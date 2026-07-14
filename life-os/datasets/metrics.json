@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "title": "Brali LifeOS Key Metrics",
+  "description": "Metric definitions collected in the app, plus the per-metric stats, report/insight metrics, and Firebase analytics event names used by the companion app.",
+  "groups": [
+    {
+      "id": "physiology",
+      "title": "Physiology",
+      "metrics": [
+        { "key": "energy", "title": "Energy" },
+        { "key": "stressLevel", "title": "Stress Level" },
+        { "key": "physicalActivity", "title": "Physical Activity" },
+        { "key": "nutritionQuality", "title": "Nutrition Quality" },
+        { "key": "painDiscomfort", "title": "Pain Discomfort" }
+      ]
+    },
+    {
+      "id": "cognition_emotion",
+      "title": "Cognition & Emotion",
+      "metrics": [
+        { "key": "mood", "title": "Mood" },
+        { "key": "anxietyLevel", "title": "Anxiety Level" },
+        { "key": "mentalClarity", "title": "Mental Clarity" },
+        { "key": "motivation", "title": "Motivation" },
+        { "key": "selfConfidence", "title": "Self-confidence" },
+        { "key": "socialConnectedness", "title": "Social Connectedness" }
+      ]
+    },
+    {
+      "id": "behavior_habits",
+      "title": "Behavior & Habits",
+      "metrics": [
+        { "key": "dailyProductivity", "title": "Daily Productivity" },
+        { "key": "discipline", "title": "Discipline" },
+        { "key": "distractions", "title": "Distractions" },
+        { "key": "unhealthyHabits", "title": "Unhealthy Habits" },
+        { "key": "learningTime", "title": "Learning Time" }
+      ]
+    },
+    {
+      "id": "recovery_cycle",
+      "title": "Recovery & Daily Cycle",
+      "metrics": [
+        { "key": "sleepQuality", "title": "Sleep" },
+        { "key": "eveningRelaxation", "title": "Evening Relaxation" },
+        { "key": "morningStartQuality", "title": "Morning Start Quality" },
+        { "key": "moodVariability", "title": "Mood Variability" }
+      ]
+    },
+    {
+      "id": "social_support",
+      "title": "Social & Support",
+      "metrics": [
+        { "key": "interactionQuality", "title": "Interaction Quality" },
+        { "key": "conflictLevel", "title": "Conflict Level" },
+        { "key": "perceivedSupport", "title": "Perceived Support" }
+      ]
+    },
+    {
+      "id": "context_triggers",
+      "title": "Context & Triggers",
+      "metrics": [
+        { "key": "positiveDayTriggers", "title": "Positive Day Triggers" },
+        { "key": "environmentQuality", "title": "Environment Quality" },
+        { "key": "microhabitAdherence", "title": "Microhabit Adherence" }
+      ]
+    },
+    {
+      "id": "goals_progress",
+      "title": "Goals & Progress",
+      "metrics": [
+        { "key": "dailyKeyGoalProgress", "title": "Daily Key Goal Progress" },
+        { "key": "growthPackProgress", "title": "Growth Pack Progress" },
+        { "key": "lifeBalance", "title": "Life Balance Across Life Areas" }
+      ]
+    },
+    {
+      "id": "long_term",
+      "title": "Long-term",
+      "metrics": [
+        { "key": "lifeSatisfaction", "title": "Life Satisfaction" },
+        { "key": "meaningPurpose", "title": "Meaning / Purpose" },
+        { "key": "psychologicalEnergy", "title": "Long-term Psychological Energy" }
+      ]
+    }
+  ],
+  "computed": {
+    "perMetricStats": [
+      { "key": "current", "title": "Current" },
+      { "key": "average", "title": "Average" },
+      { "key": "min", "title": "Min" },
+      { "key": "max", "title": "Max" },
+      { "key": "totalCheckIns", "title": "Total check-ins" },
+      { "key": "trend", "title": "Trend (up/down/stable)" },
+      {
+        "key": "averageDaysBetweenCheckIns",
+        "title": "Average days between check-ins"
+      },
+      { "key": "progressToTargetPercent", "title": "Progress-to-target %" }
+    ],
+    "insightMetrics": [
+      {
+        "key": "trendSnapshots",
+        "title": "Trend snapshots",
+        "fields": ["slope", "delta"]
+      },
+      {
+        "key": "correlations",
+        "title": "Correlations",
+        "fields": ["coefficient", "pValue"]
+      },
+      { "key": "consistencyVolatility", "title": "Consistency / volatility" },
+      { "key": "streakDays", "title": "Streak days" },
+      { "key": "zScoreVsAverage", "title": "Z-score vs average" },
+      {
+        "key": "rollups",
+        "title": "Weekly/monthly rollups",
+        "fields": ["totalCheckIns", "avgDailyCheckIns", "perMetricCounts"]
+      },
+      { "key": "periodOverPeriodDeltas", "title": "Period-over-period deltas" },
+      {
+        "key": "aiSignals",
+        "title": "AI signals",
+        "fields": ["focus", "confidence", "activationEnergy", "steadiness"]
+      }
+    ]
+  },
+  "analyticsEvents": [
+    { "name": "CheckIn" },
+    { "name": "StartTimer" },
+    { "name": "StopTimer" },
+    { "name": "Rate" },
+    { "name": "share_friend" },
+    { "name": "share_hack" },
+    { "name": "open_metkagram" },
+    { "name": "open_ai" },
+    { "name": "decision_created" },
+    { "name": "decision_action_created" },
+    { "name": "decision_committed" },
+    { "name": "decision_option_changed" },
+    { "name": "decision_reviewed" }
+  ],
+  "references": {
+    "perMetricStats": "metric_checkin_manager.dart (line 8)",
+    "insightMetrics": "analytics_models.dart (line 1)",
+    "analyticsEvents": "events.dart (line 6)"
+  }
+}
+

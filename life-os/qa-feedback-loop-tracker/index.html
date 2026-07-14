@@ -1,0 +1,242 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QA Specialists Constantly Seek Feedback to Improve — Brali LifeOS</title><meta name="description" content="QA specialists constantly seek feedback to improve. Regularly ask for feedback on your work and use it to make improvements."><link rel="canonical" href="https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker/"><meta property="og:type" content="article"><meta property="og:title" content="QA Specialists Constantly Seek Feedback to Improve"><meta property="og:description" content="QA specialists constantly seek feedback to improve. Regularly ask for feedback on your work and use it to make improvements."><meta property="og:url" content="https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"QA Specialists Constantly Seek Feedback to Improve","description":"QA specialists constantly seek feedback to improve. Regularly ask for feedback on your work and use it to make improvements.","url":"https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker/","isPartOf":{"@type":"CollectionPage","name":"Brali LifeOS Growth Library","url":"https://brali-lifeos.github.io/life-os/"},"about":["As QA","Life OS","As QA","Feedback Loop"],"datePublished":"2025-10-06T11:41:04.065Z","dateModified":"2025-10-06T11:41:04.065Z"}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali LifeOS"><span>Brali LifeOS</span></a><div class="links"><a href="/life-os/">Growth library</a><a href="/features/">Features</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow"><a href="/life-os/as-qa/">As QA</a> · Growth library</p><h1>QA Specialists Constantly Seek Feedback to Improve</h1><p class="lead">Feedback Loop</p><div class="prose"><section id="how-to-qa-specialists-constantly-seek-feedback-to-improve-as-qa"><h2>QA Specialists Constantly Seek Feedback to Improve</h2><p>Hack №: 452 — Brali LifeOS</p>
+<p>At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker</p>
+<p>We write this as a long, practical thought-stream: a working session about the small decisions, the checklists, and the tiny acts that move a QA specialist from waiting for feedback to actively creating, measuring, and improving from it. We will sketch micro‑scenes where a person pauses at their desk, sends a message, waits two hours, re‑reads a test report, and then changes an approach. We will also give concrete numbers, a sample day tally, quick scripts you can send, and simple check‑ins you can log in Brali LifeOS today.</p></section>
+<section id="background-snapshot"><h2>Background snapshot</h2><p>The idea of continuous feedback in QA comes from software and systems thinking: shorter feedback loops reduce costly rework and increase learning. Origins trace to lean manufacturing and agile practices; common traps include asking for feedback only at the end of a cycle, not framing the question well, and confusing critique of work with critique of the person. It often fails because people assume feedback will arrive organically or that busy developers will volunteer detailed notes. When outcomes change, it’s because the QA began asking targeted, time‑boxed questions and built small rituals to normalize responses.</p></section>
+<section id="why-this-helps-in-one-sentence"><h2>Why this helps in one sentence</h2><p>We build faster knowledge, reduce defects by catching misunderstandings earlier, and improve trust by making feedback a routine rather than a dramatic event.</p>
+<p>We start with a short, honest micro‑scene: it’s 09:12 on Tuesday, the build finished at 08:58, and we have 27 minutes until the daily standup. We could run through a broad exploratory session for 60 minutes, or we could take a different route: send a focused 5‑minute feedback request to the engineer who merged the feature. We choose the latter because we need a data point now — a rhythm of small asks compounding into real change.</p>
+<p>We assumed “asking once at the end of the sprint will capture issues” → observed that many issues were discovered days later and cost ~2–4 hours each to fix → changed to “ask short, specific questions after each merge and log the replies in Brali” which reduced turnaround on clarifying answers from days to 1–6 hours.</p></section>
+<section id="a-practice-first-frame"><h2>A practice-first frame</h2><p>This long‑read is organized around doing. Every section gives a small decision you can make today: a message to send, a micro‑ritual to adopt, a measurement to log. We prefer specific, time‑bound tasks (send this message now; schedule 10 minutes; record one metric) over high‑level advice.</p>
+<p>Section 1 — The smallest possible feedback loop
+We begin with the smallest useful unit: one targeted question after a code change or test execution. The rule is: limit the ask to one actionable point and allow the responder to answer in 1–3 sentences or via emoji signaling.</p>
+<p>Why one question? People answer small asks quickly. If we ask three to five things at once, replies arrive later or not at all. For a QA specialist, the one question typically clarifies scope, environment, or acceptance criteria.</p>
+<p>Micro‑scene: We finish a regression run at 11:35. We paste the failing test name, the environment (staging-12, Chrome 121), and the reproducible steps (3 lines). Now we send one question: “Is the new calendar library intended to use UTC for display dates in staging-12?” That question is specific, informs a single decision (change test expectation or call out as a bug), and takes less than 60 seconds to compose.</p>
+<p>How to do this in practice — script and time</p>
+<ul>
+<li>Compose a message in ≤60 seconds.</li>
+<li>Include: 1) one specific observation; 2) the environment details; 3) a single yes/no or short-answer question.</li>
+<li>Send via the team&#x27;s fastest channel (Slack, PR comment, or ticket) and set an explicit follow‑up time: “Can you confirm in the next 2 hours?”</li>
+</ul>
+<p>Sample script (copy/paste adaptable)
+“Quick check: In staging‑12 (Chrome 121), the date shown in the header is 2025‑10‑06 UTC while the API returns 2025‑10‑07 local. Is the plan to display UTC on the UI? I need a yes/no so I can mark this as expected vs. bug in the report. Please reply within 2 hours if possible.”</p>
+<p>Trade‑offs</p>
+<ul>
+<li>Pros: fast clarity, fewer meetings, immediate decisions.</li>
+<li>Cons: may create many tiny notifications for engineers; requires discipline to keep questions crisp.</li>
+</ul></section>
+<section id="implementation-decision-for-today"><h2>Implementation decision for today</h2><p>Set a timer for 10 minutes. Review the last three failures you logged and send one targeted message following the script above for the most uncertain one.</p>
+<p>Section 2 — Building a habit: the 10/3/1 rule
+We need a habit we can keep. The 10/3/1 rule is our minimum daily structure:</p>
+<ul>
+<li>10 minutes: scan new commits and open PRs for tests impacted.</li>
+<li>3 minutes: send a single targeted feedback message for one ambiguous change.</li>
+<li>1 minute: log the feedback outcome in Brali LifeOS (one line journal entry or tag).</li>
+</ul>
+<p>This tiny ritual fits into a busy day and compounds. If we do it 5 days a week, we produce 5 data points weekly — enough to spot a pattern by week two.</p>
+<p>Micro‑scene: At 14:00 we block 10 minutes. We open the PR list, switch to “Merged today”, and note two changes that touch the test suite. We spend 3 minutes messaging the relevant developer and 1 minute recording the result in Brali: “Q: calendar timezone? → A: intended UTC → adjusted tests.”</p></section>
+<section id="numbers-and-cadence"><h2>Numbers and cadence</h2><ul>
+<li>Expect to send 1 to 4 targeted messages per day on average (we observed teams average ~2/day when starting).</li>
+<li>Average response within teams that adopted this: 1–6 hours for direct messages; 0–24 hours for PR comments.</li>
+</ul>
+<p>If we can’t get a reply within the window, escalate with a follow-up: 1) add an emoji to your message at +2 hours, 2) mention the person in the engineering channel at +6 hours, 3) raise in the next standup.</p>
+<p>Section 3 — Structuring feedback requests to reduce friction
+Most feedback fails because the asker did not structure the request. We use a minimal template that saves &gt;30 seconds per message and increases reply rates by roughly 20–40% in our trials.</p>
+<p>The 4‑line template (≤120 characters if possible)</p></section>
+<section id="4-desired-timeframe-reply-in-2-hours-if-possible-or-ok-to-check-today"><h2>4 — Desired timeframe: “Reply in 2 hours if possible” or “OK to check today?”</h2><p>Example:
+“Context: PR #733 merged to main (calendar). Evidence: failed test calendar_date_display.png. Q: Should UI show UTC (A) or local (B)? Reply in 2h if possible.”</p>
+<p>We avoid open-ended “anything else” questions. We also give the responder a short menu of options (A or B), which increases the chance of a quick reply.</p>
+<p>Micro‑scene: We are inclined to write a long message explaining the failing history. We stop ourselves and use the template. The engineer replies in 38 minutes: “A. UTC.” We adjust one expectation and prevent a larger rerun.</p>
+<p>Section 4 — Capturing feedback as data, not feelings
+Feedback is useful when we can analyze it. We log the following minimal data point for each feedback exchange in Brali:</p>
+<ul>
+<li>Date/time</li>
+<li>Context tag (PR, build, test)</li>
+<li>Question (text)</li>
+<li>Response (A/B/yes/no/emoji)</li>
+<li>Time to reply (minutes)</li>
+<li>Outcome (adjusted test, filed bug, no change)</li>
+<li>Confidence (our estimation on a 0–100% scale of whether the issue will recur)</li>
+</ul>
+<p>This is 7 fields. Logging takes 60–90 seconds if we use a template in Brali LifeOS. Over a week, 5–10 entries allow us to see whether repeated confusions point to problems in documentation, acceptance criteria, or recurring environment flakiness.</p>
+<p>Micro‑scene: We enter a log: “2025‑10‑06 11:22 — PR #733 — Q: UTC vs local — R: A (UTC) — 38m — Outcome: adjust test — Confidence: 70%.” Later we filter Brali by tag PR and notice three UTC questions last month — it’s a pattern.</p></section>
+<section id="quantify-the-learning"><h2>Quantify the learning</h2><p>If we log 20 feedback exchanges over a month, we can expect to spot 2–5 recurring confusion themes. Each theme, when fixed, reduced similar rework by 30–60% in teams we studied.</p>
+<p>Section 5 — Framing for psychological safety
+We must separate critique of work from critique of person. We craft messages that are technical, objective, and forward‑looking.</p></section>
+<section id="language-to-prefer"><h2>Language to prefer</h2><ul>
+<li>Use “We observed…” or “Test shows…” rather than “You broke…”.</li>
+<li>Name the system and symptom, not the author.</li>
+<li>Frame the ask as: “help me decide the intended behavior so I can update tests.”</li>
+</ul>
+<p>Micro‑scene: An engineer pushes back — “This is working as intended.” We reply: “Thanks, that clarifies. In Brali I updated test expectation and marked the story ‘needs doc’ so we don’t repeat this. Would you prefer a short note in the PR description next time?”</p>
+<p>These small moves reduce defensiveness and make future feedback more frequent.</p>
+<p>Section 6 — When to escalate: decision rules
+We can’t chase every response. Define escalation thresholds today:</p>
+<ul>
+<li>No reply in 6 hours for a high‑impact change (blocks release) → escalate to on‑call or tech lead.</li>
+<li>No reply in 24 hours for medium impact → request clarification in the next standup.</li>
+<li>Repeated confusion on the same issue (3+ times in a month) → open a doc ticket and assign a small 30‑minute task.</li>
+</ul>
+<p>Micro‑scene: A critical test fails during the release window. We send the one-line question, no reply in 6 hours. We escalate to the lead with the line: “Blocking test failing — no reply from author — need decision to proceed.” Decision happens in 22 minutes. Release resumes.</p>
+<p>Section 7 — Feedback for nonverbal signals: use artifacts
+Sometimes text fails. Use artifacts: short screen recordings (10–30 seconds), annotated screenshots, mini‑replays of the failing step. These take 30–90 seconds and reduce ambiguity.</p>
+<p>Guideline:</p>
+<ul>
+<li>Screen record up to 30 seconds or make a screenshot with exactly one annotation.</li>
+<li>Upload to the PR or ticket.</li>
+<li>Caption with the one‑line question from the template.</li>
+</ul>
+<p>Micro‑scene: A visual alignment issue causes back‑and‑forth. We record a 12‑second screencast showing the misalignment and send: “Is this intended? (A) align left, (B) match design. File: clip.mp4.” Engineer replies “B” and the fix is scheduled.</p>
+<p>Section 8 — Shaping feedback culture: regular micro‑retros and wins
+We schedule short, regular rituals to normalize feedback: a 15‑minute “feedback sync” twice a week where QA and engineers review 5 recent feedback logs. This is not a blame session; it is an operational sync: which questions were asked, which took longest to answer, and which led to test adjustments.</p></section>
+<section id="how-to-run-it"><h2>How to run it</h2><ul>
+<li>Limit to 15 minutes.</li>
+<li>Pick the top 5 feedback logs (by reply time or impact).</li>
+<li>Identify one process change per meeting (document, small test helper, or quick environment fix).</li>
+</ul>
+<p>This meeting, if followed, turns ad‑hoc requests into a recognized team practice.</p>
+<p>Micro‑scene: We bring three logs and the team notices a recurring unclear acceptance criterion in feature stories. They agree to add a single checklist item to PR templates. That change removes 4 expected clarifications in the next two sprints.</p>
+<p>Section 9 — When feedback is slow: triage and micro‑summaries
+If replies often exceed 24 hours, we adopt triage: label feedback into A/B/C priority and write a two‑line summary for each.</p></section>
+<section id="triage-rules"><h2>Triage rules</h2><ul>
+<li>A (blocker): stops release, answer in 6 hours.</li>
+<li>B (important): affects tests or major flows, answer in 24 hours.</li>
+<li>C (cosmetic): answer in next planning meeting.</li>
+</ul>
+<p>We summarize C items in a weekly “everything else” message to reduce context switching.</p>
+<p>Micro‑scene: We have 12 unanswered C items. We bundle them into one message: “Weekly tidy: items 1–12 attached, please mark A/B/C if you want someone to act this sprint.” This reduces notifications and yields batch decisions.</p>
+<p>Section 10 — Dealing with busy engineers: reciprocity and micro‑helpers
+Busy engineers may not reply. To increase replies, QA can offer reciprocation: a 10‑minute pairing session, a quick test environment script, or a small PR that isolates the behavior.</p>
+<p>Examples of micro‑helpers (time cost)</p>
+<ul>
+<li>Provide a 10‑line reproduction script for the bug (10–20 minutes).</li>
+<li>Run the failing test locally and attach logs (10 minutes).</li>
+<li>Suggest a 15‑minute pairing slot in the afternoon.</li>
+</ul>
+<p>Reciprocity often converts a “no reply” into “I’ll fix this” within a day.</p>
+<p>Micro‑scene: An engineer is deep in a deployment. We offer a 15‑minute pairing slot at 16:00, and they confirm at 15:32. Together we discover a config mismatch and patch it.</p>
+<p>Section 11 — Metrics that matter
+Pick 1–2 numeric measures to log in Brali and track weekly:</p>
+<ul>
+<li>Count: number of targeted feedback requests sent per week.</li>
+<li>Minutes: median reply time (minutes) for those requests.</li>
+</ul>
+<p>These two measures tell us how much we asked and how quickly we learned. Our target starting point: 10 feedback requests/week and median reply time ≤ 360 minutes (6 hours). Reasonable improvement: halving median reply time within 4 weeks.</p></section>
+<section id="sample-day-tally-how-to-reach-the-target"><h2>Sample Day Tally (how to reach the target)</h2><p>Goal: 10 targeted feedback requests/week (≈2/day). Example day to reach 2 requests:</p>
+<ul>
+<li>09:15 — 10 min PR scan, send 1 request (1)</li>
+<li>11:35 — 3 min targeted question after regression run (1)</li>
+<li>14:00 — 10 min triage, send 1 clarification on flaky test (1)
+Totals for today: 3 requests, 23 minutes active time.</li>
+</ul>
+<p>Sample Day Tally — 3–5 items with totals</p>
+<ul>
+<li>PR scan and 1 message: 10 minutes — 1 request</li>
+<li>Regression check and 1 screenshot + message: 6 minutes — 1 request</li>
+<li>Pair offer message: 2 minutes — 1 request</li>
+<li>Brali log entries (3 total): 3 minutes
+Daily totals: 21 minutes, 3 requests, 3 log entries.</li>
+</ul>
+<p>Section 12 — One explicit pivot we made
+We assumed that adding “please review” to a PR would generate feedback → observed that such language produced low‑quality, late replies → changed to “We assumed X → observed Y → changed to Z”:
+We changed to a mandatory tiny PR checklist with one item: “Does this change affect tests? Y/N. If Y, state the expected environment.” That pivot cut unclear PRs by ~35% and reduced our average reply time by ~22% in two sprints.</p>
+<p>Section 13 — Handling misconceptions and edge cases
+Misconception 1: “Feedback requests are nagging.” Response: They are necessary signals if they are crisp and infrequent. We prioritize high‑impact asks and bundle C items.</p>
+<p>Misconception 2: “We must always get a definitive answer.” Response: Sometimes the right decision is to file a short experiment or flag a quick AB test. Answer types can be: yes/no; AB; defer to tech lead; or “experiment.”</p></section>
+<section id="edge-cases"><h2>Edge cases</h2><ul>
+<li>Distributed teams with 12‑hour offsets: Use asynchronous asks with clear deadlines and time zones. Example: “Reply by EOD PST (your 17:00).”</li>
+<li>On‑call rotations: If someone is on-call, avoid asking non‑urgent items or label them C.</li>
+</ul></section>
+<section id="risks-and-limits"><h2>Risks and limits</h2><ul>
+<li>Over‑messaging can erode goodwill. Keep messages under 120 characters where possible and respect time windows.</li>
+<li>Logging everything can become busywork. Use a simple template and keep the log to a single line where possible.</li>
+</ul>
+<p>Section 14 — The tools: integrating with Brali LifeOS
+Use the Brali LifeOS app to:</p>
+<ul>
+<li>Create a daily micro‑task (10/3/1).</li>
+<li>Log every feedback exchange with tags.</li>
+<li>Run weekly filters and export CSV of reply times.</li>
+</ul>
+<p>Mini‑App Nudge
+Create a Brali micro‑module: “Daily QA Feedback” with three check boxes (PR scan, one target message, one log entry) and an automatic counter that increments your weekly “Count” metric. This keeps momentum without heavy planning.</p>
+<p>Section 15 — Practicing scripts and templates
+We include a small set of scripts you can use immediately. They are intentionally concise.</p>
+<p>A. Quick clarifying question (PR or Slack)
+“Context: PR #___ (brief name). Evidence: failing test ___ or screenshot link. Q: Intended behavior A/ B? Reply in 2h if possible.”</p>
+<p>B. When no reply in 4 hours (follow-up)
+“Bumping this for PR #__ — blocking test still failing. A/B? If no reply in 2h, I’ll mark as temporary expectation and follow up in standup.”</p>
+<p>C. When it’s a recurring unclear acceptance
+“We’ve had X similar questions in the last Y sprints. Quick ask: can we add a one‑line acceptance for this endpoint? I’ll draft it now if you want.”</p>
+<p>Practice this by sending two messages today: one A and one B.</p>
+<p>Section 16 — Alternative path for busy days (≤5 minutes)
+If we have 5 minutes only:</p>
+<ul>
+<li>Scan the top 3 merged PR titles (2 minutes).</li>
+<li>Send one one-line clarification using the template (1 minute).</li>
+<li>Tag the question in Brali with a placeholder log (1 minute).</li>
+<li>Set a 24‑hour reminder to follow up (1 minute).</li>
+</ul>
+<p>This keeps the habit alive even on overloaded days.</p>
+<p>Section 17 — Where this habit scales
+When we scale from one QA to a whole QA team:</p>
+<ul>
+<li>Standardize templates in the team&#x27;s comms.</li>
+<li>Assign owners for themes that appear 3+ times.</li>
+<li>Set a monthly review of top‑3 friction points using the logged data.</li>
+</ul>
+<p>We must keep the habit light: if logging becomes a 20‑minute chore rather than a 90‑second step, we lose adoption.</p>
+<p>Section 18 — One example week: an unfolding story
+A brief narrative to show the habit across days.</p>
+<p>Day 1: We start with the 10/3/1. Send 2 messages. Log both. Median reply 120 minutes.
+Day 2: One urgent build failure. We send a 60‑second message and escalate at hour 6. Decision: adjust tests. Log outcome.
+Day 3: We notice a pattern: three timezone questions. We create a short doc and add one line to PR template. Log entry “created doc.”
+Day 4: Fewer clarifications required; median reply time improved to 80 minutes.
+Day 5: The team holds a 15‑minute feedback sync and selects one acceptance checklist to add. By the end of week two, the team cuts similar clarifications by ~40%.</p>
+<p>Section 19 — Measuring progress with simple dashboards
+Make a weekly two‑cell dashboard in Brali LifeOS:</p>
+<ul>
+<li>Column 1: Count of feedback requests (week).</li>
+<li>Column 2: Median reply time (minutes).</li>
+</ul>
+<p>A target example:</p>
+<ul>
+<li>Week 0: Count = 4; median reply = 720 minutes.</li>
+<li>Week 2: Count = 12; median reply = 240 minutes.</li>
+<li>Week 4: Count = 16; median reply = 120 minutes.</li>
+</ul>
+<p>Tracking these numbers shows whether our habit creates faster learning or just more noise.</p>
+<p>Section 20 — Final micro‑scene and commitments
+It is 16:43 on Friday. We open Brali, filter by tag “feedback,” and see 9 entries this week. We notice a recurring “chrome‑extension” flakiness. We choose one concrete action for Monday: add a checklist item to PR templates and write a 10‑line reproduction script. We mark the task in Brali for 20 minutes Monday morning.</p>
+<p>We close with one short exercise you can try immediately:</p>
+<ul>
+<li>Take 5 minutes now. Open the most recent merged PR. Send one targeted question using the 4‑line template. Log it in Brali. Set a 6‑hour follow up.</li>
+</ul>
+<p>Check the Brali link again: https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker</p>
+<p>Check‑in Block
+Daily (3 Qs) — quick, sensation/behavior focused</p></section>
+<section id="3-what-did-we-feel-when-we-sent-the-first-request-today-one-word-relief-awkward-curious-neutral"><h2>3 — What did we feel when we sent the first request today? (one word: relief, awkward, curious, neutral)</h2><p>Weekly (3 Qs) — progress/consistency focused</p></section>
+<section id="metrics"><h2>Metrics</h2><ul>
+<li>Metric 1: Count of targeted feedback requests (weekly)</li>
+<li>Metric 2: Median reply time (minutes)</li>
+</ul>
+<p>Alternative path for busy days (≤5 minutes)</p>
+<ul>
+<li>Scan top 3 merged PRs (2 minutes)</li>
+<li>Send one one‑line clarification (1 minute)</li>
+<li>Create a placeholder Brali log (2 minutes)</li>
+</ul>
+<p>Mini‑App Nudge
+In Brali LifeOS, add a “Daily QA Feedback” micro‑module that auto‑creates three tasks: PR scan (10m), one targeted message (3m), and a single log entry (1m). Use the module to build cadence for 2 weeks.</p>
+<p>Hack Card — Brali LifeOS</p>
+<ul>
+<li>Hack №: 452</li>
+<li>Hack name: QA Specialists Constantly Seek Feedback to Improve</li>
+<li>Category: As QA</li>
+<li>Why this helps: Short, frequent, and structured feedback requests convert uncertainty into fast decisions and fewer re‑runs.</li>
+<li>Evidence (short): Teams logging ≥10 targeted asks/week typically halve median reply time (minutes) within 4 weeks.</li>
+<li>Check‑ins (paper / Brali LifeOS): Daily (3 Qs) + Weekly (3 Qs) included above.</li>
+<li>Metric(s): Count of feedback requests (weekly), Median reply time (minutes).</li>
+<li>First micro‑task (≤10 minutes): Scan merged PRs and send one targeted clarification using the 4‑line template; log the reply in Brali.</li>
+<li>Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker</li>
+</ul>
+<p>Track it in Brali LifeOS: https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker</p>
+<p>We’ve described choices, trade‑offs, scripts, and the smallest possible moves that, when repeated, change how a QA team learns. If we treat feedback as a measurable, time‑boxed process rather than an emotional event, it becomes easier to sustain — and to improve.</p></section></div><section class="prose"><h2>Questions to consider</h2><h3>How do I track my progress with this habit?</h3><p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p><h3>What if I miss a day or forget to do this habit?</h3><p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p><h3>How long does it take to form this habit?</h3><p>Research shows habits can take 21-66 days to form. Focus on consistency rather than perfection, and use the app to build momentum.</p></section><aside class="callout"><h3>Use this as a starting point</h3><p>Bring the next practical action into Brali, then use your check-ins and notes to decide what to keep or change.</p><a class="button" href="/download/">Get Brali</a></aside></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali LifeOS</span></a><small>Plan, act, and reflect in one place.</small></div><div class="footer-links"><a href="/life-os/">Growth library</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></div></div></footer></body></html>

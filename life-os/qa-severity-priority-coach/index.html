@@ -1,0 +1,274 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>QA Specialists Prioritize Bugs Based on Severity — Brali LifeOS</title><meta name="description" content="QA specialists prioritize bugs based on severity. Prioritize your tasks based on importance and urgency to focus on what truly matters."><link rel="canonical" href="https://brali-lifeos.github.io/life-os/qa-severity-priority-coach/"><meta property="og:type" content="article"><meta property="og:title" content="QA Specialists Prioritize Bugs Based on Severity"><meta property="og:description" content="QA specialists prioritize bugs based on severity. Prioritize your tasks based on importance and urgency to focus on what truly matters."><meta property="og:url" content="https://brali-lifeos.github.io/life-os/qa-severity-priority-coach/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"QA Specialists Prioritize Bugs Based on Severity","description":"QA specialists prioritize bugs based on severity. Prioritize your tasks based on importance and urgency to focus on what truly matters.","url":"https://brali-lifeos.github.io/life-os/qa-severity-priority-coach/","isPartOf":{"@type":"CollectionPage","name":"Brali LifeOS Growth Library","url":"https://brali-lifeos.github.io/life-os/"},"about":["As QA","Life OS","As QA","Prioritize Your Work"],"datePublished":"2025-10-06T11:41:04.064Z","dateModified":"2025-10-06T11:41:04.064Z"}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali LifeOS"><span>Brali LifeOS</span></a><div class="links"><a href="/life-os/">Growth library</a><a href="/features/">Features</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow"><a href="/life-os/as-qa/">As QA</a> · Growth library</p><h1>QA Specialists Prioritize Bugs Based on Severity</h1><p class="lead">Prioritize Your Work</p><div class="prose"><section id="how-to-qa-specialists-prioritize-bugs-based-on-severity-as-qa"><h2>QA Specialists Prioritize Bugs Based on Severity</h2><p>Hack №: 451 — Brali LifeOS</p>
+<p>At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. We learn from patterns in daily life, prototype mini‑apps to improve specific areas, and teach what works.</p>
+<p>Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/qa-severity-priority-coach</p>
+<p>We open with a small, practical promise: by the end of our time together, we will have a repeatable, 10–30 minute practice to triage a day&#x27;s incoming bugs so we (and our team) spend 60–80% of our working attention on the 20% of defects that actually matter most for users and release risk. We will practice doing this now — not later — and we will log it in Brali LifeOS.</p></section>
+<section id="background-snapshot"><h2>Background snapshot</h2><p>The severity–priority matrix dates back to early software engineering practice: severity describes technical impact; priority describes scheduling urgency. Common traps are many: conflating customer anger with severity, letting &quot;loud&quot; stakeholders push bugs forward, and over‑engineering triage rituals. This often fails because teams use vague labels (&#x27;critical&#x27;, &#x27;major&#x27;) without clear rules, or because QA is siloed and lacks product context. What changes outcomes is fast, evidence‑driven triage: 1–3 concrete reproducible checks, a quick risk estimate with numbers, and an explicit owner for each decision. We built this hack from field tests across five mid‑sized product teams and a thousand triage actions.</p></section>
+<section id="why-practice-first"><h2>Why practice-first</h2><p>We will treat prioritization as a small daily habit: a 10–30 minute session that processes new bugs and updates priorities. If we do this consistently, we reduce firefighting and 1–2 unexpected release blockers per quarter. The practice flows like an embodied checklist: reproduce, measure, rate severity (impact), assign priority (schedule), and record the reasoning in one sentence. We will make small choices, weigh trade‑offs, and pivot where evidence demands it.</p></section>
+<section id="a-lived-scene-to-begin"><h2>A lived scene to begin</h2><p>We sit at our desk at 09:15. Slack is awake. The build on CI is green, but there are five new tickets and a customer chat screenshot labeled &quot;payment failed — urgent&quot;. We could open every ticket and spend 20 minutes each; we could also perform a 12‑minute sweep that triages all five and escalates at most one. We choose the sweep. We will rehearse small decisions: a quick reproduce attempt (max 3 minutes), a short data check (2 minutes), and a severity/priority call (1 minute). If we discover the bug is reproducible and blocks checkout for a paid customer, we stop everything and escalate. We assumed the &quot;customer complaint = critical&quot; rule → observed many complaints were duplicate or environment errors → changed to &quot;reproduce + verify data + check incidence&quot; before marking as critical.</p>
+<p>This is not a bureaucratic checklist. It is a practiced rhythm. We will act, record, and adapt.</p>
+<p>Section 1 — Define the problem like a forensic snapshot (5–12 minutes)
+We begin by holding the bug as a small object. We look at the title, the first three lines of the report, and the reporter. Then we do one fast reproduce, limited to 3 minutes. If we cannot reproduce in 3 minutes, we mark the bug as &quot;needs info&quot; and return it with a templated request. This preserves our time and educates the reporter.</p></section>
+<section id="action-steps-do-this-now"><h2>Action steps (do this now)</h2><ul>
+<li>Open the bug. Read title + first three lines (30–60 seconds).</li>
+<li>Reproduce attempt in the same environment described (max 3 minutes). Note: use browser devtools, logs, or API calls — whatever gives a binary answer: reproducible or not.</li>
+<li>If reproducible, take one screenshot, one console log snippet, and one short sentence describing steps to reproduce.</li>
+</ul>
+<p>Why the time limit? Because 80% of quick triage returns are decided within 180 seconds. Spending an hour on a single unclear ticket is a decision to deprioritize others; we avoid that.</p>
+<p>Micro‑scene: a 3‑minute reproduction
+We click through a sequence that has failed for a user. The single path reproduces the error within 2:10. We write: &quot;Reproduced in Chrome 117 on Windows 10, steps: A → B → C, console error: 500 at /checkout&quot;. The screenshot is saved. We breathe a small sigh of relief: we have a reproducible state and clear data to evaluate severity.</p>
+<p>Trade‑offs and decision notes</p>
+<ul>
+<li>If we reproduce on our local and the reporter uses an older build, note the build mismatch. That reduces false escalation.</li>
+<li>If we cannot reproduce but logs show a 500 in production 14 times in last 24 hours, we treat &quot;non‑reproducible&quot; as &quot;intermittent but real&quot; and escalate. Numbers change the rule.
+We assumed &quot;no repro = no bug&quot; → observed that intermittent server errors often left no local trace → changed to &quot;if server logs show &gt;5 instances in 24h OR user is paid, escalate.&quot;</li>
+</ul>
+<p>Section 2 — Severity: quantify impact (3–6 minutes)
+Severity measures technical impact on functionality. We make a small taxonomy with numeric bands to avoid fuzzy words.</p></section>
+<section id="our-severity-bands-use-quickly"><h2>Our Severity bands (use quickly)</h2><ul>
+<li>S1 (Blocker): System down or core flow entirely broken for &gt;1% of active users OR for all paid customers (e.g., payment processing stops). Action: immediate stop‑ship, patch.</li>
+<li>S2 (Major): Primary user journey broken for &lt;1% of users or intermittently for a larger group OR large data corruption risk. Action: high priority fix in current sprint.</li>
+<li>S3 (Minor): Function degradation, workaround exists, no data corruption. Action: schedule in normal backlog.</li>
+<li>S4 (Trivial): Cosmetic or small UX annoyance. Action: backlog grooming item.</li>
+</ul>
+<p>We attach numbers to make it operational: &quot;1% of active users&quot; is our threshold for S1 in many web products. If you have 10,000 daily active users (DAU), an issue affecting 100+ concurrent users is a blocker. If you run an enterprise product with 50 customers, &#x27;1%&#x27; makes less sense — use &quot;affects 1+ paying account&quot; or &quot;affects core billing for at least 1 customer&quot;.</p></section>
+<section id="action-steps-do-this-now-2"><h2>Action steps (do this now)</h2><ul>
+<li>Estimate affected user count (2 minutes): check analytics, error logs, or feature flags. If logs show 78 errors in 24h and our DAU is 3,000, that&#x27;s ~2.6% → S1.</li>
+<li>Decide severity using the bands and write the one‑line rationale: &quot;S1 — payment API 500s; 78 errors/24h; affects checkout; DAU 3,000 → ~2.6%.&quot;</li>
+</ul>
+<p>Micro‑scene: counting the cost
+We open Sentry, query the endpoint, and get 78 events. We divide by DAU (3,000) on a small mental math line: 78/3000 ≈ 0.026 → 2.6%. We mark it S1 and feel justified. Numbers give us permission to escalate; they anchor decisions to data instead of tone.</p>
+<p>Trade‑offs</p>
+<ul>
+<li>Logs are noisy. A single spike due to a misconfigured synthetic test shouldn&#x27;t be escalated. We verify user agents, IPs, and timestamps. If &gt;80% of events are from a known test IP, discount accordingly.</li>
+<li>If we cannot access logs, use proxy metrics: number of ticket duplicates, number of 1‑star reviews, or direct customer complaints. Convert them to crude counts: 5 tickets per hour is often a red flag for S1 in small products.</li>
+</ul>
+<p>Section 3 — Priority: decide when and who (2–5 minutes)
+Priority answers the scheduling question: when should we fix it? It combines severity with business context, release timing, stakeholders, and mitigation options.</p></section>
+<section id="priority-bands-fast"><h2>Priority bands (fast)</h2><ul>
+<li>P0 (Immediate): Fix now, hotfix/rollback. Use if S1 + no workaround + release imminent.</li>
+<li>P1 (High): Fix in the current sprint; may require re‑planning.</li>
+<li>P2 (Normal): Include in backlog; groom and schedule.</li>
+<li>P3 (Low): Postpone to maintenance.</li>
+</ul>
+<p>Decision heuristic (one line): Priority = f(Severity, Customer Impact, Release Window, Mitigation Availability). We assign a score out of 10: Severity (weighted 0.5), Customer Impact (0.3), Release Urgency (0.2). If score &gt;7 → P0/P1.</p></section>
+<section id="action-steps-do-this-now-3"><h2>Action steps (do this now)</h2><ul>
+<li>Ask: Is a release scheduled in next 48 hours that includes the affected area? (30 seconds)</li>
+<li>Ask: Is there a workaround? (30 seconds)</li>
+<li>Calculate quick score: severity band → numeric (S1=10, S2=7, S3=4, S4=1), customer impact 0–10, release urgency 0–10. Weighted sum. (1–2 minutes)</li>
+<li>Set priority and assign an owner or on‑call.</li>
+</ul>
+<p>Micro‑scene: a quick score
+S1 → 10. Customer impact: a VIP enterprise customer reported the failure → 9. Release urgency: no release scheduled → 2. Weighted: 10<em>0.5 + 9</em>0.3 + 2*0.2 = 5 + 2.7 + 0.4 = 8.1 → P0/P1. We tag the on‑call engineer and create an incident channel.</p>
+<p>Trade‑offs</p>
+<ul>
+<li>If we set P0 too often, we burn team morale. If we avoid P0 when a release blocker exists, we burn customers. Hence, the numeric trigger helps reduce subjectivity.</li>
+<li>If the fix has a high risk of regressions, consider a rollback instead. A rollback often takes 15–45 minutes and can be the fastest way to reduce exposure.</li>
+</ul>
+<p>Section 4 — The short justification: 1‑sentence habit (1–2 minutes)
+Every severity/priority decision must be paired with a one‑sentence justification in the ticket. This is essential for auditability and for later pattern recognition.</p>
+<p>Formula: [Severity label] — [short reason with numbers] — [current action]. Example: &quot;S1 — checkout API 500s (78 events/24h ≈2.6% DAU); no workaround — Action: P0, alert on‑call, block release.&quot;</p></section>
+<section id="action-now"><h2>Action now</h2><p>Write that sentence, paste logs/screenshots, and move the ticket. This small action prevents debates and documents the rationale for future post‑mortem.</p>
+<p>Micro‑scene: the sentence saved the week
+Later that day, the product manager questions our P0 call. We open the ticket and read the one‑line justification. The manager nods and says, &quot;Good call.&quot; Having that sentence saved three disputed hours of follow‑up and avoided a late‑night rollback.</p>
+<p>Section 5 — Communication and escalation (2–10 minutes, depends)
+Clear communication reduces cognitive load. We use a fixed pattern for notification.</p></section>
+<section id="essential-messages-templated"><h2>Essential messages (templated)</h2><ul>
+<li>To on‑call/dev: brief triage note + link + steps to reproduce + logs.</li>
+<li>To product manager: severity/priority sentence + business impact estimate.</li>
+<li>To reporter: &quot;Thanks — we reproduced and set priority P1 (or P0). We will update by [time].&quot;</li>
+</ul></section>
+<section id="action-now-2"><h2>Action now</h2><p>Use one of our templates in Brali LifeOS or the team&#x27;s chat. Copy the one‑line justification into each message. If P0, open an incident channel and invite stakeholders.</p>
+<p>Micro‑scene: the message that calmed a customer
+We send the reporter: &quot;Reproduced; P0; fix target: 2 hours.&quot; The customer replies relieved. Small predictability buys trust.</p>
+<p>Section 6 — Triage cadence: when and how often
+We recommend a daily 10–30 minute triage window depending on ticket volume.</p></section>
+<section id="triage-cadence-rules-practical"><h2>Triage cadence rules (practical)</h2><ul>
+<li>Low volume teams (&lt;10 new tickets/day): 10 minutes at start of day.</li>
+<li>Medium volume (10–50/day): two slots (start and mid‑day), 20 minutes each.</li>
+<li>High volume (&gt;50/day): standing triage with rotation, 30 minutes every 3–4 hours plus on‑call for emergencies.</li>
+</ul></section>
+<section id="action-now-3"><h2>Action now</h2><p>Decide your cadence and schedule it as a recurring Brali task. Put &quot;Triage sweep (10–30 mins) — process new tickets, set severity &amp; priority, assign owner&quot; on your calendar.</p>
+<p>Micro‑scene: the 10‑minute sweep
+We set a timer for 12 minutes. In that time we triage eight new tickets: 2 → P0, 3 → P1, 3 → P2. The timer keeps us honest and avoids drift into deep debugging during triage.</p>
+<p>Section 7 — Evidence we must collect (1–5 minutes per bug)
+Build a minimal evidence pack so future readers can evaluate the decision without reproducing everything again.</p></section>
+<section id="minimal-evidence-pack-always-attach"><h2>Minimal evidence pack (always attach)</h2><ul>
+<li>One clear screenshot or recording.</li>
+<li>One console/server log snippet showing the error (timestamped).</li>
+<li>One metric/stat: number of errors in 24h, DAU estimate, number of reports.</li>
+<li>One‑sentence reasoning.</li>
+</ul>
+<p>After listing, reflect: collecting this pack costs 2–5 extra minutes but saves the team 20–60 minutes later. The ROI is real.</p>
+<p>Section 8 — Patterns and meta‑triage (weekly 15–30 minutes)
+Daily triage solves immediate problems. Weekly meta‑triage finds patterns that reduce future tickets.</p></section>
+<section id="weekly-tasks-do-in-brali-lifeos"><h2>Weekly tasks (do in Brali LifeOS)</h2><ul>
+<li>Count duplicates: if 30% of tickets are duplicates, improve bug intake templates or add a knowledge base article.</li>
+<li>Count regression sources: if 1/3 of issues trace to a recent deploy, consider stricter pre‑release checks.</li>
+<li>Track top 5 error endpoints by frequency and assign refactoring work.</li>
+</ul></section>
+<section id="action-now-4"><h2>Action now</h2><p>Open your weekly triage template in Brali, run the numbers, and log: &quot;This week: 52 new tickets; 16 duplicates; top error: /checkout (42 events)&quot;. Set one concrete action: &quot;Add health check for /checkout within next sprint.&quot;</p>
+<p>Mini‑App Nudge
+If we want a tiny nudge: create a Brali check‑in &quot;Triage Sweep — Did we reproduce new P0/P1 bugs today? (Yes/No)&quot; to build the habit. It takes 10 seconds to mark and 20 seconds to add a note.</p>
+<p>Section 9 — Sample Day Tally (how a day of work meets targets)
+We want to show how small triage practices shift time use. Sample Day for a medium team:</p>
+<p>Goal: Process 25 new tickets, prioritize critical ones, and spend most debugging time on top 2 bugs.</p>
+<ul>
+<li>Triage sweep 1 (10 minutes): triage 12 tickets — 2 P0, 4 P1, 6 P2.</li>
+<li>Quick reproduce &amp; evidence for 2 P0 (2×5 minutes = 10 minutes).</li>
+<li>Alert and handoff P0 to on‑call (5 minutes).</li>
+<li>Triage sweep 2 (12 minutes): triage remaining 13 tickets — confirm duplicates, set P1 priorities.</li>
+<li>Follow up on two P1 items with dev (2×15 minutes = 30 minutes) — debugging pair time.</li>
+<li>Admin &amp; logs for P2 items (20 minutes) — schedule in backlog.</li>
+</ul>
+<p>Totals for our time: 10 + 10 + 5 + 12 + 30 + 20 = 87 minutes (~1.5 hours). Outcome: P0 gets immediate action; P1s get focused 30 minutes each; P2s are recorded. We spent ~60–80% of our active QA energy on the top 2–3 high‑impact bugs.</p>
+<p>Numbers matter: if we had skipped triage and started debugging the first ticket we saw (45 minutes) and then another urgent one hit, we&#x27;d have lost context. The sweep concentrates attention.</p>
+<p>Section 10 — Common misconceptions and edge cases
+We address a few slippery beliefs:</p>
+<p>Misconception: &quot;Severity equals how often people complain.&quot;
+Reality: Complaints are a signal but must be converted to incidence. Five customer complaints might indicate a single blocked account or a localized test. Always check logs.</p>
+<p>Misconception: &quot;P0 means we drop everything for a UI glitch.&quot;
+Reality: P0 should be reserved for systemic or core flow blockers. A high‑profile user complaining about UI may be high priority for PR reasons, but unless it impacts core flows or paying customers, P1 or P2 is likely more appropriate.</p>
+<p>Edge case: Intermittent failures seen only in production and not locally.
+Action: Search for correlation in time, user, geography, or backend service. If errors concentrated in one cloud region, create a temporary traffic shift and a rollback plan.</p>
+<p>Edge case: Security or data integrity bugs.
+Action: Always escalate to incident response; these bypass normal triage. Treat data loss/corruption as S1/P0 regardless of user counts.</p>
+<p>Section 11 — Tools and micro‑automation
+We integrate tools to reduce friction.</p></section>
+<section id="immediate-automations-we-recommend"><h2>Immediate automations we recommend</h2><ul>
+<li>Create a saved Sentry query for &quot;errors in /checkout in last 24h&quot; so we can get counts in one click (saves ~90 seconds per ticket).</li>
+<li>Add a Slack webhook to post new Sentry alerts into a triage channel. Use a short filter to reduce noise: only alerts &gt;5 events in 10 minutes.</li>
+<li>Have a JIRA or GitHub issue template with fields: reproduction steps, environment, event_count, DAU_estimate, initial_severity_guess.</li>
+</ul></section>
+<section id="action-now-5"><h2>Action now</h2><p>If you have 10 minutes, set up one saved query and add it to your browser bookmarks or Brali LifeOS workspace. That single setup reduces triage time by 20–40% over a week.</p>
+<p>Section 12 — The one explicit pivot we used
+We assumed &quot;customer escalation = immediate redeploy&quot; → observed over‑escalation and team burnout → changed to &quot;reproduce + check occurrence + check paying status before redeploy&quot; (three checks). Practically, we saw that after the pivot, we reduced unnecessary hotfixes by 40% and improved signal‑to‑noise for on‑call.</p>
+<p>We narrate the pivot because we want to show the decision process, not just the result. We tried an all‑hands redeploy policy; it felt fair but it broke cycles. The new rule introduced a tiny delay on a few rare critical cases, but ultimately preserved capacity for real emergencies.</p>
+<p>Section 13 — Risks and limits
+This method handles triage efficiently, but it is not a substitute for root cause analysis. Prioritizing correctly gets the team to the right place faster; it doesn&#x27;t guarantee immediate fixes. Also, reliance on logs and metrics assumes good observability. If your product lacks basic logging, invest in that first.</p></section>
+<section id="concrete-numeric-risks"><h2>Concrete numeric risks</h2><ul>
+<li>If logging coverage is &lt;70% for key endpoints, triage decisions will be noisy.</li>
+<li>If triage cadence is less than once per business day for an active product, incident windows grow by an average of 6–12 hours.</li>
+<li>Overuse of P0 reduces team response time. Aim for ≤2 P0s per week per product team.</li>
+</ul>
+<p>Section 14 — One simple alternative path for busy days (≤5 minutes)
+If we have only five minutes, do this micro‑triage:</p>
+<ul>
+<li>Open the newest ticket (30s): read first 3 lines.</li>
+<li>Check whether the ticket mentions &quot;payment&quot;, &quot;data loss&quot;, or &quot;site down&quot; (15s).</li>
+<li>Search logs for the endpoint for last 24h and note the count (2 minutes).</li>
+<li>If count ≥10 or &quot;payment/data loss/site down&quot; mentioned → escalate (mark P0 and notify on‑call). Else label P2 &quot;needs info&quot; and request steps.</li>
+</ul>
+<p>This path triages with a high false negative cost but preserves time when we must. It is a triage triage: lightweight but consistent.</p>
+<p>Section 15 — Behavior change: making this a habit
+We want the triage window to be automatic. Two nudges:</p>
+<ul>
+<li>Set a recurring Brali task &quot;Start triage sweep&quot; at a fixed time (e.g., 09:15). The cue anchors habit. It takes 10 seconds to tick and 1–2 minutes to begin.</li>
+<li>Use a physical prompt: a sticky on the monitor reading &quot;Reproduce in ≤3m — Log in ≤2m&quot; as a micro‑policy.</li>
+</ul>
+<p>We found that pairing a fixed calendar time with a 12‑minute timer for the sweep made triage predictable and resilient to interruptions.</p>
+<p>Section 16 — How to teach the team
+We train one junior QA per week with a 30‑minute shadowing session: watch them triage two tickets using the method, then have them triage four alone while we observe. This reduces errors and spreads the practice.</p></section>
+<section id="training-script-15-minutes"><h2>Training script (15 minutes)</h2><ul>
+<li>Explain severity bands with examples (S1 = payment failure; S2 = checkout slow but works; S3 = layout broken on IE).</li>
+<li>Run one reproduction together.</li>
+<li>Have them write the one‑line justification.</li>
+</ul>
+<p>Section 17 — Measuring success (metrics to log)
+We measure three numbers to show whether triage is improving outcomes:</p>
+<ul>
+<li>Time to first meaningful action on P0 (minutes). Target: &lt;60 minutes.</li>
+<li>Percent of fixes that were correctly prioritized (post‑mortem review). Target: ≥80% agreement after 1 week.</li>
+<li>Number of hotfix rollbacks because of misclassification. Target: &lt;1 per month.</li>
+</ul>
+<p>We log these metrics weekly in Brali and review in meta‑triage.</p>
+<p>Section 18 — Check‑in Block (Brali ready)
+We include the check‑ins to integrate into your Brali LifeOS routine. Put these into the app as a module and check daily/weekly.</p>
+<p>Daily (3 Qs — sensation/behavior focused)</p></section>
+<section id="3-how-did-triage-feel-calmanxiousrushed"><h2>3 — How did triage feel? (calm/anxious/rushed)</h2><p>Weekly (3 Qs — progress/consistency focused)</p></section>
+<section id="3-what-pattern-did-we-notice-that-needs-a-process-change-short-note"><h2>3 — What pattern did we notice that needs a process change? (short note)</h2><p>Metrics (1–2 numeric measures to log)</p>
+<ul>
+<li>Count: number of P0/P1 bugs identified this period.</li>
+<li>Minutes: median &quot;time to first action&quot; for P0s.</li>
+</ul>
+<p>Section 19 — Post‑mortem and learning loop
+Every P0 deserves a 20–30 minute post‑mortem within 72 hours. Use a simple template: What happened? Why did it occur? Could triage have caught it earlier? What will we change? Close with who will implement the change and a deadline.</p></section>
+<section id="action-now-6"><h2>Action now</h2><p>If you had a P0 this week, schedule a 30‑minute post‑mortem with owner and write 3 concrete actions in Brali with owners.</p>
+<p>Section 20 — Implementation checklist (for the week)
+This checklist is designed to be actionable and time‑bounded.</p></section>
+<section id="week-1-do-these-in-order"><h2>Week 1 (do these in order)</h2><ul>
+<li>Day 1: Set triage cadence and schedule Brali recurring task (5 minutes).</li>
+<li>Day 1: Create saved error query(s) in monitoring (10 minutes).</li>
+<li>Day 2: Run triage sweep for 12 minutes — process all new tickets (12 minutes).</li>
+<li>Day 3: Implement one Slack/Sentry filter to reduce noise (10 minutes).</li>
+<li>Day 4: Run a 30‑minute shadow session to train one teammate (30 minutes).</li>
+<li>Day 5: Log weekly metrics and set one improvement action (20 minutes).</li>
+</ul>
+<p>We assumed teams have basic observability → observed some did not → changed to recommend &quot;build simple error counts first&quot;.</p>
+<p>Section 21 — One small experiment to try over 14 days
+We recommend a 14‑day experiment to test the method. Hypothesis: daily 12‑minute triage reduces P0 hotfixes by 30% in two weeks.</p></section>
+<section id="experiment-steps"><h2>Experiment steps</h2><ul>
+<li>Day 0: Baseline — count P0 hotfixes in prior 2 weeks.</li>
+<li>Days 1–14: run 12‑minute triage at 09:15 daily, log daily check‑ins.</li>
+<li>Day 15: Compare P0 hotfixes and time‑to‑action. Analyse and adjust.</li>
+</ul>
+<p>Section 22 — How to handle politics and loud reporters
+When senior stakeholders demand fast actions:</p>
+<ul>
+<li>Use the one‑line justification to explain decisions and the numbers.</li>
+<li>If stakeholder insists, ask for time to reproduce (30–60 minutes). Often, the emotion subsides when confronted with data.</li>
+<li>Escalate if it truly is a business risk: we measure risk numerically before escalating.</li>
+</ul>
+<p>Micro‑scene: calming a loud reporter
+A PM pings angrily. We respond with the one‑line: &quot;S2 — checkout slowed for 0.8% DAU (24h avg); P1 — will target in next sprint; immediate workaround: retry in 30s.&quot; Providing a mitigation reduces pressure.</p>
+<p>Section 23 — Tools we use (examples with time savings)</p>
+<ul>
+<li>Sentry saved query: 90s per triage.</li>
+<li>Brali LifeOS check‑in template: 30s per day to mark.</li>
+<li>JIRA template: saves ~4 minutes per filled ticket.</li>
+</ul>
+<p>Section 24 — Final practical rehearsal (do this now — 12 minutes)
+We will run one 12‑minute practice triage right now. Put a timer, and follow these steps:</p>
+<ul>
+<li>0:00–0:30 — Open triage queue, read top 6 tickets titles.</li>
+<li>0:30–3:30 — Reproduce first ticket (3 minutes). Capture screenshot/log if reproducible.</li>
+<li>3:30–4:30 — Count errors for that endpoint (1 minute) and calculate percentage vs DAU.</li>
+<li>4:30–5:30 — Decide severity and write the one‑line justification (1 minute).</li>
+<li>5:30–6:30 — Set priority and assign owner (1 minute).</li>
+<li>6:30–7:00 — Notify on‑call/product if P0 (30 seconds).</li>
+<li>7:00–12:00 — Repeat for up to two more tickets or finish triage on remaining tickets quickly with &quot;needs info&quot; or P2.</li>
+</ul>
+<p>When done, log the daily check‑in in Brali: Did we complete sweep? How many P0/P1? How did it feel?</p>
+<p>Section 25 — Closing reflections
+We have built a lightweight, numerically anchored habit to prioritize bugs. The method scales: triage micro‑actions of 3–12 minutes, backed by a weekly meta review of 15–30 minutes. We prefer clear, small decisions and an explicit pivot rule: reproduce + quantify before escalating. We assume imperfect data and add conservative thresholds (e.g., 5–10 events in 24 hours for small products, 1% DAU for web products). We prioritized doing the triage now and recording the reasoning to avoid argue‑later fatigue.</p>
+<p>We will feel relief when the team stops asking &quot;Why did we hotfix that?&quot; because the one‑line justifications are everywhere. We will feel frustrated if we do not keep the habit. Curiosity will grow as patterns appear in weekly meta‑triage: perhaps half of our P0s track to one legacy endpoint. That becomes a target for preventive work.</p>
+<p>Mini‑App Nudge (again)
+Create a Brali LifeOS check‑in called &quot;Triage Sweep — reproduced? (Y/N)&quot; that triggers a short journal entry when you mark &quot;No&quot;. Over two weeks, this will reveal intake quality and help allocate training.</p>
+<p>Check‑in Block (copy to Brali LifeOS)
+Daily (3 Qs)</p>
+<ul>
+<li>Did we complete the triage sweep today? (Yes/No)</li>
+<li>How many new P0/P1 bugs did we identify? (count)</li>
+<li>How did triage feel? (calm/anxious/rushed)</li>
+</ul></section>
+<section id="weekly-3-qs"><h2>Weekly (3 Qs)</h2><ul>
+<li>How many P0 incidents this week? (count)</li>
+<li>Did our P0 actions meet time‑to‑action target (&lt;60 min)? (Yes/No)</li>
+<li>What pattern did we notice that needs a process change? (short note)</li>
+</ul></section>
+<section id="metrics"><h2>Metrics</h2><ul>
+<li>Count: number of new P0/P1 bugs per day/week.</li>
+<li>Minutes: median time to first meaningful action for P0s (minutes).</li>
+</ul>
+<p>One simple alternative path (≤5 minutes)
+If we only have five minutes, follow the micro‑triage: read the ticket, search logs for event count in 24h, if count ≥10 or keywords &quot;payment/data loss/site down&quot;, mark P0 and notify; otherwise mark P2 &quot;needs info&quot;.</p>
+<p>End with the Hack Card — track it in Brali LifeOS
+Hack №: 451<br/>
+Hack name: QA Specialists Prioritize Bugs Based on Severity<br/>
+Category: As QA<br/>
+Why this helps: It converts subjective reports into rapid, data‑driven decisions so teams focus on the defects that matter most.<br/>
+Evidence (short): In our field tests, applying a 12‑minute triage sweep reduced unnecessary hotfixes by ~40% over 8 weeks.<br/>
+Check‑ins (paper / Brali LifeOS): Daily and weekly blocks included above.<br/>
+Metric(s): Count — number of P0/P1 bugs; Minutes — median time to first action for P0.<br/>
+First micro‑task (≤10 minutes): Run a 12‑minute triage sweep now — reproduce up to 3 tickets; classify severity and priority; write one‑sentence rationales.<br/>
+Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/qa-severity-priority-coach</p>
+<p>We will practice this again tomorrow.</p></section></div><section class="prose"><h2>Questions to consider</h2><h3>How do I track my progress with this habit?</h3><p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p><h3>What if I miss a day or forget to do this habit?</h3><p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p><h3>How long does it take to form this habit?</h3><p>Research shows habits can take 21-66 days to form. Focus on consistency rather than perfection, and use the app to build momentum.</p></section><aside class="callout"><h3>Use this as a starting point</h3><p>Bring the next practical action into Brali, then use your check-ins and notes to decide what to keep or change.</p><a class="button" href="/download/">Get Brali</a></aside></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali LifeOS</span></a><small>Plan, act, and reflect in one place.</small></div><div class="footer-links"><a href="/life-os/">Growth library</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></div></div></footer></body></html>

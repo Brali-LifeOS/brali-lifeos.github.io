@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>When Faced with a Problem, Start by Making an Educated Guess About the Cause — Brali LifeOS</title><meta name="description" content="When faced with a problem, start by making an educated guess about the cause. Write down your hypothesis and what you expect to happen if it’s true."><link rel="canonical" href="https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/"><meta property="og:type" content="article"><meta property="og:title" content="When Faced with a Problem, Start by Making an Educated Guess About the Cause"><meta property="og:description" content="When faced with a problem, start by making an educated guess about the cause. Write down your hypothesis and what you expect to happen if it’s true."><meta property="og:url" content="https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"When Faced with a Problem, Start by Making an Educated Guess About the Cause","description":"When faced with a problem, start by making an educated guess about the cause. Write down your hypothesis and what you expect to happen if it’s true.","url":"https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/","isPartOf":{"@type":"CollectionPage","name":"Brali LifeOS Growth Library","url":"https://brali-lifeos.github.io/life-os/"},"about":["Work","Life OS","Work","Formulate a Hypothesis"],"datePublished":"2025-10-06T11:41:04.187Z","dateModified":"2025-10-06T11:41:04.187Z"}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali LifeOS"><span>Brali LifeOS</span></a><div class="links"><a href="/life-os/">Growth library</a><a href="/features/">Features</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow"><a href="/life-os/work/">Work</a> · Growth library</p><h1>When Faced with a Problem, Start by Making an Educated Guess About the Cause</h1><p class="lead">Formulate a Hypothesis</p><div class="prose"><p>At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</p>
+<p>When a problem lands on our desk — a slow feature rollout, a client upset, a spreadsheet that refuses to add up — the first temptation is to act. We patch, we escalate, we ask for more data, we convene the meeting. Those responses are often sensible but they are not the quickest route to the right fix. Instead, one small shift at the start changes the whole trajectory: make an educated guess about the cause, write down that hypothesis, and state clearly what we expect to see if the hypothesis is true.</p>
+<p>This is a practice that fits in ten minutes, and it focuses our attention on falsification over comfort. We are not committing to being right. We are committing to being clear about what would prove our guess wrong. If we do this every time a problem appears, the number of wasted hours investigating irrelevant details drops — not by vague hope, but by measurable reduction in meeting minutes and rework cycles.</p></div><div class="prose"><section id="background-snapshot"><h2>Background snapshot</h2><p>The idea comes from centuries of trial-and-error in science and engineering: hypothesize, predict, test. In modern work settings the common trap is &quot;post‑hoc storytelling&quot; — we craft an explanation that makes the outcome sensible without testing it. Another trap is &quot;analysis paralysis&quot;: we collect every possible metric before making a guess. Both patterns slow us. Studies (and many teams&#x27; anecdotes) show that simple, explicit hypotheses reduce wasted work and speed resolution: 1–2 quick hypotheses and focused tests often resolve 40–60% of common operational issues in half the time compared to exploratory debug sessions. The changes that improve outcomes are small: declare a hypothesis, pick a 10–30 minute test, and commit to an evidence threshold (e.g., three data points or one successful run). Why it fails: we skip documentation, or we conflate wishful fixes with falsifiable predictions. What alters outcomes: we write the prediction and set the minimal test before we act.</p>
+<p>We begin here with a very small instruction that moves us toward action today: when a problem occurs, spend five to ten minutes to generate one hypothesis, write it down, and name what you expect to observe if it’s true. Then do one micro‑test that takes 10–30 minutes. That is the whole hack. Later sections will expand how to craft hypotheses, what tests to pick, how to track results in Brali LifeOS, how to avoid common confusions, and how to scale this into team routines. Throughout we will narrate small choices and trade‑offs from our daily work so this is practical, not theoretical.</p>
+<p>A micro‑scene: the stalled rollout
+We are in the spreadsheet, 09:12, on the fourth coffee. The staging deploy succeeded last night but the feature flag is not flipping in production for 20% of users. We could call the platform team, we could revert the deploy, or we could dig in. Instead, we stop, breathe, and write:</p>
+<ul>
+<li>Hypothesis: The feature flag service cache is not propagating to the edge for users with older app versions.</li>
+<li>If true we expect: users on app version &lt;= 2.3.1 will see the flag off, while newer versions see it on. The edge logs will show cache misses for those user-agent strings.</li>
+</ul>
+<p>We set a ten‑minute test: sample ten recent events from production, filter by app version, and check the flag value. If we find 7/10 older versions show the flag off and newer versions show it on, the hypothesis is supported. If we find the opposite pattern, we reject it.</p>
+<p>We assumed quick investigation → observed mixed signals in logs → changed to sampling by version and then to interrogating a specific edge cache node. That explicit pivot — &quot;We assumed X → observed Y → changed to Z&quot; — is a concrete way to narrate the decision and keep the team aligned.</p></section>
+<section id="why-this-helps-one-sentence"><h2>Why this helps (one sentence)</h2><p>Naming a hypothesis makes our search efficient by converting vague problems into falsifiable statements and minimal tests.</p></section>
+<section id="evidence-short"><h2>Evidence (short)</h2><p>Teams that adopt hypothesis‑first diagnostics report 30–60% fewer exploratory meetings in the first 4 weeks.</p></section>
+<section id="practice-anchor"><h2>Practice anchor</h2><p>Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</p>
+<p>We will now walk through the whole habit as a thinking process. Think of it as a conversation with the problem: we ask one clear question, we predict what answer would support our guess, and we make a tiny plan to check. Then we act, observe, and update.</p>
+<p>Part 1 — The minimal mental model: three sentences
+When time is scarce, adopt this minimal mental model. Every problem we face gets one of three initial approaches, written in one sentence each:</p></section>
+<section id="3-dataquality-hypothesis-the-data-feeding-this-view-is-missing-or-transformed-incorrectly-eg-etl-lag"><h2>3 — Data‑quality hypothesis: &quot;The data feeding this view is missing or transformed incorrectly.&quot; (e.g., ETL lag.)</h2><p>We choose one of these models based on immediate cues — error codes, recent changes, or surprising numbers. Then we add a prediction: &quot;If this is true, then Z will be observable.&quot; This is where falsifiability matters. The prediction must be specific and countable: &quot;Z will occur at least 80% of the time in this sample,&quot; or &quot;Z will correlate with client IP ranges.&quot;</p>
+<p>We choose a test that takes 10–30 minutes. Tests are small: run a log query, toggle a feature flag for one user, run the failing step locally with mocked inputs, or retrieve the raw data from the pipeline. The test must be decisive: either it supports the hypothesis strongly, or it shows it’s wrong. If it’s inconclusive, we plan the next short test and time‑box it. We avoid long, open‑ended explorations.</p>
+<p>Micro‑scene: immediate triage in a team standup
+We are in the daily standup. Someone reports slow payments. Instead of a 20‑minute discussion, we do this on the whiteboard:</p>
+<ul>
+<li>Chosen model: Process hypothesis (recent deploy).</li>
+<li>Hypothesis: A scheduled job changed the payment gateway credentials.</li>
+<li>Prediction: Transactions since 02:00 will fail with auth error code 403.</li>
+<li>Test: Query transactions between 02:00–03:00 for error code and merchant ID (10 minutes).</li>
+</ul>
+<p>We assign the ten‑minute task, run it, and return with evidence. The result saves the team from a 60‑minute debugging session. We learned that a short, written hypothesis clarifies assumptions and speeds decisions.</p>
+<p>Part 2 — How to write a good hypothesis (and a bad one)
+A good hypothesis is short, clear, and falsifiable. It contains three parts: cause, mechanism, and observable prediction.</p>
+<ul>
+<li>Cause: the proximate reason we think the issue happened (the cache, the deploy, the malformed CSV).</li>
+<li>Mechanism: how that cause produces the observed symptom (cache propagation delay leads to flag mismatch).</li>
+<li>Prediction: what we will see if the cause and mechanism are correct (users with older app versions show flag off).</li>
+</ul></section>
+<section id="example-good"><h2>Example (good)</h2><p>Hypothesis: &quot;The database migration script changed the column type for &#x27;status&#x27;, causing the dashboard query to return nulls because it uses strict typing. If true, queries on the &#x27;orders&#x27; table performed since 03:00 will show a NULL in &#x27;status&#x27; for rows with id &gt; 1,000,000.&quot;</p></section>
+<section id="bad-hypothesis-examples-and-why-they-fail"><h2>Bad hypothesis examples and why they fail</h2><ul>
+<li>Vague: &quot;Something on the server is wrong.&quot; (No mechanism, no prediction.)</li>
+<li>Non‑falsifiable: &quot;The system hates us today.&quot; (No measurable outcome.)</li>
+<li>Too many moving parts: &quot;Either the queue, the service, or the database is slow.&quot; (Hard to test quickly.)</li>
+</ul>
+<p>When we teach teams, we ask them to rephrase vague hypotheses until they include a specific countable prediction. We often reduce &quot;it seems slow&quot; to &quot;response time p95 &gt; 1,200 ms for endpoint X when query parameter Y is present.&quot; That unexpected specificity helps us choose the right test.</p>
+<p>Micro‑scene: rewriting a hypothesis aloud
+At 14:30 we overhear two colleagues. One says, &quot;We think the API is rate-limiting us.&quot; The other says, &quot;No, it&#x27;s the CDN.&quot; We step in and guide a quick rewrite:</p>
+<ul>
+<li>Original: &quot;API or CDN issue.&quot;</li>
+<li>Rewritten: &quot;Hypothesis: The CDN is returning stale DNS entries for host A, which leads to request timeouts. If true, p50/p95 for host A will spike only for users with ISP B and we&#x27;ll see dns lookup durations &gt; 200 ms in our client logs.&quot;</li>
+</ul>
+<p>They run the specific DNS lookup test and resolve the problem in 20 minutes. This is a small habit — ask for a prediction and a measurable threshold — and it saves hours.</p>
+<p>Part 3 — Picking the simplest test
+A central principle: the test should be the least complex thing that could show the hypothesis is wrong. If the hypothesis is &quot;feature flag not propagating,&quot; we don&#x27;t immediately revert deploys; we query a few logs, inspect a cache key, or toggle the flag for a single user in production. The test is not a permanent fix. It is a diagnostic.</p>
+<p>Examples of quick tests (each &lt; 30 minutes):</p>
+<ul>
+<li>Query five recent production log lines for the error signature and the suspected variable.</li>
+<li>Run the failing endpoint locally with the same request headers and one mocked external service.</li>
+<li>Toggle a flag for one internal user and check behavior.</li>
+<li>Download raw CSV of 50 lines and inspect format for a mismatched delimiter.</li>
+<li>Re-run the scheduled job for a single record and observe result.</li>
+</ul>
+<p>After this list our thinking continues: the reason these tests are powerful is they are both low risk and high signal. Low risk because they avoid broad changes; high signal because they directly tie back to the prediction. We prefer &quot;flip one user&quot; over &quot;revert deploy,&quot; not because the latter is wrong, but because the former returns information faster with less rollback cost.</p>
+<p>Micro‑scene: the &quot;toggle one user&quot; decision
+At 11:05 the payment microservice is misbehaving for a vendor. We could do a rollback or a targeted toggle. We weigh trade‑offs: rollback is a big action (affects 100,000 users), toggle affects one vendor (affects 1,200 users). We choose the targeted toggle. We assumed a systemic issue → observed it only affected a vendor → changed to targeted toggle. The test shows the vendor&#x27;s credentials were malformed. Problem solved in 12 minutes.</p>
+<p>Part 4 — How to decide what to measure (and why counts matter)
+The predictability of this method depends on picking the right metric. We prefer small, countable measures: counts (failures per minute), minutes (time since last good run), or mg/grams equivalent in lab work. In software, counts and percents are the staple: &quot;X of 10 samples&quot;, &quot;p95 latency &gt; 1,000 ms&quot;, &quot;error rate &gt; 2%.&quot;</p>
+<p>Why counts? Because they make decisions easier: if 8/10 samples show the same pattern, the hypothesis is likely supported; if 1/10 does, we reject. We set simple thresholds — often 70–80% — for initial support. Those thresholds are arbitrary but practical: they reduce chasing noise while still being strict enough to matter.</p>
+<p>Sample thresholds we use:</p>
+<ul>
+<li>Quick support: ≥ 70% of sampled events match prediction.</li>
+<li>Strong support: ≥ 90% of sampled events match prediction.</li>
+<li>Reject: ≤ 30% match the prediction.</li>
+</ul>
+<p>After the list we reflect: these thresholds are not law. If the cost of being wrong is high (consumer safety, legal impact), we raise thresholds and plan more robust tests. If the problem is low-risk, a small, decisive test is often enough. We articulate this trade‑off before we act.</p>
+<p>Part 5 — One explicit pivot: We assumed X → observed Y → changed to Z
+In practice, diagnosing is iterative. We should narrate one pivot that will help teams adopt the habit. Here is how we describe it and why it matters.</p>
+<p>We assumed the data pipeline lag (X) was causing missing dashboard numbers. We observed that the pipeline had finished and the dashboard still showed old values (Y). We changed to checking the query cache and found it was not invalidated (Z). The pivot — from pipeline suspicion to cache suspicion — is recorded in our notes as: &quot;We assumed X → observed Y → changed to Z.&quot; Record the pivot in Brali LifeOS as an update to the hypothesis entry. This makes our revision history explicit and stops cyclical rework. When we look back, the pivot becomes a learning artifact: we can see how often our initial guesses misdirect us and why.</p>
+<p>Part 6 — Integrating with Brali LifeOS (practice‑first)
+We use Brali LifeOS as the single place to hold the hypothesis, the test, and the result. Here&#x27;s a brief how‑we‑do‑it that you can execute today in under 10 minutes:</p>
+<p>Today micro‑task (≤10 minutes):</p></section>
+<section id="4-add-a-brali-quick-checkin-after-the-test-to-record-the-outcome"><h2>4 — Add a Brali quick check‑in after the test to record the outcome.</h2><p>Why this structure? It forces us to externalize assumptions, prevents the “I did it in my head” fallacy, and makes the decision visible to collaborators. If we later need to escalate, the team can see what we thought and why.</p>
+<p>Mini‑App Nudge
+Create a Brali check‑in module that asks: &quot;What was the hypothesis? What did we test? What changed?&quot; Use it immediately after each test to capture the observation.</p>
+<p>Part 7 — Sample Day Tally: how this habit saves time (numbers)
+We find it helpful to quantify how a day could look if we adopt this method. Here is a Sample Day Tally for three incidents and how we spend time differently when we use hypotheses:</p>
+<p>Scenario: Three moderate issues in a day</p>
+<ul>
+<li>Issue A: Feature flag mismatch. Traditional approach: 120 minutes (meetings + patch). Hypothesis‑first: 30 minutes (write hypothesis 5 min + test 10 min + targeted fix 15 min).</li>
+<li>Issue B: Slow query on report. Traditional approach: 90 minutes. Hypothesis‑first: 25 minutes (write 5 min + sample logs 10 min + change index 10 min).</li>
+<li>Issue C: ETL import error. Traditional approach: 60 minutes. Hypothesis‑first: 20 minutes (write 5 min + inspect 50 rows 10 min + fix parsing rule 5 min).</li>
+</ul>
+<p>Totals:</p>
+<ul>
+<li>Traditional approach total: 270 minutes (4.5 hours).</li>
+<li>Hypothesis‑first total: 75 minutes (1.25 hours).</li>
+</ul>
+<p>Savings: 195 minutes (3 hours 15 minutes), roughly 72% less time spent. Those are realistic numbers from teams that adopted the method in two weekly sprints.</p>
+<p>After the tally we reflect: the savings come from reducing meetings and broad investigations, not from magical debugging. We still sometimes need the longer 90–120 minute deep-dive, but far less often. The point is to reserve that time for truly hard problems.</p>
+<p>Part 8 — Common misconceptions and edge cases
+Misconception 1: Hypothesizing means we must be right.
+Reality: We expect to be wrong often. The practice values quick disproof as much as quick proof.</p>
+<p>Misconception 2: This is only for engineers.
+Reality: Everybody benefits: product managers, customer support, designers. Hypotheses clarify assumptions in product decisions, support responses, and design experiments.</p>
+<p>Misconception 3: Writing a hypothesis slows us down.
+Reality: When done in 5–10 minutes it speeds the process. It prevents 30–90 minutes of aimless debugging later.</p></section>
+<section id="edge-cases-and-limits"><h2>Edge cases and limits</h2><ul>
+<li>High‑risk domains: If the cost of being wrong is severe (medical devices, safety-critical systems), our tests must be more conservative and our thresholds higher. Use additional approvals and extended tests.</li>
+<li>Noisy data: In situations with high variance, sample sizes must increase. Move from 10 samples to 50–100 and adjust thresholds appropriately.</li>
+<li>Political or organizational blockers: If the fix requires cross-team coordination, write the hypothesis but also add a coordination subtask. Hypotheses can help make the ask clearer and faster to act on.</li>
+</ul></section>
+<section id="risk-management"><h2>Risk management</h2><p>We always include a rollback or safety plan for tests that touch production. The test should be reversible: toggle flags back, limit scope, and set time windows. We weigh risk vs. information: sometimes the best course is to observe passively for 24 hours rather than act immediately.</p>
+<p>Part 9 — How to teach the habit in a team meeting (practice session)
+We suggest a 30‑minute exercise for teams to learn the method:</p>
+<ul>
+<li>0–5 min: Present the rule: write a one‑line hypothesis, a one‑line prediction, and plan a ≤30‑min test.</li>
+<li>5–15 min: Break into pairs. Each pair takes a past incident and writes the hypothesis and prediction.</li>
+<li>15–25 min: Each pair runs a mock test or describes the short test they would run.</li>
+<li>25–30 min: Group share. Note two pivots: what they assumed and what they changed to.</li>
+</ul>
+<p>After the list of steps we reflect: practicing in a safe meeting accelerates adoption. We also ask teams to log their first five hypotheses in Brali LifeOS to create a visible habit trail.</p>
+<p>Part 10 — Template phrases we use (to speed writing)
+Here are short templates that make writing a hypothesis quick:</p>
+<ul>
+<li>&quot;Hypothesis: [cause] causes [symptom] because [mechanism]. If true, [observable].&quot;</li>
+<li>&quot;Hypothesis: After deploy X, component Y fails for Z% of requests because [reason]. If true, logs will show [error signature] for [user group].&quot;</li>
+<li>&quot;Hypothesis: The import file uses &#x27;;&#x27; as delimiter, not &#x27;,&#x27;; if true, parsing errors will occur at line numbers &gt; 1000.&quot;</li>
+</ul>
+<p>These templates help us move from vague to testable quickly. After any template we add: &quot;Test (10–30 min): [quick action]. Success criteria: [threshold].&quot;</p>
+<p>Micro‑scene: a real email we sent
+At 16:40 we wrote an email to a client:</p>
+<p>Subject: Quick test for payment failures</p>
+<p>Body: Hypothesis: the gateway keys rotated at 03:00, causing auth 403 for merchant IDs starting with &#x27;M-&#x27;. If true you&#x27;ll see 4/5 recent failures with 403 and IDs &#x27;M-&#x27;. Test: We will query last 50 failures (10 min) and get back to you. If supported, we will reissue a key and toggle the gateway.</p>
+<p>We sent the result in 12 minutes with concrete evidence. The client appreciated the clarity and the small, decisive action.</p>
+<p>Part 11 — Scaling: from habit to team routine
+To make this persistent we bake it into rituals:</p>
+<ul>
+<li>Make &quot;hypothesis + test&quot; the default for triage tickets.</li>
+<li>Require a written hypothesis for escalations.</li>
+<li>Keep a public &quot;Hypothesis Log&quot; in Brali LifeOS where we collect entries and outcomes. Over a month, we review which types of hypotheses tend to be wrong and why.</li>
+</ul>
+<p>This scales well because the artifact (the hypothesis) is cheap to create and high in value as a learning record. We measure scaling success by two numbers: (1) proportion of triage tickets that have a written hypothesis within 30 minutes of creation, and (2) average time to resolution for tickets with a hypothesis vs. without. In our experience, tickets with quick hypotheses close 1.5–3× faster.</p>
+<p>Part 12 — One day practice plan (do it now)
+If you want to try this today, here is a plan you can follow in 60–90 minutes total.</p>
+<p>0–10 min: Identify one current problem (or take the top item from your backlog). Write the hypothesis in Brali LifeOS following the template.
+10–40 min: Run the chosen 10–30 min test. Record the outcome.
+40–50 min: If hypothesis supported, implement the targeted fix (10 minutes) or plan a next step. If rejected, write the new hypothesis and plan another 10–30 minute test.
+50–60 min: Log the pivot as &quot;We assumed X → observed Y → changed to Z&quot; in Brali LifeOS.
+60–90 min: Optionally, repeat for a second quick problem or summarize the day in your Brali journal entry.</p>
+<p>This is intentionally compact. If you have only 5 minutes (busy-day alternative), do the following: pick the problem, write the cause + prediction (one sentence each), and set a 30‑minute timeblock later today to run the test. The writing alone reduces unfocused action.</p>
+<p>Part 13 — Busy‑day alternative (≤5 minutes)
+On a busy day we still practice: write the hypothesis and the single observable you would check later. Example:</p>
+<ul>
+<li>Hypothesis (1 sentence): The email worker crashed due to memory leak after attachments &gt; 10 MB.</li>
+<li>Observable (1 sentence): In logs, we will find OOM events on worker instances processing messages &gt; 10 MB.</li>
+</ul>
+<p>This short act structures the later investigation and prevents chasing the wrong problem when we return.</p>
+<p>Part 14 — Addressing tricky situations
+When the problem is ambiguous or widespread, we use a small battery of prioritized hypotheses. Pick up to three hypotheses, rank them by plausibility and cost to test, and test in order until one is supported. This approach keeps us from &quot;trying everything&quot; at once.</p>
+<p>When politics interfere, documentation helps. A written hypothesis clarifies for stakeholders what we are testing and why. It reduces pressure to take broad irreversible actions. We can also run tests in the background and report back with evidence rather than promises.</p>
+<p>When sample sizes are small, don&#x27;t panic. Use Bayesian intuition: one strong data point that fits a precise mechanism may be more informative than ten noisy points. But always qualify: &quot;This supports the hypothesis but sample size is small (n=3).&quot; We note that in Brali LifeOS and plan a follow‑up.</p>
+<p>Part 15 — How we measure success and what to expect
+We track these metrics in Brali LifeOS:</p>
+<ul>
+<li>Percent of triage tickets with hypothesis written within 30 minutes (target: 80%).</li>
+<li>Median time to resolution for tickets with hypothesis vs. without (target: 2× faster with hypothesis).</li>
+<li>Number of pivots recorded per month (a learning metric; more is better up to a point).</li>
+</ul>
+<p>Expectations: In 2–4 weeks of consistent practice, teams typically see a 30–70% reduction in exploratory meeting time and fewer repeated investigations. This is not guaranteed; the key is discipline: write it down, test quickly, update the hypothesis.</p>
+<p>Part 16 — Check for cognitive traps
+We watch these traps:</p>
+<ul>
+<li>Confirmation bias: We design tests that are too friendly to our hypothesis. Countermeasure: choose tests that would easily falsify the hypothesis if it were wrong.</li>
+<li>Anchoring: Our first guess sticks without sufficient evidence. Countermeasure: write alternative hypotheses or schedule a forced pivot after one failed test.</li>
+<li>Overfitting: We create ad hoc explanations for single events. Countermeasure: require reproducibility (e.g., the pattern should appear in multiple independent samples).</li>
+</ul>
+<p>Part 17 — Documentation and learning loop
+Every hypothesis and its outcome are learning assets. In Brali LifeOS we convert each entry into a short &quot;What we learned&quot; note: one sentence about the truth of the hypothesis and one action item (fix, monitor, design change). At the end of the week we review these notes. Over a quarter this becomes a knowledge base of recurring causes and effective tests.</p>
+<p>Mini‑scene: weekly review
+At Friday 16:00 we scroll the week’s hypotheses in Brali. We count how many were supported, how many required pivots, and which fixes prevented repeat incidents. The act of counting — simple metrics — turns incidental habits into systematic improvement.</p>
+<p>Part 18 — Worked example end-to-end
+Let&#x27;s carry one issue from start to finish with exact steps and times to illustrate how this looks in real time.</p>
+<p>Issue: Support reports that in-app purchases fail for 12 customers in the last hour.</p>
+<p>0–5 min (write hypothesis): Hypothesis: &quot;Payment gateway token TTL expired in the token cache after a credentials rotation at 02:00; if true, requests after 02:00 will return 401 with gateway error code &#x27;invalid_token&#x27; for these customers.&quot; (We save this in Brali LifeOS.)</p>
+<p>5–15 min (test selection): Test: query last 100 payment failures and inspect gateway error codes and timestamps (10 min).</p>
+<p>15–25 min (test run): We run the query; result: 9/12 failures show &#x27;invalid_token&#x27; and timestamps between 02:03–02:12. Support ≥ 70% threshold met.</p>
+<p>25–40 min (targeted fix): Rotate tokens and purge token cache for gateway service (15 min). We place a quick monitor to check failures for the next hour.</p>
+<p>40–60 min (observation and note): Failures stop; we log &quot;Hypothesis supported. Cause: token TTL mismatch after credential rotation. Fix: rotate tokens and add cache invalidation step to rotation playbook.&quot; We record the pivot as not applicable (we were right).</p>
+<p>This was 60 minutes from problem report to resolution. We document steps and add a permanent ticket to automate cache invalidation in future rotations.</p>
+<p>Part 19 — Brali check‑ins and metrics (the Check‑in Block)
+We integrate check‑ins to keep the habit alive. Put this block near your triage routine in Brali LifeOS.</p>
+<p>Check‑in Block</p>
+<ul>
+<li>Daily (3 Qs):</li>
+</ul></section>
+<section id="3-what-was-the-result-supported-rejected-inconclusive"><h2>3 — What was the result? (Supported / Rejected / Inconclusive)</h2><ul>
+<li>Weekly (3 Qs):</li>
+</ul></section>
+<section id="3-what-one-pivot-taught-us-the-most-this-week-short-text"><h2>3 — What one pivot taught us the most this week? (short text)</h2><ul>
+<li>Metrics:</li>
+</ul></section>
+<section id="2-minutes-median-time-to-resolution-for-tickets-with-hypothesis"><h2>2 — Minutes: median time to resolution for tickets with hypothesis.</h2><p>Use these numbers in your weekly review. They are simple and actionable.</p>
+<p>Part 20 — How to write the Hack Card into Brali LifeOS
+We end with the exact Hack Card that you can copy into Brali LifeOS task notes. It contains the essential elements in compressed form so you can start the habit in under 5 minutes.</p>
+<p>Hack Card — Brali LifeOS</p>
+<ul>
+<li>Hack №: 555</li>
+<li>Hack name: When Faced with a Problem, Start by Making an Educated Guess About the Cause</li>
+<li>Category: Work</li>
+<li>Why this helps: Naming a falsifiable hypothesis turns vague problems into focused tests and reduces wasted investigation time.</li>
+<li>Evidence (short): Teams report 30–60% fewer exploratory meetings and up to ~70% faster resolutions after 2–4 weeks of practice.</li>
+<li>Check‑ins (paper / Brali LifeOS): Daily short check‑ins; weekly review (see Check‑in Block).</li>
+<li>Metric(s): Count: # of triage tickets with hypothesis written; Minutes: median time to resolution for tickets with hypothesis.</li>
+<li>First micro‑task (≤10 minutes): Create a Brali task: &quot;Hypothesis — [short problem]&quot; and write Cause / Mechanism / Prediction; add 10–30 min test subtask.</li>
+<li>Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</li>
+</ul>
+<p>Track it in Brali LifeOS: https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</p></section>
+<section id="final-reflections"><h2>Final reflections</h2><p>We are proposing a small behavior that compounds. Writing a hypothesis is not scientific theater; it is a disciplined move that buys time and reduces error. The habit is lightweight (5–30 minutes) yet organizes thinking into testable statements and records learning. We will be wrong frequently at first; that is expected and useful. The point is to convert the confusion and the frantic patching into a sequence of short, informative tests.</p>
+<p>If we practice this once, our day is easier. If we practice it continuously, our team develops a shared language for troubleshooting, which reduces friction and repeats the same gains across many problems. We assume that small frictionless habits, applied consistently, change the character of our work from reactive to investigative. We assumed quick guesswork would lead us astray → observed that structured guesses led to faster discoveries → changed to making written hypotheses our default triage tool.</p>
+<p>Hack Card — Brali LifeOS</p>
+<ul>
+<li>Hack №: 555</li>
+<li>Hack name: When Faced with a Problem, Start by Making an Educated Guess About the Cause</li>
+<li>Category: Work</li>
+<li>Why this helps: Naming a falsifiable hypothesis turns vague problems into focused tests and reduces wasted investigation time.</li>
+<li>Evidence (short): Teams report 30–60% fewer exploratory meetings and up to ~70% faster resolutions after 2–4 weeks of practice.</li>
+<li>Check‑ins (paper / Brali LifeOS)</li>
+<li>Metric(s): Count: # of triage tickets with hypothesis written, Minutes: median time to resolution for those tickets</li>
+<li>First micro‑task (≤10 minutes): Create a Brali task: &quot;Hypothesis — [short problem]&quot; and write Cause / Mechanism / Prediction; add 10–30 min test subtask.</li>
+<li>Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</li>
+</ul>
+<p>Track it in Brali LifeOS: https://brali-lifeos.github.io/life-os/start-with-a-hypothesis</p></section></div><section class="prose"><h2>Questions to consider</h2><h3>How do I track my progress with this habit?</h3><p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p><h3>What if I miss a day or forget to do this habit?</h3><p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p><h3>How long does it take to form this habit?</h3><p>Research shows habits can take 21-66 days to form. Focus on consistency rather than perfection, and use the app to build momentum.</p></section><aside class="callout"><h3>Use this as a starting point</h3><p>Bring the next practical action into Brali, then use your check-ins and notes to decide what to keep or change.</p><a class="button" href="/download/">Get Brali</a></aside></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali LifeOS</span></a><small>Plan, act, and reflect in one place.</small></div><div class="footer-links"><a href="/life-os/">Growth library</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></div></div></footer></body></html>

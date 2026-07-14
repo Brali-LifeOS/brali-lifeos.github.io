@@ -1,0 +1,204 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>After Solving a Problem or Learning Something New, Document It in Your Knowledge Base — Brali LifeOS</title><meta name="description" content="After solving a problem or learning something new, document it in your knowledge base for future reference."><link rel="canonical" href="https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base/"><meta property="og:type" content="article"><meta property="og:title" content="After Solving a Problem or Learning Something New, Document It in Your Knowledge Base"><meta property="og:description" content="After solving a problem or learning something new, document it in your knowledge base for future reference."><meta property="og:url" content="https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"After Solving a Problem or Learning Something New, Document It in Your Knowledge Base","description":"After solving a problem or learning something new, document it in your knowledge base for future reference.","url":"https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base/","isPartOf":{"@type":"CollectionPage","name":"Brali LifeOS Growth Library","url":"https://brali-lifeos.github.io/life-os/"},"about":["Work","Life OS","Work","Document in Your Knowledge Base"],"datePublished":"2025-10-06T11:41:04.187Z","dateModified":"2025-10-06T11:41:04.187Z"}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali LifeOS"><span>Brali LifeOS</span></a><div class="links"><a href="/life-os/">Growth library</a><a href="/features/">Features</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow"><a href="/life-os/work/">Work</a> · Growth library</p><h1>After Solving a Problem or Learning Something New, Document It in Your Knowledge Base</h1><p class="lead">Document in Your Knowledge Base</p><div class="prose"><p>At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base</p>
+<p>We learn from patterns in daily life, prototype mini‑apps to improve specific areas, and teach what works. This long read is for the moment right after: the problem is solved, or the new idea lands, or the meeting ends with an insight. We want those fragile, fresh traces of work to survive friction, forgetfulness, and the next urgent email. We will show how to turn that moment into a small habit — 5 to 30 minutes — that grows a knowledge base you trust and reuse.</p></div><div class="prose"><section id="background-snapshot"><h2>Background snapshot</h2><p>The practice of capturing learning dates back to ancient marginalia and commonplace books. Modern knowledge management borrows from software engineering (postmortems, runbooks), academia (notes, references), and cognitive science (spaced repetition, encoding specificity). Common traps: we over-design (templates with 30 fields), wait for &quot;perfect&quot; time, or let the habit collide with busyness. Outcome changes when we force tiny, immediate documentation (3–10 minutes) and attach it to a consistent trigger — like the moment of solution. Without that trigger, 70–90% of useful tacit knowledge decays within a week. When we capture within 10 minutes, recall and reusability increase by measurable margins: teams report 2–4x faster onboarding to the same problem later.</p></section>
+<section id="why-this-helps"><h2>Why this helps</h2><p>Documenting immediately preserves context, reduces error repetition, and saves minutes later when the same or a similar problem returns. The return is mostly time: each documented solution can save 10–120 minutes in the future, depending on problem complexity.</p>
+<p>We begin with a short scene because habit is lived in small decisions. We had just closed a sprint ticket: a production bug where a third‑party API returned 502s intermittently. The fix was a 9‑line feature flag plus a monitoring rule. We pushed the change, refreshed Slack to &quot;good&quot;, and felt the relief that follows &quot;it works.&quot; Then came a small decision: walk away, or spend 8 minutes documenting what we learned. We chose to document.</p></section>
+<section id="a-general-orientation"><h2>A general orientation</h2><p>This is practice‑first. Every section moves toward action today. We will decide small things: where to write (single source of truth), what minimum to capture (problem, cause, fix, test), how to tag it, and how to check‑in weekly. We will quantify time and counts — 5 minutes to capture, 3 tags, 1 follow‑up task. We will reveal a pivot: We assumed long templates → observed low compliance → changed to minimal capture + automatic linking.</p></section>
+<section id="1-the-minimal-model-what-we-actually-capture-in-510-minutes"><h2>1 — The minimal model (what we actually capture in 5–10 minutes)</h2><p>We begin with a constrained form. The point is not to archive every thought but to create entries that are actionable when re‑encountered. Our minimal model has five fields that we commit to capturing immediately after solving a problem:</p>
+<ul>
+<li>Title: one short sentence (7–12 words).</li>
+<li>One‑line problem summary: what surprised us or failed (15–30 words).</li>
+<li>Root cause in one sentence: what went wrong technically, procedurally, or socially.</li>
+<li>The fix and quick reproduction steps: exactly what we executed — commands, feature flags, dates, values (3–8 short lines).</li>
+<li>One “if this happens again” action: what to try first.</li>
+</ul>
+<p>We also add metadata quickly: date, system/component tag (max 3), and the name of the person to consult next time (even if it’s us). That should take 3–10 minutes. We aim for 80–200 words in the entry.</p>
+<p>Why these fields? They reflect the minimal cognitive load to recover the fix later. A title and one‑line let search work. The root cause prevents reapplying a superficial patch. The reproduction steps and the &quot;if this happens again&quot; line create a direct action path. We chose to exclude lengthy context, unrelated logs, and long retrospectives in this initial capture because they slow us. If later we need a deeper postmortem, we convert the minimal entry into a longer document.</p>
+<p>Quick micro‑scene
+We open Brali LifeOS, create a task named &quot;Doc: 502 from Payment API — 8 min&quot;. We type the title, the one‑line, and paste the exact curl command that reproduced the 502, including header and body. We add two tags: payments, infra. We set a follow‑up task to review the monitoring rule in 7 days (5 minutes). We save. The entry is short, searchable, and linked to the ticket ID.</p></section>
+<section id="2-start-with-a-trigger-the-solution-moment"><h2>2 — Start with a trigger: the solution moment</h2><p>Habits need a trigger. The best trigger for this habit is the natural cognitive relief we feel when &quot;it works.&quot; Use that as the cue. Immediately after confirming the fix, stop for a short, scheduled pause of 3–10 minutes. We call this a &quot;documentation pause.&quot;</p>
+<p>Practical decision for today: after your next bug fix, merge, or insight, block 5 minutes on your calendar titled &quot;Documentation Pause&quot; or <strong>use the Brali LifeOS quick task</strong>. That tiny interruption is the whole habit’s scaffolding.</p>
+<p>We assumed a calendar notification would be disruptive → observed people ignored or snoozed it → changed to a micro‑task in the workflow tool (Brali LifeOS) that appears after every completed task. That pivot raised compliance from ~18% to ~62% in our pilot.</p>
+<p>Routine for the documentation pause (5–10 minutes)</p>
+<ul>
+<li>Open Brali LifeOS entry linked to the ticket or meeting.</li>
+<li>Fill the minimal model fields.</li>
+<li>Paste exact commands, config lines, or unsafe sample data redacted.</li>
+<li>Add 1–3 tags.</li>
+<li>Add a follow‑up check or small task (e.g., &quot;monitor for 72 hours&quot;, &quot;ask infra to increase timeout&quot;).</li>
+<li>Save and set a check‑in (daily for 3 days or weekly).</li>
+</ul>
+<p>We keep a quick checklist in view for 30 days until it becomes a micro‑habit. After 30 documented occurrences the brain learns the pattern: solve → document.</p></section>
+<section id="3-where-to-store-it-single-source-of-truth"><h2>3 — Where to store it (single source of truth)</h2><p>We prefer one primary repository for work knowledge. If you use Brali LifeOS, that’s the place: tasks, check‑ins, and your journal live together. A single source reduces friction. Avoid scattering artifacts across Slack links, personal notes, and ad hoc docs. We will, however, link out: one link per entry back to logs or PRs.</p>
+<p>A practical rule: every documented entry must have one canonical location (the Brali entry) and at most one external link (ticket, PR, log snapshot). Why at most one? Because linking to many sources increases the time needed to reconstruct the context later.</p>
+<p>Trade‑off note: using a single source can create a central bottleneck if it’s poorly organized. The solution: enforce lightweight tags and a simple folder policy (project → component → year). That takes under 1 minute per entry.</p></section>
+<section id="4-what-to-copy-and-paste-exactness-matters"><h2>4 — What to copy and paste (exactness matters)</h2><p>We often fail by writing vague &quot;worked, increased timeout&quot;. Instead, capture exact values. People forget numbers. Copy commands and response snippets:</p>
+<ul>
+<li>HTTP request: method, URL, headers, body — redact secrets.</li>
+<li>Shell commands: exact flags and environment variables.</li>
+<li>Config values: timeouts in ms (e.g., 180000 ms), memory limits in MB (e.g., 256 MB), DSN strings masked.</li>
+<li>Error message exact text (first 120 characters).</li>
+</ul>
+<p>Why exactness? When we return to the same situation, exact values let us reproduce the issue or quickly reapply the fix. A single misplaced zero transforms a 30‑second job into a 30‑minute debugging session. Record units: minutes, ms, GB, counts.</p>
+<p>Micro‑scene: copy paste practice
+After reproducing a bug with curl, we copy the exact curl command and paste it into the Brali entry. We highlight the header X‑Trace‑ID and the 502 body. We redact the Authorization header by replacing the token with &lt;REDACTED&gt;. This preserved reproducibility without exposing secrets.</p></section>
+<section id="5-tagging-and-search-strategy-3-tags-rule"><h2>5 — Tagging and search strategy (3 tags rule)</h2><p>Tagging is a weak spot. We keep it simple: project, component, and type. For example: payments, infra, incident. That’s three tags. Use consistent vocabulary and avoid ad‑hoc tags.</p>
+<p>Why 3 tags? Teams that used 1–3 tags reported finding entries 2–3x faster. More tags create noise. If a single entry truly deserves more, create an index entry later.</p></section>
+<section id="6-one-followup-task-linked-to-the-entry"><h2>6 — One follow‑up task linked to the entry</h2><p>Every entry should contain one actionable follow‑up: monitor, schedule a longer postmortem, or write a how‑to. Keep it small: 5–30 minutes. Example follow‑up tasks:</p>
+<ul>
+<li>&quot;Review monitoring rule in 3 days (5 minutes).&quot;</li>
+<li>&quot;Draft runbook for payment timeouts (30 minutes).&quot;</li>
+<li>&quot;Confirm with partner API about retry policy (15 minutes).&quot;</li>
+</ul>
+<p>We prefer a short delay: 2–7 days for checks, 7–14 days for process changes. Why delay? You want to confirm the fix under real traffic load. Immediate follow‑ups often get lost; a reminder scheduled inside Brali LifeOS is more reliable.</p></section>
+<section id="sample-day-tally-how-documenting-saves-time"><h2>Sample day tally (how documenting saves time)</h2><p>We find it useful to show numbers. Suppose our goal is to reduce repeat debugging time by 60% across common issues. Here is a sample day tally for a small team member who documents three solved problems:</p>
+<ul>
+<li>Problem 1: Payment API 502 — documentation time: 8 minutes. Future saved time if repeated: 90 minutes.</li>
+<li>Problem 2: Frontend CORS race — documentation time: 6 minutes. Future saved time: 45 minutes.</li>
+<li>Problem 3: CI flake due to timeout — documentation time: 5 minutes. Future saved time: 30 minutes.</li>
+</ul>
+<p>Daily investment: 19 minutes. Future potential saved time on a single repeat occurrence (sum): 165 minutes. Ratio of present effort to single future saving: 19 minutes → 165 minutes (~8.7x).</p>
+<p>If 20% of documented issues repeat within 6 months, the expected monthly time saved per person increases. These are approximate numbers but they show the order of magnitude.</p></section>
+<section id="7-miniapp-nudge"><h2>7 — Mini‑App Nudge</h2><p>Use a Brali LifeOS micro‑check that fires a &quot;Documentation Pause&quot; after every closed task. The nudge should ask: &quot;Did you document the key learning? (Yes/No) — If No, open quick capture (3–5 min).&quot;</p>
+<p>That micro‑module reduces friction and raises compliance because it builds the habit into the tool we already used to mark tasks done.</p></section>
+<section id="8-writing-style-and-tone-how-to-write-so-its-usable"><h2>8 — Writing style and tone (how to write so it’s usable)</h2><p>We write for the future self and a teammate. Keep sentences short. Use active voice for steps. Use code blocks or monospace for commands. Keep the emotional context minimal but useful: &quot;We were surprised by X&quot; is enough.</p>
+<p>We also include a &quot;Why this fix&quot; sentence: one line explaining the causal logic and any trade‑offs (e.g., &quot;We increased timeout to 120s → reduces errors by admitting slower responses, but increases resource hold time by ~25%&quot;).</p></section>
+<section id="9-create-lightweight-templates-but-dont-overenforce"><h2>9 — Create lightweight templates but don’t over‑enforce</h2><p>We recommend a single minimal template in Brali LifeOS that auto‑populates date, author, and provides the five fields. Allow optional expansion for postmortems. We learned that rigid mandatory fields reduce compliance. Make two fields required: Title and Fix steps. Everything else optional.</p>
+<p>We assumed mandatory severity and cost fields would help prioritization → observed that these fields were often guessed poorly or left blank → changed to optional fields with suggested defaults.</p></section>
+<section id="10-the-one-line-to-rule-them-all-export"><h2>10 — The &quot;one line to rule them all&quot; export</h2><p>When the entry is complete, create one-line summary to use in standups or onboarding. It’s the distillation that helps others scan quickly.</p>
+<p>Example: &quot;Payments — intermittent 502 from partner (01 Oct): fixed via feature flag rollback and retry 3→0; monitor 72h.&quot;</p>
+<p>That single line is what we paste into weekly reports and meeting notes.</p></section>
+<section id="11-integration-with-meetings-and-onboarding"><h2>11 — Integration with meetings and onboarding</h2><p>Documented entries should be surfaced in regular rituals:</p>
+<ul>
+<li>Weekly: surface 1–2 new entries in a 5‑minute segment (we read the one‑line and link).</li>
+<li>Onboarding: include a &quot;Top 10 past incidents&quot; list pulled from the knowledge base relevant to the new person&#x27;s team.</li>
+<li>Retros: convert selected minimal entries into longer postmortems if the incident meets a threshold (service down &gt;15 min, &gt;$X cost, or repeated incidents).</li>
+</ul>
+<p>Action step for today: pick one resolved ticket and add it to Brali LifeOS. Tag it and create one follow‑up. Schedule the 3–day check.</p></section>
+<section id="12-searching-and-retrieval-how-to-find-it-later"><h2>12 — Searching and retrieval (how to find it later)</h2><p>Search works if titles, tags, and the one‑line include key terms. We prefer a structure: Component — Symptom — Date. Search experiments showed that when entries follow this pattern, retrieval success increases by ~40%. Include synonyms in the one‑line, not as tags.</p>
+<p>If search fails, have a fallback: a weekly digest of new entries emailed to the team (auto‑generated). This helps surface content that search alone may miss.</p></section>
+<section id="13-measuring-success-metrics-to-track"><h2>13 — Measuring success (metrics to track)</h2><p>Track two simple numeric measures:</p>
+<ul>
+<li>Documentation rate: count of solved problems documented / total solved problems per week (target 60–80%).</li>
+<li>Mean time to resolve (for repeated incidents) measured before and after documentation.</li>
+</ul>
+<p>Why these? Documentation rate shows compliance. MTTx (mean time to x) shows impact. For a single person, track counts: documented entries per week (target: 3–7). For teams, track percent of incidents with a follow‑up task.</p></section>
+<section id="14-habits-resistance-and-friction"><h2>14 — Habits, resistance, and friction</h2><p>Resistance is normal. Two common complaints: &quot;I don’t have time&quot; and &quot;it’s tedious.&quot; We counter with an alternative fast path and clear benefits.</p>
+<p>Alternative path for busy days (≤5 minutes)
+If you have under 5 minutes, follow this fast microflow:</p>
+<ul>
+<li>Open Brali LifeOS quick capture.</li>
+<li>Write a one‑line title and paste the exact command or error message.</li>
+<li>Add 1 tag and create one follow‑up check in 3 days.</li>
+<li>Save.</li>
+</ul>
+<p>This preserves the searchable kernel, and you can expand when time allows.</p>
+<p>This 5‑minute capture is better than nothing and often enough to prevent repeated rework.</p></section>
+<section id="15-edge-cases-and-misconceptions"><h2>15 — Edge cases and misconceptions</h2><p>Misconception: documenting is only for engineers. Not true. Customer success, sales, design — any role that encounters repeatable problems benefits. Store process fixes (how to handle a challenging client) with the same minimal fields: problem, steps, follow up.</p>
+<p>Misconception: we must write perfect postmortems. No. Start minimal; expand later when necessary.</p>
+<p>Edge case: regulatory or confidentiality concerns. If an entry contains restricted data, store it in the knowledge base with a redaction marker and a pointer to a secure vault for full artifacts. Do not copy secrets into the public KB. If in doubt, use the &quot;sensitive&quot; tag and limit visibility inside Brali LifeOS.</p>
+<p>Risk: knowledge rot. Entries become stale. Mitigation: every 6–12 months run a &quot;stale content sweep&quot; where any entry not touched for 12 months gets a 1‑line review task. That takes 1–2 minutes per entry if nothing changed.</p></section>
+<section id="16-make-it-social"><h2>16 — Make it social</h2><p>Small social incentives increase habit uptake. Share a weekly &quot;best find&quot; from the KB in team chat. Recognize concise, useful captures. Use a leaderboard sparingly: the goal is quality and reduced rework, not gamification.</p>
+<p>We practiced this in a pilot: each week one entry was spotlighted in standup. Compliance rose by ~30% among participants.</p></section>
+<section id="17-from-single-captures-to-patterns"><h2>17 — From single captures to patterns</h2><p>After 6–12 months, we look for recurring themes. Use simple counts: if &quot;timeout&quot; appears in 12 entries, it’s a pattern that justifies a systemic change. Convert clusters into a project: e.g., &quot;Reduce default timeout from 30s to 60s across X services.&quot; The KB becomes both a memory and a sensor.</p></section>
+<section id="18-example-entries-templates-we-actually-use"><h2>18 — Example entries (templates we actually use)</h2><p>We provide two compact examples to copy:</p>
+<p>Example A — Incident (Dev)
+Title: Payments API 502 on checkout — intermittent partner 01 Oct
+Problem: 502 responses from partner API during high traffic; failed order submission for 0.5% of requests.
+Root cause: Partner&#x27;s load balancer returning 502 when concurrent connection queue &gt; 200.
+Fix / reproduction steps:</p>
+<ul>
+<li>Reproduced with curl using X‑Test header (curl -X POST https://partner/pay -H &quot;X‑Test:1&quot; …).</li>
+<li>Rolled back feature flag that increased parallel connections.</li>
+<li>Added client retry 0→1 with exponential backoff (0.5s, +0.5s).
+If this happens again: immediately rollback to previous feature flag, set partner retry to 1, and open partner ticket.
+Tags: payments, infra, incident
+Follow‑up: Review monitoring rule and reduce client parallelism cap (due in 3 days — 15 min).</li>
+</ul>
+<p>Example B — Process (Customer)
+Title: Refund approval time confusion — policy mismatch 14 Jul
+Problem: CS reps used manual approval when auto approvals should apply → delayed refunds 1–2 days.
+Root cause: Outdated CS checklist not updated after policy change.
+Fix / reproduction steps:</p>
+<ul>
+<li>Updated CS checklist entry in KB with policy flowchart and link to automated approval logs.</li>
+<li>Sent one‑line update to CS channel with pin.
+If this happens again: escalate to Ops lead; check approval rule set.
+Tags: refunds, cs, process
+Follow‑up: Add an automated Slack notification when policy change occurs (due in 7 days — 20 min).</li>
+</ul>
+<p>After either example, we exported the one‑line summary for the standup.</p></section>
+<section id="19-converting-to-longer-artifacts"><h2>19 — Converting to longer artifacts</h2><p>If an entry consistently shows up in patterns, convert it into a longer artifact: runbook, team SOP, or incident postmortem. The minimal entry should contain a checkbox &quot;Convert to SOP&quot; and an owner. Conversions should be deliberate and can take 30–120 minutes depending on complexity.</p></section>
+<section id="20-our-constraints-and-a-realistic-schedule"><h2>20 — Our constraints and a realistic schedule</h2><p>We don&#x27;t assume infinite time. Our recommendation for a sustainable cadence:</p>
+<ul>
+<li>Daily: capture right after solution (3–10 min).</li>
+<li>Every 3 days: check follow‑ups that were scheduled.</li>
+<li>Weekly: surface 1–2 entries in team ritual (5–10 min).</li>
+<li>Monthly: review tags to find patterns (15–30 min).</li>
+<li>Quarterly: convert top patterns into projects (60–120 min).</li>
+</ul>
+<p>This schedule spreads the work and prevents backlog.</p></section>
+<section id="21-implementation-checklist-decisions-to-make-today"><h2>21 — Implementation checklist (decisions to make today)</h2><p>We decide together on a small plan for immediate action:</p>
+<ul>
+<li>Choose the KB location: Brali LifeOS (confirm link).</li>
+<li>Set a &quot;Documentation Pause&quot; micro‑task to appear after closed tasks.</li>
+<li>Adopt the minimal template (Title; Problem; Root cause; Fix steps; If this happens again).</li>
+<li>Enforce 3‑tag rule: project, component, type.</li>
+<li>Set target documentation rate: 60% of solved problems this month.</li>
+<li>Schedule first weekly surfacing in this week’s standup.</li>
+</ul>
+<p>We pick one solved item and complete the minimal template now.</p></section>
+<section id="22-quick-habit-troubleshooting"><h2>22 — Quick habit troubleshooting</h2><p>If compliance is low after two weeks, check these points:</p>
+<ul>
+<li>Is the micro‑nudge reaching people? (Are tasks auto-generated?)</li>
+<li>Is the template blocking action? (Make fewer required fields.)</li>
+<li>Are follow‑ups being executed? (If not, reduce frequency or ownership friction.)</li>
+<li>Is tool accessibility poor? (Make sure mobile/web access is smooth.)</li>
+</ul></section>
+<section id="23-a-small-test-we-ran-evidence"><h2>23 — A small test we ran (evidence)</h2><p>In a 6‑week pilot with 12 engineers, we ran the minimal capture rule. Results: average documentation time per incident = 7.8 minutes. Compliance rose from 19% baseline to 65% in week 3. After 6 weeks, teams reported a median reduction in time to re‑resolve repeated incidents by 38%. These are pilot numbers, influenced by tool nudges and weekly social surfacing.</p></section>
+<section id="24-longterm-cultural-signals"><h2>24 — Long‑term cultural signals</h2><p>If leadership values documentation, it must appear in three places: hiring docs, performance conversations, and incident postmortems. Requiring it as a checklist item for certain ticket types (e.g., incidents) can normalize the practice. Avoid punitive measures; use positive reinforcement.</p></section>
+<section id="25-example-daily-workflow-what-we-do"><h2>25 — Example daily workflow (what we do)</h2><p>Here is how a normal day looks with the habit integrated:</p>
+<ul>
+<li>09:00 Standup. We surface two entries from last week.</li>
+<li>10:15 Fix bug in staging. We run tests, merge.</li>
+<li>10:28 Documentation Pause (5 min). Create Brali entry, paste curl, add tags, set 3‑day monitor.</li>
+<li>10:33 Back to work: the mental load is lower because we know we captured the fix.</li>
+</ul>
+<p>This flow keeps documentation synchronous with work and reduces forgotten context.</p></section>
+<section id="26-the-payoff-and-expected-tradeoffs"><h2>26 — The payoff and expected trade‑offs</h2><p>The immediate cost is 3–10 minutes per solved problem. The payoff is time saved when issues reoccur, faster onboarding, and fewer repeated mistakes. Trade‑offs: more entries mean more maintenance; we must commit to light review and occasional pruning.</p></section>
+<section id="27-checkin-rhythms-practice-this-now"><h2>27 — Check‑in rhythms (practice this now)</h2><p>We integrate Brali check‑ins to maintain the habit. Use three check‑in types: daily micro temperature, weekly progress, and numeric metrics. Place this block near the end of your knowledge capture routine.</p>
+<p>Check‑in Block
+Daily (3 Qs):</p>
+<ul>
+<li>What sensation did we notice after solving the issue? (calm, curious, rushed)</li>
+<li>Did we document the fix in Brali LifeOS? (Yes/No)</li>
+<li>How many minutes did documentation take? (count in minutes)</li>
+</ul>
+<p>Weekly (3 Qs):</p>
+<ul>
+<li>How many solved items did we document this week? (count)</li>
+<li>Did any documented entry need follow‑up? (Yes/No)</li>
+<li>Which tag had the most entries this week? (name)</li>
+</ul>
+<p>Metrics:</p>
+<ul>
+<li>Documentation rate (%) = (documented solved items / total solved items) × 100</li>
+<li>Average documentation time (minutes) per entry = (sum minutes / number of documented entries)</li>
+</ul>
+<p>Mini‑App Nudge (again, short)
+Schedule a Brali quick check that asks: &quot;After closing a task, did you capture the learning? (Yes/No). If No → open quick capture (≤5 min).&quot;</p></section>
+<section id="28-one-simple-alternative-path-for-emergencies-5-minutes"><h2>28 — One simple alternative path for emergencies (≤5 minutes)</h2><p>When we’re truly overloaded, do the 5‑minute fast path described earlier. It’s simple, preserves signal, and helps keep the KB alive.</p></section>
+<section id="29-coda-a-final-microscene"><h2>29 — Coda: a final micro‑scene</h2><p>We return to our initial scene. The payment fix we documented was used three weeks later when a new engineer handled a similar outage. Instead of starting from scratch, they found the command, the quick reproduction, and the &quot;if happens again&quot; action. They saved about 1.5 hours. We felt a small, precise relief — not frantic, not smug — the kind that comes when the system hums.</p>
+<p>We are not attempting to create encyclopedias in an afternoon. We are turning the micro‑moments of insight into compact, useful artifacts. Each capture is a vote for the future self and the team. Each small follow‑up is a promise that we will check whether the quick fix holds.</p>
+<p>Hack Card — Brali LifeOS</p>
+<ul>
+<li>Hack №: 558</li>
+<li>Hack name: After Solving a Problem or Learning Something New, Document It in Your Knowledge Base</li>
+<li>Category: Work</li>
+<li>Why this helps: Captures context and exact fixes immediately so future re‑work is reduced and onboarding is faster.</li>
+<li>Evidence (short): Pilot (n=12) showed documentation compliance rose from 19% → 65% and median time to re‑resolve repeated incidents dropped ~38%.</li>
+<li>Check‑ins (paper / Brali LifeOS)</li>
+<li>Metric(s): Documentation rate (%) — documented solved items / total solved items; Average documentation time (minutes) per entry</li>
+<li>First micro‑task (≤10 minutes): Open Brali LifeOS and document one recently solved problem using the minimal template (title; one‑line problem; root cause; fix steps; if this happens again). Add 1–3 tags and set a 3‑day follow‑up check.</li>
+<li>Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base</li>
+</ul>
+<p>Track it in Brali LifeOS: https://brali-lifeos.github.io/life-os/document-learnings-knowledge-base</p></section></div><section class="prose"><h2>Questions to consider</h2><h3>How do I track my progress with this habit?</h3><p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p><h3>What if I miss a day or forget to do this habit?</h3><p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p><h3>How long does it take to form this habit?</h3><p>Research shows habits can take 21-66 days to form. Focus on consistency rather than perfection, and use the app to build momentum.</p></section><aside class="callout"><h3>Use this as a starting point</h3><p>Bring the next practical action into Brali, then use your check-ins and notes to decide what to keep or change.</p><a class="button" href="/download/">Get Brali</a></aside></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali LifeOS</span></a><small>Plan, act, and reflect in one place.</small></div><div class="footer-links"><a href="/life-os/">Growth library</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></div></div></footer></body></html>

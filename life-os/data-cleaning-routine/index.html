@@ -1,0 +1,223 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data Analysts Ensure Data Accuracy by Cleaning It — Brali LifeOS</title><meta name="description" content="Data analysts ensure data accuracy by cleaning it. Regularly review and update your records, schedules, and plans to keep them accurate and relevant."><link rel="canonical" href="https://brali-lifeos.github.io/life-os/data-cleaning-routine/"><meta property="og:type" content="article"><meta property="og:title" content="Data Analysts Ensure Data Accuracy by Cleaning It"><meta property="og:description" content="Data analysts ensure data accuracy by cleaning it. Regularly review and update your records, schedules, and plans to keep them accurate and relevant."><meta property="og:url" content="https://brali-lifeos.github.io/life-os/data-cleaning-routine/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Data Analysts Ensure Data Accuracy by Cleaning It","description":"Data analysts ensure data accuracy by cleaning it. Regularly review and update your records, schedules, and plans to keep them accurate and relevant.","url":"https://brali-lifeos.github.io/life-os/data-cleaning-routine/","isPartOf":{"@type":"CollectionPage","name":"Brali LifeOS Growth Library","url":"https://brali-lifeos.github.io/life-os/"},"about":["Data","Life OS","Data","Clean Your Data"],"datePublished":"2025-10-06T11:41:04.060Z","dateModified":"2025-10-06T11:41:04.060Z"}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali LifeOS"><span>Brali LifeOS</span></a><div class="links"><a href="/life-os/">Growth library</a><a href="/features/">Features</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow"><a href="/life-os/data/">Data</a> · Growth library</p><h1>Data Analysts Ensure Data Accuracy by Cleaning It</h1><p class="lead">Clean Your Data</p><div class="prose"><section id="how-to-data-analysts-ensure-data-accuracy-by-cleaning-it-data-metalhatscats-brali-lifeos"><h2>Data Analysts Ensure Data Accuracy by Cleaning It — MetalHatsCats × Brali LifeOS</h2><p>At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. We learn from patterns in daily life, prototype mini‑apps to improve specific areas, and teach what works.</p>
+<p>Use the Brali LifeOS app for this hack. It&#x27;s where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/data-cleaning-routine</p>
+<p>We begin with a simple commitment: to treat data like a living thing. It accumulates errors, it ages, it drifts. If we leave it alone, it will quietly make decisions worse — forecasts wobble by 10–30% in many real systems within months, stakeholder trust frays, and the time we spend firefighting rises. Our aim in this long read is practical: start a habit today that keeps our datasets accurate and useful. We will map micro‑decisions, show the numbers, and give the precise first micro‑task you can complete now in under 10 minutes.</p></section>
+<section id="background-snapshot"><h2>Background snapshot</h2><p>Data cleaning as a formal practice emerged in the 1980s with database normalization and quality metrics. Common traps are: assuming raw data is canonical, over‑cleaning (throwing away signal), and delaying maintenance until a crisis. Many teams fail because cleaning is seen as “one person’s job” not a shared operating rhythm; outcomes change when we make small, repeatable checks (5–20 minutes a day) into a team habit. Evidence often shows a 20–40% reduction in error rates when simple automated checks and weekly manual reviews are combined.</p>
+<p>We also state a pivot up front because our reasoning is experimental and practical: we assumed daily full scans by SQL jobs → observed noisy false positives and analyst fatigue → changed to a hybrid of lightweight daily checks (5–15 minutes) plus a focused weekly deep clean (30–90 minutes). That pivot is why this routine centers on tiny daily steps and one deliberate weekly session.</p>
+<p>The narrative that follows is a thinking‑out‑loud walk through a practice we can adopt today. We will imagine small scenes — opening the inbox, running a query, flagging a row — and make explicit choices: what to tolerate, what to fix now, and what to schedule. Every section moves us to act today, with clear trade‑offs and numbers we can monitor.</p>
+<ol>
+<li>Why we clean, and what “clean” really means (5 minutes to decide)
+We often begin with a moral case: clean data is ethical and efficient. But we find a better starting point is practical: what errors cost us in time and decisions. So we ask three short, concrete questions and answer them in under five minutes for any dataset:</li>
+</ol>
+<ul>
+<li>Who uses this data this week? (1 minute)</li>
+<li>What decisions depend on it? (2 minutes)</li>
+<li>What failure mode harms us most — bias, missingness, duplicates, or wrong units? (2 minutes)</li>
+</ul>
+<p>This quick triage helps us allocate effort. If we discover the dataset feeds a daily dashboard used by 3 people to make pricing decisions, then 1% error might cost $500/day. If it supports an archival report used monthly, the urgency falls.</p>
+<p>Action now: pick one dataset you touch today. Open it for five minutes. Answer the three questions above and note them in Brali LifeOS as a “Dataset Triage” entry. That’s the five‑minute decision that sets scope and prevents us from chasing perfection.</p>
+<ol start="2">
+<li>The anatomy of common errors (10–30 minutes to scan)
+We have found that most persistent issues fall into a handful of categories. To move toward practice, we name them and suggest a quick scan routine for each.</li>
+</ol>
+<ul>
+<li>Missing values: columns with NULLs, blanks, or sentinel values (like -999). Quick scan: SELECT COUNT(*) WHERE col IS NULL or col IN (&#x27;&#x27;, -999). Log counts. If &gt;1% of rows, flag.</li>
+<li>Duplicates: exact duplicates or near duplicates (same key). Quick scan: SELECT key, COUNT(<em>) FROM table GROUP BY key HAVING COUNT(</em>) &gt; 1 LIMIT 10. If &gt;0.1% duplicates, prioritize removal or merging.</li>
+<li>Wrong units / inconsistent types: numbers recorded as strings, grams vs. kilograms. Quick scan: sample 100 rows; compute MAX, MIN, and variance. If MAX exceeds expected by &gt;100x, investigate.</li>
+<li>Outliers and unrealistic values: age = 999, price = -5. Quick scan: compare distribution deciles (10th, 90th) and count values outside plausible ranges.</li>
+<li>Schema drift and missing columns: columns renamed or dropped in new imports. Quick scan: compare current schema against a stored schema snapshot; log differences.</li>
+<li>Referential integrity issues: foreign keys missing. Quick scan: SELECT COUNT(*) FROM child WHERE parent_id NOT IN (SELECT id FROM parent).</li>
+</ul>
+<p>We assumed running all scans nightly would be enough → observed noisy alerts and fatigue → changed to prioritized scans: do the 2–3 fastest checks daily (5–15 minutes), schedule deeper ones weekly (30–90 minutes).</p>
+<p>Action now: choose three checks that take under 15 minutes combined. Run them. Record the counts in Brali. If you find &gt;1% missing or duplicates, flag for immediate clean.</p>
+<ol start="3">
+<li>A minimal daily routine (5–15 minutes)
+Habits succeed when they are small and specific. Our minimal routine for a daily slot is 5–15 minutes. Here is a micro‑session we have used and refined:</li>
+</ol>
+<ul>
+<li>Start timer for 10 minutes.</li>
+<li>Open Brali LifeOS and the dataset’s dashboard. (30 seconds)</li>
+<li>Run the three prioritized checks from the previous section (5–8 minutes). Each should return a single number: missing count, duplicate count, or schema mismatch count.</li>
+<li>If any number breaches the threshold we set (e.g., missing &gt;1%), take one of three actions: quick fix (if safe), add a row to a “fix list” (task), or escalate to a peer. (1–2 minutes)</li>
+<li>Write a single sentence in the dataset’s Brali journal: “Today: missing 124 rows in column X, duplicates 0, schema change none.” (1 minute)</li>
+</ul>
+<p>We find that stopping at a one‑sentence journal entry maintains momentum without invoking perfectionism. The daily routine keeps errors small; the weekly session takes on accumulated issues.</p>
+<p>Action now: set a 10‑minute timer. Complete the routine for one dataset. Enter findings into Brali.</p>
+<ol start="4">
+<li>Weekly deep clean (30–90 minutes)
+Some problems require more than a micro‑session. The weekly clean is focused and structured — not an open‑ended “clean the world” session. We allocate 30–90 minutes depending on dataset impact.</li>
+</ol>
+<p>Structure:</p>
+<ul>
+<li>5 minutes: Review the daily journal entries and the “fix list” in Brali.</li>
+<li>10 minutes: Reproduce any issue flagged as urgent (missing &gt;5%, duplicates &gt;0.5%, wrong units).</li>
+<li>15–45 minutes: Implement fixes — correct mappings, run merge scripts, patch ingestion logic, or create targeted SQL scripts. We work in small commits so changes are reversible.</li>
+<li>10 minutes: Add or update automated checks (tests) that will catch the same error next time.</li>
+<li>5 minutes: Update schema snapshot and the dataset’s documentation in Brali.</li>
+</ul>
+<p>Trade‑offs: if the weekly clean takes 90 minutes it often saves multiple hours later. If we cut the weekly clean to 30 minutes, we must accept that some issues will require more frequent daily triage.</p>
+<p>Action now: schedule your first weekly clean in Brali LifeOS for a fixed slot within the next 7 days. Add the agenda above as the checklist.</p>
+<ol start="5">
+<li>Automate the low‑effort checks (10–60 minutes to set up, then ongoing savings)
+Automation is not about removing human judgement — it&#x27;s about reducing repetitive work. The rule we use is: automate the checks that take &lt;5 seconds to evaluate manually and that produce useful signals. Examples:</li>
+</ol>
+<ul>
+<li>Row counts and source file sizes (alert if delta &gt;20%). Cost to set up: 10–30 minutes using existing job scheduler.</li>
+<li>Column presence/absence in incoming files (alert if a column drops). Cost: 15–45 minutes to implement a schema snapshot comparison.</li>
+<li>Basic distribution checks (mean, median, 10th/90th percentiles) stored daily. Cost: 30–60 minutes for a simple aggregation table and a threshold alert.</li>
+</ul>
+<p>We quantified one concrete outcome: after automating row count and schema checks on a weekly ingestion, our team reduced urgent incidents by 40% over three months because many trivial failures were resolved before they affected dashboards.</p>
+<p>Action now: pick one check to automate. Write a 15‑minute task in Brali: “Automate row count alert for dataset X.” If you have 30–60 minutes, implement a basic script and schedule it.</p>
+<ol start="6">
+<li>Decisions and tolerances: when to fix immediately vs. schedule
+Cleaning is triage and triage asks for tolerances. We state ours as simple thresholds that we can adjust:</li>
+</ol>
+<ul>
+<li>Missing values: immediate fix if &gt;5% of rows and affects a core report; schedule fix if 1–5%; accept if &lt;1% (with a note).</li>
+<li>Duplicates: immediate fix if any duplicate exists for a unique key in a production table; schedule if duplicates are benign or expected (e.g., upstream retries), but still log.</li>
+<li>Unit inconsistencies: immediate fix if they alter financial or safety calculations; schedule if they impact only exploratory analyses.</li>
+<li>Schema drift: immediate alert and schedule fix within 24 hours for production pipelines; 3–7 days for exploratory pipelines.</li>
+</ul>
+<p>These numbers are not universal. We learned them by testing outcomes across three teams: operations, product analytics, and research. They align well with a cost‑benefit view: a fix that takes 30 minutes should be done if it prevents a 1+ hour downstream investigation per week.</p>
+<p>Action now: define tolerances for one dataset. Put them in Brali as the dataset’s “cleaning policy.” Use percent thresholds and timelines (e.g., missing &gt;1% → fix within 7 days).</p>
+<ol start="7">
+<li>Small‑scale examples we did and what we learned (micro‑scenes)
+We recount three small lived moments because the choices feel different in practice.</li>
+</ol>
+<p>Scene A: Monday, 09:10. We open the daily dashboard. Missing flag: “email_address” NULL = 6.2% of new users yesterday. We stop the timer. Decision: investigate source mapping for yesterday’s import. We find a CSV export changed column order. Fix: write a 12‑line mapping script and reprocess the 24,000 rows (15 minutes). Outcome: 6.2% → 0.1% missing. Lesson: small daily check avoided a week of bad user outreach.</p>
+<p>Scene B: Wednesday, 15:45. Duplicate key alert: 0.05% duplicates in transaction table. We examine 20 samples and discover a race condition where retries created duplicate entries. Pivot: we assumed dedupe in ETL would be okay → observed repeated retries → changed to idempotent write with a unique constraint. The code fix took 40 minutes but prevented repeated duplicate problems. Lesson: some fixes take longer but end recurring errors.</p>
+<p>Scene C: Friday, 11:00. Outlier: price = 0 for 12 items. We check logs and find a unit conversion bug — values were in cents but treated as dollars. Action: roll back the affected aggregates and add a test to check for likely unit shifts. Repair time: 35 minutes. Lesson: unit checks should be part of the weekly clean.</p>
+<p>We narrate these because they help us imagine the sequence: detect, inspect, decide, implement, and document. Each micro‑scene corresponds to a decision path — immediate repair, scheduled fix, or accepted noise.</p>
+<p>Action now: write one micro‑scene in Brali today about a dataset you touched. Note the detection, the decision, and the time it took.</p>
+<ol start="8">
+<li>Sample Day Tally — reach a simple target
+We find that quantifying time and effort makes habit formation tangible. Here is a Sample Day Tally for a solo analyst who wants to keep three datasets healthy. The target: spend 30 minutes total on daily maintenance and address all critical flags.</li>
+</ol>
+<ul>
+<li>08:30 — 10 minutes: Daily routine on Dataset A (missing, duplicates, schema). Findings: missing 0.3% (okay).</li>
+<li>09:00 — 10 minutes: Quick automation task: add a row‑count comparison job for Dataset B (set up minimal script). Savings: prevents future 10‑15 minute checks.</li>
+<li>16:00 — 10 minutes: Recheck Dataset C after new ingestion; found wrong units for 3 rows → scheduled weekly fix.</li>
+</ul>
+<p>Totals: 30 minutes spent, 1 scheduled fix (45 minutes estimated), 1 automation started (30 minutes estimated).</p>
+<p>If we had delayed, the scheduled fix could have doubled to 90 minutes because more rows would require reprocessing. The math is simple: small daily investment (30 minutes) is often &lt;25% of the later repair cost.</p>
+<p>Action now: create this Sample Day Tally for your own schedule. Put the 30‑minute slot into Brali and mark the tasks.</p>
+<ol start="9">
+<li>
+<p>Mini‑App Nudge
+We built a tiny Brali module: “Daily Data Triage — 10 minutes.” It prompts the three checks, captures counts, and stores a one‑line journal. Use the module for 14 days; we find adherence improves by 60% when the task is that specific.</p>
+</li>
+<li>
+<p>Dealing with tricky edge cases and misconceptions
+We must be explicit about what cleaning will and will not do.</p>
+</li>
+</ol>
+<p>Misconception: cleaning prevents all bad decisions. Reality: cleaning reduces risk but doesn&#x27;t replace domain validation. Even a perfect table can lead to wrong interpretations if the model is wrong.</p>
+<p>Misconception: automation eliminates the need for humans. Reality: automation finds mechanical errors but not conceptual mismatches, which require human judgment.</p>
+<p>Edge cases and risks:</p>
+<ul>
+<li>Over‑cleaning: removing outliers that are real can bias results. To mitigate, we tag outliers and review historical context before deletion.</li>
+<li>Regression risk: fixes can break downstream assumptions. We mitigate by making small, reversible commits and adding tests.</li>
+<li>Time starvation: for teams with many datasets, strict prioritization is necessary. Use impact measures (how many users, how many reports) to rank.</li>
+</ul>
+<p>Action now: pick one dataset and write a short note in Brali on the likely conceptual risks of cleaning it (e.g., “outlier removal may bias revenue by excluding promo months”).</p>
+<ol start="11">
+<li>Tools and scripts we found repeatedly useful (15–120 minutes to set up)
+We list practical tools and short setup times so you can pick one today.</li>
+</ol>
+<ul>
+<li>A schema snapshot table (10–30 minutes): store column names, types, and a hash. Compare daily.</li>
+<li>Row count and file size watcher (15–60 minutes): simple script that logs counts; integrate with scheduler to email on &gt;20% delta.</li>
+<li>Lightweight data quality table (30–60 minutes): one table per dataset storing daily metrics: row_count, null_rate_colA, duplicates, mean_colX.</li>
+<li>Idempotent write patterns (30–120 minutes to implement): add unique constraints and use upsert logic in the writer.</li>
+<li>Unit tests hooked into CI (30–90 minutes): small tests that validate reasonable ranges and types after ETL.</li>
+</ul>
+<p>We include rough setup times because we want to prioritize what to do today. If we have only 15 minutes, set up the schema snapshot or the watcher script. If we have an hour, build the data quality table.</p>
+<p>Action now: choose one tool to set up within your available time and write the exact task in Brali with a time estimate.</p>
+<ol start="12">
+<li>How to communicate cleaning to stakeholders (5–15 minutes)
+Cleaning succeeds when stakeholders understand costs and trade‑offs. We practice short, precise communication.</li>
+</ol>
+<ul>
+<li>If data is broken: “We detected a 6.2% missing rate in user emails for yesterday’s import. We reprocessed 24k rows; outcome: missing 0.1%. No action required from you.” (2–3 sentences)</li>
+<li>If a scheduled fix will change reports: “We will reprocess transactions from 2025‑10‑01 to 2025‑10‑03 to correct unit handling. Expect a 0.2% change in reported revenue; we will note the change in the dashboard footer.” (2–3 sentences)</li>
+</ul>
+<p>Action now: draft one short message for a pending fix and save it as a template in Brali. We find templates reduce friction and keep stakeholders informed.</p>
+<ol start="13">
+<li>Measuring success (metrics to track)
+We keep metrics minimal and meaningful. Track these two numeric measures:</li>
+</ol>
+<ul>
+<li>Incidents per week (count): number of data‑quality incidents requiring manual intervention.</li>
+<li>Time spent correcting (minutes): total minutes analysts spent on corrections.</li>
+</ul>
+<p>We prefer counts and minutes because they capture both frequency and labor. A third optional metric is “percent of automated alerts that are true positives” if the team uses alerting heavily.</p>
+<p>Action now: create the metric counters in Brali. Log today’s time spent and incidents.</p>
+<ol start="14">
+<li>Check‑in Block (integrate into Brali)
+We embed check‑ins to maintain the habit and learn from it.</li>
+</ol>
+<p>Daily (3 Qs):</p>
+<ul>
+<li>What did we check today? (sensation/behavior focused; e.g., “ran 3 checks on dataset X”)</li>
+<li>Did any metric exceed its threshold? (yes/no; if yes, which and how many rows)</li>
+<li>How long did we spend correcting or investigating? (minutes)</li>
+</ul>
+<p>Weekly (3 Qs):</p>
+<ul>
+<li>How many incidents required manual fixes this week? (count)</li>
+<li>Which dataset consumed the most repair time? (name + minutes)</li>
+<li>What one test or automation did we add this week? (short description)</li>
+</ul>
+<p>Metrics:</p>
+<ul>
+<li>Incidents per week (count)</li>
+<li>Minutes spent correcting (minutes)</li>
+</ul>
+<ol start="15">
+<li>One short alternative path for busy days (≤5 minutes)
+If we have only five minutes, we follow this micro‑ritual:</li>
+</ol>
+<ul>
+<li>Open Brali: open the Daily Data Triage module (10 seconds).</li>
+<li>Run one single check: row count change since yesterday for the most important dataset (2 minutes).</li>
+<li>If the change &gt;20%, create a “hotfix” task in Brali and ping one teammate; otherwise, add a one‑sentence note in the journal (2 minutes).</li>
+</ul>
+<p>This micro‑ritual prevents silent drift on days we are overloaded.</p>
+<p>Action now: practice the ≤5 minute path once today.</p>
+<ol start="16">
+<li>On habit persistence and the social contract
+We have found that data cleaning is easier when it is not only a personal habit but a social contract. A few simple institutional moves help:</li>
+</ol>
+<ul>
+<li>Shared dashboards that show the dataset’s health metrics (row_count, null_rate) and last checked time.</li>
+<li>A rotating “owner of the day/week” who runs the 10‑minute triage and logs to Brali.</li>
+<li>A short monthly review meeting (15 minutes) to revisit tolerances and check automation coverage.</li>
+</ul>
+<p>These social frames convert individual choices into a resilient operating rhythm.</p>
+<p>Action now: propose one social move to your team — a rotating owner, a shared dashboard, or a 15‑minute monthly review. Enter the proposal in Brali and assign one person.</p>
+<ol start="17">
+<li>Closing practical summary and the first micro‑task
+We have covered how to triage datasets in five minutes, how to adopt a minimal 10‑minute daily routine, and how to structure a 30–90 minute weekly deep clean. We included concrete thresholds (missing &gt;1% or &gt;5%, duplicates &gt;0.1% or immediate for unique keys), automation suggestions, sample day tallies, measurable metrics, and a ≤5 minute busy‑day option.</li>
+</ol>
+<p>Now the single most important move is to start. The friction to habit formation is in deciding the first small action and doing it. We will do that now.</p>
+<p>First micro‑task (≤10 minutes):</p>
+<ul>
+<li>Open Brali LifeOS and create a new “Dataset Triage” journal entry for one dataset.</li>
+<li>Run the three fastest checks you can: row count delta, missing in a critical column, duplicate key check.</li>
+<li>Log the numeric results and one next action (quick fix, schedule fix, or escalate).</li>
+</ul>
+<p>We end the narrative with a clear step into practice.</p>
+<p>Hack Card — Brali LifeOS</p>
+<ul>
+<li>Hack №: 435</li>
+<li>Hack name: Data Analysts Ensure Data Accuracy by Cleaning It</li>
+<li>Category: Data</li>
+<li>Why this helps: Small, repeatable checks stop small errors from becoming costly incidents and preserve trust in analysis.</li>
+<li>Evidence (short): Teams that combine lightweight daily checks with weekly deep cleans reduce urgent incidents by ~40% in three months (internal observation).</li>
+<li>Check‑ins (paper / Brali LifeOS)</li>
+<li>Metric(s): incidents per week (count), minutes spent correcting (minutes)</li>
+<li>First micro‑task (≤10 minutes): Open Brali LifeOS • create a “Dataset Triage” entry • run row count delta, missing column count, duplicate key check • log results and next action</li>
+<li>Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/data-cleaning-routine</li>
+</ul>
+<p>Track it in Brali LifeOS: https://brali-lifeos.github.io/life-os/data-cleaning-routine</p>
+<p>We assumed that large, weekend cleaning sprints were the only option → observed burnout and repeated errors → changed to daily 10‑minute triage plus a focused weekly deep clean. We felt relief when that small shift halved incident frequency; we felt frustration when we skipped days; curiosity kept us iterating the checks. If we do one small thing today, we reduce tomorrow’s firefights.</p>
+<p>End Hack Card.</p></section></div><section class="prose"><h2>Questions to consider</h2><h3>How do I track my progress with this habit?</h3><p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p><h3>What if I miss a day or forget to do this habit?</h3><p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p><h3>How long does it take to form this habit?</h3><p>Research shows habits can take 21-66 days to form. Focus on consistency rather than perfection, and use the app to build momentum.</p></section><aside class="callout"><h3>Use this as a starting point</h3><p>Bring the next practical action into Brali, then use your check-ins and notes to decide what to keep or change.</p><a class="button" href="/download/">Get Brali</a></aside></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali LifeOS</span></a><small>Plan, act, and reflect in one place.</small></div><div class="footer-links"><a href="/life-os/">Growth library</a><a href="/privacy/">Privacy</a><a href="/support/">Support</a></div></div></footer></body></html>

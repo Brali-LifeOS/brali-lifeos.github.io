@@ -1,10 +1,11 @@
 {
   "schema_version":1,
   "updated_at":"2026-08-18",
+  "source_policy":"/SOURCE_POLICY.md",
   "agents":[
-    {"id":"research-scout","title":"Research Scout","page":"/agents/#research-scout","skill":"/skills/research-discovery/SKILL.md","input":["research queries","taxonomy","current library"],"output":["research candidates"],"can_publish":false},
-    {"id":"evidence-reviewer","title":"Evidence Reviewer","page":"/agents/#evidence-reviewer","skill":"/skills/evidence-review/SKILL.md","input":["research candidates","actual sources","current claims"],"output":["evidence decisions","content proposals"],"can_publish":false},
-    {"id":"protocol-builder","title":"Protocol Builder","page":"/agents/#protocol-builder","skill":"/skills/protocol-design/SKILL.md","input":["hacks","evidence decisions","taxonomy"],"output":["protocol proposals"],"can_publish":false},
+    {"id":"research-scout","title":"Research Scout","page":"/agents/#research-scout","skill":"/skills/research-discovery/SKILL.md","input":["research queries","taxonomy","current library","source policy"],"output":["research candidates with traceable source records"],"can_publish":false},
+    {"id":"evidence-reviewer","title":"Evidence Reviewer","page":"/agents/#evidence-reviewer","skill":"/skills/evidence-review/SKILL.md","input":["research candidates","actual sources","current claims","source policy"],"output":["evidence decisions with citations","content proposals"],"can_publish":false},
+    {"id":"protocol-builder","title":"Protocol Builder","page":"/agents/#protocol-builder","skill":"/skills/protocol-design/SKILL.md","input":["hacks","evidence decisions","taxonomy","source policy"],"output":["protocol proposals with source coverage"],"can_publish":false},
     {"id":"taxonomy-curator","title":"Taxonomy Curator","page":"/agents/#taxonomy-curator","skill":"/skills/taxonomy-curation/SKILL.md","input":["candidate content","Life Areas","Growth Zones"],"output":["taxonomy mappings","migration proposals"],"can_publish":false}
   ]
 }

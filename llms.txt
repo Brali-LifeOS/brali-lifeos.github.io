@@ -2,7 +2,7 @@
 
 > A practical knowledge library for people, developers, researchers, and AI agents.
 
-Brali publishes atomic practical hacks, executable protocols, a practical knowledge ontology, evidence states, research candidates, and machine-readable contracts. The original Brali LifeOS app is still available, but the knowledge library and data are now the main project.
+Brali publishes atomic practical hacks, executable protocols, a practical knowledge ontology, evidence states, evidence decisions, research candidates, and machine-readable contracts. The original Brali LifeOS app is still available, but the knowledge library and data are now the main project.
 
 ## Knowledge model v2
 
@@ -13,8 +13,8 @@ Brali publishes atomic practical hacks, executable protocols, a practical knowle
 - Hack: the smallest reusable practical technique.
 - Protocol: an executable sequence or personal experiment that can reference one or more hacks.
 - Evidence state: `reviewed`, `practical`, `pending-review`, or `restricted`.
-- Research candidate: unreviewed discovery metadata. It is not evidence.
-- Evidence decision: explicit review result after reading the actual source.
+- Research candidate: discovery metadata. It is not evidence, even when its workflow status changes after review.
+- Evidence decision: explicit source-review record describing what a source supports, what it does not support, limitations, and the editorial decision.
 
 Recommended classification stack: `Domain -> Topic -> Hack -> Protocol`, with optional Method and Lens tags and separate Evidence/source provenance.
 
@@ -47,12 +47,15 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
 - Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
+- Evidence decisions: https://brali-lifeos.github.io/life-os/datasets/evidence-decisions.json
 - Existing content review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
 - Research search lenses: https://brali-lifeos.github.io/data/research-queries.json
 - Research candidate queue: https://brali-lifeos.github.io/data/research-candidates.json
 - Agent registry: https://brali-lifeos.github.io/agents/registry.json
 
 Trusted Protocol Feed schema v3 and Evidence Index schema v2 expose an `ontology` object with Domains, Topics, Methods, Lenses, classification status, and legacy compatibility identifiers. New integrations should use this object rather than treating `life_area` or `growth_zone` as the canonical semantic model.
+
+Use `evidence-decisions.json` as the audit trail between a research candidate and a public content change. A decision records the actual source reviewed, the supported claim, unsupported/overstated claims, limitations, and whether the candidate is rejected, watched, used to support/challenge existing content, or allowed to propose a Hack/Protocol. A `watch` decision is deliberately not a recommendation.
 
 Research query and candidate schema v2 records use canonical `domain_ids`, `topic_ids`, `method_ids`, and `lens_ids`. Legacy Life Area and Growth Zone fields remain during migration.
 
@@ -72,6 +75,6 @@ Hack and Protocol contracts support `domain_slugs`, `topic_slugs`, `method_slugs
 - Protocol Design: https://brali-lifeos.github.io/skills/protocol-design/SKILL.md
 - Taxonomy Curation: https://brali-lifeos.github.io/skills/taxonomy-curation/SKILL.md
 
-For normal recommendation or retrieval, start with the Trusted Protocol Feed and use the ontology to match the user's concrete Topic. For maintenance or research work, use the ontology coverage report to target unresolved `topic-pending` records or deliberate `growth-gap` Topics, then start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
+For normal recommendation or retrieval, start with the Trusted Protocol Feed and use the ontology to match the user's concrete Topic. For research/maintenance work, inspect the candidate, its Evidence Decision if one exists, and the direct source before changing content. Never promote a candidate from search metadata directly into `reviewed` content, and never convert `watch` into a recommendation merely because a source looks relevant.
 
 Only `reviewed` and `practical` entries enter the Trusted Protocol Feed. English is the main published language today. The public interface today is the static dataset/contract layer; a future MCP service may add tools over the same records. The current public license is non-commercial; commercial use requires a separate agreement.

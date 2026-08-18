@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "name": "Brali Flagship 100 quality policy",
+  "target_count": 100,
+  "trusted_states": ["reviewed", "practical"],
+  "anchor_source": "data/flagship-protocols.json",
+  "quality_contract": {
+    "required_fields": ["protocol_id", "slug", "url", "title", "description", "action", "life_area"],
+    "sensitive_requires_reviewed_source": true,
+    "minimum_action_characters_for_score": 40,
+    "minimum_description_characters_for_score": 60
+  },
+  "sensitive_terms": [
+    "diagnosis",
+    "diagnose",
+    "treatment",
+    "medication",
+    "medicine",
+    "antidepressant",
+    "suicide",
+    "self-harm",
+    "blood pressure",
+    "disease",
+    "clinical",
+    "therapy",
+    "depression"
+  ],
+  "scoring": {
+    "reviewed": 35,
+    "practical": 20,
+    "source_url": 15,
+    "topic_mapped": 12,
+    "check_in": 8,
+    "action_quality": 5,
+    "description_quality": 5
+  },
+  "diversity": {
+    "life_area_bonus": 18,
+    "life_area_decay": 2,
+    "topic_bonus": 6,
+    "topic_decay": 1
+  },
+  "notes": [
+    "The existing seven Start Here flagships remain manually curated and are forced anchors when they meet this contract.",
+    "Flagship 100 is a deterministic high-trust core, not a claim that all selected protocols have equal evidence strength.",
+    "Practical content can qualify for ordinary topics, but safety-sensitive content requires reviewed evidence with a source URL."
+  ]
+}

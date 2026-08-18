@@ -5,6 +5,8 @@ const root = process.cwd();
 const required = [
   "index.html",
   "homepage.css",
+  "library-search.js",
+  "library-search.css",
   "features/index.html",
   "how-it-works/index.html",
   "screenshots/index.html",
@@ -64,4 +66,4 @@ if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQual
   throw new Error("Title quality report is malformed.");
 }
 
-console.log(`Static site verified: ${required.length} core files, protocol-first homepage, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, protocol-first homepage, trusted library search, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

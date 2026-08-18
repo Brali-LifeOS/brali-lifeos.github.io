@@ -2,7 +2,7 @@
   "$schema":"https://json-schema.org/draft/2020-12/schema",
   "$id":"https://brali-lifeos.github.io/contracts/protocol.schema.json",
   "title":"Brali Protocol",
-  "description":"Executable experiment or sequence that combines one or more practical actions, usually referencing Brali hacks.",
+  "description":"Executable experiment or sequence that combines one or more practical actions, usually referencing Brali hacks. New records should classify the protocol with Domain and Topic, and may additionally attach Methods and Lenses; legacy Life Area and Growth Zone fields remain required during migration for compatibility.",
   "type":"object","additionalProperties":false,
   "required":["schema_version","id","title","problem","steps","check_in","life_area_slugs","zone_slugs","evidence"],
   "properties":{
@@ -17,9 +17,13 @@
     "review_after":{"type":"string"},
     "stop_or_change_rule":{"type":"string"},
     "safety_notes":{"type":"array","items":{"type":"string"}},
-    "life_area_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
-    "zone_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
-    "method_tags":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "life_area_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true,"description":"Legacy compatibility classification. Prefer domain_slugs for new integrations."},
+    "zone_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true,"description":"Legacy Growth Zone compatibility classification. Prefer topic_slugs/method_slugs/lens_slugs for new integrations."},
+    "domain_slugs":{"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"uniqueItems":true,"description":"Broad areas from the Brali knowledge ontology."},
+    "topic_slugs":{"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"uniqueItems":true,"description":"Concrete problems or capabilities from the Brali knowledge ontology."},
+    "method_slugs":{"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"uniqueItems":true,"description":"Named structured approaches used by the protocol. Methods do not replace Topics."},
+    "lens_slugs":{"type":"array","items":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},"uniqueItems":true,"description":"Transferable Brali Lenses used to frame the protocol. Lenses are not evidence."},
+    "method_tags":{"type":"array","items":{"type":"string"},"uniqueItems":true,"description":"Legacy free-form method tags; structured method_slugs are preferred for ontology-aware records."},
     "evidence":{
       "type":"object","additionalProperties":false,"required":["state"],
       "properties":{

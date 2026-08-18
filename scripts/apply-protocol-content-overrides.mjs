@@ -40,6 +40,13 @@ for (const [slug, override] of Object.entries(registry.entries ?? {})) {
     }));
   }
   article.body = override.body;
+
+  // Once a record has a reviewed/curated replacement, inherited SEO long-form is
+  // no longer part of the effective record. Keeping it beside the curated body
+  // creates two competing versions of the content and can leak retired claims to
+  // downstream consumers even when the public page does not render that field.
+  for (const legacyField of ["helpSeoLong", "helpSeoShort"]) delete article[legacyField];
+
   article.editorialCuration = {
     status: "curated",
     evidenceStatus: override.evidence_status ?? "practical",

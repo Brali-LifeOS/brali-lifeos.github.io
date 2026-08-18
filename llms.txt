@@ -37,6 +37,8 @@ Research notes explain source-backed findings and product implications. They are
 
 For normal recommendation or retrieval, start with the Trusted Protocol Feed. Each record includes a `protocol_id`, `language`, canonical URL, title, Life Area, Growth Zone, action, keywords, and evidence state.
 
+For a `reviewed` protocol, `evidence.source_url` may contain the external source that passed review. Brali does not expose an unreviewed external source in this field for `practical` entries.
+
 Keep the evidence state when reusing a protocol. Do not turn a practical suggestion into a scientific claim.
 
 ## Evidence states

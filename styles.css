@@ -46,7 +46,7 @@ h3 { font-size:21px; }
 .dark .card p { color:#c3c7d0; }
 .card-label { display:block; margin-bottom:20px; color:#7d6800; font-size:12px; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
 .dark .card-label { color:#ffd700; }
-.flow { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:42px; }
+.flow { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; margin-top:42px; }
 .step { padding:26px 22px; border-top:2px solid var(--ink); }
 .step strong { display:block; margin-bottom:11px; color:#8a7000; font-size:13px; letter-spacing:.08em; text-transform:uppercase; }
 .step p { margin:0; color:var(--muted); }
@@ -67,5 +67,21 @@ h3 { font-size:21px; }
 .footer-links { display:flex; flex-wrap:wrap; gap:14px; font-size:14px; }
 .skip { position:absolute; left:-10000px; top:auto; }
 .skip:focus { left:20px; top:16px; z-index:99; padding:9px 12px; background:white; border:2px solid #111; }
-@media (max-width:780px) { .wrap{width:min(100% - 32px,1120px)} .links{gap:13px;font-size:13px}.links a:nth-child(2),.links a:nth-child(3){display:none}.hero{padding:58px 0}.hero-grid,.screenshot{grid-template-columns:1fr;gap:34px}.app-card{min-height:390px;order:-1}.grid.three,.grid.two,.flow{grid-template-columns:1fr}.section{padding:65px 0}.footer-row{flex-direction:column}.screenshot{padding:25px} }
+@media (max-width:780px) {
+  .wrap { width:min(100% - 32px,1120px); }
+  .site-header { position:relative; }
+  .nav { min-height:auto; padding:10px 0 8px; flex-wrap:wrap; gap:9px 16px; }
+  .links { width:100%; gap:16px; overflow-x:auto; padding:2px 0 6px; white-space:nowrap; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
+  .links::-webkit-scrollbar { display:none; }
+  .links a { flex:0 0 auto; }
+  .links .button { min-height:38px; padding:8px 13px; }
+  .hero { padding:50px 0 56px; }
+  .hero-grid,.screenshot { grid-template-columns:1fr; gap:34px; }
+  .app-card { min-height:390px; order:-1; }
+  .grid.three,.grid.two,.flow { grid-template-columns:1fr; }
+  .section { padding:60px 0; }
+  .page { padding:56px 0 72px; }
+  .footer-row { flex-direction:column; }
+  .screenshot { padding:25px; }
+}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.button:hover{transform:none}}

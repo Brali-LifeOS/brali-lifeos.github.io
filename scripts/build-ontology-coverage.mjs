@@ -90,6 +90,13 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 await mkdir(path.join(root, "ontology/coverage"), { recursive: true });
 await writeFile(path.join(root, "ontology/coverage/index.html"), html);
 
+const ontologyHubPath = path.join(root, "ontology/index.html");
+let ontologyHub = await readFile(ontologyHubPath, "utf8");
+if (!ontologyHub.includes('data-ontology-coverage="true"')) {
+  ontologyHub = ontologyHub.replace('<h2>Browse other dimensions</h2>', `<div class="callout" data-ontology-coverage="true"><h3>Ontology coverage</h3><p>${report.summary.topic_coverage_percent}% of current library entries have a concrete Topic. Track unresolved legacy collections and deliberate growth gaps instead of hiding migration debt.</p><a class="button" href="/ontology/coverage/">Open coverage report</a></div><h2>Browse other dimensions</h2>`);
+  await writeFile(ontologyHubPath, ontologyHub);
+}
+
 const manifestPath = path.join(datasetRoot, "manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "ontology-coverage.json"])];

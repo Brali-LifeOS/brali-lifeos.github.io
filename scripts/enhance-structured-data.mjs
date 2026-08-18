@@ -1,12 +1,13 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { sourceDetails } from "./lib/content-trust.mjs";
+import { classifyEvidence, sourceDetails } from "./lib/content-trust.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
 const contentRoot = path.join(root, "data/life-os-content");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const lifeAreas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
+const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
 const canonical = (pathname) => `${base}${pathname.endsWith("/") ? pathname : `${pathname}/`}`;
 const isoDate = (value) => {
   if (!value) return null;
@@ -24,10 +25,12 @@ const publisher = {
 };
 
 let enhanced = 0;
+let reviewedCitations = 0;
 for (const entry of index) {
   const pagePath = path.join(root, "life-os", entry.slug, "index.html");
   const articleData = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
   const source = sourceDetails(articleData);
+  const evidence = classifyEvidence(articleData, entry, overrides);
   let html = await readFile(pagePath, "utf8");
   const articleUrl = canonical(`/life-os/${entry.slug}/`);
   const zoneUrl = canonical(`/life-os/${entry.zone.slug}/`);
@@ -45,7 +48,11 @@ for (const entry of index) {
       article.mainEntityOfPage = { "@id": articleUrl };
       article.author = { "@id": publisher["@id"] };
       article.publisher = { "@id": publisher["@id"] };
-      if (source.sourceUrl) article.citation = [...new Set([source.sourceUrl])];
+      delete article.citation;
+      if (evidence.status === "reviewed" && source.sourceUrl) {
+        article.citation = [source.sourceUrl];
+        reviewedCitations += 1;
+      }
 
       const graph = {
         "@context": "https://schema.org",
@@ -109,4 +116,4 @@ for (const area of lifeAreas) {
 addLastmod("/life-os/areas/", libraryDate);
 
 await writeFile(path.join(root, "sitemap.xml"), sitemap);
-console.log(`Structured data enhanced for ${enhanced} Growth Library entries; reliable sitemap lastmod values added.`);
+console.log(`Structured data enhanced for ${enhanced} Growth Library entries; ${reviewedCitations} reviewed citations exposed; reliable sitemap lastmod values added.`);

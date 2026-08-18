@@ -19,7 +19,8 @@ const maxDate = (values) => values.filter(Boolean).sort().at(-1) ?? null;
 const publisher = {
   "@type": "Organization",
   "@id": `${base}/#organization`,
-  name: "Brali LifeOS",
+  name: "Brali",
+  alternateName: "Brali LifeOS",
   url: `${base}/`,
   logo: { "@type": "ImageObject", url: `${base}/assets/images/brali-logo.png` },
 };
@@ -63,7 +64,7 @@ for (const entry of index) {
             "@id": articleUrl,
             url: articleUrl,
             name: article.headline,
-            isPartOf: { "@type": "CollectionPage", "@id": canonical("/life-os/"), name: "Brali LifeOS Growth Library" },
+            isPartOf: { "@type": "CollectionPage", "@id": canonical("/life-os/"), name: "Brali Growth Library" },
           },
           article,
           {
@@ -88,7 +89,69 @@ for (const entry of index) {
   enhanced += 1;
 }
 
+const datasetsPath = path.join(root, "life-os/datasets/index.html");
+let datasetsHtml = await readFile(datasetsPath, "utf8");
+const datasetCatalog = {
+  "@context": "https://schema.org",
+  "@type": "DataCatalog",
+  "@id": `${canonical("/life-os/datasets/")}#catalog`,
+  name: "Brali Growth Library Data Catalog",
+  description: "Machine-readable practical protocols, taxonomy, evidence metadata, and discovery outputs from the Brali Growth Library.",
+  url: canonical("/life-os/datasets/"),
+  creator: { "@id": publisher["@id"] },
+  dataset: [
+    {
+      "@type": "Dataset",
+      name: "Brali Trusted Protocol Feed",
+      description: "Practical protocols that meet the current Brali public quality bar.",
+      url: `${base}/life-os/datasets/protocols.json`,
+      identifier: "brali-trusted-protocol-feed",
+      inLanguage: "en",
+      license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      distribution: {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${base}/life-os/datasets/protocols.json`,
+      },
+    },
+    {
+      "@type": "Dataset",
+      name: "Brali Growth Library corpus",
+      description: "The broader public Growth Library corpus for discovery, provenance, research, and editorial work.",
+      url: `${base}/life-os/datasets/hacks.json`,
+      identifier: "brali-growth-library-corpus",
+      inLanguage: "en",
+      license: "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      distribution: {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: `${base}/life-os/datasets/hacks.json`,
+      },
+    },
+  ],
+};
+if (!datasetsHtml.includes("brali-trusted-protocol-feed")) {
+  datasetsHtml = datasetsHtml.replace(
+    "</head>",
+    `<script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@graph": [publisher, datasetCatalog] }).replace(/</g, "\\u003c")}</script></head>`,
+  );
+}
+if (!datasetsHtml.includes('href="/for-ai/"')) {
+  datasetsHtml = datasetsHtml.replace(
+    "</main>",
+    '<section class="prose"><h2>Use the data</h2><p>For AI and developer guidance, see <a href="/for-ai/">For AI & developers</a>. Commercial use requires a separate agreement; see <a href="/partners/">Partnerships</a>.</p></section></main>',
+  );
+}
+await writeFile(datasetsPath, datasetsHtml);
+
 let sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
+function ensureSitemapUrl(pathname) {
+  const url = canonical(pathname);
+  if (sitemap.includes(`<loc>${url}</loc>`)) return;
+  sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc></url>\n</urlset>`);
+}
+for (const pathname of ["/for-ai/", "/faq/", "/partners/", "/research/", "/terms/"]) ensureSitemapUrl(pathname);
+
 function addLastmod(pathname, date) {
   if (!date) return;
   const url = canonical(pathname);
@@ -116,4 +179,4 @@ for (const area of lifeAreas) {
 addLastmod("/life-os/areas/", libraryDate);
 
 await writeFile(path.join(root, "sitemap.xml"), sitemap);
-console.log(`Structured data enhanced for ${enhanced} Growth Library entries; ${reviewedCitations} reviewed citations exposed; reliable sitemap lastmod values added.`);
+console.log(`Structured data enhanced for ${enhanced} Growth Library entries; ${reviewedCitations} reviewed citations exposed; dataset catalog metadata and reliable sitemap values added.`);

@@ -1,43 +1,58 @@
-# Brali LifeOS
+# Brali
 
-> A local-first personal practice system for turning useful ideas into concrete actions, check-ins, and personal experiments that can be reviewed over time.
+> A practical knowledge library for people, developers, researchers, and AI agents.
 
-Brali's core loop is: choose -> practice -> review. The product combines a public Growth Library with planning, Focus sessions, challenges, check-ins, journals, time logs, and personal metrics so users can try a practice and keep their own record of what happened.
+Brali publishes practical protocols grouped by Life Area and Growth Zone. Each protocol can include an action, check-in, evidence state, and source page. The original Brali LifeOS app is still available, but the library and data are now the main project.
 
-## Canonical product resources
+## Main pages
 
 - Website: https://brali-lifeos.github.io/
-- Start Here — flagship protocols: https://brali-lifeos.github.io/life-os/flagships/
 - Growth Library: https://brali-lifeos.github.io/life-os/
 - Life Areas: https://brali-lifeos.github.io/life-os/areas/
-- Content methodology: https://brali-lifeos.github.io/life-os/methodology/
-- Features: https://brali-lifeos.github.io/features/
-- Getting started: https://brali-lifeos.github.io/docs/
-- Privacy: https://brali-lifeos.github.io/privacy/
-- Product facts: https://brali-lifeos.github.io/product-facts.json
-- Growth Library datasets: https://brali-lifeos.github.io/life-os/datasets/
-- Flagship collection: https://brali-lifeos.github.io/life-os/datasets/flagships.json
+- Selected protocols: https://brali-lifeos.github.io/life-os/flagships/
+- Research & trends: https://brali-lifeos.github.io/research/
+- Methodology: https://brali-lifeos.github.io/life-os/methodology/
+- FAQ: https://brali-lifeos.github.io/faq/
+- For AI & developers: https://brali-lifeos.github.io/for-ai/
+- Partnerships: https://brali-lifeos.github.io/partners/
+
+## Machine-readable data
+
+- Data catalog: https://brali-lifeos.github.io/life-os/datasets/
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
-- Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
-- Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
-- Search indexing policy: https://brali-lifeos.github.io/life-os/datasets/indexing.json
-- Editorial normalization register: https://brali-lifeos.github.io/life-os/datasets/editorial-normalizations.json
-- Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
+- Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
+- Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
+- Review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
+- Indexing status: https://brali-lifeos.github.io/life-os/datasets/indexing.json
+- Dataset manifest: https://brali-lifeos.github.io/life-os/datasets/manifest.json
 
-## Preferred entry points
+## Recommended use
 
-For a human who is new to Brali, start with the Flagship Protocols collection. It intentionally contains one curated, discovery-ready starting protocol for each Life Area rather than exposing the full taxonomy first.
+For normal recommendation or retrieval, start with the Trusted Protocol Feed. Each record includes a `protocol_id`, `language`, canonical URL, title, Life Area, Growth Zone, action, keywords, and evidence state.
 
-For an AI tool or external application that needs the complete compact discovery-ready set, use the Trusted Protocol Feed. It exposes the action, check-in, Life Area, Growth Zone, keywords, evidence status, and canonical URL without the long article body.
+Keep the evidence state when reusing a protocol. Do not turn a practical suggestion into a scientific claim.
 
-Use the content methodology, flagship dataset, editorial normalization register, evidence index, and review queue when provenance, curation, or editorial maturity matters. The migrated corpus is retained for provenance, so reviewed inherited-claim corrections may be applied before public pages and trust states are generated. Do not infer that a source recorded on a pending entry has been editorially verified.
+## Evidence states
 
-## Content interpretation
+- `reviewed`: stronger claims have traceable sources and passed editorial review.
+- `practical`: a low-risk practical suggestion.
+- `pending-review`: still needs review.
+- `restricted`: sensitive material that does not yet meet the public evidence bar.
 
-Growth Library entries have explicit evidence states: `reviewed`, `practical`, `pending-review`, or `restricted`. Search indexing is earned: only `reviewed` and `practical` entries are included in the sitemap. `pending-review` and `restricted` entries remain accessible at stable URLs but use `noindex,follow` until the quality bar is met.
+Only `reviewed` and `practical` entries enter the Trusted Protocol Feed.
 
-The library is a set of starting points for personal practice, not medical diagnosis or treatment guidance.
+## Languages
 
-## Data and privacy
+English is the main published language today. Future translations should keep the same `protocol_id` and use a different `language` value. Do not assume a translation exists unless a published route or record is available.
 
-Brali app data is stored locally on the user device. The app includes backup, restore, and export tools. The static website does not use a login, contact form, advertising, or third-party analytics scripts.
+## MCP
+
+The public interface today is the static dataset layer. A future MCP service may add search and read tools over the same records. Do not invent API or MCP endpoints that are not published.
+
+## Licensing
+
+The current public license is non-commercial. Commercial products, paid services, commercial AI use, model training, or paid redistribution require a separate agreement. See https://brali-lifeos.github.io/partners/ and `LICENSING.md` in the repository.
+
+## Safety
+
+Brali is general educational and personal-development material. It is not medical, legal, or financial advice. Sensitive topics have a higher review bar.

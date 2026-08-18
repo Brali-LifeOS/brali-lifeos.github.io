@@ -16,6 +16,11 @@ const required = [
   "terms/index.html",
   "support/index.html",
   "changelog/index.html",
+  "faq/index.html",
+  "for-ai/index.html",
+  "partners/index.html",
+  "research/index.html",
+  "LICENSING.md",
   "life-os/index.html",
   "life-os/areas/index.html",
   "life-os/datasets/evidence.json",
@@ -36,16 +41,50 @@ for (const file of required) await access(path.join(root, file));
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
 if (!homepage.includes('class="protocol-demo"')) throw new Error("Homepage lacks the protocol example.");
 if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does not provide a Life Areas entry point.");
+if (!homepage.includes('href="/for-ai/"')) throw new Error("Homepage does not expose the AI/developer entry point.");
+if (!homepage.includes('href="/research/"')) throw new Error("Homepage does not expose the research entry point.");
+if (!homepage.includes('href="/partners/"')) throw new Error("Homepage does not expose the partnership entry point.");
+if (!homepage.includes("Useful ideas, made easier to trust and use.")) throw new Error("Homepage lost the simple knowledge-library positioning.");
 if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
+if (/protocols\.jsonl|protocols\.schema\.json/.test(homepage)) throw new Error("Homepage advertises an unpublished protocol interface.");
 
 const docs = await readFile(path.join(root, "docs/index.html"), "utf8");
 if (!docs.includes("Run one small experiment first.")) throw new Error("Getting-started page is not experiment-first.");
 if (!docs.includes('href="/life-os/flagships/"')) throw new Error("Getting-started page does not link to flagship protocols.");
 if (!docs.includes("Choose → Practice → Check in → Review → Keep or change.")) throw new Error("Getting-started page does not explain the Brali review loop.");
 
+const forAi = await readFile(path.join(root, "for-ai/index.html"), "utf8");
+if (!forAi.includes('/life-os/datasets/protocols.json')) throw new Error("AI/developer page does not expose the Trusted Protocol Feed.");
+if (!forAi.includes("Do not erase uncertainty")) throw new Error("AI/developer page does not explain evidence-state preservation.");
+if (/protocols\.jsonl|protocols\.schema\.json/.test(forAi)) throw new Error("AI/developer page advertises an unpublished interface.");
+
+const faq = await readFile(path.join(root, "faq/index.html"), "utf8");
+if (!faq.includes('"@type":"FAQPage"')) throw new Error("FAQ page lacks FAQ structured data.");
+if (!faq.includes("Is the mobile app still the main product?")) throw new Error("FAQ does not explain the project pivot.");
+
+const partners = await readFile(path.join(root, "partners/index.html"), "utf8");
+if (!partners.includes("Commercial dataset licensing")) throw new Error("Partnership page lacks a commercial data model.");
+if (!partners.includes("AI and agent integrations")) throw new Error("Partnership page lacks the agent integration path.");
+
+const research = await readFile(path.join(root, "research/index.html"), "utf8");
+for (const section of ["Evidence notes", "Trend notes", "Open questions"]) {
+  if (!research.includes(section)) throw new Error(`Research page lacks ${section}.`);
+}
+
+const llms = await readFile(path.join(root, "llms.txt"), "utf8");
+if (!llms.startsWith("# Brali\n")) throw new Error("llms.txt still uses the old app-first project identity.");
+if (!llms.includes("For AI & developers")) throw new Error("llms.txt does not expose the AI/developer entry point.");
+
+const productFacts = JSON.parse(await readFile(path.join(root, "product-facts.json"), "utf8"));
+if (productFacts.project_center !== "Public knowledge layer for humans and machines") throw new Error("product-facts.json lost the knowledge-platform center.");
+if (productFacts.core_unit !== "protocol") throw new Error("product-facts.json does not declare the protocol as the core unit.");
+
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/areas/")) throw new Error("Sitemap lacks life area navigation pages.");
+for (const pathname of ["for-ai", "faq", "partners", "research", "terms"]) {
+  if (!sitemap.includes(`https://brali-lifeos.github.io/${pathname}/`)) throw new Error(`Sitemap lacks ${pathname}.`);
+}
 if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still references MetalHatsCats.");
 
 const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
@@ -55,6 +94,8 @@ const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html
 for (const dataset of ["evidence.json", "review-queue.json", "title-quality.json", "indexing.json", "protocols.json", "editorial-normalizations.json"]) {
   if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
 }
+if (!datasetsPage.includes('"@type":"DataCatalog"')) throw new Error("Dataset page lacks DataCatalog structured data.");
+if (!datasetsPage.includes('href="/for-ai/"')) throw new Error("Dataset page does not link to AI/developer integration guidance.");
 
 const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
 const publicIndex = JSON.parse(await readFile(path.join(root, "life-os-index.json"), "utf8"));
@@ -80,7 +121,7 @@ for (let index = 1; index < (reviewQueue.entries ?? []).length; index += 1) {
   const previous = reviewQueue.entries[index - 1];
   const current = reviewQueue.entries[index];
   if (previous.editorial_priority.score < current.editorial_priority.score) {
-    throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}`);
+    throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}.`);
   }
 }
 if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => typeof entry.displayTitle === "string" && entry.displayTitle.trim())) {
@@ -92,6 +133,9 @@ if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQual
 if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries ?? []).length) {
   throw new Error("Protocol feed is malformed.");
 }
+if (protocols.schema_version !== 2 || protocols.canonical_language !== "en") {
+  throw new Error("Protocol feed lacks identity/language metadata.");
+}
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, priority-ranked editorial queue, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, clear public positioning, research, AI/developer and partnership entry points, trusted search/feed, dataset metadata, editorial review outputs, and ${evidenceIndex.entries.length} evidence records.`);

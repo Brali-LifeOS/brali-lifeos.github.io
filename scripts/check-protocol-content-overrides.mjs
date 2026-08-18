@@ -11,27 +11,29 @@ const indexing = JSON.parse(await readFile(path.join(root, "life-os/datasets/ind
 const evidenceBySlug = new Map((evidence.entries ?? []).map((entry) => [entry.slug, entry]));
 const feedBySlug = new Map((protocols.entries ?? []).map((entry) => [entry.slug, entry]));
 const indexable = new Set(indexing.indexable ?? []);
-let failures = 0;
+const failures = [];
 
 for (const [slug, override] of Object.entries(registry.entries ?? {})) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${slug}.json`), "utf8"));
   const page = await readFile(path.join(root, "life-os", slug, "index.html"), "utf8");
   const expectedStatus = override.evidence_status ?? "practical";
-  if (article.editorialCuration?.status !== "curated") failures += 1;
-  if (article.editorialCuration?.evidenceStatus !== expectedStatus) failures += 1;
-  if (article.editorialCuration?.reviewedAt !== override.reviewed_at) failures += 1;
-  if (article.editorialCuration?.registry !== registry.sources?.[slug]) failures += 1;
-  if (!page.includes(override.lifeOsSource?.whatYouDo ?? "")) failures += 1;
+  if (article.editorialCuration?.status !== "curated") failures.push(`${slug}: article is not marked curated`);
+  if (article.editorialCuration?.evidenceStatus !== expectedStatus) failures.push(`${slug}: editorial evidence status mismatch`);
+  if (article.editorialCuration?.reviewedAt !== override.reviewed_at) failures.push(`${slug}: review date mismatch`);
+  if (article.editorialCuration?.registry !== registry.sources?.[slug]) failures.push(`${slug}: registry source mismatch`);
+  if (!page.includes(override.lifeOsSource?.whatYouDo ?? "")) failures.push(`${slug}: public page does not contain the curated action`);
   for (const fragment of override.forbidden_public_fragments ?? []) {
-    if (page.includes(fragment) || JSON.stringify(article).includes(fragment)) failures += 1;
+    if (page.includes(fragment) || JSON.stringify(article).includes(fragment)) failures.push(`${slug}: forbidden fragment remains: ${fragment}`);
   }
   const trust = evidenceBySlug.get(slug);
-  if (trust?.status !== expectedStatus || trust?.indexable !== true) failures += 1;
-  if (expectedStatus === "reviewed" && trust?.source?.recorded !== true) failures += 1;
-  if (!indexable.has(slug)) failures += 1;
-  if (!feedBySlug.has(slug)) failures += 1;
+  if (trust?.status !== expectedStatus || trust?.indexable !== true) failures.push(`${slug}: evidence/indexable status mismatch`);
+  if (expectedStatus === "reviewed" && trust?.source?.recorded !== true) failures.push(`${slug}: reviewed entry lacks a recorded source`);
+  if (!indexable.has(slug)) failures.push(`${slug}: missing from indexable set`);
+  if (!feedBySlug.has(slug)) failures.push(`${slug}: missing from trusted protocol feed`);
 }
 
-if (failures) throw new Error(`Curated protocol validation failed with ${failures} problem(s).`);
+if (failures.length) {
+  throw new Error(`Curated protocol validation failed with ${failures.length} problem(s):\n- ${failures.join("\n- ")}`);
+}
 const reviewed = Object.values(registry.entries ?? {}).filter((override) => override.evidence_status === "reviewed").length;
 console.log(`Curated protocol overrides verified: ${Object.keys(registry.entries ?? {}).length} entry override(s) from ${registry.files.length} registry file(s); ${reviewed} reviewed-source protocol(s); all are indexable and present in the trusted feed.`);

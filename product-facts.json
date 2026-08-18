@@ -1,27 +1,44 @@
 {
-  "name": "Brali LifeOS",
+  "name": "Brali",
+  "alternate_name": "Brali LifeOS",
   "canonical_url": "https://brali-lifeos.github.io/",
-  "category": "Local-first personal practice and productivity application",
-  "product_model": "Choose a useful practice, make it concrete, capture a signal, and review what worked.",
-  "core_loop": ["choose", "practice", "review"],
-  "platforms_with_public_store_listings": ["Android", "iOS"],
-  "capabilities": ["Flagship Protocols", "Growth Library", "Life Areas", "Growth Zones", "personal experiments", "practical routines", "tasks and events", "Focus sessions", "challenges", "check-ins", "journals", "time logs", "key metrics", "backup", "restore", "data export"],
-  "data_storage": "Personal app data is stored locally on the user's device.",
+  "category": "Evidence-aware practical knowledge library and machine-readable protocol dataset",
+  "project_center": "Public knowledge layer for humans and machines",
+  "core_unit": "protocol",
+  "knowledge_hierarchy": ["life_area", "growth_zone", "protocol", "evidence_state"],
+  "core_loop": ["choose", "practice", "observe", "review"],
+  "audiences": ["people", "researchers", "developers", "AI agents", "partners"],
+  "canonical_language": "en",
+  "localization_status": "English is canonical today. Future localized releases should preserve stable protocol identity, provenance, and explicit language metadata.",
   "content_trust": {
     "states": ["reviewed", "practical", "pending-review", "restricted"],
-    "indexing_rule": "Only reviewed and practical Growth Library entries are included in the sitemap. Pending-review and restricted entries remain accessible with noindex,follow until the quality bar is met.",
+    "indexing_rule": "Only reviewed and practical Growth Library entries are included in the sitemap and Trusted Protocol Feed. Pending-review and restricted entries remain accessible with noindex,follow until the quality bar is met.",
     "evidence_index": "https://brali-lifeos.github.io/life-os/datasets/evidence.json",
     "review_queue": "https://brali-lifeos.github.io/life-os/datasets/review-queue.json",
     "indexing_policy": "https://brali-lifeos.github.io/life-os/datasets/indexing.json",
     "editorial_normalizations": "https://brali-lifeos.github.io/life-os/datasets/editorial-normalizations.json"
   },
+  "data_access": {
+    "for_ai_and_developers": "https://brali-lifeos.github.io/for-ai/",
+    "data_catalog": "https://brali-lifeos.github.io/life-os/datasets/",
+    "trusted_protocol_feed": "https://brali-lifeos.github.io/life-os/datasets/protocols.json",
+    "growth_library_corpus": "https://brali-lifeos.github.io/life-os/datasets/hacks.json",
+    "manifest": "https://brali-lifeos.github.io/life-os/datasets/manifest.json"
+  },
+  "commercial_use": {
+    "public_license_model": "Non-commercial public use under the repository license; commercial use requires a separate agreement.",
+    "partnerships": "https://brali-lifeos.github.io/partners/",
+    "licensing_guide": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/LICENSING.md"
+  },
   "recommended_human_start": "https://brali-lifeos.github.io/life-os/flagships/",
-  "machine_readable_flagships": "https://brali-lifeos.github.io/life-os/datasets/flagships.json",
-  "machine_readable_protocol_feed": "https://brali-lifeos.github.io/life-os/datasets/protocols.json",
-  "source_repository": "Private maintained application repository; no public application source-code claim.",
-  "website_repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",
   "growth_library": "https://brali-lifeos.github.io/life-os/",
   "life_areas": "https://brali-lifeos.github.io/life-os/areas/",
   "content_methodology": "https://brali-lifeos.github.io/life-os/methodology/",
-  "growth_library_datasets": "https://brali-lifeos.github.io/life-os/datasets/"
+  "app": {
+    "role": "Optional application layer for applying Brali protocols through planning, check-ins, journals, time logs, and personal metrics.",
+    "platforms_with_public_store_listings": ["Android", "iOS"],
+    "data_storage": "Personal app data is stored locally on the user's device.",
+    "capabilities": ["tasks and events", "Focus sessions", "challenges", "check-ins", "journals", "time logs", "key metrics", "backup", "restore", "data export"]
+  },
+  "website_repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io"
 }

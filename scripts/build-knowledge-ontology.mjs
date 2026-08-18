@@ -10,6 +10,7 @@ const entries = JSON.parse(await readFile(path.join(root, "data/life-os-content/
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const canonical = (pathname) => `${base}${pathname.endsWith("/") ? pathname : `${pathname}/`}`;
 const text = (value = "") => String(value).replace(/\s+/g, " ").trim();
+const pluralFor = (kind) => kind === "lens" ? "lenses" : kind === "method" ? "methods" : kind === "topic" ? "topics" : `${kind}s`;
 const zoneBySlug = new Map(zones.map((zone) => [zone.slug, zone]));
 const topicById = new Map(ontology.topics.map((item) => [item.id, item]));
 const methodById = new Map(ontology.methods.map((item) => [item.id, item]));
@@ -54,7 +55,7 @@ async function save(relativePath, contents) {
 const entityCard = (kind, item) => {
   const count = uniqueEntriesFor(kind, item.id).length;
   const status = item.status ? `${item.status.replaceAll("-", " ")} · ` : "";
-  return `<article class="card"><span class="card-label">${status}${count} mapped entries</span><h3><a href="/ontology/${kind}s/${item.id}/">${escapeHtml(item.title)}</a></h3><p>${escapeHtml(item.description)}</p></article>`;
+  return `<article class="card"><span class="card-label">${status}${count} mapped entries</span><h3><a href="/ontology/${pluralFor(kind)}/${item.id}/">${escapeHtml(item.title)}</a></h3><p>${escapeHtml(item.description)}</p></article>`;
 };
 
 const domainCards = ontology.domains.map((domain) => {
@@ -110,7 +111,7 @@ for (const [kind, items, intro] of [
   ["method", ontology.methods, "Methods are named structured approaches. They can cross Topics and Domains, and sensitive methods do not inherit scientific authority merely from having a name."],
   ["lens", ontology.lenses, "Lenses are ways of thinking borrowed from professions, disciplines, philosophies, or strategic traditions. They generate questions and structures; they are not evidence by themselves."]
 ]) {
-  const plural = `${kind}s`;
+  const plural = pluralFor(kind);
   await save(`ontology/${plural}`, document({
     title: kind === "method" ? "Methods" : "Brali Lenses",
     description: intro,
@@ -137,7 +138,7 @@ for (const [kind, items, intro] of [
 for (const zone of zones) {
   const mapping = map[zone.slug];
   const label = mapping.kind === "topic" ? "Topic" : mapping.kind === "method" ? "Method" : "Lens";
-  const targetUrl = `/ontology/${mapping.kind}s/${mapping.target_id}/`;
+  const targetUrl = `/ontology/${pluralFor(mapping.kind)}/${mapping.target_id}/`;
   const pagePath = path.join(root, "life-os", zone.slug, "index.html");
   let html = await readFile(pagePath, "utf8");
   html = html.replace('<p class="eyebrow">Growth Zone</p>', `<p class="eyebrow">${label} · Legacy collection</p>`);

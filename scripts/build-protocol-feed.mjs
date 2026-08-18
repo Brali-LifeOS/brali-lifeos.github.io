@@ -43,6 +43,7 @@ for (const entry of sourceIndex) {
     evidence: {
       status: trust.status,
       source_recorded: Boolean(trust.source?.recorded),
+      source_url: trust.status === "reviewed" ? (trust.source?.url ?? null) : null,
       reviewed_at: trust.review?.reviewedAt ?? null,
     },
   });
@@ -59,6 +60,7 @@ const output = {
   license: "CC BY-NC-SA 4.0; Brali names and logos are not licensed for reuse.",
   selection_rule: "Only entries with evidence status reviewed or practical are included.",
   identity_rule: "protocol_id identifies the underlying protocol. Future language versions should keep the same protocol_id and change the language field.",
+  source_rule: "External source URLs are exposed only for reviewed entries. A recorded but unreviewed source is not presented as supporting evidence in this feed.",
   count: protocols.length,
   fields: ["protocol_id", "language", "slug", "url", "title", "description", "life_area", "growth_zone", "action", "check_in", "keywords", "evidence"],
   entries: protocols,

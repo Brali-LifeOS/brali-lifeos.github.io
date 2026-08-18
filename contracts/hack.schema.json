@@ -23,17 +23,55 @@
     "keywords":{"type":"array","items":{"type":"string"},"uniqueItems":true},
     "origin":{"type":"string","enum":["legacy","research-derived","editorial","community"]},
     "source_candidate_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "evidence_decision_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
     "risk_flags":{"type":"array","items":{"type":"string","enum":["health","mental-health","financial","legal","safety-critical","clinical","none"]},"uniqueItems":true},
     "evidence":{"$ref":"#/$defs/evidence"}
   },
-  "$defs":{"evidence":{"type":"object","additionalProperties":false,"required":["state"],"properties":{
-    "state":{"type":"string","enum":["reviewed","practical","pending-review","restricted"]},
-    "reviewed_at":{"type":["string","null"],"format":"date"},
-    "reviewed_by":{"type":["string","null"]},
-    "notes":{"type":"string"},
-    "limitations":{"type":"array","items":{"type":"string"}},
-    "sources":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["url","title","source_type"],"properties":{
-      "url":{"type":"string","format":"uri"},"title":{"type":"string"},"doi":{"type":["string","null"]},"source_type":{"type":"string","enum":["primary-study","systematic-review","meta-analysis","guideline","expert-consensus","other"]},"claim_scope":{"type":"string"}
-    }}}
-  }}}
+  "allOf":[
+    {
+      "if":{"properties":{"origin":{"const":"research-derived"}},"required":["origin"]},
+      "then":{
+        "required":["source_candidate_ids","evidence_decision_ids"],
+        "properties":{
+          "source_candidate_ids":{"minItems":1},
+          "evidence_decision_ids":{"minItems":1},
+          "evidence":{"properties":{"sources":{"minItems":1}},"required":["sources"]}
+        }
+      }
+    }
+  ],
+  "$defs":{
+    "source":{
+      "type":"object","additionalProperties":false,
+      "required":["url","title","source_type","claim_scope"],
+      "properties":{
+        "url":{"type":"string","format":"uri"},
+        "title":{"type":"string","minLength":3},
+        "doi":{"type":["string","null"]},
+        "source_type":{"type":"string","enum":["primary-study","systematic-review","meta-analysis","guideline","expert-consensus","other"]},
+        "publisher":{"type":"string"},
+        "published_date":{"type":["string","null"]},
+        "accessed_at":{"type":["string","null"],"format":"date"},
+        "citation_text":{"type":"string"},
+        "claim_scope":{"type":"string","minLength":5}
+      }
+    },
+    "evidence":{
+      "type":"object","additionalProperties":false,"required":["state"],
+      "properties":{
+        "state":{"type":"string","enum":["reviewed","practical","pending-review","restricted"]},
+        "reviewed_at":{"type":["string","null"],"format":"date"},
+        "reviewed_by":{"type":["string","null"]},
+        "notes":{"type":"string"},
+        "limitations":{"type":"array","items":{"type":"string"}},
+        "sources":{"type":"array","items":{"$ref":"#/$defs/source"}}
+      },
+      "allOf":[
+        {
+          "if":{"properties":{"state":{"const":"reviewed"}},"required":["state"]},
+          "then":{"required":["reviewed_at","reviewed_by","sources"],"properties":{"sources":{"minItems":1}}}
+        }
+      ]
+    }
+  }
 }

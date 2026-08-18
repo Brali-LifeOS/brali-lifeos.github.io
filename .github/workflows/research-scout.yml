@@ -1,0 +1,66 @@
+name: Research scout
+
+on:
+  schedule:
+    - cron: "23 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: brali-research-scout
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Preserve open scout queue
+        shell: bash
+        run: |
+          git fetch origin bot/research-scout:refs/remotes/origin/bot/research-scout || true
+          if git show-ref --verify --quiet refs/remotes/origin/bot/research-scout; then
+            git show origin/bot/research-scout:data/research-candidates.json > /tmp/research-candidates.json || true
+          fi
+          git checkout -B bot/research-scout origin/main
+          if [ -s /tmp/research-candidates.json ]; then cp /tmp/research-candidates.json data/research-candidates.json; fi
+      - name: Discover research candidates
+        run: python scripts/research_scout.py --days 60 --rows 8
+        env:
+          CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
+      - name: Validate research system
+        run: python scripts/check-research-system.py
+      - name: Commit candidate queue
+        id: commit
+        shell: bash
+        run: |
+          if git diff --quiet -- data/research-candidates.json; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "brali-research-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/research-candidates.json
+          git commit -m "Update research candidate queue"
+          git push --force origin HEAD:bot/research-scout
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Open or refresh research PR
+        continue-on-error: true
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          PR_NUMBER="$(gh pr list --head bot/research-scout --base main --state open --json number --jq '.[0].number // empty')"
+          if [ -z "$PR_NUMBER" ]; then
+            gh pr create --base main --head bot/research-scout --title "Research scout: review new candidates" --body "Automated discovery update from the Brali Research Scout. These records are unreviewed leads only. Review actual sources before promoting any candidate into a hack, protocol, or evidence state."
+          else
+            gh pr edit "$PR_NUMBER" --body "Automated discovery update from the Brali Research Scout. These records are unreviewed leads only. Review actual sources before promoting any candidate into a hack, protocol, or evidence state."
+          fi

@@ -1,0 +1,39 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://brali-lifeos.github.io/contracts/hack.schema.json",
+  "title":"Brali Hack",
+  "description":"Atomic practical technique that can be reused inside one or more protocols.",
+  "type":"object",
+  "additionalProperties":false,
+  "required":["schema_version","id","title","summary","action","life_area_slugs","zone_slugs","evidence"],
+  "properties":{
+    "schema_version":{"const":1},
+    "id":{"type":"string","pattern":"^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "title":{"type":"string","minLength":3},
+    "summary":{"type":"string","minLength":10},
+    "problem":{"type":"string"},
+    "action":{"type":"string","minLength":10},
+    "check_in":{"type":"string"},
+    "duration":{"type":"string"},
+    "review_after":{"type":"string"},
+    "stop_or_change_rule":{"type":"string"},
+    "life_area_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "zone_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "method_tags":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "keywords":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "origin":{"type":"string","enum":["legacy","research-derived","editorial","community"]},
+    "source_candidate_ids":{"type":"array","items":{"type":"string"},"uniqueItems":true},
+    "risk_flags":{"type":"array","items":{"type":"string","enum":["health","mental-health","financial","legal","safety-critical","clinical","none"]},"uniqueItems":true},
+    "evidence":{"$ref":"#/$defs/evidence"}
+  },
+  "$defs":{"evidence":{"type":"object","additionalProperties":false,"required":["state"],"properties":{
+    "state":{"type":"string","enum":["reviewed","practical","pending-review","restricted"]},
+    "reviewed_at":{"type":["string","null"],"format":"date"},
+    "reviewed_by":{"type":["string","null"]},
+    "notes":{"type":"string"},
+    "limitations":{"type":"array","items":{"type":"string"}},
+    "sources":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["url","title","source_type"],"properties":{
+      "url":{"type":"string","format":"uri"},"title":{"type":"string"},"doi":{"type":["string","null"]},"source_type":{"type":"string","enum":["primary-study","systematic-review","meta-analysis","guideline","expert-consensus","other"]},"claim_scope":{"type":"string"}
+    }}}
+  }}}
+}

@@ -1,30 +1,46 @@
 # Brali website and knowledge platform
 
-The official public site and knowledge repository for Brali, published at `https://brali-lifeos.github.io`.
+Official public site and knowledge repository for Brali, published at `https://brali-lifeos.github.io`.
 
-Brali started as a feature-rich personal organizer. The maintained public direction is now knowledge-first: practical protocols, taxonomy, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. Brali LifeOS remains an optional application layer for applying that knowledge through planning, check-ins, journals, time logs, and personal metrics.
+Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first: practical hacks, executable protocols, taxonomy, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. The original LifeOS app remains an optional application layer.
 
 ## Knowledge model
 
-The public hierarchy is:
+Brali separates four layers instead of treating every useful idea as the same kind of page:
 
-`Life Area -> Growth Zone -> Protocol -> Evidence state`
+`Life Area -> Growth Zone -> Hack`
 
-A protocol is the reusable unit. Discovery-ready protocols include a canonical URL, practical action, optional check-in, taxonomy, keywords, and explicit evidence metadata.
+`Protocol -> one or more Hacks`
 
-The evidence states are `reviewed`, `practical`, `pending-review`, and `restricted`. Only `reviewed` and `practical` entries qualify for normal search indexing and the Trusted Protocol Feed.
+`Hack / Protocol -> Evidence state`
 
-## Human and machine entry points
+`Research candidate -> Evidence decision -> content proposal`
+
+A **Hack** is the smallest reusable practical technique. A **Protocol** is an executable sequence or personal experiment that can reference one or more hacks and adds context, order, a check-in, and a stop/change rule. A **Research candidate** is an unreviewed scholarly lead and is never trusted evidence by itself.
+
+Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricted`. Only `reviewed` and `practical` entries qualify for normal search indexing and the Trusted Protocol Feed.
+
+## Main entry points
 
 - `/life-os/flagships/` — curated human starting points.
-- `/life-os/` — complete Growth Library navigation.
-- `/life-os/methodology/` — evidence and editorial methodology.
-- `/life-os/datasets/` — public data catalog.
-- `/life-os/datasets/protocols.json` — compact Trusted Protocol Feed for integrations.
+- `/life-os/` — complete Growth Library.
+- `/life-os/datasets/protocols.json` — Trusted Protocol Feed.
+- `/research/` — research notes and the living research pipeline.
+- `/agents/` and `/agents/registry.json` — editorial agents and machine-readable registry.
+- `/contracts/` — schemas for hacks, protocols, research candidates, and evidence decisions.
+- `/skills/` — reusable discovery, evidence, protocol, and taxonomy skills.
 - `/for-ai/` — guidance for AI tools and developers.
-- `/faq/` — project, evidence, licensing, language and integration FAQ.
-- `/partners/` — commercial licensing and collaboration paths.
-- `/llms.txt` and `/product-facts.json` — concise machine-readable project orientation.
+- `/llms.txt` — compact machine-readable project orientation.
+
+## Continuous research loop
+
+1. `data/research-queries.json` defines maintained search lenses mapped to Life Areas and Growth Zones.
+2. `scripts/research_scout.py` queries scholarly metadata and deduplicates leads into `data/research-candidates.json`.
+3. `.github/workflows/research-scout.yml` runs weekly and proposes queue changes on a bot branch/PR.
+4. The Evidence Reviewer reads the actual source and records a bounded decision before a hack or protocol can change.
+5. Protocol Builder and Taxonomy Curator turn accepted ideas into contract-shaped proposals without silently changing public URLs.
+
+The scout is intentionally allowed to find weak, negative, null, or contradictory results. It is not allowed to promote search metadata directly into `reviewed` content.
 
 ## Local build
 
@@ -34,24 +50,21 @@ npm run check
 python3 -m http.server 8080
 ```
 
-The build deterministically renders the migrated source corpus into `/life-os/<slug>/` pages, applies reviewed editorial normalizations, creates evidence and indexing outputs, generates the Trusted Protocol Feed, enhances structured data, sanitizes generated public content, and refreshes `sitemap.xml`.
+Research helpers:
 
-`npm run check` also runs the strict content-trust audit. It blocks generated legacy-brand leakage and unsourced sensitive health or mental-health pages that remain indexable. Non-blocking evidence warnings form the editorial review queue.
+```bash
+npm run research:check
+npm run research:scout
+```
 
-## Product and editorial direction
+`npm run check` includes the research-system contract checker alongside the existing trust/indexing audits.
 
-- [AGENT_LOOP.md](AGENT_LOOP.md) defines the goal, iteration loop, and priority queue.
-- [CONTENT_QUALITY.md](CONTENT_QUALITY.md) defines the evidence, safety, and indexing bar for the Growth Library.
-- [LICENSING.md](LICENSING.md) explains current licensing boundaries and the commercial-use path.
+## Direction
 
-Near-term platform work should improve the knowledge asset rather than recreate the retired feature race: stronger protocol records, evidence review, multilingual identity and localization, research collections, better retrieval, and eventually a versioned API or MCP layer over the same canonical data.
+Near-term work should improve the knowledge asset rather than recreate the retired feature race: stronger atomic hacks, executable protocols, continuous research discovery with explicit review gates, evidence review, multilingual identity, research collections, better retrieval, and eventually a versioned API or MCP layer over the same canonical data.
+
+See [AGENT_LOOP.md](AGENT_LOOP.md), [CONTENT_QUALITY.md](CONTENT_QUALITY.md), [contracts/README.md](contracts/README.md), and [LICENSING.md](LICENSING.md).
 
 ## License
 
-The root [LICENSE](LICENSE) is the authoritative current license for original repository material: CC BY-NC-SA 4.0. Attribution and the same license are required for sharing or adaptations, and commercial use is not permitted without prior written permission. Brali names and logos are not licensed for reuse.
-
-The repository also contains software/build scripts. Creative Commons recommends software-specific licenses for software; [LICENSING.md](LICENSING.md) records this as a future licensing cleanup rather than silently changing the existing public grant.
-
-## Deployment
-
-Pull requests run the build and verification job. Pushing `main` runs the same verification first and deploys the repository root to GitHub Pages only after verification succeeds.
+The root [LICENSE](LICENSE) is the authoritative current license for original repository material: CC BY-NC-SA 4.0. Commercial use requires prior written permission. See [LICENSING.md](LICENSING.md) for details.

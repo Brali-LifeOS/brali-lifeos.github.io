@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const required = [
   "index.html",
+  "homepage.css",
   "features/index.html",
   "how-it-works/index.html",
   "screenshots/index.html",
@@ -26,6 +27,11 @@ const required = [
 ];
 
 for (const file of required) await access(path.join(root, file));
+
+const homepage = await readFile(path.join(root, "index.html"), "utf8");
+if (!homepage.includes('class="protocol-demo"')) throw new Error("Homepage lacks the protocol example.");
+if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does not provide a Life Areas entry point.");
+if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
 
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
@@ -57,4 +63,4 @@ if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQual
   throw new Error("Title quality report is malformed.");
 }
 
-console.log(`Static site verified: ${required.length} core files, ${evidenceIndex.entries.length} evidence records, and normalized display titles.`);
+console.log(`Static site verified: ${required.length} core files, protocol-first homepage, ${evidenceIndex.entries.length} evidence records, and normalized display titles.`);

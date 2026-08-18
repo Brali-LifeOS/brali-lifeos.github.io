@@ -109,4 +109,14 @@ manifest.files = [...new Set([...(manifest.files ?? []), "title-quality.json"])]
 manifest.title_quality = { changed: changed.length, unresolved: unresolved.length };
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
+const datasetsPage = path.join(root, "life-os/datasets/index.html");
+let datasetsHtml = await readFile(datasetsPage, "utf8");
+if (!datasetsHtml.includes("/life-os/datasets/title-quality.json")) {
+  datasetsHtml = datasetsHtml.replace(
+    "</ul>",
+    '<li><a href="/life-os/datasets/title-quality.json">Display-title quality report (JSON)</a></li></ul>',
+  );
+  await writeFile(datasetsPage, datasetsHtml);
+}
+
 console.log(`Title quality normalized: ${changed.length} display titles changed; ${unresolved.length} unresolved title issues remain.`);

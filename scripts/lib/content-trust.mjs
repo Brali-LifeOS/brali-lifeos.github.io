@@ -26,6 +26,13 @@ export function isUsableSource(value) {
   return Boolean(text.trim()) && !/(?:metalhatscats|brali-lifeos\.github\.io\/life-os)/i.test(text);
 }
 
+function sourceUrlFrom(value) {
+  if (typeof value === "string" && /^https?:\/\//i.test(value)) return value;
+  if (!value || typeof value !== "object") return null;
+  const url = value.url || value.source_url || value.sourceUrl || value.reference_url || null;
+  return typeof url === "string" && /^https?:\/\//i.test(url) ? url : null;
+}
+
 export function sourceDetails(article) {
   const original = article.lifeOsSource ?? {};
   const direct = [original.sourceUrl, article.sourceUrl, original.reference, article.reference]
@@ -35,8 +42,8 @@ export function sourceDetails(article) {
     .flat()
     .filter(isUsableSource);
   const all = [...direct, ...listed];
-  const sourceUrl = all.find((value) => typeof value === "string" && /^https?:\/\//i.test(value)) ?? null;
-  const reference = all.find((value) => value !== sourceUrl) ?? null;
+  const sourceUrl = all.map(sourceUrlFrom).find(Boolean) ?? null;
+  const reference = all.find((value) => sourceUrlFrom(value) !== sourceUrl) ?? null;
   return {
     hasSource: all.length > 0,
     sourceCount: all.length,

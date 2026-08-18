@@ -19,6 +19,7 @@ const required = [
   "faq/index.html",
   "for-ai/index.html",
   "partners/index.html",
+  "research/index.html",
   "LICENSING.md",
   "life-os/index.html",
   "life-os/areas/index.html",
@@ -41,8 +42,9 @@ const homepage = await readFile(path.join(root, "index.html"), "utf8");
 if (!homepage.includes('class="protocol-demo"')) throw new Error("Homepage lacks the protocol example.");
 if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does not provide a Life Areas entry point.");
 if (!homepage.includes('href="/for-ai/"')) throw new Error("Homepage does not expose the AI/developer entry point.");
+if (!homepage.includes('href="/research/"')) throw new Error("Homepage does not expose the research entry point.");
 if (!homepage.includes('href="/partners/"')) throw new Error("Homepage does not expose the partnership entry point.");
-if (!homepage.includes("Practical knowledge you can use, inspect, and build on.")) throw new Error("Homepage lost the knowledge-platform positioning.");
+if (!homepage.includes("Useful ideas, made easier to trust and use.")) throw new Error("Homepage lost the simple knowledge-library positioning.");
 if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
 if (/protocols\.jsonl|protocols\.schema\.json/.test(homepage)) throw new Error("Homepage advertises an unpublished protocol interface.");
 
@@ -62,7 +64,12 @@ if (!faq.includes("Is the mobile app still the main product?")) throw new Error(
 
 const partners = await readFile(path.join(root, "partners/index.html"), "utf8");
 if (!partners.includes("Commercial dataset licensing")) throw new Error("Partnership page lacks a commercial data model.");
-if (!partners.includes("MCP and agent integrations")) throw new Error("Partnership page lacks the agent integration path.");
+if (!partners.includes("AI and agent integrations")) throw new Error("Partnership page lacks the agent integration path.");
+
+const research = await readFile(path.join(root, "research/index.html"), "utf8");
+for (const section of ["Evidence notes", "Trend notes", "Open questions"]) {
+  if (!research.includes(section)) throw new Error(`Research page lacks ${section}.`);
+}
 
 const llms = await readFile(path.join(root, "llms.txt"), "utf8");
 if (!llms.startsWith("# Brali\n")) throw new Error("llms.txt still uses the old app-first project identity.");
@@ -75,7 +82,7 @@ if (productFacts.core_unit !== "protocol") throw new Error("product-facts.json d
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/areas/")) throw new Error("Sitemap lacks life area navigation pages.");
-for (const pathname of ["for-ai", "faq", "partners", "terms"]) {
+for (const pathname of ["for-ai", "faq", "partners", "research", "terms"]) {
   if (!sitemap.includes(`https://brali-lifeos.github.io/${pathname}/`)) throw new Error(`Sitemap lacks ${pathname}.`);
 }
 if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still references MetalHatsCats.");
@@ -126,6 +133,9 @@ if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQual
 if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries ?? []).length) {
   throw new Error("Protocol feed is malformed.");
 }
+if (protocols.schema_version !== 2 || protocols.canonical_language !== "en") {
+  throw new Error("Protocol feed lacks identity/language metadata.");
+}
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, knowledge-platform positioning, AI/developer and partnership entry points, trusted search/feed, dataset discovery metadata, priority-ranked editorial queue, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, clear public positioning, research, AI/developer and partnership entry points, trusted search/feed, dataset metadata, editorial review outputs, and ${evidenceIndex.entries.length} evidence records.`);

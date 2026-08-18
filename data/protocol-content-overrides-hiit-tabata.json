@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "4-minute-hiit-tabata-workout": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited HIIT article containing unsupported heart-rate targets, calorie estimates, injury-risk claims, arbitrary eight-week progression rules and broad claims attributed to the Tabata format with a conservative high-intensity-interval protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version makes clear that the original research used a specific laboratory cycling protocol and does not justify prescribing maximal 20/10 intervals to every user.",
+      "forbidden_public_fragments": [
+        "heart-rate rule of thumb",
+        "220 − age",
+        "85–95% of max",
+        "40–60 calories",
+        "70–90 kcal",
+        "300 kcal",
+        "improved power, insulin sensitivity",
+        "number-one failure mode",
+        "reduces injury risk while increasing power",
+        "Weeks 1–2: 2–3 sessions per week",
+        "Weeks 7–8: 3–4 sessions per week",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
+        "checkIn": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+        "sourceUrl": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "reference": "NHS — Physical activity guidelines for adults aged 19 to 64"
+      },
+      "references": [
+        "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "https://pubmed.ncbi.nlm.nih.gov/8897392/",
+        "https://www.who.int/publications/i/item/9789240015128"
+      ],
+      "faq": [
+        {
+          "id": "4-minute-hiit-tabata-workout-faq-1",
+          "question": "Does HIIT need to be 20 seconds on and 10 seconds off for 8 rounds?",
+          "answer": "No. The 20/10 format is associated with the original Tabata research, but that study used a specific cycle-ergometer protocol at very high intensity. NHS guidance describes HIIT more broadly as short bursts of very vigorous effort broken up with rest. Brali does not treat one interval pattern as a universal prescription."
+        },
+        {
+          "id": "4-minute-hiit-tabata-workout-faq-2",
+          "question": "Should I aim for a percentage of my maximum heart rate?",
+          "answer": "Not from this Brali protocol. The inherited page used approximate heart-rate formulas and targets that are not needed for this general exercise experiment. Choose an intensity appropriate to your fitness, and get healthcare advice first if you have been inactive for some time, have a medical condition, symptoms or concerns."
+        },
+        {
+          "id": "4-minute-hiit-tabata-workout-faq-3",
+          "question": "When should I stop?",
+          "answer": "Stop if you feel pain or become unwell. High-intensity exercise is demanding, so do not push through concerning symptoms or poor movement control. If you are unsure whether vigorous exercise is suitable for you, get advice from a healthcare professional before using it."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>High-intensity interval training means short bursts of very vigorous activity separated by recovery. NHS guidance recognises HIIT as one form of very vigorous activity, but the right intensity depends on your current fitness and health. The famous 20-seconds-work, 10-seconds-rest format came from a specific laboratory study, not a rule that everyone should sprint maximally for four minutes. Brali therefore treats short intervals as an exercise format to adapt, not a therapeutic or fitness dose.</p>"
+        },
+        "sections": [
+          {
+            "slug": "check-suitability",
+            "title": "1. Check whether vigorous exercise fits you",
+            "html": "<p>If you have not exercised for some time, have a medical condition, symptoms, an injury or concerns about your health, get appropriate healthcare advice before starting very vigorous exercise. NHS guidance specifically recommends checking first when intensity may not be appropriate for your current fitness.</p>"
+          },
+          {
+            "slug": "choose-a-simple-movement",
+            "title": "2. Choose a movement you can control",
+            "html": "<p>Use an activity you can perform with good control and in a safe space. Running, cycling or another familiar movement may be easier to scale than adding complicated jumps or burpees simply because a timer says HIIT.</p>"
+          },
+          {
+            "slug": "warm-up-first",
+            "title": "3. Prepare before the hard interval",
+            "html": "<p>Do not jump straight from sitting still into maximal effort. Start with easier movement and build the intensity gradually so you can check how your body and movement feel before the harder work begins.</p>"
+          },
+          {
+            "slug": "use-an-interval-not-a-command",
+            "title": "4. Use the interval as a format, not a command",
+            "html": "<p>If 20 seconds of harder work followed by 10 seconds of easier recovery suits you, it can be used as a simple timer. You do not need eight rounds, maximal effort or a heart-rate target for the session to count. Reduce the work, increase the recovery or stop when that is the sensible choice.</p>"
+          },
+          {
+            "slug": "stop-on-warning-signals",
+            "title": "5. Stop when the session stops being appropriate",
+            "html": "<p>Stop if you feel pain or become unwell. Do not use a streak, calorie estimate, target heart rate or final-round challenge as a reason to continue through concerning symptoms or loss of movement control.</p>"
+          },
+          {
+            "slug": "review-the-fit",
+            "title": "6. Review suitability, not invented precision",
+            "html": "<p>In Brali, record what activity you used, roughly how demanding it felt, whether you maintained control and whether anything made you stop or modify the session. Do not infer calories burned, VO2max changes or an eight-week progression from a single four-minute session. Use repeated observations to decide whether short vigorous intervals belong in your broader activity routine.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

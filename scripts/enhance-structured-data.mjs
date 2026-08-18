@@ -150,7 +150,13 @@ function ensureSitemapUrl(pathname) {
   if (sitemap.includes(`<loc>${url}</loc>`)) return;
   sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc></url>\n</urlset>`);
 }
-for (const pathname of ["/for-ai/", "/faq/", "/partners/", "/research/", "/terms/"]) ensureSitemapUrl(pathname);
+
+const researchPages = [
+  { pathname: "/research/", updated: "2026-08-18" },
+  { pathname: "/research/habits-take-time/", updated: "2026-08-18" },
+  { pathname: "/research/rag-is-not-a-trust-button/", updated: "2026-08-18" },
+];
+for (const pathname of ["/for-ai/", "/faq/", "/partners/", "/terms/", ...researchPages.map((page) => page.pathname)]) ensureSitemapUrl(pathname);
 
 function addLastmod(pathname, date) {
   if (!date) return;
@@ -177,6 +183,7 @@ for (const area of lifeAreas) {
   addLastmod(`/life-os/areas/${area.slug}/`, maxDate(dates));
 }
 addLastmod("/life-os/areas/", libraryDate);
+for (const page of researchPages) addLastmod(page.pathname, page.updated);
 
 await writeFile(path.join(root, "sitemap.xml"), sitemap);
 console.log(`Structured data enhanced for ${enhanced} Growth Library entries; ${reviewedCitations} reviewed citations exposed; dataset catalog metadata and reliable sitemap values added.`);

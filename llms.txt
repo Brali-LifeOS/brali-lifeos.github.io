@@ -16,6 +16,13 @@ Brali publishes practical protocols grouped by Life Area and Growth Zone. Each p
 - For AI & developers: https://brali-lifeos.github.io/for-ai/
 - Partnerships: https://brali-lifeos.github.io/partners/
 
+## Research notes
+
+- Habit formation timelines: https://brali-lifeos.github.io/research/habits-take-time/
+- RAG and AI reliability: https://brali-lifeos.github.io/research/rag-is-not-a-trust-button/
+
+Research notes explain source-backed findings and product implications. They are not automatically trusted protocols and should not be treated as a separate recommendation feed.
+
 ## Machine-readable data
 
 - Data catalog: https://brali-lifeos.github.io/life-os/datasets/
@@ -29,6 +36,8 @@ Brali publishes practical protocols grouped by Life Area and Growth Zone. Each p
 ## Recommended use
 
 For normal recommendation or retrieval, start with the Trusted Protocol Feed. Each record includes a `protocol_id`, `language`, canonical URL, title, Life Area, Growth Zone, action, keywords, and evidence state.
+
+For a `reviewed` protocol, `evidence.source_url` may contain the external source that passed review. Brali does not expose an unreviewed external source in this field for `practical` entries.
 
 Keep the evidence state when reusing a protocol. Do not turn a practical suggestion into a scientific claim.
 

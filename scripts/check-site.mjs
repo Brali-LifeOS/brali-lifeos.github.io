@@ -20,6 +20,8 @@ const required = [
   "for-ai/index.html",
   "partners/index.html",
   "research/index.html",
+  "research/habits-take-time/index.html",
+  "research/rag-is-not-a-trust-button/index.html",
   "LICENSING.md",
   "life-os/index.html",
   "life-os/areas/index.html",
@@ -70,6 +72,16 @@ const research = await readFile(path.join(root, "research/index.html"), "utf8");
 for (const section of ["Evidence notes", "Trend notes", "Open questions"]) {
   if (!research.includes(section)) throw new Error(`Research page lacks ${section}.`);
 }
+for (const pathname of ["/research/habits-take-time/", "/research/rag-is-not-a-trust-button/"]) {
+  if (!research.includes(`href="${pathname}"`)) throw new Error(`Research index does not link to ${pathname}.`);
+}
+const habitResearch = await readFile(path.join(root, "research/habits-take-time/index.html"), "utf8");
+const ragResearch = await readFile(path.join(root, "research/rag-is-not-a-trust-button/index.html"), "utf8");
+for (const [name, html] of [["habit research", habitResearch], ["RAG research", ragResearch]]) {
+  if (!html.includes('"@type":"Article"')) throw new Error(`${name} lacks Article structured data.`);
+  if (!html.includes("<h2>Sources</h2>")) throw new Error(`${name} lacks visible sources.`);
+  if (!html.includes("<h2>What this changes in Brali</h2>")) throw new Error(`${name} does not connect evidence to product decisions.`);
+}
 
 const llms = await readFile(path.join(root, "llms.txt"), "utf8");
 if (!llms.startsWith("# Brali\n")) throw new Error("llms.txt still uses the old app-first project identity.");
@@ -82,7 +94,7 @@ if (productFacts.core_unit !== "protocol") throw new Error("product-facts.json d
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/areas/")) throw new Error("Sitemap lacks life area navigation pages.");
-for (const pathname of ["for-ai", "faq", "partners", "research", "terms"]) {
+for (const pathname of ["for-ai", "faq", "partners", "research", "research/habits-take-time", "research/rag-is-not-a-trust-button", "terms"]) {
   if (!sitemap.includes(`https://brali-lifeos.github.io/${pathname}/`)) throw new Error(`Sitemap lacks ${pathname}.`);
 }
 if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still references MetalHatsCats.");
@@ -138,4 +150,4 @@ if (protocols.schema_version !== 2 || protocols.canonical_language !== "en") {
 }
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, clear public positioning, research, AI/developer and partnership entry points, trusted search/feed, dataset metadata, editorial review outputs, and ${evidenceIndex.entries.length} evidence records.`);
+console.log(`Static site verified: ${required.length} core files, clear public positioning, research notes, AI/developer and partnership entry points, trusted search/feed, dataset metadata, editorial review outputs, and ${evidenceIndex.entries.length} evidence records.`);

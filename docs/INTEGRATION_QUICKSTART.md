@@ -64,4 +64,13 @@ Run from a checkout where `npm run build` has already generated `/api/v1/`.
 
 ## 6. Pin reproducible data
 
-For research and durable integrations, use a `data-v*` release instead of following `main`. Each release bundle includes a release manifest and SHA-256 checksums. See `docs/DATA_VERSIONING.md` and `CITATION.cff`.
+For research and durable integrations, pin the stable `data-v1.0.0` baseline instead of following `main`. The release bundle includes the complete canonical manifest and API v1 payload, release metadata, `CITATION.cff`, license/policy files, and SHA-256 checksums. Read `docs/releases/1.0.0.md` for the exact scope and known limitations, and `docs/DATA_VERSIONING.md` for compatibility rules.
+
+To verify a locally packaged snapshot:
+
+```bash
+npm run build
+npm run check
+npm run release:data -- --version 1.0.0
+npm run release:check -- --version 1.0.0
+```

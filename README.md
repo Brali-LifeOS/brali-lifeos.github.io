@@ -53,13 +53,16 @@ npm run research:check
 npm run research:scout
 npm run mcp:check
 npm run release:data -- --version 1.0.0
+npm run release:check -- --version 1.0.0
 ```
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, the API surface, retrieval benchmark, MCP syntax, research-provider contracts, and the existing strict content audit.
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, the API surface, retrieval benchmark, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
 
 ## Releases and citation
 
-The `Package Brali data release` workflow creates immutable `data-v*` bundles with a machine-readable release manifest and SHA-256 checksums. `CITATION.cff` is the canonical citation metadata. Consumers that need reproducibility should pin a release instead of `main`.
+The first stable dataset baseline is `1.0.0`, using the immutable tag convention `data-v1.0.0`. See `docs/releases/1.0.0.md` for included surfaces, trust rules, and known limitations.
+
+The `Package Brali data release` workflow rebuilds and checks the repository, packages every canonical dataset plus the complete API v1 surface, then verifies the release manifest and SHA-256 checksums before publishing tag assets. The bundle also includes `CITATION.cff`, license/licensing terms, evidence/source policies, versioning rules, and version-specific release notes. Consumers that need reproducibility should pin a release instead of `main`.
 
 ## Contributing and partnerships
 

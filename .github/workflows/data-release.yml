@@ -37,6 +37,8 @@ jobs:
         run: npm run build && npm run check
       - name: Package immutable dataset snapshot
         run: npm run release:data -- --version "${{ steps.version.outputs.version }}"
+      - name: Verify packaged snapshot
+        run: npm run release:check -- --version "${{ steps.version.outputs.version }}"
       - name: Create archive
         shell: bash
         run: |
@@ -56,8 +58,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          BUNDLE="releases/data-v${VERSION}"
           gh release create "$GITHUB_REF_NAME" \
-            "releases/brali-data-${{ steps.version.outputs.version }}.tar.gz" \
-            "releases/brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256" \
-            --title "Brali data ${{ steps.version.outputs.version }}" \
-            --notes "Versioned Brali dataset snapshot. See CITATION.cff and release-manifest.json for citation, license and checksums."
+            "releases/brali-data-${VERSION}.tar.gz" \
+            "releases/brali-data-${VERSION}.tar.gz.sha256" \
+            "${BUNDLE}/release-manifest.json" \
+            "${BUNDLE}/SHA256SUMS" \
+            "${BUNDLE}/CITATION.cff" \
+            "${BUNDLE}/LICENSE" \
+            --title "Brali data ${VERSION}" \
+            --notes-file "docs/releases/${VERSION}.md"

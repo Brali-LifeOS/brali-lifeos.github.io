@@ -5,11 +5,17 @@
   "product_model": "Choose a useful practice, make it concrete, capture a signal, and review what worked.",
   "core_loop": ["choose", "practice", "review"],
   "platforms_with_public_store_listings": ["Android", "iOS"],
-  "capabilities": ["Growth Library", "Growth Zones", "personal experiments", "practical routines", "tasks and events", "Focus sessions", "challenges", "check-ins", "journals", "time logs", "key metrics", "backup", "restore", "data export"],
+  "capabilities": ["Growth Library", "Life Areas", "Growth Zones", "personal experiments", "practical routines", "tasks and events", "Focus sessions", "challenges", "check-ins", "journals", "time logs", "key metrics", "backup", "restore", "data export"],
   "data_storage": "Personal app data is stored locally on the user's device.",
-  "content_trust": "Sensitive health and mental-health Growth Library entries without explicit source review are excluded from search indexing until reviewed.",
+  "content_trust": {
+    "states": ["reviewed", "practical", "pending-review", "restricted"],
+    "policy": "Sensitive health and mental-health Growth Library entries that do not meet the evidence bar are excluded from search indexing.",
+    "evidence_index": "https://brali-lifeos.github.io/life-os/datasets/evidence.json",
+    "review_queue": "https://brali-lifeos.github.io/life-os/datasets/review-queue.json"
+  },
   "source_repository": "Private maintained application repository; no public application source-code claim.",
   "website_repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",
   "growth_library": "https://brali-lifeos.github.io/life-os/",
+  "life_areas": "https://brali-lifeos.github.io/life-os/areas/",
   "growth_library_datasets": "https://brali-lifeos.github.io/life-os/datasets/"
 }

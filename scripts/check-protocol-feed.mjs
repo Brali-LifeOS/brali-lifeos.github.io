@@ -10,6 +10,7 @@ const seenIds = new Set();
 let invalid = 0;
 
 if (feed.schema_version !== 2 || feed.canonical_language !== "en") invalid += 1;
+if (!feed.source_rule?.includes("reviewed entries")) invalid += 1;
 
 for (const protocol of feed.entries ?? []) {
   if (!protocol.slug || seenSlugs.has(protocol.slug)) invalid += 1;
@@ -21,6 +22,8 @@ for (const protocol of feed.entries ?? []) {
   if (!protocol.title || !protocol.action || !protocol.url) invalid += 1;
   if (!["reviewed", "practical"].includes(protocol.evidence?.status)) invalid += 1;
   if (!protocol.growth_zone?.slug || !protocol.life_area?.slug) invalid += 1;
+  if (protocol.evidence?.status !== "reviewed" && protocol.evidence?.source_url !== null) invalid += 1;
+  if (protocol.evidence?.source_url && !/^https?:\/\//i.test(protocol.evidence.source_url)) invalid += 1;
 }
 
 const missing = [...eligible].filter((slug) => !seenSlugs.has(slug));
@@ -30,4 +33,5 @@ if ((feed.entries ?? []).length !== eligible.size) invalid += 1;
 if (invalid || missing.length) {
   throw new Error(`Protocol feed validation failed: invalid=${invalid}, missing eligible entries=${missing.length}.`);
 }
-console.log(`Protocol feed verified: ${feed.entries.length} trusted, unique protocols with stable identity and language metadata.`);
+const sourced = (feed.entries ?? []).filter((protocol) => protocol.evidence?.source_url).length;
+console.log(`Protocol feed verified: ${feed.entries.length} trusted, unique protocols with stable identity, language metadata, and ${sourced} reviewed source link(s).`);

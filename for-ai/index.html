@@ -20,7 +20,7 @@
 <main id="content" class="page wrap">
   <p class="eyebrow">For AI & developers</p>
   <h1>Use Brali data in your app or AI agent.</h1>
-  <p class="lead">Brali publishes practical protocols as JSON. A record can include the action, category, source page, keywords, and evidence state, so you do not need to scrape the website.</p>
+  <p class="lead">Brali publishes practical protocols as JSON. A record can include the action, category, Brali page, keywords, evidence state, and a reviewed evidence link when one is available.</p>
 
   <div class="grid three">
     <article class="card"><span class="card-label">Start here</span><h3>Protocol feed</h3><p>Use the smaller trusted feed for normal discovery and recommendation.</p><p><a href="/life-os/datasets/protocols.json">Open JSON feed →</a></p></article>
@@ -34,7 +34,8 @@
       <li>Find the Life Area or Growth Zone that matches the user's need.</li>
       <li>Retrieve a few protocols from the trusted feed.</li>
       <li>Prefer <code>reviewed</code> or <code>practical</code> entries.</li>
-      <li>Show the action, evidence state, and source link.</li>
+      <li>Show the action, evidence state, and Brali page.</li>
+      <li>If a reviewed entry has <code>evidence.source_url</code>, keep that link with the answer.</li>
     </ol>
 
     <h2>Machine-readable files</h2>
@@ -47,6 +48,9 @@
       <li><a href="/life-os/datasets/manifest.json">manifest.json</a> — dataset overview.</li>
       <li><a href="/llms.txt">llms.txt</a> — short project guide for language-model tools.</li>
     </ul>
+
+    <h2>Evidence links</h2>
+    <p>A source being present is not the same as a source being reviewed. The trusted feed exposes an external <code>evidence.source_url</code> only when the protocol has <code>reviewed</code> status. Practical entries can still be useful, but they should not borrow the authority of an unreviewed link.</p>
 
     <h2>Evidence</h2>
     <p>Do not turn a practical suggestion into a scientific claim. Keep the evidence state when you show or reuse a protocol. See the <a href="/life-os/methodology/">methodology</a>.</p>
@@ -61,7 +65,7 @@
     <p>Non-commercial use must follow the repository license. Commercial products, paid services, commercial AI use, or model training require a separate agreement. See <a href="/partners/">Partnerships</a>.</p>
 
     <h2>Do not erase uncertainty</h2>
-    <p>Brali is a library of things to try, not a database of universal truths. Preserve the evidence state and source link when possible.</p>
+    <p>Brali is a library of things to try, not a database of universal truths. Preserve the evidence state and reviewed source link when possible.</p>
   </section>
 </main>
 <footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>Practical knowledge for people and machines.</small></div><div class="footer-links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/faq/">FAQ</a><a href="/partners/">Partners</a><a href="/terms/">Terms</a></div></div></footer>

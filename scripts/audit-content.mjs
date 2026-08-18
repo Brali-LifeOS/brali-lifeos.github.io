@@ -1,97 +1,72 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { classifyEvidence } from "./lib/content-trust.mjs";
 
 const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
+const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
+const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const strict = process.argv.includes("--strict");
 
-const sensitiveZones = new Set([
-  "no-depression",
-  "no-fears",
-  "be-healthy",
-  "fit-life",
-  "cardio-doc",
-  "psychodynamic",
-  "metacognitive",
-  "cognitive-analytic",
-  "positive-psychotherapy",
-  "body-oriented",
-  "ericksonian",
-  "gestalt",
-  "exposure",
-  "dbt",
-  "act",
-  "cbt",
-]);
-
-const claimPattern = /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic review|meta-analysis)\b|\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
-
-function isUsableSource(value) {
-  if (!value) return false;
-  const text = typeof value === "string" ? value : JSON.stringify(value);
-  return Boolean(text.trim()) && !/(?:metalhatscats|brali-lifeos\.github\.io\/life-os)/i.test(text);
-}
-
-function hasSource(article) {
-  const original = article.lifeOsSource ?? {};
-  const directSources = [original.reference, original.sourceUrl, article.reference, article.sourceUrl].filter(isUsableSource);
-  const sourceLists = [article.references, article.sources, article.citations]
-    .filter(Array.isArray)
-    .flat()
-    .filter(isUsableSource);
-  return directSources.length > 0 || sourceLists.length > 0;
-}
-
-let sensitive = 0;
-let sensitiveUnsourced = 0;
-let suspiciousUnsourced = 0;
+const counts = { reviewed: 0, practical: 0, "pending-review": 0, restricted: 0 };
 let legacySourceEntries = 0;
 let legacyGeneratedPages = 0;
-let unprotectedSensitivePages = 0;
+let restrictedStillIndexable = 0;
 let missingProtocolSummaries = 0;
+let evidenceStatusMismatches = 0;
+let quantitativeQueue = 0;
 const examples = [];
+
+const evidenceBySlug = new Map((evidenceIndex.entries ?? []).map((record) => [record.slug, record]));
 
 for (const entry of index) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
   const sourceText = JSON.stringify(article);
-  const sourced = hasSource(article);
-  const isSensitive = sensitiveZones.has(entry.zone?.slug);
-
-  if (isSensitive) sensitive += 1;
-  if (isSensitive && !sourced) sensitiveUnsourced += 1;
-  if (!sourced && claimPattern.test(sourceText)) {
-    suspiciousUnsourced += 1;
-    if (examples.length < 12) examples.push(entry.slug);
-  }
+  const evidence = classifyEvidence(article, entry, overrides);
+  counts[evidence.status] = (counts[evidence.status] ?? 0) + 1;
+  if (evidence.claims.quantitative && evidence.status !== "reviewed") quantitativeQueue += 1;
   if (/metalhatscats/i.test(sourceText)) legacySourceEntries += 1;
 
   const generatedPath = path.join(root, "life-os", entry.slug, "index.html");
   const generated = await readFile(generatedPath, "utf8");
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
   if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
-  if (isSensitive && !sourced && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
-    unprotectedSensitivePages += 1;
+  if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
+  if (!evidence.indexable && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
+    restrictedStillIndexable += 1;
+  }
+
+  const indexed = evidenceBySlug.get(entry.slug);
+  if (!indexed || indexed.status !== evidence.status || indexed.reason !== evidence.reason) {
+    evidenceStatusMismatches += 1;
+  }
+
+  if ((evidence.status === "restricted" || evidence.status === "pending-review") && examples.length < 12) {
+    examples.push(`${entry.slug}:${evidence.status}`);
   }
 }
 
 console.log("Brali Growth Library content audit");
 console.log(`- Entries: ${index.length}`);
-console.log(`- Sensitive entries: ${sensitive}`);
-console.log(`- Sensitive entries without usable external sources: ${sensitiveUnsourced}`);
-console.log(`- Unsourced entries with evidence-like claims: ${suspiciousUnsourced}`);
+console.log(`- Reviewed: ${counts.reviewed}`);
+console.log(`- Practical: ${counts.practical}`);
+console.log(`- Pending review: ${counts["pending-review"]}`);
+console.log(`- Restricted: ${counts.restricted}`);
+console.log(`- Quantitative claims not reviewed: ${quantitativeQueue}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
 console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
-console.log(`- Unsourced sensitive pages still indexable: ${unprotectedSensitivePages}`);
-if (examples.length) console.log(`- Claim-review examples: ${examples.join(", ")}`);
+console.log(`- Restricted pages still indexable: ${restrictedStillIndexable}`);
+console.log(`- Evidence status/index mismatches: ${evidenceStatusMismatches}`);
+if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")}`);
 
-const blockingProblems = legacyGeneratedPages + unprotectedSensitivePages + missingProtocolSummaries;
+const blockingProblems = legacyGeneratedPages + restrictedStillIndexable + missingProtocolSummaries + evidenceStatusMismatches;
 if (strict && blockingProblems > 0) {
   console.error(`Content trust audit failed with ${blockingProblems} blocking problem(s).`);
   process.exit(1);
 }
 
-if (suspiciousUnsourced > 0) {
-  console.warn("Review queue created: evidence-like claims without usable external sources remain in the source dataset.");
+if (counts["pending-review"] + counts.restricted > 0) {
+  console.warn("Evidence review queue remains. Use data/evidence-overrides.json to record editorial decisions after reviewing sources and wording.");
 }

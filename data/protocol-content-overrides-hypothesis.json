@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "start-with-a-hypothesis": {
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited hypothesis-first problem-solving article containing unsupported operational percentages, arbitrary support thresholds, and invented resolution-time stories with a compact test-and-update protocol.",
+      "forbidden_public_fragments": [
+        "resolve 40–60% of common operational issues in half the time",
+        "30–60% fewer exploratory meetings",
+        "often 70–80%",
+        "Quick support: ≥ 70%",
+        "Strong support: ≥ 90%",
+        "Reject: ≤ 30%",
+        "Problem solved in 12 minutes",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "When a work problem is unclear, write one plausible explanation, state what you would expect to observe if it were true, run the smallest safe check that could change your mind, and update the hypothesis from the result.",
+        "checkIn": "What did I expect to observe, what actually happened, and what changed in my explanation after the test?"
+      },
+      "faq": [
+        {
+          "id": "start-with-a-hypothesis-faq-1",
+          "question": "What makes a useful work hypothesis?",
+          "answer": "It should name one plausible explanation and one observation that would make the explanation more or less credible. If no result could change your mind, the statement is not useful as a testable hypothesis."
+        },
+        {
+          "id": "start-with-a-hypothesis-faq-2",
+          "question": "How small should the first test be?",
+          "answer": "Small enough to learn something without creating unnecessary risk. Prefer inspection, a limited sample, a reversible check, or a safe reproduction before making a broad change."
+        },
+        {
+          "id": "start-with-a-hypothesis-faq-3",
+          "question": "What if the first test is inconclusive?",
+          "answer": "Record what the test did and did not rule out. Refine the hypothesis or choose a different observation to check instead of treating an ambiguous result as confirmation."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>When a problem is vague, it is easy to jump between logs, meetings, fixes, and theories without knowing what would change your mind. A hypothesis-first approach adds one small discipline: write a plausible explanation, state what you expect to observe if it is true, then run a safe check that can update the explanation.</p>"
+        },
+        "sections": [
+          {
+            "slug": "describe-the-problem",
+            "title": "1. Describe the problem before explaining it",
+            "html": "<p>Write the observable problem in one or two sentences. Separate what you know from what you suspect. For example: <em>Orders created after 10:00 are missing a status value</em> is an observation. <em>The migration broke the status column</em> is already an explanation.</p>"
+          },
+          {
+            "slug": "write-one-hypothesis",
+            "title": "2. Write one plausible explanation",
+            "html": "<p>Choose one explanation worth checking first. Keep it narrow enough that you can imagine evidence against it.</p><p><strong>Hypothesis:</strong> A recent mapping change is dropping the status value for one source type.</p>"
+          },
+          {
+            "slug": "write-the-prediction",
+            "title": "3. State what you expect to observe",
+            "html": "<p>Turn the explanation into a prediction. Ask: <em>If this explanation is right, what pattern should I be able to see?</em></p><p><strong>Prediction:</strong> Missing statuses should occur only for records from that source type after the mapping change.</p><p>A useful prediction is specific enough to inspect but does not need an invented universal threshold.</p>"
+          },
+          {
+            "slug": "run-a-small-safe-check",
+            "title": "4. Run the smallest safe check",
+            "html": "<p>Choose a check that can teach you something without creating a larger incident: inspect a small sample, compare before and after a change, reproduce the case safely, query a relevant log, or test a reversible setting in an appropriate environment.</p><p>The purpose of the first check is information, not proving that your first guess was clever.</p>"
+          },
+          {
+            "slug": "update-the-model",
+            "title": "5. Update the hypothesis from the result",
+            "html": "<p>Record the result in three lines:</p><ul><li><strong>Expected:</strong> what you thought you would see.</li><li><strong>Observed:</strong> what actually happened.</li><li><strong>Next:</strong> keep, change, or reject the explanation and choose the next check.</li></ul><p>For high-impact, safety, legal, or financial decisions, a small exploratory check is not a substitute for the level of validation the decision requires.</p>"
+          },
+          {
+            "slug": "use-in-brali",
+            "title": "6. Keep the reasoning trail in Brali",
+            "html": "<p>Use a task or note for the problem, hypothesis, prediction, and next check. After the result, add a short update rather than rewriting history. Over time, the useful record is not how often your first guess was right; it is how clearly you changed direction when the evidence disagreed.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

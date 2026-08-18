@@ -108,21 +108,24 @@ function decisionSearch(query, k = 3) {
 function structuredRetrieve(query, k = 5) {
   if (safetyPattern.test(query)) return { blocked: true, no_answer: true, topics: [], protocols: [], decisions: [], boundary_only: true };
   const matchedTopics = topicSearch(query, 3);
-  const matchedDecisions = decisionSearch(query, 3).filter(x => x.score >= 6);
+  const matchedDecisions = decisionSearch(query, 3).filter(x => x.score >= 9);
   const bestTopicScore = matchedTopics[0]?.score || 0;
   const bestDecisionScore = matchedDecisions[0]?.score || 0;
-  if (bestTopicScore < 4 && bestDecisionScore < 6) return { blocked: false, no_answer: true, topics: [], protocols: [], decisions: [], boundary_only: false };
+  if (bestTopicScore < 4 && bestDecisionScore < 9) return { blocked: false, no_answer: true, topics: [], protocols: [], decisions: [], boundary_only: false };
   const topicRank = new Map(matchedTopics.map((item, index) => [item.id, matchedTopics.length - index]));
   let ranked = flagships.map(entry => {
     const ids = topicIds(entry);
     const semantic = ids.reduce((sum, id) => sum + (topicRank.get(id) || 0), 0);
     const lexical = lexicalScore(query, [entry.title, entry.description, entry.action, entry.check_in].filter(Boolean).join(' '));
-    const score = semantic * 20 + lexical + Number(entry.quality_score || 0) / 20 + (entry.evidence?.status === 'reviewed' ? 4 : 0);
-    return score > 0 ? { ...entry, topic_ids: ids, retrieval_score: Number(score.toFixed(3)) } : null;
+    if (semantic === 0 && lexical === 0) return null;
+    const score = semantic * 20 + lexical * 3 + Number(entry.quality_score || 0) / 20 + (entry.evidence?.status === 'reviewed' ? 4 : 0);
+    return { ...entry, topic_ids: ids, semantic_score: semantic, lexical_score: lexical, retrieval_score: Number(score.toFixed(3)) };
   }).filter(Boolean).sort((a,b) => b.retrieval_score - a.retrieval_score || a.slug.localeCompare(b.slug));
   if (matchedTopics.length) {
-    const semantic = ranked.filter(entry => entry.topic_ids.some(id => topicRank.has(id)));
-    if (semantic.length) ranked = semantic;
+    const semantic = ranked.filter(entry => entry.semantic_score > 0);
+    const strongLexical = ranked.filter(entry => entry.lexical_score >= 6);
+    const keep = new Set([...semantic, ...strongLexical].map(entry => entry.slug));
+    if (keep.size) ranked = ranked.filter(entry => keep.has(entry.slug));
   }
   const topDecision = matchedDecisions[0];
   const boundaryOnly = Boolean(topDecision?.decision === 'watch' && boundaryCue.test(query));
@@ -154,6 +157,7 @@ function caseResult(test) {
   const actionability = structured.protocols.length ? structured.protocols.every(entry => Boolean(clean(entry.action))) : test.mode !== 'retrieve';
   const evidenceClaims = structured.decisions.length;
   const unsupportedEvidenceClaims = structured.decisions.filter(entry => !entry.source_reviewed || !entry.source_url || !entry.supported_claim).length;
+  const noKnowledgeGrounded = false;
   const needsTopic = targets.length > 0;
   const needsProtocol = expectedProtocols.length > 0;
   const needsDecision = expectedDecisions.length > 0;
@@ -184,7 +188,7 @@ function caseResult(test) {
     query: test.query,
     mode: test.mode,
     expected: { topic_ids: test.expected_topic_ids || [], acceptable_topic_ids: test.acceptable_topic_ids || [], protocol_slugs: expectedProtocols, evidence_decision_ids: expectedDecisions },
-    no_knowledge_control: { grounded: false, protocols: [], evidence_decisions: [] },
+    no_knowledge_control: { grounded: noKnowledgeGrounded, protocols: [], evidence_decisions: [] },
     lexical_brali: { protocol_slugs: rawSlugs, topic_hit: rawTopicHit, protocol_hit: rawProtocolHit, usefulness_proxy: Number(rawUsefulness.toFixed(4)) },
     structured_brali: {
       no_answer: structured.no_answer,

@@ -1,175 +1,27 @@
 {
   "schema_version": 1,
   "default_language": "en",
-  "languages": [
-    "en",
-    "ru"
-  ],
+  "languages": ["en", "ru"],
   "aliases": [
-    {
-      "kind": "domain",
-      "id": "focus-action",
-      "language": "ru",
-      "label": "Фокус и действие",
-      "aliases": [
-        "фокус",
-        "действие",
-        "продуктивность"
-      ]
-    },
-    {
-      "kind": "domain",
-      "id": "learning-thinking",
-      "language": "ru",
-      "label": "Обучение и мышление",
-      "aliases": [
-        "обучение",
-        "мышление"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "attention-focus",
-      "language": "en",
-      "label": "Attention & Focus",
-      "aliases": [
-        "focus",
-        "concentration",
-        "avoid task switching"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "task-initiation",
-      "language": "en",
-      "label": "Task Initiation",
-      "aliases": [
-        "procrastination",
-        "start a task",
-        "get started"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "attention-focus",
-      "language": "ru",
-      "label": "Внимание и фокус",
-      "aliases": [
-        "концентрация",
-        "сосредоточенность",
-        "сосредоточиться"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "task-initiation",
-      "language": "ru",
-      "label": "Начало задачи",
-      "aliases": [
-        "начать задачу",
-        "прокрастинация",
-        "приступить к делу"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "planning-prioritization",
-      "language": "ru",
-      "label": "Планирование и приоритизация",
-      "aliases": [
-        "приоритеты",
-        "планирование"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "habits-consistency",
-      "language": "ru",
-      "label": "Привычки и последовательность",
-      "aliases": [
-        "привычки",
-        "регулярность"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "decision-making",
-      "language": "ru",
-      "label": "Принятие решений",
-      "aliases": [
-        "решения",
-        "выбор"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "stress-regulation",
-      "language": "ru",
-      "label": "Регуляция стресса",
-      "aliases": [
-        "стресс",
-        "снизить стресс"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "sleep-circadian",
-      "language": "ru",
-      "label": "Сон и циркадный ритм",
-      "aliases": [
-        "сон",
-        "режим сна"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "memory",
-      "language": "ru",
-      "label": "Память",
-      "aliases": [
-        "запоминание",
-        "вспоминание"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "language-learning",
-      "language": "ru",
-      "label": "Изучение языков",
-      "aliases": [
-        "учить язык",
-        "иностранный язык"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "critical-thinking",
-      "language": "ru",
-      "label": "Критическое мышление",
-      "aliases": [
-        "проверка утверждений",
-        "оценка доказательств"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "work-systems",
-      "language": "ru",
-      "label": "Рабочие системы",
-      "aliases": [
-        "рабочий процесс",
-        "процессы"
-      ]
-    },
-    {
-      "kind": "topic",
-      "id": "digital-attention",
-      "language": "ru",
-      "label": "Цифровое внимание",
-      "aliases": [
-        "уведомления",
-        "цифровые отвлечения"
-      ]
-    }
+    {"kind":"domain","id":"focus-action","language":"ru","label":"Фокус и действие","aliases":["фокус","действие","продуктивность"]},
+    {"kind":"domain","id":"learning-thinking","language":"ru","label":"Обучение и мышление","aliases":["обучение","мышление"]},
+    {"kind":"topic","id":"attention-focus","language":"en","label":"Attention & Focus","aliases":["focus","concentration","avoid task switching"]},
+    {"kind":"topic","id":"task-initiation","language":"en","label":"Task Initiation","aliases":["procrastination","start a task","get started"]},
+    {"kind":"topic","id":"fitness-strength","language":"en","label":"Fitness & Strength","aliases":["stretch","stretching","mobility","strength routine"]},
+    {"kind":"topic","id":"movement","language":"en","label":"Movement","aliases":["movement break","movement breaks","sitting break","break up sitting"]},
+    {"kind":"topic","id":"memory","language":"en","label":"Memory","aliases":["active recall","remember what I study","remembering","retrieval study"]},
+    {"kind":"topic","id":"metacognition","language":"en","label":"Metacognition","aliases":["check understanding","calibrate confidence","overconfidence","do I really understand"]},
+    {"kind":"topic","id":"attention-focus","language":"ru","label":"Внимание и фокус","aliases":["концентрация","сосредоточенность","сосредоточиться"]},
+    {"kind":"topic","id":"task-initiation","language":"ru","label":"Начало задачи","aliases":["начать задачу","прокрастинация","приступить к делу"]},
+    {"kind":"topic","id":"planning-prioritization","language":"ru","label":"Планирование и приоритизация","aliases":["приоритеты","планирование"]},
+    {"kind":"topic","id":"habits-consistency","language":"ru","label":"Привычки и последовательность","aliases":["привычки","регулярность"]},
+    {"kind":"topic","id":"decision-making","language":"ru","label":"Принятие решений","aliases":["решения","выбор"]},
+    {"kind":"topic","id":"stress-regulation","language":"ru","label":"Регуляция стресса","aliases":["стресс","снизить стресс"]},
+    {"kind":"topic","id":"sleep-circadian","language":"ru","label":"Сон и циркадный ритм","aliases":["сон","режим сна"]},
+    {"kind":"topic","id":"memory","language":"ru","label":"Память","aliases":["запоминание","вспоминание","запоминать","вспоминать"]},
+    {"kind":"topic","id":"language-learning","language":"ru","label":"Изучение языков","aliases":["учить язык","иностранный язык"]},
+    {"kind":"topic","id":"critical-thinking","language":"ru","label":"Критическое мышление","aliases":["проверка утверждений","оценка доказательств"]},
+    {"kind":"topic","id":"work-systems","language":"ru","label":"Рабочие системы","aliases":["рабочий процесс","процессы"]},
+    {"kind":"topic","id":"digital-attention","language":"ru","label":"Цифровое внимание","aliases":["уведомления","цифровые отвлечения"]}
   ]
 }

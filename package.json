@@ -3,7 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/build-life-os.mjs",
-    "check": "node scripts/check-site.mjs"
+    "build": "node scripts/build-life-os.mjs && node scripts/sanitize-generated.mjs",
+    "audit": "node scripts/audit-content.mjs",
+    "audit:strict": "node scripts/audit-content.mjs --strict",
+    "check": "node scripts/check-site.mjs && node scripts/audit-content.mjs --strict"
   }
 }

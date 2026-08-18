@@ -10,16 +10,14 @@ const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overr
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const displayValue = (value) => value == null ? "" : (typeof value === "string" ? value : JSON.stringify(value));
 
-function cleanLegacyBrand(html) {
-  return html
-    .replaceAll("https://metalhatscats.com/life-os", "https://brali-lifeos.github.io/life-os")
-    .replaceAll("http://metalhatscats.com/life-os", "https://brali-lifeos.github.io/life-os")
-    .replaceAll("https://metalhatscats.com", "https://brali-lifeos.github.io")
-    .replaceAll("http://metalhatscats.com", "https://brali-lifeos.github.io")
-    .replaceAll("MetalHatsCats × Brali LifeOS", "Brali LifeOS")
-    .replaceAll("MetalHatsCats / Brali LifeOS", "Brali LifeOS")
-    .replaceAll("MetalHatsCats Team", "Brali LifeOS")
-    .replaceAll("MetalHatsCats", "Brali");
+export function cleanLegacyBrand(html) {
+  return String(html)
+    .replace(/https?:\/\/(?:www\.)?metalhatscats\.com\/life-os/gi, "https://brali-lifeos.github.io/life-os")
+    .replace(/https?:\/\/(?:www\.)?metalhatscats\.com/gi, "https://brali-lifeos.github.io")
+    .replace(/(?:www\.)?metalhatscats\.com/gi, "brali-lifeos.github.io")
+    .replace(/metalhatscats\s*[×/]\s*brali\s+lifeos/gi, "Brali LifeOS")
+    .replace(/metalhatscats\s+team/gi, "Brali LifeOS")
+    .replace(/metalhatscats/gi, "Brali");
 }
 
 function evidenceLabel(evidence, source) {
@@ -59,7 +57,7 @@ function protocolSummary(article, entry, evidence) {
 }
 
 let changed = 0;
-let restricted = 0;
+let withheld = 0;
 let protocolSummaries = 0;
 
 for (const entry of index) {
@@ -79,7 +77,7 @@ for (const entry of index) {
         "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,follow\">",
       );
     }
-    restricted += 1;
+    withheld += 1;
   }
 
   if (!html.includes('data-protocol-summary="true"')) {
@@ -96,4 +94,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${restricted} restricted pages protected from indexing.`);
+console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${withheld} pages withheld from indexing.`);

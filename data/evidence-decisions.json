@@ -18,30 +18,14 @@
       "study_design": "Random-effects meta-analysis with moderator analyses and meta-regression; 142 effect sizes from 51 human experimental studies.",
       "population": "Patients with anterograde amnesia, healthy older adults, and healthy young to middle-aged adults; child studies were too sparse for the main group analysis.",
       "intervention_or_exposure": "A short period of quiet wakeful rest or minimal interference immediately after learning, compared with a post-learning interference task.",
-      "outcomes": [
-        "Delayed declarative-memory performance",
-        "Reduced forgetting after learning"
-      ],
+      "outcomes": ["Delayed declarative-memory performance", "Reduced forgetting after learning"],
       "supported_claim": "A short period of quiet, minimally interfering wakeful rest after learning can reduce forgetting on average. The pooled effect is substantially smaller and less consistent in healthy young to middle-aged adults than in older adults or patient samples.",
-      "unsupported_or_overstated_claims": [
-        "Ten minutes is an optimal or universally evidence-based dose.",
-        "Everyone will remember more after post-learning rest.",
-        "Wakeful rest is equivalent to sleep or replaces adequate sleep.",
-        "A specific posture, eye-closure rule, breathing pattern, or rehearsal instruction is required.",
-        "The protocol is a treatment for memory impairment or dementia."
-      ],
-      "limitations": [
-        "There was moderate to large between-study heterogeneity overall.",
-        "The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.",
-        "Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).",
-        "Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.",
-        "Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.",
-        "The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."
-      ],
+      "unsupported_or_overstated_claims": ["Ten minutes is an optimal or universally evidence-based dose.","Everyone will remember more after post-learning rest.","Wakeful rest is equivalent to sleep or replaces adequate sleep.","A specific posture, eye-closure rule, breathing pattern, or rehearsal instruction is required.","The protocol is a treatment for memory impairment or dementia."],
+      "limitations": ["There was moderate to large between-study heterogeneity overall.","The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.","Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).","Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.","Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.","The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."],
       "target_hack_ids": ["avoid-list-interference-memory-retention"],
       "target_protocol_ids": ["brali:avoid-list-interference-memory-retention"],
       "risk_flags": [],
-      "notes": "Promote only as a conservative personal experiment. Use 'quiet/minimal interference after learning' as the action and treat duration as user-chosen; do not turn the paper title into a universal ten-minute prescription."
+      "notes": "Promote only as a conservative personal experiment. Use quiet/minimal interference after learning as the action and treat duration as user-chosen; do not turn the paper title into a universal ten-minute prescription."
     },
     {
       "schema_version": 1,
@@ -61,23 +45,62 @@
       "intervention_or_exposure": "Night-to-night sleep variability or irregularity across sleep measures.",
       "outcomes": ["Cognitive performance"],
       "supported_claim": "Across the included literature, greater sleep variability was associated with poorer cognitive performance on average, with a small pooled correlation and age moderating the association.",
-      "unsupported_or_overstated_claims": [
-        "Sleep irregularity has been shown to cause cognitive decline.",
-        "Making sleep timing more regular has been shown by this meta-analysis to improve cognition.",
-        "A fixed bedtime or wake-time tolerance can be prescribed from this evidence.",
-        "The association justifies treatment or dementia-prevention claims for an individual."
-      ],
-      "limitations": [
-        "The reviewed evidence is primarily association evidence and does not establish the direction of causality.",
-        "Sleep variability and cognition were operationalized in different ways across studies.",
-        "The pooled association was small (r=-0.12 in the authors' analysis).",
-        "Age moderated the association, so a single population-wide claim would hide meaningful differences.",
-        "The publisher abstract and bibliographic record were directly reviewed for this Brali decision; a causal behavior-change protocol is deliberately not proposed from this source alone."
-      ],
+      "unsupported_or_overstated_claims": ["Sleep irregularity has been shown to cause cognitive decline.","Making sleep timing more regular has been shown by this meta-analysis to improve cognition.","A fixed bedtime or wake-time tolerance can be prescribed from this evidence.","The association justifies treatment or dementia-prevention claims for an individual."],
+      "limitations": ["The reviewed evidence is primarily association evidence and does not establish the direction of causality.","Sleep variability and cognition were operationalized in different ways across studies.","The pooled association was small (r=-0.12 in the authors' analysis).","Age moderated the association, so a single population-wide claim would hide meaningful differences.","The publisher abstract and bibliographic record were directly reviewed for this Brali decision; a causal behavior-change protocol is deliberately not proposed from this source alone."],
       "target_hack_ids": [],
       "target_protocol_ids": [],
       "risk_flags": ["health"],
-      "notes": "Use this source to justify maintaining Sleep & Circadian Rhythm as a research Topic and to motivate further intervention-focused discovery. Do not publish 'regular sleep improves cognition' from this evidence."
+      "notes": "Use this source to justify maintaining Sleep & Circadian Rhythm as a research Topic and to motivate further intervention-focused discovery. Do not publish regular sleep improves cognition from this evidence."
+    },
+    {
+      "schema_version": 1,
+      "id": "testing-effect-direct-forward-2026",
+      "candidate_id": "crossref:10.1037/xlm0001634",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
+      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "source_type": "meta-analysis",
+      "doi": "10.1037/xlm0001634",
+      "citation_text": "Gereau AD, Mulligan NW. Journal of Experimental Psychology: Learning, Memory, and Cognition. 2026. Online ahead of print.",
+      "source_reviewed": true,
+      "study_design": "Meta-analysis of free-recall testing effects distinguishing studies capable of isolating the direct testing effect from mixed designs susceptible to both direct and forward testing effects.",
+      "population": "Human participants in the free-recall testing-effect literature included in the reviewed meta-analysis.",
+      "intervention_or_exposure": "Retrieval practice/testing compared with non-testing study conditions, classified by whether the design isolates memory for tested material or also permits forward effects on subsequently learned material.",
+      "outcomes": ["Free recall of tested material", "Free recall of subsequently learned material"],
+      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "unsupported_or_overstated_claims": ["A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.","Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.","Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.","A broad testing-effect citation is sufficient evidence for skill transfer or correct application."],
+      "limitations": ["The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.","Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.","The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."],
+      "target_hack_ids": ["active-recall-test-yourself"],
+      "target_protocol_ids": ["brali:active-recall-test-yourself"],
+      "risk_flags": [],
+      "notes": "Use this decision to remove undifferentiated testing-effect language from Brali. Public guidance should say what outcome is being trained: remembering tested material, later learning, or application."
+    },
+    {
+      "schema_version": 1,
+      "id": "retrieval-procedural-application-2026",
+      "candidate_id": "crossref:10.1016/j.learninstruc.2026.102377",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "source_type": "primary-study",
+      "doi": "10.1016/j.learninstruc.2026.102377",
+      "citation_text": "Ophuis-Cox FHA, Catrysse L, Camp G. Learning and Instruction. 2026;104:102377.",
+      "source_reviewed": true,
+      "study_design": "Cluster-randomized classroom experiment comparing worked examples with worked examples plus retrieval practice, with outcomes tested after one week.",
+      "population": "105 fourth-grade pupils from regular primary schools in the Netherlands, mean age 9.4 years.",
+      "intervention_or_exposure": "Dutch verb-spelling instruction using worked examples alone or worked examples combined with retrieval practice across practice sessions.",
+      "outcomes": ["Long-term retention of verb-spelling rules", "Correct application of verb-spelling rules"],
+      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "unsupported_or_overstated_claims": ["Remembering a rule better means a learner can apply it better.","Retrieval practice alone is sufficient practice for procedural skill application.","This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.","The specific classroom protocol should be copied as a universal learning recipe."],
+      "limitations": ["The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.","The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.","The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.","The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."],
+      "target_hack_ids": ["active-recall-test-yourself"],
+      "target_protocol_ids": ["brali:active-recall-test-yourself"],
+      "risk_flags": [],
+      "notes": "Brali should keep active recall as a retention-oriented method but explicitly add application practice when the real goal is using a rule or procedure."
     }
   ]
 }

@@ -16,13 +16,16 @@ Brali's core loop is: choose -> practice -> review. The product combines a publi
 - Growth Library datasets: https://brali-lifeos.github.io/life-os/datasets/
 - Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
 - Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
+- Search indexing policy: https://brali-lifeos.github.io/life-os/datasets/indexing.json
 - Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
 
 ## Content interpretation
 
-Growth Library entries have explicit evidence states: `reviewed`, `practical`, `pending-review`, or `restricted`. Sensitive health and mental-health entries that do not meet the evidence bar are excluded from search indexing. Evidence state is machine-readable in the public evidence dataset and visible in each generated protocol summary.
+Growth Library entries have explicit evidence states: `reviewed`, `practical`, `pending-review`, or `restricted`. Search indexing is earned: only `reviewed` and `practical` entries are included in the sitemap. `pending-review` and `restricted` entries remain accessible at stable URLs but use `noindex,follow` until the quality bar is met.
 
-The library is a set of starting points for personal practice, not medical diagnosis or treatment guidance. A recorded source does not by itself mean an entry has completed editorial review.
+Evidence state is machine-readable in the public evidence dataset and visible in each generated protocol summary. A recorded source does not by itself mean an entry has completed editorial review.
+
+The library is a set of starting points for personal practice, not medical diagnosis or treatment guidance.
 
 ## Data and privacy
 

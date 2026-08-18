@@ -4,14 +4,26 @@
 
 Brali's core loop is: choose -> practice -> review. The product combines a public Growth Library with planning, Focus sessions, challenges, check-ins, journals, time logs, and personal metrics so users can try a practice and keep their own record of what happened.
 
-- Canonical website: https://brali-lifeos.github.io/
+## Canonical product resources
+
+- Website: https://brali-lifeos.github.io/
 - Growth Library: https://brali-lifeos.github.io/life-os/
+- Life Areas: https://brali-lifeos.github.io/life-os/areas/
 - Features: https://brali-lifeos.github.io/features/
 - Getting started: https://brali-lifeos.github.io/docs/
 - Privacy: https://brali-lifeos.github.io/privacy/
 - Product facts: https://brali-lifeos.github.io/product-facts.json
 - Growth Library datasets: https://brali-lifeos.github.io/life-os/datasets/
+- Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
+- Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
+- Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
+
+## Content interpretation
+
+Growth Library entries have explicit evidence states: `reviewed`, `practical`, `pending-review`, or `restricted`. Sensitive health and mental-health entries that do not meet the evidence bar are excluded from search indexing. Evidence state is machine-readable in the public evidence dataset and visible in each generated protocol summary.
+
+The library is a set of starting points for personal practice, not medical diagnosis or treatment guidance. A recorded source does not by itself mean an entry has completed editorial review.
+
+## Data and privacy
 
 Brali app data is stored locally on the user device. The app includes backup, restore, and export tools. The static website does not use a login, contact form, advertising, or third-party analytics scripts.
-
-The Growth Library contains practical guidance with different evidence maturity. Sensitive health and mental-health entries without explicit source review are kept out of search indexing until reviewed. The library should be interpreted as a set of starting points for personal practice, not as medical diagnosis or treatment guidance.

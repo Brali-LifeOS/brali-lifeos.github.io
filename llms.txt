@@ -2,66 +2,55 @@
 
 > A practical knowledge library for people, developers, researchers, and AI agents.
 
-Brali publishes practical protocols grouped by Life Area and Growth Zone. Each protocol can include an action, check-in, evidence state, and source page. The original Brali LifeOS app is still available, but the library and data are now the main project.
+Brali publishes atomic practical hacks, executable protocols, taxonomy, evidence states, research candidates, and machine-readable contracts. The original Brali LifeOS app is still available, but the knowledge library and data are now the main project.
+
+## Knowledge model
+
+- Life Area: broad human need or destination.
+- Growth Zone: narrower topic inside a Life Area.
+- Hack: the smallest reusable practical technique.
+- Protocol: an executable sequence or personal experiment that can reference one or more hacks.
+- Evidence state: `reviewed`, `practical`, `pending-review`, or `restricted`.
+- Research candidate: unreviewed discovery metadata. It is not evidence.
+- Evidence decision: explicit review result after reading the actual source.
+
+Research promotion path: `research candidate -> evidence decision -> hack -> protocol -> taxonomy -> publish`.
 
 ## Main pages
 
 - Website: https://brali-lifeos.github.io/
 - Growth Library: https://brali-lifeos.github.io/life-os/
-- Life Areas: https://brali-lifeos.github.io/life-os/areas/
 - Selected protocols: https://brali-lifeos.github.io/life-os/flagships/
 - Research & trends: https://brali-lifeos.github.io/research/
 - Methodology: https://brali-lifeos.github.io/life-os/methodology/
-- FAQ: https://brali-lifeos.github.io/faq/
+- Agents & skills: https://brali-lifeos.github.io/agents/
 - For AI & developers: https://brali-lifeos.github.io/for-ai/
 - Partnerships: https://brali-lifeos.github.io/partners/
 
-## Research notes
-
-- Habit formation timelines: https://brali-lifeos.github.io/research/habits-take-time/
-- RAG and AI reliability: https://brali-lifeos.github.io/research/rag-is-not-a-trust-button/
-
-Research notes explain source-backed findings and product implications. They are not automatically trusted protocols and should not be treated as a separate recommendation feed.
-
 ## Machine-readable data
 
-- Data catalog: https://brali-lifeos.github.io/life-os/datasets/
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
 - Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
-- Review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
-- Indexing status: https://brali-lifeos.github.io/life-os/datasets/indexing.json
-- Dataset manifest: https://brali-lifeos.github.io/life-os/datasets/manifest.json
+- Existing content review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
+- Research search lenses: https://brali-lifeos.github.io/data/research-queries.json
+- Research candidate queue: https://brali-lifeos.github.io/data/research-candidates.json
+- Agent registry: https://brali-lifeos.github.io/agents/registry.json
 
-## Recommended use
+## Contracts
 
-For normal recommendation or retrieval, start with the Trusted Protocol Feed. Each record includes a `protocol_id`, `language`, canonical URL, title, Life Area, Growth Zone, action, keywords, and evidence state.
+- Hack: https://brali-lifeos.github.io/contracts/hack.schema.json
+- Protocol: https://brali-lifeos.github.io/contracts/protocol.schema.json
+- Research Candidate: https://brali-lifeos.github.io/contracts/research-candidate.schema.json
+- Evidence Decision: https://brali-lifeos.github.io/contracts/evidence-decision.schema.json
 
-For a `reviewed` protocol, `evidence.source_url` may contain the external source that passed review. Brali does not expose an unreviewed external source in this field for `practical` entries.
+## Agent skills
 
-Keep the evidence state when reusing a protocol. Do not turn a practical suggestion into a scientific claim.
+- Research Discovery: https://brali-lifeos.github.io/skills/research-discovery/SKILL.md
+- Evidence Review: https://brali-lifeos.github.io/skills/evidence-review/SKILL.md
+- Protocol Design: https://brali-lifeos.github.io/skills/protocol-design/SKILL.md
+- Taxonomy Curation: https://brali-lifeos.github.io/skills/taxonomy-curation/SKILL.md
 
-## Evidence states
+For normal recommendation or retrieval, start with the Trusted Protocol Feed. For maintenance or research work, start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
 
-- `reviewed`: stronger claims have traceable sources and passed editorial review.
-- `practical`: a low-risk practical suggestion.
-- `pending-review`: still needs review.
-- `restricted`: sensitive material that does not yet meet the public evidence bar.
-
-Only `reviewed` and `practical` entries enter the Trusted Protocol Feed.
-
-## Languages
-
-English is the main published language today. Future translations should keep the same `protocol_id` and use a different `language` value. Do not assume a translation exists unless a published route or record is available.
-
-## MCP
-
-The public interface today is the static dataset layer. A future MCP service may add search and read tools over the same records. Do not invent API or MCP endpoints that are not published.
-
-## Licensing
-
-The current public license is non-commercial. Commercial products, paid services, commercial AI use, model training, or paid redistribution require a separate agreement. See https://brali-lifeos.github.io/partners/ and `LICENSING.md` in the repository.
-
-## Safety
-
-Brali is general educational and personal-development material. It is not medical, legal, or financial advice. Sensitive topics have a higher review bar.
+Only `reviewed` and `practical` entries enter the Trusted Protocol Feed. English is the main published language today. The public interface today is the static dataset/contract layer; a future MCP service may add tools over the same records. The current public license is non-commercial; commercial use requires a separate agreement.

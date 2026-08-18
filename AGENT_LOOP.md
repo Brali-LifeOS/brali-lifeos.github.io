@@ -2,125 +2,97 @@
 
 ## Goal
 
-Make Brali the most trustworthy and practical local-first system for turning useful ideas into personal experiments.
+Make Brali a trustworthy and practical system for turning useful ideas into personal experiments.
 
-Optimize for four things, in this order:
+Optimize for: trust, clarity, usefulness, then discovery. New content volume is not a goal by itself.
 
-1. Trust: claims are defensible, sensitive guidance is conservative, and discovery never outruns review.
-2. Clarity: a new visitor understands the product loop quickly: choose -> practice -> review.
-3. Usefulness: Growth Library entries behave like executable protocols rather than a pile of long articles.
-4. Discovery: people, search engines, and AI tools can find the strongest material without rewarding weak page volume.
+## Knowledge loop
 
-## Loop
+`research candidate -> evidence decision -> hack -> protocol -> public discovery`
 
-Each iteration follows the same sequence:
+- **Research candidate**: an unreviewed lead.
+- **Evidence decision**: explicit result of reading the actual source.
+- **Hack**: an atomic reusable practical technique.
+- **Protocol**: an executable sequence or personal experiment that can combine hacks.
 
-1. Inspect
-   - Review repository outputs, content-quality datasets, current public pages when reachable, and search/indexing signals.
-   - Prefer generated evidence over assumptions.
+No agent may jump from a title, DOI, abstract, citation count, search result, or AI summary directly to `reviewed` content.
 
-2. Prioritize
-   - Fix trust and editorial problems before adding more content volume.
-   - Prefer changes that improve many entries through data models, generators, or checks.
+## Editorial agents
 
-3. Change
-   - Keep the static-site architecture simple and local-first.
-   - Make small reversible changes on an agent branch.
-   - Preserve canonical URLs and source records unless a migration explicitly requires otherwise.
+The public registry is `/agents/registry.json`.
 
-4. Validate
-   - Run the deterministic build and strict repository checks.
-   - Evidence state, `noindex`, sitemap membership, related recommendations, Protocol Feed membership, structured data, titles, and public trust pages must agree.
+1. **Research Scout** finds recent research and updates the candidate queue. It cannot publish.
+2. **Evidence Reviewer** reads the actual source and decides whether it supports, challenges, rejects, or suggests content.
+3. **Protocol Builder** turns accepted atomic actions into short executable protocols.
+4. **Taxonomy Curator** maps knowledge into Life Areas, Growth Zones, and method tags without breaking stable URLs.
 
-5. Review
-   - Look for ways the change could accidentally overstate evidence, hide provenance, break discovery, or make the product harder to understand.
-   - Do not treat a recorded source as reviewed evidence.
+Reusable instructions live under `/skills/`; machine-readable shapes live under `/contracts/`.
 
-6. Continue
-   - Pick the next highest-leverage unfinished item below.
+## Iteration loop
 
-## Foundation completed on 2026-08-18
+1. **Inspect** repository outputs, evidence queues, research candidates, and public pages.
+2. **Prioritize** trust/editorial problems before more content volume.
+3. **Change** through small reversible branch changes. Keep discovery, review, hack authoring, protocol composition, and taxonomy as separate handoffs.
+4. **Validate** the deterministic build, strict content checks, research mappings, contracts, evidence/indexing states, and public discovery.
+5. **Review** for overstated evidence, hidden provenance, duplicate hacks, broken URLs, and needless complexity.
+6. **Continue** with the highest-leverage unfinished item.
 
-The following are now infrastructure, not backlog items:
+## Foundation
 
-- Brali positioning is centered on personal experiments and the `choose -> practice -> review` loop.
-- Legacy MetalHatsCats branding is removed from generated public pages.
-- Every Growth Library entry receives a compact Protocol Summary with action, check-in, and evidence state.
-- Evidence states are explicit: `reviewed`, `practical`, `pending-review`, and `restricted`.
-- Manual editorial decisions are traceable through `data/evidence-overrides.json`.
-- Only `reviewed` and `practical` entries earn sitemap/search discovery; other entries remain available with `noindex,follow`.
-- Seven human-friendly Life Areas sit above the 49 detailed Growth Zones.
-- Malformed public titles are normalized without destroying original source titles.
-- Article structured data includes publisher, breadcrumbs, canonical entity relationships, and reliable `lastmod` values.
-- Related-protocol links form a trust-aware internal graph and recommend only discovery-eligible entries.
-- The Growth Library has local client-side search filtered by the evidence/indexing model.
-- A compact Trusted Protocol Feed is available for AI tools and integrations.
-- A public Content Methodology page explains the evidence and indexing rules using generated counts.
-- CI checks enforce the trust, indexing, related-link, feed, title, search, and structured-data contracts.
+Brali already has explicit evidence states (`reviewed`, `practical`, `pending-review`, `restricted`), review queues, Life Areas and Growth Zones, trust-aware indexing, local search, structured data, related protocols, a Trusted Protocol Feed, and content-quality checks.
 
-## Current priority queue
+The research layer adds:
 
-### P0 - Editorial evidence review
+- Hack, Protocol, Research Candidate, and Evidence Decision contracts;
+- Research Scout, Evidence Reviewer, Protocol Builder, and Taxonomy Curator roles;
+- provider-neutral skill files;
+- explicit research queries mapped to the taxonomy;
+- a weekly Crossref discovery workflow that only updates an unreviewed queue;
+- a machine-readable agent registry;
+- sitemap and AI/developer discovery for the new layer.
 
-This is now the most important work. Infrastructure can detect weak content; it cannot replace source review.
+## Priority queue
 
-- Work through `life-os/datasets/review-queue.json`, `restricted` first.
-- Prioritize unsupported percentages, sample sizes, clinical-sounding outcomes, and phrases such as `research shows`.
-- For each reviewed entry, verify the external source actually supports the wording.
-- Remove unsupported precision instead of attaching a vaguely related citation.
-- Record `reviewed_at`, `reviewed_by`, and a short review note in `data/evidence-overrides.json`.
-- Review generic FAQ claims such as habit-formation timelines and other repeated assertions inherited across many entries.
+### P0 — Evidence review
 
-### P1 - Stronger protocol content
+Work through existing `restricted` and `pending-review` material. Verify that sources support exact wording. Remove unsupported precision rather than attaching vaguely related citations. Record review provenance.
 
-- Identify a smaller set of flagship protocols in each Life Area.
-- Make the first screen answer: problem, action, check-in, duration/review point, and stop/change rule.
-- Reduce reliance on multi-thousand-word background articles where a compact protocol is sufficient.
-- Preserve useful deep background as optional detail rather than forcing it before the action.
-- Add explicit review horizons where the source material supports them.
+### P1 — Continuous research discovery
 
-### P2 - Taxonomy refinement
+Maintain `data/research-queries.json`. Let the weekly scout update `data/research-candidates.json`. Prioritize systematic reviews, meta-analyses, guidelines, replications, strong primary work, and useful negative/null findings. Triage only after reading the relevant source into: `rejected`, `watch`, `support-existing`, `challenge-existing`, `propose-hack`, or `propose-protocol`.
 
-- Keep all existing Growth Zone URLs stable.
-- Separate broad life areas from method lenses more clearly. CBT, Stoicism, TRIZ, Game Theory, Gestalt, and similar methods should increasingly behave like methods/tags rather than peer life destinations.
-- Improve method tags and cross-area relationships using the existing Protocol Feed.
-- Review ambiguous or low-value zone names inherited from the old taxonomy.
+Prefer research that corrects or strengthens existing content over research that merely creates another page.
 
-### P3 - Product proof and activation
+### P2 — Stronger hacks and protocols
 
-- Add authentic in-app screenshots only when real captures are available; do not simulate screenshots.
-- Show the real path from a Growth Library protocol to action/check-in/review in the application.
-- Keep store naming, Brali branding, privacy wording, and website claims aligned.
-- Improve the getting-started path around one first experiment rather than module setup.
+Gradually separate atomic hacks from composed protocols without breaking current public URLs. Prefer 1–5 steps, explicit check-ins, review points, and stop/change rules. Reuse hack identity instead of duplicating the same technique under new names. Do not invent durations, percentages, mechanisms, or guarantees.
 
-### P4 - Discovery monitoring
+### P3 — Taxonomy refinement
 
-- Monitor recrawl/index coverage after the earned-indexing migration.
-- Compare indexed URLs with `life-os/datasets/indexing.json` rather than aiming for maximum page count.
-- Watch which Life Areas and protocol queries produce impressions before expanding content.
-- Keep `llms.txt`, `product-facts.json`, the Protocol Feed, methodology page, and structured data synchronized.
-- Add new indexed content only when it meets the same evidence and protocol-quality bar.
+Keep existing Growth Zone URLs stable. Separate broad life destinations from method lenses more clearly. Prefer tags over new zones when the new term is a method, synonym, or narrow subtopic.
 
-## Definition of done for an indexable Growth Library entry
+### P4 — Discovery and integrations
 
-An entry is discovery-eligible only when it is `reviewed` or `practical` and has:
+Keep `llms.txt`, agent registry, contracts, Trusted Protocol Feed, methodology, structured data, and sitemap synchronized. Add a versioned API or MCP layer only over the same canonical knowledge model.
 
-- a clear problem or use case;
-- a concrete action or protocol;
-- a realistic check-in or observable signal;
+## Definition of done for research-derived content
+
+Before research-derived content becomes discovery-eligible, it needs:
+
+- a clear user problem and concrete action;
+- an appropriate evidence state;
+- traceable source review, not just a source URL;
+- wording scoped to the studied population/intervention/outcomes;
+- limitations and safety framing when relevant;
+- stable taxonomy and canonical identity;
 - no unsupported precise quantitative claims;
-- traceable sources for evidence-like claims when sources are required;
-- an appropriate safety framing for sensitive topics;
-- current Brali branding;
-- a useful public display title;
-- canonical and structured metadata;
-- related links that point only to discovery-eligible material.
+- a traceable handoff from research candidate/evidence decision to the public claim.
 
 ## Non-goals
 
 - Becoming another generic all-in-one productivity app.
-- Increasing sitemap size as a success metric.
+- Increasing page count or sitemap size as a success metric.
 - Using scientific language to make weak guidance sound authoritative.
 - Treating a source URL as proof that review happened.
-- Inventing app screenshots or features that are not in the shipped product.
-- Adding framework complexity without a clear user, editorial, or maintenance benefit.
+- Letting an agent auto-publish a hack because a paper title sounds relevant.
+- Creating new taxonomy zones for every new research term.

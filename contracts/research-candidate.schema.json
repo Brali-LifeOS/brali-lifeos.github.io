@@ -1,0 +1,19 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://brali-lifeos.github.io/contracts/research-candidate.schema.json",
+  "title":"Brali Research Candidate",
+  "description":"Unreviewed scholarly record discovered by the research scout. A candidate is not evidence and must not be promoted automatically.",
+  "type":"object","additionalProperties":false,
+  "required":["id","source","source_id","title","discovered_at","last_seen_at","status","query_ids","life_area_slugs","zone_slugs","reference_url","risk_flags"],
+  "properties":{
+    "id":{"type":"string"},"source":{"const":"crossref"},"source_id":{"type":"string"},"doi":{"type":["string","null"]},
+    "title":{"type":"string","minLength":3},"authors":{"type":"array","items":{"type":"string"}},"container_title":{"type":["string","null"]},
+    "publication_date":{"type":["string","null"]},"type":{"type":["string","null"]},"subjects":{"type":"array","items":{"type":"string"}},
+    "reference_url":{"type":"string","format":"uri"},"discovered_at":{"type":"string","format":"date-time"},"last_seen_at":{"type":"string","format":"date-time"},
+    "status":{"type":"string","enum":["new","screening","watch","rejected","support-existing","challenge-existing","propose-hack","propose-protocol"]},
+    "query_ids":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "life_area_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "zone_slugs":{"type":"array","minItems":1,"items":{"type":"string"},"uniqueItems":true},
+    "risk_flags":{"type":"array","items":{"type":"string"},"uniqueItems":true},"crossref_score":{"type":["number","null"]},"review_notes":{"type":"string"}
+  }
+}

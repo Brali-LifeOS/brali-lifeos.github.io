@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source": "crossref",
+  "description": "Search lenses for discovering new research that may improve Brali hacks and protocols. Discovery is intentionally broad; evidence review is a separate gate.",
+  "queries": [
+    {"id":"focus-implementation-intentions","life_area_slug":"focus-execution","zone_slugs":["do-it","future-builder"],"query":"implementation intentions goal attainment behavior change intervention","risk_flags":[]},
+    {"id":"focus-procrastination","life_area_slug":"focus-execution","zone_slugs":["do-it","grow-fast"],"query":"procrastination intervention self regulation task initiation systematic review","risk_flags":["mental-health"]},
+    {"id":"mind-psychological-flexibility","life_area_slug":"mind-resilience","zone_slugs":["act","be-calm","thinking"],"query":"psychological flexibility acceptance commitment daily life systematic review","risk_flags":["mental-health","clinical"]},
+    {"id":"mind-reappraisal","life_area_slug":"mind-resilience","zone_slugs":["be-calm","cbt","thinking"],"query":"cognitive reappraisal emotion regulation meta analysis everyday","risk_flags":["mental-health"]},
+    {"id":"health-sleep-regularity","life_area_slug":"health-energy","zone_slugs":["be-healthy"],"query":"sleep regularity health behavior systematic review adults","risk_flags":["health"]},
+    {"id":"health-movement-breaks","life_area_slug":"health-energy","zone_slugs":["fit-life","be-healthy"],"query":"sedentary breaks light physical activity workplace systematic review","risk_flags":["health"]},
+    {"id":"learning-retrieval-practice","life_area_slug":"learning-thinking","zone_slugs":["skill-sprint","language"],"query":"retrieval practice spaced practice learning meta analysis education","risk_flags":[]},
+    {"id":"learning-interleaving","life_area_slug":"learning-thinking","zone_slugs":["skill-sprint","thinking"],"query":"interleaving practice learning systematic review transfer","risk_flags":[]},
+    {"id":"communication-active-listening","life_area_slug":"communication-relationships","zone_slugs":["talk-smart","relationships"],"query":"active listening interpersonal communication intervention review","risk_flags":[]},
+    {"id":"relationships-repair","life_area_slug":"communication-relationships","zone_slugs":["relationships","grow-together"],"query":"relationship repair conflict communication couples systematic review","risk_flags":["mental-health"]},
+    {"id":"creativity-incubation","life_area_slug":"creativity-expression","zone_slugs":["be-creative"],"query":"creativity incubation effect divergent thinking meta analysis","risk_flags":[]},
+    {"id":"writing-feedback","life_area_slug":"creativity-expression","zone_slugs":["writing"],"query":"writing feedback revision learning systematic review","risk_flags":[]},
+    {"id":"work-decision-hygiene","life_area_slug":"work-money-strategy","zone_slugs":["work","avoid-errors","thinking"],"query":"decision making checklist premortem debiasing systematic review workplace","risk_flags":[]},
+    {"id":"work-feedback","life_area_slug":"work-money-strategy","zone_slugs":["work","as-qa"],"query":"feedback intervention performance meta analysis workplace learning","risk_flags":[]}
+  ]
+}

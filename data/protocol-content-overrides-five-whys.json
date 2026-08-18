@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "5-whys-goal-clarity": {
+      "title": "Ask Why Until a Goal Becomes Clearer",
+      "description": "Use repeated why questions to examine what is behind a goal, then turn the useful insight into a next step. Five questions are a prompt, not a requirement or a guarantee of finding one root cause.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited personal-goal adaptation of Five Whys containing unsupported research claims, fabricated examples presented as observations, arbitrary scoring rules and prescriptive numbers with a simple reflection protocol that acknowledges multiple causes and uncertain answers.",
+      "forbidden_public_fragments": [
+        "Studies and practice show that asking 4–7",
+        "We assumed people only needed clarity",
+        "3 of 10 job ads",
+        "Portfolio mentions were in 8 of 10",
+        "Impact / Effort ratio",
+        "$1,200/month",
+        "$5,000 in 6 months",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Take one goal or problem and ask why it matters. Repeat the question while the answers are still useful, then turn the clearest insight into one next step or one question to verify.",
+        "whatYouDo": "Write one goal or problem, ask why it matters, and continue asking why while each answer adds something useful. Stop when the answers become repetitive, speculative, or split into different causes. Then choose one next step or one assumption to check.",
+        "checkIn": "Did the questions reveal a useful reason, assumption, or constraint, and what will I do or verify next?"
+      },
+      "faq": [
+        {
+          "id": "5-whys-goal-clarity-faq-1",
+          "question": "Do I need to ask why exactly five times?",
+          "answer": "No. Five is a memorable prompt. Stop earlier if the useful answer is already clear, or continue carefully if another question adds value."
+        },
+        {
+          "id": "5-whys-goal-clarity-faq-2",
+          "question": "Will this reveal the true root cause?",
+          "answer": "Not necessarily. Personal goals and real-world problems can have several causes. Treat your answers as hypotheses to examine, not hidden truths discovered by the fifth question."
+        },
+        {
+          "id": "5-whys-goal-clarity-faq-3",
+          "question": "What should I do with the final answer?",
+          "answer": "Use it to choose a next action or identify something that needs checking. If the answer does not change what you would do, the exercise may have reached its useful limit."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Repeatedly asking why can help unpack a vague goal or problem. It is best used as a thinking prompt, not as a machine that guarantees one hidden root cause. The useful output is a clearer reason, assumption, constraint, or next step.</p>"
+        },
+        "sections": [
+          {
+            "slug": "write-one-question",
+            "title": "1. Start with one goal or problem",
+            "html": "<p>Write the situation in plain language: <em>I want to change roles</em>, <em>I keep delaying this project</em>, or <em>I want to learn this skill</em>. Keep the starting statement concrete enough to discuss.</p>"
+          },
+          {
+            "slug": "ask-why",
+            "title": "2. Ask why it matters or why it happens",
+            "html": "<p>Answer the first why as simply as you can. Then ask why about that answer. Do not force a deep-sounding response. A practical constraint such as time, money, skill, or uncertainty may be more useful than an abstract motive.</p>"
+          },
+          {
+            "slug": "notice-branches",
+            "title": "3. Notice when the answer branches",
+            "html": "<p>If several reasons appear, write them separately. Do not squeeze a complex situation into one root cause just to complete the exercise. You can explore the most relevant branch first.</p>"
+          },
+          {
+            "slug": "separate-facts-from-guesses",
+            "title": "4. Separate facts from guesses",
+            "html": "<p>Mark answers that are assumptions about other people, the market, your abilities, or future outcomes. Those are useful because they tell you what may need evidence rather than another round of introspection.</p>"
+          },
+          {
+            "slug": "choose-next-step",
+            "title": "5. Turn the useful insight into a next step",
+            "html": "<p>Choose one action or one check. You might ask for feedback, compare options, make a small test, gather missing information, or change the goal. Clarity matters most when it changes a decision.</p>"
+          },
+          {
+            "slug": "stop-when-repetitive",
+            "title": "6. Stop when the questions stop helping",
+            "html": "<p>If the answers become repetitive, increasingly speculative, or emotionally circular, stop. The number of whys is less important than whether the exercise produced something you can use.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

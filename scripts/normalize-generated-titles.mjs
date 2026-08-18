@@ -10,12 +10,14 @@ const knownSlugs = new Set(index.map((entry) => entry.slug));
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
+const overrideTitle = (override) => clean(typeof override === "string" ? override : override?.display_title);
 const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|while|when|if|of|in|on|at|by|the|a|an)|[,;:—-])$/i;
 
 for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
   if (!knownSlugs.has(slug)) throw new Error(`Title override references unknown entry: ${slug}`);
-  if (!clean(override.display_title)) throw new Error(`Title override for ${slug} must provide display_title.`);
-  if (clean(override.display_title).length > 100) throw new Error(`Title override for ${slug} exceeds 100 characters.`);
+  const title = overrideTitle(override);
+  if (!title) throw new Error(`Title override for ${slug} must provide a display title.`);
+  if (title.length > 100) throw new Error(`Title override for ${slug} exceeds 100 characters.`);
 }
 
 function titleIssue(title) {
@@ -26,7 +28,7 @@ function titleIssue(title) {
 }
 
 function displayTitle(entry) {
-  const manual = clean(overrides.entries?.[entry.slug]?.display_title);
+  const manual = overrideTitle(overrides.entries?.[entry.slug]);
   if (manual) return { title: manual, reason: "manual" };
 
   const original = clean(entry.title);

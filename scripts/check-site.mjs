@@ -94,4 +94,4 @@ if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries
 }
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, risk-ranked editorial queue, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, priority-ranked editorial queue, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

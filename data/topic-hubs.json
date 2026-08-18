@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "name": "Brali Topic Knowledge Hubs",
+  "max_protocols_per_hub": 8,
+  "hubs": [
+    {
+      "slug": "sleep",
+      "title": "Sleep",
+      "question": "How can I build a more reliable sleep routine without turning weak evidence into a prescription?",
+      "summary": "Build routines around sleep timing, recovery, and environment while keeping observational findings separate from causal claims.",
+      "primary_topic_ids": ["sleep-circadian"],
+      "related_topic_ids": ["recovery-energy", "health-basics"]
+    },
+    {
+      "slug": "focus",
+      "title": "Focus",
+      "question": "How can I start important work and stay with it instead of constantly switching?",
+      "summary": "Reduce switching, lower task-start friction, and protect attention with bounded work structures and explicit priorities.",
+      "primary_topic_ids": ["attention-focus", "task-initiation", "planning-prioritization"],
+      "related_topic_ids": ["goals", "habits-consistency", "digital-attention"]
+    },
+    {
+      "slug": "memory",
+      "title": "Memory",
+      "question": "How can I remember what I learn without confusing retention with application?",
+      "summary": "Improve retention with retrieval, interference management, and conservative post-learning practices while separating memory from skill transfer.",
+      "primary_topic_ids": ["memory"],
+      "related_topic_ids": ["skill-learning", "metacognition"]
+    },
+    {
+      "slug": "stress",
+      "title": "Stress",
+      "question": "What low-risk practices can help me respond to stress without treating a knowledge library like clinical care?",
+      "summary": "Use bounded regulation, controllability, and self-awareness practices while keeping treatment claims outside Brali's practical layer.",
+      "primary_topic_ids": ["stress-regulation", "emotion-regulation", "worry-rumination"],
+      "related_topic_ids": ["psychological-flexibility", "self-awareness", "fear-confidence"]
+    },
+    {
+      "slug": "habits",
+      "title": "Habits",
+      "question": "How can I make a useful behavior easier to repeat consistently?",
+      "summary": "Lower friction, use reliable cues, and review what actually happened instead of relying on motivation as a permanent fuel source.",
+      "primary_topic_ids": ["habits-consistency"],
+      "related_topic_ids": ["goals", "task-initiation", "environment-design"]
+    },
+    {
+      "slug": "learning",
+      "title": "Learning",
+      "question": "How can I learn through retrieval, practice, feedback, and application rather than passive exposure?",
+      "summary": "Combine retrieval, feedback, and application practice while distinguishing remembering information from being able to use it.",
+      "primary_topic_ids": ["skill-learning", "language-learning", "metacognition"],
+      "related_topic_ids": ["memory", "critical-thinking", "revision-feedback"]
+    },
+    {
+      "slug": "movement",
+      "title": "Movement & Exercise",
+      "question": "How can I move more and build sustainable physical routines without inventing a magic cognitive break dose?",
+      "summary": "Break up sedentary time and support sustainable movement, mobility, and strength while keeping exploratory cognition findings in bounds.",
+      "primary_topic_ids": ["movement", "fitness-strength", "recovery-energy"],
+      "related_topic_ids": ["health-basics", "cardiovascular-health"]
+    }
+  ]
+}

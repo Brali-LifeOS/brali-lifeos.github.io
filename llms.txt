@@ -29,6 +29,7 @@ Research notes explain source-backed findings and product implications. They are
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
 - Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
+- Protocol aliases: https://brali-lifeos.github.io/life-os/datasets/aliases.json
 - Review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
 - Indexing status: https://brali-lifeos.github.io/life-os/datasets/indexing.json
 - Dataset manifest: https://brali-lifeos.github.io/life-os/datasets/manifest.json
@@ -36,6 +37,8 @@ Research notes explain source-backed findings and product implications. They are
 ## Recommended use
 
 For normal recommendation or retrieval, start with the Trusted Protocol Feed. Each record includes a `protocol_id`, `language`, canonical URL, title, Life Area, Growth Zone, action, keywords, and evidence state.
+
+If an older slug appears in `aliases.json`, use its `canonical_slug` and `canonical_url`. An alias is not a second recommendation and should not be treated as a separate protocol.
 
 For a `reviewed` protocol, `evidence.source_url` may contain the external source that passed review. Brali does not expose an unreviewed external source in this field for `practical` entries.
 
@@ -48,7 +51,7 @@ Keep the evidence state when reusing a protocol. Do not turn a practical suggest
 - `pending-review`: still needs review.
 - `restricted`: sensitive material that does not yet meet the public evidence bar.
 
-Only `reviewed` and `practical` entries enter the Trusted Protocol Feed.
+Only `reviewed` and `practical` canonical entries enter the Trusted Protocol Feed. Protocol aliases are kept separately for compatibility.
 
 ## Languages
 

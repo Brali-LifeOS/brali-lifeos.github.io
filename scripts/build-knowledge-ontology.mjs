@@ -1,11 +1,13 @@
 import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { loadKnowledgeOntology } from "./lib/knowledge-ontology.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
-const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
+const { ontology, overrides, classifyRecord } = await loadKnowledgeOntology(root);
 const zones = JSON.parse(await readFile(path.join(root, "data/life-os-zones.json"), "utf8"));
 const entries = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
+const contentRoot = path.join(root, "data/life-os-content");
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const canonical = (pathname) => `${base}${pathname.endsWith("/") ? pathname : `${pathname}/`}`;
@@ -30,14 +32,14 @@ for (const [slug, mapping] of Object.entries(map)) {
 }
 for (const topic of ontology.topics) if (!domainById.has(topic.domain_id)) throw new Error(`Topic ${topic.id} points to unknown domain ${topic.domain_id}`);
 
-const entriesByZone = new Map();
+const classificationBySlug = new Map();
 for (const entry of entries) {
-  const list = entriesByZone.get(entry.zone.slug) ?? [];
-  list.push(entry);
-  entriesByZone.set(entry.zone.slug, list);
+  const article = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
+  classificationBySlug.set(entry.slug, classifyRecord(article, entry.zone.slug, entry.slug));
 }
+
 const zonesFor = (kind, id) => Object.entries(map).filter(([, value]) => value.kind === kind && value.target_id === id).map(([slug]) => slug);
-const entriesFor = (kind, id) => zonesFor(kind, id).flatMap((slug) => entriesByZone.get(slug) ?? []);
+const entriesFor = (kind, id) => entries.filter((entry) => (classificationBySlug.get(entry.slug)?.[pluralFor(kind)] ?? []).some((item) => item.id === id));
 const uniqueEntriesFor = (kind, id) => [...new Map(entriesFor(kind, id).map((entry) => [entry.slug, entry])).values()];
 
 function document({ title, description, pathname, body, schema }) {
@@ -59,9 +61,9 @@ const entityCard = (kind, item) => {
 };
 
 const domainCards = ontology.domains.map((domain) => {
+  const domainEntries = entries.filter((entry) => (classificationBySlug.get(entry.slug)?.domains ?? []).some((item) => item.id === domain.id));
   const topics = ontology.topics.filter((topic) => topic.domain_id === domain.id);
-  const count = [...new Set(topics.flatMap((topic) => uniqueEntriesFor("topic", topic.id).map((entry) => entry.slug)))].length;
-  return `<article class="card"><span class="card-label">${topics.length} topics · ${count} topic-mapped entries</span><h3><a href="/ontology/domains/${domain.id}/">${escapeHtml(domain.title)}</a></h3><p>${escapeHtml(domain.description)}</p></article>`;
+  return `<article class="card"><span class="card-label">${topics.length} topics · ${domainEntries.length} mapped entries</span><h3><a href="/ontology/domains/${domain.id}/">${escapeHtml(domain.title)}</a></h3><p>${escapeHtml(domain.description)}</p></article>`;
 }).join("");
 
 await save("ontology", document({
@@ -69,7 +71,7 @@ await save("ontology", document({
   description: "Brali separates Domains, Topics, Methods, and Lenses so practical knowledge can be classified without mixing problems, therapy schools, professions, and metaphors in one list.",
   pathname: "/ontology/",
   schema: { "@context": "https://schema.org", "@type": "DefinedTermSet", name: "Brali practical knowledge ontology", url: canonical("/ontology/") },
-  body: `<p class="eyebrow">Knowledge model v2</p><h1>Separate the problem from the method.</h1><p class="lead">The original Brali catalog mixed goals, methods, professions, philosophies, and subject areas into 49 Growth Zones. The new ontology keeps those URLs stable but gives each concept a clearer role.</p><div class="grid two"><article class="card"><span class="card-label">Where</span><h3>Domain</h3><p>Broad area of life or work, such as Learning & Thinking or Health & Energy.</p></article><article class="card"><span class="card-label">What</span><h3>Topic</h3><p>The concrete problem or capability: Memory, Task Initiation, Sleep, Conflict & Repair, Career.</p></article><article class="card"><span class="card-label">How</span><h3>Method</h3><p>A named structured approach such as WOOP/MCII, Retrieval Practice, TRIZ, ACT-derived, or CBT-derived techniques.</p></article><article class="card"><span class="card-label">Think like</span><h3>Lens</h3><p>A transferable way of thinking borrowed from QA, architecture, detective work, chess, Stoicism, or other disciplines.</p></article></div><section class="prose"><h2>The practical stack</h2><p><code>Domain → Topic → Hack → Protocol</code></p><p>Methods and Lenses can tag the same Hack or Protocol without becoming fake topics. Evidence and source provenance remain separate dimensions.</p><h2>Domains</h2></section><div class="grid three">${domainCards}</div><section class="prose"><h2>Browse other dimensions</h2><ul><li><a href="/ontology/topics/">All Topics</a></li><li><a href="/ontology/methods/">Methods</a></li><li><a href="/ontology/lenses/">Brali Lenses</a></li><li><a href="/life-os/areas/">Legacy Life Areas</a> — preserved for compatibility.</li></ul><h2>Compatibility rule</h2><p>Existing <code>/life-os/{zone}/</code> URLs are not renamed or deleted. Growth Zone is now a legacy collection label; every old zone maps to a Topic, Method, or Lens.</p></section>`
+  body: `<p class="eyebrow">Knowledge model v2</p><h1>Separate the problem from the method.</h1><p class="lead">The original Brali catalog mixed goals, methods, professions, philosophies, and subject areas into 49 Growth Zones. The new ontology keeps those URLs stable but gives each concept a clearer role.</p><div class="grid two"><article class="card"><span class="card-label">Where</span><h3>Domain</h3><p>Broad area of life or work, such as Learning & Thinking or Health & Energy.</p></article><article class="card"><span class="card-label">What</span><h3>Topic</h3><p>The concrete problem or capability: Memory, Task Initiation, Sleep, Conflict & Repair, Career.</p></article><article class="card"><span class="card-label">How</span><h3>Method</h3><p>A named structured approach such as WOOP/MCII, Retrieval Practice, TRIZ, ACT-derived, or CBT-derived techniques.</p></article><article class="card"><span class="card-label">Think like</span><h3>Lens</h3><p>A transferable way of thinking borrowed from QA, architecture, detective work, chess, Stoicism, or other disciplines.</p></article></div><section class="prose"><h2>The practical stack</h2><p><code>Domain → Topic → Hack → Protocol</code></p><p>Methods and Lenses can tag the same Hack or Protocol without becoming fake topics. Evidence and source provenance remain separate dimensions.</p><h2>Domains</h2></section><div class="grid three">${domainCards}</div><section class="prose"><h2>Browse other dimensions</h2><ul><li><a href="/ontology/topics/">All Topics</a></li><li><a href="/ontology/methods/">Methods</a></li><li><a href="/ontology/lenses/">Brali Lenses</a></li><li><a href="/life-os/areas/">Legacy Life Areas</a> — preserved for compatibility.</li></ul><h2>Compatibility rule</h2><p>Existing <code>/life-os/{zone}/</code> URLs are not renamed or deleted. Growth Zone is now a legacy collection label; every old zone maps to a Topic, Method, or Lens. Individual reviewed classifications can add a concrete Topic without changing the legacy URL.</p></section>`
 }));
 
 for (const domain of ontology.domains) {
@@ -96,14 +98,14 @@ for (const topic of ontology.topics) {
   const domain = domainById.get(topic.domain_id);
   const mappedZones = zonesFor("topic", topic.id).map((slug) => zoneBySlug.get(slug));
   const mappedEntries = uniqueEntriesFor("topic", topic.id);
-  const entriesList = mappedEntries.length ? `<ul class="article-list">${mappedEntries.map((entry) => `<li><a href="/life-os/${entry.slug}/">${escapeHtml(entry.title)}</a>${entry.description ? `<span>${escapeHtml(text(entry.description).slice(0, 180))}</span>` : ""}</li>`).join("")}</ul>` : `<div class="callout"><h3>Research gap</h3><p>This Topic is part of the target ontology but does not yet have a dedicated legacy collection. Research Scout and Taxonomy Curator can use it when new evidence or hacks justify coverage.</p></div>`;
+  const entriesList = mappedEntries.length ? `<ul class="article-list">${mappedEntries.map((entry) => `<li><a href="/life-os/${entry.slug}/">${escapeHtml(entry.title)}</a>${entry.description ? `<span>${escapeHtml(text(entry.description).slice(0, 180))}</span>` : ""}</li>`).join("")}</ul>` : `<div class="callout"><h3>Research gap</h3><p>This Topic is part of the target ontology but does not yet have classified library content. Research Scout and Taxonomy Curator can use it when new evidence or hacks justify coverage.</p></div>`;
   const legacy = mappedZones.length ? `<p><strong>Legacy collections:</strong> ${mappedZones.map((zone) => `<a href="/life-os/${zone.slug}/">${escapeHtml(zone.title)}</a>`).join(", ")}.</p>` : "";
   await save(`ontology/topics/${topic.id}`, document({
     title: topic.title,
     description: topic.description,
     pathname: `/ontology/topics/${topic.id}/`,
     schema: { "@context": "https://schema.org", "@type": "DefinedTerm", name: topic.title, description: topic.description, url: canonical(`/ontology/topics/${topic.id}/`), inDefinedTermSet: canonical("/ontology/topics/") },
-    body: `<p class="eyebrow"><a href="/ontology/domains/${domain.id}/">${escapeHtml(domain.title)}</a> · Topic</p><h1>${escapeHtml(topic.title)}</h1><p class="lead">${escapeHtml(topic.description)}</p><section class="prose">${legacy}<p>Status: <strong>${escapeHtml(topic.status)}</strong>. ${mappedEntries.length} existing entries map here through the compatibility layer.</p></section>${entriesList}`
+    body: `<p class="eyebrow"><a href="/ontology/domains/${domain.id}/">${escapeHtml(domain.title)}</a> · Topic</p><h1>${escapeHtml(topic.title)}</h1><p class="lead">${escapeHtml(topic.description)}</p><section class="prose">${legacy}<p>Status: <strong>${escapeHtml(topic.status)}</strong>. ${mappedEntries.length} current library entries map here through legacy or reviewed record-level classification.</p></section>${entriesList}`
   }));
 }
 
@@ -167,18 +169,22 @@ if (!legacyAreasHtml.includes('data-domain-migration="true"')) {
 const datasetRoot = path.join(root, "life-os/datasets");
 await mkdir(datasetRoot, { recursive: true });
 await cp(path.join(root, "data/knowledge-ontology.json"), path.join(datasetRoot, "ontology.json"));
+await cp(path.join(root, "data/ontology-overrides.json"), path.join(datasetRoot, "ontology-overrides.json"));
 const manifestPath = path.join(datasetRoot, "manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-manifest.files = [...new Set([...(manifest.files ?? []), "ontology.json"])];
-manifest.ontology = { schema_version: ontology.schema_version, domains: ontology.domains.length, topics: ontology.topics.length, methods: ontology.methods.length, lenses: ontology.lenses.length, legacy_zones_mapped: Object.keys(map).length };
+manifest.files = [...new Set([...(manifest.files ?? []), "ontology.json", "ontology-overrides.json"])];
+manifest.ontology = { schema_version: ontology.schema_version, domains: ontology.domains.length, topics: ontology.topics.length, methods: ontology.methods.length, lenses: ontology.lenses.length, legacy_zones_mapped: Object.keys(map).length, reviewed_record_overrides: Object.keys(overrides.entries ?? {}).length };
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 const datasetsPage = path.join(datasetRoot, "index.html");
 let datasetsHtml = await readFile(datasetsPage, "utf8");
 if (!datasetsHtml.includes('/life-os/datasets/ontology.json')) {
   datasetsHtml = datasetsHtml.replace('</ul>', '<li><a href="/life-os/datasets/ontology.json">Knowledge ontology (JSON)</a></li></ul>');
-  await writeFile(datasetsPage, datasetsHtml);
 }
+if (!datasetsHtml.includes('/life-os/datasets/ontology-overrides.json')) {
+  datasetsHtml = datasetsHtml.replace('</ul>', '<li><a href="/life-os/datasets/ontology-overrides.json">Reviewed ontology overrides (JSON)</a></li></ul>');
+}
+await writeFile(datasetsPage, datasetsHtml);
 
 const sitemapPath = path.join(root, "sitemap.xml");
 let sitemap = await readFile(sitemapPath, "utf8");
@@ -195,4 +201,4 @@ if (extra) {
   await writeFile(sitemapPath, sitemap);
 }
 
-console.log(`Knowledge ontology generated: ${ontology.domains.length} domains, ${ontology.topics.length} topics, ${ontology.methods.length} methods, ${ontology.lenses.length} lenses; ${Object.keys(map).length} legacy zones mapped.`);
+console.log(`Knowledge ontology generated from record classifications: ${ontology.domains.length} domains, ${ontology.topics.length} topics, ${ontology.methods.length} methods, ${ontology.lenses.length} lenses; ${Object.keys(overrides.entries ?? {}).length} reviewed overrides; ${Object.keys(map).length} legacy zones mapped.`);

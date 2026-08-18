@@ -17,6 +17,6 @@
     "related": "node scripts/add-related-protocols.mjs",
     "audit": "node scripts/audit-content.mjs",
     "audit:strict": "node scripts/audit-content.mjs --strict",
-    "check": "node --check library-search.js && node scripts/check-site.mjs && node scripts/check-editorial-normalizations.mjs && node scripts/check-protocol-content-overrides.mjs && node scripts/check-library-search.mjs && node scripts/check-structured-data.mjs && node scripts/check-indexing-policy.mjs && node scripts/check-protocol-feed.mjs && node scripts/check-flagship-collection.mjs && node scripts/check-content-methodology.mjs && node scripts/check-related-protocols.mjs && node scripts/audit-content.mjs --strict"
+    "check": "node --check library-search.js && node scripts/check-site.mjs && node scripts/check-editorial-normalizations.mjs && node scripts/check-protocol-content-overrides.mjs && node scripts/check-library-search.mjs && node scripts/check-structured-data.mjs && node scripts/check-indexing-policy.mjs && node scripts/check-protocol-feed.mjs && node scripts/check-protocol-aliases.mjs && node scripts/check-flagship-collection.mjs && node scripts/check-content-methodology.mjs && node scripts/check-related-protocols.mjs && node scripts/audit-content.mjs --strict"
   }
 }

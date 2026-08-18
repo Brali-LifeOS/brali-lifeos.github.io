@@ -6,6 +6,7 @@ const unique = (values = []) => [...new Set(values.filter(Boolean))];
 export async function loadKnowledgeOntology(root) {
   const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
   const areas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
+  const overrides = JSON.parse(await readFile(path.join(root, "data/ontology-overrides.json"), "utf8"));
 
   const domains = new Map(ontology.domains.map((item) => [item.id, item]));
   const topics = new Map(ontology.topics.map((item) => [item.id, item]));
@@ -69,35 +70,58 @@ export async function loadKnowledgeOntology(root) {
     };
   }
 
-  function classifyRecord(record, zoneSlug) {
+  function buildClassification({ domainIds, topicIds, methodIds, lensIds, source, legacy }) {
+    const inferredDomainIds = topicIds.map((id) => {
+      const topic = topics.get(id);
+      if (!topic) throw new Error(`Record references unknown topic ${id}`);
+      return topic.domain_id;
+    });
+    const resolvedDomainIds = unique([...domainIds, ...inferredDomainIds]);
+    for (const id of resolvedDomainIds) if (!domains.has(id)) throw new Error(`Record references unknown domain ${id}`);
+    for (const id of methodIds) if (!methods.has(id)) throw new Error(`Record references unknown method ${id}`);
+    for (const id of lensIds) if (!lenses.has(id)) throw new Error(`Record references unknown lens ${id}`);
+
+    return {
+      domains: resolvedDomainIds.map((id) => entity(domains, id)),
+      topics: topicIds.map((id) => entity(topics, id)),
+      methods: methodIds.map((id) => entity(methods, id)),
+      lenses: lensIds.map((id) => entity(lenses, id)),
+      classification_status: topicIds.length ? "explicit" : "topic-pending",
+      classification_source: source,
+      legacy
+    };
+  }
+
+  function classifyRecord(record, zoneSlug, slug = record?.slug) {
     const legacy = classifyLegacyZone(zoneSlug);
     const explicitDomainIds = unique(record?.domain_slugs ?? record?.domain_ids ?? []);
     const explicitTopicIds = unique(record?.topic_slugs ?? record?.topic_ids ?? []);
     const explicitMethodIds = unique(record?.method_slugs ?? record?.method_ids ?? []);
     const explicitLensIds = unique(record?.lens_slugs ?? record?.lens_ids ?? []);
     const hasExplicit = explicitDomainIds.length || explicitTopicIds.length || explicitMethodIds.length || explicitLensIds.length;
-    if (!hasExplicit) return legacy;
 
-    const inferredDomainIds = explicitTopicIds.map((id) => {
-      const topic = topics.get(id);
-      if (!topic) throw new Error(`Record references unknown topic ${id}`);
-      return topic.domain_id;
-    });
-    const domainIds = unique([...explicitDomainIds, ...inferredDomainIds]);
-    for (const id of domainIds) if (!domains.has(id)) throw new Error(`Record references unknown domain ${id}`);
-    for (const id of explicitMethodIds) if (!methods.has(id)) throw new Error(`Record references unknown method ${id}`);
-    for (const id of explicitLensIds) if (!lenses.has(id)) throw new Error(`Record references unknown lens ${id}`);
+    if (hasExplicit) {
+      return buildClassification({
+        domainIds: explicitDomainIds,
+        topicIds: explicitTopicIds,
+        methodIds: unique([...legacy.methods.map((item) => item.id), ...explicitMethodIds]),
+        lensIds: unique([...legacy.lenses.map((item) => item.id), ...explicitLensIds]),
+        source: "record-fields",
+        legacy: legacy.legacy
+      });
+    }
 
-    return {
-      domains: domainIds.map((id) => entity(domains, id)),
-      topics: explicitTopicIds.map((id) => entity(topics, id)),
-      methods: explicitMethodIds.map((id) => entity(methods, id)),
-      lenses: explicitLensIds.map((id) => entity(lenses, id)),
-      classification_status: explicitTopicIds.length ? "explicit" : "topic-pending",
-      classification_source: "record-fields",
+    const override = overrides.entries?.[slug];
+    if (!override) return legacy;
+    return buildClassification({
+      domainIds: unique(override.domain_ids ?? []),
+      topicIds: unique(override.topic_ids ?? []),
+      methodIds: unique([...legacy.methods.map((item) => item.id), ...(override.method_ids ?? [])]),
+      lensIds: unique([...legacy.lenses.map((item) => item.id), ...(override.lens_ids ?? [])]),
+      source: "reviewed-ontology-override",
       legacy: legacy.legacy
-    };
+    });
   }
 
-  return { ontology, domains, topics, methods, lenses, classifyLegacyZone, classifyRecord };
+  return { ontology, overrides, domains, topics, methods, lenses, classifyLegacyZone, classifyRecord };
 }

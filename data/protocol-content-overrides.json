@@ -132,6 +132,74 @@
           }
         ]
       }
+    },
+    "active-listening-exercises": {
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited active-listening draft containing unsupported performance percentages, invented pilot results, and unnecessary timing prescriptions with a compact correction-based listening protocol.",
+      "forbidden_public_fragments": [
+        "reduce repair sequences by about 30%",
+        "roughly 1.2 items per topic",
+        "increased real usage from ~20% to ~62%",
+        "without logging, we lose ~50%",
+        "adherence drops by ~20%",
+        "10–20 repetitions across different contexts yields clear competence",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "In one conversation, wait until the other person finishes a thought, paraphrase the main point in your own words, invite correction, and ask one open question before offering advice or changing the topic.",
+        "checkIn": "Did I summarize before responding? Was my summary accepted or corrected, and what did the correction teach me?"
+      },
+      "faq": [
+        {
+          "id": "active-listening-exercises-faq-1",
+          "question": "What if my summary is wrong?",
+          "answer": "That is useful feedback. Thank the person for correcting you, restate the point more accurately if needed, and continue from their correction rather than defending your first interpretation."
+        },
+        {
+          "id": "active-listening-exercises-faq-2",
+          "question": "Does active listening mean repeating the person's exact words?",
+          "answer": "No. Paraphrase the main point briefly in your own words. The goal is to test your understanding, not to imitate the speaker."
+        },
+        {
+          "id": "active-listening-exercises-faq-3",
+          "question": "Should I use a summary in every conversation?",
+          "answer": "No. Use it when understanding matters or you are unsure what the person means. If the situation requires immediate action or the person wants a direct answer, respond to that context instead of forcing a technique."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Active listening can be practiced as a simple correction loop. Listen until the other person completes a thought, say back the main point in your own words, and give them room to confirm or correct you. The value is not in performing a perfect listening technique. It is in finding out whether your understanding matches what the other person meant.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-one-conversation",
+            "title": "1. Choose one conversation",
+            "html": "<p>Pick a conversation where understanding matters: a work handoff, a disagreement, a planning discussion, or an ordinary conversation where you tend to jump to solutions. Your only practice goal is to test your understanding at least once when it feels useful.</p>"
+          },
+          {
+            "slug": "paraphrase-the-main-point",
+            "title": "2. Paraphrase the main point",
+            "html": "<p>After the person finishes a thought, summarize what you think the main point is in one short sentence. Use tentative language when you are unsure: <em>If I understood you correctly…</em> or <em>So the main issue is…</em>. Keep the summary shorter than the original explanation.</p><p>Avoid guessing motives or emotions as facts. If an interpretation matters, present it as a question that can be corrected.</p>"
+          },
+          {
+            "slug": "invite-correction",
+            "title": "3. Make correction easy",
+            "html": "<p>Pause after the summary and let the person respond. If they correct you, treat that as the success condition of the protocol: you discovered a mismatch before building the rest of the conversation on it.</p><p>You can use a short prompt such as <em>Did I get that right?</em> when confirmation is not obvious.</p>"
+          },
+          {
+            "slug": "ask-before-advising",
+            "title": "4. Ask one open question",
+            "html": "<p>Once the main point is clear, ask one question that helps the person continue: <em>What part matters most?</em>, <em>What happened next?</em>, or <em>What do you need from me here?</em>. This prevents the listening exercise from turning into a sequence of summaries with no real conversation.</p>"
+          },
+          {
+            "slug": "review-the-signal",
+            "title": "5. Review what you missed",
+            "html": "<p>After the conversation, record only the signal that helps the next attempt:</p><ul><li>Did I summarize before jumping to advice?</li><li>Was my summary accepted or corrected?</li><li>If corrected, what assumption did I make too early?</li></ul><p>In Brali, this can be one short check-in or journal note. You do not need to count eye-contact seconds, nods, or conversation scores.</p>"
+          }
+        ]
+      }
     }
   }
 }

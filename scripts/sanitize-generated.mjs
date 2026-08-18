@@ -3,9 +3,11 @@ import path from "node:path";
 import { classifyEvidence, sourceDetails } from "./lib/content-trust.mjs";
 
 const root = process.cwd();
+const base = "https://brali-lifeos.github.io";
 const contentRoot = path.join(root, "data/life-os-content");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
+const aliases = JSON.parse(await readFile(path.join(root, "data/protocol-aliases.json"), "utf8"));
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const displayValue = (value) => value == null ? "" : (typeof value === "string" ? value : JSON.stringify(value));
@@ -56,15 +58,33 @@ function protocolSummary(article, entry, evidence) {
   return `<section class="callout" data-protocol-summary="true" data-evidence-status="${escapeHtml(evidence.status)}"><span class="card-label">Protocol summary · ${escapeHtml(evidence.status)}</span><h3>Try this</h3><p>${cleanLegacyBrand(escapeHtml(action))}</p>${checkIn ? `<p><strong>Check-in:</strong> ${cleanLegacyBrand(escapeHtml(checkIn))}</p>` : ""}<p><strong>Evidence:</strong> ${evidenceLabel(evidence, source)}</p>${reviewNote}${safety}</section>`;
 }
 
+function aliasPage(entry, alias) {
+  const canonicalPath = `/life-os/${alias.canonical_slug}/`;
+  const canonicalUrl = `${base}${canonicalPath}`;
+  const oldTitle = escapeHtml(entry.title || entry.slug);
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta http-equiv="refresh" content="0; url=${canonicalPath}"><title>Protocol moved — Brali</title><meta name="description" content="This older Brali protocol has been consolidated into one canonical protocol."><link rel="canonical" href="${canonicalUrl}"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow">Protocol alias</p><h1>This protocol moved.</h1><p class="lead"><strong>${oldTitle}</strong> overlaps with a better-maintained Brali protocol. We keep this old URL so existing links still work.</p><div class="callout"><h3>Use the canonical protocol</h3><p>${escapeHtml(alias.reason)}</p><a class="button" href="${canonicalPath}">Open canonical protocol</a></div></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>Practical knowledge for people and machines.</small></div></div></footer></body></html>`;
+}
+
 let changed = 0;
 let withheld = 0;
 let protocolSummaries = 0;
+let aliasPages = 0;
 
 for (const entry of index) {
   const htmlPath = path.join(root, "life-os", entry.slug, "index.html");
   const articlePath = path.join(contentRoot, `${entry.slug}.json`);
   const article = JSON.parse(await readFile(articlePath, "utf8"));
   const evidence = classifyEvidence(article, entry, overrides);
+  const alias = aliases.entries?.[entry.slug] ?? null;
+
+  if (alias) {
+    await writeFile(htmlPath, aliasPage(entry, alias));
+    aliasPages += 1;
+    changed += 1;
+    withheld += 1;
+    continue;
+  }
+
   let html = await readFile(htmlPath, "utf8");
   const before = html;
 
@@ -94,4 +114,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${withheld} pages withheld from indexing.`);
+console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${aliasPages} alias page(s) routed to canonical protocols; ${withheld} pages withheld from indexing.`);

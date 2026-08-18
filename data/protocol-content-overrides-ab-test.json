@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "ab-test-learning-loop": {
+      "title": "Compare Two Approaches and Learn From the Result",
+      "description": "When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny informal comparison as statistical proof.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited A/B testing article containing unsupported conversion ranges, fabricated false-positive rates, arbitrary sample-size rules and internal marketing examples with a simple compare-and-learn protocol that distinguishes informal testing from proper randomized experimentation.",
+      "forbidden_public_fragments": [
+        "false positives 20–40% of the time",
+        "improve conversion by 10–30%",
+        "at least 500 observations per variant",
+        "need ~40,000 observations per variant",
+        "need ~6,000 observations per variant",
+        "need ~1,000 observations per variant",
+        "subject line tweaks often yield 5–20%",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "For a reversible decision, compare two approaches around one clear question and one outcome. Change as little as practical, record what happened, and treat small informal tests as clues rather than proof.",
+        "whatYouDo": "Choose one reversible decision, define what you want to learn, compare two approaches as fairly as you can, and record the outcome before deciding what to try next. Use proper experimental design when the result needs statistical confidence.",
+        "checkIn": "What changed between the two approaches, what outcome did I observe, and is the evidence strong enough to act or only strong enough to suggest another test?"
+      },
+      "faq": [
+        {
+          "id": "ab-test-learning-loop-faq-1",
+          "question": "Is every comparison a real A/B test?",
+          "answer": "No. A proper A/B test normally uses controlled assignment and enough data for the question being asked. A small personal or project comparison can still help you learn, but it should be described as an informal test rather than statistical proof."
+        },
+        {
+          "id": "ab-test-learning-loop-faq-2",
+          "question": "What should I change between A and B?",
+          "answer": "Keep the comparison focused. Change the factor you care about while keeping other important conditions as similar as practical. If many things change at once, the result is harder to interpret."
+        },
+        {
+          "id": "ab-test-learning-loop-faq-3",
+          "question": "When do I need statistical help?",
+          "answer": "Use proper experimental design and statistical analysis when decisions depend on reliable effect estimates, when differences are small, or when the cost of a wrong conclusion is meaningful."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Comparing two approaches can turn a vague preference into a useful observation. The method is strongest when the question is clear and the comparison is fair. For everyday work, a small test can guide the next step. It should not be presented as formal A/B evidence when it lacks the design or data to support that claim.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-question",
+            "title": "1. Choose one question",
+            "html": "<p>Start with a reversible decision such as which message format gets clearer replies, which onboarding explanation causes less confusion, or which practice routine you actually complete. Write what you want to learn before testing.</p>"
+          },
+          {
+            "slug": "define-outcome",
+            "title": "2. Define the outcome first",
+            "html": "<p>Choose the signal that matters to the decision. It might be replies, completed steps, errors, time spent, or a simple personal rating. Avoid changing the metric after seeing which version looks better.</p>"
+          },
+          {
+            "slug": "keep-comparison-clean",
+            "title": "3. Keep the comparison as clean as practical",
+            "html": "<p>Change one main factor and keep the surrounding conditions reasonably similar. If audience, timing, task difficulty, and content all change together, note that the comparison cannot tell you which factor mattered.</p>"
+          },
+          {
+            "slug": "record-result",
+            "title": "4. Record the result without upgrading it",
+            "html": "<p>Write what happened, including results that were similar or unclear. A small sample can suggest a direction without proving that one version is generally better.</p>"
+          },
+          {
+            "slug": "decide-next-step",
+            "title": "5. Decide what the evidence is good for",
+            "html": "<p>If the change is cheap, reversible, and the result is clear enough for your context, you may choose a version and keep monitoring. If the decision matters more, run a better-designed test before committing.</p>"
+          },
+          {
+            "slug": "keep-learning",
+            "title": "6. Keep the learning, not the winner story",
+            "html": "<p>Store the question, versions, result, and next decision. The useful habit is learning from comparisons, not collecting victories for version B.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

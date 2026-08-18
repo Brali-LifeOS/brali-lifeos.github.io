@@ -67,6 +67,7 @@ const requiredPages = [
   "ontology/methods/index.html",
   "ontology/lenses/index.html",
   "life-os/datasets/ontology.json",
+  "life-os/datasets/ontology-overrides.json",
 ];
 for (const domain of ontology.domains ?? []) requiredPages.push(`ontology/domains/${domain.id}/index.html`);
 for (const topic of ontology.topics ?? []) requiredPages.push(`ontology/topics/${topic.id}/index.html`);
@@ -84,8 +85,17 @@ if (!library.includes('data-ontology-entry="true"')) failures.push("Growth Libra
 const areas = await readFile(path.join(root, "life-os/areas/index.html"), "utf8");
 if (!areas.includes('data-domain-migration="true"')) failures.push("legacy Life Areas page does not explain Domain migration");
 const dataset = JSON.parse(await readFile(path.join(root, "life-os/datasets/ontology.json"), "utf8"));
+const publicOverrides = JSON.parse(await readFile(path.join(root, "life-os/datasets/ontology-overrides.json"), "utf8"));
 if (dataset.schema_version !== 2 || Object.keys(dataset.legacy_zone_map ?? {}).length !== zones.length) failures.push("published ontology dataset is incomplete");
+if (Object.keys(publicOverrides.entries ?? {}).length !== Object.keys(overrides.entries ?? {}).length) failures.push("published ontology overrides are incomplete");
 if (!dataset.topics?.some((topic) => topic.id === "environment-design")) failures.push("published ontology dataset lacks Environment Design Topic");
+
+const memoryPage = await readFile(path.join(root, "ontology/topics/memory/index.html"), "utf8");
+if (!memoryPage.includes('/life-os/detective-mnemonic-memory-tricks/')) failures.push("Memory Topic page does not include reviewed record-level classification");
+const environmentPage = await readFile(path.join(root, "ontology/topics/environment-design/index.html"), "utf8");
+for (const slug of ["home-privacy-planner", "ergonomic-workspace-assessment", "smart-home-roi-planner"]) {
+  if (!environmentPage.includes(`/life-os/${slug}/`)) failures.push(`Environment Design Topic page missing reviewed classification ${slug}`);
+}
 
 for (const zone of zones) {
   const html = await readFile(path.join(root, "life-os", zone.slug, "index.html"), "utf8");

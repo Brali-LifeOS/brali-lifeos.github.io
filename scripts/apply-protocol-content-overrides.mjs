@@ -40,6 +40,17 @@ for (const [slug, override] of Object.entries(registry.entries ?? {})) {
     }));
   }
   article.body = override.body;
+
+  // A curated replacement becomes the effective content record. Retired generated
+  // SEO copy and old HowTo metadata must not coexist beside it because downstream
+  // consumers may read fields that the current public renderer ignores.
+  for (const legacyField of ["helpSeoLong", "helpSeoShort", "structuredMeta"]) delete article[legacyField];
+
+  if (article.meta?.authorName && /metalhatscats/i.test(article.meta.authorName)) {
+    article.meta.authorName = "Brali";
+    article.meta.authorUrl = "/";
+  }
+
   article.editorialCuration = {
     status: "curated",
     evidenceStatus: override.evidence_status ?? "practical",

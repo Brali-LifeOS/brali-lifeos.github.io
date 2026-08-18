@@ -1,144 +1,30 @@
 {
   "schema_version": 1,
-  "description": "Reviewed semantic classifications for individual records whose legacy Growth Zone identifies a Method or Lens rather than a concrete Topic. These overrides supplement, not replace, the legacy Method/Lens classification.",
+  "description": "Reviewed semantic classifications for individual records whose legacy Growth Zone identifies a Method or Lens rather than a concrete Topic, or whose reviewed effective content warrants a more precise Topic than the legacy collection. These overrides supplement compatibility navigation without changing stable URLs.",
   "entries": {
-    "90-30-focus-rest-schedule": {
-      "topic_ids": ["attention-focus", "recovery-energy"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The effective protocol alternates focused work with real breaks. Attention & Focus describes the work phase; Recovery & Energy describes the break/recovery phase. Antifragility remains a Lens."
-    },
-    "triz-contradiction-coach": {
-      "topic_ids": ["problem-solving", "creative-problem-solving"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action uses contradiction templates to frame and solve problems. TRIZ remains the Method."
-    },
-    "chef-taste-and-adjust": {
-      "topic_ids": ["revision-feedback"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The entry explicitly generalizes taste-judge-adjust-repeat into regular review and refinement of projects and tasks. Chef / Operations remains the Lens."
-    },
-    "counterbalance-intense-activities-for-stability": {
-      "topic_ids": ["recovery-energy"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The concrete action is to balance intense activity with lower-intensity or opposite activity to manage recovery and load. TRIZ remains the Method."
-    },
-    "detective-mnemonic-memory-tricks": {
-      "topic_ids": ["memory"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The entry creates memory aids for observations. Detective remains the Lens."
-    },
-    "hobby-diversification-tracker": {
-      "topic_ids": ["skill-learning"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The concrete practice is to develop unfamiliar hobbies and skills outside the user's usual activity pattern. Antifragility remains a Lens rather than the Topic."
-    },
-    "circles-of-control-planner": {
-      "topic_ids": ["decision-making", "stress-regulation"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The curated protocol separates controllable from uncontrollable factors to allocate action and reduce wasted effort under stress. Stoicism remains a Lens."
-    },
-    "home-privacy-planner": {
-      "topic_ids": ["environment-design"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action changes physical space to create privacy and solitude. This is broader than Workspace and belongs to Environment Design. Architecture remains a Lens."
-    },
-    "spot-overlooked-details": {
-      "topic_ids": ["critical-thinking", "error-prevention"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action deliberately inspects small observations that may alter an interpretation or reveal an avoidable issue. Detective remains a Lens."
-    },
-    "safety-statements-exposure-anxiety": {
-      "topic_ids": ["fear-confidence"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The reviewed protocol is graded facing of a manageable fear. Exposure remains the sensitive Method; Fear & Confidence is the user-facing Topic."
-    },
-    "qa-feedback-loop-tracker": {
-      "topic_ids": ["work-systems", "revision-feedback"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The practice creates a recurring feedback-and-improvement loop for work. Quality Assurance remains a Lens."
-    },
-    "qa-test-case-coverage-planner": {
-      "topic_ids": ["error-prevention"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "Test-case coverage is used to anticipate scenarios and prevent missed failures. Quality Assurance remains a Lens."
-    },
-    "qa-workspace-organizer": {
-      "topic_ids": ["workspace"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The practice organizes the work/testing environment to reduce friction and mistakes. Quality Assurance remains a Lens."
-    },
-    "qa-severity-priority-coach": {
-      "topic_ids": ["planning-prioritization", "error-prevention"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action ranks issues by severity and priority before acting. Quality Assurance remains a Lens."
-    },
-    "qa-checklist-templates-runbook": {
-      "topic_ids": ["error-prevention", "work-systems"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The practice uses reusable checklists/runbooks to prevent omissions in recurring work. Quality Assurance remains a Lens."
-    },
-    "read-the-room-trainer": {
-      "topic_ids": ["listening", "social-confidence"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The entry observes tone, posture and other signals, treats interpretations as hypotheses, and uses low-risk follow-up questions. Fieldcraft remains a Lens."
-    },
-    "repurpose-resources-save-time": {
-      "topic_ids": ["creative-problem-solving"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action reframes existing resources for a new use to solve a constraint with less waste. TRIZ remains the Method."
-    },
-    "reverse-thinking-triz": {
-      "topic_ids": ["creative-problem-solving"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The action deliberately reverses a normal assumption or approach to generate alternative solutions. TRIZ remains the Method."
-    },
-    "ergonomic-workspace-assessment": {
-      "topic_ids": ["workspace", "environment-design"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The entry changes a physical workspace for comfort and efficiency. Workspace captures the work context; Environment Design captures the physical-space dimension. Architecture remains a Lens."
-    },
-    "pause-before-reacting-three-breaths-stoic": {
-      "topic_ids": ["emotion-regulation", "decision-making"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The Stoic pause creates a short gap before reacting so the user can choose a response rather than act impulsively. Stoicism remains a Lens."
-    },
-    "smart-home-roi-planner": {
-      "topic_ids": ["environment-design", "digital-wellbeing"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The entry evaluates and iterates technology that changes the physical environment, with explicit friction, privacy, cost and routine trade-offs. Architecture remains a Lens."
-    },
-    "3-minute-sensory-mindfulness-act": {
-      "topic_ids": ["self-awareness", "stress-regulation"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The reviewed practice uses sensory attention to return to the present and notice experience without claiming a universal treatment effect. ACT remains the sensitive Method."
-    },
-    "stoic-acceptance-tracker": {
-      "topic_ids": ["psychological-flexibility", "stress-regulation"],
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The concrete practice is to acknowledge a difficult reality, reduce resistance, and choose a workable next action. Stoicism remains a Lens."
-    }
+    "90-30-focus-rest-schedule": {"topic_ids":["attention-focus","recovery-energy"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The effective protocol alternates focused work with real breaks. Attention & Focus describes the work phase; Recovery & Energy describes the break/recovery phase. Antifragility remains a Lens."},
+    "triz-contradiction-coach": {"topic_ids":["problem-solving","creative-problem-solving"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action uses contradiction templates to frame and solve problems. TRIZ remains the Method."},
+    "chef-taste-and-adjust": {"topic_ids":["revision-feedback"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The entry explicitly generalizes taste-judge-adjust-repeat into regular review and refinement of projects and tasks. Chef / Operations remains the Lens."},
+    "counterbalance-intense-activities-for-stability": {"topic_ids":["recovery-energy"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The concrete action is to balance intense activity with lower-intensity or opposite activity to manage recovery and load. TRIZ remains the Method."},
+    "detective-mnemonic-memory-tricks": {"topic_ids":["memory"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The entry creates memory aids for observations. Detective remains the Lens."},
+    "hobby-diversification-tracker": {"topic_ids":["skill-learning"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The concrete practice is to develop unfamiliar hobbies and skills outside the user's usual activity pattern. Antifragility remains a Lens rather than the Topic."},
+    "circles-of-control-planner": {"topic_ids":["decision-making","stress-regulation"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The curated protocol separates controllable from uncontrollable factors to allocate action and reduce wasted effort under stress. Stoicism remains a Lens."},
+    "home-privacy-planner": {"topic_ids":["environment-design"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action changes physical space to create privacy and solitude. This is broader than Workspace and belongs to Environment Design. Architecture remains a Lens."},
+    "spot-overlooked-details": {"topic_ids":["critical-thinking","error-prevention"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action deliberately inspects small observations that may alter an interpretation or reveal an avoidable issue. Detective remains a Lens."},
+    "safety-statements-exposure-anxiety": {"topic_ids":["fear-confidence"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The reviewed protocol is graded facing of a manageable fear. Exposure remains the sensitive Method; Fear & Confidence is the user-facing Topic."},
+    "qa-feedback-loop-tracker": {"topic_ids":["work-systems","revision-feedback"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The practice creates a recurring feedback-and-improvement loop for work. Quality Assurance remains a Lens."},
+    "qa-test-case-coverage-planner": {"topic_ids":["error-prevention"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"Test-case coverage is used to anticipate scenarios and prevent missed failures. Quality Assurance remains a Lens."},
+    "qa-workspace-organizer": {"topic_ids":["workspace"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The practice organizes the work/testing environment to reduce friction and mistakes. Quality Assurance remains a Lens."},
+    "qa-severity-priority-coach": {"topic_ids":["planning-prioritization","error-prevention"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action ranks issues by severity and priority before acting. Quality Assurance remains a Lens."},
+    "qa-checklist-templates-runbook": {"topic_ids":["error-prevention","work-systems"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The practice uses reusable checklists/runbooks to prevent omissions in recurring work. Quality Assurance remains a Lens."},
+    "read-the-room-trainer": {"topic_ids":["listening","social-confidence"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The entry observes tone, posture and other signals, treats interpretations as hypotheses, and uses low-risk follow-up questions. Fieldcraft remains a Lens."},
+    "repurpose-resources-save-time": {"topic_ids":["creative-problem-solving"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action reframes existing resources for a new use to solve a constraint with less waste. TRIZ remains the Method."},
+    "reverse-thinking-triz": {"topic_ids":["creative-problem-solving"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The action deliberately reverses a normal assumption or approach to generate alternative solutions. TRIZ remains the Method."},
+    "ergonomic-workspace-assessment": {"topic_ids":["workspace","environment-design"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The entry changes a physical workspace for comfort and efficiency. Workspace captures the work context; Environment Design captures the physical-space dimension. Architecture remains a Lens."},
+    "pause-before-reacting-three-breaths-stoic": {"topic_ids":["emotion-regulation","decision-making"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The Stoic pause creates a short gap before reacting so the user can choose a response rather than act impulsively. Stoicism remains a Lens."},
+    "smart-home-roi-planner": {"topic_ids":["environment-design","digital-wellbeing"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The entry evaluates and iterates technology that changes the physical environment, with explicit friction, privacy, cost and routine trade-offs. Architecture remains a Lens."},
+    "3-minute-sensory-mindfulness-act": {"topic_ids":["self-awareness","stress-regulation"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The reviewed practice uses sensory attention to return to the present and notice experience without claiming a universal treatment effect. ACT remains the sensitive Method."},
+    "stoic-acceptance-tracker": {"topic_ids":["psychological-flexibility","stress-regulation"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The concrete practice is to acknowledge a difficult reality, reduce resistance, and choose a workable next action. Stoicism remains a Lens."},
+    "avoid-list-interference-memory-retention": {"topic_ids":["memory"],"reviewed_at":"2026-08-18","reviewed_by":"Brali Taxonomy Curator","reason":"The reviewed effective content is now a sourced post-learning wakeful-rest experiment focused on declarative memory. Memory is the concrete Topic; the legacy Cognitive Biases collection remains only a compatibility URL and should not define the protocol semantically."}
   }
 }

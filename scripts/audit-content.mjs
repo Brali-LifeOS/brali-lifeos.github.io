@@ -27,13 +27,19 @@ const sensitiveZones = new Set([
 
 const claimPattern = /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic review|meta-analysis)\b|\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
 
+function isUsableSource(value) {
+  if (!value) return false;
+  const text = typeof value === "string" ? value : JSON.stringify(value);
+  return Boolean(text.trim()) && !/(?:metalhatscats|brali-lifeos\.github\.io\/life-os)/i.test(text);
+}
+
 function hasSource(article) {
   const original = article.lifeOsSource ?? {};
-  const directSources = [original.reference, original.sourceUrl, article.reference, article.sourceUrl].filter(Boolean);
+  const directSources = [original.reference, original.sourceUrl, article.reference, article.sourceUrl].filter(isUsableSource);
   const sourceLists = [article.references, article.sources, article.citations]
     .filter(Array.isArray)
     .flat()
-    .filter(Boolean);
+    .filter(isUsableSource);
   return directSources.length > 0 || sourceLists.length > 0;
 }
 
@@ -43,6 +49,7 @@ let suspiciousUnsourced = 0;
 let legacySourceEntries = 0;
 let legacyGeneratedPages = 0;
 let unprotectedSensitivePages = 0;
+let missingProtocolSummaries = 0;
 const examples = [];
 
 for (const entry of index) {
@@ -62,6 +69,7 @@ for (const entry of index) {
   const generatedPath = path.join(root, "life-os", entry.slug, "index.html");
   const generated = await readFile(generatedPath, "utf8");
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
+  if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (isSensitive && !sourced && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
     unprotectedSensitivePages += 1;
   }
@@ -70,19 +78,20 @@ for (const entry of index) {
 console.log("Brali Growth Library content audit");
 console.log(`- Entries: ${index.length}`);
 console.log(`- Sensitive entries: ${sensitive}`);
-console.log(`- Sensitive entries without explicit sources: ${sensitiveUnsourced}`);
+console.log(`- Sensitive entries without usable external sources: ${sensitiveUnsourced}`);
 console.log(`- Unsourced entries with evidence-like claims: ${suspiciousUnsourced}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
+console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
 console.log(`- Unsourced sensitive pages still indexable: ${unprotectedSensitivePages}`);
 if (examples.length) console.log(`- Claim-review examples: ${examples.join(", ")}`);
 
-const blockingProblems = legacyGeneratedPages + unprotectedSensitivePages;
+const blockingProblems = legacyGeneratedPages + unprotectedSensitivePages + missingProtocolSummaries;
 if (strict && blockingProblems > 0) {
   console.error(`Content trust audit failed with ${blockingProblems} blocking problem(s).`);
   process.exit(1);
 }
 
 if (suspiciousUnsourced > 0) {
-  console.warn("Review queue created: evidence-like claims without explicit sources remain in the source dataset.");
+  console.warn("Review queue created: evidence-like claims without usable external sources remain in the source dataset.");
 }

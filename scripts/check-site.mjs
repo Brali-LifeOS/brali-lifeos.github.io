@@ -38,6 +38,11 @@ if (!homepage.includes('class="protocol-demo"')) throw new Error("Homepage lacks
 if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does not provide a Life Areas entry point.");
 if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
 
+const docs = await readFile(path.join(root, "docs/index.html"), "utf8");
+if (!docs.includes("Run one small experiment first.")) throw new Error("Getting-started page is not experiment-first.");
+if (!docs.includes('href="/life-os/flagships/"')) throw new Error("Getting-started page does not link to flagship protocols.");
+if (!docs.includes("Choose → Practice → Check in → Review → Keep or change.")) throw new Error("Getting-started page does not explain the Brali review loop.");
+
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/areas/")) throw new Error("Sitemap lacks life area navigation pages.");
@@ -74,4 +79,4 @@ if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries
 }
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, protocol-first homepage, trusted search/feed, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

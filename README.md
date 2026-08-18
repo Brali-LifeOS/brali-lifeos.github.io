@@ -2,28 +2,38 @@
 
 Official public site and knowledge repository for Brali, published at `https://brali-lifeos.github.io`.
 
-Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first: practical hacks, executable protocols, taxonomy, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. The original LifeOS app remains an optional application layer.
+Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first: practical hacks, executable protocols, an explicit ontology, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. The original LifeOS app remains an optional application layer.
 
-## Knowledge model
+## Knowledge model v2
 
-Brali separates four layers instead of treating every useful idea as the same kind of page:
+Brali no longer treats every old Growth Zone as the same semantic thing. The preferred model is:
 
-`Life Area -> Growth Zone -> Hack`
+`Domain -> Topic -> Hack -> Protocol`
 
-`Protocol -> one or more Hacks`
+with optional:
 
-`Hack / Protocol -> Evidence state`
+`Method -> Hack / Protocol`
+
+`Lens -> Hack / Protocol`
+
+and separate:
+
+`Hack / Protocol -> Evidence state -> Sources`
 
 `Research candidate -> Evidence decision -> content proposal`
 
-A **Hack** is the smallest reusable practical technique. A **Protocol** is an executable sequence or personal experiment that can reference one or more hacks and adds context, order, a check-in, and a stop/change rule. A **Research candidate** is an unreviewed scholarly lead and is never trusted evidence by itself.
+A **Domain** is a broad area of life or work. A **Topic** is the concrete problem, capability, or outcome. A **Method** is a named structured approach that may cross Topics. A **Lens** is a transferable way of thinking borrowed from another discipline or tradition and is not evidence by itself. A **Hack** is the smallest reusable practical technique. A **Protocol** is an executable sequence or personal experiment that can reference one or more hacks and adds context, order, a check-in, and a stop/change rule. A **Research candidate** is an unreviewed scholarly lead and is never trusted evidence by itself.
+
+The original **Life Area** and **Growth Zone** taxonomy remains available as a compatibility layer. Existing `/life-os/{zone}/` URLs are kept stable. Every legacy Growth Zone maps to a Topic, Method, or Lens in `data/knowledge-ontology.json`.
 
 Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricted`. Only `reviewed` and `practical` entries qualify for normal search indexing and the Trusted Protocol Feed.
 
 ## Main entry points
 
+- `/ontology/` — preferred knowledge model and human-readable ontology.
+- `/life-os/datasets/ontology.json` — machine-readable Domains, Topics, Methods, Lenses, and legacy mapping.
 - `/life-os/flagships/` — curated human starting points.
-- `/life-os/` — complete Growth Library.
+- `/life-os/` — complete Growth Library and stable legacy collection URLs.
 - `/life-os/datasets/protocols.json` — Trusted Protocol Feed.
 - `/research/` — research notes and the living research pipeline.
 - `/agents/` and `/agents/registry.json` — editorial agents and machine-readable registry.
@@ -34,11 +44,11 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 
 ## Continuous research loop
 
-1. `data/research-queries.json` defines maintained search lenses mapped to Life Areas and Growth Zones.
+1. `data/research-queries.json` defines maintained search lenses. Some older query fields still use Life Areas and Growth Zones for compatibility; Taxonomy Curator resolves them through the ontology.
 2. `scripts/research_scout.py` queries scholarly metadata and deduplicates leads into `data/research-candidates.json`.
 3. `.github/workflows/research-scout.yml` runs weekly and proposes queue changes on a bot branch/PR.
 4. The Evidence Reviewer reads the actual source and records a bounded decision before a hack or protocol can change.
-5. Protocol Builder and Taxonomy Curator turn accepted ideas into contract-shaped proposals without silently changing public URLs.
+5. Protocol Builder assigns Domain/Topic and optional Method/Lens tags, while Taxonomy Curator preserves legacy URLs and prevents category duplication.
 
 The scout is intentionally allowed to find weak, negative, null, or contradictory results. It is not allowed to promote search metadata directly into `reviewed` content.
 
@@ -50,20 +60,21 @@ npm run check
 python3 -m http.server 8080
 ```
 
-Research helpers:
+Ontology and research helpers:
 
 ```bash
+npm run ontology
 npm run research:check
 npm run research:scout
 ```
 
-`npm run check` includes the research-system contract checker alongside the existing trust/indexing audits.
+`npm run check` validates the ontology, complete legacy-zone mapping, source provenance, research contracts, trust/indexing rules, and the existing strict content audit.
 
 ## Direction
 
-Near-term work should improve the knowledge asset rather than recreate the retired feature race: stronger atomic hacks, executable protocols, continuous research discovery with explicit review gates, evidence review, multilingual identity, research collections, better retrieval, and eventually a versioned API or MCP layer over the same canonical data.
+Near-term work should improve the knowledge asset rather than recreate the retired feature race: better Topic coverage, stronger atomic hacks, executable protocols, continuous research discovery with explicit review gates, evidence review, multilingual identity, research collections, better retrieval, and eventually a versioned API or MCP layer over the same canonical ontology and data.
 
-See [AGENT_LOOP.md](AGENT_LOOP.md), [CONTENT_QUALITY.md](CONTENT_QUALITY.md), [contracts/README.md](contracts/README.md), and [LICENSING.md](LICENSING.md).
+See [AGENT_LOOP.md](AGENT_LOOP.md), [CONTENT_QUALITY.md](CONTENT_QUALITY.md), [SOURCE_POLICY.md](SOURCE_POLICY.md), [contracts/README.md](contracts/README.md), and [LICENSING.md](LICENSING.md).
 
 ## License
 

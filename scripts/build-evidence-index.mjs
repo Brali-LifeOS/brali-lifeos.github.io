@@ -8,6 +8,7 @@ const contentRoot = path.join(root, "data/life-os-content");
 const outputRoot = path.join(root, "life-os/datasets");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
+const evidenceDecisions = JSON.parse(await readFile(path.join(root, "data/evidence-decisions.json"), "utf8"));
 const { classifyRecord } = await loadKnowledgeOntology(root);
 const knownSlugs = new Set(index.map((entry) => entry.slug));
 const allowedStatuses = new Set(["reviewed", "practical", "pending-review", "restricted"]);
@@ -75,10 +76,7 @@ function withEditorialPriority(record) {
     factors.push("topic-classification-pending");
   }
 
-  return {
-    ...record,
-    editorial_priority: { score, factors },
-  };
+  return { ...record, editorial_priority: { score, factors } };
 }
 
 const queue = records
@@ -116,23 +114,31 @@ await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
   ontology_coverage: ontologyCoverage,
   entries: queue,
 }, null, 2));
+await writeFile(path.join(outputRoot, "evidence-decisions.json"), JSON.stringify({
+  schema_version: 1,
+  name: "Brali Evidence Decisions",
+  description: evidenceDecisions.description,
+  count: (evidenceDecisions.entries ?? []).length,
+  entries: evidenceDecisions.entries ?? [],
+}, null, 2));
 
 const manifestPath = path.join(outputRoot, "manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-manifest.files = [...new Set([...(manifest.files ?? []), "evidence.json", "review-queue.json"])];
+manifest.files = [...new Set([...(manifest.files ?? []), "evidence.json", "review-queue.json", "evidence-decisions.json"])];
 manifest.evidence_status_counts = counts;
 manifest.evidence_ontology_coverage = ontologyCoverage;
+manifest.evidence_decision_count = (evidenceDecisions.entries ?? []).length;
 manifest.review_queue_schema_version = 3;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 const datasetsPage = path.join(root, "life-os/datasets/index.html");
 let html = await readFile(datasetsPage, "utf8");
 if (!html.includes("/life-os/datasets/evidence.json")) {
-  html = html.replace(
-    "</ul>",
-    '<li><a href="/life-os/datasets/evidence.json">Evidence status index (JSON)</a></li><li><a href="/life-os/datasets/review-queue.json">Evidence review queue (JSON)</a></li></ul>',
-  );
-  await writeFile(datasetsPage, html);
+  html = html.replace("</ul>", '<li><a href="/life-os/datasets/evidence.json">Evidence status index (JSON)</a></li><li><a href="/life-os/datasets/review-queue.json">Evidence review queue (JSON)</a></li></ul>');
 }
+if (!html.includes("/life-os/datasets/evidence-decisions.json")) {
+  html = html.replace("</ul>", '<li><a href="/life-os/datasets/evidence-decisions.json">Evidence decisions (JSON)</a></li></ul>');
+}
+await writeFile(datasetsPage, html);
 
-console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending.`);
+console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending; ${(evidenceDecisions.entries ?? []).length} evidence decision(s) published.`);

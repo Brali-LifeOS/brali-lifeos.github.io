@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "brainwriting-group-idea-generation": {
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited brainwriting draft containing unsupported idea-yield percentages, invented internal observations, and excessive timing/count prescriptions with a compact group ideation protocol.",
+      "forbidden_public_fragments": [
+        "20–200% more ideas",
+        "50–100% more ideas per person",
+        "produce between 24 and 60 distinct ideas",
+        "first round’s output jumped from 6–8 thin ideas to 12–15 usable seeds",
+        "5:00 per round works 80% of the time",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "Give the group one clear question, let everyone write ideas silently, pass the ideas to another person to add or change them, and delay discussion until the group has built several options.",
+        "checkIn": "Did everyone get a chance to contribute before discussion? Which idea became more useful after another person built on it, and what should the group test next?"
+      },
+      "faq": [
+        {
+          "id": "brainwriting-group-idea-generation-faq-1",
+          "question": "How many ideas should each person write?",
+          "answer": "Use a small number that fits the group and the problem. The point is to create enough material to pass and build on, not to hit a universal quota."
+        },
+        {
+          "id": "brainwriting-group-idea-generation-faq-2",
+          "question": "When should the group start discussing the ideas?",
+          "answer": "After at least one silent writing round and one build round. Keeping discussion separate at the start gives each person space to contribute before the group begins evaluating."
+        },
+        {
+          "id": "brainwriting-group-idea-generation-faq-3",
+          "question": "What should I add to someone else's idea?",
+          "answer": "Add a detail, combine it with another idea, change an assumption, or make the next test more concrete. Build first; critique can wait until the group switches into selection mode."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Brainwriting separates idea generation from group discussion. Everyone writes first, then passes the written ideas so another person can add, combine, or change them. The useful part is not a magic number of people, ideas, or minutes. It is the change in sequence: parallel contribution first, evaluation later.</p>"
+        },
+        "sections": [
+          {
+            "slug": "write-one-clear-question",
+            "title": "1. Write one clear question",
+            "html": "<p>Start with a question that gives the group something specific to change or create. Include the real constraint if it matters, but do not bury the question in a long briefing.</p><p>For example: <em>How could we make the first customer setup easier without adding another meeting?</em> is more workable than <em>How can we improve onboarding?</em></p>"
+          },
+          {
+            "slug": "write-before-talking",
+            "title": "2. Write before talking",
+            "html": "<p>Give everyone a quiet first pass. Each person writes a few short ideas independently. Use paper, cards, or separate cells in a shared document. Avoid discussion during this pass so early reactions do not become the group's default direction.</p>"
+          },
+          {
+            "slug": "pass-and-build",
+            "title": "3. Pass and build",
+            "html": "<p>Move each set of ideas to another person. Their job is to build rather than judge. They can add a missing detail, combine two ideas, change an assumption, or suggest a smaller version that could be tested.</p><p>If an idea seems weak, add an alternative beside it instead of stopping the round to debate it.</p>"
+          },
+          {
+            "slug": "switch-to-discussion",
+            "title": "4. Switch modes deliberately",
+            "html": "<p>After the group has written and built on several ideas, stop the silent rounds. Now cluster similar options and discuss them. Keep generation and evaluation as separate modes instead of sliding back and forth between them.</p>"
+          },
+          {
+            "slug": "choose-one-next-test",
+            "title": "5. Choose a next test",
+            "html": "<p>Do not finish with a wall of ideas. Pick one or a few options that deserve a concrete next step. Name what will be tried, who will do it, and when the group will look at the result.</p><p>In Brali, the useful record is the prompt, the selected option, and the next test. Idea counts are optional; shipping a next step matters more than filling the page.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

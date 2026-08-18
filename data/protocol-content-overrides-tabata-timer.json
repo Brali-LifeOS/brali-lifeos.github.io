@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "4-minute-tabata-hiit-timer": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited Tabata article containing unsupported heart-rate formulas, calorie estimates, rep targets, injury claims, generic maximal-effort instructions and progression schedules with a conservative interval-timer protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version explains that 20/10 x 8 is a historically specific high-intensity format, not a universal four-minute workout prescription.",
+      "forbidden_public_fragments": [
+        "85–100% of our all‑out effort",
+        "85–95% of maximum HR",
+        "220 − age",
+        "60–80 kcal",
+        "80–120 kcal",
+        "3 Tabata sessions/week",
+        "18 burpees in 20s",
+        "RPM > 100",
+        "large cardiovascular/performance stimulus",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "If very vigorous exercise is suitable for you, use an interval timer to alternate a short period of harder work with recovery. A 20-second work and 10-second recovery pattern can be one option, but choose a movement and number of rounds you can control safely rather than treating 8 all-out rounds as mandatory.",
+        "checkIn": "What movement and interval did I use, was the effort appropriate for my fitness today, did I maintain control, and was there any pain or reason to stop?",
+        "sourceUrl": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "reference": "NHS — Physical activity guidelines for adults aged 19 to 64"
+      },
+      "references": [
+        "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "https://pubmed.ncbi.nlm.nih.gov/8897392/",
+        "https://www.who.int/publications/i/item/9789240015128"
+      ],
+      "faq": [
+        {
+          "id": "4-minute-tabata-hiit-timer-faq-1",
+          "question": "Is every 20/10 x 8 workout the original Tabata protocol?",
+          "answer": "No. The original study used seven to eight 20-second bouts on a cycle ergometer at a highly controlled laboratory intensity with 10-second rests. Using the same timer with burpees, mountain climbers or another movement is a variation, not evidence that the original study's results automatically apply."
+        },
+        {
+          "id": "4-minute-tabata-hiit-timer-faq-2",
+          "question": "Do I need to work all-out for all 8 rounds?",
+          "answer": "No. Brali does not prescribe maximal effort or 8 rounds for everyone. NHS guidance says exercise intensity should be appropriate to your fitness, and people who have not exercised for some time or have medical conditions or concerns should get healthcare advice first."
+        },
+        {
+          "id": "4-minute-tabata-hiit-timer-faq-3",
+          "question": "What should I do if the exercise feels wrong?",
+          "answer": "Reduce the intensity, change the movement or stop. Stop if you feel pain or become unwell, and get appropriate healthcare advice if you are unsure whether very vigorous exercise is suitable for you."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>The 20-seconds-work, 10-seconds-rest timer is widely called Tabata, but the original research used a demanding cycle-ergometer protocol in a small laboratory sample. NHS guidance uses HIIT more broadly for short bursts of very vigorous activity separated by rest. Brali therefore treats the timer as a format you can adapt, not proof that any four-minute exercise sequence is safe, optimal or equivalent to the research protocol.</p>"
+        },
+        "sections": [
+          {
+            "slug": "check-the-intensity-fits",
+            "title": "1. Check that very vigorous exercise fits you",
+            "html": "<p>If you have not exercised for some time, have a health condition, symptoms, an injury or concerns, get appropriate healthcare advice before starting very vigorous intervals. The goal is not to earn a timer badge by ignoring suitability.</p>"
+          },
+          {
+            "slug": "choose-a-controllable-movement",
+            "title": "2. Choose a movement you can control",
+            "html": "<p>Use a familiar movement and a safe space. You do not need a high-impact or technically demanding exercise just because a Tabata timer is running. Choose an option you can scale up or down without losing control.</p>"
+          },
+          {
+            "slug": "start-below-maximal",
+            "title": "3. Start below a forced maximum",
+            "html": "<p>Begin at an effort you can control and use the first interval to judge whether the movement and intensity are appropriate. Brali does not prescribe 85–100% effort, a maximum-heart-rate percentage or a rep target.</p>"
+          },
+          {
+            "slug": "adapt-the-timer",
+            "title": "4. Adapt the timer when needed",
+            "html": "<p>Twenty seconds of harder work followed by ten seconds of recovery is one option. Fewer rounds, a longer recovery or an easier work interval may be the better experiment. Eight rounds are not required for the practice to count.</p>"
+          },
+          {
+            "slug": "stop-when-needed",
+            "title": "5. Stop when needed",
+            "html": "<p>Stop if you feel pain or become unwell. Do not use a heart-rate target, calorie estimate, rep target or desire to finish the eighth round as a reason to push through concerning symptoms or poor movement control.</p>"
+          },
+          {
+            "slug": "review-the-session",
+            "title": "6. Review the session without pretending precision",
+            "html": "<p>Record the movement, interval pattern, number of rounds, perceived difficulty and whether anything made you modify or stop. Do not infer calorie burn, VO2max changes or a training programme from one short session. Decide whether this interval format is a sensible part of your broader activity routine.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

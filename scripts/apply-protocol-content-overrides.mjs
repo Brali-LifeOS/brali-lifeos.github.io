@@ -19,6 +19,7 @@ for (const [slug, override] of Object.entries(registry.entries ?? {})) {
   const file = path.join(contentRoot, `${slug}.json`);
   const article = JSON.parse(await readFile(file, "utf8"));
   article.lifeOsSource = { ...(article.lifeOsSource ?? {}), ...(override.lifeOsSource ?? {}) };
+  if (Array.isArray(override.references)) article.references = override.references;
   if (Array.isArray(override.faq)) {
     article.faq = override.faq.map((item) => ({
       ...item,
@@ -28,13 +29,21 @@ for (const [slug, override] of Object.entries(registry.entries ?? {})) {
   article.body = override.body;
   article.editorialCuration = {
     status: "curated",
+    evidenceStatus: override.evidence_status ?? "practical",
     reviewedAt: override.reviewed_at,
     reviewedBy: override.reviewed_by,
     reason: override.reason,
     registry: registry.sources?.[slug] ?? null,
   };
   await writeFile(file, `${JSON.stringify(article, null, 2)}\n`);
-  applied.push({ slug, reviewed_at: override.reviewed_at, reviewed_by: override.reviewed_by, reason: override.reason, registry: registry.sources?.[slug] ?? null });
+  applied.push({
+    slug,
+    evidence_status: override.evidence_status ?? "practical",
+    reviewed_at: override.reviewed_at,
+    reviewed_by: override.reviewed_by,
+    reason: override.reason,
+    registry: registry.sources?.[slug] ?? null,
+  });
 }
 
 await writeFile(path.join(root, ".protocol-content-overrides-applied.json"), JSON.stringify({ schema_version: 1, registry_files: registry.files, entries: applied }, null, 2));

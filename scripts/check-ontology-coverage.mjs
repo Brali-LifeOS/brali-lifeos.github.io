@@ -28,7 +28,8 @@ if (topicMapped + topicPending !== records.length) invalid += 1;
 if (!page.includes("Measure the migration instead of pretending it is finished.")) invalid += 1;
 if (!page.includes("Trusted records needing Topic classification")) invalid += 1;
 if (!page.includes("ontology-coverage.json")) invalid += 1;
-if (!(manifest.files ?? []).includes("ontology-coverage.json")) invalid += 1;
+const manifestPaths = new Set((manifest.files ?? []).map((item) => typeof item === "string" ? item : item?.path).filter(Boolean));
+if (![...manifestPaths].some((item) => item === "ontology-coverage.json" || item === "life-os/datasets/ontology-coverage.json")) invalid += 1;
 
 const methodIds = new Set(ontology.methods.map((item) => item.id));
 const lensIds = new Set(ontology.lenses.map((item) => item.id));

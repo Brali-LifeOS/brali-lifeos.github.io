@@ -26,11 +26,24 @@ const sensitiveZones = new Set([
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 
+function isUsableSource(value) {
+  if (!value) return false;
+  const text = typeof value === "string" ? value : JSON.stringify(value);
+  return Boolean(text.trim()) && !/(?:metalhatscats|brali-lifeos\.github\.io\/life-os)/i.test(text);
+}
+
 function sourceDetails(article) {
   const original = article.lifeOsSource ?? {};
-  const sourceUrl = original.sourceUrl || article.sourceUrl || null;
-  const reference = original.reference || article.reference || null;
-  const lists = [article.references, article.sources, article.citations].filter(Array.isArray).flat().filter(Boolean);
+  const rawSourceUrl = original.sourceUrl || article.sourceUrl || null;
+  const rawReference = original.reference || article.reference || null;
+  const sourceUrl = isUsableSource(rawSourceUrl) && /^https?:\/\//i.test(rawSourceUrl) ? rawSourceUrl : null;
+  const reference = isUsableSource(rawReference)
+    ? rawReference
+    : (!sourceUrl && isUsableSource(rawSourceUrl) ? rawSourceUrl : null);
+  const lists = [article.references, article.sources, article.citations]
+    .filter(Array.isArray)
+    .flat()
+    .filter(isUsableSource);
   return { sourceUrl, reference, listSource: lists[0] ?? null, hasSource: Boolean(sourceUrl || reference || lists.length) };
 }
 

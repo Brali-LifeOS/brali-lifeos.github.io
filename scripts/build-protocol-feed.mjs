@@ -14,6 +14,7 @@ const evidenceBySlug = new Map((evidence.entries ?? []).map((entry) => [entry.sl
 const areaByZone = new Map();
 for (const area of areas) for (const zone of area.zones) areaByZone.set(zone, area);
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
+const protocolId = (entry) => clean(entry.protocolId) || `brali:${entry.slug}`;
 
 const protocols = [];
 for (const entry of sourceIndex) {
@@ -28,6 +29,8 @@ for (const entry of sourceIndex) {
   const checkIn = clean(original.checkIn || article.checkIn || "");
 
   protocols.push({
+    protocol_id: protocolId(entry),
+    language: "en",
     slug: entry.slug,
     url: `${base}/life-os/${entry.slug}/`,
     title: clean(publicEntry.displayTitle || entry.title),
@@ -48,14 +51,16 @@ for (const entry of sourceIndex) {
 protocols.sort((a, b) => a.title.localeCompare(b.title));
 
 const output = {
-  schema_version: 1,
-  name: "Brali LifeOS Protocol Feed",
-  description: "Compact, discovery-ready protocols that currently meet the Brali content quality and search-indexing bar.",
+  schema_version: 2,
+  name: "Brali Protocol Feed",
+  description: "Practical protocols that currently meet the Brali public quality and indexing bar.",
   canonical_url: `${base}/life-os/datasets/protocols.json`,
+  canonical_language: "en",
   license: "CC BY-NC-SA 4.0; Brali names and logos are not licensed for reuse.",
   selection_rule: "Only entries with evidence status reviewed or practical are included.",
+  identity_rule: "protocol_id identifies the underlying protocol. Future language versions should keep the same protocol_id and change the language field.",
   count: protocols.length,
-  fields: ["slug", "url", "title", "description", "life_area", "growth_zone", "action", "check_in", "keywords", "evidence"],
+  fields: ["protocol_id", "language", "slug", "url", "title", "description", "life_area", "growth_zone", "action", "check_in", "keywords", "evidence"],
   entries: protocols,
 };
 
@@ -64,7 +69,12 @@ await writeFile(path.join(root, "life-os/datasets/protocols.json"), JSON.stringi
 const manifestPath = path.join(root, "life-os/datasets/manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "protocols.json"] )];
-manifest.protocol_feed = { count: protocols.length, selection_rule: output.selection_rule };
+manifest.protocol_feed = {
+  count: protocols.length,
+  schema_version: output.schema_version,
+  canonical_language: output.canonical_language,
+  selection_rule: output.selection_rule,
+};
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 const datasetsPath = path.join(root, "life-os/datasets/index.html");

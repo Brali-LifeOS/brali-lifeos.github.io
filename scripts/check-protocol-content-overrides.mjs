@@ -16,7 +16,9 @@ let failures = 0;
 for (const [slug, override] of Object.entries(registry.entries ?? {})) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${slug}.json`), "utf8"));
   const page = await readFile(path.join(root, "life-os", slug, "index.html"), "utf8");
+  const expectedStatus = override.evidence_status ?? "practical";
   if (article.editorialCuration?.status !== "curated") failures += 1;
+  if (article.editorialCuration?.evidenceStatus !== expectedStatus) failures += 1;
   if (article.editorialCuration?.reviewedAt !== override.reviewed_at) failures += 1;
   if (article.editorialCuration?.registry !== registry.sources?.[slug]) failures += 1;
   if (!page.includes(override.lifeOsSource?.whatYouDo ?? "")) failures += 1;
@@ -24,10 +26,12 @@ for (const [slug, override] of Object.entries(registry.entries ?? {})) {
     if (page.includes(fragment) || JSON.stringify(article).includes(fragment)) failures += 1;
   }
   const trust = evidenceBySlug.get(slug);
-  if (trust?.status !== "practical" || trust?.indexable !== true) failures += 1;
+  if (trust?.status !== expectedStatus || trust?.indexable !== true) failures += 1;
+  if (expectedStatus === "reviewed" && trust?.source?.recorded !== true) failures += 1;
   if (!indexable.has(slug)) failures += 1;
   if (!feedBySlug.has(slug)) failures += 1;
 }
 
 if (failures) throw new Error(`Curated protocol validation failed with ${failures} problem(s).`);
-console.log(`Curated protocol overrides verified: ${Object.keys(registry.entries ?? {}).length} entry override(s) from ${registry.files.length} registry file(s) are practical, indexable, and present in the trusted feed.`);
+const reviewed = Object.values(registry.entries ?? {}).filter((override) => override.evidence_status === "reviewed").length;
+console.log(`Curated protocol overrides verified: ${Object.keys(registry.entries ?? {}).length} entry override(s) from ${registry.files.length} registry file(s); ${reviewed} reviewed-source protocol(s); all are indexable and present in the trusted feed.`);

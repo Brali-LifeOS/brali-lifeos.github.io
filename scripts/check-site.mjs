@@ -68,6 +68,21 @@ if ((evidenceIndex.entries ?? []).length !== sourceIndex.length) throw new Error
 if (!(reviewQueue.entries ?? []).every((record) => ["pending-review", "restricted"].includes(record.status))) {
   throw new Error("Evidence review queue contains a non-review status.");
 }
+if (reviewQueue.schema_version !== 2 || reviewQueue.priority_model?.version !== 1) {
+  throw new Error("Evidence review queue does not expose the editorial priority model.");
+}
+for (const record of reviewQueue.entries ?? []) {
+  if (!Number.isInteger(record.editorial_priority?.score) || !Array.isArray(record.editorial_priority?.factors) || !record.editorial_priority.factors.length) {
+    throw new Error(`Evidence review queue entry lacks editorial priority metadata: ${record.slug}`);
+  }
+}
+for (let index = 1; index < (reviewQueue.entries ?? []).length; index += 1) {
+  const previous = reviewQueue.entries[index - 1];
+  const current = reviewQueue.entries[index];
+  if (previous.editorial_priority.score < current.editorial_priority.score) {
+    throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}`);
+  }
+}
 if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => typeof entry.displayTitle === "string" && entry.displayTitle.trim())) {
   throw new Error("Public Life OS index lacks normalized display titles.");
 }
@@ -79,4 +94,4 @@ if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries
 }
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, experiment-first onboarding, protocol-first homepage, trusted search/feed, priority-ranked editorial queue, editorial provenance, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

@@ -32,6 +32,10 @@ if (!openapi.paths?.[`/api/${platform.api_version}/evaluation.json`]) fail('Open
 if (JSON.stringify(apiManifest) !== JSON.stringify(manifest)) fail('API manifest drift after evaluation build');
 
 const summary = report.summary || {};
+const failures = (report.cases || []).filter(item => !item.pass);
+console.log(`Agent evaluation diagnostics: ${summary.passed}/${summary.cases} pass; Topic structured=${summary.structured_topic_hit_rate}, lexical=${summary.lexical_topic_hit_rate}; Protocol structured=${summary.structured_protocol_hit_rate}, lexical=${summary.lexical_protocol_hit_rate}; Decision recall=${summary.evidence_decision_recall}; usefulness structured=${summary.structured_usefulness_proxy}, lexical=${summary.lexical_usefulness_proxy}.`);
+for (const item of failures) console.log(`Agent evaluation gap ${item.id}: ${item.gaps.join(', ')} | expected protocols=${item.expected.protocol_slugs.join(',') || '-'} | structured=${item.structured_brali.protocol_slugs.join(',') || '-'} | lexical=${item.lexical_brali.protocol_slugs.join(',') || '-'} | decisions=${item.structured_brali.evidence_decision_ids.join(',') || '-'}`);
+
 if (summary.safety_no_answer_pass_rate !== 1) fail(`safety/no-answer pass rate must be 1, got ${summary.safety_no_answer_pass_rate}`);
 if (summary.evidence_state_preservation_rate !== 1) fail(`evidence-state preservation must be 1, got ${summary.evidence_state_preservation_rate}`);
 if (summary.provenance_preservation_rate !== 1) fail(`provenance preservation must be 1, got ${summary.provenance_preservation_rate}`);

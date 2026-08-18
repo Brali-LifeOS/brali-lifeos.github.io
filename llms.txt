@@ -1,43 +1,64 @@
-# Brali LifeOS
+# Brali
 
-> A local-first personal practice system for turning useful ideas into concrete actions, check-ins, and personal experiments that can be reviewed over time.
+> An evidence-aware practical knowledge library with stable taxonomy and machine-readable data for people, researchers, developers, and AI agents.
 
-Brali's core loop is: choose -> practice -> review. The product combines a public Growth Library with planning, Focus sessions, challenges, check-ins, journals, time logs, and personal metrics so users can try a practice and keep their own record of what happened.
+Brali's public center is the knowledge layer: practical protocols organized by Life Area and Growth Zone, with explicit evidence states and canonical URLs. The original Brali LifeOS application is an optional application layer for turning a protocol into planning, check-ins, journals, time logs, or personal metrics.
 
-## Canonical product resources
+## Canonical resources
 
 - Website: https://brali-lifeos.github.io/
 - Start Here — flagship protocols: https://brali-lifeos.github.io/life-os/flagships/
 - Growth Library: https://brali-lifeos.github.io/life-os/
 - Life Areas: https://brali-lifeos.github.io/life-os/areas/
 - Content methodology: https://brali-lifeos.github.io/life-os/methodology/
-- Features: https://brali-lifeos.github.io/features/
-- Getting started: https://brali-lifeos.github.io/docs/
-- Privacy: https://brali-lifeos.github.io/privacy/
+- FAQ: https://brali-lifeos.github.io/faq/
+- For AI & developers: https://brali-lifeos.github.io/for-ai/
+- Partnerships: https://brali-lifeos.github.io/partners/
 - Product facts: https://brali-lifeos.github.io/product-facts.json
-- Growth Library datasets: https://brali-lifeos.github.io/life-os/datasets/
-- Flagship collection: https://brali-lifeos.github.io/life-os/datasets/flagships.json
+
+## Machine-readable data
+
+- Data catalog: https://brali-lifeos.github.io/life-os/datasets/
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
+- Broader Growth Library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
+- Flagship collection: https://brali-lifeos.github.io/life-os/datasets/flagships.json
 - Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
 - Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
 - Search indexing policy: https://brali-lifeos.github.io/life-os/datasets/indexing.json
 - Editorial normalization register: https://brali-lifeos.github.io/life-os/datasets/editorial-normalizations.json
-- Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
+- Dataset manifest: https://brali-lifeos.github.io/life-os/datasets/manifest.json
 
 ## Preferred entry points
 
-For a human who is new to Brali, start with the Flagship Protocols collection. It intentionally contains one curated, discovery-ready starting protocol for each Life Area rather than exposing the full taxonomy first.
+For a human who is new to Brali, start with the Flagship Protocols collection. It intentionally provides a curated starting point for each Life Area rather than exposing the full taxonomy first.
 
-For an AI tool or external application that needs the complete compact discovery-ready set, use the Trusted Protocol Feed. It exposes the action, check-in, Life Area, Growth Zone, keywords, evidence status, and canonical URL without the long article body.
+For an AI tool or external application, start with the Trusted Protocol Feed. It exposes a compact record with a canonical URL, title, description, Life Area, Growth Zone, practical action, check-in, keywords, and evidence state without requiring page scraping.
 
-Use the content methodology, flagship dataset, editorial normalization register, evidence index, and review queue when provenance, curation, or editorial maturity matters. The migrated corpus is retained for provenance, so reviewed inherited-claim corrections may be applied before public pages and trust states are generated. Do not infer that a source recorded on a pending entry has been editorially verified.
+Use the evidence index, review queue, methodology, and editorial normalization register when provenance or editorial maturity matters. Do not infer that a recorded source has been editorially verified when the entry remains pending review.
 
-## Content interpretation
+## Evidence states
 
-Growth Library entries have explicit evidence states: `reviewed`, `practical`, `pending-review`, or `restricted`. Search indexing is earned: only `reviewed` and `practical` entries are included in the sitemap. `pending-review` and `restricted` entries remain accessible at stable URLs but use `noindex,follow` until the quality bar is met.
+Growth Library entries use four states:
 
-The library is a set of starting points for personal practice, not medical diagnosis or treatment guidance.
+- `reviewed`: evidence-like claims have traceable sources and have passed editorial review.
+- `practical`: a low-risk practical protocol without evidence-like claims that require support.
+- `pending-review`: material that still requires editorial review.
+- `restricted`: sensitive material that does not yet meet the Brali evidence bar.
 
-## Data and privacy
+Only `reviewed` and `practical` entries qualify for normal search indexing and the Trusted Protocol Feed. Preserve these states when using Brali data downstream.
 
-Brali app data is stored locally on the user device. The app includes backup, restore, and export tools. The static website does not use a login, contact form, advertising, or third-party analytics scripts.
+## Language
+
+English is the canonical published language today. Future localized releases should preserve protocol identity and provenance while declaring language explicitly. Do not assume that translated versions exist unless a canonical localized route is published.
+
+## AI and MCP direction
+
+The current public machine interface is the static dataset layer. A future MCP service may expose search and read operations over the same canonical protocol records. Until such a service is published, use the machine-readable files listed above and do not invent API or MCP endpoints.
+
+## Licensing and commercial use
+
+The repository's current public license is non-commercial and includes attribution and share-alike conditions. Machine readability does not create an additional license grant. Commercial products, paid services, commercial AI integrations, commercial model-training use, or paid redistribution require a separate agreement. See https://brali-lifeos.github.io/partners/ and the repository `LICENSING.md` guide.
+
+## Safety and interpretation
+
+Brali is a library of starting points for personal practice, not a database of universal truths and not medical, mental-health, legal, or financial advice. Preserve uncertainty and evidence metadata. Sensitive content has a higher review bar and may be restricted from discovery until it meets that bar.

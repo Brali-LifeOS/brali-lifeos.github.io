@@ -12,20 +12,23 @@ The Brali and Brali LifeOS names, logos, visual identity, and other brand identi
 
 ## Data and editorial content
 
-The Growth Library, protocol feeds, taxonomy, evidence metadata, editorial material, and other original knowledge assets are currently covered by the root license unless a file contains a more specific notice.
+The Growth Library, protocol feeds, taxonomy, evidence metadata, editorial material, APIs, and other original knowledge assets are currently covered by the root license unless a file contains a more specific notice.
 
 For downstream use, preserve at least:
 
+- attribution to **Dzmitryi Kharlanau** as creator and **Brali** as the project identity where attribution is required;
 - the canonical Brali URL or record identifier;
 - the applicable license notice;
 - evidence status and review metadata where supplied;
 - an indication when the material has been changed or translated.
 
+Compact form: `Brali — Dzmitryi Kharlanau — <canonical Brali URL>`. Research and dataset users should use `CITATION.cff` and pin a versioned release when reproducibility matters. See `ATTRIBUTION.md` for operational attribution guidance.
+
 Do not remove uncertainty metadata in a way that makes a `pending-review` or `restricted` record appear reviewed.
 
 ## Software and build scripts
 
-This repository also contains software such as build, validation, and publishing scripts. Creative Commons itself recommends software-specific licenses rather than CC licenses for software.
+This repository also contains software such as build, validation, publishing, and MCP scripts. Creative Commons itself recommends software-specific licenses rather than CC licenses for software.
 
 No licensing split is made by this guide alone. Until an explicit file-level or directory-level software license is added, the root repository license remains the operative notice for original repository material.
 
@@ -55,15 +58,15 @@ See the public partnership overview at `https://brali-lifeos.github.io/partners/
 
 ## Research and non-commercial use
 
-Research, education, prototypes, personal projects, and other non-commercial uses can use the public material under the conditions of the root license. When publishing results or derivative datasets, keep provenance and evidence metadata whenever reasonably possible.
+Research, education, prototypes, personal projects, and other non-commercial uses can use the public material under the conditions of the root license. When publishing results or derivative datasets, keep provenance and evidence metadata whenever reasonably possible and use the preferred citation identity where appropriate.
 
 ## AI and agent use
 
-The same licensing boundary applies to AI use. The fact that data is machine-readable does not create an additional license grant.
+The same licensing boundary applies to AI use. The fact that data is machine-readable or accessible through API/MCP does not create an additional license grant.
 
-For non-commercial agent and research use, the preferred interface is the Trusted Protocol Feed plus the evidence metadata. For commercial AI use, request a separate agreement.
+For non-commercial agent and research use, the preferred interface is the versioned API or Trusted Protocol Feed plus evidence metadata. Agent outputs should preserve canonical Brali identity/URL, evidence state, and `Brali — Dzmitryi Kharlanau` attribution when the interface permits citations or source labels.
 
-Technical integration guidance is published at `https://brali-lifeos.github.io/for-ai/`.
+Technical integration guidance is published at `https://brali-lifeos.github.io/for-ai/` and `https://brali-lifeos.github.io/for-ai/quickstart/`.
 
 ## Future licensing decision to review
 

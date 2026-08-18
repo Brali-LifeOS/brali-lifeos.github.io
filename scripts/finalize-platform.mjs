@@ -28,6 +28,7 @@ const decisions = read('data/evidence-decisions.json', { entries: [] });
 const identity = read('life-os/datasets/identity.json');
 const aliasDoc = read('life-os/datasets/identity-aliases.json');
 const apiDir = `api/${config.api_version}`;
+const attribution = { creator: 'Dzmitryi Kharlanau', project: 'Brali', canonical_url: 'https://brali-lifeos.github.io/', citation_url: 'https://brali-lifeos.github.io/citation/', citation_file: 'https://brali-lifeos.github.io/CITATION.cff', license: 'CC BY-NC-SA 4.0' };
 
 const replacement = new Map();
 for (const item of identity.identities || []) {
@@ -102,12 +103,15 @@ write('life-os/datasets/evidence-metrics.json', { schema_version: 1, dataset_ver
 const apiIdentity = read(`${apiDir}/identity.json`);
 apiIdentity.identities = identity.identities;
 apiIdentity.aliases = aliasDoc.aliases;
+apiIdentity.attribution = attribution;
 write(`${apiDir}/identity.json`, apiIdentity);
-write(`${apiDir}/evidence-decisions.json`, { schema_version: 1, dataset_version: config.dataset_version, items: (decisions.entries || []).map(item => ({ ...item, canonical_id: cid('evidence-decision', item.id), candidate_canonical_id: cid('research-candidate', String(item.candidate_id || '').replace(/^[^:]+:/, '')) })) });
+write(`${apiDir}/evidence-decisions.json`, { schema_version: 1, dataset_version: config.dataset_version, attribution, items: (decisions.entries || []).map(item => ({ ...item, canonical_id: cid('evidence-decision', item.id), candidate_canonical_id: cid('research-candidate', String(item.candidate_id || '').replace(/^[^:]+:/, '')) })) });
 const apiIndex = read(`${apiDir}/index.json`);
+apiIndex.attribution = attribution;
 apiIndex.endpoints = [...new Set([...(apiIndex.endpoints || []), 'evidence-decisions.json'])];
 write(`${apiDir}/index.json`, apiIndex);
 const openapi = read(`${apiDir}/openapi.json`);
+openapi['x-brali-attribution'] = attribution;
 openapi.paths[`/api/${config.api_version}/evidence-decisions.json`] = { get: { operationId: 'get_evidence_decisions', responses: { '200': { description: 'Reviewed source decisions', content: { 'application/json': { schema: { type: 'object' } } } } } } };
 write(`${apiDir}/openapi.json`, openapi);
 
@@ -118,7 +122,7 @@ const files = datasetFiles.map(rel => {
   const count = Array.isArray(doc) ? doc.length : ['items','entries','protocols','candidates','queries','identities','aliases'].reduce((n, key) => n ?? (Array.isArray(doc?.[key]) ? doc[key].length : null), null);
   return { path: rel, sha256: digest(text), bytes: Buffer.byteLength(text), count };
 });
-const manifest = { schema_version: 2, dataset_version: config.dataset_version, api_version: config.api_version, canonical_url: 'https://brali-lifeos.github.io/life-os/datasets/manifest.json', files, counts: { files: files.length, identities: identity.identities.length, aliases: aliasDoc.aliases.length, topics: (ontology.topics || []).length, research_candidates: (candidates.candidates || []).length, evidence_entries: evidenceEntries.length, evidence_decisions: (decisions.entries || []).length } };
+const manifest = { schema_version: 2, dataset_version: config.dataset_version, api_version: config.api_version, canonical_url: 'https://brali-lifeos.github.io/life-os/datasets/manifest.json', attribution, files, counts: { files: files.length, identities: identity.identities.length, aliases: aliasDoc.aliases.length, topics: (ontology.topics || []).length, research_candidates: (candidates.candidates || []).length, evidence_entries: evidenceEntries.length, evidence_decisions: (decisions.entries || []).length } };
 write('life-os/datasets/manifest.json', manifest);
 write(`${apiDir}/manifest.json`, manifest);
 

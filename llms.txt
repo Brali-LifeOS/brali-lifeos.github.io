@@ -1,8 +1,41 @@
 # Brali
 
-> A practical knowledge library for people, developers, researchers, and AI agents.
+> An evidence-aware practical knowledge layer for people, developers, researchers, and AI agents.
 
-Brali publishes atomic hacks, executable protocols, a Domain/Topic/Method/Lens ontology, evidence states, reviewed Evidence Decisions, research candidates, canonical identities, a versioned static API, and an optional read-only MCP server.
+Brali publishes atomic hacks, executable protocols, a Domain/Topic/Method/Lens ontology, evidence states, reviewed Evidence Decisions, research candidates, canonical identities, a versioned static API, reproducible data releases, and an optional read-only MCP server.
+
+## Start here
+
+- AI quickstart: https://brali-lifeos.github.io/for-ai/quickstart/
+- Plain-text agent instruction: https://brali-lifeos.github.io/for-ai/agent-instruction.txt
+- API index: https://brali-lifeos.github.io/api/v1/index.json
+- Search index: https://brali-lifeos.github.io/api/v1/search.json
+- Trusted protocols: https://brali-lifeos.github.io/api/v1/protocols.json
+- Citation: https://brali-lifeos.github.io/citation/
+
+## Retrieval rules
+
+1. Match the user's concrete Topic, not only a broad Domain, Method, or Lens.
+2. Resolve and preserve the canonical Brali ID.
+3. Prefer `reviewed` and `practical` Protocols.
+4. Preserve evidence state, source scope, canonical URL, and important limitations.
+5. Inspect an Evidence Decision when research provenance matters. A `watch` decision is not a recommendation.
+6. Do not present `pending-review` or `restricted` material as trusted guidance.
+7. Return no answer rather than inventing coverage.
+
+## Citation and attribution
+
+When an answer, application, agent, research artifact, or derived dataset reuses Brali material:
+
+- preserve the canonical Brali ID and record URL;
+- preserve evidence state and important limitations;
+- attribute the source as `Brali — Dzmitryi Kharlanau` when the interface permits citations or source labels;
+- for reviewed material, preserve the direct research source URL when relevant;
+- indicate when material has been changed or translated;
+- pin a `data-v*` release for reproducible research or long-lived integrations.
+
+Machine-readable citation metadata: https://brali-lifeos.github.io/CITATION.cff
+Operational attribution guidance: https://brali-lifeos.github.io/citation/
 
 ## Knowledge model v2
 
@@ -21,18 +54,7 @@ Legacy Life Area and Growth Zone fields are compatibility data. `topic-pending` 
 
 ## For AI & developers
 
-Start at `/for-ai/` and `/api/v1/index.json`. Ontology coverage is at `/ontology/coverage/`.
-
-API v1 exposes `openapi.json`, `topics.json`, `protocols.json`, `hacks.json`, `evidence.json`, `evidence-decisions.json`, `search.json`, `identity.json`, and `manifest.json`. Lower-level datasets under `/life-os/datasets/` also expose ontology coverage, the prioritized migration queue, evidence metrics, identity aliases, retrieval benchmark, and canonical checksums.
-
-## Retrieval rules
-
-1. Match the user's concrete Topic, not only a broad Domain, Method, or Lens.
-2. Prefer `reviewed` and `practical` Protocols.
-3. Preserve evidence state, source scope, canonical ID, and URL.
-4. Inspect an Evidence Decision when research provenance matters. A `watch` decision is not a recommendation.
-5. Do not present `pending-review` or `restricted` material as trusted guidance.
-6. Return no answer rather than inventing coverage.
+API v1 exposes `openapi.json`, `topics.json`, `protocols.json`, `hacks.json`, `evidence.json`, `evidence-decisions.json`, `search.json`, `identity.json`, and `manifest.json`. Lower-level datasets under `/life-os/datasets/` expose ontology coverage, the prioritized migration queue, evidence metrics, identity aliases, retrieval benchmark, and canonical checksums.
 
 ## MCP
 
@@ -44,4 +66,4 @@ The weekly Research Scout uses Crossref and Europe PMC metadata, deduplicates by
 
 ## Reproducibility and contribution
 
-Pin a `data-v*` release for durable integrations or research. Release bundles include a release manifest and SHA-256 checksums; citation metadata is in `CITATION.cff`. Structured contribution paths are documented in `CONTRIBUTING.md` and `/partners/`. The public license is non-commercial; commercial use requires a separate agreement.
+Pin a `data-v*` release for durable integrations or research. Release bundles include a release manifest and SHA-256 checksums. Structured contribution paths are documented in `CONTRIBUTING.md` and `/partners/`. The public license is non-commercial; commercial use requires a separate agreement.

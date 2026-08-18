@@ -16,8 +16,9 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 - `/life-os/` and `/life-os/datasets/` — public library and machine-readable data.
 - `/research/` — research notes and discovery pipeline.
 - `/agents/`, `/contracts/`, `/skills/` — guarded agent/editorial workflows.
-- `/for-ai/` — guidance for AI tools and developers.
+- `/for-ai/` and `/for-ai/quickstart/` — AI/developer guidance and copyable integration path.
 - `/api/v1/` — generated versioned read-only Knowledge API.
+- `/citation/` and `CITATION.cff` — attribution and citation identity.
 - `/llms.txt` — compact machine-readable project orientation.
 
 ## Stable identity and integrations
@@ -27,6 +28,8 @@ Generated entities expose canonical IDs as `brali:<kind>:<local-id>`. Titles, UR
 `npm run build` generates a canonical dataset manifest with SHA-256 checksums, identity and multilingual alias registries, an actionable ontology migration queue, evidence-debt metrics, a retrieval benchmark report, and `/api/v1/` files for Topics, Hacks, Protocols, Evidence, search, identity, manifest, and OpenAPI.
 
 The optional read-only MCP server in `mcp/` exposes `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, and `get_related` over the same generated data. Start with `docs/INTEGRATION_QUICKSTART.md`.
+
+API and dataset metadata carry the attribution identity `Brali — Dzmitryi Kharlanau` plus the canonical citation URL. Downstream systems should keep canonical identity, evidence state, source scope, and attribution together.
 
 ## Continuous research loop
 
@@ -55,11 +58,11 @@ npm run mcp:check
 npm run release:data -- --version 1.0.0
 ```
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, the API surface, retrieval benchmark, MCP syntax, research-provider contracts, and the existing strict content audit.
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, the API surface, retrieval benchmark, MCP syntax, attribution/citation surfaces, research-provider contracts, and the existing strict content audit.
 
 ## Releases and citation
 
-The `Package Brali data release` workflow creates immutable `data-v*` bundles with a machine-readable release manifest and SHA-256 checksums. `CITATION.cff` is the canonical citation metadata. Consumers that need reproducibility should pin a release instead of `main`.
+The `Package Brali data release` workflow creates immutable `data-v*` bundles with a machine-readable release manifest and SHA-256 checksums. `CITATION.cff` is the canonical citation metadata. Consumers that need reproducibility should pin a release instead of `main`. See `/citation/` and `ATTRIBUTION.md` for the requested creator/project attribution.
 
 ## Contributing and partnerships
 

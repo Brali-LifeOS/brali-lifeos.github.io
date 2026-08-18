@@ -63,7 +63,11 @@ const output = {
   description: "Practical protocols that currently meet the Brali public quality and indexing bar, with Brali ontology classification.",
   canonical_url: `${base}/life-os/datasets/protocols.json`,
   canonical_language: "en",
+  creator: "Dzmitryi Kharlanau",
+  publisher: "Brali",
+  citation_url: `${base}/citation/`,
   license: "CC BY-NC-SA 4.0; Brali names and logos are not licensed for reuse.",
+  attribution_rule: "Preserve the canonical Brali record URL, evidence state, applicable license, and Brali — Dzmitryi Kharlanau attribution where the interface permits source labels or citations.",
   selection_rule: "Only entries with evidence status reviewed or practical are included.",
   identity_rule: "protocol_id identifies the underlying protocol. Future language versions should keep the same protocol_id and change the language field.",
   ontology_rule: "Use ontology.domains/topics/methods/lenses for new integrations. life_area and growth_zone remain compatibility fields. topic-pending means the legacy collection identifies a Method or Lens but the specific Topic still requires editorial classification.",
@@ -84,7 +88,7 @@ manifest.protocol_feed = {
   schema_version: output.schema_version,
   canonical_language: output.canonical_language,
   selection_rule: output.selection_rule,
-  ontology_coverage: output.ontology_coverage,
+  citation_url: output.citation_url,
 };
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 

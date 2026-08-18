@@ -47,7 +47,8 @@ export function sourceDetails(article) {
 }
 
 export function claimFlags(article) {
-  const text = JSON.stringify(article);
+  const { editorialCuration: _editorialCuration, ...content } = article ?? {};
+  const text = JSON.stringify(content);
   return {
     evidenceLanguage: claimPattern.test(text),
     quantitative: quantitativeClaimPattern.test(text),

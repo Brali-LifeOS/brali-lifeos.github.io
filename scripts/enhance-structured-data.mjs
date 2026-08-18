@@ -103,7 +103,7 @@ const datasetCatalog = {
     {
       "@type": "Dataset",
       name: "Brali Trusted Protocol Feed",
-      description: "Compact discovery-ready practical protocols that meet the current Brali content quality and indexing bar.",
+      description: "Practical protocols that meet the current Brali public quality bar.",
       url: `${base}/life-os/datasets/protocols.json`,
       identifier: "brali-trusted-protocol-feed",
       inLanguage: "en",
@@ -117,7 +117,7 @@ const datasetCatalog = {
     {
       "@type": "Dataset",
       name: "Brali Growth Library corpus",
-      description: "The broader public Growth Library corpus retained for discovery, provenance, research, and editorial work.",
+      description: "The broader public Growth Library corpus for discovery, provenance, research, and editorial work.",
       url: `${base}/life-os/datasets/hacks.json`,
       identifier: "brali-growth-library-corpus",
       inLanguage: "en",
@@ -139,7 +139,7 @@ if (!datasetsHtml.includes("brali-trusted-protocol-feed")) {
 if (!datasetsHtml.includes('href="/for-ai/"')) {
   datasetsHtml = datasetsHtml.replace(
     "</main>",
-    '<section class="prose"><h2>Use the data</h2><p>For agent retrieval, integration guidance, evidence handling, and the current machine-readable entry points, see <a href="/for-ai/">For AI & developers</a>. Commercial use requires a separate agreement; see <a href="/partners/">Partnerships</a>.</p></section></main>',
+    '<section class="prose"><h2>Use the data</h2><p>For AI and developer guidance, see <a href="/for-ai/">For AI & developers</a>. Commercial use requires a separate agreement; see <a href="/partners/">Partnerships</a>.</p></section></main>',
   );
 }
 await writeFile(datasetsPath, datasetsHtml);
@@ -150,7 +150,7 @@ function ensureSitemapUrl(pathname) {
   if (sitemap.includes(`<loc>${url}</loc>`)) return;
   sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc></url>\n</urlset>`);
 }
-for (const pathname of ["/for-ai/", "/faq/", "/partners/", "/terms/"]) ensureSitemapUrl(pathname);
+for (const pathname of ["/for-ai/", "/faq/", "/partners/", "/research/", "/terms/"]) ensureSitemapUrl(pathname);
 
 function addLastmod(pathname, date) {
   if (!date) return;

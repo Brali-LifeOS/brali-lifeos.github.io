@@ -28,6 +28,7 @@ for (const record of evidence.entries ?? []) {
 await writeFile(sitemapPath, sitemap);
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+manifest.files = [...new Set([...(manifest.files ?? []), "indexing.json"])];
 manifest.indexing_policy = {
   rule: "Only reviewed and practical Growth Library entries are included in the sitemap. Pending-review and restricted entries remain accessible but use noindex,follow.",
   indexable_entries: indexable.length,
@@ -43,5 +44,15 @@ await writeFile(path.join(root, "life-os/datasets/indexing.json"), JSON.stringif
   indexable,
   withheld,
 }, null, 2));
+
+const datasetsPath = path.join(root, "life-os/datasets/index.html");
+let datasetsHtml = await readFile(datasetsPath, "utf8");
+if (!datasetsHtml.includes("/life-os/datasets/indexing.json")) {
+  datasetsHtml = datasetsHtml.replace(
+    "</ul>",
+    '<li><a href="/life-os/datasets/indexing.json">Search indexing policy (JSON)</a></li></ul>',
+  );
+  await writeFile(datasetsPath, datasetsHtml);
+}
 
 console.log(`Indexing policy applied: ${indexable.length} entries in sitemap; ${withheld.length} entries withheld pending quality review.`);

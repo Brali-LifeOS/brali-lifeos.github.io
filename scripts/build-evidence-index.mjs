@@ -1,12 +1,14 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { classifyEvidence } from "./lib/content-trust.mjs";
+import { loadKnowledgeOntology } from "./lib/knowledge-ontology.mjs";
 
 const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");
 const outputRoot = path.join(root, "life-os/datasets");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
+const { classifyRecord } = await loadKnowledgeOntology(root);
 const knownSlugs = new Set(index.map((entry) => entry.slug));
 const allowedStatuses = new Set(["reviewed", "practical", "pending-review", "restricted"]);
 
@@ -21,7 +23,8 @@ for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
 const records = [];
 for (const entry of index) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
-  const record = classifyEvidence(article, entry, overrides);
+  const trustRecord = classifyEvidence(article, entry, overrides);
+  const record = { ...trustRecord, ontology: classifyRecord(article, entry.zone.slug) };
   const manual = overrides.entries?.[entry.slug];
   if (manual?.status === "practical" && record.claims.evidenceLanguage) {
     throw new Error(`Cannot mark ${entry.slug} practical while evidence-like claims remain in the source record.`);
@@ -37,6 +40,13 @@ const counts = records.reduce((acc, record) => {
   acc[record.status] = (acc[record.status] ?? 0) + 1;
   return acc;
 }, {});
+const ontologyCoverage = {
+  domain_mapped: records.filter((record) => record.ontology?.domains?.length).length,
+  topic_mapped: records.filter((record) => record.ontology?.topics?.length).length,
+  topic_pending: records.filter((record) => record.ontology?.classification_status === "topic-pending").length,
+  method_tagged: records.filter((record) => record.ontology?.methods?.length).length,
+  lens_tagged: records.filter((record) => record.ontology?.lenses?.length).length,
+};
 
 function withEditorialPriority(record) {
   let score = record.status === "restricted" ? 200 : 50;
@@ -61,6 +71,9 @@ function withEditorialPriority(record) {
     score += 5;
     factors.push("source-recorded-not-reviewed");
   }
+  if (record.ontology?.classification_status === "topic-pending") {
+    factors.push("topic-classification-pending");
+  }
 
   return {
     ...record,
@@ -75,18 +88,19 @@ const queue = records
 
 await mkdir(outputRoot, { recursive: true });
 await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
-  schema_version: 1,
+  schema_version: 2,
   name: "Brali Growth Library evidence index",
   statuses: ["reviewed", "practical", "pending-review", "restricted"],
   counts,
+  ontology_coverage: ontologyCoverage,
   entries: records,
 }, null, 2));
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
-  schema_version: 2,
+  schema_version: 3,
   name: "Brali Growth Library evidence review queue",
-  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, evidence-like language, and missing usable sources raise editorial priority.",
+  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, evidence-like language, and missing usable sources raise editorial priority. Ontology classification gaps are exposed as factors but do not alter evidence priority by themselves.",
   priority_model: {
-    version: 1,
+    version: 2,
     purpose: "Editorial triage only; the score is not a clinical-risk or evidence-strength measure.",
     weights: {
       restricted: 200,
@@ -95,9 +109,11 @@ await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
       quantitative_claims: 30,
       evidence_language: 20,
       no_usable_source: 15,
-      source_recorded_not_reviewed: 5
+      source_recorded_not_reviewed: 5,
+      topic_classification_pending: 0
     }
   },
+  ontology_coverage: ontologyCoverage,
   entries: queue,
 }, null, 2));
 
@@ -105,7 +121,8 @@ const manifestPath = path.join(outputRoot, "manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "evidence.json", "review-queue.json"])];
 manifest.evidence_status_counts = counts;
-manifest.review_queue_schema_version = 2;
+manifest.evidence_ontology_coverage = ontologyCoverage;
+manifest.review_queue_schema_version = 3;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 const datasetsPage = path.join(root, "life-os/datasets/index.html");
@@ -118,4 +135,4 @@ if (!html.includes("/life-os/datasets/evidence.json")) {
   await writeFile(datasetsPage, html);
 }
 
-console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued for review with editorial priority scores.`);
+console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending.`);

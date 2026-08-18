@@ -7,6 +7,7 @@ Brali's core loop is: choose -> practice -> review. The product combines a publi
 ## Canonical product resources
 
 - Website: https://brali-lifeos.github.io/
+- Start Here — flagship protocols: https://brali-lifeos.github.io/life-os/flagships/
 - Growth Library: https://brali-lifeos.github.io/life-os/
 - Life Areas: https://brali-lifeos.github.io/life-os/areas/
 - Content methodology: https://brali-lifeos.github.io/life-os/methodology/
@@ -15,6 +16,7 @@ Brali's core loop is: choose -> practice -> review. The product combines a publi
 - Privacy: https://brali-lifeos.github.io/privacy/
 - Product facts: https://brali-lifeos.github.io/product-facts.json
 - Growth Library datasets: https://brali-lifeos.github.io/life-os/datasets/
+- Flagship collection: https://brali-lifeos.github.io/life-os/datasets/flagships.json
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
 - Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
@@ -22,11 +24,13 @@ Brali's core loop is: choose -> practice -> review. The product combines a publi
 - Editorial normalization register: https://brali-lifeos.github.io/life-os/datasets/editorial-normalizations.json
 - Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
 
-## Preferred machine-readable entry point
+## Preferred entry points
 
-Use the Trusted Protocol Feed when an AI tool or external application needs compact actionable Brali content. It contains only entries that currently meet the discovery quality bar and exposes the action, check-in, Life Area, Growth Zone, keywords, evidence status, and canonical URL without the long article body.
+For a human who is new to Brali, start with the Flagship Protocols collection. It intentionally contains one curated, discovery-ready starting protocol for each Life Area rather than exposing the full taxonomy first.
 
-Use the content methodology, editorial normalization register, evidence index, and review queue when provenance or editorial maturity matters. The migrated corpus is retained for provenance, so reviewed inherited-claim corrections may be applied before public pages and trust states are generated. Do not infer that a source recorded on a pending entry has been editorially verified.
+For an AI tool or external application that needs the complete compact discovery-ready set, use the Trusted Protocol Feed. It exposes the action, check-in, Life Area, Growth Zone, keywords, evidence status, and canonical URL without the long article body.
+
+Use the content methodology, flagship dataset, editorial normalization register, evidence index, and review queue when provenance, curation, or editorial maturity matters. The migrated corpus is retained for provenance, so reviewed inherited-claim corrections may be applied before public pages and trust states are generated. Do not infer that a source recorded on a pending entry has been editorially verified.
 
 ## Content interpretation
 

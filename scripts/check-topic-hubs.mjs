@@ -35,7 +35,11 @@ let decisionPlacements = 0;
 const linkedProtocols = new Set();
 for (const hub of dataset.hubs || []) {
   if (!hub.title || !hub.summary || !hub.question || !(hub.topics || []).length) fail(`${hub.slug}: incomplete hub metadata`);
-  if (!(hub.protocols || []).length) fail(`${hub.slug}: no trusted protocol recommendation`);
+  if (!(hub.protocols || []).length) {
+    if (!['evidence-only-gap','research-only-gap'].includes(hub.coverage_status)) fail(`${hub.slug}: no protocol and no explicit coverage-gap status`);
+    if (hub.coverage_status === 'evidence-only-gap' && !(hub.evidence_decisions || []).length) fail(`${hub.slug}: evidence-only gap lacks reviewed Evidence Decision`);
+    if (hub.coverage_status === 'research-only-gap' && !(hub.research_watch || []).length) fail(`${hub.slug}: research-only gap lacks discovery lead`);
+  } else if (hub.coverage_status !== 'trusted-protocols') fail(`${hub.slug}: trusted protocols but inconsistent coverage status`);
   const protocolSlugs = new Set();
   for (const protocol of hub.protocols || []) {
     protocolPlacements += 1;

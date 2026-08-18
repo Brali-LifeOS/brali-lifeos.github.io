@@ -3,11 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "node scripts/build-life-os.mjs && node scripts/normalize-generated-titles.mjs && node scripts/build-life-areas.mjs && node scripts/build-evidence-index.mjs && node scripts/sanitize-generated.mjs",
+    "build": "node scripts/build-life-os.mjs && node scripts/normalize-generated-titles.mjs && node scripts/build-life-areas.mjs && node scripts/enhance-structured-data.mjs && node scripts/build-evidence-index.mjs && node scripts/sanitize-generated.mjs",
     "titles": "node scripts/normalize-generated-titles.mjs",
     "evidence": "node scripts/build-evidence-index.mjs",
+    "structured": "node scripts/enhance-structured-data.mjs",
     "audit": "node scripts/audit-content.mjs",
     "audit:strict": "node scripts/audit-content.mjs --strict",
-    "check": "node scripts/check-site.mjs && node scripts/audit-content.mjs --strict"
+    "check": "node scripts/check-site.mjs && node scripts/check-structured-data.mjs && node scripts/audit-content.mjs --strict"
   }
 }

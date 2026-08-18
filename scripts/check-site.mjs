@@ -22,6 +22,7 @@ const required = [
   "life-os/datasets/review-queue.json",
   "life-os/datasets/title-quality.json",
   "life-os/datasets/indexing.json",
+  "life-os/datasets/protocols.json",
   "sitemap.xml",
   "robots.txt",
   "llms.txt",
@@ -45,7 +46,7 @@ const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/life-os/areas/"')) throw new Error("Growth Library does not link to life areas.");
 
 const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html"), "utf8");
-for (const dataset of ["evidence.json", "review-queue.json", "title-quality.json", "indexing.json"]) {
+for (const dataset of ["evidence.json", "review-queue.json", "title-quality.json", "indexing.json", "protocols.json"]) {
   if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
 }
 
@@ -54,6 +55,7 @@ const publicIndex = JSON.parse(await readFile(path.join(root, "life-os-index.jso
 const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const reviewQueue = JSON.parse(await readFile(path.join(root, "life-os/datasets/review-queue.json"), "utf8"));
 const titleQuality = JSON.parse(await readFile(path.join(root, "life-os/datasets/title-quality.json"), "utf8"));
+const protocols = JSON.parse(await readFile(path.join(root, "life-os/datasets/protocols.json"), "utf8"));
 
 if ((evidenceIndex.entries ?? []).length !== sourceIndex.length) throw new Error("Evidence index does not cover every Growth Library entry.");
 if (!(reviewQueue.entries ?? []).every((record) => ["pending-review", "restricted"].includes(record.status))) {
@@ -65,5 +67,8 @@ if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => t
 if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQuality.unresolved_count)) {
   throw new Error("Title quality report is malformed.");
 }
+if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries ?? []).length) {
+  throw new Error("Protocol feed is malformed.");
+}
 
-console.log(`Static site verified: ${required.length} core files, protocol-first homepage, trusted library search, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);
+console.log(`Static site verified: ${required.length} core files, protocol-first homepage, trusted search/feed, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

@@ -19,11 +19,11 @@ for (const entry of sourceIndex) {
   const links = [...section[1].matchAll(/href="\/life-os\/([^/]+)\/"/g)].map((match) => match[1]);
   if (links.length !== 3) wrongCount += 1;
   for (const slug of links) {
-    if (slug === entry.slug || evidenceBySlug.get(slug)?.status === "restricted") unsafeLinks += 1;
+    if (slug === entry.slug || evidenceBySlug.get(slug)?.indexable !== true) unsafeLinks += 1;
   }
 }
 
 if (missing || wrongCount || unsafeLinks) {
-  throw new Error(`Related protocol validation failed: missing=${missing}, wrong link count=${wrongCount}, self/restricted links=${unsafeLinks}.`);
+  throw new Error(`Related protocol validation failed: missing=${missing}, wrong link count=${wrongCount}, self/non-indexable links=${unsafeLinks}.`);
 }
-console.log(`Related protocol graph verified for ${sourceIndex.length} Growth Library entries.`);
+console.log(`Related protocol graph verified for ${sourceIndex.length} Growth Library entries; only indexable entries are recommended.`);

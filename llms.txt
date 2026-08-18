@@ -20,6 +20,8 @@ Recommended classification stack: `Domain -> Topic -> Hack -> Protocol`, with op
 
 Legacy `Life Area` and `Growth Zone` fields and URLs are preserved for compatibility. A legacy Growth Zone may map to a Topic, Method, or Lens through the ontology. Do not assume every Growth Zone is a Topic.
 
+`topic-pending` is an intentional migration state. It means a legacy Method or Lens collection identifies a useful secondary classification but the concrete Topic for that individual record still requires editorial classification.
+
 Research promotion path: `research candidate -> evidence decision -> hack -> protocol -> ontology -> publish`.
 
 ## Main pages
@@ -27,6 +29,7 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 - Website: https://brali-lifeos.github.io/
 - Growth Library: https://brali-lifeos.github.io/life-os/
 - Knowledge ontology: https://brali-lifeos.github.io/ontology/
+- Ontology coverage: https://brali-lifeos.github.io/ontology/coverage/
 - Topics: https://brali-lifeos.github.io/ontology/topics/
 - Methods: https://brali-lifeos.github.io/ontology/methods/
 - Brali Lenses: https://brali-lifeos.github.io/ontology/lenses/
@@ -40,6 +43,7 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 ## Machine-readable data
 
 - Knowledge ontology: https://brali-lifeos.github.io/life-os/datasets/ontology.json
+- Ontology coverage: https://brali-lifeos.github.io/life-os/datasets/ontology-coverage.json
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
 - Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
@@ -47,6 +51,10 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 - Research search lenses: https://brali-lifeos.github.io/data/research-queries.json
 - Research candidate queue: https://brali-lifeos.github.io/data/research-candidates.json
 - Agent registry: https://brali-lifeos.github.io/agents/registry.json
+
+Trusted Protocol Feed schema v3 and Evidence Index schema v2 expose an `ontology` object with Domains, Topics, Methods, Lenses, classification status, and legacy compatibility identifiers. New integrations should use this object rather than treating `life_area` or `growth_zone` as the canonical semantic model.
+
+Research query and candidate schema v2 records use canonical `domain_ids`, `topic_ids`, `method_ids`, and `lens_ids`. Legacy Life Area and Growth Zone fields remain during migration.
 
 ## Contracts
 
@@ -64,6 +72,6 @@ Hack and Protocol contracts support `domain_slugs`, `topic_slugs`, `method_slugs
 - Protocol Design: https://brali-lifeos.github.io/skills/protocol-design/SKILL.md
 - Taxonomy Curation: https://brali-lifeos.github.io/skills/taxonomy-curation/SKILL.md
 
-For normal recommendation or retrieval, start with the Trusted Protocol Feed and use the ontology to match the user's concrete Topic. For maintenance or research work, start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
+For normal recommendation or retrieval, start with the Trusted Protocol Feed and use the ontology to match the user's concrete Topic. For maintenance or research work, use the ontology coverage report to target unresolved `topic-pending` records or deliberate `growth-gap` Topics, then start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
 
 Only `reviewed` and `practical` entries enter the Trusted Protocol Feed. English is the main published language today. The public interface today is the static dataset/contract layer; a future MCP service may add tools over the same records. The current public license is non-commercial; commercial use requires a separate agreement.

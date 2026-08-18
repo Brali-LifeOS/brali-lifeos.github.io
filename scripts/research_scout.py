@@ -9,7 +9,7 @@ import argparse, datetime as dt, hashlib, json, os, time, urllib.error, urllib.p
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DEFAULT_QUERIES=ROOT/"data"/"research-queries.json"; DEFAULT_OUTPUT=ROOT/"data"/"research-candidates.json"
-API="https://api.crossref.org/works"; USER_AGENT="BraliResearchScout/1.0 (https://brali-lifeos.github.io/research/)"
+API="https://api.crossref.org/works"; USER_AGENT="BraliResearchScout/1.1 (https://brali-lifeos.github.io/research/)"
 
 def parse_args():
     p=argparse.ArgumentParser(); p.add_argument("--days",type=int,default=60); p.add_argument("--rows",type=int,default=8); p.add_argument("--max-candidates",type=int,default=250); p.add_argument("--queries",type=Path,default=DEFAULT_QUERIES); p.add_argument("--output",type=Path,default=DEFAULT_OUTPUT); return p.parse_args()
@@ -45,10 +45,13 @@ def fetch(query,from_date,rows,mailto):
             return payload.get("message",{}).get("items",[])
         except (urllib.error.URLError,urllib.error.HTTPError,TimeoutError) as exc: last=exc; time.sleep(1.5*(attempt+1))
     raise RuntimeError(f"Crossref request failed for {query['id']}: {last}")
+def union(base,key,values):
+    base[key]=sorted(set(base.get(key,[]))|set(values or []))
 def merge_candidate(existing,item,query,timestamp):
     cid,source_id,doi=stable_id(item); reference_url=f"https://doi.org/{doi}" if doi else (item.get("URL") or "https://api.crossref.org")
-    base=existing.copy() if existing else {"id":cid,"source":"crossref","source_id":source_id,"doi":doi,"title":title_of(item),"authors":authors(item),"container_title":(item.get("container-title") or [None])[0],"publication_date":published_date(item),"type":item.get("type"),"subjects":sorted(set(item.get("subject") or []))[:20],"reference_url":reference_url,"discovered_at":timestamp,"last_seen_at":timestamp,"status":"new","query_ids":[],"life_area_slugs":[],"zone_slugs":[],"risk_flags":[],"crossref_score":item.get("score"),"review_notes":""}
-    base["last_seen_at"]=timestamp; base["query_ids"]=sorted(set(base.get("query_ids",[]))|{query["id"]}); base["life_area_slugs"]=sorted(set(base.get("life_area_slugs",[]))|{query["life_area_slug"]}); base["zone_slugs"]=sorted(set(base.get("zone_slugs",[]))|set(query.get("zone_slugs",[]))); base["risk_flags"]=sorted(set(base.get("risk_flags",[]))|set(query.get("risk_flags",[])))
+    base=existing.copy() if existing else {"id":cid,"source":"crossref","source_id":source_id,"doi":doi,"title":title_of(item),"authors":authors(item),"container_title":(item.get("container-title") or [None])[0],"publication_date":published_date(item),"type":item.get("type"),"subjects":sorted(set(item.get("subject") or []))[:20],"reference_url":reference_url,"discovered_at":timestamp,"last_seen_at":timestamp,"status":"new","query_ids":[],"domain_ids":[],"topic_ids":[],"method_ids":[],"lens_ids":[],"life_area_slugs":[],"zone_slugs":[],"risk_flags":[],"crossref_score":item.get("score"),"review_notes":""}
+    base["last_seen_at"]=timestamp
+    union(base,"query_ids",[query["id"]]); union(base,"domain_ids",query.get("domain_ids",[])); union(base,"topic_ids",query.get("topic_ids",[])); union(base,"method_ids",query.get("method_ids",[])); union(base,"lens_ids",query.get("lens_ids",[])); union(base,"life_area_slugs",[query["life_area_slug"]]); union(base,"zone_slugs",query.get("zone_slugs",[])); union(base,"risk_flags",query.get("risk_flags",[]))
     if base.get("crossref_score") is None: base["crossref_score"]=item.get("score")
     return base
 def main():
@@ -60,5 +63,5 @@ def main():
             cid,_,_=stable_id(item); by_id[cid]=merge_candidate(by_id.get(cid),item,query,timestamp); seen.add(cid)
     if successful==0: raise SystemExit("All research discovery queries failed; existing queue left unchanged.")
     rank={"screening":0,"support-existing":1,"challenge-existing":1,"propose-hack":1,"propose-protocol":1,"watch":2,"new":3,"rejected":4}; candidates=list(by_id.values()); candidates.sort(key=lambda c:(rank.get(c.get("status"),9),-(float(c.get("crossref_score") or 0)),c.get("publication_date") or "",c["id"])); candidates=candidates[:max(1,args.max_candidates)]
-    output={"schema_version":1,"generated_at":timestamp,"source":"crossref","note":"Automated discovery queue. Entries here are unreviewed leads, not trusted evidence or publishable hacks.","candidates":candidates}; args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"); print(f"Research scout: {successful}/{len(config['queries'])} queries succeeded; {len(seen)} records seen; {len(candidates)} candidates retained."); return 0
+    output={"schema_version":2,"generated_at":timestamp,"source":"crossref","note":"Automated discovery queue. Entries here are unreviewed leads, not trusted evidence or publishable hacks. Domain/Topic/Method/Lens fields are canonical; legacy taxonomy fields remain for compatibility.","candidates":candidates}; args.output.parent.mkdir(parents=True,exist_ok=True); args.output.write_text(json.dumps(output,indent=2,ensure_ascii=False)+"\n",encoding="utf-8"); print(f"Research scout: {successful}/{len(config['queries'])} queries succeeded; {len(seen)} records seen; {len(candidates)} candidates retained."); return 0
 if __name__=="__main__": raise SystemExit(main())

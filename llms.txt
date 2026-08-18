@@ -2,24 +2,34 @@
 
 > A practical knowledge library for people, developers, researchers, and AI agents.
 
-Brali publishes atomic practical hacks, executable protocols, taxonomy, evidence states, research candidates, and machine-readable contracts. The original Brali LifeOS app is still available, but the knowledge library and data are now the main project.
+Brali publishes atomic practical hacks, executable protocols, a practical knowledge ontology, evidence states, research candidates, and machine-readable contracts. The original Brali LifeOS app is still available, but the knowledge library and data are now the main project.
 
-## Knowledge model
+## Knowledge model v2
 
-- Life Area: broad human need or destination.
-- Growth Zone: narrower topic inside a Life Area.
+- Domain: broad area of practical life or work.
+- Topic: concrete problem, capability, or outcome.
+- Method: named structured approach that may cross Topics and Domains.
+- Lens: transferable way of thinking borrowed from a discipline, profession, philosophy, or strategic tradition. A Lens is not evidence.
 - Hack: the smallest reusable practical technique.
 - Protocol: an executable sequence or personal experiment that can reference one or more hacks.
 - Evidence state: `reviewed`, `practical`, `pending-review`, or `restricted`.
 - Research candidate: unreviewed discovery metadata. It is not evidence.
 - Evidence decision: explicit review result after reading the actual source.
 
-Research promotion path: `research candidate -> evidence decision -> hack -> protocol -> taxonomy -> publish`.
+Recommended classification stack: `Domain -> Topic -> Hack -> Protocol`, with optional Method and Lens tags and separate Evidence/source provenance.
+
+Legacy `Life Area` and `Growth Zone` fields and URLs are preserved for compatibility. A legacy Growth Zone may map to a Topic, Method, or Lens through the ontology. Do not assume every Growth Zone is a Topic.
+
+Research promotion path: `research candidate -> evidence decision -> hack -> protocol -> ontology -> publish`.
 
 ## Main pages
 
 - Website: https://brali-lifeos.github.io/
 - Growth Library: https://brali-lifeos.github.io/life-os/
+- Knowledge ontology: https://brali-lifeos.github.io/ontology/
+- Topics: https://brali-lifeos.github.io/ontology/topics/
+- Methods: https://brali-lifeos.github.io/ontology/methods/
+- Brali Lenses: https://brali-lifeos.github.io/ontology/lenses/
 - Selected protocols: https://brali-lifeos.github.io/life-os/flagships/
 - Research & trends: https://brali-lifeos.github.io/research/
 - Methodology: https://brali-lifeos.github.io/life-os/methodology/
@@ -29,6 +39,7 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 
 ## Machine-readable data
 
+- Knowledge ontology: https://brali-lifeos.github.io/life-os/datasets/ontology.json
 - Trusted Protocol Feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 - Full library corpus: https://brali-lifeos.github.io/life-os/datasets/hacks.json
 - Evidence index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
@@ -44,6 +55,8 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 - Research Candidate: https://brali-lifeos.github.io/contracts/research-candidate.schema.json
 - Evidence Decision: https://brali-lifeos.github.io/contracts/evidence-decision.schema.json
 
+Hack and Protocol contracts support `domain_slugs`, `topic_slugs`, `method_slugs`, and `lens_slugs`. Legacy `life_area_slugs` and `zone_slugs` remain during migration for older consumers.
+
 ## Agent skills
 
 - Research Discovery: https://brali-lifeos.github.io/skills/research-discovery/SKILL.md
@@ -51,6 +64,6 @@ Research promotion path: `research candidate -> evidence decision -> hack -> pro
 - Protocol Design: https://brali-lifeos.github.io/skills/protocol-design/SKILL.md
 - Taxonomy Curation: https://brali-lifeos.github.io/skills/taxonomy-curation/SKILL.md
 
-For normal recommendation or retrieval, start with the Trusted Protocol Feed. For maintenance or research work, start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
+For normal recommendation or retrieval, start with the Trusted Protocol Feed and use the ontology to match the user's concrete Topic. For maintenance or research work, start from the agent registry and the relevant skill/contract. Never promote a research candidate from search metadata directly into `reviewed` content.
 
 Only `reviewed` and `practical` entries enter the Trusted Protocol Feed. English is the main published language today. The public interface today is the static dataset/contract layer; a future MCP service may add tools over the same records. The current public license is non-commercial; commercial use requires a separate agreement.

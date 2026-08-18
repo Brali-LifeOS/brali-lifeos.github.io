@@ -78,13 +78,16 @@ export function classifyEvidence(article, entry, overrides = {}) {
     reason = "low-risk-practical-guidance";
   }
 
+  const indexable = status === "reviewed" || status === "practical";
+
   return {
     slug: entry.slug,
     zone: entry.zone?.slug ?? null,
     status,
     reason,
     sensitive,
-    indexable: status !== "restricted",
+    indexable,
+    indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
     claims,
     source: {
       recorded: source.hasSource,

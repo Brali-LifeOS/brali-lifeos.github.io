@@ -19,6 +19,7 @@ const required = [
   "life-os/datasets/evidence.json",
   "life-os/datasets/review-queue.json",
   "life-os/datasets/title-quality.json",
+  "life-os/datasets/indexing.json",
   "sitemap.xml",
   "robots.txt",
   "llms.txt",
@@ -42,7 +43,7 @@ const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/life-os/areas/"')) throw new Error("Growth Library does not link to life areas.");
 
 const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html"), "utf8");
-for (const dataset of ["evidence.json", "review-queue.json", "title-quality.json"]) {
+for (const dataset of ["evidence.json", "review-queue.json", "title-quality.json", "indexing.json"]) {
   if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
 }
 
@@ -63,4 +64,4 @@ if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQual
   throw new Error("Title quality report is malformed.");
 }
 
-console.log(`Static site verified: ${required.length} core files, protocol-first homepage, ${evidenceIndex.entries.length} evidence records, and normalized display titles.`);
+console.log(`Static site verified: ${required.length} core files, protocol-first homepage, ${evidenceIndex.entries.length} evidence records, and earned indexing outputs.`);

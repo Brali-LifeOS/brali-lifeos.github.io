@@ -9,7 +9,7 @@ Every entry has one explicit state:
 - `reviewed`: evidence-like claims have traceable sources and the practical guidance has been checked.
 - `practical`: the entry is a low-risk personal practice and contains no evidence-like claim that requires support.
 - `pending-review`: a source is recorded or evidence-like wording exists, but editorial review is not complete.
-- `restricted`: sensitive health or mental-health guidance does not yet meet the evidence bar. It is excluded from search indexing.
+- `restricted`: sensitive health or mental-health guidance does not yet meet the evidence bar.
 
 The default state is derived automatically. Manual editorial decisions live in `data/evidence-overrides.json` and must include `reviewed_at` and `reviewed_by`.
 
@@ -19,7 +19,7 @@ The default state is derived automatically. Manual editorial decisions live in `
 2. Work through `restricted` entries first, then `pending-review`; quantitative claims are prioritized within each state.
 3. Check the source and the wording. Remove unsupported precision instead of searching for a citation that merely looks convenient.
 4. When a decision is complete, add an override with `status`, `reviewed_at`, `reviewed_by`, and an optional `note`.
-5. Run `npm run check`. Invalid overrides, evidence-state drift, missing protocol summaries, and indexable restricted pages fail the build.
+5. Run `npm run check`. Invalid overrides, evidence-state drift, missing protocol summaries, and indexing-policy drift fail the build.
 
 A `practical` override is rejected while evidence-like claims remain. A sensitive or evidence-claiming entry cannot be marked `reviewed` without a usable source.
 
@@ -52,12 +52,19 @@ Public pages use Brali branding. Historical MetalHatsCats URLs and names may rem
 
 ## Search policy
 
-Indexing is earned by content quality, not by the existence of a generated URL. Prefer fewer distinct, useful, reviewed protocol pages to a large set of repetitive articles.
+Indexing is earned by content quality, not by the existence of a generated URL.
+
+- `reviewed` and `practical` entries may be included in the sitemap.
+- `pending-review` and `restricted` entries remain available at stable URLs but use `noindex,follow` and are removed from the sitemap.
+- Related-protocol recommendations may point only to indexable entries.
+
+This deliberately favors a smaller trusted search surface over a large collection of unreviewed pages.
 
 ## Machine-readable outputs
 
 - `life-os/datasets/evidence.json` exposes the evidence state for every Growth Library entry.
 - `life-os/datasets/review-queue.json` exposes the current editorial queue.
-- `life-os/datasets/manifest.json` includes evidence-state counts.
+- `life-os/datasets/indexing.json` lists which entries meet the current search-indexing bar.
+- `life-os/datasets/manifest.json` includes evidence and indexing counts.
 
 These files are public so search systems, AI tools, and contributors can distinguish reviewed material from content still awaiting review.

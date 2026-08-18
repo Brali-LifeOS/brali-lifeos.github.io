@@ -9,9 +9,10 @@
   "data_storage": "Personal app data is stored locally on the user's device.",
   "content_trust": {
     "states": ["reviewed", "practical", "pending-review", "restricted"],
-    "policy": "Sensitive health and mental-health Growth Library entries that do not meet the evidence bar are excluded from search indexing.",
+    "indexing_rule": "Only reviewed and practical Growth Library entries are included in the sitemap. Pending-review and restricted entries remain accessible with noindex,follow until the quality bar is met.",
     "evidence_index": "https://brali-lifeos.github.io/life-os/datasets/evidence.json",
-    "review_queue": "https://brali-lifeos.github.io/life-os/datasets/review-queue.json"
+    "review_queue": "https://brali-lifeos.github.io/life-os/datasets/review-queue.json",
+    "indexing_policy": "https://brali-lifeos.github.io/life-os/datasets/indexing.json"
   },
   "source_repository": "Private maintained application repository; no public application source-code claim.",
   "website_repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",

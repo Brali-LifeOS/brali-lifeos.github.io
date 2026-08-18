@@ -36,7 +36,8 @@ function candidateScore(current, candidate) {
   return score;
 }
 
-const eligible = sourceIndex.filter((entry) => evidenceBySlug.get(entry.slug)?.status !== "restricted");
+const eligible = sourceIndex.filter((entry) => evidenceBySlug.get(entry.slug)?.indexable === true);
+if (eligible.length < 3) throw new Error("Related protocol graph requires at least three indexable entries.");
 let linkedPages = 0;
 let totalLinks = 0;
 
@@ -55,7 +56,7 @@ for (const current of sourceIndex) {
     return `<li><a href="/life-os/${candidate.slug}/">${escapeHtml(title)}</a>${description}</li>`;
   }).join("");
 
-  const section = `<section class="prose related-protocols" data-related-protocols="true"><h2>Related protocols</h2><p>Continue with another practical entry that is close to this topic or Life Area.</p><ul class="article-list">${items}</ul></section>`;
+  const section = `<section class="prose related-protocols" data-related-protocols="true"><h2>Related protocols</h2><p>Continue with another reviewed or low-risk practical entry that is close to this topic or Life Area.</p><ul class="article-list">${items}</ul></section>`;
   const pagePath = path.join(root, "life-os", current.slug, "index.html");
   let html = await readFile(pagePath, "utf8");
   if (html.includes('data-related-protocols="true"')) continue;
@@ -68,4 +69,4 @@ for (const current of sourceIndex) {
   totalLinks += related.length;
 }
 
-console.log(`Related protocols added to ${linkedPages} pages with ${totalLinks} internal links; restricted entries are never recommended.`);
+console.log(`Related protocols added to ${linkedPages} pages with ${totalLinks} internal links; only indexable entries are recommended.`);

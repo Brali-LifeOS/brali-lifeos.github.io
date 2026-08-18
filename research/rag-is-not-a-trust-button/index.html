@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RAG helps, but it is not a trust button — Brali Research</title>
+  <meta name="description" content="A Brali research note on why retrieval-augmented generation can improve AI answers but still needs good sources, filtering, and evidence-aware output.">
+  <link rel="canonical" href="https://brali-lifeos.github.io/research/rag-is-not-a-trust-button/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="RAG helps, but it is not a trust button">
+  <meta property="og:description" content="Retrieval can improve AI answers, but poor retrieval or source selection can still produce worse results.">
+  <meta property="og:url" content="https://brali-lifeos.github.io/research/rag-is-not-a-trust-button/">
+  <meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png">
+  <link rel="icon" href="/assets/images/brali-logo.png">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"RAG helps, but it is not a trust button","description":"A short Brali research note on retrieval-augmented generation and evidence-aware AI design.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Organization","name":"Brali"},"publisher":{"@type":"Organization","name":"Brali"},"mainEntityOfPage":"https://brali-lifeos.github.io/research/rag-is-not-a-trust-button/"}</script>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/faq/">FAQ</a></div></nav></header>
+<main id="content" class="page wrap">
+  <p class="eyebrow"><a href="/research/">Research</a> · AI note · 18 Aug 2026</p>
+  <h1>RAG helps, but it is not a trust button.</h1>
+  <p class="lead">Giving an AI model documents to retrieve from can improve answers. It does not automatically make the answer correct, safe, or faithful to the source.</p>
+
+  <article class="prose">
+    <h2>Why this matters</h2>
+    <p>Brali is designed so AI tools can retrieve practical protocols and evidence metadata. It would be easy to assume that this alone solves the reliability problem. Research suggests a more careful view.</p>
+
+    <h2>What recent studies show</h2>
+    <p>A 2025 systematic review and meta-analysis of biomedical RAG studies found an overall improvement compared with baseline language models. Across the included studies, RAG increased the odds of a better result.</p>
+    <p>But the effect was not universal. A separate 2025 study on consumer health questions found that the tested RAG versions performed worse than the same models without RAG. Other evaluations have also shown that retrieval quality and evidence selection can become failure points.</p>
+
+    <h2>The practical lesson</h2>
+    <p>Retrieval is only one part of the system. A useful AI workflow also needs:</p>
+    <ul>
+      <li>good source material;</li>
+      <li>a way to keep weaker and stronger evidence separate;</li>
+      <li>retrieval that finds the right record, not just a similar paragraph;</li>
+      <li>clear links back to the source;</li>
+      <li>instructions that stop the model from upgrading a practical suggestion into a scientific claim.</li>
+    </ul>
+
+    <h2>What this changes in Brali</h2>
+    <p>The Trusted Protocol Feed should remain smaller than the full library. Evidence state and canonical URL should travel with every record. Future MCP or API access should search the same records rather than create a second knowledge base.</p>
+    <p>For sensitive topics, Brali should prefer reviewed sources and keep uncertain material out of the default recommendation path.</p>
+
+    <h2>What we should test later</h2>
+    <ul>
+      <li>Does evidence-aware filtering improve recommendation quality?</li>
+      <li>Does showing fewer, better candidates help more than broad semantic retrieval?</li>
+      <li>Can an agent correctly preserve the difference between <code>reviewed</code> and <code>practical</code>?</li>
+      <li>How often does the model cite the correct Brali record after retrieval?</li>
+    </ul>
+
+    <h2>Sources</h2>
+    <ul>
+      <li><a href="https://pubmed.ncbi.nlm.nih.gov/39812777/">Liu et al. (2025), systematic review and meta-analysis of RAG in biomedicine</a></li>
+      <li><a href="https://proceedings.mlr.press/v298/fensore25a.html">Fensore et al. (2025), RAG for consumer health questions</a></li>
+      <li><a href="https://www.nature.com/articles/s41746-025-01536-y">Masanneck et al. (2025), retrieval-supported LLMs for evidence-based neurology</a></li>
+    </ul>
+
+    <div class="callout"><h3>Brali takeaway</h3><p>Do not treat retrieval as proof. Give the agent cleaner records, visible evidence states, and a source it can return to.</p><a class="button" href="/for-ai/">See Brali for AI</a></div>
+  </article>
+</main>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>Practical knowledge for people and machines.</small></div><div class="footer-links"><a href="/research/">Research</a><a href="/life-os/">Library</a><a href="/for-ai/">For AI</a><a href="/terms/">Terms</a></div></div></footer>
+</body>
+</html>

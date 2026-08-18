@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://brali-lifeos.github.io/for-ai/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Brali for AI & developers">
-  <meta property="og:description" content="Machine-readable practical knowledge with evidence states and source links.">
+  <meta property="og:description" content="Machine-readable practical knowledge with evidence states, source links, and canonical protocol aliases.">
   <meta property="og:url" content="https://brali-lifeos.github.io/for-ai/">
   <meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png">
   <link rel="icon" href="/assets/images/brali-logo.png">
@@ -25,7 +25,7 @@
   <div class="grid three">
     <article class="card"><span class="card-label">Start here</span><h3>Protocol feed</h3><p>Use the smaller trusted feed for normal discovery and recommendation.</p><p><a href="/life-os/datasets/protocols.json">Open JSON feed →</a></p></article>
     <article class="card"><span class="card-label">Check trust</span><h3>Evidence data</h3><p>Keep reviewed ideas separate from practical suggestions and items still waiting for review.</p><p><a href="/life-os/datasets/evidence.json">Evidence index →</a></p></article>
-    <article class="card"><span class="card-label">Explore</span><h3>All datasets</h3><p>See the corpus, review queue, indexing data, manifest, and other public files.</p><p><a href="/life-os/datasets/">Data catalog →</a></p></article>
+    <article class="card"><span class="card-label">Resolve old URLs</span><h3>Protocol aliases</h3><p>Use the alias file when an older slug has been consolidated into one canonical protocol.</p><p><a href="/life-os/datasets/aliases.json">Aliases JSON →</a></p></article>
   </div>
 
   <section class="prose">
@@ -43,11 +43,15 @@
       <li><a href="/life-os/datasets/protocols.json">protocols.json</a> — smaller trusted protocol feed.</li>
       <li><a href="/life-os/datasets/hacks.json">hacks.json</a> — broader library corpus.</li>
       <li><a href="/life-os/datasets/evidence.json">evidence.json</a> — evidence and review status.</li>
+      <li><a href="/life-os/datasets/aliases.json">aliases.json</a> — old protocol slugs mapped to canonical protocols.</li>
       <li><a href="/life-os/datasets/review-queue.json">review-queue.json</a> — items that still need review.</li>
       <li><a href="/life-os/datasets/indexing.json">indexing.json</a> — public discovery status.</li>
       <li><a href="/life-os/datasets/manifest.json">manifest.json</a> — dataset overview.</li>
       <li><a href="/llms.txt">llms.txt</a> — short project guide for language-model tools.</li>
     </ul>
+
+    <h2>Aliases and canonical protocols</h2>
+    <p>Brali keeps some older URLs for compatibility. If a record appears in <code>aliases.json</code>, use its <code>canonical_slug</code> and <code>canonical_url</code> instead. Alias pages are not separate recommendations and stay out of the Trusted Protocol Feed and editorial review queue.</p>
 
     <h2>Evidence links</h2>
     <p>A source being present is not the same as a source being reviewed. The trusted feed exposes an external <code>evidence.source_url</code> only when the protocol has <code>reviewed</code> status. Practical entries can still be useful, but they should not borrow the authority of an unreviewed link.</p>

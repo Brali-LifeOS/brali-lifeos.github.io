@@ -7,11 +7,29 @@ const contentRoot = path.join(root, "data/life-os-content");
 const outputRoot = path.join(root, "life-os/datasets");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overrides.json"), "utf8"));
+const knownSlugs = new Set(index.map((entry) => entry.slug));
+const allowedStatuses = new Set(["reviewed", "practical", "pending-review", "restricted"]);
+
+for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
+  if (!knownSlugs.has(slug)) throw new Error(`Evidence override references unknown entry: ${slug}`);
+  if (!allowedStatuses.has(override.status)) throw new Error(`Evidence override has invalid status for ${slug}: ${override.status}`);
+  if (!override.reviewed_at || !override.reviewed_by) {
+    throw new Error(`Evidence override for ${slug} must record reviewed_at and reviewed_by.`);
+  }
+}
 
 const records = [];
 for (const entry of index) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
-  records.push(classifyEvidence(article, entry, overrides));
+  const record = classifyEvidence(article, entry, overrides);
+  const manual = overrides.entries?.[entry.slug];
+  if (manual?.status === "practical" && record.claims.evidenceLanguage) {
+    throw new Error(`Cannot mark ${entry.slug} practical while evidence-like claims remain in the source record.`);
+  }
+  if (manual?.status === "reviewed" && (record.claims.evidenceLanguage || record.sensitive) && !record.source.recorded) {
+    throw new Error(`Cannot mark ${entry.slug} reviewed without a usable source while evidence or sensitive-content review is required.`);
+  }
+  records.push(record);
 }
 records.sort((a, b) => a.slug.localeCompare(b.slug));
 
@@ -36,6 +54,7 @@ await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
   schema_version: 1,
   name: "Brali Growth Library evidence review queue",
+  priority: "restricted first, then pending-review; quantitative claims first within each status",
   entries: queue,
 }, null, 2));
 

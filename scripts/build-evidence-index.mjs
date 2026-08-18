@@ -39,7 +39,7 @@ const counts = records.reduce((acc, record) => {
 }, {});
 
 function withEditorialPriority(record) {
-  let score = record.status === "restricted" ? 100 : 50;
+  let score = record.status === "restricted" ? 200 : 50;
   const factors = [record.status];
 
   if (record.sensitive) {
@@ -84,12 +84,12 @@ await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
   schema_version: 2,
   name: "Brali Growth Library evidence review queue",
-  priority: "Higher editorial_priority.score first. Restricted status is the strongest base signal, then sensitive topic, quantitative claims, evidence-like language, and missing usable sources.",
+  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, evidence-like language, and missing usable sources raise editorial priority.",
   priority_model: {
     version: 1,
     purpose: "Editorial triage only; the score is not a clinical-risk or evidence-strength measure.",
     weights: {
-      restricted: 100,
+      restricted: 200,
       pending_review: 50,
       sensitive_topic: 40,
       quantitative_claims: 30,

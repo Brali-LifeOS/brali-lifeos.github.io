@@ -43,6 +43,7 @@ let suspiciousUnsourced = 0;
 let legacySourceEntries = 0;
 let legacyGeneratedPages = 0;
 let unprotectedSensitivePages = 0;
+let missingProtocolSummaries = 0;
 const examples = [];
 
 for (const entry of index) {
@@ -62,6 +63,7 @@ for (const entry of index) {
   const generatedPath = path.join(root, "life-os", entry.slug, "index.html");
   const generated = await readFile(generatedPath, "utf8");
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
+  if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (isSensitive && !sourced && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
     unprotectedSensitivePages += 1;
   }
@@ -74,10 +76,11 @@ console.log(`- Sensitive entries without explicit sources: ${sensitiveUnsourced}
 console.log(`- Unsourced entries with evidence-like claims: ${suspiciousUnsourced}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
+console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
 console.log(`- Unsourced sensitive pages still indexable: ${unprotectedSensitivePages}`);
 if (examples.length) console.log(`- Claim-review examples: ${examples.join(", ")}`);
 
-const blockingProblems = legacyGeneratedPages + unprotectedSensitivePages;
+const blockingProblems = legacyGeneratedPages + unprotectedSensitivePages + missingProtocolSummaries;
 if (strict && blockingProblems > 0) {
   console.error(`Content trust audit failed with ${blockingProblems} blocking problem(s).`);
   process.exit(1);

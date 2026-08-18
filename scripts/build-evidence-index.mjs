@@ -38,10 +38,40 @@ const counts = records.reduce((acc, record) => {
   return acc;
 }, {});
 
-const priority = { restricted: 0, "pending-review": 1, practical: 2, reviewed: 3 };
+function withEditorialPriority(record) {
+  let score = record.status === "restricted" ? 100 : 50;
+  const factors = [record.status];
+
+  if (record.sensitive) {
+    score += 40;
+    factors.push("sensitive-topic");
+  }
+  if (record.claims.quantitative) {
+    score += 30;
+    factors.push("quantitative-claims");
+  }
+  if (record.claims.evidenceLanguage) {
+    score += 20;
+    factors.push("evidence-language");
+  }
+  if (!record.source.recorded) {
+    score += 15;
+    factors.push("no-usable-source");
+  } else if (record.status === "pending-review") {
+    score += 5;
+    factors.push("source-recorded-not-reviewed");
+  }
+
+  return {
+    ...record,
+    editorial_priority: { score, factors },
+  };
+}
+
 const queue = records
   .filter((record) => record.status === "restricted" || record.status === "pending-review")
-  .sort((a, b) => (priority[a.status] - priority[b.status]) || Number(b.claims.quantitative) - Number(a.claims.quantitative) || a.slug.localeCompare(b.slug));
+  .map(withEditorialPriority)
+  .sort((a, b) => (b.editorial_priority.score - a.editorial_priority.score) || a.slug.localeCompare(b.slug));
 
 await mkdir(outputRoot, { recursive: true });
 await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
@@ -52,9 +82,22 @@ await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
   entries: records,
 }, null, 2));
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
-  schema_version: 1,
+  schema_version: 2,
   name: "Brali Growth Library evidence review queue",
-  priority: "restricted first, then pending-review; quantitative claims first within each status",
+  priority: "Higher editorial_priority.score first. Restricted status is the strongest base signal, then sensitive topic, quantitative claims, evidence-like language, and missing usable sources.",
+  priority_model: {
+    version: 1,
+    purpose: "Editorial triage only; the score is not a clinical-risk or evidence-strength measure.",
+    weights: {
+      restricted: 100,
+      pending_review: 50,
+      sensitive_topic: 40,
+      quantitative_claims: 30,
+      evidence_language: 20,
+      no_usable_source: 15,
+      source_recorded_not_reviewed: 5
+    }
+  },
   entries: queue,
 }, null, 2));
 
@@ -62,6 +105,7 @@ const manifestPath = path.join(outputRoot, "manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "evidence.json", "review-queue.json"])];
 manifest.evidence_status_counts = counts;
+manifest.review_queue_schema_version = 2;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 const datasetsPage = path.join(root, "life-os/datasets/index.html");
@@ -74,4 +118,4 @@ if (!html.includes("/life-os/datasets/evidence.json")) {
   await writeFile(datasetsPage, html);
 }
 
-console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued for review.`);
+console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued for review with editorial priority scores.`);

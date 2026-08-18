@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "5w1h-communication-checklist": {
+      "title": "Check Who, What, Where, When, Why, and How",
+      "description": "Before an important operational message, check whether the reader has the people, action, place, timing, reason, and next-step details they actually need.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited communication article containing fabricated meeting metrics, arbitrary word and timing rules, made-up internal trials and unnecessary numerical examples with a concise operational-clarity checklist.",
+      "forbidden_public_fragments": [
+        "42% of our last 50 meetings",
+        "cut late starts by 60%",
+        "average of 1.4 per invite to 0.4",
+        "reduces diffusion of responsibility by roughly half",
+        "reduced start delays by 38%",
+        "adding 20–40 words to save 5–15 minutes",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before sending an important operational message, check whether the reader knows who is involved, what needs to happen, where, when, why it matters, and how to proceed.",
+        "whatYouDo": "Review an important operational message using six questions: Who? What? Where? When? Why? How? Add only the missing details the reader needs to act, then send the shortest version that is still clear.",
+        "checkIn": "Could the reader act without guessing, and did I include any detail that was unnecessary or sensitive?"
+      },
+      "faq": [
+        {
+          "id": "5w1h-communication-checklist-faq-1",
+          "question": "Do I need all six items in every message?",
+          "answer": "No. Use the questions as a gap check. A familiar conversation may already have shared context, while a handoff, meeting invite, site visit, or request may need most of the details."
+        },
+        {
+          "id": "5w1h-communication-checklist-faq-2",
+          "question": "Will this make messages too long?",
+          "answer": "It can if you treat the checklist as a form to fill. Add only information the reader needs to understand or act. Completeness does not require six labeled paragraphs."
+        },
+        {
+          "id": "5w1h-communication-checklist-faq-3",
+          "question": "What about sensitive information?",
+          "answer": "Do not add private details simply to satisfy a checklist. State the operational reason at the level needed for the audience and move sensitive context to the appropriate private channel."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Who, What, Where, When, Why, and How is a simple check for operational messages. It is useful when missing context could create delay, confusion, or unnecessary follow-up. The aim is not to make every message longer. It is to remove important gaps before sending.</p>"
+        },
+        "sections": [
+          {
+            "slug": "start-with-action",
+            "title": "1. Start with what needs to happen",
+            "html": "<p>Make the requested action or outcome easy to find. Replace vague wording such as <em>let's discuss this</em> with the decision, review, delivery, or response you actually need.</p>"
+          },
+          {
+            "slug": "check-who",
+            "title": "2. Check who is involved",
+            "html": "<p>Ask whether responsibility is clear. Name the person or role that needs to act when that matters. Do not confuse a long recipient list with clear ownership.</p>"
+          },
+          {
+            "slug": "check-where-when",
+            "title": "3. Check where and when",
+            "html": "<p>For meetings, visits, deadlines, or handoffs, include the place or link and the timing needed to act. Add a time zone when different locations make it ambiguous.</p>"
+          },
+          {
+            "slug": "check-why",
+            "title": "4. Add the reason when it changes priority",
+            "html": "<p>Explain why the request matters when that helps the reader make a better decision about urgency, trade-offs, or preparation. Keep the reason short and appropriate for the audience.</p>"
+          },
+          {
+            "slug": "check-how",
+            "title": "5. Explain how to proceed when needed",
+            "html": "<p>Include the file, tool, preparation, format, or next step only when the reader would otherwise have to guess. Avoid turning a simple request into a procedural manual.</p>"
+          },
+          {
+            "slug": "remove-extra-detail",
+            "title": "6. Remove what the reader does not need",
+            "html": "<p>Read the message once more. If the essential action is clear, remove duplicated background, unnecessary labels, and sensitive details. The checklist is successful when it makes the message easier to use.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

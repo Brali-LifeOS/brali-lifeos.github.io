@@ -23,6 +23,22 @@ The default state is derived automatically. Manual editorial decisions live in `
 
 A `practical` override is rejected while evidence-like claims remain. A sensitive or evidence-claiming entry cannot be marked `reviewed` without a usable source.
 
+## Editorial normalizations
+
+The migrated source corpus is preserved for provenance, so inherited boilerplate can remain in repository source files even after editorial review identifies a problem. Reviewed corpus-wide corrections live in `data/editorial-normalizations.json`.
+
+A normalization must record:
+
+- the exact inherited wording being corrected;
+- the replacement wording;
+- the reason for the change;
+- the review source used to evaluate the inherited claim;
+- `reviewed_at` and `reviewed_by`.
+
+Reviewed normalizations are applied before public pages, evidence states, search indexing, and the Trusted Protocol Feed are generated. The applied-rule register is published as `life-os/datasets/editorial-normalizations.json` so the correction is visible rather than silently rewriting history.
+
+Use this mechanism for genuinely repeated inherited claims. Do not use it to make article-specific editorial decisions look like generic rules.
+
 ## Claims
 
 Precise claims require precise support. Percentages, sample sizes, effect estimates, phrases such as "research shows", and claims about treatment, diagnosis, prevention, or clinical outcomes require a source that a reader can trace.
@@ -65,6 +81,8 @@ This deliberately favors a smaller trusted search surface over a large collectio
 - `life-os/datasets/evidence.json` exposes the evidence state for every Growth Library entry.
 - `life-os/datasets/review-queue.json` exposes the current editorial queue.
 - `life-os/datasets/indexing.json` lists which entries meet the current search-indexing bar.
-- `life-os/datasets/manifest.json` includes evidence and indexing counts.
+- `life-os/datasets/protocols.json` provides the compact discovery-ready Protocol Feed.
+- `life-os/datasets/editorial-normalizations.json` records reviewed inherited-claim corrections and their application counts.
+- `life-os/datasets/manifest.json` includes evidence, indexing, protocol-feed, and normalization counts.
 
 These files are public so search systems, AI tools, and contributors can distinguish reviewed material from content still awaiting review.

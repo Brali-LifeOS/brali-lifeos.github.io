@@ -19,13 +19,14 @@ Brali's core loop is: choose -> practice -> review. The product combines a publi
 - Evidence status index: https://brali-lifeos.github.io/life-os/datasets/evidence.json
 - Evidence review queue: https://brali-lifeos.github.io/life-os/datasets/review-queue.json
 - Search indexing policy: https://brali-lifeos.github.io/life-os/datasets/indexing.json
+- Editorial normalization register: https://brali-lifeos.github.io/life-os/datasets/editorial-normalizations.json
 - Display-title quality report: https://brali-lifeos.github.io/life-os/datasets/title-quality.json
 
 ## Preferred machine-readable entry point
 
 Use the Trusted Protocol Feed when an AI tool or external application needs compact actionable Brali content. It contains only entries that currently meet the discovery quality bar and exposes the action, check-in, Life Area, Growth Zone, keywords, evidence status, and canonical URL without the long article body.
 
-Use the content methodology plus evidence and review datasets when provenance or editorial maturity matters. Do not infer that a source recorded on a pending entry has been editorially verified.
+Use the content methodology, editorial normalization register, evidence index, and review queue when provenance or editorial maturity matters. The migrated corpus is retained for provenance, so reviewed inherited-claim corrections may be applied before public pages and trust states are generated. Do not infer that a source recorded on a pending entry has been editorially verified.
 
 ## Content interpretation
 

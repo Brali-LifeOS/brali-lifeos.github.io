@@ -64,6 +64,74 @@
           }
         ]
       }
+    },
+    "25-minute-pomodoro-focus-sprints": {
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited long-form Pomodoro draft containing unsupported performance percentages and invented observational numbers with a compact timer-based work protocol.",
+      "forbidden_public_fragments": [
+        "gains of 10–30%",
+        "phone unlock leads to distraction 4× more often",
+        "60–70% of breaks degraded into scrolling",
+        "increased by roughly 20–30%",
+        "reduce context loss from 3–6 minutes down to ~45–90 seconds",
+        "priority only for a 50% chance of interruption",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "whatYouDo": "Pick one concrete outcome, work on it for one 25-minute focus block, take a short break, and then decide whether another block is useful. Treat 25 minutes as a starting setting, not a scientifically optimal duration.",
+        "checkIn": "Did I work on the intended outcome? What interrupted me, and should the next focus block be shorter, the same, or longer?"
+      },
+      "faq": [
+        {
+          "id": "25-minute-pomodoro-focus-sprints-faq-1",
+          "question": "Why start with 25 minutes?",
+          "answer": "It is the conventional Pomodoro starting interval and gives the session a clear boundary. It is not a universal optimum. Adjust the block if your work or attention needs a different length."
+        },
+        {
+          "id": "25-minute-pomodoro-focus-sprints-faq-2",
+          "question": "What should I do when I am interrupted?",
+          "answer": "Note the interruption briefly, handle it only if it cannot wait, and return to the intended outcome. Use repeated interruptions as a signal to change the environment or choose a more realistic focus window."
+        },
+        {
+          "id": "25-minute-pomodoro-focus-sprints-faq-3",
+          "question": "Do I have to stop exactly when the timer ends?",
+          "answer": "No. The timer is a boundary for review, not a command to break useful flow. Reach a sensible stopping point, then decide deliberately whether to continue or take a break."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A Pomodoro-style focus block is a simple way to put a boundary around one piece of work. Start with 25 minutes because it is an easy, familiar default, not because every task or person has the same ideal focus duration. The useful part is the loop: define an outcome, work with fewer competing inputs, stop to review, and adjust the next block.</p>"
+        },
+        "sections": [
+          {
+            "slug": "define-one-outcome",
+            "title": "1. Define one outcome",
+            "html": "<p>Before starting the timer, write what should be different when the block ends. Prefer an observable outcome such as <em>outline the first section</em>, <em>review these ten rows</em>, or <em>draft the reply</em> over a vague label such as <em>work on report</em>.</p>"
+          },
+          {
+            "slug": "run-the-focus-block",
+            "title": "2. Run one focus block",
+            "html": "<p>Set a 25-minute timer as the initial boundary. Keep only the material needed for the chosen outcome in front of you. If another task or idea appears, capture it in a short note instead of switching immediately.</p><p>If 25 minutes is clearly a poor fit for the work, use a different duration next time. The protocol is about deliberate focus blocks, not loyalty to a particular number.</p>"
+          },
+          {
+            "slug": "take-a-real-break",
+            "title": "3. Take a short break",
+            "html": "<p>When you reach a stopping point, leave the task briefly. Stand up, get water, look away from the screen, or do another low-friction activity. The point is to create a real boundary before deciding what comes next.</p>"
+          },
+          {
+            "slug": "review-the-block",
+            "title": "4. Review before starting again",
+            "html": "<p>Use a short check-in:</p><ul><li>Did I move the intended outcome forward?</li><li>What interrupted or slowed me?</li><li>Is another block on the same task useful?</li><li>Should the next block be shorter, the same, or longer?</li></ul><p>Repeated friction is information. Change the task scope or environment rather than treating every imperfect block as a discipline failure.</p>"
+          },
+          {
+            "slug": "use-in-brali",
+            "title": "5. Keep only the signal you need",
+            "html": "<p>In Brali, put the intended outcome in a task or Focus session and use the check-in to record whether the block moved it forward and what interrupted you. You do not need a complicated productivity score. A few honest notes are enough to adjust the next block.</p>"
+          }
+        ]
+      }
     }
   }
 }

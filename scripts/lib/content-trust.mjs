@@ -46,9 +46,25 @@ export function sourceDetails(article) {
   };
 }
 
+export function publicClaimSurface(article = {}) {
+  const original = article.lifeOsSource ?? {};
+  return {
+    title: article.title ?? null,
+    subtitle: article.subtitle ?? null,
+    description: article.description ?? null,
+    action: original.whatYouDo ?? null,
+    checkIn: original.checkIn ?? null,
+    faq: (article.faq ?? []).map((item) => ({ question: item.question ?? null, answer: item.answer ?? null })),
+    body: {
+      intro: article.body?.intro?.html ?? null,
+      markdown: article.body?.markdown ?? null,
+      sections: (article.body?.sections ?? []).map((section) => ({ title: section.title ?? null, html: section.html ?? null })),
+    },
+  };
+}
+
 export function claimFlags(article) {
-  const { editorialCuration: _editorialCuration, ...content } = article ?? {};
-  const text = JSON.stringify(content);
+  const text = JSON.stringify(publicClaimSurface(article));
   return {
     evidenceLanguage: claimPattern.test(text),
     quantitative: quantitativeClaimPattern.test(text),

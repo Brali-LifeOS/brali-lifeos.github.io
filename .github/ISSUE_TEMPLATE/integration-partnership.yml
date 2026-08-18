@@ -1,0 +1,28 @@
+name: Integration or partnership
+description: Propose an API/MCP integration, localization, dataset license, or product partnership.
+title: "Integration/partnership: "
+labels: []
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: Proposal type
+      options: [AI or MCP integration, Dataset/API use, Localization, Commercial licensing, Custom collection, Other]
+    validations: {required: true}
+  - type: textarea
+    id: use_case
+    attributes: {label: Use case and intended users}
+    validations: {required: true}
+  - type: textarea
+    id: data
+    attributes: {label: Brali data or capabilities you expect to use}
+  - type: textarea
+    id: requirements
+    attributes: {label: Technical, licensing, or collaboration requirements}
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licensing
+      options:
+        - label: I understand the public repository license is non-commercial and commercial use requires a separate agreement.
+          required: true

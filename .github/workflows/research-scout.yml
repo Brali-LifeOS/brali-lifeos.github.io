@@ -35,9 +35,10 @@ jobs:
           git checkout -B bot/research-scout origin/main
           if [ -s /tmp/research-candidates.json ]; then cp /tmp/research-candidates.json data/research-candidates.json; fi
       - name: Discover research candidates
-        run: python scripts/research_scout.py --days 60 --rows 8
+        run: python scripts/research_scout.py --days 60 --rows 8 --providers crossref,europepmc
         env:
           CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
+          EUROPEPMC_EMAIL: ${{ vars.CROSSREF_MAILTO }}
       - name: Validate research system
         run: python scripts/check-research-system.py
       - name: Commit candidate queue
@@ -59,8 +60,9 @@ jobs:
         shell: bash
         run: |
           PR_NUMBER="$(gh pr list --head bot/research-scout --base main --state open --json number --jq '.[0].number // empty')"
+          BODY="Automated discovery update from Crossref and Europe PMC. These records are unreviewed leads only. Duplicate scholarly identities are merged by DOI/PMID while discovery provenance is preserved. Review the actual source before promoting any candidate into a hack, protocol, or evidence state."
           if [ -z "$PR_NUMBER" ]; then
-            gh pr create --base main --head bot/research-scout --title "Research scout: review new candidates" --body "Automated discovery update from the Brali Research Scout. These records are unreviewed leads only. Review actual sources before promoting any candidate into a hack, protocol, or evidence state."
+            gh pr create --base main --head bot/research-scout --title "Research scout: review new candidates" --body "$BODY"
           else
-            gh pr edit "$PR_NUMBER" --body "Automated discovery update from the Brali Research Scout. These records are unreviewed leads only. Review actual sources before promoting any candidate into a hack, protocol, or evidence state."
+            gh pr edit "$PR_NUMBER" --body "$BODY"
           fi

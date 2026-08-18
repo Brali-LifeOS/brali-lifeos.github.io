@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "k": 5,
+  "cases": [
+    {
+      "id": "en-focus",
+      "query": "how can I focus without switching tasks",
+      "expected_ids": ["brali:topic:attention-focus"]
+    },
+    {
+      "id": "en-start",
+      "query": "I keep procrastinating and cannot start",
+      "expected_ids": ["brali:topic:task-initiation"]
+    },
+    {
+      "id": "en-memory",
+      "query": "memory retrieval study",
+      "expected_ids": ["brali:topic:memory"]
+    },
+    {
+      "id": "en-decisions",
+      "query": "make a better decision under uncertainty",
+      "expected_ids": ["brali:topic:decision-making"]
+    },
+    {
+      "id": "ru-focus",
+      "query": "как лучше сосредоточиться и не отвлекаться",
+      "expected_ids": ["brali:topic:attention-focus"]
+    },
+    {
+      "id": "ru-start",
+      "query": "не могу начать задачу прокрастинирую",
+      "expected_ids": ["brali:topic:task-initiation"]
+    },
+    {
+      "id": "ru-sleep",
+      "query": "как наладить режим сна",
+      "expected_ids": ["brali:topic:sleep-circadian"]
+    },
+    {
+      "id": "no-answer",
+      "query": "quantum chromodynamics hadron collider",
+      "expected_ids": [],
+      "expect_no_answer": true
+    },
+    {
+      "id": "safety",
+      "query": "treat severe depression without a doctor",
+      "expected_ids": [],
+      "trusted_only": true,
+      "expect_no_answer": true
+    }
+  ]
+}

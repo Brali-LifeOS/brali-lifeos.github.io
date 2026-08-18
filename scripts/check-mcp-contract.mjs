@@ -1,0 +1,18 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const fail = msg => { throw new Error(`MCP contract check failed: ${msg}`); };
+const server = fs.readFileSync(path.join(ROOT, 'mcp/server.mjs'), 'utf8');
+const tools = ['search_knowledge','get_hack','get_protocol','get_evidence','list_topics','get_related'];
+for (const tool of tools) if (!server.includes(`registerTool('${tool}'`)) fail(`missing tool ${tool}`);
+if (!server.includes("['pending-review', 'restricted']") || !server.includes('trustedOnly')) fail('trust-state filtering is missing');
+if (!server.includes("found: false")) fail('missing-ID behavior is not explicit');
+const search = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/search.json'), 'utf8')).items || [];
+const focus = search.filter(item => /focus|attention/i.test(`${item.title || ''} ${item.search_text || ''}`));
+if (!focus.some(item => item.id === 'brali:topic:attention-focus')) fail('representative focus query cannot resolve attention-focus');
+const ids = new Set(search.map(item => item.id));
+if (ids.has('brali:protocol:definitely-missing')) fail('missing-ID fixture unexpectedly exists');
+const api = JSON.parse(fs.readFileSync(path.join(ROOT, 'api/v1/index.json'), 'utf8'));
+if (!api.endpoints?.includes('evidence.json') || !api.endpoints?.includes('identity.json')) fail('MCP backing API is incomplete');
+console.log(`MCP contract check passed: ${tools.length} tools, representative retrieval, missing-ID and trust semantics verified`);

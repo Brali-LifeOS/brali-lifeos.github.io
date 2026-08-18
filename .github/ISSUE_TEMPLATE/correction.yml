@@ -1,0 +1,20 @@
+name: Content or data correction
+description: Report a factual, wording, provenance, data, or broken-link problem.
+title: "Correction: "
+labels: []
+body:
+  - type: input
+    id: url
+    attributes: {label: Affected Brali URL or canonical ID}
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes: {label: "What is wrong?"}
+    validations: {required: true}
+  - type: textarea
+    id: evidence
+    attributes: {label: Source or reproducible evidence, description: Required for factual/evidence corrections; include the exact source and claim scope.}
+  - type: textarea
+    id: expected
+    attributes: {label: Expected correction}
+    validations: {required: true}

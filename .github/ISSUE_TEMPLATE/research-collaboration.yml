@@ -1,0 +1,23 @@
+name: Research collaboration
+description: Propose a transparent research or editorial collaboration.
+title: "Research collaboration: "
+labels: []
+body:
+  - type: textarea
+    id: question
+    attributes: {label: Research question or objective}
+    validations: {required: true}
+  - type: textarea
+    id: method
+    attributes: {label: Proposed method, sources, or deliverables}
+    validations: {required: true}
+  - type: textarea
+    id: contribution
+    attributes: {label: What you or your organization can contribute}
+  - type: checkboxes
+    id: public
+    attributes:
+      label: Public issue
+      options:
+        - label: I have not included confidential, personal, or client-restricted information.
+          required: true

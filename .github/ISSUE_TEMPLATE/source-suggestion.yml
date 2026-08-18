@@ -1,0 +1,27 @@
+name: Source suggestion
+description: Suggest a research source for screening. A source suggestion is not evidence approval.
+title: "Source: "
+labels: []
+body:
+  - type: input
+    id: source_url
+    attributes: {label: Source URL or DOI, placeholder: "https://doi.org/..."}
+    validations: {required: true}
+  - type: input
+    id: title
+    attributes: {label: Source title}
+    validations: {required: true}
+  - type: textarea
+    id: relevance
+    attributes: {label: Why it may matter, description: Name the Brali Topic/Hack/Protocol or claim it could support, challenge, or correct.}
+    validations: {required: true}
+  - type: textarea
+    id: limits
+    attributes: {label: Known limitations or uncertainty}
+  - type: checkboxes
+    id: boundary
+    attributes:
+      label: Evidence boundary
+      options:
+        - label: I understand this submission remains unreviewed until the actual source is reviewed.
+          required: true

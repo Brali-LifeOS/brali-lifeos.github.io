@@ -1,0 +1,24 @@
+name: Taxonomy proposal
+description: Propose a Domain, Topic, Method, Lens, alias, or mapping change.
+title: "Taxonomy: "
+labels: []
+body:
+  - type: input
+    id: ids
+    attributes: {label: Affected canonical IDs or legacy Growth Zones}
+    validations: {required: true}
+  - type: textarea
+    id: change
+    attributes: {label: Proposed classification change}
+    validations: {required: true}
+  - type: textarea
+    id: rationale
+    attributes: {label: Why this improves retrieval or semantic clarity}
+    validations: {required: true}
+  - type: checkboxes
+    id: compatibility
+    attributes:
+      label: Compatibility
+      options:
+        - label: I considered stable IDs and existing legacy URLs; I am not asking to silently reuse an identity for a different concept.
+          required: true

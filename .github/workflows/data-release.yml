@@ -1,0 +1,63 @@
+name: Package Brali data release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Dataset version, for example 1.0.0
+        required: true
+        type: string
+  push:
+    tags:
+      - 'data-v*'
+
+permissions:
+  contents: write
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Resolve version
+        id: version
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
+            VERSION="${GITHUB_REF_NAME#data-v}"
+          else
+            VERSION="${{ inputs.version }}"
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Build and validate
+        run: npm run build && npm run check
+      - name: Package immutable dataset snapshot
+        run: npm run release:data -- --version "${{ steps.version.outputs.version }}"
+      - name: Create archive
+        shell: bash
+        run: |
+          cd releases
+          tar -czf "brali-data-${{ steps.version.outputs.version }}.tar.gz" "data-v${{ steps.version.outputs.version }}"
+          sha256sum "brali-data-${{ steps.version.outputs.version }}.tar.gz" > "brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brali-data-${{ steps.version.outputs.version }}
+          path: |
+            releases/data-v${{ steps.version.outputs.version }}/
+            releases/brali-data-${{ steps.version.outputs.version }}.tar.gz
+            releases/brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256
+      - name: Publish GitHub release for data tag
+        if: github.ref_type == 'tag'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            "releases/brali-data-${{ steps.version.outputs.version }}.tar.gz" \
+            "releases/brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256" \
+            --title "Brali data ${{ steps.version.outputs.version }}" \
+            --notes "Versioned Brali dataset snapshot. See CITATION.cff and release-manifest.json for citation, license and checksums."

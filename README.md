@@ -17,6 +17,7 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 - `/research/` — research notes and discovery pipeline.
 - `/agents/`, `/contracts/`, `/skills/` — guarded agent/editorial workflows.
 - `/for-ai/` — guidance for AI tools and developers.
+- `/for-ai/query/` — zero-install browser query that returns transparent Topic → Protocol → Evidence/provenance packets.
 - `/for-ai/demos/` — deterministic reference agent scenarios.
 - `/for-ai/integrations/` — copy-paste OpenAI API, Claude Code, and Cursor integration kits.
 - `/cite/` — citation and attribution guidance for people and downstream AI systems.
@@ -31,7 +32,7 @@ Generated entities expose canonical IDs as `brali:<kind>:<local-id>`. Titles, UR
 
 The optional read-only MCP server in `mcp/` exposes `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, and `get_related` over the same generated data. It is currently a **local stdio server**, not a hosted remote MCP service. Cursor and Claude Code starter configs use that local server. The OpenAI example uses the hosted static Brali API and a bounded answer packet instead of pretending a hosted Brali MCP endpoint exists.
 
-Start with `docs/INTEGRATION_QUICKSTART.md`, `docs/REFERENCE_AGENT_DEMOS.md`, `examples/integrations/`, and `/for-ai/integrations/`.
+Start with `/for-ai/query/` to inspect the live retrieval contract with no setup, then use `docs/INTEGRATION_QUICKSTART.md`, `docs/REFERENCE_AGENT_DEMOS.md`, `examples/integrations/`, and `/for-ai/integrations/` for programmatic integration.
 
 ## Continuous research loop
 
@@ -59,6 +60,7 @@ npm run research:scout
 npm run mcp:check
 npm run demos:check
 npm run adoption:check
+npm run query:check
 npm run adoption:openai -- "How can I remember what I study?"
 npm run release:data -- --version 1.0.0
 npm run release:check -- --version 1.0.0
@@ -66,7 +68,7 @@ npm run release:check -- --version 1.0.0
 
 `adoption:openai` prints a request preview when `OPENAI_API_KEY` is absent. With a key it sends the bounded Brali packet to the OpenAI Responses API.
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, agent evaluation/reference demos, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, agent evaluation/reference demos, zero-install query behavior, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
 
 ## Releases and citation
 
@@ -84,7 +86,7 @@ External adopters are encouraged to report what they integrated, which Brali sur
 
 ## Direction
 
-Near-term work should improve the knowledge asset and external utility rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, and make the same trusted data easy to consume through static APIs, local MCP, versioned releases, and verifiable third-party integrations.
+Near-term work should improve the knowledge asset and external utility rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, and make the same trusted data easy to consume through static APIs, local MCP, versioned releases, verifiable third-party integrations, and a zero-install browser query.
 
 ## License
 

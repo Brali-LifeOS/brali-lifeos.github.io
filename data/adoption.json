@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "canonical_site": "https://brali-lifeos.github.io",
+  "developer_entry": "https://brali-lifeos.github.io/for-ai/",
+  "integrations_page": "https://brali-lifeos.github.io/for-ai/integrations/",
+  "reference_demos": "https://brali-lifeos.github.io/for-ai/demos/",
+  "api_base": "https://brali-lifeos.github.io/api/v1",
+  "mcp": {
+    "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/server.mjs",
+    "transport": "stdio",
+    "hosted_remote": false,
+    "note": "The repository MCP server runs locally over stdio. Brali does not currently operate a hosted remote MCP endpoint; consumers that require remote MCP must deploy the server themselves."
+  },
+  "runtimes": [
+    {
+      "id": "cursor",
+      "title": "Cursor",
+      "status": "supported-local-mcp",
+      "transport": "stdio",
+      "example": "examples/integrations/cursor-mcp.json",
+      "configuration": ".cursor/mcp.json",
+      "official_docs": "https://docs.cursor.com/context/model-context-protocol",
+      "note": "Point Cursor at the local Brali MCP server after building the repository and installing the MCP package dependencies."
+    },
+    {
+      "id": "claude-code",
+      "title": "Claude Code",
+      "status": "supported-local-mcp",
+      "transport": "stdio",
+      "example": "examples/integrations/claude-code.sh",
+      "configuration": "claude mcp add",
+      "official_docs": "https://docs.anthropic.com/en/docs/claude-code/mcp",
+      "note": "Register the local Brali MCP server with Claude Code. The example uses user scope so Brali can be reused across projects."
+    },
+    {
+      "id": "openai-api",
+      "title": "OpenAI API",
+      "status": "supported-static-api",
+      "transport": "https-json",
+      "example": "examples/integrations/openai-api.mjs",
+      "configuration": "Brali API prefetch -> bounded context packet -> Responses API",
+      "official_docs": "https://platform.openai.com/docs/quickstart",
+      "note": "Use Brali's hosted static API directly. OpenAI remote MCP requires a remotely reachable MCP server URL, which Brali does not currently host."
+    }
+  ],
+  "citation": {
+    "author": "Dzmitryi Kharlanau",
+    "dataset_title": "Brali Practical Knowledge Library",
+    "license": "CC-BY-NC-SA-4.0",
+    "citation_file": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/CITATION.cff",
+    "guidance_page": "https://brali-lifeos.github.io/cite/",
+    "answer_attribution_template": "Source: Brali — <record title> (<canonical_id>), <record_url>. Evidence: <evidence_state>.",
+    "dataset_citation_template": "Kharlanau, Dzmitryi. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
+    "preserve": [
+      "canonical Brali record URL or canonical_id",
+      "evidence state and review metadata where supplied",
+      "data-v release version for reproducible dataset use",
+      "an indication when material is changed or translated"
+    ]
+  },
+  "adoption_checklist": [
+    "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
+    "Run a reference demo before integrating your own retrieval flow.",
+    "Use reviewed/practical records for normal trusted recommendations.",
+    "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
+    "Return no trusted answer rather than silently falling back to pending-review or restricted material.",
+    "For reproducible work, pin a data-v release instead of following main.",
+    "Follow CC BY-NC-SA 4.0 attribution/share-alike terms for public non-commercial use; request separate permission for commercial use.",
+    "Share integration feedback or partnership proposals through the Brali partnerships page."
+  ],
+  "feedback_url": "https://brali-lifeos.github.io/partners/"
+}

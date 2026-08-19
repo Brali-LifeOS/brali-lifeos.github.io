@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "status": "submission-ready-after-package-publication",
+  "project": {
+    "name": "Brali Knowledge MCP",
+    "repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",
+    "website": "https://brali-lifeos.github.io/for-ai/integrations/",
+    "registry_name": "io.github.dkharlanau/brali-knowledge",
+    "npm_package": "brali-knowledge-mcp",
+    "transport": "stdio",
+    "hosted_remote": false,
+    "description": "Read-only MCP server for Brali's evidence-aware practical knowledge library, exposing canonical Topics, trusted Protocols, Hacks, Evidence and related knowledge while preserving trust metadata."
+  },
+  "awesome_mcp_servers": {
+    "target": "punkpeye/awesome-mcp-servers",
+    "category_hint": "Knowledge & Memory",
+    "entry": "[Brali Knowledge MCP](https://github.com/Brali-LifeOS/brali-lifeos.github.io) - Read-only evidence-aware practical knowledge for AI agents with canonical Topics, trusted Protocols, Evidence metadata, provenance and safe trust filtering.",
+    "agent_pr_title": "Add Brali Knowledge MCP 🤖🤖🤖",
+    "submit_only_after": ["npm package is publicly installable", "directory contribution rules rechecked"]
+  },
+  "mcpservers_org": {
+    "submit_url": "https://mcpservers.org/submit",
+    "name": "Brali Knowledge MCP",
+    "description": "Evidence-aware practical knowledge MCP server with six read-only tools for search, canonical records, evidence metadata, Topics and related Protocols.",
+    "submit_only_after": ["npm package is publicly installable"]
+  },
+  "claims_to_avoid_until_verified": [
+    "published on npm",
+    "listed in the Official MCP Registry",
+    "hosted remote MCP"
+  ]
+}

@@ -8,7 +8,7 @@ export const isSafetyBoundary = query => /severe depression|suicid|self[- ]harm|
 const localId = value => String(value || '').replace(/^brali:[^:]+:/, '').replace(/^brali:/, '');
 const protocolSlug = item => item.slug || item.protocol_id || item.id || localId(item.canonical_id);
 const evidenceState = item => item?.evidence?.status || item?.evidence_state || item?.status || item?.trust || 'unknown';
-const topicIds = item => (item?.ontology?.topics || item?.ontology?.topic_ids || item?.topic_ids || []).map(x => typeof x === 'string' ? x : x?.id).filter(Boolean);
+const topicIds = item => (item?.ontology?.topics || item?.ontology?.topic_ids || item?.topic_ids || []).map(x => typeof x === 'string' ? x : x?.id).filter(Boolean).map(localId);
 
 function scoreText(queryTerms, title, text) {
   const titleNorm = normalize(title), hay = new Set(tokens(`${title || ''} ${text || ''}`));
@@ -44,43 +44,40 @@ export function queryBrali(question, data, options = {}) {
   const routedTopics = topicRanked.filter(x => x.score >= Math.max(2, bestTopicScore * 0.65)).slice(0, 3).map(x => x.item);
   const routedIds = new Set(routedTopics.flatMap(item => (item.topic_ids || []).map(localId)));
 
-  const protocolDocs = searchItems.filter(item => item.kind === 'protocol' && TRUSTED.has(item.trust));
-  const ranked = protocolDocs.map(doc => {
-    const lexical = scoreText(qTerms, doc.title, doc.search_text);
-    const overlap = (doc.topic_ids || []).map(localId).filter(id => routedIds.has(id)).length;
-    if (routedIds.size && !overlap && lexical < 6) return null;
-    const score = overlap * 100 + lexical + (doc.trust === 'reviewed' ? 18 : 0);
-    return score > 0 ? { doc, score } : null;
-  }).filter(Boolean).sort((a,b) => b.score - a.score || String(a.doc.id).localeCompare(String(b.doc.id))).slice(0, limit);
+  const ranked = protocols
+    .filter(protocol => TRUSTED.has(evidenceState(protocol)))
+    .map(protocol => {
+      const pTopics = topicIds(protocol);
+      const overlap = pTopics.filter(id => routedIds.has(id)).length;
+      const body = [protocol.description, protocol.summary, protocol.action, protocol.check_in, protocol.problem].filter(Boolean).join(' ');
+      const lexical = scoreText(qTerms, protocol.title || protocol.canonical_name, body);
+      if (routedIds.size && !overlap && lexical < 6) return null;
+      const score = overlap * 100 + lexical + (evidenceState(protocol) === 'reviewed' ? 18 : 0) + (protocol.evidence?.source_url || protocol.source_url ? 8 : 0) + (protocol.check_in ? 3 : 0);
+      return score > 0 ? { protocol, score } : null;
+    })
+    .filter(Boolean)
+    .sort((a,b) => b.score - a.score || String(protocolSlug(a.protocol)).localeCompare(String(protocolSlug(b.protocol))))
+    .slice(0, limit);
 
-  const protocolById = new Map();
-  for (const item of protocols) {
-    const slug = protocolSlug(item);
-    protocolById.set(slug, item);
-    if (item.canonical_id) protocolById.set(item.canonical_id, item);
-  }
-
-  const recommendations = ranked.map(({ doc }) => {
-    const slug = localId(doc.id);
-    const protocol = protocolById.get(doc.id) || protocolById.get(slug) || {};
-    const state = evidenceState(protocol) !== 'unknown' ? evidenceState(protocol) : doc.trust;
-    const canonicalId = protocol.canonical_id || doc.id || `brali:protocol:${slug}`;
+  const recommendations = ranked.map(({ protocol }) => {
+    const slug = protocolSlug(protocol);
+    const canonicalId = protocol.canonical_id || `brali:protocol:${slug}`;
     const recordUrl = protocol.url ? new URL(protocol.url, BASE).href : `${BASE}/life-os/${slug}/`;
     return {
       canonical_id: canonicalId,
       slug,
-      title: protocol.title || doc.title,
+      title: protocol.title || protocol.canonical_name || slug,
       action: protocol.action || protocol.summary || protocol.description || null,
       check_in: protocol.check_in || null,
-      topic_ids: topicIds(protocol).length ? topicIds(protocol) : (doc.topic_ids || []),
-      evidence_state: state,
+      topic_ids: topicIds(protocol),
+      evidence_state: evidenceState(protocol),
       provenance: {
         record_url: recordUrl,
         source_url: protocol.evidence?.source_url || protocol.source_url || null,
         kind: protocol.evidence?.source_url || protocol.source_url ? 'reviewed-source' : 'brali-record'
       }
     };
-  }).filter(item => TRUSTED.has(item.evidence_state));
+  });
 
   const selectedSlugs = new Set(recommendations.map(x => x.slug));
   const evidenceBoundaries = decisions.filter(decision => decisionTargets(decision).some(slug => selectedSlugs.has(slug))).map(decision => ({

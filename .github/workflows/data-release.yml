@@ -12,9 +12,11 @@ on:
       - 'data-v*'
     branches:
       - 'release/data-v*'
+      - 'release/verify-data-v*'
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   package:
@@ -25,14 +27,20 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Resolve version
+      - name: Resolve version and mode
         id: version
         shell: bash
         run: |
+          MODE="dispatch"
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
             VERSION="${GITHUB_REF_NAME#data-v}"
+            MODE="tag"
+          elif [[ "${GITHUB_REF_TYPE}" == "branch" && "${GITHUB_REF_NAME}" == release/verify-data-v* ]]; then
+            VERSION="${GITHUB_REF_NAME#release/verify-data-v}"
+            MODE="verify"
           elif [[ "${GITHUB_REF_TYPE}" == "branch" && "${GITHUB_REF_NAME}" == release/data-v* ]]; then
             VERSION="${GITHUB_REF_NAME#release/data-v}"
+            MODE="create"
           else
             VERSION="${{ inputs.version }}"
           fi
@@ -41,6 +49,14 @@ jobs:
             exit 1
           fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "mode=$MODE" >> "$GITHUB_OUTPUT"
+      - name: Checkout immutable tag for verification
+        if: steps.version.outputs.mode == 'verify'
+        shell: bash
+        run: |
+          TAG="data-v${{ steps.version.outputs.version }}"
+          git fetch --force origin "refs/tags/${TAG}:refs/tags/${TAG}"
+          git checkout --detach "$TAG"
       - name: Build and validate
         run: npm run build && npm run check
       - name: Package immutable dataset snapshot
@@ -61,7 +77,7 @@ jobs:
             releases/brali-data-${{ steps.version.outputs.version }}.tar.gz
             releases/brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256
       - name: Create immutable data tag from verified release branch
-        if: github.ref_type == 'branch' && startsWith(github.ref_name, 'release/data-v')
+        if: steps.version.outputs.mode == 'create'
         shell: bash
         run: |
           VERSION="${{ steps.version.outputs.version }}"
@@ -72,8 +88,8 @@ jobs:
           fi
           git tag "$TAG" "$GITHUB_SHA"
           git push origin "refs/tags/${TAG}"
-      - name: Publish GitHub release
-        if: github.ref_type == 'tag' || (github.ref_type == 'branch' && startsWith(github.ref_name, 'release/data-v'))
+      - name: Publish GitHub release if missing
+        if: steps.version.outputs.mode == 'tag' || steps.version.outputs.mode == 'create' || steps.version.outputs.mode == 'verify'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -81,12 +97,49 @@ jobs:
           VERSION="${{ steps.version.outputs.version }}"
           TAG="data-v${VERSION}"
           BUNDLE="releases/data-v${VERSION}"
-          gh release create "$TAG" \
-            "releases/brali-data-${VERSION}.tar.gz" \
-            "releases/brali-data-${VERSION}.tar.gz.sha256" \
-            "${BUNDLE}/release-manifest.json" \
-            "${BUNDLE}/SHA256SUMS" \
-            "${BUNDLE}/CITATION.cff" \
-            "${BUNDLE}/LICENSE" \
-            --title "Brali data ${VERSION}" \
-            --notes-file "docs/releases/${VERSION}.md"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "GitHub release ${TAG} already exists; preserving it."
+          else
+            gh release create "$TAG" \
+              "releases/brali-data-${VERSION}.tar.gz" \
+              "releases/brali-data-${VERSION}.tar.gz.sha256" \
+              "${BUNDLE}/release-manifest.json" \
+              "${BUNDLE}/SHA256SUMS" \
+              "${BUNDLE}/CITATION.cff" \
+              "${BUNDLE}/LICENSE" \
+              --title "Brali data ${VERSION}" \
+              --notes-file "docs/releases/${VERSION}.md"
+          fi
+      - name: Verify published GitHub release assets
+        if: steps.version.outputs.mode == 'tag' || steps.version.outputs.mode == 'create' || steps.version.outputs.mode == 'verify'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="data-v${VERSION}"
+          VERIFY_DIR="${RUNNER_TEMP}/brali-release-${VERSION}"
+          rm -rf "$VERIFY_DIR"
+          mkdir -p "$VERIFY_DIR"
+          gh release download "$TAG" \
+            -p "brali-data-${VERSION}.tar.gz" \
+            -p "brali-data-${VERSION}.tar.gz.sha256" \
+            -p "release-manifest.json" \
+            -p "SHA256SUMS" \
+            -p "CITATION.cff" \
+            -p "LICENSE" \
+            -D "$VERIFY_DIR"
+          cd "$VERIFY_DIR"
+          sha256sum -c "brali-data-${VERSION}.tar.gz.sha256"
+          for file in release-manifest.json SHA256SUMS CITATION.cff LICENSE; do
+            test -s "$file" || { echo "Missing or empty release asset: $file" >&2; exit 1; }
+          done
+      - name: Record Brali 1.0 release verification
+        if: steps.version.outputs.mode == 'verify' && steps.version.outputs.version == '1.0.0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TAG="data-v1.0.0"
+          TAG_SHA="$(git rev-parse HEAD)"
+          gh issue comment 65 --body "Automated release verification passed for \`${TAG}\` at \`${TAG_SHA}\`. The immutable tag builds cleanly, the packaged snapshot verifies, required GitHub Release assets are present, and the published archive SHA-256 validates."

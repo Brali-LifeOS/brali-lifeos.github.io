@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-19",
+  "policy": {
+    "purpose": "Create a small number of useful, query-aware entry points from Brali's existing knowledge instead of generating thin pages for keyword variants.",
+    "search_metrics": "Do not publish search volume, ranking, traffic, or trend claims unless they come from first-party analytics or a named external dataset.",
+    "content_rule": "Questions route readers to canonical Brali hubs, areas, research, and the Query Playground. They are navigation and editorial framing, not claims of measured demand."
+  },
+  "question_groups": [
+    {
+      "slug": "focus-execution",
+      "title": "Focus & execution",
+      "summary": "Start work, reduce switching, and make priorities visible.",
+      "primary_url": "/topics/focus/",
+      "questions": [
+        "How do I stop switching between tasks all day?",
+        "How do I start an important task when I keep procrastinating?",
+        "How do I plan a workday when everything feels urgent?",
+        "What is a simple way to protect a block of focused work?"
+      ]
+    },
+    {
+      "slug": "habits",
+      "title": "Habits & consistency",
+      "summary": "Make useful actions easier to repeat without relying on motivation alone.",
+      "primary_url": "/topics/habits/",
+      "secondary_url": "/research/habits-take-time/",
+      "questions": [
+        "How do I make a habit easier to repeat?",
+        "What should I do when a habit keeps breaking on busy days?",
+        "How long does it really take to build a habit?",
+        "How can I reduce friction around a new routine?"
+      ]
+    },
+    {
+      "slug": "learning-memory",
+      "title": "Learning & memory",
+      "summary": "Use retrieval, practice, feedback, and application instead of passive exposure alone.",
+      "primary_url": "/topics/learning/",
+      "secondary_url": "/topics/memory/",
+      "questions": [
+        "How do I remember more of what I study?",
+        "How do I learn through practice instead of rereading?",
+        "How can I run a one-week learning sprint?",
+        "What is the difference between remembering something and being able to use it?"
+      ]
+    },
+    {
+      "slug": "sleep-energy",
+      "title": "Sleep & energy",
+      "summary": "Build more reliable recovery routines while keeping evidence boundaries visible.",
+      "primary_url": "/topics/sleep/",
+      "secondary_url": "/research/sleep-regularity-signal-not-prescription/",
+      "questions": [
+        "How can I make my sleep routine more regular?",
+        "What small changes can make evening routines easier to repeat?",
+        "How should I think about sleep regularity without treating correlations as prescriptions?"
+      ]
+    },
+    {
+      "slug": "stress",
+      "title": "Stress & regulation",
+      "summary": "Find bounded, low-risk practices without turning a knowledge library into clinical care.",
+      "primary_url": "/topics/stress/",
+      "questions": [
+        "What can I try when I feel stressed and need a simple next step?",
+        "How do I interrupt rumination without pretending one technique works for everyone?",
+        "What low-risk practices can help me settle before returning to a task?"
+      ]
+    },
+    {
+      "slug": "movement",
+      "title": "Movement & sedentary time",
+      "summary": "Break up long sitting periods and build sustainable movement routines.",
+      "primary_url": "/topics/movement/",
+      "secondary_url": "/research/movement-breaks-no-magic-interval/",
+      "questions": [
+        "How can I move more when I sit at a desk most of the day?",
+        "Do movement breaks need a perfect interval to be useful?",
+        "What is a small way to restart an exercise routine?"
+      ]
+    },
+    {
+      "slug": "communication-relationships",
+      "title": "Communication & relationships",
+      "summary": "Navigate listening, clarity, conflict repair, and relationship skills.",
+      "primary_url": "/life-os/areas/communication-relationships/",
+      "questions": [
+        "How can I listen better without immediately preparing my reply?",
+        "How do I make a difficult conversation clearer and less reactive?",
+        "What can I do after a conversation goes badly?"
+      ]
+    },
+    {
+      "slug": "decisions-work",
+      "title": "Decisions, work & strategy",
+      "summary": "Use practical structures for prioritization, decisions, problem solving, and work.",
+      "primary_url": "/life-os/areas/work-money-strategy/",
+      "questions": [
+        "How do I make a decision when several options look reasonable?",
+        "How can I test an assumption before committing too much time?",
+        "How do I turn a vague work problem into a smaller next action?"
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "slug": "2026-08-19",
+      "cadence": "weekly",
+      "status": "week-to-date",
+      "period_start": "2026-08-17",
+      "period_end": "2026-08-19",
+      "title": "Brali this week: knowledge quality, query access, and agent adoption",
+      "summary": "Brali moved beyond a large hack archive toward a smaller trusted core, problem-first topic entry points, reproducible agent evaluation, and easier zero-install access.",
+      "highlights": [
+        {
+          "title": "Flagship 100 trusted core",
+          "text": "A deterministic quality and safety policy now selects a 100-protocol trusted core instead of treating every inherited hack as equally ready for recommendation.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/82f885f03906a2069355c13e6330aad3cdd06acb"
+        },
+        {
+          "title": "Seven problem-first Topic Hubs",
+          "text": "Sleep, Focus, Memory, Stress, Habits, Learning, and Movement now combine trusted protocols, evidence boundaries, and research-watch items in compact entry points.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/e435ba2c7d7fc742d4e14fcf2621f2f72bfe175e"
+        },
+        {
+          "title": "50-case agent evaluation suite",
+          "text": "Brali added reproducible practical scenarios and later aligned the browser Query Playground with the same contract, reaching 50/50 maintained cases in the reported CI run.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/683b6dc4f7e3ca3e6714fd92174087f5407d6075"
+        },
+        {
+          "title": "Zero-install Query Playground",
+          "text": "A browser-only surface now lets people test Brali retrieval, inspect trust and provenance, and create shareable question URLs without installing an SDK or MCP client.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/dcaffbc818e7726810c4118750c3fae00e5ed2c3"
+        },
+        {
+          "title": "Reference agents and MCP distribution work",
+          "text": "Runnable reference-agent examples were published and the read-only Brali Knowledge MCP package was prepared for npm and MCP Registry distribution, with publication claims deliberately withheld until external publication is verified.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/83f02184cd777d66396ec9bede33a6d947b1db14"
+        },
+        {
+          "title": "Research became a correction loop",
+          "text": "Recent work narrowed claims around retrieval practice, sleep regularity, movement breaks, and habit formation instead of using research as decorative citations.",
+          "url": "/research/"
+        }
+      ],
+      "next": [
+        "Turn natural-language questions into stronger internal navigation without generating one page per keyword variation.",
+        "Keep replacing inherited unsupported claims with reviewed or clearly practical protocol content.",
+        "Track search performance only when first-party Search Console data is available; do not invent search-volume or ranking trends."
+      ]
+    },
+    {
+      "slug": "2026-08",
+      "cadence": "monthly",
+      "status": "month-to-date",
+      "period_start": "2026-08-01",
+      "period_end": "2026-08-19",
+      "title": "August 2026: from hack collection to evidence-aware knowledge platform",
+      "summary": "The August direction is consolidation: stronger quality boundaries, canonical Topics and Protocols, research decisions, machine-readable APIs, and practical ways for people and agents to retrieve the same knowledge.",
+      "highlights": [
+        {
+          "title": "Knowledge model",
+          "text": "Canonical identity, ontology, evidence states, review queues, protocol feeds, and versioned datasets now give the library a machine-readable structure beyond individual pages.",
+          "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/commit/434af6d514c23cb1bc55c3e813a613cb73073c66"
+        },
+        {
+          "title": "Evidence boundaries",
+          "text": "Selected high-risk or overclaimed inherited pages are being replaced by sourced or explicitly practical protocols, while research decisions record what a source does and does not establish.",
+          "url": "/research/"
+        },
+        {
+          "title": "Human and AI discovery",
+          "text": "Topic Hubs, a Query Playground, API surfaces, integration examples, reference agents, and MCP packaging now provide several paths into the same canonical knowledge.",
+          "url": "/for-ai/"
+        },
+        {
+          "title": "SEO direction",
+          "text": "The next growth layer favors useful question-led collections, fresh reports, research notes, and internal links over mass-produced pages targeting near-identical keyword variants.",
+          "url": "/questions/"
+        }
+      ],
+      "next": [
+        "Expand high-value topic coverage only when the underlying trusted library can support it.",
+        "Publish a short weekly report and a month-to-date summary from verified repository and research changes.",
+        "Use Search Console query data to decide which existing hubs deserve deeper editorial pages before creating new URLs."
+      ]
+    }
+  ]
+}

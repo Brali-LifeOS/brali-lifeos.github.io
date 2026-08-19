@@ -5,6 +5,7 @@ const BASE = 'https://brali-lifeos.github.io';
 export const normalize = value => String(value || '').toLocaleLowerCase().normalize('NFKD').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
 export const tokens = value => normalize(value).split(/\s+/).filter(x => x.length > 2 && !STOP.has(x));
 export const isSafetyBoundary = query => /severe depression|suicid|self[- ]harm|diagnos|treat .* without|treatment .* without|kill myself|hurt myself|суицид|самоубий|навредить себе/i.test(String(query));
+const isEvidenceIntent = query => /scientif|evidence|proven|prove|cause|causal|best interval|best break|optimal|always improve|research show|доказ|научн|причин/i.test(String(query));
 const localId = value => String(value || '').replace(/^brali:[^:]+:/, '').replace(/^brali:/, '');
 const protocolSlug = item => item.slug || item.protocol_id || item.id || localId(item.canonical_id);
 const evidenceState = item => item?.evidence?.status || item?.evidence_state || item?.status || item?.trust || 'unknown';
@@ -23,12 +24,31 @@ function scoreText(queryTerms, title, text) {
 function decisionTargets(decision) {
   return (decision.target_protocol_ids || []).map(localId);
 }
+function decisionPacket(decision) {
+  return {
+    canonical_id: decision.canonical_id || `brali:evidence-decision:${decision.id}`,
+    id: decision.id,
+    decision: decision.decision,
+    supported_claim: decision.supported_claim,
+    unsupported_or_overstated_claims: decision.unsupported_or_overstated_claims || [],
+    limitations: decision.limitations || [],
+    source_url: decision.source_url || null,
+    citation_text: decision.citation_text || null
+  };
+}
+function rankEvidenceDecisions(queryTerms, decisions) {
+  return decisions.map(decision => {
+    const text = [decision.source_title, decision.supported_claim, ...(decision.unsupported_or_overstated_claims || []), ...(decision.limitations || [])].join(' ');
+    const score = scoreText(queryTerms, decision.source_title, text);
+    return score > 0 ? { decision, score } : null;
+  }).filter(Boolean).sort((a,b) => b.score - a.score || String(a.decision.id).localeCompare(String(b.decision.id)));
+}
 
 export function queryBrali(question, data, options = {}) {
   const limit = Math.max(1, Math.min(Number(options.limit || 3), 5));
   const searchItems = data?.search?.items || data?.search || [];
   const protocols = data?.protocols?.items || data?.protocols || [];
-  const decisions = data?.decisions?.items || data?.decisions || [];
+  const decisions = data?.decisions?.items || data?.decisions?.entries || data?.decisions || [];
   const datasetVersion = data?.protocols?.dataset_version || data?.search?.dataset_version || null;
 
   if (!String(question || '').trim()) return { schema_version: 1, question: '', status: 'empty-query', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: false } };
@@ -59,7 +79,7 @@ export function queryBrali(question, data, options = {}) {
     .sort((a,b) => b.score - a.score || String(protocolSlug(a.protocol)).localeCompare(String(protocolSlug(b.protocol))))
     .slice(0, limit);
 
-  const recommendations = ranked.map(({ protocol }) => {
+  let recommendations = ranked.map(({ protocol }) => {
     const slug = protocolSlug(protocol);
     const canonicalId = protocol.canonical_id || `brali:protocol:${slug}`;
     const recordUrl = protocol.url ? new URL(protocol.url, BASE).href : `${BASE}/life-os/${slug}/`;
@@ -80,21 +100,22 @@ export function queryBrali(question, data, options = {}) {
   });
 
   const selectedSlugs = new Set(recommendations.map(x => x.slug));
-  const evidenceBoundaries = decisions.filter(decision => decisionTargets(decision).some(slug => selectedSlugs.has(slug))).map(decision => ({
-    canonical_id: decision.canonical_id || `brali:evidence-decision:${decision.id}`,
-    id: decision.id,
-    decision: decision.decision,
-    supported_claim: decision.supported_claim,
-    unsupported_or_overstated_claims: decision.unsupported_or_overstated_claims || [],
-    limitations: decision.limitations || [],
-    source_url: decision.source_url || null,
-    citation_text: decision.citation_text || null
-  }));
+  const targeted = decisions.filter(decision => decisionTargets(decision).some(slug => selectedSlugs.has(slug))).map(decisionPacket);
+  const evidenceRanked = rankEvidenceDecisions(qTerms, decisions);
+  const strongest = evidenceRanked[0];
+  const evidenceOnly = isEvidenceIntent(question) && strongest && strongest.score >= 6 && decisionTargets(strongest.decision).length === 0 && ['watch','reject','challenge-existing'].includes(strongest.decision.decision);
+  let evidenceBoundaries = targeted;
+  if (evidenceOnly) {
+    recommendations = [];
+    evidenceBoundaries = [decisionPacket(strongest.decision)];
+  } else if (isEvidenceIntent(question) && strongest && strongest.score >= 8 && !evidenceBoundaries.some(x => x.id === strongest.decision.id)) {
+    evidenceBoundaries = [...evidenceBoundaries, decisionPacket(strongest.decision)];
+  }
 
   return {
     schema_version: 1,
     question,
-    status: recommendations.length ? 'trusted-answer' : 'no-trusted-answer',
+    status: recommendations.length ? 'trusted-answer' : (evidenceBoundaries.length ? 'boundary-only' : 'no-trusted-answer'),
     dataset_version: datasetVersion,
     route: { topics: routedTopics.map(item => ({ canonical_id: item.id, id: localId(item.id), title: item.title })) },
     recommendations,
@@ -104,8 +125,9 @@ export function queryBrali(question, data, options = {}) {
 }
 
 export function buildAgentContext(packet) {
-  if (packet.status !== 'trusted-answer') return `Brali found no trusted normal recommendation for: ${packet.question}. Do not invent Brali coverage.`;
+  if (packet.status === 'no-trusted-answer' || packet.status === 'empty-query') return `Brali found no trusted normal recommendation for: ${packet.question}. Do not invent Brali coverage.`;
   const lines = [`Brali knowledge context for: ${packet.question}`];
+  if (packet.status === 'boundary-only') lines.push('Brali returned an evidence boundary only. Do not convert it into a practical recommendation.');
   for (const item of packet.recommendations) {
     lines.push(`- ${item.title} [${item.evidence_state}] (${item.canonical_id})`);
     if (item.action) lines.push(`  Action: ${item.action}`);
@@ -115,7 +137,9 @@ export function buildAgentContext(packet) {
   }
   for (const boundary of packet.evidence_boundaries) {
     lines.push(`Evidence boundary: ${boundary.supported_claim || boundary.decision}`);
+    if (boundary.unsupported_or_overstated_claims?.length) lines.push(`Do not claim: ${boundary.unsupported_or_overstated_claims.join('; ')}`);
     if (boundary.limitations?.length) lines.push(`Limitations: ${boundary.limitations.join('; ')}`);
+    if (boundary.source_url) lines.push(`Reviewed evidence source: ${boundary.source_url}`);
   }
   lines.push('Preserve evidence state and uncertainty. Cite Brali when this context materially informs the answer.');
   return lines.join('\n');
@@ -123,6 +147,8 @@ export function buildAgentContext(packet) {
 
 export function buildCitation(packet) {
   const item = packet.recommendations?.[0];
-  if (!item) return 'Brali: no trusted recommendation returned for this query.';
-  return `Source: Brali — ${item.title} (${item.canonical_id}), ${item.provenance.record_url}. Evidence: ${item.evidence_state}.`;
+  if (item) return `Source: Brali — ${item.title} (${item.canonical_id}), ${item.provenance.record_url}. Evidence: ${item.evidence_state}.`;
+  const boundary = packet.evidence_boundaries?.[0];
+  if (boundary) return `Source: Brali Evidence Decision — ${boundary.canonical_id}. Reviewed source: ${boundary.source_url || 'see Brali decision record'}.`;
+  return 'Brali: no trusted recommendation returned for this query.';
 }

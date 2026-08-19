@@ -9,6 +9,9 @@ const shareEl = $('#share-link');
 const copyContext = $('#copy-context');
 const copyCitation = $('#copy-citation');
 const copyJson = $('#copy-json');
+const feedbackMatch = $('#feedback-match');
+const feedbackIntegration = $('#feedback-integration');
+const GITHUB_ISSUES_NEW = 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new';
 let lastPacket = null;
 let apiData = null;
 
@@ -29,6 +32,51 @@ async function loadApi() {
 
 function setCopyState(enabled) {
   for (const button of [copyContext, copyCitation, copyJson]) button.disabled = !enabled;
+}
+
+function issueDraft(title, body) {
+  return `${GITHUB_ISSUES_NEW}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+}
+
+function updateFeedbackLinks(question, packet) {
+  if (!feedbackMatch || !feedbackIntegration) return;
+  const topics = (packet.route?.topics || []).map(x => x.canonical_id).join(', ') || 'none';
+  const protocols = (packet.recommendations || []).map(x => x.canonical_id).join(', ') || 'none';
+  const decisions = (packet.evidence_boundaries || []).map(x => x.canonical_id).join(', ') || 'none';
+  const clipped = String(question || '').slice(0, 90);
+  const body = [
+    '## Brali Query feedback',
+    '',
+    `Query: ${question}`,
+    `Observed status: ${packet.status}`,
+    `Returned Topics: ${topics}`,
+    `Returned Protocols: ${protocols}`,
+    `Returned Evidence Decisions: ${decisions}`,
+    '',
+    '## What looked wrong or missing?',
+    '',
+    '<!-- Describe the bad match, missing knowledge, misleading ranking, or other retrieval problem. Remove any personal information you do not want to publish. -->'
+  ].join('\n');
+  feedbackMatch.href = issueDraft(`Query feedback: ${clipped}`, body);
+  feedbackMatch.target = '_blank';
+  feedbackMatch.rel = 'noopener';
+
+  const integrationBody = [
+    '## Brali integration / usage report',
+    '',
+    'Runtime or tool:',
+    'Brali surface used: API / local MCP / Query / dataset / other',
+    'Project link (optional):',
+    '',
+    '## What worked?',
+    '',
+    '## What was awkward or missing?',
+    '',
+    '<!-- Do not include secrets, API keys, private prompts, or personal data. -->'
+  ].join('\n');
+  feedbackIntegration.href = issueDraft('Brali integration / usage report', integrationBody);
+  feedbackIntegration.target = '_blank';
+  feedbackIntegration.rel = 'noopener';
 }
 
 function render(packet) {
@@ -76,6 +124,7 @@ async function run(question, push = true) {
     const data = await loadApi();
     const packet = queryBrali(q, data);
     render(packet);
+    updateFeedbackLinks(q, packet);
     const url = new URL(location.href);
     url.searchParams.set('q', q);
     if (push) history.pushState({ q }, '', url);
@@ -108,6 +157,7 @@ shareEl.addEventListener('click', async event => {
   shareEl.textContent = 'Query URL copied';
 });
 
+if (feedbackIntegration) updateFeedbackLinks('', { status: 'not-run', route: { topics: [] }, recommendations: [], evidence_boundaries: [] });
 const initial = new URL(location.href).searchParams.get('q');
 if (initial) run(initial, false);
 else { statusEl.textContent = 'Ask about focus, sleep, memory, habits, stress, learning, movement, communication, or another covered Topic.'; setCopyState(false); }

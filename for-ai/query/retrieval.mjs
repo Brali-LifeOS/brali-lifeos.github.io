@@ -20,7 +20,16 @@ function scoreText(queryTerms, title, text) {
   }
   return score;
 }
-
+function topicScore(question, topic, aliases = []) {
+  const q = normalize(question), qTokens = new Set(tokens(question));
+  const phrases = [topic.title, topic.description, ...(topic.synonyms || []), ...aliases].filter(Boolean).map(normalize).filter(Boolean);
+  let score = 0;
+  for (const phrase of phrases) {
+    if (phrase.length > 3 && q.includes(phrase)) score += 14;
+    for (const term of tokens(phrase)) if (qTokens.has(term)) score += topic.title && normalize(topic.title).includes(term) ? 4 : 2;
+  }
+  return score;
+}
 function decisionTargets(decision) {
   return (decision.target_protocol_ids || []).map(localId);
 }
@@ -46,38 +55,45 @@ function rankEvidenceDecisions(queryTerms, decisions) {
 
 export function queryBrali(question, data, options = {}) {
   const limit = Math.max(1, Math.min(Number(options.limit || 3), 5));
-  const searchItems = data?.search?.items || data?.search || [];
+  const topics = data?.topics?.items || data?.topics || [];
+  const identity = data?.identity || {};
   const protocols = data?.protocols?.items || data?.protocols || [];
   const decisions = data?.decisions?.items || data?.decisions?.entries || data?.decisions || [];
-  const datasetVersion = data?.protocols?.dataset_version || data?.search?.dataset_version || null;
+  const datasetVersion = data?.protocols?.dataset_version || data?.topics?.dataset_version || null;
 
   if (!String(question || '').trim()) return { schema_version: 1, question: '', status: 'empty-query', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: false } };
   if (isSafetyBoundary(question)) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: true, reason: 'Safety-sensitive diagnosis/treatment or self-harm requests are outside normal Brali trusted retrieval.' } };
 
   const qTerms = new Set(tokens(question));
-  const topicRanked = searchItems
-    .filter(item => item.kind === 'topic')
-    .map(item => ({ item, score: scoreText(qTerms, item.title, item.search_text) }))
+  const aliasesByTopic = new Map();
+  for (const alias of identity.aliases || []) {
+    if (alias.kind !== 'topic') continue;
+    const id = localId(alias.canonical_id);
+    if (!aliasesByTopic.has(id)) aliasesByTopic.set(id, []);
+    aliasesByTopic.get(id).push(alias.value);
+  }
+  const topicRanked = topics
+    .map(topic => ({ topic, score: topicScore(question, topic, aliasesByTopic.get(localId(topic.id || topic.canonical_id)) || []) }))
     .filter(x => x.score > 0)
-    .sort((a,b) => b.score - a.score || String(a.item.id).localeCompare(String(b.item.id)));
+    .sort((a,b) => b.score - a.score || String(a.topic.id).localeCompare(String(b.topic.id)));
   const bestTopicScore = topicRanked[0]?.score || 0;
-  const routedTopics = topicRanked.filter(x => x.score >= Math.max(2, bestTopicScore * 0.65)).slice(0, 3).map(x => x.item);
-  const routedIds = new Set(routedTopics.flatMap(item => (item.topic_ids || []).map(localId)));
+  const routedTopics = topicRanked.filter(x => x.score >= Math.max(2, bestTopicScore * 0.65)).slice(0, 3).map(x => x.topic);
+  const routedIds = new Set(routedTopics.map(topic => localId(topic.id || topic.canonical_id)));
 
-  const ranked = protocols
+  const ranked = routedIds.size ? protocols
     .filter(protocol => TRUSTED.has(evidenceState(protocol)))
     .map(protocol => {
       const pTopics = topicIds(protocol);
       const overlap = pTopics.filter(id => routedIds.has(id)).length;
+      if (!overlap) return null;
       const body = [protocol.description, protocol.summary, protocol.action, protocol.check_in, protocol.problem].filter(Boolean).join(' ');
       const lexical = scoreText(qTerms, protocol.title || protocol.canonical_name, body);
-      if (routedIds.size && !overlap && lexical < 6) return null;
       const score = overlap * 100 + lexical + (evidenceState(protocol) === 'reviewed' ? 18 : 0) + (protocol.evidence?.source_url || protocol.source_url ? 8 : 0) + (protocol.check_in ? 3 : 0);
-      return score > 0 ? { protocol, score } : null;
+      return { protocol, score };
     })
     .filter(Boolean)
     .sort((a,b) => b.score - a.score || String(protocolSlug(a.protocol)).localeCompare(String(protocolSlug(b.protocol))))
-    .slice(0, limit);
+    .slice(0, limit) : [];
 
   let recommendations = ranked.map(({ protocol }) => {
     const slug = protocolSlug(protocol);
@@ -117,7 +133,7 @@ export function queryBrali(question, data, options = {}) {
     question,
     status: recommendations.length ? 'trusted-answer' : (evidenceBoundaries.length ? 'boundary-only' : 'no-trusted-answer'),
     dataset_version: datasetVersion,
-    route: { topics: routedTopics.map(item => ({ canonical_id: item.id, id: localId(item.id), title: item.title })) },
+    route: { topics: routedTopics.map(topic => ({ canonical_id: topic.canonical_id || `brali:topic:${localId(topic.id)}`, id: localId(topic.id || topic.canonical_id), title: topic.title })) },
     recommendations,
     evidence_boundaries: evidenceBoundaries,
     safety: { blocked: false }

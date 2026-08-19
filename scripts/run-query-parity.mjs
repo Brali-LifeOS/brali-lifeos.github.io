@@ -8,7 +8,7 @@ const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const writeJson = (rel, value) => { const file = path.join(ROOT, rel); fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`); };
 const pct = (n, d) => d ? Number((100 * n / d).toFixed(1)) : 100;
 const suite = read('data/agent-evaluation-suite.json');
-const data = { search: read('api/v1/search.json'), protocols: read('api/v1/protocols.json'), decisions: read('api/v1/evidence-decisions.json') };
+const data = { topics: read('api/v1/topics.json'), identity: read('api/v1/identity.json'), protocols: read('api/v1/protocols.json'), decisions: read('api/v1/evidence-decisions.json') };
 
 const rows = [];
 for (const test of suite.cases || []) {
@@ -116,4 +116,5 @@ if (html.includes('data-query-parity-summary')) html = html.replace(/<aside clas
 else html = html.replace('<section class="prose">', `${block}<section class="prose">`);
 fs.writeFileSync(pagePath, html);
 
-console.log(`Query parity: ${summary.passed}/${summary.cases} pass; Topic ${summary.topic_hit_pct}%; Protocol ${summary.expected_protocol_hit_pct}%; Decision ${summary.evidence_decision_recall_pct}%; safety ${summary.safety_pct}%; RU ${summary.ru_pass_pct}%; gaps=${summary.failed_case_ids.join(',') || 'none'}.`);
+console.log(`Query parity: ${summary.passed}/${summary.cases} pass; Topic ${summary.topic_hit_pct}%; Protocol ${summary.expected_protocol_hit_pct}%; Decision ${summary.evidence_decision_recall_pct}%; safety ${summary.safety_pct}%; no-answer ${summary.no_answer_pct}%; RU ${summary.ru_pass_pct}%; gaps=${summary.failed_case_ids.join(',') || 'none'}.`);
+for (const row of rows.filter(x => !x.pass)) console.log(`QUERY_GAP ${row.id}: status=${row.observed.status}; topics=${row.observed.topic_ids.join('|') || '-'}; protocols=${row.observed.protocol_slugs.join('|') || '-'}; decisions=${row.observed.decision_ids.join('|') || '-'}; failed=${Object.entries(row.gates).filter(([,ok]) => !ok).map(([gate]) => gate).join('|')}`);

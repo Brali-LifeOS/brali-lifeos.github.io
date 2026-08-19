@@ -8,6 +8,7 @@ Brali is a read-only practical-knowledge source. The same canonical identities a
 curl -s https://brali-lifeos.github.io/api/v1/index.json
 curl -s https://brali-lifeos.github.io/api/v1/topics.json
 curl -s https://brali-lifeos.github.io/api/v1/protocols.json
+curl -s https://brali-lifeos.github.io/api/v1/integrations.json
 ```
 
 Use `canonical_id` as the durable identity. Keep `reviewed`, `practical`, `pending-review`, and `restricted` states visible downstream. Do not turn a research candidate into evidence.
@@ -28,7 +29,7 @@ For `pending-review` or `restricted` records, show the status explicitly and do 
 python examples/python/brali_client.py "how can I focus"
 ```
 
-## 4. JavaScript
+## 4. JavaScript and reference packets
 
 ```bash
 node examples/javascript/brali-client.mjs "how can I focus"
@@ -54,7 +55,7 @@ node examples/javascript/reference-agent.mjs \
 
 Generated reference outputs are also published at `/api/v1/demos.json`, `/life-os/datasets/reference-agent-demos.json`, and `/for-ai/demos/`. See `docs/REFERENCE_AGENT_DEMOS.md` for the packet contract and limitations.
 
-## 5. MCP
+## 5. Local MCP
 
 The MCP implementation lives in `mcp/` and reads the same generated API files.
 
@@ -67,7 +68,9 @@ npm start
 
 Tools: `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, `get_related`.
 
-Example client configuration:
+Brali currently ships this as a **local stdio MCP server**. It does not currently operate a hosted remote MCP endpoint.
+
+Generic client configuration:
 
 ```json
 {
@@ -80,7 +83,7 @@ Example client configuration:
 }
 ```
 
-Run from a checkout where `npm run build` has already generated `/api/v1/`.
+Run from a checkout where `npm run build` has already generated `/api/v1/` and `mcp/npm install` has installed the MCP package dependencies.
 
 Generate a concrete MCP tool-call plan from one of the same reference scenarios:
 
@@ -88,9 +91,47 @@ Generate a concrete MCP tool-call plan from one of the same reference scenarios:
 node examples/javascript/reference-mcp-plan.mjs --scenario memory
 ```
 
-The plan begins with trusted `search_knowledge` and then resolves canonical Protocol/Evidence records. It is intentionally client-neutral: execute the calls with whichever MCP host you already use. See `examples/mcp/README.md`.
+## 6. Runtime starter kits
 
-## 6. Pin reproducible data
+### Cursor
+
+Copy `examples/integrations/cursor-mcp.json` to `.cursor/mcp.json`, then replace the placeholder checkout path.
+
+### Claude Code
+
+```bash
+BRALI_REPO=/absolute/path/to/brali-lifeos.github.io \
+  sh examples/integrations/claude-code.sh
+```
+
+The example registers the local stdio server at user scope.
+
+### OpenAI API
+
+Brali's current no-extra-hosting path for OpenAI is the hosted static JSON API, not remote MCP.
+
+Preview the bounded request without an OpenAI key:
+
+```bash
+node examples/integrations/openai-api.mjs "How can I remember what I study?"
+```
+
+Send it when `OPENAI_API_KEY` is available:
+
+```bash
+OPENAI_API_KEY=... node examples/integrations/openai-api.mjs \
+  "How can I remember what I study?"
+```
+
+See `/for-ai/integrations/` and `examples/integrations/README.md` for the maintained recipes.
+
+## 7. Attribution and trust
+
+When Brali materially informs an answer, keep the Brali canonical record URL or ID and its evidence state. Preserve reviewed-source limitations. For dataset-level or research use, cite **Dzmitryi Kharlanau, Brali Practical Knowledge Library** and pin the `data-v*` release used.
+
+See `docs/CITATION_AND_ATTRIBUTION.md`, `/cite/`, `CITATION.cff`, and `LICENSING.md`. The root `LICENSE` remains authoritative.
+
+## 8. Pin reproducible data
 
 For research and durable integrations, pin the stable `data-v1.0.0` baseline instead of following `main`. The release bundle includes the complete canonical manifest and API v1 payload, release metadata, `CITATION.cff`, license/policy files, and SHA-256 checksums. Read `docs/releases/1.0.0.md` for the exact scope and known limitations, and `docs/DATA_VERSIONING.md` for compatibility rules.
 

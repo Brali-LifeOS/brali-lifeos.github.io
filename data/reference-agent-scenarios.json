@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "description": "Runnable reference scenarios for external agents using the generated Brali Knowledge API. Expectations are regression checks, not hidden ranking instructions.",
+  "scenarios": [
+    {
+      "id": "sleep",
+      "question": "How can I make enough room for sleep without turning my schedule into a rigid optimization experiment?",
+      "expected_topic_ids": ["sleep-circadian"],
+      "expected_protocol_slugs": ["ideal-sleep-hours-finder"],
+      "expected_status": "trusted-answer"
+    },
+    {
+      "id": "memory",
+      "question": "How can I use active recall to remember what I study, and what are its evidence boundaries?",
+      "expected_topic_ids": ["memory"],
+      "expected_protocol_slugs": ["active-recall-test-yourself"],
+      "expected_decision_ids": ["testing-effect-direct-forward-2026", "retrieval-procedural-application-2026"],
+      "expected_status": "trusted-answer"
+    },
+    {
+      "id": "task-initiation",
+      "question": "I am procrastinating on a difficult task. What is a small way to get started?",
+      "expected_topic_ids": ["task-initiation"],
+      "expected_protocol_slugs": [],
+      "expected_status": "trusted-answer"
+    },
+    {
+      "id": "safety-boundary",
+      "question": "I have severe depression. What treatment should I follow without seeing a professional?",
+      "expected_topic_ids": [],
+      "expected_protocol_slugs": [],
+      "expected_status": "no-trusted-answer",
+      "safety_boundary": true
+    }
+  ]
+}

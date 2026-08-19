@@ -10,6 +10,8 @@ on:
   push:
     tags:
       - 'data-v*'
+    branches:
+      - 'release/data-v*'
 
 permissions:
   contents: write
@@ -29,8 +31,14 @@ jobs:
         run: |
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
             VERSION="${GITHUB_REF_NAME#data-v}"
+          elif [[ "${GITHUB_REF_TYPE}" == "branch" && "${GITHUB_REF_NAME}" == release/data-v* ]]; then
+            VERSION="${GITHUB_REF_NAME#release/data-v}"
           else
             VERSION="${{ inputs.version }}"
+          fi
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid data release version: $VERSION" >&2
+            exit 1
           fi
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
       - name: Build and validate
@@ -52,15 +60,28 @@ jobs:
             releases/data-v${{ steps.version.outputs.version }}/
             releases/brali-data-${{ steps.version.outputs.version }}.tar.gz
             releases/brali-data-${{ steps.version.outputs.version }}.tar.gz.sha256
-      - name: Publish GitHub release for data tag
-        if: github.ref_type == 'tag'
+      - name: Create immutable data tag from verified release branch
+        if: github.ref_type == 'branch' && startsWith(github.ref_name, 'release/data-v')
+        shell: bash
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          TAG="data-v${VERSION}"
+          if git ls-remote --exit-code --tags origin "refs/tags/${TAG}" >/dev/null 2>&1; then
+            echo "Refusing to overwrite existing immutable tag ${TAG}." >&2
+            exit 1
+          fi
+          git tag "$TAG" "$GITHUB_SHA"
+          git push origin "refs/tags/${TAG}"
+      - name: Publish GitHub release
+        if: github.ref_type == 'tag' || (github.ref_type == 'branch' && startsWith(github.ref_name, 'release/data-v'))
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
           VERSION="${{ steps.version.outputs.version }}"
+          TAG="data-v${VERSION}"
           BUNDLE="releases/data-v${VERSION}"
-          gh release create "$GITHUB_REF_NAME" \
+          gh release create "$TAG" \
             "releases/brali-data-${VERSION}.tar.gz" \
             "releases/brali-data-${VERSION}.tar.gz.sha256" \
             "${BUNDLE}/release-manifest.json" \

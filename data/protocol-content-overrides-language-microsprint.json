@@ -2,12 +2,13 @@
   "schema_version": 1,
   "entries": {
     "10-minute-language-microsprints": {
-      "title": "Practice One Small Language Skill for a Short Session",
-      "description": "Use a short study session to practice one narrow language skill such as recalling a few words, listening to a short clip, or speaking a brief response. Ten minutes is a convenient starting point, not a required dose.",
-      "evidence_status": "practical",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited language-study article containing invented adherence results, unsupported recall percentages, arbitrary targets and overconfident learning claims with a simple short-practice protocol.",
+      "title": "Use a Short Vocabulary Retrieval Micro-Sprint",
+      "subtitle": "Retrieve a small set of L2 words, check them, and revisit them later",
+      "description": "Choose a small set of second-language words or phrases, try to retrieve the meaning or L2 form before revealing the answer, correct errors, and revisit the set in later sessions. Ten minutes is only a convenient container, not an evidence-backed dose.",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Narrow the inherited generic language micro-sprint to the claim actually supported by the reviewed adult L2 vocabulary literature: spaced repetition becomes more useful when paired with retrieval practice or semantic elaboration that strengthens form-meaning connections. Remove any implication that ten minutes is optimal or that one vocabulary result generalizes to listening, pronunciation, grammar, or communicative fluency.",
       "forbidden_public_fragments": [
         "increased adherence in our small pilots from 62% to 82%",
         "increase recall by roughly 20–40%",
@@ -16,65 +17,84 @@
         "Accountability increases adherence by 20–40%",
         "retention jumps to ~70–85%",
         "recovery rates as high as 70%",
+        "ten minutes is optimal",
+        "10 minutes is optimal",
+        "all language skills",
         "Research shows habits can take 21-66 days to form",
         "At MetalHatsCats"
       ],
       "lifeOsSource": {
-        "hack": "Choose one small language skill and practice it for a short session. Keep the target narrow enough to finish, then note what felt easy or difficult and choose the next practice.",
-        "whatYouDo": "Pick one narrow language task, such as reviewing a few phrases, listening to a short clip, reading a small passage, or recording a brief spoken answer. Practice for a short session and finish with one note about what to revisit next.",
-        "checkIn": "What did I practice, what could I recall or understand without help, and what is the next small thing worth repeating?"
+        "hack": "Pick a small set of L2 words or phrases. Try to retrieve the meaning or L2 form before revealing the answer, check and correct errors, then revisit the set in a later session rather than relying on one massed review.",
+        "whatYouDo": "Choose a small vocabulary set. For each item, use a cue and try to produce the target meaning or L2 form before looking. Reveal the answer, correct the response, and mark items that need another attempt. Revisit the set in a later session. Use ten minutes only if a short time box helps you start; Brali does not prescribe a universal evidence-backed duration.",
+        "checkIn": "Which items could I retrieve before looking, which errors did I correct, and which items should return in a later session?",
+        "sourceUrl": "https://doi.org/10.1017/S0272263119000500",
+        "reference": "Rice & Tokowicz (2020) — review of adult second-language vocabulary training"
       },
+      "references": [
+        {
+          "title": "A Review of Laboratory Studies of Adult Second Language Vocabulary Training",
+          "url": "https://doi.org/10.1017/S0272263119000500",
+          "doi": "10.1017/S0272263119000500",
+          "source_type": "state-of-the-scholarship-review",
+          "claim_scope": "Supports spacing plus retrieval practice or semantic elaboration as useful ingredients for adult L2 vocabulary training and form-meaning learning. It does not establish a ten-minute dose, a universal spacing schedule, or equivalent effects for every language skill."
+        }
+      ],
       "faq": [
         {
           "id": "10-minute-language-microsprints-faq-1",
           "question": "Does the session need to be ten minutes?",
-          "answer": "No. Ten minutes is simply an easy container for a short practice. Use a duration that fits your attention and the skill you are working on."
+          "answer": "No. Ten minutes remains only a convenient label and starting container. The reviewed source does not identify a universal optimal session duration. Use enough time to retrieve, check, and correct a small set carefully."
         },
         {
           "id": "10-minute-language-microsprints-faq-2",
-          "question": "What should I practice in a short session?",
-          "answer": "Choose one narrow task: recall a few words, repeat useful phrases, listen to a short clip, read a small passage, or record a brief spoken response. Avoid trying to cover every language skill at once."
+          "question": "Why retrieve before looking at the answer?",
+          "answer": "The reviewed adult L2 vocabulary literature highlights retrieval practice, especially when combined with spacing, as one way to strengthen learning beyond massed repetition alone. The attempt should still be followed by checking and correction."
         },
         {
           "id": "10-minute-language-microsprints-faq-3",
-          "question": "Is a short session enough to learn a language?",
-          "answer": "No single short session is enough by itself. The point is to make one useful practice manageable. Broader progress needs repeated exposure, practice, feedback, and more time across different skills."
+          "question": "Does this protocol cover speaking, grammar, pronunciation, and listening too?",
+          "answer": "No. This reviewed version is intentionally narrow: it is a vocabulary retrieval protocol. Other language skills need practice that matches those outcomes instead of borrowing the vocabulary evidence and stretching it over the whole language."
+        },
+        {
+          "id": "10-minute-language-microsprints-faq-4",
+          "question": "Is one short session enough?",
+          "answer": "No. The protocol explicitly includes later revisits. The reviewed literature concerns repeated vocabulary training and does not support treating one short exposure as sufficient for durable learning."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>A short language session is useful when a larger study plan feels hard to start or when you want a small piece of practice inside a busy day. Keep the target narrow, do the practice, and leave yourself one clear next step.</p>"
+          "html": "<p>This protocol uses a short session for one narrow job: retrieving a small set of second-language words or phrases, checking the answers, and returning to them later. A review of adult L2 vocabulary-training studies supports combining repetition with methods such as spacing and retrieval practice that strengthen form-meaning connections. It does <strong>not</strong> show that ten minutes is an optimal dose or that the same protocol covers every language skill.</p>"
         },
         "sections": [
           {
-            "slug": "choose-one-skill",
-            "title": "1. Choose one small skill",
-            "html": "<p>Pick one thing for this session: recall vocabulary, listen for a phrase, read a short passage, practise pronunciation, or answer one speaking prompt. A narrow target makes the session easier to finish and review.</p>"
+            "slug": "choose-small-set",
+            "title": "1. Choose a small vocabulary set",
+            "html": "<p>Pick a set small enough that you can attempt retrieval and check each item carefully. Use words or short phrases that matter for what you are learning rather than filling the session with an arbitrary quota.</p>"
           },
           {
-            "slug": "set-small-session",
-            "title": "2. Set a small session boundary",
-            "html": "<p>Ten minutes is a convenient default if you need one. Shorter or longer is fine. The boundary is there to make starting easy, not to define how much language learning should happen in a day.</p>"
+            "slug": "retrieve-before-revealing",
+            "title": "2. Retrieve before revealing",
+            "html": "<p>Use a cue such as an L1 meaning, an image, a sentence gap, or the L2 form and try to produce the target before looking at the answer. The point is to make a retrieval attempt, not to stare at the pair again immediately.</p>"
           },
           {
-            "slug": "practice-actively",
-            "title": "3. Do something with the language",
-            "html": "<p>Whenever possible, include a small act of recall or production rather than only looking at material. Say the phrase, answer the question, write the sentence, or try to recall before checking the answer.</p>"
+            "slug": "check-and-correct",
+            "title": "3. Check and correct",
+            "html": "<p>Reveal the answer after the attempt. Correct errors immediately and notice whether the problem was the form, the meaning, or the connection between them. Do not count a confident wrong answer as useful repetition.</p>"
           },
           {
-            "slug": "keep-tools-light",
-            "title": "4. Keep the setup light",
-            "html": "<p>Use the material you already have when possible. A short practice loses much of its value if most of the session is spent choosing an app, reorganizing a deck, or searching for the perfect resource.</p>"
+            "slug": "revisit-later",
+            "title": "4. Revisit in a later session",
+            "html": "<p>Bring difficult items back later instead of repeating the whole set continuously in one block. Brali does not prescribe one universal spacing schedule here; the evidence supports spacing as a principle, while useful intervals vary across materials and learning conditions.</p>"
           },
           {
-            "slug": "leave-next-step",
-            "title": "5. Leave one next step",
-            "html": "<p>Write down one phrase, error, sound, or question to revisit. This gives the next short session a starting point without creating another complicated study system.</p>"
+            "slug": "keep-timebox-optional",
+            "title": "5. Keep the time box optional",
+            "html": "<p>If a ten-minute boundary makes the practice easier to start, use it. If the set takes six minutes or fifteen, that is not a failure. The reviewed source supports the learning ingredients, not a stopwatch setting.</p>"
           },
           {
-            "slug": "review-the-fit",
-            "title": "6. Review whether short sessions help",
-            "html": "<p>After several sessions, notice whether this format helps you practise more consistently and whether the tasks are challenging enough to matter. If not, change the duration, material, or skill focus.</p>"
+            "slug": "practice-other-skills-directly",
+            "title": "6. Practice other language outcomes directly",
+            "html": "<p>If your real goal is conversation, listening comprehension, pronunciation, grammar use, or writing, add practice that directly requires that skill. Do not assume that better vocabulary retrieval automatically proves improvement in every other language outcome.</p>"
           }
         ]
       }

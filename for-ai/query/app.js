@@ -17,13 +17,13 @@ const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({ '&':
 async function loadApi() {
   if (apiData) return apiData;
   statusEl.textContent = 'Loading Brali API…';
-  const names = ['search.json', 'protocols.json', 'evidence-decisions.json'];
-  const [search, protocols, decisions] = await Promise.all(names.map(async name => {
+  const names = ['topics.json', 'identity.json', 'protocols.json', 'evidence-decisions.json'];
+  const [topics, identity, protocols, decisions] = await Promise.all(names.map(async name => {
     const response = await fetch(`/api/v1/${name}`, { headers: { accept: 'application/json' } });
     if (!response.ok) throw new Error(`${name} returned ${response.status}`);
     return response.json();
   }));
-  apiData = { search, protocols, decisions };
+  apiData = { topics, identity, protocols, decisions };
   return apiData;
 }
 
@@ -42,6 +42,8 @@ function render(packet) {
 
   if (packet.safety?.blocked) {
     body += `<div class="callout"><strong>Safety boundary</strong><p>${escapeHtml(packet.safety.reason)}</p><p>Brali does not convert this query into a normal self-help recommendation.</p></div>`;
+  } else if (packet.status === 'boundary-only') {
+    body += '<div class="callout"><strong>Evidence boundary only.</strong><p>Brali found reviewed evidence relevant to the claim, but it does not justify turning that evidence into a normal practical recommendation.</p></div>';
   } else if (!packet.recommendations.length) {
     body += '<div class="callout"><strong>No trusted Brali answer.</strong><p>The current reviewed/practical corpus does not provide a sufficiently grounded recommendation for this wording. That is a valid result, not a broken search box.</p></div>';
   } else {
@@ -56,12 +58,12 @@ function render(packet) {
   if (packet.evidence_boundaries.length) {
     body += '<section class="query-boundaries"><h2>Evidence boundaries</h2>';
     for (const boundary of packet.evidence_boundaries) {
-      body += `<article class="callout"><p><code>${escapeHtml(boundary.canonical_id)}</code></p><p><strong>Supported:</strong> ${escapeHtml(boundary.supported_claim || boundary.decision)}</p>${boundary.limitations?.length ? `<p><strong>Limitations:</strong> ${escapeHtml(boundary.limitations.join('; '))}</p>` : ''}${boundary.source_url ? `<p><a href="${escapeHtml(boundary.source_url)}" target="_blank" rel="noopener">Reviewed evidence source</a></p>` : ''}</article>`;
+      body += `<article class="callout"><p><code>${escapeHtml(boundary.canonical_id)}</code></p><p><strong>Supported:</strong> ${escapeHtml(boundary.supported_claim || boundary.decision)}</p>${boundary.unsupported_or_overstated_claims?.length ? `<p><strong>Do not claim:</strong> ${escapeHtml(boundary.unsupported_or_overstated_claims.join('; '))}</p>` : ''}${boundary.limitations?.length ? `<p><strong>Limitations:</strong> ${escapeHtml(boundary.limitations.join('; '))}</p>` : ''}${boundary.source_url ? `<p><a href="${escapeHtml(boundary.source_url)}" target="_blank" rel="noopener">Reviewed evidence source</a></p>` : ''}</article>`;
     }
     body += '</section>';
   }
   resultsEl.innerHTML = body;
-  statusEl.textContent = packet.status === 'trusted-answer' ? `Found ${packet.recommendations.length} trusted Brali protocol${packet.recommendations.length === 1 ? '' : 's'}.` : 'No normal trusted recommendation returned.';
+  statusEl.textContent = packet.status === 'trusted-answer' ? `Found ${packet.recommendations.length} trusted Brali protocol${packet.recommendations.length === 1 ? '' : 's'}.` : packet.status === 'boundary-only' ? 'Reviewed evidence boundary returned; no normal recommendation.' : 'No normal trusted recommendation returned.';
 }
 
 async function run(question, push = true) {

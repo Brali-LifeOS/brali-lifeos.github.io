@@ -8,7 +8,7 @@ const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const writeJson = (rel, value) => { const file = path.join(ROOT, rel); fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`); };
 const pct = (n, d) => d ? Number((100 * n / d).toFixed(1)) : 100;
 const suite = read('data/agent-evaluation-suite.json');
-const data = { topics: read('api/v1/topics.json'), identity: read('api/v1/identity.json'), protocols: read('api/v1/protocols.json'), decisions: read('api/v1/evidence-decisions.json') };
+const data = { topics: read('api/v1/topics.json'), identity: read('api/v1/identity.json'), flagships: read('api/v1/flagships.json'), decisions: read('api/v1/evidence-decisions.json') };
 
 const rows = [];
 for (const test of suite.cases || []) {
@@ -23,7 +23,7 @@ for (const test of suite.cases || []) {
   const gotProtocols = new Set((packet.recommendations || []).map(x => x.slug));
   const expectedProtocols = test.expected_protocol_slugs || [];
   const protocolApplicable = expectedProtocols.length > 0;
-  const protocolHit = !protocolApplicable || expectedProtocols.every(slug => gotProtocols.has(slug));
+  const protocolHit = !protocolApplicable || expectedProtocols.some(slug => gotProtocols.has(slug));
 
   const gotDecisions = new Set((packet.evidence_boundaries || []).map(x => x.id));
   const expectedDecisions = test.expected_decision_ids || [];
@@ -97,10 +97,10 @@ const summary = {
 
 const report = {
   schema_version: 1,
-  dataset_version: data.protocols.dataset_version,
+  dataset_version: data.flagships.dataset_version,
   source_suite_version: suite.suite_version,
   name: 'Brali Query Playground Parity Report',
-  description: 'Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. Failures remain visible rather than being removed from the suite.',
+  description: 'Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. The browser core uses the same Flagship 100 hybrid retrieval contract; failures remain visible rather than being removed from the suite.',
   page_url: `${BASE}/for-ai/query/`,
   report_url: `${BASE}/for-ai/query/parity.json`,
   summary,

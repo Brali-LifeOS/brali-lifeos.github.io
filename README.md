@@ -17,6 +17,9 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 - `/research/` — research notes and discovery pipeline.
 - `/agents/`, `/contracts/`, `/skills/` — guarded agent/editorial workflows.
 - `/for-ai/` — guidance for AI tools and developers.
+- `/for-ai/demos/` — deterministic reference agent scenarios.
+- `/for-ai/integrations/` — copy-paste OpenAI API, Claude Code, and Cursor integration kits.
+- `/cite/` — citation and attribution guidance for people and downstream AI systems.
 - `/api/v1/` — generated versioned read-only Knowledge API.
 - `/llms.txt` — compact machine-readable project orientation.
 
@@ -24,9 +27,11 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 
 Generated entities expose canonical IDs as `brali:<kind>:<local-id>`. Titles, URLs, localized labels, and historical IDs are aliases around that identity. See `docs/DATA_VERSIONING.md`.
 
-`npm run build` generates a canonical dataset manifest with SHA-256 checksums, identity and multilingual alias registries, an actionable ontology migration queue, evidence-debt metrics, a retrieval benchmark report, and `/api/v1/` files for Topics, Hacks, Protocols, Evidence, search, identity, manifest, and OpenAPI.
+`npm run build` generates a canonical dataset manifest with SHA-256 checksums, identity and multilingual alias registries, an actionable ontology migration queue, evidence-debt metrics, retrieval/evaluation outputs, and `/api/v1/` files for Topics, Hacks, Protocols, Evidence, search, identity, demos, integrations, manifest, and OpenAPI.
 
-The optional read-only MCP server in `mcp/` exposes `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, and `get_related` over the same generated data. Start with `docs/INTEGRATION_QUICKSTART.md`.
+The optional read-only MCP server in `mcp/` exposes `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, and `get_related` over the same generated data. It is currently a **local stdio server**, not a hosted remote MCP service. Cursor and Claude Code starter configs use that local server. The OpenAI example uses the hosted static Brali API and a bounded answer packet instead of pretending a hosted Brali MCP endpoint exists.
+
+Start with `docs/INTEGRATION_QUICKSTART.md`, `docs/REFERENCE_AGENT_DEMOS.md`, `examples/integrations/`, and `/for-ai/integrations/`.
 
 ## Continuous research loop
 
@@ -52,11 +57,16 @@ Additional helpers:
 npm run research:check
 npm run research:scout
 npm run mcp:check
+npm run demos:check
+npm run adoption:check
+npm run adoption:openai -- "How can I remember what I study?"
 npm run release:data -- --version 1.0.0
 npm run release:check -- --version 1.0.0
 ```
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, the API surface, retrieval benchmark, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
+`adoption:openai` prints a request preview when `OPENAI_API_KEY` is absent. With a key it sends the bounded Brali packet to the OpenAI Responses API.
+
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, agent evaluation/reference demos, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
 
 ## Releases and citation
 
@@ -64,13 +74,17 @@ The first stable dataset baseline is `1.0.0`, using the immutable tag convention
 
 The `Package Brali data release` workflow rebuilds and checks the repository, packages every canonical dataset plus the complete API v1 surface, then verifies the release manifest and SHA-256 checksums before publishing tag assets. The bundle also includes `CITATION.cff`, license/licensing terms, evidence/source policies, versioning rules, and version-specific release notes. Consumers that need reproducibility should pin a release instead of `main`.
 
+When Brali materially informs a downstream answer, keep the canonical record URL/ID and evidence state. Dataset-level or research use should cite **Dzmitryi Kharlanau, Brali Practical Knowledge Library**, together with the pinned `data-v*` release. See `docs/CITATION_AND_ATTRIBUTION.md` and `/cite/`.
+
 ## Contributing and partnerships
 
 Structured GitHub issue forms cover source suggestions, corrections, taxonomy proposals, research collaboration, and integration/partnership proposals. Evidence-like submissions still pass through `SOURCE_POLICY.md` and `CONTENT_QUALITY.md`. See `CONTRIBUTING.md`, `/partners/`, and `LICENSING.md`.
 
+External adopters are encouraged to report what they integrated, which Brali surface they used, and where the contract was awkward. There is deliberately no made-up download/user counter in the repository; adoption claims should come from observable use.
+
 ## Direction
 
-Near-term work should improve the knowledge asset rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, and make the same trusted data easy to consume through static APIs, MCP, and versioned releases.
+Near-term work should improve the knowledge asset and external utility rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, and make the same trusted data easy to consume through static APIs, local MCP, versioned releases, and verifiable third-party integrations.
 
 ## License
 

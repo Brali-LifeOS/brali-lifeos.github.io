@@ -17,7 +17,7 @@ Use `canonical_id` as the durable identity. Keep `reviewed`, `practical`, `pendi
 1. Search `/api/v1/search.json` using the user's words and approved aliases.
 2. Resolve the canonical Topic or Protocol ID.
 3. Read the canonical item from `topics.json`, `protocols.json`, or `hacks.json`.
-4. Read `evidence.json` before making an evidence-like statement.
+4. Read `evidence.json` and `evidence-decisions.json` before making an evidence-like statement.
 5. Link the Brali page/source URL supplied by the record.
 
 For `pending-review` or `restricted` records, show the status explicitly and do not present them as trusted recommendations.
@@ -33,6 +33,26 @@ python examples/python/brali_client.py "how can I focus"
 ```bash
 node examples/javascript/brali-client.mjs "how can I focus"
 ```
+
+For a complete evidence-aware answer packet rather than raw search hits:
+
+```bash
+npm run build
+node examples/javascript/reference-agent.mjs --scenario sleep
+node examples/javascript/reference-agent.mjs --scenario memory
+node examples/javascript/reference-agent.mjs --scenario task-initiation
+node examples/javascript/reference-agent.mjs --scenario safety-boundary
+```
+
+Use the hosted static API directly:
+
+```bash
+node examples/javascript/reference-agent.mjs \
+  --scenario memory \
+  --api-base https://brali-lifeos.github.io/api/v1
+```
+
+Generated reference outputs are also published at `/api/v1/demos.json`, `/life-os/datasets/reference-agent-demos.json`, and `/for-ai/demos/`. See `docs/REFERENCE_AGENT_DEMOS.md` for the packet contract and limitations.
 
 ## 5. MCP
 
@@ -61,6 +81,14 @@ Example client configuration:
 ```
 
 Run from a checkout where `npm run build` has already generated `/api/v1/`.
+
+Generate a concrete MCP tool-call plan from one of the same reference scenarios:
+
+```bash
+node examples/javascript/reference-mcp-plan.mjs --scenario memory
+```
+
+The plan begins with trusted `search_knowledge` and then resolves canonical Protocol/Evidence records. It is intentionally client-neutral: execute the calls with whichever MCP host you already use. See `examples/mcp/README.md`.
 
 ## 6. Pin reproducible data
 

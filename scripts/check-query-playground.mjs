@@ -14,14 +14,14 @@ assert(html.includes('https://brali-lifeos.github.io/for-ai/query/'), 'Query pag
 assert(html.includes('Copy agent context') && html.includes('Copy citation') && html.includes('Copy JSON packet'), 'Query copy actions missing');
 assert(html.includes('processed in your browser'), 'Privacy boundary missing from query page');
 assert(!/google-analytics|gtag\(|plausible|segment\.com/i.test(`${html}\n${app}`), 'Query playground must remain analytics-free');
-for (const endpoint of ['topics.json','identity.json','protocols.json','evidence-decisions.json']) assert(app.includes(endpoint), `Query app must load ${endpoint}`);
+for (const endpoint of ['topics.json','identity.json','flagships.json','evidence-decisions.json']) assert(app.includes(endpoint), `Query app must load ${endpoint}`);
 assert(app.includes("searchParams.set('q', q)"), 'Shareable ?q= state is not wired');
 
 const { queryBrali, buildAgentContext, buildCitation } = await import(pathToFileURL(path.join(ROOT, 'for-ai/query/retrieval.mjs')).href);
 const data = {
   topics: json('api/v1/topics.json'),
   identity: json('api/v1/identity.json'),
-  protocols: json('api/v1/protocols.json'),
+  flagships: json('api/v1/flagships.json'),
   decisions: json('api/v1/evidence-decisions.json')
 };
 
@@ -53,4 +53,4 @@ const sitemap = read('sitemap.xml');
 for (const [name, text] of [['for-ai',forAi],['llms.txt',llms],['README',readme]]) assert(text.includes('/for-ai/query/'), `${name} does not link to query playground`);
 assert(sitemap.includes('https://brali-lifeos.github.io/for-ai/query/'), 'Sitemap does not include query playground');
 
-console.log(`Query playground verified: ${cases.length} trusted cases + 1 safety no-answer; canonical Topic/alias routing, shareable URL, copy packet, citation, provenance, privacy and discovery links passed.`);
+console.log(`Query playground verified: ${cases.length} trusted cases + 1 safety no-answer; Flagship 100 hybrid retrieval, canonical Topic/alias routing, shareable URL, copy packet, citation, provenance, privacy and discovery links passed.`);

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.dkharlanau/brali-knowledge",
+  "description": "Read-only access to Brali's evidence-aware practical knowledge: Topics, trusted Protocols, Hacks, Evidence and related knowledge.",
+  "repository": {
+    "url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "brali-knowledge-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

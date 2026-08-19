@@ -17,13 +17,13 @@ const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({ '&':
 async function loadApi() {
   if (apiData) return apiData;
   statusEl.textContent = 'Loading Brali API…';
-  const names = ['topics.json', 'identity.json', 'protocols.json', 'evidence-decisions.json'];
-  const [topics, identity, protocols, decisions] = await Promise.all(names.map(async name => {
+  const names = ['topics.json', 'identity.json', 'flagships.json', 'evidence-decisions.json'];
+  const [topics, identity, flagships, decisions] = await Promise.all(names.map(async name => {
     const response = await fetch(`/api/v1/${name}`, { headers: { accept: 'application/json' } });
     if (!response.ok) throw new Error(`${name} returned ${response.status}`);
     return response.json();
   }));
-  apiData = { topics, identity, protocols, decisions };
+  apiData = { topics, identity, flagships, decisions };
   return apiData;
 }
 
@@ -71,7 +71,7 @@ async function run(question, push = true) {
   if (!q) return;
   input.value = q;
   setCopyState(false);
-  resultsEl.innerHTML = '<p class="muted">Resolving Topic and trusted Protocols…</p>';
+  resultsEl.innerHTML = '<p class="muted">Resolving Topic and high-trust Protocols…</p>';
   try {
     const data = await loadApi();
     const packet = queryBrali(q, data);

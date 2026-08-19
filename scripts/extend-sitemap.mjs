@@ -6,6 +6,8 @@ await import('./build-growth-surfaces.mjs');
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
 const sitemapPath = path.join(root, "sitemap.xml");
+const growth = JSON.parse(await readFile(path.join(root, "data/growth-surfaces.json"), "utf8"));
+const reportRoutes = (growth.reports ?? []).map(report => `/updates/${report.slug}/`);
 const routes = [
   "/research/",
   "/research/habits-take-time/",
@@ -22,8 +24,7 @@ const routes = [
   "/terms/",
   "/questions/",
   "/updates/",
-  "/updates/2026-08-19/",
-  "/updates/2026-08/"
+  ...reportRoutes
 ];
 
 let xml = await readFile(sitemapPath, "utf8");

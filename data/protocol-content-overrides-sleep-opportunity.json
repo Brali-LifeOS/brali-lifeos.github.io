@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "ideal-sleep-hours-finder": {
+      "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+      "subtitle": "Start with enough time for sleep; use trends, not a magic personal optimum",
+      "description": "If your sleep is routinely short, protect a realistic window that gives you enough opportunity to sleep and observe simple trends in sleep timing and daytime alertness. Do not deliberately restrict sleep to search for an 'optimal' number or treat one bad night as a result.",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited pseudo-experiment with a conservative sleep-opportunity protocol. A 2021 systematic review/meta-analysis found that behavioral sleep-extension interventions increase sleep duration on average but with very high heterogeneity. AASM/SRS consensus recommends that healthy adults sleep seven or more hours per night on a regular basis. Neither source validates a 21-day optimization protocol, fixed wake-time tolerances, consumer sleep-stage targets, or an individual 'best' duration discovered from a small self-experiment.",
+      "forbidden_public_fragments": [
+        "21-day",
+        "15-minute window",
+        "sleep dose–response curve",
+        "maximize your functioning",
+        "30-minute bin",
+        "1–2 points on a 10-point",
+        "200 mg caffeine",
+        "30 minutes of bright light",
+        "sleep inertia",
+        "MetalHatsCats",
+        "track it in the Life OS app",
+        "Check in with LifeOS Brali app"
+      ],
+      "lifeOsSource": {
+        "hack": "Protect enough time for sleep before trying to optimize anything else. If you are an adult who routinely sleeps less than the general healthy-adult recommendation, start by making more sleep opportunity realistically available rather than testing how little sleep you can tolerate.",
+        "whatYouDo": "Choose a bedtime-to-wake window that fits your obligations and gives you a reasonable opportunity for enough sleep. For a week or two, record only a few things: roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and how alert or sleepy you felt during the day. Look for repeated patterns, not single-night scores. Change one practical constraint at a time, such as moving bedtime earlier when your current schedule routinely leaves too little time for sleep.",
+        "checkIn": "Did I give myself enough opportunity to sleep, what did my actual sleep/wake pattern look like, and was daytime alertness broadly better, unchanged, or worse over several days?",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+        "reference": "Baron et al. (2021) — systematic review and meta-analysis of behavioral sleep-extension interventions"
+      },
+      "references": [
+        {
+          "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+          "doi": "10.1016/j.smrv.2021.101532",
+          "source_type": "meta-analysis",
+          "claim_scope": "Across 42 studies, behavioral sleep-extension interventions increased sleep duration on average compared with control or baseline. Results were highly heterogeneous, and the review does not establish one ideal sleep duration, one optimal schedule, or a validated self-tracking algorithm for individuals."
+        },
+        {
+          "title": "Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25979105/",
+          "doi": "10.5664/jcsm.4758",
+          "source_type": "consensus-statement",
+          "claim_scope": "For healthy adults, the AASM/SRS consensus recommends seven or more hours of sleep per night on a regular basis to promote optimal health. Individual needs can vary, and this population recommendation is not a personalized diagnosis or treatment target."
+        }
+      ],
+      "faq": [
+        {
+          "id": "sleep-opportunity-faq-1",
+          "question": "How many hours should I sleep?",
+          "answer": "For healthy adults, AASM and the Sleep Research Society recommend seven or more hours per night on a regular basis. That is a population-level recommendation, not a promise that one exact number is ideal for every person. Age, health, pregnancy, recovery needs, and other factors can change sleep needs."
+        },
+        {
+          "id": "sleep-opportunity-faq-2",
+          "question": "Do I need exactly the same bedtime and wake time every day?",
+          "answer": "Brali does not prescribe a minute-level tolerance. Regularity is a useful part of sleep health, but the evidence does not justify a universal fifteen-minute rule. Prefer a workable routine that gives you adequate sleep opportunity and survives ordinary life."
+        },
+        {
+          "id": "sleep-opportunity-faq-3",
+          "question": "Can tracking tell me my scientifically optimal sleep duration?",
+          "answer": "No. A simple diary can help you notice repeated patterns and identify obvious schedule constraints, but a short personal log cannot establish a scientifically optimal dose or prove causality. Avoid deliberately cutting sleep to create test conditions."
+        },
+        {
+          "id": "sleep-opportunity-faq-4",
+          "question": "Is this a treatment for insomnia?",
+          "answer": "No. This is general sleep-health guidance for ordinary schedule problems and short sleep opportunity. Persistent trouble falling or staying asleep, severe daytime sleepiness, suspected sleep apnea, or another sleep disorder deserves appropriate professional assessment rather than self-optimization."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Brali's old version of this page tried to calculate a personal sleep optimum from a small self-experiment. The evidence supports something simpler. Behavioral interventions can help people make more sleep time available, but studies vary greatly in population and method. For healthy adults, professional sleep societies recommend at least seven hours per night on a regular basis. This protocol therefore starts with adequate sleep opportunity and simple trend observation, not with a homemade optimization formula.</p>"
+        },
+        "sections": [
+          {
+            "slug": "protect-opportunity",
+            "title": "1. Protect enough opportunity before optimizing",
+            "html": "<p>If obligations or habits routinely leave too little time for sleep, make that the first problem to solve. Choose a realistic bedtime-to-wake window that gives sleep enough room. Do not start by asking how little sleep you can tolerate or by intentionally shortening sleep to create comparison nights.</p>"
+          },
+          {
+            "slug": "keep-schedule-workable",
+            "title": "2. Make the schedule repeatable, not rigid",
+            "html": "<p>A routine is useful when it is predictable enough to support sleep and flexible enough to survive work, family, travel, and social life. Brali does not prescribe a universal minute-level bedtime or wake-time tolerance. If the current schedule regularly cuts sleep short, change the clearest constraint first.</p>"
+          },
+          {
+            "slug": "track-minimum",
+            "title": "3. Track the minimum useful signals",
+            "html": "<p>For a short period, note roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and whether daytime alertness or sleepiness was broadly better or worse. A wearable is optional. Consumer sleep-stage estimates are not required for this protocol.</p>"
+          },
+          {
+            "slug": "review-trends",
+            "title": "4. Review trends, not single nights",
+            "html": "<p>One poor night can reflect many things. Look for repeated patterns across several days: for example, whether nights with obviously restricted opportunity are repeatedly followed by more sleepiness. Treat the diary as a decision aid, not as proof of a personal biological optimum.</p>"
+          },
+          {
+            "slug": "change-one-constraint",
+            "title": "5. Change one practical constraint at a time",
+            "html": "<p>If the pattern suggests your schedule simply leaves too little sleep opportunity, make one reversible change, such as protecting an earlier wind-down or bedtime. Keep the change simple enough to repeat. The sleep-extension literature contains many different interventions, so Brali does not claim that one component is universally best.</p>"
+          },
+          {
+            "slug": "clinical-boundary",
+            "title": "6. Know when this protocol is the wrong tool",
+            "html": "<p>This is not insomnia treatment and it is not a diagnostic test. Persistent difficulty sleeping despite adequate opportunity, marked daytime sleepiness, loud snoring or breathing pauses, unusual sleep behaviors, or another concerning pattern should not be reduced to a self-tracking experiment. Seek appropriate professional assessment.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

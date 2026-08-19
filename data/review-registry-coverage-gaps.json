@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "description": "Additive reviewed records for closing high-value trusted coverage gaps without rewriting the generated research discovery queue or the original review registries.",
+  "evidence_overrides": {
+    "ideal-sleep-hours-finder": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a conservative sleep-opportunity protocol grounded in a systematic review/meta-analysis of behavioral sleep-extension interventions and the AASM/SRS adult sleep-duration consensus. The inherited 21-day optimization experiment, fixed wake-time tolerances, personal optimum claims, caffeine/light prescriptions, invented thresholds, and pseudo-statistical dose-response language are removed."
+    },
+    "relationship-repair-coach": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a source-bounded repair-attempt protocol grounded in experimental and meta-analytic apology/forgiveness research. The protocol does not require forgiveness, promise restored trust, prescribe arbitrary cooling-off windows, or treat apology as appropriate for abuse, coercion, or unsafe situations."
+    }
+  },
+  "ontology_overrides": {
+    "ideal-sleep-hours-finder": {
+      "topic_ids": ["sleep-circadian"],
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed effective content is about protecting adequate sleep opportunity and observing sleep timing and daytime function. Sleep & Circadian Rhythm is the concrete Topic; the legacy Be Healthy collection remains compatibility navigation."
+    },
+    "relationship-repair-coach": {
+      "topic_ids": ["conflict-repair", "relationships"],
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed effective content is a low-risk interpersonal repair attempt after a workable conflict: own the action, apologize for one's part, offer a concrete repair, and invite the other person's response. Conflict & Repair is primary; Relationships is also relevant."
+    }
+  },
+  "research_candidates": [
+    {
+      "id": "crossref:10.1016/j.smrv.2021.101532",
+      "source": "crossref",
+      "source_id": "10.1016/j.smrv.2021.101532",
+      "doi": "10.1016/j.smrv.2021.101532",
+      "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "authors": ["Kelly Glazer Baron", "Jennifer Duffecy", "Sirimon Reutrakul", "Jessica C Levenson", "Mary M McFarland", "Seunghoon Lee", "Fares Qeadan"],
+      "container_title": "Sleep Medicine Reviews",
+      "publication_date": "2021-12-01",
+      "type": "journal-article",
+      "subjects": [],
+      "reference_url": "https://doi.org/10.1016/j.smrv.2021.101532",
+      "discovered_at": "2026-08-19T06:00:00Z",
+      "last_seen_at": "2026-08-19T06:00:00Z",
+      "status": "propose-protocol",
+      "query_ids": ["health-sleep-regularity"],
+      "domain_ids": ["health-energy"],
+      "topic_ids": ["sleep-circadian"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["health-energy"],
+      "zone_slugs": ["be-healthy"],
+      "risk_flags": ["health"],
+      "crossref_score": null,
+      "review_notes": "Reviewed as support for a conservative sleep-opportunity protocol. The meta-analysis supports extending sleep duration through behavioral interventions but reports very high heterogeneity and does not identify an individual's ideal duration or prove a fixed regularity rule."
+    },
+    {
+      "id": "crossref:10.1038/s41598-021-92373-y",
+      "source": "crossref",
+      "source_id": "10.1038/s41598-021-92373-y",
+      "doi": "10.1038/s41598-021-92373-y",
+      "title": "Experimental evidence that apologies promote forgiveness by communicating relationship value",
+      "authors": ["Daniel E Forster", "Joseph Billingsley", "Jeni L Burnette", "Debra Lieberman", "Yohsuke Ohtsubo", "Michael E McCullough"],
+      "container_title": "Scientific Reports",
+      "publication_date": "2021-06-23",
+      "type": "journal-article",
+      "subjects": [],
+      "reference_url": "https://doi.org/10.1038/s41598-021-92373-y",
+      "discovered_at": "2026-08-19T06:00:00Z",
+      "last_seen_at": "2026-08-19T06:00:00Z",
+      "status": "propose-protocol",
+      "query_ids": [],
+      "domain_ids": ["communication-relationships"],
+      "topic_ids": ["conflict-repair", "relationships"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["communication-relationships"],
+      "zone_slugs": ["relationships"],
+      "risk_flags": [],
+      "crossref_score": null,
+      "review_notes": "Reviewed as experimental support for apology as one possible interpersonal repair signal. It does not establish a universal apology script, guarantee forgiveness, restore trust automatically, or make apology appropriate in coercive or unsafe situations."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "sleep-opportunity-extension-2021",
+      "candidate_id": "crossref:10.1016/j.smrv.2021.101532",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+      "source_title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "source_type": "meta-analysis",
+      "doi": "10.1016/j.smrv.2021.101532",
+      "citation_text": "Baron KG, Duffecy J, Reutrakul S, et al. Sleep Medicine Reviews. 2021;60:101532.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and meta-analysis of 42 behavioral sleep-extension studies, including controlled two-arm and one-arm designs.",
+      "population": "Participants aged 12 years and older across adult, college-student, adolescent and other samples in 14 countries.",
+      "intervention_or_exposure": "Behavioral interventions intended to increase sleep duration, ranging from direct sleep-schedule changes to coaching and educational approaches.",
+      "outcomes": ["Sleep duration"],
+      "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+      "unsupported_or_overstated_claims": [
+        "A self-tracking experiment can identify one scientifically optimal personal sleep duration.",
+        "A fixed bedtime or wake-time tolerance is proven to improve health or cognition for everyone.",
+        "A 21-day experiment, 30-minute duration bins, or a particular alertness score is evidence-based.",
+        "Sleep extension by itself is a treatment for chronic insomnia or another sleep disorder.",
+        "Consumer sleep-stage estimates are required to decide how much sleep a person needs."
+      ],
+      "limitations": [
+        "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+        "Populations, intervention components, duration and measurement methods varied substantially.",
+        "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+        "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+      ],
+      "target_hack_ids": ["ideal-sleep-hours-finder"],
+      "target_protocol_ids": ["brali:ideal-sleep-hours-finder"],
+      "risk_flags": ["health"],
+      "notes": "Promote only as a conservative protocol for protecting adequate sleep opportunity and observing trends. Pair public adult-duration wording with the AASM/SRS consensus; do not revive the inherited optimization experiment or infer causality from the separate sleep-variability observational review."
+    },
+    {
+      "schema_version": 1,
+      "id": "apology-repair-2021",
+      "candidate_id": "crossref:10.1038/s41598-021-92373-y",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34162912/",
+      "source_title": "Experimental evidence that apologies promote forgiveness by communicating relationship value",
+      "source_type": "randomized-experiment",
+      "doi": "10.1038/s41598-021-92373-y",
+      "citation_text": "Forster DE, Billingsley J, Burnette JL, et al. Scientific Reports. 2021;11:13107.",
+      "source_reviewed": true,
+      "study_design": "Controlled 2 × 2 double-randomization experiments manipulating apology and relationship-value information to test causal pathways to forgiveness.",
+      "population": "Human participants in controlled interpersonal-transgression scenarios used in the published experiments.",
+      "intervention_or_exposure": "Receiving an apology versus no apology, crossed with manipulated relationship-value information.",
+      "outcomes": ["Forgiveness", "Perceived relationship value"],
+      "supported_claim": "In the controlled experiments, apologies promoted forgiveness and operated through a causal pathway shared with perceived relationship value. This supports apology as one potentially useful repair signal after a workable interpersonal transgression.",
+      "unsupported_or_overstated_claims": [
+        "An apology guarantees forgiveness, reconciliation, or restored trust.",
+        "The harmed person should forgive, accept the apology, or resume the relationship.",
+        "One fixed apology script, cooling-off duration, or delivery deadline is scientifically established.",
+        "Apology is an appropriate repair strategy for abuse, coercion, threats, stalking, or other unsafe situations.",
+        "The study proves that apology alone resolves complex or repeated relationship conflict."
+      ],
+      "limitations": [
+        "Controlled experimental transgression paradigms do not capture every feature of real-world repeated or high-stakes conflict.",
+        "Forgiveness is only one outcome and is not equivalent to trust, reconciliation, safety, or durable behavior change.",
+        "The effect of apology depends on context, relationship value and the nature of the transgression.",
+        "The study does not validate the specific wording or step sequence used in Brali's public repair protocol."
+      ],
+      "target_hack_ids": ["relationship-repair-coach"],
+      "target_protocol_ids": ["brali:relationship-repair-coach"],
+      "risk_flags": [],
+      "notes": "Use apology as a bounded repair action: own the behavior, avoid conditional language, offer a concrete corrective step, invite the other person's perspective, and do not demand forgiveness. Safety and boundaries take precedence over repair."
+    }
+  ]
+}

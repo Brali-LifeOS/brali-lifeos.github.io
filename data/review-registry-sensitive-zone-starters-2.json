@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "description": "Second sensitive-zone review pass. Reviewed status applies only to the bounded public protocol and its stated source/evidence boundary; it does not validate an entire legacy therapy collection or make the protocol equivalent to treatment.",
+  "evidence_overrides": {
+    "dbt-distress-tolerance-coach": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against Dorset HealthCare NHS descriptions of DBT skills and the Valentine et al. systematic review of DBT skills training used without other DBT modalities. Public content is narrowed to a low-risk observe-pause-reassess exercise, removes cold-exposure/physiological instructions, and explicitly states that evidence does not make it equivalent to full DBT or crisis treatment."
+    }
+  },
+  "ontology_overrides": {
+    "dbt-distress-tolerance-coach": {
+      "topic_ids": ["emotion-regulation", "stress-regulation", "self-awareness"],
+      "method_ids": ["dbt"],
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol notices an action urge, creates a harmless pause, and reassesses the next action. Emotion Regulation, Stress Regulation and Self-Awareness are the concrete Topics; DBT-derived identifies the sensitive source tradition and does not imply delivery of DBT treatment."
+    }
+  }
+}

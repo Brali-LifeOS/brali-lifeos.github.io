@@ -6,6 +6,7 @@ await import('./build-state-evidence-trends.mjs');
 await import('./build-problem-collections.mjs');
 await import('./build-evidence-ledger.mjs');
 await import('./build-research-gaps.mjs');
+await import('./sync-research-gap-manifest.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";

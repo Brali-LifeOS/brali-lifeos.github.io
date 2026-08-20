@@ -3,12 +3,15 @@ import path from "node:path";
 
 await import('./build-growth-surfaces.mjs');
 await import('./build-state-evidence-trends.mjs');
+await import('./build-problem-collections.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
 const sitemapPath = path.join(root, "sitemap.xml");
 const growth = JSON.parse(await readFile(path.join(root, "data/growth-surfaces.json"), "utf8"));
+const problems = JSON.parse(await readFile(path.join(root, "data/problem-collections.json"), "utf8"));
 const reportRoutes = (growth.reports ?? []).map(report => `/updates/${report.slug}/`);
+const problemRoutes = (problems.collections ?? []).map(collection => `/problems/${collection.slug}/`);
 const evidenceMonth = String(growth.updated_at).slice(0, 7);
 const routes = [
   "/research/",
@@ -25,10 +28,12 @@ const routes = [
   "/partners/",
   "/terms/",
   "/questions/",
+  "/problems/",
   "/updates/",
   "/state/",
   "/trends/evidence/",
   `/trends/evidence/${evidenceMonth}/`,
+  ...problemRoutes,
   ...reportRoutes
 ];
 
@@ -44,3 +49,4 @@ console.log(`Sitemap static routes: ${routes.length - missing.length} already pr
 
 await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
+await import('./check-problem-collections.mjs');

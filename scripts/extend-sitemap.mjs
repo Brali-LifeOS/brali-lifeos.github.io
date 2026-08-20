@@ -5,6 +5,8 @@ await import('./build-growth-surfaces.mjs');
 await import('./build-state-evidence-trends.mjs');
 await import('./build-problem-collections.mjs');
 await import('./build-evidence-ledger.mjs');
+await import('./build-research-gaps.mjs');
+await import('./sync-research-gap-manifest.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -12,12 +14,15 @@ const sitemapPath = path.join(root, "sitemap.xml");
 const growth = JSON.parse(await readFile(path.join(root, "data/growth-surfaces.json"), "utf8"));
 const problems = JSON.parse(await readFile(path.join(root, "data/problem-collections.json"), "utf8"));
 const decisions = JSON.parse(await readFile(path.join(root, "data/evidence-decisions.json"), "utf8"));
+const researchGaps = JSON.parse(await readFile(path.join(root, "data/research-gap-questions.json"), "utf8"));
 const reportRoutes = (growth.reports ?? []).map(report => `/updates/${report.slug}/`);
 const problemRoutes = (problems.collections ?? []).map(collection => `/problems/${collection.slug}/`);
 const decisionRoutes = (decisions.entries ?? []).map(decision => `/evidence/${decision.id}/`);
+const researchGapRoutes = (researchGaps.items ?? []).map(item => `/research/gaps/${item.topic_id}/`);
 const evidenceMonth = String(growth.updated_at).slice(0, 7);
 const routes = [
   "/research/",
+  "/research/gaps/",
   "/research/habits-take-time/",
   "/research/rag-is-not-a-trust-button/",
   "/research/sleep-regularity-signal-not-prescription/",
@@ -37,6 +42,7 @@ const routes = [
   "/state/",
   "/trends/evidence/",
   `/trends/evidence/${evidenceMonth}/`,
+  ...researchGapRoutes,
   ...problemRoutes,
   ...decisionRoutes,
   ...reportRoutes
@@ -56,3 +62,4 @@ await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');
+await import('./check-research-gaps.mjs');

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "policy": {
+    "purpose": "Publish a deliberately small set of problem-first collections that add decision logic on top of Brali's trusted protocol feed.",
+    "quality_rule": "A problem page may recommend only reviewed or practical protocols already present in the trusted protocol feed. It must add distinct decision guidance rather than restating a Topic hub.",
+    "growth_rule": "Do not create a page for every wording variation. Add a new collection only when Brali can support a materially different problem, decision path, or evidence boundary."
+  },
+  "collections": [
+    {
+      "slug": "start-important-work",
+      "title": "Start important work when you keep putting it off",
+      "question": "How do I start important work when I keep procrastinating?",
+      "summary": "Separate a vague task, start-friction, and attention-switching problem before choosing a protocol.",
+      "primary_topic_ids": ["task-initiation", "attention-focus"],
+      "related_topic_ids": ["planning-prioritization", "goals"],
+      "related_url": "/topics/focus/",
+      "query": "I keep procrastinating and cannot get started on an important task",
+      "decision_path": [
+        {"if": "The task is still vague", "try": "Define one visible next action before adding timers, blockers, or motivation tricks."},
+        {"if": "The next action is clear but starting still feels heavy", "try": "Shrink the commitment to a deliberately small first block. The goal is to cross the start line, not finish the whole project."},
+        {"if": "You start but quickly switch away", "try": "Protect one short focus block and remove one predictable interruption instead of redesigning your entire productivity system."}
+      ],
+      "stop_rule": "If progress depends on missing information, approval, access, or another person, treat that dependency as the next action rather than diagnosing yourself with a motivation problem."
+    },
+    {
+      "slug": "resume-after-interruption",
+      "title": "Resume useful work after interruptions derail the day",
+      "question": "How do I recover after interruptions without losing the rest of the day?",
+      "summary": "Use a small re-entry sequence: recover context, choose the next action, then protect a short restart block.",
+      "primary_topic_ids": ["attention-focus", "planning-prioritization"],
+      "related_topic_ids": ["information-management", "work-systems"],
+      "related_url": "/topics/focus/",
+      "query": "I was interrupted and now I cannot get back into useful work",
+      "decision_path": [
+        {"if": "You no longer remember where you were", "try": "Reconstruct context first: what was done, what remains, and what the next concrete action was."},
+        {"if": "Several tasks now compete for attention", "try": "Re-prioritize once. Pick the one task that deserves the next block rather than repeatedly choosing again every few minutes."},
+        {"if": "You know what to do but feel scattered", "try": "Use a short restart block with a visible finish condition. A clean restart is more useful than trying to recover the imagined perfect day."}
+      ],
+      "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints."
+    },
+    {
+      "slug": "learn-under-time-pressure",
+      "title": "Learn something useful when study time is limited",
+      "question": "How do I learn effectively when I do not have much time?",
+      "summary": "Prioritize retrieval, targeted practice, feedback, and application instead of trying to consume more material.",
+      "primary_topic_ids": ["skill-learning", "memory"],
+      "related_topic_ids": ["metacognition", "revision-feedback"],
+      "related_url": "/topics/learning/",
+      "query": "How can I learn something effectively when I have limited study time?",
+      "decision_path": [
+        {"if": "You need to remember facts or concepts", "try": "Spend part of the session retrieving from memory rather than rereading the same material."},
+        {"if": "You need to perform a skill", "try": "Practice the actual operation and get feedback. Remembering an explanation is not the same as being able to apply it."},
+        {"if": "You are unsure what you know", "try": "Test yourself early enough to expose gaps, then direct the remaining time toward those gaps instead of reviewing everything equally."}
+      ],
+      "stop_rule": "Do not interpret one successful recall session as proof of durable mastery. Use delayed checks or real application when the stakes justify it."
+    },
+    {
+      "slug": "desk-day-movement",
+      "title": "Add movement to a desk-heavy day without a perfect schedule",
+      "question": "How can I move more when I sit at a desk most of the day?",
+      "summary": "Choose repeatable movement opportunities and sustainable exercise without pretending there is one scientifically perfect break interval.",
+      "primary_topic_ids": ["movement", "fitness-strength"],
+      "related_topic_ids": ["recovery-energy", "health-basics"],
+      "related_url": "/topics/movement/",
+      "query": "I sit for hours while working. How can I add more movement to my day?",
+      "decision_path": [
+        {"if": "The main problem is uninterrupted sitting", "try": "Attach brief movement to transitions you already have: calls, refills, task changes, or natural breaks."},
+        {"if": "You want a sustainable exercise routine", "try": "Choose a small repeatable strength, mobility, or walking commitment that survives ordinary workdays."},
+        {"if": "You are searching for the perfect cognitive break interval", "try": "Use practicality and adherence as the decision criteria. Brali does not treat exploratory cognition findings as a universal dose prescription."}
+      ],
+      "stop_rule": "Pain, injury, new severe symptoms, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance."
+    },
+    {
+      "slug": "prepare-difficult-conversation",
+      "title": "Prepare for a difficult conversation without escalating it",
+      "question": "How do I prepare for a difficult conversation at work or at home?",
+      "summary": "Clarify the outcome, separate observations from interpretations, listen for the other person's model, and leave room for repair.",
+      "primary_topic_ids": ["difficult-conversations", "listening", "clear-communication", "conflict-repair"],
+      "related_topic_ids": [],
+      "related_url": "/life-os/areas/communication-relationships/",
+      "query": "How can I prepare for a difficult conversation without escalating it?",
+      "decision_path": [
+        {"if": "You are rehearsing accusations", "try": "Write down the observable situation, the impact, and the outcome you want before deciding what you think the other person intended."},
+        {"if": "You expect disagreement", "try": "Prepare one or two genuine questions. The conversation needs a way to update your model, not only transmit your conclusion."},
+        {"if": "The relationship matters after the conversation", "try": "Plan how you will check understanding and repair misinterpretation instead of optimizing for winning the exchange."}
+      ],
+      "stop_rule": "If there is coercion, abuse, threats, or a serious safety issue, ordinary communication techniques are not an adequate response plan."
+    }
+  ]
+}

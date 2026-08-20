@@ -25,12 +25,14 @@ if (report.coverage.trusted_protocols !== (protocols.count ?? protocols.entries?
 if (report.coverage.indexable_entry_pages !== (evidence.entries ?? []).filter(item => item.indexable).length) fail('indexable entry count drift');
 if (report.coverage.withheld_entry_pages !== (evidence.entries ?? []).filter(item => !item.indexable).length) fail('withheld entry count drift');
 if (!report.loop?.converged || report.loop.changed_pages_by_pass?.at(-1) !== 0) fail('automatic loop did not converge');
+if (report.loop?.zone_view_normalization?.zones_checked !== zones.length) fail('zone-view normalization did not cover every zone');
 if ((report.error_count ?? 0) !== 0) fail(`report contains ${report.error_count} enforced error(s)`);
 if ((report.issues ?? []).some(issue => issue.severity === 'error')) fail('report issue list still contains an error');
 if ((report.zones ?? []).length !== zones.length) fail('zone report does not cover every Growth Zone');
 
 const evidenceBySlug = new Map((evidence.entries ?? []).map(item => [item.slug, item]));
 const zoneReport = new Map((report.zones ?? []).map(item => [item.slug, item]));
+const linkedSlugs = html => [...html.matchAll(/href=["']\/life-os\/([^/"'#?]+)\/["']/gi)].map(match => match[1]);
 
 for (const entry of sourceIndex) {
   const pathname = `/life-os/${entry.slug}/`;
@@ -60,6 +62,8 @@ for (const zone of zones) {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const machine = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   if (!html.includes('data-zone-quality="true"')) fail(`${zone.slug}: missing trust-first zone overview`);
+  if (!html.includes('data-zone-trusted="true"')) fail(`${zone.slug}: trusted subset is not explicitly marked`);
+  if (!html.includes('data-zone-archive="true"') || !html.includes('data-zone-archive-list="true"')) fail(`${zone.slug}: full archive is not explicitly marked`);
   if (!html.includes(`rel="alternate" type="application/json" href="${pathname}index.json"`)) fail(`${zone.slug}: missing alternate JSON link`);
   if (machine.slug !== zone.slug || Boolean(machine.indexable) !== Boolean(row.indexable)) fail(`${zone.slug}: zone machine record drift`);
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
@@ -67,6 +71,20 @@ for (const zone of zones) {
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
   if (Boolean(row.indexable) !== inSitemap) fail(`${zone.slug}: sitemap policy disagrees with trusted coverage`);
   if (row.indexable !== (row.trusted_protocols > 0)) fail(`${zone.slug}: zone indexing must require at least one trusted protocol`);
+
+  const trustedMatch = html.match(/<section class="prose" data-zone-trusted="true">([\s\S]*?)<\/section>/);
+  if (!trustedMatch) fail(`${zone.slug}: cannot parse trusted subset`);
+  const trustedLinks = linkedSlugs(trustedMatch[1]);
+  const trustedSet = new Set((machine.trusted_protocols ?? []).map(item => item.slug));
+  if (trustedLinks.some(slug => !trustedSet.has(slug))) fail(`${zone.slug}: untrusted entry leaked into trusted subset`);
+  for (const protocol of (machine.trusted_protocols ?? []).slice(0, 10)) {
+    if (!trustedLinks.includes(protocol.slug)) fail(`${zone.slug}: trusted protocol ${protocol.slug} missing from trusted subset`);
+  }
+
+  const archiveMatch = html.match(/<section class="prose" data-zone-archive="true">([\s\S]*?)<\/section>/);
+  if (!archiveMatch) fail(`${zone.slug}: cannot parse full archive`);
+  const archiveLinks = new Set(linkedSlugs(archiveMatch[1]));
+  for (const item of machine.entries ?? []) if (!archiveLinks.has(item.slug)) fail(`${zone.slug}: archive missing ${item.slug}`);
 }
 
 if (!fs.existsSync(path.join(ROOT, 'state/quality/index.html'))) fail('missing public quality report page');
@@ -74,4 +92,4 @@ if (!sitemap.includes(`<loc>${BASE}/state/quality/</loc>`)) fail('quality report
 if (!stateHtml.includes('data-sitewide-quality-cycle')) fail('State page does not expose quality cycle');
 if (!llms.includes('Page & Zone Quality Cycle:')) fail('llms.txt does not expose quality cycle');
 
-console.log(`Site-wide quality verified: ${sourceIndex.length} entry pages, ${zones.length} zones, ${report.coverage.indexable_zones} indexable zones, loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);
+console.log(`Site-wide quality verified: ${sourceIndex.length} entry pages, ${zones.length} zones, ${report.coverage.indexable_zones} indexable zones, trusted subsets separated from full archives, loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);

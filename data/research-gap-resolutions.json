@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "description": "Explicit research-gap closures. A gap may be marked closed only when the referenced Evidence Decisions map to the Topic and at least one referenced protocol is present in the trusted protocol feed for the same Topic.",
+  "entries": [
+    {
+      "topic_id": "memory",
+      "status": "closed",
+      "resolved_at": "2026-08-20",
+      "resolved_by": "Brali editorial agent",
+      "evidence_decision_ids": [
+        "wakeful-rest-memory-2026",
+        "testing-effect-direct-forward-2026",
+        "retrieval-procedural-application-2026"
+      ],
+      "protocol_slugs": [
+        "avoid-list-interference-memory-retention",
+        "active-recall-test-yourself"
+      ],
+      "rationale": "Memory moved from an ontology growth gap to active coverage after Brali reviewed current evidence on wakeful rest and retrieval practice, narrowed unsupported transfer claims, and published trusted protocols that preserve those evidence boundaries."
+    }
+  ]
+}

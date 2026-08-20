@@ -16,7 +16,16 @@ let restrictedStillIndexable = 0;
 let missingProtocolSummaries = 0;
 let evidenceStatusMismatches = 0;
 let quantitativeQueue = 0;
+let unsupportedFirstPartyClaimPages = 0;
 const examples = [];
+const firstPartyClaimExamples = [];
+const firstPartyClaimPatterns = [
+  { name: "our-pilot", re: /\b(?:in|during)\s+our\s+(?:pilot|trial|experiment|test)\b/i },
+  { name: "our-pilot-result", re: /\bour\s+(?:pilot|trial|experiment)\s+(?:showed|found|suggested|demonstrated|resulted)\b/i },
+  { name: "first-person-percent", re: /\bwe\s+(?:observed|measured|found|saw|recorded)\s+(?:an?\s+)?\d+(?:\.\d+)?\s*%/i },
+  { name: "our-users", re: /\bour\s+(?:users|participants|testers)\b/i },
+  { name: "our-data-result", re: /\bour\s+data\s+(?:showed|found|suggested|demonstrated)\b/i },
+];
 
 const evidenceBySlug = new Map((evidenceIndex.entries ?? []).map((record) => [record.slug, record]));
 
@@ -35,6 +44,14 @@ for (const entry of index) {
   if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
   if (!evidence.indexable && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
     restrictedStillIndexable += 1;
+  }
+
+  if (evidence.indexable) {
+    const matches = firstPartyClaimPatterns.filter(pattern => pattern.re.test(generated));
+    if (matches.length) {
+      unsupportedFirstPartyClaimPages += 1;
+      if (firstPartyClaimExamples.length < 12) firstPartyClaimExamples.push(`${entry.slug}:${matches.map(match => match.name).join('+')}`);
+    }
   }
 
   const indexed = evidenceBySlug.get(entry.slug);
@@ -56,12 +73,14 @@ console.log(`- Restricted: ${counts.restricted}`);
 console.log(`- Quantitative claims not reviewed: ${quantitativeQueue}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
+console.log(`- Indexable pages with unsupported first-party claim markers: ${unsupportedFirstPartyClaimPages}`);
 console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
 console.log(`- Restricted pages still indexable: ${restrictedStillIndexable}`);
 console.log(`- Evidence status/index mismatches: ${evidenceStatusMismatches}`);
+if (firstPartyClaimExamples.length) console.log(`- First-party claim marker examples: ${firstPartyClaimExamples.join(", ")}`);
 if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")}`);
 
-const blockingProblems = legacyGeneratedPages + restrictedStillIndexable + missingProtocolSummaries + evidenceStatusMismatches;
+const blockingProblems = legacyGeneratedPages + unsupportedFirstPartyClaimPages + restrictedStillIndexable + missingProtocolSummaries + evidenceStatusMismatches;
 if (strict && blockingProblems > 0) {
   console.error(`Content trust audit failed with ${blockingProblems} blocking problem(s).`);
   process.exit(1);

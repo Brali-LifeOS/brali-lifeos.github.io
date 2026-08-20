@@ -113,11 +113,13 @@ export async function loadKnowledgeOntology(root) {
 
     const override = overrides.entries?.[slug];
     if (!override) return legacy;
+    const legacyMethodIds = override.suppress_legacy_methods ? [] : legacy.methods.map((item) => item.id);
+    const legacyLensIds = override.suppress_legacy_lenses ? [] : legacy.lenses.map((item) => item.id);
     return buildClassification({
       domainIds: unique(override.domain_ids ?? []),
       topicIds: unique(override.topic_ids ?? []),
-      methodIds: unique([...legacy.methods.map((item) => item.id), ...(override.method_ids ?? [])]),
-      lensIds: unique([...legacy.lenses.map((item) => item.id), ...(override.lens_ids ?? [])]),
+      methodIds: unique([...legacyMethodIds, ...(override.method_ids ?? [])]),
+      lensIds: unique([...legacyLensIds, ...(override.lens_ids ?? [])]),
       source: "reviewed-ontology-override",
       legacy: legacy.legacy
     });

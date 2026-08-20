@@ -128,7 +128,7 @@ inject('trends/evidence/index.html', 'data-brali-evidence-ledger', `<aside class
 const llmsPath = path.join(ROOT, 'llms.txt');
 if (fs.existsSync(llmsPath)) {
   let llms = fs.readFileSync(llmsPath, 'utf8');
-  if (!llms.includes('/evidence/')) llms += `\n- Evidence Ledger: ${BASE}/evidence/\n- Evidence Ledger JSON: ${BASE}/evidence/index.json\n- Reviewed Evidence Decisions: ${BASE}/life-os/datasets/evidence-decisions.json\n`;
+  if (!llms.includes('Evidence Ledger:')) llms += `\n- Evidence Ledger: ${BASE}/evidence/\n- Evidence Ledger JSON: ${BASE}/evidence/index.json\n- Reviewed Evidence Decisions: ${BASE}/life-os/datasets/evidence-decisions.json\n`;
   fs.writeFileSync(llmsPath, llms);
 }
 

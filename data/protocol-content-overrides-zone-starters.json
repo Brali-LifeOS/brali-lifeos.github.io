@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "30-min-eye-break-tracker": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited screen-break copy containing evidence-like wording with a low-risk checkpoint protocol that makes no medical or performance claim.",
+      "title": "Screen Break Checkpoint",
+      "subtitle": "Interrupt long screen stretches before attention gets sloppy",
+      "description": "Use a simple checkpoint during screen-heavy work: look away, change posture, and decide whether the next block still deserves your attention.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Use a short screen-break checkpoint during long computer sessions.",
+        "whatYouDo": "At a natural breakpoint in a long screen session, look away from the display, relax your posture, and name the next task before returning.",
+        "checkIn": "Did the pause make the next action clearer, or did it reveal that you should stop, switch, or rest?"
+      },
+      "faq": [
+        {"id":"screen-break-checkpoint-1","question":"Does the checkpoint have to happen every thirty minutes?","answer":"No. Use a natural breakpoint that fits the work. The point is to interrupt an overly long screen stretch, not to obey a fixed timer."},
+        {"id":"screen-break-checkpoint-2","question":"What should I do during the pause?","answer":"Look away from the display, let your posture change, and decide what the next useful action is before you continue."}
+      ],
+      "body": {
+        "intro": {"html":"<p>A screen break can also be a work-quality checkpoint. Use a brief pause to interrupt automatic scrolling or staring, then decide deliberately what happens next.</p>"},
+        "sections": [
+          {"slug":"use-a-breakpoint","title":"1. Use a natural breakpoint","html":"<p>Pause after finishing a paragraph, message, calculation, meeting segment, or other small unit of work. A breakpoint is usually easier to keep than an arbitrary alarm.</p>"},
+          {"slug":"look-away","title":"2. Look away from the screen","html":"<p>Shift your gaze away from the display for a moment and let your body change position. Keep the pause comfortable rather than turning it into another target to hit.</p>"},
+          {"slug":"name-next-action","title":"3. Name the next action","html":"<p>Before returning, state what you are about to do next. If you cannot name a useful next action, that is a sign to stop, switch tasks, or clarify the work first.</p>"},
+          {"slug":"keep-it-light","title":"4. Keep the checkpoint light","html":"<p>If tracking the breaks becomes more distracting than the screen session itself, simplify the routine. The checkpoint should reduce friction, not create a second job.</p>"}
+        ]
+      }
+    },
+    "478-breathing-technique-guide": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited fixed-ratio breathing claims with a conservative unforced breathing pause that avoids treatment framing and rigid timing.",
+      "title": "Comfortable Breathing Reset",
+      "subtitle": "Slow down the breath without forcing a ratio",
+      "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Use a few comfortable breaths as a pause before the next action.",
+        "whatYouDo": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
+        "checkIn": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed."
+      },
+      "faq": [
+        {"id":"comfortable-breathing-reset-1","question":"Do I need to use the 4-7-8 count?","answer":"No. This version deliberately avoids a required ratio. Use a pace that feels comfortable and unforced."},
+        {"id":"comfortable-breathing-reset-2","question":"What if I feel dizzy or uncomfortable?","answer":"Stop the exercise and return to normal breathing. The pause is optional and should not be forced."}
+      ],
+      "body": {
+        "intro": {"html":"<p>The useful part of a breathing pause is often the pause itself: stop the rush, notice the body, and create a small gap before the next choice. There is no need to force a special count.</p>"},
+        "sections": [
+          {"slug":"get-comfortable","title":"1. Get comfortable","html":"<p>Sit or stand in a position where breathing feels easy. Loosen anything you are unnecessarily tensing.</p>"},
+          {"slug":"breathe-easily","title":"2. Take a few easy breaths","html":"<p>Let the breath slow naturally. Do not hold it for an uncomfortable interval and do not chase a perfect rhythm.</p>"},
+          {"slug":"notice-what-changed","title":"3. Notice what changed","html":"<p>Check whether your attention, body tension, or urge to react feels any different. No change is also useful information.</p>"},
+          {"slug":"choose-next-action","title":"4. Choose one next action","html":"<p>Return to the situation with one concrete next move: answer, wait, write something down, ask a question, or step away for longer.</p>"}
+        ]
+      }
+    },
+    "create-win-win-outcomes": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited outcome claims with a practical option-mapping protocol that treats game theory as a lens rather than a guarantee of mutual gain.",
+      "title": "Shared-Value Option Map",
+      "subtitle": "Look for trades that improve both sides",
+      "description": "Map what each side values, where constraints differ, and which exchanges could create value without pretending every conflict has a win-win solution.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Map interests and possible trades before arguing over one fixed position.",
+        "whatYouDo": "List what each side wants, what each side can trade at relatively low cost, and two or three options that combine those differences. Then test the options with the other side.",
+        "checkIn": "Did the conversation uncover a real trade, or are the interests still incompatible enough that a clear boundary or no-deal option is better?"
+      },
+      "faq": [
+        {"id":"shared-value-map-1","question":"Does every disagreement have a win-win solution?","answer":"No. Some interests genuinely conflict. The map is useful because it reveals possible trades and also makes incompatibility easier to see."},
+        {"id":"shared-value-map-2","question":"What should I list first?","answer":"Start with interests and constraints, not demands. Two people can reject each other's positions while still having room to trade on timing, scope, effort, risk, or format."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Many negotiations get stuck because each side argues for a position before understanding what the other side actually values. An option map delays that argument long enough to look for useful trades.</p>"},
+        "sections": [
+          {"slug":"list-interests","title":"1. List the interests","html":"<p>Write what matters to each side in plain language: speed, certainty, cost, flexibility, recognition, quality, risk, or another real constraint.</p>"},
+          {"slug":"find-asymmetries","title":"2. Find differences in value","html":"<p>Look for something that is relatively cheap for one side and valuable to the other. Those differences create possible trades.</p>"},
+          {"slug":"build-options","title":"3. Build more than one option","html":"<p>Create several combinations before choosing. More than one option makes it easier to compare trade-offs instead of defending the first idea.</p>"},
+          {"slug":"allow-no-deal","title":"4. Keep a no-deal option","html":"<p>Do not force the language of mutual gain when the fit is poor. A clear boundary or respectful no-deal can be better than a fragile agreement.</p>"}
+        ]
+      }
+    },
+    "achieve-multiple-goals-at-once": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited multi-goal performance language with a planning protocol that looks for compatible actions while preserving trade-offs.",
+      "title": "One Move, Several Benefits",
+      "subtitle": "Prefer actions that serve more than one priority without hiding trade-offs",
+      "description": "Look for one concrete action that advances two compatible priorities, then check that combining them does not make the action vague or overloaded.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Choose an action that advances more than one compatible priority when doing so keeps the action clear.",
+        "whatYouDo": "Name two priorities, brainstorm one concrete action that can serve both, and reject the combination if it makes either priority weaker or unclear.",
+        "checkIn": "Did combining the priorities simplify the plan, or did it create a compromised task that serves neither one well?"
+      },
+      "faq": [
+        {"id":"one-move-several-benefits-1","question":"Should I always combine goals?","answer":"No. Combine them only when one clear action genuinely serves both. Separate goals when the combination creates distraction or weakens the result."},
+        {"id":"one-move-several-benefits-2","question":"What is a simple example?","answer":"A walking meeting can combine movement and a low-complexity conversation, but it would be a poor fit for a discussion that requires detailed documents or privacy."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Some priorities can share an action. The useful trick is not to chase maximum efficiency, but to notice compatible moves while keeping trade-offs visible.</p>"},
+        "sections": [
+          {"slug":"name-priorities","title":"1. Name two real priorities","html":"<p>Choose priorities that are already important. Do not invent a second goal just to make the technique fit.</p>"},
+          {"slug":"find-one-action","title":"2. Find one concrete action","html":"<p>Ask whether a single observable action can serve both priorities. Keep the action specific enough that you know when it is done.</p>"},
+          {"slug":"check-tradeoffs","title":"3. Check the trade-offs","html":"<p>Notice what gets worse when the goals are combined. If quality, attention, privacy, or safety drops, separate the actions.</p>"},
+          {"slug":"review-result","title":"4. Review the result","html":"<p>After trying it, decide whether the combination simplified your plan or merely made it more complicated.</p>"}
+        ]
+      }
+    },
+    "leave-an-app-review": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited engagement and app-growth claims with a neutral feedback-writing protocol useful beyond app stores.",
+      "title": "Leave Useful Feedback",
+      "subtitle": "Turn a reaction into a concrete, actionable review",
+      "description": "Write feedback that separates what happened, why it mattered to you, and what change would make the experience better.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Write feedback as observation, impact, and suggestion instead of praise or frustration alone.",
+        "whatYouDo": "Describe one concrete thing that worked or failed, explain the effect it had on your task, and add one specific suggestion if you have one.",
+        "checkIn": "Could the recipient understand what happened and what might improve without guessing what you meant?"
+      },
+      "faq": [
+        {"id":"useful-feedback-1","question":"Should a review always include a suggestion?","answer":"No. A clear description of what happened can be enough. Add a suggestion only when you can make it specific and realistic."},
+        {"id":"useful-feedback-2","question":"How do I avoid an overly emotional review?","answer":"Write the concrete event first, then explain the effect on your task. You can still state a strong opinion without turning the whole review into a label about the product or people."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Useful feedback gives another person something they can inspect or act on. It is more informative than a vague score, compliment, or complaint.</p>"},
+        "sections": [
+          {"slug":"state-observation","title":"1. State the observation","html":"<p>Describe what happened with enough detail that someone else could recognize the situation.</p>"},
+          {"slug":"explain-impact","title":"2. Explain the impact","html":"<p>Say what the event changed for you: time, clarity, confidence, completion, enjoyment, or another practical outcome.</p>"},
+          {"slug":"separate-preference","title":"3. Separate preference from defect","html":"<p>When something is mainly a preference, label it that way. This makes the feedback fairer and more useful.</p>"},
+          {"slug":"offer-suggestion","title":"4. Offer one suggestion","html":"<p>If you have a realistic improvement idea, add it briefly. Avoid turning the review into a full redesign brief unless that is actually requested.</p>"}
+        ]
+      }
+    },
+    "automatic-paycheck-to-savings": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited savings outcome claims with general financial-hygiene guidance centered on a small reversible automation and explicit affordability checks.",
+      "title": "Automatic Savings Rule",
+      "subtitle": "Make a small money decision once, then review it",
+      "description": "If essential obligations are covered, automate a modest transfer to savings and review whether the amount remains comfortable. This is general educational guidance, not individualized financial advice.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Automate a modest savings transfer only when it fits your actual cash obligations.",
+        "whatYouDo": "Review upcoming essential expenses, choose a small transfer amount you can change or cancel, schedule it after income arrives, and check that it does not create a shortfall.",
+        "checkIn": "Did the automation make saving easier without making bills, debt payments, or necessary spending harder to cover?"
+      },
+      "faq": [
+        {"id":"automatic-savings-rule-1","question":"How much should I automate?","answer":"There is no universal amount. Choose a level that fits your obligations and can be changed easily. If the transfer causes a shortfall, reduce or pause it."},
+        {"id":"automatic-savings-rule-2","question":"Should saving come before paying debt or bills?","answer":"Do not use this page to override contractual payments, essential expenses, or a financial plan that reflects your circumstances. The automation is only a convenience layer."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Automation can remove a repeated decision, but it should not hide the underlying cash-flow trade-off. Start small, keep the rule reversible, and review it when circumstances change.</p>"},
+        "sections": [
+          {"slug":"check-obligations","title":"1. Check essential obligations","html":"<p>Look at bills, contractual payments, necessary spending, and near-term cash needs before adding an automatic transfer.</p>"},
+          {"slug":"choose-reversible-amount","title":"2. Choose a reversible amount","html":"<p>Use an amount you can edit or stop without penalty. The point is convenience, not forcing yourself into a cash shortage.</p>"},
+          {"slug":"place-after-income","title":"3. Place it after income arrives","html":"<p>If your bank allows it, place the transfer after the relevant income is normally available rather than before.</p>"},
+          {"slug":"review-when-life-changes","title":"4. Review when circumstances change","html":"<p>Update or pause the rule after changes in income, expenses, debt obligations, or other important commitments.</p>"}
+        ]
+      }
+    },
+    "challenge-generalizations-counterexamples": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Retain a useful counterexample check while removing inherited NLP validation language and unsupported outcome claims.",
+      "title": "Counterexample Check",
+      "subtitle": "Test absolute statements against real exceptions",
+      "description": "When a statement uses words such as always, never, everyone, or nothing, look for one genuine exception before treating it as a rule.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Test an absolute statement by looking for a real counterexample.",
+        "whatYouDo": "Write the absolute statement, underline the universal word, and find one genuine case where the statement does not hold. Then rewrite the claim more precisely.",
+        "checkIn": "Did the counterexample change the claim, or was the original statement already precise enough to survive the check?"
+      },
+      "faq": [
+        {"id":"counterexample-check-1","question":"Is this an NLP technique?","answer":"The page lives in a legacy NLP collection, but the protocol itself is simply a logic check. It makes no claim about NLP as a method."},
+        {"id":"counterexample-check-2","question":"What if I cannot find a counterexample?","answer":"Keep the claim provisional and check whether it is narrow enough to be tested. Failure to find an exception quickly does not automatically make a broad statement true."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Absolute language can hide useful detail. A counterexample check forces a broad statement to meet at least one real exception before you use it as a rule.</p>"},
+        "sections": [
+          {"slug":"capture-claim","title":"1. Capture the exact claim","html":"<p>Write the sentence as it appears in your head or conversation. Preserve words such as always, never, everyone, nobody, impossible, or guaranteed.</p>"},
+          {"slug":"find-exception","title":"2. Find a genuine exception","html":"<p>Look for one real case that does not fit. Avoid inventing a hypothetical exception solely to win an argument.</p>"},
+          {"slug":"rewrite-precisely","title":"3. Rewrite more precisely","html":"<p>Replace the absolute statement with a narrower description that reflects what you actually know.</p>"},
+          {"slug":"choose-action","title":"4. Choose the action from the narrower claim","html":"<p>Make the next decision using the more precise version rather than the emotionally stronger one.</p>"}
+        ]
+      }
+    },
+    "ancestral-torch-resilience-tracker": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited ancestry and resilience-performance language with a neutral short reminder focused on a controllable next action.",
+      "title": "Short Resilience Reminder",
+      "subtitle": "Use one sentence to reconnect with a controllable next step",
+      "description": "Create a short phrase that acknowledges difficulty without pretending it is easy, then points back to one action you can still control.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Use a brief reminder that acknowledges difficulty and names the next controllable action.",
+        "whatYouDo": "Write one sentence in the form: This is difficult, and the next thing I can control is ___. Keep it specific to the current situation.",
+        "checkIn": "Did the phrase lead to a concrete action, or did it become empty motivation that you repeated without changing anything?"
+      },
+      "faq": [
+        {"id":"short-resilience-reminder-1","question":"Should the phrase sound positive?","answer":"Not necessarily. It should sound believable. A useful reminder can acknowledge that something is difficult while still pointing to a workable next step."},
+        {"id":"short-resilience-reminder-2","question":"Can I reuse the same phrase?","answer":"Yes, if it still directs attention toward a real action. Rewrite it when it becomes background noise."}
+      ],
+      "body": {
+        "intro": {"html":"<p>A short phrase is useful only when it changes what you do next. Keep the wording believable, specific, and connected to something under your control.</p>"},
+        "sections": [
+          {"slug":"name-difficulty","title":"1. Name the difficulty plainly","html":"<p>Avoid forced positivity. State the difficult part in a few words so the reminder does not require pretending.</p>"},
+          {"slug":"name-control","title":"2. Name what remains controllable","html":"<p>Choose one controllable behavior such as send the message, ask for help, reduce the scope, prepare the document, or rest before continuing.</p>"},
+          {"slug":"write-one-line","title":"3. Write one line","html":"<p>Keep the reminder short enough to remember. Its job is orientation, not inspiration.</p>"},
+          {"slug":"discard-if-empty","title":"4. Discard it if it becomes empty","html":"<p>If the phrase no longer changes attention or action, rewrite it or stop using it.</p>"}
+        ]
+      }
+    },
+    "decision-calibration-journal": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited quantum-themed decision claims with ordinary decision-hygiene journaling and an explicit boundary against using quantum mechanics as personal-decision justification.",
+      "title": "Decision Calibration Journal",
+      "subtitle": "Record what you expect, then compare it with what happened",
+      "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Record an uncertain expectation before the outcome is known, then compare it with what happened.",
+        "whatYouDo": "Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear.",
+        "checkIn": "Which assumption held, which one failed, and what would you change in a similar decision next time?"
+      },
+      "faq": [
+        {"id":"decision-calibration-journal-1","question":"What does this have to do with quantum mechanics?","answer":"Nothing operational. Quantum is a legacy collection label here. This protocol is ordinary decision hygiene and makes no claim that quantum mechanics improves personal decisions."},
+        {"id":"decision-calibration-journal-2","question":"Do I need numeric probabilities?","answer":"No. You can use plain labels such as low, medium, or high confidence. The important part is recording the expectation before you know the outcome."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Memory edits old predictions very conveniently. A calibration journal keeps a before-and-after record so you can compare what you expected with what actually happened.</p>"},
+        "sections": [
+          {"slug":"write-expectation","title":"1. Write the expectation first","html":"<p>Capture what you currently think will happen before the result is known.</p>"},
+          {"slug":"name-confidence","title":"2. Name your confidence","html":"<p>Use a simple confidence label and record the main reason behind it.</p>"},
+          {"slug":"capture-assumption","title":"3. Capture one key assumption","html":"<p>Name the condition that would most change your view if it turned out to be wrong.</p>"},
+          {"slug":"compare-later","title":"4. Compare later","html":"<p>When the outcome is clear, compare it with the original note and change one part of your future decision process if needed.</p>"}
+        ]
+      }
+    },
+    "ai-premortem-risk-planner": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited AI and risk-reduction claims with a bounded premortem workflow where AI generates possibilities and the user verifies them before acting.",
+      "title": "AI-Assisted Premortem",
+      "subtitle": "Ask an AI to generate failure modes, then verify them yourself",
+      "description": "Use an AI model as a brainstorming partner for possible failure modes, then verify important risks against the real plan before choosing mitigations.",
+      "references": [],
+      "lifeOsSource": {
+        "hack": "Use AI to widen a premortem list, not to decide which risks are real.",
+        "whatYouDo": "Describe the plan without sensitive information, ask an AI for plausible ways it could fail, group the suggestions, verify the important ones yourself, and choose mitigations only for risks that survive the check.",
+        "checkIn": "Which risks were genuinely relevant after verification, and which model suggestions were generic, impossible, or based on missing context?"
+      },
+      "faq": [
+        {"id":"ai-premortem-1","question":"What should I avoid sending to the AI?","answer":"Do not paste secrets, personal data, confidential client material, credentials, or information you are not allowed to share."},
+        {"id":"ai-premortem-2","question":"Should I treat every generated risk as real?","answer":"No. Model output is a list of possibilities. Verify high-impact items against the actual system, people, constraints, and available facts before acting."}
+      ],
+      "body": {
+        "intro": {"html":"<p>A premortem asks what could make a plan fail before the failure happens. An AI can widen the list quickly, but it does not know your full context and should not decide which risks deserve action.</p>"},
+        "sections": [
+          {"slug":"sanitize-context","title":"1. Sanitize the context","html":"<p>Describe the goal, constraints, and broad plan without sharing protected or confidential information.</p>"},
+          {"slug":"generate-failures","title":"2. Generate possible failures","html":"<p>Ask for concrete failure modes across people, process, dependencies, timing, data, cost, and assumptions.</p>"},
+          {"slug":"verify-important-items","title":"3. Verify important items","html":"<p>Check high-impact suggestions against the real plan. Delete generic, impossible, or context-free items.</p>"},
+          {"slug":"choose-mitigations","title":"4. Choose bounded mitigations","html":"<p>Add a prevention, detection, fallback, or owner only for risks that remain plausible after verification.</p>"}
+        ]
+      }
+    }
+  }
+}

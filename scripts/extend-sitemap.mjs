@@ -40,6 +40,7 @@ const routes = [
   "/evidence/",
   "/updates/",
   "/state/",
+  "/state/quality/",
   "/trends/evidence/",
   `/trends/evidence/${evidenceMonth}/`,
   ...researchGapRoutes,
@@ -58,8 +59,11 @@ if (missing.length) {
 
 console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added.`);
 
+await import('./run-sitewide-quality-loop.mjs');
+await import('./finalize-zone-quality-views.mjs');
 await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');
 await import('./check-research-gaps.mjs');
+await import('./check-sitewide-quality-loop.mjs');

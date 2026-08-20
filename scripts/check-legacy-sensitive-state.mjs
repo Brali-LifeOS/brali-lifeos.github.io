@@ -27,19 +27,32 @@ const expectedEmptySlugs = expectedEmpty.map(row => row.zone_slug).sort();
 const actualEmptySlugs = (state.empty_legacy_collections ?? []).map(row => row.zone_slug).sort();
 if (JSON.stringify(expectedEmptySlugs) !== JSON.stringify(actualEmptySlugs)) fail('empty legacy membership drift');
 
+const verifyZoneSurface = collection => {
+  if (!collection.decision_reason || !collection.next_action || !collection.scope_note) fail(`${collection.zone_slug} missing trust-boundary metadata`);
+  const pagePath = path.join(ROOT, 'life-os', collection.zone_slug, 'index.html');
+  const machinePath = path.join(ROOT, 'life-os', collection.zone_slug, 'index.json');
+  if (!fs.existsSync(pagePath) || !fs.existsSync(machinePath)) fail(`missing archive surface for ${collection.zone_slug}`);
+  const pageHtml = fs.readFileSync(pagePath, 'utf8');
+  if (!/<meta\s+name=["']robots["'][^>]*noindex/i.test(pageHtml)) fail(`${collection.zone_slug} archive page must remain noindex`);
+  if (!pageHtml.includes('data-legacy-trust-boundary="true"')) fail(`${collection.zone_slug} is missing visible archive trust banner`);
+  if (!pageHtml.includes('/state/legacy-sensitive/')) fail(`${collection.zone_slug} banner does not link trust state`);
+  const machine = read(`life-os/${collection.zone_slug}/index.json`);
+  if (machine.recommendation_status !== collection.recommendation_status) fail(`${collection.zone_slug} machine recommendation status drift`);
+  if (machine.trust_boundary?.disposition !== collection.disposition) fail(`${collection.zone_slug} machine disposition drift`);
+  if (machine.trust_boundary?.trusted_protocols !== 0) fail(`${collection.zone_slug} machine trust boundary must report zero trusted protocols`);
+  if (!String(machine.trust_boundary?.state_url || '').endsWith('/state/legacy-sensitive/')) fail(`${collection.zone_slug} machine trust boundary missing state URL`);
+};
+
 for (const collection of state.collections ?? []) {
   if (collection.disposition !== 'legacy-sensitive') fail(`${collection.zone_slug} is not legacy-sensitive`);
   if (collection.recommendation_status !== 'archive-only') fail(`${collection.zone_slug} must be archive-only`);
   if (Number(collection.entry_count || 0) <= 0) fail(`${collection.zone_slug} must contain legacy entries`);
   if (Number(collection.trusted_protocols || 0) !== 0) fail(`${collection.zone_slug} unexpectedly has trusted protocols`);
-  if (!collection.decision_reason || !collection.next_action || !collection.scope_note) fail(`${collection.zone_slug} missing trust-boundary metadata`);
-  const pagePath = path.join(ROOT, 'life-os', collection.zone_slug, 'index.html');
-  if (!fs.existsSync(pagePath)) fail(`missing archive page for ${collection.zone_slug}`);
-  const pageHtml = fs.readFileSync(pagePath, 'utf8');
-  if (!/<meta\s+name=["']robots["'][^>]*noindex/i.test(pageHtml)) fail(`${collection.zone_slug} archive page must remain noindex`);
+  verifyZoneSurface(collection);
 }
 for (const collection of state.empty_legacy_collections ?? []) {
-  if (collection.disposition !== 'empty-legacy' || Number(collection.entry_count || 0) !== 0) fail(`${collection.zone_slug} empty legacy state is invalid`);
+  if (collection.disposition !== 'empty-legacy' || collection.recommendation_status !== 'empty-legacy' || Number(collection.entry_count || 0) !== 0) fail(`${collection.zone_slug} empty legacy state is invalid`);
+  verifyZoneSurface(collection);
 }
 
 const htmlPath = path.join(ROOT, 'state/legacy-sensitive/index.html');
@@ -60,4 +73,4 @@ const manifestEntry = (manifest.files ?? []).find(entry => (typeof entry === 'st
 if (!manifestEntry) fail('canonical manifest does not include legacy-sensitive dataset');
 if (manifest.legacy_sensitive_collections?.archive_only_sensitive_collections !== expectedSensitive.length) fail('manifest legacy-sensitive summary drift');
 
-console.log(`Legacy sensitive state verified: ${expectedSensitive.length} archive-only sensitive collections, ${expectedEntryCount} withheld legacy entries, ${expectedEmpty.length} empty legacy collection(s), all archive pages noindex.`);
+console.log(`Legacy sensitive state verified: ${expectedSensitive.length} archive-only sensitive collections, ${expectedEntryCount} withheld legacy entries, ${expectedEmpty.length} empty legacy collection(s), all zone pages noindex with visible + machine-readable trust boundaries.`);

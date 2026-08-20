@@ -8,7 +8,9 @@ await import('./build-evidence-ledger.mjs');
 await import('./build-research-gaps.mjs');
 await import('./sync-research-gap-manifest.mjs');
 await import('./build-zone-coverage-backlog.mjs');
+await import('./build-legacy-sensitive-state.mjs');
 await import('./sync-zone-coverage-backlog-manifest.mjs');
+await import('./sync-legacy-sensitive-manifest.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -43,6 +45,7 @@ const routes = [
   "/updates/",
   "/state/",
   "/state/quality/",
+  "/state/legacy-sensitive/",
   "/trends/evidence/",
   `/trends/evidence/${evidenceMonth}/`,
   ...researchGapRoutes,
@@ -69,4 +72,5 @@ await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');
 await import('./check-research-gaps.mjs');
 await import('./check-zone-coverage-backlog.mjs');
+await import('./check-legacy-sensitive-state.mjs');
 await import('./check-sitewide-quality-loop.mjs');

@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "refocus-present-stop-mind-wandering": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited generic mind-wandering and treatment-like claims with a narrow auditory attention-flexibility drill that matches core Attention Training Technique operations described in systematic-review literature: externally focused selective attention, deliberate switching, and divided attention. Preserve uncertainty about clinical effects and do not present the simplified drill as Metacognitive Therapy or a treatment.",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "subtitle": "Practice selecting, switching, and broadening external attention",
+      "description": "Use several neutral sounds around you to practice deliberately selecting one sound, switching to another, and then noticing several at once. Treat this as an attention-flexibility drill, not a treatment for worry, anxiety, or another condition.",
+      "references": [
+        {
+          "title": "Cognitive and neuropsychological correlates of the attention training technique: a systematic review and evidence synthesis",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
+          "publisher": "Frontiers in Psychiatry"
+        },
+        {
+          "title": "A randomized experimental analysis of the attention training technique: Effects on worry and relevant processes in individuals with probable generalized anxiety disorder",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33872957/",
+          "publisher": "Behaviour Research and Therapy"
+        },
+        {
+          "title": "A Systematic Review of Efficacy of the Attention Training Technique in Clinical and Nonclinical Samples",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27129094/",
+          "publisher": "Journal of Clinical Psychology"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Practice deliberately moving external attention among several neutral sounds.",
+        "whatYouDo": "Find a safe place with several ordinary sounds. Attend closely to one sound without needing to block the others. Deliberately switch to a second and then a third sound. Finish by broadening attention so several sounds can be noticed together. Keep the exercise brief and stop when you choose.",
+        "checkIn": "Could you intentionally select, switch, and broaden attention? Record the skill you practiced, not whether worry or another symptom changed.",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
+        "reference": "Attention Training Technique is an auditory metacognitive intervention using externally focused selective attention, attention switching, and divided attention. Recent systematic-review evidence describes possible attentional effects but variable study quality, while a randomized study in probable generalized anxiety disorder did not find ATT superior to its control condition on worry outcomes."
+      },
+      "faq": [
+        {
+          "id": "attention-switching-1",
+          "question": "Is this the standard Attention Training Technique or Metacognitive Therapy?",
+          "answer": "No. It is a simplified educational drill based on the attention operations described in ATT research. Formal ATT has a defined protocol, and Metacognitive Therapy is a broader treatment."
+        },
+        {
+          "id": "attention-switching-2",
+          "question": "Will this reduce worry or anxiety?",
+          "answer": "Brali does not make that promise. Research on ATT is mixed across outcomes and study designs; one randomized study in people with probable generalized anxiety disorder found no advantage over the control condition for worry measures."
+        },
+        {
+          "id": "attention-switching-3",
+          "question": "What should I measure?",
+          "answer": "Measure the controllable skill: whether you could deliberately select one sound, switch attention when intended, and broaden attention afterward. Do not treat a short-term symptom change as proof of treatment effect."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Attention Training Technique research describes deliberate practice in externally focused selective attention, switching attention, and dividing or broadening attention. Brali extracts those observable attention operations into a small educational drill while keeping the clinical claims outside the protocol.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-sounds",
+            "title": "1. Choose several neutral sounds",
+            "html": "<p>Use ordinary sounds in a safe environment: ventilation, distant traffic, birds, footsteps, a clock, or other neutral background sounds. You do not need special audio or headphones.</p>"
+          },
+          {
+            "slug": "select-one",
+            "title": "2. Select one sound",
+            "html": "<p>Direct attention toward one sound and notice its changes. The goal is not to erase other sounds but to practice choosing the current target.</p>"
+          },
+          {
+            "slug": "switch-deliberately",
+            "title": "3. Switch deliberately",
+            "html": "<p>Choose a different sound and move attention to it on purpose. Repeat with another sound. Notice the act of switching rather than judging whether concentration feels perfect.</p>"
+          },
+          {
+            "slug": "broaden-attention",
+            "title": "4. Broaden attention",
+            "html": "<p>Finish by allowing several sounds into awareness together. This changes the task from selecting one target to holding a wider external field.</p>"
+          },
+          {
+            "slug": "evidence-boundary",
+            "title": "Evidence boundary",
+            "html": "<p>ATT has been studied as a metacognitive intervention, but evidence varies by sample, outcome, protocol fidelity, and study quality. A recent systematic review found a mixed-quality evidence base, and a randomized study of probable generalized anxiety disorder did not find ATT superior to control for worry outcomes. This simplified Brali drill therefore claims only to practice attention selection and switching.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

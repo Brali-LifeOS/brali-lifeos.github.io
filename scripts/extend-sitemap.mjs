@@ -66,6 +66,7 @@ console.log(`Sitemap static routes: ${routes.length - missing.length} already pr
 
 await import('./run-sitewide-quality-loop.mjs');
 await import('./finalize-zone-quality-views.mjs');
+await import('./apply-legacy-sensitive-zone-banners.mjs');
 await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');

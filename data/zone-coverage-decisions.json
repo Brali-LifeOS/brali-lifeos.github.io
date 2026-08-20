@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "purpose": "Editorial dispositions for Growth Zones that remain without a trusted starter. These decisions describe Brali's current public-content and source-match state; they are not judgments that a therapy or school has no evidence.",
+  "allowed_dispositions": ["legacy-sensitive", "needs-new-protocol", "empty-legacy"],
+  "zones": {
+    "cognitive-analytic": {
+      "disposition": "legacy-sensitive",
+      "reason": "The current Brali entries are therapy-derived and source-free. None has yet been reviewed as a bounded, low-risk standalone public protocol with a directly matching authoritative source.",
+      "next_action": "Review the existing pattern-mapping candidates against primary or authoritative Cognitive Analytic Therapy sources before considering a narrowly educational starter. Keep all current entries restricted meanwhile."
+    },
+    "ericksonian": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited entries mix communication, suggestion and therapeutic framing. Brali does not yet have a reviewed source-to-protocol match that justifies normal trusted recommendation.",
+      "next_action": "Separate ordinary communication/reframing ideas from therapeutic suggestion claims, then review any candidate against a directly relevant source before publication."
+    },
+    "gestalt": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited experiential exercises are therapy-branded and source-free. Their current wording is not suitable for automatic self-help recommendation without a narrower evidence and safety boundary.",
+      "next_action": "Identify a concrete low-risk awareness exercise with a directly matching authoritative or peer-reviewed source, or keep the collection archive-only."
+    },
+    "metacognitive": {
+      "disposition": "needs-new-protocol",
+      "reason": "There is contemporary evidence on metacognitive therapy components such as Attention Training Technique, but the current Brali candidates do not cleanly implement that intervention. Attaching ATT evidence to an unrelated uncertainty-coach page would create a source mismatch.",
+      "next_action": "Create a new canonical ATT-compatible protocol from reviewed evidence instead of retrofitting a mismatched legacy entry. Until then, keep the legacy Metacognitive collection restricted."
+    },
+    "psychodynamic": {
+      "disposition": "legacy-sensitive",
+      "reason": "The current reflection exercises inherit psychodynamic causal language without direct reviewed sources. Brali cannot safely turn theory-derived interpretations into normal recommendations by taxonomy alone.",
+      "next_action": "If retained, redesign a candidate around observation or reflection without causal interpretation and review it against a directly matching source; otherwise keep archive-only."
+    },
+    "stratagema": {
+      "disposition": "empty-legacy",
+      "reason": "The stable legacy Growth Zone exists for compatibility but currently contains no entries.",
+      "next_action": "Do not invent filler content to reach nominal 49/49 coverage. Add content only when a real, reviewed protocol belongs here."
+    }
+  }
+}

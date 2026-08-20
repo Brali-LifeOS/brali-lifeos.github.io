@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "dbt-distress-tolerance-coach": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited cold-exposure instructions, physiological claims and treatment-like outcome claims with a conservative pause-and-observe exercise aligned to authoritative descriptions of DBT distress-tolerance and mindfulness skills. Preserve the systematic-review boundary that DBT skills training alone is not established as equivalent to full DBT.",
+      "title": "Pause Before Acting on a High-Stress Urge",
+      "subtitle": "A bounded DBT-informed distress-tolerance pause, not crisis treatment",
+      "description": "When a situation is safe enough to pause, notice the urge to react, describe what is happening, choose a harmless short delay, and then reassess the next action. This is not full DBT or crisis care.",
+      "references": [
+        {
+          "title": "Dialectical behaviour therapy (DBT)",
+          "url": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
+          "publisher": "Dorset HealthCare University NHS Foundation Trust"
+        },
+        {
+          "title": "The use of dialectical behavior therapy skills training as stand-alone treatment: a systematic review of the treatment outcome literature",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25042066/",
+          "publisher": "Journal of Clinical Psychology"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "If a difficult moment is safe enough to pause, notice the urge to react and give yourself a short harmless delay before choosing the next action.",
+        "whatYouDo": "Pause. Describe the situation in one factual sentence and name the action urge without judging it. Choose a harmless brief activity that creates time rather than escalating the situation. Then reassess what action is safest and most useful.",
+        "checkIn": "Did you create a pause without making the situation worse, and what safe next action did you choose? Do not score success by whether the emotion disappeared.",
+        "sourceUrl": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
+        "reference": "Dorset HealthCare describes DBT distress tolerance as learning to tolerate emotional pain in difficult situations rather than immediately changing it, alongside mindfulness and other skills. A systematic review found preliminary support for stand-alone DBT skills training but concluded that methodological limitations prevent strong efficacy conclusions."
+      },
+      "faq": [
+        {
+          "id": "dbt-pause-1",
+          "question": "Is this the same as DBT treatment?",
+          "answer": "No. Full DBT is a structured treatment with multiple components. This page presents one small educational exercise inspired by distress-tolerance and mindfulness skills, not a replacement for DBT."
+        },
+        {
+          "id": "dbt-pause-2",
+          "question": "Should I use this during a crisis or when I may harm myself or someone else?",
+          "answer": "No. This protocol assumes the situation is safe enough for an ordinary pause. It is not crisis planning or emergency support. Use appropriate professional or emergency support when safety is at risk."
+        },
+        {
+          "id": "dbt-pause-3",
+          "question": "Why does this version not use ice water or extreme cold?",
+          "answer": "Brali deliberately keeps this public starter low risk. It does not prescribe cold exposure, breath holding, or other physiological maneuvers that can require additional safety screening and context."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>DBT includes mindfulness, distress tolerance, emotion regulation and interpersonal-effectiveness skills. This Brali page uses only a narrow idea from the first two: notice what is happening, create a safe pause, and avoid making a difficult moment worse. It is not a compressed version of DBT treatment.</p>"
+        },
+        "sections": [
+          {
+            "slug": "check-safety",
+            "title": "1. Check that a pause is appropriate",
+            "html": "<p>Use this only when the situation is safe enough to stop briefly. If there is immediate danger, a medical emergency, or risk of harm, move to appropriate real-world support instead of this exercise.</p>"
+          },
+          {
+            "slug": "observe-describe",
+            "title": "2. Observe and describe",
+            "html": "<p>State the situation in one factual sentence. Then name the urge you notice, such as leaving, sending a message, arguing, buying something, or avoiding the task. An urge is information, not an instruction.</p>"
+          },
+          {
+            "slug": "short-safe-delay",
+            "title": "3. Create a harmless short delay",
+            "html": "<p>Choose a brief action that does not escalate the problem: sit somewhere safe, drink ordinary water, walk to another room, write the unsent message in notes, or do another neutral activity. The purpose is simply to create time before acting.</p>"
+          },
+          {
+            "slug": "reassess",
+            "title": "4. Reassess the next action",
+            "html": "<p>After the pause, ask what action is safest, useful and consistent with your responsibilities. The emotion does not have to disappear for the pause to have done its job.</p>"
+          },
+          {
+            "slug": "evidence-boundary",
+            "title": "Evidence and care boundary",
+            "html": "<p>DBT skills are normally taught within a broader structured treatment. Research on skills training used alone is promising in some settings but does not justify treating this simplified exercise as equivalent to full DBT or as a treatment for a mental-health condition.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

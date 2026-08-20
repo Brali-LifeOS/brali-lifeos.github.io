@@ -68,4 +68,5 @@ await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');
 await import('./check-research-gaps.mjs');
+await import('./check-zone-coverage-backlog.mjs');
 await import('./check-sitewide-quality-loop.mjs');

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "goal-journaling-insights": {
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited goal-journaling article containing fabricated adherence percentages, first-person observations, app-era instructions and unsupported outcome claims with a compact low-risk reflection protocol.",
+      "forbidden_public_fragments": [
+        "adherence tends to rise by about 30%",
+        "increases adherence by 20–40%",
+        "We observed a 50% drop in adherence",
+        "adherence rose by ~30%",
+        "improves follow-through by roughly 25%",
+        "At MetalHatsCats",
+        "Use the Brali LifeOS app"
+      ],
+      "title": "Goal Journal Review",
+      "subtitle": "Track what happened, then adjust one thing",
+      "description": "Use a short goal journal to capture what you planned, what actually happened, what got in the way, and one adjustment for the next attempt.",
+      "lifeOsSource": {
+        "hack": "Keep a short goal journal. Record the intended action, what actually happened, one useful observation, and one adjustment for the next attempt.",
+        "whatYouDo": "After a meaningful work session or at a regular review point, write four short lines: what I intended, what happened, what helped or blocked me, and what I will change next.",
+        "checkIn": "Did the journal produce one concrete adjustment, or did it become another place to write without changing anything?"
+      },
+      "faq": [
+        {
+          "id": "goal-journaling-insights-faq-1",
+          "question": "How long should a goal journal entry be?",
+          "answer": "Keep it only as long as needed to preserve a useful observation and a next adjustment. A few short lines are enough when they help you make a better next decision."
+        },
+        {
+          "id": "goal-journaling-insights-faq-2",
+          "question": "What should I write when nothing went as planned?",
+          "answer": "Describe the constraint without judging yourself, then identify the smallest change you can test next. If the problem was missing access, time, information, or another dependency, record that directly."
+        },
+        {
+          "id": "goal-journaling-insights-faq-3",
+          "question": "Should I track lots of numbers?",
+          "answer": "Only when a number genuinely helps the decision. One simple measure can be useful, but the journal does not need to become a dashboard."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A goal journal is useful when it turns experience into a better next choice. The aim is not to produce a long diary or manufacture a streak. Capture enough context to understand what happened, then make one concrete adjustment.</p>"
+        },
+        "sections": [
+          {
+            "slug": "write-the-intention",
+            "title": "1. Write the intended action",
+            "html": "<p>Name what you meant to do in concrete terms. Prefer an observable action such as draft the outline, take the walk, or review ten cards over a broad label such as be productive.</p>"
+          },
+          {
+            "slug": "record-what-happened",
+            "title": "2. Record what actually happened",
+            "html": "<p>Write the result plainly. Include useful context such as an interruption, missing information, unexpected difficulty, or a choice that helped you continue.</p>"
+          },
+          {
+            "slug": "separate-observation-from-story",
+            "title": "3. Separate observation from explanation",
+            "html": "<p>Distinguish what you can observe from the explanation you are tempted to attach to it. Missing one planned session is an observation. Deciding that you lack discipline is an interpretation, and usually a poor basis for the next action.</p>"
+          },
+          {
+            "slug": "choose-one-adjustment",
+            "title": "4. Choose one adjustment",
+            "html": "<p>Change one practical variable for the next attempt: reduce the scope, move the time, prepare a missing resource, remove a predictable interruption, or define a clearer first action.</p>"
+          },
+          {
+            "slug": "review-patterns-later",
+            "title": "5. Review patterns only when enough entries exist",
+            "html": "<p>Do not overinterpret one day. When several entries point to the same obstacle or helpful condition, decide whether it deserves a more durable change.</p>"
+          },
+          {
+            "slug": "keep-it-if-it-changes-decisions",
+            "title": "6. Keep the journal only if it changes decisions",
+            "html": "<p>If entries accumulate but never affect what you do next, simplify the format or stop using it. The journal is a feedback tool, not an obligation.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

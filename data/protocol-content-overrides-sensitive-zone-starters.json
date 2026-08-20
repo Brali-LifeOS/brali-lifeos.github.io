@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "abdominal-breathing-stress-relief": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited physiological percentages, fixed breathing rates and treatment-adjacent claims with a conservative diaphragmatic-breathing exercise aligned to current NCCIH guidance and explicit care boundaries.",
+      "title": "Comfortable Diaphragmatic Breathing",
+      "subtitle": "Use slow, comfortable breathing as a relaxation exercise",
+      "description": "Try a few slow, comfortable breaths while noticing the abdomen move. Keep the exercise easy, stop if it feels uncomfortable, and do not use it instead of medical care.",
+      "references": [
+        {
+          "title": "Relaxation Techniques: What You Need To Know",
+          "url": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+          "publisher": "National Center for Complementary and Integrative Health"
+        },
+        {
+          "title": "5 Things To Know About Relaxation Techniques for Stress",
+          "url": "https://www.nccih.nih.gov/health/tips/things-to-know-about-relaxation-techniques-for-stress",
+          "publisher": "National Center for Complementary and Integrative Health"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Use a few slow, comfortable diaphragmatic breaths as a brief relaxation exercise.",
+        "whatYouDo": "Sit or lie in a comfortable position, let the breath slow without forcing a count, notice the abdomen rise and fall, and stop after a few easy cycles or whenever you prefer.",
+        "checkIn": "Did the exercise feel comfortable and leave you ready for the next ordinary action? Stop if you feel dizzy, short of breath, distressed, or otherwise unwell.",
+        "sourceUrl": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+        "reference": "NCCIH describes slow, deep or diaphragmatic breathing as a relaxation technique and notes that evidence for specific health conditions is limited; relaxation practices should not replace conventional care."
+      },
+      "faq": [
+        {"id":"diaphragmatic-breathing-1","question":"Do I need a fixed breathing ratio or target rate?","answer":"No. This protocol deliberately avoids a required count. Use a pace that feels comfortable and unforced."},
+        {"id":"diaphragmatic-breathing-2","question":"Is this a treatment for anxiety, blood pressure, or another condition?","answer":"No. Brali presents it as a general relaxation exercise. It is not a diagnosis or treatment and should not replace care recommended by a health professional."},
+        {"id":"diaphragmatic-breathing-3","question":"When should I stop?","answer":"Stop if the exercise causes dizziness, shortness of breath, distress, pain, or other concerning symptoms. Return to normal breathing and seek appropriate care when needed."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Diaphragmatic breathing is one form of relaxation practice. Brali keeps the exercise deliberately simple: comfortable posture, unforced breathing, brief attention to abdominal movement, and no promise that one breathing pattern treats a health condition.</p>"},
+        "sections": [
+          {"slug":"get-comfortable","title":"1. Get comfortable","html":"<p>Sit or lie in a position where breathing feels easy. Relax unnecessary tension in the shoulders and jaw.</p>"},
+          {"slug":"notice-abdomen","title":"2. Notice the abdomen move","html":"<p>Let the breath become slower if that happens comfortably. Notice the abdomen rise on the inhale and fall on the exhale without trying to maximize depth.</p>"},
+          {"slug":"avoid-forcing","title":"3. Avoid forcing a count","html":"<p>You do not need to reach a particular breaths-per-minute target or hold your breath. Comfort is a better boundary for a general-purpose relaxation exercise.</p>"},
+          {"slug":"keep-care-boundary","title":"4. Keep the care boundary","html":"<p>Relaxation techniques can be used alongside ordinary self-care, but they are not a substitute for medical or mental-health care. Stop the exercise if it feels unwell or unsafe.</p>"}
+        ]
+      }
+    },
+    "cbt-action-mood-tracker": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited mood-improvement percentages and pseudo-trial language with a bounded observation worksheet consistent with NHS descriptions of CBT, worksheets/diaries and links between situations, thoughts, feelings and actions.",
+      "title": "Action and Mood Observation Note",
+      "subtitle": "Record what you did and what you noticed afterward",
+      "description": "Use a short note to compare an activity with what you noticed before and after it. Treat the note as observation, not proof that an activity caused a mood change.",
+      "references": [
+        {
+          "title": "Cognitive behavioural therapy (CBT)",
+          "url": "https://www.nhs.uk/tests-and-treatments/cognitive-behavioural-therapy-cbt/",
+          "publisher": "NHS"
+        },
+        {
+          "title": "Thought record CBT exercise",
+          "url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/self-help-cbt-techniques/thought-record/",
+          "publisher": "NHS Every Mind Matters"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Record one activity and what you noticed before and after it.",
+        "whatYouDo": "Write the situation, the activity you chose, how you felt before, and how you felt afterward. Add one alternative explanation so the note does not turn correlation into certainty.",
+        "checkIn": "What did you observe, and what would be worth trying or discussing next without assuming the activity caused the change?",
+        "sourceUrl": "https://www.nhs.uk/tests-and-treatments/cognitive-behavioural-therapy-cbt/",
+        "reference": "NHS describes CBT as working with difficult situations and how people think, feel and act, often using practice between sessions and worksheets or diaries."
+      },
+      "faq": [
+        {"id":"action-mood-note-1","question":"Is this the same as receiving CBT?","answer":"No. It is a simple educational observation note inspired by common CBT-style recording practices. Formal CBT involves a structured therapeutic process and may involve a trained therapist."},
+        {"id":"action-mood-note-2","question":"Does feeling better after an activity prove the activity caused it?","answer":"No. Many things can change at the same time. Record the observation and, when useful, test the pattern again rather than treating one entry as proof."},
+        {"id":"action-mood-note-3","question":"What if writing about the situation makes distress worse?","answer":"Stop the exercise. A self-guided note is optional and should not replace professional support when distress is significant or persistent."}
+      ],
+      "body": {
+        "intro": {"html":"<p>A short activity note can make a vague impression more inspectable. The purpose is to record what happened and compare observations, not to diagnose yourself or prove that one behavior caused a particular feeling.</p>"},
+        "sections": [
+          {"slug":"name-situation","title":"1. Name the situation","html":"<p>Write a short factual description of what was happening before the activity. Keep interpretation separate from the event where possible.</p>"},
+          {"slug":"record-before","title":"2. Record the before state","html":"<p>Use a few words to describe how you felt or what you were thinking before the activity. A numeric rating is optional, not required.</p>"},
+          {"slug":"record-action-after","title":"3. Record the action and after state","html":"<p>Write what you actually did and what you noticed afterward. Do not rewrite the plan as if it happened.</p>"},
+          {"slug":"add-alternative","title":"4. Add an alternative explanation","html":"<p>Ask what else might have influenced the change. This keeps the note useful as an observation instead of turning it into an unsupported causal claim.</p>"}
+        ]
+      }
+    },
+    "cardio-health-daily-habits": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited cardiology imitation, detailed diet/sleep prescriptions and unsupported risk percentages with a narrow movement-planning protocol grounded in American Heart Association physical-activity guidance.",
+      "title": "Build Toward a Weekly Movement Baseline",
+      "subtitle": "Turn general activity guidance into a realistic weekly plan",
+      "description": "Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine.",
+      "references": [
+        {
+          "title": "Life's Essential 8 - How to Be More Active Fact Sheet",
+          "url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
+          "publisher": "American Heart Association"
+        },
+        {
+          "title": "American Heart Association Recommendations for Physical Activity in Adults and Kids",
+          "url": "https://www.heart.org/en/healthy-living/exercise-and-physical-activity/fitness-basics/aha-recs-for-physical-activity-in-adults",
+          "publisher": "American Heart Association"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Translate broad physical-activity guidance into a realistic weekly movement plan.",
+        "whatYouDo": "Look at the coming week, mark the activity you already do, then add realistic walking, moderate or vigorous activity, and strength sessions where they fit. Build gradually rather than treating the guideline as a one-day target.",
+        "checkIn": "Does the plan fit your current ability, schedule and any guidance from your health professional? Adjust it rather than forcing a target that is inappropriate for you.",
+        "sourceUrl": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
+        "reference": "The American Heart Association recommends that adults aim for at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, or a combination, and include muscle-strengthening activity."
+      },
+      "faq": [
+        {"id":"weekly-movement-baseline-1","question":"Do I need to complete 150 minutes immediately?","answer":"No. The weekly recommendation is a direction, not a demand to jump from your current level to the full target at once. Build activity in a way that fits your abilities and circumstances."},
+        {"id":"weekly-movement-baseline-2","question":"What counts as moderate activity?","answer":"The AHA includes examples such as walking, dancing and gardening. The appropriate intensity depends on the person and activity."},
+        {"id":"weekly-movement-baseline-3","question":"What if I have symptoms or a medical condition?","answer":"Use guidance from your health professional when it applies. This Brali page is general educational material, not an individualized exercise prescription."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Heart-health guidance is much more useful when it becomes a weekly plan instead of a pile of heroic intentions. This protocol uses the American Heart Association activity baseline as orientation while keeping the actual plan adaptable to the person.</p>"},
+        "sections": [
+          {"slug":"audit-current","title":"1. Mark what you already do","html":"<p>Start with the walking, active commuting, exercise, sport or strength work already present in a normal week. Do not erase existing movement just because it is informal.</p>"},
+          {"slug":"find-slots","title":"2. Find realistic activity slots","html":"<p>Choose several places where additional movement can fit without requiring a complete lifestyle redesign.</p>"},
+          {"slug":"build-gradually","title":"3. Build toward the weekly baseline","html":"<p>The AHA baseline for adults is at least 150 minutes of moderate aerobic activity or 75 minutes of vigorous activity per week, or a combination. Add toward it gradually when appropriate rather than treating it as an all-or-nothing threshold.</p>"},
+          {"slug":"adapt-safely","title":"4. Adapt to your situation","html":"<p>Health conditions, symptoms, pregnancy, disability, medications and current fitness can change what is appropriate. Follow individualized medical advice when you have it.</p>"}
+        ]
+      }
+    },
+    "daily-gratitude-journal-three-things": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited well-being percentages, fixed dosage claims and therapy framing with a lightweight gratitude reflection that preserves the small/mixed evidence boundary and does not substitute for mental-health care.",
+      "title": "Specific Gratitude Note",
+      "subtitle": "Notice one to three concrete things without forcing positivity",
+      "description": "Write one to three specific things you appreciated and why they mattered. Keep the practice optional and factual; gratitude is not a requirement to feel positive or a substitute for care.",
+      "references": [
+        {
+          "title": "A meta-analysis of the effectiveness of gratitude interventions on well-being across cultures",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40627390/",
+          "publisher": "Journal of Positive Psychology"
+        },
+        {
+          "title": "A systematic review of gratitude interventions: Effects on physical health and health behaviors",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/32590219/",
+          "publisher": "Journal of Psychosomatic Research"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Write one to three specific things you appreciated, without requiring yourself to feel better afterward.",
+        "whatYouDo": "Choose one to three concrete moments, people, resources or actions from the day. Write what happened and one sentence about why it mattered to you. Skip the practice when it feels forced or unhelpful.",
+        "checkIn": "Did the note help you notice something specific, or did it feel mechanical, invalidating, or like another obligation? Keep, change, or drop it accordingly.",
+        "sourceUrl": "https://pubmed.ncbi.nlm.nih.gov/40627390/",
+        "reference": "A 2025 preregistered meta-analysis across 145 papers found a small overall increase in well-being from gratitude interventions, with meaningful cross-country variability; other systematic reviews find several physical-health outcomes mixed or under-studied."
+      },
+      "faq": [
+        {"id":"specific-gratitude-note-1","question":"Do I need to write exactly three things every day?","answer":"No. One specific item can be enough. The evidence does not justify treating three items or a daily schedule as a universal optimum."},
+        {"id":"specific-gratitude-note-2","question":"Should this make me feel better immediately?","answer":"Not necessarily. Effects reported across studies are generally modest and variable. Brali treats the note as an optional reflection practice, not a guaranteed mood intervention."},
+        {"id":"specific-gratitude-note-3","question":"What if gratitude feels wrong during grief or severe distress?","answer":"Do not force it. You can skip the practice entirely. It is not a substitute for appropriate support or mental-health care."}
+      ],
+      "body": {
+        "intro": {"html":"<p>Gratitude exercises have been studied widely, but the useful boundary matters: average effects are modest, outcomes vary, and a gratitude list is not a treatment plan. Brali therefore keeps the practice small, optional and specific.</p>"},
+        "sections": [
+          {"slug":"choose-specific","title":"1. Choose something specific","html":"<p>Pick one to three concrete moments, people, resources or actions rather than a generic category such as “everything” or “life.”</p>"},
+          {"slug":"say-why","title":"2. Say why it mattered","html":"<p>Add one short sentence about why the item mattered to you. Description is enough; there is no requirement to produce a strong positive emotion.</p>"},
+          {"slug":"avoid-forcing","title":"3. Do not force positivity","html":"<p>Gratitude should not be used to erase grief, anger, fear or legitimate problems. Skip the exercise when it feels invalidating or mechanical.</p>"},
+          {"slug":"review-usefulness","title":"4. Review whether it is useful","html":"<p>After several uses, ask whether the note changes what you notice or value. If it simply creates another obligation, reduce the frequency or stop.</p>"}
+        ]
+      }
+    }
+  }
+}

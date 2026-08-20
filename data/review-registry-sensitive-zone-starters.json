@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "description": "Source-backed starter protocols for sensitive legacy Growth Zones. A reviewed status applies only to the bounded public protocol and its stated evidence boundary; it does not validate the entire legacy therapy or professional collection.",
+  "evidence_overrides": {
+    "abdominal-breathing-stress-relief": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against current NCCIH relaxation guidance. Public copy is limited to comfortable diaphragmatic breathing as a general relaxation exercise, removes fixed-rate and treatment claims, and explicitly says not to replace conventional care."
+    },
+    "cbt-action-mood-tracker": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against NHS CBT and thought-record guidance. Public copy is an educational observation worksheet about situation, action and before/after experience; it is not presented as formal CBT, diagnosis, treatment, or proof of causality."
+    },
+    "cardio-health-daily-habits": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against American Heart Association physical-activity guidance. Public copy is narrowed to planning movement toward the adult weekly activity baseline, with explicit adaptation to ability and professional medical advice."
+    },
+    "daily-gratitude-journal-three-things": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against recent gratitude meta-analysis and systematic-review evidence. Public copy preserves the small/variable-effect boundary, removes fixed dosage and guaranteed mood claims, and says not to force gratitude or substitute it for mental-health care."
+    }
+  },
+  "ontology_overrides": {
+    "abdominal-breathing-stress-relief": {
+      "topic_ids": ["stress-regulation"],
+      "method_ids": ["body-oriented"],
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol is a conservative body-focused relaxation exercise for everyday stress. Stress Regulation is the concrete Topic; Body-oriented remains a sensitive Method classification rather than an efficacy claim for body-oriented therapy."
+    },
+    "cbt-action-mood-tracker": {
+      "topic_ids": ["self-awareness", "emotion-regulation"],
+      "method_ids": ["cbt"],
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol records situation, action and observed before/after state. Self-Awareness and Emotion Regulation are the concrete Topics; CBT-derived identifies the source tradition with an explicit non-therapy boundary."
+    },
+    "cardio-health-daily-habits": {
+      "topic_ids": ["cardiovascular-health", "movement", "health-basics"],
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol is general cardiovascular-health activity planning grounded in AHA guidance. Cardiovascular Health, Movement and Everyday Health Basics describe the bounded public use."
+    },
+    "daily-gratitude-journal-three-things": {
+      "topic_ids": ["mood-wellbeing", "self-awareness"],
+      "method_ids": ["positive-psychotherapy"],
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol is an optional gratitude reflection with modest-evidence boundaries. Mood & Wellbeing and Self-Awareness describe the concrete use; Positive Psychotherapy-derived remains a sensitive Method label, not a claim that this page provides psychotherapy."
+    }
+  }
+}

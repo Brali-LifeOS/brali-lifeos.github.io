@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "ask-a-peer-to-proofread": {
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-21",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited peer-proofreading copy containing unsupported quantitative claims and fabricated internal observations with a bounded educational-writing protocol derived from a 2024 meta-analysis of feedback for L1, L2, and foreign-language learners. The reviewed claim is limited to matching the level of feedback to the revision outcome; it does not generalize the study to all professional or creative writing.",
+      "title": "Match Feedback to the Revision Target",
+      "subtitle": "Ask for surface or deep feedback based on what you are revising",
+      "description": "When revising a student or learning-focused draft, decide whether the current pass targets surface features such as grammar and wording or deeper features such as ideas, organization, and coherence. Ask the reviewer to focus feedback on that target, revise at the same level, and use a separate pass when the other level also matters.",
+      "references": [
+        {
+          "title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+          "url": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+          "publisher": "Learning and Instruction"
+        }
+      ],
+      "lifeOsSource": {
+        "hack": "Match the feedback request to the level of writing you intend to revise.",
+        "whatYouDo": "Before asking for feedback on a student or learning-focused draft, choose the current revision target. Use a surface pass for grammar, spelling, wording, and similar features; use a deep pass for ideas, organization, coherence, or other meaning-level features. Tell the reviewer which level you want them to focus on, revise against that target, and run a separate pass if the other level also needs work.",
+        "checkIn": "What was the revision target for this pass, and did the feedback actually help you revise at that level?",
+        "sourceUrl": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+        "reference": "A 2024 meta-analysis of 95 papers and 200 treatment/control comparisons in secondary-school and university writing found that feedback effects differed by the level of writing outcome: surface feedback improved surface outcomes, deep feedback improved deep outcomes, and combined feedback could improve both. Results varied by learner group and feedback context, so Brali does not treat all feedback as interchangeable or generalize these estimates beyond educational writing."
+      },
+      "faq": [
+        {
+          "id": "feedback-target-1",
+          "question": "Should I always ask for deep feedback first?",
+          "answer": "No. Choose the pass that matches the current revision goal. If the argument or organization is still changing, deep feedback may be more relevant; if the content is already stable and you are polishing language, a surface pass may be the better target. The source does not establish one universal order."
+        },
+        {
+          "id": "feedback-target-2",
+          "question": "Is peer feedback always better than instructor or automated feedback?",
+          "answer": "No. The meta-analysis found different effects across learner groups, feedback sources, and outcomes. This protocol uses a reviewer because the existing Brali page is a peer-review workflow, but it does not claim that peers are universally the best feedback source."
+        },
+        {
+          "id": "feedback-target-3",
+          "question": "Can I use this approach for a work memo, article, or other professional writing?",
+          "answer": "You can use the surface-versus-deep distinction as a planning heuristic, but the reviewed evidence here comes from secondary-school and university educational writing. Brali does not claim that the measured effects transfer unchanged to professional, marketing, technical, or creative writing."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Feedback is easier to use when the reviewer and writer are solving the same revision problem. In educational-writing research, surface feedback and deep feedback did not behave as interchangeable treatments. Brali turns that boundary into a small workflow: name the revision level first, ask for feedback at that level, then revise against the same target.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-revision-level",
+            "title": "1. Choose the revision level",
+            "html": "<p>Before sending the draft, name what you are actually trying to improve.</p><ul><li><strong>Surface:</strong> grammar, spelling, wording, sentence-level form, and similar local features.</li><li><strong>Deep:</strong> ideas, organization, coherence, genre-level decisions, and other meaning-level features.</li></ul><p>If both matter, decide which one is the target of the current pass instead of asking for every possible comment at once.</p>"
+          },
+          {
+            "slug": "write-the-feedback-request",
+            "title": "2. Write the feedback request",
+            "html": "<p>Tell the reviewer what level to inspect. A surface request can ask where language or sentence form needs correction. A deep request can ask whether the main idea, organization, evidence, or coherence needs revision. Keep the request tied to the actual learning or writing task rather than asking for vague ‘general feedback’.</p>"
+          },
+          {
+            "slug": "revise-at-same-level",
+            "title": "3. Revise at the same level",
+            "html": "<p>When feedback arrives, first use the comments that address the chosen target. If the pass was about organization, do not let a pile of local wording edits distract you from the structural decision. If the pass was about surface accuracy, do not assume those corrections also prove that the argument or organization is strong.</p>"
+          },
+          {
+            "slug": "separate-second-pass",
+            "title": "4. Use a separate pass when needed",
+            "html": "<p>If the draft needs both deep and surface revision, run another pass with the other target after the first set of changes is stable enough to review. This is a workflow choice, not a claim that one fixed sequence is scientifically optimal.</p>"
+          },
+          {
+            "slug": "evidence-boundary",
+            "title": "Evidence boundary",
+            "html": "<p>The source behind this protocol is a 2024 meta-analysis of experimental and quasi-experimental studies of writing feedback with secondary-school and university students learning in L1, L2, and foreign-language contexts. It found different effects for surface, deep, and combined feedback, with meaningful variation by learner group and feedback source. The literature does not establish that more feedback is always better, that one feedback agent is universally superior, that one pass order is optimal, or that the reported effects transfer unchanged to professional or creative writing.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

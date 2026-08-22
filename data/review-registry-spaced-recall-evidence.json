@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "description": "Actual-source review, public rewrite and promotion decision for Brali's spaced-recall protocol. The reviewed meta-analysis directly supports distributing repeated study of verbal material across separated sessions rather than massing it, while showing that useful spacing depends on the intended retention interval and does not reduce to one universal calendar or expanding algorithm.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1037/0033-2909.132.3.354",
+      "source": "crossref",
+      "source_id": "10.1037/0033-2909.132.3.354",
+      "doi": "10.1037/0033-2909.132.3.354",
+      "pmid": "16719566",
+      "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "authors": [
+        "Nicholas J. Cepeda",
+        "Harold Pashler",
+        "Edward Vul",
+        "John T. Wixted",
+        "Doug Rohrer"
+      ],
+      "container_title": "Psychological Bulletin",
+      "publication_date": "2006-05-01",
+      "type": "journal-article",
+      "subjects": ["distributed practice", "spacing effect", "verbal recall", "retention interval", "learning"],
+      "reference_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "discovered_at": "2026-08-22T08:05:00Z",
+      "last_seen_at": "2026-08-22T08:05:00Z",
+      "status": "support-existing",
+      "query_ids": ["learning-retrieval-practice"],
+      "domain_ids": ["learning-thinking"],
+      "topic_ids": ["memory"],
+      "method_ids": ["spaced-practice"],
+      "lens_ids": [],
+      "life_area_slugs": ["learning-thinking"],
+      "zone_slugs": ["cognitive-biases"],
+      "risk_flags": [],
+      "crossref_score": null,
+      "review_notes": "The complete public manuscript was reviewed, including terminology, inclusion criteria, coding, massed-versus-spaced comparisons, inter-study-interval and retention-interval analyses, fixed-versus-expanding comparisons, educational implications and limitations. The synthesis is directly relevant to repeated study of verbal material measured by later recall. It does not validate Brali's inherited daily AI schedule, retrieval-success thresholds, neuroscience explanation, habit tracking or transfer to complex skills."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "distributed-practice-verbal-recall-boundary-2006",
+      "candidate_id": "crossref:10.1037/0033-2909.132.3.354",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "source_title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "source_type": "meta-analysis",
+      "doi": "10.1037/0033-2909.132.3.354",
+      "citation_text": "Cepeda NJ, Pashler H, Vul E, Wixted JT, Rohrer D. Psychological Bulletin. 2006;132(3):354-380.",
+      "source_reviewed": true,
+      "study_design": "Quantitative synthesis of distributed-practice experiments in verbal recall. From 427 reviewed articles, 317 experiments in 184 articles met the inclusion criteria, providing 958 accuracy values, 839 distributed-practice assessments and 169 effect sizes. Analyses compared massed with spaced study and examined how inter-study interval, retention interval, relearning procedures and fixed or expanding schedules affected final recall.",
+      "population": "Participants ranged from children to older adults, although the evidence base was dominated by young adults. Clinical populations were excluded. Included tasks involved verbal material assessed by recall, such as paired associates, lists, spelling, foreign-language items and paragraph-like verbal information; recognition and frequency-judgment outcomes were excluded.",
+      "intervention_or_exposure": "Repeated study episodes of the same verbal material separated by an inter-study interval, compared with massed presentations or with shorter versus longer spacing. Some studies used two episodes and others used fixed, expanding or contracting schedules across more episodes. Retention intervals ranged from very short delays to months or longer.",
+      "outcomes": [
+        "Final-test verbal recall after massed versus spaced study",
+        "Final-test recall under shorter versus longer inter-study intervals",
+        "Joint relationship between inter-study interval and intended retention interval",
+        "Recall under fixed versus expanding study intervals",
+        "Differences associated with task, age, experimental design and relearning procedure"
+      ],
+      "supported_claim": "For verbal material measured by later recall, separating repeated study episodes by a meaningful interval generally supports better retention than concentrating the same material into massed study. The spacing associated with the best later recall tended to increase as the intended retention interval increased. For material that must be retained over months or years, the reviewed evidence supports distributing study across days or longer rather than completing all review in one sitting or one day. These findings justify the rewritten Brali action only within a verbal-recall boundary and without one universal schedule.",
+      "unsupported_or_overstated_claims": [
+        "One fixed daily, weekly or software-generated interval is optimal for all material and retention targets.",
+        "Twenty minutes every day is superior to two hours in one sitting by a specific ratio.",
+        "An 85 to 90 percent retrieval-success threshold identifies the correct next interval.",
+        "Expanding intervals are reliably superior to fixed intervals; the review described the available evidence as limited, variable and insufficient for that conclusion.",
+        "Longer spacing is always better; the review found that intervals can become too long and that the useful interval depends on the retention target.",
+        "The source identifies testing, feedback or deliberate recall attempts as the causal mechanism of the spacing effect.",
+        "The source establishes consolidation windows, neuroplasticity, reconsolidation or another biological mechanism for the public protocol.",
+        "The result extends beyond later verbal recall to complex skills, problem solving, creative work, workplace performance or broader transfer outcomes.",
+        "A spaced schedule guarantees durable memory for an individual learner.",
+        "Children's long-term retention over months or years is established with the same confidence as the young-adult evidence.",
+        "Daily streaks, adherence scores, AI coaching or app reminders are evidence-supported components of distributed practice."
+      ],
+      "limitations": [
+        "The synthesis was restricted to verbal memory tasks measured by recall and deliberately excluded recognition, frequency judgments and the heterogeneous skill-learning literature.",
+        "The evidence base was dominated by young adults; the authors reported very little middle-aged and older-adult evidence and insufficient long-term child data for confident generalization.",
+        "Many studies did not report the variance data needed for effect-size calculation, so several analyses relied on accuracy differences and included fewer effect-size estimates.",
+        "Published null findings may be underrepresented because of the file-drawer problem.",
+        "Study materials, presentation schedules, retention intervals and experimental procedures varied substantially.",
+        "Some historical studies confounded longer spacing with more relearning trials; the review examined this problem but could not remove every design limitation from the literature.",
+        "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
+        "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
+        "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
+        "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
+        "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
+      ],
+      "target_hack_ids": ["spaced-recall-coach"],
+      "target_protocol_ids": ["brali:spaced-recall-coach"],
+      "risk_flags": [],
+      "notes": "Editorial outcome: promote only the fully rewritten protocol to reviewed. The public action now asks the user to choose verbal material, state a retention target, separate repeated study sessions, use longer gaps for longer retention targets, check final recall and adjust. It explicitly rejects one universal interval, an expanding-schedule guarantee and transfer to complex skills. Any future numerical schedule, success-threshold or mechanism claim requires a separate direct review."
+    }
+  ],
+  "evidence_overrides": {
+    "spaced-recall-coach": {
+      "status": "reviewed",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "The effective public protocol was fully rewritten to match the reviewed distributed-practice boundary: separated study sessions for verbal material, spacing chosen in relation to the intended retention period, explicit uncertainty about exact intervals, and no claim of transfer beyond verbal recall."
+    }
+  },
+  "ontology_overrides": {
+    "spaced-recall-coach": {
+      "topic_ids": ["memory"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol concerns retention of verbal material through temporally distributed study and is directly mapped to Memory. The source does not justify a Skill Learning mapping, because skill acquisition and broader transfer were outside the reviewed synthesis. Cognitive Biases remains legacy navigation only."
+    }
+  }
+}

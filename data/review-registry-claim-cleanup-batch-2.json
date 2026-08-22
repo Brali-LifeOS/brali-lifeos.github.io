@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_overrides": {
+    "avoid-anthropocentric-bias": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported survey ranges, volunteer outcomes, immediate-effect claims and rigid observation targets. The effective public record is rewritten as a low-risk observation-versus-interpretation check without an evidence claim."
+    },
+    "avoid-contrast-effect": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated trials, laboratory ranges, hiring outcomes and savings claims. The effective public record is rewritten as an independent-assessment protocol without an evidence claim."
+    },
+    "avoid-gamblers-fallacy-trust-the-odds": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated tests, financial action rules, arbitrary confidence and sample thresholds, and adherence claims. The effective public record is rewritten as a dependence-and-stop-rule check without an evidence claim."
+    },
+    "avoid-selection-bias-in-analysis": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported mistake reduction, conversion examples, sample prescriptions and statistical precision. The effective public record is rewritten as an inclusion-rule and conclusion-scope check without an evidence claim."
+    }
+  },
+  "ontology_overrides": {
+    "avoid-anthropocentric-bias": {
+      "topic_ids": ["critical-thinking"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol separates observable facts from interpretation and compares alternative explanations. Critical Thinking is the additional concrete Topic; the legacy Cognitive Biases collection already supplies the canonical bias Topic."
+    },
+    "avoid-contrast-effect": {
+      "topic_ids": ["decision-making"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol defines stable criteria, assesses options independently and then resolves trade-offs. Decision Making is the additional concrete Topic; the legacy Cognitive Biases collection remains the bias Topic."
+    },
+    "avoid-gamblers-fallacy-trust-the-odds": {
+      "topic_ids": ["decision-making", "data-literacy"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol distinguishes independent from connected events and applies a pre-defined rule under uncertainty. Decision Making and Data Literacy are the additional concrete Topics; the legacy Cognitive Biases collection remains the bias Topic."
+    },
+    "avoid-selection-bias-in-analysis": {
+      "topic_ids": ["critical-thinking", "data-literacy"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol inspects inclusion, exclusion and missing cases before generalizing. Critical Thinking and Data Literacy are the additional concrete Topics; the legacy Cognitive Biases collection remains the bias Topic."
+    }
+  },
+  "evidence_decisions": [],
+  "research_candidates": []
+}

@@ -1,11 +1,13 @@
 import crypto from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { loadClaimCleanupHistory, publicClaimCleanupHistory } from './lib/claim-cleanup-history.mjs';
 
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
 const policy = await readJson('data/claim-cleanup-policy.json');
-const decisions = await readJson('data/claim-cleanup-decisions-batch-1.json');
+const history = await loadClaimCleanupHistory(root);
+const publicHistory = publicClaimCleanupHistory(history);
 const claimDebt = await readJson('life-os/datasets/claim-debt.json');
 const reviewQueue = await readJson('life-os/datasets/review-queue.json');
 const publicIndex = await readJson('life-os-index.json');
@@ -64,7 +66,7 @@ for (const queueEntry of reviewQueue.entries ?? []) {
 }
 
 const report = {
-  schema_version: 1,
+  schema_version: 2,
   name: 'Brali next claim cleanup batch',
   policy_version: policy.schema_version,
   selection_order: policy.selection_order,
@@ -74,25 +76,26 @@ const report = {
     actionable_under_policy: eligibleTotal,
     selected: selected.length,
     blocked_preview: blocked.length,
-    completed_in_batch_1: decisions.entries?.length ?? 0,
+    completed_total: history.entries.length,
+    completed_batches: history.batches.length,
   },
   guardrails: policy.guardrails,
-  completed_batch: {
-    batch_id: decisions.batch_id,
-    selected_at: decisions.selected_at,
-    decisions_url: '/data/claim-cleanup-decisions-batch-1.json',
-    completed_slugs: decisions.selection_order,
-  },
+  completed_history_url: '/life-os/datasets/claim-cleanup-history.json',
+  completed_batches: publicHistory.batches,
   selected,
   blocked_preview: blocked,
 };
 
 const outputPath = path.join(root, 'life-os/datasets/claim-cleanup-batch.json');
 await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
+await writeFile(
+  path.join(root, 'life-os/datasets/claim-cleanup-history.json'),
+  `${JSON.stringify(publicHistory, null, 2)}\n`,
+);
 
 const countDocument = document => {
   if (Array.isArray(document)) return document.length;
-  for (const key of ['items', 'entries', 'protocols', 'candidates', 'queries', 'identities', 'aliases']) {
+  for (const key of ['items', 'entries', 'protocols', 'candidates', 'queries', 'identities', 'aliases', 'batches']) {
     if (Array.isArray(document?.[key])) return document[key].length;
   }
   return null;
@@ -112,11 +115,13 @@ const manifest = await readJson('life-os/datasets/manifest.json');
 if (manifest.schema_version !== 2 || !Array.isArray(manifest.files)) {
   throw new Error('Claim cleanup batch requires the finalized schema-v2 dataset manifest.');
 }
-const additions = await Promise.all([
-  manifestEntry('life-os/datasets/claim-debt.json'),
-  manifestEntry('life-os/datasets/claim-cleanup-batch.json'),
-  manifestEntry('data/claim-cleanup-decisions-batch-1.json'),
-]);
+const manifestPaths = [
+  'life-os/datasets/claim-debt.json',
+  'life-os/datasets/claim-cleanup-batch.json',
+  'life-os/datasets/claim-cleanup-history.json',
+  ...history.files.map(file => file.rel),
+];
+const additions = await Promise.all(manifestPaths.map(manifestEntry));
 const byPath = new Map(manifest.files.map(entry => [entry.path, entry]));
 for (const entry of additions) byPath.set(entry.path, entry);
 manifest.files = [...byPath.values()].sort((left, right) => left.path.localeCompare(right.path));
@@ -124,8 +129,10 @@ manifest.counts ||= {};
 manifest.counts.files = manifest.files.length;
 manifest.counts.claim_debt_entries = claimDebt.counts?.debt_entries ?? 0;
 manifest.counts.claim_cleanup_selected = report.counts.selected;
-manifest.counts.claim_cleanup_completed = decisions.entries?.length ?? 0;
-manifest.claim_cleanup_batch_schema_version = 1;
+manifest.counts.claim_cleanup_completed = history.entries.length;
+manifest.counts.claim_cleanup_batches = history.batches.length;
+manifest.claim_cleanup_batch_schema_version = report.schema_version;
+manifest.claim_cleanup_history_schema_version = publicHistory.schema_version;
 manifest.claim_cleanup_batch_counts = report.counts;
 const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
 await writeFile(path.join(root, 'life-os/datasets/manifest.json'), manifestText);
@@ -133,17 +140,22 @@ await writeFile(path.join(root, 'api/v1/manifest.json'), manifestText);
 
 const datasetsPath = path.join(root, 'life-os/datasets/index.html');
 let datasets = await readFile(datasetsPath, 'utf8');
-if (!datasets.includes('/life-os/datasets/claim-cleanup-batch.json')) {
-  const item = '<li><a href="/life-os/datasets/claim-cleanup-batch.json">Next claim cleanup batch (JSON)</a></li>';
-  datasets = datasets.replace('</ul>', `${item}</ul>`);
-}
-if (!datasets.includes('/data/claim-cleanup-decisions-batch-1.json')) {
-  const item = '<li><a href="/data/claim-cleanup-decisions-batch-1.json">Completed claim cleanup batch 1 decisions (JSON)</a></li>';
-  datasets = datasets.replace('</ul>', `${item}</ul>`);
+const requiredLinks = [
+  ['/life-os/datasets/claim-cleanup-batch.json', 'Next claim cleanup batch (JSON)'],
+  ['/life-os/datasets/claim-cleanup-history.json', 'Completed claim cleanup history (JSON)'],
+  ...history.files.map(file => [
+    `/${file.rel}`,
+    `Completed claim cleanup batch ${file.number} decisions (JSON)`,
+  ]),
+];
+for (const [href, label] of requiredLinks) {
+  if (!datasets.includes(href)) {
+    datasets = datasets.replace('</ul>', `<li><a href="${href}">${label}</a></li></ul>`);
+  }
 }
 await writeFile(datasetsPath, datasets);
 
-console.log(`Claim cleanup selector: unresolved=${report.counts.unresolved_claim_debt}; actionable=${eligibleTotal}; selected=${selected.length}; blocked-preview=${blocked.length}; completed=${report.counts.completed_in_batch_1}.`);
+console.log(`Claim cleanup selector: unresolved=${report.counts.unresolved_claim_debt}; actionable=${eligibleTotal}; selected=${selected.length}; blocked-preview=${blocked.length}; completed=${history.entries.length} across ${history.batches.length} batch(es).`);
 for (const [index, entry] of selected.entries()) {
   console.log(`CLAIM_CLEANUP_SELECTED ${index + 1} | ${entry.slug} | ${entry.status} | ${entry.enforced_categories.join(',')} | score=${entry.editorial_priority?.score ?? 0}`);
 }

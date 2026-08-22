@@ -1,0 +1,34 @@
+name: Validate Brali product outcome loop
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - AGENT_LOOP.md
+      - data/agent-loop-plan.json
+      - contracts/agent-loop-plan.schema.json
+      - scripts/check-agent-loop-plan.mjs
+      - .github/workflows/agent-loop.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - AGENT_LOOP.md
+      - data/agent-loop-plan.json
+      - contracts/agent-loop-plan.schema.json
+      - scripts/check-agent-loop-plan.mjs
+      - .github/workflows/agent-loop.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - run: node scripts/check-agent-loop-plan.mjs

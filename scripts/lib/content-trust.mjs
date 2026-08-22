@@ -1,3 +1,5 @@
+import { inspectClaims } from './claim-taxonomy.mjs';
+
 export const sensitiveZones = new Set([
   "no-depression",
   "no-fears",
@@ -71,10 +73,15 @@ export function publicClaimSurface(article = {}) {
 }
 
 export function claimFlags(article) {
-  const text = JSON.stringify(publicClaimSurface(article));
+  const surface = publicClaimSurface(article);
+  const text = JSON.stringify(surface);
+  const inspection = inspectClaims(surface);
   return {
     evidenceLanguage: claimPattern.test(text),
     quantitative: quantitativeClaimPattern.test(text),
+    categories: inspection.categories,
+    enforcedCategories: inspection.enforcedCategories,
+    markers: inspection.markers,
   };
 }
 

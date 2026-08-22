@@ -32,3 +32,5 @@ else queryHtml = queryHtml.replace('</main>', `${feedback}</main>`);
 write(queryRel, queryHtml);
 
 console.log(`Query adoption funnel generated: ${hubs.length} Topic deep links, 2 public entry points, 2 GitHub feedback paths.`);
+
+await import('./build-outcome-surfaces.mjs');

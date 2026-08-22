@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "description": "Actual-source review for the task-initiation/procrastination lane. The reviewed meta-analysis supports only a cautious intervention-level conclusion and explicitly does not validate Brali's exact five-minute start, one first-action sequence, timer duration, or individual effectiveness. The editorial outcome is challenge-existing rather than promotion.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.3389/fpsyg.2018.01588",
+      "source": "crossref",
+      "source_id": "10.3389/fpsyg.2018.01588",
+      "doi": "10.3389/fpsyg.2018.01588",
+      "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "authors": [
+        "Alexander Rozental",
+        "Sophie Bennett",
+        "David Forsström",
+        "David D. Ebert",
+        "Roz Shafran",
+        "Gerhard Andersson",
+        "Per Carlbring"
+      ],
+      "container_title": "Frontiers in Psychology",
+      "publication_date": "2018-08-30",
+      "type": "journal-article",
+      "subjects": ["procrastination", "psychological treatment", "cognitive behavior therapy", "self-regulation"],
+      "reference_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "discovered_at": "2026-08-22T06:55:00Z",
+      "last_seen_at": "2026-08-22T06:55:00Z",
+      "status": "challenge-existing",
+      "query_ids": ["focus-procrastination"],
+      "domain_ids": ["focus-action"],
+      "topic_ids": ["task-initiation", "habits-consistency"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["focus-execution"],
+      "zone_slugs": ["do-it", "grow-fast", "grandmaster"],
+      "risk_flags": ["mental-health"],
+      "crossref_score": null,
+      "review_notes": "The full article was reviewed, including eligibility criteria, included-study characteristics, pooled results, heterogeneity, risk of bias, discussion and conclusions. It supports a cautious statement that heterogeneous psychological treatments produced a small average post-treatment benefit on self-reported procrastination versus inactive controls. It does not isolate a five-minute start, one first action, a timer duration, implementation intentions, sub-goals or any other single component as the causal mechanism."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "procrastination-treatment-exact-protocol-boundary-2018",
+      "candidate_id": "crossref:10.3389/fpsyg.2018.01588",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "source_title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.3389/fpsyg.2018.01588",
+      "citation_text": "Rozental A, Bennett S, Forsström D, Ebert DD, Shafran R, Andersson G, Carlbring P. Frontiers in Psychology. 2018;9:1588.",
+      "source_reviewed": true,
+      "study_design": "Pre-registered systematic review and random-effects meta-analysis of randomized controlled trials comparing psychological interventions specifically targeting procrastination with inactive comparators. Twelve studies, 21 comparisons and 718 participants were included in the quantitative synthesis; the primary endpoint was self-reported procrastination at post-treatment.",
+      "population": "Self-referred participants drawn from general-population, high-school and undergraduate samples in the included studies. Individual studies were generally small, with sample sizes reported by the review as ranging from 6 to 50 participants.",
+      "intervention_or_exposure": "A heterogeneous set of psychological treatments specifically targeting procrastination, including cognitive-behavioral, emotion-focused, self-control, goal-setting and other approaches delivered individually, in groups, by class, online or through self-help over durations ranging from brief sessions to ten weeks.",
+      "outcomes": [
+        "Self-reported procrastination at post-treatment compared with an inactive control",
+        "Secondary self-report outcomes where available, which were too heterogeneous for a pooled estimate"
+      ],
+      "supported_claim": "Across the reviewed randomized comparisons, psychological treatments targeting procrastination had a small average post-treatment benefit on self-reported procrastination relative to inactive controls, but effects varied substantially between studies and the evidence base had important quality limitations. This supports treating task initiation as a legitimate intervention target, not claiming that one brief Brali routine or one component has been validated.",
+      "unsupported_or_overstated_claims": [
+        "A five-minute start is an evidence-based or optimal duration for overcoming procrastination.",
+        "Completing one visible first action by itself reduces procrastination, improves productivity or reliably creates momentum.",
+        "Implementation intentions, sub-goals, goal-setting, time management or behavioral activation were isolated by this review as the active causal component.",
+        "The broader implementation-intention literature on goal attainment directly proves effectiveness for procrastination-specific task initiation.",
+        "The cognitive-behavioral subgroup estimate validates this Brali protocol or any other single self-help exercise.",
+        "A short timer is equivalent to the multi-component psychological treatments included in the review.",
+        "The intervention effect generalizes equally to every person, task type, workplace, educational setting or clinical presentation.",
+        "Beginning briefly guarantees continuation, completion, lower distress or better performance."
+      ],
+      "limitations": [
+        "The pooled overall effect was small and showed significant between-study heterogeneity, so the average should not be treated as one stable effect across interventions or populations.",
+        "The review identified some risk of bias in every included study; blinding-related domains were frequently rated high risk.",
+        "Primary procrastination measures varied, and several assessed academic rather than general procrastination.",
+        "The included studies used different interventions, delivery formats, durations and participant populations, preventing component-level attribution.",
+        "The review analyzed post-treatment outcomes because too few studies reported follow-up data, limiting conclusions about durability.",
+        "Secondary outcomes were too heterogeneous to aggregate.",
+        "The stronger cognitive-behavioral subgroup estimate depended on excluding one small outlying study and represented only three of the four cognitive-behavioral studies.",
+        "The source did not test the exact five-minute interval, the exact Brali action sequence or the protocol's observable-review checkpoint."
+      ],
+      "target_hack_ids": ["stop-procrastination-fast-5-minute-reset"],
+      "target_protocol_ids": ["brali:stop-procrastination-fast-5-minute-reset"],
+      "risk_flags": ["mental-health"],
+      "notes": "Editorial outcome: keep the rewritten protocol practical and bounded, but do not promote it to reviewed from this source. Preserve explicit wording that five minutes is a convenient reversible default rather than an optimal dose, that stopping to clarify or remove a blocker is valid, and that the routine is not a treatment for clinically significant procrastination or related distress. Future promotion would require evidence that directly evaluates a sufficiently similar low-intensity first-action protocol and its outcome boundary."
+    }
+  ]
+}

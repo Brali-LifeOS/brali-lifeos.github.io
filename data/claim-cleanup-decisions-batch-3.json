@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-08-22-03",
+  "selected_at": "2026-08-22",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch two completed and before any batch-three rewrite was applied.",
+  "selection_order": [
+    "backfire-effect-coach",
+    "belief-update-coach",
+    "biomimicry-creative-problem-solving",
+    "bold-brainstorm-kickoff"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 646,
+    "actionable_under_policy": 527,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch records editorial rewrites, not scientific review. No entry is promoted to reviewed and no source is added merely to preserve inherited wording.",
+  "entries": [
+    {
+      "slug": "backfire-effect-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["conflict-repair", "critical-thinking"],
+      "decision": "Remove fabricated trials, effect ranges, physiological explanations and internal outcomes. Preserve a bounded disagreement protocol that clarifies one claim, states uncertainty, names what could change either view and chooses a check or respectful stopping point."
+    },
+    {
+      "slug": "belief-update-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking", "metacognition"],
+      "decision": "Remove numeric confidence prescriptions, sample-size rules, fabricated observations and arbitrary update ranges. Preserve a belief-review record that separates claim, current basis, new information, disposition and future change condition."
+    },
+    {
+      "slug": "biomimicry-creative-problem-solving",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["creative-problem-solving", "idea-generation"],
+      "decision": "Remove fabricated capacity, cleaning, communication and team outcomes, internal hit rates and unsupported biological explanations. Preserve a function-to-principle exercise that generates several applications and tests one safe reversible option."
+    },
+    {
+      "slug": "bold-brainstorm-kickoff",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["creative-problem-solving", "idea-generation"],
+      "decision": "Remove fabricated session outcomes, keeper multipliers, percentage claims and pseudo-precise timing rules. Preserve a provocation exercise that explores an extreme seed, restores real constraints and selects one feasible next test."
+    }
+  ]
+}

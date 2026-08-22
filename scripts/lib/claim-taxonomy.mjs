@@ -26,7 +26,9 @@ const definitions = [
     enforced: true,
     description: 'Guarantees, universal effectiveness, or unsupported proof language.',
     patterns: [
-      /\bguarantee(?:d|s)?\b/i,
+      /\b(?:we|this\s+(?:method|protocol|technique|system)|the\s+(?:method|protocol|technique|system))\s+guarantee(?:d|s)?\b/i,
+      /\bguaranteed\s+(?:results?|outcomes?|success|improvement)\b/i,
+      /\bguarantee(?:s)?\s+(?:a\s+|an\s+|the\s+)?(?:result|results|outcome|outcomes|success|improvement)\b/i,
       /\bworks?\s+every\s+time\b/i,
       /\bwill\s+(?:always|definitely)\b/i,
       /\bscientifically\s+proven\b/i,

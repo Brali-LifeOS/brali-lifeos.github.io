@@ -1,3 +1,5 @@
+const causalVerbs = '(?:cause|lead\\s+to|result\\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)';
+
 const definitions = [
   {
     id: 'quantitative',
@@ -114,6 +116,15 @@ export function normalizeClaimText(value) {
     .trim();
 }
 
+function withoutNegatedCausalPhrases(text) {
+  const patterns = [
+    new RegExp(`\\b(?:(?:has|have)\\s+not\\s+been|(?:was|were)\\s+not)\\s+shown\\s+to\\s+${causalVerbs}\\b`, 'gi'),
+    new RegExp(`\\bis\\s+not\\s+proven\\s+to\\s+${causalVerbs}\\b`, 'gi'),
+    new RegExp(`\\b(?:does|do|did|can|could|may|might|will|would|has|have|had)\\s+not\\s+${causalVerbs}\\b`, 'gi'),
+  ];
+  return patterns.reduce((current, pattern) => current.replace(pattern, ' '), text);
+}
+
 function examplesFor(text, patterns, limit) {
   const examples = [];
   const seen = new Set();
@@ -138,10 +149,14 @@ function examplesFor(text, patterns, limit) {
 
 export function inspectClaims(value, { exampleLimitPerCategory = 3 } = {}) {
   const text = normalizeClaimText(value);
+  const causalText = withoutNegatedCausalPhrases(text);
   const markers = [];
 
   for (const definition of definitions) {
-    const examples = examplesFor(text, definition.patterns, exampleLimitPerCategory);
+    const inspectedText = definition.id === 'causal-assertion' || definition.id === 'causal-effect'
+      ? causalText
+      : text;
+    const examples = examplesFor(inspectedText, definition.patterns, exampleLimitPerCategory);
     if (examples.length) {
       markers.push({
         category: definition.id,

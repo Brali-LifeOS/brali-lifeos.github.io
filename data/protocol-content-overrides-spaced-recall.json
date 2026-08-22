@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "spaced-recall-coach": {
+      "title": "Separate Review Sessions Instead of Cramming",
+      "subtitle": "Space repeated review around how long you need to remember the material",
+      "description": "For verbal material you need to recall later, divide repeated study across separate sessions instead of concentrating the same planned review into one sitting. Choose the gap in relation to the intended retention period, then check recall and adjust rather than following one universal schedule.",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited AI-coach article containing an invented universal schedule, neuroscience explanations, adherence tracking, app promotion and unsupported transfer claims with a source-bounded distributed-practice protocol for verbal recall.",
+      "forbidden_public_fragments": [
+        "twice as much as massed practice",
+        "2000s studies",
+        "broadly replicable",
+        "retrieval succeeds around 85–90%",
+        "more is better",
+        "software developers",
+        "21–66 days",
+        "At MetalHatsCats",
+        "Open Brali LifeOS and tap Mini-App",
+        "Your only job is to answer honestly",
+        "streak",
+        "AI coach",
+        "neuro",
+        "consolidation windows"
+      ],
+      "lifeOsSource": {
+        "hack": "When you need to remember verbal material later, revisit the same material in separate study sessions instead of repeating all planned review without a meaningful gap.",
+        "whatYouDo": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
+        "checkIn": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
+        "sourceUrl": "https://doi.org/10.1037/0033-2909.132.3.354",
+        "reference": "Cepeda NJ, Pashler H, Vul E, Wixted JT, Rohrer D. Distributed practice in verbal recall tasks: a review and quantitative synthesis. Psychological Bulletin. 2006;132(3):354-380."
+      },
+      "faq": [
+        {
+          "id": "spaced-recall-coach-faq-1",
+          "question": "What spacing interval should I use?",
+          "answer": "There is no universal interval. The review found that the spacing associated with the best later recall tended to increase as the desired retention period increased. For material needed over months or years, use separate sessions across days or longer rather than concentrating everything into one day, then adjust from actual recall."
+        },
+        {
+          "id": "spaced-recall-coach-faq-2",
+          "question": "Should every interval become longer than the previous one?",
+          "answer": "Not as a rule from this source. Evidence comparing expanding and fixed schedules was limited and inconsistent. Use a schedule you can follow, preserve real gaps between sessions, and do not present an expanding algorithm as universally superior."
+        },
+        {
+          "id": "spaced-recall-coach-faq-3",
+          "question": "Does this apply to every kind of learning?",
+          "answer": "The reviewed synthesis was restricted to verbal material measured by later recall, including paired associates, lists and related verbal-memory tasks. It does not by itself establish transfer to complex skills, creative work, motor learning, workplace performance or the ability to apply knowledge."
+        },
+        {
+          "id": "spaced-recall-coach-faq-4",
+          "question": "Is studying every day always best?",
+          "answer": "No. A fixed daily schedule may be convenient, but the useful gap depends on the retention target and material. The review explicitly found that intervals can become too long and that the exact optimum remains uncertain."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Repeated study can be concentrated into one sitting or distributed across separate sessions. For verbal information that must be recalled later, the reviewed evidence favors genuine spacing over massing, but it does not provide one universal calendar. The useful gap changes with how long the material must remain available.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-verbal-material",
+            "title": "1. Choose material that fits the evidence boundary",
+            "html": "<p>Use this protocol for verbal material you will later need to recall: terms, facts, definitions, paired items, short passages or similar content. Do not treat the same evidence as proof for complex skill transfer, creativity, motor performance or workplace output.</p>"
+          },
+          {
+            "slug": "set-retention-target",
+            "title": "2. State the retention target",
+            "html": "<p>Write when you expect to need the material: tomorrow, next week, next month or later. The review found that the spacing associated with the best later recall tended to increase as the retention interval increased, so a schedule cannot be chosen sensibly without this target.</p>"
+          },
+          {
+            "slug": "separate-study-episodes",
+            "title": "3. Separate the study episodes",
+            "html": "<p>Divide the planned repetitions across at least two sessions separated by a real gap. Avoid counting repeated exposure in one uninterrupted sitting as spaced practice. Where possible, keep the planned amount of study comparable so that more total practice is not mistaken for a spacing effect.</p>"
+          },
+          {
+            "slug": "use-longer-gaps-for-longer-retention",
+            "title": "4. Use longer gaps for longer retention targets",
+            "html": "<p>For material needed over months or years, prefer sessions spread across days or longer rather than completing all review within one day. Do not turn this into a precise universal formula: the review concluded that the exact interval for maximizing long-term retention could not be stated with certainty.</p>"
+          },
+          {
+            "slug": "check-final-recall",
+            "title": "5. Check recall after the intended interval",
+            "html": "<p>At the point when the material should be available, test whether you can recall it without relying on the source. Record what was retained and what was lost. This check evaluates the schedule; it does not prove that spacing created application skill or deeper understanding.</p>"
+          },
+          {
+            "slug": "adjust-without-universal-algorithm",
+            "title": "6. Adjust the next schedule",
+            "html": "<p>If recall was weak, shorten the next gap or add another separated session. If recall was stable, a longer gap may be reasonable. Fixed and expanding schedules were not compared strongly enough in the review to justify one universal algorithm.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

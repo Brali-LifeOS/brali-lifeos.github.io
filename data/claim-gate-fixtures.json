@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "description": "Regression fixtures for the Brali public-claim taxonomy. Expected categories are exact so taxonomy drift remains visible instead of being absorbed by an ever-growing regex fog.",
+  "cases": [
+    {
+      "id": "quantitative-and-research-language",
+      "text": "In a sample of 24 participants, 60% reported improvement.",
+      "expected_categories": ["quantitative", "research-language"],
+      "expected_enforced_categories": ["quantitative"]
+    },
+    {
+      "id": "first-party-result",
+      "text": "During our pilot, we observed a useful pattern.",
+      "expected_categories": ["first-party-result", "research-language"],
+      "expected_enforced_categories": ["first-party-result"]
+    },
+    {
+      "id": "guarantee",
+      "text": "This method guarantees results.",
+      "expected_categories": ["guarantee"],
+      "expected_enforced_categories": ["guarantee"]
+    },
+    {
+      "id": "clinical-outcome",
+      "text": "This protocol treats anxiety.",
+      "expected_categories": ["clinical-outcome"],
+      "expected_enforced_categories": ["clinical-outcome"]
+    },
+    {
+      "id": "causal-monitor-only",
+      "text": "This routine improves focus.",
+      "expected_categories": ["causal-effect"],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "mechanism-monitor-only",
+      "text": "The explanation refers to dopamine and cortisol.",
+      "expected_categories": ["mechanism"],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "research-language-monitor-only",
+      "text": "A systematic review is mentioned without making it a public claim.",
+      "expected_categories": ["research-language"],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "false-positive-negated-guarantee",
+      "text": "Five is a memorable prompt, not a guarantee of finding one root cause.",
+      "expected_categories": [],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "false-positive-evidence-check",
+      "text": "Mark assumptions that need evidence before acting.",
+      "expected_categories": [],
+      "expected_enforced_categories": []
+    }
+  ]
+}

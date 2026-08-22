@@ -9,6 +9,7 @@ const claimDebt = await readJson('life-os/datasets/claim-debt.json');
 const reviewQueue = await readJson('life-os/datasets/review-queue.json');
 const batch = await readJson('life-os/datasets/claim-cleanup-batch.json');
 const manifest = await readJson('life-os/datasets/manifest.json');
+const apiManifest = await readJson('api/v1/manifest.json');
 const datasets = await readFile(path.join(root, 'life-os/datasets/index.html'), 'utf8');
 const debtBySlug = new Map((claimDebt.entries ?? []).map(entry => [entry.slug, entry]));
 
@@ -62,8 +63,16 @@ if (batch.counts?.unresolved_claim_debt !== claimDebt.counts?.debt_entries) fail
 if (batch.counts?.actionable_under_policy !== eligibleTotal) fail('actionable count drift');
 if (batch.counts?.selected !== expectedSelected.length) fail('selected count drift');
 if (batch.counts?.blocked_preview !== expectedBlocked.length) fail('blocked count drift');
-if (!manifest.files?.includes('claim-cleanup-batch.json')) fail('dataset manifest lacks claim cleanup batch');
+if (manifest.schema_version !== 2 || !Array.isArray(manifest.files)) fail('dataset manifest is not finalized schema v2');
+const manifestPaths = new Set(manifest.files.map(entry => entry.path));
+for (const rel of ['life-os/datasets/claim-debt.json', 'life-os/datasets/claim-cleanup-batch.json']) {
+  if (!manifestPaths.has(rel)) fail(`dataset manifest lacks ${rel}`);
+}
+if (manifest.counts?.files !== manifest.files.length) fail('dataset manifest file count drift');
+if (manifest.counts?.claim_debt_entries !== claimDebt.counts?.debt_entries) fail('manifest claim-debt count drift');
+if (manifest.counts?.claim_cleanup_selected !== expectedSelected.length) fail('manifest selected-count drift');
 if (manifest.claim_cleanup_batch_schema_version !== 1) fail('dataset manifest schema marker drift');
+if (JSON.stringify(manifest) !== JSON.stringify(apiManifest)) fail('static and API manifests differ after claim batch finalization');
 if (!datasets.includes('/life-os/datasets/claim-cleanup-batch.json')) fail('dataset catalog lacks claim cleanup batch');
 if (JSON.stringify(batch).includes('examples')) fail('batch must not republish claim-marker snippets');
 

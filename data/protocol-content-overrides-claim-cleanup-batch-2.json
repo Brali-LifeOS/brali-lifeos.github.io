@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "avoid-anthropocentric-bias": {
+      "title": "Separate Observation from Human-Like Interpretation",
+      "description": "Describe what a non-human animal, plant, machine or model did before assigning a human motive. Add a system-specific alternative and state what remains uncertain.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing survey ranges, fabricated volunteer outcomes, self-reported effect claims, rigid observation quotas and app-first promotion with a bounded observation-and-alternative-explanation check.",
+      "forbidden_public_fragments": [
+        "many report 50–80% depending on the scenario",
+        "produced larger, durable shifts in 3–4 weeks for volunteers",
+        "Labeling reduces immediate reactivity by about 30–50%",
+        "In our trial, participants reporting this habit reached an average of 7 facts per session",
+        "improved accuracy in decision outcomes",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before assigning a human motive to a non-human system, separate observable facts from your interpretation and write at least one alternative that fits the system itself.",
+        "whatYouDo": "Choose one behavior or output. Record only what you could point to or reproduce. Write the human-like interpretation you first considered, then add a system-specific alternative and one low-risk way to check between them. Keep uncertainty visible when you cannot check.",
+        "checkIn": "What did I directly observe, what interpretation did I add, and what alternative or check changed my next action?"
+      },
+      "faq": [
+        {
+          "id": "avoid-anthropocentric-bias-faq-1",
+          "question": "Does this mean animals never have emotions?",
+          "answer": "No. The protocol asks you to separate observation from interpretation, not to deny animal experience. Welfare or health concerns should be handled with appropriate expertise rather than confident guessing."
+        },
+        {
+          "id": "avoid-anthropocentric-bias-faq-2",
+          "question": "Can I still use human metaphors for machines or models?",
+          "answer": "Yes, when the metaphor helps communication and its limit is explicit. Do not let words such as wants, knows or refuses replace a description of the actual rule, input or output."
+        },
+        {
+          "id": "avoid-anthropocentric-bias-faq-3",
+          "question": "What if I cannot test the alternative explanation?",
+          "answer": "Label it as an alternative rather than a conclusion. Choose a reversible action and record what information would change your view."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Human-like language is convenient, but it can hide the difference between what happened and the motive we imagined. This protocol keeps the first interpretation visible while adding a description and alternative that fit the animal, plant, machine or model being considered.</p>"
+        },
+        "sections": [
+          {
+            "slug": "name-system-and-question",
+            "title": "1. Name the system and the question",
+            "html": "<p>State what you are trying to understand: an animal's behavior, a plant's condition, a machine's response or a model's output. Keep the question narrow enough to inspect.</p>"
+          },
+          {
+            "slug": "record-observable-facts",
+            "title": "2. Record observable facts",
+            "html": "<p>Write what moved, changed, appeared, repeated or stopped. Avoid motive words in this first pass. A fact should be something another observer could check or an operator could reproduce.</p>"
+          },
+          {
+            "slug": "surface-human-interpretation",
+            "title": "3. Surface the human-like interpretation",
+            "html": "<p>Write the first label that came to mind, such as stubborn, jealous, confused or trying to help. Treat it as an interpretation rather than a property you have established.</p>"
+          },
+          {
+            "slug": "add-system-specific-alternative",
+            "title": "4. Add a system-specific alternative",
+            "html": "<p>Consider environment, learned behavior, physical condition, rules, inputs, sensors, data or constraints that could fit the same observation. Prefer an explanation that points to something checkable.</p>"
+          },
+          {
+            "slug": "choose-safe-check",
+            "title": "5. Choose a safe check or preserve uncertainty",
+            "html": "<p>Change one reversible condition, inspect a log, gather another observation or ask a qualified person. When no safe check is available, keep both explanations open instead of inventing certainty.</p>"
+          }
+        ]
+      }
+    },
+    "avoid-contrast-effect": {
+      "title": "Judge Each Option Against the Same Criteria",
+      "description": "Define the decision criteria before comparing options, assess each option on its own and only then compare the results.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing fabricated trials, regret reduction, laboratory ranges, hiring outcomes and savings claims with a bounded independent-assessment protocol.",
+      "forbidden_public_fragments": [
+        "awareness alone reduced mistakes by only 10–20% in our small trials",
+        "reduced post-purchase regrets in our small test by roughly 30–40%",
+        "separating options reduces contrast effects by about 20–50%",
+        "reduced immediate reversals by about 35%",
+        "led to higher post-hire satisfaction scores by about 15%",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Write the criteria for a decision before comparing options, then assess each option against those criteria on its own.",
+        "whatYouDo": "State the outcome and non-negotiables. Review each option separately using the same short criteria and note pass, unclear or fail. Compare only after the separate assessments are complete. Recheck any choice that depends mainly on the previous option looking unusually good or bad.",
+        "checkIn": "Would I make the same choice if this option appeared first, and which criterion actually supports the decision?"
+      },
+      "faq": [
+        {
+          "id": "avoid-contrast-effect-faq-1",
+          "question": "Should I avoid comparing options?",
+          "answer": "No. Comparison is necessary. The protocol delays comparison until each option has been judged against a stable standard."
+        },
+        {
+          "id": "avoid-contrast-effect-faq-2",
+          "question": "Do I need a numeric score?",
+          "answer": "No. Short labels such as pass, unclear and fail are enough when they refer to the same criteria. Numbers can create false precision when the criteria are vague."
+        },
+        {
+          "id": "avoid-contrast-effect-faq-3",
+          "question": "What if the decision must be fast?",
+          "answer": "Use one non-negotiable criterion and ask whether the option meets it without reference to the preceding option. Record the larger review for decisions that can wait."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>An option can look better or worse because of what appeared immediately before it. A stable decision process starts with the outcome and criteria, not with the order in which options happened to arrive.</p>"
+        },
+        "sections": [
+          {
+            "slug": "define-outcome",
+            "title": "1. Define the outcome",
+            "html": "<p>Write what the decision must accomplish and which constraints cannot be traded away. This becomes the standard against which every option is judged.</p>"
+          },
+          {
+            "slug": "use-same-criteria",
+            "title": "2. Use the same criteria for every option",
+            "html": "<p>Keep the list short and observable: required capability, total cost, implementation effort, reliability, timing or another decision-specific condition.</p>"
+          },
+          {
+            "slug": "assess-separately",
+            "title": "3. Assess each option separately",
+            "html": "<p>Review one option without discussing whether it is better than the previous one. Mark each criterion as pass, unclear or fail and note what information is missing.</p>"
+          },
+          {
+            "slug": "compare-after-assessment",
+            "title": "4. Compare after separate assessment",
+            "html": "<p>Now compare the completed notes. Resolve trade-offs using the stated outcome rather than letting an extreme option define what counts as acceptable.</p>"
+          },
+          {
+            "slug": "run-order-check",
+            "title": "5. Run an order check",
+            "html": "<p>Ask whether the choice would remain the same if the options appeared in another order or without a deliberately weak or expensive comparison. Reassess when the answer is unclear.</p>"
+          }
+        ]
+      }
+    },
+    "avoid-gamblers-fallacy-trust-the-odds": {
+      "title": "Check Whether a Streak Changes the Next Event",
+      "description": "Before acting on a streak, identify whether earlier outcomes can change the next event and use a pre-defined decision rule rather than a story about what is due.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing fabricated tests, financial action rules, arbitrary confidence, sample and cost thresholds, and adherence claims with a bounded dependence-and-stop-rule check.",
+      "forbidden_public_fragments": [
+        "reduces impulsive action by about 40–60% in our small tests",
+        "n=30 over two weeks",
+        "assume independence (99% confidence for simple devices)",
+        "When we added this step, adherence rose by 33% over two weeks",
+        "delaying 10 minutes cost an average of 0.3% of opportunity value",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before acting because an outcome feels due, check whether earlier outcomes can change the next event and follow a rule chosen before the streak.",
+        "whatYouDo": "Describe the next event and the recent streak. Ask what carries information or state from earlier outcomes into the next one. If there is no connection, ignore the streak and use the same probability or decision rule. If a connection may exist, identify the relevant state and gather that information. Use a pre-defined stop rule for repeated high-cost decisions.",
+        "checkIn": "What connection did I identify between past and next events, and did my action follow the rule or merely the feeling that an outcome was due?"
+      },
+      "faq": [
+        {
+          "id": "avoid-gamblers-fallacy-trust-the-odds-faq-1",
+          "question": "Does every streak come from independent events?",
+          "answer": "No. Some processes carry state through changing conditions, depletion, learning, wear or shared inputs. The task is to identify a real connection rather than assume either independence or dependence from the streak alone."
+        },
+        {
+          "id": "avoid-gamblers-fallacy-trust-the-odds-faq-2",
+          "question": "What should I do when the connection is unknown?",
+          "answer": "Pause the high-cost action, gather relevant information and use a conservative rule. Unknown dependence is not a reason to increase a bet or commitment."
+        },
+        {
+          "id": "avoid-gamblers-fallacy-trust-the-odds-faq-3",
+          "question": "Is this gambling or financial advice?",
+          "answer": "No. The protocol does not recommend gambling, trading or continuing after losses. A pre-defined stop rule and choosing not to participate can be the responsible decision."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A run of similar outcomes can make the opposite result feel due. Before acting on that feeling, check whether the process carries any information from earlier outcomes into the next event.</p>"
+        },
+        "sections": [
+          {
+            "slug": "state-event-and-streak",
+            "title": "1. State the next event and the streak",
+            "html": "<p>Write the event you are deciding about and the sequence that is influencing you. This separates the upcoming event from the story attached to the recent run.</p>"
+          },
+          {
+            "slug": "look-for-connection",
+            "title": "2. Look for a real connection",
+            "html": "<p>Ask what carries state from one event to the next: changing inventory, wear, shared conditions, learning, policy, season or another observable factor. A streak by itself is not that connection.</p>"
+          },
+          {
+            "slug": "use-independent-rule",
+            "title": "3. Use the same rule when events are independent",
+            "html": "<p>When earlier outcomes do not alter the next event, keep the same probability, stake or decision rule. Do not increase commitment because an outcome feels overdue.</p>"
+          },
+          {
+            "slug": "inspect-dependent-state",
+            "title": "4. Inspect the relevant state when events are connected",
+            "html": "<p>When a connection may exist, gather information about that state rather than using the streak as a substitute. Update the decision only from information relevant to the connection.</p>"
+          },
+          {
+            "slug": "use-stop-rule",
+            "title": "5. Use a pre-defined stop rule",
+            "html": "<p>For repeated high-cost choices, decide in advance when to stop, pause or seek another view. Do not rewrite the rule after each outcome merely to keep the sequence going.</p>"
+          }
+        ]
+      }
+    },
+    "avoid-selection-bias-in-analysis": {
+      "title": "Write the Inclusion Rule Before Generalizing",
+      "description": "Record who or what entered an analysis, who was excluded and how the conclusion changes when missing cases are considered.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing unsupported mistake reduction, conversion examples, sample prescriptions, statistical precision and fabricated work scenes with a bounded inclusion-rule and scope check.",
+      "forbidden_public_fragments": [
+        "reduces costly mistakes later — often by 20–50%",
+        "Conversion from demo is 40%",
+        "take 50 recent leads",
+        "k = 20–100 depending on population",
+        "selection accounts for 62.5% of the difference",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before generalizing from a report, write the target group, the inclusion rule and the cases that the rule left out.",
+        "whatYouDo": "State the question and population you want to understand. Record how cases entered the analysis, which cases were excluded or missing and whether selection depends on the outcome. Compare the conclusion with a broader view or label it as applying only to the selected group. Write what additional data would change the conclusion.",
+        "checkIn": "Who was included, who was missing, and is my conclusion limited to the selected group or supported beyond it?"
+      },
+      "faq": [
+        {
+          "id": "avoid-selection-bias-in-analysis-faq-1",
+          "question": "Does a selected sample make the analysis useless?",
+          "answer": "No. It may answer a narrower question. The problem begins when a result for the selected group is presented as though it applies to cases that were not represented."
+        },
+        {
+          "id": "avoid-selection-bias-in-analysis-faq-2",
+          "question": "What if excluded cases cannot be measured?",
+          "answer": "Describe the missing group, explain why it is missing and narrow the conclusion. Record what information would be needed before making a broader claim."
+        },
+        {
+          "id": "avoid-selection-bias-in-analysis-faq-3",
+          "question": "Is checking the inclusion rule enough to remove bias?",
+          "answer": "No. It is a diagnostic step. Other problems can remain in measurement, comparison, timing, missing data or interpretation."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A clean result can describe only the cases that were allowed into the analysis. Before turning it into a general rule, inspect the selection process and keep the conclusion inside the group the data can represent.</p>"
+        },
+        "sections": [
+          {
+            "slug": "define-target-group",
+            "title": "1. Define the target group",
+            "html": "<p>Write who, what or which events the decision is meant to cover. This is the population your conclusion would need to represent.</p>"
+          },
+          {
+            "slug": "write-inclusion-rule",
+            "title": "2. Write the inclusion rule",
+            "html": "<p>Record how cases entered the report: threshold, response, purchase, survival, availability, completion, manual choice or another filter.</p>"
+          },
+          {
+            "slug": "name-excluded-and-missing",
+            "title": "3. Name excluded and missing cases",
+            "html": "<p>List who could not enter, did not respond, dropped out or was removed. Note whether the reason for absence is related to the outcome being discussed.</p>"
+          },
+          {
+            "slug": "test-scope",
+            "title": "4. Test the scope of the conclusion",
+            "html": "<p>Compare with a broader group when data is available. Otherwise rewrite the conclusion so it applies only to the selected cases and state the missing information.</p>"
+          },
+          {
+            "slug": "record-change-condition",
+            "title": "5. Record what would change the conclusion",
+            "html": "<p>Identify the missing group, alternative sample or additional comparison needed before a broader decision is justified. Keep that need attached to the result.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

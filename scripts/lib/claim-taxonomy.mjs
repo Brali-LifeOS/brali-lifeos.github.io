@@ -2,17 +2,22 @@ const definitions = [
   {
     id: 'quantitative',
     enforced: true,
-    description: 'Percentages, explicit sample sizes, or participant counts that require precise source support.',
+    decision_required: true,
+    description: 'Percentages, explicit sample sizes, participant counts, or named effect estimates that require precise source support.',
     patterns: [
       /\b\d{1,3}(?:\.\d+)?\s*%\b/i,
       /\bn\s*=\s*\d+\b/i,
       /\b(?:sample|cohort)\s+of\s+\d+\b/i,
       /\b\d+\s+(?:participants|users|testers|subjects)\b/i,
+      /\b(?:cohen'?s?\s+d|hedges'?s?\s+g|odds\s+ratio|risk\s+ratio|hazard\s+ratio)\s*(?:=|:)?\s*-?\d+(?:\.\d+)?\b/i,
+      /\b(?:OR|RR|HR)\s*=\s*-?\d+(?:\.\d+)?\b/,
+      /\br\s*=\s*-?0?\.\d+\b/i,
     ],
   },
   {
     id: 'first-party-result',
     enforced: true,
+    decision_required: true,
     description: 'Claims about Brali, author, user, pilot, trial, experiment, or internal data results.',
     patterns: [
       /\b(?:in|during)\s+our\s+(?:pilot|trial|experiment|test)\b/i,
@@ -24,6 +29,7 @@ const definitions = [
   {
     id: 'guarantee',
     enforced: true,
+    decision_required: true,
     description: 'Guarantees, universal effectiveness, or unsupported proof language.',
     patterns: [
       /\b(?:we|this\s+(?:method|protocol|technique|system)|the\s+(?:method|protocol|technique|system))\s+guarantee(?:d|s)?\b/i,
@@ -38,6 +44,7 @@ const definitions = [
   {
     id: 'clinical-outcome',
     enforced: true,
+    decision_required: true,
     description: 'High-confidence diagnosis, treatment, cure, prevention, symptom, or disease outcome language.',
     patterns: [
       /\b(?:diagnos(?:e|es|ed)|treat(?:s|ed)?|cure(?:s|d)?|prevent(?:s|ed)?)\s+(?:depression|anxiety|insomnia|pain|disease|disorder|symptoms?)\b/i,
@@ -48,7 +55,8 @@ const definitions = [
   {
     id: 'causal-effect',
     enforced: false,
-    description: 'Causal or effect language that should be reviewed when used as a factual claim.',
+    decision_required: true,
+    description: 'Causal or effect language that needs an explicit reviewed decision before trusted discovery.',
     patterns: [
       /\b(?:has|have|was|were)\s+shown\s+to\b/i,
       /\bis\s+proven\s+to\b/i,
@@ -61,7 +69,8 @@ const definitions = [
   {
     id: 'mechanism',
     enforced: false,
-    description: 'Biological or neurological mechanism language that can create unsupported scientific authority.',
+    decision_required: true,
+    description: 'Biological or neurological mechanism language that needs an explicit reviewed decision before trusted discovery.',
     patterns: [
       /\b(?:dopamine|serotonin|cortisol|neuroplasticity|brain\s+chemistry|blood\s+flow|inflammation)\b/i,
       /\b(?:parasympathetic|sympathetic)\s+(?:system|response)\b/i,
@@ -71,7 +80,8 @@ const definitions = [
   {
     id: 'research-language',
     enforced: false,
-    description: 'Study and evidence language that requires traceable review before it supports a public claim.',
+    decision_required: false,
+    description: 'Study and evidence language that remains visible for review prioritization but is not automatically claim-specific.',
     patterns: [
       /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic\s+review|meta-analysis|evidence\s+shows|clinically)\b/i,
       /\b(?:research|evidence|studies?)\s+(?:shows?|suggests?|demonstrates?|proves?)\b/i,
@@ -133,6 +143,9 @@ export function inspectClaims(value, { exampleLimitPerCategory = 3 } = {}) {
   return {
     categories: markers.map(marker => marker.category),
     enforcedCategories: markers.filter(marker => marker.enforced).map(marker => marker.category),
+    decisionRequiredCategories: markers
+      .filter(marker => definitions.find(definition => definition.id === marker.category)?.decision_required)
+      .map(marker => marker.category),
     markers,
   };
 }

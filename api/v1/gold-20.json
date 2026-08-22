@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "api_version": "v1",
+  "dataset_version": "1.0.0",
+  "collection_id": "brali:collection:gold-20",
+  "title": "Brali Gold 20",
+  "count": 20,
+  "source_contract": "https://brali-lifeos.github.io/data/gold-20.json",
+  "protocol_feed": "https://brali-lifeos.github.io/api/v1/protocols.json",
+  "mcp_consumption": {
+    "transport": "local-stdio",
+    "tool": "get_protocol",
+    "instruction": "Use each canonical_id or slug from this projection with the existing Brali get_protocol tool. Gold membership does not change the returned evidence state."
+  },
+  "items": [
+    {"rank": 1, "canonical_id": "brali:protocol:25-minute-pomodoro-focus-sprints", "slug": "25-minute-pomodoro-focus-sprints", "protocol_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/"},
+    {"rank": 2, "canonical_id": "brali:protocol:active-listening-exercises", "slug": "active-listening-exercises", "protocol_url": "https://brali-lifeos.github.io/life-os/active-listening-exercises/"},
+    {"rank": 3, "canonical_id": "brali:protocol:weekly-theme-learning-sprints", "slug": "weekly-theme-learning-sprints", "protocol_url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/"},
+    {"rank": 4, "canonical_id": "brali:protocol:brainwriting-group-idea-generation", "slug": "brainwriting-group-idea-generation", "protocol_url": "https://brali-lifeos.github.io/life-os/brainwriting-group-idea-generation/"},
+    {"rank": 5, "canonical_id": "brali:protocol:circles-of-control-planner", "slug": "circles-of-control-planner", "protocol_url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/"},
+    {"rank": 6, "canonical_id": "brali:protocol:10-minute-morning-stretch-routine", "slug": "10-minute-morning-stretch-routine", "protocol_url": "https://brali-lifeos.github.io/life-os/10-minute-morning-stretch-routine/"},
+    {"rank": 7, "canonical_id": "brali:protocol:start-with-a-hypothesis", "slug": "start-with-a-hypothesis", "protocol_url": "https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/"},
+    {"rank": 8, "canonical_id": "brali:protocol:five-whys-goal-clarity", "slug": "five-whys-goal-clarity", "protocol_url": "https://brali-lifeos.github.io/life-os/five-whys-goal-clarity/"},
+    {"rank": 9, "canonical_id": "brali:protocol:ad-astra-per-aspera-motivation-tracker", "slug": "ad-astra-per-aspera-motivation-tracker", "protocol_url": "https://brali-lifeos.github.io/life-os/ad-astra-per-aspera-motivation-tracker/"},
+    {"rank": 10, "canonical_id": "brali:protocol:analogy-studio", "slug": "analogy-studio", "protocol_url": "https://brali-lifeos.github.io/life-os/analogy-studio/"},
+    {"rank": 11, "canonical_id": "brali:protocol:ask-better-interview-questions", "slug": "ask-better-interview-questions", "protocol_url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/"},
+    {"rank": 12, "canonical_id": "brali:protocol:ask-for-feedback-tracker", "slug": "ask-for-feedback-tracker", "protocol_url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/"},
+    {"rank": 13, "canonical_id": "brali:protocol:avoid-anthropocentric-bias", "slug": "avoid-anthropocentric-bias", "protocol_url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/"},
+    {"rank": 14, "canonical_id": "brali:protocol:avoid-contrast-effect", "slug": "avoid-contrast-effect", "protocol_url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/"},
+    {"rank": 15, "canonical_id": "brali:protocol:avoid-gamblers-fallacy-trust-the-odds", "slug": "avoid-gamblers-fallacy-trust-the-odds", "protocol_url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/"},
+    {"rank": 16, "canonical_id": "brali:protocol:avoid-selection-bias-in-analysis", "slug": "avoid-selection-bias-in-analysis", "protocol_url": "https://brali-lifeos.github.io/life-os/avoid-selection-bias-in-analysis/"},
+    {"rank": 17, "canonical_id": "brali:protocol:backfire-effect-coach", "slug": "backfire-effect-coach", "protocol_url": "https://brali-lifeos.github.io/life-os/backfire-effect-coach/"},
+    {"rank": 18, "canonical_id": "brali:protocol:belief-update-coach", "slug": "belief-update-coach", "protocol_url": "https://brali-lifeos.github.io/life-os/belief-update-coach/"},
+    {"rank": 19, "canonical_id": "brali:protocol:biomimicry-creative-problem-solving", "slug": "biomimicry-creative-problem-solving", "protocol_url": "https://brali-lifeos.github.io/life-os/biomimicry-creative-problem-solving/"},
+    {"rank": 20, "canonical_id": "brali:protocol:bold-brainstorm-kickoff", "slug": "bold-brainstorm-kickoff", "protocol_url": "https://brali-lifeos.github.io/life-os/bold-brainstorm-kickoff/"}
+  ]
+}

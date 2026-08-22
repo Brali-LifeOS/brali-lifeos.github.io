@@ -52,7 +52,7 @@ const definitions = [
     patterns: [
       /\b(?:has|have|was|were)\s+shown\s+to\b/i,
       /\bis\s+proven\s+to\b/i,
-      /\b(?:causes?|leads?\s+to|results?\s+in)\b/i,
+      /\b(?:causes|caused|causing|leads?\s+to|led\s+to|results?\s+in|resulted\s+in)\b/i,
       /\b(?:reduces?|increases?|improves?|boosts?|lowers?|raises?)\s+(?:the\s+)?(?:risk|likelihood|level|rate|performance|memory|focus|mood|stress|anxiety|pain|sleep)\b/i,
     ],
   },

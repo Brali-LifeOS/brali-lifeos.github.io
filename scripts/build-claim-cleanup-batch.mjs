@@ -5,6 +5,7 @@ import path from 'node:path';
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
 const policy = await readJson('data/claim-cleanup-policy.json');
+const decisions = await readJson('data/claim-cleanup-decisions-batch-1.json');
 const claimDebt = await readJson('life-os/datasets/claim-debt.json');
 const reviewQueue = await readJson('life-os/datasets/review-queue.json');
 const publicIndex = await readJson('life-os-index.json');
@@ -73,8 +74,15 @@ const report = {
     actionable_under_policy: eligibleTotal,
     selected: selected.length,
     blocked_preview: blocked.length,
+    completed_in_batch_1: decisions.entries?.length ?? 0,
   },
   guardrails: policy.guardrails,
+  completed_batch: {
+    batch_id: decisions.batch_id,
+    selected_at: decisions.selected_at,
+    decisions_url: '/data/claim-cleanup-decisions-batch-1.json',
+    completed_slugs: decisions.selection_order,
+  },
   selected,
   blocked_preview: blocked,
 };
@@ -107,6 +115,7 @@ if (manifest.schema_version !== 2 || !Array.isArray(manifest.files)) {
 const additions = await Promise.all([
   manifestEntry('life-os/datasets/claim-debt.json'),
   manifestEntry('life-os/datasets/claim-cleanup-batch.json'),
+  manifestEntry('data/claim-cleanup-decisions-batch-1.json'),
 ]);
 const byPath = new Map(manifest.files.map(entry => [entry.path, entry]));
 for (const entry of additions) byPath.set(entry.path, entry);
@@ -115,6 +124,7 @@ manifest.counts ||= {};
 manifest.counts.files = manifest.files.length;
 manifest.counts.claim_debt_entries = claimDebt.counts?.debt_entries ?? 0;
 manifest.counts.claim_cleanup_selected = report.counts.selected;
+manifest.counts.claim_cleanup_completed = decisions.entries?.length ?? 0;
 manifest.claim_cleanup_batch_schema_version = 1;
 manifest.claim_cleanup_batch_counts = report.counts;
 const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
@@ -126,10 +136,14 @@ let datasets = await readFile(datasetsPath, 'utf8');
 if (!datasets.includes('/life-os/datasets/claim-cleanup-batch.json')) {
   const item = '<li><a href="/life-os/datasets/claim-cleanup-batch.json">Next claim cleanup batch (JSON)</a></li>';
   datasets = datasets.replace('</ul>', `${item}</ul>`);
-  await writeFile(datasetsPath, datasets);
 }
+if (!datasets.includes('/data/claim-cleanup-decisions-batch-1.json')) {
+  const item = '<li><a href="/data/claim-cleanup-decisions-batch-1.json">Completed claim cleanup batch 1 decisions (JSON)</a></li>';
+  datasets = datasets.replace('</ul>', `${item}</ul>`);
+}
+await writeFile(datasetsPath, datasets);
 
-console.log(`Claim cleanup selector: unresolved=${report.counts.unresolved_claim_debt}; actionable=${eligibleTotal}; selected=${selected.length}; blocked-preview=${blocked.length}.`);
+console.log(`Claim cleanup selector: unresolved=${report.counts.unresolved_claim_debt}; actionable=${eligibleTotal}; selected=${selected.length}; blocked-preview=${blocked.length}; completed=${report.counts.completed_in_batch_1}.`);
 for (const [index, entry] of selected.entries()) {
   console.log(`CLAIM_CLEANUP_SELECTED ${index + 1} | ${entry.slug} | ${entry.status} | ${entry.enforced_categories.join(',')} | score=${entry.editorial_priority?.score ?? 0}`);
 }

@@ -4,7 +4,7 @@ const definitions = [
     enforced: true,
     description: 'Percentages, explicit sample sizes, or participant counts that require precise source support.',
     patterns: [
-      /\b\d{1,3}(?:\.\d+)?\s*%\b/i,
+      /\b\d{1,3}(?:\.\d+)?\s*%(?!\w)/i,
       /\bn\s*=\s*\d+\b/i,
       /\b(?:sample|cohort)\s+of\s+\d+\b/i,
       /\b\d+\s+(?:participants|users|testers|subjects)\b/i,

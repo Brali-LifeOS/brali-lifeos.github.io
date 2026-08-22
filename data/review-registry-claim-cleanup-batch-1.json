@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "evidence_overrides": {
+    "ad-astra-per-aspera-motivation-tracker": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported internal outcomes, percentages, mechanisms and rigid practice targets. The effective public record is rewritten as a low-risk phrase-to-action prompt without an evidence claim."
+    },
+    "analogy-studio": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited NLP-branded article contained unsupported laboratory, comprehension and recall claims. The effective public record is rewritten as a neutral analogy-mapping and listener-paraphrase practice without an evidence claim."
+    },
+    "ask-better-interview-questions": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited interview guide contained unsupported multipliers, sample claims and fabricated observations. The effective public record is rewritten as a consent-based, sequential information interview without an evidence claim."
+    },
+    "ask-for-feedback-tracker": {
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited feedback article contained unsupported internal trials, cohort outcomes, response-rate claims and arbitrary quotas. The effective public record is rewritten as a bounded feedback request and decision protocol without an evidence claim."
+    }
+  },
+  "ontology_overrides": {
+    "ad-astra-per-aspera-motivation-tracker": {
+      "topic_ids": ["task-initiation"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The curated protocol uses a short phrase only as a cue to choose and begin a controllable next action. Task Initiation is the concrete user-facing Topic; the legacy Phrases collection remains compatibility navigation."
+    },
+    "analogy-studio": {
+      "topic_ids": ["clear-communication", "creative-problem-solving"],
+      "suppress_legacy_methods": true,
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The curated protocol explains an idea through a bounded analogy and tests the listener's paraphrase. It supports Clear Communication and Creative Problem Solving. The inherited NLP method label is suppressed because the effective protocol does not depend on NLP."
+    },
+    "ask-better-interview-questions": {
+      "topic_ids": ["listening", "clear-communication"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The curated protocol asks permission, follows a recent event in sequence and checks the summary with the speaker. Listening and Clear Communication are the concrete Topics; Detective remains a Lens."
+    },
+    "ask-for-feedback-tracker": {
+      "topic_ids": ["metacognition", "revision-feedback"],
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The curated protocol uses another person's perspective to examine assumptions and improve an artifact or decision. Metacognition and Revision & Feedback are the concrete Topics; the legacy Thinking collection remains compatibility navigation."
+    }
+  },
+  "evidence_decisions": [],
+  "research_candidates": []
+}

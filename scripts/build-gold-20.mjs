@@ -1,14 +1,17 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import crypto from 'node:crypto';
 import path from 'node:path';
 
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
+const sha256 = text => crypto.createHash('sha256').update(text).digest('hex');
 const candidates = await readJson('data/gold-20-candidates.json');
 const reviews = await readJson('data/gold-20-reviews.json');
 const reviewSchema = await readJson('contracts/gold-protocol-review.schema.json');
 const protocols = await readJson('life-os/datasets/protocols.json');
 const evidence = await readJson('life-os/datasets/evidence.json');
 const decisions = await readJson('life-os/datasets/evidence-decisions.json');
+const platform = await readJson('data/platform.json');
 
 const protocolBySlug = new Map((protocols.entries ?? []).map(entry => [entry.slug, entry]));
 const evidenceBySlug = new Map((evidence.entries ?? []).map(entry => [entry.slug, entry]));
@@ -85,12 +88,21 @@ const output = {
   entries,
 };
 
+const datasetRel = 'life-os/datasets/gold-20.json';
+const outputText = `${JSON.stringify(output, null, 2)}\n`;
 await mkdir(path.join(root, 'life-os/datasets'), { recursive: true });
-await writeFile(path.join(root, 'life-os/datasets/gold-20.json'), JSON.stringify(output, null, 2));
+await writeFile(path.join(root, datasetRel), outputText);
 
-const manifestPath = path.join(root, 'life-os/datasets/manifest.json');
 const manifest = await readJson('life-os/datasets/manifest.json');
-manifest.files = [...new Set([...(manifest.files ?? []), 'gold-20.json'])];
+if (manifest.schema_version !== 2) throw new Error(`Gold 20 requires canonical manifest schema v2, got ${manifest.schema_version}`);
+const fileEntry = {
+  path: datasetRel,
+  sha256: sha256(outputText),
+  bytes: Buffer.byteLength(outputText),
+  count: output.entries.length,
+};
+manifest.files = [...(manifest.files ?? []).filter(item => item?.path !== datasetRel), fileEntry];
+manifest.counts = { ...(manifest.counts ?? {}), files: manifest.files.length };
 manifest.gold_20 = {
   schema_version: output.schema_version,
   target_count: output.target_count,
@@ -98,7 +110,38 @@ manifest.gold_20 = {
   gold_ready_count: output.gold_ready_count,
   observed_user_demand_available: output.observed_user_demand_available,
 };
-await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
+const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
+await writeFile(path.join(root, 'life-os/datasets/manifest.json'), manifestText);
+
+const apiDir = path.join(root, 'api', platform.api_version);
+await mkdir(apiDir, { recursive: true });
+await writeFile(path.join(apiDir, 'gold-20.json'), outputText);
+await writeFile(path.join(apiDir, 'manifest.json'), manifestText);
+
+const apiIndexPath = path.join(apiDir, 'index.json');
+const apiIndex = JSON.parse(await readFile(apiIndexPath, 'utf8'));
+apiIndex.endpoints = [...new Set([...(apiIndex.endpoints ?? []), 'gold-20.json'])];
+apiIndex.semantics = {
+  ...(apiIndex.semantics ?? {}),
+  gold: 'gold-20.json exposes candidate and manual review readiness. gold_ready=false must never be interpreted as an approved Gold protocol.',
+};
+await writeFile(apiIndexPath, `${JSON.stringify(apiIndex, null, 2)}\n`);
+
+const openapiPath = path.join(apiDir, 'openapi.json');
+const openapi = JSON.parse(await readFile(openapiPath, 'utf8'));
+openapi.paths = openapi.paths ?? {};
+openapi.paths[`/api/${platform.api_version}/gold-20.json`] = {
+  get: {
+    operationId: 'get_gold_20',
+    responses: {
+      '200': {
+        description: 'Gold 20 candidate and manual review readiness registry',
+        content: { 'application/json': { schema: { type: 'object' } } },
+      },
+    },
+  },
+};
+await writeFile(openapiPath, `${JSON.stringify(openapi, null, 2)}\n`);
 
 const datasetsPath = path.join(root, 'life-os/datasets/index.html');
 let datasetsHtml = await readFile(datasetsPath, 'utf8');
@@ -107,4 +150,4 @@ if (!datasetsHtml.includes('/life-os/datasets/gold-20.json')) {
   await writeFile(datasetsPath, datasetsHtml);
 }
 
-console.log(`Gold 20 readiness built: ${output.candidate_count} candidates; ${output.gold_ready_count} Gold-ready; observed user demand=${output.observed_user_demand_available}.`);
+console.log(`Gold 20 readiness built: ${output.candidate_count} candidates; ${output.gold_ready_count} Gold-ready; observed user demand=${output.observed_user_demand_available}; canonical/API manifests synchronized.`);

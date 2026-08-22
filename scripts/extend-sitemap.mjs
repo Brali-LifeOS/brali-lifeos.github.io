@@ -5,6 +5,7 @@ await import('./build-growth-surfaces.mjs');
 await import('./build-state-evidence-trends.mjs');
 await import('./build-problem-collections.mjs');
 await import('./build-evidence-ledger.mjs');
+await import('./build-claim-quality-summary.mjs');
 await import('./build-research-gaps.mjs');
 await import('./sync-research-gap-manifest.mjs');
 await import('./build-zone-coverage-backlog.mjs');
@@ -46,6 +47,7 @@ const routes = [
   "/state/",
   "/state/quality/",
   "/state/legacy-sensitive/",
+  "/quality/claims/",
   "/trends/evidence/",
   `/trends/evidence/${evidenceMonth}/`,
   ...researchGapRoutes,
@@ -71,6 +73,8 @@ await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');
+await import('./check-claim-taxonomy.mjs');
+await import('./check-claim-quality-summary.mjs');
 await import('./check-research-gaps.mjs');
 await import('./check-zone-coverage-backlog.mjs');
 await import('./check-legacy-sensitive-state.mjs');

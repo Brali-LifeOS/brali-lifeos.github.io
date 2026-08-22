@@ -15,9 +15,12 @@ const claimDebt = await readJson('life-os/datasets/claim-debt.json');
 const reviewQueue = await readJson('life-os/datasets/review-queue.json');
 const counts = claimDebt.counts ?? {};
 
+if (claimDebt.schema_version !== 2) fail(`expected claim-debt schema 2, found ${claimDebt.schema_version}`);
+
 for (const marker of [
   'Claim debt is visible. Unresolved claims stay out of discovery.',
   'A marker is not proof that a statement is false.',
+  'Debt by canonical Topic',
   'Highest-priority current queue',
   'What closes claim debt',
   '/life-os/datasets/claim-debt.json',
@@ -46,6 +49,19 @@ for (const status of ['reviewed', 'practical', 'pending-review', 'restricted']) 
   }
 }
 
+const topicDebt = Object.entries(counts.debt_by_topic ?? {})
+  .sort((left, right) => (right[1] - left[1]) || left[0].localeCompare(right[0]));
+if (!page.includes(`data-claim-topic-groups="${topicDebt.length}"`)) fail('Topic group count drift');
+if (!page.includes(`data-claim-topic-pending-debt="${counts.topic_pending_debt_entries ?? 0}"`)) fail('topic-pending debt count drift');
+for (const [[topicId, count], index] of topicDebt.slice(0, 12).map((entry, index) => [entry, index])) {
+  const marker = `data-claim-topic-rank="${index + 1}" data-claim-topic="${topicId}" data-claim-topic-count="${count}"`;
+  if (!page.includes(marker)) fail(`Topic order drift at rank ${index + 1}: ${topicId}`);
+}
+const renderedTopicRows = (page.match(/data-claim-topic-rank=/g) ?? []).length;
+if (renderedTopicRows !== Math.min(topicDebt.length, 12)) {
+  fail(`Topic row count drift: ${renderedTopicRows}/${Math.min(topicDebt.length, 12)}`);
+}
+
 const debtSlugs = new Set((claimDebt.entries ?? [])
   .filter(entry => (entry.debt_reasons ?? []).length > 0)
   .map(entry => entry.slug));
@@ -66,4 +82,4 @@ if (!sitemap.includes('<loc>https://brali-lifeos.github.io/quality/claims/</loc>
 if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(page)) fail('public quality report is unexpectedly noindex');
 if (/data-claim-example/i.test(page)) fail('public report must not render claim-example fields or snippets');
 
-console.log(`Public claim debt report verified: ${counts.records_checked ?? 0} checked, ${counts.debt_entries ?? 0} unresolved, ${counts.indexable_debt_entries ?? 0} indexable, ${expectedQueue.length} queue rows.`);
+console.log(`Public claim debt report verified: ${counts.records_checked ?? 0} checked, ${counts.debt_entries ?? 0} unresolved, ${counts.indexable_debt_entries ?? 0} indexable, ${topicDebt.length} Topic debt group(s), ${expectedQueue.length} queue rows.`);

@@ -1,13 +1,29 @@
+const causalVerbs = '(?:cause|lead\\s+to|result\\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)';
+
 const definitions = [
   {
     id: 'quantitative',
     enforced: true,
     description: 'Percentages, explicit sample sizes, or participant counts that require precise source support.',
     patterns: [
-      /\b\d{1,3}(?:\.\d+)?\s*%\b/i,
+      /\b\d{1,3}(?:\.\d+)?\s*%(?!\w)/i,
       /\bn\s*=\s*\d+\b/i,
       /\b(?:sample|cohort)\s+of\s+\d+\b/i,
       /\b\d+\s+(?:participants|users|testers|subjects)\b/i,
+    ],
+  },
+  {
+    id: 'effect-estimate',
+    enforced: true,
+    description: 'Statistical effect estimates, intervals, or comparative magnitudes that require exact source and analysis boundaries.',
+    patterns: [
+      /\b(?:risk\s+ratio|relative\s+risk|odds\s+ratio|hazard\s+ratio)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:RR|OR|HR)\s*[=:]\s*-?\d+(?:\.\d+)?\b/i,
+      /\b(?:Cohen['’]?s?\s+d|Hedges['’]?s?\s+g|standardized\s+mean\s+difference|SMD)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:effect\s+size|mean\s+difference)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:95\s*%\s*)?(?:confidence\s+interval|CI)\s*(?::|=)?\s*\[?\s*-?\d+(?:\.\d+)?\s*[,–-]\s*-?\d+(?:\.\d+)?\s*\]?\b/i,
+      /\b\d+(?:\.\d+)?\s+percentage\s+points?\b/i,
+      /\b\d+(?:\.\d+)?\s*(?:times|fold)\s+(?:more|less|higher|lower|likely)\b/i,
     ],
   },
   {
@@ -46,15 +62,22 @@ const definitions = [
     ],
   },
   {
+    id: 'causal-assertion',
+    enforced: true,
+    description: 'High-confidence causal proof, shown-effect, or cause language that requires a directly matching reviewed source.',
+    patterns: [
+      /\b(?:(?:has|have)\s+been|(?:was|were))\s+shown\s+to\s+(?:cause|lead\s+to|result\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)\b/i,
+      /\bis\s+proven\s+to\s+(?:cause|lead\s+to|result\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)\b/i,
+      /\b(?:causes|caused|causing)\s+(?:an?\s+|the\s+)?(?:increase|decrease|change|improvement|decline|effect|response|symptom|risk|problem|benefit|harm)\b/i,
+    ],
+  },
+  {
     id: 'causal-effect',
     enforced: false,
-    description: 'Causal or effect language that should be reviewed when used as a factual claim.',
+    description: 'Broader causal or effect language that should be reviewed when used as a factual claim.',
     patterns: [
-      /\b(?:has|have|was|were)\s+shown\s+to\b/i,
-      /\bis\s+proven\s+to\b/i,
       /\bleads?\s+to\b/i,
       /\bresults?\s+in\b/i,
-      /\bcauses?\s+(?:an?\s+|the\s+)?(?:increase|decrease|change|improvement|decline|effect|response|symptom|risk|problem|benefit|harm)\b/i,
       /\b(?:reduces?|increases?|improves?|boosts?|lowers?|raises?)\s+(?:the\s+)?(?:risk|likelihood|level|rate|performance|memory|focus|mood|stress|anxiety|pain|sleep)\b/i,
     ],
   },
@@ -93,6 +116,15 @@ export function normalizeClaimText(value) {
     .trim();
 }
 
+function withoutNegatedCausalPhrases(text) {
+  const patterns = [
+    new RegExp(`\\b(?:(?:has|have)\\s+not\\s+been|(?:was|were)\\s+not)\\s+shown\\s+to\\s+${causalVerbs}\\b`, 'gi'),
+    new RegExp(`\\bis\\s+not\\s+proven\\s+to\\s+${causalVerbs}\\b`, 'gi'),
+    new RegExp(`\\b(?:does|do|did|can|could|may|might|will|would|has|have|had)\\s+not\\s+${causalVerbs}\\b`, 'gi'),
+  ];
+  return patterns.reduce((current, pattern) => current.replace(pattern, ' '), text);
+}
+
 function examplesFor(text, patterns, limit) {
   const examples = [];
   const seen = new Set();
@@ -117,10 +149,14 @@ function examplesFor(text, patterns, limit) {
 
 export function inspectClaims(value, { exampleLimitPerCategory = 3 } = {}) {
   const text = normalizeClaimText(value);
+  const causalText = withoutNegatedCausalPhrases(text);
   const markers = [];
 
   for (const definition of definitions) {
-    const examples = examplesFor(text, definition.patterns, exampleLimitPerCategory);
+    const inspectedText = definition.id === 'causal-assertion' || definition.id === 'causal-effect'
+      ? causalText
+      : text;
+    const examples = examplesFor(inspectedText, definition.patterns, exampleLimitPerCategory);
     if (examples.length) {
       markers.push({
         category: definition.id,
@@ -130,10 +166,15 @@ export function inspectClaims(value, { exampleLimitPerCategory = 3 } = {}) {
     }
   }
 
+  const hasCausalAssertion = markers.some(marker => marker.category === 'causal-assertion');
+  const normalizedMarkers = hasCausalAssertion
+    ? markers.filter(marker => marker.category !== 'causal-effect')
+    : markers;
+
   return {
-    categories: markers.map(marker => marker.category),
-    enforcedCategories: markers.filter(marker => marker.enforced).map(marker => marker.category),
-    markers,
+    categories: normalizedMarkers.map(marker => marker.category),
+    enforcedCategories: normalizedMarkers.filter(marker => marker.enforced).map(marker => marker.category),
+    markers: normalizedMarkers,
   };
 }
 

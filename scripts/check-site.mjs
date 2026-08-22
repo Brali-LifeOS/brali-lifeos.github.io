@@ -149,11 +149,20 @@ for (let index = 1; index < (reviewQueue.entries ?? []).length; index += 1) {
     throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}.`);
   }
 }
-if (claimDebt.schema_version !== 1 || claimDebt.name !== "Brali public claim debt report") {
+if (claimDebt.schema_version !== 2 || claimDebt.name !== "Brali public claim debt report") {
   throw new Error("Claim-debt report identity or schema drift.");
 }
 if (claimDebt.counts?.records_checked !== sourceIndex.length || claimDebt.counts?.records_with_markers !== (claimDebt.entries ?? []).length) {
   throw new Error("Claim-debt report does not reconcile with the source library.");
+}
+if (!Number.isInteger(claimDebt.counts?.topic_pending_marker_records) || !Number.isInteger(claimDebt.counts?.topic_pending_debt_entries)) {
+  throw new Error("Claim-debt report lacks explicit Topic-pending counts.");
+}
+if (typeof claimDebt.counts?.by_topic !== "object" || typeof claimDebt.counts?.debt_by_topic !== "object") {
+  throw new Error("Claim-debt report lacks Topic aggregation.");
+}
+if (!(claimDebt.entries ?? []).every((entry) => Array.isArray(entry.topic_ids))) {
+  throw new Error("Claim-debt report contains an entry without canonical Topic IDs.");
 }
 if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => typeof entry.displayTitle === "string" && entry.displayTitle.trim())) {
   throw new Error("Public Life OS index lacks normalized display titles.");
@@ -171,4 +180,4 @@ if (!(protocols.entries ?? []).every((record) => record.ontology?.domains?.lengt
 if (coverage.summary?.library_entries !== sourceIndex.length) throw new Error("Ontology coverage does not reconcile with the library size.");
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, ontology/claim-aware protocol and evidence surfaces, public coverage reporting, source provenance, ${evidenceIndex.entries.length} evidence records, and ${claimDebt.counts.debt_entries} claim-debt entries.`);
+console.log(`Static site verified: ${required.length} core files, ontology/claim-aware protocol and evidence surfaces, public Topic coverage reporting, source provenance, ${evidenceIndex.entries.length} evidence records, ${claimDebt.counts.debt_entries} claim-debt entries, and ${Object.keys(claimDebt.counts.debt_by_topic ?? {}).length} Topic debt groups.`);

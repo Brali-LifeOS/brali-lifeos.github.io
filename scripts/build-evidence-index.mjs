@@ -58,9 +58,9 @@ function withEditorialPriority(record) {
     score += 40;
     factors.push("sensitive-topic");
   }
-  if (record.claims.quantitative) {
+  if (record.claims.quantitative || (record.claims.enforcedCategories ?? []).includes("effect-estimate")) {
     score += 30;
-    factors.push("quantitative-claims");
+    factors.push(record.claims.quantitative ? "quantitative-claims" : "effect-estimate-claims");
   }
   if ((record.claims.enforcedCategories ?? []).length > 0) {
     score += 25;
@@ -90,9 +90,11 @@ function claimDebtReasons(record) {
   const enforced = record.claims.enforcedCategories ?? [];
 
   if (record.claims.quantitative && record.status !== "reviewed") reasons.push("quantitative-claim-not-reviewed");
+  if (enforced.includes("effect-estimate") && record.status !== "reviewed") reasons.push("effect-estimate-not-reviewed");
   if (enforced.includes("first-party-result") && record.status !== "reviewed") reasons.push("first-party-result-not-reviewed");
   if (enforced.includes("guarantee")) reasons.push(record.status === "reviewed" ? "guarantee-language-requires-rewrite-review" : "guarantee-language-not-reviewed");
   if (enforced.includes("clinical-outcome") && record.status !== "reviewed") reasons.push("clinical-outcome-not-reviewed");
+  if (enforced.includes("causal-assertion") && record.status !== "reviewed") reasons.push("causal-assertion-not-reviewed");
   if (record.indexable && enforced.length > 0 && record.status !== "reviewed") reasons.push("indexable-enforced-claim-not-reviewed");
   if (record.status === "reviewed" && categories.length > 0 && !record.source.recorded) reasons.push("reviewed-claim-without-usable-source");
   if (record.status === "reviewed" && categories.length > 0 && (!record.review.reviewedAt || !record.review.reviewedBy)) reasons.push("reviewed-claim-without-review-metadata");
@@ -110,6 +112,7 @@ const claimEntries = records
   .map(record => ({
     slug: record.slug,
     zone: record.zone,
+    topic_ids: (record.ontology?.topics ?? []).map(topic => topic.id),
     status: record.status,
     indexable: record.indexable,
     sensitive: record.sensitive,
@@ -123,17 +126,33 @@ const claimEntries = records
 const claimDebtEntries = claimEntries.filter(entry => entry.debt_reasons.length > 0);
 const claimCountsByCategory = {};
 const claimDebtByStatus = {};
+const claimCountsByTopic = {};
+const claimDebtByTopic = {};
+let topicPendingMarkerRecords = 0;
+let topicPendingDebtEntries = 0;
+
 for (const entry of claimEntries) {
   for (const category of entry.categories) claimCountsByCategory[category] = (claimCountsByCategory[category] ?? 0) + 1;
+  if (entry.topic_ids.length === 0) topicPendingMarkerRecords += 1;
+  for (const topicId of entry.topic_ids) claimCountsByTopic[topicId] = (claimCountsByTopic[topicId] ?? 0) + 1;
 }
-for (const entry of claimDebtEntries) claimDebtByStatus[entry.status] = (claimDebtByStatus[entry.status] ?? 0) + 1;
+for (const entry of claimDebtEntries) {
+  claimDebtByStatus[entry.status] = (claimDebtByStatus[entry.status] ?? 0) + 1;
+  if (entry.topic_ids.length === 0) topicPendingDebtEntries += 1;
+  for (const topicId of entry.topic_ids) claimDebtByTopic[topicId] = (claimDebtByTopic[topicId] ?? 0) + 1;
+}
+const sortedCounts = values => Object.fromEntries(Object.entries(values).sort(([a], [b]) => a.localeCompare(b)));
 const claimDebtCounts = {
   records_checked: records.length,
   records_with_markers: claimEntries.length,
   debt_entries: claimDebtEntries.length,
   indexable_debt_entries: claimDebtEntries.filter(entry => entry.indexable).length,
-  by_category: Object.fromEntries(Object.entries(claimCountsByCategory).sort(([a], [b]) => a.localeCompare(b))),
-  by_status: Object.fromEntries(Object.entries(claimDebtByStatus).sort(([a], [b]) => a.localeCompare(b))),
+  topic_pending_marker_records: topicPendingMarkerRecords,
+  topic_pending_debt_entries: topicPendingDebtEntries,
+  by_category: sortedCounts(claimCountsByCategory),
+  by_status: sortedCounts(claimDebtByStatus),
+  by_topic: sortedCounts(claimCountsByTopic),
+  debt_by_topic: sortedCounts(claimDebtByTopic),
 };
 
 await mkdir(outputRoot, { recursive: true });
@@ -148,7 +167,7 @@ await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
   schema_version: 3,
   name: "Brali Growth Library evidence review queue",
-  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, enforced claim markers, evidence-like language, and missing usable sources raise editorial priority. Ontology classification gaps are exposed as factors but do not alter evidence priority by themselves.",
+  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative or effect-estimate claims, enforced claim markers, evidence-like language, and missing usable sources raise editorial priority. Ontology classification gaps are exposed as factors but do not alter evidence priority by themselves.",
   priority_model: {
     version: 3,
     purpose: "Editorial triage only; the score is not a clinical-risk or evidence-strength measure.",
@@ -156,7 +175,7 @@ await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
       restricted: 200,
       pending_review: 50,
       sensitive_topic: 40,
-      quantitative_claims: 30,
+      quantitative_or_effect_estimate_claims: 30,
       enforced_claim_markers: 25,
       evidence_language: 20,
       no_usable_source: 15,
@@ -175,9 +194,9 @@ await writeFile(path.join(outputRoot, "evidence-decisions.json"), JSON.stringify
   entries: evidenceDecisions.entries ?? [],
 }, null, 2));
 await writeFile(path.join(outputRoot, "claim-debt.json"), JSON.stringify({
-  schema_version: 1,
+  schema_version: 2,
   name: "Brali public claim debt report",
-  policy: "The report separates high-confidence enforced claim categories from monitor-only research, causal, and mechanism language. An entry can remain visible in this report even when it is correctly noindexed; debt is not proof that a claim is false, but it is a requirement for explicit review, rewrite, restriction, or rejection before normal trusted discovery.",
+  policy: "The report separates high-confidence enforced claim categories, including effect estimates and causal assertions, from monitor-only broad effect, mechanism, and research language. Topic aggregation exposes where review debt sits without implying that a marker is false. Unsupported enforced claims must be reviewed, rewritten, restricted, or rejected before normal trusted discovery.",
   category_definitions: claimCategoryDefinitions,
   counts: claimDebtCounts,
   entries: claimEntries,
@@ -190,7 +209,7 @@ manifest.evidence_status_counts = counts;
 manifest.evidence_ontology_coverage = ontologyCoverage;
 manifest.evidence_decision_count = (evidenceDecisions.entries ?? []).length;
 manifest.review_queue_schema_version = 3;
-manifest.claim_debt_schema_version = 1;
+manifest.claim_debt_schema_version = 2;
 manifest.claim_debt_counts = claimDebtCounts;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
@@ -207,4 +226,4 @@ if (!html.includes("/life-os/datasets/claim-debt.json")) {
 }
 await writeFile(datasetsPage, html);
 
-console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending; ${(evidenceDecisions.entries ?? []).length} evidence decision(s); ${claimDebtEntries.length} claim-debt item(s), ${claimDebtCounts.indexable_debt_entries} indexable.`);
+console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending; ${(evidenceDecisions.entries ?? []).length} evidence decision(s); ${claimDebtEntries.length} claim-debt item(s), ${claimDebtCounts.indexable_debt_entries} indexable; ${Object.keys(claimDebtCounts.debt_by_topic).length} Topic debt group(s), ${topicPendingDebtEntries} topic-pending debt item(s).`);

@@ -22,12 +22,12 @@ let unsupportedGeneratedClaimPages = 0;
 const examples = [];
 const generatedClaimExamples = [];
 
-if (claimDebt.schema_version !== 1) throw new Error(`Unexpected claim-debt schema version: ${claimDebt.schema_version}`);
+if (claimDebt.schema_version !== 2) throw new Error(`Unexpected claim-debt schema version: ${claimDebt.schema_version}`);
 if (claimDebt.name !== "Brali public claim debt report") throw new Error("Claim-debt report identity drift.");
 if (claimDebt.counts?.records_checked !== index.length) {
   throw new Error(`Claim-debt coverage drift: ${claimDebt.counts?.records_checked}/${index.length}`);
 }
-if ((claimDebt.category_definitions ?? []).length < 5) throw new Error("Claim-debt taxonomy is unexpectedly small.");
+if ((claimDebt.category_definitions ?? []).length < 7) throw new Error("Claim-debt taxonomy is unexpectedly small.");
 if ((claimDebt.counts?.records_with_markers ?? 0) !== (claimDebt.entries ?? []).length) {
   throw new Error("Claim-debt marker count does not match report entries.");
 }
@@ -35,6 +35,24 @@ const calculatedDebtEntries = (claimDebt.entries ?? []).filter(entry => (entry.d
 const calculatedIndexableDebt = calculatedDebtEntries.filter(entry => entry.indexable).length;
 if (calculatedDebtEntries.length !== claimDebt.counts?.debt_entries) throw new Error("Claim-debt total count drift.");
 if (calculatedIndexableDebt !== claimDebt.counts?.indexable_debt_entries) throw new Error("Claim-debt indexable count drift.");
+
+const sortedCounts = values => Object.fromEntries(Object.entries(values).sort(([a], [b]) => a.localeCompare(b)));
+const countByTopic = entries => {
+  const result = {};
+  for (const entry of entries) {
+    if (!Array.isArray(entry.topic_ids)) throw new Error(`${entry.slug}: claim-debt entry lacks topic_ids.`);
+    for (const topicId of entry.topic_ids) result[topicId] = (result[topicId] ?? 0) + 1;
+  }
+  return sortedCounts(result);
+};
+const markerTopicCounts = countByTopic(claimDebt.entries ?? []);
+const debtTopicCounts = countByTopic(calculatedDebtEntries);
+const topicPendingMarkers = (claimDebt.entries ?? []).filter(entry => entry.topic_ids.length === 0).length;
+const topicPendingDebt = calculatedDebtEntries.filter(entry => entry.topic_ids.length === 0).length;
+if (JSON.stringify(markerTopicCounts) !== JSON.stringify(claimDebt.counts?.by_topic ?? {})) throw new Error("Claim-debt Topic marker counts drift.");
+if (JSON.stringify(debtTopicCounts) !== JSON.stringify(claimDebt.counts?.debt_by_topic ?? {})) throw new Error("Claim-debt Topic debt counts drift.");
+if (topicPendingMarkers !== claimDebt.counts?.topic_pending_marker_records) throw new Error("Claim-debt topic-pending marker count drift.");
+if (topicPendingDebt !== claimDebt.counts?.topic_pending_debt_entries) throw new Error("Claim-debt topic-pending debt count drift.");
 
 const evidenceBySlug = new Map((evidenceIndex.entries ?? []).map((record) => [record.slug, record]));
 const claimDebtBySlug = new Map((claimDebt.entries ?? []).map((record) => [record.slug, record]));
@@ -78,6 +96,10 @@ for (const entry of index) {
     if (JSON.stringify(reportedClaims.categories) !== JSON.stringify(evidence.claims.categories)) {
       throw new Error(`${entry.slug}: claim category drift between evidence and claim-debt outputs.`);
     }
+    const expectedTopics = (indexed?.ontology?.topics ?? []).map(topic => topic.id);
+    if (JSON.stringify(reportedClaims.topic_ids) !== JSON.stringify(expectedTopics)) {
+      throw new Error(`${entry.slug}: Topic drift between evidence and claim-debt outputs.`);
+    }
   } else if (reportedClaims) {
     throw new Error(`${entry.slug}: claim-debt report contains an entry without current source markers.`);
   }
@@ -97,6 +119,9 @@ console.log(`- Quantitative claims not reviewed: ${quantitativeQueue}`);
 console.log(`- Claim marker records: ${claimDebt.counts.records_with_markers}`);
 console.log(`- Claim debt entries: ${claimDebt.counts.debt_entries}`);
 console.log(`- Indexable claim debt entries: ${claimDebt.counts.indexable_debt_entries}`);
+console.log(`- Topic claim groups: ${Object.keys(claimDebt.counts.by_topic ?? {}).length}`);
+console.log(`- Topic debt groups: ${Object.keys(claimDebt.counts.debt_by_topic ?? {}).length}`);
+console.log(`- Topic-pending claim/debt records: ${claimDebt.counts.topic_pending_marker_records}/${claimDebt.counts.topic_pending_debt_entries}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
 console.log(`- Indexable pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "batch_id": "source-review-2026-08-22-01",
+  "reviewed_at": "2026-08-22",
+  "reviewer": "Brali Evidence Reviewer",
+  "method": "Inspect the effective public protocol first, review the named article rather than search metadata alone, separate the supported source claim from the full protocol, and retain practical status when the source does not justify the exact wording or scope.",
+  "summary": {
+    "decisions": 4,
+    "promoted_to_reviewed": 0,
+    "rewritten_keep_practical": 4,
+    "rejected_sources": 0,
+    "reason_no_promotions": "Each source supports a bounded neighboring behavior or setting, but none justifies treating the complete inherited Brali protocol, exact timing, broad outcome, or universal applicability as reviewed evidence."
+  },
+  "entries": [
+    {
+      "decision_id": "brali:source-review:pomodoro-microbreaks-2026-08",
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "title": "Use a Focus Block and a Short Break",
+      "previous_status": "practical",
+      "disposition": "rewrite-keep-practical",
+      "resulting_status": "practical",
+      "source": {
+        "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+        "authors": ["Patricia Albulescu", "Ilie Macșinga", "Alina Rusu", "Coralia Sulea", "Andrei Bodnaru", "Bogdan T. Tulbure"],
+        "year": 2022,
+        "type": "systematic-review-and-meta-analysis",
+        "journal": "PLOS ONE",
+        "doi": "10.1371/journal.pone.0272460",
+        "url": "https://doi.org/10.1371/journal.pone.0272460",
+        "review_basis": "full-open-access-article"
+      },
+      "supported_claim": "Short breaks during work can support momentary well-being, particularly vigor and fatigue, across the studies synthesized by the review.",
+      "does_not_support": [
+        "That twenty-five minutes of work followed by a fixed break is an optimal universal schedule.",
+        "A general productivity or performance increase for every task.",
+        "Any inherited exact percentage, duration, retention, or health claim."
+      ],
+      "limitations": [
+        "The included studies used varied break durations, tasks, settings, and outcome measures.",
+        "Performance effects were not uniformly positive and differed by task and break characteristics.",
+        "The review does not establish one timing rule for all people or work contexts."
+      ],
+      "public_change": "Remove optimal-timing and productivity framing. Keep a flexible focus-block-and-break protocol with an observable fatigue and restart check.",
+      "editorial_reason": "The source supports taking short breaks as a bounded well-being practice, not the branded twenty-five-minute schedule as a reviewed intervention."
+    },
+    {
+      "decision_id": "brali:source-review:active-listening-initial-interactions-2026-08",
+      "slug": "active-listening-exercises",
+      "title": "Paraphrase, Check, and Ask One Follow-up",
+      "previous_status": "practical",
+      "disposition": "rewrite-keep-practical",
+      "resulting_status": "practical",
+      "source": {
+        "title": "The Relative Effectiveness of Active Listening in Initial Interactions",
+        "authors": ["Harry Weger Jr.", "Gina Castle Bell", "Elizabeth M. Minei", "Melissa C. Robinson"],
+        "year": 2014,
+        "type": "controlled-experimental-study",
+        "journal": "International Journal of Listening",
+        "doi": "10.1080/10904018.2013.813234",
+        "url": "https://doi.org/10.1080/10904018.2013.813234",
+        "review_basis": "article-level-method-and-results-review"
+      },
+      "supported_claim": "In the study's initial-interaction setting, active-listening responses were associated with stronger perceptions of being understood than advice or simple acknowledgements.",
+      "does_not_support": [
+        "That one listening script resolves conflict, repairs relationships, or produces therapeutic outcomes.",
+        "Universal gains across cultures, power differences, high-risk conversations, or long-term relationships.",
+        "Any inherited percentage improvement in empathy, trust, disclosure, or agreement."
+      ],
+      "limitations": [
+        "The study examined a bounded initial interaction rather than every real-world listening context.",
+        "Perceived understanding is not the same outcome as agreement, conflict resolution, safety, or durable behavior change.",
+        "A scripted exercise can be counterproductive when it sounds mechanical or when the listener should set a boundary instead."
+      ],
+      "public_change": "Keep paraphrasing and accuracy checking, remove broad empathy and relationship claims, and add permission, boundary, and stopping conditions.",
+      "editorial_reason": "The source directly informs a narrow listening behavior, but the public protocol remains broader than one experimental context and therefore stays practical."
+    },
+    {
+      "decision_id": "brali:source-review:weekly-theme-retrieval-boundary-2026-08",
+      "slug": "weekly-theme-learning-sprints",
+      "title": "Choose One Weekly Skill and Test Retrieval",
+      "previous_status": "practical",
+      "disposition": "rewrite-keep-practical",
+      "resulting_status": "practical",
+      "source": {
+        "title": "Retrieval Practice Consistently Benefits Student Learning: a Systematic Review of Applied Research in Schools and Classrooms",
+        "authors": ["Pooja K. Agarwal", "Ludmila D. Nunes", "Janell R. Blunt"],
+        "year": 2021,
+        "type": "systematic-review",
+        "journal": "Educational Psychology Review",
+        "doi": "10.1007/s10648-021-09595-9",
+        "url": "https://doi.org/10.1007/s10648-021-09595-9",
+        "review_basis": "full-open-access-article"
+      },
+      "supported_claim": "Low-stakes retrieval practice can improve later learning outcomes across varied applied educational studies when learners actively recall material rather than only reread it.",
+      "does_not_support": [
+        "That choosing a single weekly theme is itself an evidence-based learning intervention.",
+        "That a seven-day sprint is an optimal duration.",
+        "Guaranteed mastery, retention, motivation, or transfer from a fixed number of repetitions."
+      ],
+      "limitations": [
+        "The review focuses on retrieval practice in educational settings, not on Brali's weekly planning wrapper.",
+        "Effects depend on task, feedback, material, delay, learner, and implementation context.",
+        "Retrieval practice can reveal a gap without supplying the explanation or corrective feedback needed to close it."
+      ],
+      "public_change": "Keep weekly theming as a planning scaffold, add one concrete retrieval check, and state that the source supports retrieval rather than the weekly schedule.",
+      "editorial_reason": "A neighboring mechanism is well supported, but the complete weekly-sprint protocol is not directly tested and remains practical."
+    },
+    {
+      "decision_id": "brali:source-review:brainwriting-group-ideas-2026-08",
+      "slug": "brainwriting-group-idea-generation",
+      "title": "Write Ideas Silently, Exchange, Then Evaluate",
+      "previous_status": "practical",
+      "disposition": "rewrite-keep-practical",
+      "resulting_status": "practical",
+      "source": {
+        "title": "Idea Generation in Groups: A Basis for Creativity in Organizations",
+        "authors": ["Paul B. Paulus", "Huei-Chuan Yang"],
+        "year": 2000,
+        "type": "controlled-experimental-study",
+        "journal": "Organizational Behavior and Human Decision Processes",
+        "doi": "10.1006/obhd.2000.2888",
+        "url": "https://doi.org/10.1006/obhd.2000.2888",
+        "review_basis": "article-level-method-and-results-review"
+      },
+      "supported_claim": "Written idea exchange can provide cognitive stimulation and help participants build on ideas under the study's group-generation conditions.",
+      "does_not_support": [
+        "That brainwriting always produces more or better ideas than every alternative facilitation method.",
+        "A universal group size, round length, quantity target, or quality improvement.",
+        "That anonymous written exchange removes hierarchy, evaluation apprehension, or implementation constraints by itself."
+      ],
+      "limitations": [
+        "The experimental task and group conditions do not represent every organizational problem or team.",
+        "Idea quantity during generation is distinct from feasibility, originality after evaluation, adoption, or business impact.",
+        "Written exchange can exclude participants unless accessibility, language, time, and power differences are handled deliberately."
+      ],
+      "public_change": "Separate silent generation from evaluation, use exchange only as stimulation, remove output multipliers, and add accessibility and decision-owner boundaries.",
+      "editorial_reason": "The source supports a bounded written-exchange mechanism, but not the inherited universal performance claims or a single optimal session recipe."
+    }
+  ]
+}

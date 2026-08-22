@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "percentage-effect",
+      "text": "The routine reduced reported fatigue by 27% in the test.",
+      "expected_marker_ids": ["percentage-effect"]
+    },
+    {
+      "id": "sample-size",
+      "text": "The sample size was 84 participants.",
+      "expected_marker_ids": ["sample-size"]
+    },
+    {
+      "id": "effect-statistic",
+      "text": "The reported effect size was Hedges g = 0.42 with a confidence interval.",
+      "expected_marker_ids": ["effect-statistic"]
+    },
+    {
+      "id": "first-party",
+      "text": "During our pilot, we observed better completion among our users.",
+      "expected_marker_ids": ["internal-study", "internal-observation", "internal-participants"]
+    },
+    {
+      "id": "research-appeal",
+      "text": "Research shows that this method works.",
+      "expected_marker_ids": ["research-shows"]
+    },
+    {
+      "id": "causal",
+      "text": "This breathing pattern activates calm and will reduce anxiety.",
+      "expected_marker_ids": ["certain-outcome"]
+    },
+    {
+      "id": "mechanism",
+      "text": "The exercise lowers cortisol and activates the parasympathetic nervous system.",
+      "expected_marker_ids": ["biological-mechanism"]
+    },
+    {
+      "id": "clinical",
+      "text": "This protocol treats depression.",
+      "expected_marker_ids": ["clinical-treatment"]
+    },
+    {
+      "id": "guarantee",
+      "text": "This fail-proof method always works for everyone.",
+      "expected_marker_ids": ["guaranteed-result"]
+    },
+    {
+      "id": "boundary-not-treatment",
+      "text": "This is not a treatment for depression and does not diagnose a disorder.",
+      "expected_marker_ids": []
+    },
+    {
+      "id": "boundary-no-causality",
+      "text": "The association does not establish causality.",
+      "expected_marker_ids": []
+    },
+    {
+      "id": "ordinary-duration",
+      "text": "Try the exercise for 10 minutes and review it after three days.",
+      "expected_marker_ids": []
+    },
+    {
+      "id": "ordinary-steps",
+      "text": "Use three steps: choose one task, begin, then review.",
+      "expected_marker_ids": []
+    },
+    {
+      "id": "qualified-practical",
+      "text": "This may help some people, but results vary.",
+      "expected_marker_ids": []
+    }
+  ]
+}

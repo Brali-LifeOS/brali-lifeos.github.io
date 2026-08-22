@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-08-22-02",
+  "selected_at": "2026-08-22",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch one completed and before any batch-two rewrite was applied.",
+  "selection_order": [
+    "avoid-anthropocentric-bias",
+    "avoid-contrast-effect",
+    "avoid-gamblers-fallacy-trust-the-odds",
+    "avoid-selection-bias-in-analysis"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 650,
+    "actionable_under_policy": 531,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch records editorial rewrites, not scientific review. No entry is promoted to reviewed and no source is added merely to preserve inherited wording.",
+  "entries": [
+    {
+      "slug": "avoid-anthropocentric-bias",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "critical-thinking"],
+      "decision": "Remove unsupported survey ranges, volunteer outcomes, immediate-effect claims and rigid observation targets. Preserve an observation-first check that separates facts from human-like interpretation, adds a system-specific alternative and keeps uncertainty visible."
+    },
+    {
+      "slug": "avoid-contrast-effect",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "decision-making"],
+      "decision": "Remove fabricated trials, laboratory ranges, regret reduction, hiring outcomes and savings claims. Preserve a stable-criteria protocol that assesses each option independently before comparison and checks whether presentation order defined the standard."
+    },
+    {
+      "slug": "avoid-gamblers-fallacy-trust-the-odds",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "data-literacy", "decision-making"],
+      "decision": "Remove fabricated tests, financial action rules, arbitrary confidence and sample thresholds, and adherence claims. Preserve a bounded check for whether earlier outcomes can alter the next event, followed by a pre-defined stop or decision rule."
+    },
+    {
+      "slug": "avoid-selection-bias-in-analysis",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "critical-thinking", "data-literacy"],
+      "decision": "Remove unsupported mistake reduction, conversion examples, sample prescriptions, statistical precision and fabricated work scenes. Preserve an inclusion-rule check that names excluded and missing cases and keeps conclusions within the group the data can represent."
+    }
+  ]
+}

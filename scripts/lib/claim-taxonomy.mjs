@@ -11,6 +11,20 @@ const definitions = [
     ],
   },
   {
+    id: 'effect-estimate',
+    enforced: true,
+    description: 'Statistical effect estimates, intervals, or comparative magnitudes that require exact source and analysis boundaries.',
+    patterns: [
+      /\b(?:risk\s+ratio|relative\s+risk|odds\s+ratio|hazard\s+ratio)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:RR|OR|HR)\s*[=:]\s*-?\d+(?:\.\d+)?\b/i,
+      /\b(?:Cohen['’]?s?\s+d|Hedges['’]?s?\s+g|standardized\s+mean\s+difference|SMD)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:effect\s+size|mean\s+difference)\s*(?:(?:=|of)\s*)?-?\d+(?:\.\d+)?\b/i,
+      /\b(?:95\s*%\s*)?(?:confidence\s+interval|CI)\s*(?::|=)?\s*\[?\s*-?\d+(?:\.\d+)?\s*[,–-]\s*-?\d+(?:\.\d+)?\s*\]?\b/i,
+      /\b\d+(?:\.\d+)?\s+percentage\s+points?\b/i,
+      /\b\d+(?:\.\d+)?\s*(?:times|fold)\s+(?:more|less|higher|lower|likely)\b/i,
+    ],
+  },
+  {
     id: 'first-party-result',
     enforced: true,
     description: 'Claims about Brali, author, user, pilot, trial, experiment, or internal data results.',
@@ -46,15 +60,22 @@ const definitions = [
     ],
   },
   {
+    id: 'causal-assertion',
+    enforced: true,
+    description: 'High-confidence causal proof, shown-effect, or cause language that requires a directly matching reviewed source.',
+    patterns: [
+      /\b(?:(?:has|have)\s+been|(?:was|were))\s+shown\s+to\s+(?:cause|lead\s+to|result\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)\b/i,
+      /\bis\s+proven\s+to\s+(?:cause|lead\s+to|result\s+in|increase|decrease|improve|reduce|prevent|boost|lower|raise)\b/i,
+      /\b(?:causes|caused|causing)\s+(?:an?\s+|the\s+)?(?:increase|decrease|change|improvement|decline|effect|response|symptom|risk|problem|benefit|harm)\b/i,
+    ],
+  },
+  {
     id: 'causal-effect',
     enforced: false,
-    description: 'Causal or effect language that should be reviewed when used as a factual claim.',
+    description: 'Broader causal or effect language that should be reviewed when used as a factual claim.',
     patterns: [
-      /\b(?:has|have|was|were)\s+shown\s+to\b/i,
-      /\bis\s+proven\s+to\b/i,
       /\bleads?\s+to\b/i,
       /\bresults?\s+in\b/i,
-      /\bcauses?\s+(?:an?\s+|the\s+)?(?:increase|decrease|change|improvement|decline|effect|response|symptom|risk|problem|benefit|harm)\b/i,
       /\b(?:reduces?|increases?|improves?|boosts?|lowers?|raises?)\s+(?:the\s+)?(?:risk|likelihood|level|rate|performance|memory|focus|mood|stress|anxiety|pain|sleep)\b/i,
     ],
   },

@@ -1,20 +1,22 @@
+import { detectClaimMarkers } from './claim-integrity.mjs';
+
 export const sensitiveZones = new Set([
-  "no-depression",
-  "no-fears",
-  "be-healthy",
-  "fit-life",
-  "cardio-doc",
-  "psychodynamic",
-  "metacognitive",
-  "cognitive-analytic",
-  "positive-psychotherapy",
-  "body-oriented",
-  "ericksonian",
-  "gestalt",
-  "exposure",
-  "dbt",
-  "act",
-  "cbt",
+  'no-depression',
+  'no-fears',
+  'be-healthy',
+  'fit-life',
+  'cardio-doc',
+  'psychodynamic',
+  'metacognitive',
+  'cognitive-analytic',
+  'positive-psychotherapy',
+  'body-oriented',
+  'ericksonian',
+  'gestalt',
+  'exposure',
+  'dbt',
+  'act',
+  'cbt',
 ]);
 
 export const claimPattern = /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic review|meta-analysis|evidence shows|clinically)\b|\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
@@ -22,15 +24,15 @@ export const quantitativeClaimPattern = /\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/
 
 export function isUsableSource(value) {
   if (!value) return false;
-  const text = typeof value === "string" ? value : JSON.stringify(value);
+  const text = typeof value === 'string' ? value : JSON.stringify(value);
   return Boolean(text.trim()) && !/(?:metalhatscats|brali-lifeos\.github\.io\/life-os)/i.test(text);
 }
 
 function sourceUrlFrom(value) {
-  if (typeof value === "string" && /^https?:\/\//i.test(value)) return value;
-  if (!value || typeof value !== "object") return null;
+  if (typeof value === 'string' && /^https?:\/\//i.test(value)) return value;
+  if (!value || typeof value !== 'object') return null;
   const url = value.url || value.source_url || value.sourceUrl || value.reference_url || null;
-  return typeof url === "string" && /^https?:\/\//i.test(url) ? url : null;
+  return typeof url === 'string' && /^https?:\/\//i.test(url) ? url : null;
 }
 
 export function sourceDetails(article) {
@@ -72,9 +74,13 @@ export function publicClaimSurface(article = {}) {
 
 export function claimFlags(article) {
   const text = JSON.stringify(publicClaimSurface(article));
+  const markers = detectClaimMarkers(text);
   return {
     evidenceLanguage: claimPattern.test(text),
     quantitative: quantitativeClaimPattern.test(text),
+    enforced: markers.length > 0,
+    categories: [...new Set(markers.map(marker => marker.category))].sort(),
+    markerIds: [...new Set(markers.map(marker => marker.id))].sort(),
   };
 }
 
@@ -83,26 +89,30 @@ export function classifyEvidence(article, entry, overrides = {}) {
   const claims = claimFlags(article);
   const sensitive = sensitiveZones.has(entry.zone?.slug);
   const override = overrides?.entries?.[entry.slug] ?? null;
-  const allowed = new Set(["reviewed", "practical", "pending-review", "restricted"]);
+  const allowed = new Set(['reviewed', 'practical', 'pending-review', 'restricted']);
 
   let status;
   let reason;
 
   if (override?.status && allowed.has(override.status)) {
     status = override.status;
-    reason = "manual-review";
+    reason = 'manual-review';
   } else if (sensitive && !source.hasSource) {
-    status = "restricted";
-    reason = "sensitive-without-usable-source";
-  } else if (source.hasSource || claims.evidenceLanguage) {
-    status = "pending-review";
-    reason = source.hasSource ? "source-recorded-not-reviewed" : "evidence-like-claim-without-source";
+    status = 'restricted';
+    reason = 'sensitive-without-usable-source';
+  } else if (source.hasSource || claims.evidenceLanguage || claims.enforced) {
+    status = 'pending-review';
+    reason = source.hasSource
+      ? 'source-recorded-not-reviewed'
+      : claims.enforced
+        ? 'enforced-claim-marker-without-review'
+        : 'evidence-like-claim-without-source';
   } else {
-    status = "practical";
-    reason = "low-risk-practical-guidance";
+    status = 'practical';
+    reason = 'low-risk-practical-guidance';
   }
 
-  const indexable = status === "reviewed" || status === "practical";
+  const indexable = status === 'reviewed' || status === 'practical';
 
   return {
     slug: entry.slug,
@@ -111,7 +121,7 @@ export function classifyEvidence(article, entry, overrides = {}) {
     reason,
     sensitive,
     indexable,
-    indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
+    indexingReason: indexable ? 'quality-bar-met' : 'editorial-review-required',
     claims,
     source: {
       recorded: source.hasSource,

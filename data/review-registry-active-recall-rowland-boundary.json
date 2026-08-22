@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "description": "Actual-source review of Rowland (2014) for the retention boundary of Brali's active-recall protocol. The meta-analysis supports retrieval testing over equivalent-duration restudy as a useful retention strategy on average, while showing substantial heterogeneity and important moderator effects. The editorial outcome is support-existing for the protocol's retention claim, with no expansion into generic learning, transfer, application, mechanism, dose, or guaranteed-effect claims.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1037/a0037559",
+      "source": "crossref",
+      "source_id": "10.1037/a0037559",
+      "doi": "10.1037/a0037559",
+      "pmid": "25150680",
+      "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "authors": ["Christopher A. Rowland"],
+      "container_title": "Psychological Bulletin",
+      "publication_date": "2014-08-25",
+      "type": "journal-article",
+      "subjects": ["retrieval practice", "testing effect", "memory", "retention", "restudy"],
+      "reference_url": "https://doi.org/10.1037/a0037559",
+      "discovered_at": "2026-08-22T08:03:00Z",
+      "last_seen_at": "2026-08-22T08:03:00Z",
+      "status": "support-existing",
+      "query_ids": ["learning-retrieval-practice"],
+      "domain_ids": ["learning-thinking"],
+      "topic_ids": ["memory", "skill-learning"],
+      "method_ids": ["retrieval-practice"],
+      "lens_ids": [],
+      "life_area_slugs": ["learning-thinking"],
+      "zone_slugs": ["skill-sprint"],
+      "risk_flags": [],
+      "crossref_score": null,
+      "review_notes": "The author-shared full article was reviewed, including the scope definition, inclusion logic, primary random-effects analysis, moderator analyses and discussion. The primary testing-versus-restudy estimate was positive (Hedges' g=0.50, 95% CI 0.42 to 0.58), but between-study heterogeneity was very high (I-squared=84.35). The effect varied with design and testing conditions; recall-based initial tests generally produced larger benefits than recognition tests, longer retention intervals were associated with larger effects, and feedback was associated with larger effects. The meta-analysis intentionally focused on testing versus an equivalent-duration restudy control rather than treating every retrieval-practice design as one interchangeable intervention."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "testing-versus-restudy-retention-boundary-2014",
+      "candidate_id": "crossref:10.1037/a0037559",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1037/a0037559",
+      "source_title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "source_type": "meta-analysis",
+      "doi": "10.1037/a0037559",
+      "citation_text": "Rowland CA. Psychological Bulletin. 2014;140(6):1432-1463.",
+      "source_reviewed": true,
+      "study_design": "Random-effects meta-analysis of testing-effect studies using a conceptually common contrast between an initial memory test and an equivalent-duration restudy control, followed by a later retention assessment. The review also analyzed methodological and theoretical moderators rather than assuming one invariant testing effect.",
+      "population": "Participants from the experimental testing-effect literature included by the review, with many studies using college samples and varied learning materials, testing formats and retention intervals. The source does not justify treating the pooled estimate as one person-level effect or as a universal educational dose.",
+      "intervention_or_exposure": "An initial retrieval test over previously studied information compared with additional restudy of that information, followed by a later memory assessment. This maps to Brali's retrieve-before-looking step more directly than to its separate application-practice step.",
+      "outcomes": ["Later retention of previously learned information after testing versus restudy", "Moderator patterns across initial test format, final test format, retention interval, feedback, design and other study characteristics"],
+      "supported_claim": "Across the included testing-versus-restudy literature, retrieval testing produced better later retention on average than equivalent-duration restudy. The pooled random-effects estimate was positive, but effects varied substantially across studies and testing conditions. This supports Brali's bounded recommendation to retrieve information from memory, check the answer, and use that loop when retention is the target.",
+      "unsupported_or_overstated_claims": ["Active recall improves every kind of learning outcome.", "Better retention automatically produces better application, transfer, problem solving or procedural performance.", "One pooled testing-effect estimate describes one invariant mechanism across all retrieval-practice designs.", "A specific number of questions, repetitions, minutes or percentage target is evidence-based from this meta-analysis.", "Retrieval practice always outperforms restudy for every learner, item, delay and test format.", "Recognition testing, cued recall and free recall produce interchangeable effects.", "The meta-analysis establishes a single neurological or cognitive mechanism that Brali should present as the explanation for why retrieval works.", "A memory benefit demonstrated against restudy validates Brali's protocol for skills whose real criterion is performance or application."],
+      "limitations": ["Between-study heterogeneity in the primary analysis was very high, so the pooled mean does not describe one uniform effect across designs or contexts.", "The review deliberately restricted the quantitative synthesis to testing-versus-equivalent-restudy contrasts and does not represent every retrieval-practice paradigm.", "Testing benefits varied with methodological factors including initial test format, retention interval and feedback.", "Many contributing studies used controlled experimental learning tasks and college samples, which limits direct extrapolation to every real-world learning context.", "The review's main outcome is retention; it does not establish that remembered information can be applied correctly in a novel task or procedure.", "Theoretical findings did not provide one complete cohesive mechanism for all testing phenomena, so Brali should avoid mechanism decoration.", "A positive average effect does not imply that every individual effect was positive; the reviewed distribution included negative and null estimates."],
+      "target_hack_ids": ["active-recall-test-yourself"],
+      "target_protocol_ids": ["brali:active-recall-test-yourself"],
+      "risk_flags": [],
+      "notes": "Editorial outcome: support the existing reviewed retention boundary without broadening it. Keep the public protocol's explicit split between retention and application, its retrieval-plus-checking loop, and its refusal to prescribe a universal duration or target. The existing 2026 challenge evidence remains important because the Rowland review does not erase distinctions between direct retention, later learning and actual rule or skill application."
+    }
+  ]
+}

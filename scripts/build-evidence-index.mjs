@@ -13,6 +13,9 @@ const evidenceDecisions = JSON.parse(await readFile(path.join(root, "data/eviden
 const { classifyRecord } = await loadKnowledgeOntology(root);
 const knownSlugs = new Set(index.map((entry) => entry.slug));
 const allowedStatuses = new Set(["reviewed", "practical", "pending-review", "restricted"]);
+const decisionRequiredCategories = new Set(
+  claimCategoryDefinitions.filter((definition) => definition.decision_required).map((definition) => definition.id),
+);
 
 for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
   if (!knownSlugs.has(slug)) throw new Error(`Evidence override references unknown entry: ${slug}`);
@@ -21,6 +24,41 @@ for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
     throw new Error(`Evidence override for ${slug} must record reviewed_at and reviewed_by.`);
   }
 }
+
+function targetSlug(value) {
+  if (typeof value !== "string" || !value.trim()) return null;
+  const trimmed = value.trim();
+  if (knownSlugs.has(trimmed)) return trimmed;
+  const prefixes = ["brali:protocol:", "brali:hack:", "brali:"];
+  for (const prefix of prefixes) {
+    if (!trimmed.startsWith(prefix)) continue;
+    const candidate = trimmed.slice(prefix.length);
+    if (knownSlugs.has(candidate)) return candidate;
+  }
+  return null;
+}
+
+function decisionIsTraceable(decision) {
+  if (!decision || decision.source_reviewed !== true) return false;
+  if (!decision.id || !decision.reviewed_at || !decision.reviewed_by || !decision.source_url || !decision.supported_claim) return false;
+  return !new Set(["watch", "reject"]).has(decision.decision);
+}
+
+const decisionIdsBySlug = new Map();
+for (const decision of evidenceDecisions.entries ?? []) {
+  if (!decisionIsTraceable(decision)) continue;
+  const targets = [
+    ...(decision.target_hack_ids ?? []),
+    ...(decision.target_protocol_ids ?? []),
+  ];
+  for (const target of targets) {
+    const slug = targetSlug(target);
+    if (!slug) continue;
+    if (!decisionIdsBySlug.has(slug)) decisionIdsBySlug.set(slug, []);
+    decisionIdsBySlug.get(slug).push(decision.id);
+  }
+}
+for (const ids of decisionIdsBySlug.values()) ids.sort();
 
 const records = [];
 for (const entry of index) {
@@ -34,6 +72,16 @@ for (const entry of index) {
   if (manual?.status === "reviewed" && ((record.claims.categories ?? []).length > 0 || record.sensitive) && !record.source.recorded) {
     throw new Error(`Cannot mark ${entry.slug} reviewed without a usable source while claim or sensitive-content review is required.`);
   }
+
+  record.evidence_decision_ids = [...(decisionIdsBySlug.get(entry.slug) ?? [])];
+  record.decision_required_categories = (record.claims.categories ?? [])
+    .filter((category) => decisionRequiredCategories.has(category));
+
+  if (record.indexable && record.decision_required_categories.length > 0 && record.evidence_decision_ids.length === 0) {
+    record.indexable = false;
+    record.indexingReason = "reviewed-evidence-decision-required";
+  }
+
   records.push(record);
 }
 records.sort((a, b) => a.slug.localeCompare(b.slug));
@@ -66,6 +114,10 @@ function withEditorialPriority(record) {
     score += 25;
     factors.push(...record.claims.enforcedCategories.map(category => `enforced-claim:${category}`));
   }
+  if ((record.decision_required_categories ?? []).length > 0 && (record.evidence_decision_ids ?? []).length === 0) {
+    score += 25;
+    factors.push("claim-decision-missing");
+  }
   if (record.claims.evidenceLanguage) {
     score += 20;
     factors.push("evidence-language");
@@ -88,12 +140,16 @@ function claimDebtReasons(record) {
   const reasons = [];
   const categories = record.claims.categories ?? [];
   const enforced = record.claims.enforcedCategories ?? [];
+  const decisionRequired = record.decision_required_categories ?? [];
+  const decisions = record.evidence_decision_ids ?? [];
 
   if (record.claims.quantitative && record.status !== "reviewed") reasons.push("quantitative-claim-not-reviewed");
   if (enforced.includes("first-party-result") && record.status !== "reviewed") reasons.push("first-party-result-not-reviewed");
   if (enforced.includes("guarantee")) reasons.push(record.status === "reviewed" ? "guarantee-language-requires-rewrite-review" : "guarantee-language-not-reviewed");
   if (enforced.includes("clinical-outcome") && record.status !== "reviewed") reasons.push("clinical-outcome-not-reviewed");
+  if (decisionRequired.length > 0 && decisions.length === 0) reasons.push("decision-required-claim-without-reviewed-evidence-decision");
   if (record.indexable && enforced.length > 0 && record.status !== "reviewed") reasons.push("indexable-enforced-claim-not-reviewed");
+  if (record.indexable && decisionRequired.length > 0 && decisions.length === 0) reasons.push("indexable-decision-required-claim-without-reviewed-evidence-decision");
   if (record.status === "reviewed" && categories.length > 0 && !record.source.recorded) reasons.push("reviewed-claim-without-usable-source");
   if (record.status === "reviewed" && categories.length > 0 && (!record.review.reviewedAt || !record.review.reviewedBy)) reasons.push("reviewed-claim-without-review-metadata");
 
@@ -101,7 +157,7 @@ function claimDebtReasons(record) {
 }
 
 const queue = records
-  .filter((record) => record.status === "restricted" || record.status === "pending-review")
+  .filter((record) => record.status === "restricted" || record.status === "pending-review" || !record.indexable)
   .map(withEditorialPriority)
   .sort((a, b) => (b.editorial_priority.score - a.editorial_priority.score) || a.slug.localeCompare(b.slug));
 
@@ -115,6 +171,8 @@ const claimEntries = records
     sensitive: record.sensitive,
     categories: record.claims.categories ?? [],
     enforced_categories: record.claims.enforcedCategories ?? [],
+    decision_required_categories: record.decision_required_categories ?? [],
+    evidence_decision_ids: record.evidence_decision_ids ?? [],
     debt_reasons: claimDebtReasons(record),
     source: record.source,
     review: record.review,
@@ -132,13 +190,15 @@ const claimDebtCounts = {
   records_with_markers: claimEntries.length,
   debt_entries: claimDebtEntries.length,
   indexable_debt_entries: claimDebtEntries.filter(entry => entry.indexable).length,
+  decision_gated_entries: records.filter(record => (record.decision_required_categories ?? []).length > 0 && (record.evidence_decision_ids ?? []).length === 0).length,
+  decision_linked_entries: records.filter(record => (record.evidence_decision_ids ?? []).length > 0).length,
   by_category: Object.fromEntries(Object.entries(claimCountsByCategory).sort(([a], [b]) => a.localeCompare(b))),
   by_status: Object.fromEntries(Object.entries(claimDebtByStatus).sort(([a], [b]) => a.localeCompare(b))),
 };
 
 await mkdir(outputRoot, { recursive: true });
 await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
-  schema_version: 2,
+  schema_version: 3,
   name: "Brali Growth Library evidence index",
   statuses: ["reviewed", "practical", "pending-review", "restricted"],
   counts,
@@ -146,11 +206,11 @@ await writeFile(path.join(outputRoot, "evidence.json"), JSON.stringify({
   entries: records,
 }, null, 2));
 await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
-  schema_version: 3,
+  schema_version: 4,
   name: "Brali Growth Library evidence review queue",
-  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, enforced claim markers, evidence-like language, and missing usable sources raise editorial priority. Ontology classification gaps are exposed as factors but do not alter evidence priority by themselves.",
+  priority: "Restricted entries always rank ahead of pending-review entries. Within those groups, sensitive topic, quantitative claims, enforced claim markers, missing Evidence Decisions, evidence-like language, and missing usable sources raise editorial priority. Ontology classification gaps are exposed as factors but do not alter evidence priority by themselves.",
   priority_model: {
-    version: 3,
+    version: 4,
     purpose: "Editorial triage only; the score is not a clinical-risk or evidence-strength measure.",
     weights: {
       restricted: 200,
@@ -158,6 +218,7 @@ await writeFile(path.join(outputRoot, "review-queue.json"), JSON.stringify({
       sensitive_topic: 40,
       quantitative_claims: 30,
       enforced_claim_markers: 25,
+      claim_decision_missing: 25,
       evidence_language: 20,
       no_usable_source: 15,
       source_recorded_not_reviewed: 5,
@@ -175,9 +236,9 @@ await writeFile(path.join(outputRoot, "evidence-decisions.json"), JSON.stringify
   entries: evidenceDecisions.entries ?? [],
 }, null, 2));
 await writeFile(path.join(outputRoot, "claim-debt.json"), JSON.stringify({
-  schema_version: 1,
+  schema_version: 2,
   name: "Brali public claim debt report",
-  policy: "The report separates high-confidence enforced claim categories from monitor-only research, causal, and mechanism language. An entry can remain visible in this report even when it is correctly noindexed; debt is not proof that a claim is false, but it is a requirement for explicit review, rewrite, restriction, or rejection before normal trusted discovery.",
+  policy: "The report separates high-confidence enforced claim markers from decision-gated causal and mechanism wording and monitor-only research language. A source URL or reviewed label alone does not satisfy a decision-required claim: normal trusted discovery also requires a traceable reviewed Evidence Decision targeting the record. Debt is not proof that a claim is false; it is a requirement for explicit review, rewrite, restriction, or rejection before normal trusted discovery.",
   category_definitions: claimCategoryDefinitions,
   counts: claimDebtCounts,
   entries: claimEntries,
@@ -189,8 +250,8 @@ manifest.files = [...new Set([...(manifest.files ?? []), "evidence.json", "revie
 manifest.evidence_status_counts = counts;
 manifest.evidence_ontology_coverage = ontologyCoverage;
 manifest.evidence_decision_count = (evidenceDecisions.entries ?? []).length;
-manifest.review_queue_schema_version = 3;
-manifest.claim_debt_schema_version = 1;
+manifest.review_queue_schema_version = 4;
+manifest.claim_debt_schema_version = 2;
 manifest.claim_debt_counts = claimDebtCounts;
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
@@ -207,4 +268,4 @@ if (!html.includes("/life-os/datasets/claim-debt.json")) {
 }
 await writeFile(datasetsPage, html);
 
-console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending; ${(evidenceDecisions.entries ?? []).length} evidence decision(s); ${claimDebtEntries.length} claim-debt item(s), ${claimDebtCounts.indexable_debt_entries} indexable.`);
+console.log(`Evidence index generated: ${records.length} entries; ${queue.length} queued; ${ontologyCoverage.topic_mapped} topic-mapped, ${ontologyCoverage.topic_pending} topic-pending; ${(evidenceDecisions.entries ?? []).length} evidence decision(s); ${claimDebtEntries.length} claim-debt item(s), ${claimDebtCounts.indexable_debt_entries} indexable, ${claimDebtCounts.decision_gated_entries} decision-gated.`);

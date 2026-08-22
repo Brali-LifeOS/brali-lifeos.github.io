@@ -1,3 +1,4 @@
+import crypto from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
@@ -81,12 +82,44 @@ const report = {
 const outputPath = path.join(root, 'life-os/datasets/claim-cleanup-batch.json');
 await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
 
-const manifestPath = path.join(root, 'life-os/datasets/manifest.json');
+const countDocument = document => {
+  if (Array.isArray(document)) return document.length;
+  for (const key of ['items', 'entries', 'protocols', 'candidates', 'queries', 'identities', 'aliases']) {
+    if (Array.isArray(document?.[key])) return document[key].length;
+  }
+  return null;
+};
+const manifestEntry = async rel => {
+  const text = await readFile(path.join(root, rel), 'utf8');
+  const document = JSON.parse(text);
+  return {
+    path: rel,
+    sha256: crypto.createHash('sha256').update(text).digest('hex'),
+    bytes: Buffer.byteLength(text),
+    count: countDocument(document),
+  };
+};
+
 const manifest = await readJson('life-os/datasets/manifest.json');
-manifest.files = [...new Set([...(manifest.files ?? []), 'claim-cleanup-batch.json'])];
+if (manifest.schema_version !== 2 || !Array.isArray(manifest.files)) {
+  throw new Error('Claim cleanup batch requires the finalized schema-v2 dataset manifest.');
+}
+const additions = await Promise.all([
+  manifestEntry('life-os/datasets/claim-debt.json'),
+  manifestEntry('life-os/datasets/claim-cleanup-batch.json'),
+]);
+const byPath = new Map(manifest.files.map(entry => [entry.path, entry]));
+for (const entry of additions) byPath.set(entry.path, entry);
+manifest.files = [...byPath.values()].sort((left, right) => left.path.localeCompare(right.path));
+manifest.counts ||= {};
+manifest.counts.files = manifest.files.length;
+manifest.counts.claim_debt_entries = claimDebt.counts?.debt_entries ?? 0;
+manifest.counts.claim_cleanup_selected = report.counts.selected;
 manifest.claim_cleanup_batch_schema_version = 1;
 manifest.claim_cleanup_batch_counts = report.counts;
-await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
+await writeFile(path.join(root, 'life-os/datasets/manifest.json'), manifestText);
+await writeFile(path.join(root, 'api/v1/manifest.json'), manifestText);
 
 const datasetsPath = path.join(root, 'life-os/datasets/index.html');
 let datasets = await readFile(datasetsPath, 'utf8');

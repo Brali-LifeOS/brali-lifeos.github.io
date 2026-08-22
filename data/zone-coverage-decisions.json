@@ -1,9 +1,24 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
-  "purpose": "Editorial dispositions for Growth Zones that remain without a trusted starter. These decisions describe Brali's current public-content and source-match state; they are not judgments that a therapy or school has no evidence.",
+  "updated_at": "2026-08-22",
+  "purpose": "Editorial dispositions for Growth Zones that remain without a trusted starter. These decisions describe Brali's current public-content and source-match state; they are not judgments that a topic, practice, therapy or school has no evidence.",
   "allowed_dispositions": ["legacy-sensitive", "needs-new-protocol", "empty-legacy"],
   "zones": {
+    "as-architector": {
+      "disposition": "needs-new-protocol",
+      "reason": "After the stricter claim gate, every current architecture-themed entry remains pending review. The inherited collection mixes practical checklists with unsupported evidence-like language, so no existing page qualifies as a trusted starter by wording alone.",
+      "next_action": "Select one narrow architecture or workspace-assessment problem, remove unsupported claims and first-party framing, and review the exact public protocol and sources before restoring normal discovery."
+    },
+    "as-qa": {
+      "disposition": "needs-new-protocol",
+      "reason": "The current QA entries are potentially useful operational templates, but all remain pending review after claim and provenance checks. Brali has not yet approved one bounded, source-aware starter for normal recommendation.",
+      "next_action": "Curate one low-risk QA checklist or runbook protocol with explicit scope, observable output and provenance; keep the remaining inherited material out of trusted discovery until reviewed."
+    },
+    "chef": {
+      "disposition": "needs-new-protocol",
+      "reason": "The inherited cooking entries contain practical ideas but no entry currently passes the trusted-content bar after evidence-like wording and source boundaries are considered. Taxonomy membership alone is not a food-safety review, inconvenient though that is for dinner.",
+      "next_action": "Choose a low-risk cooking workflow such as tasting and adjusting, rewrite it without unsupported health or effectiveness claims, and review any safety-sensitive guidance against an authoritative source."
+    },
     "cognitive-analytic": {
       "disposition": "legacy-sensitive",
       "reason": "The current Brali entries are therapy-derived and source-free. None has yet been reviewed as a bounded, low-risk standalone public protocol with a directly matching authoritative source.",
@@ -19,6 +34,16 @@
       "reason": "The inherited experiential exercises are therapy-branded and source-free. Their current wording is not suitable for automatic self-help recommendation without a narrower evidence and safety boundary.",
       "next_action": "Identify a concrete low-risk awareness exercise with a directly matching authoritative or peer-reviewed source, or keep the collection archive-only."
     },
+    "grow-fast": {
+      "disposition": "needs-new-protocol",
+      "reason": "The current growth-themed entries are broad, branding-heavy and evidence-like, and none now meets the trusted starter bar. Promoting the least problematic inherited page would still confuse ambition with validated usefulness.",
+      "next_action": "Replace the category-level promise with one concrete, measurable and low-risk growth experiment, then review its wording and provenance before including it in trusted discovery."
+    },
+    "insider": {
+      "disposition": "needs-new-protocol",
+      "reason": "The inherited social-reading and influence material remains pending review and can easily overstate certainty about other people. No existing entry has yet been bounded enough for a trusted public starter.",
+      "next_action": "Curate one observation-first communication protocol that separates observable cues from interpretation, includes a correction step, and avoids manipulation or mind-reading claims."
+    },
     "psychodynamic": {
       "disposition": "legacy-sensitive",
       "reason": "The current reflection exercises inherit psychodynamic causal language without direct reviewed sources. Brali cannot safely turn theory-derived interpretations into normal recommendations by taxonomy alone.",
@@ -28,6 +53,11 @@
       "disposition": "empty-legacy",
       "reason": "The stable legacy Growth Zone exists for compatibility but currently contains no entries.",
       "next_action": "Do not invent filler content to reach nominal 49/49 coverage. Add content only when a real, reviewed protocol belongs here."
+    },
+    "writing": {
+      "disposition": "needs-new-protocol",
+      "reason": "The current writing entries remain pending review because inherited explanatory and effectiveness claims are not yet source-bounded. None qualifies as a trusted starter under the stricter gate.",
+      "next_action": "Curate one concrete writing workflow with an observable artifact, bounded claims and clear provenance, then add a retrieval case before restoring trusted coverage."
     }
   }
 }

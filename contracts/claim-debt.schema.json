@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brali-lifeos.github.io/contracts/claim-debt.schema.json",
+  "title": "Brali Claim Debt Report",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "name", "policy", "category_definitions", "counts", "entries"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "name": { "const": "Brali public claim debt report" },
+    "policy": { "type": "string", "minLength": 50 },
+    "category_definitions": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "enforced", "description"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "enforced": { "type": "boolean" },
+          "description": { "type": "string", "minLength": 20 }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["records_checked", "records_with_markers", "debt_entries", "indexable_debt_entries", "by_category", "by_status"],
+      "properties": {
+        "records_checked": { "type": "integer", "minimum": 0 },
+        "records_with_markers": { "type": "integer", "minimum": 0 },
+        "debt_entries": { "type": "integer", "minimum": 0 },
+        "indexable_debt_entries": { "type": "integer", "minimum": 0 },
+        "by_category": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+        "by_status": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "slug",
+          "zone",
+          "status",
+          "indexable",
+          "sensitive",
+          "categories",
+          "enforced_categories",
+          "debt_reasons",
+          "source",
+          "review",
+          "markers"
+        ],
+        "properties": {
+          "slug": { "type": "string", "minLength": 1 },
+          "zone": { "type": ["string", "null"] },
+          "status": { "enum": ["reviewed", "practical", "pending-review", "restricted"] },
+          "indexable": { "type": "boolean" },
+          "sensitive": { "type": "boolean" },
+          "categories": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "enforced_categories": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "debt_reasons": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "source": { "type": "object" },
+          "review": { "type": "object" },
+          "markers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["category", "enforced", "examples"],
+              "properties": {
+                "category": { "type": "string" },
+                "enforced": { "type": "boolean" },
+                "examples": { "type": "array", "items": { "type": "string" } }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -31,6 +31,7 @@ const required = [
   "life-os/datasets/ontology-coverage.json",
   "life-os/datasets/evidence.json",
   "life-os/datasets/review-queue.json",
+  "life-os/datasets/claim-debt.json",
   "life-os/datasets/title-quality.json",
   "life-os/datasets/indexing.json",
   "life-os/datasets/protocols.json",
@@ -110,7 +111,7 @@ const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/life-os/areas/"')) throw new Error("Growth Library does not link to life areas.");
 
 const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html"), "utf8");
-for (const dataset of ["ontology.json", "ontology-coverage.json", "evidence.json", "review-queue.json", "title-quality.json", "indexing.json", "protocols.json", "editorial-normalizations.json"]) {
+for (const dataset of ["ontology.json", "ontology-coverage.json", "evidence.json", "review-queue.json", "claim-debt.json", "title-quality.json", "indexing.json", "protocols.json", "editorial-normalizations.json"]) {
   if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
 }
 if (!datasetsPage.includes('"@type":"DataCatalog"')) throw new Error("Dataset page lacks DataCatalog structured data.");
@@ -120,6 +121,7 @@ const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-cont
 const publicIndex = JSON.parse(await readFile(path.join(root, "life-os-index.json"), "utf8"));
 const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const reviewQueue = JSON.parse(await readFile(path.join(root, "life-os/datasets/review-queue.json"), "utf8"));
+const claimDebt = JSON.parse(await readFile(path.join(root, "life-os/datasets/claim-debt.json"), "utf8"));
 const titleQuality = JSON.parse(await readFile(path.join(root, "life-os/datasets/title-quality.json"), "utf8"));
 const protocols = JSON.parse(await readFile(path.join(root, "life-os/datasets/protocols.json"), "utf8"));
 const coverage = JSON.parse(await readFile(path.join(root, "life-os/datasets/ontology-coverage.json"), "utf8"));
@@ -131,8 +133,8 @@ if (!(evidenceIndex.entries ?? []).every((record) => record.ontology?.domains?.l
 if (!(reviewQueue.entries ?? []).every((record) => ["pending-review", "restricted"].includes(record.status))) {
   throw new Error("Evidence review queue contains a non-review status.");
 }
-if (reviewQueue.schema_version !== 3 || reviewQueue.priority_model?.version !== 2) {
-  throw new Error("Evidence review queue does not expose the ontology-aware editorial priority model.");
+if (reviewQueue.schema_version !== 3 || reviewQueue.priority_model?.version !== 3) {
+  throw new Error("Evidence review queue does not expose the claim-aware ontology editorial priority model.");
 }
 for (const record of reviewQueue.entries ?? []) {
   if (!Number.isInteger(record.editorial_priority?.score) || !Array.isArray(record.editorial_priority?.factors) || !record.editorial_priority.factors.length) {
@@ -146,6 +148,12 @@ for (let index = 1; index < (reviewQueue.entries ?? []).length; index += 1) {
   if (previous.editorial_priority.score < current.editorial_priority.score) {
     throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}.`);
   }
+}
+if (claimDebt.schema_version !== 1 || claimDebt.name !== "Brali public claim debt report") {
+  throw new Error("Claim-debt report identity or schema drift.");
+}
+if (claimDebt.counts?.records_checked !== sourceIndex.length || claimDebt.counts?.records_with_markers !== (claimDebt.entries ?? []).length) {
+  throw new Error("Claim-debt report does not reconcile with the source library.");
 }
 if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => typeof entry.displayTitle === "string" && entry.displayTitle.trim())) {
   throw new Error("Public Life OS index lacks normalized display titles.");
@@ -163,4 +171,4 @@ if (!(protocols.entries ?? []).every((record) => record.ontology?.domains?.lengt
 if (coverage.summary?.library_entries !== sourceIndex.length) throw new Error("Ontology coverage does not reconcile with the library size.");
 if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
 
-console.log(`Static site verified: ${required.length} core files, ontology-aware protocol/evidence/research surfaces, public coverage reporting, source provenance, and ${evidenceIndex.entries.length} evidence records.`);
+console.log(`Static site verified: ${required.length} core files, ontology/claim-aware protocol and evidence surfaces, public coverage reporting, source provenance, ${evidenceIndex.entries.length} evidence records, and ${claimDebt.counts.debt_entries} claim-debt entries.`);

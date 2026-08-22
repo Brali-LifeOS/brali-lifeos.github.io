@@ -78,9 +78,10 @@ export function claimFlags(article) {
   const inspection = inspectClaims(surface);
   return {
     evidenceLanguage: claimPattern.test(text) || inspection.enforcedCategories.length > 0,
-    quantitative: quantitativeClaimPattern.test(text),
+    quantitative: quantitativeClaimPattern.test(text) || inspection.categories.includes('quantitative'),
     categories: inspection.categories,
     enforcedCategories: inspection.enforcedCategories,
+    decisionRequiredCategories: inspection.decisionRequiredCategories,
     markers: inspection.markers,
   };
 }

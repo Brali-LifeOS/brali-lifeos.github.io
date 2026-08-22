@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "batch_size": 4,
+  "blocked_preview_size": 8,
+  "selection_order": "canonical-review-queue",
+  "purpose": "Select the next small, low-risk claim-cleanup batch without manually choosing convenient entries or weakening the canonical editorial priority order.",
+  "actionable_rule": {
+    "status": "pending-review",
+    "sensitive": false,
+    "source_recorded": false,
+    "requires_enforced_category": true,
+    "proposed_disposition": "rewrite-practical-or-restrict"
+  },
+  "blocked_rules": [
+    {
+      "id": "sensitive-source-review",
+      "when": "sensitive=true or status=restricted",
+      "action": "Keep withheld and route through actual-source and safety review."
+    },
+    {
+      "id": "recorded-source-review",
+      "when": "source.recorded=true",
+      "action": "Review the source against the exact public claim before rewriting or retaining it."
+    },
+    {
+      "id": "monitor-only-marker",
+      "when": "no enforced claim category remains",
+      "action": "Leave in the broader editorial queue; do not consume the phase-one enforced-claim batch."
+    }
+  ],
+  "guardrails": [
+    "Do not auto-promote any record to reviewed.",
+    "Do not attach a vaguely related source merely to preserve inherited wording.",
+    "Do not skip blocked higher-priority entries silently; expose them in the batch report.",
+    "A practical rewrite must remove enforced evidence claims and preserve a bounded observable action.",
+    "If a safe practical rewrite is not possible, keep or move the record to a withheld state."
+  ]
+}

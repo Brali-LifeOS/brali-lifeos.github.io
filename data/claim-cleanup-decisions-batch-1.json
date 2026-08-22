@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-08-22-01",
+  "selected_at": "2026-08-22",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue under data/claim-cleanup-policy.json before any batch-one rewrite was applied.",
+  "selection_order": [
+    "ad-astra-per-aspera-motivation-tracker",
+    "analogy-studio",
+    "ask-better-interview-questions",
+    "ask-for-feedback-tracker"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 654,
+    "actionable_under_policy": 535,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch records editorial rewrites, not scientific review. No entry is promoted to reviewed and no source is added merely to preserve inherited wording.",
+  "entries": [
+    {
+      "slug": "ad-astra-per-aspera-motivation-tracker",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["task-initiation"],
+      "decision": "Remove fabricated pilot, percentage, mechanism and retention claims. Preserve only a phrase-to-next-action prompt with explicit limits against romanticizing hardship or overriding a boundary."
+    },
+    {
+      "slug": "analogy-studio",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication", "creative-problem-solving"],
+      "decision": "Remove invented comprehension, recall and lab statistics. Preserve a neutral analogy protocol built around mapping, an explicit boundary and listener paraphrase. Suppress the inherited NLP method label."
+    },
+    {
+      "slug": "ask-better-interview-questions",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["listening", "clear-communication"],
+      "decision": "Remove unsupported detail multipliers, sample claims and fabricated observations. Preserve a permission-based recent-event interview with sequential questions, uncertainty labels and summary correction."
+    },
+    {
+      "slug": "ask-for-feedback-tracker",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["metacognition", "revision-feedback"],
+      "decision": "Remove fabricated trials, cohort outcomes, response-rate claims and arbitrary quotas. Preserve a focused feedback request followed by an explicit accept, test, discuss, defer or reject decision."
+    }
+  ]
+}

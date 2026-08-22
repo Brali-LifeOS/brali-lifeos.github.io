@@ -4,6 +4,8 @@ import { classifyEvidence } from "./lib/content-trust.mjs";
 import { claimCategoryDefinitions } from "./lib/claim-taxonomy.mjs";
 import { loadKnowledgeOntology } from "./lib/knowledge-ontology.mjs";
 
+await import("./check-claim-taxonomy.mjs");
+
 const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");
 const outputRoot = path.join(root, "life-os/datasets");
@@ -84,15 +86,25 @@ function withEditorialPriority(record) {
   return { ...record, editorial_priority: { score, factors: [...new Set(factors)] } };
 }
 
+const unreviewedReasonByCategory = {
+  quantitative: "quantitative-claim-not-reviewed",
+  "first-party-result": "first-party-result-not-reviewed",
+  "clinical-outcome": "clinical-outcome-not-reviewed",
+  "causal-effect": "causal-effect-not-reviewed",
+};
+
 function claimDebtReasons(record) {
   const reasons = [];
   const categories = record.claims.categories ?? [];
   const enforced = record.claims.enforcedCategories ?? [];
 
-  if (record.claims.quantitative && record.status !== "reviewed") reasons.push("quantitative-claim-not-reviewed");
-  if (enforced.includes("first-party-result") && record.status !== "reviewed") reasons.push("first-party-result-not-reviewed");
-  if (enforced.includes("guarantee")) reasons.push(record.status === "reviewed" ? "guarantee-language-requires-rewrite-review" : "guarantee-language-not-reviewed");
-  if (enforced.includes("clinical-outcome") && record.status !== "reviewed") reasons.push("clinical-outcome-not-reviewed");
+  for (const category of enforced) {
+    if (category === "guarantee") {
+      reasons.push(record.status === "reviewed" ? "guarantee-language-requires-rewrite-review" : "guarantee-language-not-reviewed");
+    } else if (record.status !== "reviewed") {
+      reasons.push(unreviewedReasonByCategory[category] ?? `${category}-not-reviewed`);
+    }
+  }
   if (record.indexable && enforced.length > 0 && record.status !== "reviewed") reasons.push("indexable-enforced-claim-not-reviewed");
   if (record.status === "reviewed" && categories.length > 0 && !record.source.recorded) reasons.push("reviewed-claim-without-usable-source");
   if (record.status === "reviewed" && categories.length > 0 && (!record.review.reviewedAt || !record.review.reviewedBy)) reasons.push("reviewed-claim-without-review-metadata");
@@ -177,7 +189,7 @@ await writeFile(path.join(outputRoot, "evidence-decisions.json"), JSON.stringify
 await writeFile(path.join(outputRoot, "claim-debt.json"), JSON.stringify({
   schema_version: 1,
   name: "Brali public claim debt report",
-  policy: "The report separates high-confidence enforced claim categories from monitor-only research, causal, and mechanism language. An entry can remain visible in this report even when it is correctly noindexed; debt is not proof that a claim is false, but it is a requirement for explicit review, rewrite, restriction, or rejection before normal trusted discovery.",
+  policy: "The report separates high-confidence enforced claim categories from monitor-only research and mechanism language. An entry can remain visible in this report even when it is correctly noindexed; debt is not proof that a claim is false, but it is a requirement for explicit review, rewrite, restriction, or rejection before normal trusted discovery.",
   category_definitions: claimCategoryDefinitions,
   counts: claimDebtCounts,
   entries: claimEntries,

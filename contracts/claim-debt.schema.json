@@ -6,7 +6,7 @@
   "additionalProperties": false,
   "required": ["schema_version", "name", "policy", "category_definitions", "counts", "entries"],
   "properties": {
-    "schema_version": { "const": 1 },
+    "schema_version": { "const": 2 },
     "name": { "const": "Brali public claim debt report" },
     "policy": { "type": "string", "minLength": 50 },
     "category_definitions": {
@@ -15,10 +15,11 @@
       "items": {
         "type": "object",
         "additionalProperties": false,
-        "required": ["id", "enforced", "description"],
+        "required": ["id", "enforced", "decision_required", "description"],
         "properties": {
           "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
           "enforced": { "type": "boolean" },
+          "decision_required": { "type": "boolean" },
           "description": { "type": "string", "minLength": 20 }
         }
       }
@@ -26,12 +27,14 @@
     "counts": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["records_checked", "records_with_markers", "debt_entries", "indexable_debt_entries", "by_category", "by_status"],
+      "required": ["records_checked", "records_with_markers", "debt_entries", "indexable_debt_entries", "decision_gated_entries", "decision_linked_entries", "by_category", "by_status"],
       "properties": {
         "records_checked": { "type": "integer", "minimum": 0 },
         "records_with_markers": { "type": "integer", "minimum": 0 },
         "debt_entries": { "type": "integer", "minimum": 0 },
         "indexable_debt_entries": { "type": "integer", "minimum": 0 },
+        "decision_gated_entries": { "type": "integer", "minimum": 0 },
+        "decision_linked_entries": { "type": "integer", "minimum": 0 },
         "by_category": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
         "by_status": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
       }
@@ -49,6 +52,8 @@
           "sensitive",
           "categories",
           "enforced_categories",
+          "decision_required_categories",
+          "evidence_decision_ids",
           "debt_reasons",
           "source",
           "review",
@@ -62,6 +67,8 @@
           "sensitive": { "type": "boolean" },
           "categories": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
           "enforced_categories": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "decision_required_categories": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+          "evidence_decision_ids": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
           "debt_reasons": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
           "source": { "type": "object" },
           "review": { "type": "object" },

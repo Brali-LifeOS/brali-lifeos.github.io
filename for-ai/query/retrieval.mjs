@@ -95,10 +95,17 @@ function decisionSearch(query, decisions) {
   }).filter(Boolean).sort((a,b) => b.score - a.score || a.decision.id.localeCompare(b.decision.id));
 }
 function rankEvidenceBoundaries(decisionCandidates, selected, limit = 3) {
-  const selectedSlugs = new Set(selected.map(item => protocolSlug(item.entry)));
-  const direct = selectedSlugs.size
-    ? decisionCandidates.filter(({ decision }) => decisionTargetSlugs(decision).some(slug => selectedSlugs.has(slug)))
-    : [];
+  const selectedRank = new Map(selected.map((item, index) => [protocolSlug(item.entry), index]));
+  const direct = decisionCandidates.map(item => {
+    const ranks = decisionTargetSlugs(item.decision)
+      .map(slug => selectedRank.get(slug))
+      .filter(rank => Number.isInteger(rank));
+    return ranks.length ? { ...item, selected_protocol_rank: Math.min(...ranks) } : null;
+  }).filter(Boolean).sort((a, b) =>
+    a.selected_protocol_rank - b.selected_protocol_rank ||
+    b.score - a.score ||
+    a.decision.id.localeCompare(b.decision.id)
+  );
   const strongRelated = decisionCandidates.filter(item => item.score >= 9);
   const ranked = [];
   const seen = new Set();

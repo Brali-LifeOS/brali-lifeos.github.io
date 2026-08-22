@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:coot-ai-growth-journal",
+  "slug": "coot-ai-growth-journal",
+  "title": "Open a Session with Coot)",
+  "description": "Open a session with Coot.AI to talk about your personal growth journey. Use the chat to reflect on your goals, ask for advice, and gain new insights.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/index.json",
+  "growth_zone": {
+    "slug": "grow-fast",
+    "title": "Grow fast"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "habits-consistency",
+        "title": "Habits & Consistency"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "grow-fast"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

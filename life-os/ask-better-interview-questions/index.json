@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ask-better-interview-questions",
+  "slug": "ask-better-interview-questions",
+  "title": "Run a Short, Concrete Information Interview",
+  "description": "Ask permission, focus on one recent event, follow the sequence step by step and separate remembered facts, estimates and interpretation.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/index.json",
+  "growth_zone": {
+    "slug": "as-detective",
+    "title": "As Detective"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "listening",
+        "title": "Listening"
+      },
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "detective",
+        "title": "Detective"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-detective"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "listening",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/listening/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ask-better-interview-questions",
+    "language": "en",
+    "slug": "ask-better-interview-questions",
+    "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
+    "title": "Run a Short, Concrete Information Interview",
+    "description": "Ask permission, focus on one recent event, follow the sequence step by step and separate remembered facts, estimates and interpretation.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "listening",
+          "title": "Listening"
+        },
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "detective",
+          "title": "Detective"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-detective"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-detective",
+      "title": "As Detective"
+    },
+    "action": "Explain why you are asking and get permission. Ask the person to walk through the most recent relevant example. Use one question at a time about sequence, context, tools, decisions and uncertainty. Summarize what you heard and invite correction.",
+    "check_in": "What concrete sequence did I learn, what remains an estimate or interpretation, and what did the person correct?",
+    "keywords": [
+      "As Detective",
+      "Life OS",
+      "Conduct Interviews"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

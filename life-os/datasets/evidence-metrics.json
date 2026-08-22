@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "review_stale_days": 365,
+  "current": {
+    "total_entries": 947,
+    "states": {
+      "practical": 116,
+      "reviewed": 23,
+      "pending-review": 653,
+      "restricted": 155
+    },
+    "review_queue": 808,
+    "restricted": 155,
+    "pending_review": 653,
+    "sensitive_queue_items": 226,
+    "quantitative_queue_items": 798,
+    "stale_reviews": 0,
+    "evidence_decisions": 14,
+    "priority_reasons": {
+      "sensitive-without-usable-source": 155,
+      "evidence-like-claim-without-source": 653
+    }
+  },
+  "stale_review_items": [],
+  "comparison_key": "1.0.0",
+  "note": "Compare immutable data-v snapshots to track reviewed, removed, downgraded and queued content."
+}

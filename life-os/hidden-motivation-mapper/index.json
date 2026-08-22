@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:hidden-motivation-mapper",
+  "slug": "hidden-motivation-mapper",
+  "title": "Consider Actions or Reactions That Seem Automatic or Hard to Explain",
+  "description": "Consider actions or reactions that seem automatic or hard to explain. Reflect on any deeper motivations that might be at play.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/hidden-motivation-mapper/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/hidden-motivation-mapper/index.json",
+  "growth_zone": {
+    "slug": "psychodynamic",
+    "title": "Psychodynamic"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "psychodynamic",
+        "title": "Psychodynamic-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "psychodynamic"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

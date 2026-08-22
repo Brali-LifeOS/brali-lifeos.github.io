@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/",
+  "json_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/index.json",
+  "decision": "support-existing",
+  "decision_label": "Supports existing guidance",
+  "reviewed_at": "2026-08-22",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+    "url": "https://doi.org/10.3389/fpsyg.2012.00482",
+    "type": "within-participant-experiment",
+    "doi": "10.3389/fpsyg.2012.00482",
+    "citation_text": "Seehausen M, Kazzer P, Bajbouj M, Prehn K. Frontiers in Psychology. 2012;3:482.",
+    "study_design": "Within-participant experiment in which one trained interviewer asked ten standardized open questions about a real-life social conflict and alternated empathic paraphrasing with silent note-taking. Immediate self-reported emotional valence, voice measures and psychophysiological measures were compared across conditions.",
+    "population": "Twenty healthy native German-speaking adults, ten women, mean age 27 years, discussing an ongoing or recent conflict that did not involve physical or psychological violence. Some physiological and voice records were lost, leaving 16 or 17 participants for those analyses.",
+    "intervention_or_exposure": "The interviewer briefly summarized the facts, perceived feelings and what seemed important to the participant, then asked whether that understanding was correct. The comparison condition was silent note-taking. The same highly trained interviewer delivered all sessions.",
+    "outcomes": [
+      "Immediate self-reported emotional valence after paraphrasing versus note-taking",
+      "Voice intensity and speech measures following each condition",
+      "Heart rate, skin conductance and blood-volume-pulse measures during each condition"
+    ]
+  },
+  "supported_claim": "In this small nonclinical social-conflict experiment, a trained interviewer used a behavior closely matching Brali's core correction loop: summarize the speaker's facts, feelings and priorities, then ask whether the understanding is accurate. Participants reported less negative immediate emotion after paraphrasing than after silent note-taking. This supports retaining paraphrase plus explicit correction as a bounded practice behavior, with the studied outcome and setting stated precisely.",
+  "unsupported_or_overstated_claims": [
+    "Paraphrasing improves understanding accuracy or prevents misunderstandings; the study asked for accuracy confirmation but did not measure comprehension accuracy as an outcome.",
+    "The protocol resolves conflict, improves relationships, increases trust or produces better decisions.",
+    "One open question after a paraphrase has an independent effect; open questions were part of the interview procedure and were not isolated.",
+    "The emotional effect is durable beyond the immediate interview period.",
+    "Any untrained listener will reproduce the effect in ordinary work, family or online conversations.",
+    "Paraphrasing is calming in a simple physiological sense; several autonomic measures showed higher activation during paraphrasing.",
+    "A wrong paraphrase is always beneficial or harmless; the study used one experienced mediator and excluded violent conflicts.",
+    "The study validates counting summaries, eye contact, nods, fixed timing or a universal conversational script."
+  ],
+  "limitations": [
+    "Only twenty participants contributed self-report data, making results vulnerable to individual variation and unsuitable for broad population estimates.",
+    "One female interviewer with approximately 190 hours of conflict-resolution training delivered every paraphrase, so listener skill and delivery cannot be separated from the technique.",
+    "The control condition was silent note-taking rather than another spoken response; differences may partly reflect receiving a verbal response rather than paraphrasing specifically.",
+    "Participants may have interpreted note-taking as judgment despite the study explanation, potentially biasing the comparison.",
+    "Only immediate reactions were measured; the authors explicitly described longer-term emotion resolution as speculative.",
+    "Conflicts involving physical or psychological violence were excluded, so the result must not be applied as ordinary advice in unsafe or abusive situations.",
+    "The study assessed emotional valence and arousal, not whether the listener understood more accurately or whether the conflict outcome improved."
+  ],
+  "target_hack_ids": [
+    "active-listening-exercises"
+  ],
+  "target_protocol_ids": [
+    "brali:active-listening-exercises"
+  ],
+  "risk_flags": [
+    "mental-health"
+  ],
+  "notes": "Editorial outcome: keep the public protocol practical rather than promote it to reviewed on this study alone. The source supports the exact paraphrase-plus-accuracy-check behavior in a narrow setting, but the public protocol targets understanding and correction, whereas the study's measured outcome was immediate emotional valence. Preserve the correction invitation, avoid mind-reading and emotion-as-fact wording, and keep unsafe conflict contexts outside routine use."
+}

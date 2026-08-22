@@ -22,8 +22,10 @@ if (report.coverage.zone_pages_checked !== zones.length) fail(`zone coverage dri
 if (report.coverage.total_pages_checked !== sourceIndex.length + zones.length) fail('total page coverage drift');
 if (report.coverage.machine_readable_page_records !== sourceIndex.length + zones.length) fail('machine-readable page count drift');
 if (report.coverage.trusted_protocols !== (protocols.count ?? protocols.entries?.length ?? 0)) fail('trusted protocol count drift');
-if (report.coverage.indexable_entry_pages !== (evidence.entries ?? []).filter(item => item.indexable).length) fail('indexable entry count drift');
-if (report.coverage.withheld_entry_pages !== (evidence.entries ?? []).filter(item => !item.indexable).length) fail('withheld entry count drift');
+if (report.coverage.indexable_entry_pages !== sourceIndex.length) fail('search-indexable entry count drift');
+if (report.coverage.withheld_entry_pages !== 0) fail('public entries must not remain withheld from indexing');
+if (report.coverage.trusted_recommendation_entries !== (evidence.entries ?? []).filter(item => item.indexable).length) fail('trusted recommendation count drift');
+if (report.coverage.review_required_entry_pages !== (evidence.entries ?? []).filter(item => !item.indexable).length) fail('review-gated entry count drift');
 if (!report.loop?.converged || report.loop.changed_pages_by_pass?.at(-1) !== 0) fail('automatic loop did not converge');
 if (report.loop?.zone_view_normalization?.zones_checked !== zones.length) fail('zone-view normalization did not cover every zone');
 if ((report.error_count ?? 0) !== 0) fail(`report contains ${report.error_count} enforced error(s)`);
@@ -47,9 +49,9 @@ for (const entry of sourceIndex) {
   if (machine.slug !== entry.slug || machine.canonical_url !== `${BASE}${pathname}`) fail(`${entry.slug}: machine record identity drift`);
   if (machine.evidence?.status !== trust?.status || Boolean(machine.evidence?.indexable) !== Boolean(trust?.indexable)) fail(`${entry.slug}: machine evidence state drift`);
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
-  if (Boolean(trust?.indexable) === noindex) fail(`${entry.slug}: robots policy disagrees with evidence index`);
+  if (noindex) fail(`${entry.slug}: public hack page remains noindex`);
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
-  if (Boolean(trust?.indexable) !== inSitemap) fail(`${entry.slug}: sitemap policy disagrees with evidence index`);
+  if (!inSitemap) fail(`${entry.slug}: public hack page is missing from sitemap`);
 }
 
 for (const zone of zones) {
@@ -67,10 +69,11 @@ for (const zone of zones) {
   if (!html.includes(`rel="alternate" type="application/json" href="${pathname}index.json"`)) fail(`${zone.slug}: missing alternate JSON link`);
   if (machine.slug !== zone.slug || Boolean(machine.indexable) !== Boolean(row.indexable)) fail(`${zone.slug}: zone machine record drift`);
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
-  if (Boolean(row.indexable) === noindex) fail(`${zone.slug}: robots policy disagrees with trusted coverage`);
+  if (noindex) fail(`${zone.slug}: public Growth Zone remains noindex`);
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
-  if (Boolean(row.indexable) !== inSitemap) fail(`${zone.slug}: sitemap policy disagrees with trusted coverage`);
-  if (row.indexable !== (row.trusted_protocols > 0)) fail(`${zone.slug}: zone indexing must require at least one trusted protocol`);
+  if (!inSitemap) fail(`${zone.slug}: public Growth Zone is missing from sitemap`);
+  if (row.indexable !== true) fail(`${zone.slug}: public Growth Zone is not marked search-indexable`);
+  if (Boolean(row.trusted_coverage) !== (row.trusted_protocols > 0)) fail(`${zone.slug}: trusted coverage flag disagrees with protocol count`);
 
   const trustedMatch = html.match(/<section class="prose" data-zone-trusted="true">([\s\S]*?)<\/section>/);
   if (!trustedMatch) fail(`${zone.slug}: cannot parse trusted subset`);
@@ -92,4 +95,4 @@ if (!sitemap.includes(`<loc>${BASE}/state/quality/</loc>`)) fail('quality report
 if (!stateHtml.includes('data-sitewide-quality-cycle')) fail('State page does not expose quality cycle');
 if (!llms.includes('Page & Zone Quality Cycle:')) fail('llms.txt does not expose quality cycle');
 
-console.log(`Site-wide quality verified: ${sourceIndex.length} entry pages, ${zones.length} zones, ${report.coverage.indexable_zones} indexable zones, trusted subsets separated from full archives, loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);
+console.log(`Site-wide quality verified: ${sourceIndex.length} search-indexable entry pages, ${zones.length} search-indexable zones, trusted subsets separated from full archives, loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);

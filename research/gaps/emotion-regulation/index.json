@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "topic_id": "emotion-regulation",
+  "topic_title": "Emotion Regulation",
+  "domain_id": "mind-resilience",
+  "domain_title": "Mind & Resilience",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which low-risk emotion-regulation strategies have useful everyday effects, for whom, and under what conditions?",
+  "evidence_target": "Prefer systematic reviews and comparative studies that distinguish everyday regulation from treatment outcomes.",
+  "guardrail": "Do not convert general evidence into individualized mental-health treatment.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/emotion-regulation/",
+  "research_queries": [
+    {
+      "id": "mind-reappraisal",
+      "query": "cognitive reappraisal emotion regulation meta analysis everyday",
+      "risk_flags": [
+        "mental-health"
+      ]
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [
+    {
+      "slug": "cbt-action-mood-tracker",
+      "title": "Action and Mood Observation Note",
+      "url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "dbt-distress-tolerance-coach",
+      "title": "Pause Before Acting on a High-Stress Urge",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "emotion-regulation",
+    "title": "Emotion Regulation",
+    "domain_id": "mind-resilience",
+    "status": "growth-gap",
+    "entries": 3,
+    "research_candidates": 0
+  }
+}

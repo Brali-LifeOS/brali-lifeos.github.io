@@ -236,7 +236,7 @@ const core = {
   name: "Brali Flagship 100",
   description: "A deterministic high-trust core selected from the Brali trusted Protocol Feed. The seven manually curated Start Here protocols are preserved as anchors.",
   canonical_url: `${BASE}/life-os/datasets/flagship-100.json`,
-  page_url: `${BASE}/life-os/flagships/100/`,
+  page_url: `${BASE}/life-os/flagships/curated-100/`,
   target_count: target,
   count: selectedEntries.length,
   target_met: selectedEntries.length === target,
@@ -282,7 +282,8 @@ const grouped = areas.map((area) => {
     `<article class="card"><span class="card-label">#${entry.selection_rank} · ${escapeHtml(entry.evidence?.status)} · score ${entry.quality_score}</span><h3><a href="/life-os/${escapeHtml(entry.slug)}/">${escapeHtml(entry.title)}</a></h3><p>${escapeHtml(entry.action)}</p><p><small>${escapeHtml(entry.strengths.join(" · "))}</small></p></article>`
   ).join("")}</div></section>`;
 }).join("");
-const pageCanonical = `${BASE}/life-os/flagships/100/`;
+const pageCanonical = `${BASE}/life-os/flagships/curated-100/`;
+const legacyPageCanonical = `${BASE}/life-os/flagships/100/`;
 const schema = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -292,7 +293,8 @@ const schema = {
   hasPart: selectedEntries.map((entry) => ({ "@type": "Article", name: entry.title, url: entry.url })),
 };
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagship 100 — Brali high-trust protocol core</title><meta name="description" content="100 high-trust Brali protocols selected with a transparent quality, evidence, safety, and diversity contract."><link rel="canonical" href="${pageCanonical}"><meta property="og:type" content="website"><meta property="og:title" content="Brali Flagship 100"><meta property="og:description" content="A smaller high-trust core for people and AI agents."><meta property="og:url" content="${pageCanonical}"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/flagships/">Start Here 7</a><a href="/life-os/">Library</a><a href="/ontology/">Ontology</a><a href="/for-ai/">For AI</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow">High-trust core</p><h1>Flagship 100</h1><p class="lead">A deliberately smaller core for retrieval and practical use. The seven manually curated Start Here protocols remain anchors; the rest are selected deterministically from the trusted Protocol Feed using evidence, completeness, safety, ontology, and diversity signals.</p><div class="callout"><h3>What this badge means</h3><p>Flagship means the protocol meets Brali's retrieval and editorial quality contract. It does not mean every item has identical scientific evidence, and it is not medical advice.</p><p><a href="/life-os/datasets/flagship-100.json">Selected 100 (JSON)</a> · <a href="/life-os/datasets/flagship-100-candidates.json">Candidate audit trail (JSON)</a> · <a href="/data/flagship-100-policy.json">Selection policy</a></p></div>${grouped}</main><footer class="footer"><div class="wrap footer-row"><small>Brali · Flagship 100 · transparent selection</small></div></footer></body></html>`;
-writeText("life-os/flagships/100/index.html", html);
+writeText("life-os/flagships/curated-100/index.html", html);
+writeText("life-os/flagships/100/index.html", `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagship 100 moved | Brali</title><meta name="description" content="The Brali Flagship 100 collection now has a clearer canonical URL."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${pageCanonical}"><meta http-equiv="refresh" content="0;url=${pageCanonical}"><script>location.replace('/life-os/flagships/curated-100/'+location.search+location.hash)</script><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"></head><body><main id="content" class="page wrap"><p class="eyebrow">Address updated</p><h1>Flagship 100 has a clearer URL.</h1><p class="lead"><a href="/life-os/flagships/curated-100/">Open the curated Flagship 100 collection →</a></p></main></body></html>`);
 
 const datasetIndexPath = path.join(ROOT, "life-os/datasets/index.html");
 if (fs.existsSync(datasetIndexPath)) {
@@ -353,6 +355,7 @@ writeJson(`${apiDir}/manifest.json`, manifest);
 const sitemapPath = path.join(ROOT, "sitemap.xml");
 if (fs.existsSync(sitemapPath)) {
   let sitemap = fs.readFileSync(sitemapPath, "utf8");
+  sitemap = sitemap.replace(`  <url><loc>${legacyPageCanonical}</loc></url>\n`, "");
   if (!sitemap.includes(`<loc>${pageCanonical}</loc>`)) {
     sitemap = sitemap.replace("</urlset>", `  <url><loc>${pageCanonical}</loc></url>\n</urlset>`);
     fs.writeFileSync(sitemapPath, sitemap);

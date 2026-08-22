@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:zugzwang-pressure-to-progress",
+  "slug": "zugzwang-pressure-to-progress",
+  "title": "Feeling the Heat",
+  "description": "Feeling the heat? Use that pressure to your advantage, just like in chess when you're forced to make a move. Instead of panicking, take a deep breath, look at all your options, and make the best move you can.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/zugzwang-pressure-to-progress/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/zugzwang-pressure-to-progress/index.json",
+  "growth_zone": {
+    "slug": "grandmaster",
+    "title": "Grandmaster"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "chess",
+        "title": "Chess"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "grandmaster"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

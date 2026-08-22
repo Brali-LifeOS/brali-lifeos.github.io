@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:mood-based-room-color-planner",
+  "slug": "mood-based-room-color-planner",
+  "title": "Use Color Wisely",
+  "description": "Choose a color scheme for your space that reflects your personality and promotes the desired mood. For example, use calming blues for relaxation or energizing yellows for creativity.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/mood-based-room-color-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/mood-based-room-color-planner/index.json",
+  "growth_zone": {
+    "slug": "as-architector",
+    "title": "As Architector"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "architecture",
+        "title": "Architecture"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-architector"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

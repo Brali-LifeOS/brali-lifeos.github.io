@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:daily-act-value-action-tracker",
+  "slug": "daily-act-value-action-tracker",
+  "title": "Pick One Action Today That Aligns with Your Values (e",
+  "description": "Pick one action today that aligns with your values (e.g., calling a friend to show care). Do it even if it feels hard or uncomfortable.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/daily-act-value-action-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/daily-act-value-action-tracker/index.json",
+  "growth_zone": {
+    "slug": "act",
+    "title": "ACT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "act",
+        "title": "ACT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "act"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:curiosity-deep-dive-tracker",
+  "slug": "curiosity-deep-dive-tracker",
+  "title": "Curiosity-Driven Exploration",
+  "description": "Whenever something catches your interest, dive deeper by researching, asking questions, and trying related activities.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/curiosity-deep-dive-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/curiosity-deep-dive-tracker/index.json",
+  "growth_zone": {
+    "slug": "skill-sprint",
+    "title": "Skill Sprint"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "skill-learning",
+        "title": "Skill Learning"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "skill-sprint"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

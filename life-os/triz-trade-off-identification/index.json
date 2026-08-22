@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:triz-trade-off-identification",
+  "slug": "triz-trade-off-identification",
+  "title": "Identify Trade-Offs That Might Indicate a Contradiction",
+  "description": "Identify trade-offs that might indicate a contradiction. For example, if increasing durability makes the product heavier, that’s a trade-off.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/triz-trade-off-identification/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/triz-trade-off-identification/index.json",
+  "growth_zone": {
+    "slug": "triz",
+    "title": "TRIZ"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "triz",
+        "title": "TRIZ"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "triz"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

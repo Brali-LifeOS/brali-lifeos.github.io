@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "id": "retrieval-procedural-application-2026",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/",
+  "json_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/index.json",
+  "decision": "challenge-existing",
+  "decision_label": "Challenge existing claim",
+  "reviewed_at": "2026-08-18",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+    "url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+    "type": "primary-study",
+    "doi": "10.1016/j.learninstruc.2026.102377",
+    "citation_text": "Ophuis-Cox FHA, Catrysse L, Camp G. Learning and Instruction. 2026;104:102377.",
+    "study_design": "Cluster-randomized classroom experiment comparing worked examples with worked examples plus retrieval practice, with outcomes tested after one week.",
+    "population": "105 fourth-grade pupils from regular primary schools in the Netherlands, mean age 9.4 years.",
+    "intervention_or_exposure": "Dutch verb-spelling instruction using worked examples alone or worked examples combined with retrieval practice across practice sessions.",
+    "outcomes": [
+      "Long-term retention of verb-spelling rules",
+      "Correct application of verb-spelling rules"
+    ]
+  },
+  "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+  "unsupported_or_overstated_claims": [
+    "Remembering a rule better means a learner can apply it better.",
+    "Retrieval practice alone is sufficient practice for procedural skill application.",
+    "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
+    "The specific classroom protocol should be copied as a universal learning recipe."
+  ],
+  "limitations": [
+    "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+    "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+    "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+    "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+  ],
+  "target_hack_ids": [
+    "active-recall-test-yourself"
+  ],
+  "target_protocol_ids": [
+    "brali:active-recall-test-yourself"
+  ],
+  "risk_flags": [],
+  "notes": "Brali should keep active recall as a retention-oriented method but explicitly add application practice when the real goal is using a rule or procedure."
+}

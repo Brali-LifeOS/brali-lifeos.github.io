@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:emotional-trigger-tracker",
+  "slug": "emotional-trigger-tracker",
+  "title": "Notice When You Feel Triggered—times When Emotions Run High or You Feel Reactive",
+  "description": "Notice when you feel triggered—times when emotions run high or you feel reactive. Reflect on what happened and why it affected you.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/emotional-trigger-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/emotional-trigger-tracker/index.json",
+  "growth_zone": {
+    "slug": "cognitive-analytic",
+    "title": "Cognitive Analytic"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "cognitive-analytic",
+        "title": "Cognitive Analytic Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cognitive-analytic"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

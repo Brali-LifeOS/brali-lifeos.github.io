@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:4-minute-tabata-hiit-timer",
+  "slug": "4-minute-tabata-hiit-timer",
+  "title": "Use a High-Intensity Interval Timer Safely",
+  "description": "Follow the Tabata protocol: 20 seconds of very intense exercise (like burpees or mountain climbers) followed by 10 seconds of rest, repeated for 4 minutes (8 rounds).",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/index.json",
+  "growth_zone": {
+    "slug": "fit-life",
+    "title": "Fit Life"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fitness-strength",
+        "title": "Fitness & Strength"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "fit-life"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:4-minute-tabata-hiit-timer",
+    "language": "en",
+    "slug": "4-minute-tabata-hiit-timer",
+    "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
+    "title": "Use a High-Intensity Interval Timer Safely",
+    "description": "Follow the Tabata protocol: 20 seconds of very intense exercise (like burpees or mountain climbers) followed by 10 seconds of rest, repeated for 4 minutes (8 rounds).",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "fitness-strength",
+          "title": "Fitness & Strength"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "fit-life"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "fit-life",
+      "title": "Fit Life"
+    },
+    "action": "If very vigorous exercise is suitable for you, use an interval timer to alternate a short period of harder work with recovery. A 20-second work and 10-second recovery pattern can be one option, but choose a movement and number of rounds you can control safely rather than treating 8 all-out rounds as mandatory.",
+    "check_in": "What movement and interval did I use, was the effort appropriate for my fitness today, did I maintain control, and was there any pain or reason to stop?",
+    "keywords": [
+      "Fit Life",
+      "Life OS",
+      "Try Tabata Training"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

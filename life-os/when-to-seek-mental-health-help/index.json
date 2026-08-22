@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:when-to-seek-mental-health-help",
+  "slug": "when-to-seek-mental-health-help",
+  "title": "Pay Attention to Your Daily Feelings",
+  "description": "Pay attention to your daily feelings. Signs you might need help include persistent sadness, loss of interest, unusual sleep patterns, feelings of worthlessness, or thoughts of self-harm.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/when-to-seek-mental-health-help/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/when-to-seek-mental-health-help/index.json",
+  "growth_zone": {
+    "slug": "no-depression",
+    "title": "No Depression"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "mood-wellbeing",
+        "title": "Mood & Wellbeing"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "no-depression"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

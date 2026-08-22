@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:behavior-experiment-journal",
+  "slug": "behavior-experiment-journal",
+  "title": "Try Doing Something Differently Than You Usually Would",
+  "description": "Try doing something differently than you usually would. For example, if you’re usually quiet in groups, speak up. Notice how it feels to step outside your norm.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/behavior-experiment-journal/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/behavior-experiment-journal/index.json",
+  "growth_zone": {
+    "slug": "gestalt",
+    "title": "Gestalt"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "gestalt",
+        "title": "Gestalt-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "gestalt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

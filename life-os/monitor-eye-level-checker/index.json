@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:monitor-eye-level-checker",
+  "slug": "monitor-eye-level-checker",
+  "title": "Arrange Your Workstation So Your Eyes Line up with the Top Third of Your",
+  "description": "Arrange your workstation so your eyes line up with the top third of your computer screen, and make sure your back is straight and feet are flat on the ground.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/monitor-eye-level-checker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/monitor-eye-level-checker/index.json",
+  "growth_zone": {
+    "slug": "be-healthy",
+    "title": "Be Healthy"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "health-basics",
+        "title": "Everyday Health Basics"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "be-healthy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:stoic-acceptance-tracker",
+  "slug": "stoic-acceptance-tracker",
+  "title": "When Faced with Difficulties, Breathe Deeply and Accept the Situation as It Is, Without",
+  "description": "When faced with difficulties, breathe deeply and accept the situation as it is, without resistance.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/index.json",
+  "growth_zone": {
+    "slug": "stoicism",
+    "title": "Stoicism"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "psychological-flexibility",
+        "title": "Psychological Flexibility"
+      },
+      {
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "stoicism",
+        "title": "Stoicism"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "stoicism"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "psychological-flexibility",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/psychological-flexibility/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

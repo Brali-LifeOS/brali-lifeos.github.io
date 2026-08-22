@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "sleep-opportunity-extension-2021",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/",
+  "json_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/index.json",
+  "decision": "propose-protocol",
+  "decision_label": "Protocol candidate",
+  "reviewed_at": "2026-08-19",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+    "type": "meta-analysis",
+    "doi": "10.1016/j.smrv.2021.101532",
+    "citation_text": "Baron KG, Duffecy J, Reutrakul S, et al. Sleep Medicine Reviews. 2021;60:101532.",
+    "study_design": "Systematic review and meta-analysis of 42 behavioral sleep-extension studies, including controlled two-arm and one-arm designs.",
+    "population": "Participants aged 12 years and older across adult, college-student, adolescent and other samples in 14 countries.",
+    "intervention_or_exposure": "Behavioral interventions intended to increase sleep duration, ranging from direct sleep-schedule changes to coaching and educational approaches.",
+    "outcomes": [
+      "Sleep duration"
+    ]
+  },
+  "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+  "unsupported_or_overstated_claims": [
+    "A self-tracking experiment can identify one scientifically optimal personal sleep duration.",
+    "A fixed bedtime or wake-time tolerance is proven to improve health or cognition for everyone.",
+    "A 21-day experiment, 30-minute duration bins, or a particular alertness score is evidence-based.",
+    "Sleep extension by itself is a treatment for chronic insomnia or another sleep disorder.",
+    "Consumer sleep-stage estimates are required to decide how much sleep a person needs."
+  ],
+  "limitations": [
+    "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+    "Populations, intervention components, duration and measurement methods varied substantially.",
+    "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+    "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+  ],
+  "target_hack_ids": [
+    "ideal-sleep-hours-finder"
+  ],
+  "target_protocol_ids": [
+    "brali:ideal-sleep-hours-finder"
+  ],
+  "risk_flags": [
+    "health"
+  ],
+  "notes": "Promote only as a conservative protocol for protecting adequate sleep opportunity and observing trends. Pair public adult-duration wording with the AASM/SRS consensus; do not revive the inherited optimization experiment or infer causality from the separate sleep-variability observational review."
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:automatic-paycheck-to-savings",
+  "slug": "automatic-paycheck-to-savings",
+  "title": "Automatic Savings Rule",
+  "description": "If essential obligations are covered, automate a modest transfer to savings and review whether the amount remains comfortable. This is general educational guidance, not individualized financial advice.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/automatic-paycheck-to-savings/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/automatic-paycheck-to-savings/index.json",
+  "growth_zone": {
+    "slug": "money",
+    "title": "Money"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [
+      {
+        "id": "personal-finance",
+        "title": "Personal Finance"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "money"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:automatic-paycheck-to-savings",
+    "language": "en",
+    "slug": "automatic-paycheck-to-savings",
+    "url": "https://brali-lifeos.github.io/life-os/automatic-paycheck-to-savings/",
+    "title": "Automatic Savings Rule",
+    "description": "If essential obligations are covered, automate a modest transfer to savings and review whether the amount remains comfortable. This is general educational guidance, not individualized financial advice.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "personal-finance",
+          "title": "Personal Finance"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "work-money-strategy",
+        "growth_zone_slug": "money"
+      }
+    },
+    "life_area": {
+      "slug": "work-money-strategy",
+      "title": "Work, Money & Strategy"
+    },
+    "growth_zone": {
+      "slug": "money",
+      "title": "Money"
+    },
+    "action": "Review upcoming essential expenses, choose a small transfer amount you can change or cancel, schedule it after income arrives, and check that it does not create a shortfall.",
+    "check_in": "Did the automation make saving easier without making bills, debt payments, or necessary spending harder to cover?",
+    "keywords": [
+      "Money",
+      "Life OS",
+      "Automate Your Savings"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

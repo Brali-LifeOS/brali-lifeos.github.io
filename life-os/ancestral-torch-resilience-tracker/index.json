@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ancestral-torch-resilience-tracker",
+  "slug": "ancestral-torch-resilience-tracker",
+  "title": "Short Resilience Reminder",
+  "description": "Create a short phrase that acknowledges difficulty without pretending it is easy, then points back to one action you can still control.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/index.json",
+  "growth_zone": {
+    "slug": "phrases",
+    "title": "Phrases"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      },
+      {
+        "id": "psychological-flexibility",
+        "title": "Psychological Flexibility"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "phrases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "psychological-flexibility",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/psychological-flexibility/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ancestral-torch-resilience-tracker",
+    "language": "en",
+    "slug": "ancestral-torch-resilience-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/",
+    "title": "Short Resilience Reminder",
+    "description": "Create a short phrase that acknowledges difficulty without pretending it is easy, then points back to one action you can still control.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "stress-regulation",
+          "title": "Stress Regulation"
+        },
+        {
+          "id": "psychological-flexibility",
+          "title": "Psychological Flexibility"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "phrases"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "phrases",
+      "title": "Phrases"
+    },
+    "action": "Write one sentence in the form: This is difficult, and the next thing I can control is ___. Keep it specific to the current situation.",
+    "check_in": "Did the phrase lead to a concrete action, or did it become empty motivation that you repeated without changing anything?",
+    "keywords": [
+      "Phrases",
+      "Life OS",
+      "Torch of Life (Keep the Flame Going)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

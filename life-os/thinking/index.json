@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "thinking",
+  "title": "Thinking",
+  "description": "Think clearer and make better choices.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/thinking/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/thinking/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "counts": {
+    "library_entries": 18,
+    "trusted_protocols": 2,
+    "reviewed": 0,
+    "practical": 2,
+    "pending_review": 16,
+    "restricted": 0,
+    "mapped_topics": 6,
+    "research_gaps": 3
+  },
+  "topics": [
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "count": 16,
+      "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
+    },
+    {
+      "id": "error-prevention",
+      "title": "Error Prevention",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
+    },
+    {
+      "id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/revision-feedback/"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
+    {
+      "topic_id": "metacognition",
+      "title": "Metacognition",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+    },
+    {
+      "topic_id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "stage": "resolved",
+      "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ai-premortem-risk-planner",
+      "title": "AI-Assisted Premortem",
+      "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ask-for-feedback-tracker",
+      "title": "Ask for Feedback on One Specific Decision",
+      "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "evidence_status": "practical"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "hindsight-bias-prediction-journal",
+      "title": "After an Event Occurs, Resist the Urge to Say, 'I Knew It All Along",
+      "url": "https://brali-lifeos.github.io/life-os/hindsight-bias-prediction-journal/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "ai-premortem-risk-planner",
+      "title": "AI-Assisted Premortem",
+      "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "ask-for-feedback-tracker",
+      "title": "Ask for Feedback on One Specific Decision",
+      "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "scarcity-bias-check",
+      "title": "Ask Yourself If You’re Valuing Something Just Because It’s Rare",
+      "url": "https://brali-lifeos.github.io/life-os/scarcity-bias-check/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "title": "Challenge Yourself to Dig Deeper When Making Decisions",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "status-quo-bias-challenge-tracker",
+      "title": "Challenge Yourself to Step Out of Your Comfort Zone",
+      "url": "https://brali-lifeos.github.io/life-os/status-quo-bias-challenge-tracker/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "fundamental-attribution-error-coach",
+      "title": "Consider the Context (Fundamental Attribution Error)",
+      "url": "https://brali-lifeos.github.io/life-os/fundamental-attribution-error-coach/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "cut-your-losses-sunk-cost",
+      "title": "Cut Your Losses (Sunk Cost Fallacy)",
+      "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "recency-bias-priority-guard",
+      "title": "Don’t Let the Latest Information Overshadow What’s Truly Important",
+      "url": "https://brali-lifeos.github.io/life-os/recency-bias-priority-guard/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "self-serving-bias-reflection",
+      "title": "Give Yourself Credit When Things Go Well, but Also Acknowledge Your Role When They",
+      "url": "https://brali-lifeos.github.io/life-os/self-serving-bias-reflection/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "question-group-groupthink",
+      "title": "In Group Discussions, Ask Questions and Voice Your Own Opinions, Even If They Go",
+      "url": "https://brali-lifeos.github.io/life-os/question-group-groupthink/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "title": "Make It a Habit to Question Your Beliefs",
+      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "avoid-bandwagon-think-for-yourself",
+      "title": "Think for Yourself (Bandwagon Effect)",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-bandwagon-think-for-yourself/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "title": "Think in Percentages (Overconfidence Bias)",
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "illusory-correlation-checklist",
+      "title": "Validate Connections (Illusory Correlation)",
+      "url": "https://brali-lifeos.github.io/life-os/illusory-correlation-checklist/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "pause-to-avoid-anchoring-bias",
+      "title": "When Faced with a Decision, Take a Moment to Step Back and Consider Other",
+      "url": "https://brali-lifeos.github.io/life-os/pause-to-avoid-anchoring-bias/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "halo-effect-bias-check",
+      "title": "When Forming an Opinion About Someone, Take a Step Back and Consider All Aspects",
+      "url": "https://brali-lifeos.github.io/life-os/halo-effect-bias-check/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "balance-negativity-bias",
+      "title": "When You Find Yourself Focusing on the Negatives, Make a Conscious Effort to Also",
+      "url": "https://brali-lifeos.github.io/life-os/balance-negativity-bias/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    }
+  ]
+}

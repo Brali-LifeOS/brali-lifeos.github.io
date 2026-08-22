@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:foster-teamwork-collaboration-habits",
+  "slug": "foster-teamwork-collaboration-habits",
+  "title": "Foster Teamwork",
+  "description": "Collaborate with colleagues, share knowledge, and support each other’s efforts, just like surgeons work in teams to achieve the best outcomes.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/foster-teamwork-collaboration-habits/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/foster-teamwork-collaboration-habits/index.json",
+  "growth_zone": {
+    "slug": "cardio-doc",
+    "title": "Cardio Doc"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cardiovascular-health",
+        "title": "Cardiovascular Health"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "cardio-doc"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

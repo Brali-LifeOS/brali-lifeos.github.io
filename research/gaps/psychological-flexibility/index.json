@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "topic_id": "psychological-flexibility",
+  "topic_title": "Psychological Flexibility",
+  "domain_id": "mind-resilience",
+  "domain_title": "Mind & Resilience",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "What evidence supports practical psychological-flexibility exercises outside formal therapy, and where are the limits?",
+  "evidence_target": "Prefer systematic reviews and trials that report behavior or functioning outcomes, not only scale changes.",
+  "guardrail": "ACT-derived concepts require explicit mental-health boundaries and must not be presented as treatment.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/psychological-flexibility/",
+  "research_queries": [
+    {
+      "id": "mind-psychological-flexibility",
+      "query": "psychological flexibility acceptance commitment daily life systematic review",
+      "risk_flags": [
+        "mental-health",
+        "clinical"
+      ]
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [
+    {
+      "slug": "ancestral-torch-resilience-tracker",
+      "title": "Short Resilience Reminder",
+      "url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "psychological-flexibility",
+    "title": "Psychological Flexibility",
+    "domain_id": "mind-resilience",
+    "status": "growth-gap",
+    "entries": 2,
+    "research_candidates": 0
+  }
+}

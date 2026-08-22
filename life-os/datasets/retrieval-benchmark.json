@@ -1,0 +1,139 @@
+{
+  "schema_version": 2,
+  "dataset_version": "1.0.0",
+  "k": 5,
+  "ranking_policy": "Lexical score first; canonical Topic wins equal-score ties over protocols. Protocol free text excludes legacy compatibility metadata and legacy Method/Lens labels.",
+  "summary": {
+    "cases": 9,
+    "recall_at_k": 1,
+    "precision_at_k": 0.6444,
+    "passed": 9
+  },
+  "cases": [
+    {
+      "id": "en-focus",
+      "query": "how can I focus without switching tasks",
+      "expected_ids": [
+        "brali:topic:attention-focus"
+      ],
+      "result_ids": [
+        "brali:topic:attention-focus",
+        "brali:protocol:refocus-present-stop-mind-wandering",
+        "brali:protocol:25-minute-pomodoro-focus-sprints",
+        "brali:protocol:90-30-focus-rest-schedule",
+        "brali:protocol:best-odds-decision-making"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 0.2
+    },
+    {
+      "id": "en-start",
+      "query": "I keep procrastinating and cannot start",
+      "expected_ids": [
+        "brali:topic:task-initiation"
+      ],
+      "result_ids": [
+        "brali:topic:task-initiation",
+        "brali:protocol:zeigarnik-unfinished-task-focus",
+        "brali:protocol:10-minute-morning-stretch-routine",
+        "brali:protocol:avoid-anthropocentric-bias",
+        "brali:protocol:consistency-bias-tracker"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 0.2
+    },
+    {
+      "id": "en-memory",
+      "query": "memory retrieval study",
+      "expected_ids": [
+        "brali:topic:memory"
+      ],
+      "result_ids": [
+        "brali:topic:memory",
+        "brali:protocol:mood-memory-matcher",
+        "brali:protocol:deepen-memory-levels-of-processing",
+        "brali:protocol:rotate-focus-list-recall",
+        "brali:protocol:spaced-recall-coach"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 0.2
+    },
+    {
+      "id": "en-decisions",
+      "query": "make a better decision under uncertainty",
+      "expected_ids": [
+        "brali:topic:decision-making"
+      ],
+      "result_ids": [
+        "brali:topic:decision-making",
+        "brali:topic:data-literacy",
+        "brali:protocol:ask-for-feedback-tracker",
+        "brali:protocol:decision-calibration-journal",
+        "brali:protocol:highlight-recall-assistant"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 0.2
+    },
+    {
+      "id": "ru-focus",
+      "query": "как лучше сосредоточиться и не отвлекаться",
+      "expected_ids": [
+        "brali:topic:attention-focus"
+      ],
+      "result_ids": [
+        "brali:topic:attention-focus"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 1
+    },
+    {
+      "id": "ru-start",
+      "query": "не могу начать задачу прокрастинирую",
+      "expected_ids": [
+        "brali:topic:task-initiation"
+      ],
+      "result_ids": [
+        "brali:topic:task-initiation"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 1
+    },
+    {
+      "id": "ru-sleep",
+      "query": "как наладить режим сна",
+      "expected_ids": [
+        "brali:topic:sleep-circadian"
+      ],
+      "result_ids": [
+        "brali:topic:sleep-circadian"
+      ],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 1
+    },
+    {
+      "id": "no-answer",
+      "query": "quantum chromodynamics hadron collider",
+      "expected_ids": [],
+      "result_ids": [],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 1
+    },
+    {
+      "id": "safety",
+      "query": "treat severe depression without a doctor",
+      "expected_ids": [],
+      "result_ids": [],
+      "pass": true,
+      "recall_at_k": 1,
+      "precision_at_k": 1
+    }
+  ]
+}

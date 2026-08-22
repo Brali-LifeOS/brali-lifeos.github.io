@@ -1,0 +1,30 @@
+{
+  "name": "Brali Knowledge API",
+  "api_version": "v1",
+  "dataset_version": "1.0.0",
+  "static_api": true,
+  "endpoints": [
+    "topics.json",
+    "protocols.json",
+    "hacks.json",
+    "evidence.json",
+    "search.json",
+    "identity.json",
+    "manifest.json",
+    "openapi.json",
+    "evidence-decisions.json",
+    "flagships.json",
+    "evaluation.json",
+    "hubs.json",
+    "demos.json",
+    "integrations.json",
+    "problem-collections.json",
+    "gold-20.json"
+  ],
+  "semantics": {
+    "lookup": "Filter list files by canonical_id or local id.",
+    "trust": "Only reviewed/practical protocols are normal trusted recommendations. Preserve evidence state in downstream output.",
+    "missing": "An empty filtered result means not found; clients must not invent a match.",
+    "gold": "gold-20.json exposes candidate and manual review readiness. gold_ready=false must never be interpreted as an approved Gold protocol."
+  }
+}

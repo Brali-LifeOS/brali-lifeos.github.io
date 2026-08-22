@@ -1,0 +1,570 @@
+{
+  "schema_version": 2,
+  "name": "Brali next claim cleanup batch",
+  "policy_version": 1,
+  "selection_order": "canonical-review-queue",
+  "purpose": "Select the next small, low-risk claim-cleanup batch without manually choosing convenient entries or weakening the canonical editorial priority order.",
+  "counts": {
+    "unresolved_claim_debt": 658,
+    "actionable_under_policy": 539,
+    "selected": 4,
+    "blocked_preview": 8,
+    "completed_total": 12,
+    "completed_batches": 3
+  },
+  "guardrails": [
+    "Do not auto-promote any record to reviewed.",
+    "Do not attach a vaguely related source merely to preserve inherited wording.",
+    "Do not skip blocked higher-priority entries silently; expose them in the batch report.",
+    "A practical rewrite must remove enforced evidence claims and preserve a bounded observable action.",
+    "If a safe practical rewrite is not possible, keep or move the record to a withheld state."
+  ],
+  "completed_history_url": "/life-os/datasets/claim-cleanup-history.json",
+  "completed_batches": [
+    {
+      "batch_number": 1,
+      "batch_id": "claim-cleanup-2026-08-22-01",
+      "selected_at": "2026-08-22",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-1.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue under data/claim-cleanup-policy.json before any batch-one rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 654,
+        "actionable_under_policy": 535,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "ad-astra-per-aspera-motivation-tracker",
+        "analogy-studio",
+        "ask-better-interview-questions",
+        "ask-for-feedback-tracker"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 2,
+      "batch_id": "claim-cleanup-2026-08-22-02",
+      "selected_at": "2026-08-22",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-2.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch one completed and before any batch-two rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 650,
+        "actionable_under_policy": 531,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "avoid-anthropocentric-bias",
+        "avoid-contrast-effect",
+        "avoid-gamblers-fallacy-trust-the-odds",
+        "avoid-selection-bias-in-analysis"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 3,
+      "batch_id": "claim-cleanup-2026-08-22-03",
+      "selected_at": "2026-08-22",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-3.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch two completed and before any batch-three rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 646,
+        "actionable_under_policy": 527,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "backfire-effect-coach",
+        "belief-update-coach",
+        "biomimicry-creative-problem-solving",
+        "bold-brainstorm-kickoff"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    }
+  ],
+  "selected": [
+    {
+      "slug": "10x-goal-sprints-tracker",
+      "title": "Apply the 10x Rule",
+      "zone": {
+        "slug": "future-builder",
+        "title": "Future Builder"
+      },
+      "status": "pending-review",
+      "sensitive": false,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "effect-estimate-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 140,
+        "factors": [
+          "pending-review",
+          "effect-estimate-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:effect-estimate",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "proposed_disposition": "rewrite-practical-or-restrict"
+    },
+    {
+      "slug": "7-breath-decision-pause",
+      "title": "7 Breaths Decision-Making (Samurai Style)",
+      "zone": {
+        "slug": "future-builder",
+        "title": "Future Builder"
+      },
+      "status": "pending-review",
+      "sensitive": false,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result",
+        "causal-effect",
+        "mechanism",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "effect-estimate-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 140,
+        "factors": [
+          "pending-review",
+          "effect-estimate-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:effect-estimate",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "proposed_disposition": "rewrite-practical-or-restrict"
+    },
+    {
+      "slug": "ai-six-hats-facilitator",
+      "title": "Try de Bono’s Six Thinking Hats",
+      "zone": {
+        "slug": "talk-smart",
+        "title": "Talk Smart"
+      },
+      "status": "pending-review",
+      "sensitive": false,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result",
+        "causal-effect",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "effect-estimate-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 140,
+        "factors": [
+          "pending-review",
+          "effect-estimate-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:effect-estimate",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "proposed_disposition": "rewrite-practical-or-restrict"
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "title": "Look Beyond the Obvious (Availability Heuristic)",
+      "zone": {
+        "slug": "thinking",
+        "title": "Thinking"
+      },
+      "status": "pending-review",
+      "sensitive": false,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result",
+        "guarantee",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "effect-estimate",
+        "first-party-result",
+        "guarantee"
+      ],
+      "debt_reasons": [
+        "effect-estimate-not-reviewed",
+        "first-party-result-not-reviewed",
+        "guarantee-language-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 140,
+        "factors": [
+          "pending-review",
+          "effect-estimate-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:effect-estimate",
+          "enforced-claim:first-party-result",
+          "enforced-claim:guarantee",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "proposed_disposition": "rewrite-practical-or-restrict"
+    }
+  ],
+  "blocked_preview": [
+    {
+      "slug": "act-defusion-visualize-thoughts",
+      "title": "Defuse from Your Thoughts",
+      "zone": {
+        "slug": "act",
+        "title": "ACT"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "first-party-result",
+        "causal-effect",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source",
+          "topic-classification-pending"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "cbt-daily-micro-goals",
+      "title": "Set Small Daily Goals",
+      "zone": {
+        "slug": "cbt",
+        "title": "CBT"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "effect-estimate",
+        "causal-effect",
+        "mechanism",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "effect-estimate"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "effect-estimate-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:effect-estimate",
+          "evidence-language",
+          "no-usable-source",
+          "topic-classification-pending"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "cbt-mastery-activity-list",
+      "title": "Create a Mastery Activity List",
+      "zone": {
+        "slug": "cbt",
+        "title": "CBT"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "first-party-result",
+        "causal-effect",
+        "mechanism",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source",
+          "topic-classification-pending"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "compassionate-self-talk-coach",
+      "title": "Practice Compassionate Self-Talk",
+      "zone": {
+        "slug": "cognitive-analytic",
+        "title": "Cognitive Analytic"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "first-party-result",
+        "causal-effect",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source",
+          "topic-classification-pending"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "daily-burpee-challenge-tracker",
+      "title": "Conquer the Burpee Blitz",
+      "zone": {
+        "slug": "fit-life",
+        "title": "Fit Life"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "first-party-result",
+        "causal-effect",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "daily-cold-shower-habit-guide",
+      "title": "Cold Showers",
+      "zone": {
+        "slug": "be-healthy",
+        "title": "Be Healthy"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "first-party-result",
+        "mechanism",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "first-party-result"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "first-party-result-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:first-party-result",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "daily-herbal-tea-stress-digestion",
+      "title": "Herbal Teas for Digestion and Stress",
+      "zone": {
+        "slug": "be-healthy",
+        "title": "Be Healthy"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "causal-effect",
+        "research-language"
+      ],
+      "enforced_categories": [
+        "quantitative"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    },
+    {
+      "slug": "daily-hygiene-habit-tracker",
+      "title": "Hygiene Routines",
+      "zone": {
+        "slug": "be-healthy",
+        "title": "Be Healthy"
+      },
+      "status": "restricted",
+      "sensitive": true,
+      "source_recorded": false,
+      "categories": [
+        "quantitative",
+        "guarantee"
+      ],
+      "enforced_categories": [
+        "quantitative",
+        "guarantee"
+      ],
+      "debt_reasons": [
+        "quantitative-claim-not-reviewed",
+        "guarantee-language-not-reviewed"
+      ],
+      "editorial_priority": {
+        "score": 330,
+        "factors": [
+          "restricted",
+          "sensitive-topic",
+          "quantitative-claims",
+          "enforced-claim:quantitative",
+          "enforced-claim:guarantee",
+          "evidence-language",
+          "no-usable-source"
+        ]
+      },
+      "blocked_reason": "sensitive-source-review"
+    }
+  ]
+}

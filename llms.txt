@@ -45,3 +45,54 @@ The weekly Research Scout uses Crossref and Europe PMC metadata, deduplicates by
 ## Reproducibility and contribution
 
 Pin a `data-v*` release for durable integrations or research. Release bundles include a release manifest and SHA-256 checksums; citation metadata is in `CITATION.cff`. Structured contribution paths are documented in `CONTRIBUTING.md` and `/partners/`. The public license is non-commercial; commercial use requires a separate agreement.
+
+## Topic Knowledge Hubs
+- Sleep: https://brali-lifeos.github.io/topics/sleep/
+- Focus: https://brali-lifeos.github.io/topics/focus/
+- Memory: https://brali-lifeos.github.io/topics/memory/
+- Stress: https://brali-lifeos.github.io/topics/stress/
+- Habits: https://brali-lifeos.github.io/topics/habits/
+- Learning: https://brali-lifeos.github.io/topics/learning/
+- Movement & Exercise: https://brali-lifeos.github.io/topics/movement/
+- Machine-readable collection: https://brali-lifeos.github.io/api/v1/hubs.json
+
+## Reference Agent Demos
+- Human-readable: https://brali-lifeos.github.io/for-ai/demos/
+- Machine-readable: https://brali-lifeos.github.io/api/v1/demos.json
+
+## Zero-install Query Playground
+- Human/browser entry: https://brali-lifeos.github.io/for-ai/query/
+- Shareable query form: https://brali-lifeos.github.io/for-ai/query/?q=<URL-encoded-question>
+- The page reads API v1 in-browser, filters normal recommendations to reviewed/practical protocols, preserves evidence state/provenance, and returns no normal recommendation for safety-sensitive requests.
+
+## Integrations and attribution
+- Integration kits: https://brali-lifeos.github.io/for-ai/integrations/
+- Integration metadata: https://brali-lifeos.github.io/api/v1/integrations.json
+- Citation guidance: https://brali-lifeos.github.io/cite/
+- Reference demos: https://brali-lifeos.github.io/for-ai/demos/
+- Brali currently provides a local stdio MCP server, not a hosted remote MCP endpoint.
+
+## Project state and evidence trends
+- State of Practical Knowledge: https://brali-lifeos.github.io/state/
+- Evidence Trends: https://brali-lifeos.github.io/trends/evidence/
+- Project Updates: https://brali-lifeos.github.io/updates/
+
+- Problem-first guides: https://brali-lifeos.github.io/problems/
+- Problem Collections JSON: https://brali-lifeos.github.io/problems/index.json
+- Problem Collections API: https://brali-lifeos.github.io/api/v1/problem-collections.json
+
+- Evidence Ledger: https://brali-lifeos.github.io/evidence/
+- Evidence Ledger JSON: https://brali-lifeos.github.io/evidence/index.json
+- Reviewed Evidence Decisions: https://brali-lifeos.github.io/life-os/datasets/evidence-decisions.json
+
+- Research Gaps: https://brali-lifeos.github.io/research/gaps/
+- Research Gaps JSON: https://brali-lifeos.github.io/research/gaps/index.json
+
+## Intentional archive-only boundaries
+
+Legacy sensitive collections: https://brali-lifeos.github.io/state/legacy-sensitive/
+Machine-readable trust state: https://brali-lifeos.github.io/life-os/datasets/legacy-sensitive-collections.json
+These statuses describe Brali's current corpus/review state and must not be interpreted as scientific verdicts on the underlying therapy or school.
+
+- Page & Zone Quality Cycle: https://brali-lifeos.github.io/state/quality/
+- Page & Zone Quality JSON: https://brali-lifeos.github.io/state/quality/index.json

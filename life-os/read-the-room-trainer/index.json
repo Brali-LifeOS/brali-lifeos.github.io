@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:read-the-room-trainer",
+  "slug": "read-the-room-trainer",
+  "title": "Read the Room",
+  "description": "Pay attention to people's body language and tone of voice to understand their feelings and reactions.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/read-the-room-trainer/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/read-the-room-trainer/index.json",
+  "growth_zone": {
+    "slug": "insider",
+    "title": "Insider"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "listening",
+        "title": "Listening"
+      },
+      {
+        "id": "social-confidence",
+        "title": "Social Confidence"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "insider-fieldcraft",
+        "title": "Fieldcraft"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "insider"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "listening",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/listening/"
+      },
+      {
+        "topic_id": "social-confidence",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/social-confidence/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

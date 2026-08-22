@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brali reference comparison</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #07182d; color: #fff; font: 700 14px/1.4 system-ui, sans-serif; }
+    h1 { margin: 0 0 20px; font-size: 22px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    figure { margin: 0; }
+    figcaption { margin: 0 0 8px; color: #ffd02e; letter-spacing: .08em; text-transform: uppercase; }
+    img { display: block; width: 100%; height: auto; border: 1px solid #44617f; background: #fbf8ef; }
+    .focus { height: 430px; margin-top: 18px; overflow: hidden; border: 1px solid #44617f; background: #fbf8ef; }
+    .focus img { width: 100%; border: 0; transform: translateY(-9%); }
+  </style>
+</head>
+<body>
+  <h1>User reference and final implementation — same 1487 × 1058 viewport</h1>
+  <div class="grid">
+    <figure>
+      <figcaption>Reference</figcaption>
+      <img src="design-reference-user-attached.png" alt="User reference">
+      <div class="focus"><img src="design-reference-user-attached.png" alt="Reference hero and protocol focus"></div>
+    </figure>
+    <figure>
+      <figcaption>Implementation</figcaption>
+      <img src="design-home-qa-default-final.png" alt="Final implementation">
+      <div class="focus"><img src="design-home-qa-default-final.png" alt="Implementation hero and protocol focus"></div>
+    </figure>
+  </div>
+</body>
+</html>

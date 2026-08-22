@@ -34,7 +34,7 @@ function evidenceLabel(evidence, source) {
     return "Practical guidance; no evidence-like claim is detected in the current source record.";
   }
   if (evidence.status === "restricted") {
-    return "Source review pending; this page is excluded from search indexing until reviewed.";
+    return "Source review pending; this page is excluded from trusted recommendations until reviewed.";
   }
   return recorded
     ? `Source recorded; editorial review pending · ${recorded}`
@@ -57,7 +57,7 @@ function protocolSummary(article, entry, evidence) {
 }
 
 let changed = 0;
-let withheld = 0;
+let reviewGated = 0;
 let protocolSummaries = 0;
 
 for (const entry of index) {
@@ -70,15 +70,8 @@ for (const entry of index) {
 
   html = cleanLegacyBrand(html);
 
-  if (!evidence.indexable) {
-    if (!/<meta\s+name=["']robots["']/i.test(html)) {
-      html = html.replace(
-        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
-        "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"robots\" content=\"noindex,follow\">",
-      );
-    }
-    withheld += 1;
-  }
+  html = html.replace(/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']\s*>/ig, "");
+  if (!evidence.indexable) reviewGated += 1;
 
   if (!html.includes('data-protocol-summary="true"')) {
     const summary = protocolSummary(article, entry, evidence);
@@ -94,4 +87,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${withheld} pages withheld from indexing.`);
+console.log(`Generated content sanitized: ${changed} pages changed; ${protocolSummaries} protocol summaries added; ${reviewGated} pages remain excluded from trusted recommendations.`);

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:belief-update-coach",
+  "slug": "belief-update-coach",
+  "title": "Record What Would Change a Belief",
+  "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/belief-update-coach/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "metacognition",
+        "title": "Metacognition"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "metacognition",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:belief-update-coach",
+    "language": "en",
+    "slug": "belief-update-coach",
+    "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+    "title": "Record What Would Change a Belief",
+    "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "metacognition",
+          "title": "Metacognition"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition.",
+    "check_in": "What changed in the claim, its scope or my certainty, and what information would justify another update?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Challenge Conservatism Bias"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

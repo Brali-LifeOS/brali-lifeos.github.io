@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:spot-your-defense-mechanisms",
+  "slug": "spot-your-defense-mechanisms",
+  "title": "Notice Defense Mechanisms",
+  "description": "Observe how you protect yourself in stressful situations—whether through denial, avoidance, or rationalization. Notice how these mechanisms impact you.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/spot-your-defense-mechanisms/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/spot-your-defense-mechanisms/index.json",
+  "growth_zone": {
+    "slug": "psychodynamic",
+    "title": "Psychodynamic"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "psychodynamic",
+        "title": "Psychodynamic-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "psychodynamic"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

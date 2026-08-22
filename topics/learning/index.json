@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "slug": "learning",
+  "title": "Learning",
+  "question": "How can I learn through retrieval, practice, feedback, and application rather than passive exposure?",
+  "summary": "Combine retrieval, feedback, and application practice while distinguishing remembering information from being able to use it.",
+  "canonical_url": "https://brali-lifeos.github.io/topics/learning/",
+  "json_url": "https://brali-lifeos.github.io/topics/learning/index.json",
+  "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
+  "coverage_status": "trusted-protocols",
+  "coverage_note": "7 trusted protocol recommendations available.",
+  "topics": [
+    {
+      "id": "skill-learning",
+      "title": "Skill Learning",
+      "description": "Build capabilities through practice, feedback, transfer, and iteration.",
+      "canonical_id": "brali:topic:skill-learning"
+    },
+    {
+      "id": "language-learning",
+      "title": "Language Learning",
+      "description": "Learn vocabulary, patterns, comprehension, production, and communicative skill.",
+      "canonical_id": "brali:topic:language-learning"
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "description": "Think about how you learn, reason, monitor confidence, and adjust strategy.",
+      "canonical_id": "brali:topic:metacognition"
+    }
+  ],
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
+      "protocol_id": "brali:refocus-present-stop-mind-wandering",
+      "slug": "refocus-present-stop-mind-wandering",
+      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "description": "Use several neutral sounds around you to practice deliberately selecting one sound, switching to another, and then noticing several at once. Treat this as an attention-flexibility drill, not a treatment for worry, anxiety, or another condition.",
+      "action": "Find a safe place with several ordinary sounds. Attend closely to one sound without needing to block the others. Deliberately switch to a second and then a third sound. Finish by broadening attention so several sounds can be noticed together. Keep the exercise brief and stop when you choose.",
+      "check_in": "Could you intentionally select, switch, and broaden attention? Record the skill you practiced, not whether worry or another symptom changed.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "attention-focus",
+        "metacognition"
+      ],
+      "method_ids": [
+        "metacognitive-therapy"
+      ],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:active-recall-test-yourself",
+      "protocol_id": "brali:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "title": "Use Active Recall for Retention, Then Practice Application",
+      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+      "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
+      "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ],
+      "method_ids": [
+        "retrieval-practice"
+      ],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:ask-for-feedback-tracker",
+      "protocol_id": "brali:ask-for-feedback-tracker",
+      "slug": "ask-for-feedback-tracker",
+      "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "title": "Ask for Feedback on One Specific Decision",
+      "description": "Give the reviewer context, ask one focused question, make the reply easy and decide what you will accept, test, discuss, defer or ignore.",
+      "action": "State the intended outcome and the current decision. Ask one focused question such as what is unclear, what assumption looks wrong or what should change first. Choose a reviewer who can judge that question, then record what you will accept, test, discuss, defer or ignore.",
+      "check_in": "What did I ask, what did the reviewer actually say, and what decision or test changed because of it?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-22"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "metacognition",
+        "revision-feedback"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.4
+    },
+    {
+      "canonical_id": "brali:protocol:belief-update-coach",
+      "protocol_id": "brali:belief-update-coach",
+      "slug": "belief-update-coach",
+      "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+      "title": "Record What Would Change a Belief",
+      "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
+      "action": "Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition.",
+      "check_in": "What changed in the claim, its scope or my certainty, and what information would justify another update?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-22"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "critical-thinking",
+        "metacognition"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.4
+    },
+    {
+      "canonical_id": "brali:protocol:10-minute-language-microsprints",
+      "protocol_id": "brali:10-minute-language-microsprints",
+      "slug": "10-minute-language-microsprints",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/",
+      "title": "Practice One Small Language Skill for a Short Session",
+      "description": "Use a short study session to practice one narrow language skill such as recalling a few words, listening to a short clip, or speaking a brief response. Ten minutes is a convenient starting point, not a required dose.",
+      "action": "Pick one narrow language task, such as reviewing a few phrases, listening to a short clip, reading a small passage, or recording a brief spoken answer. Practice for a short session and finish with one note about what to revisit next.",
+      "check_in": "What did I practice, what could I recall or understand without help, and what is the next small thing worth repeating?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "language-learning"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.33
+    },
+    {
+      "canonical_id": "brali:protocol:decision-calibration-journal",
+      "protocol_id": "brali:decision-calibration-journal",
+      "slug": "decision-calibration-journal",
+      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+      "title": "Decision Calibration Journal",
+      "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
+      "action": "Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear.",
+      "check_in": "Which assumption held, which one failed, and what would you change in a similar decision next time?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "decision-making",
+        "metacognition"
+      ],
+      "method_ids": [],
+      "hub_score": 1061.89
+    },
+    {
+      "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
+      "protocol_id": "brali:weekly-theme-learning-sprints",
+      "slug": "weekly-theme-learning-sprints",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
+      "title": "Spend Each Week Focused on a Single Theme",
+      "description": "Spend each week focused on a single theme. Immerse yourself in everything related to that topic through reading, watching, and activities.",
+      "action": "Choose one narrow learning theme for the week, define one visible result for Friday, and complete at least one small practice rep on each day you work on it.",
+      "check_in": "Did I complete one practice rep? What was the main friction, and what should I change for the next rep?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "skill-learning"
+      ],
+      "method_ids": [],
+      "hub_score": 1061.57
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "retrieval-procedural-application-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+      "source_type": "primary-study",
+      "citation_text": "Ophuis-Cox FHA, Catrysse L, Camp G. Learning and Instruction. 2026;104:102377.",
+      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "unsupported_or_overstated_claims": [
+        "Remembering a rule better means a learner can apply it better.",
+        "Retrieval practice alone is sufficient practice for procedural skill application.",
+        "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
+        "The specific classroom protocol should be copied as a universal learning recipe."
+      ],
+      "limitations": [
+        "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+        "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+        "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+        "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+      ],
+      "topic_ids": [
+        "language-learning",
+        "memory",
+        "skill-learning"
+      ]
+    },
+    {
+      "id": "testing-effect-direct-forward-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
+      "source_type": "meta-analysis",
+      "citation_text": "Gereau AD, Mulligan NW. Journal of Experimental Psychology: Learning, Memory, and Cognition. 2026. Online ahead of print.",
+      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "unsupported_or_overstated_claims": [
+        "A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.",
+        "Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.",
+        "Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.",
+        "A broad testing-effect citation is sufficient evidence for skill transfer or correct application."
+      ],
+      "limitations": [
+        "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
+        "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
+        "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+      ],
+      "topic_ids": [
+        "language-learning",
+        "memory",
+        "skill-learning"
+      ]
+    },
+    {
+      "id": "testing-versus-restudy-retention-boundary-2014",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "source_url": "https://doi.org/10.1037/a0037559",
+      "source_type": "meta-analysis",
+      "citation_text": "Rowland CA. Psychological Bulletin. 2014;140(6):1432-1463.",
+      "supported_claim": "Across the included testing-versus-restudy literature, retrieval testing produced better later retention on average than equivalent-duration restudy. The pooled random-effects estimate was positive, but effects varied substantially across studies and testing conditions. This supports Brali's bounded recommendation to retrieve information from memory, check the answer, and use that loop when retention is the target.",
+      "unsupported_or_overstated_claims": [
+        "Active recall improves every kind of learning outcome.",
+        "Better retention automatically produces better application, transfer, problem solving or procedural performance.",
+        "One pooled testing-effect estimate describes one invariant mechanism across all retrieval-practice designs.",
+        "A specific number of questions, repetitions, minutes or percentage target is evidence-based from this meta-analysis.",
+        "Retrieval practice always outperforms restudy for every learner, item, delay and test format.",
+        "Recognition testing, cued recall and free recall produce interchangeable effects.",
+        "The meta-analysis establishes a single neurological or cognitive mechanism that Brali should present as the explanation for why retrieval works.",
+        "A memory benefit demonstrated against restudy validates Brali's protocol for skills whose real criterion is performance or application."
+      ],
+      "limitations": [
+        "Between-study heterogeneity in the primary analysis was very high, so the pooled mean does not describe one uniform effect across designs or contexts.",
+        "The review deliberately restricted the quantitative synthesis to testing-versus-equivalent-restudy contrasts and does not represent every retrieval-practice paradigm.",
+        "Testing benefits varied with methodological factors including initial test format, retention interval and feedback.",
+        "Many contributing studies used controlled experimental learning tasks and college samples, which limits direct extrapolation to every real-world learning context.",
+        "The review's main outcome is retention; it does not establish that remembered information can be applied correctly in a novel task or procedure.",
+        "Theoretical findings did not provide one complete cohesive mechanism for all testing phenomena, so Brali should avoid mechanism decoration.",
+        "A positive average effect does not imply that every individual effect was positive; the reviewed distribution included negative and null estimates."
+      ],
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ]
+    }
+  ],
+  "research_watch": [
+    {
+      "id": "crossref:10.1016/j.learninstruc.2026.102377",
+      "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "status": "challenge-existing",
+      "publication_date": "2026-08-01",
+      "reference_url": "https://doi.org/10.1016/j.learninstruc.2026.102377",
+      "topic_ids": [
+        "language-learning",
+        "memory",
+        "skill-learning"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1037/xlm0001634",
+      "title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "status": "challenge-existing",
+      "publication_date": "2026-06-08",
+      "reference_url": "https://doi.org/10.1037/xlm0001634",
+      "topic_ids": [
+        "language-learning",
+        "memory",
+        "skill-learning"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1037/a0037559",
+      "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "status": "support-existing",
+      "publication_date": "2014-08-25",
+      "reference_url": "https://doi.org/10.1037/a0037559",
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "memory",
+      "title": "Memory",
+      "canonical_id": "brali:topic:memory"
+    },
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "canonical_id": "brali:topic:critical-thinking"
+    },
+    {
+      "id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "canonical_id": "brali:topic:revision-feedback"
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "canonical_id": "brali:topic:attention-focus"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "canonical_id": "brali:topic:decision-making"
+    }
+  ],
+  "related_methods": [
+    {
+      "id": "metacognitive-therapy",
+      "title": "Metacognitive Therapy-derived",
+      "canonical_id": "brali:method:metacognitive-therapy"
+    },
+    {
+      "id": "retrieval-practice",
+      "title": "Retrieval Practice",
+      "canonical_id": "brali:method:retrieval-practice"
+    }
+  ],
+  "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
+}

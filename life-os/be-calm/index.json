@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "be-calm",
+  "title": "Be Calm",
+  "description": "Strategies for staying calm and collected, no matter what life throws at you.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/be-calm/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/be-calm/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "counts": {
+    "library_entries": 3,
+    "trusted_protocols": 1,
+    "reviewed": 0,
+    "practical": 1,
+    "pending_review": 2,
+    "restricted": 0,
+    "mapped_topics": 1,
+    "research_gaps": 0
+  },
+  "topics": [
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "count": 3,
+      "url": "https://brali-lifeos.github.io/ontology/topics/stress-regulation/"
+    }
+  ],
+  "research_gaps": [],
+  "trusted_protocols": [
+    {
+      "slug": "478-breathing-technique-guide",
+      "title": "Comfortable Breathing Reset",
+      "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
+      "evidence_status": "practical"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "478-breathing-technique-guide",
+      "title": "Comfortable Breathing Reset",
+      "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "guided-deep-breathing-routine",
+      "title": "Practice Deep Breathing Exercises for a Few Minutes Each Day",
+      "url": "https://brali-lifeos.github.io/life-os/guided-deep-breathing-routine/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "social-connection-habit",
+      "title": "Regular Social Interaction",
+      "url": "https://brali-lifeos.github.io/life-os/social-connection-habit/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    }
+  ]
+}

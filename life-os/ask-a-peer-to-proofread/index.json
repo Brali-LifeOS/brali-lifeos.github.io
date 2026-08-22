@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ask-a-peer-to-proofread",
+  "slug": "ask-a-peer-to-proofread",
+  "title": "Match Feedback to the Revision Target",
+  "description": "When revising a student or learning-focused draft, decide whether the current pass targets surface features such as grammar and wording or deeper features such as ideas, organization, and coherence. Ask the reviewer to focus feedback on that target, revise at the same level, and use a separate pass when the other level also matters.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ask-a-peer-to-proofread/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ask-a-peer-to-proofread/index.json",
+  "growth_zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": true,
+    "source_url": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+    "reviewed_at": "2026-08-21"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "writing",
+        "title": "Writing"
+      },
+      {
+        "id": "revision-feedback",
+        "title": "Revision & Feedback"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "avoid-errors"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "revision-feedback",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ask-a-peer-to-proofread",
+    "language": "en",
+    "slug": "ask-a-peer-to-proofread",
+    "url": "https://brali-lifeos.github.io/life-os/ask-a-peer-to-proofread/",
+    "title": "Match Feedback to the Revision Target",
+    "description": "When revising a student or learning-focused draft, decide whether the current pass targets surface features such as grammar and wording or deeper features such as ideas, organization, and coherence. Ask the reviewer to focus feedback on that target, revise at the same level, and use a separate pass when the other level also matters.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "writing",
+          "title": "Writing"
+        },
+        {
+          "id": "revision-feedback",
+          "title": "Revision & Feedback"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "avoid-errors"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "avoid-errors",
+      "title": "Avoid Errors"
+    },
+    "action": "Before asking for feedback on a student or learning-focused draft, choose the current revision target. Use a surface pass for grammar, spelling, wording, and similar features; use a deep pass for ideas, organization, coherence, or other meaning-level features. Tell the reviewer which level you want them to focus on, revise against that target, and run a separate pass if the other level also needs work.",
+    "check_in": "What was the revision target for this pass, and did the feedback actually help you revise at that level?",
+    "keywords": [
+      "Avoid Errors",
+      "Life OS",
+      "Get a Fresh Perspective"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+      "reviewed_at": "2026-08-21"
+    }
+  }
+}

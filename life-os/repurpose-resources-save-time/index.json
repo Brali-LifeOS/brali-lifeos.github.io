@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:repurpose-resources-save-time",
+  "slug": "repurpose-resources-save-time",
+  "title": "Recycle or Repurpose Resources to Save Time and Energy",
+  "description": "Recycle or repurpose resources to save time and energy. For instance, reuse parts of previous projects to build new ones.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/repurpose-resources-save-time/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/repurpose-resources-save-time/index.json",
+  "growth_zone": {
+    "slug": "triz",
+    "title": "TRIZ"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving"
+      }
+    ],
+    "methods": [
+      {
+        "id": "triz",
+        "title": "TRIZ"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "triz"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "creative-problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

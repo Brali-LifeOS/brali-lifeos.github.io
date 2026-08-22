@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ericksonian-self-hypnosis-breathing-guide",
+  "slug": "ericksonian-self-hypnosis-breathing-guide",
+  "title": "Find a Quiet Place, Close Your Eyes, and Focus on Your Breathing",
+  "description": "Find a quiet place, close your eyes, and focus on your breathing. Let each breath relax you a bit more, guiding yourself into a calm, focused state.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ericksonian-self-hypnosis-breathing-guide/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ericksonian-self-hypnosis-breathing-guide/index.json",
+  "growth_zone": {
+    "slug": "ericksonian",
+    "title": "Ericksonian"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "ericksonian",
+        "title": "Ericksonian-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "ericksonian"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "topic_id": "decision-making",
+  "topic_title": "Decision Making",
+  "domain_id": "focus-action",
+  "domain_title": "Focus & Action",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which lightweight decision-hygiene practices improve judgment or reduce avoidable errors outside tightly controlled laboratory tasks?",
+  "evidence_target": "Prefer systematic reviews, meta-analyses, or field experiments on checklists, premortems, debiasing, or structured decision processes.",
+  "guardrail": "Keep effects task-specific; do not promise that a checklist removes bias.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/decision-making/",
+  "research_queries": [
+    {
+      "id": "work-decision-hygiene",
+      "query": "decision making checklist premortem debiasing systematic review workplace",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [
+    {
+      "slug": "ai-premortem-risk-planner",
+      "title": "AI-Assisted Premortem",
+      "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "avoid-gamblers-fallacy-trust-the-odds",
+      "title": "Check Whether a Streak Changes the Next Event",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "decision-calibration-journal",
+      "title": "Decision Calibration Journal",
+      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "circles-of-control-planner",
+      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "avoid-contrast-effect",
+      "title": "Judge Each Option Against the Same Criteria",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "decision-making",
+    "title": "Decision Making",
+    "domain_id": "focus-action",
+    "status": "growth-gap",
+    "entries": 6,
+    "research_candidates": 0
+  }
+}

@@ -9,20 +9,18 @@ const manifestPath = path.join(root, "life-os/datasets/manifest.json");
 const evidence = JSON.parse(await readFile(evidencePath, "utf8"));
 let sitemap = await readFile(sitemapPath, "utf8");
 
-const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const withheld = [];
-const indexable = [];
+const searchIndexable = [];
+const trustedRecommendations = [];
+const reviewRequired = [];
 
 for (const record of evidence.entries ?? []) {
   const url = `${base}/life-os/${record.slug}/`;
-  if (record.indexable) {
-    indexable.push(record.slug);
-    continue;
+  searchIndexable.push(record.slug);
+  if (record.indexable) trustedRecommendations.push(record.slug);
+  else reviewRequired.push(record.slug);
+  if (!sitemap.includes(`<loc>${url}</loc>`)) {
+    sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc></url>\n</urlset>`);
   }
-  withheld.push(record.slug);
-  const urlPattern = escapeRegex(url);
-  const entryPattern = new RegExp(`\\s*<url><loc>${urlPattern}</loc>(?:<lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>)?</url>`, "g");
-  sitemap = sitemap.replace(entryPattern, "");
 }
 
 await writeFile(sitemapPath, sitemap);
@@ -30,19 +28,26 @@ await writeFile(sitemapPath, sitemap);
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "indexing.json"])];
 manifest.indexing_policy = {
-  rule: "Only reviewed and practical Growth Library entries are included in the sitemap. Pending-review and restricted entries remain accessible but use noindex,follow.",
-  indexable_entries: indexable.length,
-  withheld_entries: withheld.length,
+  web_rule: "All public Growth Library entry pages are crawlable and included in the sitemap. Evidence state remains visible on every page.",
+  recommendation_rule: "Only reviewed and practical entries enter normal trusted recommendations and the Trusted Protocol Feed.",
+  search_indexable_entries: searchIndexable.length,
+  trusted_recommendation_entries: trustedRecommendations.length,
+  review_required_entries: reviewRequired.length,
 };
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 await writeFile(path.join(root, "life-os/datasets/indexing.json"), JSON.stringify({
-  schema_version: 1,
-  rule: manifest.indexing_policy.rule,
-  indexable_count: indexable.length,
-  withheld_count: withheld.length,
-  indexable,
-  withheld,
+  schema_version: 2,
+  rule: manifest.indexing_policy.web_rule,
+  trusted_recommendation_rule: manifest.indexing_policy.recommendation_rule,
+  indexable_count: searchIndexable.length,
+  withheld_count: 0,
+  trusted_recommendation_count: trustedRecommendations.length,
+  review_required_count: reviewRequired.length,
+  indexable: searchIndexable,
+  withheld: [],
+  trusted_recommendations: trustedRecommendations,
+  review_required: reviewRequired,
 }, null, 2));
 
 const datasetsPath = path.join(root, "life-os/datasets/index.html");
@@ -55,4 +60,4 @@ if (!datasetsHtml.includes("/life-os/datasets/indexing.json")) {
   await writeFile(datasetsPath, datasetsHtml);
 }
 
-console.log(`Indexing policy applied: ${indexable.length} entries in sitemap; ${withheld.length} entries withheld pending quality review.`);
+console.log(`Indexing policy applied: ${searchIndexable.length} public entries in sitemap; ${trustedRecommendations.length} eligible for trusted recommendation; ${reviewRequired.length} remain review-gated.`);

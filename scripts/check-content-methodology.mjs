@@ -15,13 +15,14 @@ if (claimDebt.schema_version !== 2) throw new Error(`Methodology expects claim-d
 for (const marker of ["Reviewed", "Practical", "Pending review", "Restricted", "Current claim debt", "Topic-level debt", "/life-os/datasets/protocols.json", "/life-os/datasets/evidence.json", "/life-os/datasets/claim-debt.json", "/life-os/datasets/indexing.json", "/life-os/datasets/editorial-normalizations.json"]) {
   if (!page.includes(marker)) throw new Error(`Content methodology page is missing: ${marker}`);
 }
-if (!page.includes(`${indexing.indexable_count} meet the current discovery bar`)) throw new Error("Methodology page indexable count is stale.");
-if (!page.includes(`${indexing.withheld_count} remain accessible`)) throw new Error("Methodology page withheld count is stale.");
+if (!page.includes(`All ${indexing.indexable_count} public entries are included in the sitemap`)) throw new Error("Methodology search-indexable count is stale.");
+if (!page.includes(`${indexing.trusted_recommendation_count} currently meet the trusted recommendation bar`)) throw new Error("Methodology trusted recommendation count is stale.");
+if (!page.includes(`${indexing.review_required_count} remain review-gated`)) throw new Error("Methodology review-gated count is stale.");
 if (!page.includes(`Reviewed · ${evidence.counts?.reviewed ?? 0}`)) throw new Error("Methodology reviewed count is stale.");
 if (!page.includes(`inspected ${claimDebt.counts?.records_checked ?? 0} records`)) throw new Error("Methodology claim records checked count is stale.");
 if (!page.includes(`review markers in ${claimDebt.counts?.records_with_markers ?? 0}`)) throw new Error("Methodology claim marker count is stale.");
 if (!page.includes(`${claimDebt.counts?.debt_entries ?? 0} records currently carry unresolved claim debt`)) throw new Error("Methodology claim debt count is stale.");
-if (!page.includes(`${claimDebt.counts?.indexable_debt_entries ?? 0} unresolved claim-debt records are indexable`)) throw new Error("Methodology indexable claim debt count is stale.");
+if (!page.includes(`${claimDebt.counts?.indexable_debt_entries ?? 0} unresolved claim-debt records are eligible for trusted recommendation`)) throw new Error("Methodology trusted claim debt count is stale.");
 for (const category of claimDebt.category_definitions ?? []) {
   const count = claimDebt.counts?.by_category?.[category.id] ?? 0;
   const mode = category.enforced ? "enforced" : "monitor-only";
@@ -45,4 +46,4 @@ if (!page.includes(`affecting ${normalizations.changed_entries} source entr`)) t
 if (!library.includes('/life-os/methodology/')) throw new Error("Growth Library does not link to content methodology.");
 if (!sitemap.includes('<loc>https://brali-lifeos.github.io/life-os/methodology/</loc>')) throw new Error("Sitemap lacks content methodology page.");
 
-console.log(`Content methodology transparency page verified: ${claimDebt.counts?.debt_entries ?? 0} claim-debt record(s), ${claimDebt.counts?.indexable_debt_entries ?? 0} indexable, ${topicDebtGroupCount} Topic debt group(s).`);
+console.log(`Content methodology transparency page verified: ${indexing.indexable_count} search-visible, ${indexing.trusted_recommendation_count} trusted-recommendation eligible, ${claimDebt.counts?.debt_entries ?? 0} claim-debt record(s), ${topicDebtGroupCount} Topic debt group(s).`);

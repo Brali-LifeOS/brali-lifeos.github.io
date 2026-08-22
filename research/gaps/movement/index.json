@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "topic_id": "movement",
+  "topic_title": "Movement",
+  "domain_id": "health-energy",
+  "domain_title": "Health & Energy",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which practical ways of interrupting prolonged sitting are sustainable and supported for health or functioning outcomes?",
+  "evidence_target": "Prefer randomized crossover/field trials and systematic reviews that report both benefits and uncertainty.",
+  "guardrail": "Do not invent a cognition-optimizing break interval, duration, or intensity.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/movement/",
+  "research_queries": [
+    {
+      "id": "health-movement-breaks",
+      "query": "sedentary breaks light physical activity workplace systematic review",
+      "risk_flags": [
+        "health"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1186/s12966-026-01953-6",
+      "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "status": "watch",
+      "publication_date": "2026-07-13",
+      "reference_url": "https://doi.org/10.1186/s12966-026-01953-6"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "movement-breaks-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/movement-breaks-cognition-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "cardio-health-daily-habits",
+      "title": "Build Toward a Weekly Movement Baseline",
+      "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "movement",
+    "title": "Movement",
+    "domain_id": "health-energy",
+    "status": "growth-gap",
+    "entries": 1,
+    "research_candidates": 1
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:abdominal-breathing-stress-relief",
+  "slug": "abdominal-breathing-stress-relief",
+  "title": "Comfortable Diaphragmatic Breathing",
+  "description": "Try a few slow, comfortable breaths while noticing the abdomen move. Keep the exercise easy, stop if it feels uncomfortable, and do not use it instead of medical care.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/abdominal-breathing-stress-relief/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/abdominal-breathing-stress-relief/index.json",
+  "growth_zone": {
+    "slug": "body-oriented",
+    "title": "Body-Oriented"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      }
+    ],
+    "methods": [
+      {
+        "id": "body-oriented",
+        "title": "Body-oriented Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "body-oriented"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:abdominal-breathing-stress-relief",
+    "language": "en",
+    "slug": "abdominal-breathing-stress-relief",
+    "url": "https://brali-lifeos.github.io/life-os/abdominal-breathing-stress-relief/",
+    "title": "Comfortable Diaphragmatic Breathing",
+    "description": "Try a few slow, comfortable breaths while noticing the abdomen move. Keep the exercise easy, stop if it feels uncomfortable, and do not use it instead of medical care.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "stress-regulation",
+          "title": "Stress Regulation"
+        }
+      ],
+      "methods": [
+        {
+          "id": "body-oriented",
+          "title": "Body-oriented Therapy-derived"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "body-oriented"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "body-oriented",
+      "title": "Body-Oriented"
+    },
+    "action": "Sit or lie in a comfortable position, let the breath slow without forcing a count, notice the abdomen rise and fall, and stop after a few easy cycles or whenever you prefer.",
+    "check_in": "Did the exercise feel comfortable and leave you ready for the next ordinary action? Stop if you feel dizzy, short of breath, distressed, or otherwise unwell.",
+    "keywords": [
+      "Body-Oriented",
+      "Life OS",
+      "Practice Deep Breathing"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

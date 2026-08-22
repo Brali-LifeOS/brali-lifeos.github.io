@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "quantum",
+  "title": "Quantum",
+  "description": "Explore the mind-bending world of quantum mechanics and its impact on our understanding of reality.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/quantum/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/quantum/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "counts": {
+    "library_entries": 4,
+    "trusted_protocols": 1,
+    "reviewed": 0,
+    "practical": 1,
+    "pending_review": 3,
+    "restricted": 0,
+    "mapped_topics": 2,
+    "research_gaps": 2
+  },
+  "topics": [
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
+    {
+      "topic_id": "metacognition",
+      "title": "Metacognition",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "decision-calibration-journal",
+      "title": "Decision Calibration Journal",
+      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+      "evidence_status": "practical"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "decision-calibration-journal",
+      "title": "Decision Calibration Journal",
+      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "decision-consequence-coach",
+      "title": "Guide Decisions by Emphasizing the Consequences (Quantum)",
+      "url": "https://brali-lifeos.github.io/life-os/decision-consequence-coach/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "habit-observer-effect-tracker",
+      "title": "Pick a Habit or Behavior You Want to Change (Quantum)",
+      "url": "https://brali-lifeos.github.io/life-os/habit-observer-effect-tracker/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "decision-criteria-alignment",
+      "title": "When Discussing Priorities, Clarify the Hierarchy of Criteria (Quantum)",
+      "url": "https://brali-lifeos.github.io/life-os/decision-criteria-alignment/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    }
+  ]
+}

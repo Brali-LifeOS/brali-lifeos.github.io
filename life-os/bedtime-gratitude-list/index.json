@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:bedtime-gratitude-list",
+  "slug": "bedtime-gratitude-list",
+  "title": "Before Bed, Write Down Three Things You Were Grateful for That Day",
+  "description": "Before bed, write down three things you were grateful for that day.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/bedtime-gratitude-list/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/bedtime-gratitude-list/index.json",
+  "growth_zone": {
+    "slug": "stoicism",
+    "title": "Stoicism"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "stoicism",
+        "title": "Stoicism"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "stoicism"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

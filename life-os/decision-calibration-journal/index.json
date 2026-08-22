@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:decision-calibration-journal",
+  "slug": "decision-calibration-journal",
+  "title": "Decision Calibration Journal",
+  "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/index.json",
+  "growth_zone": {
+    "slug": "quantum",
+    "title": "Quantum"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      },
+      {
+        "id": "metacognition",
+        "title": "Metacognition"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "quantum"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      },
+      {
+        "topic_id": "metacognition",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:decision-calibration-journal",
+    "language": "en",
+    "slug": "decision-calibration-journal",
+    "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+    "title": "Decision Calibration Journal",
+    "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        },
+        {
+          "id": "metacognition",
+          "title": "Metacognition"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "quantum"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "quantum",
+      "title": "Quantum"
+    },
+    "action": "Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear.",
+    "check_in": "Which assumption held, which one failed, and what would you change in a similar decision next time?",
+    "keywords": [
+      "Quantum",
+      "Life OS",
+      "Schrödinger’s Decision-Making"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

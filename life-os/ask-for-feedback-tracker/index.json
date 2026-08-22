@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ask-for-feedback-tracker",
+  "slug": "ask-for-feedback-tracker",
+  "title": "Ask for Feedback on One Specific Decision",
+  "description": "Give the reviewer context, ask one focused question, make the reply easy and decide what you will accept, test, discuss, defer or ignore.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/index.json",
+  "growth_zone": {
+    "slug": "thinking",
+    "title": "Thinking"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "metacognition",
+        "title": "Metacognition"
+      },
+      {
+        "id": "revision-feedback",
+        "title": "Revision & Feedback"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "thinking"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "metacognition",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+      },
+      {
+        "topic_id": "revision-feedback",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ask-for-feedback-tracker",
+    "language": "en",
+    "slug": "ask-for-feedback-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+    "title": "Ask for Feedback on One Specific Decision",
+    "description": "Give the reviewer context, ask one focused question, make the reply easy and decide what you will accept, test, discuss, defer or ignore.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "metacognition",
+          "title": "Metacognition"
+        },
+        {
+          "id": "revision-feedback",
+          "title": "Revision & Feedback"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "thinking"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "thinking",
+      "title": "Thinking"
+    },
+    "action": "State the intended outcome and the current decision. Ask one focused question such as what is unclear, what assumption looks wrong or what should change first. Choose a reviewer who can judge that question, then record what you will accept, test, discuss, defer or ignore.",
+    "check_in": "What did I ask, what did the reviewer actually say, and what decision or test changed because of it?",
+    "keywords": [
+      "Thinking",
+      "Life OS",
+      "Double-Check Your Knowledge (Dunning-Kruger Effect)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

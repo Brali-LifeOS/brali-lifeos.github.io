@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:nature-inspired-interior-design",
+  "slug": "nature-inspired-interior-design",
+  "title": "Look to Nature for Design Ideas",
+  "description": "Look to nature for design ideas. For example, use natural light and plants to brighten your home.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/nature-inspired-interior-design/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/nature-inspired-interior-design/index.json",
+  "growth_zone": {
+    "slug": "as-architector",
+    "title": "As Architector"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "architecture",
+        "title": "Architecture"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-architector"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

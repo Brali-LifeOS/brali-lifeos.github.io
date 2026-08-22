@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:set-screen-time-limits",
+  "slug": "set-screen-time-limits",
+  "title": "Set Screen Time Limits on Your Phone",
+  "description": "Go to your phone settings and set a maximum daily screen time limit for specific apps or your overall phone use. Stick to the limit you set, and when time’s up, put the phone away!",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/set-screen-time-limits/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/set-screen-time-limits/index.json",
+  "growth_zone": {
+    "slug": "be-healthy",
+    "title": "Be Healthy"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "health-basics",
+        "title": "Everyday Health Basics"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "be-healthy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

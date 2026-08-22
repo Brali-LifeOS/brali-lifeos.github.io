@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How new knowledge enters Brali</title>
+  <meta name="description" content="See how agents and community proposals move through source review, protocol design, taxonomy, checks, and publication in Brali.">
+  <link rel="canonical" href="https://brali-lifeos.github.io/agents/contribute/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How new knowledge enters Brali">
+  <meta property="og:description" content="Two ways in, one guarded review path for new Brali knowledge.">
+  <meta property="og:url" content="https://brali-lifeos.github.io/agents/contribute/">
+  <link rel="icon" href="/assets/images/brali-logo.png">
+  <link rel="stylesheet" href="/styles.css?v=20260822j">
+</head>
+<body data-brali-cluster="ai">
+  
+  <a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>
+  <main id="content" class="page wrap">
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><a href="/agents/">Agents</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><span aria-current="page">Add knowledge</span></nav>
+    <p class="eyebrow">Adding knowledge</p>
+    <h1 class="long-heading">Two ways in. One guarded path to publication.</h1>
+    <p class="lead">An agent can discover a candidate, and you can propose your own practice, source, correction, or missing topic. Neither route publishes directly. Every proposal keeps its uncertainty visible while it moves through review.</p>
+
+    <aside class="callout">
+      <h2>Have something Brali should consider?</h2>
+      <p>Describe the problem, the smallest useful action, what someone could observe, and any source or limitation you know. A complete research paper is not required for a practical proposal.</p>
+      <a class="button" href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new?template=knowledge-proposal.yml" rel="noopener">Propose your idea</a>
+      <a class="button quiet" href="#choose-a-path">Choose another path</a>
+    </aside>
+
+    <section aria-labelledby="two-entries">
+      <p class="eyebrow" id="two-entries">Where proposals start</p>
+      <div class="grid two">
+        <article class="card">
+          <span class="card-label">Agent route</span>
+          <h2>Discovery creates a candidate</h2>
+          <p>The Research Scout follows maintained research questions, collects scholarly metadata, removes duplicates, and records a candidate with Topic and risk context.</p>
+          <p><strong>Boundary:</strong> a title, abstract, DOI, or search result is still unreviewed. The scout cannot turn it into a published claim.</p>
+        </article>
+        <article class="card">
+          <span class="card-label">Community route</span>
+          <h2>Your proposal enters the same queue</h2>
+          <p>You can suggest an original practice, an executable protocol, a missing problem, a source, a correction, or a taxonomy change through a structured public form.</p>
+          <p><strong>Boundary:</strong> a submission is a proposal, not approval. Its origin, evidence, uncertainty, and possible conflicts remain visible.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="prose" aria-labelledby="review-path">
+      <h2 id="review-path">The review path</h2>
+      <ol>
+        <li><strong>Capture.</strong> The agent or contributor records the problem, proposed action or source, known limitations, and enough context to reproduce the idea.</li>
+        <li><strong>Triage.</strong> A maintainer checks for duplicates, maps the proposal to the closest canonical Topic, adds safety flags, and decides whether it needs source review, editorial work, or a correction.</li>
+        <li><strong>Review the actual source.</strong> If the proposal makes an evidence claim, the Evidence Reviewer reads the source and records what it supports, challenges, or does not establish. Metadata alone cannot pass this step.</li>
+        <li><strong>Build the knowledge record.</strong> The Protocol Builder turns an accepted action into bounded steps with eligibility, a smallest first action, an observable signal, a stop/change rule, limitations, and provenance.</li>
+        <li><strong>Fit and verify.</strong> The Taxonomy Curator preserves canonical identity and stable URLs. Automated checks compare page, API, data, retrieval, citation, and safety behavior.</li>
+        <li><strong>Publish through review.</strong> A maintainer-reviewed change is merged only when its source and generated outputs agree. Rejected, restricted, or still-pending proposals do not silently appear as trusted recommendations.</li>
+      </ol>
+      <p><code>agent discovery or your proposal → candidate → triage → source review when needed → protocol and taxonomy → checks → maintainer review → publish</code></p>
+
+      <h2>What the labels mean</h2>
+      <table>
+        <thead><tr><th>State</th><th>What you can conclude</th></tr></thead>
+        <tbody>
+          <tr><td>Candidate / proposed</td><td>Worth looking at; not reviewed evidence and not a trusted recommendation.</td></tr>
+          <tr><td><code>pending-review</code></td><td>The record exists, but its evidence or wording still needs a decision.</td></tr>
+          <tr><td><code>restricted</code></td><td>Kept out of normal retrieval because the risk or evidence boundary is unresolved.</td></tr>
+          <tr><td><code>practical</code></td><td>A bounded, transparent practice that can be used without pretending it has stronger evidence than it does.</td></tr>
+          <tr><td><code>reviewed</code></td><td>The exact published claim is tied to an actual-source review with scope and limitations.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="prose" id="choose-a-path" aria-labelledby="proposal-types">
+      <h2 id="proposal-types">Choose what you want to propose</h2>
+      <div class="grid two">
+        <article class="card">
+          <span class="card-label">Your own idea</span>
+          <h3>Practice, protocol, or missing problem</h3>
+          <p>Share a technique you use, a short sequence someone can try, or a problem the library does not answer yet. Include attribution if the idea is adapted from someone else.</p>
+          <p><a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new?template=knowledge-proposal.yml" rel="noopener">Open a knowledge proposal →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-label">Research lead</span>
+          <h3>Source worth screening</h3>
+          <p>Suggest a paper, review, guideline, replication, or negative/null result and explain which Brali claim it may support, challenge, or correct.</p>
+          <p><a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new?template=source-suggestion.yml" rel="noopener">Suggest a source →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-label">Existing record</span>
+          <h3>Correction or missing provenance</h3>
+          <p>Point to the affected URL or canonical ID, explain what is wrong, and describe the expected correction.</p>
+          <p><a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new?template=correction.yml" rel="noopener">Report a correction →</a></p>
+        </article>
+        <article class="card">
+          <span class="card-label">Knowledge map</span>
+          <h3>Topic, method, alias, or mapping</h3>
+          <p>Propose a taxonomy change when it improves retrieval or semantic clarity without silently changing a stable identity.</p>
+          <p><a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new?template=taxonomy-proposal.yml" rel="noopener">Propose a taxonomy change →</a></p>
+        </article>
+      </div>
+
+      <h2>What makes a useful proposal</h2>
+      <ul>
+        <li>Name the concrete problem and who the idea is for.</li>
+        <li>Describe the smallest first action and any later steps.</li>
+        <li>Say what a person could observe to decide whether it helped.</li>
+        <li>Include a stop, change, or fallback condition when the action may not fit.</li>
+        <li>Link the original source or credit the origin when the idea is not yours.</li>
+        <li>State uncertainty, contraindications, conflicts, and known limitations plainly.</li>
+      </ul>
+      <p>Do not include private, identifying, medical, client-restricted, or confidential information in a public GitHub issue.</p>
+
+      <h2>What happens after you submit</h2>
+      <p>Your issue becomes the traceable intake record. A maintainer may ask for a narrower claim, better attribution, a source, or a clearer first action. A proposal can be merged, revised, kept for later review, restricted, or declined. Silence is not approval, and publication timing is not guaranteed.</p>
+      <p>For the underlying contracts and agent responsibilities, read <a href="/agents/">Agents &amp; skills</a>. For research, integration, localization, or commercial work, use <a href="/partners/">Build with Brali</a>.</p>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>
+</body>
+</html>

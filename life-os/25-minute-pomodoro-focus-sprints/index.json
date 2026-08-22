@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:25-minute-pomodoro-focus-sprints",
+  "slug": "25-minute-pomodoro-focus-sprints",
+  "title": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break",
+  "description": "Work in focused 25-minute intervals (Pomodoros) followed by a 5-minute break. After four Pomodoros, take a longer break.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:25-minute-pomodoro-focus-sprints",
+    "language": "en",
+    "slug": "25-minute-pomodoro-focus-sprints",
+    "url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+    "title": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break",
+    "description": "Work in focused 25-minute intervals (Pomodoros) followed by a 5-minute break. After four Pomodoros, take a longer break.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Pick one concrete outcome, work on it for one 25-minute focus block, take a short break, and then decide whether another block is useful. Treat 25 minutes as a starting setting, not a scientifically optimal duration.",
+    "check_in": "Did I work on the intended outcome? What interrupted me, and should the next focus block be shorter, the same, or longer?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Focus with Pomodoro Technique"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

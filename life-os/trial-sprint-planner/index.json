@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:trial-sprint-planner",
+  "slug": "trial-sprint-planner",
+  "title": "Use Temporary or Low-Commitment Solutions Where Appropriate",
+  "description": "Use temporary or low-commitment solutions where appropriate. For instance, test a new habit with a short trial period.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/trial-sprint-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/trial-sprint-planner/index.json",
+  "growth_zone": {
+    "slug": "triz",
+    "title": "TRIZ"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "triz",
+        "title": "TRIZ"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "triz"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:smart-home-roi-planner",
+  "slug": "smart-home-roi-planner",
+  "title": "Use Technology to Enhance Your Space and Life",
+  "description": "Use technology to enhance your space and life. For example, install smart lighting or a thermostat that can be controlled remotely.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/smart-home-roi-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/smart-home-roi-planner/index.json",
+  "growth_zone": {
+    "slug": "as-architector",
+    "title": "As Architector"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      }
+    ],
+    "topics": [
+      {
+        "id": "environment-design",
+        "title": "Environment Design"
+      },
+      {
+        "id": "digital-wellbeing",
+        "title": "Digital Wellbeing"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "architecture",
+        "title": "Architecture"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-architector"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "digital-wellbeing",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

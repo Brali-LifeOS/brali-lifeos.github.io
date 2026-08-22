@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:catch-errors-reading-aloud",
+  "slug": "catch-errors-reading-aloud",
+  "title": "Read Your Document Out Loud to Catch Errors You Might Miss When Reading Silently",
+  "description": "Read your document out loud to catch errors you might miss when reading silently.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/catch-errors-reading-aloud/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/catch-errors-reading-aloud/index.json",
+  "growth_zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "avoid-errors"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

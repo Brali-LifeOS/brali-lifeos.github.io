@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:wheel-of-life-tracker",
+  "slug": "wheel-of-life-tracker",
+  "title": "Use the Wheel of Life to Assess Different Areas of Your Life (e",
+  "description": "Use the Wheel of Life to assess different areas of your life (e.g., career, health, relationships) and identify areas that need improvement.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

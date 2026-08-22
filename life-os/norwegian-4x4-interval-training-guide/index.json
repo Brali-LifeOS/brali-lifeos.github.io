@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:norwegian-4x4-interval-training-guide",
+  "slug": "norwegian-4x4-interval-training-guide",
+  "title": "Perform Norwegian 4x4 Intervals",
+  "description": "Do the Norwegian 4x4 interval training: 10-minute warm-up, then 4 minutes of high-intensity exercise at 85-95% of your max heart rate, followed by 3 minutes of low-intensity exercise. Repeat the high/low cycle 4 times, then cool down for 5 minutes.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/norwegian-4x4-interval-training-guide/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/norwegian-4x4-interval-training-guide/index.json",
+  "growth_zone": {
+    "slug": "fit-life",
+    "title": "Fit Life"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fitness-strength",
+        "title": "Fitness & Strength"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "fit-life"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

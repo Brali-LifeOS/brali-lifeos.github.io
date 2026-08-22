@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:task-time-calibrator",
+  "slug": "task-time-calibrator",
+  "title": "Stop Underestimating How Long Tasks Will Take",
+  "description": "Stop underestimating how long tasks will take. Here’s how: - Add buffer time: Whatever you think a task will take, add 50% more time. - Use past experience: Look back at similar tasks and note how long they actually took. - Break it down: Split tasks into smaller steps and estimate each one individually. Example: If you think writing a report will take 2 hours, plan for 3 and include time for editing and interruptions.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/task-time-calibrator/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/task-time-calibrator/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

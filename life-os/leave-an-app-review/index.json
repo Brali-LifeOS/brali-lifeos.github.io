@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:leave-an-app-review",
+  "slug": "leave-an-app-review",
+  "title": "Leave Useful Feedback",
+  "description": "Write feedback that separates what happened, why it mattered to you, and what change would make the experience better.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/index.json",
+  "growth_zone": {
+    "slug": "grow-together",
+    "title": "Grow Together"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      },
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "revision-feedback",
+        "title": "Revision & Feedback"
+      },
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "grow-together"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "revision-feedback",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:leave-an-app-review",
+    "language": "en",
+    "slug": "leave-an-app-review",
+    "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+    "title": "Leave Useful Feedback",
+    "description": "Write feedback that separates what happened, why it mattered to you, and what change would make the experience better.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        },
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "revision-feedback",
+          "title": "Revision & Feedback"
+        },
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "grow-together"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "grow-together",
+      "title": "Grow Together"
+    },
+    "action": "Describe one concrete thing that worked or failed, explain the effect it had on your task, and add one specific suggestion if you have one.",
+    "check_in": "Could the recipient understand what happened and what might improve without guessing what you meant?",
+    "keywords": [
+      "Grow Together",
+      "Life OS",
+      "Drop a Review"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

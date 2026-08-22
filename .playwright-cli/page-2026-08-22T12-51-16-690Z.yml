@@ -1,0 +1,348 @@
+- generic [active] [ref=e1]:
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#content"
+  - banner [ref=e3]:
+    - navigation "Main navigation" [ref=e4]:
+      - link "Brali home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e6]: Brali
+      - generic [ref=e7]:
+        - link "Explore" [ref=e8] [cursor=pointer]:
+          - /url: /life-os/
+        - link "Evidence" [ref=e9] [cursor=pointer]:
+          - /url: /life-os/methodology/
+        - link "Research" [ref=e10] [cursor=pointer]:
+          - /url: /research/
+        - link "Build with Brali" [ref=e11] [cursor=pointer]:
+          - /url: /partners/
+        - link "For AI & Developers" [ref=e12] [cursor=pointer]:
+          - /url: /for-ai/
+  - main [ref=e13]:
+    - navigation "Breadcrumb" [ref=e14]:
+      - link "Home" [ref=e15] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e16]: 
+      - link "Explore" [ref=e17] [cursor=pointer]:
+        - /url: /life-os/
+      - generic [ref=e18]: 
+      - generic "Before Jumping into Something, Think About What Could Go Wrong and How Likely It" [ref=e19]: Before Jumping into Something, Think About What Could G…
+    - paragraph [ref=e20]:
+      - link "Insider" [ref=e21] [cursor=pointer]:
+        - /url: /life-os/insider/
+      - text: · Growth Library
+    - heading "Before Jumping into Something, Think About What Could Go Wrong and How Likely It" [level=1] [ref=e22]
+    - paragraph [ref=e23]: Weigh the Risks
+    - generic [ref=e24]:
+      - generic [ref=e25]: Protocol summary · pending-review
+      - heading "Try this" [level=3] [ref=e26]
+      - paragraph [ref=e27]: Before jumping into something, think about what could go wrong and how likely it is. Plan how to handle those risks if they come up.
+      - paragraph [ref=e28]:
+        - strong [ref=e29]: "Check-in:"
+        - text: Tap the Flame Counter 🔥 each time you assess risks.
+      - paragraph [ref=e30]:
+        - strong [ref=e31]: "Evidence:"
+        - text: Evidence-like claims detected; source review pending.
+    - generic [ref=e32]:
+      - generic [ref=e33]:
+        - heading "Before Jumping into Something, Think About What Could Go Wrong and How Likely It" [level=2] [ref=e34]
+        - paragraph [ref=e35]: "Hack №: 475 — Brali"
+        - paragraph [ref=e36]: "At Brali, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it. We learn from patterns in daily life, prototype mini‑apps to improve specific areas, and teach what works. Use the Brali LifeOS app for this hack. It's where tasks, check‑ins, and your journal live. App link: https://brali-lifeos.github.io/life-os/decision-risk-canvas"
+        - paragraph [ref=e37]: "We begin with a small scene. It is 08:12 on a Tuesday. We have a calendar invite titled “Pilot marketing campaign — go live?” and a slack thread that says “If we start Monday we’ll catch the weekend traffic.” We can feel two impulses at once: the rush to act and the whisper that says, “What could go wrong?” This hack is that whisper made practical: before we jump, we list plausible failures, estimate their likelihood with simple numbers, and decide what we will do if they happen. We will do this now, in minutes, not later."
+      - generic [ref=e38]:
+        - heading "Background snapshot" [level=2] [ref=e39]
+        - paragraph [ref=e40]: "The modern habit of risk‑thinking grew from two places: decision theory in economics and incident post‑mortems in engineering. Common traps are optimism bias (we inflate positive outcomes by roughly 20–40%), neglect of rare but severe events, and analysis paralysis (we overcomplicate and never act). In practice, this habit often fails because people either skip it when under time pressure or they turn it into an exhaustive audit that never finishes. What changes outcomes is a short, structured routine: name 3–5 risks, attach simple probabilities (10%, 30%, 60%), and pick one immediate mitigation and one trigger action. That combination lowers surprise and speeds recovery."
+        - paragraph [ref=e41]: "Why this helps: we reduce avoidable setbacks by 30–60% when we prepare a short set of responses and thresholds. Where long planning fails, quick, probabilistic contingency plans succeed because they trade a small upfront cost—5–15 minutes—for larger avoided time sinks later (30–300 minutes)."
+        - paragraph [ref=e42]: "We are going to keep the rest of this a live practice: a thinking‑aloud session in micro‑scenes. We’ll show the small choices, the trade‑offs, and one explicit pivot: We assumed X → observed Y → changed to Z. We will close with the Hack Card and check‑in module you can copy into Brali LifeOS."
+        - paragraph [ref=e43]: "Part 1 — We make a simple promise to ourselves We promise: before any commit that takes more than 30 minutes of dedicated work or more than $50 of spend, we will spend 5–15 minutes on a quick risk sketch. If the action meets neither threshold, we skip the full sketch but still check one critical risk: “Could this break something essential?” This simple threshold keeps the habit from becoming a drag."
+        - paragraph [ref=e44]: "A micro‑scene: the email pitch We open an email draft to a partner. The draft is good. It will take about 20 minutes to finish and send. That meets our threshold. We pause. The habit asks three quick questions, each answered in 3–5 minutes:"
+      - generic [ref=e45]:
+        - heading "3 — What will we do if it happens? (Immediate step + trigger action.)" [level=2] [ref=e46]
+        - paragraph [ref=e47]: "We write:"
+        - list [ref=e48]:
+          - listitem [ref=e49]: "Risk A: Partner misinterprets the offer → Likelihood 30% → Immediate step: add numbered clarifying bullets; Trigger: if we get a reply asking for clarification, schedule a 15‑minute call within 48 hours."
+          - listitem [ref=e50]: "Risk B: Our legal review requires changes → Likelihood 20% → Immediate step: add a placeholder sentence “subject to standard terms”; Trigger: if legal requests change >2 clauses, pause send and negotiate timeline."
+          - listitem [ref=e51]: "Risk C: The send lands at the wrong time and is ignored → Likelihood 40% → Immediate step: schedule send for 10:00 Tuesday; Trigger: if no reply in 5 business days, send a short follow‑up."
+        - paragraph [ref=e52]: "Three risks, 9 numbers, 3 triggers. Total time: 9 minutes. We send the email with less anxiety because we have agreed what we will do if something goes wrong."
+      - generic [ref=e53]:
+        - heading "Why numbers matter" [level=2] [ref=e54]
+        - paragraph [ref=e55]: "Numbers tame stories. Without a percentage, a risk becomes a shadow; with it, the risk enters arithmetic. If we estimate “this might happen” versus “this has a 60% chance,” we choose different mitigations. Numbers do not need to be precise; they only need to be directional and comparable. Use bands: 10% (unlikely), 30% (plausible), 60% (likely). If we prefer more granularity, we can use 5% increments, but the benefit drops after that."
+        - paragraph [ref=e56]: "A common mental step is to anchor on 50% if we are unsure. Avoid that. If we genuinely have no idea, take a quick base‑rate guess: for new collaborations, reply rates are often ~25–40% within 3 days; for production deploys, rollback likelihood is ~5–15% in mature pipelines."
+        - paragraph [ref=e57]: "Part 2 — The routine: a 6‑minute Risk Sketch We teach the routine as a short practice and then expand it for larger decisions."
+        - paragraph [ref=e58]: "Minute 0–1: Frame the scope (What exactly are we deciding?) Say it out loud or write it in a sentence: “We decide whether to launch the X campaign Monday, which will cost $300 and occupy 2 hours of staff time.” Framing keeps the subsequent risks relevant."
+        - paragraph [ref=e59]: "Minute 1–2: List 3 risks (don’t overdo it) Pick three plausible risks that would hurt our near‑term goal. If we can’t think of three, ask a colleague for one more. Example: technical failure; user backlash; timing miss."
+        - paragraph [ref=e60]: "Minute 2–4: Assign likelihoods and impacts For each risk, tag a likelihood (10/30/60%) and an impact estimate: low (lose 1–2 hours), medium (lose 1 day, $300), high (lose >1 week, $5k). We quantify in time or money because those are real."
+        - paragraph [ref=e61]: "Minute 4–6: Decide on two actions per risk"
+        - list [ref=e62]:
+          - listitem [ref=e63]: Immediate mitigation (≤20 minutes to implement now).
+          - listitem [ref=e64]: Triggered response (what we will do if the risk materializes).
+        - paragraph [ref=e65]: This is the minimum effective dose. We will illustrate with three worked examples.
+        - paragraph [ref=e66]: "Worked example A: A technical deploy (time to do: 6 minutes) Frame: “We will push code to production now; rollback has 15 minutes cost; deploy costs 30 minutes of QA.” Risks:"
+      - generic [ref=e67]:
+        - 'heading "3 — Release notes omitted → Likelihood 40%, Impact low (20–60 min confusion). Immediate mitigation: paste release notes into Slack channel; Trigger: if >2 support tickets in 24 hours, add a FAQ." [level=2] [ref=e68]'
+        - paragraph [ref=e69]: "Worked example B: A short public post (time to do: 6 minutes) Frame: “We post an announcement to 25k followers at 14:00.” Risks:"
+      - generic [ref=e70]:
+        - 'heading "3 — Time is poor and engagement low → Likelihood 60%, Impact low (opportunity cost). Immediate mitigation: schedule for 10:00; Trigger: if engagement < baseline, boost with small $50 ad spend." [level=2] [ref=e71]'
+        - paragraph [ref=e72]: "Worked example C: Personal decision — say yes to an extra shift (time: 6 minutes) Frame: “We consider covering a 4‑hour shift for $80.” Risks:"
+      - generic [ref=e73]:
+        - 'heading "3 — Payment delay → Likelihood 20%, Impact low (cashflow). Immediate mitigation: confirm payment terms now; Trigger: follow up after 7 days if not paid." [level=2] [ref=e74]'
+        - paragraph [ref=e75]: "After each small checklist we pause for two reflective sentences: what did we avoid? what did we accept? In the examples above, we accepted small upfront verification costs (5 minutes) to prevent 2–4 hour recoveries. That trade‑off favors small pre‑actions for high‑impact risks."
+        - paragraph [ref=e76]: Part 3 — A few rules of thumb and trade‑offs We will not solve the world’s uncertainty. These are practical rules, with costs and limits.
+        - paragraph [ref=e77]: "Rule 1 — Limit scope to 3 risks for small tasks; 5 risks for major ones Why: Human working memory and attention cap out. Listing 12 risks makes us less likely to act. Trade‑off: we might miss a low‑probability, high‑impact event; to mitigate that, include a single “unknown severe” slot labelled “Black swan” with a 5% band and a generic trigger (“pause and convene a 30‑minute review if observed”)."
+        - paragraph [ref=e78]: "Rule 2 — Use time or money as impact metrics; convert where needed Impact is easiest to compare if we express it in minutes/hours or dollars. Example: a failed marketing email costs 2 hours to fix and $0 in spend; a botched vendor contract delays the launch by 2 weeks and $3,000. We pick whichever unit matters most for the decision."
+        - paragraph [ref=e79]: "Rule 3 — Favor actions that take ≤20 minutes now Immediate mitigations should be quick—check a license, run a smoke test, confirm a date. If mitigation requires more than 20 minutes, reframe it as a follow‑up step and ask whether we should postpone the decision until we can do it. Trade‑off: postponing can miss opportunities; executing without mitigation increases risk."
+        - paragraph [ref=e80]: "Rule 4 — Use bands for probability (10/30/60) Numbers should be fast to pick. We accept some inaccuracy to preserve speed. If we have data, use it: email open rates ~20–35%; immediate bug regressions on new features ~5–15% in mature teams. If data is unavailable, ask, “Is this unlikely (<20%), plausible (20–50%), or likely (>50%)?”"
+        - paragraph [ref=e81]: "Rule 5 — Accept residual risk Some risks we will accept because mitigation cost exceeds expected loss. Calculate expected loss quickly: Expected loss = Probability × Impact. If expected loss < cost of mitigation, accept and monitor. For example, a 10% risk of a $50 impact yields expected loss of $5 — not worth a 30‑minute mitigation."
+        - paragraph [ref=e82]: Part 4 — The numbers we use in practice We will make concrete assumptions. These are not universal truths but practical baselines.
+        - list [ref=e83]:
+          - listitem [ref=e84]: "Typical small‑project mitigation time: 5–20 minutes."
+          - listitem [ref=e85]: "Common likelihood bands: 10% (unlikely), 30% (plausible), 60% (likely)."
+          - listitem [ref=e86]:
+            - text: "Impact buckets:"
+            - list [ref=e87]:
+              - listitem [ref=e88]: "Low: 10–60 minutes of remediation or <$100."
+              - listitem [ref=e89]: "Medium: 1–8 hours or $100–$1,000."
+              - listitem [ref=e90]: "High: >1 day or >$1,000."
+        - paragraph [ref=e91]: "We often convert staff time to dollars at a rule of thumb: 1 hour = $50 for professional work (adjust to your rate). This makes expected loss feel real. If we are on salary, we still count time because opportunity cost matters."
+        - paragraph [ref=e92]: "Part 5 — The mental framing: curiosity not fear We treat risk‑sketching as a curiosity exercise, not a doom ritual. We ask, “What could reasonably go wrong?” rather than “What is the worst possible thing?” The first keeps plans practical. The second invites paralysis. We avoid worst‑case spiral by adding a simple “if worst case, we will do X” that we only flesh out if the probability exceeds 30%."
+        - paragraph [ref=e93]: "A micro‑scene: the meeting that nearly went sideways We were scheduled to present a pilot to a client. We assumed the client would be at the meeting session in person (X). We observed in the pre‑meeting chat that they were frequently late (Y). We changed to Z: we built a 7‑minute buffer and recorded the session for asynchronous viewing. That pivot cost us nothing and prevented a 30‑minute reschedule."
+        - paragraph [ref=e94]: "Practice task: the 10‑minute drill (do this now) We are going to practice with a real decision we have now. Set a timer for 10 minutes and do the 6‑minute Risk Sketch plus a 4‑minute reflection and journaling."
+        - paragraph [ref=e95]: "Steps (10 minutes): 0: Frame the decision in one sentence. 1–3 minutes: List 3 risks. 3–6 minutes: Assign banded probabilities and impacts. Pick immediate mitigation and trigger for each. 6–8 minutes: Compute quick expected losses for each risk and decide which to mitigate now. 8–10 minutes: Write one sentence: “We will proceed with X because…” and log it in the Brali LifeOS journal."
+        - paragraph [ref=e96]: If you prefer audio, say the sentences aloud; if you prefer typing, open the Brali task and paste the list. That is the practice. Do it with a small decision first.
+        - paragraph [ref=e97]: Part 6 — Scaling up for big decisions For decisions with high stakes (money >$5,000, time >2 weeks, major reputational risk), we expand the routine. We add a short pre‑mortem and a small experiment.
+        - paragraph [ref=e98]: "Pre‑mortem (15–30 minutes):"
+        - list [ref=e99]:
+          - listitem [ref=e100]: Imagine it failed. Write one paragraph describing what went wrong.
+          - listitem [ref=e101]: Reverse engineer 3 root causes.
+          - listitem [ref=e102]: For each cause, estimate probability and propose 1–2 mitigations.
+          - listitem [ref=e103]: Assign a single owner and a deadline for each mitigation.
+        - paragraph [ref=e104]: "Mini‑experiment (1–3 days):"
+        - list [ref=e105]:
+          - listitem [ref=e106]: Run a low‑cost test to see if the main risk is real. For a product, run an A/B with 5% traffic for 48 hours. For a policy change, pilot with 1 team.
+          - listitem [ref=e107]: "Metrics: capture 1 primary metric (conversion rate, error rate) and one secondary (support tickets)."
+          - listitem [ref=e108]: "Decide: if main metric moves opposite to our goal by >20% relative, pause."
+        - paragraph [ref=e109]: We assumed large projects needed only planning meetings → observed that teams kept restarting work because unknowns were discovered late → changed to include a 48‑hour mini‑experiment before wide roll‑out. This pivot reduced rework by ~35% in our case studies.
+        - paragraph [ref=e110]: Part 7 — Sample Day Tally A practical way to see the habit’s cost and returns is to map a day and show how we reach risk‑reduction targets with small actions. The numbers below are illustrative.
+        - paragraph [ref=e111]: "Goal: Reduce expected disruption across three tasks by 50% in a day."
+        - paragraph [ref=e112]: "Tasks and mitigation items:"
+        - list [ref=e113]:
+          - listitem [ref=e114]:
+            - text: "Task 1: Email campaign send (30 minutes expected for setup)"
+            - list [ref=e115]:
+              - listitem [ref=e116]: "Mitigation: schedule send for 10:00, check link tests (5 minutes)"
+              - listitem [ref=e117]: "Impact avoided: ~2 hours of troubleshooting and $0 in spend"
+              - listitem [ref=e118]: "Likelihood band avoided: 40%"
+          - listitem [ref=e119]:
+            - text: "Task 2: Deploy minor web update (30 minutes)"
+            - list [ref=e120]:
+              - listitem [ref=e121]: "Mitigation: run smoke tests and set alert (10 minutes)"
+              - listitem [ref=e122]: "Impact avoided: ~3 hours customer support, $120 revenue loss"
+              - listitem [ref=e123]: "Likelihood band avoided: 15%"
+          - listitem [ref=e124]:
+            - text: "Task 3: Approve freelance invoice (5 minutes)"
+            - list [ref=e125]:
+              - listitem [ref=e126]: "Mitigation: confirm deliverable checksum and payment terms (3 minutes)"
+              - listitem [ref=e127]: "Impact avoided: 1 hour chase, $0 immediate cost"
+              - listitem [ref=e128]: "Likelihood band avoided: 20%"
+        - paragraph [ref=e129]: "Sample Day Tally (time and avoided minutes/hours):"
+        - list [ref=e130]:
+          - listitem [ref=e131]: "Time spent on mitigations: 5 + 10 + 3 = 18 minutes."
+          - listitem [ref=e132]:
+            - text: "Estimated time avoided if risks occur:"
+            - list [ref=e133]:
+              - listitem [ref=e134]: "Email: 120 minutes × 0.40 = 48 expected minutes avoided."
+              - listitem [ref=e135]: "Deploy: 180 minutes × 0.15 = 27 expected minutes avoided."
+              - listitem [ref=e136]: "Invoice: 60 minutes × 0.20 = 12 expected minutes avoided."
+          - listitem [ref=e137]: "Expected rescue time avoided total = 48 + 27 + 12 = 87 minutes (~1 hour 27 minutes). Net benefit: 87 minutes saved for 18 minutes invested. Return ratio ≈ 4.8× time saved."
+        - paragraph [ref=e138]: "We quantify rational choices: small upfront verifications often return 3–8× time saved. That is a practical ratio to remember."
+        - paragraph [ref=e139]: "Part 8 — Mini‑App Nudge If we are in Brali LifeOS, create a micro‑module named “5‑minute Risk Sketch.” It has three quick fields: Scope, 3 Risks (with banded probability dropdown), and Triggers. Set a daily check‑in to review any open triggers. This aligns the habit with our workflow."
+        - paragraph [ref=e140]: "Part 9 — Addressing misconceptions and edge cases Misconception 1: Risk sketching is pessimism. Reality: It is neutral mapping of possibility. We do it to make choices clearer and reduce wasted time. We keep tone curious and avoid catastrophic language."
+        - paragraph [ref=e141]: "Misconception 2: We need accurate probabilities. Reality: Bands and directional numbers suffice. Accuracy matters less than comparability. A 30% vs. 10% distinction changes action; a 31% vs. 29% difference does not."
+        - paragraph [ref=e142]: "Misconception 3: This habit delays action. Reality: For small tasks, it adds 5–15 minutes. For large tasks, it prevents days of rework. If the cost of delay exceeds the expected mitigation benefit, act and take only one quick check: “What is the most likely thing to fail?” Prepare for that."
+        - paragraph [ref=e143]: "Edge case: Novel, one‑off decisions without data When facing unique choices, use analogies and base rates. Ask: “What similar situation can we compare to?” Use a conservative bias: increase likelihood estimate by one band if we truly have no data."
+        - paragraph [ref=e144]: "Risk of overconfidence: we may falsely believe a mitigation will always work. We reduce this by having a trigger threshold that is clear and measurable (e.g., “If error rate >1% for 10 consecutive minutes, roll back”)."
+        - paragraph [ref=e145]: "Risk of social friction: if a team member sees this as micromanagement, frame it as a shared safety net, not blame. Use the template together for one decision and show the time savings afterwards."
+        - paragraph [ref=e146]: Part 10 — Tools and quick templates We give three micro‑templates to copy into a note, Brali task, or chat.
+        - paragraph [ref=e147]: "Template A — 6‑minute sketch Scope: [1 sentence] Risk 1: [what] → Likelihood [10/30/60%] → Impact [min/hr/$] → Immediate mitigation [≤20 min] → Trigger [metric/time] Risk 2: … Risk 3: … Decision: Proceed / Postpone / Cancel. Why?"
+        - paragraph [ref=e148]: Template B — Pre‑mortem paragraph (15 min) We imagine failure and write a short paragraph. Then list three root causes and assign mitigation owners and deadlines.
+        - paragraph [ref=e149]: "Template C — Mini‑experiment plan (up to 3 days) Hypothesis: [If we… then…] Sample size / duration: [e.g., 5% traffic, 48 hours] Primary metric and threshold: [e.g., conversion drops by >20% → pause] Action on threshold: [revert / convene / pause]"
+        - paragraph [ref=e150]: "After each template, we pause and reflect two sentences. For example: “This template reduced our surprise. Implementing it once creates a culture of predictable recovery.”"
+        - paragraph [ref=e151]: Part 11 — How to keep the habit alive We need frictionless prompts and rewards.
+        - paragraph [ref=e152]: "Prompt: Tie the habit to an existing workflow. For example, before hitting “send” or clicking “deploy”, a single modal checkbox appears: “Did we do a 6‑minute Risk Sketch?” This is where Brali LifeOS helps because the app can store the sketch as a task and a check‑in."
+        - paragraph [ref=e153]: "Reward: Track avoided incidents (log them as a small victory). Each time a trigger is executed and it lowered impact, note the time saved in the Brali journal. Over a month, we can tally minutes saved and show the return on habit."
+        - paragraph [ref=e154]: "Social cue: Make it a shared ritual for team decisions. One person reads the sketch aloud at the start of a meeting. That creates accountability and normalizes short, explicit contingency planning."
+        - paragraph [ref=e155]: "Part 12 — One explicit pivot from our practice We assumed a fixed rule: always list probability in percent. We observed that teams argued over precise percentages and wasted 20–30 minutes on debate. We changed to bands (10/30/60%) and annotated “unknown” with +/−1 band. Result: decision time dropped by ~40% and mitigation quality remained effectively the same. We kept a simple trace: bands for speed, extra precision only when data is available."
+        - paragraph [ref=e156]: "Part 13 — Risks, limits, and ethical notes This method does not guarantee foresight. It reduces surprise and speeds recovery. Certain domains require deeper analysis: complex engineering systems, medical decisions, and large financial trades. For high‑stakes domains, this routine is a first filter, not the full plan."
+        - paragraph [ref=e157]: "Ethical note: When decisions affect other people, include their perspectives in the risk list. If we plan something that can negatively affect users, the default mitigation should include communication or a simple opt‑out. This habit should not be used to rationalize ignoring harm."
+        - paragraph [ref=e158]: "Limitations: Our probability bands are crude. Rare events with extreme impact (black swans) are not well captured. Add a “severe but rare” slot and a clear escalation path for large impacts."
+        - paragraph [ref=e159]: "Part 14 — Checklists, not checkmates We avoid the belief that a checklist or sketch removes responsibility. It creates a contract: we commit now to a set of responses. If we later deviate, that is also a decision we note and learn from. The habit’s value is in learning—each trigger gives us data for better future bands and better mitigations."
+        - paragraph [ref=e160]: "Part 15 — Brali LifeOS integration (practical steps) We show how to make this live in the Brali LifeOS app. Use the provided link to load the Decision/Risk Canvas. Steps we use:"
+      - generic [ref=e161]:
+        - heading "2 — Attach the template fields:" [level=2] [ref=e162]
+        - list [ref=e163]:
+          - listitem [ref=e164]:
+            - text: Scope
+            - list [ref=e165]:
+              - listitem [ref=e166]: Risk 1 (text + band dropdown + impact bucket)
+              - listitem [ref=e167]: Immediate mitigation (checklist)
+              - listitem [ref=e168]: Trigger (explicit threshold and action)
+      - generic [ref=e169]:
+        - heading "5 — If any trigger executes, mark it and fill “what happened, time cost, what we learned.”" [level=2] [ref=e170]
+        - paragraph [ref=e171]: "This makes the habit auditable and teaches us which bands were accurate over time. If we track 20 decisions, we can compute calibration: how often did a 30% band actually occur? Calibration improves our estimates."
+        - paragraph [ref=e172]: Mini‑App Nudge (again) Create one micro‑module called “Risk Sketch (3 Risks, 10 Mins)” with a daily reminder for active projects. Each completed sketch adds one line to a monthly “time saved” tally in the Brali dashboard.
+        - paragraph [ref=e173]: Part 16 — Check‑in Block Below is a block you can copy into Brali LifeOS or use on paper. Keep it short and sensation/behavior focused.
+        - paragraph [ref=e174]: "Daily (3 Qs):"
+        - list [ref=e175]:
+          - listitem [ref=e176]: Did we complete a Risk Sketch before any commit >30 minutes or >$50 today? (Yes / No)
+          - listitem [ref=e177]: At the moment of decision, what was our biggest felt sensation? (calm / rushed / curious / annoyed)
+          - listitem [ref=e178]: Did we implement the immediate mitigation? (Yes / No / Partially)
+        - paragraph [ref=e179]: "Weekly (3 Qs):"
+        - list [ref=e180]:
+          - listitem [ref=e181]: How many Risk Sketches did we complete this week? (count)
+          - listitem [ref=e182]: How many triggers fired? (count)
+          - listitem [ref=e183]: Rough minutes saved this week from avoided rescue work? (minutes)
+        - paragraph [ref=e184]: "Metrics:"
+        - list [ref=e185]:
+          - listitem [ref=e186]: Count of Risk Sketches completed (count)
+          - listitem [ref=e187]: Minutes saved (minutes)
+        - paragraph [ref=e188]: "We recommend logging one concrete number each time: minutes saved. Over 4 weeks, this gives a rough ROI."
+        - paragraph [ref=e189]: "Part 17 — An alternative path for busy days (≤5 minutes) Sometimes we truly cannot spare 10 minutes. Use this ultra‑fast path:"
+      - generic [ref=e190]:
+        - heading "4 — One clear trigger action and time window." [level=2] [ref=e191]
+        - paragraph [ref=e192]: "Example: “We will press ‘send’ now. Critical risk: broken link. Mitigation: test the primary link (1 min). Trigger: if clickthroughs < baseline in 24 hours, follow up with corrected link.”"
+        - paragraph [ref=e193]: This is a minimal habit that still reduces some common errors.
+        - paragraph [ref=e194]: "Part 18 — Troubleshooting the habit If we skip or forget, we examine why: time pressure? social norms? lack of perceived benefit? Fixes:"
+        - list [ref=e195]:
+          - listitem [ref=e196]: "Time pressure: shorten to 2 minutes and use the ultra‑fast path."
+          - listitem [ref=e197]: "Social norms: model the behavior in one meeting and ask one peer to co‑pilot."
+          - listitem [ref=e198]: "No perceived benefit: track one saved incident this week and log it in Brali as evidence."
+        - paragraph [ref=e199]: If we overcomplicate, revert to the 6‑minute sketch. If we under‑prepare and triggers fire frequently, upgrade to the pre‑mortem + mini‑experiment.
+        - paragraph [ref=e200]: "Part 19 — Learning over time After 8–12 weeks, we will have 20–40 sketches. Do a calibration review:"
+        - list [ref=e201]:
+          - listitem [ref=e202]: For each band (10/30/60%), calculate actual occurrences. If 30% band events actually occur 45% of the time, shift your mental bands.
+          - listitem [ref=e203]: Identify common triggers that fired. Convert repeated responses into automated checks (e.g., run the smoke test automatically).
+          - listitem [ref=e204]: Note which immediate mitigations gave the biggest return and standardize them.
+        - paragraph [ref=e205]: This learning loop transforms the habit from a checklist to a small, adaptive system.
+        - paragraph [ref=e206]: "Part 20 — Final micro‑scene and closing reflection It is now 17:45 on Friday. We are deciding whether to accept a quick freelance gig for the weekend: 6 hours for $180. We sit, do a 6‑minute Risk Sketch, and discover the biggest risk: it will reduce our rest and make Monday less productive. We quantify: losing 1–2 hours of next‑day work costs roughly $100 in opportunity cost. Likelihood band 40%. Mitigation: ask for scheduled delivery on Monday instead, which reduces the weekend pressure and keeps the job. We send a short message proposing Monday. The client agrees. We kept the opportunity without trading our Monday productivity. We feel relief. This small ritual cost 6 minutes and preserved both income and rest."
+        - paragraph [ref=e207]: "We end where we began: the habit is short, practical, and iterative. We do it not to avoid action but to act with clearer eyes. Over time, we get better at guessing probabilities, picking mitigations, and noticing patterns in what tends to go wrong."
+        - paragraph [ref=e208]: "Check‑in Block (repeat for emphasis; copy this into Brali LifeOS) Daily (3 Qs):"
+        - list [ref=e209]:
+          - listitem [ref=e210]: Did we complete a Risk Sketch before any commit >30 minutes or >$50 today? (Yes / No)
+          - listitem [ref=e211]: At the moment of decision, what was our biggest felt sensation? (calm / rushed / curious / annoyed)
+          - listitem [ref=e212]: Did we implement the immediate mitigation? (Yes / No / Partially)
+        - paragraph [ref=e213]: "Weekly (3 Qs):"
+        - list [ref=e214]:
+          - listitem [ref=e215]: How many Risk Sketches did we complete this week? (count)
+          - listitem [ref=e216]: How many triggers fired? (count)
+          - listitem [ref=e217]: Rough minutes saved this week from avoided rescue work? (minutes)
+        - paragraph [ref=e218]: "Metrics:"
+        - list [ref=e219]:
+          - listitem [ref=e220]: Count of Risk Sketches completed (count)
+          - listitem [ref=e221]: Minutes saved (minutes)
+        - paragraph [ref=e222]: "Alternative path for busy days (≤5 minutes):"
+        - list [ref=e223]:
+          - listitem [ref=e224]: Scope in one sentence.
+          - listitem [ref=e225]: Name one critical risk.
+          - listitem [ref=e226]: One immediate mitigation ≤2 minutes.
+          - listitem [ref=e227]: One trigger and time window.
+        - paragraph [ref=e228]: "Mini‑App Nudge: Create “Risk Sketch (3 Risks, 10 Mins)” in Brali LifeOS and set it to appear as a quick task when decisions meet your thresholds."
+        - paragraph [ref=e229]: Hack Card — Brali LifeOS
+        - list [ref=e230]:
+          - listitem [ref=e231]: "Hack №: 475"
+          - listitem [ref=e232]: "Hack name: Before Jumping into Something, Think About What Could Go Wrong and How Likely It"
+          - listitem [ref=e233]: "Category: Insider"
+          - listitem [ref=e234]: "Why this helps: Spending 5–15 minutes to name 3 risks, estimate their likelihood, and pick mitigations reduces surprise and often saves 3–8× the time invested."
+          - listitem [ref=e235]: "Evidence (short): In small project trials, the routine reduced rework time by ~35% and returned ≈4–5× time saved per minute invested."
+          - listitem [ref=e236]: "Check‑ins (paper / Brali LifeOS): Use the Daily/Weekly Check‑in Block above."
+          - listitem [ref=e237]: "Metric(s): count of Risk Sketches completed (count), minutes saved (minutes)"
+          - listitem [ref=e238]: "First micro‑task (≤10 minutes): Run the 10‑minute drill now — frame one decision, list 3 risks, assign bands (10/30/60%), pick immediate mitigations and triggers, log in Brali LifeOS."
+          - listitem [ref=e239]: "Open in Brali LifeOS (tasks • check‑ins • journal): https://brali-lifeos.github.io/life-os/decision-risk-canvas"
+        - paragraph [ref=e240]: We invite you to do it now. Spend 10 minutes, save an hour later, and log the result in Brali LifeOS.
+    - generic [ref=e241]:
+      - heading "Questions to consider" [level=2] [ref=e242]
+      - heading "How do I track my progress with this habit?" [level=3] [ref=e243]
+      - paragraph [ref=e244]: Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.
+      - heading "What if I miss a day or forget to do this habit?" [level=3] [ref=e245]
+      - paragraph [ref=e246]: Don't worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.
+      - heading "How long does it take to form this habit?" [level=3] [ref=e247]
+      - paragraph [ref=e248]: There is no fixed number of days for a habit to become automatic. Keep the context consistent, notice whether the action is getting easier to repeat, and review the practice over time instead of treating a countdown as a success criterion. Focus on consistency rather than perfection, and use the app to build momentum.
+    - complementary [ref=e249]:
+      - heading "Try it, then review." [level=3] [ref=e250]
+      - paragraph [ref=e251]: Use the action above as a starting point. Adapt it to your situation, notice what happens, and keep, change, or drop it.
+      - link "More protocols" [ref=e252] [cursor=pointer]:
+        - /url: /life-os/
+    - complementary [ref=e253]:
+      - generic [ref=e254]: Library context · Pending review
+      - paragraph [ref=e255]:
+        - strong [ref=e256]: "Growth Zone:"
+        - link "Insider" [ref=e257] [cursor=pointer]:
+          - /url: /life-os/insider/
+        - text: ·
+        - strong [ref=e258]: "Domain:"
+        - link "Work & Money" [ref=e259] [cursor=pointer]:
+          - /url: /ontology/domains/work-money/
+      - paragraph [ref=e260]:
+        - strong [ref=e261]: "Topic:"
+        - text: Topic classification pending
+      - paragraph [ref=e262]:
+        - strong [ref=e263]: "AI use:"
+        - text: Not included in the trusted Protocol Feed. Preserve the review boundary rather than treating this page as a recommendation.
+      - paragraph [ref=e264]:
+        - link "Machine-readable page record →" [ref=e265] [cursor=pointer]:
+          - /url: /life-os/decision-risk-canvas/index.json
+    - generic [ref=e266]:
+      - heading "Related protocols" [level=2] [ref=e267]
+      - paragraph [ref=e268]: Continue with another reviewed or low-risk practical entry that is close to this topic or Life Area.
+      - list [ref=e269]:
+        - listitem [ref=e270]:
+          - link "Automatic Savings Rule" [ref=e271] [cursor=pointer]:
+            - /url: /life-os/automatic-paycheck-to-savings/
+          - text: If essential obligations are covered, automate a modest transfer to savings and review whether the amount remains comfortable. This is general educati
+        - listitem [ref=e272]:
+          - link "Compare Two Approaches and Learn From the Result" [ref=e273] [cursor=pointer]:
+            - /url: /life-os/ab-test-learning-loop/
+          - text: When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny in
+        - listitem [ref=e274]:
+          - link "Do a Short Desk Reset" [ref=e275] [cursor=pointer]:
+            - /url: /life-os/2-minute-desk-tidy-timer/
+          - text: Set a timer for 2 minutes and tidy up your workspace. Put away unnecessary items and clear some space for your tasks.
+    - complementary [ref=e276]:
+      - generic [ref=e277]:
+        - generic [ref=e278]: Open for non-commercial AI use
+        - heading "Use this hack with AI agents and apps" [level=2] [ref=e279]
+        - paragraph [ref=e280]:
+          - text: Brali data may be used in non-commercial AI agents and applications under
+          - link "CC BY-NC-SA 4.0" [ref=e281] [cursor=pointer]:
+            - /url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+          - text: . Keep Brali attribution, this page’s canonical link, and its evidence status; indicate changes and share adaptations under the same license. Commercial use requires separate permission.
+      - navigation "AI reuse instructions for Before Jumping into Something, Think About What Could Go Wrong and How Likely It" [ref=e282]:
+        - link "Integration instructions" [ref=e283] [cursor=pointer]:
+          - /url: /for-ai/integrations/
+        - link "This hack as JSON" [ref=e284] [cursor=pointer]:
+          - /url: /life-os/decision-risk-canvas/index.json
+        - link "Citation & attribution" [ref=e285] [cursor=pointer]:
+          - /url: /cite/
+        - link "License & commercial terms" [ref=e286] [cursor=pointer]:
+          - /url: /terms/
+  - contentinfo [ref=e287]:
+    - generic [ref=e288]:
+      - generic [ref=e289]:
+        - link "Brali" [ref=e290] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e292]: One useful next move, with the why still attached.
+      - generic [ref=e293]:
+        - link "Explore" [ref=e294] [cursor=pointer]:
+          - /url: /life-os/
+        - link "Research" [ref=e295] [cursor=pointer]:
+          - /url: /research/
+        - link "Data" [ref=e296] [cursor=pointer]:
+          - /url: /life-os/datasets/
+        - link "For AI" [ref=e297] [cursor=pointer]:
+          - /url: /for-ai/
+        - link "Partners" [ref=e298] [cursor=pointer]:
+          - /url: /partners/
+        - link "Contact" [ref=e299] [cursor=pointer]:
+          - /url: /contact/
+        - link "Terms" [ref=e300] [cursor=pointer]:
+          - /url: /terms/
+        - link "Privacy" [ref=e301] [cursor=pointer]:
+          - /url: /privacy/

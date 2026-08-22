@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:schedule-positive-activity-cbt",
+  "slug": "schedule-positive-activity-cbt",
+  "title": "Pick One Activity You Enjoy or Used to Enjoy (e",
+  "description": "Pick one activity you enjoy or used to enjoy (e.g., walking, painting, playing a game). Schedule it for today, even if you don’t feel like it.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/schedule-positive-activity-cbt/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/schedule-positive-activity-cbt/index.json",
+  "growth_zone": {
+    "slug": "cbt",
+    "title": "CBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "cbt",
+        "title": "CBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

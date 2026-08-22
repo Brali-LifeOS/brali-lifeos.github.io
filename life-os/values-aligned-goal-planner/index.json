@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:values-aligned-goal-planner",
+  "slug": "values-aligned-goal-planner",
+  "title": "Set Meaningful Goals",
+  "description": "Think about what truly matters to you and set a small goal aligned with your values. It should be something meaningful and achievable.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/values-aligned-goal-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/values-aligned-goal-planner/index.json",
+  "growth_zone": {
+    "slug": "positive-psychotherapy",
+    "title": "Positive Psychotherapy"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "positive-psychotherapy",
+        "title": "Positive Psychotherapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "positive-psychotherapy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

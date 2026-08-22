@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:gradual-habit-transition-planner",
+  "slug": "gradual-habit-transition-planner",
+  "title": "Use 'rounded' Approaches to Avoid Abrupt Changes",
+  "description": "Use 'rounded' approaches to avoid abrupt changes. For example, transition gradually into a new habit instead of forcing it.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/gradual-habit-transition-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/gradual-habit-transition-planner/index.json",
+  "growth_zone": {
+    "slug": "triz",
+    "title": "TRIZ"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "triz",
+        "title": "TRIZ"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "triz"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

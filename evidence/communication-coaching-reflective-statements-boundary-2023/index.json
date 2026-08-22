@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "id": "communication-coaching-reflective-statements-boundary-2023",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/",
+  "json_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/index.json",
+  "decision": "challenge-existing",
+  "decision_label": "Challenge existing claim",
+  "reviewed_at": "2026-08-22",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+    "url": "https://doi.org/10.1001/jamainternmed.2023.0629",
+    "type": "randomized-clinician-coaching-trial",
+    "doi": "10.1001/jamainternmed.2023.0629",
+    "citation_text": "Pollak KI, Olsen MK, Yang H, et al. JAMA Internal Medicine. 2023;183(6):544-553.",
+    "study_design": "Two-arm randomized clinical trial of forty cardiologists. The intervention combined three individual coaching sessions, feedback on recorded encounters and five communication behaviors. Different patient samples were recorded before and after the intervention; 230 post-intervention encounters were included in communication-behavior analyses.",
+    "population": "Forty cardiologists, mostly White men in an academic medical center or affiliated clinics, and 240 post-intervention adult cardiology patients. Nearly one-third of cardiologists reported previous communication training.",
+    "intervention_or_exposure": "A multicomponent WISER coaching package: sit and make eye contact, ask open-ended questions, make reflective statements or paraphrases, use empathic statements, and invite patient questions. Coaching included didactic instruction and tailored feedback on recorded encounters.",
+    "outcomes": [
+      "Coded use of reflective statements and open-ended questions",
+      "Coded empathic statements and responses to empathic opportunities",
+      "Use of the question-eliciting phrase 'What questions do you have?'",
+      "Patient-reported communication, trust and empathy measures",
+      "Cardiologist burnout and post-training process ratings"
+    ]
+  },
+  "supported_claim": "A multicomponent individual coaching program changed some observed cardiologist communication behaviors, particularly empathic responses and eliciting patient questions. Reflective statements and open-ended questions were explicit trained components, but the intervention did not significantly increase either behavior relative to control. This source is therefore a boundary against claiming that training the Brali sequence by itself has demonstrated communication or patient-outcome effects.",
+  "unsupported_or_overstated_claims": [
+    "The coaching trial shows that paraphrasing or reflective statements alone improved.",
+    "The Brali sequence of paraphrase, correction and one open question is equivalent to the five-component WISER intervention.",
+    "Active listening improved patient understanding, trust, satisfaction or clinical outcomes in this trial.",
+    "Open-ended questions increased because of the coaching intervention.",
+    "A single conversational attempt is equivalent to three individual coaching sessions with tailored feedback.",
+    "The findings generalize directly from cardiology encounters to ordinary work, family, conflict or digital conversations.",
+    "Patient self-reports confirmed an effect; ceiling effects prevented the planned arm comparison.",
+    "Positive clinician opinions about the coaching demonstrate objective effectiveness of each component."
+  ],
+  "limitations": [
+    "Five communication skills were trained together, so any observed effect cannot be attributed to paraphrasing or open questions independently.",
+    "There was no significant intervention-versus-control difference in reflective statements or open-ended questions.",
+    "Patient-perceived communication and trust effects could not be assessed because scores had substantial ceiling effects.",
+    "The sample included mostly White male cardiologists in an academic setting and many had prior communication training, limiting generalizability.",
+    "Pre- and post-intervention patient samples were different rather than repeated measures on the same patients.",
+    "The intervention required repeated one-to-one coaching and feedback, so it does not test a self-guided protocol used once.",
+    "Clinical and longer-term outcomes were not established."
+  ],
+  "target_hack_ids": [
+    "active-listening-exercises"
+  ],
+  "target_protocol_ids": [
+    "brali:active-listening-exercises"
+  ],
+  "risk_flags": [
+    "health"
+  ],
+  "notes": "Editorial outcome: use this trial as an explicit challenge boundary. It prevents converting a broad communication-coaching result into evidence for Brali's specific sequence. Combined with the small paraphrasing experiment, the defensible status remains practical with visible source boundaries, not reviewed effectiveness."
+}

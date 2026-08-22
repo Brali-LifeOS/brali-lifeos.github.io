@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:20-20-20-eye-break-reminder",
+  "slug": "20-20-20-eye-break-reminder",
+  "title": "Use the 20-20-20 Rule for Screen Breaks",
+  "description": "When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/index.json",
+  "growth_zone": {
+    "slug": "be-healthy",
+    "title": "Be Healthy"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "health-basics",
+        "title": "Everyday Health Basics"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "be-healthy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:20-20-20-eye-break-reminder",
+    "language": "en",
+    "slug": "20-20-20-eye-break-reminder",
+    "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+    "title": "Use the 20-20-20 Rule for Screen Breaks",
+    "description": "When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "health-basics",
+          "title": "Everyday Health Basics"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "be-healthy"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "be-healthy",
+      "title": "Be Healthy"
+    },
+    "action": "During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care.",
+    "check_in": "Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional?",
+    "keywords": [
+      "Be Healthy",
+      "Life OS",
+      "Follow the 20-20-20 Rule"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

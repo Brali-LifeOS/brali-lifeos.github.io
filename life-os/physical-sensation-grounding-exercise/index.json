@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:physical-sensation-grounding-exercise",
+  "slug": "physical-sensation-grounding-exercise",
+  "title": "Focus on Physical Sensations",
+  "description": "Choose a physical sensation to focus on, like the feeling of warmth from a cup of tea or the texture of fabric. Stay present with this sensation for a few moments.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/physical-sensation-grounding-exercise/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/physical-sensation-grounding-exercise/index.json",
+  "growth_zone": {
+    "slug": "body-oriented",
+    "title": "Body-Oriented"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "body-oriented",
+        "title": "Body-oriented Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "body-oriented"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

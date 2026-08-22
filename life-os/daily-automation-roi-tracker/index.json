@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:daily-automation-roi-tracker",
+  "slug": "daily-automation-roi-tracker",
+  "title": "Identify One or Two Tasks You Do Daily That Can Be Automated",
+  "description": "Identify one or two tasks you do daily that can be automated. Set up automation and track how much time you save over a week.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/daily-automation-roi-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/daily-automation-roi-tracker/index.json",
+  "growth_zone": {
+    "slug": "do-it",
+    "title": "Do It"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "task-initiation",
+        "title": "Task Initiation"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "do-it"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

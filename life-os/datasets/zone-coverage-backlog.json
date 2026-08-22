@@ -1,0 +1,1242 @@
+{
+  "schema_version": 2,
+  "purpose": "Editorial backlog for Growth Zones that currently have zero trusted protocols. Candidate scores are triage-only and never change evidence status automatically. Editorial dispositions describe Brali's current source/protocol state, not the validity of an entire therapy or school.",
+  "zero_trust_zone_count": 15,
+  "populated_zero_trust_zone_count": 14,
+  "empty_zero_trust_zone_count": 1,
+  "dispositions": {
+    "needs-new-protocol": 10,
+    "legacy-sensitive": 4,
+    "empty-legacy": 1
+  },
+  "candidate_rule": "Prefer pending-review, non-sensitive entries without quantitative/evidence-like claims; recorded sources and Topic mapping are positive review signals. Human/editorial review or curated rewriting is still required before promotion.",
+  "zones": [
+    {
+      "zone_slug": "as-architector",
+      "zone_title": "As Architector",
+      "entry_count": 18,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "After the stricter claim gate, every current architecture-themed entry remains pending review. The inherited collection mixes practical checklists with unsupported evidence-like language, so no existing page qualifies as a trusted starter by wording alone.",
+      "next_action": "Select one narrow architecture or workspace-assessment problem, remove unsupported claims and first-party framing, and review the exact public protocol and sources before restoring normal discovery.",
+      "candidates": [
+        {
+          "slug": "ergonomic-workspace-assessment",
+          "title": "Set up Your Workspace to Be Comfortable and Efficient",
+          "description": "Set up your workspace to be comfortable and efficient. For example, adjust your chair and desk height, and use a keyboard tray to prevent strain.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "workspace",
+              "title": "Workspace"
+            },
+            {
+              "id": "environment-design",
+              "title": "Environment Design"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "home-privacy-planner",
+          "title": "Ensure You Have Areas for Privacy and Solitude",
+          "description": "Ensure you have areas for privacy and solitude. Use room dividers, curtains, or strategic furniture placement to create secluded spots.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "environment-design",
+              "title": "Environment Design"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "smart-home-roi-planner",
+          "title": "Use Technology to Enhance Your Space and Life",
+          "description": "Use technology to enhance your space and life. For example, install smart lighting or a thermostat that can be controlled remotely.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "environment-design",
+              "title": "Environment Design"
+            },
+            {
+              "id": "digital-wellbeing",
+              "title": "Digital Wellbeing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "creative-constraint-solutions",
+          "title": "See Limits as Chances to Get Creative",
+          "description": "See limits as chances to get creative. For example, if your kitchen is small, use shelves and hooks to maximize space.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "declutter-desk-coach",
+          "title": "Declutter and Simplify Your Space",
+          "description": "Declutter and simplify your space. For example, keep only the essentials on your desk to stay focused.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        }
+      ]
+    },
+    {
+      "zone_slug": "as-qa",
+      "zone_title": "As QA",
+      "entry_count": 10,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The current QA entries are potentially useful operational templates, but all remain pending review after claim and provenance checks. Brali has not yet approved one bounded, source-aware starter for normal recommendation.",
+      "next_action": "Curate one low-risk QA checklist or runbook protocol with explicit scope, observable output and provenance; keep the remaining inherited material out of trusted discovery until reviewed.",
+      "candidates": [
+        {
+          "slug": "qa-checklist-templates-runbook",
+          "title": "QA Specialists Use Checklists to Ensure Nothing Is Missed",
+          "description": "QA specialists use checklists to ensure nothing is missed. Create checklists for your tasks to stay organized and ensure all steps are completed.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "error-prevention",
+              "title": "Error Prevention"
+            },
+            {
+              "id": "work-systems",
+              "title": "Work Systems"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "qa-feedback-loop-tracker",
+          "title": "QA Specialists Constantly Seek Feedback to Improve",
+          "description": "QA specialists constantly seek feedback to improve. Regularly ask for feedback on your work and use it to make improvements.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "work-systems",
+              "title": "Work Systems"
+            },
+            {
+              "id": "revision-feedback",
+              "title": "Revision & Feedback"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "qa-severity-priority-coach",
+          "title": "QA Specialists Prioritize Bugs Based on Severity",
+          "description": "QA specialists prioritize bugs based on severity. Prioritize your tasks based on importance and urgency to focus on what truly matters.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "planning-prioritization",
+              "title": "Planning & Prioritization"
+            },
+            {
+              "id": "error-prevention",
+              "title": "Error Prevention"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "qa-test-case-coverage-planner",
+          "title": "QA Specialists Create Test Cases to Cover Different Scenarios",
+          "description": "QA specialists create test cases to cover different scenarios. Plan for potential challenges and scenarios in your projects and prepare solutions in advance.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "error-prevention",
+              "title": "Error Prevention"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "qa-workspace-organizer",
+          "title": "QA Specialists Keep Their Testing Environment Organized",
+          "description": "QA specialists keep their testing environment organized. Maintain an organized workspace to improve focus and efficiency.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "workspace",
+              "title": "Workspace"
+            }
+          ],
+          "score": 240
+        }
+      ]
+    },
+    {
+      "zone_slug": "be-positive",
+      "zone_title": "Be Positive",
+      "entry_count": 18,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The positivity collection no longer has a trusted starter after corrected percentage detection exposed unsupported outcome language. The inherited pages often move from a reflection exercise to a promised mood or performance effect without a directly matching reviewed source.",
+      "next_action": "Choose one bounded reflection or noticing practice, remove universal mood-improvement language, define an observable personal check-in, and retain only claims supported by an exact reviewed source.",
+      "candidates": [
+        {
+          "slug": "affirmation-habit-tracker",
+          "title": "Pick a Few Powerful Affirmations That Resonate with You and Repeat Them Out Loud",
+          "description": "Pick a few powerful affirmations that resonate with you and repeat them out loud each morning.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "mood-wellbeing",
+              "title": "Mood & Wellbeing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "comfort-zone-challenge-tracker",
+          "title": "Regularly Engage in New Activities, Face Small Fears, or Learn New Skills to Expand",
+          "description": "Regularly engage in new activities, face small fears, or learn new skills to expand your comfort zone.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "mood-wellbeing",
+              "title": "Mood & Wellbeing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "complaint-to-action-reframe-coach",
+          "title": "Establish Daily Routines That Foster Positivity, Such as Starting Your Day with Uplifting Affirmations,",
+          "description": "Establish daily routines that foster positivity, such as starting your day with uplifting affirmations, refraining from complaining, and seeing the lessons in mistakes.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "mood-wellbeing",
+              "title": "Mood & Wellbeing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "daily-gratitude-3-things-journal",
+          "title": "Each Morning and Night, Jot Down Three Things You’re Grateful for",
+          "description": "Each morning and night, jot down three things you’re grateful for.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "mood-wellbeing",
+              "title": "Mood & Wellbeing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "daily-gratitude-journal-habit",
+          "title": "Regularly Think About the Positive Aspects of Your Life, No Matter How Small",
+          "description": "Regularly think about the positive aspects of your life, no matter how small.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "mood-wellbeing",
+              "title": "Mood & Wellbeing"
+            }
+          ],
+          "score": 240
+        }
+      ]
+    },
+    {
+      "zone_slug": "chef",
+      "zone_title": "Chef",
+      "entry_count": 10,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The inherited cooking entries contain practical ideas but no entry currently passes the trusted-content bar after evidence-like wording and source boundaries are considered. Taxonomy membership alone is not a food-safety review, inconvenient though that is for dinner.",
+      "next_action": "Choose a low-risk cooking workflow such as tasting and adjusting, rewrite it without unsupported health or effectiveness claims, and review any safety-sensitive guidance against an authoritative source.",
+      "candidates": [
+        {
+          "slug": "chef-taste-and-adjust",
+          "title": "Continuously Taste and Adjust Your Cooking",
+          "description": "Continuously taste and adjust your cooking. Apply this mindset to your projects and tasks by regularly reviewing and refining your work.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "revision-feedback",
+              "title": "Revision & Feedback"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "clean-as-you-go-desk-habit",
+          "title": "Chefs Clean up Their Workstations as They Cook",
+          "description": "Chefs clean up their workstations as they cook. Apply this habit to your workspace by keeping it tidy throughout the day.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "cooking-technique-drills-coach",
+          "title": "Learn and Practice Basic Cooking Techniques Like Chopping, Sautéing, and Seasoning",
+          "description": "Learn and practice basic cooking techniques like chopping, sautéing, and seasoning. Apply this principle to other areas of your life by mastering foundational skills.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "invest-in-good-knives",
+          "title": "Chefs Rely on High-Quality Knives",
+          "description": "Chefs rely on high-quality knives. Invest in quality tools for your work and personal projects, whether it’s software, equipment, or office supplies.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "mise-en-place-prep-checklist",
+          "title": "Before Starting a Task, Organize All Your Materials and Tools",
+          "description": "Adopt the chef’s habit of “mise en place” (everything in its place). Organize your workspace, tools, and schedule before starting any task.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        }
+      ]
+    },
+    {
+      "zone_slug": "cognitive-analytic",
+      "zone_title": "Cognitive Analytic",
+      "entry_count": 7,
+      "trusted_protocols": 0,
+      "disposition": "legacy-sensitive",
+      "decision_reason": "The current Brali entries are therapy-derived and source-free. None has yet been reviewed as a bounded, low-risk standalone public protocol with a directly matching authoritative source.",
+      "next_action": "Review the existing pattern-mapping candidates against primary or authoritative Cognitive Analytic Therapy sources before considering a narrowly educational starter. Keep all current entries restricted meanwhile.",
+      "candidates": [
+        {
+          "slug": "alternative-action-tracker",
+          "title": "When You Notice a Familiar Negative Pattern, Think of One Small, Alternative Action You",
+          "description": "When you notice a familiar negative pattern, think of one small, alternative action you could take instead. Experiment and notice the effects.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "behavior-pattern-mapper",
+          "title": "Draw a Map of Your Thought and Behavior Patterns, Especially Those Related to Problem",
+          "description": "Draw a map of your thought and behavior patterns, especially those related to problem situations. Visualize how one action or thought leads to the next.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "emotional-trigger-tracker",
+          "title": "Notice When You Feel Triggered—times When Emotions Run High or You Feel Reactive",
+          "description": "Notice when you feel triggered—times when emotions run high or you feel reactive. Reflect on what happened and why it affected you.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "positive-reinforcement-tracker",
+          "title": "Notice Times When a Behavior Has a Positive Outcome, Like Getting Praise or Feeling",
+          "description": "Notice times when a behavior has a positive outcome, like getting praise or feeling accomplished. Recognize these moments to reinforce positive patterns.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "reflect-after-difficult-moments",
+          "title": "After a Difficult Situation, Spend a Few Minutes Reflecting on What Happened, Why You",
+          "description": "After a difficult situation, spend a few minutes reflecting on what happened, why you reacted as you did, and how you might handle it differently next time.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        }
+      ]
+    },
+    {
+      "zone_slug": "data",
+      "zone_title": "Data",
+      "entry_count": 10,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The current data-themed entries became zero-trust when corrected quantitative detection exposed unsupported percentage and productivity assertions. Operational usefulness does not make an inherited ROI or accuracy number self-validating.",
+      "next_action": "Curate one narrow data workflow such as validating a report or documenting a transformation, require an observable output, and remove or source-bound every accuracy, time-saving, or ROI estimate before recommendation.",
+      "candidates": [
+        {
+          "slug": "automate-routine-data-reports",
+          "title": "Data Analysts Automate Routine Reports",
+          "description": "Data analysts automate routine reports. Use automation tools to generate regular reports on your progress, goals, or any other relevant data.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "data-literacy",
+              "title": "Data Literacy"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "data-analyst-trends-tracker",
+          "title": "Data Analysts Keep up with Industry Trends and Tools",
+          "description": "Data analysts keep up with industry trends and tools. Regularly read articles, attend webinars, and join professional groups to stay updated with the latest trends in your field.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "data-literacy",
+              "title": "Data Literacy"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "data-cleaning-routine",
+          "title": "Data Analysts Ensure Data Accuracy by Cleaning It",
+          "description": "Data analysts ensure data accuracy by cleaning it. Regularly review and update your records, schedules, and plans to keep them accurate and relevant.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "data-literacy",
+              "title": "Data Literacy"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "kpi-coach",
+          "title": "Data Analysts Focus on Key Performance Indicators (kpis)",
+          "description": "Data analysts focus on key performance indicators (KPIs). Determine the most important metrics in your life or work that align with your goals.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "data-literacy",
+              "title": "Data Literacy"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "personal-forecast-tracker",
+          "title": "Data Analysts Use Predictive Analysis to Forecast Future Trends",
+          "description": "Data analysts use predictive analysis to forecast future trends. Apply predictive analysis techniques to anticipate future outcomes in your projects or personal goals.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "data-literacy",
+              "title": "Data Literacy"
+            }
+          ],
+          "score": 240
+        }
+      ]
+    },
+    {
+      "zone_slug": "do-it",
+      "zone_title": "Do It",
+      "entry_count": 22,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The execution collection currently has no trusted starter after stricter quantitative and causal checks. Several inherited pages attach unsupported effectiveness estimates to otherwise ordinary action-planning ideas.",
+      "next_action": "Select one low-friction task-initiation protocol, keep the action small and observable, remove promised productivity effects, and review any retained causal wording against a directly matching source.",
+      "candidates": [
+        {
+          "slug": "daily-automation-roi-tracker",
+          "title": "Identify One or Two Tasks You Do Daily That Can Be Automated",
+          "description": "Identify one or two tasks you do daily that can be automated. Set up automation and track how much time you save over a week.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "dress-for-productivity-routine",
+          "title": "Adopt a Specific Dress Code or Outfit That You Wear When Working to Help",
+          "description": "Adopt a specific dress code or outfit that you wear when working to help you feel more focused and productive.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "eisenhower-priority-matrix",
+          "title": "Organize Your Tasks into Four Categories Using the Eisenhower Box: Urgent, Important, Not Urgent,",
+          "description": "Organize your tasks into four categories using the Eisenhower Box: urgent, important, not urgent, and not important. ",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "inbox-zero-triage-tracker",
+          "title": "Handle Emails Immediately—reply, Delete, File, or Set a Task",
+          "description": "Handle emails immediately—reply, delete, file, or set a task.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "learn-during-chores-with-podcasts",
+          "title": "Combine Simple Tasks, Like Listening to Educational Podcasts While Doing Chores",
+          "description": "Combine simple tasks, like listening to educational podcasts while doing chores.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ],
+          "score": 240
+        }
+      ]
+    },
+    {
+      "zone_slug": "ericksonian",
+      "zone_title": "Ericksonian",
+      "entry_count": 7,
+      "trusted_protocols": 0,
+      "disposition": "legacy-sensitive",
+      "decision_reason": "The inherited entries mix communication, suggestion and therapeutic framing. Brali does not yet have a reviewed source-to-protocol match that justifies normal trusted recommendation.",
+      "next_action": "Separate ordinary communication/reframing ideas from therapeutic suggestion claims, then review any candidate against a directly relevant source before publication.",
+      "candidates": [
+        {
+          "slug": "calm-on-demand-anchoring",
+          "title": "In a Relaxed State, Press Your Thumb and Index Finger Together While Imagining a",
+          "description": "In a relaxed state, press your thumb and index finger together while imagining a calm scene. Use this ‘anchor’ whenever you need calm.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "confidence-anchoring-exercise",
+          "title": "Think of a Time When You Felt Strong, Capable, or Successful",
+          "description": "Think of a time when you felt strong, capable, or successful. Tap into that memory in a relaxed state to remind yourself of your inner resources.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "ericksonian-performance-visualization-coach",
+          "title": "While Deeply Relaxed, Visualize Yourself Achieving Your Goal, Feeling Every Detail of That Success",
+          "description": "While deeply relaxed, visualize yourself achieving your goal, feeling every detail of that success. Imagine it vividly, as if it’s happening now.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "ericksonian-self-hypnosis-breathing-guide",
+          "title": "Find a Quiet Place, Close Your Eyes, and Focus on Your Breathing",
+          "description": "Find a quiet place, close your eyes, and focus on your breathing. Let each breath relax you a bit more, guiding yourself into a calm, focused state.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "reframe-negative-thoughts-ericksonian",
+          "title": "In a Relaxed State, Take a Negative Thought and Imagine It from a Different",
+          "description": "In a relaxed state, take a negative thought and imagine it from a different perspective. What positive lesson or insight could it bring?",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        }
+      ]
+    },
+    {
+      "zone_slug": "gestalt",
+      "zone_title": "Gestalt",
+      "entry_count": 8,
+      "trusted_protocols": 0,
+      "disposition": "legacy-sensitive",
+      "decision_reason": "The inherited experiential exercises are therapy-branded and source-free. Their current wording is not suitable for automatic self-help recommendation without a narrower evidence and safety boundary.",
+      "next_action": "Identify a concrete low-risk awareness exercise with a directly matching authoritative or peer-reviewed source, or keep the collection archive-only.",
+      "candidates": [
+        {
+          "slug": "behavior-experiment-journal",
+          "title": "Try Doing Something Differently Than You Usually Would",
+          "description": "Try doing something differently than you usually would. For example, if you’re usually quiet in groups, speak up. Notice how it feels to step outside your norm.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "decision-outcomes-tracker",
+          "title": "Use the App to Log Meaningful Events or Decisions as They Happen",
+          "description": "Use the app to log meaningful events or decisions as they happen. Reflect on why they stood out to you and how they shaped your day. Over time, review your entries to see how your life develops and unfolds.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "gestalt-empty-chair-dialogue",
+          "title": "Imagine Having a Conversation with Someone Important in Your Life (past or Present), Telling",
+          "description": "Imagine having a conversation with someone important in your life (past or present), telling them what you feel and think, or ask them for advice.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "inner-parts-dialogue-coach",
+          "title": "Imagine Different Parts of You (like the ‘inner Critic’ or ‘playful Self’) Having a",
+          "description": "Imagine different parts of you (like the ‘Inner Critic’ or ‘Playful Self’) having a chat. What do they have to say? Let them express themselves without judgment.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "present-moment-emotion-check-in",
+          "title": "Pause, Take a Deep Breath, and Ask Yourself, ‘what Am I Feeling Right Now",
+          "description": "Pause, take a deep breath, and ask yourself, ‘What am I feeling right now?’ Focus on being fully present and aware of yourself in this exact moment.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        }
+      ]
+    },
+    {
+      "zone_slug": "grow-fast",
+      "zone_title": "Grow fast",
+      "entry_count": 9,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The current growth-themed entries are broad, branding-heavy and evidence-like, and none now meets the trusted starter bar. Promoting the least problematic inherited page would still confuse ambition with validated usefulness.",
+      "next_action": "Replace the category-level promise with one concrete, measurable and low-risk growth experiment, then review its wording and provenance before including it in trusted discovery.",
+      "candidates": [
+        {
+          "slug": "coot-ai-growth-journal",
+          "title": "Open a Session with Coot)",
+          "description": "Open a session with Coot.AI to talk about your personal growth journey. Use the chat to reflect on your goals, ask for advice, and gain new insights.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "habits-consistency",
+              "title": "Habits & Consistency"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "daily-increment-tracker",
+          "title": "Challenge Yourself to Improve Daily by Doing a Little More Than You Did Yesterday,)",
+          "description": "Challenge yourself to improve daily by doing a little more than you did yesterday, whether it’s more reps in exercise, extra minutes of reading, or additional focus time.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "habits-consistency",
+              "title": "Habits & Consistency"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "finish-on-time-timebox",
+          "title": "Set a Time Limit for Your Task and Complete It Within That Boundary)",
+          "description": "Set a time limit for your task and complete it within that boundary. Stay focused and finish within the time you’ve set.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "habits-consistency",
+              "title": "Habits & Consistency"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "growth-pack-completion-tracker",
+          "title": "Focus on Completing All the Growth Hacks in a Chosen Pack)",
+          "description": "Focus on completing all the growth hacks in a chosen pack. Track your progress and check off each hack as you finish.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "habits-consistency",
+              "title": "Habits & Consistency"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "hack-impact-analytics",
+          "title": "Pick One Growth Hack from Your List and Write a Journal Entry About Your)",
+          "description": "Pick one growth hack from your list and write a journal entry about your experience. Reflect on how you applied it, what you learned, and any changes you noticed in yourself.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "habits-consistency",
+              "title": "Habits & Consistency"
+            }
+          ],
+          "score": 240
+        }
+      ]
+    },
+    {
+      "zone_slug": "insider",
+      "zone_title": "Insider",
+      "entry_count": 10,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The inherited social-reading and influence material remains pending review and can easily overstate certainty about other people. No existing entry has yet been bounded enough for a trusted public starter.",
+      "next_action": "Curate one observation-first communication protocol that separates observable cues from interpretation, includes a correction step, and avoids manipulation or mind-reading claims.",
+      "candidates": [
+        {
+          "slug": "read-the-room-trainer",
+          "title": "Pay Attention to People's Body Language and Tone of Voice to Understand Their Feelings",
+          "description": "Pay attention to people's body language and tone of voice to understand their feelings and reactions.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "listening",
+              "title": "Listening"
+            },
+            {
+              "id": "social-confidence",
+              "title": "Social Confidence"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "adapt-to-change-at-work",
+          "title": "Be Ready to Adjust Your Plans Based on New Information or Changing Circumstances",
+          "description": "Be ready to adjust your plans based on new information or changing circumstances. Flexibility is key to staying relevant and effective.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "confidence-action-tracker",
+          "title": "Even If You're Unsure, Act with Confidence in Your Actions and Decisions",
+          "description": "Even if you're unsure, act with confidence in your actions and decisions. This often leads to better outcomes and builds your actual confidence over time.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "daily-industry-briefing-habit",
+          "title": "Spend a Bit of Time Each Day Reading up on Your Industry or Interests",
+          "description": "Spend a bit of time each day reading up on your industry or interests. Join online groups, follow experts, and subscribe to newsletters.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        },
+        {
+          "slug": "decide-fast-without-overthinking",
+          "title": "Get the Info You Need, Weigh Your Options, and Make a Decision Without Overthinking",
+          "description": "Get the info you need, weigh your options, and make a decision without overthinking.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        }
+      ]
+    },
+    {
+      "zone_slug": "psychodynamic",
+      "zone_title": "Psychodynamic",
+      "entry_count": 7,
+      "trusted_protocols": 0,
+      "disposition": "legacy-sensitive",
+      "decision_reason": "The current reflection exercises inherit psychodynamic causal language without direct reviewed sources. Brali cannot safely turn theory-derived interpretations into normal recommendations by taxonomy alone.",
+      "next_action": "If retained, redesign a candidate around observation or reflection without causal interpretation and review it against a directly matching source; otherwise keep archive-only.",
+      "candidates": [
+        {
+          "slug": "hidden-motivation-mapper",
+          "title": "Consider Actions or Reactions That Seem Automatic or Hard to Explain",
+          "description": "Consider actions or reactions that seem automatic or hard to explain. Reflect on any deeper motivations that might be at play.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "inner-conflict-decision-journal",
+          "title": "When Facing a Difficult Decision, Identify Any Conflicting Thoughts or Feelings",
+          "description": "When facing a difficult decision, identify any conflicting thoughts or feelings. Reflect on each side of the conflict to understand its roots.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "psychodynamic-conflict-pattern-mapper",
+          "title": "Reflect on Recent Emotional Conflicts or Patterns in Your Behavior",
+          "description": "Reflect on recent emotional conflicts or patterns in your behavior. Identify any unresolved issues that seem to reappear.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "relationship-patterns-reflection",
+          "title": "Reflect on Past Relationships and How They May Influence Your Current Behaviors or Expectations",
+          "description": "Reflect on past relationships and how they may influence your current behaviors or expectations in relationships.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        },
+        {
+          "slug": "repressed-emotions-insight-map",
+          "title": "Notice Any Emotions You Tend to Push Away or Ignore",
+          "description": "Notice any emotions you tend to push away or ignore. Allow yourself to feel and acknowledge them without judgment.",
+          "status": "restricted",
+          "sensitive": true,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": -55
+        }
+      ]
+    },
+    {
+      "zone_slug": "stratagema",
+      "zone_title": "Stratagema",
+      "entry_count": 0,
+      "trusted_protocols": 0,
+      "disposition": "empty-legacy",
+      "decision_reason": "The stable legacy Growth Zone exists for compatibility but currently contains no entries.",
+      "next_action": "Do not invent filler content to reach nominal 49/49 coverage. Add content only when a real, reviewed protocol belongs here.",
+      "candidates": []
+    },
+    {
+      "zone_slug": "triz",
+      "zone_title": "TRIZ",
+      "entry_count": 49,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The TRIZ collection no longer has a trusted starter after corrected quantitative detection exposed unsupported outcome and performance claims. The conceptual framework may remain useful, but the current pages do not yet separate a bounded exercise from broad claims about results.",
+      "next_action": "Choose one specific TRIZ operation for a clearly stated problem type, produce a visible before-and-after artifact, and remove or directly source every performance, creativity, or success estimate before recommendation.",
+      "candidates": [
+        {
+          "slug": "counterbalance-intense-activities-for-stability",
+          "title": "Counterbalance Intense Activities with Opposite Actions to Maintain Stability",
+          "description": "Counterbalance intense activities with opposite actions to maintain stability. For instance, balance high-focus work with relaxation to recharge.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "recovery-energy",
+              "title": "Recovery & Energy"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "repurpose-resources-save-time",
+          "title": "Recycle or Repurpose Resources to Save Time and Energy",
+          "description": "Recycle or repurpose resources to save time and energy. For instance, reuse parts of previous projects to build new ones.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "creative-problem-solving",
+              "title": "Creative Problem Solving"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "reverse-thinking-triz",
+          "title": "Reverse Your Typical Approach to Find New Solutions",
+          "description": "Reverse your typical approach to find new solutions. If you usually react impulsively, try pausing before you respond.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "creative-problem-solving",
+              "title": "Creative Problem Solving"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "triz-contradiction-coach",
+          "title": "Use Standard Triz Contradiction Templates Like 'technical Contradiction' and 'physical Contradiction",
+          "description": "Use standard TRIZ contradiction templates like 'Technical Contradiction' and 'Physical Contradiction.' For example, 'Technical Contradiction: Increasing speed improves productivity but reduces quality.'",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "problem-solving",
+              "title": "Problem Solving"
+            },
+            {
+              "id": "creative-problem-solving",
+              "title": "Creative Problem Solving"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "adapt-winning-strategies",
+          "title": "Borrow and Adapt Successful Strategies from Others to Enhance Your Own Growth",
+          "description": "Borrow and adapt successful strategies from others to enhance your own growth.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [],
+          "score": 225
+        }
+      ]
+    },
+    {
+      "zone_slug": "writing",
+      "zone_title": "Writing",
+      "entry_count": 5,
+      "trusted_protocols": 0,
+      "disposition": "needs-new-protocol",
+      "decision_reason": "The current writing entries remain pending review because inherited explanatory and effectiveness claims are not yet source-bounded. None qualifies as a trusted starter under the stricter gate.",
+      "next_action": "Curate one concrete writing workflow with an observable artifact, bounded claims and clear provenance, then add a retrieval case before restoring trusted coverage.",
+      "candidates": [
+        {
+          "slug": "structure-writing-with-visuals",
+          "title": "Use Visual Elements Like Headings, Subheadings, Images, Tables, and Diagrams to Structure Your Text",
+          "description": "Use visual elements like headings, subheadings, images, tables, and diagrams to structure your text. These tools help guide your reader and make your writing more intuitive and engaging.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "writing",
+              "title": "Writing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "write-for-your-reader",
+          "title": "Focus on What Your Reader Needs and Cares About",
+          "description": "Focus on what your reader needs and cares about. Address their problems, interests, and concerns. Offer solutions and insights that are directly useful to them.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": false,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "writing",
+              "title": "Writing"
+            }
+          ],
+          "score": 240
+        },
+        {
+          "slug": "context-planner-for-writers",
+          "title": "Before You Start Writing, Think About the Bigger Picture",
+          "description": "Before you start writing, think about the bigger picture. Who’s going to read this? Where will it be published? Consider the reputation of the platform and the expectations of your readers. Adjust your tone and content to fit the context.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": true,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "writing",
+              "title": "Writing"
+            }
+          ],
+          "score": 200
+        },
+        {
+          "slug": "example-coverage-analyzer",
+          "title": "Whenever You Introduce a Key Point, Back It up with a Clear Example",
+          "description": "Whenever you introduce a key point, back it up with a clear example. Use the phrase 'for example' often to ensure your readers fully grasp what you’re saying.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": true,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "writing",
+              "title": "Writing"
+            }
+          ],
+          "score": 200
+        },
+        {
+          "slug": "slogan-memorability-analyzer",
+          "title": "Create Catchy Slogans or Terms That Encapsulate Your Key Ideas",
+          "description": "Create catchy slogans or terms that encapsulate your key ideas. Make them short, memorable, and easy to repeat—like a good song lyric.",
+          "status": "pending-review",
+          "sensitive": false,
+          "quantitative_claims": true,
+          "evidence_language": true,
+          "source_recorded": false,
+          "topics": [
+            {
+              "id": "writing",
+              "title": "Writing"
+            }
+          ],
+          "score": 200
+        }
+      ]
+    }
+  ]
+}

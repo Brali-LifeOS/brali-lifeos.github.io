@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "slug": "movement",
+  "title": "Movement & Exercise",
+  "question": "How can I move more and build sustainable physical routines without inventing a magic cognitive break dose?",
+  "summary": "Break up sedentary time and support sustainable movement, mobility, and strength while keeping exploratory cognition findings in bounds.",
+  "canonical_url": "https://brali-lifeos.github.io/topics/movement/",
+  "json_url": "https://brali-lifeos.github.io/topics/movement/index.json",
+  "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
+  "coverage_status": "trusted-protocols",
+  "coverage_note": "5 trusted protocol recommendations available.",
+  "topics": [
+    {
+      "id": "movement",
+      "title": "Movement",
+      "description": "Reduce prolonged inactivity and add practical movement to daily life.",
+      "canonical_id": "brali:topic:movement"
+    },
+    {
+      "id": "fitness-strength",
+      "title": "Fitness & Strength",
+      "description": "Exercise, conditioning, strength, mobility, and sustainable physical practice.",
+      "canonical_id": "brali:topic:fitness-strength"
+    },
+    {
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "description": "Manage effort, breaks, recovery, and everyday energy without pseudoscientific optimization claims.",
+      "canonical_id": "brali:topic:recovery-energy"
+    }
+  ],
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:10-minute-morning-stretch-routine",
+      "protocol_id": "brali:10-minute-morning-stretch-routine",
+      "slug": "10-minute-morning-stretch-routine",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-morning-stretch-routine/",
+      "title": "Start a Morning Stretch Routine",
+      "description": "Begin each day with a 10-minute stretch routine, increasing to 20 minutes over time.",
+      "action": "Use a short, gentle flexibility routine as a morning movement cue if that timing suits you. Move slowly only as far as is comfortable, start with a few simple movements, and build up gradually rather than forcing a fixed 10-to-20-minute progression.",
+      "check_in": "Did the movements feel comfortable and controlled? Did I stop or modify anything that caused pain or made me feel unwell, and is this routine still appropriate for me?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "fitness-strength"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:4-minute-hiit-tabata-workout",
+      "protocol_id": "brali:4-minute-hiit-tabata-workout",
+      "slug": "4-minute-hiit-tabata-workout",
+      "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
+      "title": "Try Short High-Intensity Intervals Safely",
+      "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
+      "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
+      "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "fitness-strength"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:4-minute-tabata-hiit-timer",
+      "protocol_id": "brali:4-minute-tabata-hiit-timer",
+      "slug": "4-minute-tabata-hiit-timer",
+      "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
+      "title": "Use a High-Intensity Interval Timer Safely",
+      "description": "Follow the Tabata protocol: 20 seconds of very intense exercise (like burpees or mountain climbers) followed by 10 seconds of rest, repeated for 4 minutes (8 rounds).",
+      "action": "If very vigorous exercise is suitable for you, use an interval timer to alternate a short period of harder work with recovery. A 20-second work and 10-second recovery pattern can be one option, but choose a movement and number of rounds you can control safely rather than treating 8 all-out rounds as mandatory.",
+      "check_in": "What movement and interval did I use, was the effort appropriate for my fitness today, did I maintain control, and was there any pain or reason to stop?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "fitness-strength"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:cardio-health-daily-habits",
+      "protocol_id": "brali:cardio-health-daily-habits",
+      "slug": "cardio-health-daily-habits",
+      "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
+      "title": "Build Toward a Weekly Movement Baseline",
+      "description": "Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine.",
+      "action": "Look at the coming week, mark the activity you already do, then add realistic walking, moderate or vigorous activity, and strength sessions where they fit. Build gradually rather than treating the guideline as a one-day target.",
+      "check_in": "Does the plan fit your current ability, schedule and any guidance from your health professional? Adjust it rather than forcing a target that is inappropriate for you.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "cardiovascular-health",
+        "movement",
+        "health-basics"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.27
+    },
+    {
+      "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
+      "protocol_id": "brali:90-30-focus-rest-schedule",
+      "slug": "90-30-focus-rest-schedule",
+      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+      "title": "Alternate Focused Work With Real Breaks",
+      "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
+      "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
+      "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "attention-focus",
+        "recovery-energy"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.03
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. PLOS ONE. 2022;17(8):e0272460.",
+      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "unsupported_or_overstated_claims": [
+        "A 5-minute break is an evidence-based optimal duration.",
+        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
+        "Pomodoro reliably improves productivity or task performance.",
+        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
+        "Every short break reduces fatigue or increases vigor for every individual.",
+        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
+        "The review establishes a universal break schedule for cognitively demanding work.",
+        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+      ],
+      "limitations": [
+        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+      ],
+      "topic_ids": [
+        "recovery-energy",
+        "attention-focus"
+      ]
+    },
+    {
+      "id": "movement-breaks-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "source_url": "https://link.springer.com/article/10.1186/s12966-026-01953-6",
+      "source_type": "meta-analysis",
+      "citation_text": "Zhuang M, Yin M, Liu Z, et al. International Journal of Behavioral Nutrition and Physical Activity. Published 13 July 2026.",
+      "supported_claim": "Across the included trials, interruptions to prolonged sitting were associated with small acute improvements in executive function and memory on average. Evidence for global cognition, information processing, and attention was insufficient or inconsistent, and certainty was low for most outcomes.",
+      "unsupported_or_overstated_claims": [
+        "A specific break frequency is proven to optimize cognition.",
+        "A specific break duration or intensity should be prescribed for everyone.",
+        "Standing or movement breaks reliably improve attention.",
+        "The exploratory moderator findings establish that one protocol is superior.",
+        "Brief breaks are a treatment for cognitive impairment."
+      ],
+      "limitations": [
+        "Only 21 randomized crossover trials with 433 participants were included.",
+        "GRADE certainty was low for executive function, memory, information processing, and attention and very low for global cognition.",
+        "No clear improvement was found for global cognition, information processing, or attention.",
+        "Moderator and protocol-parameter findings were exploratory and the authors explicitly state they are insufficient for definitive prescriptive recommendations.",
+        "The outcomes were acute cognitive effects, so the source does not establish long-term cognitive benefit from a break routine."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    }
+  ],
+  "research_watch": [
+    {
+      "id": "crossref:10.1186/s12966-026-01953-6",
+      "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "status": "watch",
+      "publication_date": "2026-07-13",
+      "reference_url": "https://doi.org/10.1186/s12966-026-01953-6",
+      "topic_ids": [
+        "movement"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1371/journal.pone.0272460",
+      "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "status": "support-existing",
+      "publication_date": "2022-08-31",
+      "reference_url": "https://doi.org/10.1371/journal.pone.0272460",
+      "topic_ids": [
+        "recovery-energy",
+        "attention-focus"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "health-basics",
+      "title": "Everyday Health Basics",
+      "canonical_id": "brali:topic:health-basics"
+    },
+    {
+      "id": "cardiovascular-health",
+      "title": "Cardiovascular Health",
+      "canonical_id": "brali:topic:cardiovascular-health"
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "canonical_id": "brali:topic:attention-focus"
+    }
+  ],
+  "related_methods": [],
+  "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
+}

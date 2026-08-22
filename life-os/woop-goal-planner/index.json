@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:woop-goal-planner",
+  "slug": "woop-goal-planner",
+  "title": "Use WOOP to Turn a Wish Into an If-Then Plan",
+  "description": "Use a Wish, desired Outcome, likely internal Obstacle, and a concrete if-then Plan to make one meaningful goal easier to act on. Treat the method as a self-regulation tool, not a guarantee of goal achievement.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/woop-goal-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/woop-goal-planner/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": true,
+    "source_url": "https://doi.org/10.3389/fpsyg.2021.565202",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:woop-goal-planner",
+    "language": "en",
+    "slug": "woop-goal-planner",
+    "url": "https://brali-lifeos.github.io/life-os/woop-goal-planner/",
+    "title": "Use WOOP to Turn a Wish Into an If-Then Plan",
+    "description": "Use a Wish, desired Outcome, likely internal Obstacle, and a concrete if-then Plan to make one meaningful goal easier to act on. Treat the method as a self-regulation tool, not a guarantee of goal achievement.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Choose one meaningful and reasonably feasible wish. Describe the outcome you want, identify an internal obstacle that could derail you, then write: If I notice this obstacle, then I will take this specific action. Try the plan in real life and revise it if the cue or response is not useful.",
+    "check_in": "Did the obstacle actually appear, did my if-then response help me act, and what should I keep or change next time?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Use the WOOP Method"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://doi.org/10.3389/fpsyg.2021.565202",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:default-choice-audit",
+  "slug": "default-choice-audit",
+  "title": "Challenge Default Settings",
+  "description": "Challenge default settings. Here’s how: - Ask why: Consider if the default choice is actually best for you. - Explore alternatives: Take time to review all available options. - Make it yours: Choose based on your needs, not just convenience. Example: If a subscription auto-renews, pause and ask if it’s worth continuing or switching to another plan.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/default-choice-audit/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

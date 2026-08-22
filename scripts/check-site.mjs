@@ -18,7 +18,12 @@ const required = [
   "changelog/index.html",
   "faq/index.html",
   "for-ai/index.html",
+  "agents/index.html",
+  "agents/contribute/index.html",
   "partners/index.html",
+  "partners/integrations/index.html",
+  "partners/research/index.html",
+  "partners/licensing/index.html",
   "research/index.html",
   "research/habits-take-time/index.html",
   "research/rag-is-not-a-trust-button/index.html",
@@ -70,9 +75,24 @@ const faq = await readFile(path.join(root, "faq/index.html"), "utf8");
 if (!faq.includes('"@type":"FAQPage"')) throw new Error("FAQ page lacks FAQ structured data.");
 if (!faq.includes("Is the mobile app still the main product?")) throw new Error("FAQ does not explain the project pivot.");
 
+const agents = await readFile(path.join(root, "agents/index.html"), "utf8");
+if (!agents.includes('href="/agents/contribute/"')) throw new Error("Agent page does not expose the knowledge contribution path.");
+const contributionPath = await readFile(path.join(root, "agents/contribute/index.html"), "utf8");
+for (const marker of ["The review path", "knowledge-proposal.yml", "pending-review", "practical", "reviewed"]) {
+  if (!contributionPath.includes(marker)) throw new Error(`Knowledge contribution page lacks ${marker}.`);
+}
+
 const partners = await readFile(path.join(root, "partners/index.html"), "utf8");
-if (!partners.includes("Commercial dataset licensing")) throw new Error("Partnership page lacks a commercial data model.");
-if (!partners.includes("AI and agent integrations")) throw new Error("Partnership page lacks the agent integration path.");
+for (const pathname of ["/partners/integrations/", "/partners/research/", "/partners/licensing/"]) {
+  if (!partners.includes(`href="${pathname}"`)) throw new Error(`Partnership index does not link to ${pathname}.`);
+}
+if (!partners.includes('href="/agents/contribute/"')) throw new Error("Partnership index does not expose the knowledge contribution path.");
+const integrationPartners = await readFile(path.join(root, "partners/integrations/index.html"), "utf8");
+if (!integrationPartners.includes("MCP is local today")) throw new Error("Integration partnership page overstates the current MCP boundary.");
+const researchPartners = await readFile(path.join(root, "partners/research/index.html"), "utf8");
+if (!researchPartners.includes("Research principles")) throw new Error("Research partnership page lacks collaboration principles.");
+const licensingPartners = await readFile(path.join(root, "partners/licensing/index.html"), "utf8");
+if (!licensingPartners.includes("Current public boundary")) throw new Error("Licensing partnership page lacks the public license boundary.");
 
 const research = await readFile(path.join(root, "research/index.html"), "utf8");
 for (const section of ["Evidence notes", "Trend notes", "Open questions"]) {
@@ -102,7 +122,7 @@ const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/")) throw new Error("Sitemap lacks migrated Life OS pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/life-os/areas/")) throw new Error("Sitemap lacks life area navigation pages.");
 if (!sitemap.includes("https://brali-lifeos.github.io/ontology/coverage/")) throw new Error("Sitemap lacks ontology coverage.");
-for (const pathname of ["for-ai", "faq", "partners", "research", "research/habits-take-time", "research/rag-is-not-a-trust-button", "terms"]) {
+for (const pathname of ["for-ai", "faq", "agents", "agents/contribute", "partners", "partners/integrations", "partners/research", "partners/licensing", "contact", "research", "research/habits-take-time", "research/rag-is-not-a-trust-button", "terms"]) {
   if (!sitemap.includes(`https://brali-lifeos.github.io/${pathname}/`)) throw new Error(`Sitemap lacks ${pathname}.`);
 }
 if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still references MetalHatsCats.");

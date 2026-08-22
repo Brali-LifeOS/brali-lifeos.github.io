@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:daily-gratitude-journal-three-things",
+  "slug": "daily-gratitude-journal-three-things",
+  "title": "Specific Gratitude Note",
+  "description": "Write one to three specific things you appreciated and why they mattered. Keep the practice optional and factual; gratitude is not a requirement to feel positive or a substitute for care.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/daily-gratitude-journal-three-things/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/daily-gratitude-journal-three-things/index.json",
+  "growth_zone": {
+    "slug": "positive-psychotherapy",
+    "title": "Positive Psychotherapy"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/40627390/",
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "mood-wellbeing",
+        "title": "Mood & Wellbeing"
+      },
+      {
+        "id": "self-awareness",
+        "title": "Self-Awareness"
+      }
+    ],
+    "methods": [
+      {
+        "id": "positive-psychotherapy",
+        "title": "Positive Psychotherapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "positive-psychotherapy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "self-awareness",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:daily-gratitude-journal-three-things",
+    "language": "en",
+    "slug": "daily-gratitude-journal-three-things",
+    "url": "https://brali-lifeos.github.io/life-os/daily-gratitude-journal-three-things/",
+    "title": "Specific Gratitude Note",
+    "description": "Write one to three specific things you appreciated and why they mattered. Keep the practice optional and factual; gratitude is not a requirement to feel positive or a substitute for care.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "mood-wellbeing",
+          "title": "Mood & Wellbeing"
+        },
+        {
+          "id": "self-awareness",
+          "title": "Self-Awareness"
+        }
+      ],
+      "methods": [
+        {
+          "id": "positive-psychotherapy",
+          "title": "Positive Psychotherapy-derived"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "positive-psychotherapy"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "positive-psychotherapy",
+      "title": "Positive Psychotherapy"
+    },
+    "action": "Choose one to three concrete moments, people, resources or actions from the day. Write what happened and one sentence about why it mattered to you. Skip the practice when it feels forced or unhelpful.",
+    "check_in": "Did the note help you notice something specific, or did it feel mechanical, invalidating, or like another obligation? Keep, change, or drop it accordingly.",
+    "keywords": [
+      "Positive Psychotherapy",
+      "Life OS",
+      "Practice Gratitude"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/40627390/",
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

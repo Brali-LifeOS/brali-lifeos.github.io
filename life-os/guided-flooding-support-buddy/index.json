@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:guided-flooding-support-buddy",
+  "slug": "guided-flooding-support-buddy",
+  "title": "Practice ‘Flooding’ with Support",
+  "description": "For intense fears, try full exposure (flooding) with the help of a supportive person. Confront the fear fully and allow the anxiety to peak and fade naturally.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/guided-flooding-support-buddy/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/guided-flooding-support-buddy/index.json",
+  "growth_zone": {
+    "slug": "exposure",
+    "title": "Exposure"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "exposure",
+        "title": "Exposure-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "exposure"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "topic_id": "memory",
+  "topic_title": "Memory",
+  "domain_id": "learning-thinking",
+  "domain_title": "Learning & Thinking",
+  "ontology_status": "active",
+  "baseline_status": "growth-gap",
+  "question": "Which learning practices improve durable memory, and how should Brali separate retention from transfer and application?",
+  "evidence_target": "Prefer meta-analyses and classroom/field studies that distinguish direct retention, forward effects, and application outcomes.",
+  "guardrail": "Do not collapse remembering, learning later material, and skill application into one testing-effect claim.",
+  "stage": "resolved",
+  "stage_label": "Resolved",
+  "stage_summary": "Reviewed evidence has been translated into trusted Topic coverage and explicitly closed.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/memory/",
+  "research_queries": [
+    {
+      "id": "learning-retrieval-practice",
+      "query": "retrieval practice spaced practice learning meta analysis education",
+      "risk_flags": []
+    },
+    {
+      "id": "learning-consolidation-rest",
+      "query": "wakeful rest post learning memory consolidation meta analysis",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1016/j.learninstruc.2026.102377",
+      "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "status": "challenge-existing",
+      "publication_date": "2026-08-01",
+      "reference_url": "https://doi.org/10.1016/j.learninstruc.2026.102377"
+    },
+    {
+      "id": "crossref:10.1037/0033-2909.132.3.354",
+      "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "status": "support-existing",
+      "publication_date": "2006-05-01",
+      "reference_url": "https://doi.org/10.1037/0033-2909.132.3.354"
+    },
+    {
+      "id": "crossref:10.1037/a0037559",
+      "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "status": "support-existing",
+      "publication_date": "2014-08-25",
+      "reference_url": "https://doi.org/10.1037/a0037559"
+    },
+    {
+      "id": "crossref:10.1037/xlm0001634",
+      "title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "status": "challenge-existing",
+      "publication_date": "2026-06-08",
+      "reference_url": "https://doi.org/10.1037/xlm0001634"
+    },
+    {
+      "id": "crossref:10.3758/s13423-025-02778-3",
+      "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+      "status": "propose-protocol",
+      "publication_date": "2026-01-15",
+      "reference_url": "https://doi.org/10.3758/s13423-025-02778-3"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "distributed-practice-verbal-recall-boundary-2006",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/distributed-practice-verbal-recall-boundary-2006/"
+    },
+    {
+      "id": "retrieval-procedural-application-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/"
+    },
+    {
+      "id": "testing-effect-direct-forward-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/testing-effect-direct-forward-2026/"
+    },
+    {
+      "id": "testing-versus-restudy-retention-boundary-2014",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/testing-versus-restudy-retention-boundary-2014/"
+    },
+    {
+      "id": "wakeful-rest-memory-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Should we all just take 10? A meta-analysis of wakeful rest",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "spaced-recall-coach",
+      "title": "Separate Review Sessions Instead of Cramming",
+      "url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "avoid-list-interference-memory-retention",
+      "title": "Try Quiet Wakeful Rest After Learning",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "active-recall-test-yourself",
+      "title": "Use Active Recall for Retention, Then Practice Application",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": {
+    "topic_id": "memory",
+    "status": "closed",
+    "resolved_at": "2026-08-20",
+    "resolved_by": "Brali editorial agent",
+    "evidence_decision_ids": [
+      "wakeful-rest-memory-2026",
+      "testing-effect-direct-forward-2026",
+      "retrieval-procedural-application-2026"
+    ],
+    "protocol_slugs": [
+      "avoid-list-interference-memory-retention",
+      "active-recall-test-yourself"
+    ],
+    "rationale": "Memory moved from an ontology growth gap to active coverage after Brali reviewed current evidence on wakeful rest and retrieval practice, narrowed unsupported transfer claims, and published trusted protocols that preserve those evidence boundaries."
+  },
+  "coverage": {
+    "id": "memory",
+    "title": "Memory",
+    "domain_id": "learning-thinking",
+    "status": "active",
+    "entries": 4,
+    "research_candidates": 5
+  }
+}

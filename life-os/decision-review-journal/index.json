@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:decision-review-journal",
+  "slug": "decision-review-journal",
+  "title": "Take Time Regularly to Reflect on Your Actions, Decisions, and Outcomes",
+  "description": "Take time regularly to reflect on your actions, decisions, and outcomes. Think about what worked well and what could be improved.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/decision-review-journal/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/decision-review-journal/index.json",
+  "growth_zone": {
+    "slug": "insider",
+    "title": "Insider"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "insider-fieldcraft",
+        "title": "Fieldcraft"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "insider"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

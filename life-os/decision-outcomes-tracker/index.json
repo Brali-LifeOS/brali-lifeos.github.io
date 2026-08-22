@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:decision-outcomes-tracker",
+  "slug": "decision-outcomes-tracker",
+  "title": "Use the App to Log Meaningful Events or Decisions as They Happen",
+  "description": "Use the app to log meaningful events or decisions as they happen. Reflect on why they stood out to you and how they shaped your day. Over time, review your entries to see how your life develops and unfolds.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/decision-outcomes-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/decision-outcomes-tracker/index.json",
+  "growth_zone": {
+    "slug": "gestalt",
+    "title": "Gestalt"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "gestalt",
+        "title": "Gestalt-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "gestalt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

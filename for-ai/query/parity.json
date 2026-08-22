@@ -1,0 +1,2234 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "source_suite_version": "1.0.0",
+  "name": "Brali Query Playground Parity Report",
+  "description": "Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. The browser core uses the same Flagship 100 hybrid retrieval contract; failures remain visible rather than being removed from the suite.",
+  "page_url": "https://brali-lifeos.github.io/for-ai/query/",
+  "report_url": "https://brali-lifeos.github.io/for-ai/query/parity.json",
+  "summary": {
+    "cases": 50,
+    "passed": 50,
+    "pass_rate_pct": 100,
+    "topic_hit_pct": 100,
+    "expected_protocol_hit_pct": 100,
+    "evidence_decision_recall_pct": 100,
+    "trust_preservation_pct": 100,
+    "provenance_preservation_pct": 100,
+    "safety_pct": 100,
+    "no_answer_pct": 100,
+    "en_pass_pct": 100,
+    "ru_pass_pct": 100,
+    "failed_case_ids": []
+  },
+  "cases": [
+    {
+      "id": "focus-switching",
+      "category": "focus",
+      "language": "en",
+      "query": "How can I focus on one task without constantly switching?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "attention-focus"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "attention-focus",
+          "task-initiation",
+          "digital-attention"
+        ],
+        "protocol_slugs": [
+          "90-30-focus-rest-schedule",
+          "refocus-present-stop-mind-wandering",
+          "ad-astra-per-aspera-motivation-tracker",
+          "30-min-eye-break-tracker",
+          "avoid-list-interference-memory-retention"
+        ],
+        "decision_ids": [
+          "wakeful-rest-memory-2026",
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "pomodoro-exact",
+      "category": "focus",
+      "language": "en",
+      "query": "Give me a 25 minute Pomodoro focus sprint",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "attention-focus"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "25-minute-pomodoro-focus-sprints"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "attention-focus"
+        ],
+        "protocol_slugs": [
+          "25-minute-pomodoro-focus-sprints",
+          "90-30-focus-rest-schedule",
+          "refocus-present-stop-mind-wandering"
+        ],
+        "decision_ids": [
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "start-procrastination",
+      "category": "focus",
+      "language": "en",
+      "query": "I keep procrastinating and cannot get started on an important task",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "task-initiation"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "task-initiation",
+          "attention-focus"
+        ],
+        "protocol_slugs": [
+          "ad-astra-per-aspera-motivation-tracker",
+          "90-30-focus-rest-schedule",
+          "refocus-present-stop-mind-wandering",
+          "active-recall-test-yourself",
+          "10-minute-language-microsprints"
+        ],
+        "decision_ids": [
+          "testing-versus-restudy-retention-boundary-2014",
+          "retrieval-procedural-application-2026",
+          "procrastination-treatment-exact-protocol-boundary-2018"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "prioritize-week",
+      "category": "focus",
+      "language": "en",
+      "query": "How do I prioritize my work for this week?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "planning-prioritization"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "work-systems",
+          "planning-prioritization",
+          "revision-feedback"
+        ],
+        "protocol_slugs": [
+          "3-3-3-workday-planner",
+          "start-with-a-hypothesis",
+          "2-minute-desk-tidy-timer",
+          "ai-premortem-risk-planner",
+          "achieve-multiple-goals-at-once"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "goals-control",
+      "category": "focus",
+      "language": "en",
+      "query": "How can I turn a vague goal into actions I can control?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "goals"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "goals",
+          "emotion-regulation",
+          "planning-prioritization"
+        ],
+        "protocol_slugs": [
+          "achieve-multiple-goals-at-once",
+          "woop-goal-planner",
+          "5-whys-goal-clarity",
+          "goal-journaling-insights",
+          "cbt-action-mood-tracker"
+        ],
+        "decision_ids": [
+          "procrastination-treatment-exact-protocol-boundary-2018"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "habit-consistency",
+      "category": "habits",
+      "language": "en",
+      "query": "How can I make a useful habit more consistent?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "habits-consistency"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "habits-consistency",
+          "attention-focus",
+          "cardiovascular-health"
+        ],
+        "protocol_slugs": [
+          "refocus-present-stop-mind-wandering",
+          "90-30-focus-rest-schedule",
+          "cardio-health-daily-habits"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "decision-uncertainty",
+      "category": "decisions",
+      "language": "en",
+      "query": "How can I make a better decision when the outcome is uncertain?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "decision-making"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "decision-making",
+          "negotiation",
+          "personal-finance"
+        ],
+        "protocol_slugs": [
+          "decision-calibration-journal",
+          "avoid-contrast-effect",
+          "avoid-gamblers-fallacy-trust-the-odds",
+          "circles-of-control-planner",
+          "ai-premortem-risk-planner"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "prevent-errors",
+      "category": "decisions",
+      "language": "en",
+      "query": "I keep making preventable mistakes. What kind of checklist or review can help?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "error-prevention"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "decision-making",
+          "error-prevention",
+          "task-initiation"
+        ],
+        "protocol_slugs": [
+          "ai-premortem-risk-planner",
+          "avoid-contrast-effect",
+          "circles-of-control-planner",
+          "avoid-gamblers-fallacy-trust-the-odds",
+          "decision-calibration-journal"
+        ],
+        "decision_ids": [
+          "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "procrastination-treatment-exact-protocol-boundary-2018",
+          "testing-versus-restudy-retention-boundary-2014"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "stress-overload",
+      "category": "stress",
+      "language": "en",
+      "query": "I feel stressed and overloaded after work. What low-risk practice can help me reset?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "stress-regulation"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "work-systems",
+          "stress-regulation",
+          "fitness-strength"
+        ],
+        "protocol_slugs": [
+          "3-3-3-workday-planner",
+          "2-minute-desk-tidy-timer",
+          "ai-premortem-risk-planner",
+          "start-with-a-hypothesis",
+          "478-breathing-technique-guide"
+        ],
+        "decision_ids": [
+          "microbreak-wellbeing-performance-boundary-2022",
+          "procrastination-treatment-exact-protocol-boundary-2018"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "emotion-reactivity",
+      "category": "stress",
+      "language": "en",
+      "query": "How can I notice a strong emotion before reacting automatically?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "emotion-regulation"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "emotion-regulation",
+          "self-awareness"
+        ],
+        "protocol_slugs": [
+          "dbt-distress-tolerance-coach",
+          "cbt-action-mood-tracker",
+          "3-minute-sensory-mindfulness-act",
+          "daily-gratitude-journal-three-things"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "fear-presentation",
+      "category": "stress",
+      "language": "en",
+      "query": "How can I build confidence for a presentation I am afraid of?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "fear-confidence"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "fear-confidence",
+          "social-confidence",
+          "metacognition"
+        ],
+        "protocol_slugs": [
+          "talk-about-fears-coach",
+          "safety-statements-exposure-anxiety",
+          "decision-calibration-journal",
+          "refocus-present-stop-mind-wandering",
+          "ask-for-feedback-tracker"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "worry-loop",
+      "category": "stress",
+      "language": "en",
+      "query": "I keep replaying the same worry in my head. How can I redirect attention?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "worry-rumination"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "worry-rumination",
+          "attention-focus",
+          "digital-attention"
+        ],
+        "protocol_slugs": [
+          "refocus-present-stop-mind-wandering",
+          "90-30-focus-rest-schedule",
+          "3-minute-sensory-mindfulness-act",
+          "30-min-eye-break-tracker",
+          "478-breathing-technique-guide"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sleep-routine",
+      "category": "sleep",
+      "language": "en",
+      "query": "How can I make my sleep schedule more regular?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "sleep-circadian"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "sleep-circadian",
+          "digital-wellbeing"
+        ],
+        "protocol_slugs": [
+          "ideal-sleep-hours-finder"
+        ],
+        "decision_ids": [
+          "sleep-opportunity-extension-2021"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "movement-sitting",
+      "category": "movement",
+      "language": "en",
+      "query": "I sit for hours while working. How can I add more movement to my day?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "movement"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "movement",
+          "work-systems",
+          "planning-prioritization"
+        ],
+        "protocol_slugs": [
+          "cardio-health-daily-habits",
+          "3-3-3-workday-planner",
+          "start-with-a-hypothesis",
+          "2-minute-desk-tidy-timer",
+          "ai-premortem-risk-planner"
+        ],
+        "decision_ids": [
+          "distributed-practice-verbal-recall-boundary-2006"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "stretch-exact",
+      "category": "movement",
+      "language": "en",
+      "query": "Show me a 10 minute morning stretch routine",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [],
+        "acceptable_topic_ids": [
+          "fitness-strength",
+          "movement"
+        ],
+        "protocol_slugs": [
+          "10-minute-morning-stretch-routine"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "fitness-strength"
+        ],
+        "protocol_slugs": [
+          "10-minute-morning-stretch-routine",
+          "4-minute-hiit-tabata-workout",
+          "4-minute-tabata-hiit-timer",
+          "10-minute-stress-walk",
+          "5-minute-meditation-habit-tracker"
+        ],
+        "decision_ids": [
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "strength-routine",
+      "category": "movement",
+      "language": "en",
+      "query": "How can I build a sustainable strength and mobility routine?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "fitness-strength"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "fitness-strength",
+          "career",
+          "fear-confidence"
+        ],
+        "protocol_slugs": [
+          "10-minute-morning-stretch-routine",
+          "4-minute-hiit-tabata-workout",
+          "4-minute-tabata-hiit-timer",
+          "cardio-health-daily-habits",
+          "safety-statements-exposure-anxiety"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "recovery-breaks",
+      "category": "movement",
+      "language": "en",
+      "query": "How should I think about breaks and recovery when my energy drops?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "recovery-energy"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "recovery-energy",
+          "movement",
+          "critical-thinking"
+        ],
+        "protocol_slugs": [
+          "90-30-focus-rest-schedule",
+          "cardio-health-daily-habits",
+          "20-20-20-eye-break-reminder",
+          "daily-gratitude-journal-three-things",
+          "avoid-anthropocentric-bias"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "memory-study",
+      "category": "memory",
+      "language": "en",
+      "query": "How can I remember what I study instead of only rereading it?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "memory"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "memory"
+        ],
+        "protocol_slugs": [
+          "spaced-recall-coach",
+          "avoid-list-interference-memory-retention",
+          "active-recall-test-yourself",
+          "full-list-recall-technique",
+          "highlight-recall-assistant"
+        ],
+        "decision_ids": [
+          "distributed-practice-verbal-recall-boundary-2006",
+          "wakeful-rest-memory-2026",
+          "retrieval-procedural-application-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "wakeful-rest-boundary",
+      "category": "memory",
+      "language": "en",
+      "query": "Is ten minutes of quiet rest after learning proven to improve memory for everyone?",
+      "mode": "bounded-evidence",
+      "expected": {
+        "topic_ids": [
+          "memory"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "avoid-list-interference-memory-retention"
+        ],
+        "decision_ids": [
+          "wakeful-rest-memory-2026"
+        ],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "memory",
+          "language-learning",
+          "skill-learning"
+        ],
+        "protocol_slugs": [
+          "avoid-list-interference-memory-retention",
+          "active-recall-test-yourself",
+          "spaced-recall-coach",
+          "10-minute-language-microsprints",
+          "10-minute-stress-walk"
+        ],
+        "decision_ids": [
+          "wakeful-rest-memory-2026",
+          "testing-effect-direct-forward-2026",
+          "testing-versus-restudy-retention-boundary-2014"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "active-recall-exact",
+      "category": "learning",
+      "language": "en",
+      "query": "Show me an active recall protocol where I test myself",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "memory",
+          "skill-learning"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "active-recall-test-yourself"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "memory",
+          "conflict-repair",
+          "problem-solving"
+        ],
+        "protocol_slugs": [
+          "active-recall-test-yourself",
+          "avoid-list-interference-memory-retention",
+          "spaced-recall-coach",
+          "relationship-repair-coach",
+          "backfire-effect-coach"
+        ],
+        "decision_ids": [
+          "retrieval-procedural-application-2026",
+          "testing-versus-restudy-retention-boundary-2014",
+          "testing-effect-direct-forward-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "skill-feedback",
+      "category": "learning",
+      "language": "en",
+      "query": "How can I learn a skill through practice and feedback instead of passive reading?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "skill-learning"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "skill-learning",
+          "language-learning",
+          "revision-feedback"
+        ],
+        "protocol_slugs": [
+          "weekly-theme-learning-sprints",
+          "active-recall-test-yourself",
+          "10-minute-language-microsprints",
+          "ask-a-peer-to-proofread",
+          "ask-for-feedback-tracker"
+        ],
+        "decision_ids": [
+          "testing-versus-restudy-retention-boundary-2014",
+          "retrieval-procedural-application-2026",
+          "testing-effect-direct-forward-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "language-vocabulary",
+      "category": "learning",
+      "language": "en",
+      "query": "How can I practice vocabulary and useful phrases in a new language?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "language-learning"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "language-learning",
+          "attention-focus",
+          "environment-design"
+        ],
+        "protocol_slugs": [
+          "10-minute-language-microsprints",
+          "refocus-present-stop-mind-wandering",
+          "90-30-focus-rest-schedule",
+          "safety-statements-exposure-anxiety"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "weekly-theme-learning",
+      "category": "learning",
+      "language": "en",
+      "query": "Show me a weekly theme learning sprint",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [],
+        "acceptable_topic_ids": [
+          "skill-learning"
+        ],
+        "protocol_slugs": [
+          "weekly-theme-learning-sprints"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "language-learning",
+          "skill-learning",
+          "metacognition"
+        ],
+        "protocol_slugs": [
+          "10-minute-language-microsprints",
+          "weekly-theme-learning-sprints",
+          "active-recall-test-yourself",
+          "refocus-present-stop-mind-wandering",
+          "ask-for-feedback-tracker"
+        ],
+        "decision_ids": [
+          "retrieval-procedural-application-2026",
+          "testing-effect-direct-forward-2026",
+          "testing-versus-restudy-retention-boundary-2014"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "critical-claim",
+      "category": "thinking",
+      "language": "en",
+      "query": "How can I check a claim against evidence before believing it?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "critical-thinking"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "cognitive-biases",
+          "critical-thinking",
+          "metacognition"
+        ],
+        "protocol_slugs": [
+          "challenge-generalizations-counterexamples",
+          "assumed-similarity-bias-check",
+          "avoid-groupthink-decision-checklist",
+          "belief-update-coach",
+          "consistency-bias-tracker"
+        ],
+        "decision_ids": [
+          "distributed-practice-verbal-recall-boundary-2006",
+          "communication-coaching-reflective-statements-boundary-2023",
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "problem-hypothesis",
+      "category": "thinking",
+      "language": "en",
+      "query": "How can I frame a problem and test a hypothesis?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "problem-solving"
+        ],
+        "acceptable_topic_ids": [
+          "strategy"
+        ],
+        "protocol_slugs": [
+          "start-with-a-hypothesis"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "problem-solving",
+          "creative-problem-solving"
+        ],
+        "protocol_slugs": [
+          "biomimicry-creative-problem-solving",
+          "bold-brainstorm-kickoff",
+          "start-with-a-hypothesis",
+          "analogy-studio"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "metacognition-confidence",
+      "category": "thinking",
+      "language": "en",
+      "query": "How can I monitor whether I really understand something instead of being overconfident?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "metacognition"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "metacognition",
+          "clear-communication",
+          "emotion-regulation"
+        ],
+        "protocol_slugs": [
+          "refocus-present-stop-mind-wandering",
+          "belief-update-coach",
+          "ask-for-feedback-tracker",
+          "decision-calibration-journal",
+          "5w1h-communication-checklist"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "data-uncertainty",
+      "category": "thinking",
+      "language": "en",
+      "query": "How can I use simple data and uncertainty to make a better judgment?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "data-literacy"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "data-literacy",
+          "decision-making",
+          "digital-wellbeing"
+        ],
+        "protocol_slugs": [
+          "avoid-gamblers-fallacy-trust-the-odds",
+          "avoid-selection-bias-in-analysis",
+          "ai-premortem-risk-planner",
+          "avoid-contrast-effect",
+          "circles-of-control-planner"
+        ],
+        "decision_ids": [
+          "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "distributed-practice-verbal-recall-boundary-2006"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "cognitive-bias-check",
+      "category": "thinking",
+      "language": "en",
+      "query": "How can I notice cognitive biases before making a decision?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "cognitive-biases"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "cognitive-biases",
+          "decision-making",
+          "emotion-regulation"
+        ],
+        "protocol_slugs": [
+          "bias-checkpoints-for-teams",
+          "choice-supportive-bias-check-in",
+          "best-odds-decision-making",
+          "clarify-probabilities-risk-breakdown",
+          "hindsight-bias-coach"
+        ],
+        "decision_ids": [
+          "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "sleep-variability-cognition-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "active-listening-exact",
+      "category": "communication",
+      "language": "en",
+      "query": "Show me active listening exercises",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "listening"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "active-listening-exercises"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "listening",
+          "memory"
+        ],
+        "protocol_slugs": [
+          "ask-better-interview-questions",
+          "active-recall-test-yourself",
+          "active-listening-exercises",
+          "avoid-list-interference-memory-retention",
+          "spaced-recall-coach"
+        ],
+        "decision_ids": [
+          "retrieval-procedural-application-2026",
+          "testing-versus-restudy-retention-boundary-2014",
+          "communication-coaching-reflective-statements-boundary-2023"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "clear-message",
+      "category": "communication",
+      "language": "en",
+      "query": "How can I make a work message clearer and easier to act on?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "clear-communication"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "work-systems",
+          "clear-communication",
+          "habits-consistency"
+        ],
+        "protocol_slugs": [
+          "2-minute-desk-tidy-timer",
+          "3-3-3-workday-planner",
+          "start-with-a-hypothesis",
+          "ai-premortem-risk-planner",
+          "5w1h-communication-checklist"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "difficult-conversation",
+      "category": "communication",
+      "language": "en",
+      "query": "How can I prepare for a difficult conversation without escalating it?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "difficult-conversations"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "difficult-conversations",
+          "negotiation",
+          "psychological-flexibility"
+        ],
+        "protocol_slugs": [
+          "create-win-win-outcomes",
+          "ancestral-torch-resilience-tracker"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "conflict-repair",
+      "category": "communication",
+      "language": "en",
+      "query": "How can I repair a misunderstanding after a conflict?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "conflict-repair"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "conflict-repair"
+        ],
+        "protocol_slugs": [
+          "relationship-repair-coach",
+          "backfire-effect-coach"
+        ],
+        "decision_ids": [
+          "apology-repair-2021"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "movement-break-boundary",
+      "category": "movement",
+      "language": "en",
+      "query": "What is the scientifically proven best break interval for cognition while sitting?",
+      "mode": "bounded-evidence",
+      "expected": {
+        "topic_ids": [
+          "movement"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [
+          "movement-breaks-cognition-2026"
+        ],
+        "boundary_only": true,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "boundary-only",
+        "topic_ids": [
+          "movement",
+          "recovery-energy"
+        ],
+        "protocol_slugs": [],
+        "decision_ids": [
+          "movement-breaks-cognition-2026",
+          "distributed-practice-verbal-recall-boundary-2006",
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "idea-generation",
+      "category": "creativity",
+      "language": "en",
+      "query": "How can I generate more ideas before judging them?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "idea-generation"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "idea-generation",
+          "cognitive-biases",
+          "goals"
+        ],
+        "protocol_slugs": [
+          "brainwriting-group-idea-generation",
+          "biomimicry-creative-problem-solving",
+          "bold-brainstorm-kickoff",
+          "generation-effect-memory-coach",
+          "30-minute-deadline-sprints"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "brainwriting-exact",
+      "category": "creativity",
+      "language": "en",
+      "query": "Show me a brainwriting group idea generation protocol",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "idea-generation"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "brainwriting-group-idea-generation"
+        ],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "idea-generation",
+          "writing"
+        ],
+        "protocol_slugs": [
+          "bold-brainstorm-kickoff",
+          "brainwriting-group-idea-generation",
+          "30-minute-deadline-sprints",
+          "biomimicry-creative-problem-solving",
+          "ask-a-peer-to-proofread"
+        ],
+        "decision_ids": [
+          "writing-feedback-level-match-2024"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "writing-outline",
+      "category": "creativity",
+      "language": "en",
+      "query": "How can I structure and draft a piece of writing?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "writing"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "writing",
+          "decision-making"
+        ],
+        "protocol_slugs": [
+          "ask-a-peer-to-proofread",
+          "ai-premortem-risk-planner",
+          "avoid-contrast-effect",
+          "avoid-gamblers-fallacy-trust-the-odds",
+          "circles-of-control-planner"
+        ],
+        "decision_ids": [
+          "writing-feedback-level-match-2024"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "work-system",
+      "category": "work",
+      "language": "en",
+      "query": "How can I make a recurring work process more reliable?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "work-systems"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "work-systems",
+          "planning-prioritization",
+          "revision-feedback"
+        ],
+        "protocol_slugs": [
+          "3-3-3-workday-planner",
+          "start-with-a-hypothesis",
+          "2-minute-desk-tidy-timer",
+          "ai-premortem-risk-planner",
+          "achieve-multiple-goals-at-once"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "personal-finance",
+      "category": "work",
+      "language": "en",
+      "query": "How can I improve basic personal finance planning and money habits?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "personal-finance"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "personal-finance",
+          "habits-consistency",
+          "health-basics"
+        ],
+        "protocol_slugs": [
+          "automatic-paycheck-to-savings",
+          "20-20-20-eye-break-reminder",
+          "5-minute-meditation-habit-tracker",
+          "cardio-health-daily-habits",
+          "deepen-memory-levels-of-processing"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "strategy-choice",
+      "category": "work",
+      "language": "en",
+      "query": "How can I decide what not to do when choosing a strategy?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "strategy"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "strategy",
+          "cardiovascular-health",
+          "metacognition"
+        ],
+        "protocol_slugs": [
+          "create-win-win-outcomes",
+          "cardio-health-daily-habits",
+          "refocus-present-stop-mind-wandering",
+          "ask-for-feedback-tracker",
+          "belief-update-coach"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "digital-attention",
+      "category": "digital",
+      "language": "en",
+      "query": "Notifications and feeds keep distracting me. How can I reduce digital distraction?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "digital-attention"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "digital-attention",
+          "digital-wellbeing",
+          "task-initiation"
+        ],
+        "protocol_slugs": [
+          "30-min-eye-break-tracker",
+          "ad-astra-per-aspera-motivation-tracker"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "information-management",
+      "category": "digital",
+      "language": "en",
+      "query": "How can I capture and retrieve useful information without overbuilding my system?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "information-management"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "information-management",
+          "work-systems",
+          "attention-focus"
+        ],
+        "protocol_slugs": [
+          "ai-premortem-risk-planner",
+          "2-minute-desk-tidy-timer",
+          "3-3-3-workday-planner",
+          "start-with-a-hypothesis",
+          "refocus-present-stop-mind-wandering"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "workspace-friction",
+      "category": "digital",
+      "language": "en",
+      "query": "How can I change my workspace to reduce friction and mistakes?",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "workspace"
+        ],
+        "acceptable_topic_ids": [
+          "environment-design"
+        ],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "workspace",
+          "environment-design",
+          "task-initiation"
+        ],
+        "protocol_slugs": [
+          "ad-astra-per-aspera-motivation-tracker",
+          "weekly-theme-learning-sprints"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "ru-focus",
+      "category": "multilingual",
+      "language": "ru",
+      "query": "как лучше сосредоточиться и не отвлекаться",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "attention-focus"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "attention-focus"
+        ],
+        "protocol_slugs": [
+          "refocus-present-stop-mind-wandering",
+          "90-30-focus-rest-schedule"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "ru-sleep",
+      "category": "multilingual",
+      "language": "ru",
+      "query": "как наладить режим сна",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "sleep-circadian"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "sleep-circadian"
+        ],
+        "protocol_slugs": [
+          "ideal-sleep-hours-finder"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "ru-memory",
+      "category": "multilingual",
+      "language": "ru",
+      "query": "как лучше запоминать и вспоминать изученное",
+      "mode": "retrieve",
+      "expected": {
+        "topic_ids": [
+          "memory"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "memory"
+        ],
+        "protocol_slugs": [
+          "active-recall-test-yourself",
+          "avoid-list-interference-memory-retention",
+          "spaced-recall-coach"
+        ],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "no-answer-qcd",
+      "category": "no-answer",
+      "language": "en",
+      "query": "Explain quantum chromodynamics in a hadron collider detector",
+      "mode": "no-answer",
+      "expected": {
+        "topic_ids": [],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "no-trusted-answer",
+        "topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "safety-severe-depression",
+      "category": "safety",
+      "language": "en",
+      "query": "Treat severe depression without a doctor or therapist",
+      "mode": "no-answer",
+      "expected": {
+        "topic_ids": [],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": true
+      },
+      "observed": {
+        "status": "no-trusted-answer",
+        "topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "safety-self-harm",
+      "category": "safety",
+      "language": "en",
+      "query": "Give me a self-harm treatment plan I can do instead of professional care",
+      "mode": "no-answer",
+      "expected": {
+        "topic_ids": [],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [],
+        "boundary_only": false,
+        "safety_sensitive": true
+      },
+      "observed": {
+        "status": "no-trusted-answer",
+        "topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": []
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "sleep-variability-causality",
+      "category": "evidence-boundary",
+      "language": "en",
+      "query": "Does irregular sleep cause cognitive decline and prove that a fixed bedtime will improve cognition?",
+      "mode": "bounded-evidence",
+      "expected": {
+        "topic_ids": [
+          "sleep-circadian"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [],
+        "decision_ids": [
+          "sleep-variability-cognition-2026"
+        ],
+        "boundary_only": true,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "boundary-only",
+        "topic_ids": [
+          "sleep-circadian",
+          "cognitive-biases",
+          "digital-wellbeing"
+        ],
+        "protocol_slugs": [],
+        "decision_ids": [
+          "sleep-variability-cognition-2026",
+          "sleep-opportunity-extension-2021",
+          "movement-breaks-cognition-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    },
+    {
+      "id": "retrieval-application-boundary",
+      "category": "evidence-boundary",
+      "language": "en",
+      "query": "Does retrieval practice always improve both remembering a rule and applying it correctly?",
+      "mode": "bounded-evidence",
+      "expected": {
+        "topic_ids": [
+          "memory",
+          "skill-learning"
+        ],
+        "acceptable_topic_ids": [],
+        "protocol_slugs": [
+          "active-recall-test-yourself"
+        ],
+        "decision_ids": [
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026"
+        ],
+        "boundary_only": false,
+        "safety_sensitive": false
+      },
+      "observed": {
+        "status": "trusted-answer",
+        "topic_ids": [
+          "memory",
+          "fitness-strength",
+          "revision-feedback"
+        ],
+        "protocol_slugs": [
+          "active-recall-test-yourself",
+          "avoid-list-interference-memory-retention",
+          "spaced-recall-coach",
+          "10-minute-morning-stretch-routine",
+          "4-minute-hiit-tabata-workout"
+        ],
+        "decision_ids": [
+          "testing-versus-restudy-retention-boundary-2014",
+          "retrieval-procedural-application-2026",
+          "testing-effect-direct-forward-2026"
+        ]
+      },
+      "gates": {
+        "topic_hit": true,
+        "protocol_hit": true,
+        "decision_hit": true,
+        "status_pass": true,
+        "trust_pass": true,
+        "provenance_pass": true,
+        "safety_pass": true,
+        "no_answer_pass": true
+      },
+      "pass": true
+    }
+  ]
+}

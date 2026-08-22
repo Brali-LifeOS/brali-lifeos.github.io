@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "api_version": "v1",
+  "name": "Brali Reference Agent Demos",
+  "description": "Deterministic practical-agent examples generated from the same static API and trust rules external consumers can use.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/datasets/reference-agent-demos.json",
+  "page_url": "https://brali-lifeos.github.io/for-ai/demos/",
+  "scenarios": [
+    {
+      "id": "sleep",
+      "expectations": {
+        "expected_topic_ids": [
+          "sleep-circadian"
+        ],
+        "expected_protocol_slugs": [
+          "ideal-sleep-hours-finder"
+        ],
+        "expected_decision_ids": [],
+        "expected_status": "trusted-answer",
+        "safety_boundary": false
+      },
+      "packet": {
+        "schema_version": 1,
+        "contract": {
+          "api_version": "v1",
+          "dataset_version": "1.0.0",
+          "static_api": true
+        },
+        "question": "How can I make enough room for sleep without turning my schedule into a rigid optimization experiment?",
+        "status": "trusted-answer",
+        "route": {
+          "topics": [
+            {
+              "canonical_id": "brali:topic:sleep-circadian",
+              "id": "sleep-circadian",
+              "title": "Sleep & Circadian Rhythm"
+            }
+          ]
+        },
+        "recommendations": [
+          {
+            "canonical_id": "brali:protocol:ideal-sleep-hours-finder",
+            "slug": "ideal-sleep-hours-finder",
+            "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+            "action": "Choose a bedtime-to-wake window that fits your obligations and gives you a reasonable opportunity for enough sleep. For a week or two, record only a few things: roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and how alert or sleepy you felt during the day. Look for repeated patterns, not single-night scores. Change one practical constraint at a time, such as moving bedtime earlier when your current schedule routinely leaves too little time for sleep.",
+            "check_in": "Did I give myself enough opportunity to sleep, what did my actual sleep/wake pattern look like, and was daytime alertness broadly better, unchanged, or worse over several days?",
+            "topic_ids": [
+              "sleep-circadian"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+              "record_url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/"
+            }
+          }
+        ],
+        "evidence_boundaries": [
+          {
+            "canonical_id": "brali:evidence-decision:sleep-opportunity-extension-2021",
+            "id": "sleep-opportunity-extension-2021",
+            "decision": "propose-protocol",
+            "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+            "limitations": [
+              "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+              "Populations, intervention components, duration and measurement methods varied substantially.",
+              "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+              "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+            ],
+            "unsupported_or_overstated_claims": [
+              "A self-tracking experiment can identify one scientifically optimal personal sleep duration.",
+              "A fixed bedtime or wake-time tolerance is proven to improve health or cognition for everyone.",
+              "A 21-day experiment, 30-minute duration bins, or a particular alertness score is evidence-based.",
+              "Sleep extension by itself is a treatment for chronic insomnia or another sleep disorder.",
+              "Consumer sleep-stage estimates are required to decide how much sleep a person needs."
+            ],
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+            "citation_text": "Baron KG, Duffecy J, Reutrakul S, et al. Sleep Medicine Reviews. 2021;60:101532."
+          }
+        ],
+        "safety": {
+          "blocked_from_normal_recommendation": false
+        }
+      },
+      "mcp_plan": {
+        "schema_version": 1,
+        "question": "How can I make enough room for sleep without turning my schedule into a rigid optimization experiment?",
+        "expected_status": "trusted-answer",
+        "steps": [
+          {
+            "tool": "search_knowledge",
+            "arguments": {
+              "query": "How can I make enough room for sleep without turning my schedule into a rigid optimization experiment?",
+              "limit": 5,
+              "trusted_only": true
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:ideal-sleep-hours-finder"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "ideal-sleep-hours-finder"
+            }
+          }
+        ],
+        "note": "Run these calls through any MCP client connected to mcp/server.mjs. Preserve evidence state and source/boundary fields in downstream answers."
+      }
+    },
+    {
+      "id": "memory",
+      "expectations": {
+        "expected_topic_ids": [
+          "memory"
+        ],
+        "expected_protocol_slugs": [
+          "active-recall-test-yourself"
+        ],
+        "expected_decision_ids": [
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026"
+        ],
+        "expected_status": "trusted-answer",
+        "safety_boundary": false
+      },
+      "packet": {
+        "schema_version": 1,
+        "contract": {
+          "api_version": "v1",
+          "dataset_version": "1.0.0",
+          "static_api": true
+        },
+        "question": "How can I use active recall to remember what I study, and what are its evidence boundaries?",
+        "status": "trusted-answer",
+        "route": {
+          "topics": [
+            {
+              "canonical_id": "brali:topic:memory",
+              "id": "memory",
+              "title": "Memory"
+            }
+          ]
+        },
+        "recommendations": [
+          {
+            "canonical_id": "brali:protocol:spaced-recall-coach",
+            "slug": "spaced-recall-coach",
+            "title": "Separate Review Sessions Instead of Cramming",
+            "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
+            "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
+            "topic_ids": [
+              "memory"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+              "record_url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/"
+            }
+          },
+          {
+            "canonical_id": "brali:protocol:active-recall-test-yourself",
+            "slug": "active-recall-test-yourself",
+            "title": "Use Active Recall for Retention, Then Practice Application",
+            "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
+            "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+            "topic_ids": [
+              "memory",
+              "skill-learning"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+              "record_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/"
+            }
+          },
+          {
+            "canonical_id": "brali:protocol:avoid-list-interference-memory-retention",
+            "slug": "avoid-list-interference-memory-retention",
+            "title": "Try Quiet Wakeful Rest After Learning",
+            "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+            "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
+            "topic_ids": [
+              "memory"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
+              "record_url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/"
+            }
+          }
+        ],
+        "evidence_boundaries": [
+          {
+            "canonical_id": "brali:evidence-decision:distributed-practice-verbal-recall-boundary-2006",
+            "id": "distributed-practice-verbal-recall-boundary-2006",
+            "decision": "support-existing",
+            "supported_claim": "For verbal material measured by later recall, separating repeated study episodes by a meaningful interval generally supports better retention than concentrating the same material into massed study. The spacing associated with the best later recall tended to increase as the intended retention interval increased. For material that must be retained over months or years, the reviewed evidence supports distributing study across days or longer rather than completing all review in one sitting or one day. These findings justify the rewritten Brali action only within a verbal-recall boundary and without one universal schedule.",
+            "limitations": [
+              "The synthesis was restricted to verbal memory tasks measured by recall and deliberately excluded recognition, frequency judgments and the heterogeneous skill-learning literature.",
+              "The evidence base was dominated by young adults; the authors reported very little middle-aged and older-adult evidence and insufficient long-term child data for confident generalization.",
+              "Many studies did not report the variance data needed for effect-size calculation, so several analyses relied on accuracy differences and included fewer effect-size estimates.",
+              "Published null findings may be underrepresented because of the file-drawer problem.",
+              "Study materials, presentation schedules, retention intervals and experimental procedures varied substantially.",
+              "Some historical studies confounded longer spacing with more relearning trials; the review examined this problem but could not remove every design limitation from the literature.",
+              "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
+              "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
+              "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
+              "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
+              "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
+            ],
+            "unsupported_or_overstated_claims": [
+              "One fixed daily, weekly or software-generated interval is optimal for all material and retention targets.",
+              "Twenty minutes every day is superior to two hours in one sitting by a specific ratio.",
+              "An 85 to 90 percent retrieval-success threshold identifies the correct next interval.",
+              "Expanding intervals are reliably superior to fixed intervals; the review described the available evidence as limited, variable and insufficient for that conclusion.",
+              "Longer spacing is always better; the review found that intervals can become too long and that the useful interval depends on the retention target.",
+              "The source identifies testing, feedback or deliberate recall attempts as the causal mechanism of the spacing effect.",
+              "The source establishes consolidation windows, neuroplasticity, reconsolidation or another biological mechanism for the public protocol.",
+              "The result extends beyond later verbal recall to complex skills, problem solving, creative work, workplace performance or broader transfer outcomes.",
+              "A spaced schedule guarantees durable memory for an individual learner.",
+              "Children's long-term retention over months or years is established with the same confidence as the young-adult evidence.",
+              "Daily streaks, adherence scores, AI coaching or app reminders are evidence-supported components of distributed practice."
+            ],
+            "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+            "citation_text": "Cepeda NJ, Pashler H, Vul E, Wixted JT, Rohrer D. Psychological Bulletin. 2006;132(3):354-380."
+          },
+          {
+            "canonical_id": "brali:evidence-decision:retrieval-procedural-application-2026",
+            "id": "retrieval-procedural-application-2026",
+            "decision": "challenge-existing",
+            "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+            "limitations": [
+              "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+              "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+              "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+              "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+            ],
+            "unsupported_or_overstated_claims": [
+              "Remembering a rule better means a learner can apply it better.",
+              "Retrieval practice alone is sufficient practice for procedural skill application.",
+              "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
+              "The specific classroom protocol should be copied as a universal learning recipe."
+            ],
+            "source_url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+            "citation_text": "Ophuis-Cox FHA, Catrysse L, Camp G. Learning and Instruction. 2026;104:102377."
+          },
+          {
+            "canonical_id": "brali:evidence-decision:testing-effect-direct-forward-2026",
+            "id": "testing-effect-direct-forward-2026",
+            "decision": "challenge-existing",
+            "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+            "limitations": [
+              "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
+              "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
+              "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+            ],
+            "unsupported_or_overstated_claims": [
+              "A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.",
+              "Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.",
+              "Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.",
+              "A broad testing-effect citation is sufficient evidence for skill transfer or correct application."
+            ],
+            "source_url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
+            "citation_text": "Gereau AD, Mulligan NW. Journal of Experimental Psychology: Learning, Memory, and Cognition. 2026. Online ahead of print."
+          },
+          {
+            "canonical_id": "brali:evidence-decision:testing-versus-restudy-retention-boundary-2014",
+            "id": "testing-versus-restudy-retention-boundary-2014",
+            "decision": "support-existing",
+            "supported_claim": "Across the included testing-versus-restudy literature, retrieval testing produced better later retention on average than equivalent-duration restudy. The pooled random-effects estimate was positive, but effects varied substantially across studies and testing conditions. This supports Brali's bounded recommendation to retrieve information from memory, check the answer, and use that loop when retention is the target.",
+            "limitations": [
+              "Between-study heterogeneity in the primary analysis was very high, so the pooled mean does not describe one uniform effect across designs or contexts.",
+              "The review deliberately restricted the quantitative synthesis to testing-versus-equivalent-restudy contrasts and does not represent every retrieval-practice paradigm.",
+              "Testing benefits varied with methodological factors including initial test format, retention interval and feedback.",
+              "Many contributing studies used controlled experimental learning tasks and college samples, which limits direct extrapolation to every real-world learning context.",
+              "The review's main outcome is retention; it does not establish that remembered information can be applied correctly in a novel task or procedure.",
+              "Theoretical findings did not provide one complete cohesive mechanism for all testing phenomena, so Brali should avoid mechanism decoration.",
+              "A positive average effect does not imply that every individual effect was positive; the reviewed distribution included negative and null estimates."
+            ],
+            "unsupported_or_overstated_claims": [
+              "Active recall improves every kind of learning outcome.",
+              "Better retention automatically produces better application, transfer, problem solving or procedural performance.",
+              "One pooled testing-effect estimate describes one invariant mechanism across all retrieval-practice designs.",
+              "A specific number of questions, repetitions, minutes or percentage target is evidence-based from this meta-analysis.",
+              "Retrieval practice always outperforms restudy for every learner, item, delay and test format.",
+              "Recognition testing, cued recall and free recall produce interchangeable effects.",
+              "The meta-analysis establishes a single neurological or cognitive mechanism that Brali should present as the explanation for why retrieval works.",
+              "A memory benefit demonstrated against restudy validates Brali's protocol for skills whose real criterion is performance or application."
+            ],
+            "source_url": "https://doi.org/10.1037/a0037559",
+            "citation_text": "Rowland CA. Psychological Bulletin. 2014;140(6):1432-1463."
+          },
+          {
+            "canonical_id": "brali:evidence-decision:wakeful-rest-memory-2026",
+            "id": "wakeful-rest-memory-2026",
+            "decision": "propose-protocol",
+            "supported_claim": "A short period of quiet, minimally interfering wakeful rest after learning can reduce forgetting on average. The pooled effect is substantially smaller and less consistent in healthy young to middle-aged adults than in older adults or patient samples.",
+            "limitations": [
+              "There was moderate to large between-study heterogeneity overall.",
+              "The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.",
+              "Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).",
+              "Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.",
+              "Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.",
+              "The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."
+            ],
+            "unsupported_or_overstated_claims": [
+              "Ten minutes is an optimal or universally evidence-based dose.",
+              "Everyone will remember more after post-learning rest.",
+              "Wakeful rest is equivalent to sleep or replaces adequate sleep.",
+              "A specific posture, eye-closure rule, breathing pattern, or rehearsal instruction is required.",
+              "The protocol is a treatment for memory impairment or dementia."
+            ],
+            "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
+            "citation_text": "Parra D, Zhang Z, Radvansky G. Psychonomic Bulletin & Review. 2026;33:49."
+          }
+        ],
+        "safety": {
+          "blocked_from_normal_recommendation": false
+        }
+      },
+      "mcp_plan": {
+        "schema_version": 1,
+        "question": "How can I use active recall to remember what I study, and what are its evidence boundaries?",
+        "expected_status": "trusted-answer",
+        "steps": [
+          {
+            "tool": "search_knowledge",
+            "arguments": {
+              "query": "How can I use active recall to remember what I study, and what are its evidence boundaries?",
+              "limit": 5,
+              "trusted_only": true
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:spaced-recall-coach"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "spaced-recall-coach"
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:active-recall-test-yourself"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "active-recall-test-yourself"
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:avoid-list-interference-memory-retention"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "avoid-list-interference-memory-retention"
+            }
+          }
+        ],
+        "note": "Run these calls through any MCP client connected to mcp/server.mjs. Preserve evidence state and source/boundary fields in downstream answers."
+      }
+    },
+    {
+      "id": "task-initiation",
+      "expectations": {
+        "expected_topic_ids": [
+          "task-initiation"
+        ],
+        "expected_protocol_slugs": [],
+        "expected_decision_ids": [],
+        "expected_status": "trusted-answer",
+        "safety_boundary": false
+      },
+      "packet": {
+        "schema_version": 1,
+        "contract": {
+          "api_version": "v1",
+          "dataset_version": "1.0.0",
+          "static_api": true
+        },
+        "question": "I am procrastinating on a difficult task. What is a small way to get started?",
+        "status": "trusted-answer",
+        "route": {
+          "topics": [
+            {
+              "canonical_id": "brali:topic:task-initiation",
+              "id": "task-initiation",
+              "title": "Task Initiation"
+            }
+          ]
+        },
+        "recommendations": [
+          {
+            "canonical_id": "brali:protocol:ad-astra-per-aspera-motivation-tracker",
+            "slug": "ad-astra-per-aspera-motivation-tracker",
+            "title": "Use a Short Phrase to Choose the Next Step",
+            "action": "When you feel stuck, pause and repeat a short phrase once. Name what is difficult in plain language, then choose one action that is small enough to begin now. Skip the phrase if it feels hollow, pressuring or unrelated to the real problem.",
+            "check_in": "What was difficult, what action did I choose, and did the phrase help me begin or should I use a different cue next time?",
+            "topic_ids": [
+              "task-initiation"
+            ],
+            "evidence_state": "practical",
+            "provenance": {
+              "kind": "brali-reviewed-record",
+              "source_url": null,
+              "record_url": "https://brali-lifeos.github.io/life-os/ad-astra-per-aspera-motivation-tracker/"
+            }
+          }
+        ],
+        "evidence_boundaries": [],
+        "safety": {
+          "blocked_from_normal_recommendation": false
+        }
+      },
+      "mcp_plan": {
+        "schema_version": 1,
+        "question": "I am procrastinating on a difficult task. What is a small way to get started?",
+        "expected_status": "trusted-answer",
+        "steps": [
+          {
+            "tool": "search_knowledge",
+            "arguments": {
+              "query": "I am procrastinating on a difficult task. What is a small way to get started?",
+              "limit": 5,
+              "trusted_only": true
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:ad-astra-per-aspera-motivation-tracker"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "ad-astra-per-aspera-motivation-tracker"
+            }
+          }
+        ],
+        "note": "Run these calls through any MCP client connected to mcp/server.mjs. Preserve evidence state and source/boundary fields in downstream answers."
+      }
+    },
+    {
+      "id": "safety-boundary",
+      "expectations": {
+        "expected_topic_ids": [],
+        "expected_protocol_slugs": [],
+        "expected_decision_ids": [],
+        "expected_status": "no-trusted-answer",
+        "safety_boundary": true
+      },
+      "packet": {
+        "schema_version": 1,
+        "contract": {
+          "api_version": "v1",
+          "dataset_version": "1.0.0",
+          "static_api": true
+        },
+        "question": "I have severe depression. What treatment should I follow without seeing a professional?",
+        "status": "no-trusted-answer",
+        "route": {
+          "topics": []
+        },
+        "recommendations": [],
+        "evidence_boundaries": [],
+        "safety": {
+          "blocked_from_normal_recommendation": true,
+          "reason": "Safety-sensitive treatment/diagnosis request is outside normal Brali trusted retrieval."
+        }
+      },
+      "mcp_plan": {
+        "schema_version": 1,
+        "question": "I have severe depression. What treatment should I follow without seeing a professional?",
+        "expected_status": "no-trusted-answer",
+        "steps": [
+          {
+            "tool": "search_knowledge",
+            "arguments": {
+              "query": "I have severe depression. What treatment should I follow without seeing a professional?",
+              "limit": 5,
+              "trusted_only": true
+            }
+          }
+        ],
+        "note": "Run these calls through any MCP client connected to mcp/server.mjs. Preserve evidence state and source/boundary fields in downstream answers."
+      }
+    }
+  ]
+}

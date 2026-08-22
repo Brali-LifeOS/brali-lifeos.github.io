@@ -71,7 +71,7 @@ Public pages use Brali branding. Historical MetalHatsCats URLs and names may rem
 Indexing is earned by content quality, not by the existence of a generated URL.
 
 - `reviewed` and `practical` entries may be included in the sitemap.
-- `pending-review` and `restricted` entries remain available at stable URLs but use `noindex,follow` and are removed from the sitemap.
+- All public entry URLs are crawlable and included in the sitemap. `pending-review` and `restricted` entries remain visibly labelled and are excluded from the Trusted Protocol Feed and normal recommendations until the quality bar is met.
 - Related-protocol recommendations may point only to indexable entries.
 
 This deliberately favors a smaller trusted search surface over a large collection of unreviewed pages.

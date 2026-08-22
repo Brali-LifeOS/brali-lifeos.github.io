@@ -1,0 +1,139 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "slug": "sleep",
+  "title": "Sleep",
+  "question": "How can I build a more reliable sleep routine without turning weak evidence into a prescription?",
+  "summary": "Build routines around sleep timing, recovery, and environment while keeping observational findings separate from causal claims.",
+  "canonical_url": "https://brali-lifeos.github.io/topics/sleep/",
+  "json_url": "https://brali-lifeos.github.io/topics/sleep/index.json",
+  "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
+  "coverage_status": "trusted-protocols",
+  "coverage_note": "1 trusted protocol recommendation available.",
+  "topics": [
+    {
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "description": "Sleep timing, regularity, environment, and daily rhythms.",
+      "canonical_id": "brali:topic:sleep-circadian"
+    }
+  ],
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:ideal-sleep-hours-finder",
+      "protocol_id": "brali:ideal-sleep-hours-finder",
+      "slug": "ideal-sleep-hours-finder",
+      "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+      "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+      "description": "If your sleep is routinely short, protect a realistic window that gives you enough opportunity to sleep and observe simple trends in sleep timing and daytime alertness. Do not deliberately restrict sleep to search for an 'optimal' number or treat one bad night as a result.",
+      "action": "Choose a bedtime-to-wake window that fits your obligations and gives you a reasonable opportunity for enough sleep. For a week or two, record only a few things: roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and how alert or sleepy you felt during the day. Look for repeated patterns, not single-night scores. Change one practical constraint at a time, such as moving bedtime earlier when your current schedule routinely leaves too little time for sleep.",
+      "check_in": "Did I give myself enough opportunity to sleep, what did my actual sleep/wake pattern look like, and was daytime alertness broadly better, unchanged, or worse over several days?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+        "reviewed_at": "2026-08-19"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "sleep-circadian"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "sleep-opportunity-extension-2021",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "source_title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+      "source_type": "meta-analysis",
+      "citation_text": "Baron KG, Duffecy J, Reutrakul S, et al. Sleep Medicine Reviews. 2021;60:101532.",
+      "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+      "unsupported_or_overstated_claims": [
+        "A self-tracking experiment can identify one scientifically optimal personal sleep duration.",
+        "A fixed bedtime or wake-time tolerance is proven to improve health or cognition for everyone.",
+        "A 21-day experiment, 30-minute duration bins, or a particular alertness score is evidence-based.",
+        "Sleep extension by itself is a treatment for chronic insomnia or another sleep disorder.",
+        "Consumer sleep-stage estimates are required to decide how much sleep a person needs."
+      ],
+      "limitations": [
+        "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+        "Populations, intervention components, duration and measurement methods varied substantially.",
+        "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+        "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+      ],
+      "topic_ids": [
+        "sleep-circadian"
+      ]
+    },
+    {
+      "id": "sleep-variability-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+      "source_url": "https://www.sciencedirect.com/science/article/abs/pii/S0165032725019238",
+      "source_type": "meta-analysis",
+      "citation_text": "Xia Y, He S, Sun Z, Wang F. Journal of Affective Disorders. 2026;393(Pt B):120481.",
+      "supported_claim": "Across the included literature, greater sleep variability was associated with poorer cognitive performance on average, with a small pooled correlation and age moderating the association.",
+      "unsupported_or_overstated_claims": [
+        "Sleep irregularity has been shown to cause cognitive decline.",
+        "Making sleep timing more regular has been shown by this meta-analysis to improve cognition.",
+        "A fixed bedtime or wake-time tolerance can be prescribed from this evidence.",
+        "The association justifies treatment or dementia-prevention claims for an individual."
+      ],
+      "limitations": [
+        "The reviewed evidence is primarily association evidence and does not establish the direction of causality.",
+        "Sleep variability and cognition were operationalized in different ways across studies.",
+        "The pooled association was small (r=-0.12 in the authors' analysis).",
+        "Age moderated the association, so a single population-wide claim would hide meaningful differences.",
+        "The publisher abstract and bibliographic record were directly reviewed for this Brali decision; a causal behavior-change protocol is deliberately not proposed from this source alone."
+      ],
+      "topic_ids": [
+        "sleep-circadian"
+      ]
+    }
+  ],
+  "research_watch": [
+    {
+      "id": "crossref:10.1016/j.jad.2025.120481",
+      "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+      "status": "watch",
+      "publication_date": "2026-01-15",
+      "reference_url": "https://doi.org/10.1016/j.jad.2025.120481",
+      "topic_ids": [
+        "sleep-circadian"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1016/j.smrv.2021.101532",
+      "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "status": "propose-protocol",
+      "publication_date": "2021-12-01",
+      "reference_url": "https://doi.org/10.1016/j.smrv.2021.101532",
+      "topic_ids": [
+        "sleep-circadian"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "canonical_id": "brali:topic:recovery-energy"
+    },
+    {
+      "id": "health-basics",
+      "title": "Everyday Health Basics",
+      "canonical_id": "brali:topic:health-basics"
+    }
+  ],
+  "related_methods": [],
+  "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
+}

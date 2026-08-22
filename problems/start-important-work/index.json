@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "slug": "start-important-work",
+  "title": "Start important work when you keep putting it off",
+  "question": "How do I start important work when I keep procrastinating?",
+  "summary": "Separate a vague task, start-friction, and attention-switching problem before choosing a protocol.",
+  "canonical_url": "https://brali-lifeos.github.io/problems/start-important-work/",
+  "json_url": "https://brali-lifeos.github.io/problems/start-important-work/index.json",
+  "query_url": "/for-ai/query/?q=I%20keep%20procrastinating%20and%20cannot%20get%20started%20on%20an%20important%20task",
+  "related_url": "/topics/focus/",
+  "topics": [
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "canonical_id": "brali:topic:task-initiation"
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "canonical_id": "brali:topic:attention-focus"
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "canonical_id": "brali:topic:planning-prioritization"
+    },
+    {
+      "id": "goals",
+      "title": "Goals",
+      "canonical_id": "brali:topic:goals"
+    }
+  ],
+  "decision_path": [
+    {
+      "if": "The task is still vague",
+      "try": "Define one visible next action before adding timers, blockers, or motivation tricks."
+    },
+    {
+      "if": "The next action is clear but starting still feels heavy",
+      "try": "Shrink the commitment to a deliberately small first block. The goal is to cross the start line, not finish the whole project."
+    },
+    {
+      "if": "You start but quickly switch away",
+      "try": "Protect one short focus block and remove one predictable interruption instead of redesigning your entire productivity system."
+    }
+  ],
+  "stop_rule": "If progress depends on missing information, approval, access, or another person, treat that dependency as the next action rather than diagnosing yourself with a motivation problem.",
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
+      "slug": "refocus-present-stop-mind-wandering",
+      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "description": "Use several neutral sounds around you to practice deliberately selecting one sound, switching to another, and then noticing several at once. Treat this as an attention-flexibility drill, not a treatment for worry, anxiety, or another condition.",
+      "action": "Find a safe place with several ordinary sounds. Attend closely to one sound without needing to block the others. Deliberately switch to a second and then a third sound. Finish by broadening attention so several sounds can be noticed together. Keep the exercise brief and stop when you choose.",
+      "check_in": "Could you intentionally select, switch, and broaden attention? Record the skill you practiced, not whether worry or another symptom changed.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
+        "reviewed_at": "2026-08-20"
+      },
+      "topic_ids": [
+        "attention-focus",
+        "metacognition"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 170
+    },
+    {
+      "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
+      "slug": "90-30-focus-rest-schedule",
+      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+      "title": "Alternate Focused Work With Real Breaks",
+      "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
+      "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
+      "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "attention-focus",
+        "recovery-energy"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 140
+    },
+    {
+      "canonical_id": "brali:protocol:ad-astra-per-aspera-motivation-tracker",
+      "slug": "ad-astra-per-aspera-motivation-tracker",
+      "url": "https://brali-lifeos.github.io/life-os/ad-astra-per-aspera-motivation-tracker/",
+      "title": "Use a Short Phrase to Choose the Next Step",
+      "description": "Use a brief phrase as a cue to acknowledge a difficult moment and choose one small, controllable action. The phrase is a reminder, not a prediction about how the situation will end.",
+      "action": "When you feel stuck, pause and repeat a short phrase once. Name what is difficult in plain language, then choose one action that is small enough to begin now. Skip the phrase if it feels hollow, pressuring or unrelated to the real problem.",
+      "check_in": "What was difficult, what action did I choose, and did the phrase help me begin or should I use a different cue next time?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-22"
+      },
+      "topic_ids": [
+        "task-initiation"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 140
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "unsupported_or_overstated_claims": [
+        "A 5-minute break is an evidence-based optimal duration.",
+        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
+        "Pomodoro reliably improves productivity or task performance.",
+        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
+        "Every short break reduces fatigue or increases vigor for every individual.",
+        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
+        "The review establishes a universal break schedule for cognitively demanding work.",
+        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+      ],
+      "limitations": [
+        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+      ]
+    },
+    {
+      "id": "procrastination-treatment-exact-protocol-boundary-2018",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "source_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "supported_claim": "Across the reviewed randomized comparisons, psychological treatments targeting procrastination had a small average post-treatment benefit on self-reported procrastination relative to inactive controls, but effects varied substantially between studies and the evidence base had important quality limitations. This supports treating task initiation as a legitimate intervention target, not claiming that one brief Brali routine or one component has been validated.",
+      "unsupported_or_overstated_claims": [
+        "A five-minute start is an evidence-based or optimal duration for overcoming procrastination.",
+        "Completing one visible first action by itself reduces procrastination, improves productivity or reliably creates momentum.",
+        "Implementation intentions, sub-goals, goal-setting, time management or behavioral activation were isolated by this review as the active causal component.",
+        "The broader implementation-intention literature on goal attainment directly proves effectiveness for procrastination-specific task initiation.",
+        "The cognitive-behavioral subgroup estimate validates this Brali protocol or any other single self-help exercise.",
+        "A short timer is equivalent to the multi-component psychological treatments included in the review.",
+        "The intervention effect generalizes equally to every person, task type, workplace, educational setting or clinical presentation.",
+        "Beginning briefly guarantees continuation, completion, lower distress or better performance."
+      ],
+      "limitations": [
+        "The pooled overall effect was small and showed significant between-study heterogeneity, so the average should not be treated as one stable effect across interventions or populations.",
+        "The review identified some risk of bias in every included study; blinding-related domains were frequently rated high risk.",
+        "Primary procrastination measures varied, and several assessed academic rather than general procrastination.",
+        "The included studies used different interventions, delivery formats, durations and participant populations, preventing component-level attribution.",
+        "The review analyzed post-treatment outcomes because too few studies reported follow-up data, limiting conclusions about durability.",
+        "Secondary outcomes were too heterogeneous to aggregate.",
+        "The stronger cognitive-behavioral subgroup estimate depended on excluding one small outlying study and represented only three of the four cognitive-behavioral studies.",
+        "The source did not test the exact five-minute interval, the exact Brali action sequence or the protocol's observable-review checkpoint."
+      ]
+    }
+  ],
+  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+}

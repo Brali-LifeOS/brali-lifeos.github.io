@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:create-win-win-outcomes",
+  "slug": "create-win-win-outcomes",
+  "title": "Shared-Value Option Map",
+  "description": "Map what each side values, where constraints differ, and which exchanges could create value without pretending every conflict has a win-win solution.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/create-win-win-outcomes/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/create-win-win-outcomes/index.json",
+  "growth_zone": {
+    "slug": "game-theory",
+    "title": "Game Theory"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [
+      {
+        "id": "strategy",
+        "title": "Strategy"
+      },
+      {
+        "id": "negotiation",
+        "title": "Negotiation"
+      }
+    ],
+    "methods": [
+      {
+        "id": "game-theory",
+        "title": "Game Theory"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "game-theory"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "negotiation",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/negotiation/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:create-win-win-outcomes",
+    "language": "en",
+    "slug": "create-win-win-outcomes",
+    "url": "https://brali-lifeos.github.io/life-os/create-win-win-outcomes/",
+    "title": "Shared-Value Option Map",
+    "description": "Map what each side values, where constraints differ, and which exchanges could create value without pretending every conflict has a win-win solution.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "strategy",
+          "title": "Strategy"
+        },
+        {
+          "id": "negotiation",
+          "title": "Negotiation"
+        }
+      ],
+      "methods": [
+        {
+          "id": "game-theory",
+          "title": "Game Theory"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "work-money-strategy",
+        "growth_zone_slug": "game-theory"
+      }
+    },
+    "life_area": {
+      "slug": "work-money-strategy",
+      "title": "Work, Money & Strategy"
+    },
+    "growth_zone": {
+      "slug": "game-theory",
+      "title": "Game Theory"
+    },
+    "action": "List what each side wants, what each side can trade at relatively low cost, and two or three options that combine those differences. Then test the options with the other side.",
+    "check_in": "Did the conversation uncover a real trade, or are the interests still incompatible enough that a clear boundary or no-deal option is better?",
+    "keywords": [
+      "Game Theory",
+      "Life OS",
+      "Win-Win: Find Mutual Success"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

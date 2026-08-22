@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:qa-feedback-loop-tracker",
+  "slug": "qa-feedback-loop-tracker",
+  "title": "QA Specialists Constantly Seek Feedback to Improve",
+  "description": "QA specialists constantly seek feedback to improve. Regularly ask for feedback on your work and use it to make improvements.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/qa-feedback-loop-tracker/index.json",
+  "growth_zone": {
+    "slug": "as-qa",
+    "title": "As QA"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      },
+      {
+        "id": "revision-feedback",
+        "title": "Revision & Feedback"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "qa",
+        "title": "Quality Assurance"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-qa"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "revision-feedback",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

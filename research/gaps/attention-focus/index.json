@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "topic_id": "attention-focus",
+  "topic_title": "Attention & Focus",
+  "domain_id": "focus-action",
+  "domain_title": "Focus & Action",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "What kinds of interventions reliably reduce avoidable task switching and help people sustain useful attention in everyday work?",
+  "evidence_target": "Prefer randomized or controlled field/lab evidence that separates subjective focus from task performance.",
+  "guardrail": "Do not turn one timer length, blocker, or notification setting into a universal optimum.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/attention-focus/",
+  "research_queries": [
+    {
+      "id": "focus-attention-switching",
+      "query": "task switching interruptions sustained attention workplace systematic review",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1371/journal.pone.0272460",
+      "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "status": "support-existing",
+      "publication_date": "2022-08-31",
+      "reference_url": "https://doi.org/10.1371/journal.pone.0272460"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "90-30-focus-rest-schedule",
+      "title": "Alternate Focused Work With Real Breaks",
+      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "refocus-present-stop-mind-wandering",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "attention-focus",
+    "title": "Attention & Focus",
+    "domain_id": "focus-action",
+    "status": "growth-gap",
+    "entries": 2,
+    "research_candidates": 1
+  }
+}

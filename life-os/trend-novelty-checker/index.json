@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:trend-novelty-checker",
+  "slug": "trend-novelty-checker",
+  "title": "Pause Before Calling It New",
+  "description": "When noticing a \"new\" trend: - Research its history: Check if this has actually been around for a while. - Ask others: See if someone older or more experienced recognizes it as old news. - Separate novelty from attention: Just because you noticed it recently doesn’t mean it’s new. Example: A \"new\" slang word? Look it up in older dictionaries or forums to see its origins.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/trend-novelty-checker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/trend-novelty-checker/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

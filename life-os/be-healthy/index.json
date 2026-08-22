@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "be-healthy",
+  "title": "Be Healthy",
+  "description": "Discover simple ways to take care of your body and mind, keeping you feeling great.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/be-healthy/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/be-healthy/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "counts": {
+    "library_entries": 61,
+    "trusted_protocols": 3,
+    "reviewed": 3,
+    "practical": 0,
+    "pending_review": 0,
+    "restricted": 58,
+    "mapped_topics": 2,
+    "research_gaps": 1
+  },
+  "topics": [
+    {
+      "id": "health-basics",
+      "title": "Everyday Health Basics",
+      "count": 60,
+      "url": "https://brali-lifeos.github.io/ontology/topics/health-basics/"
+    },
+    {
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/sleep-circadian/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ideal-sleep-hours-finder",
+      "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+      "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "5-minute-meditation-habit-tracker",
+      "title": "Try a Short Breath Meditation",
+      "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "20-20-20-eye-break-reminder",
+      "title": "Use the 20-20-20 Rule for Screen Breaks",
+      "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "reduce-sitting-time",
+      "title": "Actively Reduce the Amount of Time You Spend Sitting Each Day",
+      "url": "https://brali-lifeos.github.io/life-os/reduce-sitting-time/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-spice-health-habit",
+      "title": "Add Spices Such as Turmeric and Cinnamon into Your Daily Meals",
+      "url": "https://brali-lifeos.github.io/life-os/daily-spice-health-habit/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-hydration-goal-tracker",
+      "title": "Aim to Drink About 8 Glasses of Water a Day, Adjusting Based on Activity",
+      "url": "https://brali-lifeos.github.io/life-os/daily-hydration-goal-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-vitamin-d-sunlight-habit",
+      "title": "Aim to Get at Least 10 Minutes of Sun Exposure Daily or Include Vitamin",
+      "url": "https://brali-lifeos.github.io/life-os/daily-vitamin-d-sunlight-habit/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "walk-10000-steps-daily",
+      "title": "Aim to Walk 10,000 Steps Each Day and Track Your Progress with a Pedometer",
+      "url": "https://brali-lifeos.github.io/life-os/walk-10000-steps-daily/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "monitor-eye-level-checker",
+      "title": "Arrange Your Workstation So Your Eyes Line up with the Top Third of Your",
+      "url": "https://brali-lifeos.github.io/life-os/monitor-eye-level-checker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "pause-before-checking-phone",
+      "title": "Before You Pick up Your Phone or Go Online, Pause and Ask Yourself: ‘do",
+      "url": "https://brali-lifeos.github.io/life-os/pause-before-checking-phone/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "brush-and-floss-daily-habit",
+      "title": "Brush Your Teeth at Least Twice a Day, and Don’t Skip the Flossing",
+      "url": "https://brali-lifeos.github.io/life-os/brush-and-floss-daily-habit/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "seasonal-produce-guide",
+      "title": "Choose Seasonal Products When Shopping for Groceries",
+      "url": "https://brali-lifeos.github.io/life-os/seasonal-produce-guide/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "probiotic-habit-tracker",
+      "title": "Consider Adding a Probiotic Supplement to Your Daily Routine",
+      "url": "https://brali-lifeos.github.io/life-os/probiotic-habit-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "count-morning-steps-to-kitchen",
+      "title": "Count Your Steps",
+      "url": "https://brali-lifeos.github.io/life-os/count-morning-steps-to-kitchen/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "music-discovery-habit-tracker",
+      "title": "Dedicate Part of Your Day to Listening to Music Genres or Sounds That Are",
+      "url": "https://brali-lifeos.github.io/life-os/music-discovery-habit-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "stretching-habit-coach",
+      "title": "Dedicate Time Each Day to Stretch",
+      "url": "https://brali-lifeos.github.io/life-os/stretching-habit-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "safe-diy-skincare-recipes-and-routines",
+      "title": "DIY Skincare Routines",
+      "url": "https://brali-lifeos.github.io/life-os/safe-diy-skincare-recipes-and-routines/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "limit-coffee-3-4-cups-daily",
+      "title": "Drink 3 to 4 Cups of Coffee Daily but Not More",
+      "url": "https://brali-lifeos.github.io/life-os/limit-coffee-3-4-cups-daily/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-herbal-tea-stress-digestion",
+      "title": "Drink Herbal Teas Such as Chamomile or Peppermint Multiple Times a Day",
+      "url": "https://brali-lifeos.github.io/life-os/daily-herbal-tea-stress-digestion/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "weekly-new-vegetable-challenge",
+      "title": "Each Week, Pick a New or Rarely Eaten Vegetable to Add to Your Meals",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-new-vegetable-challenge/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "standing-break-relaxation-routine",
+      "title": "Ease Into Relaxation",
+      "url": "https://brali-lifeos.github.io/life-os/standing-break-relaxation-routine/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "protein-breakfast-habit-tracker",
+      "title": "Eat a High-Protein Breakfast Such as Eggs, Greek Yogurt, or Protein Shakes",
+      "url": "https://brali-lifeos.github.io/life-os/protein-breakfast-habit-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "mindful-meal-focus-mode",
+      "title": "Eat Slowly and Without Distractions Like TV or Smartphones",
+      "url": "https://brali-lifeos.github.io/life-os/mindful-meal-focus-mode/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "set-screen-at-eye-level",
+      "title": "Elevate Your Reading and Watching",
+      "url": "https://brali-lifeos.github.io/life-os/set-screen-at-eye-level/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "iron-rich-foods-for-energy",
+      "title": "Energize with Iron",
+      "url": "https://brali-lifeos.github.io/life-os/iron-rich-foods-for-energy/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "face-exercise-tracker",
+      "title": "Flex Your Face Muscles",
+      "url": "https://brali-lifeos.github.io/life-os/face-exercise-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "post-workout-refuel-coach",
+      "title": "Have a Snack or Meal That Includes Both Protein and Carbs Within 30 Minutes",
+      "url": "https://brali-lifeos.github.io/life-os/post-workout-refuel-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "walking-meeting-assistant",
+      "title": "Have Meetings While Walking, Whether in-Person or over the Phone",
+      "url": "https://brali-lifeos.github.io/life-os/walking-meeting-assistant/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "wait-before-brushing-after-acidic-foods",
+      "title": "Hold Off on Brushing After Acidic Foods",
+      "url": "https://brali-lifeos.github.io/life-os/wait-before-brushing-after-acidic-foods/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-hygiene-habit-tracker",
+      "title": "Hygiene Routines",
+      "url": "https://brali-lifeos.github.io/life-os/daily-hygiene-habit-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "eat-more-calcium-every-day",
+      "title": "Include Calcium-Rich Foods Like Milk, Cheese, Kale, and Almonds in Every Meal",
+      "url": "https://brali-lifeos.github.io/life-os/eat-more-calcium-every-day/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "eat-small-frequent-meals",
+      "title": "Instead of Three Big Meals, Eat Smaller Amounts More Often Throughout the Day",
+      "url": "https://brali-lifeos.github.io/life-os/eat-small-frequent-meals/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "magnesium-foods-daily-guide",
+      "title": "Magnesium Magic",
+      "url": "https://brali-lifeos.github.io/life-os/magnesium-foods-daily-guide/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "micro-habit-experiments",
+      "title": "Make Small Changes to Your Daily Routines",
+      "url": "https://brali-lifeos.github.io/life-os/micro-habit-experiments/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "ginger-tea-before-or-after-meals",
+      "title": "Make Yourself a Cup of Ginger Tea and Drink It Before or After Meals",
+      "url": "https://brali-lifeos.github.io/life-os/ginger-tea-before-or-after-meals/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "memory-snapshot-trainer",
+      "title": "Memory Snapshot",
+      "url": "https://brali-lifeos.github.io/life-os/memory-snapshot-trainer/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "weekly-workout-variety-coach",
+      "title": "Mix Up Your Moves",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-workout-variety-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "added-sugar-budget-tracker",
+      "title": "Monitor and Limit Added Sugars to Less Than 10% of Your Total Daily Calories",
+      "url": "https://brali-lifeos.github.io/life-os/added-sugar-budget-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "eyes-closed-morning-routine",
+      "title": "Morning Touch Test",
+      "url": "https://brali-lifeos.github.io/life-os/eyes-closed-morning-routine/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "medication-reminder-savings",
+      "title": "Never Miss Your Meds",
+      "url": "https://brali-lifeos.github.io/life-os/medication-reminder-savings/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "hold-phone-eye-level-tech-neck",
+      "title": "Phone Posture Perfection",
+      "url": "https://brali-lifeos.github.io/life-os/hold-phone-eye-level-tech-neck/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "ideal-sleep-hours-finder",
+      "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+      "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "work-break-breathing-shoulder-release",
+      "title": "Refresh with a Relaxation Break",
+      "url": "https://brali-lifeos.github.io/life-os/work-break-breathing-shoulder-release/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-self-reflection-questions",
+      "title": "Regularly Ask Yourself Probing Questions About Your Experiences and Feelings",
+      "url": "https://brali-lifeos.github.io/life-os/daily-self-reflection-questions/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "swap-tv-for-walking-daily",
+      "title": "Replace an Hour of TV Watching Each Day with Walking, Whether Outside or Indoors",
+      "url": "https://brali-lifeos.github.io/life-os/swap-tv-for-walking-daily/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "healthy-junk-food-swaps",
+      "title": "Replace Junk Food with Healthier Options",
+      "url": "https://brali-lifeos.github.io/life-os/healthy-junk-food-swaps/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "posture-friendly-shoe-checklist",
+      "title": "Select Shoes That Support Your Feet Well and Feel Comfortable for All-Day Wear",
+      "url": "https://brali-lifeos.github.io/life-os/posture-friendly-shoe-checklist/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "consistent-bedtime-routine-tracker",
+      "title": "Set a Consistent Bedtime That Aligns with Your Wake-Up Time to Get Your Body",
+      "url": "https://brali-lifeos.github.io/life-os/consistent-bedtime-routine-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "set-screen-time-limits",
+      "title": "Set Screen Time Limits on Your Phone",
+      "url": "https://brali-lifeos.github.io/life-os/set-screen-time-limits/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "eat-a-handful-of-nuts-daily",
+      "title": "Snack on a Handful of Nuts Like Walnuts, Almonds, or Brazil Nuts Each Day",
+      "url": "https://brali-lifeos.github.io/life-os/eat-a-handful-of-nuts-daily/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "morning-sunlight-habit",
+      "title": "Spend 10-15 Minutes in the Sun Each Morning or Late Afternoon",
+      "url": "https://brali-lifeos.github.io/life-os/morning-sunlight-habit/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-breathing-exercises-tracker",
+      "title": "Spend a Few Minutes Each Day on Breathing Exercises, Such as Deep Belly Breathing",
+      "url": "https://brali-lifeos.github.io/life-os/daily-breathing-exercises-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "stand-up-straight-posture-habit",
+      "title": "Stand Up Straight",
+      "url": "https://brali-lifeos.github.io/life-os/stand-up-straight-posture-habit/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "easy-yogurt-meal-ideas",
+      "title": "Start Adding a Bit of Yogurt to Your Meals Each Day",
+      "url": "https://brali-lifeos.github.io/life-os/easy-yogurt-meal-ideas/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-cold-shower-habit-guide",
+      "title": "Start Each Day with a Cold Shower",
+      "url": "https://brali-lifeos.github.io/life-os/daily-cold-shower-habit-guide/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "hydrate-between-meals",
+      "title": "Stay Hydrated, But Not With Meals",
+      "url": "https://brali-lifeos.github.io/life-os/hydrate-between-meals/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "stop-caffeine-after-lunch",
+      "title": "Stop Drinking Caffeine After Lunch Each Day",
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "eat-fatty-fish-twice-weekly",
+      "title": "Supercharge with Seafood",
+      "url": "https://brali-lifeos.github.io/life-os/eat-fatty-fish-twice-weekly/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "whole-grain-switch-tracker",
+      "title": "Switch from White to Whole-Grain Bread, Pasta, and Rice",
+      "url": "https://brali-lifeos.github.io/life-os/whole-grain-switch-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "floating-head-posture-relief",
+      "title": "The Floating Head Visualization",
+      "url": "https://brali-lifeos.github.io/life-os/floating-head-posture-relief/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "5-minute-meditation-habit-tracker",
+      "title": "Try a Short Breath Meditation",
+      "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "ergonomic-workspace-setup-guide",
+      "title": "Use of Ergonomic Furniture",
+      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-setup-guide/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "20-20-20-eye-break-reminder",
+      "title": "Use the 20-20-20 Rule for Screen Breaks",
+      "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "weekly-meal-planning-made-easy",
+      "title": "Weekly Meal Planning",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-meal-planning-made-easy/",
+      "evidence_status": "restricted",
+      "indexable": false
+    }
+  ]
+}

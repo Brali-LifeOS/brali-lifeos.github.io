@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:confidence-calibration-check",
+  "slug": "confidence-calibration-check",
+  "title": "Question Your Confidence",
+  "description": "When you're feeling overly confident in your abilities: - Ask for feedback: Seek opinions from others who have more experience. - Compare to standards: Look at benchmarks or examples of what \"good\" actually looks like. - Admit what you don't know: Acknowledging gaps helps you grow. Example: Think you’re great at coding? Test yourself with a new challenge or ask a senior developer for input.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/confidence-calibration-check/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/confidence-calibration-check/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

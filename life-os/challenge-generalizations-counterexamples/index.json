@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:challenge-generalizations-counterexamples",
+  "slug": "challenge-generalizations-counterexamples",
+  "title": "Counterexample Check",
+  "description": "When a statement uses words such as always, never, everyone, or nothing, look for one genuine exception before treating it as a rule.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/challenge-generalizations-counterexamples/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/challenge-generalizations-counterexamples/index.json",
+  "growth_zone": {
+    "slug": "nlp",
+    "title": "NLP"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [
+      {
+        "id": "nlp",
+        "title": "NLP (legacy)"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "nlp"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:challenge-generalizations-counterexamples",
+    "language": "en",
+    "slug": "challenge-generalizations-counterexamples",
+    "url": "https://brali-lifeos.github.io/life-os/challenge-generalizations-counterexamples/",
+    "title": "Counterexample Check",
+    "description": "When a statement uses words such as always, never, everyone, or nothing, look for one genuine exception before treating it as a rule.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [
+        {
+          "id": "nlp",
+          "title": "NLP (legacy)"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "nlp"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "nlp",
+      "title": "NLP"
+    },
+    "action": "Write the absolute statement, underline the universal word, and find one genuine case where the statement does not hold. Then rewrite the claim more precisely.",
+    "check_in": "Did the counterexample change the claim, or was the original statement already precise enough to survive the check?",
+    "keywords": [
+      "NLP",
+      "Life OS",
+      "Use Counterexamples"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

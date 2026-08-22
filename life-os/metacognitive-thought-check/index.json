@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:metacognitive-thought-check",
+  "slug": "metacognitive-thought-check",
+  "title": "Challenge Unhelpful Beliefs About Thoughts",
+  "description": "Notice if you believe certain thoughts are 'true' or 'important' just because they come up. Ask yourself if these beliefs are helping you or holding you back.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/metacognitive-thought-check/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/metacognitive-thought-check/index.json",
+  "growth_zone": {
+    "slug": "metacognitive",
+    "title": "Metacognitive"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "metacognitive-therapy",
+        "title": "Metacognitive Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "metacognitive"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

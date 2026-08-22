@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:brush-and-floss-daily-habit",
+  "slug": "brush-and-floss-daily-habit",
+  "title": "Brush Your Teeth at Least Twice a Day, and Don’t Skip the Flossing",
+  "description": "Brush your teeth at least twice a day, and don’t skip the flossing! Use dental floss daily to clean between your teeth, removing plaque and food particles that brushing can’t reach.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/brush-and-floss-daily-habit/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/brush-and-floss-daily-habit/index.json",
+  "growth_zone": {
+    "slug": "be-healthy",
+    "title": "Be Healthy"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "health-basics",
+        "title": "Everyday Health Basics"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "be-healthy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

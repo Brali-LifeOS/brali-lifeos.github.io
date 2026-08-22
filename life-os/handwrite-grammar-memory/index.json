@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:handwrite-grammar-memory",
+  "slug": "handwrite-grammar-memory",
+  "title": "Rewrite Grammar Cards or Notes by Hand to Reinforce Memory and Understanding",
+  "description": "Rewrite grammar cards or notes by hand to reinforce memory and understanding.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/handwrite-grammar-memory/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/handwrite-grammar-memory/index.json",
+  "growth_zone": {
+    "slug": "language",
+    "title": "Language"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "language-learning",
+        "title": "Language Learning"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "language"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

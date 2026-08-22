@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:challenge-assumed-intent",
+  "slug": "challenge-assumed-intent",
+  "title": "Challenge the Assumption of Intent Behind Events",
+  "description": "Challenge the assumption of intent behind events. Here’s how: - Pause and think: Ask, “Could this be random or accidental instead of intentional?” - Look for evidence: Check if there’s real proof of intent or just a feeling. - Explore alternatives: Consider other explanations before concluding someone or something caused it. Example: If your internet goes down, don’t immediately assume someone sabotaged it. It’s likely a technical issue.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

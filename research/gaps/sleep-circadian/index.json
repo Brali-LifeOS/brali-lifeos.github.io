@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "topic_id": "sleep-circadian",
+  "topic_title": "Sleep & Circadian Rhythm",
+  "domain_id": "health-energy",
+  "domain_title": "Health & Energy",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which modifiable sleep-timing or regularity behaviors have causal evidence for meaningful daytime outcomes?",
+  "evidence_target": "Prefer intervention studies and high-quality reviews that distinguish association from causal behavior change.",
+  "guardrail": "No fixed bedtime tolerance or medical sleep prescription should be inferred from observational associations.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/",
+  "research_queries": [
+    {
+      "id": "health-sleep-regularity",
+      "query": "sleep regularity health behavior systematic review adults",
+      "risk_flags": [
+        "health"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1016/j.jad.2025.120481",
+      "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+      "status": "watch",
+      "publication_date": "2026-01-15",
+      "reference_url": "https://doi.org/10.1016/j.jad.2025.120481"
+    },
+    {
+      "id": "crossref:10.1016/j.smrv.2021.101532",
+      "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "status": "propose-protocol",
+      "publication_date": "2021-12-01",
+      "reference_url": "https://doi.org/10.1016/j.smrv.2021.101532"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "sleep-opportunity-extension-2021",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "source_title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/"
+    },
+    {
+      "id": "sleep-variability-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/sleep-variability-cognition-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ideal-sleep-hours-finder",
+      "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+      "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "sleep-circadian",
+    "title": "Sleep & Circadian Rhythm",
+    "domain_id": "health-energy",
+    "status": "growth-gap",
+    "entries": 1,
+    "research_candidates": 2
+  }
+}

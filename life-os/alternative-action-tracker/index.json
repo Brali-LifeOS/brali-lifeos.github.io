@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:alternative-action-tracker",
+  "slug": "alternative-action-tracker",
+  "title": "Identify Alternative Actions",
+  "description": "When you notice a familiar negative pattern, think of one small, alternative action you could take instead. Experiment and notice the effects.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/alternative-action-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/alternative-action-tracker/index.json",
+  "growth_zone": {
+    "slug": "cognitive-analytic",
+    "title": "Cognitive Analytic"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "cognitive-analytic",
+        "title": "Cognitive Analytic Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cognitive-analytic"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

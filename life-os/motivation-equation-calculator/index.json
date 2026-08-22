@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:motivation-equation-calculator",
+  "slug": "motivation-equation-calculator",
+  "title": "Calculate Your Motivation",
+  "description": "Use the Motivation Equation: Motivation = (Expectancy x Value) / (Impulsiveness x Delay). Increase expectancy and value, and reduce impulsiveness and delay to boost motivation.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/motivation-equation-calculator/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/motivation-equation-calculator/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

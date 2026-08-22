@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:cbt-action-mood-tracker",
+  "slug": "cbt-action-mood-tracker",
+  "title": "Action and Mood Observation Note",
+  "description": "Use a short note to compare an activity with what you noticed before and after it. Treat the note as observation, not proof that an activity caused a mood change.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/index.json",
+  "growth_zone": {
+    "slug": "cbt",
+    "title": "CBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nhs.uk/tests-and-treatments/cognitive-behavioural-therapy-cbt/",
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "self-awareness",
+        "title": "Self-Awareness"
+      },
+      {
+        "id": "emotion-regulation",
+        "title": "Emotion Regulation"
+      }
+    ],
+    "methods": [
+      {
+        "id": "cbt",
+        "title": "CBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "self-awareness",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+      },
+      {
+        "topic_id": "emotion-regulation",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/emotion-regulation/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:cbt-action-mood-tracker",
+    "language": "en",
+    "slug": "cbt-action-mood-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+    "title": "Action and Mood Observation Note",
+    "description": "Use a short note to compare an activity with what you noticed before and after it. Treat the note as observation, not proof that an activity caused a mood change.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "self-awareness",
+          "title": "Self-Awareness"
+        },
+        {
+          "id": "emotion-regulation",
+          "title": "Emotion Regulation"
+        }
+      ],
+      "methods": [
+        {
+          "id": "cbt",
+          "title": "CBT-derived"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "cbt"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "cbt",
+      "title": "CBT"
+    },
+    "action": "Write the situation, the activity you chose, how you felt before, and how you felt afterward. Add one alternative explanation so the note does not turn correlation into certainty.",
+    "check_in": "What did you observe, and what would be worth trying or discussing next without assuming the activity caused the change?",
+    "keywords": [
+      "CBT",
+      "Life OS",
+      "Track Mood and Actions"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nhs.uk/tests-and-treatments/cognitive-behavioural-therapy-cbt/",
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

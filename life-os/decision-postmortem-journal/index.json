@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:decision-postmortem-journal",
+  "slug": "decision-postmortem-journal",
+  "title": "Use the Event Log to Jot Down Big or Important Moments",
+  "description": "Use the event log to jot down big or important moments. In the app, you can: - Write about what happened, why it mattered, and how it turned out. - Reflect on what worked, what didn’t, and what you’d do differently next time. - Spot patterns and gain insights to make smarter moves in the future. It’s like your personal playbook for learning and growing.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/decision-postmortem-journal/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/decision-postmortem-journal/index.json",
+  "growth_zone": {
+    "slug": "grandmaster",
+    "title": "Grandmaster"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "chess",
+        "title": "Chess"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "grandmaster"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

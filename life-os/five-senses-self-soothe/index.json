@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:five-senses-self-soothe",
+  "slug": "five-senses-self-soothe",
+  "title": "Self-Soothe with the Five Senses",
+  "description": "When stressed, try soothing yourself through your senses—listen to music, smell something calming, hold something comforting, etc.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/five-senses-self-soothe/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/five-senses-self-soothe/index.json",
+  "growth_zone": {
+    "slug": "dbt",
+    "title": "DBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "dbt",
+        "title": "DBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "dbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

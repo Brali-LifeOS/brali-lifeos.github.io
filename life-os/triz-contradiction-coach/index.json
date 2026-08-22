@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:triz-contradiction-coach",
+  "slug": "triz-contradiction-coach",
+  "title": "Apply Contradiction Templates",
+  "description": "Use standard TRIZ contradiction templates like 'Technical Contradiction' and 'Physical Contradiction.' For example, 'Technical Contradiction: Increasing speed improves productivity but reduces quality.'",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/triz-contradiction-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/triz-contradiction-coach/index.json",
+  "growth_zone": {
+    "slug": "triz",
+    "title": "TRIZ"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "problem-solving",
+        "title": "Problem Solving"
+      },
+      {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving"
+      }
+    ],
+    "methods": [
+      {
+        "id": "triz",
+        "title": "TRIZ"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "triz"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+      },
+      {
+        "topic_id": "creative-problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

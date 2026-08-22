@@ -12,7 +12,7 @@
   "localization_status": "English is canonical today. Future localized releases should preserve stable protocol identity, provenance, and explicit language metadata.",
   "content_trust": {
     "states": ["reviewed", "practical", "pending-review", "restricted"],
-    "indexing_rule": "Only reviewed and practical Growth Library entries are included in the sitemap and Trusted Protocol Feed. Pending-review and restricted entries remain accessible with noindex,follow until the quality bar is met.",
+    "indexing_rule": "All public Growth Library entries are crawlable and included in the sitemap. Only reviewed and practical entries are included in the Trusted Protocol Feed and normal recommendations; pending-review and restricted entries stay visibly trust-labelled.",
     "evidence_index": "https://brali-lifeos.github.io/life-os/datasets/evidence.json",
     "review_queue": "https://brali-lifeos.github.io/life-os/datasets/review-queue.json",
     "indexing_policy": "https://brali-lifeos.github.io/life-os/datasets/indexing.json",

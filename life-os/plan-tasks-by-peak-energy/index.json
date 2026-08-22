@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:plan-tasks-by-peak-energy",
+  "slug": "plan-tasks-by-peak-energy",
+  "title": "Pay Attention to When You Feel Most Awake and Tackle the Hardest Tasks Then",
+  "description": "Pay attention to when you feel most awake and tackle the hardest tasks then. Do lighter work when you feel less energetic.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/plan-tasks-by-peak-energy/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/plan-tasks-by-peak-energy/index.json",
+  "growth_zone": {
+    "slug": "do-it",
+    "title": "Do It"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "task-initiation",
+        "title": "Task Initiation"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "do-it"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

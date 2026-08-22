@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:10-minute-stress-walk",
+  "slug": "10-minute-stress-walk",
+  "title": "Take a Short Walk When Stress Builds",
+  "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/index.json",
+  "growth_zone": {
+    "slug": "no-depression",
+    "title": "No Depression"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.who.int/news-room/questions-and-answers/item/stress/",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "mood-wellbeing",
+        "title": "Mood & Wellbeing"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "no-depression"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:10-minute-stress-walk",
+    "language": "en",
+    "slug": "10-minute-stress-walk",
+    "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+    "title": "Take a Short Walk When Stress Builds",
+    "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "mood-wellbeing",
+          "title": "Mood & Wellbeing"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "no-depression"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "no-depression",
+      "title": "No Depression"
+    },
+    "action": "When you notice stress building, consider taking a short walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. Walk at a comfortable pace in a safe place, then notice whether you feel any different before returning to the next task.",
+    "check_in": "Did I take the walk? How did my stress or tension feel before and after, and did the walk feel safe and useful enough to try again?",
+    "keywords": [
+      "No Depression",
+      "Life OS",
+      "Quick Stress-Relief Walk"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.who.int/news-room/questions-and-answers/item/stress/",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

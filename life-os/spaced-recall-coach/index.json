@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:spaced-recall-coach",
+  "slug": "spaced-recall-coach",
+  "title": "Separate Review Sessions Instead of Cramming",
+  "description": "For verbal material you need to recall later, divide repeated study across separate sessions instead of concentrating the same planned review into one sitting. Choose the gap in relation to the intended retention period, then check recall and adjust rather than following one universal schedule.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": true,
+    "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "memory",
+        "title": "Memory"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "memory",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/memory/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:spaced-recall-coach",
+    "language": "en",
+    "slug": "spaced-recall-coach",
+    "url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
+    "title": "Separate Review Sessions Instead of Cramming",
+    "description": "For verbal material you need to recall later, divide repeated study across separate sessions instead of concentrating the same planned review into one sitting. Choose the gap in relation to the intended retention period, then check recall and adjust rather than following one universal schedule.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "memory",
+          "title": "Memory"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
+    "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Use the Lag Effect for Learning"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

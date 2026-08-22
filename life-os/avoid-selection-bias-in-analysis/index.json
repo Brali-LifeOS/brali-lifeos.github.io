@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:avoid-selection-bias-in-analysis",
+  "slug": "avoid-selection-bias-in-analysis",
+  "title": "Write the Inclusion Rule Before Generalizing",
+  "description": "Record who or what entered an analysis, who was excluded and how the conclusion changes when missing cases are considered.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-selection-bias-in-analysis/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/avoid-selection-bias-in-analysis/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "data-literacy",
+        "title": "Data Literacy"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:avoid-selection-bias-in-analysis",
+    "language": "en",
+    "slug": "avoid-selection-bias-in-analysis",
+    "url": "https://brali-lifeos.github.io/life-os/avoid-selection-bias-in-analysis/",
+    "title": "Write the Inclusion Rule Before Generalizing",
+    "description": "Record who or what entered an analysis, who was excluded and how the conclusion changes when missing cases are considered.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "State the question and population you want to understand. Record how cases entered the analysis, which cases were excluded or missing and whether selection depends on the outcome. Compare the conclusion with a broader view or label it as applying only to the selected group. Write what additional data would change the conclusion.",
+    "check_in": "Who was included, who was missing, and is my conclusion limited to the selected group or supported beyond it?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Spot Conditional Pitfalls"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

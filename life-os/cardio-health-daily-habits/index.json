@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:cardio-health-daily-habits",
+  "slug": "cardio-health-daily-habits",
+  "title": "Build Toward a Weekly Movement Baseline",
+  "description": "Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/index.json",
+  "growth_zone": {
+    "slug": "cardio-doc",
+    "title": "Cardio Doc"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cardiovascular-health",
+        "title": "Cardiovascular Health"
+      },
+      {
+        "id": "movement",
+        "title": "Movement"
+      },
+      {
+        "id": "health-basics",
+        "title": "Everyday Health Basics"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "cardio-doc"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "movement",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/movement/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:cardio-health-daily-habits",
+    "language": "en",
+    "slug": "cardio-health-daily-habits",
+    "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
+    "title": "Build Toward a Weekly Movement Baseline",
+    "description": "Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cardiovascular-health",
+          "title": "Cardiovascular Health"
+        },
+        {
+          "id": "movement",
+          "title": "Movement"
+        },
+        {
+          "id": "health-basics",
+          "title": "Everyday Health Basics"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "cardio-doc"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "cardio-doc",
+      "title": "Cardio Doc"
+    },
+    "action": "Look at the coming week, mark the activity you already do, then add realistic walking, moderate or vigorous activity, and strength sessions where they fit. Build gradually rather than treating the guideline as a one-day target.",
+    "check_in": "Does the plan fit your current ability, schedule and any guidance from your health professional? Adjust it rather than forcing a target that is inappropriate for you.",
+    "keywords": [
+      "Cardio Doc",
+      "Life OS",
+      "Prioritize Health"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

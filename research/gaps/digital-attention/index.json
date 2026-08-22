@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "topic_id": "digital-attention",
+  "topic_title": "Digital Attention",
+  "domain_id": "environment-digital",
+  "domain_title": "Environment & Digital Life",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which device or notification changes reduce distraction without creating rebound use or unnecessary friction?",
+  "evidence_target": "Prefer experiments and systematic reviews on notifications, smartphone interruption, and digital self-control.",
+  "guardrail": "Do not claim that one blocker or grayscale setting universally restores attention.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/digital-attention/",
+  "research_queries": [
+    {
+      "id": "focus-attention-switching",
+      "query": "task switching interruptions sustained attention workplace systematic review",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [
+    {
+      "slug": "30-min-eye-break-tracker",
+      "title": "Screen Break Checkpoint",
+      "url": "https://brali-lifeos.github.io/life-os/30-min-eye-break-tracker/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "digital-attention",
+    "title": "Digital Attention",
+    "domain_id": "environment-digital",
+    "status": "growth-gap",
+    "entries": 1,
+    "research_candidates": 0
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:family-check-in-coach",
+  "slug": "family-check-in-coach",
+  "title": "Have Check-In Chats",
+  "description": "Regularly check in with family members about how they’re feeling and what they need.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/family-check-in-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/family-check-in-coach/index.json",
+  "growth_zone": {
+    "slug": "relationships",
+    "title": "Relationships"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "relationships",
+        "title": "Relationships"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "relationships"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

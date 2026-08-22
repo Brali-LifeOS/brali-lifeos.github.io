@@ -1,0 +1,724 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-22",
+  "name": "Brali Evidence Ledger",
+  "description": "Reviewed source-by-source decisions showing what evidence supports, what it does not establish, its limitations, and how Brali changes guidance in response.",
+  "methodology_url": "https://brali-lifeos.github.io/methodology/",
+  "evidence_dataset_url": "https://brali-lifeos.github.io/life-os/datasets/evidence-decisions.json",
+  "count": 14,
+  "decision_counts": {
+    "challenge-existing": 4,
+    "support-existing": 4,
+    "propose-protocol": 4,
+    "watch": 2
+  },
+  "unsupported_or_overstated_claim_count": 89,
+  "entries": [
+    {
+      "schema_version": 1,
+      "id": "communication-coaching-reflective-statements-boundary-2023",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/",
+      "json_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/index.json",
+      "decision": "challenge-existing",
+      "decision_label": "Challenge existing claim",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+        "url": "https://doi.org/10.1001/jamainternmed.2023.0629",
+        "type": "randomized-clinician-coaching-trial",
+        "doi": "10.1001/jamainternmed.2023.0629",
+        "citation_text": "Pollak KI, Olsen MK, Yang H, et al. JAMA Internal Medicine. 2023;183(6):544-553.",
+        "study_design": "Two-arm randomized clinical trial of forty cardiologists. The intervention combined three individual coaching sessions, feedback on recorded encounters and five communication behaviors. Different patient samples were recorded before and after the intervention; 230 post-intervention encounters were included in communication-behavior analyses.",
+        "population": "Forty cardiologists, mostly White men in an academic medical center or affiliated clinics, and 240 post-intervention adult cardiology patients. Nearly one-third of cardiologists reported previous communication training.",
+        "intervention_or_exposure": "A multicomponent WISER coaching package: sit and make eye contact, ask open-ended questions, make reflective statements or paraphrases, use empathic statements, and invite patient questions. Coaching included didactic instruction and tailored feedback on recorded encounters.",
+        "outcomes": [
+          "Coded use of reflective statements and open-ended questions",
+          "Coded empathic statements and responses to empathic opportunities",
+          "Use of the question-eliciting phrase 'What questions do you have?'",
+          "Patient-reported communication, trust and empathy measures",
+          "Cardiologist burnout and post-training process ratings"
+        ]
+      },
+      "supported_claim": "A multicomponent individual coaching program changed some observed cardiologist communication behaviors, particularly empathic responses and eliciting patient questions. Reflective statements and open-ended questions were explicit trained components, but the intervention did not significantly increase either behavior relative to control. This source is therefore a boundary against claiming that training the Brali sequence by itself has demonstrated communication or patient-outcome effects.",
+      "unsupported_or_overstated_claims": [
+        "The coaching trial shows that paraphrasing or reflective statements alone improved.",
+        "The Brali sequence of paraphrase, correction and one open question is equivalent to the five-component WISER intervention.",
+        "Active listening improved patient understanding, trust, satisfaction or clinical outcomes in this trial.",
+        "Open-ended questions increased because of the coaching intervention.",
+        "A single conversational attempt is equivalent to three individual coaching sessions with tailored feedback.",
+        "The findings generalize directly from cardiology encounters to ordinary work, family, conflict or digital conversations.",
+        "Patient self-reports confirmed an effect; ceiling effects prevented the planned arm comparison.",
+        "Positive clinician opinions about the coaching demonstrate objective effectiveness of each component."
+      ],
+      "limitations": [
+        "Five communication skills were trained together, so any observed effect cannot be attributed to paraphrasing or open questions independently.",
+        "There was no significant intervention-versus-control difference in reflective statements or open-ended questions.",
+        "Patient-perceived communication and trust effects could not be assessed because scores had substantial ceiling effects.",
+        "The sample included mostly White male cardiologists in an academic setting and many had prior communication training, limiting generalizability.",
+        "Pre- and post-intervention patient samples were different rather than repeated measures on the same patients.",
+        "The intervention required repeated one-to-one coaching and feedback, so it does not test a self-guided protocol used once.",
+        "Clinical and longer-term outcomes were not established."
+      ],
+      "target_hack_ids": [
+        "active-listening-exercises"
+      ],
+      "target_protocol_ids": [
+        "brali:active-listening-exercises"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial outcome: use this trial as an explicit challenge boundary. It prevents converting a broad communication-coaching result into evidence for Brali's specific sequence. Combined with the small paraphrasing experiment, the defensible status remains practical with visible source boundaries, not reviewed effectiveness."
+    },
+    {
+      "schema_version": 1,
+      "id": "distributed-practice-verbal-recall-boundary-2006",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/distributed-practice-verbal-recall-boundary-2006/",
+      "json_url": "https://brali-lifeos.github.io/evidence/distributed-practice-verbal-recall-boundary-2006/index.json",
+      "decision": "support-existing",
+      "decision_label": "Supports existing guidance",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+        "url": "https://doi.org/10.1037/0033-2909.132.3.354",
+        "type": "meta-analysis",
+        "doi": "10.1037/0033-2909.132.3.354",
+        "citation_text": "Cepeda NJ, Pashler H, Vul E, Wixted JT, Rohrer D. Psychological Bulletin. 2006;132(3):354-380.",
+        "study_design": "Quantitative synthesis of distributed-practice experiments in verbal recall. From 427 reviewed articles, 317 experiments in 184 articles met the inclusion criteria, providing 958 accuracy values, 839 distributed-practice assessments and 169 effect sizes. Analyses compared massed with spaced study and examined how inter-study interval, retention interval, relearning procedures and fixed or expanding schedules affected final recall.",
+        "population": "Participants ranged from children to older adults, although the evidence base was dominated by young adults. Clinical populations were excluded. Included tasks involved verbal material assessed by recall, such as paired associates, lists, spelling, foreign-language items and paragraph-like verbal information; recognition and frequency-judgment outcomes were excluded.",
+        "intervention_or_exposure": "Repeated study episodes of the same verbal material separated by an inter-study interval, compared with massed presentations or with shorter versus longer spacing. Some studies used two episodes and others used fixed, expanding or contracting schedules across more episodes. Retention intervals ranged from very short delays to months or longer.",
+        "outcomes": [
+          "Final-test verbal recall after massed versus spaced study",
+          "Final-test recall under shorter versus longer inter-study intervals",
+          "Joint relationship between inter-study interval and intended retention interval",
+          "Recall under fixed versus expanding study intervals",
+          "Differences associated with task, age, experimental design and relearning procedure"
+        ]
+      },
+      "supported_claim": "For verbal material measured by later recall, separating repeated study episodes by a meaningful interval generally supports better retention than concentrating the same material into massed study. The spacing associated with the best later recall tended to increase as the intended retention interval increased. For material that must be retained over months or years, the reviewed evidence supports distributing study across days or longer rather than completing all review in one sitting or one day. These findings justify the rewritten Brali action only within a verbal-recall boundary and without one universal schedule.",
+      "unsupported_or_overstated_claims": [
+        "One fixed daily, weekly or software-generated interval is optimal for all material and retention targets.",
+        "Twenty minutes every day is superior to two hours in one sitting by a specific ratio.",
+        "An 85 to 90 percent retrieval-success threshold identifies the correct next interval.",
+        "Expanding intervals are reliably superior to fixed intervals; the review described the available evidence as limited, variable and insufficient for that conclusion.",
+        "Longer spacing is always better; the review found that intervals can become too long and that the useful interval depends on the retention target.",
+        "The source identifies testing, feedback or deliberate recall attempts as the causal mechanism of the spacing effect.",
+        "The source establishes consolidation windows, neuroplasticity, reconsolidation or another biological mechanism for the public protocol.",
+        "The result extends beyond later verbal recall to complex skills, problem solving, creative work, workplace performance or broader transfer outcomes.",
+        "A spaced schedule guarantees durable memory for an individual learner.",
+        "Children's long-term retention over months or years is established with the same confidence as the young-adult evidence.",
+        "Daily streaks, adherence scores, AI coaching or app reminders are evidence-supported components of distributed practice."
+      ],
+      "limitations": [
+        "The synthesis was restricted to verbal memory tasks measured by recall and deliberately excluded recognition, frequency judgments and the heterogeneous skill-learning literature.",
+        "The evidence base was dominated by young adults; the authors reported very little middle-aged and older-adult evidence and insufficient long-term child data for confident generalization.",
+        "Many studies did not report the variance data needed for effect-size calculation, so several analyses relied on accuracy differences and included fewer effect-size estimates.",
+        "Published null findings may be underrepresented because of the file-drawer problem.",
+        "Study materials, presentation schedules, retention intervals and experimental procedures varied substantially.",
+        "Some historical studies confounded longer spacing with more relearning trials; the review examined this problem but could not remove every design limitation from the literature.",
+        "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
+        "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
+        "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
+        "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
+        "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
+      ],
+      "target_hack_ids": [
+        "spaced-recall-coach"
+      ],
+      "target_protocol_ids": [
+        "brali:spaced-recall-coach"
+      ],
+      "risk_flags": [],
+      "notes": "Editorial outcome: promote only the fully rewritten protocol to reviewed. The public action now asks the user to choose verbal material, state a retention target, separate repeated study sessions, use longer gaps for longer retention targets, check final recall and adjust. It explicitly rejects one universal interval, an expanding-schedule guarantee and transfer to complex skills. Any future numerical schedule, success-threshold or mechanism claim requires a separate direct review."
+    },
+    {
+      "schema_version": 1,
+      "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/",
+      "json_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/index.json",
+      "decision": "support-existing",
+      "decision_label": "Supports existing guidance",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+        "url": "https://doi.org/10.3389/fpsyg.2012.00482",
+        "type": "within-participant-experiment",
+        "doi": "10.3389/fpsyg.2012.00482",
+        "citation_text": "Seehausen M, Kazzer P, Bajbouj M, Prehn K. Frontiers in Psychology. 2012;3:482.",
+        "study_design": "Within-participant experiment in which one trained interviewer asked ten standardized open questions about a real-life social conflict and alternated empathic paraphrasing with silent note-taking. Immediate self-reported emotional valence, voice measures and psychophysiological measures were compared across conditions.",
+        "population": "Twenty healthy native German-speaking adults, ten women, mean age 27 years, discussing an ongoing or recent conflict that did not involve physical or psychological violence. Some physiological and voice records were lost, leaving 16 or 17 participants for those analyses.",
+        "intervention_or_exposure": "The interviewer briefly summarized the facts, perceived feelings and what seemed important to the participant, then asked whether that understanding was correct. The comparison condition was silent note-taking. The same highly trained interviewer delivered all sessions.",
+        "outcomes": [
+          "Immediate self-reported emotional valence after paraphrasing versus note-taking",
+          "Voice intensity and speech measures following each condition",
+          "Heart rate, skin conductance and blood-volume-pulse measures during each condition"
+        ]
+      },
+      "supported_claim": "In this small nonclinical social-conflict experiment, a trained interviewer used a behavior closely matching Brali's core correction loop: summarize the speaker's facts, feelings and priorities, then ask whether the understanding is accurate. Participants reported less negative immediate emotion after paraphrasing than after silent note-taking. This supports retaining paraphrase plus explicit correction as a bounded practice behavior, with the studied outcome and setting stated precisely.",
+      "unsupported_or_overstated_claims": [
+        "Paraphrasing improves understanding accuracy or prevents misunderstandings; the study asked for accuracy confirmation but did not measure comprehension accuracy as an outcome.",
+        "The protocol resolves conflict, improves relationships, increases trust or produces better decisions.",
+        "One open question after a paraphrase has an independent effect; open questions were part of the interview procedure and were not isolated.",
+        "The emotional effect is durable beyond the immediate interview period.",
+        "Any untrained listener will reproduce the effect in ordinary work, family or online conversations.",
+        "Paraphrasing is calming in a simple physiological sense; several autonomic measures showed higher activation during paraphrasing.",
+        "A wrong paraphrase is always beneficial or harmless; the study used one experienced mediator and excluded violent conflicts.",
+        "The study validates counting summaries, eye contact, nods, fixed timing or a universal conversational script."
+      ],
+      "limitations": [
+        "Only twenty participants contributed self-report data, making results vulnerable to individual variation and unsuitable for broad population estimates.",
+        "One female interviewer with approximately 190 hours of conflict-resolution training delivered every paraphrase, so listener skill and delivery cannot be separated from the technique.",
+        "The control condition was silent note-taking rather than another spoken response; differences may partly reflect receiving a verbal response rather than paraphrasing specifically.",
+        "Participants may have interpreted note-taking as judgment despite the study explanation, potentially biasing the comparison.",
+        "Only immediate reactions were measured; the authors explicitly described longer-term emotion resolution as speculative.",
+        "Conflicts involving physical or psychological violence were excluded, so the result must not be applied as ordinary advice in unsafe or abusive situations.",
+        "The study assessed emotional valence and arousal, not whether the listener understood more accurately or whether the conflict outcome improved."
+      ],
+      "target_hack_ids": [
+        "active-listening-exercises"
+      ],
+      "target_protocol_ids": [
+        "brali:active-listening-exercises"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "notes": "Editorial outcome: keep the public protocol practical rather than promote it to reviewed on this study alone. The source supports the exact paraphrase-plus-accuracy-check behavior in a narrow setting, but the public protocol targets understanding and correction, whereas the study's measured outcome was immediate emotional valence. Preserve the correction invitation, avoid mind-reading and emotion-as-fact wording, and keep unsafe conflict contexts outside routine use."
+    },
+    {
+      "schema_version": 1,
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/",
+      "json_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/index.json",
+      "decision": "support-existing",
+      "decision_label": "Supports existing guidance",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+        "type": "systematic-review-meta-analysis",
+        "doi": "10.1371/journal.pone.0272460",
+        "citation_text": "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. PLOS ONE. 2022;17(8):e0272460.",
+        "study_design": "Systematic review and random-effects meta-analysis of experimental and quasi-experimental studies comparing work-task micro-breaks of 10 minutes or less with control conditions. Nineteen publications contributed 22 independent study samples with 2,335 participants; most studies involved students or employees and most were conducted in laboratory or workplace settings.",
+        "population": "Healthy students and employees engaged in depleting work or work-like tasks. The included samples varied in setting, task demands and break activity; the review did not establish one universal workplace or individual profile.",
+        "intervention_or_exposure": "Short task interruptions of no more than 10 minutes, with varied break content and duration, compared with continued work or another break/control condition. This is related to the break step in Brali's Pomodoro-style protocol but does not test the full 25-minute-work/5-minute-break sequence.",
+        "outcomes": [
+          "Vigor after a micro-break",
+          "Fatigue after a micro-break",
+          "Task performance after a micro-break"
+        ]
+      },
+      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "unsupported_or_overstated_claims": [
+        "A 5-minute break is an evidence-based optimal duration.",
+        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
+        "Pomodoro reliably improves productivity or task performance.",
+        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
+        "Every short break reduces fatigue or increases vigor for every individual.",
+        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
+        "The review establishes a universal break schedule for cognitively demanding work.",
+        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+      ],
+      "limitations": [
+        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+      ],
+      "target_hack_ids": [
+        "25-minute-pomodoro-focus-sprints"
+      ],
+      "target_protocol_ids": [
+        "brali:25-minute-pomodoro-focus-sprints"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial outcome: keep `25-minute-pomodoro-focus-sprints` practical. Its current wording already treats 25 minutes as a conventional starting setting and the break as an adjustable task boundary. Do not add a general performance claim or present five minutes as an optimal recovery dose."
+    },
+    {
+      "schema_version": 1,
+      "id": "procrastination-treatment-exact-protocol-boundary-2018",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/procrastination-treatment-exact-protocol-boundary-2018/",
+      "json_url": "https://brali-lifeos.github.io/evidence/procrastination-treatment-exact-protocol-boundary-2018/index.json",
+      "decision": "challenge-existing",
+      "decision_label": "Challenge existing claim",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+        "url": "https://doi.org/10.3389/fpsyg.2018.01588",
+        "type": "systematic-review-meta-analysis",
+        "doi": "10.3389/fpsyg.2018.01588",
+        "citation_text": "Rozental A, Bennett S, Forsström D, Ebert DD, Shafran R, Andersson G, Carlbring P. Frontiers in Psychology. 2018;9:1588.",
+        "study_design": "Pre-registered systematic review and random-effects meta-analysis of randomized controlled trials comparing psychological interventions specifically targeting procrastination with inactive comparators. Twelve studies, 21 comparisons and 718 participants were included in the quantitative synthesis; the primary endpoint was self-reported procrastination at post-treatment.",
+        "population": "Self-referred participants drawn from general-population, high-school and undergraduate samples in the included studies. Individual studies were generally small, with sample sizes reported by the review as ranging from 6 to 50 participants.",
+        "intervention_or_exposure": "A heterogeneous set of psychological treatments specifically targeting procrastination, including cognitive-behavioral, emotion-focused, self-control, goal-setting and other approaches delivered individually, in groups, by class, online or through self-help over durations ranging from brief sessions to ten weeks.",
+        "outcomes": [
+          "Self-reported procrastination at post-treatment compared with an inactive control",
+          "Secondary self-report outcomes where available, which were too heterogeneous for a pooled estimate"
+        ]
+      },
+      "supported_claim": "Across the reviewed randomized comparisons, psychological treatments targeting procrastination had a small average post-treatment benefit on self-reported procrastination relative to inactive controls, but effects varied substantially between studies and the evidence base had important quality limitations. This supports treating task initiation as a legitimate intervention target, not claiming that one brief Brali routine or one component has been validated.",
+      "unsupported_or_overstated_claims": [
+        "A five-minute start is an evidence-based or optimal duration for overcoming procrastination.",
+        "Completing one visible first action by itself reduces procrastination, improves productivity or reliably creates momentum.",
+        "Implementation intentions, sub-goals, goal-setting, time management or behavioral activation were isolated by this review as the active causal component.",
+        "The broader implementation-intention literature on goal attainment directly proves effectiveness for procrastination-specific task initiation.",
+        "The cognitive-behavioral subgroup estimate validates this Brali protocol or any other single self-help exercise.",
+        "A short timer is equivalent to the multi-component psychological treatments included in the review.",
+        "The intervention effect generalizes equally to every person, task type, workplace, educational setting or clinical presentation.",
+        "Beginning briefly guarantees continuation, completion, lower distress or better performance."
+      ],
+      "limitations": [
+        "The pooled overall effect was small and showed significant between-study heterogeneity, so the average should not be treated as one stable effect across interventions or populations.",
+        "The review identified some risk of bias in every included study; blinding-related domains were frequently rated high risk.",
+        "Primary procrastination measures varied, and several assessed academic rather than general procrastination.",
+        "The included studies used different interventions, delivery formats, durations and participant populations, preventing component-level attribution.",
+        "The review analyzed post-treatment outcomes because too few studies reported follow-up data, limiting conclusions about durability.",
+        "Secondary outcomes were too heterogeneous to aggregate.",
+        "The stronger cognitive-behavioral subgroup estimate depended on excluding one small outlying study and represented only three of the four cognitive-behavioral studies.",
+        "The source did not test the exact five-minute interval, the exact Brali action sequence or the protocol's observable-review checkpoint."
+      ],
+      "target_hack_ids": [
+        "stop-procrastination-fast-5-minute-reset"
+      ],
+      "target_protocol_ids": [
+        "brali:stop-procrastination-fast-5-minute-reset"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "notes": "Editorial outcome: keep the rewritten protocol practical and bounded, but do not promote it to reviewed from this source. Preserve explicit wording that five minutes is a convenient reversible default rather than an optimal dose, that stopping to clarify or remove a blocker is valid, and that the routine is not a treatment for clinically significant procrastination or related distress. Future promotion would require evidence that directly evaluates a sufficiently similar low-intensity first-action protocol and its outcome boundary."
+    },
+    {
+      "schema_version": 1,
+      "id": "testing-versus-restudy-retention-boundary-2014",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/testing-versus-restudy-retention-boundary-2014/",
+      "json_url": "https://brali-lifeos.github.io/evidence/testing-versus-restudy-retention-boundary-2014/index.json",
+      "decision": "support-existing",
+      "decision_label": "Supports existing guidance",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+        "url": "https://doi.org/10.1037/a0037559",
+        "type": "meta-analysis",
+        "doi": "10.1037/a0037559",
+        "citation_text": "Rowland CA. Psychological Bulletin. 2014;140(6):1432-1463.",
+        "study_design": "Random-effects meta-analysis of testing-effect studies using a conceptually common contrast between an initial memory test and an equivalent-duration restudy control, followed by a later retention assessment. The review also analyzed methodological and theoretical moderators rather than assuming one invariant testing effect.",
+        "population": "Participants from the experimental testing-effect literature included by the review, with many studies using college samples and varied learning materials, testing formats and retention intervals. The source does not justify treating the pooled estimate as one person-level effect or as a universal educational dose.",
+        "intervention_or_exposure": "An initial retrieval test over previously studied information compared with additional restudy of that information, followed by a later memory assessment. This maps to Brali's retrieve-before-looking step more directly than to its separate application-practice step.",
+        "outcomes": [
+          "Later retention of previously learned information after testing versus restudy",
+          "Moderator patterns across initial test format, final test format, retention interval, feedback, design and other study characteristics"
+        ]
+      },
+      "supported_claim": "Across the included testing-versus-restudy literature, retrieval testing produced better later retention on average than equivalent-duration restudy. The pooled random-effects estimate was positive, but effects varied substantially across studies and testing conditions. This supports Brali's bounded recommendation to retrieve information from memory, check the answer, and use that loop when retention is the target.",
+      "unsupported_or_overstated_claims": [
+        "Active recall improves every kind of learning outcome.",
+        "Better retention automatically produces better application, transfer, problem solving or procedural performance.",
+        "One pooled testing-effect estimate describes one invariant mechanism across all retrieval-practice designs.",
+        "A specific number of questions, repetitions, minutes or percentage target is evidence-based from this meta-analysis.",
+        "Retrieval practice always outperforms restudy for every learner, item, delay and test format.",
+        "Recognition testing, cued recall and free recall produce interchangeable effects.",
+        "The meta-analysis establishes a single neurological or cognitive mechanism that Brali should present as the explanation for why retrieval works.",
+        "A memory benefit demonstrated against restudy validates Brali's protocol for skills whose real criterion is performance or application."
+      ],
+      "limitations": [
+        "Between-study heterogeneity in the primary analysis was very high, so the pooled mean does not describe one uniform effect across designs or contexts.",
+        "The review deliberately restricted the quantitative synthesis to testing-versus-equivalent-restudy contrasts and does not represent every retrieval-practice paradigm.",
+        "Testing benefits varied with methodological factors including initial test format, retention interval and feedback.",
+        "Many contributing studies used controlled experimental learning tasks and college samples, which limits direct extrapolation to every real-world learning context.",
+        "The review's main outcome is retention; it does not establish that remembered information can be applied correctly in a novel task or procedure.",
+        "Theoretical findings did not provide one complete cohesive mechanism for all testing phenomena, so Brali should avoid mechanism decoration.",
+        "A positive average effect does not imply that every individual effect was positive; the reviewed distribution included negative and null estimates."
+      ],
+      "target_hack_ids": [
+        "active-recall-test-yourself"
+      ],
+      "target_protocol_ids": [
+        "brali:active-recall-test-yourself"
+      ],
+      "risk_flags": [],
+      "notes": "Editorial outcome: support the existing reviewed retention boundary without broadening it. Keep the public protocol's explicit split between retention and application, its retrieval-plus-checking loop, and its refusal to prescribe a universal duration or target. The existing 2026 challenge evidence remains important because the Rowland review does not erase distinctions between direct retention, later learning and actual rule or skill application."
+    },
+    {
+      "schema_version": 1,
+      "id": "writing-feedback-level-match-2024",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/",
+      "json_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/index.json",
+      "decision": "propose-protocol",
+      "decision_label": "Protocol candidate",
+      "reviewed_at": "2026-08-21",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+        "url": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+        "type": "meta-analysis",
+        "doi": "10.1016/j.learninstruc.2024.101961",
+        "citation_text": "Scherer S, Graham S, Busse V. Learning and Instruction. 2024;93:101961.",
+        "study_design": "Meta-analysis of 95 papers meeting experimental or quasi-experimental inclusion criteria, comprising 200 treatment/control comparisons and 253 effect sizes for surface- and deep-level writing outcomes.",
+        "population": "Secondary-school and university or college students represented in L1, L2, and foreign-language writing studies across the included literature.",
+        "intervention_or_exposure": "Writing feedback targeting surface-level features, deep-level features, or both, delivered through sources including instructors, peers, algorithm-based systems, and self-feedback depending on the included comparison.",
+        "outcomes": [
+          "Surface-level writing outcomes such as grammar and spelling",
+          "Deep-level writing outcomes such as writing quality, ideation, organization, genre elements, composition length, and vocabulary"
+        ]
+      },
+      "supported_claim": "In the reviewed secondary-school and university writing literature, feedback effects differed by the level of writing outcome: surface-level feedback improved surface-level outcomes, deep-level feedback improved deep-level outcomes, and combined surface-and-deep feedback could improve both. This supports matching a feedback request to the revision outcome rather than treating all feedback as interchangeable.",
+      "unsupported_or_overstated_claims": [
+        "More feedback is always better for writing.",
+        "Deep feedback should always precede surface feedback.",
+        "Peer, instructor, algorithm-based, or self-feedback is universally the best source.",
+        "The meta-analytic effects generalize unchanged to professional, technical, marketing, fiction, or other creative writing outside the reviewed educational contexts.",
+        "A specific number of feedback rounds, timing interval, or review duration is optimal.",
+        "Receiving feedback guarantees improvement for an individual writer."
+      ],
+      "limitations": [
+        "The evidence concerns educational writing by secondary-school and university or college learners rather than all writing contexts.",
+        "Effects varied across L1, L2, and foreign-language learners, so a single population-wide estimate can conceal important differences.",
+        "The included papers used experimental or quasi-experimental designs but varied in feedback treatment, source, duration, outcome measurement, and instructional context.",
+        "Only about one-third of the treatment/control comparisons examined maintenance effects, limiting conclusions about durability.",
+        "Many studies did not report enough learner-level variables, and evidence was comparatively scarce for some learner groups and treatment-outcome combinations.",
+        "Meta-analytic categories for surface, deep, combined, and feedback source are useful abstractions but do not establish one universally optimal revision workflow."
+      ],
+      "target_hack_ids": [
+        "ask-a-peer-to-proofread"
+      ],
+      "target_protocol_ids": [
+        "brali:ask-a-peer-to-proofread"
+      ],
+      "risk_flags": [],
+      "notes": "Replace the inherited generic peer-proofreading page with a conservative educational-writing workflow: name the current revision level, request feedback at that level, revise against that target, and use a separate pass when another level also matters. Keep the evidence boundary visible and do not convert subgroup findings into a universal ranking of feedback agents."
+    },
+    {
+      "schema_version": 1,
+      "id": "apology-repair-2021",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/apology-repair-2021/",
+      "json_url": "https://brali-lifeos.github.io/evidence/apology-repair-2021/index.json",
+      "decision": "propose-protocol",
+      "decision_label": "Protocol candidate",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Experimental evidence that apologies promote forgiveness by communicating relationship value",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34162912/",
+        "type": "randomized-experiment",
+        "doi": "10.1038/s41598-021-92373-y",
+        "citation_text": "Forster DE, Billingsley J, Burnette JL, et al. Scientific Reports. 2021;11:13107.",
+        "study_design": "Controlled 2 × 2 double-randomization experiments manipulating apology and relationship-value information to test causal pathways to forgiveness.",
+        "population": "Human participants in controlled interpersonal-transgression scenarios used in the published experiments.",
+        "intervention_or_exposure": "Receiving an apology versus no apology, crossed with manipulated relationship-value information.",
+        "outcomes": [
+          "Forgiveness",
+          "Perceived relationship value"
+        ]
+      },
+      "supported_claim": "In the controlled experiments, apologies promoted forgiveness and operated through a causal pathway shared with perceived relationship value. This supports apology as one potentially useful repair signal after a workable interpersonal transgression.",
+      "unsupported_or_overstated_claims": [
+        "An apology guarantees forgiveness, reconciliation, or restored trust.",
+        "The harmed person should forgive, accept the apology, or resume the relationship.",
+        "One fixed apology script, cooling-off duration, or delivery deadline is scientifically established.",
+        "Apology is an appropriate repair strategy for abuse, coercion, threats, stalking, or other unsafe situations.",
+        "The study proves that apology alone resolves complex or repeated relationship conflict."
+      ],
+      "limitations": [
+        "Controlled experimental transgression paradigms do not capture every feature of real-world repeated or high-stakes conflict.",
+        "Forgiveness is only one outcome and is not equivalent to trust, reconciliation, safety, or durable behavior change.",
+        "The effect of apology depends on context, relationship value and the nature of the transgression.",
+        "The study does not validate the specific wording or step sequence used in Brali's public repair protocol."
+      ],
+      "target_hack_ids": [
+        "relationship-repair-coach"
+      ],
+      "target_protocol_ids": [
+        "brali:relationship-repair-coach"
+      ],
+      "risk_flags": [],
+      "notes": "Use apology as a bounded repair action: own the behavior, avoid conditional language, offer a concrete corrective step, invite the other person's perspective, and do not demand forgiveness. Safety and boundaries take precedence over repair."
+    },
+    {
+      "schema_version": 1,
+      "id": "sleep-opportunity-extension-2021",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/",
+      "json_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/index.json",
+      "decision": "propose-protocol",
+      "decision_label": "Protocol candidate",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+        "type": "meta-analysis",
+        "doi": "10.1016/j.smrv.2021.101532",
+        "citation_text": "Baron KG, Duffecy J, Reutrakul S, et al. Sleep Medicine Reviews. 2021;60:101532.",
+        "study_design": "Systematic review and meta-analysis of 42 behavioral sleep-extension studies, including controlled two-arm and one-arm designs.",
+        "population": "Participants aged 12 years and older across adult, college-student, adolescent and other samples in 14 countries.",
+        "intervention_or_exposure": "Behavioral interventions intended to increase sleep duration, ranging from direct sleep-schedule changes to coaching and educational approaches.",
+        "outcomes": [
+          "Sleep duration"
+        ]
+      },
+      "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+      "unsupported_or_overstated_claims": [
+        "A self-tracking experiment can identify one scientifically optimal personal sleep duration.",
+        "A fixed bedtime or wake-time tolerance is proven to improve health or cognition for everyone.",
+        "A 21-day experiment, 30-minute duration bins, or a particular alertness score is evidence-based.",
+        "Sleep extension by itself is a treatment for chronic insomnia or another sleep disorder.",
+        "Consumer sleep-stage estimates are required to decide how much sleep a person needs."
+      ],
+      "limitations": [
+        "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+        "Populations, intervention components, duration and measurement methods varied substantially.",
+        "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+        "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+      ],
+      "target_hack_ids": [
+        "ideal-sleep-hours-finder"
+      ],
+      "target_protocol_ids": [
+        "brali:ideal-sleep-hours-finder"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Promote only as a conservative protocol for protecting adequate sleep opportunity and observing trends. Pair public adult-duration wording with the AASM/SRS consensus; do not revive the inherited optimization experiment or infer causality from the separate sleep-variability observational review."
+    },
+    {
+      "schema_version": 1,
+      "id": "movement-breaks-cognition-2026",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/movement-breaks-cognition-2026/",
+      "json_url": "https://brali-lifeos.github.io/evidence/movement-breaks-cognition-2026/index.json",
+      "decision": "watch",
+      "decision_label": "Watch, do not prescribe",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+        "url": "https://link.springer.com/article/10.1186/s12966-026-01953-6",
+        "type": "meta-analysis",
+        "doi": "10.1186/s12966-026-01953-6",
+        "citation_text": "Zhuang M, Yin M, Liu Z, et al. International Journal of Behavioral Nutrition and Physical Activity. Published 13 July 2026.",
+        "study_design": "Systematic review and three-level random-effects meta-analysis of 21 randomized crossover trials, with cluster-robust variance estimation and GRADE certainty assessment.",
+        "population": "433 participants across the included randomized crossover trials; exploratory subgroup findings varied by age and weight status.",
+        "intervention_or_exposure": "Brief standing or physical-activity interruptions during periods of prolonged sitting, compared with uninterrupted prolonged sitting.",
+        "outcomes": [
+          "Executive function",
+          "Memory",
+          "Global cognition",
+          "Information processing",
+          "Attention"
+        ]
+      },
+      "supported_claim": "Across the included trials, interruptions to prolonged sitting were associated with small acute improvements in executive function and memory on average. Evidence for global cognition, information processing, and attention was insufficient or inconsistent, and certainty was low for most outcomes.",
+      "unsupported_or_overstated_claims": [
+        "A specific break frequency is proven to optimize cognition.",
+        "A specific break duration or intensity should be prescribed for everyone.",
+        "Standing or movement breaks reliably improve attention.",
+        "The exploratory moderator findings establish that one protocol is superior.",
+        "Brief breaks are a treatment for cognitive impairment."
+      ],
+      "limitations": [
+        "Only 21 randomized crossover trials with 433 participants were included.",
+        "GRADE certainty was low for executive function, memory, information processing, and attention and very low for global cognition.",
+        "No clear improvement was found for global cognition, information processing, or attention.",
+        "Moderator and protocol-parameter findings were exploratory and the authors explicitly state they are insufficient for definitive prescriptive recommendations.",
+        "The outcomes were acute cognitive effects, so the source does not establish long-term cognitive benefit from a break routine."
+      ],
+      "target_hack_ids": [],
+      "target_protocol_ids": [],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Keep as watch. Brali may recommend breaking up prolonged sitting for broader practical/health reasons only when supported by appropriate sources, but this paper does not justify a magic cognitive break interval or a cognition-optimization protocol."
+    },
+    {
+      "schema_version": 1,
+      "id": "retrieval-procedural-application-2026",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/",
+      "json_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/index.json",
+      "decision": "challenge-existing",
+      "decision_label": "Challenge existing claim",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+        "type": "primary-study",
+        "doi": "10.1016/j.learninstruc.2026.102377",
+        "citation_text": "Ophuis-Cox FHA, Catrysse L, Camp G. Learning and Instruction. 2026;104:102377.",
+        "study_design": "Cluster-randomized classroom experiment comparing worked examples with worked examples plus retrieval practice, with outcomes tested after one week.",
+        "population": "105 fourth-grade pupils from regular primary schools in the Netherlands, mean age 9.4 years.",
+        "intervention_or_exposure": "Dutch verb-spelling instruction using worked examples alone or worked examples combined with retrieval practice across practice sessions.",
+        "outcomes": [
+          "Long-term retention of verb-spelling rules",
+          "Correct application of verb-spelling rules"
+        ]
+      },
+      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "unsupported_or_overstated_claims": [
+        "Remembering a rule better means a learner can apply it better.",
+        "Retrieval practice alone is sufficient practice for procedural skill application.",
+        "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
+        "The specific classroom protocol should be copied as a universal learning recipe."
+      ],
+      "limitations": [
+        "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+        "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+        "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+        "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+      ],
+      "target_hack_ids": [
+        "active-recall-test-yourself"
+      ],
+      "target_protocol_ids": [
+        "brali:active-recall-test-yourself"
+      ],
+      "risk_flags": [],
+      "notes": "Brali should keep active recall as a retention-oriented method but explicitly add application practice when the real goal is using a rule or procedure."
+    },
+    {
+      "schema_version": 1,
+      "id": "sleep-variability-cognition-2026",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/sleep-variability-cognition-2026/",
+      "json_url": "https://brali-lifeos.github.io/evidence/sleep-variability-cognition-2026/index.json",
+      "decision": "watch",
+      "decision_label": "Watch, do not prescribe",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+        "url": "https://www.sciencedirect.com/science/article/abs/pii/S0165032725019238",
+        "type": "meta-analysis",
+        "doi": "10.1016/j.jad.2025.120481",
+        "citation_text": "Xia Y, He S, Sun Z, Wang F. Journal of Affective Disorders. 2026;393(Pt B):120481.",
+        "study_design": "Systematic review and three-level meta-analysis of 20 published articles, 103 effect sizes, total N=15,828.",
+        "population": "Human participants across age groups represented in the included observational literature; the association was stronger in older adults than in adolescents and middle-aged adults.",
+        "intervention_or_exposure": "Night-to-night sleep variability or irregularity across sleep measures.",
+        "outcomes": [
+          "Cognitive performance"
+        ]
+      },
+      "supported_claim": "Across the included literature, greater sleep variability was associated with poorer cognitive performance on average, with a small pooled correlation and age moderating the association.",
+      "unsupported_or_overstated_claims": [
+        "Sleep irregularity has been shown to cause cognitive decline.",
+        "Making sleep timing more regular has been shown by this meta-analysis to improve cognition.",
+        "A fixed bedtime or wake-time tolerance can be prescribed from this evidence.",
+        "The association justifies treatment or dementia-prevention claims for an individual."
+      ],
+      "limitations": [
+        "The reviewed evidence is primarily association evidence and does not establish the direction of causality.",
+        "Sleep variability and cognition were operationalized in different ways across studies.",
+        "The pooled association was small (r=-0.12 in the authors' analysis).",
+        "Age moderated the association, so a single population-wide claim would hide meaningful differences.",
+        "The publisher abstract and bibliographic record were directly reviewed for this Brali decision; a causal behavior-change protocol is deliberately not proposed from this source alone."
+      ],
+      "target_hack_ids": [],
+      "target_protocol_ids": [],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Use this source to justify maintaining Sleep & Circadian Rhythm as a research Topic and to motivate further intervention-focused discovery. Do not publish regular sleep improves cognition from this evidence."
+    },
+    {
+      "schema_version": 1,
+      "id": "testing-effect-direct-forward-2026",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/testing-effect-direct-forward-2026/",
+      "json_url": "https://brali-lifeos.github.io/evidence/testing-effect-direct-forward-2026/index.json",
+      "decision": "challenge-existing",
+      "decision_label": "Challenge existing claim",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
+        "type": "meta-analysis",
+        "doi": "10.1037/xlm0001634",
+        "citation_text": "Gereau AD, Mulligan NW. Journal of Experimental Psychology: Learning, Memory, and Cognition. 2026. Online ahead of print.",
+        "study_design": "Meta-analysis of free-recall testing effects distinguishing studies capable of isolating the direct testing effect from mixed designs susceptible to both direct and forward testing effects.",
+        "population": "Human participants in the free-recall testing-effect literature included in the reviewed meta-analysis.",
+        "intervention_or_exposure": "Retrieval practice/testing compared with non-testing study conditions, classified by whether the design isolates memory for tested material or also permits forward effects on subsequently learned material.",
+        "outcomes": [
+          "Free recall of tested material",
+          "Free recall of subsequently learned material"
+        ]
+      },
+      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "unsupported_or_overstated_claims": [
+        "A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.",
+        "Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.",
+        "Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.",
+        "A broad testing-effect citation is sufficient evidence for skill transfer or correct application."
+      ],
+      "limitations": [
+        "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
+        "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
+        "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+      ],
+      "target_hack_ids": [
+        "active-recall-test-yourself"
+      ],
+      "target_protocol_ids": [
+        "brali:active-recall-test-yourself"
+      ],
+      "risk_flags": [],
+      "notes": "Use this decision to remove undifferentiated testing-effect language from Brali. Public guidance should say what outcome is being trained: remembering tested material, later learning, or application."
+    },
+    {
+      "schema_version": 1,
+      "id": "wakeful-rest-memory-2026",
+      "canonical_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/",
+      "json_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/index.json",
+      "decision": "propose-protocol",
+      "decision_label": "Protocol candidate",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source": {
+        "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+        "url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
+        "type": "meta-analysis",
+        "doi": "10.3758/s13423-025-02778-3",
+        "citation_text": "Parra D, Zhang Z, Radvansky G. Psychonomic Bulletin & Review. 2026;33:49.",
+        "study_design": "Random-effects meta-analysis with moderator analyses and meta-regression; 142 effect sizes from 51 human experimental studies.",
+        "population": "Patients with anterograde amnesia, healthy older adults, and healthy young to middle-aged adults; child studies were too sparse for the main group analysis.",
+        "intervention_or_exposure": "A short period of quiet wakeful rest or minimal interference immediately after learning, compared with a post-learning interference task.",
+        "outcomes": [
+          "Delayed declarative-memory performance",
+          "Reduced forgetting after learning"
+        ]
+      },
+      "supported_claim": "A short period of quiet, minimally interfering wakeful rest after learning can reduce forgetting on average. The pooled effect is substantially smaller and less consistent in healthy young to middle-aged adults than in older adults or patient samples.",
+      "unsupported_or_overstated_claims": [
+        "Ten minutes is an optimal or universally evidence-based dose.",
+        "Everyone will remember more after post-learning rest.",
+        "Wakeful rest is equivalent to sleep or replaces adequate sleep.",
+        "A specific posture, eye-closure rule, breathing pattern, or rehearsal instruction is required.",
+        "The protocol is a treatment for memory impairment or dementia."
+      ],
+      "limitations": [
+        "There was moderate to large between-study heterogeneity overall.",
+        "The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.",
+        "Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).",
+        "Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.",
+        "Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.",
+        "The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."
+      ],
+      "target_hack_ids": [
+        "avoid-list-interference-memory-retention"
+      ],
+      "target_protocol_ids": [
+        "brali:avoid-list-interference-memory-retention"
+      ],
+      "risk_flags": [],
+      "notes": "Promote only as a conservative personal experiment. Use quiet/minimal interference after learning as the action and treat duration as user-chosen; do not turn the paper title into a universal ten-minute prescription."
+    }
+  ]
+}

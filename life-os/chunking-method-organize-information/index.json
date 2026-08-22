@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:chunking-method-organize-information",
+  "slug": "chunking-method-organize-information",
+  "title": "Organize Large Pieces of Information into Smaller, Manageable Units",
+  "description": "Organize large pieces of information into smaller, manageable units. For example, break down long numbers into chunks.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/chunking-method-organize-information/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/chunking-method-organize-information/index.json",
+  "growth_zone": {
+    "slug": "skill-sprint",
+    "title": "Skill Sprint"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "skill-learning",
+        "title": "Skill Learning"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "skill-sprint"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

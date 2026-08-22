@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:4-minute-hiit-tabata-workout",
+  "slug": "4-minute-hiit-tabata-workout",
+  "title": "Try Short High-Intensity Intervals Safely",
+  "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/index.json",
+  "growth_zone": {
+    "slug": "fit-life",
+    "title": "Fit Life"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fitness-strength",
+        "title": "Fitness & Strength"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "fit-life"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:4-minute-hiit-tabata-workout",
+    "language": "en",
+    "slug": "4-minute-hiit-tabata-workout",
+    "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
+    "title": "Try Short High-Intensity Intervals Safely",
+    "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "fitness-strength",
+          "title": "Fitness & Strength"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "fit-life"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "fit-life",
+      "title": "Fit Life"
+    },
+    "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
+    "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+    "keywords": [
+      "Fit Life",
+      "Life OS",
+      "Boost Fitness with HIIT"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

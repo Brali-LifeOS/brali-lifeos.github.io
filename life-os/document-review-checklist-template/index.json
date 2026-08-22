@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:document-review-checklist-template",
+  "slug": "document-review-checklist-template",
+  "title": "Create a Checklist of Common Errors to Review Each Time You Finish a Document",
+  "description": "Create a checklist of common errors to review each time you finish a document. Include spelling, grammar, formatting, and key details.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/document-review-checklist-template/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/document-review-checklist-template/index.json",
+  "growth_zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "avoid-errors"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

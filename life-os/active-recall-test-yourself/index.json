@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:active-recall-test-yourself",
+  "slug": "active-recall-test-yourself",
+  "title": "Use Active Recall for Retention, Then Practice Application",
+  "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": true,
+    "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "memory",
+        "title": "Memory"
+      },
+      {
+        "id": "skill-learning",
+        "title": "Skill Learning"
+      }
+    ],
+    "methods": [
+      {
+        "id": "retrieval-practice",
+        "title": "Retrieval Practice"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "memory",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/memory/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:active-recall-test-yourself",
+    "language": "en",
+    "slug": "active-recall-test-yourself",
+    "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+    "title": "Use Active Recall for Retention, Then Practice Application",
+    "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "memory",
+          "title": "Memory"
+        },
+        {
+          "id": "skill-learning",
+          "title": "Skill Learning"
+        }
+      ],
+      "methods": [
+        {
+          "id": "retrieval-practice",
+          "title": "Retrieval Practice"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
+    "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Boost Memory with Self-Testing"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

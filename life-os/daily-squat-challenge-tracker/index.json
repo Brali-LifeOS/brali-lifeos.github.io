@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:daily-squat-challenge-tracker",
+  "slug": "daily-squat-challenge-tracker",
+  "title": "Do Bodyweight Squats Every Day",
+  "description": "Do bodyweight squats every day. Start with 15 reps and increase by 5 reps each day.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/daily-squat-challenge-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/daily-squat-challenge-tracker/index.json",
+  "growth_zone": {
+    "slug": "fit-life",
+    "title": "Fit Life"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fitness-strength",
+        "title": "Fitness & Strength"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "fit-life"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

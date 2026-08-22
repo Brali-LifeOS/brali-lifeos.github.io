@@ -1,0 +1,715 @@
+{
+  "schema_version": 1,
+  "period": "2026-08",
+  "period_label": "August 2026",
+  "snapshot_date": "2026-08-19",
+  "title": "August 2026 evidence pulse",
+  "current_distribution": {
+    "total": 947,
+    "reviewed": 23,
+    "practical": 116,
+    "pending_review": 653,
+    "restricted": 155,
+    "trusted_or_practical_share_percent": 14.7
+  },
+  "current_claim_profile": {
+    "source_recorded": 23,
+    "sensitive": 172,
+    "quantitative_claims": 195
+  },
+  "month_to_date_activity": {
+    "manual_reviews": 59,
+    "review_status_counts": {
+      "practical": 36,
+      "reviewed": 23
+    },
+    "evidence_decisions": 14,
+    "evidence_decision_types": {
+      "propose-protocol": 4,
+      "challenge-existing": 4,
+      "support-existing": 4,
+      "watch": 2
+    }
+  },
+  "research_queue": {
+    "candidates": 15,
+    "status_counts": {
+      "challenge-existing": 4,
+      "screening": 1,
+      "watch": 2,
+      "propose-protocol": 4,
+      "support-existing": 4
+    }
+  },
+  "reviews": [
+    {
+      "slug": "weekly-theme-learning-sprints",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated practical protocol. Unsupported quantitative and research-sounding claims from the inherited long-form draft are not used in the public build."
+    },
+    {
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated timer-based focus protocol. The 25-minute interval is presented as a conventional starting setting rather than an evidence-backed optimum, and inherited unsupported performance claims are removed from the effective build."
+    },
+    {
+      "slug": "active-listening-exercises",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated correction-based listening protocol. Unsupported percentages, invented pilot/adherence numbers, and unnecessary timing prescriptions from the inherited draft are removed from the effective build."
+    },
+    {
+      "slug": "brainwriting-group-idea-generation",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated group ideation protocol. Unsupported idea-yield percentages, invented internal observations, and rigid timing/count prescriptions from the inherited draft are removed from the effective build."
+    },
+    {
+      "slug": "start-with-a-hypothesis",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated hypothesis-test-update protocol. Unsupported operational percentages, arbitrary evidence thresholds, and invented resolution-time stories from the inherited draft are removed from the effective build."
+    },
+    {
+      "slug": "circles-of-control-planner",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a curated action-allocation protocol. Unsupported stress measurements, supplement advice, arbitrary timing rules, and invented internal observations are removed."
+    },
+    {
+      "slug": "10-minute-morning-stretch-routine",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced gentle-flexibility protocol. Morning timing and ten minutes are presented as optional practical settings rather than medical prescriptions; safety boundaries and gradual progression are aligned with current NHS exercise guidance."
+    },
+    {
+      "slug": "10-minute-stress-walk",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced walking protocol grounded in current WHO and NHS guidance. Ten minutes is treated as a convenient boundary rather than a therapeutic dose; inherited stress-reduction percentages, physiological claims, productivity claims and adherence estimates are removed."
+    },
+    {
+      "slug": "safety-statements-exposure-anxiety",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced graded-facing-fears protocol grounded in NHS self-help and NICE CBT guidance. Reassurance statements and safety rituals are no longer prescribed as the core mechanism; inherited effect sizes, adherence claims, fixed breathing ratios and arbitrary progression rules are removed."
+    },
+    {
+      "slug": "guided-pmr-muscle-relaxation",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced progressive muscle relaxation protocol grounded in NHS clinical relaxation guidance. Unsupported symptom-reduction percentages, force targets, rigid 35-second timing and treatment-like expectations are removed; comfort and non-straining are the safety boundary."
+    },
+    {
+      "slug": "talk-about-fears-coach",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced support-seeking protocol grounded in current NHS guidance on talking about mental health, fear and phobias. Unsupported relief percentages, social-risk estimates, required word counts, time-boxing and pseudo-clinical outcome expectations are removed."
+    },
+    {
+      "slug": "3-minute-sensory-mindfulness-act",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced present-moment sensory mindfulness protocol grounded in current NHS guidance. Fixed three-to-five-minute dosing, weekly targets, invented adherence observations and treatment-like expectations are removed."
+    },
+    {
+      "slug": "4-minute-hiit-tabata-workout",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced high-intensity interval protocol grounded in NHS physical-activity guidance, WHO guidance and the original Tabata study. Unsupported heart-rate targets, calorie estimates, injury-risk claims and arbitrary progression rules are removed, and the 20/10 format is presented as one specific interval format rather than a universal prescription."
+    },
+    {
+      "slug": "4-minute-tabata-hiit-timer",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced interval-timer protocol grounded in NHS physical-activity guidance, WHO guidance and the original Tabata study. Unsupported heart-rate and rep targets, calorie estimates, maximal-effort instructions and progression schedules are removed, and the 20/10 x 8 timer is described as a specific format rather than a universal workout prescription."
+    },
+    {
+      "slug": "5-minute-meditation-habit-tracker",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced short breath-meditation protocol grounded in current NHS mindfulness and meditation guidance. Invented adherence results, pulse-change claims, fixed twice-daily dosing and prescriptive breathing ratios are removed, and the page explicitly acknowledges that mindfulness is not helpful for everyone."
+    },
+    {
+      "slug": "2-minute-desk-tidy-timer",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a short desk-reset protocol. Invented adherence, productivity, clutter-reduction and internal-pilot claims are removed; two minutes is treated as a convenient boundary rather than an evidence-backed optimum."
+    },
+    {
+      "slug": "3-3-3-workday-planner",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a flexible three-block planning template. Invented productivity results, fixed task counts, arbitrary ratios and internal-pilot claims are removed; three blocks and up to three outcomes are presented as optional structure."
+    },
+    {
+      "slug": "5-whys-goal-clarity",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a reflection protocol that treats repeated why questions as a prompt rather than a method for proving one root cause. Unsupported research claims, fabricated examples presented as observations and arbitrary scoring rules are removed."
+    },
+    {
+      "slug": "5w1h-communication-checklist",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a concise operational-clarity checklist. Fabricated meeting metrics, internal-trial claims, arbitrary timing rules and unnecessary numerical examples are removed."
+    },
+    {
+      "slug": "30-minute-deadline-sprints",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a low-risk first-pass timebox. Fabricated completion rates, internal-pilot results, unsupported creativity claims and rigid timing rules are removed; scope reduction is preferred over rushing important quality checks."
+    },
+    {
+      "slug": "90-30-focus-rest-schedule",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a flexible focus-and-break protocol. Unsupported ultradian claims, fabricated productivity observations, health-style hydration/caffeine advice and fixed 90/30 rules are removed."
+    },
+    {
+      "slug": "ab-test-learning-loop",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a compare-and-learn protocol that distinguishes informal tests from proper randomized A/B experiments. Unsupported conversion ranges, false-positive claims and arbitrary sample-size rules are removed."
+    },
+    {
+      "slug": "10-minute-language-microsprints",
+      "status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a short language-practice protocol. Invented adherence data, unsupported recall and retention percentages, arbitrary targets and generic habit claims are removed; ten minutes is treated as a convenient starting container."
+    },
+    {
+      "slug": "20-20-20-eye-break-reminder",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced 20-20-20 screen-break protocol aligned with current National Eye Institute and American Optometric Association guidance. Unsupported symptom-reduction targets, blink-rate arithmetic, treatment suggestions and invented internal observations are removed."
+    },
+    {
+      "slug": "woop-goal-planner",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a sourced WOOP/MCII protocol grounded in a 2021 meta-analysis and a 2026 randomized trial. Unsupported goal-attainment percentages, pseudo-precise timing, physiological claims, invented observations and rigid reminder rules are removed; the public claim is narrower than the strongest wording in either source."
+    },
+    {
+      "slug": "avoid-list-interference-memory-retention",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a sourced quiet wakeful-rest protocol grounded in the 2026 Parra, Zhang & Radvansky meta-analysis. Arbitrary three-second pauses, fixed review counts, app-tracking instructions, generic habit claims and a universal ten-minute interpretation are removed; the protocol is limited to a low-interference post-learning experiment for declarative memory."
+    },
+    {
+      "slug": "active-recall-test-yourself",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a sourced retrieval-practice protocol grounded in the 2021 applied classroom systematic review and narrowed by two 2026 studies. Unsupported percentage gains, arbitrary thirty-minute sessions, generic neuroscience language and broad transfer claims are removed. The reviewed page distinguishes retention from later learning and from actual application of rules or skills."
+    },
+    {
+      "slug": "ad-astra-per-aspera-motivation-tracker",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported internal outcomes, percentages, mechanisms and rigid practice targets. The effective public record is rewritten as a low-risk phrase-to-action prompt without an evidence claim."
+    },
+    {
+      "slug": "analogy-studio",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited NLP-branded article contained unsupported laboratory, comprehension and recall claims. The effective public record is rewritten as a neutral analogy-mapping and listener-paraphrase practice without an evidence claim."
+    },
+    {
+      "slug": "ask-better-interview-questions",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited interview guide contained unsupported multipliers, sample claims and fabricated observations. The effective public record is rewritten as a consent-based, sequential information interview without an evidence claim."
+    },
+    {
+      "slug": "ask-for-feedback-tracker",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited feedback article contained unsupported internal trials, cohort outcomes, response-rate claims and arbitrary quotas. The effective public record is rewritten as a bounded feedback request and decision protocol without an evidence claim."
+    },
+    {
+      "slug": "avoid-anthropocentric-bias",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported survey ranges, volunteer outcomes, immediate-effect claims and rigid observation targets. The effective public record is rewritten as a low-risk observation-versus-interpretation check without an evidence claim."
+    },
+    {
+      "slug": "avoid-contrast-effect",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated trials, laboratory ranges, hiring outcomes and savings claims. The effective public record is rewritten as an independent-assessment protocol without an evidence claim."
+    },
+    {
+      "slug": "avoid-gamblers-fallacy-trust-the-odds",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated tests, financial action rules, arbitrary confidence and sample thresholds, and adherence claims. The effective public record is rewritten as a dependence-and-stop-rule check without an evidence claim."
+    },
+    {
+      "slug": "avoid-selection-bias-in-analysis",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported mistake reduction, conversion examples, sample prescriptions and statistical precision. The effective public record is rewritten as an inclusion-rule and conclusion-scope check without an evidence claim."
+    },
+    {
+      "slug": "backfire-effect-coach",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated trials, physiological explanations, effect ranges and self-reported cohort outcomes. The effective public record is rewritten as a bounded disagreement-and-claim-check protocol without an evidence claim."
+    },
+    {
+      "slug": "belief-update-coach",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained numeric confidence prescriptions, sample-size rules, fabricated observations and arbitrary update ranges. The effective public record is rewritten as a bounded belief-review record without an evidence claim."
+    },
+    {
+      "slug": "biomimicry-creative-problem-solving",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated performance outcomes, internal hit rates and unsupported biological explanations. The effective public record is rewritten as a function-to-principle design exercise without an evidence claim."
+    },
+    {
+      "slug": "bold-brainstorm-kickoff",
+      "status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated session outcomes, multipliers, percentage claims and pseudo-precise timing rules. The effective public record is rewritten as a provocation-to-feasible-idea exercise without an evidence claim."
+    },
+    {
+      "slug": "ideal-sleep-hours-finder",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a conservative sleep-opportunity protocol grounded in a systematic review/meta-analysis of behavioral sleep-extension interventions and the AASM/SRS adult sleep-duration consensus. The inherited 21-day optimization experiment, fixed wake-time tolerances, personal optimum claims, caffeine/light prescriptions, invented thresholds, and pseudo-statistical dose-response language are removed."
+    },
+    {
+      "slug": "relationship-repair-coach",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Public content is replaced by a source-bounded repair-attempt protocol grounded in experimental and meta-analytic apology/forgiveness research. The protocol does not require forgiveness, promise restored trust, prescribe arbitrary cooling-off windows, or treat apology as appropriate for abuse, coercion, or unsafe situations."
+    },
+    {
+      "slug": "refocus-present-stop-mind-wandering",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against 2016 and 2026 systematic-review literature on Attention Training Technique plus a 2021 randomized experimental study reporting no ATT advantage over control on worry outcomes in probable GAD. Public content is limited to the directly described attention operations: external selection, deliberate switching, and broadening/divided attention. It makes no treatment or symptom-reduction promise."
+    },
+    {
+      "slug": "dbt-distress-tolerance-coach",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against Dorset HealthCare NHS descriptions of DBT skills and the Valentine et al. systematic review of DBT skills training used without other DBT modalities. Public content is narrowed to a low-risk observe-pause-reassess exercise, removes cold-exposure/physiological instructions, and explicitly states that evidence does not make it equivalent to full DBT or crisis treatment."
+    },
+    {
+      "slug": "abdominal-breathing-stress-relief",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against current NCCIH relaxation guidance. Public copy is limited to comfortable diaphragmatic breathing as a general relaxation exercise, removes fixed-rate and treatment claims, and explicitly says not to replace conventional care."
+    },
+    {
+      "slug": "cbt-action-mood-tracker",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against NHS CBT and thought-record guidance. Public copy is an educational observation worksheet about situation, action and before/after experience; it is not presented as formal CBT, diagnosis, treatment, or proof of causality."
+    },
+    {
+      "slug": "cardio-health-daily-habits",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against American Heart Association physical-activity guidance. Public copy is narrowed to planning movement toward the adult weekly activity baseline, with explicit adaptation to ability and professional medical advice."
+    },
+    {
+      "slug": "daily-gratitude-journal-three-things",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against recent gratitude meta-analysis and systematic-review evidence. Public copy preserves the small/variable-effect boundary, removes fixed dosage and guaranteed mood claims, and says not to force gratitude or substitute it for mental-health care."
+    },
+    {
+      "slug": "spaced-recall-coach",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "The effective public protocol was fully rewritten to match the reviewed distributed-practice boundary: separated study sessions for verbal material, spacing chosen in relation to the intended retention period, explicit uncertainty about exact intervals, and no claim of transfer beyond verbal recall."
+    },
+    {
+      "slug": "ask-a-peer-to-proofread",
+      "status": "reviewed",
+      "reviewed_at": "2026-08-21",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Reviewed against Scherer, Graham, and Busse (2024), a meta-analysis of feedback in secondary-school and university L1, L2, and foreign-language writing. Public guidance is limited to matching the requested feedback level to the intended revision outcome and explicitly excludes universal claims about feedback source, sequence, amount, or transfer to professional and creative writing."
+    },
+    {
+      "slug": "30-min-eye-break-tracker",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a low-risk screen-break checkpoint. Fixed timing, medical benefit claims, productivity claims and inherited evidence-like language are removed; the protocol is framed as a work-quality pause, not treatment."
+    },
+    {
+      "slug": "478-breathing-technique-guide",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a conservative unforced breathing pause. The inherited 4-7-8 prescription, treatment-like expectations and research-sounding claims are removed; users are told to stop if the exercise feels uncomfortable or causes light-headedness."
+    },
+    {
+      "slug": "create-win-win-outcomes",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by an interest-and-trade option map. It does not promise mutual gain or imply that every conflict has a win-win solution; a clear no-deal or boundary remains valid."
+    },
+    {
+      "slug": "achieve-multiple-goals-at-once",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a compatible-goals planning protocol. Unsupported multi-goal performance claims are removed and the user is instructed to separate goals when combining them weakens quality, attention, privacy or safety."
+    },
+    {
+      "slug": "leave-an-app-review",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a neutral observation-impact-suggestion feedback protocol. App-growth, engagement and outcome claims from inherited copy are not retained."
+    },
+    {
+      "slug": "automatic-paycheck-to-savings",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by general financial-hygiene guidance for a small reversible savings automation. It explicitly preserves essential obligations and avoids individualized financial advice, savings-rate prescriptions and unsupported outcome claims."
+    },
+    {
+      "slug": "challenge-generalizations-counterexamples",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a generic counterexample logic check. The legacy NLP collection is retained only as compatibility navigation; the protocol makes no claim that NLP is scientifically validated or necessary for the technique."
+    },
+    {
+      "slug": "ancestral-torch-resilience-tracker",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a short controllable-next-step reminder. Ancestry, resilience-performance and motivational outcome claims are removed; the phrase is kept only if it changes a concrete next action."
+    },
+    {
+      "slug": "decision-calibration-journal",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by ordinary decision-calibration journaling. The legacy Quantum collection is explicitly separated from the protocol and no personal-decision claim is inferred from quantum mechanics."
+    },
+    {
+      "slug": "ai-premortem-risk-planner",
+      "status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "note": "Public content is replaced by a bounded AI-assisted premortem. Model output is treated only as candidate failure modes, sensitive information must not be shared, and important risks require verification against the real plan before mitigation."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "apology-repair-2021",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "source_title": "Experimental evidence that apologies promote forgiveness by communicating relationship value",
+      "supported_claim": "In the controlled experiments, apologies promoted forgiveness and operated through a causal pathway shared with perceived relationship value. This supports apology as one potentially useful repair signal after a workable interpersonal transgression.",
+      "limitations": [
+        "Controlled experimental transgression paradigms do not capture every feature of real-world repeated or high-stakes conflict.",
+        "Forgiveness is only one outcome and is not equivalent to trust, reconciliation, safety, or durable behavior change.",
+        "The effect of apology depends on context, relationship value and the nature of the transgression.",
+        "The study does not validate the specific wording or step sequence used in Brali's public repair protocol."
+      ]
+    },
+    {
+      "id": "communication-coaching-reflective-statements-boundary-2023",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+      "supported_claim": "A multicomponent individual coaching program changed some observed cardiologist communication behaviors, particularly empathic responses and eliciting patient questions. Reflective statements and open-ended questions were explicit trained components, but the intervention did not significantly increase either behavior relative to control. This source is therefore a boundary against claiming that training the Brali sequence by itself has demonstrated communication or patient-outcome effects.",
+      "limitations": [
+        "Five communication skills were trained together, so any observed effect cannot be attributed to paraphrasing or open questions independently.",
+        "There was no significant intervention-versus-control difference in reflective statements or open-ended questions.",
+        "Patient-perceived communication and trust effects could not be assessed because scores had substantial ceiling effects.",
+        "The sample included mostly White male cardiologists in an academic setting and many had prior communication training, limiting generalizability.",
+        "Pre- and post-intervention patient samples were different rather than repeated measures on the same patients.",
+        "The intervention required repeated one-to-one coaching and feedback, so it does not test a self-guided protocol used once.",
+        "Clinical and longer-term outcomes were not established."
+      ]
+    },
+    {
+      "id": "distributed-practice-verbal-recall-boundary-2006",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "supported_claim": "For verbal material measured by later recall, separating repeated study episodes by a meaningful interval generally supports better retention than concentrating the same material into massed study. The spacing associated with the best later recall tended to increase as the intended retention interval increased. For material that must be retained over months or years, the reviewed evidence supports distributing study across days or longer rather than completing all review in one sitting or one day. These findings justify the rewritten Brali action only within a verbal-recall boundary and without one universal schedule.",
+      "limitations": [
+        "The synthesis was restricted to verbal memory tasks measured by recall and deliberately excluded recognition, frequency judgments and the heterogeneous skill-learning literature.",
+        "The evidence base was dominated by young adults; the authors reported very little middle-aged and older-adult evidence and insufficient long-term child data for confident generalization.",
+        "Many studies did not report the variance data needed for effect-size calculation, so several analyses relied on accuracy differences and included fewer effect-size estimates.",
+        "Published null findings may be underrepresented because of the file-drawer problem.",
+        "Study materials, presentation schedules, retention intervals and experimental procedures varied substantially.",
+        "Some historical studies confounded longer spacing with more relearning trials; the review examined this problem but could not remove every design limitation from the literature.",
+        "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
+        "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
+        "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
+        "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
+        "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
+      ]
+    },
+    {
+      "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+      "supported_claim": "In this small nonclinical social-conflict experiment, a trained interviewer used a behavior closely matching Brali's core correction loop: summarize the speaker's facts, feelings and priorities, then ask whether the understanding is accurate. Participants reported less negative immediate emotion after paraphrasing than after silent note-taking. This supports retaining paraphrase plus explicit correction as a bounded practice behavior, with the studied outcome and setting stated precisely.",
+      "limitations": [
+        "Only twenty participants contributed self-report data, making results vulnerable to individual variation and unsuitable for broad population estimates.",
+        "One female interviewer with approximately 190 hours of conflict-resolution training delivered every paraphrase, so listener skill and delivery cannot be separated from the technique.",
+        "The control condition was silent note-taking rather than another spoken response; differences may partly reflect receiving a verbal response rather than paraphrasing specifically.",
+        "Participants may have interpreted note-taking as judgment despite the study explanation, potentially biasing the comparison.",
+        "Only immediate reactions were measured; the authors explicitly described longer-term emotion resolution as speculative.",
+        "Conflicts involving physical or psychological violence were excluded, so the result must not be applied as ordinary advice in unsafe or abusive situations.",
+        "The study assessed emotional valence and arousal, not whether the listener understood more accurately or whether the conflict outcome improved."
+      ]
+    },
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "limitations": [
+        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+      ]
+    },
+    {
+      "id": "movement-breaks-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "supported_claim": "Across the included trials, interruptions to prolonged sitting were associated with small acute improvements in executive function and memory on average. Evidence for global cognition, information processing, and attention was insufficient or inconsistent, and certainty was low for most outcomes.",
+      "limitations": [
+        "Only 21 randomized crossover trials with 433 participants were included.",
+        "GRADE certainty was low for executive function, memory, information processing, and attention and very low for global cognition.",
+        "No clear improvement was found for global cognition, information processing, or attention.",
+        "Moderator and protocol-parameter findings were exploratory and the authors explicitly state they are insufficient for definitive prescriptive recommendations.",
+        "The outcomes were acute cognitive effects, so the source does not establish long-term cognitive benefit from a break routine."
+      ]
+    },
+    {
+      "id": "procrastination-treatment-exact-protocol-boundary-2018",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "supported_claim": "Across the reviewed randomized comparisons, psychological treatments targeting procrastination had a small average post-treatment benefit on self-reported procrastination relative to inactive controls, but effects varied substantially between studies and the evidence base had important quality limitations. This supports treating task initiation as a legitimate intervention target, not claiming that one brief Brali routine or one component has been validated.",
+      "limitations": [
+        "The pooled overall effect was small and showed significant between-study heterogeneity, so the average should not be treated as one stable effect across interventions or populations.",
+        "The review identified some risk of bias in every included study; blinding-related domains were frequently rated high risk.",
+        "Primary procrastination measures varied, and several assessed academic rather than general procrastination.",
+        "The included studies used different interventions, delivery formats, durations and participant populations, preventing component-level attribution.",
+        "The review analyzed post-treatment outcomes because too few studies reported follow-up data, limiting conclusions about durability.",
+        "Secondary outcomes were too heterogeneous to aggregate.",
+        "The stronger cognitive-behavioral subgroup estimate depended on excluding one small outlying study and represented only three of the four cognitive-behavioral studies.",
+        "The source did not test the exact five-minute interval, the exact Brali action sequence or the protocol's observable-review checkpoint."
+      ]
+    },
+    {
+      "id": "retrieval-procedural-application-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "limitations": [
+        "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+        "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+        "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+        "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+      ]
+    },
+    {
+      "id": "sleep-opportunity-extension-2021",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-19",
+      "source_title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+      "supported_claim": "Behavioral interventions designed to extend sleep increased sleep duration on average compared with control or baseline. Direct interventions that specified a sleep schedule tended to have larger effects, but results were highly heterogeneous.",
+      "limitations": [
+        "Statistical heterogeneity was very high across both two-arm and one-arm studies.",
+        "Populations, intervention components, duration and measurement methods varied substantially.",
+        "The primary outcome was sleep duration; the review does not establish a single personal optimum for daytime performance or health.",
+        "The findings do not replace clinical assessment for persistent insomnia, excessive sleepiness, suspected sleep disorders, or other medical concerns."
+      ]
+    },
+    {
+      "id": "sleep-variability-cognition-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-18",
+      "source_title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+      "supported_claim": "Across the included literature, greater sleep variability was associated with poorer cognitive performance on average, with a small pooled correlation and age moderating the association.",
+      "limitations": [
+        "The reviewed evidence is primarily association evidence and does not establish the direction of causality.",
+        "Sleep variability and cognition were operationalized in different ways across studies.",
+        "The pooled association was small (r=-0.12 in the authors' analysis).",
+        "Age moderated the association, so a single population-wide claim would hide meaningful differences.",
+        "The publisher abstract and bibliographic record were directly reviewed for this Brali decision; a causal behavior-change protocol is deliberately not proposed from this source alone."
+      ]
+    },
+    {
+      "id": "testing-effect-direct-forward-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "limitations": [
+        "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
+        "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
+        "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+      ]
+    },
+    {
+      "id": "testing-versus-restudy-retention-boundary-2014",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+      "supported_claim": "Across the included testing-versus-restudy literature, retrieval testing produced better later retention on average than equivalent-duration restudy. The pooled random-effects estimate was positive, but effects varied substantially across studies and testing conditions. This supports Brali's bounded recommendation to retrieve information from memory, check the answer, and use that loop when retention is the target.",
+      "limitations": [
+        "Between-study heterogeneity in the primary analysis was very high, so the pooled mean does not describe one uniform effect across designs or contexts.",
+        "The review deliberately restricted the quantitative synthesis to testing-versus-equivalent-restudy contrasts and does not represent every retrieval-practice paradigm.",
+        "Testing benefits varied with methodological factors including initial test format, retention interval and feedback.",
+        "Many contributing studies used controlled experimental learning tasks and college samples, which limits direct extrapolation to every real-world learning context.",
+        "The review's main outcome is retention; it does not establish that remembered information can be applied correctly in a novel task or procedure.",
+        "Theoretical findings did not provide one complete cohesive mechanism for all testing phenomena, so Brali should avoid mechanism decoration.",
+        "A positive average effect does not imply that every individual effect was positive; the reviewed distribution included negative and null estimates."
+      ]
+    },
+    {
+      "id": "wakeful-rest-memory-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Should we all just take 10? A meta-analysis of wakeful rest",
+      "supported_claim": "A short period of quiet, minimally interfering wakeful rest after learning can reduce forgetting on average. The pooled effect is substantially smaller and less consistent in healthy young to middle-aged adults than in older adults or patient samples.",
+      "limitations": [
+        "There was moderate to large between-study heterogeneity overall.",
+        "The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.",
+        "Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).",
+        "Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.",
+        "Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.",
+        "The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."
+      ]
+    },
+    {
+      "id": "writing-feedback-level-match-2024",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-21",
+      "source_title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+      "supported_claim": "In the reviewed secondary-school and university writing literature, feedback effects differed by the level of writing outcome: surface-level feedback improved surface-level outcomes, deep-level feedback improved deep-level outcomes, and combined surface-and-deep feedback could improve both. This supports matching a feedback request to the revision outcome rather than treating all feedback as interchangeable.",
+      "limitations": [
+        "The evidence concerns educational writing by secondary-school and university or college learners rather than all writing contexts.",
+        "Effects varied across L1, L2, and foreign-language learners, so a single population-wide estimate can conceal important differences.",
+        "The included papers used experimental or quasi-experimental designs but varied in feedback treatment, source, duration, outcome measurement, and instructional context.",
+        "Only about one-third of the treatment/control comparisons examined maintenance effects, limiting conclusions about durability.",
+        "Many studies did not report enough learner-level variables, and evidence was comparatively scarce for some learner groups and treatment-outcome combinations.",
+        "Meta-analytic categories for surface, deep, combined, and feedback source are useful abstractions but do not establish one universally optimal revision workflow."
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a curation and coverage report for Brali, not a meta-analysis of scientific effects.",
+    "Month-to-date review activity is based on dated Brali review records. It does not measure search demand, user outcomes, or research-field popularity.",
+    "A true month-over-month trend requires comparable stored snapshots; the current report establishes the baseline for future comparisons."
+  ],
+  "canonical_url": "https://brali-lifeos.github.io/trends/evidence/2026-08/",
+  "research_gap_pipeline": {
+    "baseline_gaps": 24,
+    "open_gaps": 22,
+    "resolved_gaps": 2,
+    "stage_counts": {
+      "discovery-ready": 17,
+      "ready-for-resolution": 5,
+      "resolved": 2
+    },
+    "resolved_this_period": [
+      {
+        "topic_id": "memory",
+        "topic_title": "Memory",
+        "resolved_at": "2026-08-20",
+        "evidence_decision_ids": [
+          "wakeful-rest-memory-2026",
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026"
+        ],
+        "protocol_slugs": [
+          "avoid-list-interference-memory-retention",
+          "active-recall-test-yourself"
+        ]
+      },
+      {
+        "topic_id": "revision-feedback",
+        "topic_title": "Revision & Feedback",
+        "resolved_at": "2026-08-21",
+        "evidence_decision_ids": [
+          "writing-feedback-level-match-2024"
+        ],
+        "protocol_slugs": [
+          "ask-a-peer-to-proofread"
+        ]
+      }
+    ],
+    "agenda_url": "https://brali-lifeos.github.io/research/gaps/"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:schedule-daily-worry-time",
+  "slug": "schedule-daily-worry-time",
+  "title": "Set a Specific Time Each Day for Rumination (e (Metacognitive)",
+  "description": "Set a specific time each day for rumination (e.g., 10 minutes). If you catch yourself ruminating outside of this time, gently remind yourself to wait until your ‘thinking time.’",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/schedule-daily-worry-time/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/schedule-daily-worry-time/index.json",
+  "growth_zone": {
+    "slug": "metacognitive",
+    "title": "Metacognitive"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "metacognitive-therapy",
+        "title": "Metacognitive Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "metacognitive"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

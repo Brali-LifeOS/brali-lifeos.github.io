@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "dbt",
+  "title": "DBT",
+  "description": "Learn Dialectical Behavior Therapy-inspired hacks to balance emotions and handle stress.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/dbt/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/dbt/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "counts": {
+    "library_entries": 7,
+    "trusted_protocols": 1,
+    "reviewed": 1,
+    "practical": 0,
+    "pending_review": 0,
+    "restricted": 6,
+    "mapped_topics": 3,
+    "research_gaps": 2
+  },
+  "topics": [
+    {
+      "id": "emotion-regulation",
+      "title": "Emotion Regulation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/emotion-regulation/"
+    },
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/self-awareness/"
+    },
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/stress-regulation/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "emotion-regulation",
+      "title": "Emotion Regulation",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/emotion-regulation/"
+    },
+    {
+      "topic_id": "self-awareness",
+      "title": "Self-Awareness",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "dbt-distress-tolerance-coach",
+      "title": "Pause Before Acting on a High-Stress Urge",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "dbt-distress-tolerance-coach",
+      "title": "Pause Before Acting on a High-Stress Urge",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "five-senses-self-soothe",
+      "title": "Self-Soothe with the Five Senses",
+      "url": "https://brali-lifeos.github.io/life-os/five-senses-self-soothe/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "dbt-mindfulness-coach",
+      "title": "Spend a Few Minutes Each Day Focusing on the Present",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-mindfulness-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "dear-man-assertiveness-coach",
+      "title": "Use ‘DEAR MAN’ for Assertiveness",
+      "url": "https://brali-lifeos.github.io/life-os/dear-man-assertiveness-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "name-your-emotions-dbt",
+      "title": "When a Strong Emotion Hits, Name It",
+      "url": "https://brali-lifeos.github.io/life-os/name-your-emotions-dbt/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "radical-acceptance-dbt-coach",
+      "title": "When Facing Something Difficult, Try Accepting It Fully Instead of Resisting",
+      "url": "https://brali-lifeos.github.io/life-os/radical-acceptance-dbt-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "dbt-opposite-action-coach",
+      "title": "When You Feel a Negative Emotion, Try Doing the Opposite Action",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-opposite-action-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    }
+  ]
+}

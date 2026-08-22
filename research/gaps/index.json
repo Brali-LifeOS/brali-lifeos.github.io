@@ -1,0 +1,1324 @@
+{
+  "schema_version": 1,
+  "baseline_date": "2026-08-20",
+  "baseline_growth_gap_count": 24,
+  "current_open_gap_count": 22,
+  "resolved_gap_count": 2,
+  "stage_counts": {
+    "discovery-ready": 17,
+    "ready-for-resolution": 5,
+    "resolved": 2
+  },
+  "definition": "A research gap is resolved only through an explicit resolution record that can be traced to reviewed Evidence Decisions and trusted Topic protocols.",
+  "pipeline": [
+    "open question",
+    "discovery query",
+    "research candidate",
+    "Evidence Decision",
+    "trusted protocol",
+    "explicit resolution",
+    "Evidence Trends"
+  ],
+  "entries": [
+    {
+      "schema_version": 1,
+      "topic_id": "career",
+      "topic_title": "Career",
+      "domain_id": "work-money",
+      "domain_title": "Work & Money",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which career-development practices improve decision quality, adaptability, or demonstrable capability rather than just self-reported confidence?",
+      "evidence_target": "Prefer systematic reviews, longitudinal evidence, or evaluated career interventions.",
+      "guardrail": "Avoid guarantees about hiring, salary, promotion, or labor-market outcomes.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/career/",
+      "research_queries": [
+        {
+          "id": "work-career-development",
+          "query": "career adaptability career development intervention systematic review adults",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "career",
+        "title": "Career",
+        "domain_id": "work-money",
+        "status": "growth-gap",
+        "entries": 0,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "creative-problem-solving",
+      "topic_title": "Creative Problem Solving",
+      "domain_id": "creativity-expression",
+      "domain_title": "Creativity & Expression",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which incubation, analogy, reframing, or constraint techniques reliably improve creative problem solving?",
+      "evidence_target": "Prefer meta-analyses and controlled studies that distinguish idea quantity from quality and task fit.",
+      "guardrail": "Do not generalize divergent-thinking scores into guaranteed real-world creativity.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/",
+      "research_queries": [
+        {
+          "id": "creativity-incubation",
+          "query": "creativity incubation effect divergent thinking meta analysis",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "analogy-studio",
+          "title": "Explain One Idea with an Analogy and Its Limit",
+          "url": "https://brali-lifeos.github.io/life-os/analogy-studio/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "biomimicry-creative-problem-solving",
+          "title": "Translate a Problem into a Nature-Inspired Design Principle",
+          "url": "https://brali-lifeos.github.io/life-os/biomimicry-creative-problem-solving/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "bold-brainstorm-kickoff",
+          "title": "Use an Extreme Seed, Then Return to Reality",
+          "url": "https://brali-lifeos.github.io/life-os/bold-brainstorm-kickoff/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving",
+        "domain_id": "creativity-expression",
+        "status": "growth-gap",
+        "entries": 6,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "decision-making",
+      "topic_title": "Decision Making",
+      "domain_id": "focus-action",
+      "domain_title": "Focus & Action",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which lightweight decision-hygiene practices improve judgment or reduce avoidable errors outside tightly controlled laboratory tasks?",
+      "evidence_target": "Prefer systematic reviews, meta-analyses, or field experiments on checklists, premortems, debiasing, or structured decision processes.",
+      "guardrail": "Keep effects task-specific; do not promise that a checklist removes bias.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/decision-making/",
+      "research_queries": [
+        {
+          "id": "work-decision-hygiene",
+          "query": "decision making checklist premortem debiasing systematic review workplace",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "ai-premortem-risk-planner",
+          "title": "AI-Assisted Premortem",
+          "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "avoid-gamblers-fallacy-trust-the-odds",
+          "title": "Check Whether a Streak Changes the Next Event",
+          "url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "decision-calibration-journal",
+          "title": "Decision Calibration Journal",
+          "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "circles-of-control-planner",
+          "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+          "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "avoid-contrast-effect",
+          "title": "Judge Each Option Against the Same Criteria",
+          "url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "decision-making",
+        "title": "Decision Making",
+        "domain_id": "focus-action",
+        "status": "growth-gap",
+        "entries": 6,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "difficult-conversations",
+      "topic_title": "Difficult Conversations",
+      "domain_id": "communication-relationships",
+      "domain_title": "Communication & Relationships",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "What preparation and conversational practices reduce escalation or improve clarity in difficult but non-abusive conversations?",
+      "evidence_target": "Prefer workplace/interpersonal evidence and research that distinguishes conflict management from therapy or crisis response.",
+      "guardrail": "Coercion, abuse, threats, and safety risks require a different response path.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/difficult-conversations/",
+      "research_queries": [
+        {
+          "id": "communication-difficult-conversations",
+          "query": "difficult conversations conflict communication workplace systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "difficult-conversations",
+        "title": "Difficult Conversations",
+        "domain_id": "communication-relationships",
+        "status": "growth-gap",
+        "entries": 0,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "digital-attention",
+      "topic_title": "Digital Attention",
+      "domain_id": "environment-digital",
+      "domain_title": "Environment & Digital Life",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which device or notification changes reduce distraction without creating rebound use or unnecessary friction?",
+      "evidence_target": "Prefer experiments and systematic reviews on notifications, smartphone interruption, and digital self-control.",
+      "guardrail": "Do not claim that one blocker or grayscale setting universally restores attention.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/digital-attention/",
+      "research_queries": [
+        {
+          "id": "focus-attention-switching",
+          "query": "task switching interruptions sustained attention workplace systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "30-min-eye-break-tracker",
+          "title": "Screen Break Checkpoint",
+          "url": "https://brali-lifeos.github.io/life-os/30-min-eye-break-tracker/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "digital-attention",
+        "title": "Digital Attention",
+        "domain_id": "environment-digital",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "digital-wellbeing",
+      "topic_title": "Digital Wellbeing",
+      "domain_id": "environment-digital",
+      "domain_title": "Environment & Digital Life",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which technology-use interventions improve sleep, attention, relationships, or wellbeing without relying on simplistic screen-time claims?",
+      "evidence_target": "Prefer systematic reviews and trials that distinguish type/context of use from total duration.",
+      "guardrail": "Do not treat total screen time as a universal causal metric or prescribe a single safe threshold.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/",
+      "research_queries": [
+        {
+          "id": "digital-wellbeing-interventions",
+          "query": "digital wellbeing smartphone use intervention systematic review adults",
+          "risk_flags": [
+            "health"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "digital-wellbeing",
+        "title": "Digital Wellbeing",
+        "domain_id": "environment-digital",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "emotion-regulation",
+      "topic_title": "Emotion Regulation",
+      "domain_id": "mind-resilience",
+      "domain_title": "Mind & Resilience",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which low-risk emotion-regulation strategies have useful everyday effects, for whom, and under what conditions?",
+      "evidence_target": "Prefer systematic reviews and comparative studies that distinguish everyday regulation from treatment outcomes.",
+      "guardrail": "Do not convert general evidence into individualized mental-health treatment.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/emotion-regulation/",
+      "research_queries": [
+        {
+          "id": "mind-reappraisal",
+          "query": "cognitive reappraisal emotion regulation meta analysis everyday",
+          "risk_flags": [
+            "mental-health"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "cbt-action-mood-tracker",
+          "title": "Action and Mood Observation Note",
+          "url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "dbt-distress-tolerance-coach",
+          "title": "Pause Before Acting on a High-Stress Urge",
+          "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "emotion-regulation",
+        "title": "Emotion Regulation",
+        "domain_id": "mind-resilience",
+        "status": "growth-gap",
+        "entries": 3,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "information-management",
+      "topic_title": "Information Management",
+      "domain_id": "environment-digital",
+      "domain_title": "Environment & Digital Life",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which capture and retrieval practices help people find and use information without creating excessive maintenance overhead?",
+      "evidence_target": "Prefer HCI, personal-information-management, and knowledge-work studies with retrieval or task outcomes.",
+      "guardrail": "Avoid productivity claims based only on system complexity or number of notes captured.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/information-management/",
+      "research_queries": [
+        {
+          "id": "digital-information-management",
+          "query": "personal information management retrieval knowledge work systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "information-management",
+        "title": "Information Management",
+        "domain_id": "environment-digital",
+        "status": "growth-gap",
+        "entries": 0,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "metacognition",
+      "topic_title": "Metacognition",
+      "domain_id": "learning-thinking",
+      "domain_title": "Learning & Thinking",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which metacognitive strategies improve calibration, learning choices, or error detection rather than just confidence?",
+      "evidence_target": "Prefer systematic reviews and experiments that measure calibration or downstream performance.",
+      "guardrail": "Do not treat introspection or confidence ratings as accurate self-knowledge by default.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/metacognition/",
+      "research_queries": [
+        {
+          "id": "learning-metacognition",
+          "query": "metacognitive strategy calibration learning systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "ask-for-feedback-tracker",
+          "title": "Ask for Feedback on One Specific Decision",
+          "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "decision-calibration-journal",
+          "title": "Decision Calibration Journal",
+          "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "refocus-present-stop-mind-wandering",
+          "title": "Deliberate Attention Switching with Everyday Sounds",
+          "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "belief-update-coach",
+          "title": "Record What Would Change a Belief",
+          "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "metacognition",
+        "title": "Metacognition",
+        "domain_id": "learning-thinking",
+        "status": "growth-gap",
+        "entries": 4,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "negotiation",
+      "topic_title": "Negotiation",
+      "domain_id": "work-money",
+      "domain_title": "Work & Money",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which preparation and training practices improve negotiated outcomes while preserving relationships and ethical boundaries?",
+      "evidence_target": "Prefer meta-analyses, training evaluations, and field/lab studies with clear negotiation outcomes.",
+      "guardrail": "Do not imply one tactic wins across cultures, power structures, or high-stakes settings.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/negotiation/",
+      "research_queries": [
+        {
+          "id": "work-negotiation-training",
+          "query": "negotiation training meta analysis performance interpersonal",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "create-win-win-outcomes",
+          "title": "Shared-Value Option Map",
+          "url": "https://brali-lifeos.github.io/life-os/create-win-win-outcomes/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "negotiation",
+        "title": "Negotiation",
+        "domain_id": "work-money",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "nutrition",
+      "topic_title": "Nutrition",
+      "domain_id": "health-energy",
+      "domain_title": "Health & Energy",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which low-risk food-environment or routine changes have evidence for improving everyday dietary behavior in adults?",
+      "evidence_target": "Prefer systematic reviews of behavioral or environmental interventions rather than nutrient-treatment claims.",
+      "guardrail": "Keep this general and educational; do not provide individualized nutrition or medical advice.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/nutrition/",
+      "research_queries": [
+        {
+          "id": "health-nutrition-behavior",
+          "query": "dietary behavior environmental intervention adults systematic review",
+          "risk_flags": [
+            "health"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "nutrition",
+        "title": "Nutrition",
+        "domain_id": "health-energy",
+        "status": "growth-gap",
+        "entries": 0,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "problem-solving",
+      "topic_title": "Problem Solving",
+      "domain_id": "learning-thinking",
+      "domain_title": "Learning & Thinking",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which structured problem-solving methods improve solution quality or transfer across realistic tasks?",
+      "evidence_target": "Prefer comparative experiments, reviews, or educational/workplace studies with clear task outcomes.",
+      "guardrail": "A named framework is not evidence of effectiveness by itself.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/problem-solving/",
+      "research_queries": [
+        {
+          "id": "learning-problem-solving",
+          "query": "problem solving instruction transfer meta analysis adults education workplace",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "problem-solving",
+        "title": "Problem Solving",
+        "domain_id": "learning-thinking",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "psychological-flexibility",
+      "topic_title": "Psychological Flexibility",
+      "domain_id": "mind-resilience",
+      "domain_title": "Mind & Resilience",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "What evidence supports practical psychological-flexibility exercises outside formal therapy, and where are the limits?",
+      "evidence_target": "Prefer systematic reviews and trials that report behavior or functioning outcomes, not only scale changes.",
+      "guardrail": "ACT-derived concepts require explicit mental-health boundaries and must not be presented as treatment.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/psychological-flexibility/",
+      "research_queries": [
+        {
+          "id": "mind-psychological-flexibility",
+          "query": "psychological flexibility acceptance commitment daily life systematic review",
+          "risk_flags": [
+            "mental-health",
+            "clinical"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "ancestral-torch-resilience-tracker",
+          "title": "Short Resilience Reminder",
+          "url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "psychological-flexibility",
+        "title": "Psychological Flexibility",
+        "domain_id": "mind-resilience",
+        "status": "growth-gap",
+        "entries": 2,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "self-awareness",
+      "topic_title": "Self-Awareness",
+      "domain_id": "mind-resilience",
+      "domain_title": "Mind & Resilience",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which forms of self-monitoring or structured reflection improve useful self-awareness without merely increasing tracking burden?",
+      "evidence_target": "Prefer reviews or experiments linking reflection or self-monitoring to behavior, calibration, or decision quality.",
+      "guardrail": "Do not assume more journaling or more tracking is inherently beneficial.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/self-awareness/",
+      "research_queries": [
+        {
+          "id": "mind-self-monitoring",
+          "query": "self monitoring structured reflection behavior change systematic review adults",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [
+        {
+          "slug": "cbt-action-mood-tracker",
+          "title": "Action and Mood Observation Note",
+          "url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "dbt-distress-tolerance-coach",
+          "title": "Pause Before Acting on a High-Stress Urge",
+          "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "daily-gratitude-journal-three-things",
+          "title": "Specific Gratitude Note",
+          "url": "https://brali-lifeos.github.io/life-os/daily-gratitude-journal-three-things/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "3-minute-sensory-mindfulness-act",
+          "title": "Use Your Senses to Return to the Present",
+          "url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "self-awareness",
+        "title": "Self-Awareness",
+        "domain_id": "mind-resilience",
+        "status": "growth-gap",
+        "entries": 4,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "social-confidence",
+      "topic_title": "Social Confidence",
+      "domain_id": "communication-relationships",
+      "domain_title": "Communication & Relationships",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which gradual practice or communication interventions improve everyday social confidence without over-medicalizing normal discomfort?",
+      "evidence_target": "Prefer non-clinical or clearly bounded evidence with behavioral outcomes.",
+      "guardrail": "Do not turn clinical social-anxiety treatment evidence into generic self-help claims.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/social-confidence/",
+      "research_queries": [
+        {
+          "id": "communication-social-confidence",
+          "query": "social confidence communication skills intervention nonclinical adults systematic review",
+          "risk_flags": [
+            "mental-health"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "social-confidence",
+        "title": "Social Confidence",
+        "domain_id": "communication-relationships",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "workspace",
+      "topic_title": "Workspace",
+      "domain_id": "environment-digital",
+      "domain_title": "Environment & Digital Life",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which physical or digital workspace changes reliably reduce friction, interruption, or error in ordinary knowledge work?",
+      "evidence_target": "Prefer ergonomics/HCI/workplace evidence with measurable task or wellbeing outcomes.",
+      "guardrail": "Do not confuse aesthetic preference with universal productivity benefit.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/workspace/",
+      "research_queries": [
+        {
+          "id": "digital-workspace-design",
+          "query": "workspace distraction ergonomics knowledge work systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "workspace",
+        "title": "Workspace",
+        "domain_id": "environment-digital",
+        "status": "growth-gap",
+        "entries": 2,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "worry-rumination",
+      "topic_title": "Worry & Rumination",
+      "domain_id": "mind-resilience",
+      "domain_title": "Mind & Resilience",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which practical strategies reduce unproductive repetitive thinking without requiring a clinical treatment framing?",
+      "evidence_target": "Prefer systematic reviews that distinguish rumination, worry, distraction, acceptance, and problem-solving outcomes.",
+      "guardrail": "Clinical or severe symptoms remain outside a general-purpose self-help protocol.",
+      "stage": "discovery-ready",
+      "stage_label": "Discovery ready",
+      "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/worry-rumination/",
+      "research_queries": [
+        {
+          "id": "mind-rumination-worry",
+          "query": "rumination worry intervention adults systematic review nonclinical",
+          "risk_flags": [
+            "mental-health"
+          ]
+        }
+      ],
+      "candidates": [],
+      "evidence_decisions": [],
+      "trusted_protocols": [],
+      "resolution": null,
+      "coverage": {
+        "id": "worry-rumination",
+        "title": "Worry & Rumination",
+        "domain_id": "mind-resilience",
+        "status": "growth-gap",
+        "entries": 0,
+        "research_candidates": 0
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "attention-focus",
+      "topic_title": "Attention & Focus",
+      "domain_id": "focus-action",
+      "domain_title": "Focus & Action",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "What kinds of interventions reliably reduce avoidable task switching and help people sustain useful attention in everyday work?",
+      "evidence_target": "Prefer randomized or controlled field/lab evidence that separates subjective focus from task performance.",
+      "guardrail": "Do not turn one timer length, blocker, or notification setting into a universal optimum.",
+      "stage": "ready-for-resolution",
+      "stage_label": "Ready for resolution review",
+      "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/attention-focus/",
+      "research_queries": [
+        {
+          "id": "focus-attention-switching",
+          "query": "task switching interruptions sustained attention workplace systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1371/journal.pone.0272460",
+          "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+          "status": "support-existing",
+          "publication_date": "2022-08-31",
+          "reference_url": "https://doi.org/10.1371/journal.pone.0272460"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "microbreak-wellbeing-performance-boundary-2022",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "90-30-focus-rest-schedule",
+          "title": "Alternate Focused Work With Real Breaks",
+          "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "refocus-present-stop-mind-wandering",
+          "title": "Deliberate Attention Switching with Everyday Sounds",
+          "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "attention-focus",
+        "title": "Attention & Focus",
+        "domain_id": "focus-action",
+        "status": "growth-gap",
+        "entries": 2,
+        "research_candidates": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "listening",
+      "topic_title": "Listening",
+      "domain_id": "communication-relationships",
+      "domain_title": "Communication & Relationships",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which active-listening behaviors measurably improve understanding, correction, or interaction quality?",
+      "evidence_target": "Prefer interpersonal communication studies and reviews with observable comprehension or interaction outcomes.",
+      "guardrail": "Do not use invented relationship-improvement percentages or scripts as universal prescriptions.",
+      "stage": "ready-for-resolution",
+      "stage_label": "Ready for resolution review",
+      "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/listening/",
+      "research_queries": [
+        {
+          "id": "communication-active-listening",
+          "query": "active listening interpersonal communication intervention review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1001/jamainternmed.2023.0629",
+          "title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+          "status": "challenge-existing",
+          "publication_date": "2023-04-10",
+          "reference_url": "https://doi.org/10.1001/jamainternmed.2023.0629"
+        },
+        {
+          "id": "crossref:10.3389/fpsyg.2012.00482",
+          "title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+          "status": "support-existing",
+          "publication_date": "2012-11-12",
+          "reference_url": "https://doi.org/10.3389/fpsyg.2012.00482"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "communication-coaching-reflective-statements-boundary-2023",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/"
+        },
+        {
+          "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "ask-better-interview-questions",
+          "title": "Run a Short, Concrete Information Interview",
+          "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "listening",
+        "title": "Listening",
+        "domain_id": "communication-relationships",
+        "status": "growth-gap",
+        "entries": 2,
+        "research_candidates": 2
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "movement",
+      "topic_title": "Movement",
+      "domain_id": "health-energy",
+      "domain_title": "Health & Energy",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which practical ways of interrupting prolonged sitting are sustainable and supported for health or functioning outcomes?",
+      "evidence_target": "Prefer randomized crossover/field trials and systematic reviews that report both benefits and uncertainty.",
+      "guardrail": "Do not invent a cognition-optimizing break interval, duration, or intensity.",
+      "stage": "ready-for-resolution",
+      "stage_label": "Ready for resolution review",
+      "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/movement/",
+      "research_queries": [
+        {
+          "id": "health-movement-breaks",
+          "query": "sedentary breaks light physical activity workplace systematic review",
+          "risk_flags": [
+            "health"
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1186/s12966-026-01953-6",
+          "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+          "status": "watch",
+          "publication_date": "2026-07-13",
+          "reference_url": "https://doi.org/10.1186/s12966-026-01953-6"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "movement-breaks-cognition-2026",
+          "decision": "watch",
+          "reviewed_at": "2026-08-18",
+          "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/movement-breaks-cognition-2026/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "cardio-health-daily-habits",
+          "title": "Build Toward a Weekly Movement Baseline",
+          "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "movement",
+        "title": "Movement",
+        "domain_id": "health-energy",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "recovery-energy",
+      "topic_title": "Recovery & Energy",
+      "domain_id": "health-energy",
+      "domain_title": "Health & Energy",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which work-break and recovery practices improve functioning without relying on pseudoscientific energy-cycle claims?",
+      "evidence_target": "Prefer occupational or behavioral systematic reviews with objective or validated outcomes.",
+      "guardrail": "Avoid universal ultradian schedules, physiological optimization claims, or fixed recovery doses.",
+      "stage": "ready-for-resolution",
+      "stage_label": "Ready for resolution review",
+      "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/",
+      "research_queries": [
+        {
+          "id": "health-recovery-breaks",
+          "query": "work breaks recovery fatigue occupational systematic review",
+          "risk_flags": [
+            "health"
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1371/journal.pone.0272460",
+          "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+          "status": "support-existing",
+          "publication_date": "2022-08-31",
+          "reference_url": "https://doi.org/10.1371/journal.pone.0272460"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "microbreak-wellbeing-performance-boundary-2022",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "90-30-focus-rest-schedule",
+          "title": "Alternate Focused Work With Real Breaks",
+          "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+          "evidence_status": "practical"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "recovery-energy",
+        "title": "Recovery & Energy",
+        "domain_id": "health-energy",
+        "status": "growth-gap",
+        "entries": 2,
+        "research_candidates": 1
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "sleep-circadian",
+      "topic_title": "Sleep & Circadian Rhythm",
+      "domain_id": "health-energy",
+      "domain_title": "Health & Energy",
+      "ontology_status": "growth-gap",
+      "baseline_status": "growth-gap",
+      "question": "Which modifiable sleep-timing or regularity behaviors have causal evidence for meaningful daytime outcomes?",
+      "evidence_target": "Prefer intervention studies and high-quality reviews that distinguish association from causal behavior change.",
+      "guardrail": "No fixed bedtime tolerance or medical sleep prescription should be inferred from observational associations.",
+      "stage": "ready-for-resolution",
+      "stage_label": "Ready for resolution review",
+      "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/",
+      "research_queries": [
+        {
+          "id": "health-sleep-regularity",
+          "query": "sleep regularity health behavior systematic review adults",
+          "risk_flags": [
+            "health"
+          ]
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1016/j.jad.2025.120481",
+          "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+          "status": "watch",
+          "publication_date": "2026-01-15",
+          "reference_url": "https://doi.org/10.1016/j.jad.2025.120481"
+        },
+        {
+          "id": "crossref:10.1016/j.smrv.2021.101532",
+          "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+          "status": "propose-protocol",
+          "publication_date": "2021-12-01",
+          "reference_url": "https://doi.org/10.1016/j.smrv.2021.101532"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "sleep-opportunity-extension-2021",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-08-19",
+          "source_title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/sleep-opportunity-extension-2021/"
+        },
+        {
+          "id": "sleep-variability-cognition-2026",
+          "decision": "watch",
+          "reviewed_at": "2026-08-18",
+          "source_title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/sleep-variability-cognition-2026/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "ideal-sleep-hours-finder",
+          "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+          "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": null,
+      "coverage": {
+        "id": "sleep-circadian",
+        "title": "Sleep & Circadian Rhythm",
+        "domain_id": "health-energy",
+        "status": "growth-gap",
+        "entries": 1,
+        "research_candidates": 2
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "memory",
+      "topic_title": "Memory",
+      "domain_id": "learning-thinking",
+      "domain_title": "Learning & Thinking",
+      "ontology_status": "active",
+      "baseline_status": "growth-gap",
+      "question": "Which learning practices improve durable memory, and how should Brali separate retention from transfer and application?",
+      "evidence_target": "Prefer meta-analyses and classroom/field studies that distinguish direct retention, forward effects, and application outcomes.",
+      "guardrail": "Do not collapse remembering, learning later material, and skill application into one testing-effect claim.",
+      "stage": "resolved",
+      "stage_label": "Resolved",
+      "stage_summary": "Reviewed evidence has been translated into trusted Topic coverage and explicitly closed.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/memory/",
+      "research_queries": [
+        {
+          "id": "learning-retrieval-practice",
+          "query": "retrieval practice spaced practice learning meta analysis education",
+          "risk_flags": []
+        },
+        {
+          "id": "learning-consolidation-rest",
+          "query": "wakeful rest post learning memory consolidation meta analysis",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1016/j.learninstruc.2026.102377",
+          "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+          "status": "challenge-existing",
+          "publication_date": "2026-08-01",
+          "reference_url": "https://doi.org/10.1016/j.learninstruc.2026.102377"
+        },
+        {
+          "id": "crossref:10.1037/0033-2909.132.3.354",
+          "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+          "status": "support-existing",
+          "publication_date": "2006-05-01",
+          "reference_url": "https://doi.org/10.1037/0033-2909.132.3.354"
+        },
+        {
+          "id": "crossref:10.1037/a0037559",
+          "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+          "status": "support-existing",
+          "publication_date": "2014-08-25",
+          "reference_url": "https://doi.org/10.1037/a0037559"
+        },
+        {
+          "id": "crossref:10.1037/xlm0001634",
+          "title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+          "status": "challenge-existing",
+          "publication_date": "2026-06-08",
+          "reference_url": "https://doi.org/10.1037/xlm0001634"
+        },
+        {
+          "id": "crossref:10.3758/s13423-025-02778-3",
+          "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+          "status": "propose-protocol",
+          "publication_date": "2026-01-15",
+          "reference_url": "https://doi.org/10.3758/s13423-025-02778-3"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "distributed-practice-verbal-recall-boundary-2006",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/distributed-practice-verbal-recall-boundary-2006/"
+        },
+        {
+          "id": "retrieval-procedural-application-2026",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-08-18",
+          "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/"
+        },
+        {
+          "id": "testing-effect-direct-forward-2026",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-08-18",
+          "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/testing-effect-direct-forward-2026/"
+        },
+        {
+          "id": "testing-versus-restudy-retention-boundary-2014",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-22",
+          "source_title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/testing-versus-restudy-retention-boundary-2014/"
+        },
+        {
+          "id": "wakeful-rest-memory-2026",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-08-18",
+          "source_title": "Should we all just take 10? A meta-analysis of wakeful rest",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "spaced-recall-coach",
+          "title": "Separate Review Sessions Instead of Cramming",
+          "url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "avoid-list-interference-memory-retention",
+          "title": "Try Quiet Wakeful Rest After Learning",
+          "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
+          "evidence_status": "reviewed"
+        },
+        {
+          "slug": "active-recall-test-yourself",
+          "title": "Use Active Recall for Retention, Then Practice Application",
+          "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": {
+        "topic_id": "memory",
+        "status": "closed",
+        "resolved_at": "2026-08-20",
+        "resolved_by": "Brali editorial agent",
+        "evidence_decision_ids": [
+          "wakeful-rest-memory-2026",
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026"
+        ],
+        "protocol_slugs": [
+          "avoid-list-interference-memory-retention",
+          "active-recall-test-yourself"
+        ],
+        "rationale": "Memory moved from an ontology growth gap to active coverage after Brali reviewed current evidence on wakeful rest and retrieval practice, narrowed unsupported transfer claims, and published trusted protocols that preserve those evidence boundaries."
+      },
+      "coverage": {
+        "id": "memory",
+        "title": "Memory",
+        "domain_id": "learning-thinking",
+        "status": "active",
+        "entries": 4,
+        "research_candidates": 5
+      }
+    },
+    {
+      "schema_version": 1,
+      "topic_id": "revision-feedback",
+      "topic_title": "Revision & Feedback",
+      "domain_id": "creativity-expression",
+      "domain_title": "Creativity & Expression",
+      "ontology_status": "active",
+      "baseline_status": "growth-gap",
+      "question": "Which forms of feedback and revision improve written or creative work, and when can feedback backfire?",
+      "evidence_target": "Prefer systematic reviews and comparative studies with revision-quality or learning outcomes.",
+      "guardrail": "More feedback is not automatically better; timing, source, specificity, and task matter.",
+      "stage": "resolved",
+      "stage_label": "Resolved",
+      "stage_summary": "Reviewed evidence has been translated into trusted Topic coverage and explicitly closed.",
+      "canonical_url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/",
+      "research_queries": [
+        {
+          "id": "writing-feedback",
+          "query": "writing feedback revision learning systematic review",
+          "risk_flags": []
+        }
+      ],
+      "candidates": [
+        {
+          "id": "crossref:10.1016/j.learninstruc.2024.101961",
+          "title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+          "status": "propose-protocol",
+          "publication_date": "2024-10-01",
+          "reference_url": "https://doi.org/10.1016/j.learninstruc.2024.101961"
+        }
+      ],
+      "evidence_decisions": [
+        {
+          "id": "writing-feedback-level-match-2024",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-08-21",
+          "source_title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+          "ledger_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/"
+        }
+      ],
+      "trusted_protocols": [
+        {
+          "slug": "ask-for-feedback-tracker",
+          "title": "Ask for Feedback on One Specific Decision",
+          "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "leave-an-app-review",
+          "title": "Leave Useful Feedback",
+          "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+          "evidence_status": "practical"
+        },
+        {
+          "slug": "ask-a-peer-to-proofread",
+          "title": "Match Feedback to the Revision Target",
+          "url": "https://brali-lifeos.github.io/life-os/ask-a-peer-to-proofread/",
+          "evidence_status": "reviewed"
+        }
+      ],
+      "resolution": {
+        "topic_id": "revision-feedback",
+        "status": "closed",
+        "resolved_at": "2026-08-21",
+        "resolved_by": "Brali editorial agent",
+        "evidence_decision_ids": [
+          "writing-feedback-level-match-2024"
+        ],
+        "protocol_slugs": [
+          "ask-a-peer-to-proofread"
+        ],
+        "rationale": "Revision & Feedback moved from a growth gap to active coverage after Brali reviewed a 2024 meta-analysis of educational writing feedback, replaced inherited unsupported peer-review claims with a bounded protocol that distinguishes surface and deep revision targets, mapped that protocol to the canonical Topic, and preserved explicit limits on learner population, feedback source, sequence, and transfer beyond educational writing."
+      },
+      "coverage": {
+        "id": "revision-feedback",
+        "title": "Revision & Feedback",
+        "domain_id": "creativity-expression",
+        "status": "active",
+        "entries": 5,
+        "research_candidates": 1
+      }
+    }
+  ]
+}

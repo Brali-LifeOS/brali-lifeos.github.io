@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:indoor-plant-placement-guide",
+  "slug": "indoor-plant-placement-guide",
+  "title": "Incorporate Plants into Your Living and Working Spaces",
+  "description": "Incorporate plants into your living and working spaces. For example, place potted plants in your office or create a small indoor garden.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/indoor-plant-placement-guide/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/indoor-plant-placement-guide/index.json",
+  "growth_zone": {
+    "slug": "as-architector",
+    "title": "As Architector"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "architecture",
+        "title": "Architecture"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-architector"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

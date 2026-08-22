@@ -33,7 +33,7 @@ const verifyZoneSurface = collection => {
   const machinePath = path.join(ROOT, 'life-os', collection.zone_slug, 'index.json');
   if (!fs.existsSync(pagePath) || !fs.existsSync(machinePath)) fail(`missing archive surface for ${collection.zone_slug}`);
   const pageHtml = fs.readFileSync(pagePath, 'utf8');
-  if (!/<meta\s+name=["']robots["'][^>]*noindex/i.test(pageHtml)) fail(`${collection.zone_slug} archive page must remain noindex`);
+  if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(pageHtml)) fail(`${collection.zone_slug} public archive page must be search-indexable`);
   if (!pageHtml.includes('data-legacy-trust-boundary="true"')) fail(`${collection.zone_slug} is missing visible archive trust banner`);
   if (!pageHtml.includes('/state/legacy-sensitive/')) fail(`${collection.zone_slug} banner does not link trust state`);
   const machine = read(`life-os/${collection.zone_slug}/index.json`);
@@ -73,4 +73,4 @@ const manifestEntry = (manifest.files ?? []).find(entry => (typeof entry === 'st
 if (!manifestEntry) fail('canonical manifest does not include legacy-sensitive dataset');
 if (manifest.legacy_sensitive_collections?.archive_only_sensitive_collections !== expectedSensitive.length) fail('manifest legacy-sensitive summary drift');
 
-console.log(`Legacy sensitive state verified: ${expectedSensitive.length} archive-only sensitive collections, ${expectedEntryCount} withheld legacy entries, ${expectedEmpty.length} empty legacy collection(s), all zone pages noindex with visible + machine-readable trust boundaries.`);
+console.log(`Legacy sensitive state verified: ${expectedSensitive.length} archive-only sensitive collections, ${expectedEntryCount} review-gated legacy entries, ${expectedEmpty.length} empty legacy collection(s), all zone pages search-indexable with visible + machine-readable trust boundaries.`);

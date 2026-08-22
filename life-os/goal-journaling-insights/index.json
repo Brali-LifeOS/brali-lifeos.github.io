@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:goal-journaling-insights",
+  "slug": "goal-journaling-insights",
+  "title": "Goal Journal Review",
+  "description": "Use a short goal journal to capture what you planned, what actually happened, what got in the way, and one adjustment for the next attempt.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/goal-journaling-insights/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/goal-journaling-insights/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:goal-journaling-insights",
+    "language": "en",
+    "slug": "goal-journaling-insights",
+    "url": "https://brali-lifeos.github.io/life-os/goal-journaling-insights/",
+    "title": "Goal Journal Review",
+    "description": "Use a short goal journal to capture what you planned, what actually happened, what got in the way, and one adjustment for the next attempt.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "After a meaningful work session or at a regular review point, write four short lines: what I intended, what happened, what helped or blocked me, and what I will change next.",
+    "check_in": "Did the journal produce one concrete adjustment, or did it become another place to write without changing anything?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Journal Your Goals"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": null
+    }
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:biomimicry-creative-problem-solving",
+  "slug": "biomimicry-creative-problem-solving",
+  "title": "Translate a Problem into a Nature-Inspired Design Principle",
+  "description": "Describe the function a solution must perform, inspect a biological example, extract a transferable principle and test one safe application without copying the organism literally.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/biomimicry-creative-problem-solving/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/biomimicry-creative-problem-solving/index.json",
+  "growth_zone": {
+    "slug": "be-creative",
+    "title": "Be Creative"
+  },
+  "life_area": {
+    "slug": "creativity-expression",
+    "title": "Creativity & Expression"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving"
+      },
+      {
+        "id": "idea-generation",
+        "title": "Idea Generation"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "creativity-expression",
+      "growth_zone_slug": "be-creative"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "creative-problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:biomimicry-creative-problem-solving",
+    "language": "en",
+    "slug": "biomimicry-creative-problem-solving",
+    "url": "https://brali-lifeos.github.io/life-os/biomimicry-creative-problem-solving/",
+    "title": "Translate a Problem into a Nature-Inspired Design Principle",
+    "description": "Describe the function a solution must perform, inspect a biological example, extract a transferable principle and test one safe application without copying the organism literally.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "creative-problem-solving",
+          "title": "Creative Problem Solving"
+        },
+        {
+          "id": "idea-generation",
+          "title": "Idea Generation"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "creativity-expression",
+        "growth_zone_slug": "be-creative"
+      }
+    },
+    "life_area": {
+      "slug": "creativity-expression",
+      "title": "Creativity & Expression"
+    },
+    "growth_zone": {
+      "slug": "be-creative",
+      "title": "Be Creative"
+    },
+    "action": "State what the solution must do without naming the current solution. Choose a biological example from a reliable description. Separate the observed structure or process from the metaphor. Write one transferable principle, generate several applications and test the smallest reversible option within safety and operational constraints.",
+    "check_in": "What function did I study, what principle did I extract, and what did the small test reveal about its usefulness or limit?",
+    "keywords": [
+      "Be Creative",
+      "Life OS",
+      "Biomimicry"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

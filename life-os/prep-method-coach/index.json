@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:prep-method-coach",
+  "slug": "prep-method-coach",
+  "title": "Apply the PREP Method",
+  "description": "Use the PREP method (Point, Reason, Example, Point) to structure your responses and arguments. Start with your main point, provide a reason, give an example, and then restate your main point.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/prep-method-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/prep-method-coach/index.json",
+  "growth_zone": {
+    "slug": "talk-smart",
+    "title": "Talk Smart"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "talk-smart"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

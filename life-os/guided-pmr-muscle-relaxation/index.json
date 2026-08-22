@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:guided-pmr-muscle-relaxation",
+  "slug": "guided-pmr-muscle-relaxation",
+  "title": "Try Progressive Muscle Relaxation Gently",
+  "description": "Tightly squeeze each muscle group for five seconds, then relax it for thirty seconds, moving from your toes up to your head.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/guided-pmr-muscle-relaxation/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/guided-pmr-muscle-relaxation/index.json",
+  "growth_zone": {
+    "slug": "no-depression",
+    "title": "No Depression"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.rbht.nhs.uk/our-services/clinical_support/rehabilitation-and-therapies/psychological-medicine/relaxation-exercises",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "mood-wellbeing",
+        "title": "Mood & Wellbeing"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "no-depression"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:guided-pmr-muscle-relaxation",
+    "language": "en",
+    "slug": "guided-pmr-muscle-relaxation",
+    "url": "https://brali-lifeos.github.io/life-os/guided-pmr-muscle-relaxation/",
+    "title": "Try Progressive Muscle Relaxation Gently",
+    "description": "Tightly squeeze each muscle group for five seconds, then relax it for thirty seconds, moving from your toes up to your head.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "mood-wellbeing",
+          "title": "Mood & Wellbeing"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "no-depression"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "no-depression",
+      "title": "No Depression"
+    },
+    "action": "Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort.",
+    "check_in": "Did I practise without pain or straining? Which areas felt tense, and did I notice any difference after releasing them?",
+    "keywords": [
+      "No Depression",
+      "Life OS",
+      "Progressive Muscle Relaxation (PMR)"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.rbht.nhs.uk/our-services/clinical_support/rehabilitation-and-therapies/psychological-medicine/relaxation-exercises",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

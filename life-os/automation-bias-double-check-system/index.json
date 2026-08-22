@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:automation-bias-double-check-system",
+  "slug": "automation-bias-double-check-system",
+  "title": "Avoid over-Relying on Automation",
+  "description": "Avoid over-relying on automation. Here’s how: - Verify output: Check if automated results align with your expectations or data. - Stay informed: Learn how the system works to catch potential errors. - Trust your instincts: If something feels off, investigate instead of blindly following automation. Example: If a navigation app suggests a strange route, cross-check it with a map before following.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/automation-bias-double-check-system/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/automation-bias-double-check-system/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

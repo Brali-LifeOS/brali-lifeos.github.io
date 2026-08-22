@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:control-to-action-compass",
+  "slug": "control-to-action-compass",
+  "title": "Each Morning, Write Down Your Main Concerns for the Day",
+  "description": "Each morning, write down your main concerns for the day. Next to each concern, list what aspects you can control and acknowledge the elements you can't.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/index.json",
+  "growth_zone": {
+    "slug": "stoicism",
+    "title": "Stoicism"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "stoicism",
+        "title": "Stoicism"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "stoicism"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

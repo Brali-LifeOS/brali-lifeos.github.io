@@ -70,9 +70,7 @@ for (const entry of index) {
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
   if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
-  if (!evidence.indexable && !/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) {
-    restrictedStillIndexable += 1;
-  }
+  if (/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) restrictedStillIndexable += 1;
 
   const generatedClaims = inspectClaims(generated);
   const disallowedGeneratedCategories = generatedClaims.enforcedCategories.filter(category => {
@@ -126,7 +124,7 @@ console.log(`- Source records containing legacy MetalHatsCats branding: ${legacy
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
 console.log(`- Indexable pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);
 console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
-console.log(`- Restricted pages still indexable: ${restrictedStillIndexable}`);
+console.log(`- Public hack pages still carrying noindex: ${restrictedStillIndexable}`);
 console.log(`- Evidence status/index mismatches: ${evidenceStatusMismatches}`);
 if (generatedClaimExamples.length) console.log(`- Generated claim marker examples: ${generatedClaimExamples.join(", ")}`);
 if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")}`);

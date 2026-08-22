@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:worst-option-out-decision-tool",
+  "slug": "worst-option-out-decision-tool",
+  "title": "Start by Picking the Worst Option from Your List of Choices and Cross It",
+  "description": "Start by picking the worst option from your list of choices and cross it out. Repeat this process with the remaining alternatives until you’re left with the most optimal decision. Don’t be afraid to practice making decisions—whatever choice you make, it’s up to you to decide if it was the right one. And even if it wasn’t, don’t worry—mistakes can always be fixed.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/worst-option-out-decision-tool/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/worst-option-out-decision-tool/index.json",
+  "growth_zone": {
+    "slug": "future-builder",
+    "title": "Future Builder"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "future-builder"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

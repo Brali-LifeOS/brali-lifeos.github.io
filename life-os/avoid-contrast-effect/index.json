@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:avoid-contrast-effect",
+  "slug": "avoid-contrast-effect",
+  "title": "Judge Each Option Against the Same Criteria",
+  "description": "Define the decision criteria before comparing options, assess each option on its own and only then compare the results.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:avoid-contrast-effect",
+    "language": "en",
+    "slug": "avoid-contrast-effect",
+    "url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+    "title": "Judge Each Option Against the Same Criteria",
+    "description": "Define the decision criteria before comparing options, assess each option on its own and only then compare the results.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "State the outcome and non-negotiables. Review each option separately using the same short criteria and note pass, unclear or fail. Compare only after the separate assessments are complete. Recheck any choice that depends mainly on the previous option looking unusually good or bad.",
+    "check_in": "Would I make the same choice if this option appeared first, and which criterion actually supports the decision?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Spot the Contrast Trap"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

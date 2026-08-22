@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:nightly-gratitude-journal-tracker",
+  "slug": "nightly-gratitude-journal-tracker",
+  "title": "Each Night, Write Down Three Things You Were Thankful for That Day",
+  "description": "Each night, write down three things you were thankful for that day.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/nightly-gratitude-journal-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/nightly-gratitude-journal-tracker/index.json",
+  "growth_zone": {
+    "slug": "be-positive",
+    "title": "Be Positive"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "mood-wellbeing",
+        "title": "Mood & Wellbeing"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "be-positive"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

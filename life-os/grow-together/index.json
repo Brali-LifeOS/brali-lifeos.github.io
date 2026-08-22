@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "grow-together",
+  "title": "Grow Together",
+  "description": "Growth hacks from Cognitive Behavioral Therapy to challenge negative thoughts and boost positive actions.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/grow-together/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/grow-together/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "counts": {
+    "library_entries": 3,
+    "trusted_protocols": 1,
+    "reviewed": 0,
+    "practical": 1,
+    "pending_review": 2,
+    "restricted": 0,
+    "mapped_topics": 3,
+    "research_gaps": 1
+  },
+  "topics": [
+    {
+      "id": "conflict-repair",
+      "title": "Conflict & Repair",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/conflict-repair/"
+    },
+    {
+      "id": "clear-communication",
+      "title": "Clear Communication",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/clear-communication/"
+    },
+    {
+      "id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/revision-feedback/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "stage": "resolved",
+      "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "leave-an-app-review",
+      "title": "Leave Useful Feedback",
+      "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+      "evidence_status": "practical"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "leave-an-app-review",
+      "title": "Leave Useful Feedback",
+      "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "quick-dm-invite-templates",
+      "title": "Shoot a Quick Text, DM, or Shout-Out on Social to Invite Someone New",
+      "url": "https://brali-lifeos.github.io/life-os/quick-dm-invite-templates/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "streak-share-referral-kit",
+      "title": "Show Off Your Wins",
+      "url": "https://brali-lifeos.github.io/life-os/streak-share-referral-kit/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    }
+  ]
+}

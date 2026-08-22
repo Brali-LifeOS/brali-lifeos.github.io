@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "id": "microbreak-wellbeing-performance-boundary-2022",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/",
+  "json_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/index.json",
+  "decision": "support-existing",
+  "decision_label": "Supports existing guidance",
+  "reviewed_at": "2026-08-22",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+    "type": "systematic-review-meta-analysis",
+    "doi": "10.1371/journal.pone.0272460",
+    "citation_text": "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. PLOS ONE. 2022;17(8):e0272460.",
+    "study_design": "Systematic review and random-effects meta-analysis of experimental and quasi-experimental studies comparing work-task micro-breaks of 10 minutes or less with control conditions. Nineteen publications contributed 22 independent study samples with 2,335 participants; most studies involved students or employees and most were conducted in laboratory or workplace settings.",
+    "population": "Healthy students and employees engaged in depleting work or work-like tasks. The included samples varied in setting, task demands and break activity; the review did not establish one universal workplace or individual profile.",
+    "intervention_or_exposure": "Short task interruptions of no more than 10 minutes, with varied break content and duration, compared with continued work or another break/control condition. This is related to the break step in Brali's Pomodoro-style protocol but does not test the full 25-minute-work/5-minute-break sequence.",
+    "outcomes": [
+      "Vigor after a micro-break",
+      "Fatigue after a micro-break",
+      "Task performance after a micro-break"
+    ]
+  },
+  "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+  "unsupported_or_overstated_claims": [
+    "A 5-minute break is an evidence-based optimal duration.",
+    "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
+    "Pomodoro reliably improves productivity or task performance.",
+    "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
+    "Every short break reduces fatigue or increases vigor for every individual.",
+    "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
+    "The review establishes a universal break schedule for cognitively demanding work.",
+    "The pooled effects justify treatment, burnout-prevention or clinical claims."
+  ],
+  "limitations": [
+    "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+    "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+    "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+    "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+    "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+    "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+    "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+  ],
+  "target_hack_ids": [
+    "25-minute-pomodoro-focus-sprints"
+  ],
+  "target_protocol_ids": [
+    "brali:25-minute-pomodoro-focus-sprints"
+  ],
+  "risk_flags": [
+    "health"
+  ],
+  "notes": "Editorial outcome: keep `25-minute-pomodoro-focus-sprints` practical. Its current wording already treats 25 minutes as a conventional starting setting and the break as an adjustable task boundary. Do not add a general performance claim or present five minutes as an optimal recovery dose."
+}

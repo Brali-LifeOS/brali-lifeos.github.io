@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ai-premortem-risk-planner",
+  "slug": "ai-premortem-risk-planner",
+  "title": "AI-Assisted Premortem",
+  "description": "Use an AI model as a brainstorming partner for possible failure modes, then verify important risks against the real plan before choosing mitigations.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/index.json",
+  "growth_zone": {
+    "slug": "thinking",
+    "title": "Thinking"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      },
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      },
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "thinking"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ai-premortem-risk-planner",
+    "language": "en",
+    "slug": "ai-premortem-risk-planner",
+    "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+    "title": "AI-Assisted Premortem",
+    "description": "Use an AI model as a brainstorming partner for possible failure modes, then verify important risks against the real plan before choosing mitigations.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "error-prevention",
+          "title": "Error Prevention"
+        },
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "thinking"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "thinking",
+      "title": "Thinking"
+    },
+    "action": "Describe the plan without sensitive information, ask an AI for plausible ways it could fail, group the suggestions, verify the important ones yourself, and choose mitigations only for risks that survive the check.",
+    "check_in": "Which risks were genuinely relevant after verification, and which model suggestions were generic, impossible, or based on missing context?",
+    "keywords": [
+      "Thinking",
+      "Life OS",
+      "Check Your Optimism (Optimism Bias)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

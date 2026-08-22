@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:zoom-in-out-reframing-nlp",
+  "slug": "zoom-in-out-reframing-nlp",
+  "title": "Change the Frame Size by Zooming in or Out on an Issue",
+  "description": "Change the frame size by zooming in or out on an issue. For instance, ask 'What’s the bigger picture?' to expand the context, or 'What’s the smallest detail?' to focus in.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/zoom-in-out-reframing-nlp/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/zoom-in-out-reframing-nlp/index.json",
+  "growth_zone": {
+    "slug": "nlp",
+    "title": "NLP"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "nlp",
+        "title": "NLP (legacy)"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "nlp"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

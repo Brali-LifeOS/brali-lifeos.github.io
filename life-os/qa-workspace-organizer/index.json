@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:qa-workspace-organizer",
+  "slug": "qa-workspace-organizer",
+  "title": "QA Specialists Keep Their Testing Environment Organized",
+  "description": "QA specialists keep their testing environment organized. Maintain an organized workspace to improve focus and efficiency.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/qa-workspace-organizer/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/qa-workspace-organizer/index.json",
+  "growth_zone": {
+    "slug": "as-qa",
+    "title": "As QA"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      }
+    ],
+    "topics": [
+      {
+        "id": "workspace",
+        "title": "Workspace"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "qa",
+        "title": "Quality Assurance"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-qa"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "workspace",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

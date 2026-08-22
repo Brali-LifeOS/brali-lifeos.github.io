@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:analogy-studio",
+  "slug": "analogy-studio",
+  "title": "Explain One Idea with an Analogy and Its Limit",
+  "description": "Compare an unfamiliar idea with something familiar, state the matching point, name where the comparison stops and ask the listener to restate the idea.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/analogy-studio/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/analogy-studio/index.json",
+  "growth_zone": {
+    "slug": "nlp",
+    "title": "NLP"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
+      }
+    ],
+    "topics": [
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      },
+      {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "nlp"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "creative-problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:analogy-studio",
+    "language": "en",
+    "slug": "analogy-studio",
+    "url": "https://brali-lifeos.github.io/life-os/analogy-studio/",
+    "title": "Explain One Idea with an Analogy and Its Limit",
+    "description": "Compare an unfamiliar idea with something familiar, state the matching point, name where the comparison stops and ask the listener to restate the idea.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        },
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        },
+        {
+          "id": "creative-problem-solving",
+          "title": "Creative Problem Solving"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "nlp"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "nlp",
+      "title": "NLP"
+    },
+    "action": "Write the idea you need to explain. Choose a familiar comparison, map only the important relationship, add one boundary sentence and ask the listener to restate the original idea. Revise the analogy if the restatement keeps the wrong detail.",
+    "check_in": "Could the listener restate the intended idea, and which part of the analogy clarified or distorted it?",
+    "keywords": [
+      "NLP",
+      "Life OS",
+      "Create Analogies"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ideal-sleep-hours-finder",
+  "slug": "ideal-sleep-hours-finder",
+  "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+  "description": "If your sleep is routinely short, protect a realistic window that gives you enough opportunity to sleep and observe simple trends in sleep timing and daytime alertness. Do not deliberately restrict sleep to search for an 'optimal' number or treat one bad night as a result.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/index.json",
+  "growth_zone": {
+    "slug": "be-healthy",
+    "title": "Be Healthy"
+  },
+  "life_area": {
+    "slug": "health-energy",
+    "title": "Health & Energy"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+    "reviewed_at": "2026-08-19"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
+      }
+    ],
+    "topics": [
+      {
+        "id": "sleep-circadian",
+        "title": "Sleep & Circadian Rhythm"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "health-energy",
+      "growth_zone_slug": "be-healthy"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "sleep-circadian",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ideal-sleep-hours-finder",
+    "language": "en",
+    "slug": "ideal-sleep-hours-finder",
+    "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+    "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
+    "description": "If your sleep is routinely short, protect a realistic window that gives you enough opportunity to sleep and observe simple trends in sleep timing and daytime alertness. Do not deliberately restrict sleep to search for an 'optimal' number or treat one bad night as a result.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "sleep-circadian",
+          "title": "Sleep & Circadian Rhythm"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "be-healthy"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "be-healthy",
+      "title": "Be Healthy"
+    },
+    "action": "Choose a bedtime-to-wake window that fits your obligations and gives you a reasonable opportunity for enough sleep. For a week or two, record only a few things: roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and how alert or sleepy you felt during the day. Look for repeated patterns, not single-night scores. Change one practical constraint at a time, such as moving bedtime earlier when your current schedule routinely leaves too little time for sleep.",
+    "check_in": "Did I give myself enough opportunity to sleep, what did my actual sleep/wake pattern look like, and was daytime alertness broadly better, unchanged, or worse over several days?",
+    "keywords": [
+      "Be Healthy",
+      "Life OS",
+      "Find Your Ideal Sleep Duration"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
+      "reviewed_at": "2026-08-19"
+    }
+  }
+}

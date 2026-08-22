@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "slug": "learn-under-time-pressure",
+  "title": "Learn something useful when study time is limited",
+  "question": "How do I learn effectively when I do not have much time?",
+  "summary": "Prioritize retrieval, targeted practice, feedback, and application instead of trying to consume more material.",
+  "canonical_url": "https://brali-lifeos.github.io/problems/learn-under-time-pressure/",
+  "json_url": "https://brali-lifeos.github.io/problems/learn-under-time-pressure/index.json",
+  "query_url": "/for-ai/query/?q=How%20can%20I%20learn%20something%20effectively%20when%20I%20have%20limited%20study%20time%3F",
+  "related_url": "/topics/learning/",
+  "topics": [
+    {
+      "id": "skill-learning",
+      "title": "Skill Learning",
+      "canonical_id": "brali:topic:skill-learning"
+    },
+    {
+      "id": "memory",
+      "title": "Memory",
+      "canonical_id": "brali:topic:memory"
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "canonical_id": "brali:topic:metacognition"
+    },
+    {
+      "id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "canonical_id": "brali:topic:revision-feedback"
+    }
+  ],
+  "decision_path": [
+    {
+      "if": "You need to remember facts or concepts",
+      "try": "Spend part of the session retrieving from memory rather than rereading the same material."
+    },
+    {
+      "if": "You need to perform a skill",
+      "try": "Practice the actual operation and get feedback. Remembering an explanation is not the same as being able to apply it."
+    },
+    {
+      "if": "You are unsure what you know",
+      "try": "Test yourself early enough to expose gaps, then direct the remaining time toward those gaps instead of reviewing everything equally."
+    }
+  ],
+  "stop_rule": "Do not interpret one successful recall session as proof of durable mastery. Use delayed checks or real application when the stakes justify it.",
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "title": "Use Active Recall for Retention, Then Practice Application",
+      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+      "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
+      "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 270
+    },
+    {
+      "canonical_id": "brali:protocol:spaced-recall-coach",
+      "slug": "spaced-recall-coach",
+      "url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
+      "title": "Separate Review Sessions Instead of Cramming",
+      "description": "For verbal material you need to recall later, divide repeated study across separate sessions instead of concentrating the same planned review into one sitting. Choose the gap in relation to the intended retention period, then check recall and adjust rather than following one universal schedule.",
+      "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
+      "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+        "reviewed_at": "2026-08-22"
+      },
+      "topic_ids": [
+        "memory"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 170
+    },
+    {
+      "canonical_id": "brali:protocol:avoid-list-interference-memory-retention",
+      "slug": "avoid-list-interference-memory-retention",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
+      "title": "Try Quiet Wakeful Rest After Learning",
+      "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
+      "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+      "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "memory"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 170
+    },
+    {
+      "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
+      "slug": "weekly-theme-learning-sprints",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
+      "title": "Spend Each Week Focused on a Single Theme",
+      "description": "Spend each week focused on a single theme. Immerse yourself in everything related to that topic through reading, watching, and activities.",
+      "action": "Choose one narrow learning theme for the week, define one visible result for Friday, and complete at least one small practice rep on each day you work on it.",
+      "check_in": "Did I complete one practice rep? What was the main friction, and what should I change for the next rep?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "skill-learning"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 140
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "distributed-practice-verbal-recall-boundary-2006",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
+      "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+      "supported_claim": "For verbal material measured by later recall, separating repeated study episodes by a meaningful interval generally supports better retention than concentrating the same material into massed study. The spacing associated with the best later recall tended to increase as the intended retention interval increased. For material that must be retained over months or years, the reviewed evidence supports distributing study across days or longer rather than completing all review in one sitting or one day. These findings justify the rewritten Brali action only within a verbal-recall boundary and without one universal schedule.",
+      "unsupported_or_overstated_claims": [
+        "One fixed daily, weekly or software-generated interval is optimal for all material and retention targets.",
+        "Twenty minutes every day is superior to two hours in one sitting by a specific ratio.",
+        "An 85 to 90 percent retrieval-success threshold identifies the correct next interval.",
+        "Expanding intervals are reliably superior to fixed intervals; the review described the available evidence as limited, variable and insufficient for that conclusion.",
+        "Longer spacing is always better; the review found that intervals can become too long and that the useful interval depends on the retention target.",
+        "The source identifies testing, feedback or deliberate recall attempts as the causal mechanism of the spacing effect.",
+        "The source establishes consolidation windows, neuroplasticity, reconsolidation or another biological mechanism for the public protocol.",
+        "The result extends beyond later verbal recall to complex skills, problem solving, creative work, workplace performance or broader transfer outcomes.",
+        "A spaced schedule guarantees durable memory for an individual learner.",
+        "Children's long-term retention over months or years is established with the same confidence as the young-adult evidence.",
+        "Daily streaks, adherence scores, AI coaching or app reminders are evidence-supported components of distributed practice."
+      ],
+      "limitations": [
+        "The synthesis was restricted to verbal memory tasks measured by recall and deliberately excluded recognition, frequency judgments and the heterogeneous skill-learning literature.",
+        "The evidence base was dominated by young adults; the authors reported very little middle-aged and older-adult evidence and insufficient long-term child data for confident generalization.",
+        "Many studies did not report the variance data needed for effect-size calculation, so several analyses relied on accuracy differences and included fewer effect-size estimates.",
+        "Published null findings may be underrepresented because of the file-drawer problem.",
+        "Study materials, presentation schedules, retention intervals and experimental procedures varied substantially.",
+        "Some historical studies confounded longer spacing with more relearning trials; the review examined this problem but could not remove every design limitation from the literature.",
+        "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
+        "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
+        "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
+        "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
+        "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
+      ]
+    },
+    {
+      "id": "retrieval-procedural-application-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
+      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "unsupported_or_overstated_claims": [
+        "Remembering a rule better means a learner can apply it better.",
+        "Retrieval practice alone is sufficient practice for procedural skill application.",
+        "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
+        "The specific classroom protocol should be copied as a universal learning recipe."
+      ],
+      "limitations": [
+        "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
+        "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
+        "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
+        "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+      ]
+    },
+    {
+      "id": "testing-effect-direct-forward-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-18",
+      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
+      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "unsupported_or_overstated_claims": [
+        "A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.",
+        "Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.",
+        "Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.",
+        "A broad testing-effect citation is sufficient evidence for skill transfer or correct application."
+      ],
+      "limitations": [
+        "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
+        "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
+        "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+      ]
+    }
+  ],
+  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+}

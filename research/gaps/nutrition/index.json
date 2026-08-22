@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "topic_id": "nutrition",
+  "topic_title": "Nutrition",
+  "domain_id": "health-energy",
+  "domain_title": "Health & Energy",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which low-risk food-environment or routine changes have evidence for improving everyday dietary behavior in adults?",
+  "evidence_target": "Prefer systematic reviews of behavioral or environmental interventions rather than nutrient-treatment claims.",
+  "guardrail": "Keep this general and educational; do not provide individualized nutrition or medical advice.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/nutrition/",
+  "research_queries": [
+    {
+      "id": "health-nutrition-behavior",
+      "query": "dietary behavior environmental intervention adults systematic review",
+      "risk_flags": [
+        "health"
+      ]
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [],
+  "resolution": null,
+  "coverage": {
+    "id": "nutrition",
+    "title": "Nutrition",
+    "domain_id": "health-energy",
+    "status": "growth-gap",
+    "entries": 0,
+    "research_candidates": 0
+  }
+}

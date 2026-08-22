@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:challenge-negative-predictions",
+  "slug": "challenge-negative-predictions",
+  "title": "Challenge Negative Predictions",
+  "description": "When expecting the worst: - Look for evidence: Ask, \"What facts support this prediction, and what contradicts it?\" - Test your assumption: Take a small action to see if things are as bad as you think. - Balance it: Consider both best and worst-case scenarios. Example: Nervous about a presentation? Focus on times you’ve handled similar situations well and start small.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/challenge-negative-predictions/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/challenge-negative-predictions/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "topic_id": "recovery-energy",
+  "topic_title": "Recovery & Energy",
+  "domain_id": "health-energy",
+  "domain_title": "Health & Energy",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which work-break and recovery practices improve functioning without relying on pseudoscientific energy-cycle claims?",
+  "evidence_target": "Prefer occupational or behavioral systematic reviews with objective or validated outcomes.",
+  "guardrail": "Avoid universal ultradian schedules, physiological optimization claims, or fixed recovery doses.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/",
+  "research_queries": [
+    {
+      "id": "health-recovery-breaks",
+      "query": "work breaks recovery fatigue occupational systematic review",
+      "risk_flags": [
+        "health"
+      ]
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1371/journal.pone.0272460",
+      "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "status": "support-existing",
+      "publication_date": "2022-08-31",
+      "reference_url": "https://doi.org/10.1371/journal.pone.0272460"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "90-30-focus-rest-schedule",
+      "title": "Alternate Focused Work With Real Breaks",
+      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "recovery-energy",
+    "title": "Recovery & Energy",
+    "domain_id": "health-energy",
+    "status": "growth-gap",
+    "entries": 2,
+    "research_candidates": 1
+  }
+}

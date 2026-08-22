@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:exposure-ladder-coach",
+  "slug": "exposure-ladder-coach",
+  "title": "Start by Identifying Something You Fear",
+  "description": "Start by identifying something you fear. Then break it down into smaller, manageable steps, and face each step at your own pace.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/exposure-ladder-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/exposure-ladder-coach/index.json",
+  "growth_zone": {
+    "slug": "exposure",
+    "title": "Exposure"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "exposure",
+        "title": "Exposure-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "exposure"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

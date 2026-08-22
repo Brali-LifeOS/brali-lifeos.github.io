@@ -27,7 +27,7 @@ for (const zone of zones) {
 
   const trustedBody = trusted.length
     ? `<ul class="article-list" data-zone-trusted-list="true">${trusted.slice(0, 10).map(protocol => `<li><a href="/life-os/${esc(protocol.slug)}/">${esc(protocol.title)}</a><span>${esc(protocol.action || protocol.description || '')}</span><small>${esc(protocol.evidence?.status || 'trusted')}</small></li>`).join('')}</ul>${trusted.length > 10 ? `<p><small>${trusted.length - 10} more trusted protocols are listed in the full archive below.</small></p>` : ''}`
-    : '<p>No entry in this zone currently meets the trusted Protocol Feed bar. The archive remains accessible for editorial review, but this zone is withheld from search indexing until trusted coverage exists.</p>';
+    : '<p>No entry in this zone currently meets the trusted Protocol Feed bar. The archive is search-visible and evidence-labelled, but its entries remain excluded from normal trusted recommendations until review is complete.</p>';
   const trustedSection = `<section class="prose" data-zone-trusted="true"><h2>Start with trusted protocols</h2><p>These entries currently meet Brali's reviewed/practical retrieval bar. “Trusted” is a publication state, not a promise that every protocol has equal scientific support.</p>${trustedBody}</section>`;
   const trustedPattern = /<section class="prose"><h2>Start with trusted protocols<\/h2>[\s\S]*?<\/section>/;
   const markedTrustedPattern = /<section class="prose" data-zone-trusted="true"><h2>Start with trusted protocols<\/h2>[\s\S]*?<\/section>/;

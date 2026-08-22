@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "topic_id": "revision-feedback",
+  "topic_title": "Revision & Feedback",
+  "domain_id": "creativity-expression",
+  "domain_title": "Creativity & Expression",
+  "ontology_status": "active",
+  "baseline_status": "growth-gap",
+  "question": "Which forms of feedback and revision improve written or creative work, and when can feedback backfire?",
+  "evidence_target": "Prefer systematic reviews and comparative studies with revision-quality or learning outcomes.",
+  "guardrail": "More feedback is not automatically better; timing, source, specificity, and task matter.",
+  "stage": "resolved",
+  "stage_label": "Resolved",
+  "stage_summary": "Reviewed evidence has been translated into trusted Topic coverage and explicitly closed.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/",
+  "research_queries": [
+    {
+      "id": "writing-feedback",
+      "query": "writing feedback revision learning systematic review",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1016/j.learninstruc.2024.101961",
+      "title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+      "status": "propose-protocol",
+      "publication_date": "2024-10-01",
+      "reference_url": "https://doi.org/10.1016/j.learninstruc.2024.101961"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "writing-feedback-level-match-2024",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-21",
+      "source_title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ask-for-feedback-tracker",
+      "title": "Ask for Feedback on One Specific Decision",
+      "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "leave-an-app-review",
+      "title": "Leave Useful Feedback",
+      "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ask-a-peer-to-proofread",
+      "title": "Match Feedback to the Revision Target",
+      "url": "https://brali-lifeos.github.io/life-os/ask-a-peer-to-proofread/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "resolution": {
+    "topic_id": "revision-feedback",
+    "status": "closed",
+    "resolved_at": "2026-08-21",
+    "resolved_by": "Brali editorial agent",
+    "evidence_decision_ids": [
+      "writing-feedback-level-match-2024"
+    ],
+    "protocol_slugs": [
+      "ask-a-peer-to-proofread"
+    ],
+    "rationale": "Revision & Feedback moved from a growth gap to active coverage after Brali reviewed a 2024 meta-analysis of educational writing feedback, replaced inherited unsupported peer-review claims with a bounded protocol that distinguishes surface and deep revision targets, mapped that protocol to the canonical Topic, and preserved explicit limits on learner population, feedback source, sequence, and transfer beyond educational writing."
+  },
+  "coverage": {
+    "id": "revision-feedback",
+    "title": "Revision & Feedback",
+    "domain_id": "creativity-expression",
+    "status": "active",
+    "entries": 5,
+    "research_candidates": 1
+  }
+}

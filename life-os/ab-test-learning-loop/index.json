@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ab-test-learning-loop",
+  "slug": "ab-test-learning-loop",
+  "title": "Compare Two Approaches and Learn From the Result",
+  "description": "When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny informal comparison as statistical proof.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/index.json",
+  "growth_zone": {
+    "slug": "marketing",
+    "title": "Marketing"
+  },
+  "life_area": {
+    "slug": "work-money-strategy",
+    "title": "Work, Money & Strategy"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "work-money",
+        "title": "Work & Money"
+      }
+    ],
+    "topics": [
+      {
+        "id": "marketing-positioning",
+        "title": "Marketing & Positioning"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "work-money-strategy",
+      "growth_zone_slug": "marketing"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:ab-test-learning-loop",
+    "language": "en",
+    "slug": "ab-test-learning-loop",
+    "url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/",
+    "title": "Compare Two Approaches and Learn From the Result",
+    "description": "When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny informal comparison as statistical proof.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "marketing-positioning",
+          "title": "Marketing & Positioning"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "work-money-strategy",
+        "growth_zone_slug": "marketing"
+      }
+    },
+    "life_area": {
+      "slug": "work-money-strategy",
+      "title": "Work, Money & Strategy"
+    },
+    "growth_zone": {
+      "slug": "marketing",
+      "title": "Marketing"
+    },
+    "action": "Choose one reversible decision, define what you want to learn, compare two approaches as fairly as you can, and record the outcome before deciding what to try next. Use proper experimental design when the result needs statistical confidence.",
+    "check_in": "What changed between the two approaches, what outcome did I observe, and is the evidence strong enough to act or only strong enough to suggest another test?",
+    "keywords": [
+      "Marketing",
+      "Life OS",
+      "Test and Learn"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

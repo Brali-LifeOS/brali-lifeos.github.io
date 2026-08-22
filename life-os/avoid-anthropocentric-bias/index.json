@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:avoid-anthropocentric-bias",
+  "slug": "avoid-anthropocentric-bias",
+  "title": "Separate Observation from Human-Like Interpretation",
+  "description": "Describe what a non-human animal, plant, machine or model did before assigning a human motive. Add a system-specific alternative and state what remains uncertain.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:avoid-anthropocentric-bias",
+    "language": "en",
+    "slug": "avoid-anthropocentric-bias",
+    "url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/",
+    "title": "Separate Observation from Human-Like Interpretation",
+    "description": "Describe what a non-human animal, plant, machine or model did before assigning a human motive. Add a system-specific alternative and state what remains uncertain.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Choose one behavior or output. Record only what you could point to or reproduce. Write the human-like interpretation you first considered, then add a system-specific alternative and one low-risk way to check between them. Keep uncertainty visible when you cannot check.",
+    "check_in": "What did I directly observe, what interpretation did I add, and what alternative or check changed my next action?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Check Anthropocentric Thinking"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

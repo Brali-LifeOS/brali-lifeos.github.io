@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:selection-bias-guard",
+  "slug": "selection-bias-guard",
+  "title": "Avoid Selection Bias",
+  "description": "Be mindful when choosing data or examples to avoid misrepresenting the whole picture. Here’s how: - Check your sample: Ask, “Is this data random and diverse, or is it skewed?” - Seek different sources: Compare information from multiple, varied perspectives. - Look for missing voices: Ask who or what isn’t represented in the data. Example: If you’re evaluating employee satisfaction, don’t just rely on feedback from high-performing teams—include everyone.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/selection-bias-guard/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/selection-bias-guard/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

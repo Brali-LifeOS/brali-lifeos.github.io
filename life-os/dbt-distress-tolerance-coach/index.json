@@ -1,0 +1,142 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:dbt-distress-tolerance-coach",
+  "slug": "dbt-distress-tolerance-coach",
+  "title": "Pause Before Acting on a High-Stress Urge",
+  "description": "When a situation is safe enough to pause, notice the urge to react, describe what is happening, choose a harmless short delay, and then reassess the next action. This is not full DBT or crisis care.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/index.json",
+  "growth_zone": {
+    "slug": "dbt",
+    "title": "DBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "emotion-regulation",
+        "title": "Emotion Regulation"
+      },
+      {
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      },
+      {
+        "id": "self-awareness",
+        "title": "Self-Awareness"
+      }
+    ],
+    "methods": [
+      {
+        "id": "dbt",
+        "title": "DBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "dbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "emotion-regulation",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/emotion-regulation/"
+      },
+      {
+        "topic_id": "self-awareness",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:dbt-distress-tolerance-coach",
+    "language": "en",
+    "slug": "dbt-distress-tolerance-coach",
+    "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+    "title": "Pause Before Acting on a High-Stress Urge",
+    "description": "When a situation is safe enough to pause, notice the urge to react, describe what is happening, choose a harmless short delay, and then reassess the next action. This is not full DBT or crisis care.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "emotion-regulation",
+          "title": "Emotion Regulation"
+        },
+        {
+          "id": "stress-regulation",
+          "title": "Stress Regulation"
+        },
+        {
+          "id": "self-awareness",
+          "title": "Self-Awareness"
+        }
+      ],
+      "methods": [
+        {
+          "id": "dbt",
+          "title": "DBT-derived"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "dbt"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "dbt",
+      "title": "DBT"
+    },
+    "action": "Pause. Describe the situation in one factual sentence and name the action urge without judging it. Choose a harmless brief activity that creates time rather than escalating the situation. Then reassess what action is safest and most useful.",
+    "check_in": "Did you create a pause without making the situation worse, and what safe next action did you choose? Do not score success by whether the emotion disappeared.",
+    "keywords": [
+      "DBT",
+      "Life OS",
+      "Build Distress Tolerance"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

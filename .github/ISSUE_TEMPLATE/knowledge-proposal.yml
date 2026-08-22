@@ -1,0 +1,68 @@
+name: Knowledge or protocol proposal
+description: Propose your own practical technique, short protocol, or a problem Brali should cover.
+title: "Knowledge proposal: "
+labels: []
+body:
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: What are you proposing?
+      options:
+        - Practical technique or hack
+        - Step-by-step protocol
+        - Missing problem or question
+        - Improvement to an existing protocol
+    validations: {required: true}
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and intended user
+      description: Describe the concrete situation this should help with and who it is for.
+    validations: {required: true}
+  - type: textarea
+    id: action
+    attributes:
+      label: Smallest action and steps
+      description: Start with the smallest action someone could try, then add any later steps.
+    validations: {required: true}
+  - type: textarea
+    id: signal
+    attributes:
+      label: Observable signal
+      description: What could someone observe to decide whether the idea helped, did not help, or should change?
+    validations: {required: true}
+  - type: textarea
+    id: stop_change
+    attributes:
+      label: Stop, change, or fallback rule
+      description: Say when this action may not fit and what someone could do instead.
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Where did the idea come from?
+      options:
+        - My own practice or idea
+        - Adapted from another method or author
+        - Existing published method
+        - Not sure
+    validations: {required: true}
+  - type: input
+    id: source
+    attributes:
+      label: Source or attribution
+      description: Link or credit the original source when the idea is not yours. A source is optional for an original practical proposal.
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limitations, risks, or uncertainty
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Submission boundaries
+      options:
+        - label: I understand this is a public proposal and will not be published as trusted knowledge without review.
+          required: true
+        - label: I have not included private, identifying, medical, client-restricted, or confidential information.
+          required: true
+        - label: I understand that a linked source remains unreviewed until the actual source is reviewed.
+          required: true

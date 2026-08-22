@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "writing-feedback-level-match-2024",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/",
+  "json_url": "https://brali-lifeos.github.io/evidence/writing-feedback-level-match-2024/index.json",
+  "decision": "propose-protocol",
+  "decision_label": "Protocol candidate",
+  "reviewed_at": "2026-08-21",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "How effective is feedback for L1, L2, and FL learners’ writing? A meta-analysis",
+    "url": "https://doi.org/10.1016/j.learninstruc.2024.101961",
+    "type": "meta-analysis",
+    "doi": "10.1016/j.learninstruc.2024.101961",
+    "citation_text": "Scherer S, Graham S, Busse V. Learning and Instruction. 2024;93:101961.",
+    "study_design": "Meta-analysis of 95 papers meeting experimental or quasi-experimental inclusion criteria, comprising 200 treatment/control comparisons and 253 effect sizes for surface- and deep-level writing outcomes.",
+    "population": "Secondary-school and university or college students represented in L1, L2, and foreign-language writing studies across the included literature.",
+    "intervention_or_exposure": "Writing feedback targeting surface-level features, deep-level features, or both, delivered through sources including instructors, peers, algorithm-based systems, and self-feedback depending on the included comparison.",
+    "outcomes": [
+      "Surface-level writing outcomes such as grammar and spelling",
+      "Deep-level writing outcomes such as writing quality, ideation, organization, genre elements, composition length, and vocabulary"
+    ]
+  },
+  "supported_claim": "In the reviewed secondary-school and university writing literature, feedback effects differed by the level of writing outcome: surface-level feedback improved surface-level outcomes, deep-level feedback improved deep-level outcomes, and combined surface-and-deep feedback could improve both. This supports matching a feedback request to the revision outcome rather than treating all feedback as interchangeable.",
+  "unsupported_or_overstated_claims": [
+    "More feedback is always better for writing.",
+    "Deep feedback should always precede surface feedback.",
+    "Peer, instructor, algorithm-based, or self-feedback is universally the best source.",
+    "The meta-analytic effects generalize unchanged to professional, technical, marketing, fiction, or other creative writing outside the reviewed educational contexts.",
+    "A specific number of feedback rounds, timing interval, or review duration is optimal.",
+    "Receiving feedback guarantees improvement for an individual writer."
+  ],
+  "limitations": [
+    "The evidence concerns educational writing by secondary-school and university or college learners rather than all writing contexts.",
+    "Effects varied across L1, L2, and foreign-language learners, so a single population-wide estimate can conceal important differences.",
+    "The included papers used experimental or quasi-experimental designs but varied in feedback treatment, source, duration, outcome measurement, and instructional context.",
+    "Only about one-third of the treatment/control comparisons examined maintenance effects, limiting conclusions about durability.",
+    "Many studies did not report enough learner-level variables, and evidence was comparatively scarce for some learner groups and treatment-outcome combinations.",
+    "Meta-analytic categories for surface, deep, combined, and feedback source are useful abstractions but do not establish one universally optimal revision workflow."
+  ],
+  "target_hack_ids": [
+    "ask-a-peer-to-proofread"
+  ],
+  "target_protocol_ids": [
+    "brali:ask-a-peer-to-proofread"
+  ],
+  "risk_flags": [],
+  "notes": "Replace the inherited generic peer-proofreading page with a conservative educational-writing workflow: name the current revision level, request feedback at that level, revise against that target, and use a separate pass when another level also matters. Keep the evidence boundary visible and do not convert subgroup findings into a universal ranking of feedback agents."
+}

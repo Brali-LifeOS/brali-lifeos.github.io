@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "slug": "habits",
+  "title": "Habits",
+  "question": "How can I make a useful behavior easier to repeat consistently?",
+  "summary": "Lower friction, use reliable cues, and review what actually happened instead of relying on motivation as a permanent fuel source.",
+  "canonical_url": "https://brali-lifeos.github.io/topics/habits/",
+  "json_url": "https://brali-lifeos.github.io/topics/habits/index.json",
+  "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
+  "coverage_status": "evidence-only-gap",
+  "coverage_note": "No reviewed/practical protocol currently covers this Topic. Brali shows reviewed evidence boundaries instead of promoting weaker content.",
+  "topics": [
+    {
+      "id": "habits-consistency",
+      "title": "Habits & Consistency",
+      "description": "Make useful behavior easier to repeat and review over time.",
+      "canonical_id": "brali:topic:habits-consistency"
+    }
+  ],
+  "protocols": [],
+  "evidence_decisions": [
+    {
+      "id": "procrastination-treatment-exact-protocol-boundary-2018",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "source_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Rozental A, Bennett S, Forsström D, Ebert DD, Shafran R, Andersson G, Carlbring P. Frontiers in Psychology. 2018;9:1588.",
+      "supported_claim": "Across the reviewed randomized comparisons, psychological treatments targeting procrastination had a small average post-treatment benefit on self-reported procrastination relative to inactive controls, but effects varied substantially between studies and the evidence base had important quality limitations. This supports treating task initiation as a legitimate intervention target, not claiming that one brief Brali routine or one component has been validated.",
+      "unsupported_or_overstated_claims": [
+        "A five-minute start is an evidence-based or optimal duration for overcoming procrastination.",
+        "Completing one visible first action by itself reduces procrastination, improves productivity or reliably creates momentum.",
+        "Implementation intentions, sub-goals, goal-setting, time management or behavioral activation were isolated by this review as the active causal component.",
+        "The broader implementation-intention literature on goal attainment directly proves effectiveness for procrastination-specific task initiation.",
+        "The cognitive-behavioral subgroup estimate validates this Brali protocol or any other single self-help exercise.",
+        "A short timer is equivalent to the multi-component psychological treatments included in the review.",
+        "The intervention effect generalizes equally to every person, task type, workplace, educational setting or clinical presentation.",
+        "Beginning briefly guarantees continuation, completion, lower distress or better performance."
+      ],
+      "limitations": [
+        "The pooled overall effect was small and showed significant between-study heterogeneity, so the average should not be treated as one stable effect across interventions or populations.",
+        "The review identified some risk of bias in every included study; blinding-related domains were frequently rated high risk.",
+        "Primary procrastination measures varied, and several assessed academic rather than general procrastination.",
+        "The included studies used different interventions, delivery formats, durations and participant populations, preventing component-level attribution.",
+        "The review analyzed post-treatment outcomes because too few studies reported follow-up data, limiting conclusions about durability.",
+        "Secondary outcomes were too heterogeneous to aggregate.",
+        "The stronger cognitive-behavioral subgroup estimate depended on excluding one small outlying study and represented only three of the four cognitive-behavioral studies.",
+        "The source did not test the exact five-minute interval, the exact Brali action sequence or the protocol's observable-review checkpoint."
+      ],
+      "topic_ids": [
+        "task-initiation",
+        "habits-consistency"
+      ]
+    }
+  ],
+  "research_watch": [
+    {
+      "id": "crossref:10.1016/j.actpsy.2025.106168",
+      "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
+      "status": "screening",
+      "publication_date": "2026-02-01",
+      "reference_url": "https://doi.org/10.1016/j.actpsy.2025.106168",
+      "topic_ids": [
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.3389/fpsyg.2018.01588",
+      "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
+      "status": "challenge-existing",
+      "publication_date": "2018-08-30",
+      "reference_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "topic_ids": [
+        "task-initiation",
+        "habits-consistency"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "goals",
+      "title": "Goals",
+      "canonical_id": "brali:topic:goals"
+    },
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "canonical_id": "brali:topic:task-initiation"
+    },
+    {
+      "id": "environment-design",
+      "title": "Environment Design",
+      "canonical_id": "brali:topic:environment-design"
+    }
+  ],
+  "related_methods": [],
+  "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
+}

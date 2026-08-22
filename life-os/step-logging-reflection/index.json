@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:step-logging-reflection",
+  "slug": "step-logging-reflection",
+  "title": "As You Work on a Task, Log Each Step You Take in Real-Time)",
+  "description": "As you work on a task, log each step you take in real-time. Focus on writing down: - What action you performed. - Why you chose that action. - The immediate result or outcome. At the end, review your log to assess: - Which steps were effective. - Where adjustments might be needed.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/index.json",
+  "growth_zone": {
+    "slug": "grow-fast",
+    "title": "Grow fast"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "habits-consistency",
+        "title": "Habits & Consistency"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "grow-fast"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

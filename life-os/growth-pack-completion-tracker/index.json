@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:growth-pack-completion-tracker",
+  "slug": "growth-pack-completion-tracker",
+  "title": "Focus on Completing All the Growth Hacks in a Chosen Pack)",
+  "description": "Focus on completing all the growth hacks in a chosen pack. Track your progress and check off each hack as you finish.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/index.json",
+  "growth_zone": {
+    "slug": "grow-fast",
+    "title": "Grow fast"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "habits-consistency",
+        "title": "Habits & Consistency"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "grow-fast"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

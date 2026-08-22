@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "topic_id": "metacognition",
+  "topic_title": "Metacognition",
+  "domain_id": "learning-thinking",
+  "domain_title": "Learning & Thinking",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which metacognitive strategies improve calibration, learning choices, or error detection rather than just confidence?",
+  "evidence_target": "Prefer systematic reviews and experiments that measure calibration or downstream performance.",
+  "guardrail": "Do not treat introspection or confidence ratings as accurate self-knowledge by default.",
+  "stage": "discovery-ready",
+  "stage_label": "Discovery ready",
+  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/metacognition/",
+  "research_queries": [
+    {
+      "id": "learning-metacognition",
+      "query": "metacognitive strategy calibration learning systematic review",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [],
+  "evidence_decisions": [],
+  "trusted_protocols": [
+    {
+      "slug": "ask-for-feedback-tracker",
+      "title": "Ask for Feedback on One Specific Decision",
+      "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "decision-calibration-journal",
+      "title": "Decision Calibration Journal",
+      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "refocus-present-stop-mind-wandering",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "belief-update-coach",
+      "title": "Record What Would Change a Belief",
+      "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "metacognition",
+    "title": "Metacognition",
+    "domain_id": "learning-thinking",
+    "status": "growth-gap",
+    "entries": 4,
+    "research_candidates": 0
+  }
+}

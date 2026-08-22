@@ -1,0 +1,293 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "Brali Knowledge API",
+    "version": "1.0.0",
+    "description": "Versioned read-only static JSON API over the canonical Brali knowledge model."
+  },
+  "servers": [
+    {
+      "url": "https://brali-lifeos.github.io"
+    }
+  ],
+  "paths": {
+    "/api/v1/index.json": {
+      "get": {
+        "operationId": "get_index",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/topics.json": {
+      "get": {
+        "operationId": "get_topics",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/protocols.json": {
+      "get": {
+        "operationId": "get_protocols",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/hacks.json": {
+      "get": {
+        "operationId": "get_hacks",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/evidence.json": {
+      "get": {
+        "operationId": "get_evidence",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/search.json": {
+      "get": {
+        "operationId": "get_search",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/identity.json": {
+      "get": {
+        "operationId": "get_identity",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/manifest.json": {
+      "get": {
+        "operationId": "get_manifest",
+        "responses": {
+          "200": {
+            "description": "Static JSON response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/evidence-decisions.json": {
+      "get": {
+        "operationId": "get_evidence_decisions",
+        "responses": {
+          "200": {
+            "description": "Reviewed source decisions",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/flagships.json": {
+      "get": {
+        "operationId": "get_flagship_protocols",
+        "summary": "Get the Brali Flagship 100 high-trust protocol core",
+        "responses": {
+          "200": {
+            "description": "Flagship 100 dataset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/evaluation.json": {
+      "get": {
+        "operationId": "get_agent_evaluation",
+        "summary": "Get the versioned Brali agent retrieval evaluation report",
+        "responses": {
+          "200": {
+            "description": "Agent evaluation report",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/hubs.json": {
+      "get": {
+        "operationId": "get_topic_hubs",
+        "summary": "Get Brali high-value Topic Knowledge Hubs",
+        "responses": {
+          "200": {
+            "description": "Topic hub collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/demos.json": {
+      "get": {
+        "operationId": "get_reference_agent_demos",
+        "summary": "Get generated Brali reference agent scenarios and bounded answer packets",
+        "responses": {
+          "200": {
+            "description": "Reference agent demo collection",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/integrations.json": {
+      "get": {
+        "operationId": "get_integrations",
+        "summary": "Get Brali integration, MCP deployment, citation, and adoption metadata",
+        "responses": {
+          "200": {
+            "description": "External adoption metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/problem-collections.json": {
+      "get": {
+        "operationId": "get_problem_collections",
+        "summary": "Get Brali problem-first practical collections",
+        "responses": {
+          "200": {
+            "description": "Problem collection dataset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/gold-20.json": {
+      "get": {
+        "operationId": "get_gold_20",
+        "responses": {
+          "200": {
+            "description": "Gold 20 candidate and manual review readiness registry",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

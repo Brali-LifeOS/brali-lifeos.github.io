@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:anxiety-exposure-tracker",
+  "slug": "anxiety-exposure-tracker",
+  "title": "Before and After Each Exposure Session, Rate Your Anxiety on a Scale of 1",
+  "description": "Before and after each exposure session, rate your anxiety on a scale of 1 to 10. Tracking helps you see progress over time as anxiety decreases.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/anxiety-exposure-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/anxiety-exposure-tracker/index.json",
+  "growth_zone": {
+    "slug": "exposure",
+    "title": "Exposure"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "exposure",
+        "title": "Exposure-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "exposure"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

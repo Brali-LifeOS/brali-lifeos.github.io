@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "wakeful-rest-memory-2026",
+  "canonical_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/",
+  "json_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-memory-2026/index.json",
+  "decision": "propose-protocol",
+  "decision_label": "Protocol candidate",
+  "reviewed_at": "2026-08-18",
+  "reviewed_by": "Brali Evidence Reviewer",
+  "source": {
+    "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+    "url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
+    "type": "meta-analysis",
+    "doi": "10.3758/s13423-025-02778-3",
+    "citation_text": "Parra D, Zhang Z, Radvansky G. Psychonomic Bulletin & Review. 2026;33:49.",
+    "study_design": "Random-effects meta-analysis with moderator analyses and meta-regression; 142 effect sizes from 51 human experimental studies.",
+    "population": "Patients with anterograde amnesia, healthy older adults, and healthy young to middle-aged adults; child studies were too sparse for the main group analysis.",
+    "intervention_or_exposure": "A short period of quiet wakeful rest or minimal interference immediately after learning, compared with a post-learning interference task.",
+    "outcomes": [
+      "Delayed declarative-memory performance",
+      "Reduced forgetting after learning"
+    ]
+  },
+  "supported_claim": "A short period of quiet, minimally interfering wakeful rest after learning can reduce forgetting on average. The pooled effect is substantially smaller and less consistent in healthy young to middle-aged adults than in older adults or patient samples.",
+  "unsupported_or_overstated_claims": [
+    "Ten minutes is an optimal or universally evidence-based dose.",
+    "Everyone will remember more after post-learning rest.",
+    "Wakeful rest is equivalent to sleep or replaces adequate sleep.",
+    "A specific posture, eye-closure rule, breathing pattern, or rehearsal instruction is required.",
+    "The protocol is a treatment for memory impairment or dementia."
+  ],
+  "limitations": [
+    "There was moderate to large between-study heterogeneity overall.",
+    "The overall prediction interval included negative effects, so future studies are not guaranteed to find a benefit.",
+    "Healthy young to middle-aged adults had the smallest pooled effect (g=0.20 in the authors' group analysis).",
+    "Patient studies were small and showed funnel-plot asymmetry consistent with possible publication bias.",
+    "Learning materials, interference tasks, test procedures, age, and clinical status varied across studies.",
+    "The meta-analysis concerns declarative memory and does not justify broad claims about skill acquisition, creativity, focus, or general intelligence."
+  ],
+  "target_hack_ids": [
+    "avoid-list-interference-memory-retention"
+  ],
+  "target_protocol_ids": [
+    "brali:avoid-list-interference-memory-retention"
+  ],
+  "risk_flags": [],
+  "notes": "Promote only as a conservative personal experiment. Use quiet/minimal interference after learning as the action and treat duration as user-chosen; do not turn the paper title into a universal ten-minute prescription."
+}

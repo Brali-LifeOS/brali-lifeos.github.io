@@ -1,0 +1,525 @@
+{
+  "schema_version": 1,
+  "registry_files": [
+    "protocol-content-overrides-5w1h.json",
+    "protocol-content-overrides-ab-test.json",
+    "protocol-content-overrides-active-recall.json",
+    "protocol-content-overrides-brainwriting.json",
+    "protocol-content-overrides-claim-cleanup-batch-1.json",
+    "protocol-content-overrides-claim-cleanup-batch-2.json",
+    "protocol-content-overrides-claim-cleanup-batch-3a.json",
+    "protocol-content-overrides-claim-cleanup-batch-3b.json",
+    "protocol-content-overrides-conflict-repair.json",
+    "protocol-content-overrides-control-circles.json",
+    "protocol-content-overrides-deadline-sprint.json",
+    "protocol-content-overrides-desk-tidy.json",
+    "protocol-content-overrides-exposure-basics.json",
+    "protocol-content-overrides-eye-break.json",
+    "protocol-content-overrides-five-whys.json",
+    "protocol-content-overrides-focus-rest.json",
+    "protocol-content-overrides-gentle-mobility.json",
+    "protocol-content-overrides-goal-journaling.json",
+    "protocol-content-overrides-hiit-tabata.json",
+    "protocol-content-overrides-hypothesis.json",
+    "protocol-content-overrides-language-microsprint.json",
+    "protocol-content-overrides-metacognitive-attention.json",
+    "protocol-content-overrides-pmr.json",
+    "protocol-content-overrides-sensitive-zone-starters-2.json",
+    "protocol-content-overrides-sensitive-zone-starters.json",
+    "protocol-content-overrides-sensory-mindfulness.json",
+    "protocol-content-overrides-short-meditation.json",
+    "protocol-content-overrides-sleep-opportunity.json",
+    "protocol-content-overrides-spaced-recall.json",
+    "protocol-content-overrides-stress-walk.json",
+    "protocol-content-overrides-tabata-timer.json",
+    "protocol-content-overrides-talk-about-fears.json",
+    "protocol-content-overrides-wakeful-rest.json",
+    "protocol-content-overrides-woop.json",
+    "protocol-content-overrides-workday-blocks.json",
+    "protocol-content-overrides-writing-feedback.json",
+    "protocol-content-overrides-zone-starters.json",
+    "protocol-content-overrides.json"
+  ],
+  "entries": [
+    {
+      "slug": "5w1h-communication-checklist",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited communication article containing fabricated meeting metrics, arbitrary word and timing rules, made-up internal trials and unnecessary numerical examples with a concise operational-clarity checklist.",
+      "registry": "protocol-content-overrides-5w1h.json"
+    },
+    {
+      "slug": "ab-test-learning-loop",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited A/B testing article containing unsupported conversion ranges, fabricated false-positive rates, arbitrary sample-size rules and internal marketing examples with a simple compare-and-learn protocol that distinguishes informal testing from proper randomized experimentation.",
+      "registry": "protocol-content-overrides-ab-test.json"
+    },
+    {
+      "slug": "active-recall-test-yourself",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited active-recall article containing unsupported percentage gains, arbitrary thirty-minute sessions, generic neuroscience language, invented progress targets, and broad claims about learning performance with a bounded retrieval-practice protocol. A 2021 systematic review supports retrieval practice for classroom learning/retention; two 2026 sources narrow interpretation by distinguishing direct and forward testing effects and showing that improved rule retention did not automatically produce better rule application in one classroom study.",
+      "registry": "protocol-content-overrides-active-recall.json"
+    },
+    {
+      "slug": "brainwriting-group-idea-generation",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited brainwriting draft containing unsupported idea-yield percentages, invented internal observations, and excessive timing/count prescriptions with a compact group ideation protocol.",
+      "registry": "protocol-content-overrides-brainwriting.json"
+    },
+    {
+      "slug": "ad-astra-per-aspera-motivation-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited motivation article containing fabricated pilot outcomes, percentages, physiological explanations, rigid repetition targets and app-first promotion with a bounded reflection-and-action cue.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-1.json"
+    },
+    {
+      "slug": "analogy-studio",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited NLP-branded article containing invented comprehension, recall and laboratory statistics with a neutral communication practice that tests an analogy through listener paraphrase and explicit boundaries.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-1.json"
+    },
+    {
+      "slug": "ask-better-interview-questions",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited interview guide containing unsupported multipliers, sample claims, fabricated observations and arbitrary precision with a consent-based protocol for gathering concrete, correctable information.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-1.json"
+    },
+    {
+      "slug": "ask-for-feedback-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited Dunning-Kruger and feedback article containing fabricated internal trials, cohort outcomes, response-rate claims and arbitrary quotas with a bounded feedback request and review protocol.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-1.json"
+    },
+    {
+      "slug": "avoid-anthropocentric-bias",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing survey ranges, fabricated volunteer outcomes, self-reported effect claims, rigid observation quotas and app-first promotion with a bounded observation-and-alternative-explanation check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-2.json"
+    },
+    {
+      "slug": "avoid-contrast-effect",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing fabricated trials, regret reduction, laboratory ranges, hiring outcomes and savings claims with a bounded independent-assessment protocol.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-2.json"
+    },
+    {
+      "slug": "avoid-gamblers-fallacy-trust-the-odds",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing fabricated tests, financial action rules, arbitrary confidence, sample and cost thresholds, and adherence claims with a bounded dependence-and-stop-rule check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-2.json"
+    },
+    {
+      "slug": "avoid-selection-bias-in-analysis",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace an inherited article containing unsupported mistake reduction, conversion examples, sample prescriptions, statistical precision and fabricated work scenes with a bounded inclusion-rule and scope check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-2.json"
+    },
+    {
+      "slug": "backfire-effect-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated trials, effect ranges and internal outcomes with a bounded disagreement-and-claim-check protocol.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-3a.json"
+    },
+    {
+      "slug": "belief-update-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace numeric confidence prescriptions, fabricated observations and arbitrary update rules with a bounded belief-review record.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-3a.json"
+    },
+    {
+      "slug": "biomimicry-creative-problem-solving",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated capacity, cleaning, communication and team outcomes with a bounded function-to-principle design exercise.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-3b.json"
+    },
+    {
+      "slug": "bold-brainstorm-kickoff",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated session logs, keeper multipliers, percentage outcomes and tested-duration claims with a bounded provocation-to-feasible-idea exercise.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-3b.json"
+    },
+    {
+      "slug": "relationship-repair-coach",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited apology-and-forgiveness routine containing invented sincerity percentages, arbitrary timers and targets, and an implicit expectation that the harmed person should forgive. Experimental evidence supports apology as a causal signal that can promote forgiveness, and a large meta-analysis identifies apology and empathy as important correlates of forgiveness. The public protocol therefore focuses on accountable repair while preserving the other person's right not to forgive, reconcile, or continue the relationship.",
+      "registry": "protocol-content-overrides-conflict-repair.json"
+    },
+    {
+      "slug": "circles-of-control-planner",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited circles-of-control article containing unsupported stress measurements, arbitrary timing rules, supplement advice, and invented internal observations with a neutral action-allocation protocol.",
+      "registry": "protocol-content-overrides-control-circles.json"
+    },
+    {
+      "slug": "30-minute-deadline-sprints",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited deadline-sprint article containing fabricated completion rates, internal-pilot results, unsupported creativity claims and rigid timing rules with a low-risk timeboxing protocol focused on scope decisions.",
+      "registry": "protocol-content-overrides-deadline-sprint.json"
+    },
+    {
+      "slug": "2-minute-desk-tidy-timer",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited desk-tidy article containing invented adherence results, productivity claims, arbitrary measurements and internal-pilot language with a short low-risk practical reset.",
+      "registry": "protocol-content-overrides-desk-tidy.json"
+    },
+    {
+      "slug": "safety-statements-exposure-anxiety",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited exposure article that prescribed reassurance statements, fixed breathing ratios, sensory rituals, arbitrary exposure schedules and unsupported effect/adherence percentages with a conservative graded-facing-fears protocol grounded in current NHS self-help guidance and NICE CBT guidance. The public version treats exposure as gradual approach to an avoided but actually safe situation, not as a universal treatment recipe or a promise that fear will disappear.",
+      "registry": "protocol-content-overrides-exposure-basics.json"
+    },
+    {
+      "slug": "20-20-20-eye-break-reminder",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited eye-break article containing unsupported symptom-reduction targets, invented internal observations, blink-rate arithmetic, treatment suggestions and rigid tracking rules with a conservative screen-break protocol aligned with current National Eye Institute and American Optometric Association guidance.",
+      "registry": "protocol-content-overrides-eye-break.json"
+    },
+    {
+      "slug": "5-whys-goal-clarity",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited personal-goal adaptation of Five Whys containing unsupported research claims, fabricated examples presented as observations, arbitrary scoring rules and prescriptive numbers with a simple reflection protocol that acknowledges multiple causes and uncertain answers.",
+      "registry": "protocol-content-overrides-five-whys.json"
+    },
+    {
+      "slug": "90-30-focus-rest-schedule",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited 90/30 article containing unsupported ultradian claims, fabricated productivity observations, prescriptive hydration/caffeine advice and rigid timing rules with a flexible focus-and-recovery practice.",
+      "registry": "protocol-content-overrides-focus-rest.json"
+    },
+    {
+      "slug": "10-minute-morning-stretch-routine",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited stretching article containing unsupported recovery, pain, heart-rate, adherence, and progression claims with a conservative flexibility routine grounded in current NHS exercise guidance and safety information.",
+      "registry": "protocol-content-overrides-gentle-mobility.json"
+    },
+    {
+      "slug": "goal-journaling-insights",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited goal-journaling article containing fabricated adherence percentages, first-person observations, app-era instructions and unsupported outcome claims with a compact low-risk reflection protocol.",
+      "registry": "protocol-content-overrides-goal-journaling.json"
+    },
+    {
+      "slug": "4-minute-hiit-tabata-workout",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited HIIT article containing unsupported heart-rate targets, calorie estimates, injury-risk claims, arbitrary eight-week progression rules and broad claims attributed to the Tabata format with a conservative high-intensity-interval protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version makes clear that the original research used a specific laboratory cycling protocol and does not justify prescribing maximal 20/10 intervals to every user.",
+      "registry": "protocol-content-overrides-hiit-tabata.json"
+    },
+    {
+      "slug": "start-with-a-hypothesis",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited hypothesis-first problem-solving article containing unsupported operational percentages, arbitrary support thresholds, and invented resolution-time stories with a compact test-and-update protocol.",
+      "registry": "protocol-content-overrides-hypothesis.json"
+    },
+    {
+      "slug": "10-minute-language-microsprints",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited language-study article containing invented adherence results, unsupported recall percentages, arbitrary targets and overconfident learning claims with a simple short-practice protocol.",
+      "registry": "protocol-content-overrides-language-microsprint.json"
+    },
+    {
+      "slug": "refocus-present-stop-mind-wandering",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited generic mind-wandering and treatment-like claims with a narrow auditory attention-flexibility drill that matches core Attention Training Technique operations described in systematic-review literature: externally focused selective attention, deliberate switching, and divided attention. Preserve uncertainty about clinical effects and do not present the simplified drill as Metacognitive Therapy or a treatment.",
+      "registry": "protocol-content-overrides-metacognitive-attention.json"
+    },
+    {
+      "slug": "guided-pmr-muscle-relaxation",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited PMR article containing unsupported anxiety/tension percentages, arbitrary force targets, rigid 35-second timing, invented internal observations and treatment-like expectations with a conservative progressive muscle relaxation protocol grounded in current NHS clinical relaxation guidance. The public version presents PMR as a relaxation skill for noticing and releasing muscle tension, not as a treatment for depression or a guaranteed percentage reduction in anxiety.",
+      "registry": "protocol-content-overrides-pmr.json"
+    },
+    {
+      "slug": "dbt-distress-tolerance-coach",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited cold-exposure instructions, physiological claims and treatment-like outcome claims with a conservative pause-and-observe exercise aligned to authoritative descriptions of DBT distress-tolerance and mindfulness skills. Preserve the systematic-review boundary that DBT skills training alone is not established as equivalent to full DBT.",
+      "registry": "protocol-content-overrides-sensitive-zone-starters-2.json"
+    },
+    {
+      "slug": "abdominal-breathing-stress-relief",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited physiological percentages, fixed breathing rates and treatment-adjacent claims with a conservative diaphragmatic-breathing exercise aligned to current NCCIH guidance and explicit care boundaries.",
+      "registry": "protocol-content-overrides-sensitive-zone-starters.json"
+    },
+    {
+      "slug": "cbt-action-mood-tracker",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited mood-improvement percentages and pseudo-trial language with a bounded observation worksheet consistent with NHS descriptions of CBT, worksheets/diaries and links between situations, thoughts, feelings and actions.",
+      "registry": "protocol-content-overrides-sensitive-zone-starters.json"
+    },
+    {
+      "slug": "cardio-health-daily-habits",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited cardiology imitation, detailed diet/sleep prescriptions and unsupported risk percentages with a narrow movement-planning protocol grounded in American Heart Association physical-activity guidance.",
+      "registry": "protocol-content-overrides-sensitive-zone-starters.json"
+    },
+    {
+      "slug": "daily-gratitude-journal-three-things",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited well-being percentages, fixed dosage claims and therapy framing with a lightweight gratitude reflection that preserves the small/mixed evidence boundary and does not substitute for mental-health care.",
+      "registry": "protocol-content-overrides-sensitive-zone-starters.json"
+    },
+    {
+      "slug": "3-minute-sensory-mindfulness-act",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited sensory-mindfulness article containing unsupported adherence claims, fixed weekly dose targets, invented internal observations and treatment-like expectations with a conservative present-moment awareness protocol grounded in current NHS mindfulness guidance. The public version presents sensory noticing as a mindfulness exercise that may help someone reconnect with the present moment, not as a guaranteed treatment or a precise three-to-five-minute dose.",
+      "registry": "protocol-content-overrides-sensory-mindfulness.json"
+    },
+    {
+      "slug": "5-minute-meditation-habit-tracker",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited meditation article containing invented adherence results, pulse-change claims, fixed twice-daily dosing, prescriptive breathing ratios and pseudo-clinical expectations with a conservative short breath-meditation protocol grounded in current NHS mindfulness and meditation guidance. The public version treats five minutes as a convenient starting container, not an evidence-based dose, and acknowledges that mindfulness is not helpful for everyone.",
+      "registry": "protocol-content-overrides-short-meditation.json"
+    },
+    {
+      "slug": "ideal-sleep-hours-finder",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-19",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited pseudo-experiment with a conservative sleep-opportunity protocol. A 2021 systematic review/meta-analysis found that behavioral sleep-extension interventions increase sleep duration on average but with very high heterogeneity. AASM/SRS consensus recommends that healthy adults sleep seven or more hours per night on a regular basis. Neither source validates a 21-day optimization protocol, fixed wake-time tolerances, consumer sleep-stage targets, or an individual 'best' duration discovered from a small self-experiment.",
+      "registry": "protocol-content-overrides-sleep-opportunity.json"
+    },
+    {
+      "slug": "spaced-recall-coach",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited AI-coach article containing an invented universal schedule, neuroscience explanations, adherence tracking, app promotion and unsupported transfer claims with a source-bounded distributed-practice protocol for verbal recall.",
+      "registry": "protocol-content-overrides-spaced-recall.json"
+    },
+    {
+      "slug": "10-minute-stress-walk",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited stress-walking article containing unsupported percentages, heart-rate claims, calorie estimates, adherence claims, breathing prescriptions and invented internal observations with a conservative walking protocol grounded in current WHO and NHS guidance. Walking is presented as one accessible form of physical activity that may support wellbeing and stress management, not as a guaranteed acute treatment or a precise ten-minute dose.",
+      "registry": "protocol-content-overrides-stress-walk.json"
+    },
+    {
+      "slug": "4-minute-tabata-hiit-timer",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited Tabata article containing unsupported heart-rate formulas, calorie estimates, rep targets, injury claims, generic maximal-effort instructions and progression schedules with a conservative interval-timer protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version explains that 20/10 x 8 is a historically specific high-intensity format, not a universal four-minute workout prescription.",
+      "registry": "protocol-content-overrides-tabata-timer.json"
+    },
+    {
+      "slug": "talk-about-fears-coach",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited fear-disclosure article containing unsupported relief percentages, arbitrary word counts and timers, invented social-risk estimates and pseudo-clinical outcome expectations with a simple support-seeking protocol grounded in current NHS guidance. The public version focuses on choosing a trusted person, saying what is happening in plain language, asking for the kind of support wanted, respecting boundaries and seeking professional support when fear or anxiety significantly affects daily life.",
+      "registry": "protocol-content-overrides-talk-about-fears.json"
+    },
+    {
+      "slug": "avoid-list-interference-memory-retention",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited list-memory tip containing arbitrary three-second pauses, fixed item counts, app-tracking instructions, generic habit claims and unsupported optimization language with a conservative post-learning wakeful-rest protocol grounded in a 2026 open-access meta-analysis of 142 effect sizes from 51 experimental studies. The public claim is intentionally narrower than the pooled result because effects were heterogeneous and smallest in healthy young to middle-aged adults.",
+      "registry": "protocol-content-overrides-wakeful-rest.json"
+    },
+    {
+      "slug": "woop-goal-planner",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited WOOP article containing unsupported goal-attainment percentages, pseudo-precise timing, physiological claims, invented observations and rigid reminder rules with a conservative MCII protocol grounded in a 2021 meta-analysis and a 2026 randomized trial. The public claim is deliberately narrower than either source's strongest wording.",
+      "registry": "protocol-content-overrides-woop.json"
+    },
+    {
+      "slug": "3-3-3-workday-planner",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited workday-planning article containing invented productivity results, arbitrary ratios, rigid task counts and internal-pilot claims with a flexible three-block planning template.",
+      "registry": "protocol-content-overrides-workday-blocks.json"
+    },
+    {
+      "slug": "ask-a-peer-to-proofread",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-08-21",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited peer-proofreading copy containing unsupported quantitative claims and fabricated internal observations with a bounded educational-writing protocol derived from a 2024 meta-analysis of feedback for L1, L2, and foreign-language learners. The reviewed claim is limited to matching the level of feedback to the revision outcome; it does not generalize the study to all professional or creative writing.",
+      "registry": "protocol-content-overrides-writing-feedback.json"
+    },
+    {
+      "slug": "30-min-eye-break-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited screen-break copy containing evidence-like wording with a low-risk checkpoint protocol that makes no medical or performance claim.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "478-breathing-technique-guide",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited fixed-ratio breathing claims with a conservative unforced breathing pause that avoids treatment framing and rigid timing.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "create-win-win-outcomes",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited outcome claims with a practical option-mapping protocol that treats game theory as a lens rather than a guarantee of mutual gain.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "achieve-multiple-goals-at-once",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited multi-goal performance language with a planning protocol that looks for compatible actions while preserving trade-offs.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "leave-an-app-review",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited engagement and app-growth claims with a neutral feedback-writing protocol useful beyond app stores.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "automatic-paycheck-to-savings",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited savings outcome claims with general financial-hygiene guidance centered on a small reversible automation and explicit affordability checks.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "challenge-generalizations-counterexamples",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Retain a useful counterexample check while removing inherited NLP validation language and unsupported outcome claims.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "ancestral-torch-resilience-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited ancestry and resilience-performance language with a neutral short reminder focused on a controllable next action.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "decision-calibration-journal",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited quantum-themed decision claims with ordinary decision-hygiene journaling and an explicit boundary against using quantum mechanics as personal-decision justification.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "ai-premortem-risk-planner",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-20",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace inherited AI and risk-reduction claims with a bounded premortem workflow where AI generates possibilities and the user verifies them before acting.",
+      "registry": "protocol-content-overrides-zone-starters.json"
+    },
+    {
+      "slug": "weekly-theme-learning-sprints",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited long-form draft containing unsupported quantitative and research-sounding claims with a compact practical protocol that can stand without scientific overclaiming.",
+      "registry": "protocol-content-overrides.json"
+    },
+    {
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited long-form Pomodoro draft containing unsupported performance percentages and invented observational numbers with a compact timer-based work protocol.",
+      "registry": "protocol-content-overrides.json"
+    },
+    {
+      "slug": "active-listening-exercises",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-18",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Replace an inherited active-listening draft containing unsupported performance percentages, invented pilot results, and unnecessary timing prescriptions with a compact correction-based listening protocol.",
+      "registry": "protocol-content-overrides.json"
+    }
+  ]
+}

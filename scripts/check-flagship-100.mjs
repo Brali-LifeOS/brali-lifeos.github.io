@@ -20,7 +20,8 @@ const api = read(`api/${platform.api_version}/flagships.json`);
 const apiIndex = read(`api/${platform.api_version}/index.json`);
 const openapi = read(`api/${platform.api_version}/openapi.json`);
 const manifest = read("life-os/datasets/manifest.json");
-const page = fs.readFileSync(path.join(ROOT, "life-os/flagships/100/index.html"), "utf8");
+const page = fs.readFileSync(path.join(ROOT, "life-os/flagships/curated-100/index.html"), "utf8");
+const legacyPage = fs.readFileSync(path.join(ROOT, "life-os/flagships/100/index.html"), "utf8");
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 
 const target = Number(policy.target_count || 100);
@@ -65,6 +66,8 @@ for (const rel of ["life-os/datasets/flagships.json", "life-os/datasets/flagship
   if (item.sha256 !== hash(text)) fail(`manifest checksum mismatch for ${rel}`);
 }
 if (JSON.stringify(read(`api/${platform.api_version}/manifest.json`)) !== JSON.stringify(manifest)) fail("API manifest drift after Flagship 100 build");
-if (!sitemap.includes("<loc>https://brali-lifeos.github.io/life-os/flagships/100/</loc>")) fail("sitemap lacks Flagship 100 page");
+if (!sitemap.includes("<loc>https://brali-lifeos.github.io/life-os/flagships/curated-100/</loc>")) fail("sitemap lacks the canonical Flagship 100 page");
+if (sitemap.includes("<loc>https://brali-lifeos.github.io/life-os/flagships/100/</loc>")) fail("sitemap still exposes the legacy numeric-only Flagship 100 route");
+if (!legacyPage.includes('rel="canonical" href="https://brali-lifeos.github.io/life-os/flagships/curated-100/"')) fail("legacy Flagship 100 route lacks canonical migration");
 
 console.log(`Flagship 100 verified: ${target} unique trusted protocols, all 7 Start Here anchors retained, ${core.summary.topic_mapped} topic-mapped, ${core.summary.source_linked} source-linked.`);

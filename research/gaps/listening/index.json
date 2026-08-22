@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "topic_id": "listening",
+  "topic_title": "Listening",
+  "domain_id": "communication-relationships",
+  "domain_title": "Communication & Relationships",
+  "ontology_status": "growth-gap",
+  "baseline_status": "growth-gap",
+  "question": "Which active-listening behaviors measurably improve understanding, correction, or interaction quality?",
+  "evidence_target": "Prefer interpersonal communication studies and reviews with observable comprehension or interaction outcomes.",
+  "guardrail": "Do not use invented relationship-improvement percentages or scripts as universal prescriptions.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
+  "canonical_url": "https://brali-lifeos.github.io/research/gaps/listening/",
+  "research_queries": [
+    {
+      "id": "communication-active-listening",
+      "query": "active listening interpersonal communication intervention review",
+      "risk_flags": []
+    }
+  ],
+  "candidates": [
+    {
+      "id": "crossref:10.1001/jamainternmed.2023.0629",
+      "title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+      "status": "challenge-existing",
+      "publication_date": "2023-04-10",
+      "reference_url": "https://doi.org/10.1001/jamainternmed.2023.0629"
+    },
+    {
+      "id": "crossref:10.3389/fpsyg.2012.00482",
+      "title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+      "status": "support-existing",
+      "publication_date": "2012-11-12",
+      "reference_url": "https://doi.org/10.3389/fpsyg.2012.00482"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "communication-coaching-reflective-statements-boundary-2023",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/communication-coaching-reflective-statements-boundary-2023/"
+    },
+    {
+      "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/empathic-paraphrasing-immediate-emotion-boundary-2012/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ask-better-interview-questions",
+      "title": "Run a Short, Concrete Information Interview",
+      "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
+      "evidence_status": "practical"
+    }
+  ],
+  "resolution": null,
+  "coverage": {
+    "id": "listening",
+    "title": "Listening",
+    "domain_id": "communication-relationships",
+    "status": "growth-gap",
+    "entries": 2,
+    "research_candidates": 2
+  }
+}

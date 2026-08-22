@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:fear-stories-to-exposure-coach",
+  "slug": "fear-stories-to-exposure-coach",
+  "title": "Learn From Others",
+  "description": "Explore books, videos, or podcasts about people who have faced and conquered fears similar to yours.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/fear-stories-to-exposure-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/fear-stories-to-exposure-coach/index.json",
+  "growth_zone": {
+    "slug": "no-fears",
+    "title": "No Fears"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fear-confidence",
+        "title": "Fear & Confidence"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "no-fears"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

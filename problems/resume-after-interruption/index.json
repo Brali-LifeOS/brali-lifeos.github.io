@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-20",
+  "slug": "resume-after-interruption",
+  "title": "Resume useful work after interruptions derail the day",
+  "question": "How do I recover after interruptions without losing the rest of the day?",
+  "summary": "Use a small re-entry sequence: recover context, choose the next action, then protect a short restart block.",
+  "canonical_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/",
+  "json_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/index.json",
+  "query_url": "/for-ai/query/?q=I%20was%20interrupted%20and%20now%20I%20cannot%20get%20back%20into%20useful%20work",
+  "related_url": "/topics/focus/",
+  "topics": [
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "canonical_id": "brali:topic:attention-focus"
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "canonical_id": "brali:topic:planning-prioritization"
+    }
+  ],
+  "related_topics": [
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "canonical_id": "brali:topic:information-management"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "canonical_id": "brali:topic:work-systems"
+    }
+  ],
+  "decision_path": [
+    {
+      "if": "You no longer remember where you were",
+      "try": "Reconstruct context first: what was done, what remains, and what the next concrete action was."
+    },
+    {
+      "if": "Several tasks now compete for attention",
+      "try": "Re-prioritize once. Pick the one task that deserves the next block rather than repeatedly choosing again every few minutes."
+    },
+    {
+      "if": "You know what to do but feel scattered",
+      "try": "Use a short restart block with a visible finish condition. A clean restart is more useful than trying to recover the imagined perfect day."
+    }
+  ],
+  "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints.",
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
+      "slug": "refocus-present-stop-mind-wandering",
+      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "title": "Deliberate Attention Switching with Everyday Sounds",
+      "description": "Use several neutral sounds around you to practice deliberately selecting one sound, switching to another, and then noticing several at once. Treat this as an attention-flexibility drill, not a treatment for worry, anxiety, or another condition.",
+      "action": "Find a safe place with several ordinary sounds. Attend closely to one sound without needing to block the others. Deliberately switch to a second and then a third sound. Finish by broadening attention so several sounds can be noticed together. Keep the exercise brief and stop when you choose.",
+      "check_in": "Could you intentionally select, switch, and broaden attention? Record the skill you practiced, not whether worry or another symptom changed.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
+        "reviewed_at": "2026-08-20"
+      },
+      "topic_ids": [
+        "attention-focus",
+        "metacognition"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 170
+    },
+    {
+      "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
+      "slug": "90-30-focus-rest-schedule",
+      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+      "title": "Alternate Focused Work With Real Breaks",
+      "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
+      "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
+      "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "attention-focus",
+        "recovery-energy"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 140
+    },
+    {
+      "canonical_id": "brali:protocol:achieve-multiple-goals-at-once",
+      "slug": "achieve-multiple-goals-at-once",
+      "url": "https://brali-lifeos.github.io/life-os/achieve-multiple-goals-at-once/",
+      "title": "One Move, Several Benefits",
+      "description": "Look for one concrete action that advances two compatible priorities, then check that combining them does not make the action vague or overloaded.",
+      "action": "Name two priorities, brainstorm one concrete action that can serve both, and reject the combination if it makes either priority weaker or unclear.",
+      "check_in": "Did combining the priorities simplify the plan, or did it create a compromised task that serves neither one well?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-20"
+      },
+      "topic_ids": [
+        "planning-prioritization",
+        "goals"
+      ],
+      "is_flagship_100": true,
+      "relevance_score": 140
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "microbreak-wellbeing-performance-boundary-2022",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "unsupported_or_overstated_claims": [
+        "A 5-minute break is an evidence-based optimal duration.",
+        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
+        "Pomodoro reliably improves productivity or task performance.",
+        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
+        "Every short break reduces fatigue or increases vigor for every individual.",
+        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
+        "The review establishes a universal break schedule for cognitively demanding work.",
+        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+      ],
+      "limitations": [
+        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
+        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
+        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
+        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
+        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
+        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
+        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+      ]
+    }
+  ],
+  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+}

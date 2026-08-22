@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "type": "brali-growth-zone",
+  "slug": "act",
+  "title": "ACT",
+  "description": "Use Acceptance and Commitment Therapy hacks to accept challenges and focus on your values.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/act/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/act/index.json",
+  "indexable": true,
+  "trusted_coverage": true,
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "counts": {
+    "library_entries": 7,
+    "trusted_protocols": 1,
+    "reviewed": 1,
+    "practical": 0,
+    "pending_review": 0,
+    "restricted": 6,
+    "mapped_topics": 2,
+    "research_gaps": 1
+  },
+  "topics": [
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/self-awareness/"
+    },
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/stress-regulation/"
+    }
+  ],
+  "research_gaps": [
+    {
+      "topic_id": "self-awareness",
+      "title": "Self-Awareness",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "3-minute-sensory-mindfulness-act",
+      "title": "Use Your Senses to Return to the Present",
+      "url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+      "evidence_status": "reviewed"
+    }
+  ],
+  "entries": [
+    {
+      "slug": "accept-uncomfortable-feelings",
+      "title": "Accept Uncomfortable Feelings",
+      "url": "https://brali-lifeos.github.io/life-os/accept-uncomfortable-feelings/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "self-talk-tone-coach",
+      "title": "Notice the Tone of Your Inner Voice",
+      "url": "https://brali-lifeos.github.io/life-os/self-talk-tone-coach/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "daily-act-value-action-tracker",
+      "title": "Pick One Action Today That Aligns with Your Values (e",
+      "url": "https://brali-lifeos.github.io/life-os/daily-act-value-action-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "values-alignment-tracker",
+      "title": "Spend 5 Minutes Reflecting on What Deeply Matters to You (e",
+      "url": "https://brali-lifeos.github.io/life-os/values-alignment-tracker/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "3-minute-sensory-mindfulness-act",
+      "title": "Use Your Senses to Return to the Present",
+      "url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "act-defusion-let-go-visualization",
+      "title": "Visualize Your Difficult Thought or Feeling as a Physical Object (e",
+      "url": "https://brali-lifeos.github.io/life-os/act-defusion-let-go-visualization/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "act-defusion-visualize-thoughts",
+      "title": "When a Troubling Thought Arises, Imagine It as a Character or an Object (e",
+      "url": "https://brali-lifeos.github.io/life-os/act-defusion-visualize-thoughts/",
+      "evidence_status": "restricted",
+      "indexable": false
+    }
+  ]
+}

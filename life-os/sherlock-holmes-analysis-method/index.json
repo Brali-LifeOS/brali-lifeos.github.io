@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:sherlock-holmes-analysis-method",
+  "slug": "sherlock-holmes-analysis-method",
+  "title": "Apply the Sherlock Holmes Method",
+  "description": "Look at a situation from all angles, consider all evidence, and eliminate the impossible.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/sherlock-holmes-analysis-method/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/sherlock-holmes-analysis-method/index.json",
+  "growth_zone": {
+    "slug": "as-detective",
+    "title": "As Detective"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "detective",
+        "title": "Detective"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-detective"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

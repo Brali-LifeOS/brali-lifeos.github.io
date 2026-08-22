@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:detective-mnemonic-memory-tricks",
+  "slug": "detective-mnemonic-memory-tricks",
+  "title": "Create Memory Aids to Help Remember Observations",
+  "description": "Create memory aids to help remember observations.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/detective-mnemonic-memory-tricks/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/detective-mnemonic-memory-tricks/index.json",
+  "growth_zone": {
+    "slug": "as-detective",
+    "title": "As Detective"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "memory",
+        "title": "Memory"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "detective",
+        "title": "Detective"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-detective"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "memory",
+        "stage": "resolved",
+        "url": "https://brali-lifeos.github.io/research/gaps/memory/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

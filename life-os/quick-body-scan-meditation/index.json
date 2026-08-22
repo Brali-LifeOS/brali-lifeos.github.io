@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:quick-body-scan-meditation",
+  "slug": "quick-body-scan-meditation",
+  "title": "Scan Your Body",
+  "description": "Take a few minutes to close your eyes and mentally scan your body from head to toe. Notice any areas of tension or discomfort.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/quick-body-scan-meditation/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/quick-body-scan-meditation/index.json",
+  "growth_zone": {
+    "slug": "body-oriented",
+    "title": "Body-Oriented"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "body-oriented",
+        "title": "Body-oriented Therapy-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "body-oriented"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:30-min-eye-break-tracker",
+  "slug": "30-min-eye-break-tracker",
+  "title": "Screen Break Checkpoint",
+  "description": "Use a simple checkpoint during screen-heavy work: look away, change posture, and decide whether the next block still deserves your attention.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/30-min-eye-break-tracker/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/30-min-eye-break-tracker/index.json",
+  "growth_zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-20"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "digital-attention",
+        "title": "Digital Attention"
+      },
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "avoid-errors"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "digital-attention",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/digital-attention/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:30-min-eye-break-tracker",
+    "language": "en",
+    "slug": "30-min-eye-break-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/30-min-eye-break-tracker/",
+    "title": "Screen Break Checkpoint",
+    "description": "Use a simple checkpoint during screen-heavy work: look away, change posture, and decide whether the next block still deserves your attention.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "digital-attention",
+          "title": "Digital Attention"
+        },
+        {
+          "id": "error-prevention",
+          "title": "Error Prevention"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "avoid-errors"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "avoid-errors",
+      "title": "Avoid Errors"
+    },
+    "action": "At a natural breakpoint in a long screen session, look away from the display, relax your posture, and name the next task before returning.",
+    "check_in": "Did the pause make the next action clearer, or did it reveal that you should stop, switch, or rest?",
+    "keywords": [
+      "Avoid Errors",
+      "Life OS",
+      "Rest Your Eyes"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-20"
+    }
+  }
+}

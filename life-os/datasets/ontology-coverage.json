@@ -1,0 +1,1035 @@
+{
+  "schema_version": 2,
+  "name": "Brali Ontology Coverage",
+  "generated_from": "evidence index + trusted protocol feed + research candidate queue",
+  "summary": {
+    "library_entries": 947,
+    "trusted_protocols": 139,
+    "domain_mapped": 947,
+    "topic_mapped": 710,
+    "topic_pending": 237,
+    "trusted_topic_pending": 0,
+    "topic_coverage_percent": 75,
+    "method_tagged": 147,
+    "lens_tagged": 123,
+    "research_candidates": 15,
+    "growth_gap_topics": 22
+  },
+  "migration_rule": "topic-pending is deliberate: a legacy Method or Lens collection provides a useful secondary classification but cannot honestly determine the concrete Topic for every contained entry.",
+  "domains": [
+    {
+      "id": "focus-action",
+      "title": "Focus & Action",
+      "entries": 110
+    },
+    {
+      "id": "mind-resilience",
+      "title": "Mind & Resilience",
+      "entries": 144
+    },
+    {
+      "id": "health-energy",
+      "title": "Health & Energy",
+      "entries": 83
+    },
+    {
+      "id": "learning-thinking",
+      "title": "Learning & Thinking",
+      "entries": 350
+    },
+    {
+      "id": "communication-relationships",
+      "title": "Communication & Relationships",
+      "entries": 159
+    },
+    {
+      "id": "creativity-expression",
+      "title": "Creativity & Expression",
+      "entries": 35
+    },
+    {
+      "id": "work-money",
+      "title": "Work & Money",
+      "entries": 77
+    },
+    {
+      "id": "environment-digital",
+      "title": "Environment & Digital Life",
+      "entries": 5
+    }
+  ],
+  "topics": [
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "domain_id": "focus-action",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 1
+    },
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "domain_id": "focus-action",
+      "status": "active",
+      "entries": 23,
+      "research_candidates": 2
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "domain_id": "focus-action",
+      "status": "active",
+      "entries": 2,
+      "research_candidates": 0
+    },
+    {
+      "id": "goals",
+      "title": "Goals",
+      "domain_id": "focus-action",
+      "status": "active",
+      "entries": 51,
+      "research_candidates": 1
+    },
+    {
+      "id": "habits-consistency",
+      "title": "Habits & Consistency",
+      "domain_id": "focus-action",
+      "status": "active",
+      "entries": 9,
+      "research_candidates": 2
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "domain_id": "focus-action",
+      "status": "growth-gap",
+      "entries": 6,
+      "research_candidates": 0
+    },
+    {
+      "id": "error-prevention",
+      "title": "Error Prevention",
+      "domain_id": "focus-action",
+      "status": "active",
+      "entries": 11,
+      "research_candidates": 0
+    },
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "domain_id": "mind-resilience",
+      "status": "active",
+      "entries": 9,
+      "research_candidates": 0
+    },
+    {
+      "id": "emotion-regulation",
+      "title": "Emotion Regulation",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 3,
+      "research_candidates": 0
+    },
+    {
+      "id": "fear-confidence",
+      "title": "Fear & Confidence",
+      "domain_id": "mind-resilience",
+      "status": "active",
+      "entries": 5,
+      "research_candidates": 0
+    },
+    {
+      "id": "worry-rumination",
+      "title": "Worry & Rumination",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "mood-wellbeing",
+      "title": "Mood & Wellbeing",
+      "domain_id": "mind-resilience",
+      "status": "active",
+      "entries": 28,
+      "research_candidates": 0
+    },
+    {
+      "id": "psychological-flexibility",
+      "title": "Psychological Flexibility",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 0
+    },
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 4,
+      "research_candidates": 0
+    },
+    {
+      "id": "health-basics",
+      "title": "Everyday Health Basics",
+      "domain_id": "health-energy",
+      "status": "active",
+      "entries": 61,
+      "research_candidates": 0
+    },
+    {
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 2
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 1
+    },
+    {
+      "id": "fitness-strength",
+      "title": "Fitness & Strength",
+      "domain_id": "health-energy",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 1
+    },
+    {
+      "id": "nutrition",
+      "title": "Nutrition",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "cardiovascular-health",
+      "title": "Cardiovascular Health",
+      "domain_id": "health-energy",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "memory",
+      "title": "Memory",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 4,
+      "research_candidates": 5
+    },
+    {
+      "id": "skill-learning",
+      "title": "Skill Learning",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 27,
+      "research_candidates": 3
+    },
+    {
+      "id": "language-learning",
+      "title": "Language Learning",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 17,
+      "research_candidates": 2
+    },
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 22,
+      "research_candidates": 0
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 4,
+      "research_candidates": 0
+    },
+    {
+      "id": "data-literacy",
+      "title": "Data Literacy",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 12,
+      "research_candidates": 0
+    },
+    {
+      "id": "cognitive-biases",
+      "title": "Cognitive Biases",
+      "domain_id": "learning-thinking",
+      "status": "active",
+      "entries": 166,
+      "research_candidates": 0
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 2
+    },
+    {
+      "id": "clear-communication",
+      "title": "Clear Communication",
+      "domain_id": "communication-relationships",
+      "status": "active",
+      "entries": 124,
+      "research_candidates": 2
+    },
+    {
+      "id": "difficult-conversations",
+      "title": "Difficult Conversations",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "conflict-repair",
+      "title": "Conflict & Repair",
+      "domain_id": "communication-relationships",
+      "status": "active",
+      "entries": 4,
+      "research_candidates": 1
+    },
+    {
+      "id": "relationships",
+      "title": "Relationships",
+      "domain_id": "communication-relationships",
+      "status": "active",
+      "entries": 31,
+      "research_candidates": 1
+    },
+    {
+      "id": "social-confidence",
+      "title": "Social Confidence",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "idea-generation",
+      "title": "Idea Generation",
+      "domain_id": "creativity-expression",
+      "status": "active",
+      "entries": 21,
+      "research_candidates": 0
+    },
+    {
+      "id": "creative-problem-solving",
+      "title": "Creative Problem Solving",
+      "domain_id": "creativity-expression",
+      "status": "growth-gap",
+      "entries": 6,
+      "research_candidates": 0
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "domain_id": "creativity-expression",
+      "status": "active",
+      "entries": 6,
+      "research_candidates": 1
+    },
+    {
+      "id": "revision-feedback",
+      "title": "Revision & Feedback",
+      "domain_id": "creativity-expression",
+      "status": "active",
+      "entries": 5,
+      "research_candidates": 1
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "domain_id": "work-money",
+      "status": "active",
+      "entries": 32,
+      "research_candidates": 0
+    },
+    {
+      "id": "career",
+      "title": "Career",
+      "domain_id": "work-money",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "personal-finance",
+      "title": "Personal Finance",
+      "domain_id": "work-money",
+      "status": "active",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "strategy",
+      "title": "Strategy",
+      "domain_id": "work-money",
+      "status": "active",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "negotiation",
+      "title": "Negotiation",
+      "domain_id": "work-money",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "marketing-positioning",
+      "title": "Marketing & Positioning",
+      "domain_id": "work-money",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "environment-design",
+      "title": "Environment Design",
+      "domain_id": "environment-digital",
+      "status": "active",
+      "entries": 3,
+      "research_candidates": 0
+    },
+    {
+      "id": "workspace",
+      "title": "Workspace",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 0
+    },
+    {
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    }
+  ],
+  "methods": [
+    {
+      "id": "implementation-intentions",
+      "title": "Implementation Intentions",
+      "status": "active",
+      "entries": 0,
+      "research_candidates": 1
+    },
+    {
+      "id": "mcii-woop",
+      "title": "MCII / WOOP",
+      "status": "active",
+      "entries": 0,
+      "research_candidates": 1
+    },
+    {
+      "id": "retrieval-practice",
+      "title": "Retrieval Practice",
+      "status": "emerging",
+      "entries": 1,
+      "research_candidates": 3
+    },
+    {
+      "id": "spaced-practice",
+      "title": "Spaced Practice",
+      "status": "emerging",
+      "entries": 0,
+      "research_candidates": 3
+    },
+    {
+      "id": "interleaving",
+      "title": "Interleaving",
+      "status": "emerging",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "triz",
+      "title": "TRIZ",
+      "status": "active",
+      "entries": 49,
+      "research_candidates": 0
+    },
+    {
+      "id": "game-theory",
+      "title": "Game Theory",
+      "status": "active",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "cbt",
+      "title": "CBT-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "act",
+      "title": "ACT-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "dbt",
+      "title": "DBT-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "exposure",
+      "title": "Exposure-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "metacognitive-therapy",
+      "title": "Metacognitive Therapy-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "psychodynamic",
+      "title": "Psychodynamic-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "cognitive-analytic",
+      "title": "Cognitive Analytic Therapy-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "positive-psychotherapy",
+      "title": "Positive Psychotherapy-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "body-oriented",
+      "title": "Body-oriented Therapy-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "ericksonian",
+      "title": "Ericksonian-derived",
+      "status": "sensitive",
+      "entries": 7,
+      "research_candidates": 0
+    },
+    {
+      "id": "gestalt",
+      "title": "Gestalt-derived",
+      "status": "sensitive",
+      "entries": 8,
+      "research_candidates": 0
+    },
+    {
+      "id": "nlp",
+      "title": "NLP (legacy)",
+      "status": "review-required",
+      "entries": 12,
+      "research_candidates": 0
+    }
+  ],
+  "lenses": [
+    {
+      "id": "stoicism",
+      "title": "Stoicism",
+      "status": "active",
+      "entries": 13,
+      "research_candidates": 0
+    },
+    {
+      "id": "antifragility",
+      "title": "Antifragility",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "qa",
+      "title": "Quality Assurance",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "architecture",
+      "title": "Architecture",
+      "status": "active",
+      "entries": 18,
+      "research_candidates": 0
+    },
+    {
+      "id": "detective",
+      "title": "Detective",
+      "status": "active",
+      "entries": 36,
+      "research_candidates": 0
+    },
+    {
+      "id": "chef-operations",
+      "title": "Chef / Operations",
+      "status": "active",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "chess",
+      "title": "Chess",
+      "status": "active",
+      "entries": 13,
+      "research_candidates": 0
+    },
+    {
+      "id": "classical-strategy",
+      "title": "Classical Strategy",
+      "status": "active",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "insider-fieldcraft",
+      "title": "Fieldcraft",
+      "status": "review-required",
+      "entries": 10,
+      "research_candidates": 0
+    },
+    {
+      "id": "quantum-analogy",
+      "title": "Quantum (legacy analogy)",
+      "status": "legacy-only",
+      "entries": 3,
+      "research_candidates": 0
+    }
+  ],
+  "trusted_topic_pending": [],
+  "unresolved_legacy_collections": [
+    {
+      "zone_slug": "triz",
+      "entries": 45,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "triz",
+      "target_title": "TRIZ"
+    },
+    {
+      "zone_slug": "as-detective",
+      "entries": 33,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "detective",
+      "target_title": "Detective"
+    },
+    {
+      "zone_slug": "as-architector",
+      "entries": 15,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "architecture",
+      "target_title": "Architecture"
+    },
+    {
+      "zone_slug": "grandmaster",
+      "entries": 12,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "chess",
+      "target_title": "Chess"
+    },
+    {
+      "zone_slug": "nlp",
+      "entries": 11,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "nlp",
+      "target_title": "NLP (legacy)"
+    },
+    {
+      "zone_slug": "stoicism",
+      "entries": 10,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "stoicism",
+      "target_title": "Stoicism"
+    },
+    {
+      "zone_slug": "chef",
+      "entries": 9,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "chef-operations",
+      "target_title": "Chef / Operations"
+    },
+    {
+      "zone_slug": "insider",
+      "entries": 9,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "insider-fieldcraft",
+      "target_title": "Fieldcraft"
+    },
+    {
+      "zone_slug": "antifragility",
+      "entries": 8,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "antifragility",
+      "target_title": "Antifragility"
+    },
+    {
+      "zone_slug": "gestalt",
+      "entries": 8,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "gestalt",
+      "target_title": "Gestalt-derived"
+    },
+    {
+      "zone_slug": "cognitive-analytic",
+      "entries": 7,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "cognitive-analytic",
+      "target_title": "Cognitive Analytic Therapy-derived"
+    },
+    {
+      "zone_slug": "ericksonian",
+      "entries": 7,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "ericksonian",
+      "target_title": "Ericksonian-derived"
+    },
+    {
+      "zone_slug": "psychodynamic",
+      "entries": 7,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "psychodynamic",
+      "target_title": "Psychodynamic-derived"
+    },
+    {
+      "zone_slug": "act",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "act",
+      "target_title": "ACT-derived"
+    },
+    {
+      "zone_slug": "body-oriented",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "body-oriented",
+      "target_title": "Body-oriented Therapy-derived"
+    },
+    {
+      "zone_slug": "cbt",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "cbt",
+      "target_title": "CBT-derived"
+    },
+    {
+      "zone_slug": "dbt",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "dbt",
+      "target_title": "DBT-derived"
+    },
+    {
+      "zone_slug": "exposure",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "exposure",
+      "target_title": "Exposure-derived"
+    },
+    {
+      "zone_slug": "game-theory",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "game-theory",
+      "target_title": "Game Theory"
+    },
+    {
+      "zone_slug": "metacognitive",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "metacognitive-therapy",
+      "target_title": "Metacognitive Therapy-derived"
+    },
+    {
+      "zone_slug": "positive-psychotherapy",
+      "entries": 6,
+      "trusted": 0,
+      "kind": "method",
+      "target_id": "positive-psychotherapy",
+      "target_title": "Positive Psychotherapy-derived"
+    },
+    {
+      "zone_slug": "as-qa",
+      "entries": 5,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "qa",
+      "target_title": "Quality Assurance"
+    },
+    {
+      "zone_slug": "quantum",
+      "entries": 3,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "quantum-analogy",
+      "target_title": "Quantum (legacy analogy)"
+    }
+  ],
+  "growth_gap_topics": [
+    {
+      "id": "career",
+      "title": "Career",
+      "domain_id": "work-money",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "difficult-conversations",
+      "title": "Difficult Conversations",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "nutrition",
+      "title": "Nutrition",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "worry-rumination",
+      "title": "Worry & Rumination",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 0,
+      "research_candidates": 0
+    },
+    {
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 1
+    },
+    {
+      "id": "negotiation",
+      "title": "Negotiation",
+      "domain_id": "work-money",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 2
+    },
+    {
+      "id": "social-confidence",
+      "title": "Social Confidence",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 1,
+      "research_candidates": 0
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "domain_id": "focus-action",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 1
+    },
+    {
+      "id": "listening",
+      "title": "Listening",
+      "domain_id": "communication-relationships",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 2
+    },
+    {
+      "id": "psychological-flexibility",
+      "title": "Psychological Flexibility",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 0
+    },
+    {
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 1
+    },
+    {
+      "id": "workspace",
+      "title": "Workspace",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 2,
+      "research_candidates": 0
+    },
+    {
+      "id": "emotion-regulation",
+      "title": "Emotion Regulation",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 3,
+      "research_candidates": 0
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 4,
+      "research_candidates": 0
+    },
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "domain_id": "mind-resilience",
+      "status": "growth-gap",
+      "entries": 4,
+      "research_candidates": 0
+    },
+    {
+      "id": "creative-problem-solving",
+      "title": "Creative Problem Solving",
+      "domain_id": "creativity-expression",
+      "status": "growth-gap",
+      "entries": 6,
+      "research_candidates": 0
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "domain_id": "focus-action",
+      "status": "growth-gap",
+      "entries": 6,
+      "research_candidates": 0
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:streak-share-referral-kit",
+  "slug": "streak-share-referral-kit",
+  "title": "Show Off Your Wins",
+  "description": "Snap a screenshot of your best streak or hack progress and post it on social.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/streak-share-referral-kit/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/streak-share-referral-kit/index.json",
+  "growth_zone": {
+    "slug": "grow-together",
+    "title": "Grow Together"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "conflict-repair",
+        "title": "Conflict & Repair"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "grow-together"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

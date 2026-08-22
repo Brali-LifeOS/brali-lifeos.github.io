@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:ergonomic-workspace-assessment",
+  "slug": "ergonomic-workspace-assessment",
+  "title": "Set up Your Workspace to Be Comfortable and Efficient",
+  "description": "Set up your workspace to be comfortable and efficient. For example, adjust your chair and desk height, and use a keyboard tray to prevent strain.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/index.json",
+  "growth_zone": {
+    "slug": "as-architector",
+    "title": "As Architector"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      }
+    ],
+    "topics": [
+      {
+        "id": "workspace",
+        "title": "Workspace"
+      },
+      {
+        "id": "environment-design",
+        "title": "Environment Design"
+      }
+    ],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "architecture",
+        "title": "Architecture"
+      }
+    ],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "as-architector"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": [
+      {
+        "topic_id": "workspace",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
+      }
+    ]
+  },
+  "trusted_protocol": null
+}

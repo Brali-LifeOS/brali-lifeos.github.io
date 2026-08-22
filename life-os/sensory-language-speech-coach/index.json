@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:sensory-language-speech-coach",
+  "slug": "sensory-language-speech-coach",
+  "title": "Use Language That Appeals to the Senses",
+  "description": "Use language that appeals to the senses. For example, “I see what you mean,” “I hear you,” or “That feels right.”",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/sensory-language-speech-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/sensory-language-speech-coach/index.json",
+  "growth_zone": {
+    "slug": "talk-smart",
+    "title": "Talk Smart"
+  },
+  "life_area": {
+    "slug": "communication-relationships",
+    "title": "Communication & Relationships"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
+      }
+    ],
+    "topics": [
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "communication-relationships",
+      "growth_zone_slug": "talk-smart"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

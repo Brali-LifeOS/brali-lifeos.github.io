@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:talk-about-fears-coach",
+  "slug": "talk-about-fears-coach",
+  "title": "Talk About a Fear With Someone You Trust",
+  "description": "Share your fears with a trusted friend, family member, or therapist.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/talk-about-fears-coach/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/talk-about-fears-coach/index.json",
+  "growth_zone": {
+    "slug": "no-fears",
+    "title": "No Fears"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-talk-about-your-mental-health/",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "fear-confidence",
+        "title": "Fear & Confidence"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "no-fears"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": []
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:talk-about-fears-coach",
+    "language": "en",
+    "slug": "talk-about-fears-coach",
+    "url": "https://brali-lifeos.github.io/life-os/talk-about-fears-coach/",
+    "title": "Talk About a Fear With Someone You Trust",
+    "description": "Share your fears with a trusted friend, family member, or therapist.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "fear-confidence",
+          "title": "Fear & Confidence"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "no-fears"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "no-fears",
+      "title": "No Fears"
+    },
+    "action": "Choose someone you trust and tell them, in your own words, what you are worried or afraid about. You can also say what kind of support you want, such as listening, practical help, or simply company. Keep the conversation within boundaries that feel appropriate for both of you.",
+    "check_in": "Who did I talk to, what did I want from the conversation, did I feel heard or supported, and is there any next step I need?",
+    "keywords": [
+      "No Fears",
+      "Life OS",
+      "Talk It Out"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-talk-about-your-mental-health/",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

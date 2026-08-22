@@ -61,6 +61,7 @@
   },
   "adoption_checklist": [
     "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
+    "Try the zero-install Query Playground before writing custom integration code; copy its agent context or JSON packet to inspect the contract.",
     "Run a reference demo before integrating your own retrieval flow.",
     "Use reviewed/practical records for normal trusted recommendations.",
     "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
@@ -69,5 +70,6 @@
     "Follow CC BY-NC-SA 4.0 attribution/share-alike terms for public non-commercial use; request separate permission for commercial use.",
     "Share integration feedback or partnership proposals through the Brali partnerships page."
   ],
-  "feedback_url": "https://brali-lifeos.github.io/partners/"
+  "feedback_url": "https://brali-lifeos.github.io/partners/",
+  "query_playground": "https://brali-lifeos.github.io/for-ai/query/"
 }

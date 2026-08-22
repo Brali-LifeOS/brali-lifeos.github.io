@@ -72,16 +72,8 @@ function ensureAlternateJson(html, href) {
   return html.replace('</head>', `<link rel="alternate" type="application/json" href="${href}"></head>`);
 }
 
-function ensureNoindex(html) {
-  if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(html)) return html;
-  return html.replace(
-    '<meta name="viewport" content="width=device-width,initial-scale=1">',
-    '<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow">'
-  );
-}
-
 function removeNoindex(html) {
-  return html.replace(/<meta\s+name=["']robots["']\s+content=["']noindex,follow["']\s*>/ig, '');
+  return html.replace(/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']\s*>/ig, '');
 }
 
 function articleDescription(entry, record) {
@@ -127,6 +119,7 @@ function articleMachineRecord(entry, record, protocol) {
     evidence: {
       status: record?.status ?? null,
       indexable: Boolean(record?.indexable),
+      search_indexable: true,
       sensitive: Boolean(record?.sensitive),
       source_recorded: Boolean(record?.source?.recorded),
       source_url: record?.status === 'reviewed' ? (record?.source?.url ?? null) : null,
@@ -134,6 +127,7 @@ function articleMachineRecord(entry, record, protocol) {
     },
     ontology: record?.ontology ?? null,
     discovery: {
+      search_indexable: true,
       trusted_protocol_feed: Boolean(protocol),
       research_gaps: gaps.map(gap => ({ topic_id: gap.topic_id, stage: gap.stage, url: gap.canonical_url }))
     },
@@ -155,8 +149,7 @@ function transformArticle(entry) {
       ? html.replace('<section class="prose related-protocols"', `${block}<section class="prose related-protocols"`)
       : html.replace('</main>', `${block}</main>`);
   }
-  if (record?.indexable) html = removeNoindex(html);
-  else html = ensureNoindex(html);
+  html = removeNoindex(html);
   if (html !== before) fs.writeFileSync(htmlPath, html);
   writeJson(`life-os/${entry.slug}/index.json`, articleMachineRecord(entry, record, protocol));
   return html !== before;
@@ -183,7 +176,7 @@ function zoneSummary(zone) {
   const topics = [...topicCounts.values()].sort((a, b) => b.count - a.count || a.title.localeCompare(b.title));
   const gaps = topics.map(topic => gapByTopic.get(topic.id)).filter(Boolean);
   const area = areaByZone.get(zone.slug) ?? null;
-  return { zone, entries, trusted, statuses, topics, gaps, area, indexable: trusted.length > 0 };
+  return { zone, entries, trusted, statuses, topics, gaps, area, indexable: true, trustedCoverage: trusted.length > 0 };
 }
 
 function zoneDescription(summary) {
@@ -201,6 +194,7 @@ function zoneMachineRecord(summary) {
     canonical_url: `${BASE}/life-os/${summary.zone.slug}/`,
     machine_url: `${BASE}/life-os/${summary.zone.slug}/index.json`,
     indexable: summary.indexable,
+    trusted_coverage: summary.trustedCoverage,
     life_area: summary.area ? { slug: summary.area.slug, title: summary.area.title } : null,
     counts: {
       library_entries: summary.entries.length,
@@ -231,7 +225,7 @@ function zoneMachineRecord(summary) {
 function zoneOverview(summary) {
   const trustedList = summary.trusted.length
     ? `<ul class="article-list">${summary.trusted.slice(0, 10).map(protocol => `<li><a href="/life-os/${esc(protocol.slug)}/">${esc(protocol.title)}</a><span>${esc(protocol.action || protocol.description || '')}</span><small>${esc(statusLabel(protocol.evidence?.status))}</small></li>`).join('')}</ul>${summary.trusted.length > 10 ? `<p><small>${summary.trusted.length - 10} more trusted protocols are available in the full archive below.</small></p>` : ''}`
-    : '<p>No entry in this zone currently meets the trusted Protocol Feed bar. The archive remains accessible for editorial review, but this zone is withheld from search indexing until trusted coverage exists.</p>';
+    : '<p>No entry in this zone currently meets the trusted Protocol Feed bar. The archive is search-visible and evidence-labelled, but its entries remain excluded from normal trusted recommendations until review is complete.</p>';
   const topicLinks = summary.topics.slice(0, 8).map(topic => `<a href="/ontology/topics/${esc(topic.id)}/">${esc(topic.title)} (${topic.count})</a>`).join(' · ');
   const gapLinks = summary.gaps.length
     ? `<p><strong>Research gaps:</strong> ${summary.gaps.slice(0, 8).map(gap => `<a href="/research/gaps/${esc(gap.topic_id)}/">${esc(gap.topic_title)} · ${esc(gap.stage_label)}</a>`).join(' · ')}</p>`
@@ -263,8 +257,7 @@ function transformZone(zone) {
     const archive = '<section class="prose"><h2>';
     html = html.includes(archive) ? html.replace(archive, `${block}${archive}`) : html.replace('</main>', `${block}</main>`);
   }
-  if (summary.indexable) html = removeNoindex(html);
-  else html = ensureNoindex(html);
+  html = removeNoindex(html);
   if (html !== before) fs.writeFileSync(htmlPath, html);
   writeJson(`life-os/${zone.slug}/index.json`, zoneMachineRecord(summary));
   return { changed: html !== before, summary };
@@ -291,10 +284,7 @@ if (!converged) throw new Error(`Site-wide quality loop did not converge after $
 let sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 for (const summary of zoneSummaries) {
   const loc = `<loc>${BASE}/life-os/${summary.zone.slug}/</loc>`;
-  if (!summary.indexable) {
-    const pattern = new RegExp(`\\s*<url><loc>${BASE.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}\\/life-os\\/${summary.zone.slug.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}\\/</loc>(?:<lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod>)?</url>`, 'g');
-    sitemap = sitemap.replace(pattern, '');
-  } else if (!sitemap.includes(loc)) {
+  if (!sitemap.includes(loc)) {
     sitemap = sitemap.replace('</urlset>', `  <url>${loc}</url>\n</urlset>`);
   }
 }
@@ -341,9 +331,9 @@ for (const entry of sourceIndex) {
   if (!html.includes('data-sitewide-quality-context="true"')) addIssue('error', 'quality-context', pathname, 'Missing library context.');
   if (!html.includes(`/life-os/${entry.zone?.slug}/`)) addIssue('error', 'zone-backlink', pathname, 'Missing Growth Zone backlink.');
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
-  if (Boolean(record?.indexable) === noindex) addIssue('error', 'indexing-alignment', pathname, `indexable=${Boolean(record?.indexable)} but noindex=${noindex}`);
+  if (noindex) addIssue('error', 'indexing-alignment', pathname, 'Public hack page must not contain noindex.');
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
-  if (Boolean(record?.indexable) !== inSitemap) addIssue('error', 'sitemap-alignment', pathname, `indexable=${Boolean(record?.indexable)} but sitemap=${inSitemap}`);
+  if (!inSitemap) addIssue('error', 'sitemap-alignment', pathname, 'Public hack page is missing from sitemap.');
 }
 
 for (const summary of zoneSummaries) {
@@ -353,13 +343,14 @@ for (const summary of zoneSummaries) {
   if (!html.includes('data-zone-quality="true"')) addIssue('error', 'zone-quality', pathname, 'Missing trust-first zone overview.');
   if (!html.includes(`${summary.entries.length} library entries`)) addIssue('error', 'zone-archive', pathname, 'Archive heading does not reflect full library count.');
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
-  if (summary.indexable === noindex) addIssue('error', 'zone-indexing', pathname, `indexable=${summary.indexable} but noindex=${noindex}`);
+  if (noindex) addIssue('error', 'zone-indexing', pathname, 'Public Growth Zone must not contain noindex.');
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
-  if (summary.indexable !== inSitemap) addIssue('error', 'zone-sitemap', pathname, `indexable=${summary.indexable} but sitemap=${inSitemap}`);
+  if (!inSitemap) addIssue('error', 'zone-sitemap', pathname, 'Public Growth Zone is missing from sitemap.');
 }
 
 const errors = issues.filter(issue => issue.severity === 'error');
-const indexableZones = zoneSummaries.filter(item => item.indexable).length;
+const indexableZones = zoneSummaries.length;
+const trustedRecommendationEntries = (evidence.entries ?? []).filter(item => item.indexable).length;
 const report = {
   schema_version: 1,
   name: 'Brali Site-wide Page & Zone Quality Cycle',
@@ -376,10 +367,13 @@ const report = {
     total_pages_checked: sourceIndex.length + zones.length,
     machine_readable_page_records: sourceIndex.length + zones.length,
     trusted_protocols: protocols.count ?? (protocols.entries ?? []).length,
-    indexable_entry_pages: (evidence.entries ?? []).filter(item => item.indexable).length,
-    withheld_entry_pages: (evidence.entries ?? []).filter(item => !item.indexable).length,
+    indexable_entry_pages: sourceIndex.length,
+    withheld_entry_pages: 0,
+    trusted_recommendation_entries: trustedRecommendationEntries,
+    review_required_entry_pages: sourceIndex.length - trustedRecommendationEntries,
     indexable_zones: indexableZones,
-    withheld_zones: zones.length - indexableZones,
+    withheld_zones: 0,
+    zones_without_trusted_protocols: zoneSummaries.filter(item => !item.trustedCoverage).length,
     open_research_gaps: researchGaps.current_open_gap_count,
     resolved_research_gaps: researchGaps.resolved_gap_count
   },
@@ -387,7 +381,7 @@ const report = {
     'Every entry and zone must have canonical, descriptive metadata, one H1, JSON-LD, and an alternate JSON record.',
     'Every entry exposes evidence state, ontology context, trusted-feed eligibility, and linked research gaps where applicable.',
     'Every zone presents trusted protocols first and labels the full archive by evidence state.',
-    'Entry indexing follows the Brali evidence policy; zone indexing requires at least one trusted protocol.',
+    'All public entries and zones are crawlable; evidence state separately gates normal trusted recommendations.',
     'All internal links on the 947 entry pages and 49 zone pages must resolve to a generated local target.',
     'The automatic loop must converge: a second pass should make zero additional HTML changes.'
   ],
@@ -397,6 +391,7 @@ const report = {
     slug: summary.zone.slug,
     title: summary.zone.title,
     indexable: summary.indexable,
+    trusted_coverage: summary.trustedCoverage,
     library_entries: summary.entries.length,
     trusted_protocols: summary.trusted.length,
     reviewed: summary.statuses.reviewed,
@@ -412,13 +407,13 @@ writeJson('state/quality/index.json', report);
 
 const cards = [
   ['Pages cycled', report.coverage.total_pages_checked, `${sourceIndex.length} entries + ${zones.length} zones.`],
-  ['Trusted entries', report.coverage.indexable_entry_pages, `${report.coverage.withheld_entry_pages} entry pages remain noindex pending review.`],
-  ['Indexable zones', report.coverage.indexable_zones, `${report.coverage.withheld_zones} zones have no trusted protocol yet and remain noindex.`],
+  ['Search-visible entries', report.coverage.indexable_entry_pages, 'Every public hack page is crawlable and included in the sitemap.'],
+  ['Trusted recommendations', report.coverage.trusted_recommendation_entries, `${report.coverage.review_required_entry_pages} pages remain outside normal trusted recommendations.`],
   ['Research gaps', `${report.coverage.open_research_gaps} open`, `${report.coverage.resolved_research_gaps} resolved in the current research agenda.`],
   ['Loop convergence', passChanges.join(' → '), `${passChanges.length} pass(es); final pass changed zero pages.`],
   ['Technical errors', report.error_count, report.error_count ? 'See the issue list below.' : 'All enforced page and zone checks passed.']
 ].map(([label, value, detail]) => `<article class="card"><span class="card-label">${esc(label)}</span><h2>${esc(value)}</h2><p>${esc(detail)}</p></article>`).join('');
-const zoneRows = report.zones.map(zone => `<tr><td><a href="/life-os/${esc(zone.slug)}/">${esc(zone.title)}</a></td><td>${zone.library_entries}</td><td>${zone.trusted_protocols}</td><td>${zone.pending_review}</td><td>${zone.restricted}</td><td>${zone.research_gaps}</td><td>${zone.indexable ? 'index' : 'noindex'}</td></tr>`).join('');
+const zoneRows = report.zones.map(zone => `<tr><td><a href="/life-os/${esc(zone.slug)}/">${esc(zone.title)}</a></td><td>${zone.library_entries}</td><td>${zone.trusted_protocols}</td><td>${zone.pending_review}</td><td>${zone.restricted}</td><td>${zone.research_gaps}</td><td>index · ${zone.trusted_coverage ? 'trusted subset available' : 'review-gated archive'}</td></tr>`).join('');
 const issueRows = issues.length ? `<h2>Unresolved issues</h2><table><thead><tr><th>Severity</th><th>Type</th><th>Page</th><th>Detail</th></tr></thead><tbody>${issues.slice(0, 200).map(issue => `<tr><td>${esc(issue.severity)}</td><td>${esc(issue.kind)}</td><td>${esc(issue.page)}</td><td>${esc(issue.detail)}</td></tr>`).join('')}</tbody></table>` : '<div class="callout"><strong>No enforced issues remain after convergence.</strong> Content evidence review is a separate editorial backlog and is not silently “fixed” by this technical loop.</div>';
 const qualitySchema = { '@context':'https://schema.org', '@type':'Dataset', name:report.name, description:report.scope, url:`${BASE}/state/quality/`, measurementTechnique:'Deterministic build-time checks across every generated Growth Library entry and Growth Zone page' };
 const qualityHtml = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page & Zone Quality Cycle | Brali</title><meta name="description" content="Deterministic site-wide quality cycle across all Brali Growth Library entry pages and Growth Zones, including trust, indexing, internal links, metadata, and machine-readable records."><link rel="canonical" href="${BASE}/state/quality/"><meta property="og:type" content="website"><meta property="og:title" content="Brali Page & Zone Quality Cycle"><meta property="og:description" content="A reproducible quality pass across every Growth Library entry and zone."><meta property="og:url" content="${BASE}/state/quality/"><link rel="alternate" type="application/json" href="/state/quality/index.json"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(qualitySchema).replace(/</g, '\\u003c')}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/">Library</a><a href="/state/">State</a><a href="/research/gaps/">Research Gaps</a><a href="/evidence/">Evidence</a><a href="/for-ai/">For AI</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow">State · Site-wide quality cycle</p><h1>Every entry. Every zone. Repeat until the safe fixes converge.</h1><p class="lead">This build-time loop walks all ${sourceIndex.length} Growth Library entry pages and all ${zones.length} Growth Zones. It fixes deterministic presentation and discovery issues, then checks the final pages again. Evidence review remains human/editorial work rather than being cosmetically declared complete.</p><div class="grid two">${cards}</div>${issueRows}<section class="prose"><h2>Zone coverage</h2><table><thead><tr><th>Growth Zone</th><th>Entries</th><th>Trusted</th><th>Pending</th><th>Restricted</th><th>Research gaps</th><th>Search</th></tr></thead><tbody>${zoneRows}</tbody></table><h2>Machine-readable result</h2><p><a href="/state/quality/index.json">Quality-cycle JSON →</a> · <a href="/life-os/datasets/evidence.json">Evidence index →</a> · <a href="/life-os/datasets/protocols.json">Trusted Protocol Feed →</a></p></section></main><footer class="footer"><div class="wrap footer-row"><small>Brali · measurable quality instead of a ceremonial audit</small></div></footer></body></html>\n`;
@@ -428,7 +423,7 @@ const statePath = path.join(ROOT, 'state/index.html');
 if (fs.existsSync(statePath)) {
   let stateHtml = fs.readFileSync(statePath, 'utf8');
   if (!stateHtml.includes('data-sitewide-quality-cycle')) {
-    stateHtml = stateHtml.replace('</main>', `<aside class="callout" data-sitewide-quality-cycle><h3>Page & Zone Quality Cycle</h3><p>Every build now checks ${sourceIndex.length} entry pages and ${zones.length} Growth Zones, publishes per-page JSON, and withholds zones with no trusted protocol from search indexing.</p><a class="button" href="/state/quality/">Open site-wide quality report</a></aside></main>`);
+    stateHtml = stateHtml.replace('</main>', `<aside class="callout" data-sitewide-quality-cycle><h3>Page & Zone Quality Cycle</h3><p>Every build checks ${sourceIndex.length} entry pages and ${zones.length} Growth Zones, publishes per-page JSON, keeps all public pages crawlable, and separately gates trusted recommendations by evidence state.</p><a class="button" href="/state/quality/">Open site-wide quality report</a></aside></main>`);
     fs.writeFileSync(statePath, stateHtml);
   }
 }
@@ -446,4 +441,4 @@ if (fs.existsSync(llmsPath)) {
 }
 
 if (errors.length) throw new Error(`Site-wide quality cycle finished with ${errors.length} enforced error(s). See /state/quality/index.json.`);
-console.log(`Site-wide quality cycle: ${sourceIndex.length} entries + ${zones.length} zones; passes ${passChanges.join(' -> ')}; ${indexableZones}/${zones.length} zones indexable; ${errors.length} enforced errors.`);
+console.log(`Site-wide quality cycle: ${sourceIndex.length} entries + ${zones.length} zones; passes ${passChanges.join(' -> ')}; all public pages indexable; ${trustedRecommendationEntries} trusted recommendation entries; ${errors.length} enforced errors.`);

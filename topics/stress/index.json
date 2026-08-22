@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "dataset_version": "1.0.0",
+  "slug": "stress",
+  "title": "Stress",
+  "question": "What low-risk practices can help me respond to stress without treating a knowledge library like clinical care?",
+  "summary": "Use bounded regulation, controllability, and self-awareness practices while keeping treatment claims outside Brali's practical layer.",
+  "canonical_url": "https://brali-lifeos.github.io/topics/stress/",
+  "json_url": "https://brali-lifeos.github.io/topics/stress/index.json",
+  "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
+  "coverage_status": "trusted-protocols",
+  "coverage_note": "7 trusted protocol recommendations available.",
+  "topics": [
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "description": "Use low-risk practices to respond to everyday stress and regain workable perspective.",
+      "canonical_id": "brali:topic:stress-regulation"
+    },
+    {
+      "id": "emotion-regulation",
+      "title": "Emotion Regulation",
+      "description": "Notice, understand, and respond to emotions without promising emotional control on demand.",
+      "canonical_id": "brali:topic:emotion-regulation"
+    },
+    {
+      "id": "worry-rumination",
+      "title": "Worry & Rumination",
+      "description": "Work with repetitive thinking and redirect attention toward useful action.",
+      "canonical_id": "brali:topic:worry-rumination"
+    }
+  ],
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:dbt-distress-tolerance-coach",
+      "protocol_id": "brali:dbt-distress-tolerance-coach",
+      "slug": "dbt-distress-tolerance-coach",
+      "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+      "title": "Pause Before Acting on a High-Stress Urge",
+      "description": "When a situation is safe enough to pause, notice the urge to react, describe what is happening, choose a harmless short delay, and then reassess the next action. This is not full DBT or crisis care.",
+      "action": "Pause. Describe the situation in one factual sentence and name the action urge without judging it. Choose a harmless brief activity that creates time rather than escalating the situation. Then reassess what action is safest and most useful.",
+      "check_in": "Did you create a pause without making the situation worse, and what safe next action did you choose? Do not score success by whether the emotion disappeared.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "emotion-regulation",
+        "stress-regulation",
+        "self-awareness"
+      ],
+      "method_ids": [
+        "dbt"
+      ],
+      "hub_score": 1242.4
+    },
+    {
+      "canonical_id": "brali:protocol:3-minute-sensory-mindfulness-act",
+      "protocol_id": "brali:3-minute-sensory-mindfulness-act",
+      "slug": "3-minute-sensory-mindfulness-act",
+      "url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+      "title": "Use Your Senses to Return to the Present",
+      "description": "Spend 3–5 minutes focusing on your senses. Notice what you see, hear, smell, feel, and taste. Gently redirect your attention whenever your mind wanders.",
+      "action": "Pause somewhere safe and deliberately notice what is happening around you right now. Choose a few sights, sounds, textures, smells or tastes and describe them simply. When your attention drifts into planning, worry or commentary, notice that and gently return to one sensory detail.",
+      "check_in": "What did I notice, how easy or difficult was it to return attention to the present, and did this feel useful enough to try again?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "self-awareness",
+        "stress-regulation"
+      ],
+      "method_ids": [
+        "act"
+      ],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:cbt-action-mood-tracker",
+      "protocol_id": "brali:cbt-action-mood-tracker",
+      "slug": "cbt-action-mood-tracker",
+      "url": "https://brali-lifeos.github.io/life-os/cbt-action-mood-tracker/",
+      "title": "Action and Mood Observation Note",
+      "description": "Use a short note to compare an activity with what you noticed before and after it. Treat the note as observation, not proof that an activity caused a mood change.",
+      "action": "Write the situation, the activity you chose, how you felt before, and how you felt afterward. Add one alternative explanation so the note does not turn correlation into certainty.",
+      "check_in": "What did you observe, and what would be worth trying or discussing next without assuming the activity caused the change?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nhs.uk/tests-and-treatments/cognitive-behavioural-therapy-cbt/",
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "self-awareness",
+        "emotion-regulation"
+      ],
+      "method_ids": [
+        "cbt"
+      ],
+      "hub_score": 1191.79
+    },
+    {
+      "canonical_id": "brali:protocol:abdominal-breathing-stress-relief",
+      "protocol_id": "brali:abdominal-breathing-stress-relief",
+      "slug": "abdominal-breathing-stress-relief",
+      "url": "https://brali-lifeos.github.io/life-os/abdominal-breathing-stress-relief/",
+      "title": "Comfortable Diaphragmatic Breathing",
+      "description": "Try a few slow, comfortable breaths while noticing the abdomen move. Keep the exercise easy, stop if it feels uncomfortable, and do not use it instead of medical care.",
+      "action": "Sit or lie in a comfortable position, let the breath slow without forcing a count, notice the abdomen rise and fall, and stop after a few easy cycles or whenever you prefer.",
+      "check_in": "Did the exercise feel comfortable and leave you ready for the next ordinary action? Stop if you feel dizzy, short of breath, distressed, or otherwise unwell.",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nccih.nih.gov/health/relaxation-techniques-what-you-need-to-know",
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "stress-regulation"
+      ],
+      "method_ids": [
+        "body-oriented"
+      ],
+      "hub_score": 1191.73
+    },
+    {
+      "canonical_id": "brali:protocol:circles-of-control-planner",
+      "protocol_id": "brali:circles-of-control-planner",
+      "slug": "circles-of-control-planner",
+      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
+      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "description": "Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control.",
+      "action": "Write down one concern, separate the outcome from the actions you can take, convert anything you can influence into one concrete behavior, and choose the next useful action without pretending you control the final result.",
+      "check_in": "What part of this situation was actually mine to act on, what remained outside my control, and did the sorting help me choose a clearer next step?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "decision-making",
+        "stress-regulation"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.21
+    },
+    {
+      "canonical_id": "brali:protocol:478-breathing-technique-guide",
+      "protocol_id": "brali:478-breathing-technique-guide",
+      "slug": "478-breathing-technique-guide",
+      "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
+      "title": "Comfortable Breathing Reset",
+      "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
+      "action": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
+      "check_in": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed.",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "stress-regulation"
+      ],
+      "method_ids": [],
+      "hub_score": 1061.54
+    },
+    {
+      "canonical_id": "brali:protocol:ancestral-torch-resilience-tracker",
+      "protocol_id": "brali:ancestral-torch-resilience-tracker",
+      "slug": "ancestral-torch-resilience-tracker",
+      "url": "https://brali-lifeos.github.io/life-os/ancestral-torch-resilience-tracker/",
+      "title": "Short Resilience Reminder",
+      "description": "Create a short phrase that acknowledges difficulty without pretending it is easy, then points back to one action you can still control.",
+      "action": "Write one sentence in the form: This is difficult, and the next thing I can control is ___. Keep it specific to the current situation.",
+      "check_in": "Did the phrase lead to a concrete action, or did it become empty motivation that you repeated without changing anything?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "stress-regulation",
+        "psychological-flexibility"
+      ],
+      "method_ids": [],
+      "hub_score": 1061.34
+    }
+  ],
+  "evidence_decisions": [],
+  "research_watch": [],
+  "related_topics": [
+    {
+      "id": "psychological-flexibility",
+      "title": "Psychological Flexibility",
+      "canonical_id": "brali:topic:psychological-flexibility"
+    },
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "canonical_id": "brali:topic:self-awareness"
+    },
+    {
+      "id": "fear-confidence",
+      "title": "Fear & Confidence",
+      "canonical_id": "brali:topic:fear-confidence"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "canonical_id": "brali:topic:decision-making"
+    }
+  ],
+  "related_methods": [
+    {
+      "id": "dbt",
+      "title": "DBT-derived",
+      "canonical_id": "brali:method:dbt"
+    },
+    {
+      "id": "act",
+      "title": "ACT-derived",
+      "canonical_id": "brali:method:act"
+    },
+    {
+      "id": "cbt",
+      "title": "CBT-derived",
+      "canonical_id": "brali:method:cbt"
+    },
+    {
+      "id": "body-oriented",
+      "title": "Body-oriented Therapy-derived",
+      "canonical_id": "brali:method:body-oriented"
+    }
+  ],
+  "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
+}

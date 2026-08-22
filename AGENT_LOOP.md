@@ -39,7 +39,7 @@ Gate order is binding unless later work is strictly required to unblock an earli
 
 ### 0. `trust-reset` — completed
 
-Issues #109 and #93 established claim gating, deterministic/public claim debt, safe noindex behavior, and the first source-bounded editorial decisions. The gate remains regression-protected even after completion.
+Issues #109 and #93 established claim gating, deterministic/public claim debt, explicit search-vs-recommendation boundaries, and the first source-bounded editorial decisions. The trust gate remains regression-protected even though every public entry is now crawlable.
 
 ### 1. `gold-core` — active
 
@@ -117,7 +117,7 @@ Knowledge flow:
 
 `research candidate -> actual-source review -> evidence decision -> protocol -> trusted discovery -> observed outcome`
 
-No title, DOI, abstract, citation count, search result, or AI summary can directly create `reviewed` content. Precise quantitative, causal, mechanism, first-party, guarantee, treatment, diagnosis, or prevention wording requires a reviewed decision supporting that exact bounded claim. Otherwise remove precision, keep practical, restrict, noindex, or reject.
+No title, DOI, abstract, citation count, search result, or AI summary can directly create `reviewed` content. Precise quantitative, causal, mechanism, first-party, guarantee, treatment, diagnosis, or prevention wording requires a reviewed decision supporting that exact bounded claim. Otherwise remove precision, keep practical, restrict from trusted recommendation, or reject.
 
 A source URL is not proof of review. A neighboring mechanism is not proof of protocol effectiveness. Absence of a regex marker is not proof of evidence quality. Safe abstention is a product feature.
 

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:avoid-gamblers-fallacy-trust-the-odds",
+  "slug": "avoid-gamblers-fallacy-trust-the-odds",
+  "title": "Check Whether a Streak Changes the Next Event",
+  "description": "Before acting on a streak, identify whether earlier outcomes can change the next event and use a pre-defined decision rule rather than a story about what is due.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "practical",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": "2026-08-22"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      },
+      {
+        "id": "data-literacy",
+        "title": "Data Literacy"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:avoid-gamblers-fallacy-trust-the-odds",
+    "language": "en",
+    "slug": "avoid-gamblers-fallacy-trust-the-odds",
+    "url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+    "title": "Check Whether a Streak Changes the Next Event",
+    "description": "Before acting on a streak, identify whether earlier outcomes can change the next event and use a pre-defined decision rule rather than a story about what is due.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        },
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Describe the next event and the recent streak. Ask what carries information or state from earlier outcomes into the next one. If there is no connection, ignore the streak and use the same probability or decision rule. If a connection may exist, identify the relevant state and gather that information. Use a pre-defined stop rule for repeated high-cost decisions.",
+    "check_in": "What connection did I identify between past and next events, and did my action follow the rule or merely the feeling that an outcome was due?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Trust the Odds"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-08-22"
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:cbt-mastery-activity-list",
+  "slug": "cbt-mastery-activity-list",
+  "title": "Create a List of Activities That Give You a Sense of Accomplishment (e",
+  "description": "Create a list of activities that give you a sense of accomplishment (e.g., cooking a meal, organizing a shelf). Try one today.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/cbt-mastery-activity-list/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/cbt-mastery-activity-list/index.json",
+  "growth_zone": {
+    "slug": "cbt",
+    "title": "CBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "cbt",
+        "title": "CBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

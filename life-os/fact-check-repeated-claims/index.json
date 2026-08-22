@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:fact-check-repeated-claims",
+  "slug": "fact-check-repeated-claims",
+  "title": "Spot Repeated Lies",
+  "description": "Be wary of repeated statements: - Fact-check: Look up evidence for claims you’ve heard multiple times. - Question familiarity: Ask, \"Do I believe this because it’s true or just because I’ve heard it a lot?\" - Practice skepticism: Even well-designed ads or viral posts can repeat falsehoods convincingly. Example: Heard \"You need to drink 8 glasses of water a day\"? Check the science instead of relying on repetition.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/fact-check-repeated-claims/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/fact-check-repeated-claims/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

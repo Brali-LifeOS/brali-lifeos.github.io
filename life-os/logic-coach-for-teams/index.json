@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:logic-coach-for-teams",
+  "slug": "logic-coach-for-teams",
+  "title": "Question Believability",
+  "description": "When evaluating arguments: - Focus on logic: Ask, \"Does this follow from the premises?\" instead of, \"Do I agree with the conclusion?\" - Separate belief from evidence: Analyze whether the conclusion feels true because it’s logical or just because it aligns with your beliefs. - Test counterexamples: Find a scenario where the logic works but the conclusion isn’t believable. Example: Someone says, \"All successful people wake up at 5 a.m.\" Instead of agreeing because it feels motivating, test the logic and exceptions.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/logic-coach-for-teams/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/logic-coach-for-teams/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

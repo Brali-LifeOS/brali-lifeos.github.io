@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-19",
+  "policy": {
+    "purpose": "Create a small number of useful, query-aware entry points from Brali's existing knowledge instead of generating thin pages for keyword variants.",
+    "search_metrics": "Do not publish search volume, ranking, traffic, or trend claims unless they come from first-party analytics or a named external dataset.",
+    "content_rule": "Questions route readers to canonical Brali hubs, areas, research, and the Query Playground. They are navigation and editorial framing, not claims of measured demand."
+  },
+  "groups": [
+    {
+      "slug": "focus-execution",
+      "title": "Focus & execution",
+      "summary": "Start work, reduce switching, and make priorities visible.",
+      "primary_url": "/topics/focus/",
+      "questions": [
+        "How do I stop switching between tasks all day?",
+        "How do I start an important task when I keep procrastinating?",
+        "How do I plan a workday when everything feels urgent?",
+        "What is a simple way to protect a block of focused work?"
+      ]
+    },
+    {
+      "slug": "habits",
+      "title": "Habits & consistency",
+      "summary": "Make useful actions easier to repeat without relying on motivation alone.",
+      "primary_url": "/topics/habits/",
+      "secondary_url": "/research/habits-take-time/",
+      "questions": [
+        "How do I make a habit easier to repeat?",
+        "What should I do when a habit keeps breaking on busy days?",
+        "How long does it really take to build a habit?",
+        "How can I reduce friction around a new routine?"
+      ]
+    },
+    {
+      "slug": "learning-memory",
+      "title": "Learning & memory",
+      "summary": "Use retrieval, practice, feedback, and application instead of passive exposure alone.",
+      "primary_url": "/topics/learning/",
+      "secondary_url": "/topics/memory/",
+      "questions": [
+        "How do I remember more of what I study?",
+        "How do I learn through practice instead of rereading?",
+        "How can I run a one-week learning sprint?",
+        "What is the difference between remembering something and being able to use it?"
+      ]
+    },
+    {
+      "slug": "sleep-energy",
+      "title": "Sleep & energy",
+      "summary": "Build more reliable recovery routines while keeping evidence boundaries visible.",
+      "primary_url": "/topics/sleep/",
+      "secondary_url": "/research/sleep-regularity-signal-not-prescription/",
+      "questions": [
+        "How can I make my sleep routine more regular?",
+        "What small changes can make evening routines easier to repeat?",
+        "How should I think about sleep regularity without treating correlations as prescriptions?"
+      ]
+    },
+    {
+      "slug": "stress",
+      "title": "Stress & regulation",
+      "summary": "Find bounded, low-risk practices without turning a knowledge library into clinical care.",
+      "primary_url": "/topics/stress/",
+      "questions": [
+        "What can I try when I feel stressed and need a simple next step?",
+        "How do I interrupt rumination without pretending one technique works for everyone?",
+        "What low-risk practices can help me settle before returning to a task?"
+      ]
+    },
+    {
+      "slug": "movement",
+      "title": "Movement & sedentary time",
+      "summary": "Break up long sitting periods and build sustainable movement routines.",
+      "primary_url": "/topics/movement/",
+      "secondary_url": "/research/movement-breaks-no-magic-interval/",
+      "questions": [
+        "How can I move more when I sit at a desk most of the day?",
+        "Do movement breaks need a perfect interval to be useful?",
+        "What is a small way to restart an exercise routine?"
+      ]
+    },
+    {
+      "slug": "communication-relationships",
+      "title": "Communication & relationships",
+      "summary": "Navigate listening, clarity, conflict repair, and relationship skills.",
+      "primary_url": "/life-os/areas/communication-relationships/",
+      "questions": [
+        "How can I listen better without immediately preparing my reply?",
+        "How do I make a difficult conversation clearer and less reactive?",
+        "What can I do after a conversation goes badly?"
+      ]
+    },
+    {
+      "slug": "decisions-work",
+      "title": "Decisions, work & strategy",
+      "summary": "Use practical structures for prioritization, decisions, problem solving, and work.",
+      "primary_url": "/life-os/areas/work-money-strategy/",
+      "questions": [
+        "How do I make a decision when several options look reasonable?",
+        "How can I test an assumption before committing too much time?",
+        "How do I turn a vague work problem into a smaller next action?"
+      ]
+    }
+  ]
+}

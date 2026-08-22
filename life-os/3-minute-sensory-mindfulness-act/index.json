@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:3-minute-sensory-mindfulness-act",
+  "slug": "3-minute-sensory-mindfulness-act",
+  "title": "Use Your Senses to Return to the Present",
+  "description": "Spend 3–5 minutes focusing on your senses. Notice what you see, hear, smell, feel, and taste. Gently redirect your attention whenever your mind wanders.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/index.json",
+  "growth_zone": {
+    "slug": "act",
+    "title": "ACT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "reviewed",
+    "indexable": true,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": true,
+    "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/",
+    "reviewed_at": "2026-08-18"
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [
+      {
+        "id": "self-awareness",
+        "title": "Self-Awareness"
+      },
+      {
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      }
+    ],
+    "methods": [
+      {
+        "id": "act",
+        "title": "ACT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "act"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "self-awareness",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+      }
+    ]
+  },
+  "trusted_protocol": {
+    "protocol_id": "brali:3-minute-sensory-mindfulness-act",
+    "language": "en",
+    "slug": "3-minute-sensory-mindfulness-act",
+    "url": "https://brali-lifeos.github.io/life-os/3-minute-sensory-mindfulness-act/",
+    "title": "Use Your Senses to Return to the Present",
+    "description": "Spend 3–5 minutes focusing on your senses. Notice what you see, hear, smell, feel, and taste. Gently redirect your attention whenever your mind wanders.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "self-awareness",
+          "title": "Self-Awareness"
+        },
+        {
+          "id": "stress-regulation",
+          "title": "Stress Regulation"
+        }
+      ],
+      "methods": [
+        {
+          "id": "act",
+          "title": "ACT-derived"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "act"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "act",
+      "title": "ACT"
+    },
+    "action": "Pause somewhere safe and deliberately notice what is happening around you right now. Choose a few sights, sounds, textures, smells or tastes and describe them simply. When your attention drifts into planning, worry or commentary, notice that and gently return to one sensory detail.",
+    "check_in": "What did I notice, how easy or difficult was it to return attention to the present, and did this feel useful enough to try again?",
+    "keywords": [
+      "ACT",
+      "Life OS",
+      "Practice Daily Mindfulness"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/",
+      "reviewed_at": "2026-08-18"
+    }
+  }
+}

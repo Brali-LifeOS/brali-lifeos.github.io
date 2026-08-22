@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:cbt-daily-micro-goals",
+  "slug": "cbt-daily-micro-goals",
+  "title": "Set One Small, Achievable Goal for the Day (e",
+  "description": "Set one small, achievable goal for the day (e.g., ‘Clean one drawer’ or ‘Call a friend’). Focus on completing it.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/cbt-daily-micro-goals/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/cbt-daily-micro-goals/index.json",
+  "growth_zone": {
+    "slug": "cbt",
+    "title": "CBT"
+  },
+  "life_area": {
+    "slug": "mind-resilience",
+    "title": "Mind & Resilience"
+  },
+  "evidence": {
+    "status": "restricted",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": true,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "mind-resilience",
+        "title": "Mind & Resilience"
+      }
+    ],
+    "topics": [],
+    "methods": [
+      {
+        "id": "cbt",
+        "title": "CBT-derived"
+      }
+    ],
+    "lenses": [],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "mind-resilience",
+      "growth_zone_slug": "cbt"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

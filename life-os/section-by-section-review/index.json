@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:section-by-section-review",
+  "slug": "section-by-section-review",
+  "title": "Review in Sections",
+  "description": "Break your document into sections and review each one individually to avoid feeling overwhelmed.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/section-by-section-review/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/section-by-section-review/index.json",
+  "growth_zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "avoid-errors"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

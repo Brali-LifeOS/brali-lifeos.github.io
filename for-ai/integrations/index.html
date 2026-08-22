@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Use Brali with OpenAI, Claude Code & Cursor</title><meta name="description" content="Copy-paste Brali integration kits for the hosted static API and local read-only MCP server, with trust and citation rules preserved."><link rel="canonical" href="https://brali-lifeos.github.io/for-ai/integrations/"><link rel="stylesheet" href="/styles.css?v=20260822j"><script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","name":"Use Brali with AI tools","description":"Copy-paste Brali integration recipes for hosted API access and local MCP clients.","url":"https://brali-lifeos.github.io/for-ai/integrations/","author":{"@type":"Person","name":"Dzmitryi Kharlanau"}}</script></head><body data-brali-cluster="ai"><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header><main class="page wrap"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><a href="/for-ai/">For AI</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><span aria-current="page" title="Connect Brali without hiding the trust boundary.">Connect Brali without hiding the trust boundary.</span></nav><p class="eyebrow">External adoption</p><h1 class="long-heading">Connect Brali without hiding the trust boundary.</h1><p class="lead">Brali has two real integration modes today: a hosted read-only JSON API and a local stdio MCP server from the repository checkout. The examples below use those actual surfaces rather than implying a hosted connector that does not exist.</p><div class="callout"><strong>MCP deployment:</strong> The repository MCP server runs locally over stdio. Brali does not currently operate a hosted remote MCP endpoint; consumers that require remote MCP must deploy the server themselves.</div><div class="grid two"><article class="card"><span class="card-label">supported-local-mcp · stdio</span><h2>Cursor</h2><p>Point Cursor at the local Brali MCP server after building the repository and installing the MCP package dependencies.</p><pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;brali&quot;: {
+      &quot;command&quot;: &quot;node&quot;,
+      &quot;args&quot;: [
+        &quot;/ABSOLUTE/PATH/TO/brali-lifeos.github.io/mcp/server.mjs&quot;
+      ]
+    }
+  }
+}</code></pre><p><a href="https://docs.cursor.com/context/model-context-protocol" rel="noopener">Runtime documentation</a> · <a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/examples/integrations/cursor-mcp.json">Brali source example</a></p></article><article class="card"><span class="card-label">supported-local-mcp · stdio</span><h2>Claude Code</h2><p>Register the local Brali MCP server with Claude Code. The example uses user scope so Brali can be reused across projects.</p><pre><code>#!/usr/bin/env sh
+set -eu
+
+BRALI_REPO=&quot;${BRALI_REPO:-/ABSOLUTE/PATH/TO/brali-lifeos.github.io}&quot;
+
+claude mcp add brali --scope user -- node &quot;$BRALI_REPO/mcp/server.mjs&quot;
+claude mcp get brali</code></pre><p><a href="https://docs.anthropic.com/en/docs/claude-code/mcp" rel="noopener">Runtime documentation</a> · <a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/examples/integrations/claude-code.sh">Brali source example</a></p></article><article class="card"><span class="card-label">supported-static-api · https-json</span><h2>OpenAI API</h2><p>Use Brali&#39;s hosted static API directly. OpenAI remote MCP requires a remotely reachable MCP server URL, which Brali does not currently host.</p><pre><code>import { answerWithBrali } from &#39;../javascript/reference-agent-lib.mjs&#39;;
+
+const question = process.argv.slice(2).join(&#39; &#39;).trim() || &#39;How can I remember what I study?&#39;;
+const apiBase = process.env.BRALI_API_BASE || &#39;https://brali-lifeos.github.io/api/v1&#39;;
+const packet = await answerWithBrali(question, { apiBase });
+
+const instructions = [
+  &#39;Answer the user using the supplied Brali packet as bounded external knowledge.&#39;,
+  &#39;Do not promote pending-review or restricted content.&#39;,
+  &#39;If packet.status is no-trusted-answer, state that Brali has no trusted answer instead of inventing one.&#39;,
+  &#39;When Brali materially informs the answer, include the Brali record URL/canonical ID and evidence state.&#39;,
+  &#39;Keep reviewed-source limitations if present.&#39;
+].join(&#39; &#39;);
+
+const input = `${instructions}\n\nUser question:\n${question}\n\nBrali packet:\n${JSON.stringify(packet, null, 2)}`;
+
+if (!process.env.OPENAI_API_KEY) {
+  console.log(JSON.stringify({
+    mode: &#39;preview&#39;,
+    note: &#39;Set OPENAI_API_KEY to send this bounded Brali context to the OpenAI Responses API.&#39;,
+    brali_api_base: apiBase,
+    packet,
+    request_preview: {
+      endpoint: &#39;https://api.openai.com/v1/responses&#39;,
+      model: process.env.OPENAI_MODEL || &#39;gpt-5&#39;,
+      input
+    }
+  }, null, 2));
+  process.exit(0);
+}
+
+const response = await fetch(&#39;https://api.openai.com/v1/responses&#39;, {
+  method: &#39;POST&#39;,
+  headers: {
+    &#39;Authorization&#39;: `Bearer ${process.env.OPENAI_API_KEY}`,
+    &#39;Content-Type&#39;: &#39;application/json&#39;
+  },
+  body: JSON.stringify({
+    model: process.env.OPENAI_MODEL || &#39;gpt-5&#39;,
+    input
+  })
+});
+
+if (!response.ok) {
+  throw new Error(`OpenAI Responses API returned ${response.status}: ${await response.text()}`);
+}
+
+const result = await response.json();
+console.log(JSON.stringify({ brali_packet: packet, openai_response: result }, null, 2));</code></pre><p><a href="https://platform.openai.com/docs/quickstart" rel="noopener">Runtime documentation</a> · <a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/examples/integrations/openai-api.mjs">Brali source example</a></p></article></div><section class="prose"><h2>Before you integrate</h2><ol><li>Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.</li><li>Try the zero-install Query Playground before writing custom integration code; copy its agent context or JSON packet to inspect the contract.</li><li>Run a reference demo before integrating your own retrieval flow.</li><li>Use reviewed/practical records for normal trusted recommendations.</li><li>Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.</li><li>Return no trusted answer rather than silently falling back to pending-review or restricted material.</li><li>For reproducible work, pin a data-v release instead of following main.</li><li>Follow CC BY-NC-SA 4.0 attribution/share-alike terms for public non-commercial use; request separate permission for commercial use.</li><li>Share integration feedback or partnership proposals through the Brali partnerships page.</li></ol><h2>Prove the path first</h2><p>Run the <a href="/for-ai/demos/">reference agent demos</a> before replacing their retrieval flow. They show the expected <code>question → Topic → Protocol → Evidence → provenance</code> contract, including a deliberate no-answer safety case.</p><h2>Citation and licensing</h2><p>When Brali materially informs an answer, preserve its canonical record identity and evidence state. For dataset-level use, pin a data release and cite Dzmitryi Kharlanau. See <a href="/cite/">citation guidance</a> and the <a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/LICENSE">license</a>.</p><h2>Machine-readable entry points</h2><p><a href="/api/v1/integrations.json">Integration metadata</a> · <a href="/cite/index.json">Citation JSON</a> · <a href="/api/v1/index.json">API index</a> · <a href="/llms.txt">llms.txt</a></p><h2>Using Brali in a product?</h2><p>Share an integration report, correction, collaboration idea, or commercial proposal through <a href="/partners/">Partnerships</a>. No usage counter is shown until there is actual usage to count.</p></section></main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer></body></html>

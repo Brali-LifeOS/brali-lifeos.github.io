@@ -36,7 +36,7 @@ This is deliberately simple enough to audit. A mysterious machine-learning ranke
 
 ## Outputs
 
-- `/life-os/flagships/100/` — human-readable collection.
+- `/life-os/flagships/curated-100/` — human-readable collection (`/life-os/flagships/100/` remains a noindex compatibility redirect).
 - `/life-os/datasets/flagship-100.json` — selected core.
 - `/life-os/datasets/flagship-100-candidates.json` — candidate audit trail, including non-selected and ineligible records.
 - `/data/flagship-100-policy.json` — machine-readable policy.

@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:clean-as-you-go-desk-habit",
+  "slug": "clean-as-you-go-desk-habit",
+  "title": "Chefs Clean up Their Workstations as They Cook",
+  "description": "Chefs clean up their workstations as they cook. Apply this habit to your workspace by keeping it tidy throughout the day.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/clean-as-you-go-desk-habit/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/clean-as-you-go-desk-habit/index.json",
+  "growth_zone": {
+    "slug": "chef",
+    "title": "Chef"
+  },
+  "life_area": {
+    "slug": "focus-execution",
+    "title": "Focus & Execution"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      }
+    ],
+    "topics": [],
+    "methods": [],
+    "lenses": [
+      {
+        "id": "chef-operations",
+        "title": "Chef / Operations"
+      }
+    ],
+    "classification_status": "topic-pending",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "focus-execution",
+      "growth_zone_slug": "chef"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

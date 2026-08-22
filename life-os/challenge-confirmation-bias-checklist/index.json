@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "type": "brali-library-entry",
+  "protocol_id": "brali:challenge-confirmation-bias-checklist",
+  "slug": "challenge-confirmation-bias-checklist",
+  "title": "Challenge Confirmation Bias",
+  "description": "When evaluating information: - Seek opposing views: Actively search for evidence that challenges your beliefs. - Ask questions: “What would change my mind about this?” - Stay curious: Approach topics with an open mind, looking for new perspectives. Example: If you believe a certain diet works, read studies that critique it.",
+  "canonical_url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/",
+  "machine_url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/index.json",
+  "growth_zone": {
+    "slug": "cognitive-biases",
+    "title": "Cognitive Biases"
+  },
+  "life_area": {
+    "slug": "learning-thinking",
+    "title": "Learning & Thinking"
+  },
+  "evidence": {
+    "status": "pending-review",
+    "indexable": false,
+    "search_indexable": true,
+    "sensitive": false,
+    "source_recorded": false,
+    "source_url": null,
+    "reviewed_at": null
+  },
+  "ontology": {
+    "domains": [
+      {
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      }
+    ],
+    "topics": [
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
+      }
+    ],
+    "methods": [],
+    "lenses": [],
+    "classification_status": "topic-mapped",
+    "classification_source": "legacy-zone-map",
+    "legacy": {
+      "life_area_slug": "learning-thinking",
+      "growth_zone_slug": "cognitive-biases"
+    }
+  },
+  "discovery": {
+    "search_indexable": true,
+    "trusted_protocol_feed": false,
+    "research_gaps": []
+  },
+  "trusted_protocol": null
+}

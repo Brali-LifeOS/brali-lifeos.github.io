@@ -1,0 +1,40 @@
+name: Verify Gold 20
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/gold-20.json'
+      - 'life-os/gold-20/**'
+      - 'scripts/check-gold-20-contract.mjs'
+      - '.github/workflows/gold-20.yml'
+      - 'data/protocol-content-overrides*.json'
+      - 'data/review-registry*.json'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/gold-20.json'
+      - 'life-os/gold-20/**'
+      - 'scripts/check-gold-20-contract.mjs'
+      - '.github/workflows/gold-20.yml'
+      - 'data/protocol-content-overrides*.json'
+      - 'data/review-registry*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gold-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm run build && npm run check
+      - run: node scripts/check-gold-20-contract.mjs

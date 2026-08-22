@@ -67,9 +67,9 @@
         "An 85 to 90 percent retrieval-success threshold identifies the correct next interval.",
         "Expanding intervals are reliably superior to fixed intervals; the review described the available evidence as limited, variable and insufficient for that conclusion.",
         "Longer spacing is always better; the review found that intervals can become too long and that the useful interval depends on the retention target.",
-        "The source validates active recall, testing, feedback or retrieval practice as the causal mechanism of the spacing effect.",
+        "The source identifies testing, feedback or deliberate recall attempts as the causal mechanism of the spacing effect.",
         "The source establishes consolidation windows, neuroplasticity, reconsolidation or another biological mechanism for the public protocol.",
-        "The result automatically transfers from verbal recall to complex skills, problem solving, creative work, workplace performance or the ability to apply knowledge.",
+        "The result extends beyond later verbal recall to complex skills, problem solving, creative work, workplace performance or broader transfer outcomes.",
         "A spaced schedule guarantees durable memory for an individual learner.",
         "Children's long-term retention over months or years is established with the same confidence as the young-adult evidence.",
         "Daily streaks, adherence scores, AI coaching or app reminders are evidence-supported components of distributed practice."
@@ -84,13 +84,13 @@
         "Binning inter-study and retention intervals supported broad patterns but reduced the ability to recommend exact intervals.",
         "The useful interval depends jointly on spacing and the later retention target, and the authors stated that exact long-term optimization could not be specified with certainty.",
         "Evidence comparing expanding and fixed schedules was sparse and inconsistent, with large between-study variability.",
-        "The synthesis addresses later recall, not comprehension, transfer, application, motivation, study adherence or real-world productivity.",
+        "The synthesis addresses later recall, not broader comprehension, transfer, motivation, study adherence or real-world performance.",
         "The review was published in 2006 and should be rechecked against newer syntheses before adding more precise scheduling claims."
       ],
       "target_hack_ids": ["spaced-recall-coach"],
       "target_protocol_ids": ["brali:spaced-recall-coach"],
       "risk_flags": [],
-      "notes": "Editorial outcome: promote only the fully rewritten protocol to reviewed. The public action now asks the user to choose verbal material, state a retention target, separate repeated study sessions, use longer gaps for longer retention targets, check final recall and adjust. It explicitly rejects one universal interval, an expanding-schedule guarantee and transfer to complex skills. Any future numerical schedule, retrieval threshold or mechanism claim requires a separate direct review."
+      "notes": "Editorial outcome: promote only the fully rewritten protocol to reviewed. The public action now asks the user to choose verbal material, state a retention target, separate repeated study sessions, use longer gaps for longer retention targets, check final recall and adjust. It explicitly rejects one universal interval, an expanding-schedule guarantee and transfer to complex skills. Any future numerical schedule, success-threshold or mechanism claim requires a separate direct review."
     }
   ],
   "evidence_overrides": {
@@ -98,7 +98,7 @@
       "status": "reviewed",
       "reviewed_at": "2026-08-22",
       "reviewed_by": "Brali Evidence Reviewer",
-      "note": "The effective public protocol was fully rewritten to match the reviewed distributed-practice boundary: separated study sessions for verbal material, spacing chosen in relation to the intended retention period, explicit uncertainty about exact intervals, and no claim of transfer to skills or application."
+      "note": "The effective public protocol was fully rewritten to match the reviewed distributed-practice boundary: separated study sessions for verbal material, spacing chosen in relation to the intended retention period, explicit uncertainty about exact intervals, and no claim of transfer beyond verbal recall."
     }
   },
   "ontology_overrides": {
@@ -106,7 +106,7 @@
       "topic_ids": ["memory"],
       "reviewed_at": "2026-08-22",
       "reviewed_by": "Brali Taxonomy Curator",
-      "reason": "The effective protocol concerns retention of verbal material through temporally distributed study and is directly mapped to Memory. The source does not justify a Skill Learning mapping, because skill acquisition and application were outside the reviewed synthesis. Cognitive Biases remains legacy navigation only."
+      "reason": "The effective protocol concerns retention of verbal material through temporally distributed study and is directly mapped to Memory. The source does not justify a Skill Learning mapping, because skill acquisition and broader transfer were outside the reviewed synthesis. Cognitive Biases remains legacy navigation only."
     }
   }
 }

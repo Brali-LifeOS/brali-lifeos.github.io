@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "description": "Actual-source review for Brali's timer-based focus-and-break protocol. A systematic review and meta-analysis supports a narrow short-break boundary for immediate vigor and fatigue, while finding no statistically significant overall performance effect and no benefit for cognitively demanding task performance. The source does not evaluate the Pomodoro technique or validate a 25/5 schedule, so the protocol remains practical.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1371/journal.pone.0272460",
+      "source": "crossref",
+      "source_id": "10.1371/journal.pone.0272460",
+      "doi": "10.1371/journal.pone.0272460",
+      "pmid": "36044424",
+      "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "authors": [
+        "Patricia Albulescu",
+        "Irina Macsinga",
+        "Andrei Rusu",
+        "Coralia Sulea",
+        "Alexandra Bodnaru",
+        "Bogdan T. Tulbure"
+      ],
+      "container_title": "PLOS ONE",
+      "publication_date": "2022-08-31",
+      "type": "journal-article",
+      "subjects": ["micro-breaks", "work recovery", "fatigue", "vigor", "performance"],
+      "reference_url": "https://doi.org/10.1371/journal.pone.0272460",
+      "discovered_at": "2026-08-22T07:42:00Z",
+      "last_seen_at": "2026-08-22T07:42:00Z",
+      "status": "support-existing",
+      "query_ids": ["health-recovery-breaks"],
+      "domain_ids": ["focus-action", "health-energy"],
+      "topic_ids": ["attention-focus", "recovery-energy"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["focus-execution", "health-energy"],
+      "zone_slugs": ["future-builder"],
+      "risk_flags": [],
+      "crossref_score": null,
+      "review_notes": "The full open-access article was reviewed, including eligibility criteria, study characteristics, pooled effects, moderator analyses, discussion and limitations. The review defines micro-breaks as task discontinuities lasting no more than ten minutes. It supports only a short-break component for immediate self-reported vigor and fatigue. It does not directly study the Pomodoro technique, a 25-minute work interval, a five-minute break, four-cycle sequencing, focus-block adherence or long-term productivity."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "micro-break-wellbeing-performance-boundary-2022",
+      "candidate_id": "crossref:10.1371/journal.pone.0272460",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1371/journal.pone.0272460",
+      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.1371/journal.pone.0272460",
+      "citation_text": "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. PLOS ONE. 2022;17(8):e0272460.",
+      "source_reviewed": true,
+      "study_design": "PRISMA-reported, PROSPERO-registered systematic review and random-effects meta-analysis of between-group experimental and quasi-experimental studies. Nineteen publications contributed twenty-two independent samples with 2,335 participants. Eligible studies compared a micro-break of no more than ten minutes with a control and measured vigor, fatigue or performance after the intervention.",
+      "population": "Healthy employees or students completing depleting work or comparable work-related tasks. Studies included laboratory and workplace settings, different professional categories and varied cognitive, clerical, emotional and creative task demands.",
+      "intervention_or_exposure": "Task discontinuities lasting from eight seconds to ten minutes after work or work-like activity. Break activities varied and included physical, relaxing, cognitive, mixed and other non-work activities. Work periods before breaks also varied and were incompletely reported.",
+      "outcomes": [
+        "Immediate self-reported vigor after a micro-break",
+        "Immediate self-reported fatigue after a micro-break",
+        "Objective or subjective performance after a micro-break",
+        "Performance moderation by break duration and preceding task type"
+      ],
+      "supported_claim": "Across the included experimental and quasi-experimental samples, micro-breaks of no more than ten minutes had small pooled benefits for immediate self-reported vigor and fatigue. The pooled overall performance effect was not statistically significant, and performance after cognitively demanding tasks did not improve in the subgroup analysis. This supports retaining a short break as a bounded recovery option and reviewing fatigue or energy, not claiming that a Pomodoro schedule increases focus or productivity.",
+      "unsupported_or_overstated_claims": [
+        "Twenty-five minutes is an evidence-based or optimal work interval.",
+        "A five-minute break is the optimal recovery duration.",
+        "Four 25-minute cycles followed by a longer break is validated by this review.",
+        "The Pomodoro technique improves overall productivity, output, attention, learning or task completion.",
+        "A micro-break improves performance on cognitively demanding work; the corresponding subgroup effect was small, non-significant and imprecise.",
+        "The 25-minute work interval itself caused any observed vigor or fatigue effect; the review studied breaks, not a fixed preceding work duration.",
+        "Movement, hydration, breathing, social contact or another specific break activity is superior; break activities were too heterogeneous for that moderator analysis.",
+        "A break shorter than ten minutes is always sufficient after highly depleting work.",
+        "Longer micro-breaks guarantee better performance for an individual person or task.",
+        "Short-term post-break findings establish durable daily, weekly or occupational outcomes.",
+        "The reviewed evidence justifies fixed Pomodoro counts, productivity targets, context-loss estimates or app-generated effectiveness claims."
+      ],
+      "limitations": [
+        "Only nineteen publications and twenty-two samples met the criteria, leaving modest numbers for each outcome and limiting moderator analyses.",
+        "Break duration ranged from eight seconds to ten minutes, and no consensus or directly tested optimum was established.",
+        "Break activities, preceding tasks, control conditions, settings and participant groups were heterogeneous, preventing attribution to one break format.",
+        "Vigor and fatigue were measured only by self-report, using instruments of varying depth and inconsistently reported reliability.",
+        "The overall performance result had substantial unexplained heterogeneity and a wide prediction interval.",
+        "The clerical-task performance estimate was based on only two studies and requires cautious interpretation.",
+        "The analysis used post-intervention outcomes because only two studies reported follow-up, so durability is unclear.",
+        "Two extreme outliers were excluded from the primary fatigue and performance analyses; sensitivity results differed substantially when they were included.",
+        "About half of the studies involved students, and the authors cautioned against simple generalization between educational and workplace settings.",
+        "The included evidence predates pandemic-related changes in remote and hybrid work.",
+        "The review did not evaluate the Pomodoro technique, the exact Brali action sequence or a 25-minute focus block."
+      ],
+      "target_hack_ids": ["25-minute-pomodoro-focus-sprints"],
+      "target_protocol_ids": ["brali:25-minute-pomodoro-focus-sprints"],
+      "risk_flags": [],
+      "notes": "Editorial outcome: keep the compact public protocol practical. Preserve wording that twenty-five minutes is a conventional starting boundary rather than a universal optimum, allow the user to continue or adjust the block, and treat the break as a recovery checkpoint. Do not add performance, productivity, attention or learning claims from this source. A future reviewed promotion would require direct evidence for a sufficiently similar timer-based work-and-break protocol and its exact outcome boundary."
+    }
+  ]
+}

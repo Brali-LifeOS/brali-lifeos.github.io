@@ -77,7 +77,7 @@ export function claimFlags(article) {
   const text = JSON.stringify(surface);
   const inspection = inspectClaims(surface);
   return {
-    evidenceLanguage: claimPattern.test(text),
+    evidenceLanguage: claimPattern.test(text) || inspection.enforcedCategories.length > 0,
     quantitative: quantitativeClaimPattern.test(text),
     categories: inspection.categories,
     enforcedCategories: inspection.enforcedCategories,

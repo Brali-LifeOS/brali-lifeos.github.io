@@ -22,17 +22,43 @@ async function loadJson({ root, apiBase }, name) {
   return JSON.parse(await fs.readFile(file, 'utf8'));
 }
 
+async function loadOptionalJson({ root, apiBase }, name, fallback) {
+  if (apiBase) {
+    const response = await fetch(`${String(apiBase).replace(/\/$/, '')}/${name}`);
+    if (response.status === 404) return fallback;
+    if (!response.ok) throw new Error(`Brali API ${name} returned ${response.status}`);
+    return response.json();
+  }
+  try {
+    const file = path.join(root, 'api', 'v1', name);
+    return JSON.parse(await fs.readFile(file, 'utf8'));
+  } catch (error) {
+    if (error?.code === 'ENOENT') return fallback;
+    throw error;
+  }
+}
+
 export async function loadReferenceApi(options = {}) {
   const root = path.resolve(options.root || process.cwd());
   const apiBase = options.apiBase || null;
-  const [index, topics, protocols, decisions, identity] = await Promise.all([
+  const [index, topics, protocols, decisions, identity, hubs] = await Promise.all([
     loadJson({ root, apiBase }, 'index.json'),
     loadJson({ root, apiBase }, 'topics.json'),
     loadJson({ root, apiBase }, 'protocols.json'),
     loadJson({ root, apiBase }, 'evidence-decisions.json'),
-    loadJson({ root, apiBase }, 'identity.json')
+    loadJson({ root, apiBase }, 'identity.json'),
+    loadOptionalJson({ root, apiBase }, 'hubs.json', { hubs: [] })
   ]);
-  return { root, apiBase, index, topics: topics.items || [], protocols: protocols.items || [], decisions: decisions.items || [], identity };
+  return {
+    root,
+    apiBase,
+    index,
+    topics: topics.items || [],
+    protocols: protocols.items || [],
+    decisions: decisions.items || [],
+    identity,
+    hubs: hubs.hubs || hubs.items || []
+  };
 }
 
 function topicScore(query, topic, aliases) {
@@ -63,6 +89,13 @@ function provenance(protocol) {
   return { kind: 'brali-reviewed-record', source_url: null, record_url: recordUrl };
 }
 
+function addTopicSignal(map, topicId, value) {
+  const local = String(topicId || '').replace(/^brali:topic:/, '');
+  if (!local || !value) return;
+  if (!map.has(local)) map.set(local, []);
+  map.get(local).push(value);
+}
+
 export function buildMcpPlan(packet) {
   const steps = [{ tool: 'search_knowledge', arguments: { query: packet.question, limit: 5, trusted_only: true } }];
   for (const item of packet.recommendations || []) {
@@ -80,10 +113,16 @@ export async function answerWithBrali(question, options = {}) {
   const aliasesByTopic = new Map();
   for (const alias of api.identity.aliases || []) {
     if (alias.kind !== 'topic') continue;
-    const local = String(alias.canonical_id || '').replace(/^brali:topic:/, '');
-    if (!aliasesByTopic.has(local)) aliasesByTopic.set(local, []);
-    aliasesByTopic.get(local).push(alias.value);
+    addTopicSignal(aliasesByTopic, alias.canonical_id, alias.value);
   }
+  for (const hub of api.hubs || []) {
+    const signals = [hub.question, hub.summary].filter(Boolean);
+    for (const topic of hub.topics || []) {
+      const topicId = typeof topic === 'string' ? topic : topic?.id || topic?.canonical_id;
+      for (const signal of signals) addTopicSignal(aliasesByTopic, topicId, signal);
+    }
+  }
+
   const rankedTopics = api.topics.map(topic => ({ topic, score: topicScore(question, topic, aliasesByTopic.get(topic.id) || []) }))
     .filter(x => x.score > 0).sort((a, b) => b.score - a.score || a.topic.id.localeCompare(b.topic.id));
   const best = rankedTopics[0]?.score || 0;

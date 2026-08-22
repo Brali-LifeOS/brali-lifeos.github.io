@@ -1,72 +1,90 @@
 {
-  "schema_version": 1,
-  "purpose": "Regression cases for Brali claim-marker categories. These fixtures test marker behavior, not whether a statement is scientifically true.",
+  "schema_version": 2,
+  "purpose": "Regression cases for Brali claim-marker categories. These fixtures test marker and decision-gate behavior, not whether a statement is scientifically true.",
   "cases": [
     {
       "id": "quantitative-and-first-party-pilot",
       "text": "In our pilot, we observed a 32% improvement across 18 participants.",
       "expected_categories": ["quantitative", "first-party-result", "research-language"],
-      "expected_enforced_categories": ["quantitative", "first-party-result"]
+      "expected_enforced_categories": ["quantitative", "first-party-result"],
+      "expected_decision_required_categories": ["quantitative", "first-party-result"]
+    },
+    {
+      "id": "named-effect-estimate",
+      "text": "The meta-analysis reported Hedges' g = 0.42 for the measured outcome.",
+      "expected_categories": ["quantitative", "research-language"],
+      "expected_enforced_categories": ["quantitative"],
+      "expected_decision_required_categories": ["quantitative"]
     },
     {
       "id": "explicit-internal-data-result",
       "text": "Our data showed that users completed the routine faster.",
       "expected_categories": ["first-party-result"],
-      "expected_enforced_categories": ["first-party-result"]
+      "expected_enforced_categories": ["first-party-result"],
+      "expected_decision_required_categories": ["first-party-result"]
     },
     {
       "id": "positive-guarantee",
       "text": "This protocol guarantees results and works every time.",
       "expected_categories": ["guarantee"],
-      "expected_enforced_categories": ["guarantee"]
+      "expected_enforced_categories": ["guarantee"],
+      "expected_decision_required_categories": ["guarantee"]
     },
     {
       "id": "no-guarantee-boundary",
       "text": "Five questions are a prompt, not a requirement or a guarantee of finding one root cause.",
       "expected_categories": [],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
     },
     {
       "id": "negated-guarantee-boundary",
       "text": "Repeated questions are not a machine that guarantees one hidden root cause.",
       "expected_categories": [],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
     },
     {
       "id": "clinical-outcome",
       "text": "This technique treats anxiety symptoms.",
       "expected_categories": ["clinical-outcome"],
-      "expected_enforced_categories": ["clinical-outcome"]
+      "expected_enforced_categories": ["clinical-outcome"],
+      "expected_decision_required_categories": ["clinical-outcome"]
     },
     {
       "id": "ordinary-duration",
       "text": "Choose one 25-minute focus block and review what interrupted it.",
       "expected_categories": [],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
     },
     {
       "id": "research-monitor-only",
       "text": "A systematic review discussed the intervention, but this sentence makes no protocol-specific effect claim.",
       "expected_categories": ["research-language"],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
     },
     {
-      "id": "mechanism-monitor-only",
+      "id": "mechanism-decision-gated",
       "text": "The inherited explanation refers to cortisol and the parasympathetic response.",
       "expected_categories": ["mechanism"],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": ["mechanism"]
     },
     {
-      "id": "causal-monitor-only",
+      "id": "causal-decision-gated",
       "text": "The article says the behavior leads to better focus.",
       "expected_categories": ["causal-effect"],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": ["causal-effect"]
     },
     {
       "id": "html-and-script-normalization",
       "text": "<style>.score{width:80%}</style><script>const result = 'our pilot showed';</script><p>Choose one small action.</p>",
       "expected_categories": [],
-      "expected_enforced_categories": []
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
     }
   ]
 }

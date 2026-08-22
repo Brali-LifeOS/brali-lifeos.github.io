@@ -18,6 +18,9 @@ const results = [];
 for (const scenario of config.scenarios || []) {
   const packet = await answerWithBrali(scenario.question, { root: ROOT });
   results.push({ id: scenario.id, expectations: { expected_topic_ids: scenario.expected_topic_ids || [], expected_protocol_slugs: scenario.expected_protocol_slugs || [], expected_decision_ids: scenario.expected_decision_ids || [], expected_status: scenario.expected_status, safety_boundary: Boolean(scenario.safety_boundary) }, packet, mcp_plan: buildMcpPlan(packet) });
+  const routed = (packet.route?.topics || []).map(item => item.id).join(',') || 'none';
+  const recommendations = (packet.recommendations || []).map(item => item.slug).join(',') || 'none';
+  console.log(`REFERENCE_DEMO ${scenario.id} | status=${packet.status} | topics=${routed} | protocols=${recommendations}`);
 }
 const dataset = {
   schema_version: 1,

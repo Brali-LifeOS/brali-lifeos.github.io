@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brali-lifeos.github.io/contracts/claim-review.schema.json",
+  "title": "Brali Claim Review Registry",
+  "description": "Excerpt-level approvals for precise public claims after actual-source review.",
+  "type": "object",
+  "required": ["schema_version", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": 1 },
+    "description": { "type": "string", "minLength": 20 },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "slug",
+          "categories",
+          "approved_excerpt",
+          "evidence_decision_ids",
+          "reviewed_at",
+          "reviewed_by",
+          "note"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]+$" },
+          "categories": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "quantitative",
+                "first-party",
+                "research-appeal",
+                "causal",
+                "mechanism",
+                "clinical",
+                "guarantee"
+              ]
+            }
+          },
+          "marker_ids": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 3 }
+          },
+          "approved_excerpt": { "type": "string", "minLength": 12 },
+          "evidence_decision_ids": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 3 }
+          },
+          "reviewed_at": { "type": "string", "format": "date" },
+          "reviewed_by": { "type": "string", "minLength": 3 },
+          "note": { "type": "string", "minLength": 20 }
+        }
+      }
+    }
+  }
+}

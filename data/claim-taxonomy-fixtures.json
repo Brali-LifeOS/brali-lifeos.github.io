@@ -80,6 +80,20 @@
       "expected_decision_required_categories": ["causal-effect"]
     },
     {
+      "id": "causal-results-in",
+      "text": "This results in better performance.",
+      "expected_categories": ["causal-effect"],
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": ["causal-effect"]
+    },
+    {
+      "id": "noun-result-instruction",
+      "text": "Record the result in three lines and choose the next check.",
+      "expected_categories": [],
+      "expected_enforced_categories": [],
+      "expected_decision_required_categories": []
+    },
+    {
       "id": "html-and-script-normalization",
       "text": "<style>.score{width:80%}</style><script>const result = 'our pilot showed';</script><p>Choose one small action.</p>",
       "expected_categories": [],

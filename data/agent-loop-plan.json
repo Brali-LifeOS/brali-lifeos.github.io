@@ -1,0 +1,269 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-22",
+  "canonical_issue_repo": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues",
+  "product_positioning": "Brali is an evidence-aware protocol layer that helps people and AI agents move from a practical question to a bounded action with explicit trust, provenance, and outcome review.",
+  "product_boundary": {
+    "primary": "Canonical practical protocols, evidence decisions, retrieval, citation, and safe abstention for external consumers.",
+    "secondary": "A zero-install human Query and browsing experience over the same trusted knowledge layer.",
+    "legacy": "The original LifeOS organizer remains an optional historical application layer and must not drive the primary roadmap."
+  },
+  "value_chain": [
+    "practical-question",
+    "trusted-protocol-match",
+    "bounded-action",
+    "evidence-and-provenance",
+    "outcome-review",
+    "measured-learning"
+  ],
+  "north_star": {
+    "id": "weekly_verified_successful_executions",
+    "definition": "Completed Brali protocol runs that are explicitly marked helpful, deduplicated using privacy-safe client or session semantics and separated from demos, targets, and synthetic tests.",
+    "collection_status": "not-collected",
+    "initial_validation_target": 25,
+    "target_type": "hypothesis",
+    "anti_metrics": [
+      "raw-page-count",
+      "raw-hack-count",
+      "sitemap-size",
+      "generated-file-count",
+      "ci-check-count",
+      "unverified-downloads-or-users"
+    ]
+  },
+  "wip_limits": {
+    "implementation_prs": 1,
+    "active_implementation_slices": 1,
+    "active_editorial_reviews": 2
+  },
+  "gates": [
+    {
+      "id": "trust-reset",
+      "order": 0,
+      "title": "Trust and claim integrity",
+      "status": "active",
+      "issue_numbers": [109, 93],
+      "exit_criteria": [
+        "No indexable page contains an unsupported enforced quantitative, first-party, causal, or clinical claim marker.",
+        "The first reviewed-core source decisions are recorded with supported wording, limitations, provenance, and regression protection.",
+        "Claim debt is available as deterministic machine-readable output and a public summary."
+      ]
+    },
+    {
+      "id": "gold-core",
+      "order": 1,
+      "title": "Gold 20 outcome-ready protocol core",
+      "status": "queued",
+      "issue_numbers": [110, 93],
+      "exit_criteria": [
+        "Twenty manually reviewed protocols pass one outcome-ready quality contract.",
+        "Every Gold protocol has problem-first retrieval coverage, trust boundaries, a review signal, and consistent site/API/MCP exposure.",
+        "Gold selection is based on user value and evidence rather than legacy taxonomy symmetry."
+      ]
+    },
+    {
+      "id": "outcome-loop",
+      "order": 2,
+      "title": "Observed outcomes and unresolved-query learning",
+      "status": "queued",
+      "issue_numbers": [111],
+      "exit_criteria": [
+        "A versioned privacy-light outcome event contract and retention boundary exist.",
+        "Helpful, not-helpful, no-answer, bad-match, and missing-knowledge signals can feed aggregate reports and evaluation queues.",
+        "Observed values are explicitly separated from hypotheses, targets, demos, and synthetic events."
+      ]
+    },
+    {
+      "id": "distribution-and-adoption",
+      "order": 3,
+      "title": "Clear product path and real external use",
+      "status": "queued",
+      "issue_numbers": [112, 113, 117],
+      "exit_criteria": [
+        "Product identity and public metadata present one primary promise and one canonical proof path.",
+        "MCP distribution is externally installable and its publication, registry, and hosting states are verified rather than claimed.",
+        "At least three external integrations are working or a transparent cohort report explains the missed target."
+      ]
+    },
+    {
+      "id": "trusted-discovery",
+      "order": 4,
+      "title": "Trusted SEO and knowledge updates",
+      "status": "queued",
+      "issue_numbers": [114],
+      "exit_criteria": [
+        "Sitemap, robots, canonical, navigation, page JSON, evidence state, and API indexing policy agree.",
+        "At least ten problem-first Gold pages provide unique trusted value and reproducible Query/API/MCP paths.",
+        "Knowledge updates and release diffs are generated from actual changes without synthetic research or adoption claims."
+      ]
+    },
+    {
+      "id": "operational-and-commercial-readiness",
+      "order": 5,
+      "title": "Maintainable operations, licensing clarity, and outcome proof",
+      "status": "queued",
+      "issue_numbers": [115, 116, 118],
+      "exit_criteria": [
+        "Software, data/content, brand, third-party, and commercial license boundaries are explicit and consistent.",
+        "Build stages are deterministic, idempotent, diagnosable, and retain the full trust gate.",
+        "A pinned model benchmark reports whether structured Brali improves answer quality, including null or negative results."
+      ]
+    }
+  ],
+  "workstreams": [
+    {
+      "id": "reviewed-core-first-batch",
+      "issue_number": 93,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/93",
+      "priority": "P0",
+      "lane": "editorial",
+      "gate": "trust-reset",
+      "status": "active",
+      "depends_on": [],
+      "next_slice": "Complete the first source-bounded decisions for task initiation, focus or breaks, active listening, and learning or memory without requiring promotion as the outcome.",
+      "completion_evidence": []
+    },
+    {
+      "id": "claim-gate-and-corpus-cleanup",
+      "issue_number": 109,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/109",
+      "priority": "P0",
+      "lane": "implementation",
+      "gate": "trust-reset",
+      "status": "active",
+      "depends_on": [],
+      "next_slice": "Extend the enforced claim taxonomy and generate a claim-debt report before making broad content rewrites.",
+      "completion_evidence": []
+    },
+    {
+      "id": "gold-20-core",
+      "issue_number": 110,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/110",
+      "priority": "P0",
+      "lane": "editorial",
+      "gate": "gold-core",
+      "status": "queued",
+      "depends_on": [93, 109],
+      "next_slice": "Define the Gold contract and select the first candidate set from measured retrieval demand and safe high-value problems.",
+      "completion_evidence": []
+    },
+    {
+      "id": "outcome-signals",
+      "issue_number": 111,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/111",
+      "priority": "P0",
+      "lane": "implementation",
+      "gate": "outcome-loop",
+      "status": "queued",
+      "depends_on": [109],
+      "next_slice": "Add the outcome-event contract and privacy boundary before choosing a collection service or publishing counters.",
+      "completion_evidence": []
+    },
+    {
+      "id": "product-identity",
+      "issue_number": 112,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/112",
+      "priority": "P1",
+      "lane": "implementation",
+      "gate": "distribution-and-adoption",
+      "status": "queued",
+      "depends_on": [109],
+      "next_slice": "Align the homepage hero, repository metadata, README, Query entry, and legacy-app boundary around the canonical product promise.",
+      "completion_evidence": []
+    },
+    {
+      "id": "mcp-distribution",
+      "issue_number": 113,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/113",
+      "priority": "P1",
+      "lane": "external",
+      "gate": "distribution-and-adoption",
+      "status": "queued",
+      "depends_on": [112],
+      "next_slice": "Verify package identity and clean-machine installation, then perform external npm and registry actions only with the required credentials.",
+      "completion_evidence": []
+    },
+    {
+      "id": "trusted-seo",
+      "issue_number": 114,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/114",
+      "priority": "P1",
+      "lane": "implementation",
+      "gate": "trusted-discovery",
+      "status": "queued",
+      "depends_on": [109, 110, 112],
+      "next_slice": "Audit sitemap and legacy zone eligibility, then create the first problem-first Gold landing page from canonical data.",
+      "completion_evidence": []
+    },
+    {
+      "id": "licensing-split",
+      "issue_number": 115,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/115",
+      "priority": "P1",
+      "lane": "decision",
+      "gate": "operational-and-commercial-readiness",
+      "status": "queued",
+      "depends_on": [],
+      "next_slice": "Produce a repository asset inventory and a decision record comparing software and data licensing options without changing authoritative licenses yet.",
+      "completion_evidence": []
+    },
+    {
+      "id": "build-decomposition",
+      "issue_number": 116,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/116",
+      "priority": "P1",
+      "lane": "implementation",
+      "gate": "operational-and-commercial-readiness",
+      "status": "queued",
+      "depends_on": [],
+      "next_slice": "Document current build stages and introduce compatibility stage aliases before changing execution order or caching.",
+      "completion_evidence": []
+    },
+    {
+      "id": "external-adopter-cohort",
+      "issue_number": 117,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/117",
+      "priority": "P1",
+      "lane": "external",
+      "gate": "distribution-and-adoption",
+      "status": "queued",
+      "depends_on": [111, 112, 113],
+      "next_slice": "Publish the design-partner intake and one canonical onboarding path before recruiting or reporting adoption.",
+      "completion_evidence": []
+    },
+    {
+      "id": "model-outcome-benchmark",
+      "issue_number": 118,
+      "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/118",
+      "priority": "P2",
+      "lane": "implementation",
+      "gate": "operational-and-commercial-readiness",
+      "status": "blocked",
+      "depends_on": [109, 110, 111],
+      "next_slice": "Freeze the benchmark design and grading rubric only after the first trusted Gold and outcome contracts are stable.",
+      "completion_evidence": []
+    }
+  ],
+  "stop_rules": [
+    "Do not add long-tail content while an unblocked P0 trust, Gold, or outcome slice remains unfinished unless the content closes a measured trusted-coverage gap.",
+    "Do not increase page count, sitemap size, dataset size, or generated checks as a substitute for observed usefulness, trust, or adoption.",
+    "Do not publish quantitative, causal, first-party, clinical, or mechanism claims without a reviewed source decision supporting the exact public wording.",
+    "Do not create another API, transport, taxonomy layer, or application shell unless an observed consumer problem cannot be solved through the existing canonical surfaces.",
+    "Do not claim npm publication, registry presence, hosted MCP, users, downloads, integrations, or outcomes until an external observation is recorded as completion evidence.",
+    "Do not start an active P1 or P2 implementation slice while an unblocked P0 implementation slice is active or queued ahead of it.",
+    "Do not weaken safe abstention, evidence state, provenance, citation, canonical identity, or sensitive-content boundaries to improve retrieval or conversion metrics.",
+    "Do not change authoritative licensing terms as part of routine implementation work without an explicit reviewed decision."
+  ],
+  "run_protocol": [
+    "Read AGENT_LOOP.md and this plan, then inspect current issues, open pull requests, quality outputs, evaluation gaps, and externally observed blockers.",
+    "Select the highest-priority unblocked workstream while respecting lane-specific WIP limits and gate order.",
+    "Define one reversible slice with a concrete before state, expected output, validation path, and issue link; avoid combining unrelated cleanup.",
+    "Implement on a feature branch and keep source changes, generated outputs, editorial decisions, and external actions distinguishable in the pull request.",
+    "Run the narrow checks first, then the full deterministic build and validation gate before marking the slice complete.",
+    "Review the result for unsupported claims, evidence-state loss, provenance loss, unsafe discovery, fake adoption signals, broken compatibility, and needless complexity.",
+    "Record only observed completion evidence in the issue and plan; targets, planned publication, demo runs, and synthetic events do not count as completion.",
+    "Merge or close the slice before opening another implementation pull request, then continue with the next highest-leverage unblocked item.",
+    "When an external credential, legal decision, human source review, or adopter response is required, mark the workstream awaiting external input and continue with the next independent item instead of pretending completion."
+  ],
+  "external_blocker_policy": "External publication, credentials, legal approval, full-source evidence review, and adopter consent cannot be manufactured by the loop. Record the exact blocker and completed preparation, mark the workstream awaiting-external when appropriate, and continue with the next independent unblocked slice while preserving honest public status."
+}

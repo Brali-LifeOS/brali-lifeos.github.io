@@ -2,19 +2,19 @@
 
 ## Canonical controls
 
-This file defines the human-readable operating rules. The machine-readable control plane is `data/agent-loop-plan.json`, validated against `contracts/agent-loop-plan.schema.json` by `scripts/check-agent-loop-plan.mjs` and `.github/workflows/agent-loop.yml`.
+`data/agent-loop-plan.json` is the machine-readable control plane. `contracts/agent-loop-plan.schema.json`, `scripts/check-agent-loop-plan.mjs`, and `.github/workflows/agent-loop.yml` validate it. GitHub issues are the execution record.
 
-GitHub issues are the execution record. The plan may name a target or next slice, but a workstream becomes complete only when the issue and plan contain observed completion evidence. A planned release, demo, synthetic event, generated counter, or confident paragraph does not count.
+A target, generated counter, demo, synthetic event, or confident paragraph is not completion evidence. A workstream becomes complete only after observed evidence is recorded and the relevant checks pass.
 
 ## Mission
 
 Brali is an **evidence-aware protocol layer for people and AI agents**.
 
-The canonical value chain is:
+Canonical value chain:
 
 `practical question -> trusted protocol match -> bounded action -> evidence and provenance -> outcome review -> measured learning`
 
-The primary product is the knowledge layer: canonical protocols, evidence decisions, retrieval, citation, safe abstention, APIs, and read-only agent access. The zero-install human Query is a public view over the same layer. The original LifeOS organizer is a legacy and optional application layer; it must not drive the main roadmap or be revived as another broad feature race.
+The primary product is the knowledge layer: canonical protocols, evidence decisions, retrieval, citation, safe abstention, APIs, and read-only agent access. Query is a zero-install public view over that layer. The original LifeOS organizer is a legacy application layer and must not drive the roadmap.
 
 Optimize in this order:
 
@@ -25,235 +25,132 @@ Optimize in this order:
 5. discovery;
 6. operational and commercial readiness.
 
-New content volume, page count, sitemap size, generated files, CI checks, and unverified downloads are not product outcomes.
+Page count, corpus size, sitemap size, generated files, CI checks, and unverified downloads are anti-metrics when used as substitutes for outcomes.
 
-## North-star metric
+## North star
 
-The north-star metric is `weekly_verified_successful_executions`.
+The north star is `weekly_verified_successful_executions`: completed Brali protocol runs explicitly marked helpful, deduplicated with privacy-safe client/session semantics and kept separate from targets, demos, fixtures, and synthetic events.
 
-It means completed Brali protocol runs that are explicitly marked helpful, deduplicated through privacy-safe client or session semantics and kept separate from targets, demos, fixtures, and synthetic events.
-
-The initial target in the plan is a hypothesis, not an observed result. Until issue #111 implements the event contract and collection boundary, the truthful status is `not-collected`.
-
-Supporting signals include:
-
-- trusted-answer and safe-abstention rates;
-- protocol start, completion, and helpfulness rates;
-- repeat use;
-- source and citation interaction;
-- unresolved-query and bad-match rates;
-- active external integrations.
-
-No public adoption claim may be inferred from repository views, page generation, test runs, or issue creation.
+Until #111 implements the event contract and collection boundary, the truthful collection status is `not-collected`. The initial target is a hypothesis, not an observed value.
 
 ## Stage gates
 
-The loop follows the gates in `data/agent-loop-plan.json`. Gate order is binding unless a later slice is required to unblock an earlier gate.
+Gate order is binding unless later work is strictly required to unblock an earlier gate.
 
-### 0. `trust-reset`
+### 0. `trust-reset` — completed
 
-Issues: #109 and #93.
+Issues #109 and #93 established claim gating, deterministic/public claim debt, safe noindex behavior, and the first source-bounded editorial decisions. The gate remains regression-protected even after completion.
 
-- eliminate unsupported quantitative, first-party, causal, mechanism, guarantee, and clinical-sounding claims from indexable surfaces;
-- keep sensitive material out of normal discovery until explicitly reviewed;
-- record source-bounded evidence decisions, including `keep practical`, `rewrite`, `watch`, and `reject` outcomes;
-- publish claim debt honestly and deterministically.
+### 1. `gold-core` — active
 
-### 1. `gold-core`
+Issue #110 creates 20 manually reviewed, outcome-ready protocols selected for practical value rather than legacy taxonomy symmetry.
 
-Issues: #110 and #93.
-
-Create 20 manually reviewed, outcome-ready protocols chosen by recurring user value, actionability, safety, evidence quality, retrieval demand, and observability. Do not force equal representation across legacy Life Areas merely because symmetrical dashboards look reassuring.
-
-Each Gold protocol needs:
+A Gold protocol requires:
 
 - a clear user problem and eligibility conditions;
 - when not to use it;
-- the smallest first action and complete bounded steps;
-- a justified review horizon rather than an invented duration;
+- the smallest first action and bounded steps;
+- a justified review horizon, not an invented duration;
 - an observable signal;
-- stop/change rules and a fallback;
-- evidence state, source boundary, limitations, last review date, and citation;
+- a stop/change rule and fallback;
+- evidence state, source boundary, limitations, review date, and citation;
 - canonical identity and consistent site/API/MCP exposure;
-- problem-first retrieval and evaluation coverage.
+- problem-first retrieval and evaluation coverage;
+- an agent-friendly summary.
+
+Candidate selection is not Gold approval. `data/gold-20-candidates.json` is an editorial product hypothesis until observed demand exists. `data/gold-20-reviews.json` is the manual promotion boundary, governed by `contracts/gold-protocol-review.schema.json`.
 
 ### 2. `outcome-loop`
 
-Issue: #111.
-
-- define privacy-light outcome events and retention rules;
-- separate platform/adoption metrics from legacy companion-app metrics;
-- collect helpful, not-helpful, safe no-answer, bad-match, and missing-knowledge signals without retaining personal prompts by default;
-- feed observed failures back into evaluation, ontology, retrieval, and editorial queues;
-- distinguish observed values from targets, demos, and synthetic data everywhere.
+Issue #111 defines privacy-light outcome events, retention rules, helpful/not-helpful/no-answer/bad-match/missing-knowledge signals, and a strict separation between observed values and targets or demos.
 
 ### 3. `distribution-and-adoption`
 
-Issues: #112, #113, and #117.
-
-- present one product promise and one primary proof path;
-- make Query the zero-install demonstration of the canonical knowledge layer;
-- publish and verify MCP/package/registry states externally before updating status claims;
-- recruit a small design-partner cohort and preserve failed integrations as valid learning;
-- require verifiable external use before claiming adoption.
+Issues #112, #113, and #117 align product identity, verify installable MCP/package states externally, and seek real design-partner use without manufacturing adoption claims.
 
 ### 4. `trusted-discovery`
 
-Issue: #114.
+Issue #114 aligns sitemap, robots, canonical, navigation, evidence state, page JSON and API policy, then builds problem-first discovery from Gold protocols rather than thin page multiplication.
 
-- index only canonical, trusted, useful pages;
-- keep sitemap, robots, canonical, navigation, evidence state, page JSON, API, and aliases aligned;
-- build problem-first pages from Gold protocols instead of thin combinatorial SEO pages;
-- publish knowledge updates from actual additions, rewrites, downgrades, rejections, and unresolved gaps.
+### 5. `operational-and-commercial-readiness`
 
-### 5. Operational and commercial readiness
+Issues #115, #116, and #118 cover licensing boundaries, deterministic build decomposition, and a pinned model-with-Brali versus model-without-Brali benchmark that must show null or negative results when they occur.
 
-Issues: #115, #116, and #118.
-
-- separate software, knowledge-data, content, brand, third-party, and commercial licensing only through an explicit reviewed decision;
-- decompose the build into deterministic, idempotent, diagnosable stages without weakening the full trust gate;
-- run a pinned model-with-Brali versus model-without-Brali benchmark with human grading and visible null or negative results.
-
-## Work lanes and WIP limits
-
-The loop has four lanes:
+## Lanes and WIP
 
 - **implementation**: code, contracts, generated surfaces, retrieval, CI, publishing infrastructure;
 - **editorial**: actual-source review, claim decisions, protocol wording, safety boundaries;
-- **external**: npm/registry publication, hosted deployment, adopter contact, consented usage evidence;
-- **decision**: licensing, branding, legal, and irreversible product choices.
+- **external**: publication, deployment, adopter contact, consented usage evidence;
+- **decision**: licensing, legal, branding, and other irreversible choices.
 
 Limits:
 
 - one active implementation slice;
-- one open implementation pull request;
-- at most two active editorial reviews;
-- external or decision work may wait for credentials or approval, but waiting must be explicit.
+- one open implementation PR;
+- at most two active editorial reviews.
 
-Do not start an active P1 or P2 implementation slice while an unblocked P0 implementation slice remains. Editorial source review may proceed in parallel because it has a separate WIP lane.
+Do not start a P1/P2 implementation slice while an unblocked P0 implementation slice remains. Editorial source review may proceed in parallel within its own WIP limit.
 
-## Agents and responsibilities
+## Responsibilities
 
-The public editorial registry remains `/agents/registry.json`:
+The public editorial registry remains `/agents/registry.json`: Research Scout discovers but cannot publish; Evidence Reviewer reads actual sources and records bounded decisions; Protocol Builder turns accepted actions into executable protocols; Taxonomy Curator preserves canonical identity and compatibility.
 
-1. **Research Scout** finds candidates and cannot publish.
-2. **Evidence Reviewer** reads actual sources and records bounded decisions.
-3. **Protocol Builder** composes accepted actions into executable protocols.
-4. **Taxonomy Curator** preserves canonical identity and legacy compatibility.
-
-The product loop adds operating responsibilities without granting automatic publication:
-
-- **Product Steward** selects the highest-leverage unblocked slice and prevents roadmap drift.
-- **Trust Auditor** finds unsupported claims, indexing leaks, provenance loss, and unsafe recommendations.
-- **Retrieval Evaluator** turns real failures into reproducible cases rather than tuning only happy paths.
-- **Adoption Observer** records real external use, failed integrations, and outcome signals without inventing counters.
-- **Distribution Maintainer** keeps static API, package, MCP, citation, version, and deployment states accurate.
-
-One agent may perform several responsibilities, but each handoff and decision must remain traceable.
+Product-loop responsibilities are Product Steward, Trust Auditor, Retrieval Evaluator, Adoption Observer, and Distribution Maintainer. One agent may perform several roles, but decisions and handoffs must remain traceable.
 
 ## Execution cycle
 
-1. **Inspect** `data/agent-loop-plan.json`, current issues, open pull requests, quality/evidence outputs, evaluation failures, public pages, and external blockers.
-2. **Select** the highest-priority unblocked workstream by P0/P1/P2, gate order, trust risk, external user value, and reversibility.
-3. **Slice** one change with a before state, expected output, validation path, and linked issue. Avoid mixing unrelated cleanup.
-4. **Implement** on a feature branch. Keep source changes, generated outputs, editorial decisions, and external actions distinguishable.
-5. **Validate** narrow checks first, then the complete deterministic build and check gate required by the repository.
-6. **Review** for unsupported claims, evidence-state loss, provenance loss, unsafe indexing, fake adoption signals, broken compatibility, and needless complexity.
-7. **Record** only observed evidence in the issue and `completion_evidence`. Targets, preparation, and intent are not completion.
-8. **Merge or close** the slice before opening another implementation pull request.
-9. **Continue** with the next highest-leverage unblocked item.
+1. Inspect the plan, issues, open PRs, quality/evidence outputs, evaluation failures, public surfaces, and external blockers.
+2. Select the highest-priority unblocked workstream by gate order, trust risk, user value, and reversibility.
+3. Slice one reversible change with a before state, expected output, validation path, and issue link.
+4. Implement on a feature branch; keep source, generated, editorial, and external changes distinguishable.
+5. Run focused checks, then the complete deterministic repository gate.
+6. Review for unsupported claims, evidence/provenance loss, unsafe discovery, fake adoption signals, compatibility breaks, and needless complexity.
+7. Record only observed completion evidence.
+8. Merge or close the slice before opening another implementation PR.
+9. Continue with the next highest-leverage unblocked item.
 
-When an external credential, legal decision, human source review, or adopter response is required, mark the workstream `awaiting-external`, record exactly what is ready and what is missing, and continue with the next independent slice. Never convert an unavailable external action into fictional success.
+External credentials, legal decisions, actual-source review, adopter consent, publication, and usage evidence cannot be invented. Mark the exact blocker and continue with an independent slice when possible.
 
-## Selection rules
+## Claim and knowledge rules
 
-Prefer work that:
+Knowledge flow:
 
-1. removes unsafe or unsupported indexed claims;
-2. improves the first Gold protocols;
-3. closes a real evaluation or trusted-coverage failure;
-4. enables outcome observation;
-5. removes friction from one actual external integration;
-6. simplifies the system without weakening trust;
-7. improves discovery of already-trusted knowledge.
+`research candidate -> actual-source review -> evidence decision -> protocol -> trusted discovery -> observed outcome`
 
-Defer work that mainly:
+No title, DOI, abstract, citation count, search result, or AI summary can directly create `reviewed` content. Precise quantitative, causal, mechanism, first-party, guarantee, treatment, diagnosis, or prevention wording requires a reviewed decision supporting that exact bounded claim. Otherwise remove precision, keep practical, restrict, noindex, or reject.
 
-- creates more long-tail entries;
-- adds another API, transport, taxonomy layer, app shell, or visual dashboard without an observed need;
-- translates the full corpus before canonical identity and retrieval demand justify it;
-- increases page count or automation theatre;
-- optimizes for a benchmark by weakening expected outcomes or deleting difficult cases.
-
-## Knowledge and claim rules
-
-The knowledge loop remains:
-
-`research candidate -> actual-source review -> evidence decision -> hack -> protocol -> trusted discovery -> observed outcome`
-
-No agent may jump from a title, DOI, abstract, citation count, search result, or AI summary directly to `reviewed` content.
-
-Precise public wording requires precise support. Percentages, sample sizes, effect estimates, mechanisms, causal statements, internal pilot results, guarantees, and treatment/diagnosis/prevention language need a reviewed source decision supporting the exact bounded claim. If that support is absent, remove the precision, keep the item practical, restrict it, noindex it, or reject it.
-
-A source URL is not proof that review occurred. A neighboring mechanism is not proof of a protocol-specific effect. The absence of a regex match is not proof of evidence quality.
-
-Safe abstention is a product feature. Retrieval may return no trusted answer rather than silently using `pending-review` or `restricted` material.
+A source URL is not proof of review. A neighboring mechanism is not proof of protocol effectiveness. Absence of a regex marker is not proof of evidence quality. Safe abstention is a product feature.
 
 ## Outcome and privacy rules
 
-- Do not collect full prompt text or personal data by default.
-- Preserve only the minimum identifiers needed for protocol/result version, client category, coarse event state, and deduplication.
-- Document collection, consent, retention, deletion, aggregation, and demo-data boundaries.
-- Publish zero rather than a fabricated metric when no observation exists.
-- A failed protocol, bad match, no-answer case, rejected source, or abandoned integration is valid learning and must not be hidden to improve optics.
+Do not collect full prompts or personal data by default. Keep only the minimum identifiers needed for protocol/result version, client category, coarse event state, and deduplication. Document consent, retention, deletion, aggregation, and demo-data boundaries. Publish zero rather than a fabricated metric. Failed protocols, bad matches, no-answer cases, rejected sources, and abandoned integrations are valid learning.
 
 ## Discovery and integration rules
 
-- Static API, local MCP, hosted MCP, Query, datasets, and pages must use the same canonical IDs, evidence states, provenance, and citation boundaries.
-- Do not describe local stdio MCP as hosted remote MCP.
-- Do not claim npm or registry publication until the external package identity resolves and a clean-machine test succeeds.
-- Do not create a new integration surface while the existing static API, package, Query, or MCP can solve the observed need.
-- Sitemap inclusion is earned by trusted coverage and unique user value, not by file existence.
-- Legacy, alias, duplicate, empty, restricted, and archive-only pages do not belong in normal discovery.
+Static API, local MCP, Query, datasets and pages must share canonical IDs, evidence state, provenance and citation boundaries. Do not describe local stdio MCP as hosted remote MCP. Do not claim npm/registry publication until external identity and clean-machine installation are verified. Do not add another integration surface when existing Query/API/MCP can solve the observed need. Sitemap inclusion is earned by trusted unique value, not file existence.
 
-## Branch and pull-request protocol
+## Branch and PR protocol
 
-- Work from a feature branch, never directly from `main`.
-- Use one active implementation branch and pull request at a time.
-- Link the issue and gate in the pull request body.
-- Keep changes small, reversible, and single-purpose.
-- Do not stage or overwrite unrelated work.
-- Create pull requests as draft unless the slice is fully validated and explicitly ready.
-- Full build/check, relevant focused checks, and review of generated diffs are required before merge.
-- Close stale or superseded pull requests after verifying that their intended behavior exists on `main` or is represented by the current backlog.
+Work from a feature branch, never directly from `main`. Keep one implementation branch/PR active. Link the issue and gate. Keep changes single-purpose and reversible. Create draft PRs until validated. Full build/check and generated-diff review are required before merge. Close stale or superseded PRs once their intent is on `main` or represented in the backlog.
 
 ## Current active slices
 
-- Implementation: #109, extend the claim gate and produce measurable claim debt.
-- Editorial: #93, complete the first four actual-source decisions.
-- Next after the trust gate: #110 Gold 20 contract, then #111 outcome event contract.
+- Implementation: #110 — Gold 20 manual-review contract, candidate set, and deterministic readiness registry.
+- Editorial: none required to start the contract slice; manual Gold reviews may begin after the contract is validated.
+- Next gate after Gold 20: #111 outcome event and privacy contract.
 
-Status changes must be reflected in `data/agent-loop-plan.json`; CI enforces WIP limits, issue references, dependency integrity, gate order, and the presence of this control document.
+Status changes must be reflected in `data/agent-loop-plan.json`.
 
-## Definition of done for a loop slice
+## Definition of done
 
-A slice is complete only when:
-
-- the linked issue's acceptance criteria for that slice are met;
-- source and generated outputs are consistent;
-- evidence state, provenance, citation, canonical identity, and safety boundaries are preserved;
-- no fake usage, evidence, publication, or completion claim is introduced;
-- focused and full validations pass;
-- the pull request is merged or intentionally closed;
-- observed completion evidence is recorded;
-- the next workstream status and next slice are updated.
+A slice is complete only when the linked acceptance criteria are met; source and generated outputs agree; trust/provenance/citation/canonical identity/safety are preserved; no fake evidence, usage, publication or completion claim is introduced; focused and full checks pass; the PR is merged or intentionally closed; observed completion evidence is recorded; and the next workstream state is updated.
 
 ## Non-goals
 
-- Rebuilding a generic all-in-one productivity application.
-- Becoming the largest collection of advice pages.
-- Using scientific language to decorate weak guidance.
-- Treating automation volume as product traction.
-- Publishing synthetic research, adoption, or outcome claims.
+- Rebuilding a generic all-in-one productivity app.
+- Becoming the largest advice collection.
+- Scientific language used as decoration.
+- Automation volume treated as traction.
+- Synthetic research, adoption, or outcome claims.
 - Hiding negative evidence, safe no-answer behavior, or failed integrations.
-- Allowing the loop to grow itself instead of improving the product.
+- Letting the loop grow itself instead of improving the product.

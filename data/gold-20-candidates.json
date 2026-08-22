@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "name": "Brali Gold 20 candidate set",
+  "target_count": 20,
+  "selection_status": "editorial-hypothesis",
+  "observed_user_demand_available": false,
+  "selection_note": "Observed user demand is not collected yet. This first candidate set is an editorial product hypothesis based on recurring practical problem clusters, current trusted status, existing retrieval/evaluation coverage, actionability, safety boundaries and whether an outcome can be observed. Candidate selection is not Gold approval.",
+  "required_first_batch_protocols": [
+    "25-minute-pomodoro-focus-sprints",
+    "active-listening-exercises",
+    "active-recall-test-yourself"
+  ],
+  "first_batch_exclusions": [
+    {
+      "slug": "stop-procrastination-fast-5-minute-reset",
+      "reason": "The source-bounded review in #93 did not make this protocol eligible for the current trusted Protocol Feed. Gold selection follows the trust gate rather than review-batch membership."
+    }
+  ],
+  "candidates": [
+    {"rank":1,"slug":"brainwriting-group-idea-generation","cluster":"creative-problem-solving","problem":"Our group needs independent ideas before discussion converges on the first suggestion.","selection_reasons":["low-risk-practical","group-artifact","clear-session-boundary","creative-problem-solving-value"]},
+    {"rank":2,"slug":"woop-goal-planner","cluster":"action-planning","problem":"I have a goal but keep failing to turn it into a workable next action.","selection_reasons":["reviewed-evidence","planning-value","observable-plan-output","problem-first-retrieval-fit"]},
+    {"rank":3,"slug":"3-3-3-workday-planner","cluster":"action-planning","problem":"My workday is overloaded and I need a smaller visible plan.","selection_reasons":["low-risk-practical","clear-output","easy-review-signal","recurring-work-problem"]},
+    {"rank":4,"slug":"30-minute-deadline-sprints","cluster":"task-initiation","problem":"I am stuck polishing or delaying and need a bounded first pass.","selection_reasons":["low-risk-practical","bounded-action","observable-artifact","recurring-work-problem"]},
+    {"rank":5,"slug":"25-minute-pomodoro-focus-sprints","cluster":"focus-breaks","problem":"I need a clear focus boundary without pretending one timer length is optimal.","selection_reasons":["first-batch-evidence-boundary","adjustable-protocol","observable-focus-block","problem-first-retrieval-fit"]},
+    {"rank":6,"slug":"90-30-focus-rest-schedule","cluster":"focus-breaks","problem":"Long work periods are becoming unproductive and I need deliberate work/rest boundaries.","selection_reasons":["low-risk-practical","adjustable-boundary","observable-fatigue-signal","focus-cluster-coverage"]},
+    {"rank":7,"slug":"2-minute-desk-tidy-timer","cluster":"focus-environment","problem":"My immediate workspace is creating friction and I want a tiny reset before work.","selection_reasons":["low-risk-practical","small-first-action","observable-environment-change","easy-fallback"]},
+    {"rank":8,"slug":"active-recall-test-yourself","cluster":"learning-memory","problem":"I need to remember material rather than only reread it.","selection_reasons":["reviewed-evidence","first-batch-evidence-boundary","clear-retention-outcome","strong-retrieval-fit"]},
+    {"rank":9,"slug":"avoid-list-interference-memory-retention","cluster":"learning-memory","problem":"I want a low-interference period after learning before adding more material.","selection_reasons":["reviewed-evidence","bounded-memory-outcome","conservative-action","clear-limitations"]},
+    {"rank":10,"slug":"weekly-theme-learning-sprints","cluster":"learning","problem":"My learning is scattered and I need one narrow weekly practice target.","selection_reasons":["low-risk-practical","visible-weekly-artifact","review-loop","learning-cluster-coverage"]},
+    {"rank":11,"slug":"10-minute-language-microsprints","cluster":"learning","problem":"I want a small repeatable language-practice container without an invented retention promise.","selection_reasons":["low-risk-practical","bounded-practice","observable-rep","language-learning-coverage"]},
+    {"rank":12,"slug":"active-listening-exercises","cluster":"communication","problem":"I may be misunderstanding someone and need a correction-friendly listening loop.","selection_reasons":["first-batch-evidence-boundary","correction-signal","high-everyday-value","problem-first-retrieval-fit"]},
+    {"rank":13,"slug":"5w1h-communication-checklist","cluster":"communication","problem":"A handoff or request is unclear and I need to make missing context explicit.","selection_reasons":["low-risk-practical","clear-artifact","workplace-usefulness","communication-cluster-coverage"]},
+    {"rank":14,"slug":"start-with-a-hypothesis","cluster":"problem-solving","problem":"I am investigating a problem without a testable explanation or next check.","selection_reasons":["low-risk-practical","observable-test-output","error-reduction-value","workplace-usefulness"]},
+    {"rank":15,"slug":"5-whys-goal-clarity","cluster":"problem-solving","problem":"I need to examine why a goal or problem matters without pretending one root cause is proven.","selection_reasons":["low-risk-practical","reflection-boundary","anti-overclaiming","clear-stop-rule-potential"]},
+    {"rank":16,"slug":"ab-test-learning-loop","cluster":"problem-solving","problem":"I want to compare two low-risk options and learn from the result without overstating an informal test.","selection_reasons":["low-risk-practical","observable-comparison","explicit-method-boundary","workplace-usefulness"]},
+    {"rank":17,"slug":"circles-of-control-planner","cluster":"resilience-action","problem":"I am spending effort on factors I cannot control and need to separate action from acceptance.","selection_reasons":["low-risk-practical","clear-action-allocation","observable-next-step","broad-everyday-value"]},
+    {"rank":18,"slug":"ideal-sleep-hours-finder","cluster":"sleep","problem":"My schedule leaves too little sleep opportunity and I need a conservative way to review the pattern.","selection_reasons":["reviewed-evidence","safety-boundary","observable-sleep-opportunity-signal","conservative-health-case"]},
+    {"rank":19,"slug":"10-minute-stress-walk","cluster":"movement","problem":"I need a small everyday movement option without treating it as a therapeutic dose.","selection_reasons":["reviewed-evidence","conservative-health-case","small-first-action","observable-completion"]},
+    {"rank":20,"slug":"20-20-20-eye-break-reminder","cluster":"screen-breaks","problem":"Long screen sessions are uncomfortable and I need a simple distance-looking break cue.","selection_reasons":["reviewed-evidence","bounded-guidance","observable-break","digital-work-relevance"]}
+  ]
+}

@@ -41,7 +41,7 @@
       "id": "trust-reset",
       "order": 0,
       "title": "Trust and claim integrity",
-      "status": "active",
+      "status": "completed",
       "issue_numbers": [109, 93],
       "exit_criteria": [
         "No indexable page contains an unsupported enforced quantitative, first-party, causal, or clinical claim marker.",
@@ -53,7 +53,7 @@
       "id": "gold-core",
       "order": 1,
       "title": "Gold 20 outcome-ready protocol core",
-      "status": "queued",
+      "status": "active",
       "issue_numbers": [110, 93],
       "exit_criteria": [
         "Twenty manually reviewed protocols pass one outcome-ready quality contract.",
@@ -118,10 +118,13 @@
       "priority": "P0",
       "lane": "editorial",
       "gate": "trust-reset",
-      "status": "active",
+      "status": "completed",
       "depends_on": [],
-      "next_slice": "Complete the first source-bounded decisions for task initiation, focus or breaks, active listening, and learning or memory without requiring promotion as the outcome.",
-      "completion_evidence": []
+      "next_slice": "First reviewed-core batch is complete; carry its source boundaries into Gold 20 reviews and reopen only for a new explicit editorial tranche.",
+      "completion_evidence": [
+        "Issue #93 closed completed after merged PRs #130, #133, #135, and #137 each passed the full repository build/check gate.",
+        "Four source-bounded decisions cover task initiation, active listening, focus/work breaks, and learning/memory without forced evidence promotion."
+      ]
     },
     {
       "id": "claim-gate-and-corpus-cleanup",
@@ -130,21 +133,24 @@
       "priority": "P0",
       "lane": "implementation",
       "gate": "trust-reset",
-      "status": "active",
+      "status": "completed",
       "depends_on": [],
-      "next_slice": "Extend the enforced claim taxonomy and generate a claim-debt report before making broad content rewrites.",
-      "completion_evidence": []
+      "next_slice": "Trust implementation is complete; preserve the regression gates while Gold 20 reviews consume only the trusted protocol feed.",
+      "completion_evidence": [
+        "Issue #109 is closed completed with deterministic claim taxonomy, claim-debt output, decision gating, public methodology and human-readable claim-debt reporting on main.",
+        "Strict repository checks enforce zero indexable unresolved claim debt rather than treating a source URL or manual label as proof."
+      ]
     },
     {
       "id": "gold-20-core",
       "issue_number": 110,
       "issue_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/110",
       "priority": "P0",
-      "lane": "editorial",
+      "lane": "implementation",
       "gate": "gold-core",
-      "status": "queued",
+      "status": "active",
       "depends_on": [93, 109],
-      "next_slice": "Define the Gold contract and select the first candidate set from measured retrieval demand and safe high-value problems.",
+      "next_slice": "Define and validate the Gold manual-review contract, select twenty trusted candidates without claiming observed demand, and publish deterministic readiness output before any Gold promotion.",
       "completion_evidence": []
     },
     {
@@ -155,7 +161,7 @@
       "lane": "implementation",
       "gate": "outcome-loop",
       "status": "queued",
-      "depends_on": [109],
+      "depends_on": [109, 110],
       "next_slice": "Add the outcome-event contract and privacy boundary before choosing a collection service or publishing counters.",
       "completion_evidence": []
     },

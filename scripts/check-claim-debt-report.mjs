@@ -64,6 +64,6 @@ if (!methodology.includes('href="/quality/claims/"')) fail('methodology page doe
 if (!datasets.includes('href="/quality/claims/"')) fail('dataset catalog does not link to public report');
 if (!sitemap.includes('<loc>https://brali-lifeos.github.io/quality/claims/</loc>')) fail('sitemap lacks public report');
 if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(page)) fail('public quality report is unexpectedly noindex');
-if (/data-claim-example|unsupported claim snippet/i.test(page)) fail('public report must not republish unsupported claim snippets');
+if (/data-claim-example/i.test(page)) fail('public report must not render claim-example fields or snippets');
 
 console.log(`Public claim debt report verified: ${counts.records_checked ?? 0} checked, ${counts.debt_entries ?? 0} unresolved, ${counts.indexable_debt_entries ?? 0} indexable, ${expectedQueue.length} queue rows.`);

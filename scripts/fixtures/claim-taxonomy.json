@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {"id":"percentage","text":"The intervention reduced fatigue by 27%.","expected_categories":["quantitative"]},
+    {"id":"effect-estimate","text":"The meta-analysis reported Hedges g = 0.42 and a confidence interval.","expected_categories":["quantitative","research-language"]},
+    {"id":"first-party","text":"During our pilot, we observed a change among our users.","expected_categories":["first-party-result","research-language"]},
+    {"id":"causal","text":"This routine will improve memory.","expected_categories":["causal-effect"]},
+    {"id":"causal-negated","text":"This study does not show that the routine will improve memory.","expected_categories":["research-language"]},
+    {"id":"association-boundary","text":"The association does not establish causality.","expected_categories":[]},
+    {"id":"clinical","text":"This protocol treats depression.","expected_categories":["clinical-outcome"]},
+    {"id":"clinical-boundary","text":"This is not a treatment for depression and does not diagnose a disorder.","expected_categories":[]},
+    {"id":"guarantee","text":"The method guarantees success and works for everyone.","expected_categories":["guarantee"]},
+    {"id":"guarantee-boundary","text":"Results are not guaranteed.","expected_categories":[]},
+    {"id":"mechanism-monitor","text":"The explanation mentions cortisol and vagal tone.","expected_categories":["mechanism"]},
+    {"id":"research-monitor","text":"Research suggests a possible association.","expected_categories":["research-language"]},
+    {"id":"duration-not-claim","text":"Try it for 10 minutes and review after three days.","expected_categories":[]},
+    {"id":"steps-not-claim","text":"Use three steps: choose, act, and review.","expected_categories":[]}
+  ]
+}

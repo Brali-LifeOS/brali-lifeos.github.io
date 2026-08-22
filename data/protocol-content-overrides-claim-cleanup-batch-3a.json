@@ -1,0 +1,126 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "backfire-effect-coach": {
+      "title": "Pause a Heated Disagreement and Test One Claim",
+      "description": "Slow down a defensive exchange, restate the other person's claim, identify what could change either view and choose one concrete check or a respectful stopping point.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated trials, effect ranges and internal outcomes with a bounded disagreement-and-claim-check protocol.",
+      "forbidden_public_fragments": [
+        "42% reduction in unproductive argument length",
+        "under 90 seconds in 72% of trials",
+        "reduce defensive reasoning by roughly 25–40%",
+        "four-week, self-reported sample (n=36)",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When a disagreement becomes defensive, pause, restate one claim neutrally and identify one check or condition that could change the discussion.",
+        "whatYouDo": "Notice that you are defending rather than examining. Pause before replying. Restate the other person's claim in words they accept, then state your own position and uncertainty. Ask what information would change either view. Choose one concrete check, or stop when the exchange is no longer productive or safe.",
+        "checkIn": "What claim did we clarify, what could change either view, and did we choose a check, revise a position or stop respectfully?"
+      },
+      "faq": [
+        {
+          "id": "backfire-effect-coach-faq-1",
+          "question": "Do I need to continue every disagreement?",
+          "answer": "No. Stop when the exchange becomes unsafe, repetitive or unrelated to a decision that matters. A boundary can be more useful than another argument."
+        },
+        {
+          "id": "backfire-effect-coach-faq-2",
+          "question": "Does restating a claim mean I agree with it?",
+          "answer": "No. It shows that you understand the claim well enough to discuss it. You can still reject it after the meaning is clear."
+        },
+        {
+          "id": "backfire-effect-coach-faq-3",
+          "question": "What if no practical check is available?",
+          "answer": "Record the unresolved point, make a reversible decision where possible and stop presenting uncertainty as settled fact."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>The aim is not to win the entire conversation. Clarify one claim, make uncertainty visible and choose a concrete next step.</p>"
+        },
+        "sections": [
+          {
+            "slug": "pause-and-restate",
+            "title": "1. Pause and restate one claim",
+            "html": "<p>Notice interruption, repetition or urge to prove. Pause, then describe the other person's claim without ridicule or exaggeration. Ask whether your restatement is accurate.</p>"
+          },
+          {
+            "slug": "state-change-condition",
+            "title": "2. State what could change the view",
+            "html": "<p>Separate what you believe, what you know directly and what remains unclear. Ask what observation, record or outcome would matter, and state your own change condition.</p>"
+          },
+          {
+            "slug": "check-or-stop",
+            "title": "3. Choose one check or stop",
+            "html": "<p>Inspect one source, run one reversible test, ask a qualified person or defer the decision. Stop when the exchange no longer serves understanding, action or safety.</p>"
+          }
+        ]
+      }
+    },
+    "belief-update-coach": {
+      "title": "Record What Would Change a Belief",
+      "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace numeric confidence prescriptions, fabricated observations and arbitrary update rules with a bounded belief-review record.",
+      "forbidden_public_fragments": [
+        "moving a dial from 0% to 100% belief",
+        "sample size > 200",
+        "reduce confidence by 5–15 points",
+        "New A/B test shows the new onboarding reduces activation by 12%",
+        "The study is small (n=60)",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "For an important belief, record the claim, why you currently hold it, what new information challenges it and what condition would justify a revision.",
+        "whatYouDo": "Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition.",
+        "checkIn": "What changed in the claim, its scope or my certainty, and what information would justify another update?"
+      },
+      "faq": [
+        {
+          "id": "belief-update-coach-faq-1",
+          "question": "Should one new article reverse my position?",
+          "answer": "Not automatically. First check whether it addresses the same claim and adds information relevant to your decision."
+        },
+        {
+          "id": "belief-update-coach-faq-2",
+          "question": "Do I need to assign a percentage to every belief?",
+          "answer": "No. Verbal states such as uncertain, provisional or unresolved are enough when numeric precision would be invented."
+        },
+        {
+          "id": "belief-update-coach-faq-3",
+          "question": "What if the belief is tied to identity or values?",
+          "answer": "Separate the factual claim from the value. You can revise an explanation without abandoning the value that made the question important."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Updating a belief is not reacting to every new headline. Keep the claim, its scope, the basis for your view and the change condition visible enough to revise without pretending certainty.</p>"
+        },
+        "sections": [
+          {
+            "slug": "state-claim-and-basis",
+            "title": "1. State the claim and its basis",
+            "html": "<p>Write one sentence that could be wrong. List the observations, records, experience or trusted explanations supporting it and mark assumptions separately.</p>"
+          },
+          {
+            "slug": "inspect-new-information",
+            "title": "2. Inspect the new information",
+            "html": "<p>Ask whether it addresses the same claim, context and group. Note what it adds, what it does not address and whether the source can be checked.</p>"
+          },
+          {
+            "slug": "choose-disposition",
+            "title": "3. Choose a disposition and next condition",
+            "html": "<p>Keep the belief unchanged, become less certain, revise it, narrow its scope or mark it unresolved. Record what would justify another update.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

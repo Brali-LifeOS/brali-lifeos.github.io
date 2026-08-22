@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "biomimicry-creative-problem-solving": {
+      "title": "Translate a Problem into a Nature-Inspired Design Principle",
+      "description": "Describe the function a solution must perform, inspect a biological example, extract a transferable principle and test one safe application without copying the organism literally.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated capacity, cleaning, communication and team outcomes with a bounded function-to-principle design exercise.",
+      "forbidden_public_fragments": [
+        "a simple 23% increase in capacity",
+        "50% fewer, n=7 days",
+        "average drops by 35%",
+        "Our own count last month: 43 models considered",
+        "The hit rate was about 35%",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Translate a design problem into a function, inspect how a biological system performs a similar function and extract one principle to test safely.",
+        "whatYouDo": "State what the solution must do without naming the current solution. Choose a biological example from a reliable description. Separate the observed structure or process from the metaphor. Write one transferable principle, generate several applications and test the smallest reversible option within safety and operational constraints.",
+        "checkIn": "What function did I study, what principle did I extract, and what did the small test reveal about its usefulness or limit?"
+      },
+      "faq": [
+        {
+          "id": "biomimicry-creative-problem-solving-faq-1",
+          "question": "Is a nature metaphor enough?",
+          "answer": "No. State the function and the observable structure or process. A poetic comparison can inspire ideas, but it is not yet a design principle."
+        },
+        {
+          "id": "biomimicry-creative-problem-solving-faq-2",
+          "question": "Should I copy the biological form directly?",
+          "answer": "Not necessarily. Scale, material, environment and purpose can differ. Extract a principle and test an application suited to your constraints."
+        },
+        {
+          "id": "biomimicry-creative-problem-solving-faq-3",
+          "question": "What if the biological description is uncertain?",
+          "answer": "Use a better documented example or label the idea as a loose analogy and test only the design concept."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Nature-inspired design becomes useful when the problem is translated into a function and the biological example is inspected for a transferable principle.</p>"
+        },
+        "sections": [
+          {
+            "slug": "define-function",
+            "title": "1. Define the function",
+            "html": "<p>Describe what the solution must do: route, filter, attach, cool, distribute, protect, adapt or recover. Remove the current solution from the sentence.</p>"
+          },
+          {
+            "slug": "extract-principle",
+            "title": "2. Choose an example and extract the principle",
+            "html": "<p>Find a reliable description of a biological system performing a similar function. Write the relevant structure or process in neutral terms and separate it from the organism's name.</p>"
+          },
+          {
+            "slug": "generate-and-test",
+            "title": "3. Generate applications and test one",
+            "html": "<p>Apply the principle to your materials, workflow or layout. Keep several options, then choose a reversible prototype that respects safety, welfare and operational constraints.</p>"
+          }
+        ]
+      }
+    },
+    "bold-brainstorm-kickoff": {
+      "title": "Use an Extreme Seed, Then Return to Reality",
+      "description": "Start an idea session with a deliberately unrealistic seed, explore its consequences without defending it and then translate useful fragments back into real constraints.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated session logs, keeper multipliers, percentage outcomes and tested-duration claims with a bounded provocation-to-feasible-idea exercise.",
+      "forbidden_public_fragments": [
+        "starting with a bold seed led to 1.9× more “keepers”",
+        "30–40% of notes looking odd",
+        "increased idea count by ~40% compared to 6 minutes",
+        "We have refined this ritual across 70+ uses",
+        "We tested 6, 12, and 20",
+        "Research shows habits can take 21-66 days to form",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Begin with one deliberately extreme assumption, explore what it changes and then keep only the fragments that survive real constraints.",
+        "whatYouDo": "State the real problem. Choose an extreme seed that changes one constraint, customer, resource or rule. During a short generation round, list consequences and variants without arguing with the seed. Remove the seed, restore actual constraints and choose one feasible fragment to test or develop.",
+        "checkIn": "Which useful fragment came from the extreme seed, and what real constraint or next test made it actionable?"
+      },
+      "faq": [
+        {
+          "id": "bold-brainstorm-kickoff-faq-1",
+          "question": "Does the bold seed need to be realistic?",
+          "answer": "No. It is a temporary lens, not a proposal. The final idea must still pass the real constraints after the seed is removed."
+        },
+        {
+          "id": "bold-brainstorm-kickoff-faq-2",
+          "question": "What if the group starts debating the seed?",
+          "answer": "Remind everyone that evaluation comes later. Write consequences and variants first, then return to feasibility in a separate pass."
+        },
+        {
+          "id": "bold-brainstorm-kickoff-faq-3",
+          "question": "Are all extreme prompts acceptable?",
+          "answer": "No. Avoid prompts that normalize harm, broken consent or unsafe shortcuts. Boldness does not remove boundaries."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>An unrealistic seed can move a session away from the first familiar answer. Its purpose is temporary: expose consequences and variants, then remove the seed and select only what remains useful.</p>"
+        },
+        "sections": [
+          {
+            "slug": "state-problem-and-seed",
+            "title": "1. State the problem and choose a seed",
+            "html": "<p>Write the outcome, audience and main constraint. Reverse one constraint, remove a resource, change the customer or imagine an unusual rule.</p>"
+          },
+          {
+            "slug": "explore-without-evaluation",
+            "title": "2. Explore without evaluation",
+            "html": "<p>List what would change in behavior, sequence, ownership, cost, communication or failure. Do not argue with feasibility during this pass.</p>"
+          },
+          {
+            "slug": "restore-reality",
+            "title": "3. Restore constraints and choose one test",
+            "html": "<p>Return to the real budget, time, safety and technical limits. Select one fragment that can be prototyped or checked and record what would make you discard it.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

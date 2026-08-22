@@ -6,13 +6,18 @@
   "observed_user_demand_available": false,
   "selection_note": "Observed user demand is not collected yet. This first candidate set is an editorial product hypothesis based on recurring practical problem clusters, current trusted status, existing retrieval/evaluation coverage, actionability, safety boundaries and whether an outcome can be observed. Candidate selection is not Gold approval.",
   "required_first_batch_protocols": [
-    "stop-procrastination-fast-5-minute-reset",
     "25-minute-pomodoro-focus-sprints",
     "active-listening-exercises",
     "active-recall-test-yourself"
   ],
+  "first_batch_exclusions": [
+    {
+      "slug": "stop-procrastination-fast-5-minute-reset",
+      "reason": "The source-bounded review in #93 did not make this protocol eligible for the current trusted Protocol Feed. Gold selection follows the trust gate rather than review-batch membership."
+    }
+  ],
   "candidates": [
-    {"rank":1,"slug":"stop-procrastination-fast-5-minute-reset","cluster":"task-initiation","problem":"I keep avoiding an important task and need a small reversible start.","selection_reasons":["first-batch-evidence-boundary","high-actionability","observable-start-signal","problem-first-retrieval-fit"]},
+    {"rank":1,"slug":"brainwriting-group-idea-generation","cluster":"creative-problem-solving","problem":"Our group needs independent ideas before discussion converges on the first suggestion.","selection_reasons":["low-risk-practical","group-artifact","clear-session-boundary","creative-problem-solving-value"]},
     {"rank":2,"slug":"woop-goal-planner","cluster":"action-planning","problem":"I have a goal but keep failing to turn it into a workable next action.","selection_reasons":["reviewed-evidence","planning-value","observable-plan-output","problem-first-retrieval-fit"]},
     {"rank":3,"slug":"3-3-3-workday-planner","cluster":"action-planning","problem":"My workday is overloaded and I need a smaller visible plan.","selection_reasons":["low-risk-practical","clear-output","easy-review-signal","recurring-work-problem"]},
     {"rank":4,"slug":"30-minute-deadline-sprints","cluster":"task-initiation","problem":"I am stuck polishing or delaying and need a bounded first pass.","selection_reasons":["low-risk-practical","bounded-action","observable-artifact","recurring-work-problem"]},

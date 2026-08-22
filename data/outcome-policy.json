@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "name": "Brali outcome observation policy",
+  "collection_status": "instrumented",
+  "north_star": {
+    "id": "weekly_verified_successful_executions",
+    "definition": "Unique protocol runs with both a protocol_completed event and an explicit helpful_yes event in the same ISO week, using the same run_id and a published Brali dataset version.",
+    "initial_validation_target": 25,
+    "target_type": "hypothesis",
+    "observed_value_must_come_from": "Reviewed, explicit opt-in outcome events listed in data/outcome-observations.json. Demo, fixture, CI, page-view, repository and generated events never count."
+  },
+  "automatic_collection": {
+    "enabled": false,
+    "network_requests_from_query_feedback": false,
+    "cookies": false,
+    "local_storage": false,
+    "raw_query_storage": false,
+    "user_identifier_storage": false
+  },
+  "opt_in_channels": [
+    {
+      "id": "github-issue",
+      "status": "available",
+      "description": "The browser prepares a privacy-light event in a prefilled GitHub issue. The user reviews and submits it explicitly. Raw query text is omitted."
+    },
+    {
+      "id": "native-share",
+      "status": "available-when-supported",
+      "description": "The browser shares the event JSON through the operating system share sheet. No destination is selected by Brali."
+    },
+    {
+      "id": "download",
+      "status": "available",
+      "description": "The browser downloads the event JSON locally for manual review or later submission. Downloading is not collection."
+    },
+    {
+      "id": "manual-import",
+      "status": "maintainer-only",
+      "description": "A maintainer may add a reviewed, consented event to data/outcome-observations.json with provenance and verification metadata."
+    }
+  ],
+  "privacy_contract": {
+    "raw_query_in_event": false,
+    "personal_data_in_event": false,
+    "user_identifier_in_event": false,
+    "ephemeral_browser_ids": true,
+    "prompt_text_may_be_shared_separately": "Only when the user deliberately adds it after reviewing the destination. It is never part of the outcome event envelope.",
+    "minimum_context": [
+      "event type",
+      "event and run/query identifiers",
+      "client category",
+      "dataset version",
+      "canonical Topic and Protocol identifiers where available",
+      "trust/result state",
+      "explicit feedback reason",
+      "share channel and consent state"
+    ]
+  },
+  "retention": {
+    "browser": "Event previews exist only in page memory unless the user shares or downloads them.",
+    "github_issue": "Submitted issue content follows GitHub and repository retention controls. Users can edit or delete their issue subject to platform permissions.",
+    "public_observation_dataset": "Only reviewed events with explicit consent and no personal data may be copied into the versioned public observation dataset.",
+    "aggregate_report": "Aggregate reports contain counts and canonical IDs, not raw prompts or user identifiers."
+  },
+  "verification": {
+    "accepted_observation_sources": ["github-issue", "manual-import"],
+    "required_for_public_observation": [
+      "explicit consent",
+      "valid outcome-event schema",
+      "no raw query",
+      "no personal identifier",
+      "published dataset version",
+      "reviewed provenance record"
+    ],
+    "verified_success_rule": "Count a run only when protocol_completed and helpful_yes are both present, valid and linked by the same run_id."
+  },
+  "reporting_rules": [
+    "Show zero when no reviewed observations exist.",
+    "Separate observed counts from hypotheses, targets, demos and fixtures.",
+    "Do not infer users, completions or helpfulness from page views, copies, downloads, repository activity or CI.",
+    "Publish failed, not-helpful, bad-match and no-answer outcomes when they meet the same consent and privacy boundary.",
+    "Do not claim repeated use without repeated reviewed observations from a privacy-safe integration identifier or explicitly linked run series."
+  ],
+  "public_surfaces": {
+    "schema": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
+    "policy": "https://brali-lifeos.github.io/life-os/datasets/outcome-policy.json",
+    "observations": "https://brali-lifeos.github.io/life-os/datasets/outcome-observations.json",
+    "report": "https://brali-lifeos.github.io/life-os/datasets/outcome-report.json",
+    "human_report": "https://brali-lifeos.github.io/quality/outcomes/"
+  }
+}

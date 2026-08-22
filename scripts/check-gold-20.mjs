@@ -26,6 +26,10 @@ if (new Set(slugs).size !== slugs.length) fail('candidate slugs must be unique')
 if (new Set(ranks).size !== ranks.length) fail('candidate ranks must be unique');
 for (let rank = 1; rank <= 20; rank += 1) if (!ranks.includes(rank)) fail(`candidate rank ${rank} is missing`);
 for (const required of candidates.required_first_batch_protocols ?? []) if (!slugs.includes(required)) fail(`first-batch protocol missing from candidate set: ${required}`);
+for (const exclusion of candidates.first_batch_exclusions ?? []) {
+  if (slugs.includes(exclusion.slug)) fail(`explicitly excluded protocol is still a Gold candidate: ${exclusion.slug}`);
+  if (!(exclusion.reason?.length >= 30)) fail(`Gold exclusion lacks a concrete reason: ${exclusion.slug}`);
+}
 
 const trustedSlugs = new Set((protocols.entries ?? []).map(item => item.slug));
 for (const candidate of candidates.candidates ?? []) {

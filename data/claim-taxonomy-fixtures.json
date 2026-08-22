@@ -9,6 +9,18 @@
       "expected_enforced_categories": ["quantitative", "first-party-result"]
     },
     {
+      "id": "standalone-percentage",
+      "text": "The intervention reduced fatigue by 27%.",
+      "expected_categories": ["quantitative"],
+      "expected_enforced_categories": ["quantitative"]
+    },
+    {
+      "id": "effect-estimate-and-singular-study",
+      "text": "The study reported Hedges g = 0.42 and a confidence interval.",
+      "expected_categories": ["quantitative", "research-language"],
+      "expected_enforced_categories": ["quantitative"]
+    },
+    {
       "id": "explicit-internal-data-result",
       "text": "Our data showed that users completed the routine faster.",
       "expected_categories": ["first-party-result"],
@@ -39,6 +51,36 @@
       "expected_enforced_categories": ["clinical-outcome"]
     },
     {
+      "id": "clinical-negation-boundary",
+      "text": "This is not a treatment for depression and does not diagnose a disorder.",
+      "expected_categories": [],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "causal-enforced",
+      "text": "The article says the behavior leads to better focus.",
+      "expected_categories": ["causal-effect"],
+      "expected_enforced_categories": ["causal-effect"]
+    },
+    {
+      "id": "certain-future-effect",
+      "text": "This routine will improve memory.",
+      "expected_categories": ["causal-effect"],
+      "expected_enforced_categories": ["causal-effect"]
+    },
+    {
+      "id": "causal-negation-boundary",
+      "text": "This study does not show that the routine will improve memory.",
+      "expected_categories": ["research-language"],
+      "expected_enforced_categories": []
+    },
+    {
+      "id": "association-boundary",
+      "text": "The association does not establish causality.",
+      "expected_categories": [],
+      "expected_enforced_categories": []
+    },
+    {
       "id": "ordinary-duration",
       "text": "Choose one 25-minute focus block and review what interrupted it.",
       "expected_categories": [],
@@ -54,12 +96,6 @@
       "id": "mechanism-monitor-only",
       "text": "The inherited explanation refers to cortisol and the parasympathetic response.",
       "expected_categories": ["mechanism"],
-      "expected_enforced_categories": []
-    },
-    {
-      "id": "causal-monitor-only",
-      "text": "The article says the behavior leads to better focus.",
-      "expected_categories": ["causal-effect"],
       "expected_enforced_categories": []
     },
     {

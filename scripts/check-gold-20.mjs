@@ -1,8 +1,10 @@
 import { readFile } from 'node:fs/promises';
+import crypto from 'node:crypto';
 import path from 'node:path';
 
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
+const sha256 = text => crypto.createHash('sha256').update(text).digest('hex');
 const fail = message => { throw new Error(`Gold 20 check failed: ${message}`); };
 
 const candidates = await readJson('data/gold-20-candidates.json');
@@ -11,6 +13,11 @@ const reviewSchema = await readJson('contracts/gold-protocol-review.schema.json'
 const output = await readJson('life-os/datasets/gold-20.json');
 const protocols = await readJson('life-os/datasets/protocols.json');
 const manifest = await readJson('life-os/datasets/manifest.json');
+const platform = await readJson('data/platform.json');
+const apiOutput = await readJson(`api/${platform.api_version}/gold-20.json`);
+const apiManifest = await readJson(`api/${platform.api_version}/manifest.json`);
+const apiIndex = await readJson(`api/${platform.api_version}/index.json`);
+const openapi = await readJson(`api/${platform.api_version}/openapi.json`);
 
 if (candidates.schema_version !== 1) fail(`candidate schema_version ${candidates.schema_version}`);
 if (reviews.schema_version !== 1) fail(`review registry schema_version ${reviews.schema_version}`);
@@ -64,8 +71,17 @@ for (const candidate of candidates.candidates ?? []) {
 const calculatedReady = (output.entries ?? []).filter(item => item.gold_ready).length;
 if (calculatedReady !== output.gold_ready_count) fail('gold_ready_count drift');
 if (output.gold_ready_count > output.candidate_count) fail('gold_ready_count exceeds candidate count');
-const manifestFile = (manifest.files ?? []).find(item => (typeof item === 'string' ? item : item.path) === 'gold-20.json');
-if (!manifestFile) fail('manifest does not expose gold-20.json');
+const datasetPath = 'life-os/datasets/gold-20.json';
+const manifestFile = (manifest.files ?? []).find(item => item?.path === datasetPath);
+if (!manifestFile) fail(`manifest does not expose ${datasetPath}`);
+const datasetText = await readFile(path.join(root, datasetPath), 'utf8');
+if (manifestFile.sha256 !== sha256(datasetText) || manifestFile.bytes !== Buffer.byteLength(datasetText) || manifestFile.count !== output.entries.length) {
+  fail('Gold dataset manifest checksum/size/count drift');
+}
 if (manifest.gold_20?.candidate_count !== output.candidate_count || manifest.gold_20?.gold_ready_count !== output.gold_ready_count) fail('manifest Gold 20 summary drift');
+if (JSON.stringify(apiManifest) !== JSON.stringify(manifest)) fail('API manifest differs from canonical manifest after Gold publication');
+if (JSON.stringify(apiOutput) !== JSON.stringify(output)) fail('Gold API endpoint differs from canonical dataset');
+if (!(apiIndex.endpoints ?? []).includes('gold-20.json')) fail('API index does not expose gold-20.json');
+if (!openapi.paths?.[`/api/${platform.api_version}/gold-20.json`]) fail('OpenAPI does not describe Gold 20 endpoint');
 
-console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready; observed demand remains unclaimed.`);
+console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready; canonical/API manifests synchronized; observed demand remains unclaimed.`);

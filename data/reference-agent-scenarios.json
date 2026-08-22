@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "dataset_version": "1.0.0",
-  "description": "Runnable reference scenarios for external agents using the generated Brali Knowledge API. Expectations are regression checks, not hidden ranking instructions or promises that every routed Topic already has trusted coverage.",
+  "description": "Runnable reference scenarios for external agents using the generated Brali Knowledge API. Expectations are regression checks, not hidden ranking instructions.",
   "scenarios": [
     {
       "id": "sleep",
@@ -23,8 +23,7 @@
       "question": "I am procrastinating on a difficult task. What is a small way to get started?",
       "expected_topic_ids": ["task-initiation"],
       "expected_protocol_slugs": [],
-      "expected_status": "no-trusted-answer",
-      "coverage_gap": true
+      "expected_status": "trusted-answer"
     },
     {
       "id": "safety-boundary",

@@ -1,0 +1,49 @@
+name: Verify outcome contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'contracts/outcome-event.schema.json'
+      - 'data/outcome-*.json'
+      - 'for-ai/query/**'
+      - 'quality/outcomes/**'
+      - 'scripts/build-outcome-surfaces.mjs'
+      - 'scripts/check-outcome-surfaces.mjs'
+      - 'scripts/build-query-adoption-funnel.mjs'
+      - 'data/agent-loop-plan.json'
+      - 'AGENT_LOOP.md'
+      - '.github/workflows/outcome-contract.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'contracts/outcome-event.schema.json'
+      - 'data/outcome-*.json'
+      - 'for-ai/query/**'
+      - 'quality/outcomes/**'
+      - 'scripts/build-outcome-surfaces.mjs'
+      - 'scripts/check-outcome-surfaces.mjs'
+      - 'scripts/build-query-adoption-funnel.mjs'
+      - 'data/agent-loop-plan.json'
+      - 'AGENT_LOOP.md'
+      - '.github/workflows/outcome-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  outcome-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm run build
+      - run: node scripts/check-outcome-surfaces.mjs
+      - run: python3 scripts/check-agent-loop.py

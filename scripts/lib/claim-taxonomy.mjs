@@ -151,10 +151,15 @@ export function inspectClaims(value, { exampleLimitPerCategory = 3 } = {}) {
     }
   }
 
+  const hasCausalAssertion = markers.some(marker => marker.category === 'causal-assertion');
+  const normalizedMarkers = hasCausalAssertion
+    ? markers.filter(marker => marker.category !== 'causal-effect')
+    : markers;
+
   return {
-    categories: markers.map(marker => marker.category),
-    enforcedCategories: markers.filter(marker => marker.enforced).map(marker => marker.category),
-    markers,
+    categories: normalizedMarkers.map(marker => marker.category),
+    enforcedCategories: normalizedMarkers.filter(marker => marker.enforced).map(marker => marker.category),
+    markers: normalizedMarkers,
   };
 }
 

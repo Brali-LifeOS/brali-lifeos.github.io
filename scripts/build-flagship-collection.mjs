@@ -27,6 +27,23 @@ if (missingAreas.length || unknownAreas.length || duplicates.length) {
   throw new Error(`Flagship configuration invalid. missing=[${missingAreas.join(", ")}], unknown=[${unknownAreas.join(", ")}], duplicate protocols=[${[...new Set(duplicates)].join(", ")}]`);
 }
 
+function flagshipDiagnostic(slug, { source, publicEntry, trust, feed, override }) {
+  return JSON.stringify({
+    slug,
+    source: Boolean(source),
+    public: Boolean(publicEntry),
+    evidence: Boolean(trust),
+    feed: Boolean(feed),
+    curated: Boolean(override),
+    evidence_status: trust?.status ?? null,
+    indexable: trust?.indexable ?? null,
+    indexing_reason: trust?.indexingReason ?? null,
+    claim_categories: trust?.claims?.categories ?? [],
+    decision_required_categories: trust?.decision_required_categories ?? [],
+    evidence_decision_ids: trust?.evidence_decision_ids ?? [],
+  });
+}
+
 const flagships = lifeAreas.map((area) => {
   const slug = flagshipConfig.areas[area.slug];
   const source = sourceBySlug.get(slug);
@@ -34,8 +51,9 @@ const flagships = lifeAreas.map((area) => {
   const trust = evidenceBySlug.get(slug);
   const feed = feedBySlug.get(slug);
   const override = curated.entries?.[slug];
-  if (!source || !publicEntry || !trust || !feed || !override) throw new Error(`Flagship ${slug} is missing source, public, evidence, feed, or curated data.`);
-  if (trust.indexable !== true || !["reviewed", "practical"].includes(trust.status)) throw new Error(`Flagship ${slug} does not meet the discovery quality bar.`);
+  const diagnostic = flagshipDiagnostic(slug, { source, publicEntry, trust, feed, override });
+  if (!source || !publicEntry || !trust || !feed || !override) throw new Error(`Flagship dependency failed: ${diagnostic}`);
+  if (trust.indexable !== true || !["reviewed", "practical"].includes(trust.status)) throw new Error(`Flagship discovery quality gate failed: ${diagnostic}`);
   if (source.zone?.slug && !area.zones.includes(source.zone.slug)) throw new Error(`Flagship ${slug} does not belong to configured Life Area ${area.slug}.`);
   return {
     life_area: { slug: area.slug, title: area.title, subtitle: area.subtitle },

@@ -80,7 +80,7 @@ function topicSearch(query, topics, identity, k = 3) {
     return score > 0 ? { topic, id, score } : null;
   }).filter(Boolean).sort((a,b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, k);
 }
-function decisionSearch(query, decisions, k = 3) {
+function decisionSearch(query, decisions) {
   const q = tokenSet(query), qNorm = normalize(query);
   return decisions.map(decision => {
     const fields = [decision.source_title, decision.supported_claim, ...(decision.unsupported_or_overstated_claims || []), ...(decision.limitations || []), decision.notes].filter(Boolean);
@@ -92,7 +92,23 @@ function decisionSearch(query, decisions, k = 3) {
       if (p && qNorm.includes(p.slice(0, Math.min(p.length, 24)))) score += 4;
     }
     return score > 0 ? { decision, score } : null;
-  }).filter(Boolean).sort((a,b) => b.score - a.score || a.decision.id.localeCompare(b.decision.id)).slice(0, k);
+  }).filter(Boolean).sort((a,b) => b.score - a.score || a.decision.id.localeCompare(b.decision.id));
+}
+function rankEvidenceBoundaries(decisionCandidates, selected, limit = 3) {
+  const selectedSlugs = new Set(selected.map(item => protocolSlug(item.entry)));
+  const direct = selectedSlugs.size
+    ? decisionCandidates.filter(({ decision }) => decisionTargetSlugs(decision).some(slug => selectedSlugs.has(slug)))
+    : [];
+  const strongRelated = decisionCandidates.filter(item => item.score >= 9);
+  const ranked = [];
+  const seen = new Set();
+  for (const item of [...direct, ...strongRelated]) {
+    if (seen.has(item.decision.id)) continue;
+    seen.add(item.decision.id);
+    ranked.push(item);
+    if (ranked.length >= limit) break;
+  }
+  return ranked;
 }
 
 export function queryBrali(question, data, options = {}) {
@@ -107,9 +123,10 @@ export function queryBrali(question, data, options = {}) {
   if (isSafetyBoundary(question)) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: true, reason: 'Safety-sensitive diagnosis/treatment or self-harm requests are outside normal Brali trusted retrieval.' } };
 
   const matchedTopics = topicSearch(question, topics, identity, 3);
-  const matchedDecisions = decisionSearch(question, decisions, 3).filter(x => x.score >= 9);
+  const decisionCandidates = decisionSearch(question, decisions);
+  const strongDecisions = decisionCandidates.filter(item => item.score >= 9);
   const bestTopicScore = matchedTopics[0]?.score || 0;
-  const bestDecisionScore = matchedDecisions[0]?.score || 0;
+  const bestDecisionScore = strongDecisions[0]?.score || 0;
   if (bestTopicScore < 4 && bestDecisionScore < 9) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: false } };
 
   const topicRank = new Map(matchedTopics.map((item, index) => [item.id, matchedTopics.length - index]));
@@ -132,7 +149,7 @@ export function queryBrali(question, data, options = {}) {
     if (keep.size) ranked = ranked.filter(item => keep.has(protocolSlug(item.entry)));
   }
 
-  const topDecision = matchedDecisions[0];
+  const topDecision = strongDecisions[0];
   const boundaryOnly = Boolean(topDecision?.decision?.decision === 'watch' && BOUNDARY_CUE.test(question));
   const selected = boundaryOnly ? [] : ranked.slice(0, limit);
   const recommendations = selected.map(({ entry }) => {
@@ -148,7 +165,7 @@ export function queryBrali(question, data, options = {}) {
       provenance: provenance(entry)
     };
   });
-  const evidenceBoundaries = matchedDecisions.map(({ decision }) => decisionPacket(decision));
+  const evidenceBoundaries = rankEvidenceBoundaries(decisionCandidates, selected, 3).map(({ decision }) => decisionPacket(decision));
 
   return {
     schema_version: 1,

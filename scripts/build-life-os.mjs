@@ -6,7 +6,27 @@ const base = "https://brali-lifeos.github.io";
 const contentRoot = path.join(root, "data/life-os-content");
 const outputRoot = path.join(root, "life-os");
 const zones = JSON.parse(await readFile(path.join(root, "data/life-os-zones.json"), "utf8"));
+const areas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
+
+const coverAltByArea = new Map([
+  ["focus-execution", "A person choosing one next action for focus and reliable follow-through"],
+  ["mind-resilience", "A person pausing calmly to notice their experience and regain perspective"],
+  ["health-energy", "A person beginning a simple stretch beside a water bottle"],
+  ["learning-thinking", "A person comparing notes and marking one useful insight"],
+  ["communication-relationships", "Two people practicing clear speaking and attentive listening"],
+  ["creativity-expression", "A person sketching and arranging a new visual idea"],
+  ["work-money-strategy", "A person comparing options and placing one choice onto a path"],
+]);
+const areaByZone = new Map();
+for (const area of areas) {
+  for (const zoneSlug of area.zones) {
+    if (areaByZone.has(zoneSlug)) throw new Error(`Growth Zone mapped to more than one Life Area: ${zoneSlug}`);
+    areaByZone.set(zoneSlug, area);
+  }
+}
+const uncoveredZones = zones.map((zone) => zone.slug).filter((slug) => !areaByZone.has(slug));
+if (uncoveredZones.length) throw new Error(`Growth Zones without hack-cover mapping: ${uncoveredZones.join(", ")}`);
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
 const escapeAttribute = escapeHtml;
@@ -18,12 +38,12 @@ const cleanHtml = (html = "") => String(html)
   .replaceAll("MetalHatsCats × Brali LifeOS", "Brali")
   .replaceAll("MetalHatsCats / Brali LifeOS", "Brali");
 
-function document({ title, description, pathname, body, jsonLd }) {
+function document({ title, description, pathname, body, jsonLd, imagePath = "/assets/images/brali-logo.png" }) {
   const safeTitle = escapeHtml(title);
   const safeDescription = escapeAttribute(text(description).slice(0, 300));
   const url = canonical(pathname);
   const schema = jsonLd ? `<script type="application/ld+json">${JSON.stringify(jsonLd).replace(/</g, "\\u003c")}</script>` : "";
-  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${safeTitle} — Brali</title><meta name="description" content="${safeDescription}"><link rel="canonical" href="${url}"><meta property="og:type" content="article"><meta property="og:title" content="${safeTitle}"><meta property="og:description" content="${safeDescription}"><meta property="og:url" content="${url}"><meta property="og:image" content="${base}/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css">${schema}</head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/faq/">FAQ</a></div></nav></header><main id="content" class="page wrap">${body}</main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>Practical knowledge for people and machines.</small></div><div class="footer-links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/faq/">FAQ</a><a href="/terms/">Terms</a></div></div></footer></body></html>`;
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${safeTitle} — Brali</title><meta name="description" content="${safeDescription}"><link rel="canonical" href="${url}"><meta property="og:type" content="article"><meta property="og:title" content="${safeTitle}"><meta property="og:description" content="${safeDescription}"><meta property="og:url" content="${url}"><meta property="og:image" content="${base}${imagePath}"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css">${schema}</head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/faq/">FAQ</a></div></nav></header><main id="content" class="page wrap">${body}</main><footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>Practical knowledge for people and machines.</small></div><div class="footer-links"><a href="/life-os/">Library</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/faq/">FAQ</a><a href="/terms/">Terms</a></div></div></footer></body></html>`;
 }
 
 async function save(relativePath, contents) {
@@ -54,15 +74,18 @@ for (const entry of index) {
   const faq = (article.faq || []).filter((item) => item.question && item.answer).slice(0, 5);
   const faqBody = faq.length ? `<section class="prose"><h2>Questions to consider</h2>${faq.map((item) => `<h3>${escapeHtml(item.question)}</h3>${cleanHtml(item.answerHtml || `<p>${escapeHtml(item.answer)}</p>`)}`).join("")}</section>` : "";
   const articlePath = `/life-os/${entry.slug}/`;
+  const area = areaByZone.get(entry.zone.slug);
+  const coverPath = `/assets/images/brali-hack-${area.slug}.webp`;
+  const cover = `<figure class="hack-cover" data-hack-cover="true" data-life-area="${area.slug}"><img src="${coverPath}" width="1672" height="941" alt="${escapeAttribute(coverAltByArea.get(area.slug))}" fetchpriority="high"></figure>`;
   const schema = { "@context": "https://schema.org", "@type": "Article", headline: entry.title, description: text(entry.description), url: canonical(articlePath), isPartOf: { "@type": "CollectionPage", name: "Brali Growth Library", url: canonical("/life-os/") }, about: entry.keywords || [], datePublished: entry.publishedISO || undefined, dateModified: entry.updatedISO || undefined };
-  await save(`life-os/${entry.slug}`, document({ title: entry.title, description: entry.description, pathname: articlePath, jsonLd: schema, body: `<p class="eyebrow"><a href="/life-os/${entry.zone.slug}/">${escapeHtml(entry.zone.title)}</a> · Growth Library</p><h1>${escapeHtml(entry.title)}</h1>${entry.subtitle ? `<p class="lead">${escapeHtml(entry.subtitle)}</p>` : ""}${articleBody}${faqBody}<aside class="callout"><h3>Try it, then review.</h3><p>Use the action above as a starting point. Adapt it to your situation, notice what happens, and keep, change, or drop it.</p><a class="button" href="/life-os/">More protocols</a></aside>` }));
+  await save(`life-os/${entry.slug}`, document({ title: entry.title, description: entry.description, pathname: articlePath, jsonLd: schema, imagePath: coverPath, body: `<p class="eyebrow"><a href="/life-os/${entry.zone.slug}/">${escapeHtml(entry.zone.title)}</a> · Growth Library</p><h1>${escapeHtml(entry.title)}</h1>${entry.subtitle ? `<p class="lead">${escapeHtml(entry.subtitle)}</p>` : ""}${cover}${articleBody}${faqBody}<aside class="callout"><h3>Try it, then review.</h3><p>Use the action above as a starting point. Adapt it to your situation, notice what happens, and keep, change, or drop it.</p><a class="button" href="/life-os/">More protocols</a></aside>` }));
 }
 
 for (const zone of zones) {
   const entries = (itemsByZone.get(zone.slug) ?? []).sort((a, b) => a.title.localeCompare(b.title));
   const zonePath = `/life-os/${zone.slug}/`;
   const links = entries.map((entry) => `<li><a href="/life-os/${entry.slug}/">${escapeHtml(entry.title)}</a>${entry.description ? `<span>${escapeHtml(text(entry.description).slice(0, 180))}</span>` : ""}</li>`).join("");
-  await save(`life-os/${zone.slug}`, document({ title: zone.title, description: zone.subtitle, pathname: zonePath, jsonLd: { "@context": "https://schema.org", "@type": "CollectionPage", name: `${zone.title} | Brali`, description: zone.subtitle, url: canonical(zonePath) }, body: `<p class="eyebrow">Growth Zone</p><h1>${escapeHtml(zone.title)}</h1><p class="lead">${escapeHtml(zone.subtitle)}</p><section class="prose"><h2>${entries.length} practical entries</h2><ul class="article-list">${links}</ul></section>` }));
+  await save(`life-os/${zone.slug}`, document({ title: zone.title, description: zone.subtitle, pathname: zonePath, jsonLd: { "@context": "https://schema.org", "@type": "CollectionPage", name: `${zone.title} | Brali`, description: zone.subtitle, url: canonical(zonePath) }, body: `<section class="visual-hero visual-hero--hacks"><div class="visual-hero-copy"><p class="eyebrow">Growth Zone</p><h1>${escapeHtml(zone.title)}</h1><p class="lead">${escapeHtml(zone.subtitle)}</p></div><figure class="visual-hero-media"><img src="/assets/images/brali-practical-hack.webp" width="1672" height="941" alt="Three people choosing one action, pausing to try it, and recording an observation" fetchpriority="high"></figure></section><section class="prose"><h2>${entries.length} practical entries</h2><ul class="article-list">${links}</ul></section>` }));
 }
 
 const zoneCards = zones.map((zone) => { const count = (itemsByZone.get(zone.slug) ?? []).length; return `<article class="card"><span class="card-label">${count} entries</span><h3><a href="/life-os/${zone.slug}/">${escapeHtml(zone.title)}</a></h3><p>${escapeHtml(zone.subtitle)}</p></article>`; }).join("");

@@ -43,7 +43,7 @@ await save("life-os/areas", document({
   description: "Start with a familiar area of life, then explore the detailed Brali Growth Zones inside it.",
   pathname: "/life-os/areas/",
   schema: { "@context": "https://schema.org", "@type": "CollectionPage", name: "Brali LifeOS life areas", url: canonical("/life-os/areas/") },
-  body: `<p class="eyebrow">Growth Library</p><h1>Start with the part of life you want to work on.</h1><p class="lead">The detailed Growth Library has ${zones.length} Growth Zones. These seven life areas give you a simpler first step without removing the deeper taxonomy.</p><div class="grid three">${areaCards}</div>`
+  body: `<section class="visual-hero visual-hero--zones"><div class="visual-hero-copy"><p class="eyebrow">Growth Library</p><h1>Start with the part of life you want to work on.</h1><p class="lead">The detailed Growth Library has ${zones.length} Growth Zones. These seven life areas give you a simpler first step without removing the deeper taxonomy.</p></div><figure class="visual-hero-media"><img src="/assets/images/brali-growth-zones.webp" width="1672" height="941" alt="People reflecting, planning, and taking a next step across three bright life-area panels" fetchpriority="high"></figure></section><div class="grid three">${areaCards}</div>`
 }));
 
 for (const area of areas) {

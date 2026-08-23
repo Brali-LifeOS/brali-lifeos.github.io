@@ -75,8 +75,10 @@ for (const entry of index) {
 
   if (!html.includes('data-protocol-summary="true"')) {
     const summary = protocolSummary(article, entry, evidence);
+    const coverPattern = /(<figure class="hack-cover"[\s\S]*?<\/figure>)/;
     const leadPattern = /(<p class="lead">[\s\S]*?<\/p>)/;
-    if (leadPattern.test(html)) html = html.replace(leadPattern, `$1${summary}`);
+    if (coverPattern.test(html)) html = html.replace(coverPattern, `$1${summary}`);
+    else if (leadPattern.test(html)) html = html.replace(leadPattern, `$1${summary}`);
     else html = html.replace("</h1>", `</h1>${summary}`);
     protocolSummaries += 1;
   }

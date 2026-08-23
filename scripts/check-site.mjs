@@ -30,6 +30,15 @@ const required = [
   "LICENSING.md",
   "life-os/index.html",
   "life-os/areas/index.html",
+  "assets/images/brali-growth-zones.webp",
+  "assets/images/brali-practical-hack.webp",
+  "assets/images/brali-hack-focus-execution.webp",
+  "assets/images/brali-hack-mind-resilience.webp",
+  "assets/images/brali-hack-health-energy.webp",
+  "assets/images/brali-hack-learning-thinking.webp",
+  "assets/images/brali-hack-communication-relationships.webp",
+  "assets/images/brali-hack-creativity-expression.webp",
+  "assets/images/brali-hack-work-money-strategy.webp",
   "ontology/index.html",
   "ontology/coverage/index.html",
   "life-os/datasets/ontology.json",
@@ -130,6 +139,13 @@ if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still refere
 const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/life-os/areas/"')) throw new Error("Growth Library does not link to life areas.");
 
+const areas = await readFile(path.join(root, "life-os/areas/index.html"), "utf8");
+if (!areas.includes('src="/assets/images/brali-growth-zones.webp"')) throw new Error("Life Areas page lacks its branded Growth Zones illustration.");
+const sampleZone = await readFile(path.join(root, "life-os/do-it/index.html"), "utf8");
+if (!sampleZone.includes('src="/assets/images/brali-practical-hack.webp"')) throw new Error("Growth Zone pages lack the branded practical-hack illustration.");
+const styles = await readFile(path.join(root, "styles.css"), "utf8");
+if (!styles.includes(".article-list > * > span { display:block")) throw new Error("Article list descriptions can collapse into adjacent links.");
+
 const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html"), "utf8");
 for (const dataset of ["ontology.json", "ontology-coverage.json", "evidence.json", "review-queue.json", "claim-debt.json", "title-quality.json", "indexing.json", "protocols.json", "editorial-normalizations.json"]) {
   if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
@@ -138,6 +154,18 @@ if (!datasetsPage.includes('"@type":"DataCatalog"')) throw new Error("Dataset pa
 if (!datasetsPage.includes('href="/for-ai/"')) throw new Error("Dataset page does not link to AI/developer integration guidance.");
 
 const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
+const lifeAreas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
+const expectedAreaByZone = new Map(lifeAreas.flatMap((area) => area.zones.map((zoneSlug) => [zoneSlug, area.slug])));
+const hackCoverPages = await Promise.all(sourceIndex.map(async (entry) => [entry, await readFile(path.join(root, "life-os", entry.slug, "index.html"), "utf8")]));
+for (const [entry, html] of hackCoverPages) {
+  const areaSlug = expectedAreaByZone.get(entry.zone.slug);
+  if (!areaSlug) throw new Error(`Hack belongs to an unmapped Growth Zone: ${entry.slug} -> ${entry.zone.slug}`);
+  const coverPath = `/assets/images/brali-hack-${areaSlug}.webp`;
+  if (!html.includes(`data-hack-cover="true" data-life-area="${areaSlug}"`)) throw new Error(`Hack page lacks the correct Life Area cover marker: ${entry.slug}`);
+  if (!html.includes(`src="${coverPath}"`)) throw new Error(`Hack page lacks the correct Life Area image: ${entry.slug}`);
+  if (!html.includes(`<meta property="og:image" content="https://brali-lifeos.github.io${coverPath}">`)) throw new Error(`Hack page lacks the correct social image: ${entry.slug}`);
+  if (html.indexOf('data-hack-cover="true"') > html.indexOf('data-protocol-summary="true"')) throw new Error(`Hack cover appears below its protocol summary: ${entry.slug}`);
+}
 const publicIndex = JSON.parse(await readFile(path.join(root, "life-os-index.json"), "utf8"));
 const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const reviewQueue = JSON.parse(await readFile(path.join(root, "life-os/datasets/review-queue.json"), "utf8"));

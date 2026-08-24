@@ -1,0 +1,48 @@
+name: Verify staged pipeline diagnostics
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'data/pipeline-stages.json'
+      - 'scripts/run-staged-pipeline.mjs'
+      - 'scripts/check-pipeline-contract.mjs'
+      - '.github/workflows/staged-pipeline.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'package.json'
+      - 'data/pipeline-stages.json'
+      - 'scripts/run-staged-pipeline.mjs'
+      - 'scripts/check-pipeline-contract.mjs'
+      - '.github/workflows/staged-pipeline.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  staged-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Verify stage definition parity
+        run: node scripts/check-pipeline-contract.mjs
+      - name: Run staged build, check and supplemental gates
+        run: node scripts/run-staged-pipeline.mjs --group all --report pipeline-report.json
+      - name: Upload pipeline report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brali-pipeline-report
+          path: pipeline-report.json
+          if-no-files-found: error
+          retention-days: 14

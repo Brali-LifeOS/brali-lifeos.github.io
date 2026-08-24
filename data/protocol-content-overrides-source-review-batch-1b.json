@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "weekly-theme-learning-sprints": {
+      "title": "Choose One Weekly Skill and Test Retrieval",
+      "description": "Use one weekly theme as a planning scaffold, define a visible result, practise in small sessions, and include at least one attempt to recall or apply the material without looking at the source.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "A systematic review supports retrieval practice in applied education, but not weekly theming or a fixed seven-day sprint. Keep the schedule practical and make the supported retrieval action explicit.",
+      "forbidden_public_fragments": [
+        "master a skill in one week",
+        "guaranteed retention",
+        "seven days is optimal",
+        "At MetalHatsCats",
+        "Research shows habits can take 21-66 days to form"
+      ],
+      "lifeOsSource": {
+        "hack": "Choose one narrow skill for the week, define one visible result, and test what you can recall or apply without looking at the source.",
+        "whatYouDo": "Name one skill small enough to practise this week and one artifact or performance that would show progress. Schedule brief practice opportunities. During at least one session, close the notes and retrieve, explain, solve, or perform from memory. Check the result, then use feedback or the source to correct the gap.",
+        "checkIn": "What could I retrieve or perform without support, what gap appeared, and what should the next practice session target?"
+      },
+      "faq": [
+        {
+          "id": "weekly-theme-learning-sprints-faq-1",
+          "question": "Is one week an evidence-based learning duration?",
+          "answer": "No. The week is an organizational boundary. Continue, narrow, or stop the theme based on the skill, feedback, and actual progress."
+        },
+        {
+          "id": "weekly-theme-learning-sprints-faq-2",
+          "question": "What counts as retrieval?",
+          "answer": "Explain, answer, solve, sketch, or perform without consulting the source first. Then compare and correct the result."
+        },
+        {
+          "id": "weekly-theme-learning-sprints-faq-3",
+          "question": "What if retrieval reveals many errors?",
+          "answer": "Use the errors to choose the next practice target. Retrieval identifies gaps; explanation, feedback, and further practice are still needed."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A weekly theme can reduce planning overhead, but the calendar boundary is not the learning mechanism. Make the theme concrete, practise it, and test what you can retrieve or apply without support.</p>"
+        },
+        "sections": [
+          {
+            "slug": "choose-skill-and-result",
+            "title": "1. Choose one skill and one visible result",
+            "html": "<p>Narrow the theme until you can describe an artifact, answer, demonstration, or performance that would show progress.</p>"
+          },
+          {
+            "slug": "practice-and-retrieve",
+            "title": "2. Practise, then retrieve without looking",
+            "html": "<p>Use short practice opportunities. During at least one of them, close the source and explain, solve, recall, or perform from memory.</p>"
+          },
+          {
+            "slug": "correct-and-decide",
+            "title": "3. Correct the gap and decide what continues",
+            "html": "<p>Compare the attempt with feedback or the source. Continue the theme only when another week is useful; otherwise narrow it, change it, or finish.</p>"
+          }
+        ]
+      }
+    },
+    "brainwriting-group-idea-generation": {
+      "title": "Write Ideas Silently, Exchange, Then Evaluate",
+      "description": "Separate silent idea generation from evaluation, exchange written ideas as optional stimulation, and make feasibility and selection a distinct decision step.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-08-22",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "A controlled study supports written idea exchange as a source of cognitive stimulation under bounded conditions, not universal superiority, fixed group recipes, or downstream business impact. Rewrite and keep practical.",
+      "forbidden_public_fragments": [
+        "twice as many ideas",
+        "guaranteed creativity",
+        "best group size",
+        "At MetalHatsCats",
+        "Research shows habits can take 21-66 days to form"
+      ],
+      "lifeOsSource": {
+        "hack": "Let each participant write ideas before discussion, exchange the notes to stimulate variants, and postpone evaluation until the generation round is complete.",
+        "whatYouDo": "State the problem and constraints. Give everyone an accessible way to write independently. Exchange or display ideas without attaching status to the author, then add variants or combinations. In a separate step, cluster, challenge, and select ideas using explicit criteria and a named decision owner.",
+        "checkIn": "Which idea or combination became clearer through written exchange, and what criterion determined the next test?"
+      },
+      "faq": [
+        {
+          "id": "brainwriting-group-idea-generation-faq-1",
+          "question": "Is brainwriting always better than discussion?",
+          "answer": "No. It is one way to reduce early interruption and expose written ideas. The task, team, accessibility needs, and decision process still matter."
+        },
+        {
+          "id": "brainwriting-group-idea-generation-faq-2",
+          "question": "Should idea generation be anonymous?",
+          "answer": "Anonymity can reduce status cues in some settings, but it does not remove power differences or accountability needs. Choose the format deliberately."
+        },
+        {
+          "id": "brainwriting-group-idea-generation-faq-3",
+          "question": "When should ideas be evaluated?",
+          "answer": "After the generation and exchange round. Use explicit constraints and a decision owner rather than allowing the loudest reaction to select the winner."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Brainwriting separates the production of options from the social pressure of immediate discussion. Written exchange can stimulate another idea, but selection still requires criteria, challenge, and ownership.</p>"
+        },
+        "sections": [
+          {
+            "slug": "write-independently",
+            "title": "1. Write independently",
+            "html": "<p>State the problem and constraints, then let each participant record ideas without interruption using an accessible format.</p>"
+          },
+          {
+            "slug": "exchange-and-build",
+            "title": "2. Exchange and build",
+            "html": "<p>Share the written ideas and add variants, combinations, questions, or missing assumptions. Do not evaluate the author during this pass.</p>"
+          },
+          {
+            "slug": "evaluate-separately",
+            "title": "3. Evaluate in a separate step",
+            "html": "<p>Cluster similar ideas, apply explicit criteria, identify risks, and assign a decision owner and one next test.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

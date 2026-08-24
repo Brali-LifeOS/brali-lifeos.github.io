@@ -1,0 +1,40 @@
+name: Verify source review decisions
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/source-review-decisions-*.json'
+      - 'data/protocol-content-overrides-source-review-*.json'
+      - 'data/review-registry-source-review-*.json'
+      - 'quality/source-reviews/**'
+      - 'scripts/check-source-review-contract.mjs'
+      - '.github/workflows/source-review.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'data/source-review-decisions-*.json'
+      - 'data/protocol-content-overrides-source-review-*.json'
+      - 'data/review-registry-source-review-*.json'
+      - 'quality/source-reviews/**'
+      - 'scripts/check-source-review-contract.mjs'
+      - '.github/workflows/source-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: npm run build && npm run check
+      - run: node scripts/check-source-review-contract.mjs

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Second discovery batch for new Brali Protocol candidates, focused on communication, creativity, work, digital wellbeing, and human-AI decision calibration. Research records do not bypass Evidence Decisions or protocol implementation gates.",
+  "description": "Second discovery batch for new Brali Protocol candidates, focused on communication, creativity, work, digital wellbeing, and human-AI decision calibration. Two open-access 2026 sources have completed bounded Evidence Decisions and are promoted only to protocol proposals, not to reviewed public content.",
   "research_candidates": [
     {
       "id": "manual:10.1038/s41467-026-71669-5",
@@ -17,7 +17,7 @@
       "reference_url": "https://doi.org/10.1038/s41467-026-71669-5",
       "discovered_at": "2026-08-24T19:06:00Z",
       "last_seen_at": "2026-08-24T19:06:00Z",
-      "status": "screening",
+      "status": "propose-protocol",
       "query_ids": ["communication-difficult-conversations", "relationships-repair"],
       "domain_ids": ["communication-relationships"],
       "topic_ids": ["difficult-conversations", "conflict-repair", "clear-communication"],
@@ -44,7 +44,7 @@
       "reference_url": "https://doi.org/10.1371/journal.pone.0347878",
       "discovered_at": "2026-08-24T19:06:00Z",
       "last_seen_at": "2026-08-24T19:06:00Z",
-      "status": "screening",
+      "status": "propose-protocol",
       "query_ids": ["creativity-incubation"],
       "domain_ids": ["creativity-expression"],
       "topic_ids": ["idea-generation", "creative-problem-solving"],
@@ -54,7 +54,7 @@
       "zone_slugs": ["be-creative"],
       "risk_flags": [],
       "crossref_score": null,
-      "review_notes": "The full open-access systematic review and meta-analysis was reviewed. Twenty-three studies with roughly 1,036 participants were included; sensitivity analyses restricted to randomized studies still found a large positive effect of walking on divergent thinking. Evidence for divergent thinking was rated moderate certainty, while evidence for convergent thinking was very low certainty and did not show a clear effect. Heterogeneity remained substantial, most samples were post-secondary students, and many positive studies came from one research group. Brali should exploit the useful asymmetry: walk when the job is to generate alternatives, then switch context when the job becomes evaluation and selection. Do not claim that walking improves all creativity, reasoning, intelligence, or decision quality, and do not invent one optimal walking duration or intensity."
+      "review_notes": "The full open-access systematic review and meta-analysis was reviewed. Twenty-three studies with roughly one thousand participants were included; sensitivity analyses restricted to randomized studies still found a large positive effect of walking on divergent thinking. Evidence for divergent thinking was rated moderate certainty, while evidence for convergent thinking was very low certainty and did not show a clear effect. Heterogeneity remained substantial, most samples were post-secondary students, and many positive studies came from one research group. Brali should exploit the useful asymmetry: walk when the job is to generate alternatives, then switch context when the job becomes evaluation and selection. Do not claim that walking improves all creativity, reasoning, intelligence, or decision quality, and do not invent one optimal walking duration or intensity."
     },
     {
       "id": "manual:10.1186/s12916-025-03944-z",
@@ -134,6 +134,58 @@
       "risk_flags": [],
       "crossref_score": null,
       "review_notes": "High-priority 2026 lead for Brali's people-and-agents positioning. The accessible source abstract reports a systematic review of 15 studies with 15,752 participants and proposes that uniformly confident AI outputs can impair human calibration of when to delegate. Reported aggregate effects differed by decision phase: positive in intelligence/information tasks, mixed in design, and negative in final choice. Treat these numerical effects as discovery-only until the complete paper is reviewed. Candidate protocol direction: explicitly separate 'expand the information or option set with AI' from 'make the final choice', and require independent checks before delegating consequential selection to a model."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "spoken-vs-written-disagreement-boundary-2026",
+      "candidate_id": "manual:10.1038/s41467-026-71669-5",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-24",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1038/s41467-026-71669-5",
+      "source_title": "Spoken disagreement is more constructive than written disagreement",
+      "source_type": "series of randomized experiments",
+      "doi": "10.1038/s41467-026-71669-5",
+      "citation_text": "Bevis B, Schroeder J, Yeomans M. Nature Communications. 2026;17:5792.",
+      "source_reviewed": true,
+      "study_design": "A series of randomized experiments comparing spoken and written disagreement across laboratory and field-like conversation settings, with 1,576 conversation partners, 1,842 conversations, and 1,432 observers reported across the paper. The studies also manipulated conversation structure and examined conversational receptiveness as a potential mechanism.",
+      "population": "Participants were primarily college students at several American universities and often strangers to one another. Conversation topics were controversial opinion disagreements. The authors explicitly note that overall conflict was relatively low and that close-relationship, workplace, older, non-American and culturally indirect settings require further study.",
+      "intervention_or_exposure": "Disagreeing conversation partners were assigned to spoken or written communication, with some studies additionally varying interactivity, length or synchronicity. Outcomes included perceived understanding, perceived conflict, social impressions, attitude alignment and linguistic markers of conversational receptiveness.",
+      "outcomes": ["Perceived understanding", "Perceived conflict", "Impressions of the conversation partner", "Attitude alignment", "Conversational receptiveness"],
+      "supported_claim": "In the disagreement settings studied, choosing a spoken rather than written medium tended to increase perceived understanding and, on average, reduce perceived conflict. This supports a bounded Brali protocol that treats conversation medium as a controllable variable: when the primary goal is mutual understanding during a manageable disagreement, moving from text to voice is a reasonable action to test.",
+      "unsupported_or_overstated_claims": ["Spoken communication is always superior to writing.", "Voice reliably resolves high-stakes workplace, family or identity conflict.", "Speaking is safer or better where harassment, coercion, abuse or a power imbalance exists.", "Written records should be avoided in legal, compliance, employment or accountability-sensitive contexts.", "Speaking guarantees persuasion, attitude change or agreement.", "The findings establish the same effect across cultures, older populations or close relationships.", "A particular call duration, script or video format is optimal."],
+      "limitations": ["Overall measured conflict was relatively low across experiments.", "Participants were mostly college students at American universities and often strangers.", "The conversations focused on controversial opinions rather than close-relationship or workplace disputes.", "Participants' goals varied and were not directly controlled or measured.", "Some structural interaction tests were underpowered, so absence of moderation should not be treated as evidence of invariance.", "The authors explicitly call for testing in older, non-American, culturally indirect, close-relationship and higher-stakes settings.", "The research does not address situations where written documentation or asynchronous distance is needed for safety, accountability or careful deliberation."],
+      "target_hack_ids": ["move-disagreement-to-voice"],
+      "target_protocol_ids": ["brali:move-disagreement-to-voice"],
+      "risk_flags": [],
+      "notes": "Protocol-design direction: detect an escalating or repetitive text disagreement, distinguish the need for a durable record from the need for mutual understanding, move one bounded issue to voice when safe and appropriate, then document only decisions and unresolved points. The protocol must include explicit exclusions for safety, coercion, harassment, power imbalance and documentation-sensitive contexts."
+    },
+    {
+      "schema_version": 1,
+      "id": "walking-divergent-thinking-boundary-2026",
+      "candidate_id": "manual:10.1371/journal.pone.0347878",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-24",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1371/journal.pone.0347878",
+      "source_title": "The impact of walking on creative thinking: A systematic review and meta-analysis",
+      "source_type": "systematic review and meta-analysis",
+      "doi": "10.1371/journal.pone.0347878",
+      "citation_text": "Thabane A, Arora V, Boilard J, et al. PLOS One. 2026;21(5):e0347878.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and meta-analysis of 23 studies examining walking and creative thinking, including randomized, non-randomized experimental and observational designs. The review separately synthesized divergent and convergent thinking, ran randomized-study sensitivity analyses, assessed publication bias and graded evidence certainty.",
+      "population": "About one thousand participants across the included studies, with most samples drawn from post-secondary students. Walking was frequently studied indoors and divergent thinking was commonly measured with alternative-uses tasks.",
+      "intervention_or_exposure": "Walking compared with sitting or other control conditions during or around creative-thinking tasks. The review separately analyzed divergent idea generation and convergent idea selection/problem solving.",
+      "outcomes": ["Divergent thinking performance", "Convergent thinking performance", "Sensitivity estimate among randomized studies", "Evidence certainty", "Heterogeneity across study designs and settings"],
+      "supported_claim": "Walking is supported as a practical way to increase divergent idea generation in the studied settings. The evidence is substantially clearer for generating alternatives than for convergent evaluation or selection. This supports a Brali protocol that deliberately separates the creative process into two phases: walk while expanding the option set, then switch into a separate evaluation phase rather than claiming that walking improves every form of creativity.",
+      "unsupported_or_overstated_claims": ["Walking improves all forms of creativity or intelligence.", "Walking improves convergent thinking or final decision quality.", "There is one optimal walking duration, pace, environment or intensity for creativity.", "Outdoor walking is definitively superior to indoor walking.", "A walking meeting guarantees a better business or scientific decision.", "The effect generalizes with equal confidence to all ages, occupations or expert domains.", "The source establishes one specific neurobiological mechanism as the cause of the effect."],
+      "limitations": ["Substantial heterogeneity remained unexplained across the primary analyses.", "Most studies used undergraduate or post-secondary student samples, limiting generalizability.", "Many positive studies came from one research group, creating a possible source of systematic bias and a need for replication.", "Evidence for convergent thinking was based on few studies and rated very low certainty.", "Study designs, control conditions, walking settings and creativity measures varied.", "The review could not establish an optimal walking duration, intensity or timing.", "A creativity-specific risk-of-bias tool used in the review had not itself been validated."],
+      "target_hack_ids": ["walk-for-ideas-sit-for-selection"],
+      "target_protocol_ids": ["brali:walk-for-ideas-sit-for-selection"],
+      "risk_flags": [],
+      "notes": "Protocol-design direction: define an option-generating question, walk safely while capturing alternatives without evaluation, stop walking when enough options exist, then use explicit criteria in a separate seated or stationary selection phase. The protocol should be framed as an idea-generation tool rather than a general cognitive-performance intervention."
     }
   ]
 }

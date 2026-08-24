@@ -1,0 +1,182 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
+  "title": "Brali Privacy-Light Outcome Event",
+  "description": "An explicit opt-in event envelope for reporting Brali retrieval, protocol execution, helpfulness and integration outcomes without including raw queries or personal identifiers by default.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "event_id",
+    "event_type",
+    "occurred_at",
+    "client",
+    "dataset",
+    "consent",
+    "privacy"
+  ],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "event_id": { "$ref": "#/$defs/uuid" },
+    "event_type": {
+      "enum": [
+        "query_submitted",
+        "trusted_match_returned",
+        "no_trusted_answer",
+        "protocol_opened",
+        "protocol_started",
+        "protocol_completed",
+        "helpful_yes",
+        "helpful_no",
+        "bad_match",
+        "missing_knowledge",
+        "source_opened",
+        "context_packet_copied",
+        "integration_reported"
+      ]
+    },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "query_id": { "$ref": "#/$defs/uuid" },
+    "run_id": { "$ref": "#/$defs/uuid" },
+    "protocol_id": { "type": "string", "pattern": "^brali:protocol:[a-z0-9][a-z0-9-]*$" },
+    "client": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category"],
+      "properties": {
+        "category": {
+          "enum": [
+            "browser-query",
+            "static-api",
+            "local-mcp",
+            "hosted-mcp",
+            "external-agent",
+            "manual",
+            "other"
+          ]
+        },
+        "runtime": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "integration_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$" }
+      }
+    },
+    "dataset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version"],
+      "properties": {
+        "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][A-Za-z0-9.-]+)?$" },
+        "manifest_sha256": {
+          "type": ["string", "null"],
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "result": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["state"],
+      "properties": {
+        "state": { "enum": ["trusted_match", "no_trusted_answer", "not_applicable"] },
+        "topic_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 10,
+          "items": { "type": "string", "pattern": "^brali:topic:[a-z0-9][a-z0-9-]*$" }
+        },
+        "protocol_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 10,
+          "items": { "type": "string", "pattern": "^brali:protocol:[a-z0-9][a-z0-9-]*$" }
+        },
+        "evidence_states": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["reviewed", "practical", "pending-review", "restricted"] }
+        }
+      }
+    },
+    "feedback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reason", "note_included"],
+      "properties": {
+        "reason": {
+          "enum": [
+            "helpful",
+            "not-helpful",
+            "bad-match",
+            "missing-knowledge",
+            "completed",
+            "not-completed",
+            "source-use",
+            "integration"
+          ]
+        },
+        "note_included": { "type": "boolean" }
+      }
+    },
+    "consent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicit", "channel", "reviewed_before_share"],
+      "properties": {
+        "explicit": { "const": true },
+        "channel": { "enum": ["github-issue", "native-share", "download", "manual-import"] },
+        "reviewed_before_share": { "type": "boolean" }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_query_included", "personal_data_included", "user_identifier_included"],
+      "properties": {
+        "raw_query_included": { "const": false },
+        "personal_data_included": { "const": false },
+        "user_identifier_included": { "const": false }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "language": { "type": "string", "pattern": "^[A-Za-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$" },
+        "canonical_page": { "type": "string", "format": "uri", "pattern": "^https://brali-lifeos\\.github\\.io/" }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "event_type": {
+            "enum": ["query_submitted", "trusted_match_returned", "no_trusted_answer", "helpful_yes", "helpful_no", "bad_match", "missing_knowledge", "context_packet_copied"]
+          }
+        }
+      },
+      "then": { "required": ["query_id", "result"] }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": { "enum": ["protocol_opened", "protocol_started", "protocol_completed", "source_opened"] }
+        }
+      },
+      "then": { "required": ["run_id", "protocol_id"] }
+    },
+    {
+      "if": {
+        "properties": {
+          "event_type": { "enum": ["helpful_yes", "helpful_no", "bad_match", "missing_knowledge", "integration_reported"] }
+        }
+      },
+      "then": { "required": ["feedback"] }
+    }
+  ],
+  "$defs": {
+    "uuid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    }
+  }
+}

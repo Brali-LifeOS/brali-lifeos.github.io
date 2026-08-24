@@ -1,0 +1,63 @@
+name: Outcome feedback
+description: Share a privacy-light Brali result, completion, helpfulness, bad-match or missing-knowledge event.
+title: "[Outcome] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the Query page to prepare an event when possible. Review it before submitting. Do not include raw personal prompts, credentials, customer data, private system details, names, email addresses or other personal identifiers.
+
+        Contract: https://brali-lifeos.github.io/contracts/outcome-event.schema.json
+        Policy: https://brali-lifeos.github.io/quality/outcomes/
+
+  - type: dropdown
+    id: outcome_type
+    attributes:
+      label: Outcome type
+      options:
+        - Helpful result
+        - Not helpful
+        - Bad match
+        - Missing knowledge
+        - Protocol completed
+        - Protocol not completed
+        - Integration report
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: event_json
+    attributes:
+      label: Privacy-light event JSON
+      description: Paste the generated event. Raw query text and user identifiers must remain absent.
+      render: json
+      placeholder: |
+        {
+          "schema_version": 1,
+          "event_id": "..."
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: note
+    attributes:
+      label: Optional context
+      description: Explain what helped, failed or was missing without adding personal or private data.
+      placeholder: The returned protocol did not fit because...
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy_confirmation
+    attributes:
+      label: Privacy and consent
+      options:
+        - label: I reviewed the event and intentionally submit it for Brali quality and outcome analysis.
+          required: true
+        - label: The event does not contain raw query text, personal data, credentials, customer data or a user identifier.
+          required: true
+        - label: I understand that submission does not automatically make the event part of the public observation dataset; a maintainer must review provenance and consent first.
+          required: true

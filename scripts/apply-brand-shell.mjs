@@ -6,6 +6,7 @@ const SKIP = new Set(['node_modules', '.git', 'reports']);
 
 const header = `<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>`;
 const footer = `<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>`;
+const arwpDiscovery = '  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">\n';
 
 function files(dir) {
   const result = [];
@@ -83,6 +84,10 @@ for (const file of files(ROOT)) {
   html = html.replace(/href="\/life-os\/flagships\/100\/"/g, 'href="/life-os/flagships/curated-100/"');
   html = markLongHeadings(html, rel === 'index.html');
   html = html.replace(/<a class="skip"[^>]*>[\s\S]*?<\/a>/g, '');
+
+  if (!/href="\/ai\/site-profile\.json"/.test(html) && /<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${arwpDiscovery}</head>`);
+  }
 
   if (/<header class="site-header">[\s\S]*?<\/header>/.test(html)) {
     html = html.replace(/<header class="site-header">[\s\S]*?<\/header>/, header);

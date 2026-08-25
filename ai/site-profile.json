@@ -1,0 +1,67 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/main/schema/site-profile.schema.json",
+  "profileVersion": "0.1",
+  "id": "brali-practical-knowledge",
+  "name": "Brali Practical Knowledge Library",
+  "canonicalUrl": "https://brali-lifeos.github.io/",
+  "description": "Evidence-aware practical knowledge library with stable identities, versioned static API surfaces, bounded retrieval and a local read-only MCP server.",
+  "languages": ["en"],
+  "web": {
+    "sitemap": "https://brali-lifeos.github.io/sitemap.xml",
+    "robots": "https://brali-lifeos.github.io/robots.txt",
+    "llms": "https://brali-lifeos.github.io/llms.txt"
+  },
+  "data": {
+    "catalog": "https://brali-lifeos.github.io/api/v1/index.json",
+    "openapi": "https://brali-lifeos.github.io/api/v1/openapi.json",
+    "distributions": [
+      {
+        "name": "Brali API manifest",
+        "url": "https://brali-lifeos.github.io/api/v1/manifest.json",
+        "mediaType": "application/json",
+        "role": "release",
+        "description": "Generated API and dataset manifest with release metadata and checksums."
+      },
+      {
+        "name": "Brali search index",
+        "url": "https://brali-lifeos.github.io/api/v1/search.json",
+        "mediaType": "application/json",
+        "role": "search-index",
+        "description": "Static bounded search distribution over public Brali knowledge."
+      }
+    ]
+  },
+  "retrieval": {
+    "indexes": [
+      {
+        "name": "Brali search index",
+        "url": "https://brali-lifeos.github.io/api/v1/search.json",
+        "mediaType": "application/json",
+        "format": "json",
+        "description": "Static retrieval index over Brali knowledge records."
+      }
+    ],
+    "search": "https://brali-lifeos.github.io/for-ai/query/"
+  },
+  "mcp": {
+    "servers": [
+      {
+        "name": "io.github.dkharlanau/brali-knowledge",
+        "transport": "stdio",
+        "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/tree/main/mcp",
+        "documentation": "https://brali-lifeos.github.io/for-ai/integrations/",
+        "readOnly": true
+      }
+    ]
+  },
+  "identity": {
+    "namespace": "brali",
+    "idPattern": "brali:<kind>:<local-id>",
+    "aliases": "https://brali-lifeos.github.io/api/v1/identity.json"
+  },
+  "trust": {
+    "license": "https://brali-lifeos.github.io/LICENSE",
+    "citation": "https://brali-lifeos.github.io/cite/",
+    "provenance": "https://brali-lifeos.github.io/api/v1/manifest.json"
+  }
+}

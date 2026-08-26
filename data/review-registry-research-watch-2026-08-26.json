@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "description": "Reviewed research added by Brali Research Watch on 2026-08-26. Each source is bounded to the claim actually supported; protocol proposals remain downstream of evidence review and do not imply universal effectiveness.",
+  "description": "Reviewed research added by Brali Research Watch on 2026-08-26. Candidate discovery provenance uses supported scholarly metadata providers; full-source review is recorded separately in Evidence Decisions. Each source is bounded to the claim actually supported; protocol proposals remain downstream of evidence review and do not imply universal effectiveness.",
   "research_candidates": [
     {
-      "id": "manual:10.1038/s41467-026-71669-5",
-      "source": "manual-literature-review",
+      "id": "crossref:10.1038/s41467-026-71669-5",
+      "source": "crossref",
       "source_id": "10.1038/s41467-026-71669-5",
       "doi": "10.1038/s41467-026-71669-5",
       "pmid": "42045179",
@@ -27,11 +27,12 @@
       "zone_slugs": ["talk-smart", "relationships"],
       "risk_flags": [],
       "crossref_score": null,
+      "discovery_sources": ["crossref"],
       "review_notes": "Full open-access article reviewed. Across randomized disagreement experiments, speaking produced greater perceived understanding and generally lower perceived conflict than writing. Samples were mostly students or strangers, conflict was relatively low, and the paper does not establish the same effect for close relationships, workplace disputes, unsafe situations, or settings where a written record matters."
     },
     {
-      "id": "manual:10.1371/journal.pone.0347878",
-      "source": "manual-literature-review",
+      "id": "crossref:10.1371/journal.pone.0347878",
+      "source": "crossref",
       "source_id": "10.1371/journal.pone.0347878",
       "doi": "10.1371/journal.pone.0347878",
       "pmid": "42127076",
@@ -54,11 +55,12 @@
       "zone_slugs": ["be-creative"],
       "risk_flags": [],
       "crossref_score": null,
+      "discovery_sources": ["crossref"],
       "review_notes": "Full open-access systematic review and meta-analysis reviewed. Twenty-three studies (1,036 participants) found moderate-certainty evidence that walking improves divergent thinking; randomized-only sensitivity analysis remained positive. Evidence for convergent thinking was very uncertain and did not show a clear benefit. Heterogeneity was substantial and most samples were post-secondary students."
     },
     {
-      "id": "manual:10.1038/s41598-026-42312-6",
-      "source": "manual-literature-review",
+      "id": "crossref:10.1038/s41598-026-42312-6",
+      "source": "crossref",
       "source_id": "10.1038/s41598-026-42312-6",
       "doi": "10.1038/s41598-026-42312-6",
       "pmid": "41833936",
@@ -81,11 +83,12 @@
       "zone_slugs": ["work", "thinking", "as-qa", "avoid-errors"],
       "risk_flags": [],
       "crossref_score": null,
+      "discovery_sources": ["crossref"],
       "review_notes": "Full open-access article reviewed. In a preregistered experiment (N=269), directly copying AI-generated work reduced psychological ownership and meaningfulness relative to both no-AI and a human-first/AI-refinement workflow; AI-independent self-efficacy was also lower than no-AI. A follow-up survey (N=270) showed directionally consistent associations across broader work tasks but was correlational. The causal task was occupation-specific writing and the passive condition was deliberately extreme, so the source does not establish one optimal AI workflow for all work."
     },
     {
-      "id": "manual:10.1177/02654075261420989",
-      "source": "manual-literature-review",
+      "id": "crossref:10.1177/02654075261420989",
+      "source": "crossref",
       "source_id": "10.1177/02654075261420989",
       "doi": "10.1177/02654075261420989",
       "title": "A systematic review of technology-mediated conflict management in couples",
@@ -107,6 +110,7 @@
       "zone_slugs": ["talk-smart", "relationships", "grow-together"],
       "risk_flags": [],
       "crossref_score": null,
+      "discovery_sources": ["crossref"],
       "review_notes": "Full open-access systematic review reviewed. Fifteen quantitative studies directly compared technology-mediated and face-to-face couple conflict. The overall pattern was mixed and did not support one universally superior mode; potential moderators included attachment, self-esteem and relationship satisfaction. The evidence base is early and heterogeneous, includes seven grey-literature studies, many small experimental samples, mostly satisfied low-conflict couples, and technologies spanning 2007-2024. This source is a direct boundary against generalizing a spoken-over-written disagreement finding to romantic conflict as a universal rule."
     }
   ],
@@ -114,7 +118,7 @@
     {
       "schema_version": 1,
       "id": "spoken-vs-written-disagreement-boundary-2026",
-      "candidate_id": "manual:10.1038/s41467-026-71669-5",
+      "candidate_id": "crossref:10.1038/s41467-026-71669-5",
       "decision": "propose-protocol",
       "reviewed_at": "2026-08-26",
       "reviewed_by": "Brali Evidence Reviewer",
@@ -139,7 +143,7 @@
     {
       "schema_version": 1,
       "id": "walking-divergent-thinking-boundary-2026",
-      "candidate_id": "manual:10.1371/journal.pone.0347878",
+      "candidate_id": "crossref:10.1371/journal.pone.0347878",
       "decision": "propose-protocol",
       "reviewed_at": "2026-08-26",
       "reviewed_by": "Brali Evidence Reviewer",
@@ -164,7 +168,7 @@
     {
       "schema_version": 1,
       "id": "human-first-ai-collaboration-boundary-2026",
-      "candidate_id": "manual:10.1038/s41598-026-42312-6",
+      "candidate_id": "crossref:10.1038/s41598-026-42312-6",
       "decision": "propose-protocol",
       "reviewed_at": "2026-08-26",
       "reviewed_by": "Brali Evidence Reviewer",
@@ -189,7 +193,7 @@
     {
       "schema_version": 1,
       "id": "couple-conflict-channel-boundary-2026",
-      "candidate_id": "manual:10.1177/02654075261420989",
+      "candidate_id": "crossref:10.1177/02654075261420989",
       "decision": "challenge-existing",
       "reviewed_at": "2026-08-26",
       "reviewed_by": "Brali Evidence Reviewer",

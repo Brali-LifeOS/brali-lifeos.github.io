@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed research added by Brali Research Watch on 2026-08-27. Candidate discovery provenance uses supported scholarly metadata providers; full-source review is recorded separately in Evidence Decisions. Claims are deliberately bounded to the outcomes and populations actually studied.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1093/pnasnexus/pgaf017",
+      "source": "crossref",
+      "source_id": "10.1093/pnasnexus/pgaf017",
+      "doi": "10.1093/pnasnexus/pgaf017",
+      "pmid": "39967678",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "authors": [
+        "Noah Castelo",
+        "Kostadin Kushlev",
+        "Adrian F Ward",
+        "Michael Esterman",
+        "Peter B Reiner"
+      ],
+      "container_title": "PNAS Nexus",
+      "publication_date": "2025-02-18",
+      "type": "journal-article",
+      "subjects": [
+        "mobile internet",
+        "smartphones",
+        "sustained attention",
+        "digital disconnection",
+        "screen time"
+      ],
+      "reference_url": "https://doi.org/10.1093/pnasnexus/pgaf017",
+      "discovered_at": "2026-08-27T05:25:00Z",
+      "last_seen_at": "2026-08-27T05:25:00Z",
+      "status": "propose-protocol",
+      "query_ids": [
+        "focus-attention-switching",
+        "digital-wellbeing-interventions"
+      ],
+      "domain_ids": [
+        "focus-action",
+        "environment-digital"
+      ],
+      "topic_ids": [
+        "attention-focus",
+        "digital-attention",
+        "digital-wellbeing"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "focus-execution",
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "do-it",
+        "thinking",
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health",
+        "mental-health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access article reviewed. In a preregistered month-long randomized delayed-intervention trial, participants assigned to block all mobile internet on their smartphones for two weeks improved on an objectively measured sustained-attention task, alongside self-reported wellbeing outcomes. Calls, texts and internet on other devices remained available. Adherence was difficult: only 119 of 467 people who agreed to the intervention met the preregistered compliance threshold. The sample was unusually motivated to reduce smartphone use, attrition was substantial, and expectancy effects could affect self-reports. Brali should therefore use the source to justify a bounded attention experiment, not a mental-health treatment claim, a universal screen-time limit, or a requirement to block mobile internet for two full weeks."
+    },
+    {
+      "id": "crossref:10.1038/s41598-026-46218-1",
+      "source": "crossref",
+      "source_id": "10.1038/s41598-026-46218-1",
+      "doi": "10.1038/s41598-026-46218-1",
+      "pmid": null,
+      "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "authors": [
+        "Julius Klingelhoefer",
+        "Alicia Gilbert",
+        "Adrian Meier"
+      ],
+      "container_title": "Scientific Reports",
+      "publication_date": "2026-05-29",
+      "type": "journal-article",
+      "subjects": [
+        "digital disconnection",
+        "procrastination",
+        "self-regulation",
+        "goal conflict",
+        "self-control"
+      ],
+      "reference_url": "https://doi.org/10.1038/s41598-026-46218-1",
+      "discovered_at": "2026-08-27T05:25:00Z",
+      "last_seen_at": "2026-08-27T05:25:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "focus-procrastination",
+        "digital-wellbeing-interventions"
+      ],
+      "domain_ids": [
+        "focus-action",
+        "environment-digital"
+      ],
+      "topic_ids": [
+        "task-initiation",
+        "digital-attention",
+        "digital-wellbeing"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "focus-execution",
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "do-it",
+        "grow-fast",
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access article reviewed. A preregistered two-week experience-sampling study followed 237 young adult Android users across 12,408 observations. Within a person, moments with deliberate digital disconnection were associated with slightly less procrastination, and exploratory lagged analyses showed a small association into the following measurement window. Device-, application- and feature-level disconnection showed the most promising pattern. The study is observational, self-reported and limited to young adults; reverse causality and time-varying confounding remain possible. It supports the situational design of a phone-offline protocol but does not establish causal effectiveness."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "mobile-internet-block-attention-boundary-2025",
+      "candidate_id": "crossref:10.1093/pnasnexus/pgaf017",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-27",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11834938/",
+      "source_title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "source_type": "primary-study",
+      "doi": "10.1093/pnasnexus/pgaf017",
+      "citation_text": "Castelo N, Kushlev K, Ward AF, Esterman M, Reiner PB. PNAS Nexus. 2025;4(2):pgaf017.",
+      "source_reviewed": true,
+      "study_design": "Preregistered month-long randomized controlled delayed-intervention trial. Participants were randomized to block all mobile internet on their smartphone during the first or second two-week phase. The Freedom app objectively tracked whether the block was active. Main analyses were intention-to-treat.",
+      "population": "467 unique adult participants in the United States and Canada who agreed to attempt a two-week mobile-internet block. The sample was strongly selected toward people motivated and confident about reducing smartphone use; retention to all three surveys was 67 percent.",
+      "intervention_or_exposure": "Block all Wi-Fi and mobile-data internet access on the smartphone for two weeks while preserving calls and text messages and allowing internet access from other devices such as computers or tablets.",
+      "outcomes": [
+        "Objectively measured sustained attention on the gradCPT",
+        "Subjective wellbeing",
+        "Self-reported mental-health composite",
+        "Smartphone screen time",
+        "Time-use mediators"
+      ],
+      "supported_claim": "For adults who actively want to reduce constant phone connectivity, temporarily removing mobile-internet access from the phone is a defensible attention experiment. In this randomized trial, the intervention produced a small intention-to-treat improvement in objectively measured sustained attention while calls, texts and non-phone internet remained available. Brali can therefore test a bounded phone-offline window or period when the user's goal is fewer digital temptations and more sustained attention.",
+      "unsupported_or_overstated_claims": [
+        "Blocking mobile internet treats depression, anxiety, ADHD or any mental-health condition.",
+        "Two weeks is an optimal or necessary duration.",
+        "Everyone should use a dumb phone or eliminate smartphone internet.",
+        "A fixed daily screen-time threshold is scientifically established by this study.",
+        "The intervention will improve productivity, job performance or learning outcomes.",
+        "The self-reported wellbeing effects are free from expectancy or demand effects.",
+        "The study proves that every notification, app or form of internet access is harmful."
+      ],
+      "limitations": [
+        "Only 119 of 467 participants who agreed to the intervention met the preregistered compliance threshold, so the full two-week block was difficult to sustain.",
+        "The sample was strongly motivated to reduce smartphone use, which limits generalizability to people who do not share that goal.",
+        "Only 67 percent completed all three surveys; completers had somewhat better baseline mental health and sustained attention than non-completers.",
+        "The delayed-intervention design did not provide an active placebo control, so expectancy and demand effects may have affected self-report outcomes.",
+        "The sustained-attention task provides a cognitive outcome, not direct evidence of improved work, study, safety or life performance.",
+        "The study tested a broad mobile-internet block, not shorter work windows, app-specific limits, notification batching or other lower-friction variants."
+      ],
+      "target_hack_ids": [
+        "phone-offline-window"
+      ],
+      "target_protocol_ids": [
+        "brali:phone-offline-window"
+      ],
+      "risk_flags": [
+        "health",
+        "mental-health"
+      ],
+      "notes": "Protocol direction: when a user identifies phone connectivity as a recurring attention conflict, preserve essential communication but remove the internet channel from the phone for one bounded, user-chosen period. Measure actual phone use and completion/focus on the intended task. Start with a lower-friction window rather than prescribing the study's two-week block; escalate only if the user wants to test a stronger version. Stop or redesign the experiment if access is needed for safety, care, work authentication, navigation or other essential functions."
+    },
+    {
+      "schema_version": 1,
+      "id": "situational-digital-disconnection-procrastination-boundary-2026",
+      "candidate_id": "crossref:10.1038/s41598-026-46218-1",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-27",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.nature.com/articles/s41598-026-46218-1",
+      "source_title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "source_type": "primary-study",
+      "doi": "10.1038/s41598-026-46218-1",
+      "citation_text": "Klingelhoefer J, Gilbert A, Meier A. Scientific Reports. 2026;16:17133.",
+      "source_reviewed": true,
+      "study_design": "Preregistered two-week naturalistic experience-sampling study with up to five surveys per day. Multilevel models separated within-person from between-person associations, with exploratory lagged and disconnection-level analyses.",
+      "population": "237 young adults aged 18 to 35 recruited from a German online panel and two university mailing lists; all used Android smartphones. The dataset contained 12,408 valid situational observations.",
+      "intervention_or_exposure": "Self-initiated, temporary digital-disconnection behaviors in everyday life, spanning device, application, feature, interaction and message levels. The study observed behavior rather than assigning an intervention.",
+      "outcomes": [
+        "Momentary self-reported procrastination",
+        "Goal conflict",
+        "Digital-disconnection behavior",
+        "Exploratory lagged procrastination"
+      ],
+      "supported_claim": "Situational digital disconnection is a plausible low-friction self-regulation tactic to include in Brali's phone-offline protocol design. Within individuals, moments with more deliberate disconnection were associated with slightly less procrastination, and channel-focused strategies at the device, app or feature level showed the most promising pattern. This source adds ecological support for targeting access to a temptation before it is opened, but it does not establish a causal effect.",
+      "unsupported_or_overstated_claims": [
+        "Digital disconnection has been proven to reduce procrastination causally.",
+        "Putting the phone away will improve productivity or task performance for every user.",
+        "Device-level disconnection is always superior to app- or feature-level controls.",
+        "A specific duration, frequency or disconnection tool is optimal.",
+        "Digital media breaks are inherently procrastination or should always be suppressed.",
+        "The findings generalize unchanged beyond young adult Android users."
+      ],
+      "limitations": [
+        "The design was observational, so reverse causality and time-varying situational confounding remain possible.",
+        "Digital disconnection and procrastination were both self-reported.",
+        "Surveys asked participants to recall the previous two hours, creating possible recall delay and measurement error.",
+        "The sample was limited to young adults and Android users recruited largely through German university-related channels.",
+        "The lagged analyses and comparisons among disconnection levels were exploratory.",
+        "The study did not measure downstream work performance, academic achievement or objective task completion."
+      ],
+      "target_hack_ids": [
+        "phone-offline-window"
+      ],
+      "target_protocol_ids": [
+        "brali:phone-offline-window"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "notes": "Evidence role: support the protocol's situational and preventive design, not its causal effectiveness. Prefer removing access at the channel level (phone, app or feature) before a known temptation appears, and let the user choose the narrowest intervention that protects the intended task without unnecessarily blocking useful communication."
+    }
+  ]
+}

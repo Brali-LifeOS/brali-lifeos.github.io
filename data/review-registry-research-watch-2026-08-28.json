@@ -1,58 +1,7 @@
 {
   "schema_version": 1,
-  "description": "Reviewed research added by Brali Research Watch on 2026-08-28. This batch adds a bounded post-learning wakeful-rest protocol candidate together with a same-year ecological challenge study, so the protocol is useful without generalizing a laboratory memory effect to complex learning.",
+  "description": "Reviewed research added by Brali Research Watch on 2026-08-28. The established wakeful-rest protocol already has a reviewed 2026 meta-analysis; this batch adds a same-year ecological challenge study so Brali does not generalize declarative-memory evidence to complex educational reading.",
   "research_candidates": [
-    {
-      "id": "crossref:10.3758/s13423-025-02778-3",
-      "source": "crossref",
-      "source_id": "10.3758/s13423-025-02778-3",
-      "doi": "10.3758/s13423-025-02778-3",
-      "pmid": "41540313",
-      "title": "Should we all just take 10? A meta-analysis of wakeful rest",
-      "authors": [
-        "Daniela Parra",
-        "Zhiyong Zhang",
-        "Gabriel Radvansky"
-      ],
-      "container_title": "Psychonomic Bulletin & Review",
-      "publication_date": "2026-01-15",
-      "type": "journal-article",
-      "subjects": [
-        "wakeful rest",
-        "post-encoding rest",
-        "memory",
-        "declarative memory",
-        "minimal interference"
-      ],
-      "reference_url": "https://doi.org/10.3758/s13423-025-02778-3",
-      "discovered_at": "2026-08-28T05:35:00Z",
-      "last_seen_at": "2026-08-28T05:35:00Z",
-      "status": "propose-protocol",
-      "query_ids": [
-        "learning-consolidation-rest"
-      ],
-      "domain_ids": [
-        "learning-thinking"
-      ],
-      "topic_ids": [
-        "memory"
-      ],
-      "method_ids": [],
-      "lens_ids": [],
-      "life_area_slugs": [
-        "learning-thinking"
-      ],
-      "zone_slugs": [
-        "skill-sprint",
-        "thinking"
-      ],
-      "risk_flags": [],
-      "crossref_score": null,
-      "discovery_sources": [
-        "crossref"
-      ],
-      "review_notes": "Full open-access article reviewed. The random-effects meta-analysis combined 142 effect sizes from 51 experimental studies comparing post-learning minimal-interference rest with an interference condition. The pooled effect was strongest in people with anterograde amnesia and healthy older adults, and small in healthy young-to-middle-aged adults (g=0.20; g=0.15 after removal of nine outliers). Effects varied by study characteristics, and the search strategy relied mainly on the first 200 Google Scholar results for selected terms plus reference and incidental searching. Brali should use this as a low-cost, bounded post-learning option for declarative-memory tasks, not as a universal ten-minute rule or a replacement for active learning and retrieval practice."
-    },
     {
       "id": "crossref:10.1007/s00426-026-02265-x",
       "source": "crossref",
@@ -103,60 +52,10 @@
       "discovery_sources": [
         "crossref"
       ],
-      "review_notes": "Full open-access article reviewed. In a randomized classroom study, 161 university students read an expository text and were assigned to eight minutes of wakeful rest, social media, math problems, or a content-similar reading task. Immediate and one-week tests measured factual recall and conceptual understanding. Wakeful rest did not show a consistent advantage over the distractor conditions. This is an important boundary for Brali: evidence from word-list and declarative-memory paradigms should not be presented as proof that quiet rest improves comprehension or retention of complex educational material."
+      "review_notes": "Full open-access article reviewed. In a randomized classroom study, 161 university students read an expository text and were assigned to eight minutes of wakeful rest, social media, math problems, or a content-similar reading task. Immediate and one-week tests measured factual recall and conceptual understanding. Wakeful rest did not show a consistent advantage over the distractor conditions. This is an important boundary for Brali: the existing meta-analytic support for wakeful rest concerns declarative-memory paradigms and should not be presented as proof that quiet rest improves comprehension or retention of complex educational material."
     }
   ],
   "evidence_decisions": [
-    {
-      "schema_version": 1,
-      "id": "wakeful-rest-declarative-memory-boundary-2026",
-      "candidate_id": "crossref:10.3758/s13423-025-02778-3",
-      "decision": "propose-protocol",
-      "reviewed_at": "2026-08-28",
-      "reviewed_by": "Brali Evidence Reviewer",
-      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12808189/",
-      "source_title": "Should we all just take 10? A meta-analysis of wakeful rest",
-      "source_type": "meta-analysis",
-      "doi": "10.3758/s13423-025-02778-3",
-      "citation_text": "Parra D, Zhang Z, Radvansky G. Psychonomic Bulletin & Review. 2026;33:49.",
-      "source_reviewed": true,
-      "study_design": "Random-effects meta-analysis of 142 effect sizes from 51 experimental studies. Included studies compared a period of minimal interference immediately after learning or an immediate test with a post-learning interference condition and measured declarative memory. Moderator analyses separated patient, older-adult and healthy young-to-middle-aged adult groups; exploratory meta-regressions examined study characteristics.",
-      "population": "Human declarative-memory studies spanning people with anterograde amnesia, healthy older adults and healthy young-to-middle-aged adults. Individual studies were often small; healthy adult experiments averaged roughly 33 participants and patient experiments roughly 14.",
-      "intervention_or_exposure": "A brief period of quiet, low-interference wakeful rest immediately after learning, compared with an interference task or other cognitively active post-learning condition.",
-      "outcomes": [
-        "Delayed declarative-memory performance",
-        "Pooled wakeful-rest effect by population group",
-        "Moderator relationships with study and task characteristics"
-      ],
-      "supported_claim": "After learning declarative material, a brief low-interference rest period is a reasonable optional memory-protection tactic when it is easy to insert and the alternative is immediate cognitive interference. The pooled benefit was large in patient studies, moderate in healthy older adults and small in healthy young-to-middle-aged adults. For Brali's general audience, the defensible action is therefore a low-cost experiment rather than a promise: after a memory-heavy learning block, optionally leave a short quiet gap before switching into another demanding task and check whether later recall improves for that user and material.",
-      "unsupported_or_overstated_claims": [
-        "Exactly ten minutes of rest should be prescribed to everyone.",
-        "Ten minutes is an optimal post-learning rest duration.",
-        "Wakeful rest improves comprehension, problem solving, transfer, complex skill learning or work performance.",
-        "Wakeful rest is superior to retrieval practice, spaced practice, feedback or other active learning methods.",
-        "The effect is equally strong in healthy adults, older adults and people with memory impairment.",
-        "Wakeful rest is a treatment for amnesia, dementia or another clinical condition.",
-        "Eyes-closed rest, a particular posture, breathing technique, mindfulness exercise or app is required for the effect.",
-        "Any activity immediately after learning disrupts memory consolidation."
-      ],
-      "limitations": [
-        "Moderate to large heterogeneity remained across major pooled analyses, and prediction intervals show that effects vary substantially across settings.",
-        "The pooled effect in healthy young-to-middle-aged adults was small: g=0.20, or g=0.15 after removal of nine outlying effects.",
-        "Patient studies were small and the patient analysis showed evidence consistent with possible publication bias.",
-        "The literature search relied mainly on the first 200 Google Scholar results for selected search terms, supplemented by reference and incidental searching, rather than a conventional multi-database systematic-review search.",
-        "Exploratory moderator modeling used stepwise meta-regression, which the authors note can introduce bias and multiple-testing problems.",
-        "Included studies varied in materials, interference tasks, rest procedures and memory tests, limiting any precise prescription for duration or format.",
-        "The evidence concerns declarative-memory outcomes and does not establish benefits for comprehension, transfer or complex real-world learning."
-      ],
-      "target_hack_ids": [
-        "quiet-after-learning"
-      ],
-      "target_protocol_ids": [
-        "brali:quiet-after-learning"
-      ],
-      "risk_flags": [],
-      "notes": "Protocol direction: use only after a learning block where later recall matters. Keep the rest interval deliberately low-stimulation and user-chosen rather than prescribing ten minutes. Do not replace retrieval practice or active review. Treat the tactic as optional for healthy adults, and evaluate it with later recall rather than a feeling of mental freshness. The paired 2026 classroom challenge study should be shown as an explicit boundary whenever this protocol is published."
-    },
     {
       "schema_version": 1,
       "id": "wakeful-rest-complex-learning-challenge-2026",
@@ -179,7 +78,7 @@
         "One-week factual retention",
         "One-week conceptual understanding"
       ],
-      "supported_claim": "A wakeful-rest protocol must not promise better comprehension or long-term retention for complex educational reading. In this more ecologically valid randomized study, eight minutes of post-reading wakeful rest did not produce a consistent advantage over social media, math or similar-text reading on immediate or one-week factual and conceptual tests. Brali should therefore keep the proposed quiet-after-learning protocol narrow: it is an optional declarative-memory tactic, not a general learning upgrade.",
+      "supported_claim": "The existing Brali wakeful-rest protocol must not promise better comprehension or long-term retention for complex educational reading. In this more ecologically valid randomized study, eight minutes of post-reading wakeful rest did not produce a consistent advantage over social media, math or similar-text reading on immediate or one-week factual and conceptual tests. Keep the protocol narrow: it is an optional declarative-memory tactic, not a general learning upgrade.",
       "unsupported_or_overstated_claims": [
         "This single study proves that wakeful rest never helps learning.",
         "Social-media use immediately after learning is harmless in every setting.",
@@ -196,13 +95,13 @@
         "A single null study cannot establish absence of a wakeful-rest effect across all complex learning tasks or populations."
       ],
       "target_hack_ids": [
-        "quiet-after-learning"
+        "avoid-list-interference-memory-retention"
       ],
       "target_protocol_ids": [
-        "brali:quiet-after-learning"
+        "brali:avoid-list-interference-memory-retention"
       ],
       "risk_flags": [],
-      "notes": "Evidence role: explicit boundary for protocol design and public copy. If Brali later publishes quiet-after-learning, state that laboratory/meta-analytic declarative-memory effects do not yet translate cleanly to comprehension of complex educational material. Prefer recall-sensitive use cases and keep active learning methods primary."
+      "notes": "Evidence role: explicit boundary for the existing reviewed protocol and public copy. State that laboratory/meta-analytic declarative-memory effects do not yet translate cleanly to comprehension of complex educational material. Prefer recall-sensitive use cases and keep active learning methods primary."
     }
   ]
 }

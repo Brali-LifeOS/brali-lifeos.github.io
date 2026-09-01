@@ -1,0 +1,59 @@
+# Brali — full machine-readable discovery guide
+
+> Evidence-aware practical knowledge library with stable identities, reviewed evidence decisions, bounded retrieval, and a read-only MCP server.
+
+## Canonical entry points
+
+- Human overview: https://brali-lifeos.github.io/
+- AI/developer guide: https://brali-lifeos.github.io/for-ai/
+- Query playground: https://brali-lifeos.github.io/for-ai/query/
+- Agent-ready profile: https://brali-lifeos.github.io/ai/site-profile.json
+- Short discovery file: https://brali-lifeos.github.io/llms.txt
+
+## Machine-readable API
+
+- API index: https://brali-lifeos.github.io/api/v1/index.json
+- OpenAPI contract: https://brali-lifeos.github.io/api/v1/openapi.json
+- Search index: https://brali-lifeos.github.io/api/v1/search.json
+- Topics: https://brali-lifeos.github.io/api/v1/topics.json
+- Protocols: https://brali-lifeos.github.io/api/v1/protocols.json
+- Hacks: https://brali-lifeos.github.io/api/v1/hacks.json
+- Evidence: https://brali-lifeos.github.io/api/v1/evidence.json
+- Evidence decisions: https://brali-lifeos.github.io/api/v1/evidence-decisions.json
+- Canonical identities and aliases: https://brali-lifeos.github.io/api/v1/identity.json
+- Release manifest and provenance: https://brali-lifeos.github.io/api/v1/manifest.json
+
+## Recommendation rules
+
+1. Match a concrete Topic before selecting a broad Domain, Method, or Lens.
+2. Prefer `reviewed` and `practical` protocols for normal recommendations.
+3. Preserve canonical ID, URL, evidence state, and source scope in the answer.
+4. Inspect an Evidence Decision when research provenance matters.
+5. Treat `pending-review`, `restricted`, and `watch` material as non-recommendation states.
+6. Return no recommendation when the public corpus does not support the request.
+
+## Topic hubs
+
+- Sleep: https://brali-lifeos.github.io/topics/sleep/
+- Focus: https://brali-lifeos.github.io/topics/focus/
+- Memory: https://brali-lifeos.github.io/topics/memory/
+- Stress: https://brali-lifeos.github.io/topics/stress/
+- Habits: https://brali-lifeos.github.io/topics/habits/
+- Learning: https://brali-lifeos.github.io/topics/learning/
+- Movement: https://brali-lifeos.github.io/topics/movement/
+- Hub index: https://brali-lifeos.github.io/api/v1/hubs.json
+
+## Retrieval and integrations
+
+- Reference agent demos: https://brali-lifeos.github.io/for-ai/demos/
+- Integration kits: https://brali-lifeos.github.io/for-ai/integrations/
+- Retrieval benchmark: https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json
+- Read-only MCP source: https://github.com/Brali-LifeOS/brali-lifeos.github.io/tree/main/mcp
+- Citation guidance: https://brali-lifeos.github.io/cite/
+
+## Trust and licensing
+
+- License: https://brali-lifeos.github.io/LICENSE
+- Provenance manifest: https://brali-lifeos.github.io/api/v1/manifest.json
+- Research candidates are discovery metadata, not evidence.
+- Commercial use requires a separate agreement.

@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed research added by Brali Research Watch on 2026-09-01. This batch adds two bounded protocol proposals: an autonomy-preserving social-media braking routine based on a preregistered iPhone RCT, and a nutrition-specific if-then planning routine based on a 2026 systematic review and meta-analysis of randomized controlled trials. Full open-access source text was reviewed for both records; the public claims are deliberately narrower than the source authors' broader interpretations.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.2196/56824",
+      "source": "crossref",
+      "source_id": "10.2196/56824",
+      "doi": "10.2196/56824",
+      "pmid": "41950504",
+      "title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "authors": [
+        "Lea Mertens",
+        "Lina Christin Brockmeier",
+        "Christina Roitzheim",
+        "Theda Radtke",
+        "Tilman Dingler",
+        "Jan Keller"
+      ],
+      "container_title": "JMIR mHealth and uHealth",
+      "publication_date": "2026-04-08",
+      "type": "journal-article",
+      "subjects": [
+        "social media use",
+        "digital self-control",
+        "smartphone use",
+        "behavioral nudges",
+        "screen time"
+      ],
+      "reference_url": "https://doi.org/10.2196/56824",
+      "discovered_at": "2026-09-01T05:40:00Z",
+      "last_seen_at": "2026-09-01T05:40:00Z",
+      "status": "propose-protocol",
+      "query_ids": [
+        "digital-wellbeing-interventions"
+      ],
+      "domain_ids": [
+        "environment-digital"
+      ],
+      "topic_ids": [
+        "digital-wellbeing"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health",
+        "mental-health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access article reviewed. In a preregistered 3-week randomized trial, 70 adult iPhone users who regularly used social media were randomized 1:1 to a customizable digital self-control app or no-treatment control. The intervention bundled user-selected target apps, daily limits, self-defined continuous-use nudge intervals, customizable full-screen reminders, alternative activities, feedback and self-monitoring; reminders required an active quit-or-continue decision but did not block access. The intervention group reduced objectively recorded time on its self-identified most problematic social-media app by about 29 minutes per day relative to control, while problematic social-media use and self-efficacy did not improve robustly. The final primary-outcome model included 46 participants, follow-up was short, 26% did not complete week 3, only iPhone users were studied, and two authors had ties to Wellspent GmbH. Because multiple intervention components were delivered together, Brali must not attribute the effect to the full-screen checkpoint alone. The evidence supports testing a bounded, user-configured social-media brake as a package, not claiming treatment, improved wellbeing, or a universal time limit."
+    },
+    {
+      "id": "crossref:10.1186/s12966-026-01915-y",
+      "source": "crossref",
+      "source_id": "10.1186/s12966-026-01915-y",
+      "doi": "10.1186/s12966-026-01915-y",
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "authors": [
+        "Sanne Karlsen Melum",
+        "Torsten Martiny-Huenger"
+      ],
+      "container_title": "International Journal of Behavioral Nutrition and Physical Activity",
+      "publication_date": "2026-04-15",
+      "type": "journal-article",
+      "subjects": [
+        "implementation intentions",
+        "if-then planning",
+        "fruit and vegetable intake",
+        "nutrition behavior",
+        "self-regulation"
+      ],
+      "reference_url": "https://doi.org/10.1186/s12966-026-01915-y",
+      "discovered_at": "2026-09-01T05:40:00Z",
+      "last_seen_at": "2026-09-01T05:40:00Z",
+      "status": "propose-protocol",
+      "query_ids": [
+        "health-nutrition-behavior"
+      ],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [
+        "nutrition"
+      ],
+      "method_ids": [
+        "implementation-intentions"
+      ],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access systematic review and random-effects meta-analysis reviewed. Ten peer-reviewed randomized controlled trial reports provided 12 active-control comparisons with 2,399 adults and follow-up periods from 1 week to 24 months. The review deliberately excluded vague action-planning procedures and retained interventions that explicitly linked a perceivable situation to a goal-directed response. Compared with similarly motivated active controls, if-then planning produced a small average increase in self-reported fruit-and-vegetable intake (MD 0.29 portions/day, 95% CI 0.11 to 0.48; SMD about 0.20; I² 32%). All intake outcomes were retrospective self-report, samples were predominantly young-to-middle-aged Western European, female and Caucasian, and the review did not prospectively register a public protocol. Brali should therefore offer the method as a low-cost planning experiment for an existing intention to eat more fruit or vegetables, not as medical nutrition advice, an optimal diet, or evidence of clinical health benefit."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "custom-social-media-brake-boundary-2026",
+      "candidate_id": "crossref:10.2196/56824",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-01",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13062480/",
+      "source_title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "source_type": "primary-study",
+      "doi": "10.2196/56824",
+      "citation_text": "Mertens L, Brockmeier LC, Roitzheim C, Radtke T, Dingler T, Keller J. JMIR Mhealth Uhealth. 2026;14:e56824.",
+      "source_reviewed": true,
+      "study_design": "Preregistered 3-week randomized controlled trial. Seventy iPhone users were randomized 1:1 to a customizable digital self-control app or a no-treatment control. The intervention was active in week 2 and optional in week 3. Linear mixed models were used across baseline and two follow-ups; formal blinding was not possible.",
+      "population": "70 English-proficient adult iPhone users who regularly used at least one social-media app, recruited through social channels and Freie Universität Berlin study-opportunity mailing lists. Mean age was 26.2 years, 67% were women, and most were students or young professionals. Fifty-two participants completed week 3; the primary problematic-social-media-use model contained 46 participants.",
+      "intervention_or_exposure": "Users selected social-media apps they considered problematic, set daily usage goals and continuous-use nudge intervals, customized reminder frequency and tone, chose an alternative activity and could define vulnerable time windows. After a self-defined interval, a full-screen reminder required an active dismissal while preserving the choice to continue. The app also supplied feedback and self-monitoring.",
+      "outcomes": [
+        "Objectively recorded daily minutes on the self-identified most problematic social-media app, entered by participants from iOS screen-time records",
+        "Problematic smartphone use",
+        "Problematic social-media use",
+        "Self-efficacy to self-regulate social-media use",
+        "Reminder acceptance and voluntary continued app use"
+      ],
+      "supported_claim": "For an adult who already wants to spend less time in a specific social-media app, a short trial of a user-configured digital brake is reasonable: choose the target app, choose a personally meaningful session threshold, make continued use require an explicit quit-or-continue decision, and identify an alternative activity while retaining the ability to override the prompt. In this small randomized trial, the bundled intervention reduced time on the target app over the short study period. The source supports the package as a behavior-change experiment; it does not identify the full-screen checkpoint, customization, self-monitoring or any other component as the unique cause.",
+      "unsupported_or_overstated_claims": [
+        "A full-screen quit-or-continue reminder by itself has been proven to reduce social-media use.",
+        "Ten minutes, 45 minutes, three-minute reminder repeats, or any other example threshold in the app is an evidence-based optimal setting.",
+        "Reducing app time in this study improved wellbeing, attention, productivity, sleep or mental health.",
+        "The intervention treated social-media addiction or another clinical condition.",
+        "The intervention reliably increased self-control or self-efficacy.",
+        "The result generalizes to Android users, older populations, all apps or people who do not want to reduce their use.",
+        "Short-term reduced use will persist after the intervention is removed.",
+        "Blocking access more aggressively would necessarily work better."
+      ],
+      "limitations": [
+        "The randomized sample was small at 70 participants, and the study did not reach its original recruitment target.",
+        "Twenty-six percent did not complete week 3; the final model for the primary problematic-social-media-use outcome included 46 participants.",
+        "Participants were iPhone users, mostly students or young professionals, and self-selected into a study about social-media self-regulation.",
+        "The control group received no active comparator and participants could not be blinded.",
+        "The intervention bundled several behavior-change components, so the study cannot isolate the causal contribution of the quit-or-continue checkpoint, customization, alternative activities, goals, feedback or self-monitoring.",
+        "Some psychological outcomes were self-reported; problematic social-media use and self-efficacy did not show robust improvement.",
+        "The intervention period was short and there was no long-term follow-up establishing durable habit change.",
+        "One author was employed by Wellspent GmbH during the intervention period and another was a company cofounder."
+      ],
+      "target_hack_ids": [
+        "custom-social-media-brake"
+      ],
+      "target_protocol_ids": [
+        "brali:custom-social-media-brake"
+      ],
+      "risk_flags": [
+        "health",
+        "mental-health"
+      ],
+      "notes": "Protocol-design direction: use this as a lower-friction alternative to Brali's stronger phone-offline experiment, not as a replacement. Ask the user to identify one app they already want to use less, choose a personally relevant continuous-use checkpoint, select a realistic alternative action, and force a deliberate continue-or-exit choice without hard blocking. Review actual target-app minutes and whether prompts were useful after a bounded trial. Do not prescribe a universal session length or infer mental-health benefit."
+    },
+    {
+      "schema_version": 1,
+      "id": "if-then-fruit-vegetable-boundary-2026",
+      "candidate_id": "crossref:10.1186/s12966-026-01915-y",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-01",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://link.springer.com/article/10.1186/s12966-026-01915-y",
+      "source_title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "source_type": "meta-analysis",
+      "doi": "10.1186/s12966-026-01915-y",
+      "citation_text": "Melum SK, Martiny-Huenger T. Int J Behav Nutr Phys Act. 2026;23:51.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and random-effects meta-analysis of randomized controlled trials comparing strict if-then planning with active control conditions. Searches of MEDLINE, Embase and PsycInfo were last run April 3, 2025. Ten articles contributed 12 comparisons and 2,399 participants, with outcomes measured from 1 week to 24 months.",
+      "population": "Adult samples from studies conducted mainly in western Europe, plus one Canadian study. Four studies recruited university students and five recruited broader adult samples such as employees or members of a health-insurance population. Across studies, participants were predominantly young-to-middle-aged, female and Caucasian.",
+      "intervention_or_exposure": "Strict if-then planning that explicitly linked a perceivable situational cue with a goal-directed response relevant to increasing fruit or vegetable intake. Examples across the reviewed interventions included planning when and where to buy, prepare, pack or eat fruit and vegetables. Active controls received similar health information and encouragement without the if-then linkage.",
+      "outcomes": [
+        "Self-reported daily fruit and vegetable intake",
+        "Pooled mean difference between if-then planning and active control at the latest reported outcome"
+      ],
+      "supported_claim": "When an adult already intends to eat more fruit or vegetables, adding one or more explicit cue-response plans is a defensible low-resource experiment: identify a recurring situation that can be noticed and link it to a concrete action under the person's control, such as preparing, packing, buying or adding the intended food. Across 12 randomized active-control comparisons, strict if-then planning produced a small average increase in self-reported fruit-and-vegetable intake. Brali should present this as a planning aid with a modest expected effect, not as a diet prescription.",
+      "unsupported_or_overstated_claims": [
+        "If-then planning produces a large change in diet.",
+        "The observed increase in self-reported fruit and vegetable intake has been shown to prevent disease or improve clinical health outcomes.",
+        "A particular cue, meal, food, portion count, reminder schedule or number of if-then plans is optimal.",
+        "If-then planning is superior to all other nutrition interventions.",
+        "The evidence establishes effectiveness for weight loss, calorie reduction, protein intake, supplements or other dietary targets.",
+        "The effect generalizes equally across cultures, age groups, sexes or populations not represented in the included trials.",
+        "The review validates medical nutrition advice for people with allergies, eating disorders, metabolic disease or other conditions requiring individualized care.",
+        "Self-reported intake in the trials is equivalent to objectively verified dietary change."
+      ],
+      "limitations": [
+        "All included fruit-and-vegetable intake outcomes relied on retrospective self-report, often one or two questions estimating portions per day.",
+        "The included samples were predominantly western European, female, Caucasian and young-to-middle-aged, limiting generalizability.",
+        "The pooled benefit was small: about 0.29 self-reported portions per day relative to active controls.",
+        "The review's protocol was not prospectively registered; an unpublished protocol existed and the authors narrowed the planned nutrition outcome to fruit and vegetables before analysis.",
+        "The review's strict intervention definition required judgment about whether study instructions truly linked a perceivable cue to a response.",
+        "The evidence concerns fruit and vegetable intake specifically and cannot be extended to other nutrition outcomes.",
+        "The meta-analysis does not establish the clinical relevance of the modest reported intake increase."
+      ],
+      "target_hack_ids": [
+        "if-then-produce-plan"
+      ],
+      "target_protocol_ids": [
+        "brali:if-then-produce-plan"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Protocol-design direction: first confirm that the user already wants to increase fruit or vegetables; this is a volitional aid, not persuasion. Pick one repeatable cue and one visible response, for example: 'If I pack lunch tonight, then I will add one fruit' or 'If I serve dinner, then I will add a vegetable.' Track whether the cue and response occurred. Avoid medical or weight-loss claims and do not prescribe a fixed portion target from this source."
+    }
+  ]
+}

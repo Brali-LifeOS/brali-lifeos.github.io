@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-04. One 2026 pre-registered large field experiment on records-management compliance completed full-source review and is promoted only to a bounded protocol proposal. The evidence supports testing a recurring records-maintenance block with approved guidance; it does not isolate the calendar reminder from the weekly tips or framing, and storage reduction remains a proxy rather than direct file-level compliance.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1016/j.giq.2026.102106",
+      "source": "crossref",
+      "source_id": "10.1016/j.giq.2026.102106",
+      "doi": "10.1016/j.giq.2026.102106",
+      "pmid": null,
+      "title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "authors": ["Vincent C. Hopkins", "Christine Kormos"],
+      "container_title": "Government Information Quarterly",
+      "publication_date": "2026-06",
+      "type": "journal-article",
+      "subjects": ["records management", "information governance", "behavioral science", "field experiment", "calendar commitment"],
+      "reference_url": "https://doi.org/10.1016/j.giq.2026.102106",
+      "discovered_at": "2026-09-04T05:38:44Z",
+      "last_seen_at": "2026-09-04T05:38:44Z",
+      "status": "propose-protocol",
+      "query_ids": ["digital-information-management"],
+      "domain_ids": ["environment-digital"],
+      "topic_ids": ["information-management"],
+      "method_ids": [],
+      "lens_ids": ["architecture"],
+      "life_area_slugs": ["learning-thinking"],
+      "zone_slugs": ["thinking", "as-architector"],
+      "risk_flags": [],
+      "crossref_score": null,
+      "discovery_sources": ["crossref"],
+      "review_notes": "Full open-access Government Information Quarterly article reviewed. In a pre-registered field experiment with 22,774 employees across 35 agencies in a Canadian provincial government, the intervention combined an initial message, an opt-in recurring 10-minute weekly calendar appointment for two months, and a new expert-approved records-management tip each week. Relative to status quo control, both motivational framings reduced network-drive storage by about 5%, with no credible difference between personal-benefit and injunctive-norm framing; a similar decrease appeared when the control group later received the intervention. Storage volume was an objective administrative outcome but only a proxy for file-level compliance, and the multi-component treatment cannot identify which component caused the effect. Brali should therefore test a bounded recurring maintenance block only where retention and archival rules are known, without treating ten minutes weekly as an optimal dose or encouraging indiscriminate deletion."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "records-maintenance-precommitment-boundary-2026",
+      "candidate_id": "crossref:10.1016/j.giq.2026.102106",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-04",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://doi.org/10.1016/j.giq.2026.102106",
+      "source_title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "source_type": "primary-study",
+      "doi": "10.1016/j.giq.2026.102106",
+      "citation_text": "Hopkins VC, Kormos C. Government Information Quarterly. 2026;43(2):102106.",
+      "source_reviewed": true,
+      "study_design": "Pre-registered randomized field experiment using repeated administrative observations of employee network-drive storage from January through December 2021. Employees were randomized in June to an injunctive-norm intervention, a personal-incentive intervention, or status quo control; the control group received the injunctive-norm intervention later in October, providing an additional within-study replication pattern. The treatment was a bundle rather than a factorial test of individual components.",
+      "population": "22,774 employees across 35 agencies in one Canadian provincial government. Employees used centrally managed network drives, allowing monthly storage measurement. Data were deidentified, so treatment-effect heterogeneity by age, gender, tenure or occupation could not be examined.",
+      "intervention_or_exposure": "An initial behaviorally framed email and calendar invitation. Accepting the invitation created a recurring 10-minute weekly records-management appointment for two months. Each reminder included one expert-approved practical tip, such as emptying the recycling bin, finding large duplicate files or moving sensitive files to secure government archives. Initial messaging emphasized either personal benefits or institutional/injunctive norms.",
+      "outcomes": [
+        "Monthly network-drive storage volume per employee",
+        "Persistence of storage reduction after intervention",
+        "Relative performance of personal-benefit versus injunctive-norm framing"
+      ],
+      "supported_claim": "In the studied Canadian government setting, a multi-component package combining a recurring calendar commitment, timely records-management guidance and behavioral framing reduced network-drive storage relative to status quo control, with effects persisting over subsequent months. This supports testing a bounded Brali protocol that reserves a recurring maintenance block and uses one organization-approved records action per session when retention and archival rules are already known.",
+      "unsupported_or_overstated_claims": [
+        "Ten minutes every week is the universally optimal records-maintenance dose.",
+        "A calendar reminder alone produced the observed effect.",
+        "Personal-benefit framing is superior to institutional or injunctive-norm framing.",
+        "The intervention proves employees deleted only records that should have been deleted.",
+        "Deleting old, duplicated or large files indiscriminately is safe.",
+        "The intervention has been shown to improve retrieval speed, reduce security incidents, increase productivity or improve information-access compliance directly.",
+        "The reported monetary savings generalize to other organizations.",
+        "The intervention is already validated for private-sector organizations or personal knowledge-management systems.",
+        "Generative AI or automation should automatically delete or archive records on the basis of this study."
+      ],
+      "limitations": [
+        "The primary outcome was storage volume, an objective administrative measure but only a proxy for records-policy compliance; individual file decisions were not observed.",
+        "The intervention bundled pre-commitment, recurring reminders, weekly practical guidance and motivational framing, so the causal contribution of each component cannot be isolated.",
+        "The study took place in one Canadian provincial government, whose accountability structures, retention requirements, infrastructure and employment context may differ from private, nonprofit or personal settings.",
+        "Deidentified data prevented subgroup analysis by employee age, gender, tenure or occupation.",
+        "The unbalanced panel experienced attrition over time, although reported robustness checks did not materially change the findings.",
+        "The study did not test alternative maintenance frequencies or durations, so the 10-minute weekly schedule should not be treated as an optimized dose.",
+        "The study did not directly measure retrieval quality, data-breach risk, employee productivity or downstream information-access outcomes.",
+        "The treatment worked in an environment with mandatory records-management training and expert-approved retention guidance; applying cleanup actions without equivalent policy knowledge could create harm."
+      ],
+      "target_hack_ids": ["records-maintenance-block"],
+      "target_protocol_ids": ["brali:records-maintenance-block"],
+      "risk_flags": [],
+      "notes": "Protocol-design direction: reserve a short recurring records-maintenance appointment; at each session execute one approved, low-ambiguity action such as clearing disposable material, resolving duplicates or moving sensitive records to the correct archive. Treat 10 minutes weekly for two months as the tested implementation, not a universal prescription. Where retention rules are unclear, stop and resolve policy rather than deleting. Any future AI assistance should surface candidates and preserve human accountability for retention or deletion decisions."
+    }
+  ]
+}

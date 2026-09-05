@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch addendum for 2026-09-05. A fresh open-access 2026 systematic review and meta-analysis of generative AI in STEM education completed full-source review. It is recorded as support for the existing human-first AI collaboration boundary rather than as a new generic 'AI improves learning' protocol because the bias-corrected overall effect was near null, heterogeneity was extreme, and the more useful signal concerned whether AI augmented or substituted learners' cognitive activity.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1007/s10462-026-11665-9",
+      "source": "crossref",
+      "source_id": "10.1007/s10462-026-11665-9",
+      "doi": "10.1007/s10462-026-11665-9",
+      "pmid": null,
+      "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "authors": [
+        "Chiara Boolzen",
+        "Jochen Kuhn",
+        "Salome Flegr",
+        "Eva-Maria Rott",
+        "Niklas Stausberg",
+        "Stefan Küchemann"
+      ],
+      "container_title": "Artificial Intelligence Review",
+      "publication_date": "2026-08-25",
+      "type": "journal-article",
+      "subjects": [
+        "generative AI",
+        "STEM education",
+        "learning outcomes",
+        "augmentation",
+        "cognitive activity",
+        "AI substitution"
+      ],
+      "reference_url": "https://doi.org/10.1007/s10462-026-11665-9",
+      "discovered_at": "2026-09-05T11:34:00Z",
+      "last_seen_at": "2026-09-05T11:34:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "work-human-ai-decision-calibration"
+      ],
+      "domain_ids": [
+        "learning-thinking",
+        "focus-action"
+      ],
+      "topic_ids": [
+        "skill-learning",
+        "critical-thinking",
+        "metacognition"
+      ],
+      "method_ids": [],
+      "lens_ids": [
+        "qa"
+      ],
+      "life_area_slugs": [
+        "learning-thinking"
+      ],
+      "zone_slugs": [
+        "skill-sprint",
+        "thinking",
+        "as-qa"
+      ],
+      "risk_flags": [],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access peer-reviewed article and its detailed methods/results material were reviewed. The systematic review found 85 eligible controlled quantitative STEM-learning studies; 49 studies contributed 59 effect sizes to the meta-analysis. A conventional random-effects model appeared positive, but heterogeneity was extreme (I²=96.32%), the prediction interval included negative through strongly positive effects, funnel asymmetry suggested publication bias, and a robust Bayesian publication-bias correction favored the absence of a stable overall positive or negative effect. Moderator analyses were more informative: learning outcome type and the degree to which AI augmented versus substituted learners' cognitive activity explained some heterogeneity, with the authors concluding that AI appears more promising when it augments learner activity rather than replacing it. The review also found that many apparently large effects came from intervention and control groups doing cognitively incomparable work, and all included studies were rated high risk of bias. This supports Brali's existing human-first AI collaboration boundary in learning contexts, not a blanket claim that AI improves learning or that one prompt/workflow is optimal."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "genai-learning-augmentation-boundary-2026",
+      "candidate_id": "crossref:10.1007/s10462-026-11665-9",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://link.springer.com/article/10.1007/s10462-026-11665-9",
+      "source_title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "source_type": "systematic-review-and-meta-analysis",
+      "doi": "10.1007/s10462-026-11665-9",
+      "citation_text": "Boolzen C, Kuhn J, Flegr S, et al. Artificial Intelligence Review. Published August 25, 2026.",
+      "source_reviewed": true,
+      "study_design": "Preregistered systematic review and meta-analysis of peer-reviewed quantitative STEM-education studies involving learner interaction with generative AI and a comparison or control group. Searches of ERIC, PsycINFO and Web of Science were updated May 7, 2026 and supplemented by citation tracking. Eighty-five studies met review criteria; 49 studies contributed 59 effect sizes to the quantitative meta-analysis. Random-effects meta-analysis, risk-of-bias assessment, moderator analyses, coincidence analysis and Robust Bayesian Meta-Analysis were used to examine heterogeneity and publication bias.",
+      "population": "Learners in STEM education. Most reviewed work used text-based generative-AI systems and much of the literature was in higher education; among the 49 meta-analyzed articles, the detailed review classified 25 as university studies, 23 as K-12 and one with educational level unavailable.",
+      "intervention_or_exposure": "Learners used generative-AI systems during STEM learning activities. The review classified studies partly by whether AI substituted, augmented or redefined learners' cognitive activity relative to the comparison condition and by whether outcomes primarily assessed knowledge or skills.",
+      "outcomes": [
+        "Externally assessed cognitive learning outcomes",
+        "Knowledge versus skill outcomes",
+        "Heterogeneity across studies",
+        "Publication-bias-adjusted overall effect",
+        "Moderation by augmentation/substitution of cognitive activity",
+        "Reported learner challenges and instructional supports"
+      ],
+      "supported_claim": "Brali should not treat generative AI as a learning intervention by itself. In this highly heterogeneous literature, the apparent positive pooled effect did not survive robust publication-bias correction, while more informative moderator evidence suggested that outcomes depend partly on what cognitive work the learner still performs. This supports the existing human-first AI collaboration principle in learning contexts: preserve a meaningful learner attempt, explanation, retrieval, reasoning or verification step and use AI to extend or refine that activity rather than silently replacing the activity being learned.",
+      "unsupported_or_overstated_claims": [
+        "Generative AI has been shown to improve STEM learning overall.",
+        "Human-first AI workflows are proven superior for every learning task; the review compared heterogeneous instructional designs rather than one canonical Brali workflow.",
+        "AI substitution is always harmful or augmentation is always beneficial.",
+        "The meta-analysis establishes an optimal prompt, model, tutoring script, feedback style or amount of AI assistance.",
+        "Knowledge outcomes are universally improved while skill outcomes are not; substantial residual heterogeneity remained within categories.",
+        "A large effect reported in an individual AI-learning study should be assumed causal when intervention and control groups performed different levels of cognitive activity.",
+        "The findings establish long-term skill retention, transfer to real work, or independent performance after AI is removed.",
+        "The results generalize unchanged beyond STEM education."
+      ],
+      "limitations": [
+        "Between-study heterogeneity was extreme (I²=96.32%), and the prediction interval included negative, null and strongly positive true effects.",
+        "Funnel-plot asymmetry and the Robust Bayesian Meta-Analysis indicated substantial publication bias; after correction the evidence favored no stable overall positive or negative main effect.",
+        "The review's risk-of-bias assessment found high risk across included studies, with no study meeting the low-risk criteria.",
+        "Many studies used cognitively incomparable intervention and control conditions; the authors identified numerous apparently large effects where this comparison problem was present.",
+        "Most studies used text-based systems and many were conducted in higher education, limiting generalization to other learners, modalities and tasks.",
+        "AI literacy, metacognitive skill, delegation behavior, prompt quality and verification behavior were often underreported, leaving important mechanisms unresolved.",
+        "Evidence about learner challenges and instructional supports was sparse and inconsistently reported, so those qualitative findings should not be turned into general effect estimates.",
+        "Moderator patterns explained only part of the heterogeneity and did not produce a sufficient if-then configuration that guaranteed large effects."
+      ],
+      "target_hack_ids": [
+        "human-first-ai-collaboration"
+      ],
+      "target_protocol_ids": [
+        "brali:human-first-ai-collaboration"
+      ],
+      "risk_flags": [],
+      "notes": "Evidence role: strengthen and teach the existing boundary rather than create another AI hack. For a learning task, ask what cognitive operation the user is trying to acquire. Require a meaningful unaided attempt or explicit reasoning step where that operation matters; then use AI for examples, critique, comparison, feedback or extension; finally verify or reproduce the target skill without leaning on the generated answer. The sarcastic version is accurate enough for editorial use: if the AI performs the exact thinking you are trying to learn, excellent news for the AI. The learner still needs a turn."
+    }
+  ]
+}

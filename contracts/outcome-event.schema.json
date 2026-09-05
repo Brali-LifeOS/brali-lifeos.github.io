@@ -19,7 +19,7 @@
       "additionalProperties": false,
       "required": ["category"],
       "properties": {
-        "category": {"enum": ["browser-query", "static-api", "local-mcp", "hosted-mcp", "external-agent", "manual", "other"]},
+        "category": {"enum": ["browser-query", "browser-runner", "static-api", "local-mcp", "hosted-mcp", "external-agent", "manual", "other"]},
         "runtime": {"type": "string", "minLength": 1, "maxLength": 80},
         "integration_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$"}
       }

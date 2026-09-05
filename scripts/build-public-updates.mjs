@@ -54,7 +54,7 @@ function readSource() {
     urls.add(item.url);
   }
 
-  data.items.sort((a, b) => b.date_published.localeCompare(a.date_published) || a.kind.localeCompare(b.kind));
+  data.items.sort((a, b) => b.date_published.localeCompare(a.date_published));
   return data;
 }
 

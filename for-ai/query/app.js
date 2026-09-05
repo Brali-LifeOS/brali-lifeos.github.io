@@ -1,4 +1,5 @@
 import { queryBrali, buildAgentContext, buildCitation } from './retrieval.mjs';
+import { newQueryId, buildQueryFeedbackEvent, feedbackLabel, eventJson, downloadOutcomeEvent, shareOutcomeEvent, githubOutcomeDraft } from './outcome-feedback.js';
 
 const $ = selector => document.querySelector(selector);
 const form = $('#query-form');
@@ -9,10 +10,19 @@ const shareEl = $('#share-link');
 const copyContext = $('#copy-context');
 const copyCitation = $('#copy-citation');
 const copyJson = $('#copy-json');
-const feedbackMatch = $('#feedback-match');
-const feedbackIntegration = $('#feedback-integration');
-const GITHUB_ISSUES_NEW = 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new';
+const outcomeChoices = [...document.querySelectorAll('[data-outcome-choice]')];
+const outcomePreview = $('#outcome-preview');
+const outcomeStatus = $('#outcome-feedback-status');
+const outcomeEventPreview = $('#outcome-event-preview');
+const includeQuery = $('#feedback-include-query');
+const outcomeDownload = $('#outcome-download');
+const outcomeShare = $('#outcome-share');
+const outcomeGithub = $('#outcome-github');
 let lastPacket = null;
+let lastQuestion = '';
+let lastQueryId = null;
+let currentOutcomeChoice = null;
+let previewEvent = null;
 let apiData = null;
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[c]));
@@ -34,49 +44,51 @@ function setCopyState(enabled) {
   for (const button of [copyContext, copyCitation, copyJson]) button.disabled = !enabled;
 }
 
-function issueDraft(title, body) {
-  return `${GITHUB_ISSUES_NEW}?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;
+function resetOutcomePreview() {
+  currentOutcomeChoice = null;
+  previewEvent = null;
+  if (outcomePreview) outcomePreview.hidden = true;
+  if (outcomeEventPreview) outcomeEventPreview.textContent = '';
+  if (outcomeStatus) outcomeStatus.textContent = '';
+  if (includeQuery) includeQuery.checked = false;
+  if (outcomeDownload) outcomeDownload.disabled = true;
+  if (outcomeShare) outcomeShare.disabled = true;
+  if (outcomeGithub) outcomeGithub.href = 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/new';
 }
 
-function updateFeedbackLinks(question, packet) {
-  if (!feedbackMatch || !feedbackIntegration) return;
-  const topics = (packet.route?.topics || []).map(x => x.canonical_id).join(', ') || 'none';
-  const protocols = (packet.recommendations || []).map(x => x.canonical_id).join(', ') || 'none';
-  const decisions = (packet.evidence_boundaries || []).map(x => x.canonical_id).join(', ') || 'none';
-  const clipped = String(question || '').slice(0, 90);
-  const body = [
-    '## Brali Query feedback',
-    '',
-    `Query: ${question}`,
-    `Observed status: ${packet.status}`,
-    `Returned Topics: ${topics}`,
-    `Returned Protocols: ${protocols}`,
-    `Returned Evidence Decisions: ${decisions}`,
-    '',
-    '## What looked wrong or missing?',
-    '',
-    '<!-- Describe the bad match, missing knowledge, misleading ranking, or other retrieval problem. Remove any personal information you do not want to publish. -->'
-  ].join('\n');
-  feedbackMatch.href = issueDraft(`Query feedback: ${clipped}`, body);
-  feedbackMatch.target = '_blank';
-  feedbackMatch.rel = 'noopener';
+function setOutcomeState(enabled) {
+  for (const button of outcomeChoices) button.disabled = !enabled;
+  if (!enabled) resetOutcomePreview();
+}
 
-  const integrationBody = [
-    '## Brali integration / usage report',
-    '',
-    'Runtime or tool:',
-    'Brali surface used: API / local MCP / Query / dataset / other',
-    'Project link (optional):',
-    '',
-    '## What worked?',
-    '',
-    '## What was awkward or missing?',
-    '',
-    '<!-- Do not include secrets, API keys, private prompts, or personal data. -->'
-  ].join('\n');
-  feedbackIntegration.href = issueDraft('Brali integration / usage report', integrationBody);
-  feedbackIntegration.target = '_blank';
-  feedbackIntegration.rel = 'noopener';
+function buildOutcome(channel) {
+  if (!lastPacket || !lastQueryId || !currentOutcomeChoice) throw new Error('Run a Brali query and choose a feedback signal first.');
+  return buildQueryFeedbackEvent({
+    queryId: lastQueryId,
+    packet: lastPacket,
+    choice: currentOutcomeChoice,
+    channel
+  });
+}
+
+function refreshGithubDraft() {
+  if (!currentOutcomeChoice || !outcomeGithub) return;
+  const event = buildOutcome('github-issue');
+  outcomeGithub.href = githubOutcomeDraft(event, {
+    question: lastQuestion,
+    includeQuery: includeQuery?.checked === true
+  });
+}
+
+function chooseOutcome(choice) {
+  currentOutcomeChoice = choice;
+  previewEvent = buildOutcome('download');
+  outcomePreview.hidden = false;
+  outcomeEventPreview.textContent = eventJson(previewEvent);
+  outcomeStatus.textContent = `${feedbackLabel(choice)} selected. Review the privacy-light envelope, then choose an export path. Nothing has been sent.`;
+  outcomeDownload.disabled = false;
+  outcomeShare.disabled = false;
+  refreshGithubDraft();
 }
 
 function render(packet) {
@@ -118,13 +130,16 @@ async function run(question, push = true) {
   const q = String(question || '').trim();
   if (!q) return;
   input.value = q;
+  lastQuestion = q;
+  lastQueryId = newQueryId();
   setCopyState(false);
+  setOutcomeState(false);
   resultsEl.innerHTML = '<p class="muted">Resolving Topic and high-trust Protocols…</p>';
   try {
     const data = await loadApi();
     const packet = queryBrali(q, data);
     render(packet);
-    updateFeedbackLinks(q, packet);
+    setOutcomeState(true);
     const url = new URL(location.href);
     url.searchParams.set('q', q);
     if (push) history.pushState({ q }, '', url);
@@ -133,12 +148,35 @@ async function run(question, push = true) {
   } catch (error) {
     statusEl.textContent = 'Could not load Brali API.';
     resultsEl.innerHTML = `<div class="callout"><strong>API error</strong><p>${escapeHtml(error.message)}</p></div>`;
+    setOutcomeState(false);
   }
 }
 
 form.addEventListener('submit', event => { event.preventDefault(); run(input.value); });
 for (const button of document.querySelectorAll('[data-example]')) button.addEventListener('click', () => run(button.dataset.example));
 window.addEventListener('popstate', () => { const q = new URL(location.href).searchParams.get('q'); if (q) run(q, false); });
+
+for (const button of outcomeChoices) {
+  button.addEventListener('click', () => chooseOutcome(button.dataset.outcomeChoice));
+}
+if (includeQuery) includeQuery.addEventListener('change', refreshGithubDraft);
+if (outcomeDownload) outcomeDownload.addEventListener('click', () => {
+  if (!previewEvent) return;
+  downloadOutcomeEvent(previewEvent);
+  outcomeStatus.textContent = 'Event JSON downloaded locally. Brali still has not received or counted it.';
+});
+if (outcomeShare) outcomeShare.addEventListener('click', async () => {
+  try {
+    const event = buildOutcome('native-share');
+    const shared = await shareOutcomeEvent(event);
+    outcomeStatus.textContent = shared
+      ? 'Your device share sheet was used. This does not become a reviewed Brali observation unless you deliberately send it to a review path.'
+      : 'Native sharing is not available here. Download the event JSON or open the GitHub draft instead.';
+  } catch (error) {
+    outcomeStatus.textContent = `Nothing was sent. ${error?.message || 'Sharing was cancelled.'}`;
+  }
+});
+if (outcomeGithub) outcomeGithub.addEventListener('click', refreshGithubDraft);
 
 async function copy(text, button) {
   await navigator.clipboard.writeText(text);
@@ -157,7 +195,10 @@ shareEl.addEventListener('click', async event => {
   shareEl.textContent = 'Query URL copied';
 });
 
-if (feedbackIntegration) updateFeedbackLinks('', { status: 'not-run', route: { topics: [] }, recommendations: [], evidence_boundaries: [] });
 const initial = new URL(location.href).searchParams.get('q');
 if (initial) run(initial, false);
-else { statusEl.textContent = 'Ask about focus, sleep, memory, habits, stress, learning, movement, communication, or another covered Topic.'; setCopyState(false); }
+else {
+  statusEl.textContent = 'Ask about focus, sleep, memory, habits, stress, learning, movement, communication, or another covered Topic.';
+  setCopyState(false);
+  setOutcomeState(false);
+}

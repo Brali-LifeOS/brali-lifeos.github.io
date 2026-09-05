@@ -26,6 +26,7 @@ let previewEvent = null;
 let apiData = null;
 
 const escapeHtml = value => String(value ?? '').replace(/[&<>'"]/g, c => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' }[c]));
+const runnerHref = canonicalId => `/run/?protocol=${encodeURIComponent(canonicalId)}`;
 
 async function loadApi() {
   if (apiData) return apiData;
@@ -110,7 +111,8 @@ function render(packet) {
     body += '<div class="query-results-grid">';
     for (const item of packet.recommendations) {
       const source = item.provenance.source_url ? `<a href="${escapeHtml(item.provenance.source_url)}" target="_blank" rel="noopener">Reviewed source</a>` : '<span class="muted">No direct reviewed-source link on this record</span>';
-      body += `<article class="card query-result"><span class="card-label">${escapeHtml(item.evidence_state)}</span><h2>${escapeHtml(item.title)}</h2><p><code>${escapeHtml(item.canonical_id)}</code></p>${item.action ? `<p>${escapeHtml(item.action)}</p>` : ''}${item.check_in ? `<p><strong>Check-in:</strong> ${escapeHtml(item.check_in)}</p>` : ''}<p><a href="${escapeHtml(item.provenance.record_url)}">Open Brali record</a> · ${source}</p></article>`;
+      const run = `<a href="${escapeHtml(runnerHref(item.canonical_id))}"><strong>Run protocol</strong></a>`;
+      body += `<article class="card query-result"><span class="card-label">${escapeHtml(item.evidence_state)}</span><h2>${escapeHtml(item.title)}</h2><p><code>${escapeHtml(item.canonical_id)}</code></p>${item.action ? `<p>${escapeHtml(item.action)}</p>` : ''}${item.check_in ? `<p><strong>Check-in:</strong> ${escapeHtml(item.check_in)}</p>` : ''}<p>${run} · <a href="${escapeHtml(item.provenance.record_url)}">Open Brali record</a> · ${source}</p></article>`;
     }
     body += '</div>';
   }

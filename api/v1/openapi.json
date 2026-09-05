@@ -288,6 +288,24 @@
           }
         }
       }
+    },
+    "/api/v1/updates.json": {
+      "get": {
+        "operationId": "get_updates",
+        "summary": "Get the dated Brali public update stream",
+        "responses": {
+          "200": {
+            "description": "Verified weekly and monthly Brali project updates",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

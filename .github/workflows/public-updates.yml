@@ -8,6 +8,8 @@ on:
       - 'feed.xml'
       - 'feed.json'
       - 'api/v1/updates.json'
+      - 'api/v1/index.json'
+      - 'api/v1/openapi.json'
       - 'sitemap-updates.xml'
       - 'updates/**'
       - 'robots.txt'
@@ -20,6 +22,8 @@ on:
       - 'feed.xml'
       - 'feed.json'
       - 'api/v1/updates.json'
+      - 'api/v1/index.json'
+      - 'api/v1/openapi.json'
       - 'sitemap-updates.xml'
       - 'updates/**'
       - 'robots.txt'
@@ -49,7 +53,7 @@ jobs:
         run: node scripts/build-public-updates.mjs
 
       - name: Verify generated surfaces are committed
-        run: git diff --exit-code -- feed.xml feed.json api/v1/updates.json sitemap-updates.xml
+        run: git diff --exit-code -- feed.xml feed.json api/v1/updates.json api/v1/index.json api/v1/openapi.json sitemap-updates.xml
 
       - name: Check weekly and monthly freshness
         id: freshness

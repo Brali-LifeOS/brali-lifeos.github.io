@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Brali Agent Surface Observatory</title>
+  <meta name="description" content="Repository-backed inventory of Brali's canonical machine-readable discovery, retrieval, evidence, trust and attribution surfaces.">
+  <link rel="canonical" href="https://brali-lifeos.github.io/observatory/">
+  <style>
+    :root{color-scheme:light dark;--bg:#0d0f12;--panel:#15191f;--text:#f4f6f8;--muted:#aab2bd;--line:#2b333d;--accent:#d8ff4f}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}main{max-width:1060px;margin:auto;padding:56px 24px 80px}a{color:var(--accent)}h1{font-size:clamp(2.2rem,6vw,4.8rem);line-height:.95;letter-spacing:-.04em;margin:0 0 20px}.lede{max-width:780px;color:var(--muted);font-size:1.08rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:30px}.card{padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.card h2{font-size:1rem;margin:0 0 8px}.meta{color:var(--muted);font-size:.88rem}.status{display:inline-block;margin-top:10px;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}.scope{margin:28px 0;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}footer{margin-top:34px;color:var(--muted);font-size:.92rem}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="/for-ai/">For AI</a> / observatory</p>
+  <h1>Agent surface observatory</h1>
+  <p class="lede">A repository-backed inventory of the surfaces an agent can use to discover, retrieve, verify and cite Brali.</p>
+  <div class="scope"><strong>What “active” means here.</strong> The surface is declared and versioned in the Brali repository. This is not a real-time health check, ranking metric, adoption claim or AI citation score.</div>
+  <div class="grid" id="surfaces">Loading surfaces…</div>
+  <footer>Machine-readable: <a href="/observatory/surfaces.json">surfaces.json</a> · History: <a href="/observatory/history/index.json">snapshots</a> · AI profile: <a href="/ai/ai-search-profile.json">ai-search-profile.json</a></footer>
+</main>
+<script>
+fetch('/observatory/surfaces.json').then(r=>r.json()).then(data=>{
+ const root=document.getElementById('surfaces');root.textContent='';
+ for(const s of data.surfaces){const card=document.createElement('article');card.className='card';const h=document.createElement('h2');const a=document.createElement('a');a.href=s.url;a.textContent=s.id;h.appendChild(a);card.appendChild(h);const meta=document.createElement('div');meta.className='meta';meta.textContent=s.role+' · '+s.mediaType;card.appendChild(meta);const status=document.createElement('div');status.className='status';status.textContent=s.status;card.appendChild(status);root.appendChild(card)}
+}).catch(()=>{document.getElementById('surfaces').textContent='Surface registry unavailable.'});
+</script>
+</body>
+</html>

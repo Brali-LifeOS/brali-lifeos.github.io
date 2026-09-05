@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "schema_version": 2,
+  "dataset_version": "1.1.0",
   "canonical_url": "https://brali-lifeos.github.io/cite/",
   "author": "Dzmitryi Kharlanau",
   "dataset_title": "Brali Practical Knowledge Library",
@@ -14,6 +14,56 @@
     "evidence state and review metadata where supplied",
     "data-v release version for reproducible dataset use",
     "an indication when material is changed or translated"
+  ],
+  "canonical_vocabulary": [
+    {
+      "term": "Evidence Decision",
+      "definition": "A reviewed record of how a source affects Brali guidance, including supported claims, unsupported or overstated claims, limitations and editorial outcome.",
+      "url": "https://brali-lifeos.github.io/evidence/"
+    },
+    {
+      "term": "evidence state",
+      "definition": "A Brali publication-state label: reviewed, practical, pending-review or restricted. It is not a universal scientific-certainty score.",
+      "url": "https://brali-lifeos.github.io/state/"
+    },
+    {
+      "term": "canonical identity",
+      "definition": "A stable Brali identifier in the form brali:<kind>:<local-id>; labels, URLs, localized terms and historical identifiers are aliases.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Topic",
+      "definition": "A concrete problem, capability or outcome used as Brali's primary retrieval target.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Protocol",
+      "definition": "An executable sequence or personal experiment represented as a reusable Brali knowledge object.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Lens",
+      "definition": "A transferable way of thinking that can connect multiple Topics; a Lens is not evidence by itself.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    }
+  ],
+  "machine_surfaces": {
+    "site_profile": "https://brali-lifeos.github.io/ai/site-profile.json",
+    "ai_search_profile": "https://brali-lifeos.github.io/ai/ai-search-profile.json",
+    "locale_manifest": "https://brali-lifeos.github.io/ai/locales.json",
+    "knowledge_graph": "https://brali-lifeos.github.io/knowledge/graph.json",
+    "trust_center": "https://brali-lifeos.github.io/trust/trust.json",
+    "corrections_ledger": "https://brali-lifeos.github.io/trust/corrections.json",
+    "evidence_decisions": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json",
+    "evidence_metrics": "https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json",
+    "retrieval_benchmark": "https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json",
+    "history_feed": "https://brali-lifeos.github.io/updates/feed.json"
+  },
+  "citation_guardrails": [
+    "Do not infer scientific certainty from Brali publication states.",
+    "Do not treat research candidates as evidence by themselves.",
+    "Do not infer search visibility, AI citation, external authority or readiness from the existence of machine-readable surfaces.",
+    "Preserve negative, unsupported and watch outcomes from Evidence Decisions when relevant."
   ],
   "license_url": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/LICENSE",
   "licensing_guide": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/LICENSING.md",

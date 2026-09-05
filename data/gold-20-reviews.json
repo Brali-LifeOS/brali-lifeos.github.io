@@ -69,6 +69,132 @@
         "memory-study",
         "retrieval-application-boundary"
       ]
+    },
+    "25-minute-pomodoro-focus-sprints": {
+      "schema_version": 1,
+      "protocol_id": "brali:25-minute-pomodoro-focus-sprints",
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I need a clear boundary around one piece of work because I keep switching, drifting, or letting a vague task consume an undefined amount of time.",
+      "eligibility": [
+        "The user has one concrete low-risk work or study outcome that can be advanced during a bounded focus block.",
+        "A timer or deliberate stopping point would reduce ambiguity without creating a safety or operational problem.",
+        "The user is willing to adjust the block length from experience rather than treating twenty-five minutes as a universal rule."
+      ],
+      "when_not_to_use": [
+        "Do not use a focus timer where continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes deliberate disengagement inappropriate.",
+        "Do not interpret twenty-five minutes of work or a five-minute break as a scientifically optimal dose; the reviewed evidence does not test the full Pomodoro sequence.",
+        "Do not use block completion as a productivity score when the chosen task requires collaboration, waiting, exploration, or another outcome that is not well represented by uninterrupted solo work."
+      ],
+      "first_action": "Write one observable outcome for the next block, then start with a twenty-five-minute focus boundary only as a familiar default.",
+      "steps": [
+        "Name what should be different when the block ends, using an observable result instead of a vague task label.",
+        "Begin one focus block and keep only the inputs needed for that result in front of you; capture unrelated tasks instead of switching immediately.",
+        "At a sensible stopping point around the boundary, step away briefly rather than rolling automatically into another block.",
+        "Review whether the intended outcome moved forward, what interrupted it, and whether the next block should be shorter, the same, longer, or unnecessary.",
+        "Change the environment or task scope when the same friction repeats instead of treating every imperfect block as a discipline failure."
+      ],
+      "review_horizon": {
+        "value": "After each focus block",
+        "rationale": "The protocol is a short execution experiment. The review point belongs at the end of the block because the useful signal is whether that boundary helped the intended task; no evidence supports waiting for a fixed number of Pomodoros before adjusting."
+      },
+      "observable_signal": "Whether the intended outcome moved forward, which interruptions occurred, and whether the chosen focus boundary made returning to or continuing the task easier.",
+      "stop_or_change_rule": "Change the block length, task scope, or environment when the timer repeatedly interrupts useful flow, fails to protect attention, or creates more management overhead than value. Stop using the protocol when the work needs responsiveness or another workflow fits the task better.",
+      "fallback": "If twenty-five minutes feels too large, choose a smaller concrete outcome and a shorter block; if it repeatedly breaks useful deep work, use a longer boundary or a natural task milestone instead of serving the timer.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a practical focus-boundary protocol, not an evidence-backed twenty-five-minute dose. A systematic review of micro-breaks supports only a narrow recovery boundary: short breaks were associated on average with small improvements in vigor and fatigue, while overall performance benefit was not reliable and the full Pomodoro sequence was not tested.",
+        "source_decision_ids": [
+          "microbreak-wellbeing-performance-boundary-2022"
+        ]
+      },
+      "limitations": [
+        "The micro-break literature is heterogeneous in tasks, populations, break activities, and durations and does not validate the full twenty-five-minute-work/five-minute-break sequence.",
+        "The reviewed meta-analysis found no statistically significant pooled overall performance effect and rated only a minority of included samples low risk of bias.",
+        "The protocol has no evidence-backed universal work-block duration, break duration, number of cycles, productivity gain, or ideal interruption policy.",
+        "A timer can make some work easier to start and other work unnecessarily fragmented; individual task fit must be reviewed directly."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+        "source_citations": [
+          "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022;17(8):e0272460. https://doi.org/10.1371/journal.pone.0272460"
+        ]
+      },
+      "agent_summary": "Use this as an adjustable work-boundary protocol when a user needs one concrete focus block. Twenty-five minutes is a conventional starting setting, not a scientific optimum. Ask for one observable outcome, protect the block, take a real boundary, then adjust the next block from interruption and progress signals.",
+      "retrieval_paths": [
+        "/life-os/25-minute-pomodoro-focus-sprints/",
+        "/topics/focus/",
+        "/for-ai/query/?q=Give%20me%20a%2025%20minute%20Pomodoro%20focus%20sprint"
+      ],
+      "evaluation_case_ids": [
+        "pomodoro-exact"
+      ]
+    },
+    "active-listening-exercises": {
+      "schema_version": 1,
+      "protocol_id": "brali:active-listening-exercises",
+      "slug": "active-listening-exercises",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I may be responding to my interpretation of what someone said instead of checking whether I actually understood their main point.",
+      "eligibility": [
+        "The conversation is ordinary and safe enough for a brief paraphrase-and-correction loop.",
+        "Understanding the other person's point matters more than immediately persuading, diagnosing, defending, or giving advice.",
+        "There is enough conversational time to let the other person correct the listener without turning the exchange into a scripted performance."
+      ],
+      "when_not_to_use": [
+        "Do not force this exercise in abuse, coercion, threats, harassment, violence, or other unsafe situations where safety, distance, documentation, or professional support takes priority.",
+        "Do not paraphrase motives or emotions as facts; interpretations should remain tentative and easy to correct.",
+        "Do not use the technique as proof that the listener understood accurately, resolved a conflict, improved trust, or produced a better relationship outcome."
+      ],
+      "first_action": "In one conversation where understanding matters, wait for one complete thought, summarize the main point briefly in your own words, and leave room for correction.",
+      "steps": [
+        "Choose one ordinary conversation where misunderstanding would matter and make the practice goal simply to test your understanding once.",
+        "After the speaker completes a thought, paraphrase the main point in one short sentence without adding unverified motives or emotions.",
+        "Pause and invite correction with a lightweight prompt such as Did I get that right? when confirmation is not otherwise clear.",
+        "Treat correction as useful information rather than defending the first summary; update your understanding from what the person actually says.",
+        "Once the main point is clearer, ask one open question when useful before moving into advice, argument, or a new topic."
+      ],
+      "review_horizon": {
+        "value": "After the conversation",
+        "rationale": "The protocol's primary signal is whether a paraphrase was accepted or corrected and what assumption changed. The reviewed sources do not justify a fixed number of repetitions or training sessions for ordinary self-guided use."
+      },
+      "observable_signal": "Whether the listener summarized before reacting, whether the speaker accepted or corrected the summary, and what mistaken assumption became visible when correction occurred.",
+      "stop_or_change_rule": "Stop forcing the sequence when it makes the conversation mechanical, the other person asks for a direct response, immediate action is required, or the situation is unsafe. Change the wording or shorten the paraphrase when it repeatedly adds interpretations the speaker has to undo.",
+      "fallback": "If a full paraphrase feels awkward, use one shorter accuracy check such as So the main issue is X—is that right? and let the other person correct the rest.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "Brali keeps this as a correction-based practical protocol rather than claiming generic active-listening effectiveness. A small trained-interviewer experiment supports a narrow paraphrase-plus-accuracy-check behavior for immediate emotional valence, while a larger multicomponent cardiology coaching trial did not show intervention-arm increases in reflective statements or open-ended questions and cannot validate Brali's sequence independently.",
+        "source_decision_ids": [
+          "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "communication-coaching-reflective-statements-boundary-2023"
+        ]
+      },
+      "limitations": [
+        "The paraphrasing experiment included only twenty healthy German-speaking adults and one highly trained interviewer, and it measured immediate emotion rather than comprehension accuracy or conflict outcome.",
+        "The cardiology coaching trial trained five communication behaviors together with repeated individual coaching, so it does not isolate paraphrasing or one open question.",
+        "Neither source establishes that a self-guided ordinary listener using this exact sequence improves trust, relationship quality, decisions, or long-term conflict resolution.",
+        "The protocol deliberately excludes unsafe or coercive conflict contexts that were not established as appropriate use cases."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/active-listening-exercises/",
+        "source_citations": [
+          "Seehausen M, Kazzer P, Bajbouj M, Prehn K. Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict. Frontiers in Psychology. 2012;3:482. https://doi.org/10.3389/fpsyg.2012.00482",
+          "Pollak KI, Olsen MK, Yang H, et al. Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial. JAMA Internal Medicine. 2023;183(6):544-553. https://doi.org/10.1001/jamainternmed.2023.0629"
+        ]
+      },
+      "agent_summary": "Use this protocol as an understanding check in ordinary safe conversations: paraphrase one main point, invite correction, update from the correction, then ask one open question when useful. Treat correction as the success signal. Do not claim that the sequence has proven general effects on trust, relationships, conflict resolution, or clinical communication.",
+      "retrieval_paths": [
+        "/life-os/active-listening-exercises/",
+        "/life-os/areas/communication-relationships/",
+        "/for-ai/query/?q=Show%20me%20active%20listening%20exercises"
+      ],
+      "evaluation_case_ids": [
+        "active-listening-exact"
+      ]
     }
   }
 }

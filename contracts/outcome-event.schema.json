@@ -84,12 +84,21 @@
   },
   "allOf": [
     {
-      "if": {"properties": {"event_type": {"enum": ["query_submitted", "trusted_match_returned", "no_trusted_answer", "helpful_yes", "helpful_no", "bad_match", "missing_knowledge", "context_packet_copied"]}}},
+      "if": {"properties": {"event_type": {"enum": ["query_submitted", "trusted_match_returned", "no_trusted_answer", "bad_match", "missing_knowledge", "context_packet_copied"]}}},
       "then": {"required": ["query_id", "result"]}
     },
     {
       "if": {"properties": {"event_type": {"enum": ["protocol_opened", "protocol_started", "protocol_completed", "source_opened"]}}},
       "then": {"required": ["run_id", "protocol_id"]}
+    },
+    {
+      "if": {"properties": {"event_type": {"enum": ["helpful_yes", "helpful_no"]}}},
+      "then": {
+        "anyOf": [
+          {"required": ["query_id", "result"]},
+          {"required": ["run_id", "protocol_id"]}
+        ]
+      }
     },
     {
       "if": {"properties": {"event_type": {"enum": ["helpful_yes", "helpful_no", "bad_match", "missing_knowledge", "integration_reported"]}}},

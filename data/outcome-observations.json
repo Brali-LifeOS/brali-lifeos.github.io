@@ -2,7 +2,7 @@
   "schema_version": 1,
   "name": "Brali reviewed outcome observations",
   "collection_status": "instrumented",
-  "description": "Versioned public observations accepted only after explicit consent, schema validation, privacy review and provenance review. Ask Brali can now prepare opt-in feedback events, but the empty observations array is still an observed zero, not synthetic usage.",
+  "description": "Versioned public observations accepted only after explicit consent, schema validation, privacy review and provenance review. Ask Brali and the Protocol Runner can now prepare opt-in outcome events, but the empty observations array is still an observed zero, not synthetic usage.",
   "observations": [],
   "rejected_or_withheld_counts": {
     "invalid_schema": 0,
@@ -14,9 +14,9 @@
   },
   "notes": [
     "No demo, test, generated, analytics or repository event belongs in this file.",
-    "A downloaded event, native-share action or prepared GitHub issue draft does not become a reviewed public observation automatically.",
+    "A downloaded event, exported protocol-run bundle, native-share action or prepared GitHub issue draft does not become a reviewed public observation automatically.",
     "Negative, not-helpful, bad-match and no-answer outcomes are eligible when they meet the same privacy and provenance rules.",
-    "Query feedback is instrumented as explicit opt-in export; browser protocol-run completion is not live yet.",
+    "Query feedback and browser protocol execution are instrumented as explicit opt-in export paths with no automatic transmission.",
     "Zero reviewed observations therefore remains a valid current result."
   ]
 }

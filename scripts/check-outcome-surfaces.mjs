@@ -16,6 +16,9 @@ const qualityPage = await readFile(path.join(root, 'quality/outcomes/index.html'
 const datasets = await readFile(path.join(root, 'life-os/datasets/index.html'), 'utf8');
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const builder = await readFile(path.join(root, 'scripts/build-outcome-surfaces.mjs'), 'utf8');
+const queryPage = await readFile(path.join(root, 'for-ai/query/index.html'), 'utf8');
+const queryApp = await readFile(path.join(root, 'for-ai/query/app.js'), 'utf8');
+const outcomeClient = await readFile(path.join(root, 'for-ai/query/outcome-feedback.js'), 'utf8');
 
 const eventTypes = schema.properties?.event_type?.enum ?? [];
 const clientCategories = schema.properties?.client?.properties?.category?.enum ?? [];
@@ -80,13 +83,16 @@ for (const fixture of fixtures.invalid) {
   }
 }
 
-if (sourcePolicy.schema_version !== 1 || sourcePolicy.collection_status !== 'contract-ready') fail('source policy status drift');
+if (sourcePolicy.schema_version !== 1 || sourcePolicy.collection_status !== 'instrumented') fail('source policy status drift');
+if (sourcePolicy.instrumentation_scope?.query_feedback !== 'live') fail('Query feedback is not marked live');
+if (sourcePolicy.instrumentation_scope?.protocol_execution !== 'not-live') fail('Protocol execution status must remain not-live');
 if (sourcePolicy.automatic_collection?.enabled !== false || sourcePolicy.automatic_collection?.network_requests_from_feedback !== false) fail('source policy automatic-collection boundary drift');
 if (sourcePolicy.privacy_contract?.raw_query_in_event !== false || sourcePolicy.privacy_contract?.personal_data_in_event !== false || sourcePolicy.privacy_contract?.user_identifier_in_event !== false) fail('source policy privacy boundary drift');
-if (sourceObservations.schema_version !== 1 || sourceObservations.collection_status !== 'contract-ready' || !Array.isArray(sourceObservations.observations)) fail('source observation registry drift');
+if (sourceObservations.schema_version !== 1 || sourceObservations.collection_status !== 'instrumented' || !Array.isArray(sourceObservations.observations)) fail('source observation registry drift');
 if (JSON.stringify(sourcePolicy) !== JSON.stringify(policy)) fail('published outcome policy differs from source policy');
 if (JSON.stringify(sourceObservations) !== JSON.stringify(observations)) fail('published observation registry differs from source registry');
-if (report.schema_version !== 1 || report.collection_status !== 'contract-ready') fail('report status drift');
+if (report.schema_version !== 1 || report.collection_status !== 'instrumented') fail('report status drift');
+if (report.instrumentation_scope?.query_feedback !== 'live' || report.instrumentation_scope?.protocol_execution !== 'not-live') fail('report instrumentation scope drift');
 if (report.counts?.reviewed_events !== observations.observations.length) fail('reviewed-event aggregate drift');
 if (report.north_star?.id !== 'weekly_verified_successful_executions') fail('north-star identity drift');
 if (report.north_star?.observed_total !== report.counts?.verified_successful_executions) fail('north-star aggregate drift');
@@ -97,28 +103,64 @@ for (const rel of [
   'quality/outcomes/index.html',
   'life-os/datasets/outcome-policy.json',
   'life-os/datasets/outcome-observations.json',
-  'life-os/datasets/outcome-report.json'
+  'life-os/datasets/outcome-report.json',
+  'for-ai/query/outcome-feedback.js'
 ]) await access(path.join(root, rel));
 
 for (const marker of [
-  'The contract is ready. The evidence of usefulness is still',
+  'Feedback is instrumented. Verified usefulness is still',
   `data-reviewed-events="${report.counts.reviewed_events}"`,
   `data-verified-executions="${report.north_star.observed_total}"`,
   `data-validation-target="${report.north_star.initial_validation_target}"`,
   'not an observed result',
-  'do not count as successful executions',
-  'Query/Protocol feedback is not live yet',
+  'Query feedback is live',
+  'Browser protocol execution is not instrumented yet',
   '/contracts/outcome-event.schema.json',
-  '/life-os/datasets/outcome-report.json'
+  '/life-os/datasets/outcome-report.json',
+  '/for-ai/query/'
 ]) {
   if (!qualityPage.includes(marker)) fail(`quality page lacks required marker: ${marker}`);
 }
 
+for (const marker of [
+  'data-outcome-feedback',
+  'data-outcome-choice="helpful"',
+  'data-outcome-choice="not-helpful"',
+  'data-outcome-choice="bad-match"',
+  'data-outcome-choice="missing-knowledge"',
+  'feedback-include-query',
+  'off by default',
+  'Nothing is sent automatically',
+  '/quality/outcomes/'
+]) {
+  if (!queryPage.includes(marker)) fail(`Query page lacks live outcome marker: ${marker}`);
+}
+if (!queryApp.includes("from './outcome-feedback.js'")) fail('Query app does not load outcome feedback module');
+if (!queryApp.includes('newQueryId()')) fail('Query app does not create privacy-safe query IDs');
+if (!queryApp.includes("buildOutcome('github-issue')")) fail('Query app does not create GitHub-channel feedback');
+if (!queryApp.includes("buildOutcome('native-share')")) fail('Query app does not create native-share feedback');
+if (!queryApp.includes('downloadOutcomeEvent(previewEvent)')) fail('Query app does not expose local event download');
+
+for (const marker of [
+  'raw_query_included: false',
+  'personal_data_included: false',
+  'user_identifier_included: false',
+  "channel,",
+  "'github-issue'",
+  "'native-share'",
+  "'download'",
+  'The event envelope intentionally excludes the raw query'
+]) {
+  if (!outcomeClient.includes(marker)) fail(`outcome feedback module lacks privacy/channel marker: ${marker}`);
+}
+if (/\bfetch\s*\(|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie/.test(outcomeClient)) fail('outcome feedback module performs automatic collection or persistent storage');
+if (!outcomeClient.includes('includeQuery = false')) fail('GitHub raw-query inclusion is not opt-in by default');
+
 if (!datasets.includes('/quality/outcomes/')) fail('dataset catalog lacks outcome report entry point');
 if (!sitemap.includes('<loc>https://brali-lifeos.github.io/quality/outcomes/</loc>')) fail('sitemap lacks outcome report');
 if (/\bfetch\s*\(|XMLHttpRequest|sendBeacon|localStorage|document\.cookie/.test(builder)) fail('outcome builder contains collection or persistent-storage primitives');
-if (!builder.includes("policy.collection_status !== 'contract-ready'")) fail('builder does not protect contract-ready status');
+if (!builder.includes("policy.collection_status !== 'instrumented'")) fail('builder does not protect instrumented status');
 if (!builder.includes("answer.protocol_id === completed.protocol_id")) fail('builder does not match helpful feedback to the completed protocol');
 if (!builder.includes("answer.dataset.version === completed.dataset.version")) fail('builder does not match helpful feedback to the completed dataset version');
 
-console.log(`Outcome surfaces verified: status=contract-ready; reviewed-events=${observations.observations.length}; verified-successes=${report.north_star.observed_total}; automatic-collection=false; fixtures=${fixtures.valid.length + fixtures.invalid.length}.`);
+console.log(`Outcome surfaces verified: status=instrumented; query-feedback=live; protocol-execution=not-live; reviewed-events=${observations.observations.length}; verified-successes=${report.north_star.observed_total}; automatic-collection=false; fixtures=${fixtures.valid.length + fixtures.invalid.length}.`);

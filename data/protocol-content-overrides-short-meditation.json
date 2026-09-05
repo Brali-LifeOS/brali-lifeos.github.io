@@ -2,12 +2,12 @@
   "schema_version": 1,
   "entries": {
     "5-minute-meditation-habit-tracker": {
-      "title": "Try a Short Breath Meditation",
-      "description": "Sit comfortably for a short meditation, let your breathing stay natural, and gently return attention when your mind wanders.",
+      "title": "Try a Short Breath Meditation — Without Turning Five Minutes Into a Religion",
+      "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down.",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited meditation article containing invented adherence results, pulse-change claims, fixed twice-daily dosing, prescriptive breathing ratios and pseudo-clinical expectations with a conservative short breath-meditation protocol grounded in current NHS mindfulness and meditation guidance. The public version treats five minutes as a convenient starting container, not an evidence-based dose, and acknowledges that mindfulness is not helpful for everyone.",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Keep the conservative short breath-meditation protocol while replacing brochure-like copy with Brali's teaching voice. NHS guidance supports a simple beginner practice with no universal session length and warns that mindfulness is not helpful for everyone. A 2026 preregistered network meta-analysis of 183 RCTs and 22,811 adults without diagnosed conditions adds a useful boundary: mindfulness is one evidence-informed route to general well-being alongside exercise, yoga, compassion and positive-psychology approaches, with no clear reason to present one as the universal winner. The page therefore teaches the attention-return loop, treats five minutes as a convenience rather than a dose, and normalizes switching practices when the method is unhelpful.",
       "forbidden_public_fragments": [
         "78% vs 51%",
         "n=34",
@@ -21,68 +21,79 @@
         "At MetalHatsCats"
       ],
       "lifeOsSource": {
-        "hack": "Try a short breath meditation. Sit somewhere comfortable and safe, let your breathing stay natural, and gently return attention when your mind wanders.",
-        "whatYouDo": "Set aside a short period somewhere comfortable and safe. Let your breathing stay natural, notice the sensations of breathing, and when your mind wanders gently bring attention back. Five minutes can be a convenient starting point, but use a duration and routine that work for you rather than treating twice-daily five-minute sessions as a required dose.",
-        "checkIn": "Did I practise, how did focusing on the breath feel, and was returning attention useful, neutral or uncomfortable for me today?",
+        "hack": "Use a short period to practise noticing when attention has wandered and returning it to the natural breath. If breath focus is uncomfortable or simply not useful for you, switch to another low-risk wellbeing practice instead of forcing the streak.",
+        "whatYouDo": "Sit somewhere comfortable and safe. Let breathing stay natural. Notice the sensations of breathing; when attention drifts into plans, memories, sounds or commentary, notice that and return to the breath without grading yourself. Use five minutes only if it is a convenient starting container. After several attempts, keep the practice only if it is useful for you.",
+        "checkIn": "Did I notice attention wandering and return without turning it into a fight? Was the practice useful, neutral or uncomfortable? Would another wellbeing practice fit me better today?",
         "sourceUrl": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-meditate-for-beginners/",
-        "reference": "NHS Every Mind Matters — How to meditate for beginners"
+        "reference": "NHS beginner meditation guidance; Wilkie et al. (2026) network meta-analysis of general-adult well-being interventions"
       },
       "references": [
         "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-meditate-for-beginners/",
         "https://www.nhs.uk/mental-health/self-help/tips-and-support/mindfulness/",
-        "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/"
+        "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/",
+        "https://doi.org/10.1038/s41562-025-02369-1"
       ],
       "faq": [
         {
           "id": "5-minute-meditation-habit-tracker-faq-1",
           "question": "Does meditation need to be five minutes twice a day?",
-          "answer": "No. Five minutes can make the practice easy to start, but NHS guidance says there is no rule about how long a meditation session should last and encourages people to find a routine that works for them. Brali does not treat two five-minute sessions as a therapeutic dose."
+          "answer": "No. Five minutes is just a convenient container. NHS guidance does not prescribe one universal session length, and Brali does not turn a tidy number into a therapeutic dose. Your timer is useful; it is not a clinician."
         },
         {
           "id": "5-minute-meditation-habit-tracker-faq-2",
           "question": "What if my mind keeps wandering?",
-          "answer": "Mind wandering is a normal part of meditation. Notice that attention moved and gently bring it back to the breath. The return is part of the practice, not evidence that you are doing it badly."
+          "answer": "Then you have found the part you can actually practise. Notice that attention moved and bring it back. The goal is not to produce an empty mind; it is to practise noticing and returning without adding a second problem called ‘I am bad at meditation.’"
         },
         {
           "id": "5-minute-meditation-habit-tracker-faq-3",
           "question": "What if mindfulness makes me feel worse?",
-          "answer": "Stop or choose another wellbeing practice. NHS guidance notes that mindfulness is not right for everyone and some people find it unhelpful or feel worse. If significant anxiety, low mood or another mental-health difficulty is affecting daily life, use appropriate professional support."
+          "answer": "Stop, shorten the practice, use an external anchor such as sounds, or choose another wellbeing activity. NHS guidance notes that mindfulness is not right for everyone. If significant anxiety, low mood or another mental-health difficulty is affecting daily life, use appropriate professional support rather than trying to win an argument with a five-minute timer."
+        },
+        {
+          "id": "5-minute-meditation-habit-tracker-faq-4",
+          "question": "Is meditation the best wellbeing practice?",
+          "answer": "The evidence does not give Brali a universal winner. A 2026 network meta-analysis of 183 randomized trials in adults without diagnosed conditions found several viable routes, including mindfulness, exercise, yoga, compassion-based and positive-psychology interventions. Many head-to-head differences were not clear, and study quality was often imperfect. Treat meditation as one option worth testing, not a loyalty program."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>Meditation can be as simple as setting aside a little time, sitting comfortably and returning attention to the breath when the mind wanders. NHS guidance emphasises that a wandering mind is normal and that there is no single correct session length. Brali therefore uses a short sit as a personal experiment, not a prescribed five-minute treatment or a test of whether your heart rate changes.</p>"
+          "html": "<p>The job is not to empty your head. If that were the entry requirement, meditation would have a very small user base. The useful move is simpler: put attention somewhere ordinary, notice when it leaves, and bring it back without turning the detour into a personal failure. NHS guidance describes mind wandering as normal and does not prescribe one correct session length. A 2026 network meta-analysis also gives Brali a useful bigger-picture boundary: mindfulness is one plausible route to general wellbeing, not the only one. Exercise, yoga, compassion-based and positive-psychology approaches also showed benefits in randomized-trial evidence. So this page is a small experiment, not a recruitment campaign.</p>"
         },
         "sections": [
           {
             "slug": "choose-a-safe-place",
-            "title": "1. Choose a comfortable, safe place",
-            "html": "<p>Sit somewhere you can pause without needing to monitor traffic, machinery or another safety-critical task. You do not need special equipment or a special posture; choose a position that is comfortable and reasonably alert.</p>"
+            "title": "1. Make the environment boring enough to notice yourself",
+            "html": "<p>Sit somewhere comfortable and safe where you do not need to monitor traffic, machinery or another safety-critical task. No special cushion, soundtrack or identity upgrade is required. A chair is allowed.</p>"
           },
           {
             "slug": "let-the-breath-be-natural",
-            "title": "2. Let the breath be natural",
-            "html": "<p>Notice the sensations of breathing without forcing a counting pattern, long exhale or breath hold. If a simple word such as ‘in’ and ‘out’ helps you stay with the breath, use it lightly rather than trying to control the physiology.</p>"
+            "title": "2. Leave the breath alone",
+            "html": "<p>Notice the sensations of normal breathing. Do not force a long exhale, breath hold or precise ratio just because numbers look scientific. If a quiet label such as <em>in</em> and <em>out</em> helps attention stay with the breath, use it lightly.</p>"
           },
           {
             "slug": "notice-wandering",
-            "title": "3. Notice when the mind wanders",
-            "html": "<p>Thoughts, sounds and plans will pull attention away. When you notice that happening, gently bring attention back to the breath. NHS guidance explicitly describes mind wandering as a normal part of learning meditation.</p>"
+            "title": "3. Catch the wander — that is the rep",
+            "html": "<p>Attention will leave. It may go to a message, a meeting, dinner, an argument from 2019 or the sudden discovery that your nose exists. When you notice, return to the breath. That moment of noticing is not a failed session; it is the observable event the practice gives you a chance to work with.</p>"
           },
           {
             "slug": "use-five-minutes-as-a-container",
-            "title": "4. Treat five minutes as a container, not a dose",
-            "html": "<p>If five minutes fits your day, use it as a convenient timer. A shorter or longer sit can also be reasonable. There is no need to complete two sessions a day or to chase a fixed number of minutes for the practice to count.</p>"
+            "title": "4. Five minutes is a container, not a prescription",
+            "html": "<p>If five minutes fits your day, set five minutes. If two minutes makes the practice easier to start, use two. If a longer sit is comfortable and useful, use longer. The reviewed sources do not establish a universal evidence-backed dose, so Brali will resist the ancient productivity tradition of turning a round number into natural law.</p>"
           },
           {
             "slug": "notice-if-it-is-not-helpful",
-            "title": "5. Notice if this practice is not helping",
-            "html": "<p>Mindfulness is not right for everyone. If focusing inward feels uncomfortable or makes you feel worse, stop, shorten the practice, use an external anchor such as sounds, or choose a different wellbeing activity. Do not force the session to protect a streak.</p>"
+            "title": "5. Switch methods without making it a moral failure",
+            "html": "<p>If breath focus is irritating, uncomfortable or consistently unhelpful, stop or change the anchor. You can use sounds, take a walk, do another low-risk wellbeing practice or simply decide that this is not your tool. A large 2026 synthesis found several different intervention families with evidence for general wellbeing; it did not establish that mindfulness must win. Choice is part of the protocol, not evidence that you failed it.</p>"
           },
           {
             "slug": "review-the-experience",
-            "title": "6. Review the experience",
-            "html": "<p>In Brali, record whether you practised and what the experience was like. Avoid turning pulse, HRV, number of thoughts or a calmness score into proof that meditation worked. After several attempts, decide whether this is a useful practice for you and what duration or context makes sense.</p>"
+            "title": "6. Measure the useful thing, not wellness theatre",
+            "html": "<p>After the session, record something simple: Did you practise? Could you notice attention moving and return? Was the experience useful, neutral or uncomfortable? Do not chase pulse, HRV, number of thoughts or a manufactured calmness score as proof. After several attempts, keep, modify or drop the practice based on what actually helps.</p>"
+          },
+          {
+            "slug": "evidence-boundary",
+            "title": "Where the evidence stops",
+            "html": "<p>The 2026 network meta-analysis synthesized 183 randomized trials with 22,811 adults without diagnosed conditions. Mindfulness, exercise, yoga, compassion and several positive-psychology approaches generally improved wellbeing relative to inactive controls, but 60% of included trials were rated high risk of bias, many outcomes were measured only immediately after the intervention, and many comparisons were indirect. This supports offering mindfulness as one reasonable option. It does not prove that five minutes is optimal, that meditation treats a diagnosed condition, or that one practice is best for every person.</p>"
           }
         ]
       }

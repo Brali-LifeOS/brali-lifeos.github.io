@@ -25,6 +25,7 @@
       {"name":"Brali retrieval benchmark","url":"https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json","mediaType":"application/json","role":"evaluation","description":"Deterministic retrieval evaluation with cases, recall@k, precision@k and pass results."},
       {"name":"Brali agent locale manifest","url":"https://brali-lifeos.github.io/ai/locales.json","mediaType":"application/json","role":"other","description":"Canonical-language and fallback routing declaration that separates published locales from multilingual retrieval evaluation."},
       {"name":"Brali AI Search and Citation Profile","url":"https://brali-lifeos.github.io/ai/ai-search-profile.json","mediaType":"application/json","role":"other","description":"Machine-readable discoverability, citation, trust, measurement and guardrail profile."},
+      {"name":"Brali canonical citation index","url":"https://brali-lifeos.github.io/citation-index.json","mediaType":"application/json","role":"other","description":"Stable canonical answers, Brali-defined vocabulary, machine surfaces and citation guardrails for search and AI systems."},
       {"name":"Brali Trust Center","url":"https://brali-lifeos.github.io/trust/trust.json","mediaType":"application/json","role":"other","description":"Machine-readable evidence, provenance, integrity, correction, reuse and measurement boundaries."},
       {"name":"Brali corrections ledger","url":"https://brali-lifeos.github.io/trust/corrections.json","mediaType":"application/json","role":"other","description":"Public ledger contract for material corrections without a perfect-history claim."},
       {"name":"Brali Knowledge Graph","url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json","role":"other","description":"JSON-LD graph linking the site, publisher, API, ontology, evidence, trust and update surfaces."}
@@ -67,6 +68,7 @@
       "status": "experimental-project-profile",
       "profile": "https://brali-lifeos.github.io/ai/ai-search-profile.json",
       "schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/main/schema/ai-search-profile.schema.json",
+      "citationIndex": "https://brali-lifeos.github.io/citation-index.json",
       "trustCenter": "https://brali-lifeos.github.io/trust/trust.json",
       "correctionsLedger": "https://brali-lifeos.github.io/trust/corrections.json",
       "knowledgeGraph": "https://brali-lifeos.github.io/knowledge/graph.json"

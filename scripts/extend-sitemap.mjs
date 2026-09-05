@@ -91,3 +91,4 @@ await import('./check-research-gaps.mjs');
 await import('./check-zone-coverage-backlog.mjs');
 await import('./check-legacy-sensitive-state.mjs');
 await import('./check-sitewide-quality-loop.mjs');
+await import('./check-outcome-loop-extensions.mjs');

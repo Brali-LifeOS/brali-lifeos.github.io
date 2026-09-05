@@ -1,0 +1,78 @@
+{
+  "version": "0.1",
+  "updated": "2026-09-05",
+  "canonical": "https://brali-lifeos.github.io/citation-index.json",
+  "scope": "Canonical Brali terms, answer surfaces, evidence boundaries and machine-readable references for search and AI citation. This index complements the generated /cite/index.json attribution contract and does not replace it.",
+  "canonicalAnswers": [
+    {
+      "id": "what-is-brali",
+      "question": "What is Brali?",
+      "answer": "Brali is an evidence-aware practical knowledge library that keeps canonical identity, evidence state, provenance and reviewed boundaries attached to reusable protocols and machine-readable data.",
+      "url": "https://brali-lifeos.github.io/"
+    },
+    {
+      "id": "how-brali-retrieval-works",
+      "question": "How should an AI retrieve Brali knowledge?",
+      "answer": "Match a concrete Topic, prefer reviewed or practical Protocols, preserve evidence state and provenance, inspect Evidence Decisions when research boundaries matter, and return no trusted answer rather than inventing coverage.",
+      "url": "https://brali-lifeos.github.io/for-ai/"
+    },
+    {
+      "id": "how-brali-handles-evidence",
+      "question": "How does Brali distinguish evidence from discovery metadata?",
+      "answer": "Research candidates are discovery metadata only. Reviewed Evidence Decisions record what a source supports, challenges or fails to support before guidance changes.",
+      "url": "https://brali-lifeos.github.io/evidence/"
+    }
+  ],
+  "vocabulary": [
+    {
+      "term": "Evidence Decision",
+      "definition": "A reviewed record of how a source affects Brali guidance, including supported claims, unsupported or overstated claims, limitations and editorial outcome.",
+      "url": "https://brali-lifeos.github.io/evidence/"
+    },
+    {
+      "term": "evidence state",
+      "definition": "A Brali publication-state label: reviewed, practical, pending-review or restricted. It is not a universal scientific-certainty score.",
+      "url": "https://brali-lifeos.github.io/state/"
+    },
+    {
+      "term": "canonical identity",
+      "definition": "A stable Brali identifier in the form brali:<kind>:<local-id>; labels, URLs, localized terms and historical identifiers are aliases.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Topic",
+      "definition": "A concrete problem, capability or outcome used as Brali's primary retrieval target.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Protocol",
+      "definition": "An executable sequence or personal experiment represented as a reusable Brali knowledge object.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "term": "Lens",
+      "definition": "A transferable way of thinking that can connect multiple Topics; a Lens is not evidence by itself.",
+      "url": "https://brali-lifeos.github.io/ontology/"
+    }
+  ],
+  "machineSurfaces": {
+    "siteProfile": "https://brali-lifeos.github.io/ai/site-profile.json",
+    "aiSearchProfile": "https://brali-lifeos.github.io/ai/ai-search-profile.json",
+    "localeManifest": "https://brali-lifeos.github.io/ai/locales.json",
+    "knowledgeGraph": "https://brali-lifeos.github.io/knowledge/graph.json",
+    "trustCenter": "https://brali-lifeos.github.io/trust/trust.json",
+    "correctionsLedger": "https://brali-lifeos.github.io/trust/corrections.json",
+    "evidenceDecisions": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json",
+    "evidenceMetrics": "https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json",
+    "retrievalBenchmark": "https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json",
+    "historyFeed": "https://brali-lifeos.github.io/updates/feed.json",
+    "citationContract": "https://brali-lifeos.github.io/cite/index.json"
+  },
+  "guardrails": [
+    "Do not infer scientific certainty from Brali publication states.",
+    "Do not treat research candidates as evidence by themselves.",
+    "Do not infer search visibility, AI citation, external authority or readiness from the existence of machine-readable surfaces.",
+    "Preserve negative, unsupported, challenge-existing and watch outcomes from Evidence Decisions when relevant.",
+    "Keep the generated citation contract and dataset license authoritative for attribution and reuse terms."
+  ]
+}

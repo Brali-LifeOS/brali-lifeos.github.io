@@ -1,0 +1,55 @@
+{
+  "version": "2026-09-05",
+  "scope": "Project-level factual claims about Brali's published interfaces and editorial model. This registry is not a scientific evidence score and does not replace Evidence Decisions for content claims.",
+  "canonicalEvidenceDecisions": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json",
+  "claims": [
+    {
+      "id": "BRALI-CLAIM-0001",
+      "claim": "Brali exposes a versioned static API v1 for public knowledge and retrieval surfaces.",
+      "status": "verified-project-fact",
+      "evidence": [
+        "https://brali-lifeos.github.io/api/v1/index.json",
+        "https://brali-lifeos.github.io/api/v1/openapi.json",
+        "https://brali-lifeos.github.io/api/v1/manifest.json"
+      ],
+      "limitations": "This claim describes published Brali interfaces; it does not imply external adoption or uptime guarantees."
+    },
+    {
+      "id": "BRALI-CLAIM-0002",
+      "claim": "Brali separates research-candidate discovery metadata from reviewed Evidence Decisions and does not treat candidate metadata as evidence by itself.",
+      "status": "verified-project-fact",
+      "evidence": [
+        "https://brali-lifeos.github.io/llms.txt",
+        "https://brali-lifeos.github.io/evidence/",
+        "https://brali-lifeos.github.io/api/v1/evidence-decisions.json"
+      ],
+      "limitations": "The separation is an editorial and data-model contract; scientific strength still depends on the underlying reviewed sources."
+    },
+    {
+      "id": "BRALI-CLAIM-0003",
+      "claim": "Brali currently documents a local read-only stdio MCP integration and does not claim a hosted remote MCP endpoint.",
+      "status": "verified-project-fact",
+      "evidence": [
+        "https://brali-lifeos.github.io/for-ai/integrations/",
+        "https://brali-lifeos.github.io/llms.txt",
+        "https://github.com/Brali-LifeOS/brali-lifeos.github.io/tree/main/mcp"
+      ],
+      "limitations": "This describes the currently published integration contract and can change in future releases."
+    },
+    {
+      "id": "BRALI-CLAIM-0004",
+      "claim": "Brali publishes machine-readable evidence-state metrics and a deterministic retrieval benchmark as separate measurement surfaces.",
+      "status": "verified-project-fact",
+      "evidence": [
+        "https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json",
+        "https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json"
+      ],
+      "limitations": "These measurements describe Brali's corpus and retrieval evaluation; they are not independent scientific-quality or AI-readiness scores."
+    }
+  ],
+  "guardrails": [
+    "Project facts must cite first-party published surfaces.",
+    "Scientific or practical content claims belong in Evidence Decisions, not this registry.",
+    "External adoption, ranking, citation, or authority claims require independent observable evidence."
+  ]
+}

@@ -32,9 +32,17 @@ function rfc822(value) {
   return isoDate(value, 'date').toUTCString();
 }
 
+function readJson(file, label) {
+  if (!fs.existsSync(file)) fail(`missing ${label}`);
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch (error) {
+    fail(`${label} is not valid JSON: ${error.message}`);
+  }
+}
+
 function readSource() {
-  if (!fs.existsSync(SOURCE)) fail('missing data/public-updates.json');
-  const data = JSON.parse(fs.readFileSync(SOURCE, 'utf8'));
+  const data = readJson(SOURCE, 'data/public-updates.json');
   if (data.schema_version !== 1) fail('unsupported schema_version');
   if (!data.title || !data.description || !data.home_page_url) fail('title, description, and home_page_url are required');
   if (!data.feeds?.rss || !data.feeds?.json || !data.feeds?.api || !data.feeds?.sitemap) fail('all feed URLs are required');
@@ -135,6 +143,49 @@ function buildSitemap(data) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((entry) => `  <url>\n    <loc>${xml(entry.loc)}</loc>\n    <lastmod>${entry.lastmod}</lastmod>\n  </url>`).join('\n')}\n</urlset>`;
 }
 
+function buildApiIndex() {
+  const file = path.join(ROOT, 'api/v1/index.json');
+  const current = readJson(file, 'api/v1/index.json');
+  const endpoints = Array.isArray(current.endpoints) ? [...current.endpoints] : [];
+  if (!endpoints.includes('updates.json')) endpoints.push('updates.json');
+  return JSON.stringify({
+    ...current,
+    endpoints,
+    semantics: {
+      ...(current.semantics || {}),
+      updates: 'updates.json is the dated public change stream. It reports verified changes and does not imply rankings, traffic, adoption, or recommendation outcomes.'
+    }
+  }, null, 2);
+}
+
+function buildOpenApi() {
+  const file = path.join(ROOT, 'api/v1/openapi.json');
+  const current = readJson(file, 'api/v1/openapi.json');
+  const updatePath = {
+    get: {
+      operationId: 'get_updates',
+      summary: 'Get the dated Brali public update stream',
+      responses: {
+        '200': {
+          description: 'Verified weekly and monthly Brali project updates',
+          content: {
+            'application/json': {
+              schema: { type: 'object' }
+            }
+          }
+        }
+      }
+    }
+  };
+  return JSON.stringify({
+    ...current,
+    paths: {
+      ...(current.paths || {}),
+      '/api/v1/updates.json': updatePath
+    }
+  }, null, 2);
+}
+
 const data = readSource();
 if (CHECK_FRESHNESS) {
   checkFreshness(data);
@@ -145,3 +196,5 @@ write(path.join(ROOT, 'feed.xml'), buildRss(data));
 write(path.join(ROOT, 'feed.json'), buildJsonFeed(data));
 write(path.join(ROOT, 'api/v1/updates.json'), buildApi(data));
 write(path.join(ROOT, 'sitemap-updates.xml'), buildSitemap(data));
+write(path.join(ROOT, 'api/v1/index.json'), buildApiIndex());
+write(path.join(ROOT, 'api/v1/openapi.json'), buildOpenApi());

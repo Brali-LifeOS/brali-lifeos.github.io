@@ -2,13 +2,13 @@
   "schema_version": 1,
   "entries": {
     "active-recall-test-yourself": {
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "subtitle": "Test memory without pretending that remembering and doing are the same outcome",
-      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "subtitle": "Retrieve first, check second — and do not confuse remembering a rule with being able to use it",
+      "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
+      "reviewed_at": "2026-09-05",
       "reviewed_by": "Brali Evidence Reviewer",
-      "reason": "Replace an inherited active-recall article containing unsupported percentage gains, arbitrary thirty-minute sessions, generic neuroscience language, invented progress targets, and broad claims about learning performance with a bounded retrieval-practice protocol. A 2021 systematic review supports retrieval practice for classroom learning/retention; two 2026 sources narrow interpretation by distinguishing direct and forward testing effects and showing that improved rule retention did not automatically produce better rule application in one classroom study.",
+      "reason": "Retain the bounded retrieval-practice evidence while rewriting the reviewed protocol in Brali's explanatory voice. The page now teaches the difference between familiarity, retrieval, and application; removes inherited unsupported precision; and uses dry humor only to challenge learning theatre, not the reader. A 2021 systematic review supports retrieval practice for classroom learning/retention; two 2026 sources narrow interpretation by distinguishing direct and forward testing effects and showing that improved rule retention did not automatically produce better rule application in one classroom study.",
       "forbidden_public_fragments": [
         "improve long-term retention by 20–50%",
         "improved recall accuracy from roughly 60% to 85%",
@@ -20,9 +20,9 @@
         "MetalHatsCats × Brali LifeOS"
       ],
       "lifeOsSource": {
-        "hack": "Close the source and try to retrieve the target information from memory. Check the answer and correct errors. If the goal is applying a rule or skill, follow recall with practice that requires actual application.",
-        "whatYouDo": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-        "checkIn": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+        "hack": "Close the source and try to retrieve the target information from memory before looking. Check the answer and correct errors. If the real goal is application, follow recall with a task that requires actual application.",
+        "whatYouDo": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+        "checkIn": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
         "sourceUrl": "https://doi.org/10.1007/s10648-021-09595-9",
         "reference": "Agarwal, Nunes & Blunt (2021) — systematic review of retrieval practice in schools and classrooms"
       },
@@ -53,12 +53,12 @@
         {
           "id": "active-recall-faq-1",
           "question": "What is active recall?",
-          "answer": "It means trying to retrieve information from memory before looking at the answer. Examples include answering a question, explaining a concept from memory, or writing down what you remember, followed by checking and correction."
+          "answer": "It means trying to retrieve information from memory before looking at the answer, then checking and correcting. A question, a blank page, a flashcard cue, or a short explanation can all create that retrieval attempt."
         },
         {
           "id": "active-recall-faq-2",
           "question": "Is rereading useless?",
-          "answer": "No. The point is not to ban reading or examples. Retrieval adds an opportunity to find out what you can actually remember. Reading, worked examples, feedback, and application practice can serve different roles in learning."
+          "answer": "No. Reading gives you information; retrieval checks whether you can produce it without the source. Worked examples, reading, feedback, retrieval, and application practice can solve different parts of the learning problem. Declaring one of them the One True Method would be convenient, but the evidence is less theatrical."
         },
         {
           "id": "active-recall-faq-3",
@@ -68,43 +68,48 @@
         {
           "id": "active-recall-faq-4",
           "question": "How long should an active-recall session be?",
-          "answer": "Brali does not prescribe a universal evidence-backed duration. Use a small enough set of questions or prompts that you can retrieve, check, and correct carefully. The quality of the retrieval-and-feedback loop matters more here than an invented timer."
+          "answer": "Brali does not prescribe a universal evidence-backed timer. Use a set small enough that you can retrieve, check, and correct carefully. Twenty-five, thirty, or forty-two minutes do not become scientific merely because a timer can count them."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>Active recall is useful when the outcome you care about is remembering. Instead of looking at the material again immediately, try to retrieve it first, then check what you got right and wrong. Applied classroom research supports retrieval practice as a useful learning strategy. Newer work also gives Brali an important boundary: the phrase <em>testing effect</em> can hide different memory effects, and stronger memory for a rule does not automatically mean stronger application of that rule. The protocol therefore separates retention practice from application practice.</p>"
+          "html": "<p>Rereading feels productive because the page keeps supplying the answer. Everything looks familiar, which is pleasant but not the same thing as being able to retrieve it later. Active recall changes the task: hide the answer, try to produce it, then check. Applied classroom research supports retrieval practice for learning and retention. The useful boundary is just as important: remembering a rule does not automatically mean you can use it in a new problem. So Brali separates <strong>retrieval</strong> from <strong>application</strong> instead of asking one technique to perform two jobs.</p>"
         },
         "sections": [
           {
             "slug": "define-outcome",
-            "title": "1. Decide what success means",
-            "html": "<p>Ask whether you need to <strong>remember</strong> information, <strong>apply</strong> it, or both. Active recall directly practices retrieval from memory. If the real task is solving a problem, producing language, performing a procedure, or using a rule in context, plan a separate application task as well.</p>"
+            "title": "1. First decide what game you are playing",
+            "html": "<p>Do you need to <strong>remember</strong> something, <strong>use</strong> it, or both? If the exam asks for a definition, retrieval is close to the target. If the job is to solve a case, speak a language, debug code, or perform a procedure, recall is only one layer. Write the real outcome down before choosing the practice. Otherwise it is very easy to become excellent at flashcards and mysteriously average at the thing the flashcards were supposed to support.</p>"
           },
           {
             "slug": "retrieve-before-looking",
-            "title": "2. Retrieve before looking",
-            "html": "<p>Hide the answer or close the source. Use a question, cue, blank page, flashcard prompt, or short explanation task and try to produce the target information from memory. Do not turn this into a test of self-worth; the failed retrievals are useful because they reveal what needs another learning cycle.</p>"
+            "title": "2. Close the source. Yes, actually close it.",
+            "html": "<p>Use a question, cue, blank page, flashcard prompt, or short explanation task. Try to produce the target information before revealing it. A failed retrieval is not a verdict on your intelligence; it is a diagnostic signal that the answer was not available on demand yet. That is much more useful than another pass where the page politely does the remembering for you.</p>"
           },
           {
             "slug": "check-correct",
-            "title": "3. Check and correct",
-            "html": "<p>Compare your response with the source soon enough to catch errors. Correct what was missing or wrong. Retrieval without checking can leave mistakes unresolved, so the practical loop is retrieval plus feedback rather than repeated guessing.</p>"
+            "title": "3. Check before the mistake becomes a souvenir",
+            "html": "<p>Compare your response with the source soon enough to catch omissions and errors. Repair them explicitly: write the missing step, restate the definition, or explain why your answer was wrong. The practical loop is <strong>retrieve → check → correct</strong>. Repeated guessing without feedback is not active recall with extra courage; it is just unresolved error.</p>"
           },
           {
             "slug": "separate-retention-application",
-            "title": "4. Separate retention from application",
-            "html": "<p>If knowing the answer is not the final goal, now use the knowledge. Solve a new problem, write a sentence, perform the procedure, classify a new example, or complete another task that resembles the real criterion. A 2026 classroom study provides a useful warning: pupils who combined retrieval practice with worked examples retained spelling rules better after one week, but they did not apply those rules better than pupils using worked examples alone.</p>"
+            "title": "4. Remembering is not doing. Annoying, but useful.",
+            "html": "<p>If knowing the answer is not the final goal, now use the knowledge. Solve a fresh problem, write a sentence, classify a new example, perform the procedure, or explain how the rule changes a real decision. A 2026 classroom study found that adding retrieval practice to worked examples improved retention of spelling rules after one week without improving correct rule application beyond worked examples alone. The lesson is not that retrieval failed. It is that the outcome changed.</p>"
           },
           {
             "slug": "repeat-where-needed",
-            "title": "5. Repeat what failed, not everything by default",
-            "html": "<p>Use later retrieval opportunities for items you want to keep accessible, especially material you missed or could only partly recall. You can space those opportunities over time. Brali does not prescribe a universal number of questions, repetitions, minutes, or percentage target.</p>"
+            "title": "5. Repeat the weak spots, not the whole textbook out of superstition",
+            "html": "<p>Return later to material you want to keep accessible, especially items you missed or could only partly retrieve. Space those opportunities when useful. Brali does not prescribe a sacred number of questions, repetitions, minutes, or percentage targets. Track whether retrieval is becoming more reliable and whether the separate application task is improving.</p>"
           },
           {
             "slug": "keep-claim-specific",
-            "title": "6. Name the outcome when you describe the evidence",
-            "html": "<p>A 2026 meta-analysis found that much of the free-recall literature described under one <em>testing effect</em> label mixes direct effects on tested material with forward effects on material learned later. That does not make retrieval practice useless. It means the claim should be specific: say whether the evidence concerns remembering tested material, later learning, or application rather than borrowing one broad label for all three.</p>"
+            "title": "6. Keep the claim as specific as the evidence",
+            "html": "<p>A 2026 meta-analysis points out that research grouped under the broad label <em>testing effect</em> often mixes direct benefits for tested material with forward effects on material learned later. That does not weaken the basic practice; it stops us from using one impressive label for several different outcomes. When you describe what worked, say whether you mean remembering the tested material, learning later material, or applying knowledge. Precision is less exciting than magic. It is also more reusable.</p>"
+          },
+          {
+            "slug": "run-the-loop",
+            "title": "7. Run one small learning loop",
+            "html": "<p>Pick three to five things you genuinely need to retain. Retrieve them without looking, check the misses, and correct them. Then choose one application task if the real goal requires performance. At the next normal study session, ask two questions: <strong>Can I still retrieve it?</strong> and <strong>Can I use it?</strong> Keep the parts that improve the outcome you actually care about; change the rest.</p>"
           }
         ]
       }

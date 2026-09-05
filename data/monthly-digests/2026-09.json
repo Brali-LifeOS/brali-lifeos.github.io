@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "month": "2026-09",
+  "period_start": "2026-09-01",
+  "period_end_exclusive": "2026-10-01",
+  "generated_at": "2026-09-05T11:30:00Z",
+  "status": "partial",
+  "counts": {
+    "candidates_discovered_in_review_batches": 9,
+    "decisions_reviewed": 8,
+    "propose-protocol": 6,
+    "support-existing": 1,
+    "watch": 1,
+    "screening_without_decision": 1,
+    "fresh_september_publications_screened": 4,
+    "fresh_september_publications_promoted": 0
+  },
+  "reviewed_batches": [
+    {
+      "date": "2026-09-01",
+      "added_or_strengthened": [
+        "Customizable social-media brake protocol proposal",
+        "Nutrition-specific if-then planning protocol proposal"
+      ]
+    },
+    {
+      "date": "2026-09-02",
+      "added_or_strengthened": [
+        "Guess-before-reveal vocabulary pretesting protocol proposal"
+      ],
+      "held_back": [
+        "Personal-finance goal-setting RCT remains screening pending complete source review"
+      ]
+    },
+    {
+      "date": "2026-09-03",
+      "added_or_strengthened": [
+        "Leisure-crafting protocol proposal"
+      ],
+      "held_back": [
+        "Supervisory-feedback meta-analysis remains watch because the evidence base is mostly correlational and highly heterogeneous"
+      ]
+    },
+    {
+      "date": "2026-09-04",
+      "added_or_strengthened": [
+        "Recurring records-maintenance block protocol proposal"
+      ]
+    },
+    {
+      "date": "2026-09-05",
+      "added_or_strengthened": [
+        "Protect off-work time from work apps protocol proposal",
+        "Existing prolonged-sitting break protocol strengthened and its cognitive claims narrowed"
+      ]
+    }
+  ],
+  "fresh_external_scan": [
+    {
+      "publication_date": "2026-09-02",
+      "title": "Efficacy of a self-guided online resilience intervention for improving mental health among university students: A randomized controlled trial",
+      "doi": "10.1038/s41598-026-67088-7",
+      "url": "https://www.nature.com/articles/s41598-026-67088-7",
+      "decision": "hold",
+      "reason": "The per-protocol analysis showed some improvements, but adherence was low and the intention-to-treat analysis found no significant effects. This is useful negative/boundary evidence, not a basis for a general self-guided resilience protocol."
+    },
+    {
+      "publication_date": "2026-09-02",
+      "title": "Encouraging Growth in Programming Education: Does Growth Mindset Feedback Influence Learning?",
+      "doi": "10.1007/s10758-026-09996-1",
+      "url": "https://link.springer.com/article/10.1007/s10758-026-09996-1",
+      "decision": "challenge",
+      "reason": "In a controlled study of 79 German secondary-school students, feedback type showed no main effect on performance, mindset beliefs, self-efficacy, attempts, or give-up behavior. The narrow sample prevents broad conclusions, but the result argues against treating growth-mindset wording as a default feedback upgrade."
+    },
+    {
+      "publication_date": "2026-09-02",
+      "title": "Mindfulness, creative self-efficacy, and communal-agentic orientation in human–AI decision-making with implications for adaptive AI design",
+      "doi": "10.1038/s41598-026-69355-z",
+      "url": "https://www.nature.com/articles/s41598-026-69355-z",
+      "decision": "watch",
+      "reason": "The study is relevant to human-AI decision calibration but is observational: it links individual traits with whether professionals revise a budget allocation after AI input. It cannot justify a causal delegation or calibration protocol."
+    },
+    {
+      "publication_date": "2026-09-04",
+      "title": "Effects of mobile application-based exercises compared with traditional exercise on pain and work functioning in academicians: a quasi-experimental study",
+      "doi": "10.1038/s41598-026-68695-0",
+      "url": "https://www.nature.com/articles/s41598-026-68695-0",
+      "decision": "reject-for-now",
+      "reason": "The study is small, quasi-experimental, institution-allocated, and combines exercise with ergonomic education. It is too context-specific and causally weak to justify another Brali movement protocol beyond the existing stronger evidence base."
+    }
+  ],
+  "project_changes": [
+    "Opened Brali AI discovery surfaces",
+    "Added a Google Search indexing loop and pinned a valid indexing runner",
+    "Expanded research search lenses for pretesting, personal finance, leisure crafting, and related topics",
+    "Added and corrected daily evidence-review batches through September 5",
+    "Added a machine-readable and human-readable monthly digest generator"
+  ],
+  "next_monthly_loop": {
+    "close_month_on": "2026-10-01",
+    "rules": [
+      "Search the previous calendar month, not an arbitrary rolling window, for the digest layer.",
+      "Keep discovery, source review, and protocol promotion as separate states.",
+      "Record negative and null findings when they constrain Brali claims.",
+      "Prefer strengthening or challenging an existing protocol over creating a near-duplicate.",
+      "Report what was reviewed, what changed, what was rejected or held, and why."
+    ]
+  },
+  "note": "Partial September digest through 2026-09-05. The fresh external scan is a screening layer only; none of those four September publications is promoted to canonical Brali evidence by this digest."
+}

@@ -1,0 +1,29 @@
+{
+  "version": "2026-09-05",
+  "name": "Brali Agent Surface Observatory",
+  "scope": "Repository-backed inventory of canonical public machine-readable surfaces. Status means the surface is declared and versioned in the Brali repository; it is not a synthetic availability SLA or external visibility score.",
+  "observedAt": "2026-09-05",
+  "observationMode": "repository-declared",
+  "surfaces": [
+    {"id":"site-profile","url":"https://brali-lifeos.github.io/ai/site-profile.json","mediaType":"application/json","role":"discovery","status":"declared-active"},
+    {"id":"ai-search-profile","url":"https://brali-lifeos.github.io/ai/ai-search-profile.json","mediaType":"application/json","role":"search-and-citation-policy","status":"declared-active"},
+    {"id":"llms","url":"https://brali-lifeos.github.io/llms.txt","mediaType":"text/plain","role":"agent-orientation","status":"declared-active"},
+    {"id":"robots","url":"https://brali-lifeos.github.io/robots.txt","mediaType":"text/plain","role":"crawler-policy","status":"declared-active"},
+    {"id":"sitemap","url":"https://brali-lifeos.github.io/sitemap.xml","mediaType":"application/xml","role":"discovery","status":"declared-active"},
+    {"id":"api-index","url":"https://brali-lifeos.github.io/api/v1/index.json","mediaType":"application/json","role":"data-catalog","status":"declared-active"},
+    {"id":"openapi","url":"https://brali-lifeos.github.io/api/v1/openapi.json","mediaType":"application/json","role":"api-contract","status":"declared-active"},
+    {"id":"search-index","url":"https://brali-lifeos.github.io/api/v1/search.json","mediaType":"application/json","role":"retrieval","status":"declared-active"},
+    {"id":"evidence-decisions","url":"https://brali-lifeos.github.io/api/v1/evidence-decisions.json","mediaType":"application/json","role":"content-evidence","status":"declared-active"},
+    {"id":"project-claims","url":"https://brali-lifeos.github.io/evidence/claims/index.json","mediaType":"application/json","role":"project-evidence","status":"declared-active"},
+    {"id":"crawler-matrix","url":"https://brali-lifeos.github.io/crawler-matrix/crawlers.json","mediaType":"application/json","role":"crawler-policy","status":"declared-active"},
+    {"id":"trust","url":"https://brali-lifeos.github.io/trust/trust.json","mediaType":"application/json","role":"trust-policy","status":"declared-active"},
+    {"id":"corrections","url":"https://brali-lifeos.github.io/trust/corrections.json","mediaType":"application/json","role":"corrections","status":"declared-active"},
+    {"id":"knowledge-graph","url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json","role":"entity-linking","status":"declared-active"},
+    {"id":"press-facts","url":"https://brali-lifeos.github.io/media/press-facts.json","mediaType":"application/json","role":"attribution-and-reuse","status":"declared-active"}
+  ],
+  "guardrails": [
+    "Declared-active is a repository publication state, not a real-time HTTP health check.",
+    "No surface is evidence of search ranking, external adoption, AI citation frequency or scientific validity.",
+    "Runtime monitoring may be added later only with explicit measurement provenance."
+  ]
+}

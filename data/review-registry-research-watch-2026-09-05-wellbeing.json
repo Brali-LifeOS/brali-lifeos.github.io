@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch follow-up for 2026-09-05. A 2026 preregistered systematic review and network meta-analysis of well-being interventions completed full-source review. It is used to strengthen an existing short-meditation protocol and, more importantly, to bound Brali's wellbeing voice: several practical routes can help, and the evidence does not justify presenting one technique as the universal winner.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1038/s41562-025-02369-1",
+      "source": "crossref",
+      "source_id": "10.1038/s41562-025-02369-1",
+      "doi": "10.1038/s41562-025-02369-1",
+      "pmid": null,
+      "title": "A systematic review and network meta-analysis of randomized controlled trials of well-being-focused interventions",
+      "authors": ["Lowri Wilkie", "Zoe Fisher", "Antonia Geidel", "Isabel Goodall", "Shannon Kamil", "Elen Davies", "Andrew Haddon Kemp"],
+      "container_title": "Nature Human Behaviour",
+      "publication_date": "2026-01-02",
+      "type": "journal-article",
+      "subjects": ["well-being", "mindfulness", "exercise", "yoga", "positive psychology", "network meta-analysis"],
+      "reference_url": "https://doi.org/10.1038/s41562-025-02369-1",
+      "discovered_at": "2026-09-05T11:45:00Z",
+      "last_seen_at": "2026-09-05T11:45:00Z",
+      "status": "support-existing",
+      "query_ids": ["mind-wellbeing-interventions"],
+      "domain_ids": ["mind-resilience"],
+      "topic_ids": ["mood-wellbeing"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["mind-resilience"],
+      "zone_slugs": ["be-positive", "be-calm", "be-healthy"],
+      "risk_flags": ["mental-health"],
+      "crossref_score": null,
+      "discovery_sources": ["crossref"],
+      "review_notes": "Full open-access Nature Human Behaviour article reviewed. The preregistered network meta-analysis included 183 randomized controlled trials and 22,811 adults without diagnosed conditions. Mindfulness, compassion, yoga, exercise and single positive-psychology interventions generally improved well-being versus inactive controls, with no consistent evidence that the better-supported approaches clearly outperformed one another. Mindfulness had the broadest direct evidence base among the contemplative approaches. The review also reports major quality constraints: 60% of included trials were rated high risk of bias, only 33% used intention-to-treat analysis, funnel-plot asymmetry suggested publication bias, many outcomes were immediate post-intervention, and many network comparisons were indirect. Brali should therefore use this source to support choice among several bounded wellbeing practices, not to crown a universal best technique or prescribe a fixed dose."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "wellbeing-multiple-pathways-boundary-2026",
+      "candidate_id": "crossref:10.1038/s41562-025-02369-1",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.nature.com/articles/s41562-025-02369-1",
+      "source_title": "A systematic review and network meta-analysis of randomized controlled trials of well-being-focused interventions",
+      "source_type": "systematic-review-network-meta-analysis",
+      "doi": "10.1038/s41562-025-02369-1",
+      "citation_text": "Wilkie L, Fisher Z, Geidel A, et al. Nature Human Behaviour. 2026;10:715-726.",
+      "source_reviewed": true,
+      "study_design": "Preregistered systematic review and random-effects network meta-analysis (PROSPERO CRD42023403480) of randomized controlled trials. Searches of MEDLINE, PsycINFO, CENTRAL and Scopus through March 2023 identified 183 trials used in the final network meta-analysis. Risk of bias was assessed with RoB 2, network confidence with CINeMA, and sensitivity analyses excluded high-risk and small studies, restricted outcomes, and added grey literature.",
+      "population": "22,811 adults without diagnosed conditions. Mean participant age was 38.3 years with a reported range of 18-82. Studies were conducted in universities, workplaces, communities and online settings; 79% were conducted in Western countries. Demographic reporting was incomplete across many trials.",
+      "intervention_or_exposure": "Structured well-being interventions including mindfulness-based, compassion-based, positive-psychology, exercise, yoga, ACT, educational, nature-based and some combined psychological-plus-exercise programmes, compared directly or indirectly through a connected randomized-trial network.",
+      "outcomes": ["Validated well-being outcomes", "Relative intervention effects versus control", "Network treatment rankings", "Risk of bias", "Certainty of network comparisons", "Sensitivity analyses"],
+      "supported_claim": "For general adult well-being, Brali can reasonably offer more than one small practice rather than pretending there is a single best technique. In this network meta-analysis, several established approaches—including mindfulness, exercise, yoga, compassion-based and positive-psychology interventions—showed moderate benefits versus inactive controls, while many head-to-head differences were not statistically clear. This supports the existing short-meditation protocol as one optional practice and supports a broader Brali rule: choose a feasible evidence-informed route, test it, and keep the one that is useful in the user's context.",
+      "unsupported_or_overstated_claims": [
+        "Mindfulness is the single best well-being intervention for everyone.",
+        "A five-minute meditation is an evidence-established dose.",
+        "Exercise-plus-psychological interventions are definitively superior; that node contained only three studies and two were high risk of bias.",
+        "These interventions treat depression, anxiety or another diagnosed mental-health condition; clinical samples were excluded.",
+        "Nature-based practices do not work; the nature node was small, heterogeneous and weakly connected to the network.",
+        "Treatment rankings prove one intervention should be preferred clinically or personally over another.",
+        "Immediate post-intervention gains prove durable long-term improvement.",
+        "The pooled effect sizes predict how much one individual will benefit."
+      ],
+      "limitations": [
+        "The literature search ended in March 2023 even though the synthesis was published in 2026, so it is a current synthesis of an older evidence window rather than a review of trials through 2025-2026.",
+        "Only 12 of 183 studies were rated low risk of bias overall; 110 (60%) were rated high risk.",
+        "Only 33% of studies used intention-to-treat analysis.",
+        "Funnel-plot asymmetry and Egger tests suggested publication bias, although sensitivity analyses did not materially change the overall pattern.",
+        "Many trials reported only immediate post-intervention outcomes, leaving long-term durability poorly characterized.",
+        "Many network comparisons relied on indirect evidence rather than direct head-to-head trials.",
+        "Seventy-nine percent of studies were conducted in Western countries and demographic reporting was incomplete.",
+        "Broad intervention nodes combined programmes that can differ materially in content, dose and delivery, so the review cannot identify the active ingredient or an optimal protocol duration."
+      ],
+      "target_hack_ids": ["5-minute-meditation-habit-tracker"],
+      "target_protocol_ids": ["brali:5-minute-meditation-habit-tracker"],
+      "risk_flags": ["mental-health"],
+      "notes": "Editorial role: strengthen the short-meditation page without turning it into a sales pitch for meditation. The useful lesson is pluralism: structured mindfulness is a defensible option, but exercise, yoga, compassion and positive-psychology approaches also have evidence. Brali should explain the mechanism/action clearly, invite a small experiment, and make switching practices normal when one approach is unhelpful."
+    }
+  ]
+}

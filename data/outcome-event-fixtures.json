@@ -32,27 +32,25 @@
         "occurred_at": "2026-09-05T16:00:00.000Z",
         "run_id": "44444444-4444-4444-8444-444444444444",
         "protocol_id": "brali:protocol:five-whys-goal-clarity",
-        "client": {"category": "manual"},
+        "client": {"category": "browser-runner", "runtime": "Brali Protocol Runner"},
         "dataset": {"version": "1.0.0", "manifest_sha256": null},
-        "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
+        "consent": {"explicit": true, "channel": "download", "reviewed_before_share": true},
         "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
       }
     },
     {
-      "id": "helpful-run-feedback",
+      "id": "helpful-run-feedback-without-query",
       "event": {
         "schema_version": 1,
         "event_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
         "event_type": "helpful_yes",
         "occurred_at": "2026-09-05T16:05:00.000Z",
-        "query_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
         "run_id": "44444444-4444-4444-8444-444444444444",
         "protocol_id": "brali:protocol:five-whys-goal-clarity",
-        "client": {"category": "manual"},
+        "client": {"category": "browser-runner", "runtime": "Brali Protocol Runner"},
         "dataset": {"version": "1.0.0", "manifest_sha256": null},
-        "result": {"state": "trusted_match", "protocol_ids": ["brali:protocol:five-whys-goal-clarity"], "evidence_states": ["practical"]},
         "feedback": {"reason": "helpful", "note_included": false},
-        "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
+        "consent": {"explicit": true, "channel": "download", "reviewed_before_share": true},
         "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
       }
     }
@@ -101,8 +99,23 @@
         "event_type": "protocol_completed",
         "occurred_at": "2026-09-05T16:20:00.000Z",
         "protocol_id": "brali:protocol:five-whys-goal-clarity",
+        "client": {"category": "browser-runner"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "consent": {"explicit": true, "channel": "download", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    },
+    {
+      "id": "helpful-without-query-or-run",
+      "expected_error": "feedback context",
+      "event": {
+        "schema_version": 1,
+        "event_id": "eeeeeeee-eeee-4eee-8eee-eeeeeeeeeeee",
+        "event_type": "helpful_yes",
+        "occurred_at": "2026-09-05T16:22:00.000Z",
         "client": {"category": "manual"},
         "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "feedback": {"reason": "helpful", "note_included": false},
         "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
         "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
       }

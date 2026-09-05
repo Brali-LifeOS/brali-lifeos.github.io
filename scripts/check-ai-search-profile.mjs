@@ -10,6 +10,7 @@ const locales = await readJson('ai/locales.json');
 const trust = await readJson('trust/trust.json');
 const corrections = await readJson('trust/corrections.json');
 const graph = await readJson('knowledge/graph.json');
+const citation = await readJson('cite/index.json');
 const llms = await readFile('llms.txt', 'utf8');
 const trustHtml = await readFile('trust/index.html', 'utf8');
 
@@ -66,6 +67,12 @@ assert(typeof corrections.emptyState === 'string' && corrections.emptyState.leng
 
 assert(graph['@context'] === 'https://schema.org', 'knowledge graph must use schema.org context');
 assert(Array.isArray(graph['@graph']) && graph['@graph'].length >= 5, 'knowledge graph is unexpectedly small');
+
+assert(citation.schema_version >= 2, 'citation index schema must include the extended machine-surface contract');
+assert(Array.isArray(citation.canonical_vocabulary) && citation.canonical_vocabulary.length >= 5, 'citation index must publish canonical vocabulary');
+assert(citation.machine_surfaces?.ai_search_profile === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'citation index must link the AI search profile');
+assert(citation.machine_surfaces?.knowledge_graph === 'https://brali-lifeos.github.io/knowledge/graph.json', 'citation index must link the knowledge graph');
+assert(Array.isArray(citation.citation_guardrails) && citation.citation_guardrails.length >= 3, 'citation guardrails are missing');
 
 for (const path of ['/ai/ai-search-profile.json', '/trust/', '/trust/trust.json', '/trust/corrections.json', '/knowledge/graph.json']) {
   assert(llms.includes(path), `llms.txt must expose ${path}`);

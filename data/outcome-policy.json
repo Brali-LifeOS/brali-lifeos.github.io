@@ -2,10 +2,12 @@
   "schema_version": 1,
   "name": "Brali outcome observation policy",
   "collection_status": "instrumented",
-  "description": "Ask Brali exposes explicit opt-in privacy-light retrieval feedback, and the Brali Protocol Runner now supports a complete browser path from trusted protocol start to completion and Helpful/Not helpful review. Both surfaces create local reviewable event envelopes and transmit nothing automatically. Observed counts still change only after deliberate sharing, schema/privacy review and acceptance into the public observation registry.",
+  "description": "Ask Brali exposes explicit opt-in privacy-light retrieval feedback, the Brali Protocol Runner supports a browser path from trusted protocol start to completion and Helpful/Not helpful review, and the integration report surface can prepare a privacy-light integration event. These surfaces create local reviewable event data and transmit nothing automatically. Observed counts change only after deliberate sharing, schema/privacy review and acceptance into the public observation registry.",
   "instrumentation_scope": {
     "query_feedback": "live",
     "protocol_execution": "live",
+    "integration_feedback": "live",
+    "unresolved_review_queue": "live",
     "automatic_collection": false
   },
   "north_star": {
@@ -27,12 +29,12 @@
     {
       "id": "github-issue",
       "status": "live",
-      "description": "Ask Brali and Protocol Runner can prepare privacy-light event data inside a GitHub issue draft. Query text is excluded from the event envelope and is off by default even when a Query draft offers a separate opt-in. The user reviews the public draft before submitting it."
+      "description": "Query, Protocol Runner, and integration reporting can prepare privacy-light event data inside a GitHub issue draft. Query text is excluded from the event envelope and is off by default even when a Query draft offers a separate opt-in. The user reviews the public draft before submitting it."
     },
     {
       "id": "native-share",
       "status": "live-when-supported",
-      "description": "After choosing a feedback or protocol outcome signal, the user may explicitly open the operating-system share sheet with event JSON. Brali does not choose a destination or share in the background."
+      "description": "After choosing a feedback, protocol outcome, or integration signal, the user may explicitly open the operating-system share sheet with event JSON. Brali does not choose a destination or share in the background."
     },
     {
       "id": "download",
@@ -49,7 +51,7 @@
     "raw_query_in_event": false,
     "personal_data_in_event": false,
     "user_identifier_in_event": false,
-    "prompt_text_may_be_shared_separately": "Only if a person deliberately opts in outside the event envelope after reviewing the destination. Brali does not require raw query text for outcome reporting.",
+    "prompt_text_may_be_shared_separately": "Only if a person deliberately opts in outside the event envelope after reviewing the destination. Brali does not require raw query text for outcome reporting or unresolved-review routing.",
     "minimum_context": [
       "event type",
       "event and run/query identifiers",
@@ -62,10 +64,11 @@
     ]
   },
   "retention": {
-    "browser": "Query feedback previews and protocol-run state stay in page memory only until navigation or refresh unless the user explicitly exports or shares them.",
+    "browser": "Query feedback previews, protocol-run state, and integration event previews stay in page memory only until navigation or refresh unless the user explicitly exports or shares them.",
     "github_issue": "A deliberately submitted GitHub issue follows GitHub and repository retention controls; submission itself does not automatically create a reviewed public observation.",
     "public_observation_dataset": "Only reviewed events with explicit consent, valid provenance and no prohibited data may enter the versioned public observation registry.",
-    "aggregate_report": "Aggregate reports contain counts and canonical IDs, not raw prompts or user identifiers."
+    "aggregate_report": "Aggregate reports contain counts and canonical IDs, not raw prompts or user identifiers.",
+    "unresolved_review_queue": "The evaluation/editorial queue contains only accepted unresolved event categories, canonical Topic/Protocol context, dataset version, coarse client category and reviewed provenance. Raw query text and user identifiers are excluded."
   },
   "verification": {
     "accepted_observation_sources": ["github-issue", "manual-import"],
@@ -77,7 +80,8 @@
       "published dataset version",
       "reviewed provenance record"
     ],
-    "verified_success_rule": "Count a run only when protocol_completed and helpful_yes are both present, valid, and linked by the same run_id, protocol_id, dataset version and ISO week."
+    "verified_success_rule": "Count a run only when protocol_completed and helpful_yes are both present, valid, and linked by the same run_id, protocol_id, dataset version and ISO week.",
+    "unresolved_queue_rule": "Only reviewed no_trusted_answer, bad_match, and missing_knowledge events may enter the unresolved review queue. The queue must not import prompt text."
   },
   "reporting_rules": [
     "Show zero when no reviewed observations exist.",
@@ -85,16 +89,18 @@
     "Do not infer users, completions or helpfulness from page views, downloads, generated drafts, share actions, repository activity or CI.",
     "Publish not-helpful, bad-match, no-answer and missing-knowledge outcomes when they meet the same consent, privacy and provenance boundary.",
     "Do not claim repeated use without repeated reviewed observations linked through a privacy-safe run or integration identifier.",
-    "Instrumented means explicit Query feedback and Protocol Runner paths are live; it does not mean reviewed outcomes exist.",
-    "A locally generated or exported protocol-run bundle does not affect the north-star metric until its events are deliberately shared, reviewed and accepted."
+    "Instrumented means explicit Query feedback, Protocol Runner, integration feedback, and unresolved-review paths are live; it does not mean reviewed outcomes exist.",
+    "A locally generated or exported event bundle does not affect the north-star metric until its events are deliberately shared, reviewed and accepted."
   ],
   "public_surfaces": {
     "schema": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
     "policy": "https://brali-lifeos.github.io/life-os/datasets/outcome-policy.json",
     "observations": "https://brali-lifeos.github.io/life-os/datasets/outcome-observations.json",
     "report": "https://brali-lifeos.github.io/life-os/datasets/outcome-report.json",
+    "review_queue": "https://brali-lifeos.github.io/life-os/datasets/outcome-review-queue.json",
     "human_report": "https://brali-lifeos.github.io/quality/outcomes/",
     "query_feedback": "https://brali-lifeos.github.io/for-ai/query/",
-    "protocol_runner": "https://brali-lifeos.github.io/run/"
+    "protocol_runner": "https://brali-lifeos.github.io/run/",
+    "integration_feedback": "https://brali-lifeos.github.io/for-ai/integrations/report/"
   }
 }

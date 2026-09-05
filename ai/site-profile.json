@@ -9,49 +9,32 @@
   "web": {
     "sitemap": "https://brali-lifeos.github.io/sitemap.xml",
     "robots": "https://brali-lifeos.github.io/robots.txt",
-    "llms": "https://brali-lifeos.github.io/llms.txt"
+    "llms": "https://brali-lifeos.github.io/llms.txt",
+    "feeds": [
+      {"url":"https://brali-lifeos.github.io/updates/feed.json","mediaType":"application/feed+json","title":"Brali Updates JSON Feed"},
+      {"url":"https://brali-lifeos.github.io/updates/feed.atom","mediaType":"application/atom+xml","title":"Brali Updates Atom Feed"}
+    ]
   },
   "data": {
     "catalog": "https://brali-lifeos.github.io/api/v1/index.json",
     "openapi": "https://brali-lifeos.github.io/api/v1/openapi.json",
     "distributions": [
-      {
-        "name": "Brali API manifest",
-        "url": "https://brali-lifeos.github.io/api/v1/manifest.json",
-        "mediaType": "application/json",
-        "role": "release",
-        "description": "Generated API and dataset manifest with release metadata and checksums."
-      },
-      {
-        "name": "Brali search index",
-        "url": "https://brali-lifeos.github.io/api/v1/search.json",
-        "mediaType": "application/json",
-        "role": "search-index",
-        "description": "Static bounded search distribution over public Brali knowledge."
-      }
+      {"name":"Brali API manifest","url":"https://brali-lifeos.github.io/api/v1/manifest.json","mediaType":"application/json","role":"release","description":"Generated API and dataset manifest with release metadata and checksums."},
+      {"name":"Brali search index","url":"https://brali-lifeos.github.io/api/v1/search.json","mediaType":"application/json","role":"search-index","description":"Static bounded search distribution over public Brali knowledge."},
+      {"name":"Brali evidence metrics","url":"https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json","mediaType":"application/json","role":"evaluation","description":"Generated corpus and evidence-state metrics, review queue counts and Evidence Decision totals."},
+      {"name":"Brali retrieval benchmark","url":"https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json","mediaType":"application/json","role":"evaluation","description":"Deterministic retrieval evaluation with cases, recall@k, precision@k and pass results."},
+      {"name":"Brali AI Search and Citation Profile","url":"https://brali-lifeos.github.io/ai/ai-search-profile.json","mediaType":"application/json","role":"other","description":"Machine-readable discoverability, citation, trust, measurement and guardrail profile."}
     ]
   },
   "retrieval": {
     "indexes": [
-      {
-        "name": "Brali search index",
-        "url": "https://brali-lifeos.github.io/api/v1/search.json",
-        "mediaType": "application/json",
-        "format": "json",
-        "description": "Static retrieval index over Brali knowledge records."
-      }
+      {"name":"Brali search index","url":"https://brali-lifeos.github.io/api/v1/search.json","mediaType":"application/json","format":"json","description":"Static retrieval index over Brali knowledge records."}
     ],
     "search": "https://brali-lifeos.github.io/for-ai/query/"
   },
   "mcp": {
     "servers": [
-      {
-        "name": "io.github.dkharlanau/brali-knowledge",
-        "transport": "stdio",
-        "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/tree/main/mcp",
-        "documentation": "https://brali-lifeos.github.io/for-ai/integrations/",
-        "readOnly": true
-      }
+      {"name":"io.github.dkharlanau/brali-knowledge","transport":"stdio","source":"https://github.com/Brali-LifeOS/brali-lifeos.github.io/tree/main/mcp","documentation":"https://brali-lifeos.github.io/for-ai/integrations/","readOnly":true}
     ]
   },
   "identity": {
@@ -62,6 +45,12 @@
   "trust": {
     "license": "https://brali-lifeos.github.io/LICENSE",
     "citation": "https://brali-lifeos.github.io/cite/",
-    "provenance": "https://brali-lifeos.github.io/api/v1/manifest.json"
+    "provenance": "https://brali-lifeos.github.io/api/v1/manifest.json",
+    "reviewPolicy": "https://brali-lifeos.github.io/evidence/methodology.html"
+  },
+  "extensions": {
+    "arwp/ai-search-profile": {"url":"https://brali-lifeos.github.io/ai/ai-search-profile.json","profileVersion":"0.1"},
+    "brali/trust-center": {"url":"https://brali-lifeos.github.io/trust/","machineReadable":"https://brali-lifeos.github.io/trust/trust.json"},
+    "brali/knowledge-graph": {"url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json"}
   }
 }

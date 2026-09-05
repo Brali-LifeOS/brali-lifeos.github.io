@@ -28,7 +28,11 @@
       {"name":"Brali canonical citation index","url":"https://brali-lifeos.github.io/citation-index.json","mediaType":"application/json","role":"other","description":"Stable canonical answers, Brali-defined vocabulary, machine surfaces and citation guardrails for search and AI systems."},
       {"name":"Brali Trust Center","url":"https://brali-lifeos.github.io/trust/trust.json","mediaType":"application/json","role":"other","description":"Machine-readable evidence, provenance, integrity, correction, reuse and measurement boundaries."},
       {"name":"Brali corrections ledger","url":"https://brali-lifeos.github.io/trust/corrections.json","mediaType":"application/json","role":"other","description":"Public ledger contract for material corrections without a perfect-history claim."},
-      {"name":"Brali Knowledge Graph","url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json","role":"other","description":"JSON-LD graph linking the site, publisher, API, ontology, evidence, trust and update surfaces."}
+      {"name":"Brali Knowledge Graph","url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json","role":"other","description":"JSON-LD graph linking the site, publisher, API, ontology, evidence, trust and update surfaces."},
+      {"name":"Brali crawler access matrix","url":"https://brali-lifeos.github.io/crawler-matrix/crawlers.json","mediaType":"application/json","role":"other","description":"Declared robots access policy for named and wildcard crawlers, explicitly separated from observed crawling, indexing or citation."},
+      {"name":"Brali project claims registry","url":"https://brali-lifeos.github.io/evidence/claims/index.json","mediaType":"application/json","role":"other","description":"Bounded registry of verifiable project-level facts, separate from scientific and practical Evidence Decisions."},
+      {"name":"Brali agent surface observatory","url":"https://brali-lifeos.github.io/observatory/surfaces.json","mediaType":"application/json","role":"other","description":"Repository-backed inventory of canonical machine-readable discovery, retrieval, evidence, trust and attribution surfaces."},
+      {"name":"Brali press facts","url":"https://brali-lifeos.github.io/media/press-facts.json","mediaType":"application/json","role":"other","description":"Reusable factual product description, canonical sources, citation guidance and licensing boundaries."}
     ]
   },
   "retrieval": {
@@ -79,6 +83,37 @@
       "human": "https://brali-lifeos.github.io/trust/",
       "machine": "https://brali-lifeos.github.io/trust/trust.json",
       "corrections": "https://brali-lifeos.github.io/trust/corrections.json"
+    },
+    "io.github.dkharlanau/crawler-matrix": {
+      "version": "2026-09-05",
+      "status": "active-project-policy",
+      "human": "https://brali-lifeos.github.io/crawler-matrix/",
+      "machine": "https://brali-lifeos.github.io/crawler-matrix/crawlers.json",
+      "history": "https://brali-lifeos.github.io/crawler-matrix/history/index.json",
+      "boundary": "Robots permission is not evidence of crawling, indexing, ranking, training or citation."
+    },
+    "io.github.dkharlanau/project-claims": {
+      "version": "2026-09-05",
+      "status": "active-project-evidence",
+      "human": "https://brali-lifeos.github.io/evidence/claims/",
+      "machine": "https://brali-lifeos.github.io/evidence/claims/index.json",
+      "contentEvidence": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json"
+    },
+    "io.github.dkharlanau/surface-observatory": {
+      "version": "2026-09-05",
+      "status": "active-repository-observation",
+      "human": "https://brali-lifeos.github.io/observatory/",
+      "machine": "https://brali-lifeos.github.io/observatory/surfaces.json",
+      "history": "https://brali-lifeos.github.io/observatory/history/index.json",
+      "observationMode": "repository-declared"
+    },
+    "io.github.dkharlanau/media-facts": {
+      "version": "2026-09-05",
+      "status": "active-attribution-surface",
+      "human": "https://brali-lifeos.github.io/media/",
+      "machine": "https://brali-lifeos.github.io/media/press-facts.json",
+      "citation": "https://brali-lifeos.github.io/cite/",
+      "license": "https://brali-lifeos.github.io/LICENSE"
     }
   }
 }

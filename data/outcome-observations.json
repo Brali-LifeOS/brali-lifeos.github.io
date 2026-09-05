@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "name": "Brali reviewed outcome observations",
+  "collection_status": "contract-ready",
+  "description": "Versioned public observations accepted only after explicit consent, schema validation, privacy review and provenance review. The empty array is an observed zero, not a placeholder for synthetic usage.",
+  "observations": [],
+  "rejected_or_withheld_counts": {
+    "invalid_schema": 0,
+    "missing_consent": 0,
+    "personal_data": 0,
+    "raw_query_included": 0,
+    "unverifiable_provenance": 0,
+    "duplicate_event": 0
+  },
+  "notes": [
+    "No demo, test, generated, analytics or repository event belongs in this file.",
+    "A downloaded event or prepared issue draft does not become a public observation automatically.",
+    "Negative, not-helpful, bad-match and no-answer outcomes are eligible when they meet the same privacy and provenance rules.",
+    "Interactive feedback collection is not live yet; collection_status remains contract-ready until that path is verified."
+  ]
+}

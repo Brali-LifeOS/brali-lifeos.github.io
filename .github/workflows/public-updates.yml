@@ -1,0 +1,80 @@
+name: Public Update Loop
+
+on:
+  pull_request:
+    paths:
+      - 'data/public-updates.json'
+      - 'scripts/build-public-updates.mjs'
+      - 'feed.xml'
+      - 'feed.json'
+      - 'api/v1/updates.json'
+      - 'sitemap-updates.xml'
+      - 'updates/**'
+      - 'robots.txt'
+      - 'llms.txt'
+  push:
+    branches: [main]
+    paths:
+      - 'data/public-updates.json'
+      - 'scripts/build-public-updates.mjs'
+      - 'feed.xml'
+      - 'feed.json'
+      - 'api/v1/updates.json'
+      - 'sitemap-updates.xml'
+      - 'updates/**'
+      - 'robots.txt'
+      - 'llms.txt'
+  schedule:
+    - cron: '17 6 * * 1'
+    - cron: '27 6 8 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  update-stream:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Regenerate public update surfaces
+        run: node scripts/build-public-updates.mjs
+
+      - name: Verify generated surfaces are committed
+        run: git diff --exit-code -- feed.xml feed.json api/v1/updates.json sitemap-updates.xml
+
+      - name: Check weekly and monthly freshness
+        id: freshness
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        run: node scripts/build-public-updates.mjs --check-freshness
+
+      - name: Open one freshness maintenance issue
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.freshness.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing="$(gh issue list --state open --search '"[Loop] Public update freshness" in:title' --json number --jq '.[0].number // empty')"
+          if [ -z "$existing" ]; then
+            gh issue create \
+              --title '[Loop] Public update freshness' \
+              --body $'The public update stream is outside its freshness contract.\n\nRun the Agent Loop against real repository, research, and search evidence; publish a factual weekly or monthly update only when there is something worth reporting; add it to `data/public-updates.json`; then regenerate the feeds with `node scripts/build-public-updates.mjs`.\n\nDo not invent traffic, ranking, adoption, research, or outcome claims to satisfy this check.'
+          fi
+
+      - name: Close freshness issue when current again
+        if: (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && steps.freshness.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing="$(gh issue list --state open --search '"[Loop] Public update freshness" in:title' --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh issue close "$existing" --comment 'Public update freshness is back inside the weekly/monthly contract.'
+          fi

@@ -28,14 +28,22 @@ for (const rel of ['index.html','life-os/index.html']) {
 
 const queryHtml = read('for-ai/query/index.html');
 const app = read('for-ai/query/app.js');
-assert(queryHtml.includes('data-query-feedback'), 'Query feedback section missing');
-assert(queryHtml.includes('id="feedback-match"'), 'Bad-match feedback link missing');
+const outcomes = read('for-ai/query/outcome-feedback.js');
+assert(queryHtml.includes('data-outcome-feedback'), 'Query outcome feedback section missing');
+for (const choice of ['helpful','not-helpful','bad-match','missing-knowledge']) {
+  assert(queryHtml.includes(`data-outcome-choice="${choice}"`), `Query feedback choice missing: ${choice}`);
+}
+assert(queryHtml.includes('id="feedback-include-query"'), 'Raw-query opt-in control missing');
+assert(queryHtml.includes('off by default'), 'Raw-query opt-in is not visibly off by default');
 assert(queryHtml.includes('id="feedback-integration"'), 'Integration feedback link missing');
-assert(queryHtml.includes('review the draft before submitting'), 'Feedback privacy/review warning missing');
-assert(app.includes(`${REPO}/issues/new`), 'Query app does not build GitHub issue drafts');
-assert(app.includes('feedback-match') && app.includes('feedback-integration'), 'Query app feedback elements not wired');
-assert(app.includes('encodeURIComponent'), 'Query feedback URLs are not encoded');
-assert(app.includes('Observed status') && app.includes('Returned Topics') && app.includes('Returned Protocols'), 'Retrieval feedback draft lacks observed packet context');
-assert(!/fetch\([^)]*issues\/new|XMLHttpRequest|google-analytics|gtag\(|plausible|segment\.com/i.test(`${queryHtml}\n${app}`), 'Feedback funnel must not submit data or add analytics automatically');
+assert(queryHtml.includes('review before submitting'), 'Feedback privacy/review warning missing');
+assert(app.includes("from './outcome-feedback.js'"), 'Query app does not load outcome feedback module');
+assert(app.includes("buildOutcome('github-issue')") && app.includes("buildOutcome('native-share')"), 'Query app feedback export channels not wired');
+assert(outcomes.includes(`${REPO}/issues/new`), 'Outcome module does not build GitHub issue drafts');
+assert(outcomes.includes('encodeURIComponent'), 'Outcome draft URLs are not encoded');
+assert(outcomes.includes('topic_ids: topics') && outcomes.includes('protocol_ids: protocols'), 'Outcome envelope lacks returned packet context');
+assert(outcomes.includes('raw_query_included: false') && outcomes.includes('user_identifier_included: false'), 'Outcome envelope privacy flags missing');
+assert(outcomes.includes('includeQuery = false'), 'Raw query is not opt-in by default');
+assert(!/fetch\([^)]*issues\/new|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|google-analytics|gtag\(|plausible|segment\.com/i.test(`${queryHtml}\n${app}\n${outcomes}`), 'Feedback funnel must not submit data, persist identity, or add analytics automatically');
 
-console.log(`Query adoption funnel verified: ${deepLinks} Topic deep links, homepage/LifeOS entry points, privacy-light retrieval and integration GitHub drafts.`);
+console.log(`Query adoption funnel verified: ${deepLinks} Topic deep links, homepage/LifeOS entry points, four opt-in outcome signals, privacy-light export paths, and integration feedback.`);

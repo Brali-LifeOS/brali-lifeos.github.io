@@ -10,7 +10,8 @@ const locales = await readJson('ai/locales.json');
 const trust = await readJson('trust/trust.json');
 const corrections = await readJson('trust/corrections.json');
 const graph = await readJson('knowledge/graph.json');
-const citation = await readJson('cite/index.json');
+const citationContract = await readJson('cite/index.json');
+const citationIndex = await readJson('citation-index.json');
 const llms = await readFile('llms.txt', 'utf8');
 const trustHtml = await readFile('trust/index.html', 'utf8');
 
@@ -51,6 +52,7 @@ const aiExtension = siteProfile.extensions?.['io.github.dkharlanau/ai-search-pro
 const localeExtension = siteProfile.extensions?.['io.github.dkharlanau/localized-llms'];
 const trustExtension = siteProfile.extensions?.['io.github.dkharlanau/trust-center'];
 assert(aiExtension?.profile === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'site profile must link the ARWP AI search profile extension');
+assert(aiExtension?.citationIndex === 'https://brali-lifeos.github.io/citation-index.json', 'AI search extension must link the canonical citation index');
 assert(aiExtension?.knowledgeGraph === 'https://brali-lifeos.github.io/knowledge/graph.json', 'AI search extension must link the knowledge graph');
 assert(localeExtension?.manifest === 'https://brali-lifeos.github.io/ai/locales.json', 'site profile must link the locale manifest');
 assert(trustExtension?.machine === 'https://brali-lifeos.github.io/trust/trust.json', 'site profile must link the machine-readable trust center');
@@ -68,13 +70,17 @@ assert(typeof corrections.emptyState === 'string' && corrections.emptyState.leng
 assert(graph['@context'] === 'https://schema.org', 'knowledge graph must use schema.org context');
 assert(Array.isArray(graph['@graph']) && graph['@graph'].length >= 5, 'knowledge graph is unexpectedly small');
 
-assert(citation.schema_version >= 2, 'citation index schema must include the extended machine-surface contract');
-assert(Array.isArray(citation.canonical_vocabulary) && citation.canonical_vocabulary.length >= 5, 'citation index must publish canonical vocabulary');
-assert(citation.machine_surfaces?.ai_search_profile === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'citation index must link the AI search profile');
-assert(citation.machine_surfaces?.knowledge_graph === 'https://brali-lifeos.github.io/knowledge/graph.json', 'citation index must link the knowledge graph');
-assert(Array.isArray(citation.citation_guardrails) && citation.citation_guardrails.length >= 3, 'citation guardrails are missing');
+assert(citationContract.schema_version === 1, 'generated citation contract schema drifted');
+assert(citationContract.canonical_url === 'https://brali-lifeos.github.io/cite/', 'generated citation contract canonical URL drifted');
+assert(citationIndex.version === '0.1', 'unexpected canonical citation index version');
+assert(Array.isArray(citationIndex.canonicalAnswers) && citationIndex.canonicalAnswers.length >= 3, 'citation index must publish canonical answers');
+assert(Array.isArray(citationIndex.vocabulary) && citationIndex.vocabulary.length >= 5, 'citation index must publish canonical vocabulary');
+assert(citationIndex.machineSurfaces?.aiSearchProfile === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'citation index must link the AI search profile');
+assert(citationIndex.machineSurfaces?.knowledgeGraph === 'https://brali-lifeos.github.io/knowledge/graph.json', 'citation index must link the knowledge graph');
+assert(citationIndex.machineSurfaces?.citationContract === 'https://brali-lifeos.github.io/cite/index.json', 'citation index must keep the generated attribution contract authoritative');
+assert(Array.isArray(citationIndex.guardrails) && citationIndex.guardrails.length >= 4, 'citation guardrails are missing');
 
-for (const path of ['/ai/ai-search-profile.json', '/trust/', '/trust/trust.json', '/trust/corrections.json', '/knowledge/graph.json']) {
+for (const path of ['/ai/ai-search-profile.json', '/ai/locales.json', '/citation-index.json', '/trust/', '/trust/trust.json', '/trust/corrections.json', '/knowledge/graph.json']) {
   assert(llms.includes(path), `llms.txt must expose ${path}`);
 }
 assert(trustHtml.includes('<link rel="canonical" href="https://brali-lifeos.github.io/trust/">'), 'trust page canonical link missing');

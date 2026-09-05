@@ -1,0 +1,45 @@
+{
+  "version": "2026-09-05",
+  "name": "Brali Practical Knowledge Library",
+  "shortName": "Brali",
+  "canonicalUrl": "https://brali-lifeos.github.io/",
+  "repository": "https://github.com/Brali-LifeOS/brali-lifeos.github.io",
+  "publisher": "Brali-LifeOS",
+  "description": "Evidence-aware practical knowledge library with stable identities, versioned static API surfaces, bounded retrieval and a local read-only MCP server.",
+  "facts": [
+    {
+      "id": "product-scope",
+      "text": "Brali publishes practical knowledge as Topics, Hacks, Protocols, Methods and Lenses with explicit evidence states.",
+      "source": "https://brali-lifeos.github.io/ontology/"
+    },
+    {
+      "id": "evidence-workflow",
+      "text": "Research-candidate discovery metadata is kept separate from reviewed Evidence Decisions and does not become evidence automatically.",
+      "source": "https://brali-lifeos.github.io/evidence/"
+    },
+    {
+      "id": "agent-access",
+      "text": "Brali exposes llms.txt, Agent-Ready Web Profile metadata, a versioned static API, bounded search data and a local read-only stdio MCP integration.",
+      "source": "https://brali-lifeos.github.io/for-ai/"
+    },
+    {
+      "id": "identity",
+      "text": "Canonical Brali identities use the brali:<kind>:<local-id> namespace while labels and historical identifiers are treated as aliases.",
+      "source": "https://brali-lifeos.github.io/ontology/"
+    }
+  ],
+  "citation": {
+    "guidance": "https://brali-lifeos.github.io/cite/",
+    "citationFile": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/CITATION.cff"
+  },
+  "rights": {
+    "license": "https://brali-lifeos.github.io/LICENSE",
+    "commercialReuse": "requires-separate-agreement",
+    "note": "Do not infer permission-free commercial reuse from public availability."
+  },
+  "guardrails": [
+    "Do not describe Brali as independently validated unless an independent source supports that statement.",
+    "Do not infer search ranking, AI citation frequency or adoption from the existence of machine-readable surfaces.",
+    "Preserve evidence state and limitations when reusing content claims."
+  ]
+}

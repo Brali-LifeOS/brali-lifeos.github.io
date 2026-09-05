@@ -11,6 +11,7 @@ await import('./build-zone-coverage-backlog.mjs');
 await import('./build-legacy-sensitive-state.mjs');
 await import('./sync-zone-coverage-backlog-manifest.mjs');
 await import('./sync-legacy-sensitive-manifest.mjs');
+await import('./build-outcome-review-queue.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -34,6 +35,7 @@ const routes = [
   "/for-ai/",
   "/for-ai/query/",
   "/for-ai/integrations/",
+  "/for-ai/integrations/report/",
   "/run/",
   "/cite/",
   "/agents/",
@@ -66,6 +68,14 @@ if (missing.length) {
   const additions = missing.map(route => `  <url><loc>${base}${route}</loc></url>`).join("\n");
   xml = xml.replace("</urlset>", `${additions}\n</urlset>`);
   await writeFile(sitemapPath, xml);
+}
+
+const integrationPath = path.join(root, 'for-ai/integrations/index.html');
+let integrationHtml = await readFile(integrationPath, 'utf8');
+if (!integrationHtml.includes('/for-ai/integrations/report/')) {
+  const callout = '<aside class="callout" data-brali-integration-outcome><h2>Did you actually use an integration?</h2><p>Prepare a privacy-light integration outcome event. No prompt, API key, email, or user identity is required, and nothing is sent automatically.</p><a class="button" href="/for-ai/integrations/report/">Report an integration outcome</a></aside>';
+  integrationHtml = integrationHtml.replace('</main>', `${callout}</main>`);
+  await writeFile(integrationPath, integrationHtml);
 }
 
 console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added.`);

@@ -45,6 +45,24 @@ Precise claims require precise support. Percentages, sample sizes, effect estima
 
 When a source is unavailable, prefer a modest practical statement over scientific-sounding language. Do not invent a study-shaped explanation to make a recommendation look authoritative.
 
+## Editorial voice and teaching
+
+Brali should not read like a database wearing a blog costume. A protocol is also a small lesson: the reader should leave knowing what to try, why the move is plausible, what signal to watch, and where the evidence stops.
+
+Use these rules for new material and when revising the inherited library:
+
+1. **Explain the move before the terminology.** Start with the human problem and the mechanism in plain language. Introduce technical terms only when they make the idea clearer or more precise.
+2. **Teach the boundary, not just the result.** A useful evidence section says what the source supports, what it does not support, and why that distinction changes the action.
+3. **Prefer a concrete contrast.** "Walk while generating options; sit down when you switch to evaluation" teaches more than "walking improves creativity." Concrete examples should illuminate the mechanism rather than manufacture fake certainty.
+4. **Let the reader run an experiment.** Give a smallest useful version, a review horizon when one is justified, an observable signal, and explicit keep/change/stop logic.
+5. **Sound like a thoughtful person.** Clear, compact, conversational language is preferred over corporate prose, generic AI voice, SEO filler, and motivational wallpaper.
+6. **Dry humor is allowed; contempt is not.** Mild sarcasm can target pseudoscientific theatre, magic timers, unsupported certainty, or productivity rituals. Never mock the reader, vulnerable people, safety concerns, failed attempts, or scientific uncertainty.
+7. **No neuroscience confetti.** Words such as dopamine, cortisol, neural pathways, or brain rewiring do not make weak advice scientific. Use mechanism claims only when the reviewed source actually supports them.
+8. **Do not turn every finding into a commandment.** If a study tested one context, present a bounded experiment for that context. A sample size is not a license to write a universal law.
+9. **Keep provenance visible.** A more interesting voice must never erase source traceability, limitations, evidence state, or safety exclusions.
+
+A good Brali paragraph often follows this rhythm: **what is happening → why the usual approach fails → what to try → what to notice → what would make us change our mind.** The goal is not to sound scientific. The goal is to help the reader think scientifically without making the reading painful.
+
 ## Health and mental health
 
 Health and mental-health entries receive the highest review priority. Until the evidence bar is met, keep them out of search indexing, frame them as general education rather than medical advice, and avoid diagnosis or treatment promises.
@@ -61,6 +79,8 @@ A strong Brali entry should answer:
 6. What would make me keep, change, or stop it?
 7. What evidence supports any factual claim?
 8. Are there safety limits or contexts where this is not appropriate?
+9. Can a non-specialist explain the mechanism back after reading the page?
+10. Does the page state where the evidence ends instead of quietly turning a finding into a universal rule?
 
 ## Brand and provenance
 

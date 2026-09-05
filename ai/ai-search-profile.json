@@ -1,0 +1,86 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/main/schema/ai-search-profile.schema.json",
+  "profileVersion": "0.1",
+  "site": {
+    "id": "brali-practical-knowledge",
+    "name": "Brali Practical Knowledge Library",
+    "canonicalUrl": "https://brali-lifeos.github.io/",
+    "languages": ["en"],
+    "canonicalLanguage": "en"
+  },
+  "objective": {
+    "primary": "Make Brali easy for search and AI systems to identify, retrieve, verify and cite as a bounded practical-knowledge source without turning editorial states into scientific certainty or synthetic AI-readiness scores.",
+    "targetQuestions": [
+      "How does Brali distinguish reviewed knowledge from pending-review material?",
+      "How can an AI agent retrieve Brali protocols without inventing coverage?",
+      "Which Brali topic or protocol matches a concrete practical problem?",
+      "How was a research source reviewed before it changed published guidance?",
+      "How can a developer cite and pin a Brali dataset release?"
+    ],
+    "canonicalTerms": ["Brali", "Evidence Decision", "evidence state", "canonical identity", "Topic", "Protocol", "Lens"]
+  },
+  "surfaces": {
+    "entityHome": {"status":"active","url":"https://brali-lifeos.github.io/","mediaType":"text/html"},
+    "siteProfile": {"status":"active","url":"https://brali-lifeos.github.io/ai/site-profile.json","mediaType":"application/json"},
+    "llmsCanonical": {"status":"active","url":"https://brali-lifeos.github.io/llms.txt","language":"en","mediaType":"text/plain"},
+    "history": {"status":"active","url":"https://brali-lifeos.github.io/updates/","mediaType":"text/html"},
+    "sitemap": {"status":"active","url":"https://brali-lifeos.github.io/sitemap.xml","mediaType":"application/xml"},
+    "robots": {"status":"active","url":"https://brali-lifeos.github.io/robots.txt","mediaType":"text/plain"},
+    "knowledgeGraph": {"status":"active","url":"https://brali-lifeos.github.io/knowledge/graph.json","mediaType":"application/ld+json"},
+    "claimsIndex": {"status":"active","url":"https://brali-lifeos.github.io/api/v1/evidence-decisions.json","mediaType":"application/json"},
+    "reuseRights": {"status":"active","url":"https://brali-lifeos.github.io/LICENSE","mediaType":"text/plain","notes":"Brali uses its published non-commercial license; this surface does not imply permission-free commercial reuse."},
+    "trustCenter": {"status":"active","url":"https://brali-lifeos.github.io/trust/","mediaType":"text/html"},
+    "correctionsLedger": {"status":"active","url":"https://brali-lifeos.github.io/trust/corrections.json","mediaType":"application/json"}
+  },
+  "modules": {
+    "answerPages": {"status":"active","priority":"P0","description":"Expose stable problem-first routes and a bounded browser query surface so agents can answer concrete questions from canonical Brali records instead of broad keyword matches.","url":"https://brali-lifeos.github.io/problems/","machineReadable":["https://brali-lifeos.github.io/api/v1/problem-collections.json","https://brali-lifeos.github.io/api/v1/search.json"]},
+    "originalResearch": {"status":"planned","priority":"P2","description":"Keep external research review separate from first-party original research; only mark this active when Brali publishes reproducible original measurements or experiments.","url":"https://brali-lifeos.github.io/research/"},
+    "protocolObservatory": {"status":"not-applicable","priority":"P2","description":"A web-protocol observatory is outside Brali's practical-knowledge scope; Brali consumes stable web interfaces rather than monitoring protocol adoption."},
+    "comparisonPages": {"status":"planned","priority":"P2","description":"Add durable comparison pages only where reviewed evidence supports meaningful trade-offs; avoid producing thin comparison content for search coverage."},
+    "conceptDefinitions": {"status":"active","priority":"P0","description":"Publish the Domain, Topic, Method, Lens, Hack, Protocol and evidence-state model as canonical ontology surfaces with stable identities.","url":"https://brali-lifeos.github.io/ontology/","machineReadable":["https://brali-lifeos.github.io/api/v1/identity.json"]},
+    "claimsRegistry": {"status":"active","priority":"P0","description":"Use reviewed Evidence Decisions as the machine-readable registry for supported claims, unsupported or overstated claims, limitations and editorial outcomes.","url":"https://brali-lifeos.github.io/evidence/","machineReadable":["https://brali-lifeos.github.io/api/v1/evidence-decisions.json"],"cadence":"on-change"},
+    "evidenceReceipts": {"status":"planned","priority":"P1","description":"Evidence Decisions already preserve review provenance, but per-claim replayable receipts with durable digests are not claimed until they are actually published.","url":"https://brali-lifeos.github.io/evidence/"},
+    "crawlerMatrix": {"status":"not-applicable","priority":"P2","description":"Crawler-observatory behavior belongs to Agent-Ready Web Profile rather than the Brali knowledge product."},
+    "agentFetchLab": {"status":"planned","priority":"P1","description":"Brali already benchmarks its own deterministic retrieval, but a web-agent fetch-order lab is a separate experiment and is not claimed as implemented.","url":"https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json","cadence":"quarterly"},
+    "knowledgeGraph": {"status":"active","priority":"P1","description":"Link Brali's website, publisher, API datasets, ontology, evidence, citation, trust and update surfaces in a compact JSON-LD graph.","url":"https://brali-lifeos.github.io/knowledge/graph.json","machineReadable":["https://brali-lifeos.github.io/knowledge/graph.json"],"cadence":"on-change"},
+    "citationVisuals": {"status":"planned","priority":"P2","description":"Dedicated reusable charts or diagrams with stable citation metadata are not claimed until Brali publishes and maintains them."},
+    "openReuseAssets": {"status":"not-applicable","priority":"P2","description":"Brali's current public license is non-commercial, so the project does not claim a permission-free open-reuse media pack.","url":"https://brali-lifeos.github.io/LICENSE"},
+    "trustCenter": {"status":"active","priority":"P0","description":"Aggregate evidence policy, citation, provenance, integrity, updates, corrections and license boundaries on one canonical trust surface.","url":"https://brali-lifeos.github.io/trust/","machineReadable":["https://brali-lifeos.github.io/trust/trust.json","https://brali-lifeos.github.io/trust/corrections.json"]},
+    "correctionsLedger": {"status":"active","priority":"P1","description":"Expose a machine-readable corrections ledger with explicit empty-state semantics so material corrections can be recorded without implying a perfect history.","url":"https://brali-lifeos.github.io/trust/","machineReadable":["https://brali-lifeos.github.io/trust/corrections.json"],"cadence":"on-change"},
+    "softwareProvenance": {"status":"planned","priority":"P1","description":"Brali publishes release manifests and SHA-256 checksums, but signed software or build attestations are not claimed as deployed.","url":"https://brali-lifeos.github.io/api/v1/manifest.json"},
+    "persistentIdentifiers": {"status":"planned","priority":"P2","description":"Stable Brali web identities are active, while externally issued persistent identifiers such as DOI are not claimed until issued.","url":"https://brali-lifeos.github.io/cite/"},
+    "externalTrustSignals": {"status":"planned","priority":"P2","description":"Do not promote repository badges or self-authored metrics as independent trust signals; add external signals only when their scope is explicit."},
+    "externalDistribution": {"status":"planned","priority":"P2","description":"External syndication and citation distribution should preserve Brali canonical URLs and evidence state when added.","cadence":"on-change"},
+    "aiVisibility": {"status":"planned","priority":"P1","description":"Measure observable AI citations, referrals and external mentions only from real source data; do not infer visibility from the existence of machine-readable files.","cadence":"monthly"},
+    "localization": {"status":"planned","priority":"P1","description":"Brali's canonical publication surface is currently English; multilingual query evaluation does not count as localized published content.","url":"https://brali-lifeos.github.io/llms.txt"},
+    "history": {"status":"active","priority":"P1","description":"Expose content and product evolution through human-readable updates plus machine-readable JSON and Atom feeds.","url":"https://brali-lifeos.github.io/updates/","machineReadable":["https://brali-lifeos.github.io/updates/feed.json","https://brali-lifeos.github.io/updates/feed.atom"],"cadence":"on-change"}
+  },
+  "vocabulary": [
+    {"term":"Evidence Decision","definition":"A reviewed record of how a source affects Brali guidance, including supported claims, unsupported or overstated claims, limitations and editorial outcome.","url":"https://brali-lifeos.github.io/evidence/","status":"active"},
+    {"term":"evidence state","definition":"Brali's publication-state label that distinguishes reviewed, practical, pending-review and restricted material without pretending those labels are a universal scientific certainty score.","url":"https://brali-lifeos.github.io/state/","status":"active"},
+    {"term":"canonical identity","definition":"A stable Brali identifier in the form brali:<kind>:<local-id>, with labels, URLs, localized terms and historical identifiers treated as aliases.","url":"https://brali-lifeos.github.io/ontology/","status":"active"},
+    {"term":"Topic","definition":"A concrete problem, capability or outcome used as the primary retrieval target in Brali's knowledge model.","url":"https://brali-lifeos.github.io/ontology/","status":"active"},
+    {"term":"Protocol","definition":"An executable sequence or personal experiment represented as a reusable Brali knowledge object and gated by evidence state for trusted recommendations.","url":"https://brali-lifeos.github.io/ontology/","status":"active"},
+    {"term":"Lens","definition":"A transferable way of thinking that can connect multiple Topics but is explicitly not evidence by itself.","url":"https://brali-lifeos.github.io/ontology/","status":"active"}
+  ],
+  "measurement": {
+    "signals": [
+      {"name":"evidence-state coverage","status":"active","description":"Track corpus size, reviewed/practical/pending-review/restricted distribution, review queue and Evidence Decision counts from the generated evidence metrics dataset.","url":"https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json"},
+      {"name":"retrieval benchmark","status":"active","description":"Track deterministic retrieval cases, recall@k, precision@k and pass results from Brali's generated retrieval benchmark rather than an opaque readiness score.","url":"https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json"},
+      {"name":"site quality cycle","status":"active","description":"Track crawlable page and Growth Zone quality separately from evidence trust state so presentation quality is not confused with scientific support.","url":"https://brali-lifeos.github.io/state/quality/"},
+      {"name":"search visibility","status":"planned","description":"Track indexed canonical pages, queries, impressions and clicks only when webmaster-source data is integrated."},
+      {"name":"AI citations and referrals","status":"planned","description":"Track observable AI citations, grounding queries, referrals and external mentions only where a source exposes them."},
+      {"name":"referring domains","status":"planned","description":"Track external sources that cite or link to Brali without converting link counts into a trust or authority score."}
+    ],
+    "reviewCadence": "monthly",
+    "privacy": "Use aggregate, privacy-minimized visibility signals; do not add user-level tracking or build browsing-history datasets solely to measure AI/search exposure."
+  },
+  "guardrails": {
+    "noRankingClaimsWithoutEvidence": true,
+    "separateOwnedFromIndependentEvidence": true,
+    "preserveNegativeResults": true,
+    "canonicalTechnicalSemantics": true,
+    "noFabricatedAdoption": true,
+    "noReadinessScore": true
+  }
+}

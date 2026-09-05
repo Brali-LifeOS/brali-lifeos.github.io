@@ -8,7 +8,14 @@ on:
       - 'api/**'
       - 'mcp/**'
       - 'for-ai/**'
+      - 'crawler-matrix/**'
+      - 'evidence/claims/**'
+      - 'observatory/**'
+      - 'media/**'
+      - 'trust/**'
       - 'llms.txt'
+      - 'robots.txt'
+      - 'sitemap.xml'
       - 'scripts/apply-brand-shell.mjs'
       - '.github/workflows/arwp.yml'
   pull_request:
@@ -18,7 +25,14 @@ on:
       - 'api/**'
       - 'mcp/**'
       - 'for-ai/**'
+      - 'crawler-matrix/**'
+      - 'evidence/claims/**'
+      - 'observatory/**'
+      - 'media/**'
+      - 'trust/**'
       - 'llms.txt'
+      - 'robots.txt'
+      - 'sitemap.xml'
       - 'scripts/apply-brand-shell.mjs'
       - '.github/workflows/arwp.yml'
   workflow_dispatch:
@@ -34,6 +48,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Validate Agent-Ready Web Profile
-        uses: dkharlanau/agent-ready-web-profile@2b9c627f9a8cbe5cae2d6aaa78012a1671c4566e
+        uses: dkharlanau/agent-ready-web-profile@c1d51698e3765d0817ee14bcbc36c67297457260
         with:
           profile: ai/site-profile.json

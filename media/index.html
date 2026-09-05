@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Brali Media & Attribution Facts</title>
+  <meta name="description" content="Reusable factual description, attribution and licensing boundaries for Brali.">
+  <link rel="canonical" href="https://brali-lifeos.github.io/media/">
+  <style>
+    :root{color-scheme:light dark;--bg:#0d0f12;--panel:#15191f;--text:#f4f6f8;--muted:#aab2bd;--line:#2b333d;--accent:#d8ff4f}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}main{max-width:940px;margin:auto;padding:56px 24px 80px}a{color:var(--accent)}h1{font-size:clamp(2.2rem,6vw,4.8rem);line-height:.95;letter-spacing:-.04em;margin:0 0 20px}.lede{max-width:760px;color:var(--muted);font-size:1.08rem}.fact{padding:20px;border-bottom:1px solid var(--line)}.facts{margin-top:28px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}.fact h2{font-size:1rem;margin:0 0 8px}.meta{color:var(--muted);font-size:.88rem}.boundary{margin:28px 0;padding:18px 20px;border-left:3px solid var(--accent);background:var(--panel)}footer{margin-top:30px;color:var(--muted);font-size:.92rem}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="/cite/">Citation</a> / media facts</p>
+  <h1>Media & attribution facts</h1>
+  <p class="lede">A bounded set of reusable statements about Brali, with canonical sources and reuse boundaries.</p>
+  <div class="boundary"><strong>Reuse boundary.</strong> Public availability is not permission-free commercial reuse. Preserve source links, evidence state and limitations.</div>
+  <section class="facts" id="facts">Loading facts…</section>
+  <footer>Machine-readable: <a href="/media/press-facts.json">press-facts.json</a> · Citation guidance: <a href="/cite/">/cite/</a> · License: <a href="/LICENSE">LICENSE</a></footer>
+</main>
+<script>
+fetch('/media/press-facts.json').then(r=>r.json()).then(data=>{const root=document.getElementById('facts');root.textContent='';for(const f of data.facts){const el=document.createElement('article');el.className='fact';const h=document.createElement('h2');h.textContent=f.text;el.appendChild(h);const p=document.createElement('p');p.className='meta';const a=document.createElement('a');a.href=f.source;a.textContent=f.source;p.appendChild(a);el.appendChild(p);root.appendChild(el)}}).catch(()=>{document.getElementById('facts').textContent='Facts registry unavailable.'});
+</script>
+</body>
+</html>

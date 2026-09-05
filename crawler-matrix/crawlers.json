@@ -1,0 +1,66 @@
+{
+  "version": "2026-09-05",
+  "canonicalRobots": "https://brali-lifeos.github.io/robots.txt",
+  "scope": "Declared robots.txt access policy for Brali public content. This registry does not prove that a crawler fetched, indexed, trained on, cited, or ranked Brali.",
+  "defaultPolicy": {
+    "userAgent": "*",
+    "directive": "Allow: /",
+    "effect": "allowed"
+  },
+  "crawlers": [
+    {
+      "id": "oai-searchbot",
+      "userAgent": "OAI-SearchBot",
+      "access": "allowed",
+      "basis": "explicit",
+      "directive": "Allow: /"
+    },
+    {
+      "id": "chatgpt-user",
+      "userAgent": "ChatGPT-User",
+      "access": "allowed",
+      "basis": "explicit",
+      "directive": "Allow: /"
+    },
+    {
+      "id": "gptbot",
+      "userAgent": "GPTBot",
+      "access": "allowed",
+      "basis": "explicit",
+      "directive": "Allow: /"
+    },
+    {
+      "id": "googlebot",
+      "userAgent": "Googlebot",
+      "access": "allowed",
+      "basis": "wildcard",
+      "directive": "User-agent: * / Allow: /"
+    },
+    {
+      "id": "bingbot",
+      "userAgent": "bingbot",
+      "access": "allowed",
+      "basis": "wildcard",
+      "directive": "User-agent: * / Allow: /"
+    },
+    {
+      "id": "perplexitybot",
+      "userAgent": "PerplexityBot",
+      "access": "allowed",
+      "basis": "wildcard",
+      "directive": "User-agent: * / Allow: /"
+    },
+    {
+      "id": "claudebot",
+      "userAgent": "ClaudeBot",
+      "access": "allowed",
+      "basis": "wildcard",
+      "directive": "User-agent: * / Allow: /"
+    }
+  ],
+  "guardrails": [
+    "Access policy is not evidence of crawling or indexing.",
+    "Crawler names are identifiers only; this file does not infer product behavior from robots access.",
+    "Search visibility and AI citation must be measured from external observable data when available."
+  ]
+}

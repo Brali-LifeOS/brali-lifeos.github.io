@@ -103,6 +103,21 @@ Pin a `data-v*` release for durable integrations or research. Release bundles in
 - Retrieval benchmark: https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json
 - Update feed: https://brali-lifeos.github.io/updates/feed.json
 
+## Agent discovery, project evidence and attribution
+
+- Crawler access matrix: https://brali-lifeos.github.io/crawler-matrix/
+- Crawler access JSON: https://brali-lifeos.github.io/crawler-matrix/crawlers.json
+- Crawler policy history: https://brali-lifeos.github.io/crawler-matrix/history/index.json
+- Project claims registry: https://brali-lifeos.github.io/evidence/claims/
+- Project claims JSON: https://brali-lifeos.github.io/evidence/claims/index.json
+- Agent surface observatory: https://brali-lifeos.github.io/observatory/
+- Agent surface inventory JSON: https://brali-lifeos.github.io/observatory/surfaces.json
+- Surface history: https://brali-lifeos.github.io/observatory/history/index.json
+- Media and attribution facts: https://brali-lifeos.github.io/media/
+- Press facts JSON: https://brali-lifeos.github.io/media/press-facts.json
+
+Crawler permission records only declared robots access; they do not prove crawling, indexing, ranking, model use or citation. Project claims describe Brali itself and are separate from scientific/practical Evidence Decisions. The observatory is repository-backed inventory, not a real-time availability SLA.
+
 Use the underlying evidence, retrieval, quality and history datasets directly. Do not infer search visibility, AI citations, external authority, scientific certainty, or an AI-readiness score from the presence of these machine-readable surfaces. Brali's canonical published language is currently English; multilingual retrieval evaluation does not imply that localized content is published.
 
 ## Intentional archive-only boundaries

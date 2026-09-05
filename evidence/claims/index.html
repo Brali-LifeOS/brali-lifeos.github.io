@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Brali Project Claims Registry</title>
+  <meta name="description" content="A bounded registry of verifiable project-level claims about Brali's published interfaces and editorial model.">
+  <link rel="canonical" href="https://brali-lifeos.github.io/evidence/claims/">
+  <style>
+    :root{color-scheme:light dark;--bg:#0d0f12;--panel:#15191f;--text:#f4f6f8;--muted:#aab2bd;--line:#2b333d;--accent:#d8ff4f}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}main{max-width:980px;margin:auto;padding:56px 24px 80px}a{color:var(--accent)}h1{font-size:clamp(2.2rem,6vw,4.8rem);line-height:.95;letter-spacing:-.04em;margin:0 0 20px}.lede{max-width:760px;color:var(--muted);font-size:1.08rem}.claim{margin:20px 0;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}.claim h2{margin:0 0 10px;font-size:1.15rem}.meta{color:var(--muted);font-size:.9rem}.sources{margin:12px 0 0;padding-left:20px}.scope{padding:18px 20px;border-left:3px solid var(--accent);background:var(--panel);margin:28px 0}footer{margin-top:32px;color:var(--muted);font-size:.92rem}
+  </style>
+</head>
+<body>
+<main>
+  <p><a href="/evidence/">Evidence</a> / project claims</p>
+  <h1>Project claims registry</h1>
+  <p class="lede">Verifiable facts about Brali itself: its interfaces, evidence workflow and integration boundaries. Scientific and practical guidance remains governed by Evidence Decisions.</p>
+  <div class="scope"><strong>Scope boundary.</strong> A verified project fact is not an independent endorsement, adoption metric, scientific-quality score or AI-readiness score.</div>
+  <div id="claims">Loading claims…</div>
+  <footer>Machine-readable: <a href="/evidence/claims/index.json">index.json</a> · Content evidence: <a href="/api/v1/evidence-decisions.json">Evidence Decisions</a> · Trust policy: <a href="/trust/">Trust Center</a></footer>
+</main>
+<script>
+fetch('/evidence/claims/index.json').then(r=>r.json()).then(data=>{
+ const root=document.getElementById('claims');root.textContent='';
+ for(const c of data.claims){const article=document.createElement('article');article.className='claim';
+  const h=document.createElement('h2');h.textContent=c.id+' · '+c.claim;article.appendChild(h);
+  const meta=document.createElement('p');meta.className='meta';meta.textContent=c.status+' — '+c.limitations;article.appendChild(meta);
+  const ul=document.createElement('ul');ul.className='sources';for(const src of c.evidence){const li=document.createElement('li');const a=document.createElement('a');a.href=src;a.textContent=src;li.appendChild(a);ul.appendChild(li)}article.appendChild(ul);root.appendChild(article)}
+}).catch(()=>{document.getElementById('claims').textContent='Claims registry unavailable.'});
+</script>
+</body>
+</html>

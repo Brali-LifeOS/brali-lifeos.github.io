@@ -1,0 +1,34 @@
+{
+  "version": "0.1",
+  "status": "experimental-project-extension",
+  "scope": "https://brali-lifeos.github.io/",
+  "canonicalLanguage": "en",
+  "fallbackLanguage": "en",
+  "humanInterfaceLanguages": ["en"],
+  "agentRoutingLanguages": ["en"],
+  "locales": [
+    {
+      "language": "en",
+      "label": "English",
+      "status": "canonical",
+      "llms": "https://brali-lifeos.github.io/llms.txt"
+    }
+  ],
+  "selection": {
+    "explicitLocaleUrlPreferred": true,
+    "httpLanguageNegotiation": false,
+    "fallback": "en",
+    "rule": "Use a published locale-specific discovery surface when one exists; otherwise use the canonical English surface."
+  },
+  "semantics": {
+    "normativeKnowledgeLanguage": "en",
+    "translateCanonicalIdentifiers": false,
+    "translateJsonFieldNames": false,
+    "localizedSurfaceRole": "discovery-and-routing"
+  },
+  "evaluation": {
+    "retrievalBenchmarkLanguages": ["en", "ru"],
+    "benchmark": "https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json",
+    "note": "A language appearing in retrieval evaluation does not mean Brali publishes a localized human or agent-routing surface in that language."
+  }
+}

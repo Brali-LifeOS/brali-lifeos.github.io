@@ -34,6 +34,7 @@ const routes = [
   "/for-ai/",
   "/for-ai/query/",
   "/for-ai/integrations/",
+  "/run/",
   "/cite/",
   "/agents/",
   "/agents/contribute/",

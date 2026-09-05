@@ -111,6 +111,23 @@ Product-loop responsibilities are Product Steward, Trust Auditor, Retrieval Eval
 
 External credentials, legal decisions, actual-source review, adopter consent, publication, and usage evidence cannot be invented. Mark the exact blocker and continue with an independent slice when possible.
 
+## Public freshness maintenance loop
+
+The weekly/monthly update stream is a **maintenance control**, not permission to bypass gate order or open a second implementation PR. It keeps already-completed work discoverable while the active product slice remains authoritative.
+
+`data/public-updates.json` is the canonical public update manifest. `scripts/build-public-updates.mjs` deterministically projects it into `/feed.xml`, `/feed.json`, `/api/v1/updates.json`, and `/sitemap-updates.xml`. Human pages under `/updates/` and the manifest must describe the same verified changes.
+
+Freshness contract:
+
+- the latest weekly public update may not be more than 10 days old;
+- from the 8th day of a month, a monthly public update for the previous month must exist;
+- `.github/workflows/public-updates.yml` checks the contract weekly and again on the 8th, opens at most one `[Loop] Public update freshness` maintenance issue when stale, and closes it when the stream is current again;
+- a freshness failure is a request to review real work, not a request to manufacture content;
+- reports may cite repository changes, reviewed research decisions, first-party Search Console data, observed outcomes, and externally verified distribution state; they must not invent traffic, rankings, AI recommendations, adoption, or research conclusions;
+- the small update sitemap is a freshness surface for dated update pages. Never rewrite unrelated `lastmod` values merely to create a crawl signal.
+
+RSS is the default human subscription path because it requires no account or personal-data collection. JSON Feed and the update API provide the same stream to tools and agents. Email subscription may be added only with an explicit provider, privacy boundary, and unsubscribe/retention contract.
+
 ## Claim and knowledge rules
 
 Knowledge flow:

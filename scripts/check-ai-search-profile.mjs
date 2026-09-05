@@ -6,6 +6,7 @@ const assert = (condition, message) => { if (!condition) fail(message); };
 
 const profile = await readJson('ai/ai-search-profile.json');
 const siteProfile = await readJson('ai/site-profile.json');
+const locales = await readJson('ai/locales.json');
 const trust = await readJson('trust/trust.json');
 const corrections = await readJson('trust/corrections.json');
 const graph = await readJson('knowledge/graph.json');
@@ -16,7 +17,7 @@ assert(profile.profileVersion === '0.1', 'unexpected profileVersion');
 assert(profile.site?.canonicalUrl === 'https://brali-lifeos.github.io/', 'canonical URL drift');
 assert(profile.site?.canonicalLanguage === 'en', 'canonical language must remain explicit');
 
-for (const key of ['entityHome', 'siteProfile', 'llmsCanonical', 'knowledgeGraph', 'claimsIndex', 'trustCenter', 'correctionsLedger']) {
+for (const key of ['entityHome', 'siteProfile', 'llmsCanonical', 'localeManifest', 'knowledgeGraph', 'claimsIndex', 'trustCenter', 'correctionsLedger']) {
   assert(profile.surfaces?.[key]?.status === 'active', `${key} surface must be active`);
   assert(profile.surfaces[key].url?.startsWith('https://'), `${key} surface must expose an HTTPS URL`);
 }
@@ -45,9 +46,17 @@ assert(signalByName.get('AI citations and referrals')?.status === 'planned', 'AI
 assert(profile.guardrails?.noReadinessScore === true, 'noReadinessScore guardrail must stay enabled');
 assert(profile.guardrails?.noRankingClaimsWithoutEvidence === true, 'ranking evidence guardrail must stay enabled');
 
-assert(siteProfile.extensions?.['arwp/ai-search-profile']?.url === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'site profile must link the AI search profile');
-assert(siteProfile.extensions?.['brali/trust-center']?.url === 'https://brali-lifeos.github.io/trust/', 'site profile must link the trust center');
-assert(siteProfile.extensions?.['brali/knowledge-graph']?.url === 'https://brali-lifeos.github.io/knowledge/graph.json', 'site profile must link the knowledge graph');
+const aiExtension = siteProfile.extensions?.['io.github.dkharlanau/ai-search-profile'];
+const localeExtension = siteProfile.extensions?.['io.github.dkharlanau/localized-llms'];
+const trustExtension = siteProfile.extensions?.['io.github.dkharlanau/trust-center'];
+assert(aiExtension?.profile === 'https://brali-lifeos.github.io/ai/ai-search-profile.json', 'site profile must link the ARWP AI search profile extension');
+assert(aiExtension?.knowledgeGraph === 'https://brali-lifeos.github.io/knowledge/graph.json', 'AI search extension must link the knowledge graph');
+assert(localeExtension?.manifest === 'https://brali-lifeos.github.io/ai/locales.json', 'site profile must link the locale manifest');
+assert(trustExtension?.machine === 'https://brali-lifeos.github.io/trust/trust.json', 'site profile must link the machine-readable trust center');
+
+assert(locales.canonicalLanguage === 'en' && locales.fallbackLanguage === 'en', 'locale manifest must preserve English canonical fallback');
+assert(JSON.stringify(locales.agentRoutingLanguages) === JSON.stringify(['en']), 'do not claim unpublished locale routing');
+assert(locales.evaluation?.retrievalBenchmarkLanguages?.includes('ru'), 'locale manifest should preserve multilingual benchmark disclosure');
 
 assert(trust.measurement?.readinessScore === null, 'trust surface must not synthesize a readiness score');
 assert(trust.measurement?.evidenceMetrics?.endsWith('/life-os/datasets/evidence-metrics.json'), 'trust surface must link canonical evidence metrics');

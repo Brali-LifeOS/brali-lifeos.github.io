@@ -3,7 +3,19 @@ name: Research scout
 on:
   schedule:
     - cron: "23 5 * * 1"
+    - cron: "47 5 1 * *"
   workflow_dispatch:
+    inputs:
+      generate_monthly_digest:
+        description: "Generate a calendar-month research digest"
+        required: false
+        default: false
+        type: boolean
+      digest_month:
+        description: "Optional digest month (YYYY-MM); defaults to previous calendar month"
+        required: false
+        default: ""
+        type: string
 
 permissions:
   contents: write
@@ -39,17 +51,29 @@ jobs:
         env:
           CROSSREF_MAILTO: ${{ vars.CROSSREF_MAILTO }}
           EUROPEPMC_EMAIL: ${{ vars.CROSSREF_MAILTO }}
+      - name: Generate monthly research digest
+        if: github.event.schedule == '47 5 1 * *' || (github.event_name == 'workflow_dispatch' && inputs.generate_monthly_digest == true)
+        shell: bash
+        run: |
+          if [ -n "${{ inputs.digest_month }}" ]; then
+            python scripts/monthly_research_digest.py --month "${{ inputs.digest_month }}"
+          else
+            python scripts/monthly_research_digest.py
+          fi
       - name: Validate research system
         run: python scripts/check-research-system.py
-      - name: Commit candidate queue
+      - name: Commit scout outputs
         id: commit
         shell: bash
         run: |
-          if git diff --quiet -- data/research-candidates.json; then echo "changed=false" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ -z "$(git status --porcelain -- data/research-candidates.json data/monthly-digests research/monthly)" ]; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
           git config user.name "brali-research-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/research-candidates.json
-          git commit -m "Update research candidate queue"
+          git add data/research-candidates.json data/monthly-digests research/monthly
+          git commit -m "Update research scout outputs"
           git push --force origin HEAD:bot/research-scout
           echo "changed=true" >> "$GITHUB_OUTPUT"
       - name: Open or refresh research PR
@@ -60,9 +84,9 @@ jobs:
         shell: bash
         run: |
           PR_NUMBER="$(gh pr list --head bot/research-scout --base main --state open --json number --jq '.[0].number // empty')"
-          BODY="Automated discovery update from Crossref and Europe PMC. These records are unreviewed leads only. Duplicate scholarly identities are merged by DOI/PMID while discovery provenance is preserved. Review the actual source before promoting any candidate into a hack, protocol, or evidence state."
+          BODY="Automated Brali research-scout update from Crossref and Europe PMC. Candidate records are unreviewed leads only. Duplicate scholarly identities are merged by DOI/PMID while discovery provenance is preserved. On the first day of each month this same loop also generates an audit digest for the previous calendar month from canonical research registries and Git history. Review the actual source before promoting any candidate into a hack, protocol, or evidence state."
           if [ -z "$PR_NUMBER" ]; then
-            gh pr create --base main --head bot/research-scout --title "Research scout: review new candidates" --body "$BODY"
+            gh pr create --base main --head bot/research-scout --title "Research scout: review new candidates and digest" --body "$BODY"
           else
             gh pr edit "$PR_NUMBER" --body "$BODY"
           fi

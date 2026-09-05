@@ -19,12 +19,14 @@
     "demos.json",
     "integrations.json",
     "problem-collections.json",
-    "gold-20.json"
+    "gold-20.json",
+    "updates.json"
   ],
   "semantics": {
     "lookup": "Filter list files by canonical_id or local id.",
     "trust": "Only reviewed/practical protocols are normal trusted recommendations. Preserve evidence state in downstream output.",
     "missing": "An empty filtered result means not found; clients must not invent a match.",
-    "gold": "gold-20.json exposes candidate and manual review readiness. gold_ready=false must never be interpreted as an approved Gold protocol."
+    "gold": "gold-20.json exposes candidate and manual review readiness. gold_ready=false must never be interpreted as an approved Gold protocol.",
+    "updates": "updates.json is the dated public change stream. It reports verified changes and does not imply rankings, traffic, adoption, or recommendation outcomes."
   }
 }

@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - run: npm run build && npm run check
+      - run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
 
   deploy:
     if: github.event_name != 'pull_request'

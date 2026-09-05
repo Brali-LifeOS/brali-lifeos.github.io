@@ -34,68 +34,36 @@
       "discovered_at": "2026-09-05T05:10:34Z",
       "last_seen_at": "2026-09-05T05:10:34Z",
       "status": "propose-protocol",
-      "query_ids": ["digital-wellbeing-interventions"],
-      "domain_ids": ["work-money", "environment-digital", "health-energy"],
-      "topic_ids": ["work-systems", "digital-wellbeing"],
+      "query_ids": [
+        "digital-wellbeing-interventions"
+      ],
+      "domain_ids": [
+        "work-money",
+        "environment-digital",
+        "health-energy"
+      ],
+      "topic_ids": [
+        "work-systems",
+        "digital-wellbeing"
+      ],
       "method_ids": [],
       "lens_ids": [],
-      "life_area_slugs": ["work-money-strategy", "health-energy"],
-      "zone_slugs": ["work", "be-healthy"],
-      "risk_flags": ["mental-health"],
+      "life_area_slugs": [
+        "work-money-strategy",
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "work",
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
       "crossref_score": null,
-      "discovery_sources": ["crossref"],
+      "discovery_sources": [
+        "crossref"
+      ],
       "review_notes": "Full open-access Journal of Medical Systems article reviewed. In a preregistered pragmatic parallel RCT, 815 US healthcare workers with a work-email app on their smartphone were randomized before an off-work weekend to usual behavior or a three-part intervention encouraging an automatic out-of-office reply, lower leisure screen time, and removal of work apps from personal devices. Among 520 participants with post-weekend outcome data, baseline-adjusted perceived stress was 1.6 PSS-10 points lower in the intervention group (95% CI -2.6 to -0.6), and the intervention group had higher odds of lower screen time. The randomized treatment tested the package, not any component in isolation; the apparent advantage among participants who uninstalled work apps was exploratory and self-selected. Brali can therefore propose a bounded 'protect off-work time from work apps' experiment for genuinely off-duty periods, while preserving emergency/on-call access and avoiding a claim that uninstalling an app is itself the proven active ingredient."
-    },
-    {
-      "id": "crossref:10.1186/s12966-026-01953-6",
-      "source": "crossref",
-      "source_id": "10.1186/s12966-026-01953-6",
-      "doi": "10.1186/s12966-026-01953-6",
-      "pmid": null,
-      "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
-      "authors": [
-        "Mingnan Zhuang",
-        "Mingyue Yin",
-        "Zongnan Liu",
-        "Ningkun Xiao",
-        "Qing Yi",
-        "Zhiwei Fan",
-        "Henghao Yan",
-        "Xiupeng Li",
-        "Bitai Wu",
-        "Shuhan Qiu",
-        "Anqi Chen",
-        "Chao Xie",
-        "Chenghao Liu",
-        "Xintong Zou",
-        "Donglin Shi"
-      ],
-      "container_title": "International Journal of Behavioral Nutrition and Physical Activity",
-      "publication_date": "2026-07-13",
-      "type": "journal-article",
-      "subjects": [
-        "prolonged sitting",
-        "sitting interruptions",
-        "physical activity breaks",
-        "executive function",
-        "memory",
-        "meta-analysis"
-      ],
-      "reference_url": "https://doi.org/10.1186/s12966-026-01953-6",
-      "discovered_at": "2026-09-05T05:10:34Z",
-      "last_seen_at": "2026-09-05T05:10:34Z",
-      "status": "support-existing",
-      "query_ids": ["health-movement-breaks"],
-      "domain_ids": ["health-energy"],
-      "topic_ids": ["movement"],
-      "method_ids": [],
-      "lens_ids": [],
-      "life_area_slugs": ["health-energy"],
-      "zone_slugs": ["fit-life", "be-healthy"],
-      "risk_flags": ["health"],
-      "crossref_score": null,
-      "discovery_sources": ["crossref"],
-      "review_notes": "Full open-access article reviewed. The prospectively registered systematic review included 21 randomized crossover trials with 433 participants and used a three-level meta-analysis with cluster-robust variance estimation. Interrupting prolonged sitting with brief standing or activity was associated with small acute improvements in executive function (Hedges' g=0.18, 95% CI 0.03 to 0.32) and memory (g=0.37, 95% CI 0.13 to 0.61), but not clear improvements in global cognition, information processing, or attention. GRADE certainty was low for executive function, memory, information processing and attention and very low for global cognition. Exploratory frequency/mode subgroup findings are not prescriptive. This supports keeping the existing brali:break-up-prolonged-sitting protocol broad and low-friction, while removing any temptation to promise attention/productivity gains or hard-code a specific break frequency for cognition."
     }
   ],
   "evidence_decisions": [
@@ -140,9 +108,15 @@
         "The study was conducted in US healthcare workers, where work urgency and after-hours obligations may differ materially from other occupations.",
         "The protocol must not be applied to periods when the user is formally on call or must remain reachable for safety-critical responsibilities."
       ],
-      "target_hack_ids": ["protect-off-work-time-from-work-apps"],
-      "target_protocol_ids": ["brali:protect-off-work-time-from-work-apps"],
-      "risk_flags": ["mental-health"],
+      "target_hack_ids": [
+        "protect-off-work-time-from-work-apps"
+      ],
+      "target_protocol_ids": [
+        "brali:protect-off-work-time-from-work-apps"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
       "notes": "Protocol-design direction: for a user-chosen period that is genuinely off duty, first communicate the boundary (for example, an approved away status or handoff), then disable/remove optional work-app access from the personal device or sign out of it, while preserving any explicitly required emergency/on-call channel. Restore access after the protected period. Measure whether work checking actually falls and whether subjective recovery/stress improves. Treat this as a boundary experiment, not a treatment for burnout or a blanket anti-screen rule."
     },
     {
@@ -186,9 +160,15 @@
         "Subgroup and meta-regression findings were exploratory and should not be converted into individualized dosing rules.",
         "Some apparently favorable domain estimates may be sensitive to the small number of studies and heterogeneous cognitive tasks."
       ],
-      "target_hack_ids": ["break-up-prolonged-sitting"],
-      "target_protocol_ids": ["brali:break-up-prolonged-sitting"],
-      "risk_flags": ["health"],
+      "target_hack_ids": [
+        "break-up-prolonged-sitting"
+      ],
+      "target_protocol_ids": [
+        "brali:break-up-prolonged-sitting"
+      ],
+      "risk_flags": [
+        "health"
+      ],
       "notes": "Evidence role: support the existing protocol while tightening its cognitive boundary. Keep the action simple—interrupt long sitting with feasible brief movement—but do not sell the protocol as an attention or productivity hack and do not infer an exact timer from exploratory moderator analyses."
     }
   ]

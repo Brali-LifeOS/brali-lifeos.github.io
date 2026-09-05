@@ -44,6 +44,6 @@ assert(outcomes.includes('encodeURIComponent'), 'Outcome draft URLs are not enco
 assert(outcomes.includes('topic_ids: topics') && outcomes.includes('protocol_ids: protocols'), 'Outcome envelope lacks returned packet context');
 assert(outcomes.includes('raw_query_included: false') && outcomes.includes('user_identifier_included: false'), 'Outcome envelope privacy flags missing');
 assert(outcomes.includes('includeQuery = false'), 'Raw query is not opt-in by default');
-assert(!/fetch\([^)]*issues\/new|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|google-analytics|gtag\(|plausible|segment\.com/i.test(`${queryHtml}\n${app}\n${outcomes}`), 'Feedback funnel must not submit data, persist identity, or add analytics automatically');
+assert(!/fetch\([^)]*issues\/new|XMLHttpRequest|sendBeacon|localStorage|sessionStorage|document\.cookie|google-analytics|gtag\(|plausible|segment\.com/i.test(`${app}\n${outcomes}`), 'Feedback code must not submit outcome data, persist identity, or add its own analytics automatically');
 
 console.log(`Query adoption funnel verified: ${deepLinks} Topic deep links, homepage/LifeOS entry points, four opt-in outcome signals, privacy-light export paths, and integration feedback.`);

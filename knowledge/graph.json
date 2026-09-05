@@ -1,0 +1,165 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@id": "https://brali-lifeos.github.io/#website",
+      "@type": "WebSite",
+      "name": "Brali Practical Knowledge Library",
+      "url": "https://brali-lifeos.github.io/",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://brali-lifeos.github.io/#organization"
+      },
+      "mainEntity": [
+        {
+          "@id": "https://brali-lifeos.github.io/#api"
+        },
+        {
+          "@id": "https://brali-lifeos.github.io/#ontology"
+        },
+        {
+          "@id": "https://brali-lifeos.github.io/#evidence"
+        },
+        {
+          "@id": "https://brali-lifeos.github.io/#trust"
+        }
+      ]
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#organization",
+      "@type": "Organization",
+      "name": "Brali Life OS",
+      "url": "https://github.com/Brali-LifeOS"
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#api",
+      "@type": "Dataset",
+      "name": "Brali API v1",
+      "url": "https://brali-lifeos.github.io/api/v1/index.json",
+      "isPartOf": {
+        "@id": "https://brali-lifeos.github.io/#website"
+      },
+      "publisher": {
+        "@id": "https://brali-lifeos.github.io/#organization"
+      },
+      "distribution": [
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://brali-lifeos.github.io/api/v1/search.json",
+          "encodingFormat": "application/json",
+          "name": "Bounded search index"
+        },
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json",
+          "encodingFormat": "application/json",
+          "name": "Evidence Decisions"
+        },
+        {
+          "@type": "DataDownload",
+          "contentUrl": "https://brali-lifeos.github.io/api/v1/manifest.json",
+          "encodingFormat": "application/json",
+          "name": "Release and integrity manifest"
+        }
+      ]
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#ontology",
+      "@type": "DefinedTermSet",
+      "name": "Brali Knowledge Model",
+      "url": "https://brali-lifeos.github.io/ontology/",
+      "isPartOf": {
+        "@id": "https://brali-lifeos.github.io/#website"
+      },
+      "hasDefinedTerm": [
+        {
+          "@type": "DefinedTerm",
+          "name": "Domain",
+          "description": "Broad area of practical life or work."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Topic",
+          "description": "Concrete problem, capability or outcome and the primary retrieval target."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Method",
+          "description": "Named structured approach that may cross Topics."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Lens",
+          "description": "Transferable way of thinking; a Lens is not evidence."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Hack",
+          "description": "Smallest reusable practical technique."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Protocol",
+          "description": "Executable sequence or personal experiment."
+        },
+        {
+          "@type": "DefinedTerm",
+          "name": "Evidence Decision",
+          "description": "Reviewed source record describing supported claims, limitations and editorial outcome."
+        }
+      ]
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#evidence",
+      "@type": "CreativeWork",
+      "name": "Brali Evidence Ledger",
+      "url": "https://brali-lifeos.github.io/evidence/",
+      "isPartOf": {
+        "@id": "https://brali-lifeos.github.io/#website"
+      },
+      "encoding": [
+        {
+          "@type": "MediaObject",
+          "contentUrl": "https://brali-lifeos.github.io/evidence/index.json",
+          "encodingFormat": "application/json"
+        },
+        {
+          "@type": "MediaObject",
+          "contentUrl": "https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json",
+          "encodingFormat": "application/json"
+        }
+      ]
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#trust",
+      "@type": "WebPage",
+      "name": "Brali Trust Center",
+      "url": "https://brali-lifeos.github.io/trust/",
+      "isPartOf": {
+        "@id": "https://brali-lifeos.github.io/#website"
+      },
+      "about": [
+        {
+          "@id": "https://brali-lifeos.github.io/#evidence"
+        },
+        {
+          "@id": "https://brali-lifeos.github.io/#api"
+        }
+      ]
+    },
+    {
+      "@id": "https://brali-lifeos.github.io/#updates",
+      "@type": "CreativeWork",
+      "name": "Brali Updates",
+      "url": "https://brali-lifeos.github.io/updates/",
+      "isPartOf": {
+        "@id": "https://brali-lifeos.github.io/#website"
+      },
+      "encoding": {
+        "@type": "MediaObject",
+        "contentUrl": "https://brali-lifeos.github.io/updates/feed.json",
+        "encodingFormat": "application/feed+json"
+      }
+    }
+  ]
+}

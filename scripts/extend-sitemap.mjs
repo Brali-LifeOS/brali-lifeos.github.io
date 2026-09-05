@@ -38,6 +38,7 @@ const routes = [
   "/for-ai/integrations/report/",
   "/run/",
   "/cite/",
+  "/trust/",
   "/agents/",
   "/agents/contribute/",
   "/faq/",

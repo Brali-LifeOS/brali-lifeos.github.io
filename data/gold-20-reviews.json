@@ -1,5 +1,74 @@
 {
   "schema_version": 1,
-  "description": "Manual Gold-contract reviews. Candidate selection does not populate this registry automatically. A protocol enters Gold only after a complete review record passes the contract and repository checks.",
-  "entries": {}
+  "description": "Manual Gold-contract reviews keyed by protocol slug. Candidate selection alone never implies Gold readiness.",
+  "entries": {
+    "active-recall-test-yourself": {
+      "schema_version": 1,
+      "protocol_id": "brali:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I keep rereading material until it feels familiar, but I need to know whether I can actually retrieve it later and, when relevant, apply it.",
+      "eligibility": [
+        "The target includes information, rules, concepts, vocabulary, or other material that the person needs to retrieve from memory.",
+        "The learner can compare the attempted answer with a trustworthy source or worked answer soon after retrieval.",
+        "The task is low-risk enough that practice errors can be corrected before the knowledge is used in a consequential setting."
+      ],
+      "when_not_to_use": [
+        "Do not use memory recall alone as a substitute for supervised practice, competency assessment, or expert review in safety-critical, clinical, legal, financial, or other consequential work.",
+        "Do not assume recall practice by itself trains application, procedural execution, fluent production, judgment, or transfer to a new problem.",
+        "Do not keep guessing from memory when the material has not first been learned well enough to provide a meaningful retrieval target; learn or clarify the source first."
+      ],
+      "first_action": "Choose three to five things you genuinely need to remember, close the source, and try to produce the first answer before looking.",
+      "steps": [
+        "Define the real outcome: retention, application, or both. This determines whether retrieval is the whole practice target or only one layer.",
+        "Hide the source and retrieve the target information using a question, cue, blank page, flashcard prompt, or short explanation.",
+        "Check the attempted answer against the source and explicitly correct missing or wrong parts instead of rehearsing unresolved guesses.",
+        "If the real outcome requires performance, add a fresh application task such as solving, writing, speaking, calculating, classifying, or performing.",
+        "At a later normal study opportunity, retrieve the weak items again and separately check whether the application task is improving."
+      ],
+      "review_horizon": {
+        "value": "At the next normal study or review session",
+        "rationale": "The evidence supports retrieval practice for retention but does not establish one universal session length or spacing schedule. A later ordinary study opportunity provides a useful check without inventing a magic timer."
+      },
+      "observable_signal": "Whether the learner can produce the target information without looking, identify and correct misses, and—if application matters—complete a separate representative application task.",
+      "stop_or_change_rule": "Change the protocol if retrieval is becoming reliable but the real application outcome is not improving; add or replace practice with tasks that more closely match the required performance. Stop using a source or exercise if feedback is unreliable, the material is unsafe to practise independently, or repeated errors cannot be checked confidently.",
+      "fallback": "If unaided retrieval is too difficult to be useful, reduce the material, relearn one small chunk, use a stronger cue, then try retrieval again with immediate checking rather than repeating blind failure.",
+      "evidence_boundary": {
+        "status": "reviewed",
+        "statement": "Applied classroom research supports retrieval practice as a useful strategy for learning and retention. Brali keeps the claim outcome-specific: later remembering is not the same as later application, and the broad label testing effect can combine distinct direct and forward effects.",
+        "source_decision_ids": [
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026"
+        ]
+      },
+      "limitations": [
+        "The main supporting systematic review concerns school and classroom learning and is geographically concentrated in the United States and Western Europe.",
+        "The 2026 procedural classroom study concerns Dutch verb-spelling rules in fourth-grade pupils and should not be generalized into a universal claim about every complex skill.",
+        "The 2026 testing-effect meta-analysis narrows terminology and outcome interpretation; it does not establish one optimal retrieval format, timer, repetition count, or schedule.",
+        "Retrieval success for an individual item does not guarantee comprehension, transfer, judgment quality, motivation, or durable real-world performance."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+        "source_citations": [
+          "Agarwal PK, Nunes LD, Blunt JR. Retrieval Practice Consistently Benefits Student Learning: a Systematic Review of Applied Research in Schools and Classrooms. Educational Psychology Review. 2021. https://doi.org/10.1007/s10648-021-09595-9",
+          "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall. Journal of Experimental Psychology: Learning, Memory, and Cognition. 2026. https://doi.org/10.1037/xlm0001634",
+          "Ophuis-Cox FHA, Catrysse L, Camp G. Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education. Learning and Instruction. 2026. https://doi.org/10.1016/j.learninstruc.2026.102377"
+        ]
+      },
+      "agent_summary": "Use this protocol when the user needs to retain learned material. Ask them to retrieve before looking, check and correct errors, and add a separate representative application task whenever success means doing rather than merely remembering. Do not invent a universal timer or imply that recall automatically transfers to skill.",
+      "retrieval_paths": [
+        "/life-os/active-recall-test-yourself/",
+        "/topics/memory/",
+        "/topics/learning/",
+        "/for-ai/query/?q=Show%20me%20an%20active%20recall%20protocol%20where%20I%20test%20myself"
+      ],
+      "evaluation_case_ids": [
+        "active-recall-exact",
+        "memory-study",
+        "retrieval-application-boundary"
+      ]
+    }
+  }
 }

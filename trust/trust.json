@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "updated": "2026-09-05",
+  "canonical": "https://brali-lifeos.github.io/trust/",
+  "scope": "Publisher-declared trust, evidence, provenance, correction and reuse surfaces for Brali. These are not independent endorsements.",
+  "surfaces": [
+    {
+      "id": "source-policy",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/SOURCE_POLICY.md",
+      "purpose": "Source selection and evidence handling policy."
+    },
+    {
+      "id": "evidence-methodology",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/evidence/methodology.html",
+      "purpose": "Human-readable evidence review methodology."
+    },
+    {
+      "id": "evidence-decisions",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/api/v1/evidence-decisions.json",
+      "purpose": "Machine-readable reviewed source decisions."
+    },
+    {
+      "id": "citation",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/cite/",
+      "purpose": "Canonical citation and attribution guidance."
+    },
+    {
+      "id": "integrity",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/api/v1/manifest.json",
+      "purpose": "Generated release metadata and checksums."
+    },
+    {
+      "id": "history",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/updates/feed.json",
+      "purpose": "Machine-readable project and content updates."
+    },
+    {
+      "id": "corrections",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/trust/corrections.json",
+      "purpose": "Ledger for material corrections to canonical published guidance or data."
+    },
+    {
+      "id": "license",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/LICENSE",
+      "purpose": "Published reuse terms."
+    },
+    {
+      "id": "ai-search-profile",
+      "status": "active",
+      "url": "https://brali-lifeos.github.io/ai/ai-search-profile.json",
+      "purpose": "Machine-readable AI/search discoverability, citation, measurement and guardrail profile."
+    }
+  ],
+  "measurement": {
+    "evidenceMetrics": "https://brali-lifeos.github.io/life-os/datasets/evidence-metrics.json",
+    "retrievalBenchmark": "https://brali-lifeos.github.io/life-os/datasets/retrieval-benchmark.json",
+    "siteQuality": "https://brali-lifeos.github.io/state/quality/",
+    "visibilityMetrics": "planned",
+    "readinessScore": null,
+    "reason": "Brali exposes source metrics and benchmark outputs directly instead of collapsing them into a synthetic readiness, authority or AI-visibility score."
+  },
+  "boundaries": [
+    "Reviewed and practical are Brali publication states, not universal levels of scientific certainty.",
+    "Research candidates are discovery metadata and are not evidence by themselves.",
+    "Publisher-declared trust surfaces are kept separate from independent external trust signals.",
+    "Search or AI visibility is not inferred from the presence of llms.txt, JSON APIs, MCP or other machine-readable interfaces."
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "valid": [
+    {
+      "id": "helpful-query-feedback-download",
+      "event": {
+        "schema_version": 1,
+        "event_id": "11111111-1111-4111-8111-111111111111",
+        "event_type": "helpful_yes",
+        "occurred_at": "2026-09-05T15:45:00.000Z",
+        "query_id": "22222222-2222-4222-8222-222222222222",
+        "client": {"category": "browser-query", "runtime": "Ask Brali"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "result": {
+          "state": "trusted_match",
+          "topic_ids": ["brali:topic:task-initiation"],
+          "protocol_ids": ["brali:protocol:five-whys-goal-clarity"],
+          "evidence_states": ["practical"]
+        },
+        "feedback": {"reason": "helpful", "note_included": false},
+        "consent": {"explicit": true, "channel": "download", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false},
+        "metadata": {"language": "en", "canonical_page": "https://brali-lifeos.github.io/for-ai/query/"}
+      }
+    },
+    {
+      "id": "completed-protocol-run",
+      "event": {
+        "schema_version": 1,
+        "event_id": "33333333-3333-4333-8333-333333333333",
+        "event_type": "protocol_completed",
+        "occurred_at": "2026-09-05T16:00:00.000Z",
+        "run_id": "44444444-4444-4444-8444-444444444444",
+        "protocol_id": "brali:protocol:five-whys-goal-clarity",
+        "client": {"category": "manual"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    },
+    {
+      "id": "helpful-run-feedback",
+      "event": {
+        "schema_version": 1,
+        "event_id": "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+        "event_type": "helpful_yes",
+        "occurred_at": "2026-09-05T16:05:00.000Z",
+        "query_id": "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+        "run_id": "44444444-4444-4444-8444-444444444444",
+        "protocol_id": "brali:protocol:five-whys-goal-clarity",
+        "client": {"category": "manual"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "result": {"state": "trusted_match", "protocol_ids": ["brali:protocol:five-whys-goal-clarity"], "evidence_states": ["practical"]},
+        "feedback": {"reason": "helpful", "note_included": false},
+        "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "raw-query-forbidden",
+      "expected_error": "raw query",
+      "event": {
+        "schema_version": 1,
+        "event_id": "55555555-5555-4555-8555-555555555555",
+        "event_type": "helpful_yes",
+        "occurred_at": "2026-09-05T16:10:00.000Z",
+        "query_id": "66666666-6666-4666-8666-666666666666",
+        "client": {"category": "browser-query"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "result": {"state": "trusted_match"},
+        "feedback": {"reason": "helpful", "note_included": false},
+        "consent": {"explicit": true, "channel": "download", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": true, "personal_data_included": false, "user_identifier_included": false}
+      }
+    },
+    {
+      "id": "implicit-consent-forbidden",
+      "expected_error": "consent",
+      "event": {
+        "schema_version": 1,
+        "event_id": "77777777-7777-4777-8777-777777777777",
+        "event_type": "missing_knowledge",
+        "occurred_at": "2026-09-05T16:15:00.000Z",
+        "query_id": "88888888-8888-4888-8888-888888888888",
+        "client": {"category": "browser-query"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "result": {"state": "no_trusted_answer"},
+        "feedback": {"reason": "missing-knowledge", "note_included": false},
+        "consent": {"explicit": false, "channel": "github-issue", "reviewed_before_share": false},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    },
+    {
+      "id": "protocol-event-without-run",
+      "expected_error": "run_id",
+      "event": {
+        "schema_version": 1,
+        "event_id": "99999999-9999-4999-8999-999999999999",
+        "event_type": "protocol_completed",
+        "occurred_at": "2026-09-05T16:20:00.000Z",
+        "protocol_id": "brali:protocol:five-whys-goal-clarity",
+        "client": {"category": "manual"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "consent": {"explicit": true, "channel": "manual-import", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    },
+    {
+      "id": "unsupported-copy-channel",
+      "expected_error": "consent",
+      "event": {
+        "schema_version": 1,
+        "event_id": "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+        "event_type": "protocol_started",
+        "occurred_at": "2026-09-05T16:25:00.000Z",
+        "run_id": "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+        "protocol_id": "brali:protocol:five-whys-goal-clarity",
+        "client": {"category": "manual"},
+        "dataset": {"version": "1.0.0", "manifest_sha256": null},
+        "consent": {"explicit": true, "channel": "copy", "reviewed_before_share": true},
+        "privacy": {"raw_query_included": false, "personal_data_included": false, "user_identifier_included": false}
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "name": "Brali outcome observation policy",
+  "collection_status": "contract-ready",
+  "description": "Brali has a versioned privacy-light outcome contract and honest zero-state reporting. Interactive Query and Protocol feedback collection is not live yet, so contract readiness must not be described as observed use or completed instrumentation.",
+  "north_star": {
+    "id": "weekly_verified_successful_executions",
+    "definition": "Unique protocol runs with both a protocol_completed event and an explicit helpful_yes event in the same ISO week, using the same run_id, protocol_id, and published Brali dataset version.",
+    "initial_validation_target": 25,
+    "target_type": "hypothesis",
+    "observed_value_must_come_from": "Reviewed, explicit opt-in observations accepted into data/outcome-observations.json. Demo events, fixtures, CI, page views, downloads, copies, repository activity and generated files never count as observed usefulness."
+  },
+  "automatic_collection": {
+    "enabled": false,
+    "network_requests_from_feedback": false,
+    "cookies": false,
+    "local_storage": false,
+    "raw_query_storage": false,
+    "user_identifier_storage": false
+  },
+  "opt_in_channels": [
+    {
+      "id": "github-issue",
+      "status": "planned-next-slice",
+      "description": "Prepare a privacy-light event for explicit user review before a GitHub issue is submitted. No raw query belongs in the event envelope."
+    },
+    {
+      "id": "native-share",
+      "status": "planned-next-slice",
+      "description": "Prepare event JSON for the operating-system share sheet when supported. Brali does not select a destination or transmit automatically."
+    },
+    {
+      "id": "download",
+      "status": "contract-ready",
+      "description": "The event contract can be exported as JSON for local review. A local download is not collection and is never counted as use."
+    },
+    {
+      "id": "manual-import",
+      "status": "maintainer-only",
+      "description": "A maintainer may add a reviewed, consented event to the public observation registry after schema, privacy and provenance checks."
+    }
+  ],
+  "privacy_contract": {
+    "raw_query_in_event": false,
+    "personal_data_in_event": false,
+    "user_identifier_in_event": false,
+    "prompt_text_may_be_shared_separately": "Only if a person deliberately adds it outside the event envelope after reviewing the destination. Brali does not require or store it for outcome reporting.",
+    "minimum_context": [
+      "event type",
+      "event and run/query identifiers",
+      "client category",
+      "dataset version",
+      "canonical Topic and Protocol identifiers where available",
+      "trust/result state",
+      "explicit feedback reason",
+      "share channel and consent state"
+    ]
+  },
+  "retention": {
+    "browser": "Future event previews must remain in page memory unless the user explicitly exports or shares them.",
+    "github_issue": "A deliberately submitted GitHub issue follows GitHub and repository retention controls; submission itself does not automatically create a reviewed public observation.",
+    "public_observation_dataset": "Only reviewed events with explicit consent, valid provenance and no prohibited data may enter the versioned public observation registry.",
+    "aggregate_report": "Aggregate reports contain counts and canonical IDs, not raw prompts or user identifiers."
+  },
+  "verification": {
+    "accepted_observation_sources": ["github-issue", "manual-import"],
+    "required_for_public_observation": [
+      "explicit consent",
+      "valid outcome-event schema",
+      "no raw query",
+      "no personal identifier",
+      "published dataset version",
+      "reviewed provenance record"
+    ],
+    "verified_success_rule": "Count a run only when protocol_completed and helpful_yes are both present, valid, and linked by the same run_id, protocol_id, dataset version and ISO week."
+  },
+  "reporting_rules": [
+    "Show zero when no reviewed observations exist.",
+    "Separate observed counts from hypotheses, targets, demos and fixtures.",
+    "Do not infer users, completions or helpfulness from page views, downloads, copies, repository activity or CI.",
+    "Publish not-helpful, bad-match, no-answer and missing-knowledge outcomes when they meet the same consent, privacy and provenance boundary.",
+    "Do not claim repeated use without repeated reviewed observations linked through a privacy-safe run or integration identifier.",
+    "Do not call the system instrumented until a real opt-in feedback path is live and verified."
+  ],
+  "public_surfaces": {
+    "schema": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
+    "policy": "https://brali-lifeos.github.io/life-os/datasets/outcome-policy.json",
+    "observations": "https://brali-lifeos.github.io/life-os/datasets/outcome-observations.json",
+    "report": "https://brali-lifeos.github.io/life-os/datasets/outcome-report.json",
+    "human_report": "https://brali-lifeos.github.io/quality/outcomes/"
+  }
+}

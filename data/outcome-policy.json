@@ -1,8 +1,13 @@
 {
   "schema_version": 1,
   "name": "Brali outcome observation policy",
-  "collection_status": "contract-ready",
-  "description": "Brali has a versioned privacy-light outcome contract and honest zero-state reporting. Interactive Query and Protocol feedback collection is not live yet, so contract readiness must not be described as observed use or completed instrumentation.",
+  "collection_status": "instrumented",
+  "description": "Ask Brali now exposes an explicit opt-in privacy-light feedback path that creates a local event envelope and lets the user choose download, native share, or a reviewable GitHub issue draft. No feedback is transmitted automatically. Browser protocol-run completion is not instrumented yet, so the north-star successful-execution metric remains dependent on reviewed imported run observations.",
+  "instrumentation_scope": {
+    "query_feedback": "live",
+    "protocol_execution": "not-live",
+    "automatic_collection": false
+  },
   "north_star": {
     "id": "weekly_verified_successful_executions",
     "definition": "Unique protocol runs with both a protocol_completed event and an explicit helpful_yes event in the same ISO week, using the same run_id, protocol_id, and published Brali dataset version.",
@@ -21,18 +26,18 @@
   "opt_in_channels": [
     {
       "id": "github-issue",
-      "status": "planned-next-slice",
-      "description": "Prepare a privacy-light event for explicit user review before a GitHub issue is submitted. No raw query belongs in the event envelope."
+      "status": "live",
+      "description": "Ask Brali can prepare a privacy-light event inside a GitHub issue draft. The raw query is excluded from the envelope and may be added separately only through an off-by-default checkbox. The user reviews the public draft before submitting it."
     },
     {
       "id": "native-share",
-      "status": "planned-next-slice",
-      "description": "Prepare event JSON for the operating-system share sheet when supported. Brali does not select a destination or transmit automatically."
+      "status": "live-when-supported",
+      "description": "After choosing a feedback signal, the user may explicitly open the operating-system share sheet with the event JSON. Brali does not choose a destination or share in the background."
     },
     {
       "id": "download",
-      "status": "contract-ready",
-      "description": "The event contract can be exported as JSON for local review. A local download is not collection and is never counted as use."
+      "status": "live",
+      "description": "The user may download the event JSON locally after reviewing its preview. A local download is not collection and is never counted as use."
     },
     {
       "id": "manual-import",
@@ -44,7 +49,7 @@
     "raw_query_in_event": false,
     "personal_data_in_event": false,
     "user_identifier_in_event": false,
-    "prompt_text_may_be_shared_separately": "Only if a person deliberately adds it outside the event envelope after reviewing the destination. Brali does not require or store it for outcome reporting.",
+    "prompt_text_may_be_shared_separately": "Only if a person deliberately opts in outside the event envelope after reviewing the destination. Brali does not require raw query text for outcome reporting.",
     "minimum_context": [
       "event type",
       "event and run/query identifiers",
@@ -57,7 +62,7 @@
     ]
   },
   "retention": {
-    "browser": "Future event previews must remain in page memory unless the user explicitly exports or shares them.",
+    "browser": "Event previews stay in page memory only until navigation or refresh unless the user explicitly exports or shares them.",
     "github_issue": "A deliberately submitted GitHub issue follows GitHub and repository retention controls; submission itself does not automatically create a reviewed public observation.",
     "public_observation_dataset": "Only reviewed events with explicit consent, valid provenance and no prohibited data may enter the versioned public observation registry.",
     "aggregate_report": "Aggregate reports contain counts and canonical IDs, not raw prompts or user identifiers."
@@ -67,7 +72,7 @@
     "required_for_public_observation": [
       "explicit consent",
       "valid outcome-event schema",
-      "no raw query",
+      "no raw query inside the event envelope",
       "no personal identifier",
       "published dataset version",
       "reviewed provenance record"
@@ -80,13 +85,15 @@
     "Do not infer users, completions or helpfulness from page views, downloads, copies, repository activity or CI.",
     "Publish not-helpful, bad-match, no-answer and missing-knowledge outcomes when they meet the same consent, privacy and provenance boundary.",
     "Do not claim repeated use without repeated reviewed observations linked through a privacy-safe run or integration identifier.",
-    "Do not call the system instrumented until a real opt-in feedback path is live and verified."
+    "Instrumented means an explicit feedback path is live; it does not mean that reviewed outcomes exist.",
+    "Do not imply that browser Query feedback can make the north-star metric nonzero until a protocol-run completion path is also live."
   ],
   "public_surfaces": {
     "schema": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
     "policy": "https://brali-lifeos.github.io/life-os/datasets/outcome-policy.json",
     "observations": "https://brali-lifeos.github.io/life-os/datasets/outcome-observations.json",
     "report": "https://brali-lifeos.github.io/life-os/datasets/outcome-report.json",
-    "human_report": "https://brali-lifeos.github.io/quality/outcomes/"
+    "human_report": "https://brali-lifeos.github.io/quality/outcomes/",
+    "query_feedback": "https://brali-lifeos.github.io/for-ai/query/"
   }
 }

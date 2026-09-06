@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed research added by Brali Research Watch on 2026-09-06. Discovery metadata is kept separate from full-source Evidence Decisions; public claims are bounded to the population, dose, timing, and sleep outcomes actually tested.",
+  "evidence_overrides": {
+    "stop-caffeine-after-lunch": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-06",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "The inherited fixed after-lunch cutoff and detailed dosing advice are replaced by a sourced, bedtime-relative and dose-aware sleep protocol. The reviewed 2025 randomized crossover trial supports concern about a single 400 mg dose reaching into sleep even when taken many hours before bedtime, but it does not justify a universal 1 p.m. cutoff, body-weight dosing, a claim that 100 mg four hours before bed is safe for everyone, or using sleep response to infer caffeine metabolism."
+    }
+  },
+  "ontology_overrides": {
+    "stop-caffeine-after-lunch": {
+      "topic_ids": [
+        "sleep-circadian",
+        "health-basics"
+      ],
+      "reviewed_at": "2026-09-06",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol is about adjusting caffeine dose and timing to protect subsequent sleep. Sleep & Circadian Rhythm is the primary Topic and Everyday Health Basics preserves the general-health context."
+    }
+  },
+  "research_candidates": [
+    {
+      "id": "crossref:10.1093/sleep/zsae230",
+      "source": "crossref",
+      "source_id": "10.1093/sleep/zsae230",
+      "doi": "10.1093/sleep/zsae230",
+      "pmid": "39377163",
+      "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "authors": [
+        "Carissa L Gardiner",
+        "Jonathon Weakley",
+        "Louise M Burke",
+        "Francesca Fernandez",
+        "Rich D Johnston",
+        "Josh Leota",
+        "Suzanna Russell",
+        "Gabriella Munteanu",
+        "Andrew Townshend",
+        "Shona L Halson"
+      ],
+      "container_title": "Sleep",
+      "publication_date": "2025-04-11",
+      "type": "journal-article",
+      "subjects": [
+        "caffeine",
+        "sleep",
+        "dose timing",
+        "sleep architecture",
+        "polysomnography"
+      ],
+      "reference_url": "https://doi.org/10.1093/sleep/zsae230",
+      "discovered_at": "2026-09-06T05:12:00Z",
+      "last_seen_at": "2026-09-06T05:12:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "health-sleep-regularity"
+      ],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [
+        "sleep-circadian",
+        "health-basics"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full open-access article reviewed. In a placebo-controlled, double-blind randomized crossover trial, 23 healthy men aged 18–40 with moderate habitual caffeine intake completed placebo and 100 mg or 400 mg caffeine conditions at 12, 8, or 4 hours before habitual bedtime. Objective sleep was measured with in-home partial polysomnography and subjective sleep with diaries. A 400 mg single dose disrupted several sleep outcomes, with effects detectable even when consumed 12 hours before bed and generally larger closer to bedtime. No statistically significant objective or subjective sleep effects were detected for 100 mg at the tested timings. The small all-male sample, acute capsule dosing, and narrow population mean Brali should not turn the null 100 mg result into a universal four-hour safety rule or the 400 mg result into a universal cutoff for every caffeine dose."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "caffeine-dose-timing-sleep-boundary-2025",
+      "candidate_id": "crossref:10.1093/sleep/zsae230",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-06",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+      "source_title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "source_type": "primary-study",
+      "doi": "10.1093/sleep/zsae230",
+      "citation_text": "Gardiner CL, Weakley J, Burke LM, et al. Sleep. 2025;48(4):zsae230.",
+      "source_reviewed": true,
+      "study_design": "Placebo-controlled, double-blind randomized crossover trial with seven conditions separated by 48-hour washouts. Participants received placebo or a single 100 mg or 400 mg caffeine dose 12, 8, or 4 hours before habitual bedtime; sleep was assessed with in-home partial polysomnography and sleep diaries.",
+      "population": "23 healthy males aged 18–40 years (mean age 25.3 years) with moderate habitual caffeine intake below 300 mg per day.",
+      "intervention_or_exposure": "Acute caffeine anhydrous capsules containing 100 mg or 400 mg, administered once at 12, 8, or 4 hours before habitual bedtime, compared with placebo.",
+      "outcomes": [
+        "Objective total sleep time",
+        "Sleep efficiency",
+        "Sleep onset latency and latency to persistent sleep",
+        "Wake after sleep onset and awakenings",
+        "Sleep-stage distribution including N3 sleep",
+        "Subjective total sleep time and sleep quality"
+      ],
+      "supported_claim": "Caffeine timing should be interpreted together with dose rather than as one universal after-lunch rule. In this small randomized crossover trial, a single 400 mg dose disrupted multiple objective sleep measures when taken within 12 hours of bedtime, with larger disruption closer to bedtime; no statistically significant sleep effect was detected for 100 mg at the tested 12-, 8-, and 4-hour timings. For Brali, this supports moving large late-day caffeine doses earlier when sleep matters and using bedtime-relative timing rather than a fixed clock cutoff.",
+      "unsupported_or_overstated_claims": [
+        "Everyone should stop caffeine at 1 p.m. or immediately after lunch.",
+        "A 100 mg dose four hours before bedtime is safe or sleep-neutral for every person.",
+        "Twelve hours is a scientifically established cutoff for every caffeine dose or pattern of use.",
+        "People can infer whether they metabolize caffeine quickly from whether they fall asleep after an afternoon coffee.",
+        "The study establishes an ideal daily caffeine dose, a body-weight dosing range, or a morning dosing schedule.",
+        "The trial tested ordinary coffee, tea, energy drinks, or repeated real-world servings rather than standardized caffeine capsules.",
+        "A personal sleep log can establish a causal individual caffeine dose-response curve."
+      ],
+      "limitations": [
+        "The sample was small (23 participants) and included only healthy men aged 18–40, limiting generalizability to women, older adults, adolescents, people with sleep disorders, and other populations.",
+        "Participants were moderate habitual caffeine users; results may differ in people with very low, very high, or irregular caffeine exposure.",
+        "The intervention used acute standardized caffeine capsules rather than the variable doses, ingredients, absorption patterns, and repeated servings found in real-world caffeinated products.",
+        "The study tested only two caffeine doses and three pre-bed timing points, so it cannot define a continuous or personalized cutoff.",
+        "Sleep was measured with in-home partial polysomnography rather than full laboratory polysomnography.",
+        "A nonsignificant result for 100 mg in this sample is not proof of no effect for every individual, especially given known variability in caffeine pharmacokinetics and sensitivity."
+      ],
+      "target_hack_ids": [
+        "stop-caffeine-after-lunch"
+      ],
+      "target_protocol_ids": [
+        "brali:stop-caffeine-after-lunch"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: replace the inherited fixed after-lunch/1 p.m. rule with a dose-aware, bedtime-relative protocol. Start with the highest-leverage low-risk change: move large late-day doses earlier or reduce them. Let users track last caffeine timing/rough amount and broad sleep/daytime-function trends without deliberately challenging themselves with late caffeine. Keep the 100 mg null finding as an evidence boundary, not a clearance rule."
+    }
+  ]
+}

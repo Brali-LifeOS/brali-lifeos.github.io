@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "stop-caffeine-after-lunch": {
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "subtitle": "Use dose and bedtime—not lunch—as the boundary",
+      "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-09-06",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace a rigid, unsupported after-lunch/1 p.m. rule and inherited dosing advice with a bounded protocol based on a fully reviewed 2025 randomized crossover trial. The trial directly tests caffeine dose and timing relative to bedtime. It supports a stronger caution around a single 400 mg dose and shows why dose matters, while its small all-male sample and acute capsule design do not justify universal personal cutoffs or claims that 100 mg four hours before bed is harmless for everyone.",
+      "forbidden_public_fragments": [
+        "last caffeine by 1:00 p.m.",
+        "2–4 mg/kg/day",
+        "If we metabolize caffeine quickly",
+        "none after lunch",
+        "12:45 p.m.",
+        "quarter-life territory",
+        "sleep latency shrink by 10–15 minutes",
+        "Caffeine’s half‑life is roughly 5–7 hours"
+      ],
+      "lifeOsSource": {
+        "hack": "If sleep is a priority, make caffeine timing relative to your bedtime and pay attention to dose. Large single doses deserve much more runway than a small drink.",
+        "whatYouDo": "For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance.",
+        "checkIn": "When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days?",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+        "reference": "Gardiner et al. (Sleep, 2025) — placebo-controlled double-blind randomized crossover trial"
+      },
+      "references": [
+        {
+          "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+          "doi": "10.1093/sleep/zsae230",
+          "source_type": "primary-study",
+          "claim_scope": "In 23 healthy young men with moderate habitual caffeine intake, a single 400 mg caffeine dose disrupted multiple objective sleep measures when taken within 12 hours of habitual bedtime, with larger disruption closer to bedtime. A 100 mg dose showed no statistically significant objective or subjective sleep effect at the tested 12-, 8-, and 4-hour timings. The study does not establish a universal cutoff or prove that 100 mg four hours before bed is harmless for every person."
+        }
+      ],
+      "faq": [
+        {
+          "id": "caffeine-cutoff-faq-1",
+          "question": "What time should I stop caffeine?",
+          "answer": "There is no single clock time supported for everyone. Lunch is a meal, not a pharmacokinetic event. Use your planned bedtime as the reference point and treat larger doses more cautiously. In the reviewed trial, a single 400 mg dose affected several objective sleep measures even when taken 12 hours before bed."
+        },
+        {
+          "id": "caffeine-cutoff-faq-2",
+          "question": "Does 100 mg four hours before bed not affect sleep?",
+          "answer": "The trial did not detect a statistically significant effect from 100 mg at four, eight, or twelve hours before bed, but that was in only 23 healthy young men. A null result in a small sample is not a universal safety guarantee. Individual sensitivity and caffeine clearance vary."
+        },
+        {
+          "id": "caffeine-cutoff-faq-3",
+          "question": "Do I need to know the exact milligrams in every drink?",
+          "answer": "No. Use a label when one is available, but rough categories are enough for the protocol: small, moderate, or large. Caffeine content varies across coffee, tea, energy drinks, and supplements, so false precision is not useful."
+        },
+        {
+          "id": "caffeine-cutoff-faq-4",
+          "question": "Should I stop caffeine completely?",
+          "answer": "This study does not answer that question. It tested acute dose and timing effects on subsequent sleep, not the overall benefits and harms of quitting caffeine. The Brali protocol is narrower: adjust timing and dose when protecting sleep is the goal."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>The old version of this page treated “after lunch” like a biological border. It is not. A 2025 randomized crossover trial tested caffeine relative to bedtime and found a much more useful pattern: dose matters, timing matters, and a large dose can reach into the night long after the obvious buzz has faded. Brali therefore replaces the fixed clock rule with a bedtime-relative, dose-aware experiment.</p>"
+        },
+        "sections": [
+          {
+            "slug": "why-lunch-is-too-neat",
+            "title": "1. Stop using lunch as the science",
+            "html": "<p>Lunch is a convenient reminder, not a pharmacokinetic event. In the reviewed trial, 23 healthy men received placebo or 100 mg or 400 mg caffeine at 12, 8, or 4 hours before their habitual bedtime. The high dose changed several objective sleep measures; the smaller dose did not show a statistically significant effect at those tested timings. That makes a single “no caffeine after 1 p.m.” rule too neat for the evidence.</p>"
+          },
+          {
+            "slug": "large-dose-runway",
+            "title": "2. Give large doses much more runway",
+            "html": "<p>The clearest actionable signal is the 400 mg condition. A single 400 mg dose reduced deep sleep at all three tested timings and disrupted sleep initiation or continuity on several measures, with generally greater disruption closer to bedtime. If you use a large dose and sleep matters that night, moving it earlier or reducing it is the first lever to pull.</p>"
+          },
+          {
+            "slug": "bedtime-reference",
+            "title": "3. Use bedtime as the reference point",
+            "html": "<p>Instead of asking “Is it after lunch?”, ask “How long until I plan to sleep, and how large is this dose?” This keeps the rule useful for early sleepers, late sleepers, shift schedules, travel, and changing routines. It also avoids pretending that one clock time fits every schedule.</p>"
+          },
+          {
+            "slug": "null-is-not-clearance",
+            "title": "4. Do not turn the 100 mg result into a clearance certificate",
+            "html": "<p>The study found no statistically significant sleep effect from 100 mg at the tested timings, including four hours before bed. That is informative, but it is not proof that 100 mg is sleep-neutral for everyone. The sample was small, all male, young, and limited to moderate habitual caffeine users. Individual caffeine clearance and sensitivity vary. “Not detected here” and “cannot affect me” are different claims.</p>"
+          },
+          {
+            "slug": "small-personal-check",
+            "title": "5. Run the smallest useful personal check",
+            "html": "<p>For one or two weeks, record only what helps a decision: the time and rough amount of your last caffeine, bedtime, whether falling asleep or staying asleep felt broadly easier or harder, and next-day sleepiness. Start by moving the last large dose earlier or reducing it. Keep the change if the pattern is repeatedly better. If nothing changes, reconsider whether caffeine timing is actually the main constraint.</p>"
+          },
+          {
+            "slug": "do-not-dose-challenge",
+            "title": "6. Do not manufacture a tolerance test",
+            "html": "<p>You do not need to deliberately take caffeine late to prove a point. Ordinary variation is enough for observation. A personal log can reveal a useful pattern, but it cannot establish your exact caffeine half-life or prove a causal dose-response curve. The goal is a better decision, not a kitchen-table pharmacology lab.</p>"
+          },
+          {
+            "slug": "evidence-boundary",
+            "title": "7. Know where this evidence ends",
+            "html": "<p>This was an acute crossover study using standardized caffeine capsules, not a long-term trial of ordinary coffee, tea, energy drinks, or repeated servings. It included 23 healthy men aged 18–40 and used in-home partial polysomnography. Persistent insomnia, severe daytime sleepiness, suspected sleep apnea, or another sleep problem needs appropriate professional assessment rather than progressively stricter caffeine rules.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

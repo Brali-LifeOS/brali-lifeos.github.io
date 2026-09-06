@@ -1,0 +1,50 @@
+name: ARWP Growth Profile
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 6 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  growth-profile:
+    runs-on: ubuntu-latest
+    env:
+      ARWP_TARGET: https://brali-lifeos.github.io/
+    steps:
+      - name: Checkout current ARWP
+        uses: actions/checkout@v7
+        with:
+          repository: dkharlanau/agent-ready-web-profile
+          ref: main
+          path: .arwp
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: .arwp/package-lock.json
+
+      - name: Install ARWP dependencies
+        run: npm ci --prefix .arwp --ignore-scripts --no-audit --no-fund
+
+      - name: Build current Growth Profile
+        run: |
+          ARWP_SHA="$(git -C .arwp rev-parse HEAD)"
+          printf '%s\n' "$ARWP_SHA" > arwp-growth.version.txt
+          node .arwp/bin/arwp-growth.mjs "$ARWP_TARGET" --vertical=editorial --json > arwp-growth.json
+          node -e "const p=require('./arwp-growth.json'); console.log('ARWP revision:', require('fs').readFileSync('arwp-growth.version.txt','utf8').trim()); console.log('ARWP Growth actions:', p.summary);"
+
+      - name: Upload Growth evidence
+        uses: actions/upload-artifact@v6
+        with:
+          name: arwp-growth-profile
+          path: |
+            arwp-growth.json
+            arwp-growth.version.txt
+          if-no-files-found: error
+          retention-days: 30

@@ -22,7 +22,15 @@ const validDate = (value) => {
   return Number.isNaN(date.getTime()) ? null : date.toISOString();
 };
 
-function discoveryMetadata(entry) {
+function pageImage(html) {
+  return html.match(/<meta\s+property=["']og:image["']\s+content=["']([^"']+)["'][^>]*>/i)?.[1] ?? null;
+}
+
+function representativeImage(url) {
+  return Boolean(url) && !/\/brali-logo\.png(?:[?#]|$)/i.test(url);
+}
+
+function discoveryMetadata(entry, imageUrl) {
   const published = validDate(entry.publishedISO);
   const modified = validDate(entry.updatedISO);
   return [
@@ -31,15 +39,15 @@ function discoveryMetadata(entry) {
     `<meta property="article:section" content="${escapeHtml(entry.zone?.title || "Growth Library")}">`,
     published ? `<meta property="article:published_time" content="${escapeHtml(published)}">` : "",
     modified ? `<meta property="article:modified_time" content="${escapeHtml(modified)}">` : "",
-    '<meta name="twitter:card" content="summary">',
+    representativeImage(imageUrl) ? '<meta name="twitter:card" content="summary_large_image">' : '<meta name="twitter:card" content="summary">',
     `<meta name="twitter:title" content="${escapeHtml(clean(entry.title))}">`,
     `<meta name="twitter:description" content="${escapeHtml(clean(entry.description).slice(0, 200))}">`,
-    `<meta name="twitter:image" content="${base}/assets/images/brali-logo.png">`,
+    `<meta name="twitter:image" content="${escapeHtml(representativeImage(imageUrl) ? imageUrl : `${base}/assets/images/brali-logo.png`)}">`,
     `<link rel="license" href="${license}">`,
   ].filter(Boolean).join("");
 }
 
-function enrichSchema(html, entry) {
+function enrichSchema(html, entry, imageUrl) {
   const pathname = `/life-os/${entry.slug}/`;
   const articleUrl = `${base}${pathname}`;
   return html.replace(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/, (whole, raw) => {
@@ -63,6 +71,10 @@ function enrichSchema(html, entry) {
         encodingFormat: "application/json",
         contentUrl: `${articleUrl}index.json`,
       };
+      if (representativeImage(imageUrl)) {
+        article.image = { "@type": "ImageObject", url: imageUrl };
+        webPage.primaryImageOfPage = { "@type": "ImageObject", url: imageUrl };
+      }
       const keywords = [...new Set((entry.keywords ?? []).map(clean).filter(Boolean))].slice(0, 12);
       if (keywords.length) article.keywords = keywords;
 
@@ -86,14 +98,17 @@ function reuseBlock(entry) {
 }
 
 let changed = 0;
+let largeImagePages = 0;
 for (const entry of index) {
   const pagePath = path.join(root, "life-os", entry.slug, "index.html");
   let html = await readFile(pagePath, "utf8");
   const before = html;
+  const imageUrl = pageImage(html);
+  if (representativeImage(imageUrl)) largeImagePages += 1;
 
   html = html.replace(/<!-- brali-hack-discovery -->[\s\S]*?<!-- \/brali-hack-discovery -->/g, "");
-  html = html.replace("</head>", `<!-- brali-hack-discovery -->${discoveryMetadata(entry)}<!-- /brali-hack-discovery --></head>`);
-  html = enrichSchema(html, entry);
+  html = html.replace("</head>", `<!-- brali-hack-discovery -->${discoveryMetadata(entry, imageUrl)}<!-- /brali-hack-discovery --></head>`);
+  html = enrichSchema(html, entry, imageUrl);
   html = html.replace(/<aside class="agent-reuse"[\s\S]*?<\/aside>/g, "");
   html = html.replace("</main>", `${reuseBlock(entry)}</main>`);
 
@@ -103,4 +118,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata, licensing schema, machine records, and AI reuse instructions.`);
+console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata, licensing schema, machine records, AI reuse instructions, and ${largeImagePages} representative large-image previews.`);

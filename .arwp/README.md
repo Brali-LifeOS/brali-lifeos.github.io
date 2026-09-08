@@ -2,6 +2,8 @@
 
 This directory contains Brali's publisher-authored ARWP contracts. They describe intent and adoption state; they are not ranking, indexing, citation or efficacy certification.
 
+Contract revision: 2026-09-08.
+
 ## Current contracts
 
 - `adoption.json` — retained discoverability/adoption experiment contract and evidence boundaries.

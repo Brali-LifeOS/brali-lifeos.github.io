@@ -1,0 +1,111 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/main/schema/site-focus-profile-v0.3.schema.json",
+  "version": "0.3",
+  "canonicalUrl": "https://brali-lifeos.github.io/",
+  "thesis": {
+    "primaryProblem": "Practical self-improvement advice is often fragmented into shallow tips with unclear evidence, fit, limitations and stopping conditions.",
+    "primaryAudience": "People looking for one evidence-aware practical routine they can inspect before using.",
+    "usefulOutcome": "Find one bounded protocol for a real-life problem, understand why it may fit, inspect its evidence and limits, and take one useful next move.",
+    "distinctEvidence": "Reviewed protocol records, explicit evidence states, source provenance, stable identities, versioned datasets and reproducible retrieval artifacts.",
+    "primaryAction": "Choose one relevant protocol and inspect its evidence and stop conditions."
+  },
+  "scope": {
+    "in": [
+      "evidence-aware practical protocols",
+      "problem-first everyday decision support",
+      "bounded routines for focus, stress, memory, sleep, habits, learning and movement",
+      "inspectable practical knowledge with provenance"
+    ],
+    "adjacent": [
+      "research notes and evidence review infrastructure",
+      "ontology and versioned public datasets",
+      "read-only API, retrieval and agent integration surfaces",
+      "the legacy LifeOS organizer as an optional application layer"
+    ],
+    "out": [
+      "clinical diagnosis or treatment",
+      "generic self-help content farms",
+      "a feature race for an all-purpose personal organizer",
+      "unsupported health or efficacy claims",
+      "search ranking or AI citation guarantees"
+    ]
+  },
+  "problemLanes": [
+    {
+      "id": "find",
+      "label": "Find",
+      "job": "Move from a messy everyday problem to one relevant bounded protocol.",
+      "audience": "A person who knows the situation they want to improve but not which routine fits.",
+      "problem": "Large libraries and generic advice make it hard to choose one useful next move.",
+      "desiredOutcome": "Reach a small set of relevant protocols without browsing unrelated knowledge.",
+      "primaryAction": "Use the problem, topic or protocol finder."
+    },
+    {
+      "id": "evaluate",
+      "label": "Evaluate",
+      "job": "Understand why a protocol may fit and where its evidence or applicability stops.",
+      "audience": "A reader deciding whether a practical routine is credible and appropriate for the situation.",
+      "problem": "Practical advice is easy to overstate when sources, evidence state and limitations are detached from the action.",
+      "desiredOutcome": "See evidence state, sources, limitations and stop conditions before treating a protocol as trusted guidance.",
+      "primaryAction": "Inspect the protocol evidence and methodology."
+    },
+    {
+      "id": "apply",
+      "label": "Apply",
+      "job": "Turn the selected protocol into one bounded action while preserving context.",
+      "audience": "A person ready to try a low-risk practical routine.",
+      "problem": "Useful knowledge often remains descriptive instead of becoming a small executable next step.",
+      "desiredOutcome": "Complete one practical next move without converting the site into an unbounded coaching or treatment system.",
+      "primaryAction": "Use the selected protocol."
+    }
+  ],
+  "homepage": {
+    "primaryLane": "find",
+    "supportingLanes": ["evaluate", "apply"],
+    "requiredSignals": ["problem", "audience", "outcome", "evidence", "action"]
+  },
+  "primaryNavigation": [
+    "/life-os/",
+    "/life-os/methodology/",
+    "/research/",
+    "/partners/",
+    "/for-ai/"
+  ],
+  "routeRules": [
+    { "match": { "path": "/" }, "role": "problem-commercial", "scope": "IN", "lane": "find" },
+    { "match": { "pathPrefix": "/problems" }, "role": "problem-commercial", "scope": "IN", "lane": "find" },
+    { "match": { "pathPrefix": "/topics" }, "role": "problem-commercial", "scope": "IN", "lane": "find" },
+    { "match": { "pathPrefix": "/questions" }, "role": "problem-commercial", "scope": "IN", "lane": "find" },
+    { "match": { "pathPrefix": "/life-os" }, "role": "problem-commercial", "scope": "IN", "lane": "apply" },
+    { "match": { "pathPrefix": "/research" }, "role": "proof-portfolio", "scope": "ADJACENT", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/evidence" }, "role": "proof-portfolio", "scope": "IN", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/ontology" }, "role": "technical-reference", "scope": "ADJACENT", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/for-ai" }, "role": "technical-reference", "scope": "ADJACENT", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/api" }, "role": "technical-reference", "scope": "ADJACENT", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/partners" }, "role": "trust-utility", "scope": "ADJACENT", "lane": "apply" },
+    { "match": { "pathPrefix": "/cite" }, "role": "trust-utility", "scope": "ADJACENT", "lane": "evaluate" },
+    { "match": { "pathPrefix": "/trust" }, "role": "trust-utility", "scope": "ADJACENT", "lane": "evaluate" }
+  ],
+  "experience": {
+    "visualPrinciples": [
+      "Keep the bright friendly Brali identity while making the useful next move visually dominant.",
+      "Show evidence and limitations as part of the content rather than as decorative trust badges.",
+      "Reveal technical data and agent surfaces after the human problem and protocol path is clear.",
+      "Prefer problem-first entry points over exposing the size of the knowledge system."
+    ],
+    "navigation": {
+      "maxPrimaryItems": 5,
+      "consistentAcrossPages": true
+    },
+    "performance": {
+      "lcpMsP75Max": 2500,
+      "inpMsP75Max": 200,
+      "clsP75Max": 0.1
+    }
+  },
+  "notes": [
+    "Research, API, AI and ontology surfaces support the practical-protocol product; they are not separate homepage product territories.",
+    "The Core Web Vitals values are budgets. Field measurements remain separate evidence and must not be fabricated by the focus audit.",
+    "A Site Focus pass does not imply ranking, indexing, citation or protocol efficacy."
+  ]
+}

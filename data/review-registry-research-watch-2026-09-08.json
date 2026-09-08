@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed research added by Brali Research Watch on 2026-09-08. Discovery records remain separate from full-source Evidence Decisions. The new Vanherle 2026 review is added as support-existing evidence. Gale et al. 2026 was already fully reviewed in the 2026-08-30 research-watch registry, so its candidate and Evidence Decision are reused rather than duplicated. The public claim is limited to acute cardiometabolic responses to interrupting prolonged sitting with actual physical activity; walking-meeting format effects, a universal timer, and long-term clinical benefit are not inferred.",
+  "evidence_overrides": {
+    "walking-meeting-assistant": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-08",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "The inherited walking-meeting article is replaced by a sourced implementation protocol for interrupting a prolonged sitting block with actual movement when a meeting can safely travel. The newly reviewed Vanherle 2026 systematic review/meta-analyses and the already-reviewed Gale 2026 meta-analysis support acute glucose and insulin benefits from physical-activity breaks, with walking showing a useful signal. They do not establish a special walking-meeting effect, a universal 20-minute interval, long-term disease prevention, or the inherited step-count, heart-rate, creativity, wind-noise, and battery-drain claims."
+    }
+  },
+  "research_candidates": [
+    {
+      "id": "crossref:10.1093/eurjpc/zwag079",
+      "source": "crossref",
+      "source_id": "10.1093/eurjpc/zwag079",
+      "doi": "10.1093/eurjpc/zwag079",
+      "pmid": "41920954",
+      "title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+      "authors": [
+        "J Vanherle",
+        "GHLM Franssen",
+        "A Ivanova",
+        "BO Eijnde",
+        "WMA Franssen"
+      ],
+      "container_title": "European Journal of Preventive Cardiology",
+      "publication_date": "2026-04-01",
+      "type": "journal-article",
+      "subjects": [
+        "sedentary behaviour",
+        "physical activity breaks",
+        "glucose",
+        "insulin",
+        "cardiometabolic health"
+      ],
+      "reference_url": "https://doi.org/10.1093/eurjpc/zwag079",
+      "discovered_at": "2026-09-08T06:50:00Z",
+      "last_seen_at": "2026-09-08T06:50:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "health-movement-breaks"
+      ],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [
+        "movement"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "fit-life",
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref"
+      ],
+      "review_notes": "Full Oxford Academic article reviewed. The review synthesized 144 randomized studies, 247 intervention arms, and 2,216 adults in acute controlled settings. Physical-activity interruptions produced favourable average acute effects on glucose and insulin; the review rated pooled glucose and insulin evidence high certainty with GRADE. More frequent light-to-moderate bouts were favourable for glucose. Standing-only interventions did not show the same acute cardiometabolic signal. The authors emphasize heterogeneous protocols, many small samples, and the gap between acute laboratory responses and sustainable long-term clinical outcomes."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "movement-breaks-cardiometabolic-vanherle-2026",
+      "candidate_id": "crossref:10.1093/eurjpc/zwag079",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-08",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwag079/8571395",
+      "source_title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+      "source_type": "meta-analysis",
+      "doi": "10.1093/eurjpc/zwag079",
+      "citation_text": "Vanherle J, Franssen GHLM, Ivanova A, Eijnde BO, Franssen WMA. European Journal of Preventive Cardiology. Published online 1 April 2026. doi:10.1093/eurjpc/zwag079.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and meta-analyses of randomized controlled trials comparing acute laboratory-based aerobic physical-activity interruptions with sedentary control conditions; risk of bias assessed with Cochrane RoB 2 and certainty with GRADE.",
+      "population": "Adults aged 18-65 years, including healthy participants and people with cardiometabolic conditions, across 144 studies, 247 intervention arms, and 2,216 participants.",
+      "intervention_or_exposure": "Physical-activity bouts interrupting prolonged sedentary behaviour, varying in frequency, duration, and intensity, compared with uninterrupted sedentary control; standing-only conditions were examined separately.",
+      "outcomes": [
+        "Acute glucose concentrations",
+        "Acute insulin concentrations",
+        "Blood pressure",
+        "Triglycerides",
+        "Endothelial function"
+      ],
+      "supported_claim": "In acute controlled settings, interrupting prolonged sitting with actual physical activity can improve glucose and insulin responses on average. More frequent light-to-moderate activity appears useful for acute glucose control, while standing alone did not show the same cardiometabolic signal. For Brali this supports replacing an avoidable sitting block with safe movement, including walking when a meeting can travel, without prescribing one universal interval.",
+      "unsupported_or_overstated_claims": [
+        "A walking meeting has a special metabolic, productivity, creativity, or cognitive effect beyond the movement it contains.",
+        "Everyone should stand or walk every 20 or 30 minutes.",
+        "Standing still is metabolically equivalent to a walking or physical-activity break.",
+        "Acute laboratory improvements prove long-term prevention or treatment of diabetes, hypertension, cardiovascular disease, or other conditions.",
+        "A walking meeting should target a fixed step count, heart-rate increase, duration, or physiological dose.",
+        "The review supports inherited claims about wind noise, phone battery drain, meeting quality, mental clarity, or screen fatigue."
+      ],
+      "limitations": [
+        "The evidence is dominated by acute controlled experimental settings and cannot establish long-term clinical benefit or sustainable free-living adherence.",
+        "Participant characteristics, meals, timing, activity protocols, and outcome measurement varied substantially across studies.",
+        "Many individual studies had small samples; only a minority of intervention comparisons were rated low overall risk of bias, with most having some concerns.",
+        "The review focused on adults aged 18-65 years, so the findings should not be generalized automatically to children or older adults.",
+        "The evidence concerns physical-activity interruptions, not walking meetings as a distinct behavioral or workplace intervention."
+      ],
+      "target_hack_ids": [
+        "walking-meeting-assistant"
+      ],
+      "target_protocol_ids": [
+        "brali:walking-meeting-assistant"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: replace the inherited walking-meeting page with a mechanism-first implementation protocol. The meeting is only a delivery surface for exchanging some sitting for movement. Remove unsupported numerical targets and health/productivity halo claims; teach users to observe whether sitting was actually replaced, the conversation still worked, and the route remained safe and practical. The Gale 2026 meta-analysis is already represented by Evidence Decision activity-breaks-postprandial-metabolism-boundary-2026 and is reused as converging evidence rather than duplicated."
+    }
+  ]
+}

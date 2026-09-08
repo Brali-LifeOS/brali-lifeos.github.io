@@ -1,30 +1,29 @@
-# Agent-Ready Web Profile adoption
+# Cite Goose / ARWP adoption
 
-Start with the repository's governing instructions and `.arwp/adoption.json`. This is a publisher-authored adoption contract, not a ranking certification.
+This directory contains Brali's publisher-authored ARWP contracts. They describe intent and adoption state; they are not ranking, indexing, citation or efficacy certification.
 
-Audience: Readers applying an evidence-aware practical routine. Useful action: Try one existing bounded protocol and inspect its evidence and stop conditions.
+## Current contracts
 
-## Sources and publication
+- `adoption.json` — retained discoverability/adoption experiment contract and evidence boundaries.
+- `site-focus.json` — Cite Goose Site Focus v0.3 product and experience contract.
+- `../ai/site-profile.json` — machine/agent service map for real published Brali interfaces.
 
-- Canonical publication: https://brali-lifeos.github.io/
-- Profile source: `ai/site-profile.json`; public location: `ai/site-profile.json` under the canonical site base.
-- Authoritative site source: `.`.
-- Published directory: `.`.
-- Build evidence: `package.json; .github/workflows/deploy-pages.yml`.
-- Product claims are bounded by `README.md`; CLI or source availability does not imply a hosted agent endpoint.
+The Site Focus contract makes Brali's product boundary explicit: the primary product is an evidence-aware practical knowledge library that helps a person move from a real-life problem to one bounded protocol. Research, ontology, datasets, APIs and agent integrations support that product; they are not separate reasons to broaden the homepage indefinitely.
 
-## Editorial experiment
+## Product boundary
 
-Improve one existing strong protocol with a decision lead and null or failed-result boundary; avoid creating thin adjacent variants.
+IN: practical protocols, problem-first discovery, inspectable evidence/provenance and bounded next actions.
 
-Reuse the existing intent owner before adding a page. Put the direct answer, concrete example, sources and strongest limitation in visible HTML. Keep comparison criteria symmetric; state where another approach is a better fit. Label synthetic fixtures and first-party interpretations.
+ADJACENT: research, ontology, datasets, read-only API/retrieval/agent surfaces and the legacy LifeOS organizer layer.
 
-The tactic IDs in the adoption contract resolve against [the ARWP corpus](https://github.com/dkharlanau/agent-ready-web-profile/blob/main/knowledge/discoverability-corpus.json). New tactics require evidence and a measurable product consequence.
+OUT: clinical diagnosis/treatment, generic self-help publishing, an all-purpose organizer feature race, unsupported efficacy claims and Search/AI guarantees.
 
-## Validation and baseline
+## Validation
 
-Validate the profile against [the ARWP v0.1 schema](https://github.com/dkharlanau/agent-ready-web-profile/blob/main/schema/site-profile.schema.json). Use this repository's existing build and profile publication mechanism; `public/` assets are served directly by Next.js, and root static assets must survive the site generator.
+The repository's Cite Goose Site Focus workflow validates `.arwp/site-focus.json` against the current v0.3 contract and runs a bounded comparison against the public site. The resulting report is evidence for review, not an instruction to delete or split pages automatically.
 
-Check the exact emitted JSON and HTML before release. After an authorized release, verify the canonical live URL, HTTP status, profile link and response body. Record crawl eligibility, index status, search clicks/impressions, useful-action completion and independent AI citation separately. Missing observations remain unavailable; no score is a ranking promise.
+A focus warning should be resolved by checking the actual product boundary and page role. Do not weaken the contract merely to make CI quiet.
 
-This application is local only. Existing unrelated changes, product telemetry constraints and publication approvals remain in force.
+## Evidence rule
+
+Implementation success remains separate from external outcome evidence. A valid profile or passing focus audit does not prove indexing, ranking, AI citation, user adoption or protocol effectiveness. Missing observations remain unknown.

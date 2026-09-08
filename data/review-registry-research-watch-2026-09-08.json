@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed research added by Brali Research Watch on 2026-09-08. The full 2026 systematic review and meta-analysis was checked before recording the Evidence Decision. Claims are bounded to acute postprandial glucose and insulin responses observed in laboratory randomized crossover studies; subgroup cadence findings are not treated as a universal timer prescription.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1111/obr.70152",
+      "source": "crossref",
+      "source_id": "10.1111/obr.70152",
+      "doi": "10.1111/obr.70152",
+      "pmid": "42070794",
+      "title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "authors": ["Jennifer T Gale", "Hannah Martin", "Matthew C Parmenter", "Jill J Haszard"],
+      "container_title": "Obesity Reviews",
+      "publication_date": "2026-05-03",
+      "type": "journal-article",
+      "subjects": ["prolonged sitting", "activity breaks", "walking", "postprandial glucose", "insulin"],
+      "reference_url": "https://doi.org/10.1111/obr.70152",
+      "discovered_at": "2026-09-08T06:20:00Z",
+      "last_seen_at": "2026-09-08T06:20:00Z",
+      "status": "propose-protocol",
+      "query_ids": ["health-movement-sedentary-breaks"],
+      "domain_ids": ["health-energy"],
+      "topic_ids": ["movement", "health-basics"],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": ["health-energy"],
+      "zone_slugs": ["be-healthy"],
+      "risk_flags": ["health"],
+      "crossref_score": null,
+      "discovery_sources": ["crossref", "pubmed"],
+      "review_notes": "Full Wiley article reviewed. The review included 53 acute laboratory randomized crossover studies; 39 contributed to meta-analysis. Compared with prolonged sitting, regular active breaks produced small reductions in postprandial glucose and insulin iAUC. Walking showed the clearest mode-specific signal. More frequent 15–20 minute interruption schedules had the largest subgroup estimates, but heterogeneity was often high and these subgroup comparisons do not establish a magic 20-minute timer. The evidence is acute and surrogate: it does not establish diabetes prevention, cardiovascular-event reduction, longevity, productivity gains, or a treatment protocol for metabolic disease."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "active-breaks-prolonged-sitting-postprandial-boundary-2026",
+      "candidate_id": "crossref:10.1111/obr.70152",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-08",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://onlinelibrary.wiley.com/doi/full/10.1111/obr.70152",
+      "source_title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "source_type": "systematic-review-and-meta-analysis",
+      "doi": "10.1111/obr.70152",
+      "citation_text": "Gale JT, Martin H, Parmenter MC, Haszard JJ. Obesity Reviews. 2026. doi:10.1111/obr.70152.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and random-effects meta-analysis of acute (<24 h) laboratory randomized crossover trials comparing prolonged sitting with regular activity breaks shorter than 10 minutes and repeated at least three times over three hours. Fifty-three studies met eligibility criteria and 39 were meta-analyzed.",
+      "population": "Adults across healthy, overweight/obesity, and metabolic-health groups represented in the included laboratory crossover studies; protocols and participant characteristics varied substantially.",
+      "intervention_or_exposure": "Interrupt prolonged sitting with repeated short active breaks. Modes included walking, standing, resistance and other activity; frequencies varied across studies.",
+      "outcomes": ["Postprandial glucose incremental area under the curve", "Postprandial insulin incremental area under the curve", "Glucose and insulin AUC or mean concentration in secondary analyses"],
+      "supported_claim": "For adults spending long blocks seated, periodically replacing a little sitting with actual movement is a reasonable low-complexity tactic when the goal is to improve the immediate post-meal glucose and insulin response. Across the meta-analysis, active breaks reduced glucose and insulin iAUC by about 0.30 standardized mean differences. Walking showed the most consistent mode-specific signal. More frequent breaks, roughly every 20–30 minutes in the subgroup analyses, tended to show larger acute effects, but the evidence supports the principle of breaking up prolonged sitting more strongly than any exact timer setting.",
+      "unsupported_or_overstated_claims": [
+        "Everyone needs to stand up exactly every 20 minutes.",
+        "A 20-minute timer is proven superior to a 30-minute cadence for real-world health outcomes.",
+        "Standing still provides the same metabolic effect as walking.",
+        "Activity breaks prevent diabetes, cardiovascular disease, weight gain, or premature death.",
+        "Short walking breaks treat type 2 diabetes or replace prescribed exercise, medication, nutrition care, or clinical advice.",
+        "Users should deliberately provoke glucose spikes or buy a continuous glucose monitor to test the protocol.",
+        "The protocol improves productivity, concentration, mood, or back pain.",
+        "One exact break duration, walking speed, intensity, or daily number of breaks is established as optimal."
+      ],
+      "limitations": [
+        "The evidence base is acute laboratory research, mostly lasting hours rather than weeks or months, so it cannot establish long-term clinical outcomes.",
+        "The pooled studies used varied populations, activity modes, intensities, meal protocols, break durations and measurement methods.",
+        "Heterogeneity was high for many pooled estimates, including several frequency subgroups.",
+        "Frequency results are subgroup comparisons across studies rather than a clean head-to-head trial establishing one optimal cadence.",
+        "All eligible interventions used breaks shorter than 10 minutes and at least three breaks over three hours, but the review does not identify one optimal break duration.",
+        "Standing produced a much smaller and statistically uncertain glucose signal compared with walking, so a stand-only protocol should not inherit the walking evidence.",
+        "The metabolic outcomes are surrogate physiological measures, not direct evidence of disease prevention, longevity or subjective wellbeing."
+      ],
+      "target_hack_ids": ["break-up-long-sitting-with-movement"],
+      "target_protocol_ids": ["brali:break-up-long-sitting-with-short-walks"],
+      "risk_flags": ["health"],
+      "notes": "Protocol direction: target uninterrupted sitting rather than creating chair guilt. During long seated blocks, use natural transitions or a sustainable roughly 20–30 minute cadence as an experiment, not a sacred timer, to insert a brief bout of actual movement. Walking has the clearest evidence signal; simply standing is not equivalent. Keep the break small enough to repeat without turning the workday into interval-training theatre. Check in on whether long sitting was actually interrupted with movement and whether the cadence is sustainable. If walking is inaccessible, choose feasible active movement compatible with ability and context while being explicit that the review does not establish equivalence to walking. Public copy should teach the muscle-contraction mechanism and state clearly that the demonstrated outcome is acute postprandial glucose/insulin response, not proven disease prevention."
+    }
+  ]
+}

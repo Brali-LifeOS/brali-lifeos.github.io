@@ -86,9 +86,12 @@ if (!integrationHtml.includes('/for-ai/integrations/report/')) {
 
 console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added.`);
 
+await import('./prepare-sitewide-quality-loop.mjs');
 await import('./run-sitewide-quality-loop.mjs');
 await import('./finalize-zone-quality-views.mjs');
 await import('./apply-legacy-sensitive-zone-banners.mjs');
+await import('./apply-indexing-policy.mjs');
+await import('./finalize-sitewide-quality-trust.mjs');
 await import('./check-growth-surfaces.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');

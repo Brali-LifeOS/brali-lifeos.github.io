@@ -4,6 +4,8 @@ Official public site and knowledge repository for Brali, published at `https://b
 
 Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first: practical hacks, executable protocols, an explicit ontology, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. The original LifeOS app remains an optional application layer.
 
+For repository work from ChatGPT or another coding agent, start with [AGENTS.md](AGENTS.md).
+
 ## Knowledge model v2
 
 Preferred model: `Domain -> Topic -> Hack -> Protocol`, with optional Method and Lens metadata and separate Evidence/source provenance. Legacy Life Area and Growth Zone URLs remain a compatibility layer. `topic-pending` is explicit editorial debt, not permission to invent a Topic.

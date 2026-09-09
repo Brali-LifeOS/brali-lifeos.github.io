@@ -3,9 +3,9 @@
   "entries": {
     "4-minute-hiit-tabata-workout": {
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited HIIT article containing unsupported heart-rate targets, calorie estimates, injury-risk claims, arbitrary eight-week progression rules and broad claims attributed to the Tabata format with a conservative high-intensity-interval protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version makes clear that the original research used a specific laboratory cycling protocol and does not justify prescribing maximal 20/10 intervals to every user.",
+      "reviewed_at": "2026-09-09",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Update the reviewed short-HIIT page with 2026 exercise-snack evidence. The strongest fresh synthesis is an RCT-only systematic review/meta-analysis of 21 studies (921 adults) showing moderate-certainty improvements in VO2max and peak power, while body-composition and blood-lipid findings remain low-certainty or inconclusive. A 2026 real-world randomized trial in 69 insufficiently active adults with type 2 diabetes provides an important boundary: four 1-minute vigorous bouts on at least five days per week were feasible, but did not outperform an active mobility/stretching comparator on most secondary cardiometabolic or fitness outcomes. The page therefore distinguishes a short interval session from exercise snacks spread through the day, keeps safety boundaries, and rejects one magic timer or cadence as an optimized prescription.",
       "forbidden_public_fragments": [
         "heart-rate rule of thumb",
         "220 − age",
@@ -19,15 +19,21 @@
         "Weeks 1–2: 2–3 sessions per week",
         "Weeks 7–8: 3–4 sessions per week",
         "Research shows habits can take 21-66 days to form",
-        "At MetalHatsCats"
+        "At MetalHatsCats",
+        "4 × 1-minute is the optimal dose",
+        "3 × 1-minute is the optimal dose",
+        "exercise snacks replace conventional exercise",
+        "guaranteed to improve blood sugar"
       ],
       "lifeOsSource": {
-        "whatYouDo": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
-        "checkIn": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
-        "sourceUrl": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
-        "reference": "NHS — Physical activity guidelines for adults aged 19 to 64"
+        "whatYouDo": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely. You can use it as one short interval session, or as brief exercise snacks separated across the day when a full workout is unlikely. Make the effort challenging but controlled. Treat 20/10, 3 × 1 minute, 4 × 1 minute and similar timers as formats to adapt, not scientifically optimized doses.",
+        "checkIn": "Was the effort genuinely challenging but still controlled, could I repeat it without losing movement quality, and over several weeks is fitness or function trending in a useful direction rather than just my streak count?",
+        "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
+        "reference": "Meng L, Li Y, Chen J, Zheng H. Journal of Nutrition, Health & Aging. 2026;30(10):100940."
       },
       "references": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
+        "https://pubmed.ncbi.nlm.nih.gov/42502209/",
         "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
         "https://pubmed.ncbi.nlm.nih.gov/8897392/",
         "https://www.who.int/publications/i/item/9789240015128"
@@ -36,53 +42,78 @@
         {
           "id": "4-minute-hiit-tabata-workout-faq-1",
           "question": "Does HIIT need to be 20 seconds on and 10 seconds off for 8 rounds?",
-          "answer": "No. The 20/10 format is associated with the original Tabata research, but that study used a specific cycle-ergometer protocol at very high intensity. NHS guidance describes HIIT more broadly as short bursts of very vigorous effort broken up with rest. Brali does not treat one interval pattern as a universal prescription."
+          "answer": "No. The 20/10 format comes from a specific laboratory cycling protocol. The 2026 exercise-snack meta-analysis also included very different modes, bout lengths, frequencies and intensities. Short vigorous work can be useful, but the evidence does not establish one universal timer as the best prescription."
         },
         {
           "id": "4-minute-hiit-tabata-workout-faq-2",
-          "question": "Should I aim for a percentage of my maximum heart rate?",
-          "answer": "Not from this Brali protocol. The inherited page used approximate heart-rate formulas and targets that are not needed for this general exercise experiment. Choose an intensity appropriate to your fitness, and get healthcare advice first if you have been inactive for some time, have a medical condition, symptoms or concerns."
+          "question": "What is the difference between a short HIIT session and exercise snacks?",
+          "answer": "A short HIIT session groups hard and recovery intervals into one session. Exercise snacks are multiple brief bouts distributed across the day. The 2026 meta-analysis supports exercise snacks as a way to improve cardiorespiratory fitness on average, but does not show that a specific number of daily bouts or a particular timer is optimal."
         },
         {
           "id": "4-minute-hiit-tabata-workout-faq-3",
+          "question": "Do exercise snacks improve weight, cholesterol or blood sugar?",
+          "answer": "Do not assume that. In the 2026 RCT-only meta-analysis, evidence was more consistent for cardiorespiratory fitness and peak power than for body fat or blood lipids. A 2026 real-world trial in adults with type 2 diabetes found the vigorous snack protocol feasible and improved sit-to-stand performance versus an active comparator, but found no between-group advantage for most other secondary outcomes, including HbA1c and estimated VO2max."
+        },
+        {
+          "id": "4-minute-hiit-tabata-workout-faq-4",
+          "question": "Should I aim for a percentage of my maximum heart rate?",
+          "answer": "Not from this Brali protocol. Approximate heart-rate formulas are not required to run this general experiment. Choose an effort that is challenging but controlled and appropriate to your fitness. If you have been inactive for some time, have a medical condition, symptoms or concerns, get appropriate healthcare guidance before vigorous exercise."
+        },
+        {
+          "id": "4-minute-hiit-tabata-workout-faq-5",
           "question": "When should I stop?",
-          "answer": "Stop if you feel pain or become unwell. High-intensity exercise is demanding, so do not push through concerning symptoms or poor movement control. If you are unsure whether vigorous exercise is suitable for you, get advice from a healthcare professional before using it."
+          "answer": "Stop if you feel pain or become unwell. Do not let a timer, streak, calorie estimate or final-round challenge overrule concerning symptoms or loss of movement control. If you are unsure whether vigorous exercise is suitable for you, get advice from a healthcare professional before using it."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>High-intensity interval training means short bursts of very vigorous activity separated by recovery. NHS guidance recognises HIIT as one form of very vigorous activity, but the right intensity depends on your current fitness and health. The famous 20-seconds-work, 10-seconds-rest format came from a specific laboratory study, not a rule that everyone should sprint maximally for four minutes. Brali therefore treats short intervals as an exercise format to adapt, not a therapeutic or fitness dose.</p>"
+          "html": "<p>Short hard bouts are more interesting than the old internet story of ‘four magic minutes.’ A 2026 systematic review and meta-analysis of 21 randomized studies involving 921 adults found moderate-certainty improvements in cardiorespiratory fitness and peak power from exercise snacks: multiple brief bouts distributed through the day. But the same review found much shakier evidence for body composition and blood lipids, and it explicitly warns that cross-study subgroup patterns do not establish an optimal number of bouts, days per week or intervention length. The timer is not the active ingredient.</p><p>Brali therefore gives you two related options: use short intervals as one compact session, or distribute brief, genuinely challenging bouts across the day when that fits real life better. Neither option earns metabolic superpowers just because it is short.</p>"
         },
         "sections": [
           {
             "slug": "check-suitability",
             "title": "1. Check whether vigorous exercise fits you",
-            "html": "<p>If you have not exercised for some time, have a medical condition, symptoms, an injury or concerns about your health, get appropriate healthcare advice before starting very vigorous exercise. NHS guidance specifically recommends checking first when intensity may not be appropriate for your current fitness.</p>"
+            "html": "<p>If you have not exercised for some time, have a medical condition, symptoms, an injury or concerns about your health, get appropriate healthcare advice before starting very vigorous exercise. Short duration does not make hard exercise automatically appropriate.</p>"
           },
           {
             "slug": "choose-a-simple-movement",
             "title": "2. Choose a movement you can control",
-            "html": "<p>Use an activity you can perform with good control and in a safe space. Running, cycling or another familiar movement may be easier to scale than adding complicated jumps or burpees simply because a timer says HIIT.</p>"
+            "html": "<p>The trials used several modes, including stair climbing, cycling, resistance exercise and sprint-style work. That variety is useful: the evidence is about accumulating a meaningful exercise stimulus, not worshipping one exercise. Pick something familiar enough that you can make it harder without making it sloppy.</p>"
           },
           {
-            "slug": "warm-up-first",
-            "title": "3. Prepare before the hard interval",
-            "html": "<p>Do not jump straight from sitting still into maximal effort. Start with easier movement and build the intensity gradually so you can check how your body and movement feel before the harder work begins.</p>"
+            "slug": "session-or-snacks",
+            "title": "3. Decide: one mini-session or bouts across the day",
+            "html": "<p>A compact interval session puts work and recovery together. Exercise snacks separate brief bouts across the day. If your barrier is finding one uninterrupted workout block, the distributed version is a reasonable fallback. Do not quietly turn the evidence into a rigid schedule: the 2026 review found promising subgroup patterns for bout frequency and intervention duration, but the authors explicitly say those cross-study comparisons are not proof of an optimal dose.</p>"
           },
           {
-            "slug": "use-an-interval-not-a-command",
-            "title": "4. Use the interval as a format, not a command",
-            "html": "<p>If 20 seconds of harder work followed by 10 seconds of easier recovery suits you, it can be used as a simple timer. You do not need eight rounds, maximal effort or a heart-rate target for the session to count. Reduce the work, increase the recovery or stop when that is the sensible choice.</p>"
+            "slug": "challenge-without-timer-theatre",
+            "title": "4. Make the effort real; keep the timer humble",
+            "html": "<p>Use an effort that feels clearly challenging while you still control the movement. Twenty seconds on and ten off, three one-minute bouts or four one-minute bouts are all possible formats, not commandments. A timer can organize work. It cannot manufacture a physiological stimulus if the work itself is too easy, and it cannot make unsafe effort sensible.</p>"
+          },
+          {
+            "slug": "what-the-evidence-supports",
+            "title": "5. Expect the strongest evidence where it is strongest",
+            "html": "<p>The 2026 RCT-only meta-analysis found improvements in VO2max and peak power with moderate certainty, despite substantial between-study heterogeneity. That makes cardiorespiratory fitness the most defensible reason to use exercise snacks. Body-fat and lipid results were low-certainty or inconsistent, so Brali does not sell this as a weight-loss shortcut or cholesterol hack.</p>"
+          },
+          {
+            "slug": "real-world-boundary",
+            "title": "6. Real life can dilute the laboratory stimulus",
+            "html": "<p>In a 2026 randomized real-world trial, 69 insufficiently active adults with type 2 diabetes were assigned to four one-minute vigorous bouts or four one-minute low-intensity mobility/stretching bouts on at least five days per week for 12 weeks. Adherence was high. The vigorous group improved 30-second sit-to-stand performance more, but did not outperform the active comparator on most other secondary outcomes, including HbA1c and estimated VO2max. That is a useful brake on the idea that merely completing the scheduled snack guarantees a broad cardiometabolic payoff.</p>"
+          },
+          {
+            "slug": "observe-the-trend",
+            "title": "7. Observe function, repeatability and the trend",
+            "html": "<p>Record the movement, approximate effort, whether you stayed in control and whether anything made you stop or modify it. Over several weeks, look for a useful trend in fitness or function: stairs feel easier, the same work feels more manageable, or a repeatable field measure improves. Do not infer calories burned, blood markers or VO2max from a stopwatch.</p>"
+          },
+          {
+            "slug": "movement-breaks-are-different",
+            "title": "8. Do not confuse exercise snacks with ordinary movement breaks",
+            "html": "<p>A light walk or standing break can still be useful for comfort and for interrupting sitting, but that is a different question from using short bouts as a fitness stimulus. Brali's <a href=\"/research/movement-breaks-no-magic-interval/\">movement-break review</a> found no evidence for one universal cognitive break cadence. Exercise snacks add intensity or training stimulus; the clock alone remains unimpressed.</p>"
           },
           {
             "slug": "stop-on-warning-signals",
-            "title": "5. Stop when the session stops being appropriate",
-            "html": "<p>Stop if you feel pain or become unwell. Do not use a streak, calorie estimate, target heart rate or final-round challenge as a reason to continue through concerning symptoms or loss of movement control.</p>"
-          },
-          {
-            "slug": "review-the-fit",
-            "title": "6. Review suitability, not invented precision",
-            "html": "<p>In Brali, record what activity you used, roughly how demanding it felt, whether you maintained control and whether anything made you stop or modify the session. Do not infer calories burned, VO2max changes or an eight-week progression from a single four-minute session. Use repeated observations to decide whether short vigorous intervals belong in your broader activity routine.</p>"
+            "title": "9. Stop when the session stops being appropriate",
+            "html": "<p>Stop if you feel pain or become unwell. Do not use a streak, target heart rate, calorie estimate or final-round challenge as a reason to continue through concerning symptoms or loss of movement control.</p>"
           }
         ]
       }

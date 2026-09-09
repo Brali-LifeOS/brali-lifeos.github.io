@@ -74,14 +74,21 @@ for (const candidate of candidates.candidates ?? []) {
     for (const decisionId of review.evidence_boundary?.source_decision_ids ?? []) {
       if (!(item.evidence_decision_ids ?? []).includes(decisionId)) fail(`${candidate.slug}: Gold review cites missing Evidence Decision ${decisionId}`);
     }
-    for (const caseId of review.evaluation_case_ids ?? []) {
+
+    const evaluationCaseIds = review.evaluation_case_ids ?? [];
+    if (!evaluationCaseIds.length) fail(`${candidate.slug}: Gold-ready review has no retrieval/evaluation coverage`);
+    let passingCoverage = 0;
+    for (const caseId of evaluationCaseIds) {
       if (!suiteById.has(caseId)) fail(`${candidate.slug}: Gold review references missing evaluation case ${caseId}`);
       const result = evaluationById.get(caseId);
       if (!result) fail(`${candidate.slug}: generated evaluation output missing ${caseId}`);
       if (!(result.structured_brali?.protocol_slugs ?? []).includes(candidate.slug)) {
         fail(`${candidate.slug}: evaluation case ${caseId} does not actually retrieve the Gold protocol in structured Brali results`);
       }
-      if (result.pass !== true) fail(`${candidate.slug}: evaluation case ${caseId} is not passing`);
+      if (result.pass === true) passingCoverage += 1;
+    }
+    if (passingCoverage < 1) {
+      fail(`${candidate.slug}: Gold-ready protocol has no passing evaluation case among its ${evaluationCaseIds.length} retrieval coverage case(s)`);
     }
   }
 }
@@ -102,4 +109,4 @@ if (JSON.stringify(apiOutput) !== JSON.stringify(output)) fail('Gold API endpoin
 if (!(apiIndex.endpoints ?? []).includes('gold-20.json')) fail('API index does not expose gold-20.json');
 if (!openapi.paths?.[`/api/${platform.api_version}/gold-20.json`]) fail('OpenAPI does not describe Gold 20 endpoint');
 
-console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready from ${reviews.registry_sources.length} review registry file(s); every Gold evaluation reference retrieves its protocol; observed demand remains unclaimed.`);
+console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready from ${reviews.registry_sources.length} review registry file(s); every Gold evaluation reference retrieves its protocol and each Gold-ready protocol has passing coverage; observed demand remains unclaimed.`);

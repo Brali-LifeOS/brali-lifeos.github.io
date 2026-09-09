@@ -17,6 +17,9 @@ const reviewRequired = [];
 const trustedStates = new Set(["reviewed", "practical"]);
 
 const escapeRegExp = (value = "") => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+const sitemapLastmod = (xml, url) => xml.match(
+  new RegExp(`<url>\\s*<loc>${escapeRegExp(url)}</loc>(?:\\s*<lastmod>([^<]+)</lastmod>)?\\s*</url>`),
+)?.[1] ?? null;
 const removeSitemapUrl = (xml, url) => xml.replace(
   new RegExp(`\\s*<url>\\s*<loc>${escapeRegExp(url)}</loc>(?:\\s*<lastmod>[^<]+</lastmod>)?\\s*</url>`, "g"),
   "",
@@ -25,8 +28,8 @@ const robotsMeta = (html, content) => {
   const cleaned = html.replace(/<meta\s+name=["']robots["'][^>]*>/gi, "");
   return cleaned.replace("</head>", `<meta name="robots" content="${content}"></head>`);
 };
-const sitemapEntry = (url, record) => {
-  const reviewedAt = String(record.reviewed_at ?? record.review?.reviewedAt ?? "").slice(0, 10);
+const sitemapEntry = (url, record, preservedLastmod = null) => {
+  const reviewedAt = preservedLastmod || String(record.reviewed_at ?? record.review?.reviewedAt ?? "").slice(0, 10);
   return reviewedAt
     ? `  <url><loc>${url}</loc><lastmod>${reviewedAt}</lastmod></url>`
     : `  <url><loc>${url}</loc></url>`;
@@ -35,6 +38,7 @@ const sitemapEntry = (url, record) => {
 for (const record of evidence.entries ?? []) {
   const url = `${base}/life-os/${record.slug}/`;
   const trusted = record.indexable === true && trustedStates.has(record.status);
+  const preservedLastmod = sitemapLastmod(sitemap, url);
   sitemap = removeSitemapUrl(sitemap, url);
 
   const pagePath = path.join(root, "life-os", record.slug, "index.html");
@@ -52,7 +56,7 @@ for (const record of evidence.entries ?? []) {
   if (trusted) {
     searchIndexable.push(record.slug);
     trustedRecommendations.push(record.slug);
-    sitemap = sitemap.replace("</urlset>", `${sitemapEntry(url, record)}\n</urlset>`);
+    sitemap = sitemap.replace("</urlset>", `${sitemapEntry(url, record, preservedLastmod)}\n</urlset>`);
   } else {
     withheld.push(record.slug);
     reviewRequired.push(record.slug);

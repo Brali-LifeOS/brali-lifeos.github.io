@@ -27,15 +27,20 @@ on:
       - 'topics/**'
       - 'problems/**'
       - 'questions/**'
+  workflow_run:
+    workflows: ['Verify and deploy GitHub Pages']
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
 
 jobs:
-  focus:
+  source-focus:
+    if: github.event_name != 'workflow_run'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Brali
+      - name: Checkout Brali source
         uses: actions/checkout@v6
 
       - name: Set up Node for local focus checks
@@ -44,6 +49,23 @@ jobs:
           node-version: '24'
 
       - name: Check homepage focus invariants
+        run: node scripts/check-homepage-focus.mjs
+
+  production-focus:
+    if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the deployed Brali commit
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+
+      - name: Set up Node for local focus checks
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Recheck source invariants at deployed SHA
         run: node scripts/check-homepage-focus.mjs
 
       - name: Checkout Cite Goose / ARWP v0.3 baseline
@@ -64,7 +86,7 @@ jobs:
         working-directory: .tools/arwp
         run: npm ci --ignore-scripts
 
-      - name: Compare declared focus with the public site
+      - name: Compare declared focus with deployed public site
         run: >-
           node .tools/arwp/bin/arwp-focus.mjs
           https://brali-lifeos.github.io/
@@ -72,10 +94,27 @@ jobs:
           --max-pages=30
           --output="$RUNNER_TEMP/site-focus-report.json"
 
-      - name: Upload focus evidence
+      - name: Attach deployment lineage to report
+        env:
+          REPORT: ${{ runner.temp }}/site-focus-report.json
+          DEPLOYED_SHA: ${{ github.event.workflow_run.head_sha }}
+          DEPLOY_RUN_ID: ${{ github.event.workflow_run.id }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const report = JSON.parse(fs.readFileSync(process.env.REPORT, 'utf8'));
+          report.deploymentEvidence = {
+            commitSha: process.env.DEPLOYED_SHA,
+            deployWorkflowRunId: Number(process.env.DEPLOY_RUN_ID),
+            verifiedAfterSuccessfulDeploy: true
+          };
+          fs.writeFileSync(process.env.REPORT, JSON.stringify(report, null, 2) + '\n');
+          NODE
+
+      - name: Upload production focus evidence
         uses: actions/upload-artifact@v4
         with:
-          name: brali-site-focus-report
+          name: brali-site-focus-production-${{ github.event.workflow_run.head_sha }}
           path: ${{ runner.temp }}/site-focus-report.json
           if-no-files-found: error
           retention-days: 30

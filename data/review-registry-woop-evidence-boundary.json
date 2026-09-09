@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Actual-source review of the evidence relevant to Brali's WOOP / mental contrasting with implementation intentions protocol. The reviewed evidence supports MCII as a bounded self-regulation strategy for goal pursuit, but not a guarantee of goal achievement, not one universal effect size for every person or goal, and not a substitute for addressing external constraints. A 2026 academic-procrastination RCT is retained as narrow corroborating evidence rather than generalized beyond its undergraduate setting.",
+  "description": "Actual-source review of the evidence relevant to Brali's WOOP / mental contrasting with implementation intentions protocol. The reviewed evidence supports MCII as a bounded self-regulation strategy for goal pursuit, but not a guarantee of goal achievement, not one universal effect size for every person or goal, and not a substitute for addressing external constraints. A 2026 academic-procrastination RCT already present in Brali's research queue is reviewed here as narrow corroborating evidence rather than duplicated or generalized beyond its undergraduate setting.",
   "research_candidates": [
     {
       "id": "crossref:10.3389/fpsyg.2021.565202",
@@ -20,40 +20,13 @@
       "query_ids": ["focus-goals-planning"],
       "domain_ids": ["focus-action"],
       "topic_ids": ["goals"],
-      "method_ids": [],
+      "method_ids": ["implementation-intentions", "mcii-woop"],
       "lens_ids": [],
       "life_area_slugs": ["focus-execution"],
       "zone_slugs": ["future-builder"],
       "risk_flags": [],
       "crossref_score": null,
       "review_notes": "The full open-access meta-analysis was reviewed. It included 21 empirical articles contributing 24 independent effect sizes and 15,907 participants. The random-effects pooled effect was small-to-medium (Hedges' g=0.336, 95% CI 0.229 to 0.443) with medium heterogeneity (I2=59.321%). Publication-bias analyses were mixed; trim-and-fill produced a smaller adjusted estimate (0.242, 95% CI 0.143 to 0.342). The authors explicitly called for more studies on moderators."
-    },
-    {
-      "id": "crossref:10.1016/j.actpsy.2025.106168",
-      "source": "crossref",
-      "source_id": "10.1016/j.actpsy.2025.106168",
-      "doi": "10.1016/j.actpsy.2025.106168",
-      "pmid": "41601124",
-      "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
-      "authors": ["Xiaoxue Zhou", "Walton Wider", "Hao Wu", "Yong Xu", "Manping Qin", "Alex S. Borromeo"],
-      "container_title": "Acta Psychologica",
-      "publication_date": "2026-02-01",
-      "type": "journal-article",
-      "subjects": ["academic procrastination", "implementation intentions", "mental contrasting", "self-regulated learning"],
-      "reference_url": "https://doi.org/10.1016/j.actpsy.2025.106168",
-      "discovered_at": "2026-09-09T21:30:00Z",
-      "last_seen_at": "2026-09-09T21:30:00Z",
-      "status": "support-existing",
-      "query_ids": ["focus-goals-planning"],
-      "domain_ids": ["focus-action"],
-      "topic_ids": ["goals"],
-      "method_ids": [],
-      "lens_ids": [],
-      "life_area_slugs": ["focus-execution"],
-      "zone_slugs": ["future-builder"],
-      "risk_flags": [],
-      "crossref_score": null,
-      "review_notes": "The published abstract and article record were reviewed. The randomized study compared MCII with a positive-thinking control in 81 undergraduates at a private Chinese university, assessing task aversiveness, outcome utility and willingness to initiate academic tasks at pre-test, post-test and one-week follow-up. MCII reduced task aversiveness and improved willingness to act relative to the control. This is a narrow academic-procrastination result and must not be generalized into a universal WOOP efficacy claim."
     }
   ],
   "evidence_decisions": [
@@ -104,8 +77,8 @@
       "limitations": ["The sample was small and restricted to undergraduates at one private Chinese university.", "The context was academic procrastination rather than general goal pursuit.", "The follow-up was one week, so long-term persistence is unknown.", "The outcomes reported in the abstract do not justify generalizing to broad life outcomes or clinical treatment."],
       "target_hack_ids": ["woop-goal-planner"],
       "target_protocol_ids": ["brali:woop-goal-planner"],
-      "risk_flags": [],
-      "notes": "Use as corroborating boundary evidence only. Do not turn this narrow RCT into the primary public claim or imply cross-domain efficacy."
+      "risk_flags": ["mental-health"],
+      "notes": "Use as corroborating boundary evidence only. Reuse the existing research-candidate identity; do not turn this narrow RCT into the primary public claim or imply cross-domain efficacy."
     }
   ]
 }

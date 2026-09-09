@@ -48,8 +48,26 @@ for (const record of evidence.entries ?? []) {
   const machinePath = path.join(root, "life-os", record.slug, "index.json");
   if (existsSync(machinePath)) {
     const machine = JSON.parse(await readFile(machinePath, "utf8"));
-    machine.evidence = { ...(machine.evidence ?? {}), search_indexable: trusted };
-    machine.discovery = { ...(machine.discovery ?? {}), search_indexable: trusted };
+    machine.evidence = {
+      ...(machine.evidence ?? {}),
+      status: record.status,
+      indexable: trusted,
+      search_indexable: trusted,
+    };
+    machine.content = {
+      ...(machine.content ?? {}),
+      ...(record.content ?? {}),
+      current_guidance: trusted,
+      display_state: trusted ? "current-guidance-visible" : "historical-source-only",
+      historical_source_url: record.content?.historical_source_url ?? `/data/life-os-content/${encodeURIComponent(record.slug)}.json`,
+      historical_source_role: "provenance-only-not-current-guidance",
+    };
+    machine.discovery = {
+      ...(machine.discovery ?? {}),
+      search_indexable: trusted,
+      trusted_protocol_feed: trusted,
+      recommendation_eligible: trusted,
+    };
     await writeFile(machinePath, `${JSON.stringify(machine, null, 2)}\n`);
   }
 
@@ -69,7 +87,7 @@ const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.indexing_policy = {
   web_rule: "Only canonical Growth Library entries with evidence status reviewed or practical and an eligible evidence decision are included in the sitemap and marked index,follow. Review-gated entries remain directly accessible but are noindex,follow.",
   recommendation_rule: "Only the same reviewed and practical entries enter normal trusted recommendations and the Trusted Protocol Feed.",
-  machine_rule: "Per-entry HTML robots metadata, sitemap membership and machine discovery.search_indexable must agree with the same trust decision.",
+  machine_rule: "Per-entry HTML robots metadata, sitemap membership, machine discovery.search_indexable and content.current_guidance must agree with the same trust decision. Historical source fields are provenance-only and never imply current guidance.",
   search_indexable_entries: searchIndexable.length,
   withheld_entries: withheld.length,
   trusted_recommendation_entries: trustedRecommendations.length,
@@ -78,10 +96,11 @@ manifest.indexing_policy = {
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 await writeFile(path.join(root, "life-os/datasets/indexing.json"), JSON.stringify({
-  schema_version: 3,
+  schema_version: 4,
   rule: manifest.indexing_policy.web_rule,
   trusted_recommendation_rule: manifest.indexing_policy.recommendation_rule,
   machine_rule: manifest.indexing_policy.machine_rule,
+  content_display_rule: "Reviewed/practical records expose current guidance. Pending-review/restricted records expose a bounded review record while preserving their source JSON only for provenance.",
   indexable_count: searchIndexable.length,
   withheld_count: withheld.length,
   trusted_recommendation_count: trustedRecommendations.length,

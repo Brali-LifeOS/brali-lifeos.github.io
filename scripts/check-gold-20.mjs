@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import crypto from 'node:crypto';
 import path from 'node:path';
+import { loadGoldReviewRegistry } from './lib/gold-review-registry.mjs';
 
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
@@ -8,7 +9,7 @@ const sha256 = text => crypto.createHash('sha256').update(text).digest('hex');
 const fail = message => { throw new Error(`Gold 20 check failed: ${message}`); };
 
 const candidates = await readJson('data/gold-20-candidates.json');
-const reviews = await readJson('data/gold-20-reviews.json');
+const reviews = await loadGoldReviewRegistry(root);
 const reviewSchema = await readJson('contracts/gold-protocol-review.schema.json');
 const output = await readJson('life-os/datasets/gold-20.json');
 const protocols = await readJson('life-os/datasets/protocols.json');
@@ -18,6 +19,8 @@ const apiOutput = await readJson(`api/${platform.api_version}/gold-20.json`);
 const apiManifest = await readJson(`api/${platform.api_version}/manifest.json`);
 const apiIndex = await readJson(`api/${platform.api_version}/index.json`);
 const openapi = await readJson(`api/${platform.api_version}/openapi.json`);
+const evaluationSuite = await readJson('data/agent-evaluation-suite.json');
+const evaluationOutput = await readJson('life-os/datasets/agent-evaluation.json');
 
 if (candidates.schema_version !== 1) fail(`candidate schema_version ${candidates.schema_version}`);
 if (reviews.schema_version !== 1) fail(`review registry schema_version ${reviews.schema_version}`);
@@ -45,10 +48,13 @@ for (const candidate of candidates.candidates ?? []) {
   if (!(candidate.selection_reasons?.length >= 2)) fail(`${candidate.slug}: selection reasons are incomplete`);
 }
 
+const suiteById = new Map((evaluationSuite.cases ?? []).map(item => [item.id, item]));
+const evaluationById = new Map((evaluationOutput.cases ?? []).map(item => [item.id, item]));
 if (output.schema_version !== 1 || output.name !== 'Brali Gold 20 readiness registry') fail('generated registry identity drift');
 if (output.candidate_count !== 20 || (output.entries ?? []).length !== 20) fail('generated candidate count drift');
 if (output.target_count !== 20) fail('generated target count drift');
 if (output.observed_user_demand_available !== false) fail('generated output invents observed user demand');
+if (JSON.stringify(output.review_registry_sources ?? []) !== JSON.stringify(reviews.registry_sources ?? [])) fail('generated Gold review registry source list drift');
 const outputBySlug = new Map((output.entries ?? []).map(item => [item.slug, item]));
 for (const candidate of candidates.candidates ?? []) {
   const item = outputBySlug.get(candidate.slug);
@@ -65,6 +71,18 @@ for (const candidate of candidates.candidates ?? []) {
       if (!present) fail(`${candidate.slug}: gold-ready review missing ${field}`);
     }
     if (!item.gold_ready) fail(`${candidate.slug}: complete gold-ready review was not reflected in generated registry`);
+    for (const decisionId of review.evidence_boundary?.source_decision_ids ?? []) {
+      if (!(item.evidence_decision_ids ?? []).includes(decisionId)) fail(`${candidate.slug}: Gold review cites missing Evidence Decision ${decisionId}`);
+    }
+    for (const caseId of review.evaluation_case_ids ?? []) {
+      if (!suiteById.has(caseId)) fail(`${candidate.slug}: Gold review references missing evaluation case ${caseId}`);
+      const result = evaluationById.get(caseId);
+      if (!result) fail(`${candidate.slug}: generated evaluation output missing ${caseId}`);
+      if (!(result.structured_brali?.protocol_slugs ?? []).includes(candidate.slug)) {
+        fail(`${candidate.slug}: evaluation case ${caseId} does not actually retrieve the Gold protocol in structured Brali results`);
+      }
+      if (result.pass !== true) fail(`${candidate.slug}: evaluation case ${caseId} is not passing`);
+    }
   }
 }
 
@@ -84,4 +102,4 @@ if (JSON.stringify(apiOutput) !== JSON.stringify(output)) fail('Gold API endpoin
 if (!(apiIndex.endpoints ?? []).includes('gold-20.json')) fail('API index does not expose gold-20.json');
 if (!openapi.paths?.[`/api/${platform.api_version}/gold-20.json`]) fail('OpenAPI does not describe Gold 20 endpoint');
 
-console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready; canonical/API manifests synchronized; observed demand remains unclaimed.`);
+console.log(`Gold 20 verified: ${output.candidate_count} trusted candidates; ${output.gold_ready_count} manually Gold-ready from ${reviews.registry_sources.length} review registry file(s); every Gold evaluation reference retrieves its protocol; observed demand remains unclaimed.`);

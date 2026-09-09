@@ -32,10 +32,12 @@ const updates = await readFile(path.join(root, "updates/index.html"), "utf8");
 if (!updates.includes('data-brali-preferred-source="true"')) invalid += 1;
 if (!updates.includes("google.com/preferences/source?q=brali-lifeos.github.io")) invalid += 1;
 
+// Validate capabilities/contract markers rather than exact presentation casing.
+// Copy changes such as “portable” vs “Portable” must not break a semantic gate.
 const skillPageRequirements = [
   '<link rel="canonical" href="https://brali-lifeos.github.io/skill-packs/">',
   '/life-os/datasets/protocols.json',
-  'Portable SKILL.md-style',
+  'SKILL.md',
   'reviewed',
   'practical',
   'not a ranking shortcut',

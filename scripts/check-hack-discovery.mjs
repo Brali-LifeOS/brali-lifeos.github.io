@@ -5,47 +5,82 @@ const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
 const license = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
 const index = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
+const evidence = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
+const evidenceBySlug = new Map((evidence.entries ?? []).map((record) => [record.slug, record]));
 const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
-let invalid = 0;
+const skillPackHtml = await readFile(path.join(root, "skill-packs/index.html"), "utf8");
+const skillPackApp = await readFile(path.join(root, "skill-packs/app.js"), "utf8");
+const violations = [];
 let representative = 0;
+let skillAvailable = 0;
+let reviewGated = 0;
 
+const fail = (label) => violations.push(label);
+const requireCondition = (condition, label) => { if (!condition) fail(label); };
 const metaContent = (html, name, attribute = "name") => html.match(new RegExp(`<meta\\b[^>]*\\b${attribute}=["']${name}["'][^>]*\\bcontent=["']([^"']+)["'][^>]*>`, "i"))?.[1] ?? null;
 const imageUrl = (value) => typeof value === "string" ? value : value?.url ?? value?.contentUrl ?? null;
 const isRepresentative = (url) => Boolean(url) && !/\/brali-logo\.png(?:[?#]|$)/i.test(url);
+const isTrusted = (record) => record?.indexable === true && ["reviewed", "practical"].includes(record?.status);
 
-if (!/User-agent:\s*OAI-SearchBot[\s\S]*?Allow:\s*\//i.test(robots)) invalid += 1;
-if (!/User-agent:\s*GPTBot[\s\S]*?(?:Allow|Disallow):\s*\//i.test(robots)) invalid += 1;
+requireCondition(/User-agent:\s*OAI-SearchBot[\s\S]*?Allow:\s*\//i.test(robots), "robots: OAI-SearchBot is not explicitly allowed");
+requireCondition(/User-agent:\s*GPTBot[\s\S]*?(?:Allow|Disallow):\s*\//i.test(robots), "robots: GPTBot policy is missing");
 
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
-if (!homepage.includes('data-brali-growth-identity="true"')) invalid += 1;
-if (!/max-image-preview:large/i.test(homepage)) invalid += 1;
+requireCondition(homepage.includes('data-brali-growth-identity="true"'), "homepage: Brali growth identity marker is missing");
+requireCondition(/max-image-preview:large/i.test(homepage), "homepage: max-image-preview:large is missing");
 
 const updates = await readFile(path.join(root, "updates/index.html"), "utf8");
-if (!updates.includes('data-brali-preferred-source="true"')) invalid += 1;
-if (!updates.includes("google.com/preferences/source?q=brali-lifeos.github.io")) invalid += 1;
+requireCondition(updates.includes('data-brali-preferred-source="true"'), "updates: preferred-source marker is missing");
+requireCondition(updates.includes("google.com/preferences/source?q=brali-lifeos.github.io"), "updates: Google preferred-source link is missing");
+
+const skillPageRequirements = [
+  ['<link rel="canonical" href="https://brali-lifeos.github.io/skill-packs/">', "skill-packs: canonical link is missing"],
+  ['/life-os/datasets/protocols.json', "skill-packs: Trusted Protocol Feed link is missing"],
+  ['SKILL.md', "skill-packs: SKILL.md capability marker is missing"],
+  ['reviewed', "skill-packs: reviewed trust-state explanation is missing"],
+  ['practical', "skill-packs: practical trust-state explanation is missing"],
+  ['not a ranking shortcut', "skill-packs: ranking-boundary disclaimer is missing"],
+];
+for (const [marker, label] of skillPageRequirements) requireCondition(skillPackHtml.includes(marker), label);
+try { new Function(skillPackApp); } catch (error) { fail(`skill-packs/app.js: syntax error: ${error.message}`); }
+requireCondition(skillPackApp.includes('trustedStates = new Set(["reviewed", "practical"])'), "skill-packs/app.js: trusted-state filter is missing");
+requireCondition(skillPackApp.includes("Brali does not package review-gated records as skills"), "skill-packs/app.js: review-gated refusal is missing");
+requireCondition(sitemap.includes(`<loc>${base}/skill-packs/</loc>`), "sitemap: /skill-packs/ is missing");
 
 for (const entry of index) {
   const pagePath = path.join(root, "life-os", entry.slug, "index.html");
   const html = await readFile(pagePath, "utf8");
   const pathname = `/life-os/${entry.slug}/`;
   const ogImage = metaContent(html, "og:image", "property");
+  const evidenceRecord = evidenceBySlug.get(entry.slug);
+  const trusted = isTrusted(evidenceRecord);
+  const inSitemap = sitemap.includes(`<loc>${base}${pathname}</loc>`);
+  const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
   const required = [
-    'data-agent-reuse="true"',
-    'data-agent-reuse-license="CC-BY-NC-SA-4.0"',
-    'href="/for-ai/integrations/"',
-    `href="${pathname}index.json"`,
-    'href="/cite/"',
-    'href="/terms/"',
-    '<meta property="og:site_name" content="Brali">',
-    `<link rel="license" href="${license}">`,
-    'max-image-preview:large',
+    ['data-agent-reuse="true"', "agent reuse marker"],
+    ['data-agent-reuse-license="CC-BY-NC-SA-4.0"', "reuse license marker"],
+    [`href="${pathname}index.json"`, "protocol JSON link"],
+    ['href="/cite/"', "citation link"],
+    ['<meta property="og:site_name" content="Brali">', "og:site_name"],
+    [`<link rel="license" href="${license}">`, "license link"],
   ];
-  if (required.some((marker) => !html.includes(marker))) invalid += 1;
-  if ((html.match(/data-agent-reuse="true"/g) ?? []).length !== 1) invalid += 1;
-  if (html.lastIndexOf('data-agent-reuse="true"') < html.lastIndexOf('data-related-protocols="true"')) invalid += 1;
-  if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(html)) invalid += 1;
-  if (!sitemap.includes(`<loc>${base}${pathname}</loc>`)) invalid += 1;
+  for (const [marker, label] of required) requireCondition(html.includes(marker), `${entry.slug}: missing ${label}`);
+  requireCondition((html.match(/data-agent-reuse="true"/g) ?? []).length === 1, `${entry.slug}: expected exactly one agent reuse block`);
+  requireCondition(html.lastIndexOf('data-agent-reuse="true"') >= html.lastIndexOf('data-related-protocols="true"'), `${entry.slug}: agent reuse block appears before related protocols`);
+
+  if (trusted) {
+    skillAvailable += 1;
+    requireCondition(html.includes('data-agent-skill="available"'), `${entry.slug}: trusted page missing skill-available marker`);
+    requireCondition(html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: trusted page missing skill-pack link`);
+    requireCondition(html.includes('href="/for-ai/integrations/"'), `${entry.slug}: trusted page missing AI integrations link`);
+    requireCondition(!noindex && inSitemap && /max-image-preview:large/i.test(html), `${entry.slug}: trusted search visibility contract failed`);
+  } else {
+    reviewGated += 1;
+    requireCondition(html.includes('data-agent-skill="review-gated"'), `${entry.slug}: review-gated page missing review-gated skill marker`);
+    requireCondition(!html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: review-gated page leaked a skill-pack link`);
+    requireCondition(noindex && !inSitemap, `${entry.slug}: review-gated search visibility contract failed`);
+  }
 
   const schemaMatch = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   try {
@@ -53,21 +88,29 @@ for (const entry of index) {
     const graph = schema?.["@graph"] ?? [];
     const article = graph.find((node) => node?.["@type"] === "Article");
     const webPage = graph.find((node) => node?.["@type"] === "WebPage");
-    if (article?.license !== license || article?.usageInfo !== `${base}/terms/` || article?.isAccessibleForFree !== true) invalid += 1;
-    if (article?.encoding?.contentUrl !== `${base}${pathname}index.json`) invalid += 1;
-    if (webPage?.license !== license || webPage?.mainEntity?.["@id"] !== article?.["@id"]) invalid += 1;
+    requireCondition(article?.license === license && article?.usageInfo === `${base}/terms/` && article?.isAccessibleForFree === true, `${entry.slug}: Article licensing/usage schema drift`);
+    requireCondition(article?.encoding?.contentUrl === `${base}${pathname}index.json`, `${entry.slug}: Article JSON encoding URL drift`);
+    requireCondition(webPage?.license === license && webPage?.mainEntity?.["@id"] === article?.["@id"], `${entry.slug}: WebPage mainEntity/license schema drift`);
+    const actionTarget = article?.potentialAction?.target;
+    requireCondition(trusted ? actionTarget === `${base}/skill-packs/?hack=${encodeURIComponent(entry.slug)}` : !actionTarget, `${entry.slug}: skill potentialAction trust parity failed`);
     if (isRepresentative(ogImage)) {
       representative += 1;
-      if (metaContent(html, "twitter:card") !== "summary_large_image") invalid += 1;
-      if (metaContent(html, "twitter:image") !== ogImage) invalid += 1;
-      if (imageUrl(article?.image) !== ogImage) invalid += 1;
-      if (imageUrl(webPage?.primaryImageOfPage) !== ogImage) invalid += 1;
+      requireCondition(metaContent(html, "twitter:card") === "summary_large_image", `${entry.slug}: representative image missing summary_large_image card`);
+      requireCondition(metaContent(html, "twitter:image") === ogImage, `${entry.slug}: twitter:image differs from og:image`);
+      requireCondition(imageUrl(article?.image) === ogImage, `${entry.slug}: Article image differs from og:image`);
+      requireCondition(imageUrl(webPage?.primaryImageOfPage) === ogImage, `${entry.slug}: WebPage primaryImageOfPage differs from og:image`);
     }
-  } catch {
-    invalid += 1;
+  } catch (error) {
+    fail(`${entry.slug}: JSON-LD parse/validation error: ${error.message}`);
   }
 }
 
-if (!representative) invalid += 1;
-if (invalid) throw new Error(`Hack discovery validation failed with ${invalid} contract violation(s).`);
-console.log(`Hack discovery verified for ${index.length} pages: indexable, in sitemap, machine-readable, licensed, AI-linked; ${representative} expose representative large-image metadata.`);
+requireCondition(representative > 0, "site: no representative hack image was found");
+requireCondition(skillAvailable > 0, "site: no trusted skill-enabled hack was found");
+requireCondition(reviewGated > 0, "site: no review-gated hack was found");
+
+if (violations.length) {
+  const preview = violations.slice(0, 25).map((item) => `- ${item}`).join("\n");
+  throw new Error(`Hack discovery validation failed with ${violations.length} contract violation(s):\n${preview}${violations.length > 25 ? `\n- ... ${violations.length - 25} more` : ""}`);
+}
+console.log(`Hack discovery verified for ${index.length} pages: ${skillAvailable} trusted skill-enabled, ${reviewGated} review-gated; ${representative} expose representative large-image metadata.`);

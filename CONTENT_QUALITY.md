@@ -90,18 +90,30 @@ Public pages use Brali branding. Historical MetalHatsCats URLs and names may rem
 
 Indexing is earned by content quality, not by the existence of a generated URL.
 
-- `reviewed` and `practical` entries may be included in the sitemap.
-- All public entry URLs are crawlable and included in the sitemap. `pending-review` and `restricted` entries remain visibly labelled and are excluded from the Trusted Protocol Feed and normal recommendations until the quality bar is met.
+- `reviewed` and eligible `practical` entries may be indexed, included in the sitemap, and offered through normal trusted recommendations.
+- `pending-review` and `restricted` entry URLs remain directly accessible for provenance and review, but must be `noindex,follow`, must not appear in the sitemap, and must not enter the Trusted Protocol Feed or normal recommendations.
 - Related-protocol recommendations may point only to indexable entries.
+- A canonical human protocol page remains the primary search surface. Machine records, API views, and Brali Skill Packs are reusable representations of the same identity; they must not create thin duplicate SEO pages for every format.
+- Sitemap membership, indexing, ranking, AI citation, recommendation traffic, and protocol usefulness are separate states. Repository checks may prove implementation parity but must not claim external search outcomes.
 
 This deliberately favors a smaller trusted search surface over a large collection of unreviewed pages.
+
+## Reusable Brali Skill Packs
+
+A trusted protocol may expose a portable `SKILL.md`-style pack for AI tools and agent workflows. The pack is derived from the canonical trusted record rather than maintained as a second copy of the advice.
+
+- Only records already eligible for the Trusted Protocol Feed may be offered as skill packs.
+- The pack must preserve the canonical ID/URL, evidence state, action, check-in, source boundary, attribution, and important guardrails.
+- A review-gated record must not become reusable simply because its public URL is crawlable.
+- Tool-specific installation support must be described accurately. A downloadable or copyable instruction file is not evidence of universal one-click installation.
+- Skill-pack availability is a product capability, not a search-ranking or AI-recommendation claim.
 
 ## Machine-readable outputs
 
 - `life-os/datasets/evidence.json` exposes the evidence state for every Growth Library entry.
 - `life-os/datasets/review-queue.json` exposes the current editorial queue.
-- `life-os/datasets/indexing.json` lists which entries meet the current search-indexing bar.
-- `life-os/datasets/protocols.json` provides the compact discovery-ready Protocol Feed.
+- `life-os/datasets/indexing.json` lists which entries meet the current search-indexing bar and which remain review-gated.
+- `life-os/datasets/protocols.json` provides the compact discovery-ready Trusted Protocol Feed and is the catalog source for Brali Skill Packs.
 - `life-os/datasets/editorial-normalizations.json` records reviewed inherited-claim corrections and their application counts.
 - `life-os/datasets/manifest.json` includes evidence, indexing, protocol-feed, and normalization counts.
 

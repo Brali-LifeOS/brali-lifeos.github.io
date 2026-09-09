@@ -15,6 +15,10 @@ const report = read('state/quality/index.json');
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 const stateHtml = fs.readFileSync(path.join(ROOT, 'state/index.html'), 'utf8');
+const trustedStates = new Set(['reviewed', 'practical']);
+const isSearchIndexable = record => record?.indexable === true && trustedStates.has(record?.status);
+const trustedEntries = (evidence.entries ?? []).filter(isSearchIndexable);
+const withheldEntries = (evidence.entries ?? []).filter(record => !isSearchIndexable(record));
 
 if (report.schema_version !== 1) fail('unexpected report schema version');
 if (report.coverage.entry_pages_checked !== sourceIndex.length) fail(`entry coverage drift: ${report.coverage.entry_pages_checked}/${sourceIndex.length}`);
@@ -22,14 +26,15 @@ if (report.coverage.zone_pages_checked !== zones.length) fail(`zone coverage dri
 if (report.coverage.total_pages_checked !== sourceIndex.length + zones.length) fail('total page coverage drift');
 if (report.coverage.machine_readable_page_records !== sourceIndex.length + zones.length) fail('machine-readable page count drift');
 if (report.coverage.trusted_protocols !== (protocols.count ?? protocols.entries?.length ?? 0)) fail('trusted protocol count drift');
-if (report.coverage.indexable_entry_pages !== sourceIndex.length) fail('search-indexable entry count drift');
-if (report.coverage.withheld_entry_pages !== 0) fail('public entries must not remain withheld from indexing');
-if (report.coverage.trusted_recommendation_entries !== (evidence.entries ?? []).filter(item => item.indexable).length) fail('trusted recommendation count drift');
-if (report.coverage.review_required_entry_pages !== (evidence.entries ?? []).filter(item => !item.indexable).length) fail('review-gated entry count drift');
-if (!report.loop?.converged || report.loop.changed_pages_by_pass?.at(-1) !== 0) fail('automatic loop did not converge');
+if (report.coverage.indexable_entry_pages !== trustedEntries.length) fail(`search-indexable entry count drift: ${report.coverage.indexable_entry_pages}/${trustedEntries.length}`);
+if (report.coverage.withheld_entry_pages !== withheldEntries.length) fail(`withheld entry count drift: ${report.coverage.withheld_entry_pages}/${withheldEntries.length}`);
+if (report.coverage.trusted_recommendation_entries !== trustedEntries.length) fail('trusted recommendation count drift');
+if (report.coverage.review_required_entry_pages !== withheldEntries.length) fail('review-gated entry count drift');
+if (report.final_search_policy?.indexable_entry_pages !== trustedEntries.length || report.final_search_policy?.withheld_entry_pages !== withheldEntries.length) fail('final search policy summary drift');
+if (!report.loop?.converged || report.loop.changed_pages_by_pass?.at(-1) !== 0) fail('automatic structural loop did not converge');
 if (report.loop?.zone_view_normalization?.zones_checked !== zones.length) fail('zone-view normalization did not cover every zone');
-if ((report.error_count ?? 0) !== 0) fail(`report contains ${report.error_count} enforced error(s)`);
-if ((report.issues ?? []).some(issue => issue.severity === 'error')) fail('report issue list still contains an error');
+if ((report.error_count ?? 0) !== 0) fail(`report contains ${report.error_count} enforced structural error(s)`);
+if ((report.issues ?? []).some(issue => issue.severity === 'error')) fail('report issue list still contains an enforced structural error');
 if ((report.zones ?? []).length !== zones.length) fail('zone report does not cover every Growth Zone');
 
 const evidenceBySlug = new Map((evidence.entries ?? []).map(item => [item.slug, item]));
@@ -44,14 +49,22 @@ for (const entry of sourceIndex) {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const machine = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
   const trust = evidenceBySlug.get(entry.slug);
+  const searchIndexable = isSearchIndexable(trust);
   if (!html.includes('data-sitewide-quality-context="true"')) fail(`${entry.slug}: missing site-wide quality context`);
   if (!html.includes(`rel="alternate" type="application/json" href="${pathname}index.json"`)) fail(`${entry.slug}: missing alternate JSON link`);
   if (machine.slug !== entry.slug || machine.canonical_url !== `${BASE}${pathname}`) fail(`${entry.slug}: machine record identity drift`);
   if (machine.evidence?.status !== trust?.status || Boolean(machine.evidence?.indexable) !== Boolean(trust?.indexable)) fail(`${entry.slug}: machine evidence state drift`);
+  if (Boolean(machine.evidence?.search_indexable) !== searchIndexable) fail(`${entry.slug}: machine evidence search-indexable drift`);
+  if (Boolean(machine.discovery?.search_indexable) !== searchIndexable) fail(`${entry.slug}: machine discovery search-indexable drift`);
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
-  if (noindex) fail(`${entry.slug}: public hack page remains noindex`);
   const inSitemap = sitemap.includes(`<loc>${BASE}${pathname}</loc>`);
-  if (!inSitemap) fail(`${entry.slug}: public hack page is missing from sitemap`);
+  if (searchIndexable) {
+    if (noindex) fail(`${entry.slug}: trusted hack page is noindex`);
+    if (!inSitemap) fail(`${entry.slug}: trusted hack page is missing from sitemap`);
+  } else {
+    if (!noindex) fail(`${entry.slug}: review-gated hack page is missing noindex`);
+    if (inSitemap) fail(`${entry.slug}: review-gated hack page leaked into sitemap`);
+  }
 }
 
 for (const zone of zones) {
@@ -95,4 +108,4 @@ if (!sitemap.includes(`<loc>${BASE}/state/quality/</loc>`)) fail('quality report
 if (!stateHtml.includes('data-sitewide-quality-cycle')) fail('State page does not expose quality cycle');
 if (!llms.includes('Page & Zone Quality Cycle:')) fail('llms.txt does not expose quality cycle');
 
-console.log(`Site-wide quality verified: ${sourceIndex.length} search-indexable entry pages, ${zones.length} search-indexable zones, trusted subsets separated from full archives, loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);
+console.log(`Site-wide quality verified: ${trustedEntries.length} trusted entry pages indexable, ${withheldEntries.length} review-gated entry pages noindex, ${zones.length} search-indexable zones, trusted subsets separated from full archives, structural loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);

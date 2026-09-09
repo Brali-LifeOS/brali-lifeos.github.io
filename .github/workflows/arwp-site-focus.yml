@@ -8,6 +8,8 @@ on:
       - '.arwp/site-focus.json'
       - '.arwp/README.md'
       - 'index.html'
+      - 'homepage.js'
+      - 'scripts/check-homepage-focus.mjs'
       - 'life-os/**'
       - 'topics/**'
       - 'problems/**'
@@ -19,6 +21,8 @@ on:
       - '.arwp/site-focus.json'
       - '.arwp/README.md'
       - 'index.html'
+      - 'homepage.js'
+      - 'scripts/check-homepage-focus.mjs'
       - 'life-os/**'
       - 'topics/**'
       - 'problems/**'
@@ -34,6 +38,14 @@ jobs:
       - name: Checkout Brali
         uses: actions/checkout@v6
 
+      - name: Set up Node for local focus checks
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Check homepage focus invariants
+        run: node scripts/check-homepage-focus.mjs
+
       - name: Checkout Cite Goose / ARWP v0.3 baseline
         uses: actions/checkout@v6
         with:
@@ -41,7 +53,7 @@ jobs:
           ref: 8f1847e9ef7154f69a781071414f88be5b7eddd9
           path: .tools/arwp
 
-      - name: Set up Node
+      - name: Set up Node for ARWP runtime
         uses: actions/setup-node@v6
         with:
           node-version: '24'

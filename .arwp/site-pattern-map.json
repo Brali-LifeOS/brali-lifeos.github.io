@@ -1,0 +1,108 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/716e0a13aeaef1f2dcb2dd89d868fbf7343acc63/schema/site-pattern-map-v0.1.schema.json",
+  "version": "0.1",
+  "generatedAt": "2026-09-09T20:20:00Z",
+  "site": {
+    "canonicalUrl": "https://brali-lifeos.github.io/",
+    "repository": "Brali-LifeOS/brali-lifeos.github.io",
+    "siteFocusPath": ".arwp/site-focus.json",
+    "siteFocusVersion": "0.3"
+  },
+  "catalogs": {
+    "discoverability": {
+      "version": "1.12.0",
+      "path": "knowledge/discoverability-corpus.json"
+    },
+    "antiPatterns": {
+      "version": "1.1.0",
+      "path": "knowledge/research/anti-patterns.json"
+    }
+  },
+  "coverage": {
+    "mode": "sample",
+    "routesKnown": null,
+    "routesObserved": 2,
+    "note": "This dogfood map binds the crawler policy and the new Skill Packs surface to inspected repository evidence. It is not a whole-site ranking or indexing certification."
+  },
+  "instances": [
+    {
+      "id": "spi_brali_searchbot_policy",
+      "kind": "practice",
+      "pattern": {
+        "id": "arwp-access-searchbot",
+        "version": "1.0.1"
+      },
+      "target": {
+        "scope": "site",
+        "value": "https://brali-lifeos.github.io/"
+      },
+      "applicability": "applicable",
+      "verdict": "present",
+      "basis": "deterministic",
+      "evidence": [
+        {
+          "type": "repo-file",
+          "locator": "robots.txt",
+          "observedAt": "2026-09-09T20:20:00Z",
+          "summary": "The repository robots policy explicitly allows OAI-SearchBot, ChatGPT-User and general crawlers. This is an implementation fact only; it does not prove crawl frequency, indexing or citation."
+        }
+      ],
+      "falsePositiveBoundaryReviewed": true,
+      "remediation": {
+        "state": "none"
+      },
+      "outcomes": [],
+      "note": "Crawler access is necessary for some discovery paths but is not a ranking signal or recommendation guarantee."
+    },
+    {
+      "id": "spi_brali_skill_pack_no_magic_claim",
+      "kind": "anti-pattern",
+      "pattern": {
+        "id": "anti-magic-agent-file",
+        "version": "1.0.0"
+      },
+      "target": {
+        "scope": "route",
+        "value": "/skill-packs/"
+      },
+      "applicability": "applicable",
+      "verdict": "absent",
+      "basis": "manual-reviewed",
+      "evidence": [
+        {
+          "type": "repo-file",
+          "locator": "skill-packs/index.html",
+          "observedAt": "2026-09-09T20:20:00Z",
+          "summary": "The Skill Packs page explicitly describes the output as a portable instruction file, says tool-specific installation differs, and rejects both universal one-click installation and ranking-shortcut framing."
+        },
+        {
+          "type": "repo-file",
+          "locator": "CONTENT_QUALITY.md",
+          "observedAt": "2026-09-09T20:20:00Z",
+          "summary": "The content policy defines Skill Packs as reusable representations of trusted canonical protocols and explicitly separates product capability from search ranking or AI recommendation claims."
+        }
+      ],
+      "falsePositiveBoundaryReviewed": true,
+      "remediation": {
+        "state": "none"
+      },
+      "outcomes": [],
+      "note": "Absence is scoped to the reviewed Skill Packs implementation and policy, not every future third-party description of Brali."
+    }
+  ],
+  "relations": [
+    {
+      "from": "spi_brali_searchbot_policy",
+      "to": "spi_brali_skill_pack_no_magic_claim",
+      "type": "reinforces",
+      "rationale": "Brali keeps machine access open while avoiding claims that a machine-readable skill file itself creates search or recommendation preference."
+    }
+  ],
+  "knownUnknowns": [
+    "The map does not establish Google ranking, indexing, AI Overview inclusion, AI Mode inclusion or preferred-source treatment.",
+    "The map does not establish ChatGPT citation frequency, ranking or correctness for Brali pages.",
+    "The map does not establish that any user has copied, saved, installed or repeatedly used a Brali Skill Pack.",
+    "The current implementation changes the trusted entry indexing contract, but legacy zone and cross-domain migration cleanup remain separate work and must not be treated as completed by this map.",
+    "No causal search or recommendation outcome is attributed to these patterns until an external measurement design supports that claim."
+  ]
+}

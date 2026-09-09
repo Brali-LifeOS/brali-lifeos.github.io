@@ -10,11 +10,13 @@ const overrides = JSON.parse(await readFile(path.join(root, "data/evidence-overr
 const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const claimDebt = JSON.parse(await readFile(path.join(root, "life-os/datasets/claim-debt.json"), "utf8"));
 const strict = process.argv.includes("--strict");
+const trustedStates = new Set(["reviewed", "practical"]);
 
 const counts = { reviewed: 0, practical: 0, "pending-review": 0, restricted: 0 };
 let legacySourceEntries = 0;
 let legacyGeneratedPages = 0;
-let restrictedStillIndexable = 0;
+let trustedPagesWithNoindex = 0;
+let reviewGatedPagesMissingNoindex = 0;
 let missingProtocolSummaries = 0;
 let evidenceStatusMismatches = 0;
 let quantitativeQueue = 0;
@@ -61,6 +63,8 @@ for (const entry of index) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
   const sourceText = JSON.stringify(article);
   const evidence = classifyEvidence(article, entry, overrides);
+  const indexed = evidenceBySlug.get(entry.slug);
+  const searchIndexable = indexed?.indexable === true && trustedStates.has(indexed?.status);
   counts[evidence.status] = (counts[evidence.status] ?? 0) + 1;
   if (evidence.claims.quantitative && evidence.status !== "reviewed") quantitativeQueue += 1;
   if (/metalhatscats/i.test(sourceText)) legacySourceEntries += 1;
@@ -70,7 +74,9 @@ for (const entry of index) {
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
   if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
-  if (/<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated)) restrictedStillIndexable += 1;
+  const noindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated);
+  if (searchIndexable && noindex) trustedPagesWithNoindex += 1;
+  if (!searchIndexable && !noindex) reviewGatedPagesMissingNoindex += 1;
 
   const generatedClaims = inspectClaims(generated);
   const disallowedGeneratedCategories = generatedClaims.enforcedCategories.filter(category => {
@@ -84,7 +90,6 @@ for (const entry of index) {
     }
   }
 
-  const indexed = evidenceBySlug.get(entry.slug);
   if (!indexed || indexed.status !== evidence.status || indexed.reason !== evidence.reason) {
     evidenceStatusMismatches += 1;
   }
@@ -124,7 +129,8 @@ console.log(`- Source records containing legacy MetalHatsCats branding: ${legacy
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
 console.log(`- Indexable pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);
 console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
-console.log(`- Public hack pages still carrying noindex: ${restrictedStillIndexable}`);
+console.log(`- Trusted pages incorrectly carrying noindex: ${trustedPagesWithNoindex}`);
+console.log(`- Review-gated pages incorrectly missing noindex: ${reviewGatedPagesMissingNoindex}`);
 console.log(`- Evidence status/index mismatches: ${evidenceStatusMismatches}`);
 if (generatedClaimExamples.length) console.log(`- Generated claim marker examples: ${generatedClaimExamples.join(", ")}`);
 if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")}`);
@@ -132,7 +138,8 @@ if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")
 const blockingProblems = legacyGeneratedPages
   + unsupportedGeneratedClaimPages
   + claimDebt.counts.indexable_debt_entries
-  + restrictedStillIndexable
+  + trustedPagesWithNoindex
+  + reviewGatedPagesMissingNoindex
   + missingProtocolSummaries
   + evidenceStatusMismatches;
 if (strict && blockingProblems > 0) {

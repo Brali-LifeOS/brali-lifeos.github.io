@@ -110,6 +110,7 @@ export function classifyEvidence(article, entry, overrides = {}) {
   }
 
   const indexable = status === "reviewed" || status === "practical";
+  const historicalSourceUrl = `/data/life-os-content/${encodeURIComponent(entry.slug)}.json`;
 
   return {
     slug: entry.slug,
@@ -119,6 +120,12 @@ export function classifyEvidence(article, entry, overrides = {}) {
     sensitive,
     indexable,
     indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
+    content: {
+      current_guidance: indexable,
+      display_state: indexable ? "current-guidance-visible" : "historical-source-only",
+      historical_source_url: historicalSourceUrl,
+      historical_source_role: "provenance-only-not-current-guidance",
+    },
     claims,
     source: {
       recorded: source.hasSource,

@@ -62,7 +62,6 @@ for (const record of evidence.entries ?? []) {
 await writeFile(sitemapPath, sitemap);
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
-manifest.files = [...new Set([...(manifest.files ?? []), "indexing.json"])];
 manifest.indexing_policy = {
   web_rule: "Only canonical Growth Library entries with evidence status reviewed or practical and an eligible evidence decision are included in the sitemap and marked index,follow. Review-gated entries remain directly accessible but are noindex,follow.",
   recommendation_rule: "Only the same reviewed and practical entries enter normal trusted recommendations and the Trusted Protocol Feed.",

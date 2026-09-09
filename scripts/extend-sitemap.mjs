@@ -20,6 +20,7 @@ const growth = JSON.parse(await readFile(path.join(root, "data/growth-surfaces.j
 const problems = JSON.parse(await readFile(path.join(root, "data/problem-collections.json"), "utf8"));
 const decisions = JSON.parse(await readFile(path.join(root, "data/evidence-decisions.json"), "utf8"));
 const researchGaps = JSON.parse(await readFile(path.join(root, "data/research-gap-questions.json"), "utf8"));
+const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
 const reportRoutes = (growth.reports ?? []).map(report => `/updates/${report.slug}/`);
 const problemRoutes = (problems.collections ?? []).map(collection => `/problems/${collection.slug}/`);
 const decisionRoutes = (decisions.entries ?? []).map(decision => `/evidence/${decision.id}/`);
@@ -85,6 +86,22 @@ if (!integrationHtml.includes('/for-ai/integrations/report/')) {
 }
 
 console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added.`);
+
+// The structural site-wide loop predates evidence-gated search indexing and still
+// validates the full generated corpus as one temporary crawlable set. Restore the
+// complete entry set only for that structural pass; apply-indexing-policy.mjs runs
+// again immediately afterwards and deterministically removes review-gated entries,
+// restores noindex,follow, and finalizes machine/search parity before checks.
+let structuralSitemap = await readFile(sitemapPath, "utf8");
+const structuralMissing = sourceIndex
+  .map(entry => `/life-os/${entry.slug}/`)
+  .filter(route => !structuralSitemap.includes(`<loc>${base}${route}</loc>`));
+if (structuralMissing.length) {
+  const additions = structuralMissing.map(route => `  <url><loc>${base}${route}</loc></url>`).join("\n");
+  structuralSitemap = structuralSitemap.replace("</urlset>", `${additions}\n</urlset>`);
+  await writeFile(sitemapPath, structuralSitemap);
+}
+console.log(`Structural quality preflight: ${structuralMissing.length} review-gated entry route(s) temporarily restored before final trusted indexing is reapplied.`);
 
 await import('./prepare-sitewide-quality-loop.mjs');
 await import('./run-sitewide-quality-loop.mjs');

@@ -10,6 +10,7 @@
       summary: 'Clear mental clutter with three meaningful tasks chosen for impact, not urgency.',
       trust: 'Practical',
       source: 'Brali protocol record',
+      limit: 'A bounded planning routine; inspect the full protocol before treating it as trusted guidance.',
       href: '/life-os/top-3-daily-focus-planner/',
       steps: [
         ['Capture', 'Dump everything on your mind.', '5 min'],
@@ -23,6 +24,7 @@
       summary: 'Close the material and retrieve the key idea from memory before checking what you missed.',
       trust: 'Reviewed boundary',
       source: 'Protocol + evidence decision',
+      limit: 'Useful for learning practice; the full protocol keeps the evidence boundary and source context attached.',
       href: '/life-os/active-recall-test-yourself/',
       steps: [
         ['Close', 'Put the source out of sight.', '2 min'],
@@ -36,6 +38,7 @@
       summary: 'Slow the pace briefly, notice the body, and return to one controllable next step.',
       trust: 'Practical',
       source: 'Brali protocol record',
+      limit: 'A low-stakes practical reset, not a diagnosis, treatment, crisis tool, or guaranteed stress reduction.',
       href: '/life-os/box-breathing-for-speakers/',
       steps: [
         ['Pause', 'Stop adding new input for two minutes.', '2 min'],
@@ -49,6 +52,7 @@
       summary: 'Choose one evening boundary and make it easier to repeat than to negotiate each night.',
       trust: 'Practical',
       source: 'Brali protocol record',
+      limit: 'A routine experiment for consistency; it is not medical sleep advice or a treatment claim.',
       href: '/life-os/stop-caffeine-after-lunch/',
       steps: [
         ['Pick', 'Choose one cue or cutoff that matters.', '5 min'],
@@ -63,6 +67,7 @@
   const summary = document.querySelector('#protocol-summary');
   const trust = document.querySelector('#protocol-trust');
   const source = document.querySelector('#protocol-source');
+  const limit = document.querySelector('#protocol-limit');
   const steps = document.querySelector('#protocol-steps');
   const link = document.querySelector('#protocol-link');
   const topicLink = document.querySelector('.topic-more');
@@ -74,6 +79,7 @@
     summary.textContent = protocol.summary;
     if (trust) trust.textContent = protocol.trust;
     if (source) source.textContent = protocol.source;
+    if (limit) limit.textContent = protocol.limit;
     link.href = protocol.href;
     if (topicLink) topicLink.href = `/topics/${picker.value}/`;
     steps.replaceChildren(...protocol.steps.map(([name, detail, time]) => {

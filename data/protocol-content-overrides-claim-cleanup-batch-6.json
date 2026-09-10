@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "calibrate-task-estimates": {
+      "title": "Calibrate Task Estimates With Planned vs Actual Work",
+      "subtitle": "Use completed work to update the next comparable estimate.",
+      "description": "Define a concrete deliverable, make an initial estimate, record what completion actually required, note the main source of difference, and use that local record when planning similar work again.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported planning-fallacy authority language, universal milestone sizes, fixed correction percentages, invented quick-task timing rules and claimed calibration gains with a bounded planned-versus-actual feedback loop.",
+      "forbidden_public_fragments": [
+        "Researchers studying planning fallacy and overconfidence",
+        "add 20% to account for interruptions and hidden steps",
+        "treat anything that requires changing mental context as at least 8 minutes",
+        "multiply the estimated time by 3",
+        "lift in estimation accuracy often within 3–4 tasks",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Estimate a clearly defined piece of work, record what completion actually required, and use the difference to improve the next estimate for comparable work.",
+        "whatYouDo": "Write the deliverable and important assumptions, make an estimate that includes the work you currently know about, complete or reassess the task, record the actual conditions and the main reason for any difference, then consult that record before estimating similar work again.",
+        "checkIn": "What did I estimate, what actually happened, what caused the largest difference, and what will I change in the next comparable estimate?"
+      },
+      "faq": [
+        {
+          "id": "calibrate-task-estimates-faq-1",
+          "question": "Should I always add the same buffer?",
+          "answer": "No. A fixed buffer can hide very different causes of delay. Record the reason for the difference and adjust future planning according to the type of work, known dependencies and your own comparable history."
+        },
+        {
+          "id": "calibrate-task-estimates-faq-2",
+          "question": "What if the task changes after I estimate it?",
+          "answer": "Record the scope change separately. An estimate for one deliverable should not be judged against a larger deliverable created later. The change itself is useful planning information for the next similar task."
+        },
+        {
+          "id": "calibrate-task-estimates-faq-3",
+          "question": "What should I record besides time?",
+          "answer": "Capture the assumption or dependency that mattered most: missing input, review cycles, unfamiliar work, interruptions, waiting for another person, rework, or a changed scope. Keep the record small enough that you will actually reuse it."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>An estimate becomes more useful when it is connected to a clearly defined deliverable and later compared with what completion actually required. The purpose of this protocol is not to find a universal buffer. It is to build a small local record that makes the next comparable estimate easier to explain and revise.</p>"
+        },
+        "sections": [
+          {
+            "slug": "define",
+            "title": "1. Define what the estimate covers",
+            "html": "<p>Name the deliverable, the current scope, important inputs and any dependency already known. Replace vague labels such as <em>work on report</em> with an observable state such as <em>draft ready for review</em>. If the scope is unclear, note that uncertainty rather than hiding it inside a precise-looking estimate.</p>"
+          },
+          {
+            "slug": "estimate",
+            "title": "2. Make the estimate from what you know now",
+            "html": "<p>Consider the work steps and waiting points that are already visible. When a comparable completed task exists, use it as context. Keep assumptions beside the estimate so a later review can distinguish a poor estimate from a task whose scope or dependencies changed.</p>"
+          },
+          {
+            "slug": "record",
+            "title": "3. Record the actual completion conditions",
+            "html": "<p>When the task finishes or is materially replanned, capture what happened. Note the completion time or effort when available and the main source of difference: extra review, missing input, rework, interruption, unfamiliar work, waiting, or a scope change.</p>"
+          },
+          {
+            "slug": "update",
+            "title": "4. Update the next comparable estimate",
+            "html": "<p>Before estimating similar work, inspect the relevant completed records. Adjust the plan for the recurring difference you can actually see, and keep exceptional one-off events separate so they do not become an automatic rule for every future task.</p>"
+          }
+        ]
+      }
+    },
+    "challenge-assumed-intent": {
+      "title": "Separate Observed Facts From Assumed Intent",
+      "subtitle": "Check what happened before deciding why another person did it.",
+      "description": "When an ordinary ambiguous event feels intentional, separate the observable facts from your interpretation, list plausible alternatives, check relevant information, and use a neutral clarification before treating intent as established.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated conflict outcomes, unsupported neurological mechanism claims, arbitrary evidence-count thresholds, fixed response delays and overbroad high-stakes scripts with a bounded fact-versus-inference check.",
+      "forbidden_public_fragments": [
+        "cut unnecessary confrontations by about 30–60% in our trials",
+        "linguistic labeling reduces amygdala reactivity by roughly 20–30%",
+        "reduces hasty accusations in interpersonal conflict by an estimated 40%",
+        "conflicts dropped by ~30–50%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When intent is unclear, separate what you directly know from the story you are adding, then check plausible alternatives before accusing or escalating.",
+        "whatYouDo": "Write the observable event without motive language, mark the inferred intent as an interpretation, list other explanations that fit the known facts, check the information that is reasonably available, and ask a neutral clarifying question when another person can resolve the ambiguity.",
+        "checkIn": "What did I directly observe, what intent did I infer, what else could explain it, and what information would actually distinguish those explanations?"
+      },
+      "faq": [
+        {
+          "id": "challenge-assumed-intent-faq-1",
+          "question": "Does this mean I should assume good intent?",
+          "answer": "No. The protocol asks you to avoid treating an unverified motive as a fact. A benign explanation and a deliberate explanation can both remain possible until the available information separates them."
+        },
+        {
+          "id": "challenge-assumed-intent-faq-2",
+          "question": "What if the situation involves a real safety, security or legal concern?",
+          "answer": "Use the appropriate policy, incident process or qualified support for that domain. Do not delay required protective action merely to complete this reflection exercise, and do not use this protocol as a substitute for formal investigation."
+        },
+        {
+          "id": "challenge-assumed-intent-faq-3",
+          "question": "What is a neutral clarification?",
+          "answer": "Describe the event you can verify and ask for the missing context without embedding the accusation in the question. For example, ask what changed or who made a decision before asserting a motive you cannot yet establish."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>An event and its motive are different kinds of information. A missed message, changed task, abrupt reply, failed system or unexpected decision can be observable; the conclusion that someone intended a particular consequence may still be an interpretation. This protocol keeps those layers separate long enough to choose the next useful check.</p>"
+        },
+        "sections": [
+          {
+            "slug": "facts",
+            "title": "1. State the event without motive language",
+            "html": "<p>Write only what could be checked by another person: what changed, what was said, what record exists, or what action occurred. Remove words that already imply a motive unless that motive was explicitly stated.</p>"
+          },
+          {
+            "slug": "inference",
+            "title": "2. Mark the inferred intent as an interpretation",
+            "html": "<p>Name the explanation currently in your mind, then label it as an inference rather than a confirmed fact. This does not make the explanation wrong; it makes clear which part still needs support.</p>"
+          },
+          {
+            "slug": "alternatives",
+            "title": "3. Check plausible alternatives and available information",
+            "html": "<p>Consider other explanations that fit the same event, such as error, missing context, conflicting priorities, a technical failure, or a deliberate choice with a different purpose. Inspect relevant records or context when doing so is appropriate and proportionate.</p>"
+          },
+          {
+            "slug": "clarify",
+            "title": "4. Clarify before converting inference into accusation",
+            "html": "<p>When another person can resolve the ambiguity, ask about the event and missing context directly. If the situation belongs to a formal safety, security, compliance or legal process, follow that process rather than improvising an informal investigation.</p>"
+          }
+        ]
+      }
+    },
+    "check-base-rates-before-deciding": {
+      "title": "Check a Relevant Baseline Before Interpreting One Case",
+      "subtitle": "Put a vivid example beside the broader reference class it belongs to.",
+      "description": "For an ordinary data-informed decision, define the relevant reference class, find a comparable baseline, inspect its scope and denominator, then combine that general context with the facts that are specific to the case.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported accuracy claims, fabricated outcomes, arbitrary sample-size confidence rules and medical, political, hiring and relationship prescriptions with a bounded reference-class and applicability workflow.",
+      "forbidden_public_fragments": [
+        "improved diagnostic accuracy by roughly 10–30%",
+        "If the base rate is <0.01%",
+        "expected hiring error reduction: about 20–30%",
+        "sample size >1,000",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before letting one memorable case define what you expect, identify the broader group of comparable cases and inspect the baseline that belongs to that group.",
+        "whatYouDo": "State the decision, define the reference class, find a baseline with a clear denominator and scope, check whether it is comparable to the current case, add the case-specific information that genuinely differs, and keep the conclusion tentative when the baseline or fit is weak.",
+        "checkIn": "What reference class did I use, where did its baseline come from, how comparable is it to this case, and which case-specific fact could justify departing from it?"
+      },
+      "faq": [
+        {
+          "id": "check-base-rates-before-deciding-faq-1",
+          "question": "What makes a baseline relevant?",
+          "answer": "It should describe a group that is meaningfully comparable to the case and use a denominator that matches the question. A broad number from a different population, period, product, process or operating environment may be less useful than a narrower local record."
+        },
+        {
+          "id": "check-base-rates-before-deciding-faq-2",
+          "question": "Should the baseline override specific information?",
+          "answer": "No. Use the baseline as context, then account for case-specific information that is relevant and reliable. The purpose is to prevent one vivid detail from silently replacing the broader context, not to ignore real differences."
+        },
+        {
+          "id": "check-base-rates-before-deciding-faq-3",
+          "question": "Can I use this for medical, legal or other high-stakes decisions?",
+          "answer": "This page is not a decision rule for high-stakes domains. Use domain-appropriate authoritative information and qualified professional guidance where required; a generic reference-class exercise is not a substitute for that review."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A memorable example is information about one case. A baseline describes a broader set of cases. When a decision depends on what usually happens, put those two layers beside each other: define the reference class, inspect the baseline and its scope, then ask whether the current case contains information that should move the judgment away from that starting context.</p>"
+        },
+        "sections": [
+          {
+            "slug": "question",
+            "title": "1. Define the question and reference class",
+            "html": "<p>State what you are trying to estimate or compare. Then define the group of cases that would make a meaningful baseline: the same type of task, customer, incident, product, project, process, or other relevant category.</p>"
+          },
+          {
+            "slug": "baseline",
+            "title": "2. Find a baseline with visible scope",
+            "html": "<p>Record where the baseline comes from, what period and population it covers, and what denominator it uses. If you cannot identify those basics, treat the number or frequency as weak context rather than a precise anchor.</p>"
+          },
+          {
+            "slug": "fit",
+            "title": "3. Check whether the baseline fits this case",
+            "html": "<p>Compare the current case with the reference class. Note differences that could matter, such as a changed process, environment, segment, requirement or selection rule. Do not borrow precision from a baseline that describes a materially different situation.</p>"
+          },
+          {
+            "slug": "combine",
+            "title": "4. Combine general context with specific facts",
+            "html": "<p>Use the baseline as starting context and add the information that is genuinely specific to the case. If the reference class is weak or the specific information is incomplete, keep the decision reversible where possible and state what remains unknown.</p>"
+          }
+        ]
+      }
+    },
+    "choose-best-resources": {
+      "title": "Choose Resources for the Next Concrete Step",
+      "subtitle": "Evaluate information and tools by fit, not by novelty or collection size.",
+      "description": "Start from the output or decision you need, choose the resource that best fits that next step, check authority, freshness, licensing and security where relevant, test the smallest useful use, then keep, defer or archive it.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated internal project outcomes, universal freshness windows, arbitrary time and price thresholds and claimed follow-through improvements with a bounded resource-selection and evaluation workflow.",
+      "forbidden_public_fragments": [
+        "improves the quality of our outputs by about 20–40%",
+        "project completion time dropped by a median of 33%",
+        "increased first-use probability from ~22% to ~68%",
+        "follow-through rose by ~3x",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Choose a resource because it helps the next concrete step, not merely because it is new, popular or already collected.",
+        "whatYouDo": "Name the output or decision you need, compare candidate resources on direct relevance and usability, check authority, freshness, licensing, privacy and security where they matter, try the smallest useful interaction, and record whether to keep, defer or archive the resource.",
+        "checkIn": "What next step was this resource meant to support, did it fit that job, what constraint did I verify, and should I keep using it, defer it or archive it?"
+      },
+      "faq": [
+        {
+          "id": "choose-best-resources-faq-1",
+          "question": "Does newer always mean better?",
+          "answer": "No. Freshness matters when information changes quickly, while stable references may remain useful for much longer. Check the update date and applicability only when they matter to the task."
+        },
+        {
+          "id": "choose-best-resources-faq-2",
+          "question": "How should I evaluate a tool or plugin?",
+          "answer": "Check whether it supports the current task, what access it requires, whether its license and data handling fit your constraints, and whether a small reversible test is possible. Do not install or connect a tool merely to clear a resource backlog."
+        },
+        {
+          "id": "choose-best-resources-faq-3",
+          "question": "What if a resource looks valuable but is not useful now?",
+          "answer": "Defer or archive it with enough context to find it later. Keeping every potentially useful resource in the active queue creates competition with material that supports the work already in progress."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A resource is useful only in relation to a job. Before collecting another article, report, tool, dataset, template or course, state the output or decision you are trying to move. Then evaluate the resource against that next step rather than treating novelty, price or recency as a quality score.</p>"
+        },
+        "sections": [
+          {
+            "slug": "job",
+            "title": "1. Name the job for the resource",
+            "html": "<p>Write the next output, decision, question or blocker the resource should support. This creates a filter: material that does not address the current job can be deferred without needing a full review.</p>"
+          },
+          {
+            "slug": "constraints",
+            "title": "2. Check the constraints that matter",
+            "html": "<p>Inspect relevance and usability first. Where appropriate, also check authorship or ownership, update date, license, required permissions, privacy, data handling, compatibility and security. The necessary checks depend on whether the resource is information, software, data, a service or another kind of input.</p>"
+          },
+          {
+            "slug": "probe",
+            "title": "3. Test the smallest useful interaction",
+            "html": "<p>Read the section tied to the question, inspect a representative sample, run a safe example, or compare the tool against the immediate requirement. Stop once you have enough information to decide whether deeper use is justified.</p>"
+          },
+          {
+            "slug": "disposition",
+            "title": "4. Keep, defer or archive it",
+            "html": "<p>Keep the resource active when it supports the current work and passes the relevant constraints. Defer it when it is useful for a known later step. Archive or reject it when the fit is weak, the cost is unjustified, or the permissions and risks do not match the task.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

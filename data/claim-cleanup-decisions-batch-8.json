@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-08",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch seven completed and before any batch-eight rewrite was applied.",
+  "selection_order": [
+    "common-source-radar",
+    "confidence-calibration-habit",
+    "confirmation-bias-challenge",
+    "conjunction-fallacy-coach"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 617,
+    "actionable_under_policy": 500,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch preserves only low-risk operational or logical procedures. It removes inherited unsupported quantitative, first-party, mechanism and performance claims, adds no source and promotes no entry to reviewed.",
+  "entries": [
+    {
+      "slug": "common-source-radar",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking", "information-management"],
+      "decision": "Remove unsupported claims about repetition, judgment improvement and training targets, fabricated source-tracing outcomes, rigid timing rules and health, money or civic examples. Preserve a source-lineage procedure: trace repeated claims to the material they rely on, note shared documents, datasets or organizations, and avoid counting repeated summaries as independent support."
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["metacognition", "decision-making"],
+      "decision": "Remove fabricated calibration statistics, effect claims, fixed probability increments, action thresholds, reminder schedules and first-party examples. Preserve a qualitative judgment log: state the current confidence level, record the main support and uncertainty, name one observable fact that would change the judgment, and compare the prediction with what later happened."
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking", "decision-making"],
+      "decision": "Remove unsupported historical and cognitive claims, fabricated volunteer and cohort outcomes, fixed daily habit targets, emotional mechanism claims, political and health examples and arbitrary numerical decision thresholds. Preserve a narrow decision preflight: state the assumption, name one observation that would weaken it, check that condition before committing, and update or escalate when it is found."
+    },
+    {
+      "slug": "conjunction-fallacy-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking", "data-literacy"],
+      "decision": "Remove fabricated pause experiments, cognitive-mechanism claims, probability training bins, daily quotas and high-stakes hiring or health examples. Preserve the underlying logical check: split a compound statement into A and B, compare A with A-and-B, and remember that every case satisfying both conditions is already included among the cases satisfying A."
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 await import('./build-growth-surfaces.mjs');
+await import('./build-search-question-pages.mjs');
 await import('./build-state-evidence-trends.mjs');
 await import('./build-problem-collections.mjs');
 await import('./build-evidence-ledger.mjs');
@@ -114,6 +115,7 @@ await import('./apply-legacy-sensitive-zone-banners.mjs');
 await import('./apply-indexing-policy.mjs');
 await import('./finalize-sitewide-quality-trust.mjs');
 await import('./check-growth-surfaces.mjs');
+await import('./check-search-question-pages.mjs');
 await import('./check-state-evidence-trends.mjs');
 await import('./check-problem-collections.mjs');
 await import('./check-evidence-ledger.mjs');

@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "break-big-goals-into-steps": {
+      "title": "Break a Large Goal Into the Next Few Concrete Steps",
+      "subtitle": "Turn an intimidating outcome into visible deliverables and one useful next action.",
+      "description": "Define what finished means, expose dependencies and unknowns, split the work into observable deliverables, and choose the smallest next action that produces progress or useful information.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace inherited app promotion, fabricated completion-rate and initiation percentages, arbitrary universal timeboxes, invented experiments, and prescriptive health/fitness examples with a bounded low-risk goal-decomposition workflow.",
+      "forbidden_public_fragments": [
+        "30–50%",
+        "34%",
+        "run 60 seconds",
+        "Flame Counter",
+        "Use the Brali LifeOS app"
+      ],
+      "lifeOsSource": {
+        "hack": "When a goal feels too large to start, define the finish condition, split the work into observable deliverables, expose dependencies, and choose one next action that creates progress or information.",
+        "whatYouDo": "Write what done would look like, list the main deliverables or decision points, mark dependencies and unknowns, split any item that still hides multiple actions, then choose the next step you can actually perform or the question you must answer before proceeding.",
+        "checkIn": "What does done mean, which dependency matters now, what is the next visible action, and what did that action reveal?"
+      },
+      "faq": [
+        {
+          "id": "break-big-goals-into-steps-faq-1",
+          "question": "How small should the next step be?",
+          "answer": "Small enough that the action is unambiguous and can be started without another planning session. Do not force a universal duration. A useful step may be producing a draft, requesting access, making a decision, or collecting the one fact needed to continue."
+        },
+        {
+          "id": "break-big-goals-into-steps-faq-2",
+          "question": "What if I cannot decompose the goal because too much is unknown?",
+          "answer": "Make uncertainty visible instead of inventing detail. Turn the most important unknown into an information-gaining step such as checking a constraint, asking the responsible person, inspecting an example, or building a small reversible prototype."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Large goals often hide several different kinds of work: decisions, dependencies, unknowns, and actions. Decomposition is useful when it exposes those parts without pretending that every project can be reduced to the same number of steps or minutes.</p>"
+        },
+        "sections": [
+          {
+            "slug": "finish",
+            "title": "1. Define the finish condition",
+            "html": "<p>Write the observable result that would make this piece of work complete enough for its current purpose. Prefer an artifact, decision, delivered change, or verified outcome over a vague intention such as <em>work on the project</em>.</p>"
+          },
+          {
+            "slug": "parts",
+            "title": "2. Expose the meaningful parts",
+            "html": "<p>List the deliverables, decisions, dependencies, and unknowns between the current state and the finish condition. If one item still contains several verbs or requires another round of interpretation before it can begin, split it again.</p>"
+          },
+          {
+            "slug": "next",
+            "title": "3. Choose the next useful action",
+            "html": "<p>Select an action that is available now and either moves a deliverable forward or resolves an uncertainty that blocks later work. If another person, permission, input, or system access is the real dependency, addressing that dependency is the next action.</p>"
+          },
+          {
+            "slug": "update",
+            "title": "4. Update the map from what you learn",
+            "html": "<p>After the action, revise the remaining steps when new information changes scope, sequence, or ownership. The decomposition is a working model, not a promise that the original plan was complete.</p>"
+          }
+        ]
+      }
+    },
+    "batch-similar-tasks-planner": {
+      "title": "Batch Similar Small Tasks Without Letting the Batch Take Over",
+      "subtitle": "Group work that uses the same context, then close the batch deliberately.",
+      "description": "Collect a bounded set of similar low-complexity tasks, define what belongs in the batch, process them under the same working context, capture side work instead of switching, and review whether batching actually reduced setup friction.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported context-switch recovery times, fabricated reclaimed-time claims, arbitrary batch counts and durations, pseudo-precise interruption targets, and old app tracking with a bounded operational batching workflow.",
+      "forbidden_public_fragments": [
+        "10 to 25 minutes",
+        "23 minutes",
+        "reclaim an hour",
+        "2–4 task batches",
+        "Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "Group a small set of tasks that use the same tool, information, or work mode, process that set together, and stop when the batch boundary is reached instead of turning batching into an all-day queue.",
+        "whatYouDo": "Choose one task family, define which items belong and which do not, collect only the current batch, process the items in one context, capture unrelated work for later rather than switching immediately, then close the batch and return to the higher-priority plan.",
+        "checkIn": "Which tasks genuinely shared context, what tried to pull me out of the batch, and did batching reduce setup friction without delaying more important work?"
+      },
+      "faq": [
+        {
+          "id": "batch-similar-tasks-planner-faq-1",
+          "question": "Which tasks are good candidates for batching?",
+          "answer": "Usually tasks that share the same tool, information source, communication channel, or low-complexity work mode and can safely wait for the batch. Similar-looking tasks with different priorities, dependencies, or deep-thinking requirements may not belong together."
+        },
+        {
+          "id": "batch-similar-tasks-planner-faq-2",
+          "question": "Should I batch every message and administrative task?",
+          "answer": "No. Response commitments, emergencies, handoffs, and work that blocks other people may require different handling. Batching is a convenience for compatible work, not a rule that overrides service levels or priority."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Batching is useful when several small tasks genuinely share the same setup or mental context. It becomes counterproductive when the batch grows without a boundary, hides urgent work, or replaces a higher-value task simply because the small items are easy to clear.</p>"
+        },
+        "sections": [
+          {
+            "slug": "family",
+            "title": "1. Choose one task family",
+            "html": "<p>Pick tasks that use the same working context: for example the same inbox, reporting tool, review queue, or document set. Do not group tasks only because they are small; priority and dependencies still matter.</p>"
+          },
+          {
+            "slug": "boundary",
+            "title": "2. Define the batch boundary",
+            "html": "<p>Decide what belongs in this pass and what is explicitly outside it. Use a concrete list, queue cutoff, or finish condition rather than an endless category such as <em>do all admin</em>.</p>"
+          },
+          {
+            "slug": "process",
+            "title": "3. Process one context and capture side work",
+            "html": "<p>Work through the chosen set while the relevant tools and information are already available. When unrelated work appears, capture it in the appropriate place unless it is genuinely urgent or blocks the current task.</p>"
+          },
+          {
+            "slug": "close",
+            "title": "4. Close the batch and inspect the trade-off",
+            "html": "<p>Stop at the chosen boundary, return to the main plan, and ask whether grouping reduced repeated setup or merely postponed more important work. Adjust the next batch based on that observation rather than a fixed universal schedule.</p>"
+          }
+        ]
+      }
+    },
+    "clear-concise-communication-coach": {
+      "title": "Lead With the Point, Then Add Only the Context Needed",
+      "subtitle": "Make the request, decision, or conclusion easy to find.",
+      "description": "Decide what the listener needs to know or do, state the main point early, add only the context required to understand it, replace avoidable jargon, and make the next step explicit when action is needed.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported working-memory simplifications, fabricated comprehension and action effects, fixed 1-3-1 formulas, arbitrary word and speaking-length targets, and old app tracking with a bounded clarity-first communication workflow.",
+      "forbidden_public_fragments": [
+        "4±1 chunks",
+        "30–40% higher",
+        "~2x more likely",
+        "1‑3‑1",
+        "Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "Put the main request, decision, conclusion, or status first enough that the recipient can find it, then add only the context needed to understand or act on it.",
+        "whatYouDo": "Identify the purpose and audience, write or say the main point, add the minimum context that changes interpretation, replace avoidable jargon or define necessary terms, and finish with the owner, decision, question, or next step when action is required.",
+        "checkIn": "Could the recipient identify the main point, what context was actually necessary, and is the next action or decision unambiguous?"
+      },
+      "faq": [
+        {
+          "id": "clear-concise-communication-coach-faq-1",
+          "question": "Does concise communication mean removing important detail?",
+          "answer": "No. Required context, evidence, risks, contractual language, safety information, and technical detail should remain when they affect understanding or action. Concision means removing material that does not help the recipient interpret or use the message."
+        },
+        {
+          "id": "clear-concise-communication-coach-faq-2",
+          "question": "Should I avoid technical jargon completely?",
+          "answer": "Use terminology that your audience reliably understands and that makes the message more precise. Replace avoidable jargon when it obscures the point, and define specialized terms when the recipient needs them to make a decision or perform the work."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Clear communication is not a contest to use the fewest words. The useful test is whether the recipient can find the point, understand the context that changes it, and know what happens next without reconstructing the message from a long preface.</p>"
+        },
+        "sections": [
+          {
+            "slug": "purpose",
+            "title": "1. Decide what the message must accomplish",
+            "html": "<p>Name the recipient and the outcome: inform, request, decide, warn, clarify, or hand off. If several unrelated outcomes are mixed together, separate them or state the priority so the reader does not have to infer it.</p>"
+          },
+          {
+            "slug": "point",
+            "title": "2. Put the main point where it can be found",
+            "html": "<p>State the request, decision, conclusion, or status early enough that the recipient understands why the supporting information matters. Do not bury the action under chronology that can be supplied afterward.</p>"
+          },
+          {
+            "slug": "context",
+            "title": "3. Add only context that changes interpretation",
+            "html": "<p>Keep facts, constraints, evidence, risks, and definitions that the recipient needs. Remove repetition, decorative background, and side issues that do not affect the decision or action. Preserve mandatory detail where legal, safety, compliance, or technical requirements demand it.</p>"
+          },
+          {
+            "slug": "next",
+            "title": "4. Make the handoff explicit",
+            "html": "<p>When action is required, state the decision needed, owner, question, dependency, or next step. When no action is required, say so when that distinction would otherwise be unclear.</p>"
+          }
+        ]
+      }
+    },
+    "calibrate-task-estimates": {
+      "title": "Calibrate Task Estimates With Scope, Assumptions, and Actuals",
+      "subtitle": "Treat the first estimate as a forecast that can improve with evidence.",
+      "description": "Define the task boundary, compare with similar completed work when available, write down assumptions and unknowns, make an estimate with visible uncertainty, and update it when actual progress reveals new information.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace inherited app promotion, fabricated practitioner observations, arbitrary universal milestone and recalibration timeboxes, and unsupported claims about what reliably improves estimating with a transparent forecast-versus-actual workflow.",
+      "forbidden_public_fragments": [
+        "20–40 minutes",
+        "20–60 minutes",
+        "reduces the emotional cost",
+        "Use the Brali LifeOS app",
+        "calendar brags"
+      ],
+      "lifeOsSource": {
+        "hack": "Estimate a task from an explicit scope and assumptions, compare with similar actual work when possible, and revise the forecast when early execution reveals information the first estimate did not contain.",
+        "whatYouDo": "Define what is included and excluded, split the work enough to expose major components and dependencies, check relevant past actuals if you have them, record the estimate together with important assumptions and unknowns, then compare forecast with progress and update it transparently when the basis changes.",
+        "checkIn": "What scope and assumptions produced the estimate, what actual evidence changed them, and what is the updated forecast or range?"
+      },
+      "faq": [
+        {
+          "id": "calibrate-task-estimates-faq-1",
+          "question": "What if I have no similar past task to compare with?",
+          "answer": "Make the missing reference explicit. Decompose the work enough to expose the largest uncertainties, use a range or scenarios when appropriate, and identify the earliest action that can reduce a decisive unknown instead of presenting a precise number without a basis."
+        },
+        {
+          "id": "calibrate-task-estimates-faq-2",
+          "question": "Is changing an estimate a failure?",
+          "answer": "Not when the underlying information changed or the original assumption was shown to be wrong. Record what changed and revise the forecast. For contractual or externally committed dates, follow the relevant change-control and risk process rather than silently moving the target."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>An estimate is more useful when its basis is visible. Instead of treating the first number as a promise, define the scope, expose assumptions and unknowns, use relevant actual history when it exists, and revise the forecast when execution produces better information.</p>"
+        },
+        "sections": [
+          {
+            "slug": "scope",
+            "title": "1. Define the task boundary",
+            "html": "<p>Write what is included, what is explicitly excluded, what outcome marks completion, and which dependencies or approvals sit outside your control. A precise estimate over an undefined scope is still an undefined forecast.</p>"
+          },
+          {
+            "slug": "reference",
+            "title": "2. Look for comparable actual work",
+            "html": "<p>Use completed tasks with similar scope, constraints, people, or technology as reference points when they are genuinely comparable. Record meaningful differences instead of copying a previous duration as if the tasks were identical.</p>"
+          },
+          {
+            "slug": "forecast",
+            "title": "3. State the estimate with its assumptions",
+            "html": "<p>Record the forecast or range together with the assumptions most likely to change it: input quality, review cycles, access, dependencies, novelty, or waiting time. Avoid false precision when the inputs do not justify it.</p>"
+          },
+          {
+            "slug": "calibrate",
+            "title": "4. Compare with actuals and update",
+            "html": "<p>As work proceeds, compare the forecast with observed progress and newly discovered scope. Update the remaining estimate when the basis changes, and retain the forecast-versus-actual record so future estimates have a better reference class.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "10x-goal-sprints-tracker": {
+      "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
+      "description": "Choose an intentionally ambitious outcome, separate controllable levers from external constraints, test one reversible change, and review what the sprint actually teaches you.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated output and completion statistics, invented internal observations, arbitrary effort prescriptions, and projection-like 10x claims with a bounded stretch-goal experiment.",
+      "forbidden_public_fragments": [
+        "produced only 5–15% change in output after six weeks",
+        "We find that weeks planned with this ritual have 30–40% higher task completion",
+        "we observed burnout after two weeks",
+        "10x can translate into orders of magnitude growth over 1–2 years",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Use an intentionally ambitious goal as a prompt to question the current system, then test one small structural change instead of assuming that more effort will produce a proportional result.",
+        "whatYouDo": "Write one desired outcome and the constraints around it. List the levers you can actually change, choose one reversible experiment, define what you will observe, run the smallest useful version, and review whether the result changes your plan.",
+        "checkIn": "What assumption, constraint, or controllable lever did the sprint expose, and what should I keep, change, or stop next?"
+      },
+      "faq": [
+        {
+          "id": "10x-goal-sprints-tracker-faq-1",
+          "question": "Does 10x mean I should literally expect ten times the result?",
+          "answer": "No. Here, 10x is a stretch label used to challenge assumptions about the current approach. It is not an evidence-backed multiplier, forecast, or guarantee."
+        },
+        {
+          "id": "10x-goal-sprints-tracker-faq-2",
+          "question": "What should I test first?",
+          "answer": "Choose the smallest reversible change that tests an important assumption: a different channel, workflow, constraint, sequence, offer, tool, or source of leverage. Define the observation before you run it."
+        },
+        {
+          "id": "10x-goal-sprints-tracker-faq-3",
+          "question": "What if the goal depends mostly on things I cannot control?",
+          "answer": "Record those dependencies explicitly. Do not convert market conditions, permission, money, staffing, health, or another external constraint into a personal effort failure. Narrow the experiment to a lever you can actually influence."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A very ambitious target can be useful as a diagnostic question: what would have to change in the system rather than simply asking you to work harder? In this Brali protocol, <strong>10x is a stretch label, not a promised multiplier</strong>. The useful output is a better hypothesis and a small test.</p>"
+        },
+        "sections": [
+          {
+            "slug": "state-outcome-and-boundaries",
+            "title": "1. State the outcome and its boundaries",
+            "html": "<p>Write the outcome in plain language. Then list the important constraints and dependencies beside it. Mark which parts you can influence and which require another person, resource, permission, market condition, or longer time horizon.</p>"
+          },
+          {
+            "slug": "find-a-lever",
+            "title": "2. Find one lever worth testing",
+            "html": "<p>Ask what would need to work differently if the current approach could not simply be repeated more often. Choose one controllable lever and turn it into a reversible experiment. Prefer a test that can fail cheaply and teach you something specific.</p>"
+          },
+          {
+            "slug": "define-the-observation",
+            "title": "3. Decide what would change your mind",
+            "html": "<p>Before starting, write the signal you will inspect and a stop condition. Avoid invented success percentages. A useful signal can be an observable response, a completed step, a bottleneck discovered, a cost measured, or a dependency confirmed.</p>"
+          },
+          {
+            "slug": "review-the-sprint",
+            "title": "4. Review the sprint, not your ambition",
+            "html": "<p>After the test, record what happened. Keep the lever if the observation supports another iteration; change it if the assumption was wrong; stop it if the cost or constraint dominates. The aim is to improve the model of the problem, not to defend the 10x headline.</p>"
+          }
+        ]
+      }
+    },
+    "7-breath-decision-pause": {
+      "title": "Use a Short Pause Before an Ordinary Decision",
+      "description": "Pause briefly before a reactive low-risk choice, breathe comfortably or simply sit quietly, then decide whether to act, gather one missing fact, or defer deliberately.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pilots, unsupported physiological and decision-quality claims, prescriptive breathing mechanics, and arbitrary frequency and duration rules with an optional decision pause.",
+      "forbidden_public_fragments": [
+        "reduced impulsive choices by 30–50% in small pilots",
+        "reduced reports of dizziness by about 80% in our internal trials",
+        "It reliably reduces impulsive actions",
+        "n≈120 users over 4 weeks",
+        "increase prefrontal access to working memory",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Insert a short pause before an ordinary reactive decision, then choose whether to act, gather one missing fact, or schedule the decision for later.",
+        "whatYouDo": "Name the decision in one sentence. Take a few comfortable breaths or use a quiet pause; seven is only a memorable optional count. Ask what is known, what is missing, and whether the choice is reversible. Then act, gather one specific piece of information, or set a deliberate time to revisit it.",
+        "checkIn": "After the pause, did I act, identify one missing fact, or defer the decision intentionally—and what made that the appropriate next step?"
+      },
+      "faq": [
+        {
+          "id": "7-breath-decision-pause-faq-1",
+          "question": "Why seven breaths?",
+          "answer": "There is no reviewed evidence here that seven is an optimal dose. It is only a memorable boundary. Use fewer, more, or a silent pause if that is more comfortable and practical."
+        },
+        {
+          "id": "7-breath-decision-pause-faq-2",
+          "question": "Should I use this for a high-stakes decision?",
+          "answer": "Not as the decision method. A short pause can interrupt a reactive response, but consequential medical, legal, financial, safety, or strategic decisions need the relevant evidence, expertise, and decision process."
+        },
+        {
+          "id": "7-breath-decision-pause-faq-3",
+          "question": "What if deliberate breathing feels uncomfortable?",
+          "answer": "Do not force it. Use an ordinary quiet pause instead and keep breathing normally. The useful part of this practical exercise is creating a small gap before the next action, not performing a breathing technique correctly."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Some everyday decisions arrive with an immediate urge to answer, click, send, buy, or agree. This protocol creates a small gap before that response. Seven breaths can be used as a simple count, but <strong>seven is not presented as a validated physiological or decision-making dose</strong>.</p>"
+        },
+        "sections": [
+          {
+            "slug": "name-the-decision",
+            "title": "1. Name the decision",
+            "html": "<p>Reduce the situation to one concrete question. If the real problem contains several decisions, choose only the next one rather than trying to solve the whole situation during the pause.</p>"
+          },
+          {
+            "slug": "pause-comfortably",
+            "title": "2. Pause without forcing the breath",
+            "html": "<p>Take a few comfortable breaths, count to seven if the count is useful, or simply sit quietly for a short moment. Do not chase a special breathing pattern, altered state, or physiological effect.</p>"
+          },
+          {
+            "slug": "choose-the-next-state",
+            "title": "3. Choose the next state",
+            "html": "<p>Ask: do I know enough to act, is one important fact missing, or should this be decided later? Convert the answer into one next step: act, gather one specific fact, or set a time and owner for the decision.</p>"
+          },
+          {
+            "slug": "keep-the-boundary",
+            "title": "4. Keep the boundary",
+            "html": "<p>Do not let repeated pauses become avoidance. For high-stakes or urgent situations, use the appropriate domain process rather than this micro-routine. If breathing itself is uncomfortable, use a normal quiet pause.</p>"
+          }
+        ]
+      }
+    },
+    "ai-six-hats-facilitator": {
+      "title": "Run a Six-Perspective Thinking Pass",
+      "description": "Separate facts, reactions, risks, opportunities, alternatives, and process into distinct passes so a discussion can expose what is missing before choosing a next step.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported effectiveness claims, invented team observations, fabricated timing and conversion examples, and arbitrary experiment thresholds with a neutral six-perspective facilitation checklist.",
+      "forbidden_public_fragments": [
+        "staying in their default reasoning 70–90% of the time",
+        "increases perspective diversity and reduces confirmation bias in measurable ways",
+        "This pivot increased idea count from 2 to 8 within 10 minutes",
+        "We assumed a 7-minute block per hat",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Examine one question through six separate perspectives before combining them into a decision or next test.",
+        "whatYouDo": "Write one question. Make six short passes: facts and unknowns; reactions and preferences; risks and failure modes; benefits and opportunities; alternatives and experiments; then process and next step. Keep observations in their own pass so facts are not silently mixed with preferences or forecasts.",
+        "checkIn": "Which perspective added information the first discussion was missing, and what decision, question, or test follows from it?"
+      },
+      "faq": [
+        {
+          "id": "ai-six-hats-facilitator-faq-1",
+          "question": "Do I need fixed colors, order, or timings?",
+          "answer": "No evidence-backed optimum is claimed here. The practical value of the checklist is separation of perspectives. Use labels, colors, order, and timeboxes that help the group stay clear rather than treating them as a scientific dose."
+        },
+        {
+          "id": "ai-six-hats-facilitator-faq-2",
+          "question": "Can this replace evidence or domain expertise?",
+          "answer": "No. The facts pass should expose what is known and unknown, not manufacture certainty. If the decision requires technical, legal, medical, financial, or safety expertise, bring that evidence and expertise into the process."
+        },
+        {
+          "id": "ai-six-hats-facilitator-faq-3",
+          "question": "What should the session produce?",
+          "answer": "A useful output is modest: a clearer map of the question, unresolved facts, important risks and opportunities, alternatives worth considering, and one explicit next step or decision owner."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A discussion often mixes evidence, preference, caution, optimism, ideation, and process into the same sentence. This six-pass checklist separates them temporarily so the group can see what kind of statement it is making. It is a facilitation structure, <strong>not a claim that six passes or any fixed timing improves decisions by a measured amount</strong>.</p>"
+        },
+        "sections": [
+          {
+            "slug": "frame-one-question",
+            "title": "1. Frame one question",
+            "html": "<p>Write the decision or problem in one sentence. Define the boundary: what is in scope, what is not, and who owns the final decision.</p>"
+          },
+          {
+            "slug": "run-six-passes",
+            "title": "2. Run six distinct passes",
+            "html": "<p><strong>Facts:</strong> knowns, sources, and unknowns. <strong>Reactions:</strong> preferences, concerns, and intuitions. <strong>Risks:</strong> failure modes and constraints. <strong>Opportunities:</strong> plausible benefits. <strong>Alternatives:</strong> other options and small tests. <strong>Process:</strong> what must happen next, by whom, and what remains unresolved.</p>"
+          },
+          {
+            "slug": "label-uncertainty",
+            "title": "3. Label uncertainty instead of filling it",
+            "html": "<p>If a number, causal explanation, or forecast is not supported, mark it as an assumption or question. Do not turn a perspective exercise into invented evidence merely because the discussion needs closure.</p>"
+          },
+          {
+            "slug": "close-with-next-step",
+            "title": "4. Close with one explicit next step",
+            "html": "<p>Summarize what changed after the six passes. Decide, request missing evidence, assign an owner, or define a reversible test. If the passes added no useful distinction, use a simpler checklist next time.</p>"
+          }
+        ]
+      }
+    },
+    "avoid-availability-heuristic-decisions": {
+      "title": "Run a Missing-Evidence Check Before a Decision",
+      "description": "When a vivid or recent example is dominating a decision, separate what is easy to recall from what is representative, then look for one missing denominator, counterexample, or relevant source.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated colleague and user results, unsupported uncertainty and risk-reduction percentages, guarantee-like language, and arbitrary thresholds with a bounded missing-evidence checklist.",
+      "forbidden_public_fragments": [
+        "adds 2–15 percentage points of uncertainty into our thinking",
+        "We instructed 12 colleagues",
+        "74% of those times",
+        "Self-reported reduction in \"rash decisions\" = 62%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When one memorable example is carrying too much weight, pause and ask what representative information, denominator, or counterexample is missing before committing.",
+        "whatYouDo": "Write the example or story currently driving the decision. Ask whether it is representative or simply vivid, recent, or personal. Look for one counterexample and, when the decision warrants it, one relevant denominator, base rate, or source. Update the decision only as far as the new information supports.",
+        "checkIn": "What information was easy to recall, what was missing, and did the additional evidence change the decision or only the level of uncertainty?"
+      },
+      "faq": [
+        {
+          "id": "avoid-availability-heuristic-decisions-faq-1",
+          "question": "Does a vivid example mean my judgment is biased?",
+          "answer": "Not necessarily. A memorable example can be relevant. The point of the check is to ask whether it is representative enough for the decision and whether important information is absent."
+        },
+        {
+          "id": "avoid-availability-heuristic-decisions-faq-2",
+          "question": "Do I need a number for every decision?",
+          "answer": "No. Use a denominator, rate, or comparison when it is relevant and available. Do not invent numerical confidence or false precision simply to make the decision look analytical."
+        },
+        {
+          "id": "avoid-availability-heuristic-decisions-faq-3",
+          "question": "What about consequential decisions?",
+          "answer": "A memory check is not enough. For medical, legal, financial, safety, hiring, or other consequential decisions, use the appropriate evidence, policy, qualified expertise, and review process."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Recent events, vivid stories, and personal examples can become the easiest evidence to retrieve. That does not automatically make them wrong. This protocol asks a narrower question: <strong>what relevant information would be less memorable but more representative?</strong></p>"
+        },
+        "sections": [
+          {
+            "slug": "capture-first-story",
+            "title": "1. Capture the first story",
+            "html": "<p>Write the example, event, or impression currently carrying the decision. Separate what actually happened from the conclusion you are drawing from it.</p>"
+          },
+          {
+            "slug": "ask-what-is-missing",
+            "title": "2. Ask what is missing",
+            "html": "<p>Look for one counterexample, an unseen group, a longer time window, or a denominator that could change the interpretation. The goal is not to force the opposite answer; it is to widen the evidence set.</p>"
+          },
+          {
+            "slug": "seek-representative-information",
+            "title": "3. Seek representative information when it matters",
+            "html": "<p>For a consequential decision, prefer a relevant source, base rate, policy, dataset, or qualified review over a story that merely comes to mind quickly. If representative information is unavailable, preserve that uncertainty instead of manufacturing a percentage.</p>"
+          },
+          {
+            "slug": "update-only-as-far-as-supported",
+            "title": "4. Update only as far as the evidence supports",
+            "html": "<p>Record whether the additional information changed the action, narrowed the claim, or left the decision uncertain. A good check may confirm the original choice; its purpose is not to reverse every first impression.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

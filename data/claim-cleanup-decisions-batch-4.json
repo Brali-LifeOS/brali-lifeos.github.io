@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-04",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch three completed and before any batch-four rewrite was applied.",
+  "selection_order": [
+    "10x-goal-sprints-tracker",
+    "7-breath-decision-pause",
+    "ai-six-hats-facilitator",
+    "avoid-availability-heuristic-decisions"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 658,
+    "actionable_under_policy": 539,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch records editorial rewrites, not scientific review. No entry is promoted to reviewed and no source is added merely to preserve inherited wording.",
+  "entries": [
+    {
+      "slug": "10x-goal-sprints-tracker",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["goals"],
+      "decision": "Remove fabricated output and completion statistics, invented internal observations, arbitrary effort prescriptions and projection-like growth claims. Preserve the 10x idea only as a stretch label that exposes assumptions, separates external constraints and tests one controllable lever through a reversible sprint."
+    },
+    {
+      "slug": "7-breath-decision-pause",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["goals"],
+      "decision": "Remove fabricated pilot outcomes, physiological explanations, decision-quality claims, rigid breathing mechanics and arbitrary frequency or timing rules. Preserve a short optional pause that ends in one of three states: act, gather one missing fact, or defer deliberately. Seven breaths is a memorable container rather than a validated dose."
+    },
+    {
+      "slug": "ai-six-hats-facilitator",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication"],
+      "decision": "Remove unsupported effectiveness claims, invented team observations, fabricated timing and conversion examples, and arbitrary experiment thresholds. Preserve a six-perspective facilitation checklist that separates facts, reactions, risks, opportunities, alternatives and process, then closes with one explicit next step."
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result", "guarantee"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking"],
+      "decision": "Remove fabricated colleague and user results, pseudo-quantified uncertainty and risk reductions, guarantee-like language, and arbitrary monetary or emotional thresholds. Preserve a missing-evidence check that distinguishes memorable examples from representative information and explicitly avoids manufactured confidence precision."
+    }
+  ]
+}

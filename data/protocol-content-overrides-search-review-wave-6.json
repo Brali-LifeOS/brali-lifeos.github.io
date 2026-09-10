@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "judge-decisions-by-process": {
+      "title": "Review a Decision Using What Was Known at the Time",
+      "subtitle": "Separate the quality of the process from the luck of the outcome.",
+      "description": "Reconstruct what information was actually available when a decision was made, compare it with the options and constraints considered then, and turn the review into one process improvement for a similar future decision.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported debiasing effects, invented timing and memory thresholds, fabricated first-party process results, arbitrary scoring systems, and therapy-adjacent framing with a bounded retrospective decision review.",
+      "forbidden_public_fragments": ["2–3×", "48-hour window", "30%", "n=62", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "When reviewing an important past decision, reconstruct what was actually known at the decision point before judging the process using information that appeared later.",
+        "whatYouDo": "Write the decision and its date, list the information and constraints that were available then, separate later discoveries into a different section, note which realistic alternatives were considered or missed, identify one process weakness or strength, and define one change to use for a similar future decision.",
+        "checkIn": "What was genuinely knowable at the decision point, what did I learn only afterward, and what should change in the process next time?"
+      },
+      "faq": [
+        {"id": "judge-decisions-by-process-faq-1", "question": "Does a good process make a bad outcome acceptable?", "answer": "No. Outcomes still matter. The process review asks a different question: whether the decision used the information, constraints, alternatives, and responsibilities available at the time, and what should be improved before a similar choice recurs."},
+        {"id": "judge-decisions-by-process-faq-2", "question": "What if I cannot remember what was known then?", "answer": "Prefer contemporaneous artifacts such as tickets, notes, messages, dashboards, approvals, or decision records. Mark uncertain memories as uncertain rather than turning hindsight into a reconstructed fact."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A result can make an earlier choice look obviously good or obviously bad. A useful retrospective separates the outcome from the information that existed when the choice was made. That creates a fairer process record and, more importantly, a concrete improvement for the next similar decision.</p>"},
+        "sections": [
+          {"slug": "reconstruct", "title": "1. Reconstruct the decision point", "html": "<p>Write what was being decided, who owned the decision, the date or stage, and the constraints that were active. Then collect the artifacts that existed at that point. Do not start by explaining the later outcome.</p>"},
+          {"slug": "separate", "title": "2. Separate then-known facts from later information", "html": "<p>Create two lists: information available before the decision and information learned afterward. If an item is based only on memory, mark that uncertainty. This prevents later knowledge from quietly changing what the original decision environment looked like.</p>"},
+          {"slug": "inspect-process", "title": "3. Inspect the process, not just the result", "html": "<p>Ask whether important constraints were visible, alternatives were considered, dissent or uncertainty was recorded, ownership was clear, and a fallback existed where one was needed. Name specific omissions instead of assigning a vague good-or-bad score.</p>"},
+          {"slug": "change", "title": "4. Carry one improvement forward", "html": "<p>Choose one process change that would improve a similar future decision: capture a missing input, require a named owner, document an assumption, add a rollback trigger, or request a second view. Put that change where the next decision will actually encounter it.</p>"}
+        ]
+      }
+    },
+    "qa-clear-feedback-templates": {
+      "title": "Write a QA Report Another Person Can Act On",
+      "subtitle": "State the observed behavior, reproduction context, evidence, and acceptance check.",
+      "description": "Turn a vague defect report into a compact handoff that distinguishes what was observed from what is suspected and gives the receiver enough context to reproduce, investigate, and verify the fix.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated engineering-org results, unsupported cycle-time reductions, pseudo-optimal evidence quantities, invented social effects, and over-specific universal QA prescriptions with a practical defect-reporting template.",
+      "forbidden_public_fragments": ["35%", "~60%", "40–70%", "~15%", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "A useful QA handoff separates observation from hypothesis and gives the receiver enough context to reproduce the issue and verify the expected result.",
+        "whatYouDo": "Write a one-line observed problem and context, add the smallest reliable reproduction sequence, attach the relevant evidence while removing secrets and personal data, label any suspected cause as a hypothesis, state the expected behavior, and define a narrow acceptance check for the fix.",
+        "checkIn": "Can another person see what happened, reproduce or investigate it, distinguish fact from hypothesis, and know what would count as fixed?"
+      },
+      "faq": [
+        {"id": "qa-clear-feedback-templates-faq-1", "question": "Should every bug report include a suspected cause?", "answer": "No. Add a hypothesis only when you have a useful reason for it, and label it clearly. A precise observation with reproducible context is better than a confident guess."},
+        {"id": "qa-clear-feedback-templates-faq-2", "question": "How much log or trace data should I attach?", "answer": "Include enough to identify the failing behavior and relevant context without burying the report. Remove credentials, tokens, personal data, and unrelated payloads before sharing diagnostic material."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A defect report is a handoff. Its job is to make the next investigation cheaper and safer, not to prove that the reporter already knows the cause. A compact report keeps observations, reproduction context, hypotheses, and acceptance criteria distinct.</p>"},
+        "sections": [
+          {"slug": "observe", "title": "1. Start with the observable problem", "html": "<p>Write one sentence describing what happened and where: feature, environment, relevant state, and visible failure. Avoid blame and avoid explaining the cause before the behavior itself is clear.</p>"},
+          {"slug": "reproduce", "title": "2. Add the smallest reliable reproduction context", "html": "<p>List the prerequisites, inputs, and sequence needed to encounter the problem. Include version, platform, account state, feature flag, or sample data only when it matters. Say when the issue is intermittent rather than presenting one occurrence as a deterministic sequence.</p>"},
+          {"slug": "evidence", "title": "3. Attach focused diagnostic material", "html": "<p>Add the screenshot, request identifier, trace excerpt, console output, or other artifact that helps locate the failure. Remove secrets and unrelated personal data. Put suspected causes in a separately labeled hypothesis so the receiver can challenge them without disputing the observation.</p>"},
+          {"slug": "acceptance", "title": "4. State expected behavior and the acceptance check", "html": "<p>Describe what should happen instead and the narrow condition that would demonstrate the fix in the reported context. If broader regression coverage is needed, keep that as a separate verification task rather than expanding the original defect indefinitely.</p>"}
+        ]
+      }
+    },
+    "creativity-within-constraints": {
+      "title": "Use One Constraint to Produce a Different Creative Draft",
+      "subtitle": "Limit one dimension, make a variant, then judge the result against the brief.",
+      "description": "When open-ended exploration is producing more browsing than making, choose one reversible constraint on scope, tools, format, or time and use it to create a concrete alternative you can compare with the original direction.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported creativity mechanisms, fabricated output comparisons and observations, physiological engagement claims, pseudo-optimal session lengths, and arbitrary completion targets with a reversible constraint-based drafting exercise.",
+      "forbidden_public_fragments": ["70–80%", "5–10 bpm", "3–5", "sweet spot", "20–40 seconds", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "When a creative task stays too open-ended, constrain one dimension temporarily—scope, tools, format, sequence, or available time—and make a separate draft under that rule.",
+        "whatYouDo": "Name the artifact and the part that feels too open, choose one constraint that does not violate the brief, create a reversible variant without adding new constraints midstream, compare the result with the original requirements, and keep only the useful difference.",
+        "checkIn": "What did I constrain, what changed in the artifact, and did the constraint reveal anything worth keeping?"
+      },
+      "faq": [
+        {"id": "creativity-within-constraints-faq-1", "question": "What kinds of constraints are useful?", "answer": "Use constraints that are easy to understand and undo, such as fewer components, a shorter format, one tool, a fixed audience, a different sequence, or a bounded working window."},
+        {"id": "creativity-within-constraints-faq-2", "question": "What if the constraint makes the work worse?", "answer": "Discard the variant or change the constraint. The rule is a temporary generator of alternatives, not a requirement that deserves to survive when the artifact becomes less useful."}
+      ],
+      "body": {
+        "intro": {"html": "<p>An open brief can create a large search space before anything concrete exists. A temporary constraint gives the next draft an edge: one dimension is deliberately limited so you can make something different and judge it. The constraint has no authority beyond the variant it helps produce.</p>"},
+        "sections": [
+          {"slug": "locate", "title": "1. Locate the open-ended part", "html": "<p>Identify where choice is expanding faster than progress: too many formats, tools, features, visual directions, story structures, ingredients, or implementation paths. Keep the rest of the brief unchanged.</p>"},
+          {"slug": "constraint", "title": "2. Constrain one dimension", "html": "<p>Choose one rule that is clear and reversible. Examples include using fewer components, fitting the idea into a shorter format, explaining it for one audience, removing one feature, or working inside a bounded session. Do not stack arbitrary rules until the exercise becomes the problem.</p>"},
+          {"slug": "variant", "title": "3. Produce a separate variant", "html": "<p>Make the constrained version in a copy, sketch, branch, or draft. Follow the temporary rule long enough to produce something comparable, and resist adding more options before the first variant exists.</p>"},
+          {"slug": "judge", "title": "4. Judge the artifact, not the constraint", "html": "<p>Compare the variant with the real brief. Keep a clearer structure, stronger omission, simpler implementation, or other concrete improvement when it helps. Remove the constraint when it no longer serves the work.</p>"}
+        ]
+      }
+    },
+    "daily-priority-review-coach": {
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "subtitle": "Use the task list to make decisions, not to rehearse everything you owe.",
+      "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated user cohorts and retention results, unsupported time-savings, arbitrary review durations and archival thresholds, and pseudo-optimized task counts with a bounded task-list maintenance workflow.",
+      "forbidden_public_fragments": ["order of magnitude", "n=120", "75%", "40%", "23%", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use a short task-list review to decide what is still active, what the next visible action is, and what should be parked, delegated, or removed.",
+        "whatYouDo": "Scan the open list, close or park items that are no longer active, rewrite vague active work as a concrete next action, identify blocked items and their dependency, choose the small set that deserves attention now, and stop the review before it turns into doing the tasks themselves.",
+        "checkIn": "What became clearer, what was removed or parked, which item is blocked, and what is the next action I can actually take?"
+      },
+      "faq": [
+        {"id": "daily-priority-review-coach-faq-1", "question": "Do I need to review every open task every day?", "answer": "No. Focus on the active horizon that can affect current commitments. Larger backlogs can have their own less frequent maintenance process."},
+        {"id": "daily-priority-review-coach-faq-2", "question": "What if reviewing a task reveals a large planning problem?", "answer": "Capture a separate planning action with the required context and return to the review. The review should clarify the work queue, not absorb every piece of work it discovers."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A task list becomes less useful when it mixes active commitments, stale ideas, blocked work, vague projects, and items that already finished. A small review restores meaning by making a few explicit decisions and leaving each important item in a state that supports action.</p>"},
+        "sections": [
+          {"slug": "scan", "title": "1. Scan the active horizon", "html": "<p>Look at work that can affect current deadlines, commitments, dependencies, or near-term choices. Do not open the entire historical backlog unless that backlog is the object of the review.</p>"},
+          {"slug": "clean", "title": "2. Close, park, delegate, or clarify", "html": "<p>Remove completed items, park ideas that are not active, delegate work that has another owner, and rewrite vague items so the next physical or informational action is visible. Mark a dependency when no action is currently possible.</p>"},
+          {"slug": "choose", "title": "3. Choose the current attention set", "html": "<p>From the clarified list, select the small set that deserves attention based on deadlines, value, dependencies, and available capacity. Keep the remaining active work visible without promoting it all to the same priority.</p>"},
+          {"slug": "stop", "title": "4. Stop before review becomes execution", "html": "<p>If an item needs substantial planning or work, create the appropriate next action and leave it for its own block. End the review when the list is actionable enough to support the next decision; perfect organization is not the goal.</p>"}
+        ]
+      }
+    }
+  }
+}

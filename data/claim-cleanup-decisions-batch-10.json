@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-10",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch nine completed and before any batch-ten rewrite was applied.",
+  "selection_order": [
+    "conversation-chunking-nlp-coach",
+    "count-the-moments-tracker",
+    "couples-cooldown-protocol",
+    "cross-disciplinary-insight-lenses"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 609,
+    "actionable_under_policy": 492,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch preserves only bounded low-risk operational procedures. It removes unsupported quantitative, first-party, psychological, physiological and performance claims, adds no source and promotes no entry to reviewed.",
+  "entries": [
+    {
+      "slug": "conversation-chunking-nlp-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication", "conflict-repair"],
+      "decision": "Remove unsupported NLP and cognitive-framing mechanisms, fabricated team outcomes, quantified alignment effects, fixed timing rules and emotional-state inference. Preserve a plain communication move: when discussion is too abstract ask for a concrete example or constraint; when details lack a shared criterion ask about the broader purpose, then use the answer as information rather than as a guaranteed resolution technique."
+    },
+    {
+      "slug": "count-the-moments-tracker",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["habits-consistency"],
+      "decision": "Remove unsupported attention and memory mechanisms, fabricated field trials, arbitrary thresholds defining a moment, target counts and quantified wellbeing implications. Preserve an optional capture-and-review archive for experiences the user personally wants to remember, with an explicit boundary that the tally is not a score for happiness, presence, gratitude or memory quality."
+    },
+    {
+      "slug": "couples-cooldown-protocol",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["conflict-repair", "clear-communication"],
+      "decision": "Remove clinical and physiological mechanism claims, fabricated couples outcomes, universal timer lengths, heart-rate and breathing targets, fixed calming activities and unsupported habit-formation rules. Preserve a low-risk disagreement pause: communicate that the discussion is paused rather than abandoned, agree on a credible return point, stop continuing the argument during the break and check mutual willingness before resuming. Add a safety boundary for threats, coercion or violence."
+    },
+    {
+      "slug": "cross-disciplinary-insight-lenses",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["creative-problem-solving", "problem-solving"],
+      "decision": "Remove fabricated internal experiments, unsupported decision and idea-generation effects, arbitrary field counts and timeboxes, and pseudo-statistical sample-size and significance rules. Preserve cross-disciplinary transfer as hypothesis generation: state the real problem, borrow one relevant pattern, write the mapping and where it breaks, identify assumptions and validate the resulting idea using evidence appropriate to the destination domain and decision stakes."
+    }
+  ]
+}

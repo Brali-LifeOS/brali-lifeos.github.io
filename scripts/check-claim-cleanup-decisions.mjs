@@ -8,6 +8,7 @@ const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'u
 const fail = message => { throw new Error(`Claim cleanup decision check failed: ${message}`); };
 const sorted = values => [...values].sort((left, right) => left.localeCompare(right));
 const same = (left, right) => JSON.stringify(sorted(left)) === JSON.stringify(sorted(right));
+const allowedDispositions = new Set(['rewrite-practical', 'restrict']);
 
 const history = await loadClaimCleanupHistory(root);
 const policy = await readJson('data/claim-cleanup-policy.json');
@@ -46,35 +47,54 @@ for (const batchRecord of history.batches) {
     if (decision.previous_status !== 'pending-review') fail(`${decision.slug}: previous status drift`);
     if (!(decision.previous_enforced_categories?.length > 0)) fail(`${decision.slug}: previous enforced categories are missing`);
     if (decision.previous_source_recorded !== false) fail(`${decision.slug}: source boundary drift`);
-    if (decision.disposition !== 'rewrite-practical') fail(`${decision.slug}: unsupported disposition ${decision.disposition}`);
+    if (!allowedDispositions.has(decision.disposition)) fail(`${decision.slug}: unsupported disposition ${decision.disposition}`);
     if (!(decision.decision?.length >= 80)) fail(`${decision.slug}: decision rationale is too short`);
-    if (!(decision.resulting_topics?.length >= 1)) fail(`${decision.slug}: resulting Topics are missing`);
-
-    const override = registry.entries?.[decision.slug];
-    if (!override) fail(`${decision.slug}: missing protocol content override`);
-    if (override.evidence_status !== 'practical') fail(`${decision.slug}: protocol override is not practical`);
-    if (!(override.forbidden_public_fragments?.length >= 4)) fail(`${decision.slug}: insufficient regression fragments`);
 
     const trust = evidenceBySlug.get(decision.slug);
     if (!trust) fail(`${decision.slug}: missing evidence record`);
-    if (trust.status !== 'practical' || trust.indexable !== true) fail(`${decision.slug}: effective status is not indexable practical`);
-    if (trust.source?.recorded !== false) fail(`${decision.slug}: practical rewrite unexpectedly records a source`);
-    if ((trust.claims?.categories ?? []).length !== 0 || (trust.claims?.enforcedCategories ?? []).length !== 0) {
-      fail(`${decision.slug}: claim markers remain after rewrite: ${JSON.stringify(trust.claims?.categories ?? [])}`);
-    }
-    if (claimDebtBySlug.has(decision.slug)) fail(`${decision.slug}: completed rewrite remains in claim-debt report`);
-    if (!indexable.has(decision.slug)) fail(`${decision.slug}: missing from indexable set`);
 
-    const protocol = feedBySlug.get(decision.slug);
-    if (!protocol) fail(`${decision.slug}: missing from trusted protocol feed`);
-    const actualTopics = (trust.ontology?.topics ?? []).map(topic => topic.id);
-    if (!same(actualTopics, decision.resulting_topics ?? [])) {
-      fail(`${decision.slug}: ontology topics ${JSON.stringify(actualTopics)} != ${JSON.stringify(decision.resulting_topics ?? [])}`);
+    if (decision.disposition === 'rewrite-practical') {
+      if (!(decision.resulting_topics?.length >= 1)) fail(`${decision.slug}: resulting Topics are missing`);
+
+      const override = registry.entries?.[decision.slug];
+      if (!override) fail(`${decision.slug}: missing protocol content override`);
+      if (override.evidence_status !== 'practical') fail(`${decision.slug}: protocol override is not practical`);
+      if (!(override.forbidden_public_fragments?.length >= 4)) fail(`${decision.slug}: insufficient regression fragments`);
+
+      if (trust.status !== 'practical' || trust.indexable !== true) fail(`${decision.slug}: effective status is not indexable practical`);
+      if (trust.source?.recorded !== false) fail(`${decision.slug}: practical rewrite unexpectedly records a source`);
+      if ((trust.claims?.categories ?? []).length !== 0 || (trust.claims?.enforcedCategories ?? []).length !== 0) {
+        fail(`${decision.slug}: claim markers remain after rewrite: ${JSON.stringify(trust.claims?.categories ?? [])}`);
+      }
+      if (claimDebtBySlug.has(decision.slug)) fail(`${decision.slug}: completed rewrite remains in claim-debt report`);
+      if (!indexable.has(decision.slug)) fail(`${decision.slug}: missing from indexable set`);
+
+      const protocol = feedBySlug.get(decision.slug);
+      if (!protocol) fail(`${decision.slug}: missing from trusted protocol feed`);
+      const actualTopics = (trust.ontology?.topics ?? []).map(topic => topic.id);
+      if (!same(actualTopics, decision.resulting_topics ?? [])) {
+        fail(`${decision.slug}: ontology topics ${JSON.stringify(actualTopics)} != ${JSON.stringify(decision.resulting_topics ?? [])}`);
+      }
+      if (!same((protocol.ontology?.topics ?? []).map(topic => topic.id), decision.resulting_topics ?? [])) {
+        fail(`${decision.slug}: protocol-feed ontology topics drift`);
+      }
+      continue;
     }
-    if (!same((protocol.ontology?.topics ?? []).map(topic => topic.id), decision.resulting_topics ?? [])) {
-      fail(`${decision.slug}: protocol-feed ontology topics drift`);
+
+    if (trust.status !== 'restricted' || trust.indexable !== false) fail(`${decision.slug}: restricted disposition did not produce a withheld restricted record`);
+    if (trust.source?.recorded !== false) fail(`${decision.slug}: restricted disposition unexpectedly records a source`);
+    if (indexable.has(decision.slug)) fail(`${decision.slug}: restricted disposition remains in the indexable set`);
+    if (feedBySlug.has(decision.slug)) fail(`${decision.slug}: restricted disposition remains in the trusted protocol feed`);
+    if (!claimDebtBySlug.has(decision.slug)) fail(`${decision.slug}: restricted disposition lost its unresolved claim-debt record`);
+    if (decision.resulting_topics && !same((trust.ontology?.topics ?? []).map(topic => topic.id), decision.resulting_topics)) {
+      fail(`${decision.slug}: restricted ontology topics drift`);
     }
   }
 }
 
-console.log(`Claim cleanup decisions verified: ${history.entries.length} practical rewrites across ${history.batches.length} batch(es); all claim markers removed, indexable, topic-mapped and present in the trusted feed.`);
+const dispositionCounts = Object.fromEntries(
+  [...new Set(history.entries.map(entry => entry.disposition))]
+    .sort((left, right) => left.localeCompare(right))
+    .map(disposition => [disposition, history.entries.filter(entry => entry.disposition === disposition).length]),
+);
+console.log(`Claim cleanup decisions verified: ${history.entries.length} completed decisions across ${history.batches.length} batch(es); dispositions=${JSON.stringify(dispositionCounts)}; practical rewrites are claim-clean, indexable and trusted while restricted dispositions remain withheld with debt preserved.`);

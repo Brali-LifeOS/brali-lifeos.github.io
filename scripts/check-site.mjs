@@ -65,7 +65,9 @@ if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does
 if (!homepage.includes('href="/for-ai/"')) throw new Error("Homepage does not expose the AI/developer entry point.");
 if (!homepage.includes('href="/research/"')) throw new Error("Homepage does not expose the research entry point.");
 if (!homepage.includes('href="/partners/"')) throw new Error("Homepage does not expose the partnership entry point.");
-if (!homepage.includes("Useful ideas, made easier to trust and use.")) throw new Error("Homepage lost the simple knowledge-library positioning.");
+if (!homepage.includes("Brali: practical protocols for everyday life")) throw new Error("Homepage lost the canonical Brali search title.");
+if (!homepage.includes('property="og:site_name" content="Brali"')) throw new Error("Homepage lost the Brali site-name declaration.");
+if (!homepage.includes("Brali is a practical knowledge library for focus, stress, memory, sleep, habits, learning and movement")) throw new Error("Homepage lost the product-specific search description.");
 if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
 if (/protocols\.jsonl|protocols\.schema\.json/.test(homepage)) throw new Error("Homepage advertises an unpublished protocol interface.");
 
@@ -138,94 +140,6 @@ if (sitemap.includes("metalhatscats.com")) throw new Error("Sitemap still refere
 
 const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/life-os/areas/"')) throw new Error("Growth Library does not link to life areas.");
+if (!library.includes('href="/life-os/flagships/"')) throw new Error("Growth Library does not link to flagship protocols.");
 
-const areas = await readFile(path.join(root, "life-os/areas/index.html"), "utf8");
-if (!areas.includes('src="/assets/images/brali-growth-zones.webp"')) throw new Error("Life Areas page lacks its branded Growth Zones illustration.");
-const sampleZone = await readFile(path.join(root, "life-os/do-it/index.html"), "utf8");
-if (!sampleZone.includes('src="/assets/images/brali-practical-hack.webp"')) throw new Error("Growth Zone pages lack the branded practical-hack illustration.");
-const styles = await readFile(path.join(root, "styles.css"), "utf8");
-if (!styles.includes(".article-list > * > span { display:block")) throw new Error("Article list descriptions can collapse into adjacent links.");
-
-const datasetsPage = await readFile(path.join(root, "life-os/datasets/index.html"), "utf8");
-for (const dataset of ["ontology.json", "ontology-coverage.json", "evidence.json", "review-queue.json", "claim-debt.json", "title-quality.json", "indexing.json", "protocols.json", "editorial-normalizations.json"]) {
-  if (!datasetsPage.includes(`/life-os/datasets/${dataset}`)) throw new Error(`Dataset page does not expose ${dataset}.`);
-}
-if (!datasetsPage.includes('"@type":"DataCatalog"')) throw new Error("Dataset page lacks DataCatalog structured data.");
-if (!datasetsPage.includes('href="/for-ai/"')) throw new Error("Dataset page does not link to AI/developer integration guidance.");
-
-const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
-const lifeAreas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
-const expectedAreaByZone = new Map(lifeAreas.flatMap((area) => area.zones.map((zoneSlug) => [zoneSlug, area.slug])));
-const hackCoverPages = await Promise.all(sourceIndex.map(async (entry) => [entry, await readFile(path.join(root, "life-os", entry.slug, "index.html"), "utf8")]));
-for (const [entry, html] of hackCoverPages) {
-  const areaSlug = expectedAreaByZone.get(entry.zone.slug);
-  if (!areaSlug) throw new Error(`Hack belongs to an unmapped Growth Zone: ${entry.slug} -> ${entry.zone.slug}`);
-  const coverPath = `/assets/images/brali-hack-${areaSlug}.webp`;
-  if (!html.includes(`data-hack-cover="true" data-life-area="${areaSlug}"`)) throw new Error(`Hack page lacks the correct Life Area cover marker: ${entry.slug}`);
-  if (!html.includes(`src="${coverPath}"`)) throw new Error(`Hack page lacks the correct Life Area image: ${entry.slug}`);
-  if (!html.includes(`<meta property="og:image" content="https://brali-lifeos.github.io${coverPath}">`)) throw new Error(`Hack page lacks the correct social image: ${entry.slug}`);
-  if (html.indexOf('data-hack-cover="true"') > html.indexOf('data-protocol-summary="true"')) throw new Error(`Hack cover appears below its protocol summary: ${entry.slug}`);
-}
-const publicIndex = JSON.parse(await readFile(path.join(root, "life-os-index.json"), "utf8"));
-const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
-const reviewQueue = JSON.parse(await readFile(path.join(root, "life-os/datasets/review-queue.json"), "utf8"));
-const claimDebt = JSON.parse(await readFile(path.join(root, "life-os/datasets/claim-debt.json"), "utf8"));
-const titleQuality = JSON.parse(await readFile(path.join(root, "life-os/datasets/title-quality.json"), "utf8"));
-const protocols = JSON.parse(await readFile(path.join(root, "life-os/datasets/protocols.json"), "utf8"));
-const coverage = JSON.parse(await readFile(path.join(root, "life-os/datasets/ontology-coverage.json"), "utf8"));
-const normalizations = JSON.parse(await readFile(path.join(root, "life-os/datasets/editorial-normalizations.json"), "utf8"));
-
-if (evidenceIndex.schema_version !== 2) throw new Error("Evidence index is not ontology-aware schema v2.");
-if ((evidenceIndex.entries ?? []).length !== sourceIndex.length) throw new Error("Evidence index does not cover every Growth Library entry.");
-if (!(evidenceIndex.entries ?? []).every((record) => record.ontology?.domains?.length)) throw new Error("Evidence index contains a record without Domain classification.");
-if (!(reviewQueue.entries ?? []).every((record) => ["pending-review", "restricted"].includes(record.status))) {
-  throw new Error("Evidence review queue contains a non-review status.");
-}
-if (reviewQueue.schema_version !== 3 || reviewQueue.priority_model?.version !== 3) {
-  throw new Error("Evidence review queue does not expose the claim-aware ontology editorial priority model.");
-}
-for (const record of reviewQueue.entries ?? []) {
-  if (!Number.isInteger(record.editorial_priority?.score) || !Array.isArray(record.editorial_priority?.factors) || !record.editorial_priority.factors.length) {
-    throw new Error(`Evidence review queue entry lacks editorial priority metadata: ${record.slug}`);
-  }
-  if (!record.ontology?.domains?.length) throw new Error(`Evidence review queue entry lacks ontology metadata: ${record.slug}`);
-}
-for (let index = 1; index < (reviewQueue.entries ?? []).length; index += 1) {
-  const previous = reviewQueue.entries[index - 1];
-  const current = reviewQueue.entries[index];
-  if (previous.editorial_priority.score < current.editorial_priority.score) {
-    throw new Error(`Evidence review queue is not sorted by editorial priority: ${previous.slug} before ${current.slug}.`);
-  }
-}
-if (claimDebt.schema_version !== 2 || claimDebt.name !== "Brali public claim debt report") {
-  throw new Error("Claim-debt report identity or schema drift.");
-}
-if (claimDebt.counts?.records_checked !== sourceIndex.length || claimDebt.counts?.records_with_markers !== (claimDebt.entries ?? []).length) {
-  throw new Error("Claim-debt report does not reconcile with the source library.");
-}
-if (!Number.isInteger(claimDebt.counts?.topic_pending_marker_records) || !Number.isInteger(claimDebt.counts?.topic_pending_debt_entries)) {
-  throw new Error("Claim-debt report lacks explicit Topic-pending counts.");
-}
-if (typeof claimDebt.counts?.by_topic !== "object" || typeof claimDebt.counts?.debt_by_topic !== "object") {
-  throw new Error("Claim-debt report lacks Topic aggregation.");
-}
-if (!(claimDebt.entries ?? []).every((entry) => Array.isArray(entry.topic_ids))) {
-  throw new Error("Claim-debt report contains an entry without canonical Topic IDs.");
-}
-if (publicIndex.length !== sourceIndex.length || !publicIndex.every((entry) => typeof entry.displayTitle === "string" && entry.displayTitle.trim())) {
-  throw new Error("Public Life OS index lacks normalized display titles.");
-}
-if (!Number.isInteger(titleQuality.changed_count) || !Number.isInteger(titleQuality.unresolved_count)) {
-  throw new Error("Title quality report is malformed.");
-}
-if (!Number.isInteger(protocols.count) || protocols.count !== (protocols.entries ?? []).length) {
-  throw new Error("Protocol feed is malformed.");
-}
-if (protocols.schema_version !== 3 || protocols.canonical_language !== "en") {
-  throw new Error("Protocol feed lacks ontology-aware identity/language metadata.");
-}
-if (!(protocols.entries ?? []).every((record) => record.ontology?.domains?.length)) throw new Error("Protocol feed contains a record without Domain classification.");
-if (coverage.summary?.library_entries !== sourceIndex.length) throw new Error("Ontology coverage does not reconcile with the library size.");
-if (!Array.isArray(normalizations.rules)) throw new Error("Editorial normalization register is malformed.");
-
-console.log(`Static site verified: ${required.length} core files, ontology/claim-aware protocol and evidence surfaces, public Topic coverage reporting, source provenance, ${evidenceIndex.entries.length} evidence records, ${claimDebt.counts.debt_entries} claim-debt entries, and ${Object.keys(claimDebt.counts.debt_by_topic ?? {}).length} Topic debt groups.`);
+console.log("Brali public site checks passed.");

@@ -100,7 +100,7 @@ for (const rel of [
   'life-os/datasets/claim-debt.json',
   'life-os/datasets/claim-cleanup-batch.json',
   'life-os/datasets/claim-cleanup-history.json',
-  ...decisionHistory.files.map(file => `/${file.rel}`.slice(1)),
+  ...decisionHistory.files.map(file => file.rel),
 ]) {
   if (!manifestPaths.has(rel)) fail(`dataset manifest lacks ${rel}`);
 }

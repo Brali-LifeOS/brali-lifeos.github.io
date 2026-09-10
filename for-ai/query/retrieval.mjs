@@ -15,7 +15,7 @@ const stem = token => {
 export const tokens = value => normalize(value).replace(/[^\p{L}\p{N}]+/gu, ' ').trim().split(/\s+/).filter(Boolean).filter(t => !STOP.has(t)).map(stem);
 const tokenSet = value => new Set(tokens(value));
 const intersectionCount = (a, b) => [...a].filter(x => b.has(x)).length;
-export const isSafetyBoundary = query => /severe depression|suicid|self[- ]harm|diagnos|treat(?:ment)? .* without|instead of professional care|medication plan|prescription|kill myself|hurt myself|суицид|самоубий|навредить себе/i.test(String(query));
+export const isSafetyBoundary = query => /severe depression|suicid|self[- ]harm|diagnos|treat(?:ment)? .* without|instead of professional care|medication plan|prescription (?:drug|medication|medicine|dose|dosage|plan)|prescrib(?:e|ed|ing)?\b[^.!?]{0,40}\b(?:drug|medication|medicine)|kill myself|hurt myself|суицид|самоубий|навредить себе/i.test(String(query));
 const BOUNDARY_CUE = /cause|proven|prove|always|everyone|best|optimal|interval|frequency|duration|prescrib|treat|guarantee|scientif|доказ|научн|причин/i;
 const localTopicId = value => String(value || '').replace(/^brali:topic:/, '').replace(/^brali:/, '');
 const protocolSlug = value => typeof value === 'string' ? value.replace(/^brali:protocol:/, '').replace(/^brali:/, '') : String(value?.slug || value?.protocol_id || value?.id || value?.canonical_id || '').replace(/^brali:protocol:/, '').replace(/^brali:/, '');

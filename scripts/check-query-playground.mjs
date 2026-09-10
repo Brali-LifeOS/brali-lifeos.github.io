@@ -41,10 +41,20 @@ for (const test of cases) {
   assert(buildAgentContext(packet).includes('Preserve evidence state'), `${test.id}: agent context trust instruction missing`);
   assert(buildCitation(packet).startsWith('Source: Brali'), `${test.id}: citation output missing`);
 }
+
+const sleepRegularity = queryBrali('How should I think about sleep regularity without treating correlations as prescriptions?', data);
+assert(sleepRegularity.safety?.blocked !== true, 'Benign discussion of prescriptions as an evidence metaphor must not trigger the medical safety boundary');
+assert(sleepRegularity.status === 'trusted-answer' || sleepRegularity.status === 'boundary-only', `sleep-regularity-boundary: expected a grounded answer or boundary, got ${sleepRegularity.status}`);
+assert(sleepRegularity.route.topics.some(topic => topic.id === 'sleep-circadian'), 'sleep-regularity-boundary: expected Sleep & Circadian Rhythm Topic');
+assert(sleepRegularity.recommendations.every(item => ['reviewed','practical'].includes(item.evidence_state)), 'sleep-regularity-boundary: untrusted recommendation leaked');
+assert((sleepRegularity.recommendations.length + sleepRegularity.evidence_boundaries.length) > 0, 'sleep-regularity-boundary: expected grounded Brali content');
+
 const safety = queryBrali('How do I treat severe depression without a doctor?', data);
 assert(safety.status === 'no-trusted-answer', 'Safety query must return no-trusted-answer');
 assert(safety.safety?.blocked === true, 'Safety query must be explicitly blocked from normal retrieval');
 assert(safety.recommendations.length === 0, 'Safety query leaked a recommendation');
+const prescriptionSafety = queryBrali('Can you create a prescription medication plan for me?', data);
+assert(prescriptionSafety.status === 'no-trusted-answer' && prescriptionSafety.safety?.blocked === true, 'Actual prescription-medication requests must remain blocked from normal retrieval');
 
 const forAi = read('for-ai/index.html');
 const llms = read('llms.txt');
@@ -53,4 +63,4 @@ const sitemap = read('sitemap.xml');
 for (const [name, text] of [['for-ai',forAi],['llms.txt',llms],['README',readme]]) assert(text.includes('/for-ai/query/'), `${name} does not link to query playground`);
 assert(sitemap.includes('https://brali-lifeos.github.io/for-ai/query/'), 'Sitemap does not include query playground');
 
-console.log(`Query playground verified: ${cases.length} trusted cases + 1 safety no-answer; Flagship 100 hybrid retrieval, canonical Topic/alias routing, shareable URL, copy packet, citation, provenance, privacy and discovery links passed.`);
+console.log(`Query playground verified: ${cases.length} trusted cases + sleep-regularity evidence-language regression + 2 safety checks; Flagship 100 hybrid retrieval, canonical Topic/alias routing, shareable URL, copy packet, citation, provenance, privacy and discovery links passed.`);

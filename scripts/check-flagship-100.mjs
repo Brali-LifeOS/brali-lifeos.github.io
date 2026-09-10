@@ -11,6 +11,7 @@ const fail = (message) => { throw new Error(`Flagship 100 validation failed: ${m
 
 const policy = read("data/flagship-100-policy.json");
 const startHere = read(policy.anchor_source);
+const gold20 = read("data/gold-20-candidates.json");
 const areas = read("data/life-areas.json");
 const core = read("life-os/datasets/flagship-100.json");
 const candidates = read("life-os/datasets/flagship-100-candidates.json");
@@ -25,9 +26,12 @@ const legacyPage = fs.readFileSync(path.join(ROOT, "life-os/flagships/100/index.
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 
 const target = Number(policy.target_count || 100);
+const goldCandidateSlugs = (gold20.candidates || []).map((entry) => String(entry.slug || "").trim()).filter(Boolean);
 if (core.count !== target || core.entries?.length !== target || core.target_met !== true) fail(`expected exactly ${target} selected protocols`);
 if (candidates.summary?.selected !== target) fail("candidate queue selected count differs from core");
 if (candidates.summary?.eligible < target) fail("candidate queue has fewer eligible protocols than target");
+if (core.summary?.gold_candidate_anchors !== goldCandidateSlugs.length) fail("Gold 20 retrieval-anchor count drift");
+if (candidates.summary?.gold_candidate_anchors !== goldCandidateSlugs.length) fail("candidate queue Gold 20 retrieval-anchor count drift");
 const selectedCandidates = (candidates.entries || []).filter((entry) => entry.selected);
 if (selectedCandidates.length !== target) fail("candidate selected flags do not match target");
 
@@ -52,11 +56,13 @@ for (const entry of core.entries || []) {
 }
 
 for (const slug of Object.values(startHere.areas || {})) if (!selectedSlugs.has(slug)) fail(`manual Start Here anchor ${slug} is missing`);
+for (const slug of goldCandidateSlugs) if (!selectedSlugs.has(slug)) fail(`Gold 20 retrieval anchor ${slug} is missing`);
 for (const area of areas) if (!(core.summary?.life_areas?.[area.slug] > 0)) fail(`Life Area ${area.slug} has no Flagship 100 coverage`);
+if (manifest.counts?.gold_candidate_flagships !== goldCandidateSlugs.length) fail("manifest Gold 20 retrieval-anchor count drift");
 
 if (JSON.stringify(api) !== JSON.stringify(core)) fail("API flagships endpoint differs from canonical Flagship 100 dataset");
 if (!(apiIndex.endpoints || []).includes("flagships.json")) fail("API index does not expose flagships.json");
-if (!openapi.paths?.[`/api/${platform.api_version}/flagships.json`]) fail("OpenAPI does not describe flagships endpoint");
+if (!openapi.paths?.[`/api/${platform.api_version}/flagships.json`]) fail("OpenAPI does not describe Flagship endpoint");
 
 for (const rel of ["life-os/datasets/flagships.json", "life-os/datasets/flagship-100.json", "life-os/datasets/flagship-100-candidates.json", "data/flagship-100-policy.json"]) {
   const item = (manifest.files || []).find((entry) => entry.path === rel);
@@ -70,4 +76,4 @@ if (!sitemap.includes("<loc>https://brali-lifeos.github.io/life-os/flagships/cur
 if (sitemap.includes("<loc>https://brali-lifeos.github.io/life-os/flagships/100/</loc>")) fail("sitemap still exposes the legacy numeric-only Flagship 100 route");
 if (!legacyPage.includes('rel="canonical" href="https://brali-lifeos.github.io/life-os/flagships/curated-100/"')) fail("legacy Flagship 100 route lacks canonical migration");
 
-console.log(`Flagship 100 verified: ${target} unique trusted protocols, all 7 Start Here anchors retained, ${core.summary.topic_mapped} topic-mapped, ${core.summary.source_linked} source-linked.`);
+console.log(`Flagship 100 verified: ${target} unique trusted protocols, all 7 Start Here anchors and ${goldCandidateSlugs.length} Gold 20 retrieval anchors retained, ${core.summary.topic_mapped} topic-mapped, ${core.summary.source_linked} source-linked.`);

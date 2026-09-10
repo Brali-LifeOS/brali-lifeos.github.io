@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "process-of-elimination-tracker": {
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "subtitle": "Remove clearly unfit options before comparing what remains.",
+      "description": "Define a few decision constraints, eliminate options that clearly fail them, then compare the smaller remaining set without pretending arbitrary thresholds are universal rules.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated decision-time and satisfaction statistics, invented first-party observations, arbitrary universal numeric thresholds, and pseudo-optimized probe rules with a bounded elimination workflow for low-stakes decisions.",
+      "forbidden_public_fragments": ["40–65%", "above 80%", "30–70%", "n=12 internal pilot", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "When a decision has too many options, write the constraints that really matter, remove options that clearly violate them, and compare only what survives.",
+        "whatYouDo": "List the viable options, write two to four constraints that are genuinely relevant to this decision, eliminate only options that clearly fail a constraint, inspect what remains for missing information and trade-offs, then choose the next reversible test or decision step.",
+        "checkIn": "Which constraint removed an option, what uncertainty remains among the survivors, and what is the smallest next step that would improve the decision?"
+      },
+      "faq": [
+        {"id": "process-of-elimination-tracker-faq-1", "question": "Should every decision use numeric cutoffs?", "answer": "No. Use a number only when the constraint is genuinely numerical, such as a hard budget or deadline. Do not invent precision merely to make the decision look objective."},
+        {"id": "process-of-elimination-tracker-faq-2", "question": "What if an eliminated option could still be valuable?", "answer": "Check whether the constraint is truly mandatory. If it is, eliminate the option. If it is only a preference, keep the option and compare the trade-off instead of disguising a preference as a hard rule."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Elimination is useful when a decision has accumulated too many plausible options. The aim is not to manufacture certainty. It is to remove choices that clearly cannot satisfy the constraints you already have, so attention can move to the smaller set that deserves real comparison.</p>"},
+        "sections": [
+          {"slug": "define-decision", "title": "1. Define the decision and the real constraints", "html": "<p>Write the decision in one sentence and list the constraints that would genuinely make an option unacceptable: a fixed budget, an immovable date, a required capability, a legal or safety boundary, or another condition you can defend. Keep preferences separate from hard constraints.</p>"},
+          {"slug": "eliminate", "title": "2. Eliminate only clear failures", "html": "<p>Review each option against the constraints. Remove it only when the failure is clear enough to explain in one sentence. If the evidence is missing, mark the uncertainty instead of treating an assumption as a failed test.</p>"},
+          {"slug": "compare", "title": "3. Compare the survivors", "html": "<p>Once the list is smaller, compare the remaining options on the trade-offs that matter. Ask what is still unknown, which difference could change the choice, and whether two options are effectively equivalent for the current purpose.</p>"},
+          {"slug": "next-step", "title": "4. Choose a decision or an information-gaining step", "html": "<p>If one option now fits clearly better, choose it. If the remaining uncertainty could change the result, take the smallest reversible action that produces useful information: ask for a quote, run a small test, request a missing fact, or set a short decision checkpoint.</p>"}
+        ]
+      }
+    },
+    "plan-tasks-by-peak-energy": {
+      "title": "Match Demanding Work to Your Own High-Energy Windows",
+      "subtitle": "Observe your pattern before rearranging the calendar.",
+      "description": "Track when demanding work feels easier or harder for several normal days, protect a promising window for one important task, and keep the change only if your own results justify it.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported chronobiology effect sizes, fabricated productivity observations, caffeine and nutrition prescriptions, health-adjacent advice, and rigid timing claims with a self-observation and scheduling experiment.",
+      "forbidden_public_fragments": ["10–30%", "20–40%", "80–120 mg", "glucose crash", "ADHD or PTSD", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Notice when you personally handle demanding work more easily, then test moving one high-value task into that window instead of assuming a universal best time of day.",
+        "whatYouDo": "For several ordinary workdays, note your perceived energy and the kind of work you were doing at a few points in the day, look for a repeatable high-energy window, place one demanding task there, protect the block from avoidable interruptions, and compare the result with your usual schedule.",
+        "checkIn": "When did demanding work feel easiest today, what task did I place there, and did the scheduling change produce a result worth repeating?"
+      },
+      "faq": [
+        {"id": "plan-tasks-by-peak-energy-faq-1", "question": "Is there one best time of day for difficult work?", "answer": "This protocol does not assume one. Work schedules, sleep, responsibilities, task type, and individual patterns differ. Observe your own normal days before changing the calendar."},
+        {"id": "plan-tasks-by-peak-energy-faq-2", "question": "What if I cannot move meetings or deadlines?", "answer": "Use the idea only where you have control. Even moving one demanding task, preparation block, or review session may be enough to test whether timing helps in your environment."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Some parts of the day may be better than others for demanding work, but a useful schedule starts with observation rather than a universal clock rule. Treat timing as a small work-design experiment: find a pattern in your own days, move one important task, and judge the change from the work produced.</p>"},
+        "sections": [
+          {"slug": "observe", "title": "1. Observe a few normal days", "html": "<p>At a few natural points in the day, note your perceived energy, what you were doing, and whether focused thinking felt easy or effortful. Do not change sleep, food, caffeine, medication, or other health-related routines for this experiment; the goal is simply to observe the schedule you already have.</p>"},
+          {"slug": "find-window", "title": "2. Look for a repeatable window", "html": "<p>After several days, look for a period that repeatedly appears workable for writing, analysis, design, debugging, or another demanding task. Treat a single unusually good or bad day as weak evidence and keep the conclusion tentative.</p>"},
+          {"slug": "test", "title": "3. Move one demanding task", "html": "<p>Choose one high-value task and place a bounded work block in the promising window. Reduce avoidable interruptions where possible and define the output you want before the block begins. Leave the rest of the schedule largely unchanged so the test remains interpretable.</p>"},
+          {"slug": "review", "title": "4. Keep, adapt, or discard the pattern", "html": "<p>Compare what happened with your usual schedule: Did you start more easily? Did you finish a useful unit of work? Did protecting the window create unacceptable coordination costs elsewhere? Keep the scheduling rule only when the trade-off is useful in your real environment.</p>"}
+        ]
+      }
+    },
+    "oblique-strategies-prompt-cards": {
+      "title": "Use One Random Constraint to Break a Creative Stalemate",
+      "subtitle": "Generate a different version before judging it.",
+      "description": "When familiar approaches keep producing the same result, draw or select one bounded prompt, create a reversible alternative for a few minutes, and keep only the part that improves the actual work.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated internal pilots, completion-rate and idea-count effects, pseudo-optimal deck sizes and timers, and overclaimed creativity mechanisms with a simple reversible prompt-constraint exercise.",
+      "forbidden_public_fragments": ["58% to 91%", "1.8x", "n=12 people", "56 sessions", "sweet spot", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "If you are repeating the same creative move, introduce one arbitrary but safe constraint, make a quick alternative, then judge the artifact rather than the prompt.",
+        "whatYouDo": "Name the part of the work that feels stuck, select one prompt or constraint without hunting for the perfect one, create a separate reversible version under that constraint, stop after one useful pass, compare it with the original, and keep only the changes that improve the brief.",
+        "checkIn": "What constraint did I try, what changed in the artifact, and which part—if any—is worth carrying into the real version?"
+      },
+      "faq": [
+        {"id": "oblique-strategies-prompt-cards-faq-1", "question": "Does the random prompt decide what I should make?", "answer": "No. The prompt only creates a temporary constraint that may reveal another direction. You still judge the result against the real goal, audience, ethics, and requirements."},
+        {"id": "oblique-strategies-prompt-cards-faq-2", "question": "What if the prompt is irrelevant or unsafe for the brief?", "answer": "Discard or reinterpret it. Keep the experiment reversible and do not let a creativity exercise override legal, safety, brand, accessibility, or factual constraints."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Creative work often stalls because the same framing keeps generating the same answer. A random prompt can be useful as a temporary constraint: it forces one different pass without claiming that randomness is inherently better. The output still has to earn its place in the real artifact.</p>"},
+        "sections": [
+          {"slug": "name-stuck", "title": "1. Name what is stuck", "html": "<p>Point to a concrete unit: the opening paragraph, layout, product flow, diagram, headline, problem angle, or another part of the work. A prompt is easier to evaluate when you know which artifact it is supposed to perturb.</p>"},
+          {"slug": "choose-constraint", "title": "2. Choose one bounded constraint", "html": "<p>Draw or select one prompt without searching for the perfect instruction. Use a generic transformation such as subtracting an element, reversing the sequence, changing the scale, making a rough visual version, or explaining the idea to a different audience. Skip any prompt that conflicts with the brief or safety boundaries.</p>"},
+          {"slug": "make-variant", "title": "3. Make a reversible variant", "html": "<p>Work in a copy, branch, sketch, or scratch area. Follow the constraint long enough to produce a visibly different version, but do not confuse obedience to the prompt with quality. The exercise has succeeded when it gives you something concrete to compare.</p>"},
+          {"slug": "integrate", "title": "4. Keep only what improves the work", "html": "<p>Compare the variant with the original against the actual brief. Keep a stronger structure, clearer contrast, useful omission, or other specific improvement. Discard the rest without trying to justify the prompt after the fact.</p>"}
+        ]
+      }
+    },
+    "phase-transition-ritual-tracker": {
+      "title": "Create a Clear Handoff Between Two Activities",
+      "subtitle": "Close one mode before starting the next.",
+      "description": "Use a short, ordinary handoff at a recurring boundary—such as work to personal time—to record what is unfinished, reset the environment, and make the first action of the next activity explicit.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace physics analogies presented as behavioral mechanisms, fabricated field trials and self-report effects, health-adjacent breathing and mobility prescriptions, arbitrary optimized durations, and unsupported psychological claims with a practical context-handoff checklist.",
+      "forbidden_public_fragments": ["20–40%", "increased separation", "27%", "18 minutes", "6 minutes", "predictive model in our brain", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "At a recurring boundary between activities, briefly close the current loop and make the next mode visible instead of letting unfinished details spill across the transition.",
+        "whatYouDo": "Choose one recurring transition, write down any unfinished item that must be resumed later, perform one simple closing action in the environment, name the first action of the next activity, then leave the handoff alone unless it proves useful enough to repeat.",
+        "checkIn": "What did I close, what did I preserve for later, what is the first action in the next mode, and did this handoff reduce avoidable switching friction?"
+      },
+      "faq": [
+        {"id": "phase-transition-ritual-tracker-faq-1", "question": "Does the handoff need a fixed ritual or timer?", "answer": "No. Use the smallest repeatable sequence that closes the current activity and makes the next one clear. A fixed duration is not required."},
+        {"id": "phase-transition-ritual-tracker-faq-2", "question": "What belongs in a work-to-personal-time handoff?", "answer": "A minimal version can be: record the next work action, close or put away the work surface, and name the first personal activity you are moving to. Add steps only if they solve a recurring problem."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Transitions become messy when one activity ends without leaving a clear state for later and the next begins without an obvious first action. A short handoff can make the boundary operational: preserve what matters, change the immediate context, and start the next mode deliberately.</p>"},
+        "sections": [
+          {"slug": "choose-boundary", "title": "1. Choose one recurring boundary", "html": "<p>Pick a transition that regularly creates friction: work to personal time, planning to execution, one project to another, meeting to focused work, or another repeated switch. Do not build rituals for every transition at once.</p>"},
+          {"slug": "close-loop", "title": "2. Preserve the unfinished state", "html": "<p>Write one short note containing the next action, open question, or item that must be resumed later. The note should make re-entry easier without turning the handoff into a new planning session.</p>"},
+          {"slug": "change-context", "title": "3. Make one visible closing move", "html": "<p>Use an ordinary action that fits the environment: close the work document, clear the relevant surface, put equipment away, change rooms, or switch the tools needed for the next task. The action is a boundary marker, not a treatment or performance intervention.</p>"},
+          {"slug": "start-next", "title": "4. Name the first action of the next mode", "html": "<p>State the first concrete thing you will do next and begin it. After several uses, keep the handoff only if it reduces repeated reopening, forgotten state, or avoidable context switching. Simplify it if the handoff itself becomes friction.</p>"}
+        ]
+      }
+    }
+  }
+}

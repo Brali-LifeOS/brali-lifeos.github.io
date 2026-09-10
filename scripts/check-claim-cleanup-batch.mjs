@@ -46,6 +46,7 @@ const expectedSelected = [];
 const expectedBlocked = [];
 let eligibleTotal = 0;
 for (const queueEntry of reviewQueue.entries ?? []) {
+  if (decisionHistory.completedSlugSet.has(queueEntry.slug)) continue;
   const debt = debtBySlug.get(queueEntry.slug);
   if (!debt || !(debt.debt_reasons ?? []).length) continue;
   const actionable = debt.status === policy.actionable_rule.status
@@ -99,7 +100,7 @@ for (const rel of [
   'life-os/datasets/claim-debt.json',
   'life-os/datasets/claim-cleanup-batch.json',
   'life-os/datasets/claim-cleanup-history.json',
-  ...decisionHistory.files.map(file => file.rel),
+  ...decisionHistory.files.map(file => `/${file.rel}`.slice(1)),
 ]) {
   if (!manifestPaths.has(rel)) fail(`dataset manifest lacks ${rel}`);
 }

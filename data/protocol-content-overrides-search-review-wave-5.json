@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "communication-blocks-scheduler": {
+      "title": "Batch Routine Messages Around Real Response Obligations",
+      "subtitle": "Protect focused work without hiding time-sensitive channels.",
+      "description": "Set predictable windows for non-urgent messages, keep an explicit path for work that genuinely cannot wait, and adjust the schedule when it conflicts with actual response duties.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported context-switching statistics, invented time-savings, rigid universal message schedules, fabricated observations, and pseudo-optimized block lengths with a role-aware communication batching workflow.",
+      "forbidden_public_fragments": ["20–30%", "60–120 minutes", "80% of the benefit", "22-minute blocks", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Batch non-urgent email and chat when your role allows it, while keeping a clear route for work that genuinely cannot wait.",
+        "whatYouDo": "List the communication channels you monitor, separate channels that require rapid coverage from routine messages, place routine processing into predictable windows, define an exception path for genuinely time-sensitive items, turn longer requests into tasks, and review whether your response obligations are still being met.",
+        "checkIn": "Which messages waited until the planned window, which exception was genuinely time-sensitive, and did the schedule still meet the response expectations of my role?"
+      },
+      "faq": [
+        {"id": "communication-blocks-scheduler-faq-1", "question": "What if my role requires fast responses?", "answer": "Keep the coverage your role actually requires. Apply batching only to channels or message types that can safely wait, and preserve the agreed escalation route for urgent work."},
+        {"id": "communication-blocks-scheduler-faq-2", "question": "How many message windows should I schedule?", "answer": "There is no fixed number. Start from deadlines, service expectations, collaboration needs, and the amount of routine communication you receive. Adjust the windows when the schedule creates missed obligations or unnecessary switching."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Communication batching is a work-design choice, not a rule that everyone should answer messages at the same cadence. The useful version separates routine traffic from genuinely time-sensitive work, gives colleagues a predictable response pattern, and preserves an escalation path when waiting would create a real problem.</p>"},
+        "sections": [
+          {"slug": "map-obligations", "title": "1. Map the response obligations", "html": "<p>List the channels you monitor and the kinds of requests that arrive there. Mark which items have an agreed response target, which can wait until a normal processing window, and which need a clear escalation route. Do not batch work that your role requires you to cover continuously.</p>"},
+          {"slug": "set-windows", "title": "2. Set predictable windows for routine traffic", "html": "<p>Choose message-processing windows that fit the real calendar rather than an idealized schedule. During a window, scan the routine channels, answer short items, and move anything requiring substantial work into the task system with an owner and next action.</p>"},
+          {"slug": "exceptions", "title": "3. Define the exception path", "html": "<p>Decide how genuinely time-sensitive work should reach you outside the routine windows: a designated channel, a call, an agreed escalation tag, or another method already understood by the team. Keep the exception narrow enough that it remains meaningful.</p>"},
+          {"slug": "review", "title": "4. Review the operating fit", "html": "<p>After using the schedule, check for missed commitments, delayed handoffs, duplicated checking, or unnecessary interruptions. Keep the batching pattern when it supports both focused work and response obligations; change it when either side is being damaged.</p>"}
+        ]
+      }
+    },
+    "if-then-rules-productivity": {
+      "title": "Write an If-Then Rule for a Recurring Work Decision",
+      "subtitle": "Pre-decide one safe response to one clear cue.",
+      "description": "Turn a repeated low-stakes choice into a simple cue-and-action rule, add a fallback for common exceptions, and revise the rule when it creates friction or no longer fits the work.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported effect-size claims, fabricated outcomes and observations, health-adjacent triggers, wearable thresholds, and rigid repetition schedules with a bounded cue-action decision rule for ordinary work.",
+      "forbidden_public_fragments": ["double the odds", "2×", "Cohen", "heart rate", "4–5 km/h", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "For a recurring low-stakes decision, write one clear cue and one pre-decided action so you do not have to invent the response from scratch each time.",
+        "whatYouDo": "Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work.",
+        "checkIn": "Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed?"
+      },
+      "faq": [
+        {"id": "if-then-rules-productivity-faq-1", "question": "What makes a useful cue?", "answer": "Use something you can recognize without interpretation, such as a meeting ending, a task entering a particular status, a file arriving, or a deadline reaching a defined checkpoint."},
+        {"id": "if-then-rules-productivity-faq-2", "question": "Should the rule always be followed automatically?", "answer": "No. The rule is a convenience for a recurring low-stakes choice. It should never override safety, access controls, approvals, contractual duties, or new information that materially changes the situation."}
+      ],
+      "body": {
+        "intro": {"html": "<p>An if-then rule is useful when the same small decision keeps returning. Instead of re-deciding from zero, you define the cue and a reasonable response in advance. The rule stays subordinate to context: it should be easy to revise, easy to stop, and narrow enough that exceptions are visible.</p>"},
+        "sections": [
+          {"slug": "choose-situation", "title": "1. Choose one recurring situation", "html": "<p>Pick a moment that appears often enough to be annoying but is still low stakes: a meeting ending, a request waiting for clarification, a task becoming blocked, or a routine handoff. Avoid building a rule around rare or consequential decisions that deserve fresh judgment.</p>"},
+          {"slug": "write-rule", "title": "2. Write the cue and the action", "html": "<p>Make the cue observable and the response concrete. For example: <em>If a meeting ends with an unresolved owner, then I add an owner question to the follow-up before closing my notes.</em> The action should be small enough to execute without creating a second planning problem.</p>"},
+          {"slug": "fallback", "title": "3. Add one important fallback", "html": "<p>Name a common condition that should suspend or redirect the rule. A fallback might be an approval requirement, unavailable information, an urgent interruption, or a handoff to another owner. The fallback prevents a convenient shortcut from becoming blind automation.</p>"},
+          {"slug": "revise", "title": "4. Keep only rules that still fit", "html": "<p>When the cue occurs, use the rule and notice the result. If the rule repeatedly creates cleanup, gets ignored, or no longer matches the workflow, narrow it, replace it, or remove it. A deleted bad rule is an improvement.</p>"}
+        ]
+      }
+    },
+    "top-3-daily-focus-planner": {
+      "title": "Choose Up to Three Priority Outcomes for the Day",
+      "subtitle": "Use a small list as a capacity boundary, not a magic number.",
+      "description": "Choose a small set of outcomes that deserves protected attention today, define what done means, and move the rest to a visible backlog instead of pretending every task is equally urgent.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated completion samples, unsupported habit-decay and estimation claims, universal time budgets, morning-work prescriptions, and invented first-party observations with a capacity-based daily prioritization checklist.",
+      "forbidden_public_fragments": ["60–70%", "35% to 63%", "150–240 minutes", "20–30%", "41%", "62%", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use a small daily priority list to make capacity visible. Three can be a convenient upper bound, but one or two outcomes may be enough when the work is large or the day is constrained.",
+        "whatYouDo": "Review today's deadlines, dependencies, and available capacity; choose up to three outcomes that most deserve progress; define what done means for each; reserve appropriate time where possible; place other tasks in a visible backlog; and re-plan explicitly when genuinely urgent work changes the day.",
+        "checkIn": "Which priority outcomes moved today, what changed the plan, and what should be carried forward rather than silently added to tomorrow?"
+      },
+      "faq": [
+        {"id": "top-3-daily-focus-planner-faq-1", "question": "Why up to three instead of exactly three?", "answer": "The number is a capacity boundary, not a requirement. One large deliverable can be enough for a constrained day, while three smaller outcomes may fit another day."},
+        {"id": "top-3-daily-focus-planner-faq-2", "question": "What if more than three things are urgent?", "answer": "Triage the consequences, dependencies, owners, and deadlines. Some items may need delegation, renegotiation, escalation, or a smaller definition of done. Do not hide overload by placing everything in the priority set."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A short priority list is useful because it makes a choice visible: these are the outcomes that deserve protected attention today, and the rest still exists but is not pretending to be equally important. The list should reflect capacity and obligations, not a belief that three is universally optimal.</p>"},
+        "sections": [
+          {"slug": "scan", "title": "1. Scan the day before choosing", "html": "<p>Look at deadlines, commitments, dependencies, meetings, and realistic available capacity. Separate work that must happen today from work that merely feels noisy or easy to start.</p>"},
+          {"slug": "choose", "title": "2. Choose up to three outcomes", "html": "<p>Select the smallest set of outcomes that best protects the important commitments of the day. Prefer outcome language such as <em>send the reviewed proposal</em> or <em>resolve the blocking decision</em> rather than broad categories such as <em>work on project</em>.</p>"},
+          {"slug": "define-done", "title": "3. Define done and park the rest", "html": "<p>Write a clear completion condition for each priority and put non-priority work into a visible backlog or later slot. Parking is part of the method: an item should not disappear simply because it is not in today's small set.</p>"},
+          {"slug": "replan", "title": "4. Re-plan explicitly when the day changes", "html": "<p>If genuinely urgent work arrives, decide which existing priority moves, shrinks, delegates, or waits. Do not quietly grow the list while keeping the fiction that everything remains a top priority. At the end of the day, carry unfinished work forward deliberately.</p>"}
+        ]
+      }
+    },
+    "default-choice-audit": {
+      "title": "Audit a Default Before Letting It Decide for You",
+      "subtitle": "Keep convenient defaults when they fit; change them when they do not.",
+      "description": "For a setting, subscription, workflow, or template with meaningful consequences, identify the current default, compare the relevant alternatives, and make a deliberate keep-or-change decision with an easy rollback when possible.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported uptake effects, invented attention savings and annualized impact, fabricated personal observations, arbitrary audit cadences, and overgeneralized privacy or security conclusions with a bounded default-choice review.",
+      "forbidden_public_fragments": ["60–90%", "180 minutes", "$240/year", "375 minutes", "75 hours", "30 minutes/day", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Review defaults that have meaningful cost, access, privacy, workflow, or compatibility consequences instead of changing settings merely because they are defaults.",
+        "whatYouDo": "Pick one consequential default, identify what is currently selected, state what you need from the setting or service, compare only the realistic alternatives, note switching costs and important constraints, make a keep-or-change decision, and record how to reverse it when reversal matters.",
+        "checkIn": "What default did I inspect, what requirement mattered most, why did I keep or change it, and can I reverse the decision if the new choice is worse?"
+      },
+      "faq": [
+        {"id": "default-choice-audit-faq-1", "question": "Should I change every default setting?", "answer": "No. A default can be perfectly suitable. Prioritize choices with meaningful consequences for money, access, privacy, workflow, compatibility, or recurring effort, and leave trivial defaults alone."},
+        {"id": "default-choice-audit-faq-2", "question": "What if I cannot tell which option is better?", "answer": "Keep the current choice when the downside of changing is unclear, or make a reversible change and record the previous setting. Seek authoritative guidance when the option affects safety, legal obligations, account access, or another high-stakes area."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A default is simply the option selected before you make an active choice. Sometimes that is exactly what you need. The useful habit is not to oppose defaults; it is to inspect the consequential ones and decide whether the selected option still fits your current requirements.</p>"},
+        "sections": [
+          {"slug": "pick-default", "title": "1. Pick a consequential default", "html": "<p>Choose a setting, subscription, workflow, template, permission, or account option that affects recurring cost, access, privacy, compatibility, or repeated work. Skip trivial choices whose consequences are too small to justify an audit.</p>"},
+          {"slug": "state-requirement", "title": "2. State what you actually need", "html": "<p>Before comparing alternatives, write the requirement in plain language. For example: <em>I need this notification only when action is required today</em>, or <em>I need this subscription while project X is active</em>. This prevents the audit from becoming random preference switching.</p>"},
+          {"slug": "compare", "title": "3. Compare realistic alternatives", "html": "<p>Look only at options you could genuinely use. Note recurring cost, lost capability, extra steps, access implications, compatibility, and any condition that would make the alternative unsuitable. Use the provider's documentation for details that matter.</p>"},
+          {"slug": "decide", "title": "4. Keep, change, and record rollback", "html": "<p>Keep the default when it fits. Change it when another option clearly serves the requirement better and the switching cost is acceptable. When reversal matters, record the previous value or the steps needed to restore it, then revisit only if the new choice creates a real problem.</p>"}
+        ]
+      }
+    }
+  }
+}

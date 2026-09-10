@@ -51,12 +51,12 @@ assert(integrationHtml.includes('does not exist') || integrationHtml.includes('d
 const citation = json('cite/index.json');
 const citationHtml = read('cite/index.html');
 const cff = read('CITATION.cff');
-assert(citation.author === 'Dzmitryi Kharlanau', 'Citation JSON author drifted');
+assert(citation.author === 'MetalHatsCats', 'Citation JSON author drifted');
 assert(citation.dataset_title === 'Brali Practical Knowledge Library', 'Citation dataset title drifted');
 assert(citation.license === 'CC-BY-NC-SA-4.0', 'Citation JSON license drifted');
-assert(cff.includes('family-names: Kharlanau') && cff.includes('given-names: Dzmitryi'), 'CITATION.cff author does not match public citation guidance');
+assert(cff.includes('name: "MetalHatsCats"'), 'CITATION.cff author does not match public citation guidance');
 assert(cff.includes('license: CC-BY-NC-SA-4.0'), 'CITATION.cff license does not match public citation guidance');
-for (const required of ['Dzmitryi Kharlanau', 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
+for (const required of ['MetalHatsCats', 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
 
 const forAi = read('for-ai/index.html');
 assert(forAi.includes('data-brali-adoption') && forAi.includes('/for-ai/integrations/') && forAi.includes('/cite/'), 'For-AI page must expose integrations and citation entry points');

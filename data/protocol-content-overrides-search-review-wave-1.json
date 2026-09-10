@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "apply-80-20-principle": {
+      "title": "Use 80/20 as a Prioritization Hypothesis",
+      "description": "Rank the few inputs most likely to matter, test that ranking against observed results, and revise it instead of treating 80/20 as a law or exact forecast.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace an inherited Pareto article containing pseudo-precise effect sizes, arbitrary work intervals, fabricated observations, and ROI-style claims with a bounded prioritization experiment.",
+      "forbidden_public_fragments": ["Research shows habits can take 21-66 days to form", "At MetalHatsCats", "90-minute"],
+      "lifeOsSource": {
+        "hack": "Treat 80/20 as a prompt to look for concentration, not as a promise that exactly 20% of inputs create exactly 80% of results.",
+        "whatYouDo": "Define one outcome, list the inputs that could influence it, rank a small number by expected impact and cost, choose one to test, and compare the observed result with your initial ranking. Revise the ranking when the data disagrees.",
+        "checkIn": "Which input actually changed the outcome, what did it cost, and what should move up, down, or out of the priority list?"
+      },
+      "faq": [
+        {"id": "apply-80-20-principle-faq-1", "question": "Does the result need to be exactly 80/20?", "answer": "No. The ratio is a memorable heuristic for looking for uneven contribution. Your real distribution may be different, and the point is to inspect it rather than force it to match a slogan."},
+        {"id": "apply-80-20-principle-faq-2", "question": "What if the highest-impact item is expensive or risky?", "answer": "Separate impact from cost, reversibility, dependencies, and risk. A lower-impact option can be the better next test when it is cheaper or safer to learn from."}
+      ],
+      "body": {
+        "intro": {"html": "<p>The 80/20 idea is most useful as a question: <em>is a small part of this system carrying a disproportionate share of the result?</em> It is not a universal ratio. Use it to create a ranking you can challenge with evidence.</p>"},
+        "sections": [
+          {"slug": "name-outcome", "title": "1. Name the outcome", "html": "<p>Choose one observable result: resolved incidents, useful leads, completed tasks, defects found, pages visited, or another outcome relevant to the problem. Avoid optimizing a proxy unless you can explain why it matters.</p>"},
+          {"slug": "rank-inputs", "title": "2. Rank plausible inputs", "html": "<p>List the activities, customers, causes, features, channels, or failure modes that could drive the outcome. Rank a small number by expected impact, cost, and confidence. Mark guesses as guesses.</p>"},
+          {"slug": "test-and-rerank", "title": "3. Test one priority, then re-rank", "html": "<p>Choose a reversible action that tests an important item near the top of the list. Decide what you will observe first. Compare what happened with the original ranking, promote inputs that repeatedly matter, and demote weak ones. The useful output is a better allocation decision, not a perfect Pareto chart.</p>"}
+        ]
+      }
+    },
+    "batch-similar-tasks-planner": {
+      "title": "Batch Similar Tasks When Switching Is the Problem",
+      "description": "Group comparable low-risk tasks when repeated setup or context switching is slowing the work, then compare the batch with your normal flow and stop batching when responsiveness suffers.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported productivity percentages, invented switching costs, rigid batch durations, and fabricated observations with a reversible workflow experiment.",
+      "forbidden_public_fragments": ["Research shows habits can take 21-66 days to form", "At MetalHatsCats", "reclaim an hour"],
+      "lifeOsSource": {
+        "hack": "Batch tasks that use the same tools, information, or decision pattern when switching itself appears to be the bottleneck.",
+        "whatYouDo": "Pick one recurring task family, define what makes the tasks similar, collect a small batch, process it with the same setup, and record throughput, errors, waiting time, and missed urgency. Compare with the ordinary workflow before expanding the batch.",
+        "checkIn": "Did batching reduce repeated setup without increasing delay, errors, or missed urgent work?"
+      },
+      "faq": [
+        {"id": "batch-similar-tasks-planner-faq-1", "question": "Should I batch every repetitive task?", "answer": "No. Batching can increase waiting time and hide urgent work. Use it where repeated setup is meaningful and where delaying individual items is acceptable."},
+        {"id": "batch-similar-tasks-planner-faq-2", "question": "How large should a batch be?", "answer": "There is no universal size. Start small enough that you can notice delay and quality problems, then adjust from observed workflow data."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Batching is a workflow option, not a productivity law. It can help when repeated setup dominates the work, and hurt when items are urgent, highly variable, or benefit from immediate feedback.</p>"},
+        "sections": [
+          {"slug": "find-switching-cost", "title": "1. Find the repeated setup", "html": "<p>Identify what you reload or re-decide each time: a system, dataset, template, communication channel, test environment, or decision rule. If there is little repeated setup, batching may add ceremony without value.</p>"},
+          {"slug": "define-safe-batch", "title": "2. Define a safe batch", "html": "<p>Collect a small set of comparable items. Keep urgent, exceptional, or high-risk work outside the batch unless the normal process explicitly supports it.</p>"},
+          {"slug": "run-and-review", "title": "3. Run, observe, and resize", "html": "<p>Track completed items, rework, waiting time, interruptions, and anything that became stale. Keep batching only if it reduces friction without damaging responsiveness or quality; otherwise split the batch or return to one-by-one flow.</p>"}
+        ]
+      }
+    },
+    "adopt-new-tools-at-work": {
+      "title": "Pilot a New Work Tool on a Reversible Task",
+      "description": "Evaluate a new tool on a low-risk workflow, define the decision criteria first, keep a fallback, and expand only after the observed result justifies the change.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated pilots, unsupported adoption metrics, medical-adjacent examples, and arbitrary success thresholds with a low-risk tool-evaluation protocol.",
+      "forbidden_public_fragments": ["Research shows habits can take 21-66 days to form", "At MetalHatsCats", "cardiologists", "surgeons"],
+      "lifeOsSource": {
+        "hack": "Test a new tool on a reversible, noncritical task before changing the wider workflow.",
+        "whatYouDo": "State the problem the tool should solve and the criteria that would justify adoption. Choose a low-risk task, define the current baseline, run the tool with a manual fallback, record errors, effort, output quality and user friction, then decide whether to reject, revise, extend, or adopt.",
+        "checkIn": "What changed versus the current workflow, what failure mode appeared, and is there enough evidence to expand the pilot?"
+      },
+      "faq": [
+        {"id": "adopt-new-tools-at-work-faq-1", "question": "Should I pilot the tool on real production work?", "answer": "Use a low-risk, reversible case first. Safety-critical, clinical, legal, financial, security-sensitive, or regulated workflows require the relevant approval, validation, and expert process."},
+        {"id": "adopt-new-tools-at-work-faq-2", "question": "What if the pilot is faster but less reliable?", "answer": "Treat that as a trade-off, not a win. Decide which criteria are non-negotiable and whether a narrower use case can keep the benefit without accepting the failure mode."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A new tool earns its place by improving a real workflow under its actual constraints. Start with a reversible test, preserve the fallback, and let observed trade-offs determine whether the change expands.</p>"},
+        "sections": [
+          {"slug": "define-problem", "title": "1. Define the job and decision criteria", "html": "<p>Write the problem in workflow terms. Specify what would have to improve and what must not degrade. Include non-negotiable security, privacy, quality, audit, and compliance constraints where relevant.</p>"},
+          {"slug": "choose-low-risk-pilot", "title": "2. Choose a low-risk pilot", "html": "<p>Select a task that is representative enough to teach you something but cheap to reverse. Keep the existing method available so the test cannot silently become a forced migration.</p>"},
+          {"slug": "observe-and-decide", "title": "3. Observe the full trade-off", "html": "<p>Record output quality, errors, operator effort, handoffs, reliability, and exceptions, including checking and repair time. Expand only when the observed result meets the criteria and important failure modes have owners.</p>"}
+        ]
+      }
+    },
+    "ai-question-bank-builder": {
+      "title": "Build an AI-Assisted Question Bank You Can Verify",
+      "description": "Use AI to draft varied practice questions from material you already have, verify every answer against the source, and keep only questions that test the knowledge you actually need.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported learning-effect percentages, rigid question ratios, fixed timing prescriptions, and research-sounding claims with a source-checked question-authoring workflow.",
+      "forbidden_public_fragments": ["10–30%", "6:3:1", "Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use AI as a question drafter, not as the authority for the answer.",
+        "whatYouDo": "Choose a source you need to learn, ask AI for questions that cover definitions, explanations, comparisons, application and error cases, verify every answer against the source, remove ambiguous or unsupported items, and practice from the cleaned bank.",
+        "checkIn": "Which questions exposed a gap, which answers could not be verified, and what should be corrected or added before the next practice round?"
+      },
+      "faq": [
+        {"id": "ai-question-bank-builder-faq-1", "question": "Can I trust the generated answer key?", "answer": "No by default. Check each answer against the source material or another authoritative reference before using it as a learning key."},
+        {"id": "ai-question-bank-builder-faq-2", "question": "How many questions should I generate?", "answer": "Enough to cover the important material without creating a review burden you will not use. Coverage and answer quality matter more than a fixed ratio or count."}
+      ],
+      "body": {
+        "intro": {"html": "<p>AI can cheaply produce many questions, which makes verification more important, not less. Separate generation from answer authority: draft broadly, check against the source, then practice only from the cleaned set.</p>"},
+        "sections": [
+          {"slug": "choose-source", "title": "1. Anchor the bank to a source", "html": "<p>Select the notes, manual, textbook section, specification, or other material you actually need to learn. State the scope so questions do not drift into adjacent facts that were never part of the target.</p>"},
+          {"slug": "generate-varied-questions", "title": "2. Generate varied questions", "html": "<p>Include recall, explanation, comparison, application, examples, counterexamples, and common-error checks when those formats fit the material. Avoid cosmetic paraphrases that test the same thing repeatedly.</p>"},
+          {"slug": "verify-and-edit", "title": "3. Verify the answer key and edit the bank", "html": "<p>Check each answer against the source. Delete questions that depend on missing context or an answer you cannot verify. When practice exposes a gap, decide whether the problem is your knowledge or the question itself and revise accordingly.</p>"}
+        ]
+      }
+    },
+    "break-big-goals-into-steps": {
+      "title": "Turn a Large Goal into the Next Verifiable Step",
+      "description": "Define the finish condition, expose dependencies, split the goal into observable deliverables, and choose the smallest next step that creates information or progress.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported completion-rate claims, fabricated experiments, arbitrary duration rules, and broad motivational promises with a concrete decomposition protocol.",
+      "forbidden_public_fragments": ["30–50%", "34%", "17-minute", "Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Replace a vague large goal with a visible finish condition, a dependency map, and one next deliverable small enough to start.",
+        "whatYouDo": "Write what done looks like, list the major deliverables and external dependencies, split uncertain work until each next step has an observable output, choose the smallest useful step, complete it, and update the map from what you learned.",
+        "checkIn": "What became complete or clearer, what dependency blocks the next step, and what is the smallest observable deliverable now?"
+      },
+      "faq": [
+        {"id": "break-big-goals-into-steps-faq-1", "question": "How small should a step be?", "answer": "Small enough that you can tell when it is done and begin without first solving several hidden decisions. Do not split work merely to create a longer checklist."},
+        {"id": "break-big-goals-into-steps-faq-2", "question": "Should I plan every step before starting?", "answer": "No. Map enough to see the finish condition, major dependencies, and next useful action. Update the decomposition as new information changes the plan."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Large goals often hide several different problems: unclear finish conditions, dependencies, unknowns, and tasks that are still too broad to begin. Decomposition makes those boundaries visible without pretending the first plan will remain correct.</p>"},
+        "sections": [
+          {"slug": "define-done", "title": "1. Define what done means", "html": "<p>Write one observable finish condition. Replace labels such as <em>improve the site</em> with a result someone could inspect, test, approve, publish, or use.</p>"},
+          {"slug": "map-dependencies", "title": "2. Map deliverables and dependencies", "html": "<p>List the few outputs required for the finish condition and mark what depends on another person, decision, system, or unknown. Do not hide waiting behind a task label.</p>"},
+          {"slug": "choose-next-step", "title": "3. Choose a verifiable next step", "html": "<p>Break broad work into a deliverable or learning step with a visible result. Complete it, then revise the map: delete work that became unnecessary, add newly discovered dependencies, and choose the next useful deliverable.</p>"}
+        ]
+      }
+    },
+    "break-down-big-problems-triz": {
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "description": "Describe the unwanted result, expose the trade-off or contradiction, split the system into parts, and test a change that removes a constraint instead of merely optimizing around it.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace pseudo-quantified TRIZ outcomes, fabricated pilots, arbitrary timing rules, and broad superiority claims with a bounded problem-structuring exercise inspired by contradiction and separation.",
+      "forbidden_public_fragments": ["2.5×", "42%", "33%", "17-minute", "Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "When a problem resists ordinary optimization, write the contradiction explicitly and look for a way to separate the conflicting requirements by time, place, condition, component, or role.",
+        "whatYouDo": "State the unwanted outcome, map the main parts and interactions, write the trade-off as two requirements that appear to conflict, generate separation or redesign options, choose a reversible test, and record which assumption or constraint changed.",
+        "checkIn": "What contradiction did I expose, what separation or redesign did I test, and did it remove the conflict or only move it elsewhere?"
+      },
+      "faq": [
+        {"id": "break-down-big-problems-triz-faq-1", "question": "Is this a complete TRIZ method?", "answer": "No. This is a practical TRIZ-inspired structuring exercise using contradiction and separation prompts. It does not represent the full TRIZ body of methods or claim validated effect sizes."},
+        {"id": "break-down-big-problems-triz-faq-2", "question": "What if I cannot remove the trade-off?", "answer": "That is a valid result. Record which constraint appears real, which assumptions remain untested, and whether a conventional trade-off is currently the responsible choice."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Some problems stay hard because the current design treats a trade-off as fixed. A TRIZ-inspired pass asks whether conflicting requirements can be separated or whether the system can be changed so they no longer compete in the same way.</p>"},
+        "sections": [
+          {"slug": "state-unwanted-result", "title": "1. State the unwanted result", "html": "<p>Describe what happens now and where it appears in the system. Separate symptoms from constraints you know are real.</p>"},
+          {"slug": "write-contradiction", "title": "2. Write the contradiction", "html": "<p>Express the conflict as two requirements: what must improve and what must not become worse. Add the condition under which each requirement matters.</p>"},
+          {"slug": "separate-and-test", "title": "3. Separate, redesign, and test", "html": "<p>Ask whether the requirements can be separated by time, place, condition, component, role, or state. Run the smallest reversible test and inspect side effects. A solution that merely moves the conflict to another team, step, or failure mode has not removed it.</p>"}
+        ]
+      }
+    },
+    "aida-message-optimizer": {
+      "title": "Use AIDA as a Message Clarity Checklist",
+      "description": "Check whether a message earns attention, makes the relevant point understandable, explains why it matters, and gives the reader a clear next action without treating AIDA as a persuasion guarantee.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported response-rate improvements, fabricated A/B outcomes, and formula-like persuasion claims with a bounded editing checklist.",
+      "forbidden_public_fragments": ["Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use Attention, Interest, Desire, and Action as four editing questions, not as a promise that a message will persuade.",
+        "whatYouDo": "Name the audience and desired next step, review the opening for relevance, remove information that does not help understanding, explain the concrete value or consequence honestly, and end with one clear action the reader can accept, decline, or ignore.",
+        "checkIn": "Can the reader quickly tell why this matters, what is being asked, and what they should do next without exaggerated claims or hidden pressure?"
+      },
+      "faq": [
+        {"id": "aida-message-optimizer-faq-1", "question": "Does AIDA guarantee a better response rate?", "answer": "No. It is used here as an editing structure. Response depends on the offer, audience, timing, trust, channel, evidence, and many other factors."},
+        {"id": "aida-message-optimizer-faq-2", "question": "How do I avoid manipulative messaging?", "answer": "Keep claims checkable, state important conditions, do not manufacture urgency or social proof, and make the requested action clear enough to decline."}
+      ],
+      "body": {
+        "intro": {"html": "<p>AIDA can be used as four editing questions rather than a sales formula. The goal is not to force persuasion. It is to make the message easier to recognize, understand, evaluate, and act on.</p>"},
+        "sections": [
+          {"slug": "attention-interest", "title": "1. Attention and interest: relevance before theatrics", "html": "<p>Start with the reader's actual problem, context, decision, or desired result. Give the minimum context needed to understand the proposal. Prefer concrete language and evidence over generic hooks.</p>"},
+          {"slug": "desire-value", "title": "2. Desire: explain value without overclaiming", "html": "<p>Describe the plausible benefit, avoided cost, or consequence and the conditions attached to it. Do not invent proof, testimonials, scarcity, or guaranteed outcomes.</p>"},
+          {"slug": "action-next-step", "title": "3. Action: ask for one clear next step", "html": "<p>State what the reader can do next and what commitment it implies. Keep the action proportional to the evidence and make refusal or deferral possible when appropriate.</p>"}
+        ]
+      }
+    },
+    "attention-to-detail-trainer": {
+      "title": "Run a Detail Check Before You Ship",
+      "description": "Inspect a concrete artifact against a small checklist, run a second pass from a different angle, log anomalies, and improve the checklist from real misses rather than training vague hypervigilance.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported perception statistics, fabricated improvement timelines, invented pilot outcomes, and people-observation prompts with a bounded artifact verification routine.",
+      "forbidden_public_fragments": ["98%", "2–4 weeks", "Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Improve detail work by checking a real artifact against explicit failure modes, not by trying to notice everything.",
+        "whatYouDo": "Choose an artifact or environment where errors matter, write a short checklist from known failure modes, inspect once for completeness and once from a different perspective such as data consistency or user flow, record anomalies, fix them, and update the checklist when a new recurring miss appears.",
+        "checkIn": "What defect or ambiguity did the check find, which checklist item caught it, and what recurring miss should change the next review?"
+      },
+      "faq": [
+        {"id": "attention-to-detail-trainer-faq-1", "question": "Should I try to notice more details everywhere?", "answer": "No. Use attention where the cost of an error justifies it. A bounded checklist is more actionable than staying continuously alert."},
+        {"id": "attention-to-detail-trainer-faq-2", "question": "Does this involve observing other people?", "answer": "Not by default. Prefer artifacts, records, interfaces, or environments you are responsible for. Do not infer personal traits or monitor people without a legitimate purpose, consent, and applicable policy."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Attention to detail is easier to improve when the target is explicit. Instead of trying to become generally hyper-observant, define the failure modes that matter for a specific artifact and build a short verification loop around them.</p>"},
+        "sections": [
+          {"slug": "define-failure-modes", "title": "1. Define what can go wrong", "html": "<p>Choose a document, dataset, screen, configuration, report, package, or other artifact. List the few mistakes that would create real rework, confusion, or risk.</p>"},
+          {"slug": "run-two-passes", "title": "2. Run two different passes", "html": "<p>First check the known failure modes systematically. Then change perspective: follow the user flow, reconcile totals, trace links, compare source and output, or inspect naming consistency. Do not simply repeat the same scan faster.</p>"},
+          {"slug": "learn-from-misses", "title": "3. Learn from actual misses", "html": "<p>Log meaningful defects and near-misses. Add a checklist item only when it prevents a recurring class of error; remove checks that produce noise without changing decisions or quality.</p>"}
+        ]
+      }
+    },
+    "automate-routine-data-reports": {
+      "title": "Automate a Routine Report with Validation and Fallback",
+      "description": "Automate a stable reporting workflow only after defining source ownership, transformations, validation rules, freshness, failure handling, and a manual fallback.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated team savings, unsupported reliability targets, arbitrary engineering thresholds, and broad automation claims with a bounded report-automation readiness and control protocol.",
+      "forbidden_public_fragments": ["Research shows habits can take 21-66 days to form", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Automate a report only when the data path and failure behavior are explicit enough to validate.",
+        "whatYouDo": "Map the report consumer, source data, transformations and delivery step. Define validation rules for schema, completeness, freshness and key totals. Build a small automated path with logging and a visible failure state, keep a manual fallback, and stop publication when validation fails.",
+        "checkIn": "Did the automated report use the expected source, pass validation, arrive on time, and fail visibly when an assumption broke?"
+      },
+      "faq": [
+        {"id": "automate-routine-data-reports-faq-1", "question": "What should be automated first?", "answer": "Start with a stable, repeated transformation or delivery step whose inputs and expected output are well understood. Avoid automating an ambiguous business decision merely because it appears inside a report workflow."},
+        {"id": "automate-routine-data-reports-faq-2", "question": "What should happen when validation fails?", "answer": "Fail visibly, preserve the last trustworthy state where appropriate, notify the owner, and use the manual fallback or repair path. Do not silently publish a result that no longer meets the contract."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A report is not ready for automation merely because someone repeats it. Reliable automation needs an explicit data contract, validation, ownership, failure behavior, and a way to recover when an assumption changes.</p>"},
+        "sections": [
+          {"slug": "map-report-contract", "title": "1. Map the report contract", "html": "<p>Name the consumer, purpose, source systems, transformation logic, output, schedule, and owner. Mark manual judgments separately; do not hide them inside code without deciding whether they should be automated.</p>"},
+          {"slug": "define-validation", "title": "2. Define validation before automation", "html": "<p>Choose checks that would catch a wrong or stale report: expected schema, row or entity coverage, freshness, reconciled totals, duplicate rules, and important business constraints. Use thresholds only when they have a real operational basis.</p>"},
+          {"slug": "visible-failure", "title": "3. Build a visible failure and recovery path", "html": "<p>Log the run, surface validation failures, and stop or quarantine publication when the contract is broken. Assign an owner and preserve a manual recovery path. Review the ongoing monitoring and exception cost before expanding the automation.</p>"}
+        ]
+      }
+    }
+  }
+}

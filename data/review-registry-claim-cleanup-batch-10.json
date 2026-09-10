@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "evidence_overrides": {
+    "conversation-chunking-nlp-coach": {
+      "status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported NLP and cognitive-framing mechanisms, fabricated team outcomes, fixed timing rules and quantified alignment effects. The effective public record is narrowed to asking for broader purpose or concrete detail when a conversation is stuck at an unhelpful level of abstraction."
+    },
+    "count-the-moments-tracker": {
+      "status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained unsupported attention and memory mechanisms, fabricated field trials, arbitrary moment thresholds, daily-count prescriptions and wellbeing implications. The effective public record is a lightweight optional archive of experiences the user personally wants to remember."
+    },
+    "couples-cooldown-protocol": {
+      "status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained clinical and physiological framing, fabricated couples outcomes, fixed break durations, heart-rate and breathing targets and unsupported habit-formation rules. The effective public record is narrowed to explicitly pausing a low-risk disagreement and agreeing on a credible re-entry point."
+    },
+    "cross-disciplinary-insight-lenses": {
+      "status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "note": "The inherited article contained fabricated internal experiments, unsupported decision-improvement effects, arbitrary field/timebox rules and pseudo-statistical A/B guidance. The effective public record treats cross-disciplinary analogy as hypothesis generation followed by explicit mapping, assumption checks and destination-domain validation."
+    }
+  },
+  "ontology_overrides": {
+    "conversation-chunking-nlp-coach": {
+      "topic_ids": ["clear-communication", "conflict-repair"],
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali Taxonomy Curator (AI-assisted)",
+      "reason": "The effective protocol clarifies purpose or concrete detail when a conversation stalls. Clear Communication is primary; Conflict & Repair covers the disagreement case without preserving unsupported NLP framing."
+    },
+    "count-the-moments-tracker": {
+      "topic_ids": ["habits-consistency"],
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali Taxonomy Curator (AI-assisted)",
+      "reason": "The effective protocol is an optional repeatable capture-and-review habit. Habits & Consistency describes the operational behavior without implying a memory, mindfulness or wellbeing effect that has not been reviewed."
+    },
+    "couples-cooldown-protocol": {
+      "topic_ids": ["conflict-repair", "clear-communication"],
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali Taxonomy Curator (AI-assisted)",
+      "reason": "The effective protocol is a communication boundary for a low-risk disagreement with an explicit re-entry plan. Conflict & Repair is primary and Clear Communication captures the pause and return agreement."
+    },
+    "cross-disciplinary-insight-lenses": {
+      "topic_ids": ["creative-problem-solving", "problem-solving"],
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali Taxonomy Curator (AI-assisted)",
+      "reason": "The effective protocol uses analogy to generate a new angle, then requires explicit assumptions and validation in the real domain. Creative Problem Solving captures the transfer; Problem Solving captures hypothesis and validation discipline."
+    }
+  }
+}

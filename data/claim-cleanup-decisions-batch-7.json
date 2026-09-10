@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-07",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch six completed and before any batch-seven rewrite was applied.",
+  "selection_order": [
+    "chunk-complex-ideas-for-clarity",
+    "clarity-ladder-analyzer",
+    "clustering-illusion-guard",
+    "cognitive-dissonance-resolution"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 621,
+    "actionable_under_policy": 504,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch preserves only low-risk operational procedures. It removes inherited unsupported cognitive, statistical, first-party and performance claims, adds no source and promotes no entry to reviewed.",
+  "entries": [
+    {
+      "slug": "chunk-complex-ideas-for-clarity",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication", "information-management"],
+      "decision": "Remove unsupported working-memory and comprehension claims, fabricated internal outcomes, universal chunk counts, fixed timing and word limits and pseudo-precise audience or template multipliers. Preserve the useful structural operation: define the audience and decision, group related material, label the groups, keep the main path concise and move supporting detail into retrievable layers."
+    },
+    {
+      "slug": "clarity-ladder-analyzer",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication", "writing"],
+      "decision": "Remove unsupported rhetoric and cognitive-mechanism authority, fabricated recall and throughput effects, invented internal examples, fixed abstract-to-concrete ratios and timing prescriptions. Preserve a message-editing move: state the general point, add a concrete example or observable detail, connect the example back to the point and remove detail that does not serve the audience's task."
+    },
+    {
+      "slug": "clustering-illusion-guard",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "data-literacy"],
+      "decision": "Remove fabricated time savings and internal experiments, arbitrary sample cutoffs, probability thresholds, fold-change rules, financial action bands and claims that a short streak is or is not random. Preserve a bounded pattern check: record the full observation window and denominator, compare the streak with its broader context, look for measurement or environment changes and avoid changing a plan solely because a short sequence looks meaningful."
+    },
+    {
+      "slug": "cognitive-dissonance-resolution",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["critical-thinking", "cognitive-biases"],
+      "decision": "Remove unsupported named-study claims, fabricated forecasting and bias effects, exercise and nutrition prescriptions, numeric source-scoring rules, fixed search durations and equal-weight both-sides framing. Preserve a critical-thinking procedure: write the specific claim, record what currently supports it, seek the strongest credible counter-information, compare source relevance and independence, then keep, narrow or revise the claim explicitly."
+    }
+  ]
+}

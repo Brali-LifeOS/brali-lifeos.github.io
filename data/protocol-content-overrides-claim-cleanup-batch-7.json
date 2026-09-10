@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "chunk-complex-ideas-for-clarity": {
+      "title": "Organize Complex Information Around One Decision",
+      "subtitle": "Give the main path a small set of labeled parts and keep supporting detail easy to retrieve.",
+      "description": "Define the audience and decision, group related material into labeled parts, put the main path in a useful order, and move supporting detail into linked layers instead of either flattening everything or presenting every detail at once.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported working-memory and comprehension claims, fabricated internal outcomes, universal chunk counts, fixed timing and word limits and pseudo-precise audience or template multipliers with a bounded information-structure workflow.",
+      "forbidden_public_fragments": [
+        "improves comprehension by roughly 20–40% in controlled tests",
+        "addressing two audiences typically increases content length by ≈1.6×",
+        "templates reduce the time to produce a usable brief by ~35–50% in our tests",
+        "reduced meeting time and follow-up emails by 40–60%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Structure complex material around the audience's immediate task, then separate the main path from supporting detail without deleting the detail that may still matter.",
+        "whatYouDo": "Name the primary audience and the decision or action they need to understand. Group related material by purpose, give each group a descriptive label, order the groups into a main path, and move supporting definitions, examples, calculations or source detail into a layer that remains easy to retrieve.",
+        "checkIn": "What does the audience need to decide or do, which groups form the main path, what belongs in supporting detail, and can a reader find that detail when needed?"
+      },
+      "faq": [
+        {
+          "id": "chunk-complex-ideas-for-clarity-faq-1",
+          "question": "How many groups should I create?",
+          "answer": "Use the smallest set that preserves the distinctions the audience needs. If a group mixes unrelated purposes, split it. If several groups can be understood and used as one, combine them. The structure should follow the material rather than a universal count."
+        },
+        {
+          "id": "chunk-complex-ideas-for-clarity-faq-2",
+          "question": "What if I have several audiences?",
+          "answer": "Keep one stable underlying source and create different main paths when the audiences need different decisions or levels of detail. Do not force every audience through the same summary merely to avoid maintaining separate views."
+        },
+        {
+          "id": "chunk-complex-ideas-for-clarity-faq-3",
+          "question": "What should move out of the main path?",
+          "answer": "Move material that is useful for verification, implementation or deeper understanding but is not required to follow the immediate decision. Keep links or labels clear enough that the detail is not lost."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Complex information becomes difficult to use when every detail competes for the same level of attention. The alternative is not to delete nuance. Build a main path around the audience's immediate decision or action, then preserve definitions, examples, calculations and deeper context in labeled supporting layers.</p>"
+        },
+        "sections": [
+          {
+            "slug": "audience",
+            "title": "1. Define the audience and immediate task",
+            "html": "<p>State who needs the information and what they need to understand, decide, explain or do next. Use that task to distinguish essential context from material that can remain available without occupying the main path.</p>"
+          },
+          {
+            "slug": "group",
+            "title": "2. Group material by purpose",
+            "html": "<p>Put related facts, constraints, steps, definitions or examples together and give each group a descriptive label. A useful label tells the reader what role the group plays rather than merely repeating a section number.</p>"
+          },
+          {
+            "slug": "path",
+            "title": "3. Build the main path",
+            "html": "<p>Order the labeled groups so the audience can move from context to the important distinction and then to the decision or next action. Remove duplicate explanations from the main path, but keep necessary caveats where removing them would change the meaning.</p>"
+          },
+          {
+            "slug": "layers",
+            "title": "4. Preserve supporting layers",
+            "html": "<p>Place deeper detail in appendices, linked notes, expandable sections, source references or separate technical views. Make the connection to the main path explicit so a reader can inspect the detail without having to search the entire source again.</p>"
+          }
+        ]
+      }
+    },
+    "clarity-ladder-analyzer": {
+      "title": "Connect a General Point to a Concrete Example",
+      "subtitle": "Move from the idea to an observable detail, then explain what the detail means.",
+      "description": "State the general point, add a concrete example or observable detail that belongs to it, connect the example back to the point, and remove specifics that do not help the audience understand the message or next action.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported cognitive and rhetoric authority, fabricated recall and throughput effects, invented internal examples and rigid abstract-to-concrete ratios and timing prescriptions with a bounded message-editing move.",
+      "forbidden_public_fragments": [
+        "dropout by an estimated 30–50% in comprehension tests",
+        "remembered 42% more action items at 24 hours",
+        "improved listener recall by ~40% at 1 hour",
+        "In our dev tests, throughput improved by 18%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When a message feels too vague or too detailed, connect one general point with a concrete example and then state why the example belongs to that point.",
+        "whatYouDo": "Write the main point in plain language, choose an example, observation, step or verified figure that illustrates it, explain the connection in one sentence, and remove details that do not change understanding or action. If you began with a detail, reverse the sequence by stating the broader point it supports.",
+        "checkIn": "What is the general point, which concrete detail makes it easier to understand, what does that detail show here, and which specifics can be removed without changing the meaning?"
+      },
+      "faq": [
+        {
+          "id": "clarity-ladder-analyzer-faq-1",
+          "question": "Should I always start with the general point?",
+          "answer": "No. Start where the audience needs orientation. A concrete incident may be the clearest opening when the problem is unfamiliar; a general point may be better when the audience already knows the details. In either case, connect the two levels explicitly."
+        },
+        {
+          "id": "clarity-ladder-analyzer-faq-2",
+          "question": "What counts as a useful concrete detail?",
+          "answer": "Use a detail that answers a likely question about the point: what happened, what changed, what the step looks like, which constraint applies, or which verified value matters. Specificity that does not serve the message is only extra detail."
+        },
+        {
+          "id": "clarity-ladder-analyzer-faq-3",
+          "question": "How do I avoid oversimplifying?",
+          "answer": "Keep the qualification that would change the conclusion or next action. Move secondary detail elsewhere if necessary, but do not remove a boundary merely because it makes the sentence shorter."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Messages often fail in opposite directions: a broad label can leave the audience asking what it means here, while a pile of details can leave them asking why any of it matters. Connect the levels deliberately. State the point, show a relevant detail, and then say what the detail means for the point.</p>"
+        },
+        "sections": [
+          {
+            "slug": "point",
+            "title": "1. State the general point",
+            "html": "<p>Write the idea, principle, conclusion or concern in language the audience can recognize. Replace jargon when it hides the actual claim or decision. If the point is still too broad to guide a useful example, narrow it first.</p>"
+          },
+          {
+            "slug": "detail",
+            "title": "2. Add one relevant concrete detail",
+            "html": "<p>Choose an example, observed event, step, constraint, quote or verified figure that belongs directly to the point. Prefer a detail you can explain accurately over a dramatic example that only resembles the topic.</p>"
+          },
+          {
+            "slug": "bridge",
+            "title": "3. Explain the connection",
+            "html": "<p>State what the detail illustrates and why it matters to the current message. This bridge is especially important when the audience could interpret the same example in several ways.</p>"
+          },
+          {
+            "slug": "trim",
+            "title": "4. Remove detail that does not serve the task",
+            "html": "<p>Keep boundaries and facts that could change the conclusion. Move secondary context to a supporting layer and remove scene-setting, metrics or examples that do not help the audience understand, verify or act on the point.</p>"
+          }
+        ]
+      }
+    },
+    "clustering-illusion-guard": {
+      "title": "Check a Streak Before Treating It as a Pattern",
+      "subtitle": "Put the visible cluster back into its full observation window before changing a plan.",
+      "description": "When a short streak looks meaningful, record the complete observation window and denominator, compare the cluster with the broader history, check whether measurement or operating conditions changed, and avoid changing a plan solely because the sequence looks striking.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated time savings and internal experiments, arbitrary sample cutoffs, probability thresholds, fold-change rules and financial action bands with a bounded denominator-and-context check.",
+      "forbidden_public_fragments": [
+        "about 10–30 minutes per decision on average",
+        "coefficient of variation often 20–40%",
+        "If sample <30",
+        "If fold change > 3",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before changing a plan because of a striking streak, place the streak inside the complete set of observations and check whether the context or measurement changed.",
+        "whatYouDo": "Record what happened, the full period or set you are looking at, and the denominator behind the visible cluster. Compare it with the earlier history when available, note any change in measurement or operating conditions, identify plausible alternative explanations, and choose whether to act, gather more information or keep the current plan.",
+        "checkIn": "What streak caught my attention, what is the full denominator and observation window, what changed in the context, and would I make the same decision if the sequence looked less visually striking?"
+      },
+      "faq": [
+        {
+          "id": "clustering-illusion-guard-faq-1",
+          "question": "Does a short streak mean the pattern is random?",
+          "answer": "No. A short streak can reflect a real change, ordinary variation, a measurement change, selective attention or another cause. The protocol prevents the visual pattern alone from doing all the decision work."
+        },
+        {
+          "id": "clustering-illusion-guard-faq-2",
+          "question": "What if I do not know the baseline?",
+          "answer": "Record that gap explicitly. Compare with whatever relevant historical record is available, gather more information when the decision justifies it, or keep the action reversible rather than inventing a baseline."
+        },
+        {
+          "id": "clustering-illusion-guard-faq-3",
+          "question": "What about high-stakes statistical decisions?",
+          "answer": "Use the appropriate analytical method, domain policy or qualified statistical support. This quick check is for detecting when a visible cluster is driving the story; it is not a replacement for formal analysis."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A cluster attracts attention because nearby events look connected. Before turning that visual impression into a plan change, reconstruct the larger picture: what was observed, across which period or set, out of how many opportunities, and under which operating conditions.</p>"
+        },
+        "sections": [
+          {
+            "slug": "record",
+            "title": "1. Record the cluster without explaining it",
+            "html": "<p>Write the events or outcomes that caught your attention. Keep the first note descriptive. Do not add a cause, trend label or story until the broader observation set is visible.</p>"
+          },
+          {
+            "slug": "denominator",
+            "title": "2. Restore the denominator and observation window",
+            "html": "<p>Ask what the visible events are a subset of: all requests, releases, applications, transactions, days, checks, or other opportunities. Include the earlier period or comparison set that makes the streak interpretable.</p>"
+          },
+          {
+            "slug": "context",
+            "title": "3. Check for context and measurement changes",
+            "html": "<p>Look for a changed definition, instrumentation, reporting channel, customer mix, workflow, season, release, policy or selection rule. A different measurement process can create an apparent pattern even when the underlying process is not comparable.</p>"
+          },
+          {
+            "slug": "decision",
+            "title": "4. Separate the pattern check from the action",
+            "html": "<p>Decide what additional information would matter and how reversible the next action is. A striking sequence can justify attention without automatically justifying a large conclusion or irreversible response.</p>"
+          }
+        ]
+      }
+    },
+    "cognitive-dissonance-resolution": {
+      "title": "Stress-Test a Belief With Strong Counter-Information",
+      "subtitle": "Seek the strongest credible challenge to a specific claim, then record what changes.",
+      "description": "Write the specific claim you currently accept, note the strongest support you have, seek credible information that could challenge it, compare relevance and independence, then keep, narrow or revise the claim without giving weak counterclaims equal weight.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported named-study and forecasting claims, fabricated bias effects, health examples, numeric source scoring, fixed search durations and equal-weight both-sides framing with a bounded claim-update workflow.",
+      "forbidden_public_fragments": [
+        "Classic experiments show",
+        "improves forecasting accuracy in field studies",
+        "reductions in confirmation bias on the order of 20–30%",
+        "improved Brier scores by roughly 20–30%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When new information conflicts with a belief, turn the disagreement into a specific claim and deliberately look for the strongest credible information that could make you narrow or revise it.",
+        "whatYouDo": "Write the claim precisely, record what currently supports it, identify what kind of information would materially challenge it, seek the strongest relevant counter-information you can verify, compare source directness, relevance and independence, and record whether the claim stays, narrows or changes.",
+        "checkIn": "What is the exact claim, what currently supports it, what strong counter-information did I find, and did I keep, narrow or revise the claim for a stated reason?"
+      },
+      "faq": [
+        {
+          "id": "cognitive-dissonance-resolution-faq-1",
+          "question": "Does this mean giving both sides equal weight?",
+          "answer": "No. The purpose is to seek a serious challenge to your current view, not to balance strong information with a weak counterclaim. Weight material by directness, relevance, independence and traceability to the question."
+        },
+        {
+          "id": "cognitive-dissonance-resolution-faq-2",
+          "question": "What if the topic is medical, legal, financial or otherwise high stakes?",
+          "answer": "Use authoritative domain sources and qualified professional support where appropriate. This protocol can help structure the question, but it is not a substitute for the standards or expertise required by a high-stakes decision."
+        },
+        {
+          "id": "cognitive-dissonance-resolution-faq-3",
+          "question": "What if the counter-information changes only part of the claim?",
+          "answer": "Narrow the claim instead of forcing a complete reversal. Record which population, condition, timeframe, mechanism, exception or boundary changed so the updated statement is more precise than the one you started with."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Conflicting information often produces a binary reaction: defend the existing belief or replace it entirely. A better operational move is to make the claim precise and ask what strong, relevant information could change its boundary. The goal is an explicit update, not a ritual of collecting equal amounts of material for opposing positions.</p>"
+        },
+        "sections": [
+          {
+            "slug": "claim",
+            "title": "1. Write the claim you actually hold",
+            "html": "<p>Turn the broad belief into a statement specific enough to inspect. Include the context or boundary that matters. Avoid words such as <em>always</em> or <em>never</em> unless the claim truly depends on a universal condition.</p>"
+          },
+          {
+            "slug": "challenge",
+            "title": "2. Define what could materially challenge it",
+            "html": "<p>Before searching for confirming material, state what kind of counter-information would matter: a directly comparable case, a stronger source, a missing variable, a failed assumption, a different boundary, or a credible alternative explanation.</p>"
+          },
+          {
+            "slug": "compare",
+            "title": "3. Compare the strongest relevant material",
+            "html": "<p>Check whether sources address the same question, rely on independent underlying material, expose enough context to inspect the claim, and remain applicable to the situation at hand. Do not count repeated copies of one claim as independent support.</p>"
+          },
+          {
+            "slug": "update",
+            "title": "4. Record the update explicitly",
+            "html": "<p>Keep the claim when the challenge does not materially change it, narrow it when a boundary becomes clearer, or revise it when the central assumption no longer holds. Record what changed and which uncertainty remains instead of pretending the disagreement has been completely resolved.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

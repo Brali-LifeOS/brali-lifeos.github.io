@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-06",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch five completed and before any batch-six rewrite was applied.",
+  "selection_order": [
+    "calibrate-task-estimates",
+    "challenge-assumed-intent",
+    "check-base-rates-before-deciding",
+    "choose-best-resources"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 625,
+    "actionable_under_policy": 508,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch records bounded editorial rewrites only. It removes inherited unsupported numerical, first-party and mechanism claims, avoids high-stakes prescriptions, adds no source and promotes no entry to reviewed.",
+  "entries": [
+    {
+      "slug": "calibrate-task-estimates",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["planning-prioritization", "work-systems"],
+      "decision": "Remove unsupported planning-fallacy authority language, universal milestone sizes, fixed correction percentages, invented timing rules for quick tasks and claimed calibration gains. Preserve a simple feedback loop: define a deliverable, estimate it, record actual completion conditions and revise the next comparable estimate from that local record."
+    },
+    {
+      "slug": "challenge-assumed-intent",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "critical-thinking"],
+      "decision": "Remove fabricated conflict outcomes, neurological mechanism claims, arbitrary evidence-count thresholds, fixed response delays and prescriptive scripts for security or legal situations. Preserve an ordinary ambiguity check that separates the observed event from inferred intent, lists plausible alternatives, verifies relevant facts and uses neutral clarification before accusation."
+    },
+    {
+      "slug": "check-base-rates-before-deciding",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["data-literacy", "critical-thinking"],
+      "decision": "Remove unsupported historical and accuracy claims, fabricated outcomes, pseudo-statistical confidence rules and medical, political, hiring and relationship prescriptions. Preserve a bounded data-literacy workflow for ordinary decisions: choose a relevant reference class, locate a comparable baseline, inspect its scope, combine it with case-specific facts and keep uncertainty explicit."
+    },
+    {
+      "slug": "choose-best-resources",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["information-management", "work-systems"],
+      "decision": "Remove fabricated internal project results, universal freshness windows, fixed probe durations, arbitrary price thresholds and claimed follow-through improvements. Preserve a resource-selection workflow that begins with the next concrete output, checks fit, authority, freshness, licensing and security, tests the smallest useful use and archives resources that do not justify further attention."
+    }
+  ]
+}

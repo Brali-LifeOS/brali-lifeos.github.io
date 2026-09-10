@@ -46,6 +46,7 @@ const expectedSelected = [];
 const expectedBlocked = [];
 let eligibleTotal = 0;
 for (const queueEntry of reviewQueue.entries ?? []) {
+  if (decisionHistory.completedSlugSet.has(queueEntry.slug)) continue;
   const debt = debtBySlug.get(queueEntry.slug);
   if (!debt || !(debt.debt_reasons ?? []).length) continue;
   const actionable = debt.status === policy.actionable_rule.status

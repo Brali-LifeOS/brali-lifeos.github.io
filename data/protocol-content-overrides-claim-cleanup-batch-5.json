@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "brag-doc-wins-hub": {
+      "title": "Keep a Work Wins Log You Can Reuse",
+      "subtitle": "Capture concrete outcomes while the details are still easy to reconstruct.",
+      "description": "Record completed work, solved problems, decisions, useful contributions and recoveries in a compact log so you can retrieve concrete examples for reviews, resumes, proposals, retrospectives and planning.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pilot outcomes, unsupported confidence and motivation claims, invented adherence figures, arbitrary logging targets and pseudo-precise review schedules with a bounded work-record workflow.",
+      "forbidden_public_fragments": [
+        "review sessions amplify meaning by 2–3×",
+        "after 10–14 days we see consistent recall improve",
+        "reduced retrieval time by about 60% in our pilot users",
+        "In a small pilot (N=42, four weeks)",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Keep a compact record of work you may need to describe later, focusing on what changed, what you contributed and enough context to reconstruct the example accurately.",
+        "whatYouDo": "After a meaningful piece of work, add a short entry with the situation, your contribution, the concrete result or current state, and one or two tags. During a review, retrieve entries that match the purpose and verify any figures or claims before reusing them.",
+        "checkIn": "What changed, what did I contribute, what detail will I need later, and is the entry specific enough to reuse without exaggeration?"
+      },
+      "faq": [
+        {
+          "id": "brag-doc-wins-hub-faq-1",
+          "question": "What belongs in a work wins log?",
+          "answer": "Include completed deliverables, problems solved, decisions clarified, risks reduced, useful support, recoveries from mistakes and other concrete contributions you may need to explain later. Small entries are useful when they preserve a fact that would otherwise be forgotten."
+        },
+        {
+          "id": "brag-doc-wins-hub-faq-2",
+          "question": "Should every entry include a number?",
+          "answer": "No. Use a number only when you actually know it and can verify it. A precise description of what changed is better than an invented metric added to make the entry sound stronger."
+        },
+        {
+          "id": "brag-doc-wins-hub-faq-3",
+          "question": "What should I avoid recording?",
+          "answer": "Do not store secrets, credentials, unnecessary personal data, customer information or confidential internal details in a place that is not approved for them. Use redacted wording when the useful lesson does not require the sensitive detail."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A work wins log is a retrieval aid, not a scoreboard. Its job is to preserve concrete examples that are easy to lose after several weeks: what happened, what you contributed, what changed, and enough context to explain the example accurately when a review, resume, proposal, interview, retrospective, or planning session needs it.</p>"
+        },
+        "sections": [
+          {
+            "slug": "capture",
+            "title": "1. Capture the concrete change",
+            "html": "<p>Write the entry close enough to the work that the details are still available. Name the deliverable, problem, decision, recovery, or contribution. Prefer a short factual description over a broad label such as <em>productive day</em> or <em>great meeting</em>.</p>"
+          },
+          {
+            "slug": "context",
+            "title": "2. Add only the context you may need later",
+            "html": "<p>Record your role, the constraint that mattered, and the current result or state. If a figure is important, include it only when it is known and traceable. If the useful example contains confidential details, redact or generalize them before storing the note.</p>"
+          },
+          {
+            "slug": "tags",
+            "title": "3. Make the entry retrievable",
+            "html": "<p>Add a small number of stable tags such as project, capability, customer problem, leadership, incident, delivery, or learning. Use the same vocabulary often enough that a later search can return a useful set rather than dozens of near-duplicate labels.</p>"
+          },
+          {
+            "slug": "reuse",
+            "title": "4. Reuse the record without inflating it",
+            "html": "<p>When you need an example, retrieve the relevant entries and adapt them to the purpose. Separate what you personally did from what the team did, distinguish the observed result from your interpretation, and verify dates, numbers, names, and scope before publishing or sending the claim.</p>"
+          }
+        ]
+      }
+    },
+    "break-familiarity-bias": {
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "subtitle": "Compare the default with one viable alternative before keeping it automatically.",
+      "description": "For an ordinary low-stakes choice, name the familiar default, state the criterion that matters, compare one viable alternative, and keep or change the default for a concrete reason rather than novelty alone.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated prototype outcomes, invented satisfaction changes, mechanism claims, arbitrary experiment counts and universal statements about cues or habit formation with a bounded low-stakes choice check.",
+      "forbidden_public_fragments": [
+        "average satisfaction increase of 0.8 points",
+        "about 60% of people who logged two or more mini‑experiments",
+        "average satisfaction changes of +0.5–1.5 points",
+        "Small external cues beat willpower in the long run",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When a familiar option is being chosen automatically, make the default explicit and compare it with one realistic alternative using the criterion that actually matters for this decision.",
+        "whatYouDo": "Name the default, write the criterion that matters, identify one viable alternative, compare the two on that criterion and any important constraint, then keep the default or try the alternative for a stated reason. Use this only for ordinary low-stakes choices.",
+        "checkIn": "What was the default, what criterion mattered, what alternative did I compare, and why did I keep or change the choice?"
+      },
+      "faq": [
+        {
+          "id": "break-familiarity-bias-faq-1",
+          "question": "Do I need to choose the unfamiliar option?",
+          "answer": "No. The familiar option may still be the better choice. The purpose is to make the reason visible, not to reward novelty."
+        },
+        {
+          "id": "break-familiarity-bias-faq-2",
+          "question": "What kinds of decisions fit this protocol?",
+          "answer": "Use it for ordinary reversible choices such as tools, routes, formats, routines, vendors with low switching cost, or ways of organizing work. Do not use casual experimentation as a substitute for proper review in medical, legal, safety-critical or major financial decisions."
+        },
+        {
+          "id": "break-familiarity-bias-faq-3",
+          "question": "How many alternatives should I compare?",
+          "answer": "Start with one viable alternative when the problem is automatic defaulting. If the decision is important enough to require broader option generation, use a fuller decision process instead of turning this check into a large comparison exercise."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Defaults are useful because they reduce repeated decision work, but a default can outlive the reason it was chosen. This protocol is a small check for ordinary reversible choices: make the familiar option explicit, compare it with one realistic alternative, and keep or change the default because of a concrete criterion.</p>"
+        },
+        "sections": [
+          {
+            "slug": "name-default",
+            "title": "1. Name the default",
+            "html": "<p>State what you are about to choose simply because it is the usual option. Do not assume that familiarity is a problem by itself. The first step is only to make the current default visible.</p>"
+          },
+          {
+            "slug": "criterion",
+            "title": "2. State the criterion that matters",
+            "html": "<p>Choose the reason that should drive this decision: cost, compatibility, reliability, time, quality, effort, preference, reversibility, or another real constraint. Avoid changing the criterion after seeing which option wins.</p>"
+          },
+          {
+            "slug": "alternative",
+            "title": "3. Compare one viable alternative",
+            "html": "<p>Pick an alternative that could realistically replace the default. Compare both options on the stated criterion and note any constraint that would make the alternative impractical. Unknown information stays unknown rather than being filled with a guess.</p>"
+          },
+          {
+            "slug": "update",
+            "title": "4. Keep or update the default deliberately",
+            "html": "<p>If the familiar option still fits, keep it and record why. If the alternative is preferable and the change is reversible, try it and note what you learned. For higher-stakes decisions, move to a more complete review rather than relying on this quick check.</p>"
+          }
+        ]
+      }
+    },
+    "bullet-point-coach": {
+      "title": "Use a Short Bullet Outline Before You Speak",
+      "subtitle": "Prepare cue points for the purpose, key information and requested next step.",
+      "description": "Before a meeting, update or presentation, write a compact set of cue points that preserves the purpose, the information the listener needs and the requested next step, then speak from the outline rather than reading a script.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated clarity and meeting outcomes, unsupported working-memory explanations, invented client observations and rigid prescriptions for bullet counts, word counts, rehearsal doses and speaking rhythm with a bounded speaking-outline workflow.",
+      "forbidden_public_fragments": [
+        "raises clarity by roughly 40–60% in observational exercises",
+        "working memory — roughly 4±1 chunks",
+        "20–50% reduction in \"time-to-decision\"",
+        "30–60% drop in follow-up clarification emails",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Use a short list of cue points to preserve the structure of an important spoken update without turning the outline into a script.",
+        "whatYouDo": "Write the purpose of the conversation, the key facts or updates the listener needs, the decision or request if there is one, and any important risk or unknown. Put the cues in a useful order, remove duplicate points, then speak from them and adjust when the conversation changes.",
+        "checkIn": "Did the outline make the purpose, key information and next step easy to find, and which cue should be changed before the next use?"
+      },
+      "faq": [
+        {
+          "id": "bullet-point-coach-faq-1",
+          "question": "How many bullets should I use?",
+          "answer": "Use as many as are needed to preserve the structure and no more. A short update may need only a few cues; a complex presentation may need grouped sections. The useful constraint is readability at a glance, not a universal number."
+        },
+        {
+          "id": "bullet-point-coach-faq-2",
+          "question": "Should the bullets be full sentences?",
+          "answer": "Only when a sentence must be stated precisely. Otherwise use short cues that remind you of the point while allowing natural speech. If the outline becomes a page of paragraphs, it is functioning as a script rather than a speaking aid."
+        },
+        {
+          "id": "bullet-point-coach-faq-3",
+          "question": "What belongs in a decision-oriented update?",
+          "answer": "Make the current state, the important change or constraint, and the requested decision or next step easy to locate. Add supporting detail only when the listener needs it to make the decision."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A speaking outline is useful when you need structure without reading a script. The goal is to preserve the route through the conversation: why you are speaking, what the listener needs to know, where uncertainty sits, and what should happen next.</p>"
+        },
+        "sections": [
+          {
+            "slug": "purpose",
+            "title": "1. Write the purpose first",
+            "html": "<p>State what this interaction needs to accomplish: inform, decide, ask, align, escalate, explain, or collect feedback. A visible purpose makes it easier to remove details that are interesting but not useful for this conversation.</p>"
+          },
+          {
+            "slug": "cues",
+            "title": "2. Add the minimum useful cues",
+            "html": "<p>List the facts, changes, constraints, risks, or examples the listener needs. Use wording you can understand at a glance. Keep exact figures, names, or commitments only when they are verified and necessary.</p>"
+          },
+          {
+            "slug": "next-step",
+            "title": "3. Make the ask or next step explicit",
+            "html": "<p>If you need a decision, question, owner, approval, or follow-up, give it its own cue. Do not hide the requested action inside background information.</p>"
+          },
+          {
+            "slug": "use",
+            "title": "4. Speak from the outline, not at it",
+            "html": "<p>Use the bullets as navigation. Expand only where the listener needs detail, skip a cue when the point is already resolved, and change direction when new information matters. Afterward, update the outline if a missing or confusing cue caused friction.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

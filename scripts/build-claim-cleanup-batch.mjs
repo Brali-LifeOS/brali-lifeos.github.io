@@ -41,6 +41,7 @@ const selected = [];
 const blocked = [];
 let eligibleTotal = 0;
 for (const queueEntry of reviewQueue.entries ?? []) {
+  if (history.completedSlugSet.has(queueEntry.slug)) continue;
   const debt = debtBySlug.get(queueEntry.slug);
   if (!debt || !(debt.debt_reasons ?? []).length) continue;
 

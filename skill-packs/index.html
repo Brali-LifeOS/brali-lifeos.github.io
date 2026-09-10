@@ -3,22 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Free Brali Skill Packs — practical AI skills with provenance</title>
-  <meta name="description" content="Turn trusted Brali practical protocols into portable SKILL.md-style instruction packs for AI tools. Every pack keeps its canonical source, evidence state, action and check-in attached.">
+  <title>Free Brali Agent Skills — practical protocols with provenance</title>
+  <meta name="description" content="Browse free Agent Skills generated from trusted Brali practical protocols. Each skill has a stable page, portable SKILL.md, canonical protocol, evidence state and machine-readable metadata.">
   <link rel="canonical" href="https://brali-lifeos.github.io/skill-packs/">
+  <link rel="alternate" type="application/json" href="https://brali-lifeos.github.io/skill-packs/catalog.json" title="Brali Agent Skills catalog">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Brali">
-  <meta property="og:title" content="Free Brali Skill Packs">
-  <meta property="og:description" content="Portable AI skill packs generated from trusted Brali protocols, with evidence state and provenance preserved.">
+  <meta property="og:title" content="Free Brali Agent Skills">
+  <meta property="og:description" content="Stable, portable Agent Skills generated from trusted Brali protocols, with evidence state and provenance preserved.">
   <meta property="og:url" content="https://brali-lifeos.github.io/skill-packs/">
   <meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-mascot-hero.png">
   <link rel="icon" href="/assets/images/brali-logo.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Brali Skill Packs","url":"https://brali-lifeos.github.io/skill-packs/","description":"Portable AI skill packs generated from Brali protocols that meet the current trusted public quality bar.","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","isPartOf":{"@type":"WebSite","name":"Brali","url":"https://brali-lifeos.github.io/"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Free Brali Agent Skills","url":"https://brali-lifeos.github.io/skill-packs/","description":"Portable Agent Skills generated from Brali protocols that meet the current trusted public quality bar.","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","isPartOf":{"@type":"WebSite","name":"Brali","url":"https://brali-lifeos.github.io/"}}</script>
   <style>
-    .skill-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:2rem;align-items:center;padding:3rem 0 2rem}.skill-hero-card,.skill-builder,.skill-result,.skill-note{border:1px solid var(--border,#d9d5ca);border-radius:24px;background:var(--surface,#fff);box-shadow:0 16px 50px rgba(24,21,17,.07)}.skill-hero-card{padding:1.4rem}.skill-builder{padding:1.5rem;margin:1.5rem 0}.skill-grid{display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr);gap:1.25rem}.skill-list{display:grid;gap:.65rem;max-height:34rem;overflow:auto;padding-right:.25rem}.skill-choice{display:block;width:100%;text-align:left;border:1px solid var(--border,#d9d5ca);background:transparent;border-radius:16px;padding:.9rem 1rem;cursor:pointer}.skill-choice:hover,.skill-choice[aria-current="true"]{transform:translateY(-1px);box-shadow:0 8px 24px rgba(24,21,17,.08)}.skill-choice small{display:block;opacity:.72;margin-top:.3rem}.skill-result{padding:1.25rem;min-height:20rem}.skill-result pre{white-space:pre-wrap;overflow:auto;max-height:30rem;background:#171717;color:#f6f4ee;border-radius:16px;padding:1rem;font-size:.86rem;line-height:1.5}.skill-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0}.skill-search{width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--border,#d9d5ca);margin:.6rem 0 1rem}.skill-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}.skill-chip{display:inline-flex;padding:.35rem .65rem;border-radius:999px;background:#f2efe8;font-size:.82rem}.skill-note{padding:1rem 1.2rem;margin:1.4rem 0}.skill-empty{padding:1rem;border:1px dashed var(--border,#d9d5ca);border-radius:14px}.skill-examples{display:flex;flex-wrap:wrap;gap:.55rem}.skill-examples a{display:inline-flex;padding:.55rem .8rem;border:1px solid var(--border,#d9d5ca);border-radius:999px;text-decoration:none}@media(max-width:800px){.skill-hero,.skill-grid{grid-template-columns:1fr}.skill-list{max-height:24rem}}
+    .skill-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);gap:2rem;align-items:center;padding:3rem 0 2rem}.skill-hero-card,.skill-builder,.skill-result,.skill-note{border:1px solid var(--border,#d9d5ca);border-radius:24px;background:var(--surface,#fff);box-shadow:0 16px 50px rgba(24,21,17,.07)}.skill-hero-card{padding:1.4rem}.skill-builder{padding:1.5rem;margin:1.5rem 0}.skill-grid{display:grid;grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr);gap:1.25rem}.skill-list{display:grid;gap:.65rem;max-height:34rem;overflow:auto;padding-right:.25rem}.skill-choice{display:block;width:100%;text-align:left;border:1px solid var(--border,#d9d5ca);background:transparent;border-radius:16px;padding:.9rem 1rem;cursor:pointer}.skill-choice:hover,.skill-choice[aria-current="true"]{transform:translateY(-1px);box-shadow:0 8px 24px rgba(24,21,17,.08)}.skill-choice small{display:block;opacity:.72;margin-top:.3rem}.skill-result{padding:1.25rem;min-height:20rem}.skill-result pre{white-space:pre-wrap;overflow:auto;max-height:30rem;background:#171717;color:#f6f4ee;border-radius:16px;padding:1rem;font-size:.86rem;line-height:1.5}.skill-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0}.skill-search{width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--border,#d9d5ca);margin:.6rem 0 1rem}.skill-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}.skill-chip{display:inline-flex;padding:.35rem .65rem;border-radius:999px;background:#f2efe8;font-size:.82rem}.skill-note{padding:1rem 1.2rem;margin:1.4rem 0}.skill-empty{padding:1rem;border:1px dashed var(--border,#d9d5ca);border-radius:14px}.skill-examples{display:flex;flex-wrap:wrap;gap:.55rem}.skill-examples a{display:inline-flex;padding:.55rem .8rem;border:1px solid var(--border,#d9d5ca);border-radius:999px;text-decoration:none}.install-box{background:#171717;color:#f6f4ee;border-radius:16px;padding:1rem;overflow:auto}.install-box code{color:inherit}@media(max-width:800px){.skill-hero,.skill-grid{grid-template-columns:1fr}.skill-list{max-height:24rem}}
   </style>
   <script src="/skill-packs/app.js" defer></script>
 </head>
@@ -28,18 +29,27 @@
 <main id="content" class="page wrap">
   <section class="skill-hero">
     <div>
-      <p class="eyebrow">Brali Skill Packs · free · evidence-aware</p>
-      <h1>Turn a trusted protocol into a portable AI skill.</h1>
-      <p class="lead">Brali Skill Packs convert the same canonical protocols used by the site and public data feed into a compact <code>SKILL.md</code>-style instruction. The evidence state, source boundary, canonical link and check-in stay attached.</p>
-      <div class="skill-actions"><a class="button yellow" href="#builder">Choose a skill</a><a class="button quiet" href="/life-os/datasets/protocols.json">Inspect the trusted feed</a></div>
+      <p class="eyebrow">Brali Agent Skills · free · evidence-aware</p>
+      <h1>Give an AI agent a small practical protocol without cutting away the evidence boundary.</h1>
+      <p class="lead">Each trusted Brali protocol now has its own stable skill page, portable <code>SKILL.md</code> and machine-readable skill record. The canonical protocol remains the source of truth; the skill is a generated distribution surface.</p>
+      <div class="skill-actions"><a class="button yellow" href="#builder">Find a skill</a><a class="button quiet" href="/skill-packs/catalog.json">Machine-readable catalog</a><a href="/life-os/datasets/protocols.json">Trusted protocol feed</a></div>
     </div>
     <aside class="skill-hero-card" aria-label="Skill pack contract">
-      <span class="card-label">One source, another useful surface</span>
-      <h2>No duplicate advice layer.</h2>
-      <p>A hack remains canonical at its Brali protocol URL. The skill pack is generated from that record instead of creating a second hand-maintained version.</p>
-      <ul><li>Only <strong>reviewed</strong> and eligible <strong>practical</strong> records are offered.</li><li>Review-gated records do not become installable just because a URL exists.</li><li>A skill pack is a reusable instruction file, not a ranking shortcut or a claim of universal one-click installation.</li></ul>
+      <span class="card-label">One source, many reusable surfaces</span>
+      <h2>Skills are generated, not rewritten by hand.</h2>
+      <p>Brali packages only protocols that currently meet the public trust gate. A skill keeps the canonical protocol ID, URL, evidence state, action, check-in and guardrails attached.</p>
+      <ul><li>Only <strong>reviewed</strong> and eligible <strong>practical</strong> records become public skills.</li><li><strong>Pending-review</strong> and <strong>restricted</strong> records stay outside the executable catalog.</li><li>Every skill gets a stable crawlable URL instead of existing only inside a JavaScript picker.</li></ul>
+      <p>A skill is a reuse and discovery surface, not a ranking shortcut or evidence that a search engine or AI system will recommend Brali.</p>
     </aside>
   </section>
+
+  <aside class="skill-note" aria-labelledby="router-skill-title">
+    <p class="card-label">One installable router skill</p>
+    <h2 id="router-skill-title">Let an agent search the trusted Brali catalog.</h2>
+    <p>The repository includes a small <code>brali-life-os</code> Agent Skill that teaches compatible agents how to retrieve a fitting trusted protocol, preserve provenance and return no match instead of stretching weak coverage.</p>
+    <pre class="install-box"><code>gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os</code></pre>
+    <p><a href="https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/agent-skills/skills/brali-life-os/SKILL.md">Inspect the router skill before installing</a>. Agent Skills can contain executable instructions, so inspection is part of the trust model.</p>
+  </aside>
 
   <section id="builder" class="skill-builder" aria-labelledby="builder-title">
     <p class="eyebrow">Free skill catalog</p>
@@ -47,25 +57,25 @@
     <p id="catalog-status">Loading the current trusted Brali Protocol Feed…</p>
     <label for="skill-search"><strong>Search skills</strong></label>
     <input class="skill-search" id="skill-search" type="search" placeholder="Try focus, memory, feedback, planning…" autocomplete="off">
-    <div class="skill-examples" aria-label="Example skill links">
-      <a href="?hack=25-minute-pomodoro-focus-sprints#builder">Pomodoro focus</a>
-      <a href="?hack=ai-premortem-risk-planner#builder">AI premortem</a>
-      <a href="?hack=ask-for-feedback-tracker#builder">Ask for feedback</a>
+    <div class="skill-examples" aria-label="Example stable skill pages">
+      <a href="/skill-packs/25-minute-pomodoro-focus-sprints/">Pomodoro focus</a>
+      <a href="/skill-packs/ai-premortem-risk-planner/">AI premortem</a>
+      <a href="/skill-packs/ask-for-feedback-tracker/">Ask for feedback</a>
     </div>
     <div class="skill-grid">
       <div><h3>Available skills</h3><div id="skill-list" class="skill-list" aria-live="polite"></div></div>
-      <div id="skill-result" class="skill-result" aria-live="polite"><div class="skill-empty"><h3>Select a skill</h3><p>You will get a portable instruction pack plus links back to the canonical protocol and machine-readable record.</p></div></div>
+      <div id="skill-result" class="skill-result" aria-live="polite"><div class="skill-empty"><h3>Select a skill</h3><p>You will get a portable instruction pack plus links to its stable skill page, canonical protocol and machine-readable record.</p></div></div>
     </div>
   </section>
 
   <aside class="skill-note">
-    <h2>How to use a pack</h2>
-    <p>Copy or save the generated <code>SKILL.md</code> and use it in an AI tool or agent workflow that accepts reusable instructions. Tool-specific installation differs, so Brali does not pretend one button installs everywhere. For direct data integration, use the <a href="/for-ai/integrations/">integration guides</a> or the <a href="/api/v1/">read-only API</a>.</p>
+    <h2>Two ways to reuse Brali</h2>
+    <p>For one bounded protocol, open its stable page and copy or save the generated <code>SKILL.md</code>. For broader retrieval, install the <code>brali-life-os</code> router skill above. For application integration, use the <a href="/for-ai/integrations/">integration guides</a> or the <a href="/api/v1/">read-only API</a>.</p>
   </aside>
 
   <section class="prose">
     <h2>Why this exists</h2>
-    <p>Many useful routines disappear inside long articles or get stripped of their limitations when copied into AI prompts. Brali Skill Packs keep the action small and the provenance visible. If a protocol later changes evidence state, the canonical Brali record remains the source to re-check.</p>
+    <p>Many useful routines disappear inside long articles or lose their limitations when copied into prompts. Brali Agent Skills keep the action small, give each reusable unit a stable address, and keep provenance visible. If evidence state changes later, the canonical Brali protocol remains the record to re-check.</p>
     <h2>Licensing and attribution</h2>
     <p>Original Brali knowledge is available for non-commercial reuse under <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Keep Brali attribution, the canonical protocol link and its evidence state; indicate changes and share adaptations under the same license. Commercial use requires separate permission. See <a href="/cite/">citation guidance</a> and <a href="/terms/">terms</a>.</p>
   </section>

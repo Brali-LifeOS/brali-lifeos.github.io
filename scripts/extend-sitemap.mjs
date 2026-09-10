@@ -12,6 +12,7 @@ await import('./build-legacy-sensitive-state.mjs');
 await import('./sync-zone-coverage-backlog-manifest.mjs');
 await import('./sync-legacy-sensitive-manifest.mjs');
 await import('./build-outcome-review-queue.mjs');
+await import('./build-skill-packs.mjs');
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -21,10 +22,12 @@ const problems = JSON.parse(await readFile(path.join(root, "data/problem-collect
 const decisions = JSON.parse(await readFile(path.join(root, "data/evidence-decisions.json"), "utf8"));
 const researchGaps = JSON.parse(await readFile(path.join(root, "data/research-gap-questions.json"), "utf8"));
 const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
+const skillCatalog = JSON.parse(await readFile(path.join(root, "skill-packs/catalog.json"), "utf8"));
 const reportRoutes = (growth.reports ?? []).map(report => `/updates/${report.slug}/`);
 const problemRoutes = (problems.collections ?? []).map(collection => `/problems/${collection.slug}/`);
 const decisionRoutes = (decisions.entries ?? []).map(decision => `/evidence/${decision.id}/`);
 const researchGapRoutes = (researchGaps.items ?? []).map(item => `/research/gaps/${item.topic_id}/`);
+const skillRoutes = (skillCatalog.entries ?? []).map(skill => `/skill-packs/${skill.slug}/`);
 const evidenceMonth = String(growth.updated_at).slice(0, 7);
 const routes = [
   "/research/",
@@ -66,7 +69,8 @@ const routes = [
   ...researchGapRoutes,
   ...problemRoutes,
   ...decisionRoutes,
-  ...reportRoutes
+  ...reportRoutes,
+  ...skillRoutes,
 ];
 
 let xml = await readFile(sitemapPath, "utf8");
@@ -85,7 +89,7 @@ if (!integrationHtml.includes('/for-ai/integrations/report/')) {
   await writeFile(integrationPath, integrationHtml);
 }
 
-console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added.`);
+console.log(`Sitemap static routes: ${routes.length - missing.length} already present, ${missing.length} added (${skillRoutes.length} skill routes declared).`);
 
 // The structural site-wide loop predates evidence-gated search indexing and still
 // validates the full generated corpus as one temporary crawlable set. Restore the
@@ -118,3 +122,4 @@ await import('./check-zone-coverage-backlog.mjs');
 await import('./check-legacy-sensitive-state.mjs');
 await import('./check-sitewide-quality-loop.mjs');
 await import('./check-outcome-loop-extensions.mjs');
+await import('./check-skill-packs.mjs');

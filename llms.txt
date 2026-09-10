@@ -2,7 +2,7 @@
 
 > A practical knowledge library for people, developers, researchers, and AI agents.
 
-Brali publishes atomic hacks, executable protocols, a Domain/Topic/Method/Lens ontology, evidence states, reviewed Evidence Decisions, research candidates, canonical identities, a versioned static API, and an optional read-only MCP server.
+Brali publishes atomic hacks, executable protocols, a Domain/Topic/Method/Lens ontology, evidence states, reviewed Evidence Decisions, research candidates, canonical identities, a versioned static API, optional read-only MCP tooling, and generated Agent Skills for trusted protocols.
 
 ## Knowledge model v2
 
@@ -24,6 +24,20 @@ Legacy Life Area and Growth Zone fields are compatibility data. `topic-pending` 
 Start at `/for-ai/` and `/api/v1/index.json`. Ontology coverage is at `/ontology/coverage/`.
 
 API v1 exposes `openapi.json`, `topics.json`, `protocols.json`, `hacks.json`, `evidence.json`, `evidence-decisions.json`, `search.json`, `identity.json`, and `manifest.json`. Lower-level datasets under `/life-os/datasets/` also expose ontology coverage, the prioritized migration queue, evidence metrics, identity aliases, retrieval benchmark, and canonical checksums.
+
+## Free Agent Skills
+
+Brali exposes a generated skill distribution layer without making it a second editorial source of truth.
+
+- Human catalog: https://brali-lifeos.github.io/skill-packs/
+- Machine catalog: https://brali-lifeos.github.io/skill-packs/catalog.json
+- Stable skill page pattern: https://brali-lifeos.github.io/skill-packs/<protocol-slug>/
+- Portable skill file pattern: https://brali-lifeos.github.io/skill-packs/<protocol-slug>/SKILL.md
+- Per-skill metadata pattern: https://brali-lifeos.github.io/skill-packs/<protocol-slug>/skill.json
+- Repository router skill: https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/agent-skills/skills/brali-life-os/SKILL.md
+- GitHub CLI install: `gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os`
+
+Only records in the reviewed/practical Trusted Protocol Feed become public generated skills. `pending-review` and `restricted` records do not become executable skills. Every generated skill retains the Brali protocol ID, canonical URL, evidence state, check-in, and safety/evidence guardrails. Re-check the canonical protocol before making evidence-sensitive claims.
 
 ## Retrieval rules
 

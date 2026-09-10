@@ -37,10 +37,12 @@ requireCondition(updates.includes("google.com/preferences/source?q=brali-lifeos.
 const skillPageRequirements = [
   ['<link rel="canonical" href="https://brali-lifeos.github.io/skill-packs/">', "skill-packs: canonical link is missing"],
   ['/life-os/datasets/protocols.json', "skill-packs: Trusted Protocol Feed link is missing"],
+  ['/skill-packs/catalog.json', "skill-packs: machine-readable catalog link is missing"],
   ['SKILL.md', "skill-packs: SKILL.md capability marker is missing"],
   ['reviewed', "skill-packs: reviewed trust-state explanation is missing"],
   ['practical', "skill-packs: practical trust-state explanation is missing"],
   ['not a ranking shortcut', "skill-packs: ranking-boundary disclaimer is missing"],
+  ['gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os', "skill-packs: router install command is missing"],
 ];
 for (const [marker, label] of skillPageRequirements) requireCondition(skillPackHtml.includes(marker), label);
 try { new Function(skillPackApp); } catch (error) { fail(`skill-packs/app.js: syntax error: ${error.message}`); }
@@ -52,6 +54,7 @@ for (const entry of index) {
   const pagePath = path.join(root, "life-os", entry.slug, "index.html");
   const html = await readFile(pagePath, "utf8");
   const pathname = `/life-os/${entry.slug}/`;
+  const stableSkillPath = `/skill-packs/${entry.slug}/`;
   const ogImage = metaContent(html, "og:image", "property");
   const evidenceRecord = evidenceBySlug.get(entry.slug);
   const trusted = isTrusted(evidenceRecord);
@@ -72,13 +75,14 @@ for (const entry of index) {
   if (trusted) {
     skillAvailable += 1;
     requireCondition(html.includes('data-agent-skill="available"'), `${entry.slug}: trusted page missing skill-available marker`);
-    requireCondition(html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: trusted page missing skill-pack link`);
+    requireCondition(html.includes(`href="${stableSkillPath}"`), `${entry.slug}: trusted page missing stable skill link`);
+    requireCondition(!html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: trusted page still uses query-only skill link`);
     requireCondition(html.includes('href="/for-ai/integrations/"'), `${entry.slug}: trusted page missing AI integrations link`);
     requireCondition(!noindex && inSitemap && /max-image-preview:large/i.test(html), `${entry.slug}: trusted search visibility contract failed`);
   } else {
     reviewGated += 1;
     requireCondition(html.includes('data-agent-skill="review-gated"'), `${entry.slug}: review-gated page missing review-gated skill marker`);
-    requireCondition(!html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: review-gated page leaked a skill-pack link`);
+    requireCondition(!html.includes(`href="${stableSkillPath}"`), `${entry.slug}: review-gated page leaked a stable skill link`);
     requireCondition(noindex && !inSitemap, `${entry.slug}: review-gated search visibility contract failed`);
   }
 
@@ -92,7 +96,7 @@ for (const entry of index) {
     requireCondition(article?.encoding?.contentUrl === `${base}${pathname}index.json`, `${entry.slug}: Article JSON encoding URL drift`);
     requireCondition(webPage?.license === license && webPage?.mainEntity?.["@id"] === article?.["@id"], `${entry.slug}: WebPage mainEntity/license schema drift`);
     const actionTarget = article?.potentialAction?.target;
-    requireCondition(trusted ? actionTarget === `${base}/skill-packs/?hack=${encodeURIComponent(entry.slug)}` : !actionTarget, `${entry.slug}: skill potentialAction trust parity failed`);
+    requireCondition(trusted ? actionTarget === `${base}${stableSkillPath}` : !actionTarget, `${entry.slug}: stable skill potentialAction trust parity failed`);
     if (isRepresentative(ogImage)) {
       representative += 1;
       requireCondition(metaContent(html, "twitter:card") === "summary_large_image", `${entry.slug}: representative image missing summary_large_image card`);
@@ -113,4 +117,4 @@ if (violations.length) {
   const preview = violations.slice(0, 25).map((item) => `- ${item}`).join("\n");
   throw new Error(`Hack discovery validation failed with ${violations.length} contract violation(s):\n${preview}${violations.length > 25 ? `\n- ... ${violations.length - 25} more` : ""}`);
 }
-console.log(`Hack discovery verified for ${index.length} pages: ${skillAvailable} trusted skill-enabled, ${reviewGated} review-gated; ${representative} expose representative large-image metadata.`);
+console.log(`Hack discovery verified for ${index.length} pages: ${skillAvailable} trusted stable skill-enabled, ${reviewGated} review-gated; ${representative} expose representative large-image metadata.`);

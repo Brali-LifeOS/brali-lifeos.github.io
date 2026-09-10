@@ -9,9 +9,17 @@
   let selectedSlug = new URLSearchParams(location.search).get("hack") || "";
 
   const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
-  const yaml = (value = "") => `"${clean(value).replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
+  const yaml = (value = "") => JSON.stringify(clean(value));
   const markdownLink = (label, url) => url ? `[${label}](${url})` : label;
   const topics = (entry) => (entry.ontology?.topics ?? []).map((item) => item.title).filter(Boolean);
+  const skillName = (slug) => String(slug).slice(0, 64).replace(/-+$/, "");
+  const skillPageUrl = (entry) => `/skill-packs/${encodeURIComponent(entry.slug)}/`;
+  const skillDescription = (entry) => {
+    const prefix = `Use this Brali skill when the user's situation matches the bounded protocol "${clean(entry.title)}". `;
+    const suffix = " Preserve the canonical source, evidence state, limitations, and check-in.";
+    const room = 1024 - prefix.length - suffix.length;
+    return `${prefix}${clean(entry.description).slice(0, Math.max(0, room))}${suffix}`.slice(0, 1024);
+  };
   const searchable = (entry) => [entry.title, entry.description, entry.action, ...(entry.keywords ?? []), ...topics(entry)].join(" ").toLowerCase();
 
   function skillMarkdown(entry) {
@@ -19,24 +27,27 @@
     const state = evidence.status || "unknown";
     const sourceBoundary = state === "reviewed"
       ? (evidence.source_url
-          ? `Reviewed source attached to this record: ${evidence.source_url}`
+          ? `Reviewed source attached to the canonical Brali record: ${evidence.source_url}`
           : "This record is reviewed. Inspect the canonical Brali page for the exact source boundary before making evidence claims.")
       : "This is an eligible practical record. Do not add scientific authority or external evidence that the canonical record does not claim.";
     const topicLine = topics(entry).length ? topics(entry).join(", ") : "See canonical Brali classification";
-    const reviewedAt = evidence.reviewed_at ? `\nLast Brali review recorded: ${evidence.reviewed_at}` : "";
+    const reviewedAt = evidence.reviewed_at ? `\nLast Brali review recorded: ${evidence.reviewed_at}.` : "";
 
     return `---
-name: brali-${entry.slug}
-description: ${yaml(entry.description || entry.title)}
-canonical_id: ${entry.protocol_id}
-canonical_url: ${entry.url}
-evidence_state: ${state}
-license: CC-BY-NC-SA-4.0
+name: ${skillName(entry.slug)}
+description: ${yaml(skillDescription(entry))}
+license: ${yaml("CC-BY-NC-SA-4.0")}
+compatibility: ${yaml("Portable Agent Skills instructions. Re-check the canonical Brali URL before making evidence claims.")}
+metadata:
+  brali-protocol-id: ${yaml(entry.protocol_id)}
+  brali-canonical-url: ${yaml(entry.url)}
+  brali-evidence-state: ${yaml(state)}
+  brali-source-feed: ${yaml("https://brali-lifeos.github.io/life-os/datasets/protocols.json")}
 ---
 
 # ${entry.title}
 
-Use this skill when the user's situation fits the bounded practical problem described by this Brali protocol.
+Use this skill only when the user's situation fits the bounded practical problem described by the canonical Brali protocol.
 
 ## Goal
 ${entry.description}
@@ -54,7 +65,7 @@ ${sourceBoundary}
 Topics: ${topicLine}
 
 ## Guardrails
-- Keep the canonical Brali protocol and evidence state attached when this skill materially informs an answer.
+- Keep the canonical Brali protocol, protocol ID, and evidence state attached when this skill materially informs an answer.
 - Do not turn this protocol into diagnosis, treatment, professional advice, a universal rule, or a guaranteed outcome.
 - Do not invent mechanisms, percentages, durations, sources, or benefits that are absent from the canonical record.
 - If the user's situation appears safety-sensitive or outside this protocol's bounded scope, stop and use an appropriate safer or professional path instead.
@@ -63,7 +74,8 @@ Topics: ${topicLine}
 ## Canonical record
 ${markdownLink(entry.title, entry.url)}
 
-Machine-readable trusted feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
+Machine-readable record: ${entry.url}index.json
+Trusted protocol feed: https://brali-lifeos.github.io/life-os/datasets/protocols.json
 Citation guidance: https://brali-lifeos.github.io/cite/
 License and commercial terms: https://brali-lifeos.github.io/terms/
 `;
@@ -87,7 +99,7 @@ License and commercial terms: https://brali-lifeos.github.io/terms/
     resultEl.replaceChildren();
     const label = document.createElement("span");
     label.className = "card-label";
-    label.textContent = "Portable SKILL.md-style pack";
+    label.textContent = "Portable Agent Skill";
     const title = document.createElement("h3");
     title.textContent = entry.title;
     const meta = document.createElement("div");
@@ -100,7 +112,11 @@ License and commercial terms: https://brali-lifeos.github.io/terms/
     });
     const actions = document.createElement("div");
     actions.className = "skill-actions";
-    const copy = button("Copy SKILL.md", "button yellow");
+    const open = document.createElement("a");
+    open.className = "button yellow";
+    open.href = skillPageUrl(entry);
+    open.textContent = "Open stable skill page";
+    const copy = button("Copy SKILL.md", "button");
     copy.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(md);
@@ -115,7 +131,7 @@ License and commercial terms: https://brali-lifeos.github.io/terms/
       const href = URL.createObjectURL(new Blob([md], { type: "text/markdown;charset=utf-8" }));
       const anchor = document.createElement("a");
       anchor.href = href;
-      anchor.download = `brali-${entry.slug}-SKILL.md`;
+      anchor.download = "SKILL.md";
       document.body.append(anchor);
       anchor.click();
       anchor.remove();
@@ -124,11 +140,11 @@ License and commercial terms: https://brali-lifeos.github.io/terms/
     const source = document.createElement("a");
     source.className = "button quiet";
     source.href = entry.url;
-    source.textContent = "Open canonical protocol";
+    source.textContent = "Canonical protocol";
     const json = document.createElement("a");
     json.href = `/life-os/${encodeURIComponent(entry.slug)}/index.json`;
     json.textContent = "Protocol JSON";
-    actions.append(copy, save, source, json);
+    actions.append(open, copy, save, source, json);
     const pre = document.createElement("pre");
     pre.tabIndex = 0;
     pre.textContent = md;
@@ -170,7 +186,7 @@ License and commercial terms: https://brali-lifeos.github.io/terms/
       empty.textContent = "No trusted skill matches this search yet.";
       listEl.append(empty);
     }
-    statusEl.textContent = `${entries.length} trusted protocols can be turned into free skill packs. Showing ${Math.min(matches.length, 80)}${matches.length > 80 ? ` of ${matches.length}` : ""}.`;
+    statusEl.textContent = `${entries.length} trusted protocols have free generated Agent Skills with stable pages. Showing ${Math.min(matches.length, 80)}${matches.length > 80 ? ` of ${matches.length}` : ""}.`;
   }
 
   async function start() {

@@ -76,8 +76,8 @@ function enrichSchema(html, entry, imageUrl, trusted) {
       if (trusted) {
         article.potentialAction = {
           "@type": "ViewAction",
-          name: "Open free Brali Skill Pack",
-          target: `${base}/skill-packs/?hack=${encodeURIComponent(entry.slug)}`,
+          name: "Open free Brali Agent Skill",
+          target: `${base}/skill-packs/${encodeURIComponent(entry.slug)}/`,
         };
       } else {
         delete article.potentialAction;
@@ -109,7 +109,7 @@ function reuseBlock(entry, evidenceRecord) {
   if (!trusted) {
     return `<aside class="agent-reuse" data-agent-reuse="true" data-agent-reuse-license="CC-BY-NC-SA-4.0" data-agent-skill="review-gated" aria-labelledby="${escapeHtml(labelId)}"><div><span class="card-label">Review-gated record</span><h2 id="${escapeHtml(labelId)}">Not packaged as a Brali Skill yet</h2><p>This record remains available for provenance, but Brali does not turn pending-review or restricted guidance into a reusable AI skill. Inspect the evidence state and wait for the quality gate rather than copying an unreviewed routine into an agent.</p></div><nav class="agent-reuse-links" aria-label="Review status for ${escapeHtml(title)}"><a class="button" href="/life-os/methodology/">How the evidence gate works</a><a class="button quiet" href="/life-os/${escapeHtml(entry.slug)}/index.json">Inspect this record as JSON</a><a href="/cite/">Citation &amp; attribution</a></nav></aside>`;
   }
-  return `<aside class="agent-reuse" data-agent-reuse="true" data-agent-reuse-license="CC-BY-NC-SA-4.0" data-agent-skill="available" aria-labelledby="${escapeHtml(labelId)}"><div><span class="card-label">Free Brali Skill Pack</span><h2 id="${escapeHtml(labelId)}">Use this protocol with AI agents and apps</h2><p>This trusted Brali record can be turned into a portable SKILL.md-style instruction pack without losing its canonical link, evidence state or check-in. Non-commercial reuse is available under <a href="${license}" rel="license">CC BY-NC-SA 4.0</a>.</p></div><nav class="agent-reuse-links" aria-label="AI reuse instructions for ${escapeHtml(title)}"><a class="button" href="/skill-packs/?hack=${escapeHtml(entry.slug)}">Open free skill pack</a><a class="button quiet" href="/life-os/${escapeHtml(entry.slug)}/index.json">This protocol as JSON</a><a href="/for-ai/integrations/">Integration instructions</a><a href="/cite/">Citation &amp; attribution</a><a href="/terms/">License &amp; commercial terms</a></nav></aside>`;
+  return `<aside class="agent-reuse" data-agent-reuse="true" data-agent-reuse-license="CC-BY-NC-SA-4.0" data-agent-skill="available" aria-labelledby="${escapeHtml(labelId)}"><div><span class="card-label">Free Brali Agent Skill</span><h2 id="${escapeHtml(labelId)}">Use this protocol with AI agents and apps</h2><p>This trusted Brali record has a stable generated skill page and portable SKILL.md instruction without losing its canonical link, evidence state or check-in. Non-commercial reuse is available under <a href="${license}" rel="license">CC BY-NC-SA 4.0</a>.</p></div><nav class="agent-reuse-links" aria-label="AI reuse instructions for ${escapeHtml(title)}"><a class="button" href="/skill-packs/${escapeHtml(entry.slug)}/">Open free Agent Skill</a><a class="button quiet" href="/life-os/${escapeHtml(entry.slug)}/index.json">This protocol as JSON</a><a href="/for-ai/integrations/">Integration instructions</a><a href="/cite/">Citation &amp; attribution</a><a href="/terms/">License &amp; commercial terms</a></nav></aside>`;
 }
 
 let changed = 0;
@@ -137,4 +137,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata and machine records; ${trustedSkillPages} trusted pages expose free skill packs; ${largeImagePages} expose representative large-image previews.`);
+console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata and machine records; ${trustedSkillPages} trusted pages link stable free Agent Skills; ${largeImagePages} expose representative large-image previews.`);

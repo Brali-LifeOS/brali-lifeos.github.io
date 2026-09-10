@@ -1,0 +1,265 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "common-source-radar": {
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "subtitle": "Check whether several pages are independent or are repeating the same origin.",
+      "description": "When several pages or reports repeat the same claim, follow their links and citations back to the underlying material, record shared documents, datasets or organizations, and distinguish independent origins from repeated summaries.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported claims about repetition, judgment improvement and training targets, fabricated tracing outcomes, rigid timing rules and high-stakes examples with a bounded source-lineage procedure.",
+      "forbidden_public_fragments": [
+        "within 5 minutes for 80% of items we examine",
+        "Eating X reduces mortality by Y%",
+        "repetition increases perceived truth",
+        "improves the quality of our judgment",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When several pages repeat the same claim, trace each one back far enough to see whether the underlying material is actually independent or shared.",
+        "whatYouDo": "Write the claim, list the pages or reports repeating it, follow their citations or links toward the origin, note shared documents, datasets, organizations or copied wording, and classify the set as independent origins, shared origin, mixed, or unclear.",
+        "checkIn": "Which items looked separate, what underlying origin did each one use, where did they overlap, and how many genuinely distinct origins remain?"
+      },
+      "faq": [
+        {
+          "id": "common-source-radar-faq-1",
+          "question": "Do different websites count as independent sources?",
+          "answer": "Not automatically. Two websites can repeat the same announcement, document, dataset or earlier article. Follow the attribution chain far enough to identify what each page actually relies on."
+        },
+        {
+          "id": "common-source-radar-faq-2",
+          "question": "What if I cannot reach the original material?",
+          "answer": "Mark the lineage as unclear. You can still record which intermediate sources are shared, but do not turn an unresolved chain into a claim of independence."
+        },
+        {
+          "id": "common-source-radar-faq-3",
+          "question": "Does a shared source make the claim wrong?",
+          "answer": "No. This protocol only prevents repeated publication from being counted as multiple independent origins. Whether the underlying claim is correct requires a separate evaluation of the material itself."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Seeing the same statement in several places can create the appearance of several independent confirmations even when the pages trace back to one origin. Source lineage separates repetition from independence: follow the chain, record shared origins, and count distinct underlying material rather than distinct browser tabs.</p>"
+        },
+        "sections": [
+          {
+            "slug": "claim",
+            "title": "1. Freeze the repeated claim",
+            "html": "<p>Write the specific statement that appears across the items. Keep wording close enough that you can tell whether the pages are truly making the same claim or only discussing the same topic.</p>"
+          },
+          {
+            "slug": "trace",
+            "title": "2. Trace each item toward its origin",
+            "html": "<p>Follow citations, links, named documents, announcements, datasets and attributed quotations. Stop when you can identify the material that the item actually depends on, or when the chain becomes unavailable.</p>"
+          },
+          {
+            "slug": "overlap",
+            "title": "3. Mark shared lineage",
+            "html": "<p>Record when multiple items rely on the same underlying document, dataset, organization, author group, announcement or copied wording. Also note mixed cases where the items share one origin but add genuinely separate material.</p>"
+          },
+          {
+            "slug": "classify",
+            "title": "4. Classify independence explicitly",
+            "html": "<p>Label the set as independent origins, shared origin, mixed, or unclear. Use that classification when summarizing what you found so repeated summaries do not silently become additional independent support.</p>"
+          }
+        ]
+      }
+    },
+    "confidence-calibration-habit": {
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "subtitle": "Make support, unknowns and update conditions visible before a decision hardens.",
+      "description": "State your current confidence in plain language, record the main support and unknowns, name an observable fact that would change the judgment, then compare the expectation with what later happened and update future decisions accordingly.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated calibration statistics, effect claims, fixed probability increments, action thresholds, reminder schedules and first-party examples with a qualitative judgment-and-feedback loop.",
+      "forbidden_public_fragments": [
+        "90% chance but are correct ~70% of the time",
+        "0–100% scale",
+        "round to nearest 5%",
+        "If we say 70% twelve times, we should be correct ~8–9 times",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before a meaningful commitment, write how confident you are, why, what is still unknown, and what observable information would make you change the judgment.",
+        "whatYouDo": "State the decision or prediction, label your confidence in ordinary language, list the strongest support and the most important unknown, name one observable condition that would make you update, then revisit the record when the outcome or new information becomes available.",
+        "checkIn": "What did I expect, how confident was I, what would have changed my view, what actually happened, and what should I update next time?"
+      },
+      "faq": [
+        {
+          "id": "confidence-calibration-habit-faq-1",
+          "question": "Do I need to assign a numeric probability?",
+          "answer": "No. Use a qualitative label if a number would imply precision you do not have. The important part is making the reason for your confidence and the condition for updating explicit."
+        },
+        {
+          "id": "confidence-calibration-habit-faq-2",
+          "question": "What makes a good update condition?",
+          "answer": "Use something observable that would materially change the decision: an approval, missing input, test result from your own process, confirmed dependency, deadline change, customer response, or another concrete event relevant to the judgment."
+        },
+        {
+          "id": "confidence-calibration-habit-faq-3",
+          "question": "What if the outcome was different because the plan changed?",
+          "answer": "Record the changed condition instead of scoring the original judgment as though nothing changed. The purpose is to improve the model of the situation, including which assumptions and dependencies were unstable."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>Confidence becomes easier to inspect when it is recorded before the outcome is known. A small judgment log captures what you expected, why you believed it, what remained uncertain, and which observable condition would have made you update. Later, compare that record with what actually happened.</p>"
+        },
+        "sections": [
+          {
+            "slug": "judgment",
+            "title": "1. State the judgment and confidence",
+            "html": "<p>Write the prediction, interpretation or commitment in a form you can revisit. Label confidence in ordinary language such as low, mixed, or high when that is sufficient. Avoid adding numeric precision merely because the field allows it.</p>"
+          },
+          {
+            "slug": "support",
+            "title": "2. Separate support from unknowns",
+            "html": "<p>List the strongest reason for the current judgment and the missing fact or dependency that could matter most. This makes it possible to see later whether the outcome differed because the reasoning was weak or because an important condition changed.</p>"
+          },
+          {
+            "slug": "update-condition",
+            "title": "3. Name what would change the judgment",
+            "html": "<p>Choose one observable condition that would make you reconsider, ask for more information, reduce the commitment, or choose another path. Prefer a condition tied directly to the decision rather than a vague feeling of greater certainty.</p>"
+          },
+          {
+            "slug": "review",
+            "title": "4. Compare the record with what happened",
+            "html": "<p>When the outcome or missing information arrives, revisit the original entry. Note which assumption held, which failed, and what type of uncertainty should receive more attention in the next comparable decision.</p>"
+          }
+        ]
+      }
+    },
+    "confirmation-bias-challenge": {
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "subtitle": "Define what would weaken the favored assumption, then check for it before locking in the decision.",
+      "description": "Before an ordinary consequential commitment, state the assumption you currently favor, name one observable condition that would weaken it, check that condition directly, and update, narrow or escalate the decision when the result matters.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported historical and cognitive claims, fabricated volunteer and cohort outcomes, fixed habit targets, emotional mechanisms, high-stakes examples and arbitrary numerical thresholds with a narrow decision-preflight check.",
+      "forbidden_public_fragments": [
+        "reduce forecast error by roughly 10–30%",
+        "In our trials with 150 people over 8 weeks",
+        "Those who added a small access friction to newsfeed reduced passive confirmation behaviors by 30%",
+        "Labeling emotion before analysis reduced defensive argumentation by 40%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before committing to a favored explanation or plan, name one observable condition that would make it weaker and check that condition deliberately.",
+        "whatYouDo": "Write the assumption driving the decision, state one observation that would materially weaken it, identify where that information can be checked, inspect it before the commitment becomes difficult to reverse, and then keep, narrow, change or escalate the plan according to what you found.",
+        "checkIn": "What assumption was I favoring, what would have weakened it, did I check that condition, and how did the result change the commitment?"
+      },
+      "faq": [
+        {
+          "id": "confirmation-bias-challenge-faq-1",
+          "question": "Do I need to challenge every belief?",
+          "answer": "No. Use the check where a favored assumption is materially shaping an upcoming commitment and a relevant counter-check is available at reasonable cost. Constantly disputing trivial beliefs creates noise rather than better decisions."
+        },
+        {
+          "id": "confirmation-bias-challenge-faq-2",
+          "question": "What if the disconfirming condition is found?",
+          "answer": "Do not force an automatic reversal. Reassess how much the condition changes the original assumption, narrow the claim or scope when appropriate, gather a missing fact, or escalate the review if the decision now requires deeper scrutiny."
+        },
+        {
+          "id": "confirmation-bias-challenge-faq-3",
+          "question": "Can this replace formal review for a high-stakes decision?",
+          "answer": "No. Use the required domain process, authoritative materials and qualified review for safety-critical, medical, legal, major financial or similarly high-stakes decisions. This quick check is only a preflight against one favored assumption."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A favored assumption can quietly shape what information we look for next. Before an ordinary commitment becomes expensive to reverse, define one observation that would weaken the assumption and check it deliberately. The goal is not permanent doubt; it is one targeted attempt to discover a reason the current plan may need revision.</p>"
+        },
+        "sections": [
+          {
+            "slug": "assumption",
+            "title": "1. Name the assumption driving the decision",
+            "html": "<p>Write the explanation, expectation or premise that makes the current plan look preferable. Keep it specific enough that a contrary observation could actually bear on it.</p>"
+          },
+          {
+            "slug": "weaken",
+            "title": "2. Define one condition that would weaken it",
+            "html": "<p>Choose an observable counter-condition tied to the assumption: a missing approval, contradictory record, incompatible requirement, absent user need, failed dependency, or another fact that would materially change the case for the plan.</p>"
+          },
+          {
+            "slug": "check",
+            "title": "3. Check the condition directly",
+            "html": "<p>Look in the most relevant available source: the system record, requirement, contract, customer response, owner, log, dataset, or other authoritative place for this specific operational question. Mark unknown when the check cannot resolve it.</p>"
+          },
+          {
+            "slug": "update",
+            "title": "4. Update the commitment",
+            "html": "<p>Keep the plan if the check does not materially weaken it. Narrow, change, delay, or escalate when the result exposes a real dependency or contradiction. Record the reason so the update is traceable rather than a silent change of story.</p>"
+          }
+        ]
+      }
+    },
+    "conjunction-fallacy-coach": {
+      "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+      "subtitle": "Split A from A-and-B before a detailed story changes the comparison.",
+      "description": "When one option is A and another is A plus an additional condition B, write the two event sets explicitly and check their logical relationship before letting the more detailed description seem more likely.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pause experiments, cognitive-mechanism claims, arbitrary probability bins, daily quotas and inappropriate high-stakes examples with the underlying logical subset check.",
+      "forbidden_public_fragments": [
+        "N = 56 participants",
+        "reduced conjunction responses by ~45%",
+        "We used these bins in training 88 people",
+        "target = 10 checks",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When comparing A with A-and-B, write both statements explicitly and check whether the second one simply adds another required condition to the first.",
+        "whatYouDo": "Identify condition A, identify the additional condition B, write the compound event as A-and-B, and check whether every compound case is already included among the A cases. If so, do not rank the compound event above A merely because the added detail makes the story feel more specific.",
+        "checkIn": "What was A, what extra condition did B add, is every A-and-B case already an A case, and did the detailed wording change my initial ranking?"
+      },
+      "faq": [
+        {
+          "id": "conjunction-fallacy-coach-faq-1",
+          "question": "Why can A-and-B not be more common than A?",
+          "answer": "Every case that satisfies both A and B necessarily satisfies A. The compound set is therefore contained inside the A set; adding a required condition cannot create additional cases outside A."
+        },
+        {
+          "id": "conjunction-fallacy-coach-faq-2",
+          "question": "Does this mean the simpler explanation is always better?",
+          "answer": "No. This protocol is only about comparing a condition with the same condition plus another required condition. Detail can be useful for explanation or prediction, but it does not reverse the subset relationship between A and A-and-B."
+        },
+        {
+          "id": "conjunction-fallacy-coach-faq-3",
+          "question": "What if the statements are not nested in this way?",
+          "answer": "Then this check does not decide the comparison. Define the events more carefully or use an appropriate probability or decision method rather than forcing an A-versus-A-and-B template onto a different problem."
+        }
+      ],
+      "body": {
+        "intro": {
+          "html": "<p>A detailed description can feel compelling, but one simple logical relationship does not depend on the story. If one event is A and another requires both A and B, every A-and-B case is already part of A. Write the sets explicitly before ranking the two descriptions.</p>"
+        },
+        "sections": [
+          {
+            "slug": "split",
+            "title": "1. Split the statement into conditions",
+            "html": "<p>Identify the general condition A and the additional requirement B. Remove descriptive material that does not change whether the event belongs to A, B, or both.</p>"
+          },
+          {
+            "slug": "sets",
+            "title": "2. Write A and A-and-B side by side",
+            "html": "<p>Make the comparison visible. The first option requires A. The second requires A and also B. This prevents a vivid compound description from hiding the additional requirement.</p>"
+          },
+          {
+            "slug": "subset",
+            "title": "3. Check the subset relationship",
+            "html": "<p>Ask whether every case satisfying A-and-B also satisfies A. When that is true, the compound event is contained within A and cannot contain more cases than A itself.</p>"
+          },
+          {
+            "slug": "limits",
+            "title": "4. Use another method when the structure differs",
+            "html": "<p>If the options are not nested, or the decision depends on conditional information, costs, utilities or other factors, this logical check is not enough. Use the method appropriate to the actual question rather than extending the shortcut beyond its scope.</p>"
+          }
+        ]
+      }
+    }
+  }
+}

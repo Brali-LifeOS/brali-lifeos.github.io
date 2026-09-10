@@ -2,12 +2,14 @@ import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
+const base = "https://brali-lifeos.github.io";
 const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
 const overrides = JSON.parse(await readFile(path.join(root, "data/ontology-overrides.json"), "utf8"));
 const zones = JSON.parse(await readFile(path.join(root, "data/life-os-zones.json"), "utf8"));
 const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
 const hacksSchema = JSON.parse(await readFile(path.join(root, "contracts/hack.schema.json"), "utf8"));
 const protocolSchema = JSON.parse(await readFile(path.join(root, "contracts/protocol.schema.json"), "utf8"));
+const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const failures = [];
 
 const uniqueIds = (items, label) => {
@@ -79,6 +81,27 @@ for (const file of requiredPages) {
   catch { failures.push(`generated ontology/compatibility page missing: ${file}`); }
 }
 
+const ontologyRoutes = [
+  "/ontology/",
+  "/ontology/topics/",
+  "/ontology/methods/",
+  "/ontology/lenses/",
+  ...(ontology.domains ?? []).map((item) => `/ontology/domains/${item.id}/`),
+  ...(ontology.topics ?? []).map((item) => `/ontology/topics/${item.id}/`),
+  ...(ontology.methods ?? []).map((item) => `/ontology/methods/${item.id}/`),
+  ...(ontology.lenses ?? []).map((item) => `/ontology/lenses/${item.id}/`),
+];
+for (const route of ontologyRoutes) {
+  const file = route === "/ontology/"
+    ? "ontology/index.html"
+    : `${route.replace(/^\//, "")}index.html`;
+  const html = await readFile(path.join(root, file), "utf8");
+  const canonical = `${base}${route}`;
+  if (!html.includes(`<link rel="canonical" href="${canonical}">`)) failures.push(`${route}: canonical link missing or drifted`);
+  if (/<meta\s+name=["']robots["'][^>]*noindex/i.test(html)) failures.push(`${route}: ontology page must remain search-indexable`);
+  if (!sitemap.includes(`<loc>${canonical}</loc>`)) failures.push(`${route}: ontology page missing from sitemap`);
+}
+
 const library = await readFile(path.join(root, "life-os/index.html"), "utf8");
 if (!library.includes('href="/ontology/"')) failures.push("Growth Library does not link to the ontology");
 if (!library.includes('data-ontology-entry="true"')) failures.push("Growth Library ontology migration callout missing");
@@ -103,4 +126,4 @@ for (const zone of zones) {
 }
 
 if (failures.length) throw new Error(`Knowledge ontology validation failed with ${failures.length} problem(s):\n- ${failures.join("\n- ")}`);
-console.log(`Knowledge ontology verified: ${ontology.domains.length} domains, ${ontology.topics.length} topics, ${ontology.methods.length} methods, ${ontology.lenses.length} lenses, ${Object.keys(overrides.entries ?? {}).length} reviewed entry overrides, ${zones.length} preserved legacy zones.`);
+console.log(`Knowledge ontology verified: ${ontology.domains.length} domains, ${ontology.topics.length} topics, ${ontology.methods.length} methods, ${ontology.lenses.length} lenses, ${Object.keys(overrides.entries ?? {}).length} reviewed entry overrides, ${zones.length} preserved legacy zones; ${ontologyRoutes.length} ontology pages canonical, indexable and present in sitemap.`);

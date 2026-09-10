@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-05",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch four completed and before any batch-five disposition was applied.",
+  "selection_order": [
+    "boost-focus-with-40hz-binaural-beats",
+    "brag-doc-wins-hub",
+    "break-familiarity-bias",
+    "bullet-point-coach"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 628,
+    "actionable_under_policy": 512,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch may either replace unsupported low-risk guidance with bounded practical instructions or withhold the record. It does not invent evidence, preserve neuroscience claims without sources, or promote any record to reviewed.",
+  "entries": [
+    {
+      "slug": "boost-focus-with-40hz-binaural-beats",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative"],
+      "previous_source_recorded": false,
+      "disposition": "restrict",
+      "decision": "Withhold this record rather than converting it into practical guidance. The inherited recommendation depends on unsourced claims about 40 Hz stimulation, attention, EEG changes, reaction time, comparative benefit, session design and safety. Removing those claims would remove the substance of the hack, so it should remain outside trusted and normal search discovery until an actual source review establishes a defensible scope."
+    },
+    {
+      "slug": "brag-doc-wins-hub",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["information-management", "work-systems"],
+      "decision": "Remove fabricated pilot results, unsupported motivation and confidence claims, invented adherence figures, pseudo-precise review schedules and universal logging targets. Preserve the useful operational core as a compact record of completed work, solved problems, decisions and contributions that can later be retrieved for reviews, resumes, proposals and planning."
+    },
+    {
+      "slug": "break-familiarity-bias",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["cognitive-biases", "decision-making"],
+      "decision": "Remove fabricated prototype outcomes, invented satisfaction deltas, unsupported mechanism language, arbitrary experiment counts, cost caps and universal claims about cues or habit formation. Preserve a low-stakes choice check: identify the familiar default, state the criterion that matters, compare one viable alternative and update the default only when the comparison gives a concrete reason."
+    },
+    {
+      "slug": "bullet-point-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["clear-communication"],
+      "decision": "Remove invented clarity and meeting improvements, unsupported working-memory explanations, fabricated client and cohort outcomes, rigid word counts, rehearsal doses and speaking rhythms. Preserve the low-risk communication tool: prepare a short set of cue points that states the purpose, key information and requested next step, then use those cues without reading a script."
+    }
+  ]
+}

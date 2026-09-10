@@ -34,10 +34,14 @@ const tokenSet = value => new Set(tokens(value));
 const intersectionCount = (a, b) => [...a].filter(x => b.has(x)).length;
 const escapeHtml = value => clean(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
 const itemId = value => typeof value === 'string' ? value.replace(/^brali:topic:/, '') : clean(value?.id || value?.slug || value?.topic_id || value?.title).replace(/^brali:topic:/, '');
+const protocolSlug = value => typeof value === 'string'
+  ? value.replace(/^brali:protocol:/, '').replace(/^brali:/, '')
+  : clean(value?.slug || value?.protocol_id || value?.id || value?.canonical_id).replace(/^brali:protocol:/, '').replace(/^brali:/, '');
 const topicIds = entry => {
   const values = entry?.ontology?.topics || entry?.ontology?.topic_ids || entry?.topic_ids || [];
   return [...new Set(values.map(itemId).filter(Boolean))];
 };
+const decisionTargetSlugs = decision => (decision.target_protocol_ids || []).map(protocolSlug);
 
 const suite = read('data/agent-evaluation-suite.json');
 const platform = read('data/platform.json');
@@ -90,27 +94,52 @@ function topicSearch(query, k = 3) {
   }).filter(Boolean).sort((a,b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, k);
 }
 
-function decisionSearch(query, k = 3) {
+function decisionSearch(query) {
   const q = tokenSet(query), qNorm = normalize(query);
   return decisions.map(decision => {
     const fields = [decision.source_title, decision.supported_claim, ...(decision.unsupported_or_overstated_claims || []), ...(decision.limitations || []), decision.notes].filter(Boolean);
     const doc = fields.join(' ');
     let score = intersectionCount(q, tokenSet(doc)) * 3;
-    if (qNorm.includes(normalize(decision.source_title))) score += 15;
+    if (decision.source_title && qNorm.includes(normalize(decision.source_title))) score += 15;
     for (const phrase of decision.unsupported_or_overstated_claims || []) {
       const p = normalize(phrase);
       if (p && qNorm.includes(p.slice(0, Math.min(p.length, 24)))) score += 4;
     }
-    return score > 0 ? { id: decision.id, decision: decision.decision, source_url: decision.source_url, source_reviewed: decision.source_reviewed, supported_claim: decision.supported_claim, limitations: decision.limitations, score } : null;
-  }).filter(Boolean).sort((a,b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, k);
+    return score > 0 ? { ...decision, score } : null;
+  }).filter(Boolean).sort((a,b) => b.score - a.score || a.id.localeCompare(b.id));
+}
+
+function rankEvidenceBoundaries(decisionCandidates, selected, limit = 3) {
+  const selectedRank = new Map(selected.map((entry, index) => [protocolSlug(entry), index]));
+  const direct = decisionCandidates.map(item => {
+    const ranks = decisionTargetSlugs(item)
+      .map(slug => selectedRank.get(slug))
+      .filter(rank => Number.isInteger(rank));
+    return ranks.length ? { ...item, selected_protocol_rank: Math.min(...ranks) } : null;
+  }).filter(Boolean).sort((a, b) =>
+    a.selected_protocol_rank - b.selected_protocol_rank ||
+    b.score - a.score ||
+    a.id.localeCompare(b.id)
+  );
+  const strongRelated = decisionCandidates.filter(item => item.score >= 9);
+  const ranked = [];
+  const seen = new Set();
+  for (const item of [...direct, ...strongRelated]) {
+    if (seen.has(item.id)) continue;
+    seen.add(item.id);
+    ranked.push(item);
+    if (ranked.length >= limit) break;
+  }
+  return ranked;
 }
 
 function structuredRetrieve(query, k = 5) {
   if (safetyPattern.test(query)) return { blocked: true, no_answer: true, topics: [], protocols: [], decisions: [], boundary_only: true };
   const matchedTopics = topicSearch(query, 3);
-  const matchedDecisions = decisionSearch(query, 3).filter(x => x.score >= 9);
+  const decisionCandidates = decisionSearch(query);
+  const strongDecisions = decisionCandidates.filter(x => x.score >= 9);
   const bestTopicScore = matchedTopics[0]?.score || 0;
-  const bestDecisionScore = matchedDecisions[0]?.score || 0;
+  const bestDecisionScore = strongDecisions[0]?.score || 0;
   if (bestTopicScore < 4 && bestDecisionScore < 9) return { blocked: false, no_answer: true, topics: [], protocols: [], decisions: [], boundary_only: false };
   const topicRank = new Map(matchedTopics.map((item, index) => [item.id, matchedTopics.length - index]));
   let ranked = flagships.map(entry => {
@@ -127,9 +156,10 @@ function structuredRetrieve(query, k = 5) {
     const keep = new Set([...semantic, ...strongLexical].map(entry => entry.slug));
     if (keep.size) ranked = ranked.filter(entry => keep.has(entry.slug));
   }
-  const topDecision = matchedDecisions[0];
+  const topDecision = strongDecisions[0];
   const boundaryOnly = Boolean(topDecision?.decision === 'watch' && boundaryCue.test(query));
   const selected = boundaryOnly ? [] : ranked.slice(0, k);
+  const matchedDecisions = rankEvidenceBoundaries(decisionCandidates, selected, 3);
   return { blocked: false, no_answer: selected.length === 0 && matchedDecisions.length === 0, topics: matchedTopics, protocols: selected, decisions: matchedDecisions, boundary_only: boundaryOnly };
 }
 
@@ -245,7 +275,7 @@ const report = {
   methodology: {
     no_knowledge_control: 'Returns no external record. This measures the value of grounding, not the intelligence of a particular language model.',
     lexical_brali: 'Token-overlap retrieval over Flagship 100 title/description/action text without ontology aliases, evidence decisions, or explicit safety routing.',
-    structured_brali: 'Alias-aware Topic routing plus Flagship 100 retrieval, Evidence Decision retrieval, trust-state preservation, provenance checks, and conservative no-answer/safety behavior.',
+    structured_brali: 'Alias-aware Topic routing plus Flagship 100 retrieval, Evidence Decision retrieval aligned with production protocol links, trust-state preservation, provenance checks, and conservative no-answer/safety behavior.',
     limitation: 'This repository suite evaluates retrieval and grounded answer packets, not natural-language style or the capabilities of a chosen external model. Model-level A/B evaluation should be layered on top with a pinned provider/model.'
   },
   summary: {

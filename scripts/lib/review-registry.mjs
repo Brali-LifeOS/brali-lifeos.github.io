@@ -4,6 +4,8 @@ import path from "node:path";
 const read = (file) => JSON.parse(fs.readFileSync(file, "utf8"));
 const clone = (value) => JSON.parse(JSON.stringify(value));
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+const candidateUpdateFields = new Set(["status", "last_seen_at", "review_notes"]);
+const candidateWorkflowStates = new Set(["new", "screening", "watch", "rejected", "support-existing", "challenge-existing", "propose-hack", "propose-protocol"]);
 
 function mergeKeyed(target, additions, label) {
   target.entries ||= {};
@@ -30,6 +32,19 @@ function mergeList(target, key, additions, label) {
   }
 }
 
+function applyCandidateUpdates(researchCandidates, updates, sourceName) {
+  const byId = new Map((researchCandidates.candidates ?? []).map((entry) => [entry.id, entry]));
+  for (const [candidateId, patch] of Object.entries(updates ?? {})) {
+    const candidate = byId.get(candidateId);
+    if (!candidate) throw new Error(`${sourceName}: research candidate update references unknown candidate ${candidateId}`);
+    if (!patch || typeof patch !== "object" || Array.isArray(patch)) throw new Error(`${sourceName}: invalid research candidate update for ${candidateId}`);
+    const unknownFields = Object.keys(patch).filter((field) => !candidateUpdateFields.has(field));
+    if (unknownFields.length) throw new Error(`${sourceName}: research candidate update for ${candidateId} contains unsupported fields: ${unknownFields.join(", ")}`);
+    if (patch.status && !candidateWorkflowStates.has(patch.status)) throw new Error(`${sourceName}: invalid workflow status ${patch.status} for ${candidateId}`);
+    Object.assign(candidate, patch);
+  }
+}
+
 export function loadReviewRegistry(root) {
   const dataRoot = path.join(root, "data");
   const evidenceOverrides = clone(read(path.join(dataRoot, "evidence-overrides.json")));
@@ -50,6 +65,7 @@ export function loadReviewRegistry(root) {
     mergeKeyed(ontologyOverrides, document.ontology_overrides, "ontology override");
     mergeList(evidenceDecisions, "entries", document.evidence_decisions, "Evidence Decision id");
     mergeList(researchCandidates, "candidates", document.research_candidates, "research candidate id");
+    applyCandidateUpdates(researchCandidates, document.research_candidate_updates, name);
   }
 
   evidenceDecisions.entries.sort((a, b) => a.id.localeCompare(b.id));

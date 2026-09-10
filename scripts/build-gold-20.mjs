@@ -1,12 +1,13 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import crypto from 'node:crypto';
 import path from 'node:path';
+import { loadGoldReviewRegistry } from './lib/gold-review-registry.mjs';
 
 const root = process.cwd();
 const readJson = async rel => JSON.parse(await readFile(path.join(root, rel), 'utf8'));
 const sha256 = text => crypto.createHash('sha256').update(text).digest('hex');
 const candidates = await readJson('data/gold-20-candidates.json');
-const reviews = await readJson('data/gold-20-reviews.json');
+const reviews = await loadGoldReviewRegistry(root);
 const reviewSchema = await readJson('contracts/gold-protocol-review.schema.json');
 const protocols = await readJson('life-os/datasets/protocols.json');
 const evidence = await readJson('life-os/datasets/evidence.json');
@@ -84,6 +85,7 @@ const output = {
   rejected_count: entries.filter(entry => entry.manual_review_status === 'reject').length,
   observed_user_demand_available: candidates.observed_user_demand_available,
   selection_note: candidates.selection_note,
+  review_registry_sources: reviews.registry_sources,
   contract_url: 'https://brali-lifeos.github.io/contracts/gold-protocol-review.schema.json',
   entries,
 };
@@ -150,4 +152,4 @@ if (!datasetsHtml.includes('/life-os/datasets/gold-20.json')) {
   await writeFile(datasetsPath, datasetsHtml);
 }
 
-console.log(`Gold 20 readiness built: ${output.candidate_count} candidates; ${output.gold_ready_count} Gold-ready; observed user demand=${output.observed_user_demand_available}; canonical/API manifests synchronized.`);
+console.log(`Gold 20 readiness built: ${output.candidate_count} candidates; ${output.gold_ready_count} Gold-ready from ${reviews.registry_sources.length} review registry file(s); observed user demand=${output.observed_user_demand_available}; canonical/API manifests synchronized.`);

@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "description": "Completion reviews for the remaining two Gold Batch A protocols. These are additive to the base manual Gold review registry and must not shadow an existing review.",
+  "entries": {
+    "woop-goal-planner": {
+      "schema_version": 1,
+      "protocol_id": "brali:woop-goal-planner",
+      "slug": "woop-goal-planner",
+      "reviewed_at": "2026-09-09",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I have a meaningful goal but keep stalling when an internal obstacle appears, and I want a concrete response I can try when that obstacle shows up.",
+      "eligibility": [
+        "The wish is meaningful, reasonably feasible, and low-risk enough to test through ordinary self-directed action.",
+        "The user can identify at least one internal obstacle, such as a thought, feeling, habit, or impulse, that is relevant to the goal and partly within their influence.",
+        "The user can define a specific action to try when that obstacle or cue appears and can later inspect what happened."
+      ],
+      "when_not_to_use": [
+        "Do not use WOOP to reframe an external constraint such as missing permission, money, staffing, safety, discrimination, or another structural blocker as a personal self-regulation failure.",
+        "Do not use the protocol as a guarantee that a goal will be achieved or as a substitute for professional assessment in medical, legal, safety-critical, or other consequential decisions.",
+        "Do not force a wish that is not reasonably feasible or personally meaningful merely to complete the template."
+      ],
+      "first_action": "Write one meaningful and reasonably feasible wish, one concrete outcome, one internal obstacle that could derail you, and one sentence in the form: If I notice this obstacle, then I will take this specific action.",
+      "steps": [
+        "Choose one wish that matters and is plausible enough to act on rather than a fantasy with no realistic action path.",
+        "Describe the desired outcome concretely enough that you can recognize movement toward it without turning the exercise into a numeric guarantee.",
+        "Identify the most relevant internal obstacle that could interfere with your own action, while keeping external constraints separate.",
+        "Create one if-then response: if that obstacle or cue appears, then take one specific action that is small enough to execute.",
+        "Try the plan in the real situation, then revise the obstacle, cue, or response if the plan was not triggered or did not help you act."
+      ],
+      "review_horizon": {
+        "value": "After the relevant obstacle next appears or after one real attempt",
+        "rationale": "WOOP is cue-triggered self-regulation. The useful review point is the first real encounter with the chosen obstacle; the reviewed evidence does not justify one universal waiting period, repetition count, or goal-completion deadline."
+      },
+      "observable_signal": "Whether the chosen obstacle actually appeared, whether the user noticed it, whether the if-then response was executed, and what changed in the next action. Goal completion itself is a separate longer-horizon outcome and is not guaranteed by the protocol.",
+      "stop_or_change_rule": "Change the plan when the chosen obstacle is not the real blocker, the cue is too vague to notice, the response is too large to execute, or an external constraint dominates the situation. Stop the exercise when the wish is unsafe, infeasible, or no longer meaningful.",
+      "fallback": "If the internal obstacle is unclear, skip the full WOOP sequence and write the smallest controllable next action plus the external dependency that must be resolved. Return to WOOP only when a meaningful internal obstacle and cue can be identified honestly.",
+      "evidence_boundary": {
+        "status": "reviewed",
+        "statement": "A 2021 meta-analysis of mental contrasting with implementation intentions reported a small-to-medium average effect on goal attainment across heterogeneous field interventions, with mixed publication-bias diagnostics and a smaller trim-and-fill estimate. A 2026 randomized undergraduate procrastination study provides narrow corroboration for task aversiveness and willingness to act. Brali therefore treats WOOP as a bounded self-regulation option for feasible goals, not as a universal or guaranteed goal-achievement method.",
+        "source_decision_ids": [
+          "woop-mcii-goal-attainment-meta-analysis-2021",
+          "woop-mcii-academic-procrastination-rct-2026"
+        ]
+      },
+      "limitations": [
+        "The 2021 meta-analysis combined heterogeneous populations, goal domains, delivery formats, and outcomes; the average effect does not predict one person's result.",
+        "Publication-bias diagnostics in the meta-analysis were mixed and trim-and-fill produced a smaller adjusted effect estimate.",
+        "The 2026 trial randomized 101 eligible first-year undergraduates at one private Chinese university; 20 were excluded for missing reports or intervention nonadherence, leaving 81 in the final sample. Its main psychological outcomes were self-reported and the follow-up lasted one week.",
+        "Neither source supports using WOOP as treatment, a universal productivity method, an optimal script, or a substitute for resolving external constraints."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/woop-goal-planner/",
+        "source_citations": [
+          "Wang G, Wang Y, Gai X. A Meta-Analysis of the Effects of Mental Contrasting With Implementation Intentions on Goal Attainment. Frontiers in Psychology. 2021;12:565202. https://doi.org/10.3389/fpsyg.2021.565202",
+          "Zhou X, Wider W, Wu H, Xu Y, Qin M, Borromeo AS. Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination. Acta Psychologica. 2026;262:106168. https://doi.org/10.1016/j.actpsy.2025.106168"
+        ]
+      },
+      "agent_summary": "Use WOOP when a user has a meaningful feasible goal and can identify an internal obstacle they may encounter. Help them name Wish, Outcome, Obstacle, and one If-obstacle-then-action response, then review what happened when the cue actually appeared. Keep external constraints separate and never promise that the protocol guarantees goal achievement.",
+      "retrieval_paths": [
+        "/life-os/woop-goal-planner/",
+        "/topics/goals/",
+        "/for-ai/query/?q=How%20can%20I%20turn%20a%20vague%20goal%20into%20actions%20I%20can%20control"
+      ],
+      "evaluation_case_ids": [
+        "goals-control"
+      ]
+    },
+    "3-3-3-workday-planner": {
+      "schema_version": 1,
+      "protocol_id": "brali:3-3-3-workday-planner",
+      "slug": "3-3-3-workday-planner",
+      "reviewed_at": "2026-09-09",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "My workday has too many competing tasks and interruptions, and I need a lightweight plan that makes the next important outcome visible without pretending the day will stay fixed.",
+      "eligibility": [
+        "The user is planning an ordinary low-risk workday and can choose or renegotiate at least some priorities.",
+        "Grouping work into a few broad blocks would reduce decision friction without hiding fixed meetings, dependencies, service levels, or deadlines.",
+        "The user is willing to replan when reality changes instead of treating the initial blocks as commitments that must be completed exactly."
+      ],
+      "when_not_to_use": [
+        "Do not use the template as the controlling workflow for emergency response, incident management, clinical care, driving, safety-critical operations, or another setting where priorities must update continuously from external events.",
+        "Do not compress mandatory sequences, deadlines, handoffs, or dependencies into three blocks when doing so would hide operational constraints.",
+        "Do not interpret three blocks or three outcomes as an evidence-backed optimal dose for productivity."
+      ],
+      "first_action": "Look at today's fixed constraints, then write up to three broad work blocks and give each block one to three observable outcomes that fit the time you actually control.",
+      "steps": [
+        "List the fixed constraints first: meetings, deadlines, dependencies, support coverage, caregiving, or other commitments that the plan must respect.",
+        "Create up to three broad blocks around the remaining work rather than forcing exactly three when the day does not support it.",
+        "Give each block one to three observable outcomes, phrased as what should be different when the block ends rather than a long task inventory.",
+        "Start with the current block and capture new work without immediately rebuilding the whole day unless priority genuinely changes.",
+        "When an interruption, urgent request, delay, or dependency changes the day, replan the remaining blocks instead of treating the original plan as failed.",
+        "At the end of the day, note which outcomes moved, what displaced them, and whether fewer, different, or more flexible blocks would fit the next similar day better."
+      ],
+      "review_horizon": {
+        "value": "At the end of the same workday, with replanning whenever a material constraint changes",
+        "rationale": "This is an editorial planning template rather than an evidence-backed scheduling dose. The same-day review simply tests whether the structure clarified choices and adapted to real constraints."
+      },
+      "observable_signal": "Whether the user could identify the current important outcome, whether fixed constraints remained visible, and whether the remaining plan could be updated without carrying obsolete blocks forward as guilt or hidden backlog.",
+      "stop_or_change_rule": "Reduce or abandon the block structure when it repeatedly hides urgent dependencies, makes the day more rigid, adds more planning overhead than clarity, or creates overloaded blocks. Replan immediately when a material constraint changes.",
+      "fallback": "Use a simpler top-three or next-action list plus fixed calendar constraints when blocks add unnecessary structure, or use the team's operational queue when work is primarily event-driven.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "The 3-3-3 structure is a low-risk editorial planning template. Brali has no reviewed source establishing three blocks, three outcomes, or any exact 3×3 schedule as a scientifically optimal productivity method; the value claim is limited to whether the user finds the structure useful in the current workday.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "The number three is an organizational convenience, not an evidence-backed productivity dose.",
+        "The template may fit poorly in interrupt-driven, shift-based, support, care, incident-response, or tightly sequenced work.",
+        "A completed block does not prove that the highest-value work was chosen; priority still depends on real objectives, constraints, and dependencies.",
+        "The protocol does not claim improvements in productivity, wellbeing, focus, or time management beyond the user's observable planning experience."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/3-3-3-workday-planner/",
+        "source_citations": []
+      },
+      "agent_summary": "Use this as a lightweight workday planning template: preserve fixed constraints, create up to three broad blocks, give each one to three observable outcomes, and replan when reality changes. Treat three as a convenience, not a scientific optimum, and switch to a simpler or event-driven system when blocks hide dependencies or add overhead.",
+      "retrieval_paths": [
+        "/life-os/3-3-3-workday-planner/",
+        "/topics/work-systems/",
+        "/for-ai/query/?q=How%20do%20I%20prioritize%20my%20work%20for%20this%20week"
+      ],
+      "evaluation_case_ids": [
+        "prioritize-week"
+      ]
+    }
+  }
+}

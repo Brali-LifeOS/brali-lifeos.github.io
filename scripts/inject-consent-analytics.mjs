@@ -41,7 +41,7 @@ const head = `<!-- ${marker} -->
 })(window,document,'${containerId}');
 </script>`;
 
-const banner = `<aside id="brali-analytics-consent" role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
+const banner = `<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
   <strong style="display:block;margin-bottom:6px;font-size:17px">Optional analytics</strong>
   <span>Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.</span>
   <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">

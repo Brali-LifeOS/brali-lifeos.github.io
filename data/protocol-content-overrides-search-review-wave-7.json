@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "weekly-goal-review-coach": {
+      "title": "Run a Weekly Review That Produces One Clear Change",
+      "subtitle": "Compare intentions with what actually happened, then update the next week.",
+      "description": "Use a recurring weekly checkpoint to inspect active goals, completed and missed work, constraints, and changing priorities, then turn the review into a small set of concrete scheduling or scope decisions.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated adherence and execution results, unsupported optimal review windows, pseudo-precise weekly time leverage, health and nutrition examples, and arbitrary metric targets with a bounded operational weekly review.",
+      "forbidden_public_fragments": ["0.6–1.2%", "40% to 15%", "55% to 84%", "~20–30%", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use a recurring weekly checkpoint to compare planned work with actual progress and constraints, then change the next week instead of only recording what happened.",
+        "whatYouDo": "Review the active goals and commitments, note what moved and what did not, identify the main constraint or changed assumption, decide what should continue, stop, shrink, delegate, or move, and schedule the first concrete action created by the review.",
+        "checkIn": "What moved this week, what blocked or changed, what am I changing for the next week, and where is the first action scheduled?"
+      },
+      "faq": [
+        {"id": "weekly-goal-review-coach-faq-1", "question": "How long should a weekly review take?", "answer": "Long enough to make the important decisions and short enough that the review remains maintainable. The right duration depends on the number of active commitments and the quality of the information already captured during the week."},
+        {"id": "weekly-goal-review-coach-faq-2", "question": "What if the week was disrupted by unexpected work?", "answer": "Treat the disruption as part of the operating context. Record what changed, which commitments were displaced, and whether the next week needs different capacity, scope, ownership, or escalation rather than judging the original plan in isolation."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A weekly review is useful when it changes the next week. The goal is not to produce a perfect retrospective or a large dashboard; it is to compare current commitments with reality, expose the main constraint, and make a small number of explicit decisions about what happens next.</p>"},
+        "sections": [
+          {"slug": "collect", "title": "1. Collect the active picture", "html": "<p>Open the current goals, task list, calendar, deadlines, and any short notes that explain significant changes. Focus on the commitments that can affect the coming week rather than reopening every historical item.</p>"},
+          {"slug": "compare", "title": "2. Compare intended and actual progress", "html": "<p>For each active goal, note what moved, what stayed blocked, what became irrelevant, and what consumed more or less capacity than expected. Keep facts and assumptions separate when the reason for a miss is still unclear.</p>"},
+          {"slug": "decide", "title": "3. Make the operating decisions", "html": "<p>Decide which items continue unchanged and which should stop, shrink, move, delegate, split, or escalate. Prefer a small number of consequential changes over a long list of cosmetic edits to the plan.</p>"},
+          {"slug": "schedule", "title": "4. Put the first change into the next week", "html": "<p>Convert the most important review decision into a visible next action with an owner and an appropriate place in the calendar or task system. A review that ends only with notes has not yet changed the operating plan.</p>"}
+        ]
+      }
+    },
+    "separate-to-decide-decision-evaluator": {
+      "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+      "subtitle": "Keep the criteria stable so side-by-side differences do not rewrite the decision.",
+      "description": "Define the must-have criteria first, inspect each option against the same criteria, record unknowns separately, and compare survivors only after the individual evaluations are complete.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported cognitive-bias mechanisms, fabricated team experiments, invented satisfaction and speed effects, arbitrary universal timeboxes and score scales, and high-stakes insurance or job-offer prescriptions with a criteria-stability decision workflow.",
+      "forbidden_public_fragments": ["25% less time", "18% greater satisfaction", "48 volunteers", "n(n-1)/2", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Define the important criteria before comparing options, then evaluate each candidate against those same criteria so the standards do not drift with every new alternative.",
+        "whatYouDo": "Write the must-have constraints and relevant preferences before opening the comparison, evaluate each option against that same list, mark missing information as unknown rather than pass or fail, remove options that clearly violate a must-have, and compare the remaining trade-offs only after the individual evaluations are recorded.",
+        "checkIn": "Did I keep the same criteria across options, which unknown could still change the result, and which remaining trade-off actually matters?"
+      },
+      "faq": [
+        {"id": "separate-to-decide-decision-evaluator-faq-1", "question": "Should I avoid side-by-side comparison entirely?", "answer": "No. Side-by-side comparison is useful after each option has been checked against stable requirements. The sequence is meant to prevent the criteria from drifting, not to forbid direct comparison."},
+        {"id": "separate-to-decide-decision-evaluator-faq-2", "question": "What if a new option reveals a criterion I forgot?", "answer": "Add the criterion only if it is genuinely relevant, then re-evaluate every serious option against the revised list. Do not apply a new standard only to the option that happened to reveal it."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Comparisons become noisy when the standards change while the options are being inspected. A simple way to control that drift is to define the decision criteria first, evaluate each candidate against the same list, and postpone the final trade-off comparison until the individual records are complete.</p>"},
+        "sections": [
+          {"slug": "criteria", "title": "1. Freeze the initial criteria", "html": "<p>Write the must-have constraints and the few preferences that actually matter. Use measurable thresholds when the requirement is truly measurable, but do not invent numeric precision for subjective preferences.</p>"},
+          {"slug": "individual", "title": "2. Evaluate each option on the same sheet", "html": "<p>For every option, record pass, fail, or unknown for the must-haves and brief notes for the preferences. Keep unknown information visible instead of filling gaps with assumptions or ratings that look more certain than the input deserves.</p>"},
+          {"slug": "survivors", "title": "3. Remove clear failures and resolve decisive unknowns", "html": "<p>Eliminate candidates that clearly fail a real must-have. For surviving options, identify which missing fact could materially change the choice and obtain that information when the cost of doing so is justified.</p>"},
+          {"slug": "compare", "title": "4. Compare only the meaningful trade-offs", "html": "<p>Now place the viable options side by side. Focus on the differences tied to the original criteria, document any criterion that changed during the process, and choose or take the smallest next step needed to close the remaining uncertainty.</p>"}
+        ]
+      }
+    },
+    "active-listening-coach": {
+      "title": "Use a Brief Summary to Check What You Heard",
+      "subtitle": "Listen for meaning, reflect it back, and give the speaker room to correct you.",
+      "description": "In an important conversation, delay your response long enough to capture the speaker's main point, summarize it in your own words, ask whether you understood correctly, and adjust before moving to advice or action.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported empathy and speed effects, fabricated interpersonal observations, prescriptive eye-contact and nodding percentages, physiological instructions, and culture-insensitive nonverbal rules with an accessible comprehension-check protocol.",
+      "forbidden_public_fragments": ["+15–30%", "50–70%", "1–4 nods", "200–300 ms", "~40%", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Before answering an important point, summarize what you think the other person means and give them a chance to correct the summary.",
+        "whatYouDo": "Let the speaker finish the relevant thought, identify the main point and any stated constraint, summarize it briefly in your own words, ask whether you captured it correctly, update your understanding if they correct you, and only then move to your response or the next action.",
+        "checkIn": "What did I think the person meant, what did they correct or add, and did the final next step reflect the shared understanding?"
+      },
+      "faq": [
+        {"id": "active-listening-coach-faq-1", "question": "Do I need to maintain eye contact or use specific body language?", "answer": "No fixed nonverbal behavior is required. Communication norms, accessibility needs, neurodiversity, culture, medium, and personal comfort differ. Focus on accurately understanding the message and giving the speaker a real opportunity to correct your interpretation."},
+        {"id": "active-listening-coach-faq-2", "question": "What if summarizing feels artificial?", "answer": "Use ordinary language and summarize only when understanding matters. A short phrase such as 'So the blocker is the approval, not the implementation?' can be enough; repeating every statement is unnecessary."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Listening becomes operational when the other person can see what you understood and correct it before decisions are made. The core move is simple: hear the relevant point, reflect the meaning in your own words, verify it, and then continue from the corrected shared picture.</p>"},
+        "sections": [
+          {"slug": "finish", "title": "1. Let the relevant thought finish", "html": "<p>When possible, avoid interrupting with the answer you were already preparing. Listen for the claim, request, constraint, uncertainty, or concern that the speaker is trying to communicate. In fast operational settings, this may be only a sentence or two.</p>"},
+          {"slug": "summary", "title": "2. Summarize the meaning, not every word", "html": "<p>Use your own wording to state the main point and the constraint that seems to matter. Keep the summary short enough that the speaker can easily confirm or repair it rather than having to listen to a second monologue.</p>"},
+          {"slug": "verify", "title": "3. Invite correction", "html": "<p>Ask a direct check such as <em>Is that the right reading?</em> or <em>What am I missing?</em> Treat a correction as useful information, not as a failure of the technique. Update the summary when the distinction affects the decision.</p>"},
+          {"slug": "respond", "title": "4. Respond to the corrected version", "html": "<p>Once the shared understanding is good enough, give your answer, question, decision, or next step. When the conversation ends with an action, state the owner and next move so the listening check connects to execution.</p>"}
+        ]
+      }
+    },
+    "conversational-storytelling-coach": {
+      "title": "Use a Short Story to Explain One Point in Conversation",
+      "subtitle": "Keep the anecdote relevant, compressed, and safe to share.",
+      "description": "Choose one real example that directly supports the point you are making, keep only the context needed to understand what changed, connect the ending back to the current conversation, and remove confidential or identifying details that are not necessary.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported recall and credibility effects, fabricated training outcomes, pseudo-optimal story lengths and beat timing, and overgeneralized listener-state prescriptions with a concise relevance-and-privacy storytelling workflow.",
+      "forbidden_public_fragments": ["20–40%", "10–25%", "90-second story", "three check-ins per day", "At MetalHatsCats"],
+      "lifeOsSource": {
+        "hack": "Use a short real example when it clarifies the point better than another abstract explanation, and cut every detail that does not help the listener understand the connection.",
+        "whatYouDo": "State the point you need to explain, choose one real example that directly supports it, keep only the minimum context, describe the change or decision that matters, connect the ending back to the present topic, and remove confidential or identifying details that are not necessary for the explanation.",
+        "checkIn": "What point was the story serving, which detail made it clearer, what could be removed, and did I protect information that did not need to be shared?"
+      },
+      "faq": [
+        {"id": "conversational-storytelling-coach-faq-1", "question": "How short should the story be?", "answer": "Short enough to serve the current conversation without taking it over. A complex example may need more context than a simple one; relevance and listener time matter more than a fixed duration."},
+        {"id": "conversational-storytelling-coach-faq-2", "question": "What if the useful example involves a colleague or client?", "answer": "Remove names, account details, confidential values, and other identifying information unless sharing them is necessary and permitted. If anonymizing the example still creates a privacy or contractual problem, use a different example."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A conversational story is useful when a concrete example can make one point easier to understand. The story is not the destination: it should earn its time by clarifying the current topic, then hand the conversation back to the listener or the decision at hand.</p>"},
+        "sections": [
+          {"slug": "point", "title": "1. Name the point before choosing the story", "html": "<p>Write or think the sentence the listener needs to understand. If you cannot state the point without the anecdote, clarify the point first. This prevents an entertaining memory from becoming the reason the conversation changes direction.</p>"},
+          {"slug": "example", "title": "2. Choose one directly relevant example", "html": "<p>Pick an event that demonstrates the same type of constraint, decision, failure mode, or outcome being discussed. Prefer a real example you can describe accurately over a dramatic example that only loosely resembles the current problem.</p>"},
+          {"slug": "compress", "title": "3. Keep context, change, and connection", "html": "<p>Give only enough context to orient the listener, describe the action or change that matters, and end by connecting the example back to the present point. Remove side characters, chronology, numbers, and scene details that do not improve understanding.</p>"},
+          {"slug": "privacy", "title": "4. Protect people and confidential context", "html": "<p>Before telling the story, remove unnecessary names, customer details, internal identifiers, confidential figures, and personal information. If the listener needs technical specifics, offer the appropriate source or follow-up rather than embedding sensitive material in the anecdote.</p>"}
+        ]
+      }
+    }
+  }
+}

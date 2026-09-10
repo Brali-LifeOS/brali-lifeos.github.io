@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "context-guard-for-decisions": {
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "subtitle": "Make changed conditions, constraints and unknowns visible before applying an old answer.",
+      "description": "Before applying a familiar solution, state what changed, identify the people and system constraints that matter, separate verified facts from assumptions, and choose a reversible next step when important context is still missing.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated project outcomes, psychological mechanism claims, universal timing and sample rules, health and emotional examples and assumptions about other people's motives with a bounded operating-context check.",
+      "forbidden_public_fragments": [
+        "reduce typical failure modes by ~30–60%",
+        "completion rate drops sharply beyond three",
+        "78% completion with three concerns vs. 49% with five",
+        "reduced failures by 2–4x in low‑bandwidth markets",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before reusing a familiar solution, check what is different about the current situation and which missing fact could make the old answer inappropriate.",
+        "whatYouDo": "State the decision, note what changed since the comparable case, list the concrete constraints and stakeholders that affect execution, mark assumptions separately from verified facts, and choose a reversible next step or clarification when a missing condition could change the choice.",
+        "checkIn": "What changed, which constraint matters now, what am I assuming rather than verifying, and what is the smallest next step that fits the current context?"
+      },
+      "faq": [
+        {
+          "id": "context-guard-for-decisions-faq-1",
+          "question": "Do I need to analyze another person's motives?",
+          "answer": "No. Prefer observable constraints, stated needs, permissions, deadlines, capabilities and system conditions. When motive matters but is unknown, ask or leave it marked as an assumption rather than inventing an explanation."
+        },
+        {
+          "id": "context-guard-for-decisions-faq-2",
+          "question": "When is the old solution safe to reuse?",
+          "answer": "Reuse it when the conditions that made it work are still relevant and no changed constraint materially alters the choice. If a key condition is unknown, make the next step reversible or gather that information first."
+        },
+        {
+          "id": "context-guard-for-decisions-faq-3",
+          "question": "What if the decision is high stakes?",
+          "answer": "Use the required domain process and qualified review. This context check can help expose assumptions, but it does not replace safety, legal, financial, medical or compliance procedures."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>A solution that worked before can fail when the surrounding conditions change. Instead of treating context as background, make the conditions that affect execution explicit: what changed, who or what is constrained, which facts are known, and which assumption could still reverse the decision.</p>"},
+        "sections": [
+          {"slug": "change", "title": "1. State what changed", "html": "<p>Compare the current situation with the case you are using as a reference. Note changed timing, ownership, system state, customer need, workload, permissions, environment or other condition that could affect the decision.</p>"},
+          {"slug": "constraints", "title": "2. Identify concrete constraints", "html": "<p>List the constraints that limit what can actually be done. Use observable facts such as available access, required approval, device or system capability, deadline, dependency, language, format or staffing rather than guessing about character or motivation.</p>"},
+          {"slug": "unknowns", "title": "3. Separate facts from assumptions", "html": "<p>Mark each important unknown that you are currently filling with an assumption. Ask which unknown could materially change the decision and whether it can be clarified before committing.</p>"},
+          {"slug": "step", "title": "4. Choose a context-fit next step", "html": "<p>When the context is sufficiently clear, choose the action that fits it. When an important condition is unresolved, prefer a reversible step, clarification or small probe rather than a large commitment built on an unverified assumption.</p>"}
+        ]
+      }
+    },
+    "context-planner-for-writers": {
+      "title": "Write a Context Brief Before Drafting",
+      "subtitle": "Name the reader, publication surface, purpose and constraints before choosing structure and tone.",
+      "description": "Before drafting, write a compact brief that identifies the primary reader, where the text will appear, what the reader should understand or do, which constraints apply, and what facts or sources must be verified.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated editing and publication outcomes, invented user tests, fixed word-count menus, pseudo-precise timing and unsupported audience-response claims with a bounded pre-draft context brief.",
+      "forbidden_public_fragments": [
+        "drafts are 20–50% shorter",
+        "In our user tests (n = 48)",
+        "reduced revision cycles by 34%",
+        "publication frequency by 40%",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Before drafting, decide who the primary reader is, where the text will appear, what the text must accomplish and which constraints or verification needs should shape the draft.",
+        "whatYouDo": "Write the primary reader, publication surface, desired reader action or understanding, required tone or format constraints, facts that must be checked, and any detail that should be omitted for privacy, confidentiality or scope. Then build the outline from that brief.",
+        "checkIn": "Who is this for, where will it appear, what should the reader understand or do, and which constraint or fact must the draft respect?"
+      },
+      "faq": [
+        {
+          "id": "context-planner-for-writers-faq-1",
+          "question": "What if the text has several audiences?",
+          "answer": "Choose the reader who drives the main path and record secondary audiences separately. If their needs conflict materially, create separate versions or clearly separated layers rather than forcing every purpose into one paragraph."
+        },
+        {
+          "id": "context-planner-for-writers-faq-2",
+          "question": "Should the brief specify a word count?",
+          "answer": "Only when the publication surface or task has a real length constraint. Otherwise define the information the reader needs and remove material that does not serve the purpose rather than inventing an arbitrary target."
+        },
+        {
+          "id": "context-planner-for-writers-faq-3",
+          "question": "What should I verify before drafting?",
+          "answer": "Identify claims, names, dates, figures, quotations, permissions, links and other details whose accuracy or provenance matters. Mark unknowns in the brief so they are not silently filled with plausible wording during drafting."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Writing decisions become easier when the context is explicit before the first paragraph. A short brief defines the reader, publication surface, purpose, constraints and verification needs. Those choices become the filter for structure, tone and supporting detail.</p>"},
+        "sections": [
+          {"slug": "reader", "title": "1. Name the primary reader", "html": "<p>Describe the reader by the task they are trying to complete or the decision they need to make. Avoid invented demographic detail unless it is genuinely relevant and known.</p>"},
+          {"slug": "surface", "title": "2. Record the publication surface", "html": "<p>Note where the text will appear and the actual constraints of that surface: required format, available space, link behavior, confidentiality, moderation rules, accessibility needs or organizational standards.</p>"},
+          {"slug": "purpose", "title": "3. Define the intended outcome", "html": "<p>State what the reader should understand, decide or do after reading. When the text has several goals, identify which one controls the main path and which can remain secondary.</p>"},
+          {"slug": "boundaries", "title": "4. Set verification and content boundaries", "html": "<p>List the facts that need checking and the information that should not be included. Use the brief to choose the outline and tone, then revisit it when the draft starts serving a different audience or purpose.</p>"}
+        ]
+      }
+    },
+    "contextual-language-coach": {
+      "title": "Rehearse One Real Language Scenario",
+      "subtitle": "Prepare the phrases and repair moves needed for one low-risk interaction.",
+      "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported language-learning effects, fabricated classroom and pilot outcomes, rigid phrase counts and repetition schedules, anxiety claims and unsafe pharmacy examples with a bounded scenario-rehearsal workflow.",
+      "forbidden_public_fragments": [
+        "30–50% faster accuracy improvement",
+        "In our small pilots, 70% of learners",
+        "frequency ≥3/week",
+        "60–80% higher rehearsal completion",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "Choose one low-risk interaction you are likely to face and rehearse the words needed to start, complete and repair that interaction.",
+        "whatYouDo": "Define the scenario and desired outcome, write the core request or response, add likely follow-up phrases and one repair phrase for misunderstanding, rehearse both sides aloud, use the interaction when appropriate, and update the phrase set from the point where you hesitated or needed clarification.",
+        "checkIn": "Which scenario did I rehearse, where did the interaction become difficult, which phrase or listening cue should I add, and what can I reuse next time?"
+      },
+      "faq": [
+        {
+          "id": "contextual-language-coach-faq-1",
+          "question": "Which scenarios should I choose first?",
+          "answer": "Prefer common, low-risk interactions with a clear outcome: greeting a colleague, ordering a familiar item, asking for directions, checking a reservation, introducing a project or asking a routine service question."
+        },
+        {
+          "id": "contextual-language-coach-faq-2",
+          "question": "What is a repair phrase?",
+          "answer": "It is a phrase that keeps the interaction going when you miss something, such as asking the person to repeat, slow down, clarify a word or confirm what you understood."
+        },
+        {
+          "id": "contextual-language-coach-faq-3",
+          "question": "Should I rehearse medical or legal conversations this way?",
+          "answer": "Do not rely on informal language practice for a high-stakes interaction. Use professional interpretation, translated official material or qualified assistance when misunderstanding could materially affect health, rights, money or safety."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>A broad goal such as <em>speak better</em> is difficult to rehearse. A specific interaction gives practice a visible beginning and end. Prepare the language required for one real low-risk scenario, include a way to repair misunderstanding, then update the script from the part that was actually difficult.</p>"},
+        "sections": [
+          {"slug": "scenario", "title": "1. Define the interaction", "html": "<p>Name the setting, the other person's role and the concrete outcome you need: place an order, ask a routine question, confirm a time, introduce a topic or obtain simple information. Keep the first scenario narrow enough to rehearse end to end.</p>"},
+          {"slug": "phrases", "title": "2. Prepare the core and repair language", "html": "<p>Write the opening, main request or response, likely follow-up and a repair phrase. Prefer reusable sentence frames over a long memorized speech, and leave room to substitute names, times, objects or places.</p>"},
+          {"slug": "rehearse", "title": "3. Rehearse both sides", "html": "<p>Say your lines aloud and imagine more than one plausible reply. Practice the repair phrase as part of the scenario so a missed word or unexpected answer does not end the interaction.</p>"},
+          {"slug": "update", "title": "4. Update from the real interaction", "html": "<p>After using the scenario, note where you hesitated, misunderstood or lacked a phrase. Add only the language that would have helped at that point, then reuse the revised version when the same situation returns.</p>"}
+        ]
+      }
+    },
+    "control-to-action-compass": {
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "subtitle": "Turn a concern into the next action you can actually perform.",
+      "description": "For a concern or desired outcome, separate actions you can directly perform from dependencies you can influence or only observe, choose one concrete next action, and define how waiting items will be revisited instead of repeatedly planning the outcome itself.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace therapy and physiological framing, medical and family-health examples, fabricated completion outcomes, fixed concern counts, timing prescriptions and attention claims with a bounded action-allocation workflow.",
+      "forbidden_public_fragments": [
+        "typical heart rate drops of 2–5 bpm",
+        "self‑reported anxiety down by ~10–20%",
+        "78% completion with three concerns vs. 49% with five",
+        "attention flips context roughly every 40–120 seconds",
+        "At MetalHatsCats"
+      ],
+      "lifeOsSource": {
+        "hack": "When a concern mixes your actions with external outcomes, separate the parts and move one directly controllable action into the real plan.",
+        "whatYouDo": "Write the concern or desired outcome, list the actions you can directly perform, list dependencies or responses owned by others, identify outcomes you can only observe, choose one next action under your control, and give waiting items a review trigger rather than repeatedly treating them as current work.",
+        "checkIn": "What action can I perform directly, what depends on someone or something else, what outcome can I only observe, and when will I revisit the waiting part?"
+      },
+      "faq": [
+        {
+          "id": "control-to-action-compass-faq-1",
+          "question": "Is influence the same as control?",
+          "answer": "No. You may control the action of asking, proposing, preparing or following up, while the other person's response remains outside your control. Keep those two parts separate so the plan does not depend on pretending the response is guaranteed."
+        },
+        {
+          "id": "control-to-action-compass-faq-2",
+          "question": "What should I do with something I cannot act on yet?",
+          "answer": "Give it a waiting state with a trigger such as a date, reply, delivery, approval or other event. Revisit it when the trigger occurs rather than repeatedly carrying the same item as an active task."
+        },
+        {
+          "id": "control-to-action-compass-faq-3",
+          "question": "Does this mean ignoring outcomes I cannot control?",
+          "answer": "No. Outcomes and dependencies still matter for planning and risk. The distinction only clarifies where direct action is possible and where monitoring, contingency planning, escalation or waiting is the appropriate next state."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Many concerns contain several different things at once: an action you can perform, a response owned by someone else, and an outcome no one can directly command. Separating those parts turns a vague concern into a plan without pretending that the plan controls the result.</p>"},
+        "sections": [
+          {"slug": "concern", "title": "1. State the concern or outcome", "html": "<p>Write the situation in one sentence. Then identify the result you care about without turning that result itself into a task. A task should describe something an owner can actually do.</p>"},
+          {"slug": "separate", "title": "2. Separate actions, dependencies and outcomes", "html": "<p>Put directly performable actions in one group. Put approvals, replies, deliveries and other external dependencies in another. Put final outcomes that can only be observed in a third group.</p>"},
+          {"slug": "action", "title": "3. Choose one controllable next action", "html": "<p>Select the action that moves the situation or reduces uncertainty now: draft, ask, schedule, prepare, send, check, decide, document or escalate. Give it a real owner and place in the work system.</p>"},
+          {"slug": "waiting", "title": "4. Give dependencies a review trigger", "html": "<p>Move external dependencies out of the active action list once your part is complete. Record what you are waiting for and the condition that should bring the item back into attention.</p>"}
+        ]
+      }
+    }
+  }
+}

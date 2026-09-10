@@ -28,10 +28,10 @@
   },
   "ontology_overrides": {
     "context-guard-for-decisions": {
-      "topic_ids": ["decision-making", "problem-solving"],
+      "topic_ids": ["decision-making"],
       "reviewed_at": "2026-09-10",
       "reviewed_by": "Brali Taxonomy Curator (AI-assisted)",
-      "reason": "The effective protocol adds situational constraints, stakeholders, verified facts and unknowns to an active choice before selecting a reversible next step. Decision Making is primary; Problem Solving captures reframing a solution around the actual operating context."
+      "reason": "The effective protocol adds situational constraints, stakeholders, verified facts and unknowns to an active choice before selecting a reversible next step. Decision Making directly captures the task; broader Problem Solving routing is intentionally omitted to avoid crowding hypothesis-specific retrieval."
     },
     "context-planner-for-writers": {
       "topic_ids": ["writing", "clear-communication"],

@@ -19,6 +19,11 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Validate installable Brali Agent Skill
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_PROMPT_DISABLED: 1
+        run: gh skill publish agent-skills --dry-run
       - run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
 
   deploy:

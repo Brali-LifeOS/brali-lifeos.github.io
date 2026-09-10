@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-2026-09-10-09",
+  "selected_at": "2026-09-10",
+  "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch eight completed and before any batch-nine rewrite was applied.",
+  "selection_order": [
+    "context-guard-for-decisions",
+    "context-planner-for-writers",
+    "contextual-language-coach",
+    "control-to-action-compass"
+  ],
+  "observed_initial_queue": {
+    "unresolved_claim_debt": 613,
+    "actionable_under_policy": 496,
+    "selected": 4,
+    "blocked_preview": 8,
+    "selected_editorial_score": 140,
+    "blocked_editorial_score": 330,
+    "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+  },
+  "guardrail": "This batch preserves only bounded operational procedures. It removes inherited unsupported quantitative, first-party, psychological, health-adjacent and performance claims, adds no source and promotes no entry to reviewed.",
+  "entries": [
+    {
+      "slug": "context-guard-for-decisions",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["decision-making"],
+      "decision": "Remove fabricated project outcomes, psychological mechanism claims, universal timing and sample rules, health and emotional examples, and assumptions about other people's motives or capacities. Preserve a decision-context check: state what changed, identify concrete constraints and stakeholders, separate verified facts from assumptions, and choose a reversible next step when important context remains unknown."
+    },
+    {
+      "slug": "context-planner-for-writers",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["writing", "clear-communication"],
+      "decision": "Remove fabricated editing and publication outcomes, invented user tests, fixed word-count menus, pseudo-precise timing and unsupported claims about platform expectations. Preserve a pre-draft brief that names the primary reader, publication surface, purpose, required constraints and verification needs before the writer chooses structure and tone."
+    },
+    {
+      "slug": "contextual-language-coach",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "effect-estimate", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["language-learning", "skill-learning"],
+      "decision": "Remove unsupported language-learning effects, fabricated classroom and pilot outcomes, rigid phrase counts and repetition schedules, physiological or anxiety claims, and pharmacy or dosage scenarios. Preserve a low-risk scenario rehearsal: choose a real interaction, prepare the minimum useful phrases plus a repair phrase, rehearse both sides, try the interaction when appropriate, and update the phrase set from what was actually difficult."
+    },
+    {
+      "slug": "control-to-action-compass",
+      "previous_status": "pending-review",
+      "previous_enforced_categories": ["quantitative", "first-party-result"],
+      "previous_source_recorded": false,
+      "disposition": "rewrite-practical",
+      "resulting_topics": ["decision-making"],
+      "decision": "Remove therapy and physiological framing, medical and family-health examples, fabricated completion outcomes, fixed concern counts, timing prescriptions and claims about attention or emotional release. Preserve an action-allocation workflow: separate outcomes you can directly produce from dependencies you can only influence or observe, choose one controllable next action, and define how to revisit waiting items."
+    }
+  ]
+}

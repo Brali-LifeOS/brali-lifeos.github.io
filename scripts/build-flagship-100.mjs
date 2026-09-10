@@ -25,6 +25,7 @@ const escapeHtml = (value = "") => clean(value).replace(/[&<>'"]/g, (character) 
 
 const policy = read("data/flagship-100-policy.json");
 const startHere = read(policy.anchor_source);
+const gold20 = read("data/gold-20-candidates.json");
 const protocols = read("life-os/datasets/protocols.json");
 const areas = read("data/life-areas.json");
 const platform = read("data/platform.json");
@@ -33,7 +34,9 @@ const identity = read("life-os/datasets/identity.json");
 const trustedStates = new Set(policy.trusted_states || []);
 const areaIds = new Set(areas.map((area) => area.slug));
 const anchorSlugs = areas.map((area) => startHere.areas?.[area.slug]).filter(Boolean);
+const goldCandidateSlugs = (gold20.candidates || []).map((entry) => clean(entry.slug)).filter(Boolean);
 const anchorSet = new Set(anchorSlugs);
+const goldCandidateSet = new Set(goldCandidateSlugs);
 const canonicalBySlug = new Map(
   (identity.identities || [])
     .filter((entry) => entry.kind === "protocol")
@@ -98,6 +101,7 @@ function evaluate(entry) {
     checks.action_quality ? "clear-action" : null,
     checks.description_quality ? "clear-description" : null,
     anchorSet.has(entry.slug) ? "start-here-anchor" : null,
+    goldCandidateSet.has(entry.slug) ? "gold-20-candidate" : null,
   ].filter(Boolean);
 
   return {
@@ -128,10 +132,11 @@ function evaluate(entry) {
 
 const candidates = (protocols.entries || []).map(evaluate);
 const bySlug = new Map(candidates.map((entry) => [entry.slug, entry]));
-for (const slug of anchorSlugs) {
+const requiredRetrievalSlugs = [...new Set([...anchorSlugs, ...goldCandidateSlugs])];
+for (const slug of requiredRetrievalSlugs) {
   const candidate = bySlug.get(slug);
-  if (!candidate) throw new Error(`Flagship 100 anchor ${slug} is missing from the trusted Protocol Feed.`);
-  if (!candidate.eligible) throw new Error(`Flagship 100 anchor ${slug} violates the quality contract: ${candidate.ineligible_reasons.join(", ")}`);
+  if (!candidate) throw new Error(`Flagship 100 retrieval anchor ${slug} is missing from the trusted Protocol Feed.`);
+  if (!candidate.eligible) throw new Error(`Flagship 100 retrieval anchor ${slug} violates the quality contract: ${candidate.ineligible_reasons.join(", ")}`);
 }
 
 const selected = [];
@@ -157,8 +162,16 @@ for (const slug of anchorSlugs) {
   const candidate = bySlug.get(slug);
   addSelected(candidate, "manual-start-here-anchor", candidate.quality_score + 1000);
 }
+for (const slug of goldCandidateSlugs) {
+  if (selectedSlugs.has(slug)) continue;
+  const candidate = bySlug.get(slug);
+  addSelected(candidate, "gold-20-retrieval-anchor", candidate.quality_score + 900);
+}
 
 const target = Number(policy.target_count || 100);
+if (requiredRetrievalSlugs.length > target) {
+  throw new Error(`Flagship 100 has ${requiredRetrievalSlugs.length} required retrieval anchors for a target of ${target}.`);
+}
 const eligibleCount = candidates.filter((entry) => entry.eligible).length;
 if (eligibleCount < target) {
   throw new Error(`Flagship 100 needs ${target} eligible protocols, but only ${eligibleCount} meet the quality contract.`);
@@ -234,19 +247,20 @@ const core = {
   schema_version: 1,
   dataset_version: platform.dataset_version,
   name: "Brali Flagship 100",
-  description: "A deterministic high-trust core selected from the Brali trusted Protocol Feed. The seven manually curated Start Here protocols are preserved as anchors.",
+  description: "A deterministic high-trust core selected from the Brali trusted Protocol Feed. Start Here anchors and the fixed Gold 20 evaluation cohort are retained so reviewed retrieval contracts cannot disappear as the trusted pool grows.",
   canonical_url: `${BASE}/life-os/datasets/flagship-100.json`,
   page_url: `${BASE}/life-os/flagships/curated-100/`,
   target_count: target,
   count: selectedEntries.length,
   target_met: selectedEntries.length === target,
   quality_policy: "/data/flagship-100-policy.json",
-  selection_rule: "Trusted feed only; complete core content; safety-sensitive items require reviewed evidence with a source URL; then deterministic quality and diversity ranking.",
-  caveat: "Flagship status is a retrieval and editorial quality signal. It does not mean every protocol has the same evidence strength or that Brali provides medical advice.",
+  selection_rule: "Trusted feed only; complete core content; safety-sensitive items require reviewed evidence with a source URL; retain Start Here and Gold 20 evaluation candidates; then deterministic quality and diversity ranking.",
+  caveat: "Flagship status is a retrieval and editorial quality signal. Gold 20 candidate retention preserves evaluation coverage but is not Gold approval, and it does not mean every protocol has the same evidence strength or that Brali provides medical advice.",
   summary: {
     eligible_candidates: eligibleCount,
     candidate_count: candidates.length,
     manual_anchors: anchorSlugs.length,
+    gold_candidate_anchors: goldCandidateSlugs.length,
     topic_mapped: topicMapped,
     source_linked: sourceLinked,
     evidence_states: stateCoverage,
@@ -265,6 +279,7 @@ const candidateDoc = {
     eligible: eligibleCount,
     ineligible: candidates.length - eligibleCount,
     selected: selectedEntries.length,
+    gold_candidate_anchors: goldCandidateSlugs.length,
   },
   entries: candidates.sort((a, b) =>
     Number(b.selected) - Number(a.selected) ||
@@ -292,7 +307,7 @@ const schema = {
   url: pageCanonical,
   hasPart: selectedEntries.map((entry) => ({ "@type": "Article", name: entry.title, url: entry.url })),
 };
-const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagship 100 — Brali high-trust protocol core</title><meta name="description" content="100 high-trust Brali protocols selected with a transparent quality, evidence, safety, and diversity contract."><link rel="canonical" href="${pageCanonical}"><meta property="og:type" content="website"><meta property="og:title" content="Brali Flagship 100"><meta property="og:description" content="A smaller high-trust core for people and AI agents."><meta property="og:url" content="${pageCanonical}"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/flagships/">Start Here 7</a><a href="/life-os/">Library</a><a href="/ontology/">Ontology</a><a href="/for-ai/">For AI</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow">High-trust core</p><h1>Flagship 100</h1><p class="lead">A deliberately smaller core for retrieval and practical use. The seven manually curated Start Here protocols remain anchors; the rest are selected deterministically from the trusted Protocol Feed using evidence, completeness, safety, ontology, and diversity signals.</p><div class="callout"><h3>What this badge means</h3><p>Flagship means the protocol meets Brali's retrieval and editorial quality contract. It does not mean every item has identical scientific evidence, and it is not medical advice.</p><p><a href="/life-os/datasets/flagship-100.json">Selected 100 (JSON)</a> · <a href="/life-os/datasets/flagship-100-candidates.json">Candidate audit trail (JSON)</a> · <a href="/data/flagship-100-policy.json">Selection policy</a></p></div>${grouped}</main><footer class="footer"><div class="wrap footer-row"><small>Brali · Flagship 100 · transparent selection</small></div></footer></body></html>`;
+const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagship 100 — Brali high-trust protocol core</title><meta name="description" content="100 high-trust Brali protocols selected with a transparent quality, evidence, safety, and diversity contract."><link rel="canonical" href="${pageCanonical}"><meta property="og:type" content="website"><meta property="og:title" content="Brali Flagship 100"><meta property="og:description" content="A smaller high-trust core for people and AI agents."><meta property="og:url" content="${pageCanonical}"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script></head><body><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/life-os/flagships/">Start Here 7</a><a href="/life-os/">Library</a><a href="/ontology/">Ontology</a><a href="/for-ai/">For AI</a></div></nav></header><main id="content" class="page wrap"><p class="eyebrow">High-trust core</p><h1>Flagship 100</h1><p class="lead">A deliberately smaller core for retrieval and practical use. The seven manually curated Start Here protocols and the fixed Gold 20 evaluation cohort remain retrieval-stable; the rest are selected deterministically from the trusted Protocol Feed using evidence, completeness, safety, ontology, and diversity signals.</p><div class="callout"><h3>What this badge means</h3><p>Flagship means the protocol meets Brali's retrieval and editorial quality contract. Gold 20 candidate retention keeps evaluation coverage stable but is not Gold approval. It does not mean every item has identical scientific evidence, and it is not medical advice.</p><p><a href="/life-os/datasets/flagship-100.json">Selected 100 (JSON)</a> · <a href="/life-os/datasets/flagship-100-candidates.json">Candidate audit trail (JSON)</a> · <a href="/data/flagship-100-policy.json">Selection policy</a></p></div>${grouped}</main><footer class="footer"><div class="wrap footer-row"><small>Brali · Flagship 100 · transparent selection</small></div></footer></body></html>`;
 writeText("life-os/flagships/curated-100/index.html", html);
 writeText("life-os/flagships/100/index.html", `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagship 100 moved | Brali</title><meta name="description" content="The Brali Flagship 100 collection now has a clearer canonical URL."><meta name="robots" content="noindex,follow"><link rel="canonical" href="${pageCanonical}"><meta http-equiv="refresh" content="0;url=${pageCanonical}"><script>location.replace('/life-os/flagships/curated-100/'+location.search+location.hash)</script><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"></head><body><main id="content" class="page wrap"><p class="eyebrow">Address updated</p><h1>Flagship 100 has a clearer URL.</h1><p class="lead"><a href="/life-os/flagships/curated-100/">Open the curated Flagship 100 collection →</a></p></main></body></html>`);
 
@@ -349,6 +364,7 @@ manifest.files.sort((a, b) => String(a.path || a).localeCompare(String(b.path ||
 manifest.counts ||= {};
 manifest.counts.start_here_flagships = anchorSlugs.length;
 manifest.counts.flagship_protocols = selectedEntries.length;
+manifest.counts.gold_candidate_flagships = goldCandidateSlugs.length;
 writeJson(manifestPath, manifest);
 writeJson(`${apiDir}/manifest.json`, manifest);
 
@@ -362,4 +378,4 @@ if (fs.existsSync(sitemapPath)) {
   }
 }
 
-console.log(`Flagship 100 generated: ${selectedEntries.length}/${target} selected from ${eligibleCount} eligible candidates across ${Object.keys(areaCoverage).length} Life Areas.`);
+console.log(`Flagship 100 generated: ${selectedEntries.length}/${target} selected from ${eligibleCount} eligible candidates across ${Object.keys(areaCoverage).length} Life Areas; ${goldCandidateSlugs.length} Gold 20 candidates retained for retrieval coverage.`);

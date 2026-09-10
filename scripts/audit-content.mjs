@@ -11,18 +11,23 @@ const evidenceIndex = JSON.parse(await readFile(path.join(root, "life-os/dataset
 const claimDebt = JSON.parse(await readFile(path.join(root, "life-os/datasets/claim-debt.json"), "utf8"));
 const strict = process.argv.includes("--strict");
 const trustedStates = new Set(["reviewed", "practical"]);
+const isTrusted = evidence => evidence?.indexable === true && trustedStates.has(evidence?.status);
+const isReference = evidence => evidence?.status === "pending-review" && evidence?.sensitive !== true;
+const isSearchIndexable = evidence => isTrusted(evidence) || isReference(evidence);
 
 const counts = { reviewed: 0, practical: 0, "pending-review": 0, restricted: 0 };
 let legacySourceEntries = 0;
 let legacyGeneratedPages = 0;
-let trustedPagesWithNoindex = 0;
-let reviewGatedPagesMissingNoindex = 0;
+let searchIndexablePagesWithNoindex = 0;
+let searchWithheldPagesMissingNoindex = 0;
+let referenceFramingProblems = 0;
 let missingProtocolSummaries = 0;
 let evidenceStatusMismatches = 0;
 let quantitativeQueue = 0;
 let unsupportedGeneratedClaimPages = 0;
 const examples = [];
 const generatedClaimExamples = [];
+const referenceFramingExamples = [];
 
 if (claimDebt.schema_version !== 2) throw new Error(`Unexpected claim-debt schema version: ${claimDebt.schema_version}`);
 if (claimDebt.name !== "Brali public claim debt report") throw new Error("Claim-debt report identity drift.");
@@ -64,7 +69,8 @@ for (const entry of index) {
   const sourceText = JSON.stringify(article);
   const evidence = classifyEvidence(article, entry, overrides);
   const indexed = evidenceBySlug.get(entry.slug);
-  const searchIndexable = indexed?.indexable === true && trustedStates.has(indexed?.status);
+  const searchIndexable = isSearchIndexable(indexed);
+  const referenceIndexable = isReference(indexed);
   counts[evidence.status] = (counts[evidence.status] ?? 0) + 1;
   if (evidence.claims.quantitative && evidence.status !== "reviewed") quantitativeQueue += 1;
   if (/metalhatscats/i.test(sourceText)) legacySourceEntries += 1;
@@ -74,9 +80,22 @@ for (const entry of index) {
   if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
   if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
-  const noindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(generated);
-  if (searchIndexable && noindex) trustedPagesWithNoindex += 1;
-  if (!searchIndexable && !noindex) reviewGatedPagesMissingNoindex += 1;
+  const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(generated);
+  if (searchIndexable && noindex) searchIndexablePagesWithNoindex += 1;
+  if (!searchIndexable && !noindex) searchWithheldPagesMissingNoindex += 1;
+
+  if (referenceIndexable) {
+    const neutral = generated.includes("Review record:")
+      && generated.includes('data-legacy-content-state="historical-source-only"')
+      && generated.includes("Review record, not advice")
+      && !generated.includes("Try it, then review.")
+      && !generated.includes('<div class="prose">')
+      && !generated.includes('<section class="prose">');
+    if (!neutral) {
+      referenceFramingProblems += 1;
+      if (referenceFramingExamples.length < 12) referenceFramingExamples.push(entry.slug);
+    }
+  }
 
   const generatedClaims = inspectClaims(generated);
   const disallowedGeneratedCategories = generatedClaims.enforcedCategories.filter(category => {
@@ -121,25 +140,28 @@ console.log(`- Restricted: ${counts.restricted}`);
 console.log(`- Quantitative claims not reviewed: ${quantitativeQueue}`);
 console.log(`- Claim marker records: ${claimDebt.counts.records_with_markers}`);
 console.log(`- Claim debt entries: ${claimDebt.counts.debt_entries}`);
-console.log(`- Indexable claim debt entries: ${claimDebt.counts.indexable_debt_entries}`);
+console.log(`- Trust-eligible claim debt entries: ${claimDebt.counts.indexable_debt_entries}`);
 console.log(`- Topic claim groups: ${Object.keys(claimDebt.counts.by_topic ?? {}).length}`);
 console.log(`- Topic debt groups: ${Object.keys(claimDebt.counts.debt_by_topic ?? {}).length}`);
 console.log(`- Topic-pending claim/debt records: ${claimDebt.counts.topic_pending_marker_records}/${claimDebt.counts.topic_pending_debt_entries}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
 console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
-console.log(`- Indexable pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);
+console.log(`- Trusted current-guidance pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);
+console.log(`- Search-indexable pages incorrectly carrying noindex: ${searchIndexablePagesWithNoindex}`);
+console.log(`- Search-withheld pages incorrectly missing noindex: ${searchWithheldPagesMissingNoindex}`);
+console.log(`- Pending-review reference framing problems: ${referenceFramingProblems}`);
 console.log(`- Generated pages missing protocol summaries: ${missingProtocolSummaries}`);
-console.log(`- Trusted pages incorrectly carrying noindex: ${trustedPagesWithNoindex}`);
-console.log(`- Review-gated pages incorrectly missing noindex: ${reviewGatedPagesMissingNoindex}`);
 console.log(`- Evidence status/index mismatches: ${evidenceStatusMismatches}`);
 if (generatedClaimExamples.length) console.log(`- Generated claim marker examples: ${generatedClaimExamples.join(", ")}`);
+if (referenceFramingExamples.length) console.log(`- Reference framing examples: ${referenceFramingExamples.join(", ")}`);
 if (examples.length) console.log(`- Review queue examples: ${examples.join(", ")}`);
 
 const blockingProblems = legacyGeneratedPages
   + unsupportedGeneratedClaimPages
   + claimDebt.counts.indexable_debt_entries
-  + trustedPagesWithNoindex
-  + reviewGatedPagesMissingNoindex
+  + searchIndexablePagesWithNoindex
+  + searchWithheldPagesMissingNoindex
+  + referenceFramingProblems
   + missingProtocolSummaries
   + evidenceStatusMismatches;
 if (strict && blockingProblems > 0) {
@@ -148,5 +170,5 @@ if (strict && blockingProblems > 0) {
 }
 
 if (counts["pending-review"] + counts.restricted > 0) {
-  console.warn("Evidence review queue remains. Use data/evidence-overrides.json to record editorial decisions after reviewing sources and wording.");
+  console.warn("Evidence review queue remains. Search-indexable pending-review pages are neutral review records only; use data/evidence-overrides.json to promote guidance after reviewing sources and wording.");
 }

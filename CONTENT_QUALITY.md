@@ -88,15 +88,18 @@ Public pages use Brali branding. Historical MetalHatsCats URLs and names may rem
 
 ## Search policy
 
-Indexing is earned by content quality, not by the existence of a generated URL.
+Indexing is earned by useful public content, but **search visibility is not the same as recommendation eligibility**.
 
-- `reviewed` and eligible `practical` entries may be indexed, included in the sitemap, and offered through normal trusted recommendations.
-- `pending-review` and `restricted` entry URLs remain directly accessible for provenance and review, but must be `noindex,follow`, must not appear in the sitemap, and must not enter the Trusted Protocol Feed or normal recommendations.
-- Related-protocol recommendations may point only to indexable entries.
-- A canonical human protocol page remains the primary search surface. Machine records, API views, and Brali Skill Packs are reusable representations of the same identity; they must not create thin duplicate SEO pages for every format.
-- Sitemap membership, indexing, ranking, AI citation, recommendation traffic, and protocol usefulness are separate states. Repository checks may prove implementation parity but must not claim external search outcomes.
+- `reviewed` and eligible `practical` entries are canonical current-guidance pages: they may be indexed, included in the sitemap, offered through normal trusted recommendations, and packaged as Brali Agent Skills.
+- Non-sensitive `pending-review` entries may be indexed only after the generator **withholds the inherited long-form guidance**, rewrites title/description/structured data as an explicit **review record**, and exposes only provenance, ontology context, review state, and trusted alternatives. These pages are reference/evaluation surfaces, not advice.
+- `pending-review` search visibility never changes `content.current_guidance`, Trusted Protocol Feed eligibility, normal recommendation eligibility, evidence status, or Agent Skill eligibility. Promotion to current guidance still requires the normal editorial review path.
+- `restricted` entries remain `noindex,follow`, outside the sitemap, outside trusted recommendations, and outside Agent Skills. This includes safety-sensitive health or mental-health records that have not met the evidence bar.
+- Related-protocol recommendations may point only to trusted current-guidance entries. A pending-review reference page may link to trusted alternatives but cannot itself be recommended as the protocol to use.
+- Topic, Domain, Method, Lens, Growth Zone, problem and question pages may be indexed when they add distinct navigation, decision, ontology, provenance, or retrieval value. Do not create near-duplicate URLs merely to target wording variants.
+- A canonical human protocol/review page remains the primary search surface for that record. Machine records, API views, and Brali Skill Packs are reusable representations of the same identity; they must not create thin duplicate SEO pages for every format.
+- Sitemap membership, crawlability, indexing eligibility, actual indexing, ranking, AI citation, recommendation traffic, and protocol usefulness are separate states. Repository checks may prove implementation parity but must not claim external search outcomes.
 
-This deliberately favors a smaller trusted search surface over a large collection of unreviewed pages.
+This policy opens the largest defensible first-party search surface while preserving a hard boundary between **discoverable record** and **trusted advice**. Google and other search systems may still choose not to index an eligible URL.
 
 ## Reusable Brali Skill Packs
 
@@ -104,17 +107,17 @@ A trusted protocol may expose a portable `SKILL.md`-style pack for AI tools and 
 
 - Only records already eligible for the Trusted Protocol Feed may be offered as skill packs.
 - The pack must preserve the canonical ID/URL, evidence state, action, check-in, source boundary, attribution, and important guardrails.
-- A review-gated record must not become reusable simply because its public URL is crawlable.
+- A review-gated record must not become reusable simply because its public URL is crawlable or search-indexable.
 - Tool-specific installation support must be described accurately. A downloadable or copyable instruction file is not evidence of universal one-click installation.
 - Skill-pack availability is a product capability, not a search-ranking or AI-recommendation claim.
 
 ## Machine-readable outputs
 
-- `life-os/datasets/evidence.json` exposes the evidence state for every Growth Library entry.
+- `life-os/datasets/evidence.json` exposes the evidence state and current-guidance eligibility for every Growth Library entry.
 - `life-os/datasets/review-queue.json` exposes the current editorial queue.
-- `life-os/datasets/indexing.json` lists which entries meet the current search-indexing bar and which remain review-gated.
+- `life-os/datasets/indexing.json` separately lists search-indexable trusted guidance, search-indexable pending-review reference records, restricted search-withheld records, and trusted recommendation eligibility.
 - `life-os/datasets/protocols.json` provides the compact discovery-ready Trusted Protocol Feed and is the catalog source for Brali Skill Packs.
 - `life-os/datasets/editorial-normalizations.json` records reviewed inherited-claim corrections and their application counts.
 - `life-os/datasets/manifest.json` includes evidence, indexing, protocol-feed, and normalization counts.
 
-These files are public so search systems, AI tools, and contributors can distinguish reviewed material from content still awaiting review.
+These files are public so search systems, AI tools, and contributors can distinguish discoverability from evidence state and recommendation eligibility.

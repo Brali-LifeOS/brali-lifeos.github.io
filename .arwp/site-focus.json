@@ -78,7 +78,7 @@
     {"match":{"pathPrefix":"/problems"},"role":"problem-commercial","scope":"IN","lane":"find"},
     {"match":{"pathPrefix":"/topics"},"role":"problem-commercial","scope":"IN","lane":"find"},
     {"match":{"pathPrefix":"/questions"},"role":"problem-commercial","scope":"IN","lane":"find"},
-    {"match":{"pathPrefix":"/life-os"},"role":"problem-commercial","scope":"IN","lane":"apply"},
+    {"match":{"pathPrefix":"/life-os"},"role":"problem-commercial","scope":"IN","lane":"apply","note":"Trusted reviewed/practical records are apply surfaces. Non-sensitive pending-review records may be search-indexable only after containment as neutral review/reference records; they remain evaluation/provenance surfaces with current_guidance=false and recommendation_eligible=false. Restricted records remain search-withheld."},
     {"match":{"pathPrefix":"/skill-packs"},"role":"problem-commercial","scope":"IN","lane":"apply","note":"Reusable product surface derived from trusted canonical protocol records; not a parallel SEO corpus."},
     {"match":{"pathPrefix":"/research"},"role":"proof-portfolio","scope":"ADJACENT","lane":"evaluate"},
     {"match":{"pathPrefix":"/updates"},"role":"proof-portfolio","scope":"ADJACENT","lane":"evaluate"},
@@ -110,6 +110,8 @@
     "Agent Ready Web Profile source revision applied in this run: dkharlanau/agent-ready-web-profile@716e0a13aeaef1f2dcb2dd89d868fbf7343acc63.",
     "Research, API, AI and ontology surfaces support the practical-protocol product; they are not separate homepage product territories.",
     "Skill Packs are an apply/reuse surface over trusted canonical records. Review-gated records must not be promoted through the skill catalog.",
+    "Search visibility and trusted recommendation eligibility are deliberately separate. A non-sensitive pending-review record may be discoverable as a neutral review/provenance page without becoming advice, a protocol recommendation or an Agent Skill.",
+    "Restricted safety-sensitive records remain intentionally withheld from search until they meet the evidence bar.",
     "The Core Web Vitals values are budgets. Field measurements remain separate evidence and must not be fabricated by the focus audit.",
     "A Site Focus pass does not imply ranking, indexing, citation, recommendation traffic or protocol efficacy."
   ]

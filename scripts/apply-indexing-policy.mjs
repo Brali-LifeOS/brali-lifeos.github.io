@@ -11,10 +11,20 @@ const evidence = JSON.parse(await readFile(evidencePath, "utf8"));
 let sitemap = await readFile(sitemapPath, "utf8");
 
 const searchIndexable = [];
-const withheld = [];
 const trustedRecommendations = [];
+const referenceIndexable = [];
+const withheld = [];
 const reviewRequired = [];
 const trustedStates = new Set(["reviewed", "practical"]);
+
+const isTrustedGuidance = (record) => record.indexable === true && trustedStates.has(record.status);
+const isReferenceIndexable = (record) => record.status === "pending-review" && record.sensitive !== true;
+const isSearchIndexable = (record) => isTrustedGuidance(record) || isReferenceIndexable(record);
+const searchRole = (record) => isTrustedGuidance(record)
+  ? "trusted-current-guidance"
+  : isReferenceIndexable(record)
+    ? "pending-review-reference"
+    : "withheld-restricted";
 
 const escapeRegExp = (value = "") => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const sitemapLastmod = (xml, url) => xml.match(
@@ -37,13 +47,15 @@ const sitemapEntry = (url, record, preservedLastmod = null) => {
 
 for (const record of evidence.entries ?? []) {
   const url = `${base}/life-os/${record.slug}/`;
-  const trusted = record.indexable === true && trustedStates.has(record.status);
+  const trusted = isTrustedGuidance(record);
+  const reference = isReferenceIndexable(record);
+  const searchEligible = trusted || reference;
   const preservedLastmod = sitemapLastmod(sitemap, url);
   sitemap = removeSitemapUrl(sitemap, url);
 
   const pagePath = path.join(root, "life-os", record.slug, "index.html");
   const pageHtml = await readFile(pagePath, "utf8");
-  await writeFile(pagePath, robotsMeta(pageHtml, trusted ? "index,follow,max-image-preview:large" : "noindex,follow"));
+  await writeFile(pagePath, robotsMeta(pageHtml, searchEligible ? "index,follow,max-image-preview:large" : "noindex,follow"));
 
   const machinePath = path.join(root, "life-os", record.slug, "index.json");
   if (existsSync(machinePath)) {
@@ -51,44 +63,49 @@ for (const record of evidence.entries ?? []) {
     machine.evidence = {
       ...(machine.evidence ?? {}),
       status: record.status,
-      indexable: trusted,
-      search_indexable: trusted,
+      indexable: record.indexable === true,
+      search_indexable: searchEligible,
     };
     machine.content = {
       ...(machine.content ?? {}),
       ...(record.content ?? {}),
       current_guidance: trusted,
       display_state: trusted ? "current-guidance-visible" : "historical-source-only",
+      search_role: searchRole(record),
       historical_source_url: record.content?.historical_source_url ?? `/data/life-os-content/${encodeURIComponent(record.slug)}.json`,
       historical_source_role: "provenance-only-not-current-guidance",
     };
     machine.discovery = {
       ...(machine.discovery ?? {}),
-      search_indexable: trusted,
+      search_indexable: searchEligible,
+      search_role: searchRole(record),
       trusted_protocol_feed: trusted,
       recommendation_eligible: trusted,
+      agent_skill_eligible: trusted,
     };
     await writeFile(machinePath, `${JSON.stringify(machine, null, 2)}\n`);
   }
 
-  if (trusted) {
+  if (searchEligible) {
     searchIndexable.push(record.slug);
-    trustedRecommendations.push(record.slug);
     sitemap = sitemap.replace("</urlset>", `${sitemapEntry(url, record, preservedLastmod)}\n</urlset>`);
   } else {
     withheld.push(record.slug);
-    reviewRequired.push(record.slug);
   }
+  if (trusted) trustedRecommendations.push(record.slug);
+  if (reference) referenceIndexable.push(record.slug);
+  if (!trusted) reviewRequired.push(record.slug);
 }
 
 await writeFile(sitemapPath, sitemap);
 
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.indexing_policy = {
-  web_rule: "Only canonical Growth Library entries with evidence status reviewed or practical and an eligible evidence decision are included in the sitemap and marked index,follow. Review-gated entries remain directly accessible but are noindex,follow.",
-  recommendation_rule: "Only the same reviewed and practical entries enter normal trusted recommendations and the Trusted Protocol Feed.",
-  machine_rule: "Per-entry HTML robots metadata, sitemap membership, machine discovery.search_indexable and content.current_guidance must agree with the same trust decision. Historical source fields are provenance-only and never imply current guidance.",
+  web_rule: "Canonical reviewed/practical Growth Library entries are indexable as current guidance. Non-sensitive pending-review entries are also indexable only after inherited guidance is contained and the page is rendered as a neutral review/reference record. Restricted entries remain noindex and outside the sitemap.",
+  recommendation_rule: "Only reviewed and practical entries with an eligible evidence decision enter normal trusted recommendations, the Trusted Protocol Feed, and Agent Skills. Search visibility of a pending-review reference record never makes its inherited guidance recommendation-eligible.",
+  machine_rule: "Per-entry HTML robots metadata, sitemap membership, machine discovery.search_indexable, content.current_guidance and discovery.recommendation_eligible are separate explicit states. Pending-review reference records may be search-indexable while current_guidance and recommendation_eligible remain false.",
   search_indexable_entries: searchIndexable.length,
+  reference_indexable_entries: referenceIndexable.length,
   withheld_entries: withheld.length,
   trusted_recommendation_entries: trustedRecommendations.length,
   review_required_entries: reviewRequired.length,
@@ -96,16 +113,18 @@ manifest.indexing_policy = {
 await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
 
 await writeFile(path.join(root, "life-os/datasets/indexing.json"), JSON.stringify({
-  schema_version: 4,
+  schema_version: 5,
   rule: manifest.indexing_policy.web_rule,
   trusted_recommendation_rule: manifest.indexing_policy.recommendation_rule,
   machine_rule: manifest.indexing_policy.machine_rule,
-  content_display_rule: "Reviewed/practical records expose current guidance. Pending-review/restricted records expose a bounded review record while preserving their source JSON only for provenance.",
+  content_display_rule: "Reviewed/practical records expose current guidance. Non-sensitive pending-review records expose neutral review/reference pages that may be indexed but never become current guidance. Restricted records remain historical-source-only and search-withheld.",
   indexable_count: searchIndexable.length,
+  reference_indexable_count: referenceIndexable.length,
   withheld_count: withheld.length,
   trusted_recommendation_count: trustedRecommendations.length,
   review_required_count: reviewRequired.length,
   indexable: searchIndexable,
+  reference_indexable: referenceIndexable,
   withheld,
   trusted_recommendations: trustedRecommendations,
   review_required: reviewRequired,
@@ -121,4 +140,4 @@ if (!datasetsHtml.includes("/life-os/datasets/indexing.json")) {
   await writeFile(datasetsPath, datasetsHtml);
 }
 
-console.log(`Indexing policy applied: ${searchIndexable.length} trusted entries indexable; ${withheld.length} review-gated entries withheld from search; ${trustedRecommendations.length} eligible for trusted recommendation.`);
+console.log(`Indexing policy applied: ${searchIndexable.length} entry pages indexable (${trustedRecommendations.length} trusted guidance + ${referenceIndexable.length} pending-review reference records); ${withheld.length} restricted entries withheld; ${trustedRecommendations.length} eligible for trusted recommendation.`);

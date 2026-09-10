@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "qa-checklist-templates-runbook": {
+      "title": "Build a QA Checklist from Real Failure Modes",
+      "subtitle": "Make required checks explicit, observable, and easy to update.",
+      "description": "Turn a recurring QA task into a short checklist with clear expected results, exception handling, an owner, and a revision step when reality exposes a missing check.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated release observations, unsupported defect-rate claims, rigid checklist-size rules, and invented benchmarks with a bounded QA execution protocol.",
+      "forbidden_public_fragments": ["At MetalHatsCats", "40–70%", "25% regression rate", "sample of 50 releases"],
+      "lifeOsSource": {
+        "hack": "Write checklist items around failures that matter, with an observable result for each step and a clear path when a check fails.",
+        "whatYouDo": "Choose one recurring QA activity, list the failure modes that would matter, turn each necessary check into an action plus expected result, define what to capture when the result differs, run the checklist on real work, and revise it when a new recurring miss appears.",
+        "checkIn": "Which check changed the release or review decision, which item was ambiguous, and what should be added, removed, or rewritten before the next run?"
+      },
+      "faq": [
+        {"id": "qa-checklist-templates-runbook-faq-1", "question": "Should a checklist contain every possible QA step?", "answer": "No. Put the checks needed for this task and its important failure modes in the checklist. Move detailed procedures into a runbook when they would make the checklist hard to scan."},
+        {"id": "qa-checklist-templates-runbook-faq-2", "question": "What happens when a check fails?", "answer": "Record the observed result, stop or contain the affected action when the workflow requires it, and follow the defined exception or escalation path rather than marking the step complete."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A QA checklist is useful when it turns an important expectation into something a person can actually verify. It should support judgment, not replace it. Start from the failures that matter, state the expected result, and make exceptions visible.</p>"},
+        "sections": [
+          {"slug": "failure-modes", "title": "1. Start with failure modes", "html": "<p>Choose one recurring QA activity and ask what could be missed, misconfigured, stale, incomplete, or inconsistent. Keep only failure modes that would change a decision or create meaningful rework.</p>"},
+          {"slug": "observable-checks", "title": "2. Write observable checks", "html": "<p>Use an action and an expected result: open the artifact, run the named check, compare the expected and actual state, and capture enough context to reproduce a failure. Avoid items such as <em>verify everything is OK</em>.</p>"},
+          {"slug": "exceptions", "title": "3. Define the exception path", "html": "<p>For checks that can block release or handoff, state what happens when the result differs: stop, quarantine, investigate, escalate, or obtain an explicit exception. A green checkbox must not hide an unresolved anomaly.</p>"},
+          {"slug": "revise", "title": "4. Revise from real misses", "html": "<p>After the run, inspect ambiguity, duplicate work, false alarms, and escaped defects. Change the checklist only when the change makes the next decision clearer or catches a recurring class of failure.</p>"}
+        ]
+      }
+    },
+    "structure-writing-with-visuals": {
+      "title": "Structure Dense Writing for Fast Navigation",
+      "subtitle": "Use headings and visuals only when they answer a reader question.",
+      "description": "Turn a dense draft into a navigable document by giving each section one job and choosing headings, tables, diagrams, or images according to the information the reader needs to inspect.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated usability observations, unsupported comprehension gains, support-ticket claims, and arbitrary visual thresholds with a bounded document-structure review protocol.",
+      "forbidden_public_fragments": ["At MetalHatsCats", "30–50%", "support tickets by 32%", "12 drafts"],
+      "lifeOsSource": {
+        "hack": "Treat visual structure as navigation: each heading, table, diagram, or image should help the reader find, compare, understand, or perform something.",
+        "whatYouDo": "Name the reader's main task, read the current headings without the body, reorganize sections around that path, replace repeated comparisons with a table when rows share the same attributes, use a diagram for relationships or sequence, and keep images only when they show information that prose would make harder to inspect.",
+        "checkIn": "Can a reader scan the headings and understand the path, and does every visual element answer a question that the surrounding text does not answer as clearly?"
+      },
+      "faq": [
+        {"id": "structure-writing-with-visuals-faq-1", "question": "When should I add an image?", "answer": "Add one when the visual itself carries useful information, such as a location in an interface, a physical arrangement, or a comparison that is hard to describe compactly. Decorative images are optional."},
+        {"id": "structure-writing-with-visuals-faq-2", "question": "When is a table better than prose?", "answer": "Use a table when several items can be compared on the same attributes. Use prose when the relationships are irregular or the explanation needs sequence and nuance."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Visual structure is part of the information architecture of a document. The goal is not to decorate a draft. It is to let readers see where they are, what each section does, and which representation best fits the information.</p>"},
+        "sections": [
+          {"slug": "reader-path", "title": "1. Read the headings as a map", "html": "<p>Hide the body and scan only the headings. Reorder or rename them until they describe the reader's likely path through the material rather than the order in which the author discovered it.</p>"},
+          {"slug": "section-job", "title": "2. Give each section one job", "html": "<p>Decide whether a section explains, compares, instructs, warns, or documents an exception. Split sections that try to do several unrelated jobs and remove headings that add hierarchy without meaning.</p>"},
+          {"slug": "representation", "title": "3. Match the representation to the question", "html": "<p>Use headings for navigation, tables for repeated attributes, diagrams for relationships or sequence, and images when seeing the thing matters. Keep a text equivalent for information that must remain accessible without the visual.</p>"},
+          {"slug": "scan", "title": "4. Scan the finished document", "html": "<p>Review the page at normal reading width. Check heading hierarchy, labels, captions, table clarity, alt text, and whether any visual element creates maintenance cost without adding information.</p>"}
+        ]
+      }
+    },
+    "chef-taste-and-adjust": {
+      "title": "Taste and Adjust One Variable at a Time",
+      "subtitle": "Use feedback while cooking without guessing at universal seasoning rules.",
+      "description": "For food that is safe to taste, sample at useful stages, identify the specific imbalance you notice, make one small adjustment, and taste again before changing something else.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated kitchen outcomes, pseudo-precise seasoning formulas, unsupported physiological claims, and unsafe overgeneralization of tasting with a conservative feedback workflow.",
+      "forbidden_public_fragments": ["At MetalHatsCats", "30–60%", "parasympathetic", "g salt per 100 g"],
+      "lifeOsSource": {
+        "hack": "When the food is safe to taste, change one thing at a time so you can tell what the adjustment did.",
+        "whatYouDo": "Choose a useful tasting point, make sure the food is safe and cool enough to sample, name the issue you notice such as blandness, excess salt, acidity, texture, or thickness, choose one small adjustment appropriate to the dish, mix or cook as needed, then taste again before making another change.",
+        "checkIn": "What did I notice before the adjustment, what single change did I make, and what is different after the next safe taste?"
+      },
+      "faq": [
+        {"id": "chef-taste-and-adjust-faq-1", "question": "Should I taste every ingredient while cooking?", "answer": "No. Only taste food when it is safe to do so. Follow food-safety guidance for raw meat, eggs, seafood, flour, and other ingredients that may be unsafe before adequate cooking or preparation."},
+        {"id": "chef-taste-and-adjust-faq-2", "question": "Why change only one thing at a time?", "answer": "It keeps the feedback interpretable. If several seasonings or components change together, it becomes harder to know which adjustment moved the dish in the direction you wanted."}
+      ],
+      "body": {
+        "intro": {"html": "<p>Tasting while cooking is a feedback loop, not a fixed seasoning formula. For food that is safe to sample, notice one specific property, make a small appropriate change, and check again before stacking more adjustments.</p>"},
+        "sections": [
+          {"slug": "safe-point", "title": "1. Choose a safe tasting point", "html": "<p>Do not taste ingredients that require further cooking or preparation to be safe. When tasting hot food, take a small sample and let it cool enough to sample safely.</p>"},
+          {"slug": "name-issue", "title": "2. Name the issue before changing it", "html": "<p>Use a concrete description such as bland, too salty, too acidic, too thick, too thin, undercooked, or overcooked. Different problems need different responses; adding more seasoning is not a universal repair.</p>"},
+          {"slug": "one-adjustment", "title": "3. Make one small adjustment", "html": "<p>Choose a change that fits the dish and the issue. Add conservatively, mix thoroughly, allow the change to distribute or cook when needed, and avoid adding several corrective ingredients at once.</p>"},
+          {"slug": "taste-again", "title": "4. Taste again and stop when appropriate", "html": "<p>Compare the next safe taste with the previous one. If the problem is no longer clear or further changes risk making the dish worse, stop adjusting rather than chasing an imagined perfect endpoint.</p>"}
+        ]
+      }
+    },
+    "build-your-support-network": {
+      "title": "Build a Support Map Around Specific Needs",
+      "subtitle": "Ask the right person for a small, optional kind of help.",
+      "description": "Map the kinds of support you sometimes need, identify appropriate people or communities for each kind, make specific requests that are easy to decline, and protect reciprocity and boundaries.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated response rates and observational samples, rigid network-size targets, broad psychological claims, and pseudo-optimized social scripts with a consent- and boundary-aware support mapping protocol.",
+      "forbidden_public_fragments": ["At MetalHatsCats", "20–40%", "N=42", "tripled response reliability"],
+      "lifeOsSource": {
+        "hack": "Map support by need instead of expecting one person to provide advice, encouragement, introductions, practical help, and accountability at once.",
+        "whatYouDo": "Write down one current need, decide what kind of help would actually be useful, identify a person or community that is appropriate for that request, ask specifically and make declining easy, respect the answer, and record whether you need a different resource or a different kind of help next time.",
+        "checkIn": "Was the request specific and appropriate, was the other person's boundary clear, and do I need to change the ask, the resource, or my own next action?"
+      },
+      "faq": [
+        {"id": "build-your-support-network-faq-1", "question": "Does every need require asking a friend or colleague?", "answer": "No. Some needs are better served by documentation, a community, a paid specialist, a formal service, or your own next action. Match the resource to the need rather than defaulting to the nearest person."},
+        {"id": "build-your-support-network-faq-2", "question": "How do I make a request respectful?", "answer": "State what you are asking for, keep the scope visible, make it easy to decline or suggest another time, and do not turn previous help into an obligation for future help."}
+      ],
+      "body": {
+        "intro": {"html": "<p>A support network is easier to use responsibly when support is not treated as one vague category. Different situations call for different resources. Start with the need, then choose an appropriate person, community, service, or self-directed action.</p>"},
+        "sections": [
+          {"slug": "name-need", "title": "1. Name the kind of help", "html": "<p>Distinguish feedback, expertise, encouragement, an introduction, practical assistance, accountability, or simply being heard. A vague request makes it harder for both people to judge what is being asked.</p>"},
+          {"slug": "match-resource", "title": "2. Match the need to a resource", "html": "<p>Choose someone whose role, relationship, knowledge, or availability makes the request appropriate. Do not assign a support role to someone merely because they are close to you.</p>"},
+          {"slug": "ask-with-boundaries", "title": "3. Ask with visible boundaries", "html": "<p>Make the scope clear and leave room for no, later, or a smaller alternative. If the request is recurring, discuss expectations instead of assuming that one successful interaction created an ongoing commitment.</p>"},
+          {"slug": "avoid-single-point", "title": "4. Avoid a single point of dependency", "html": "<p>When one person is becoming the default for every problem, broaden the resource map or change the type of help you seek. Reciprocity means respecting capacity, not keeping a ledger of favors.</p>"}
+        ]
+      }
+    }
+  }
+}

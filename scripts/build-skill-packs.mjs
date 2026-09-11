@@ -1,4 +1,5 @@
 import { readFile, writeFile, mkdir, readdir, rm } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import path from "node:path";
 
 const root = process.cwd();
@@ -7,8 +8,10 @@ const skillRoot = path.join(root, "skill-packs");
 const feedPath = path.join(root, "life-os/datasets/protocols.json");
 const licenseUrl = "https://creativecommons.org/licenses/by-nc-sa/4.0/";
 const licenseId = "CC-BY-NC-SA-4.0";
+const specUrl = "https://agentskills.io/specification";
 const trustedStates = new Set(["reviewed", "practical"]);
 const skillNamePattern = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
+const sha256Pattern = /^[a-f0-9]{64}$/;
 
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({
@@ -21,6 +24,7 @@ const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character)
 const yamlString = (value = "") => JSON.stringify(clean(value));
 const topicTitles = (entry) => (entry.ontology?.topics ?? []).map((item) => clean(item.title)).filter(Boolean);
 const skillName = (slug) => String(slug).slice(0, 64).replace(/-+$/, "");
+const sha256 = (value) => createHash("sha256").update(value, "utf8").digest("hex");
 
 function skillDescription(entry) {
   const prefix = `Use this Brali skill when the user's situation matches the bounded protocol "${clean(entry.title)}". `;
@@ -28,6 +32,10 @@ function skillDescription(entry) {
   const room = 1024 - prefix.length - suffix.length;
   const body = clean(entry.description).slice(0, Math.max(0, room));
   return `${prefix}${body}${suffix}`.slice(0, 1024);
+}
+
+function compatibilityText() {
+  return "Portable AgentSkills.io SKILL.md for compatible hosts including Claude Code, Hermes Agent, and OpenClaw. Re-check the canonical Brali URL before making evidence claims.";
 }
 
 function skillMarkdown(entry) {
@@ -40,22 +48,28 @@ function skillMarkdown(entry) {
         ? `Reviewed source attached to the canonical Brali record: ${sourceUrl}`
         : "This record is reviewed. Inspect the canonical Brali page for the exact source boundary before making evidence claims.")
     : "This is an eligible practical record. Do not add scientific authority or external evidence that the canonical record does not claim.";
+  const verificationUrl = `${base}/skill-packs/${entry.slug}/skill.json`;
 
   return `---
 name: ${skillName(entry.slug)}
 description: ${yamlString(skillDescription(entry))}
 license: ${yamlString(licenseId)}
-compatibility: ${yamlString("Portable Agent Skills instructions. Re-check the canonical Brali URL before making evidence claims.")}
+compatibility: ${yamlString(compatibilityText())}
 metadata:
   brali-protocol-id: ${yamlString(entry.protocol_id)}
   brali-canonical-url: ${yamlString(entry.url)}
   brali-evidence-state: ${yamlString(state)}
   brali-source-feed: ${yamlString(`${base}/life-os/datasets/protocols.json`)}
+  brali-verification: ${yamlString(verificationUrl)}
+  agent-skills-spec: ${yamlString(specUrl)}
 ---
 
 # ${clean(entry.title)}
 
 Use this skill only when the user's situation fits the bounded practical problem described by the canonical Brali protocol.
+
+## When to use
+Use it when the user is asking for a practical next step that directly matches the goal and scope below. Do not stretch this skill into adjacent problems just because the wording is similar.
 
 ## Goal
 ${clean(entry.description)}
@@ -78,16 +92,48 @@ ${topics.length ? `\nTopics: ${topics.join(", ")}` : ""}
 - If the user's situation appears safety-sensitive or outside this protocol's bounded scope, stop and use an appropriate safer or professional path instead.
 - Treat the check-in as a reason to keep, change, or stop the protocol rather than as proof of causality.
 
+## Verification
+This file is generated from Brali's trusted protocol feed and checked in CI for naming, frontmatter, provenance, trust-gate eligibility, stable links, and content checksum. This is Brali verification, not endorsement by Anthropic, Nous Research, OpenClaw, or another agent vendor.
+
 ## Canonical record
 Protocol: ${entry.url}
 Machine-readable record: ${entry.url}index.json
+Skill verification record: ${verificationUrl}
 Trusted protocol feed: ${base}/life-os/datasets/protocols.json
+Agent Skills specification: ${specUrl}
 Citation guidance: ${base}/cite/
 License and commercial terms: ${base}/terms/
 `;
 }
 
-function skillJson(entry) {
+function installInfo(entry) {
+  const name = skillName(entry.slug);
+  const markdownUrl = `${base}/skill-packs/${entry.slug}/SKILL.md`;
+  return {
+    generic: {
+      artifact_url: markdownUrl,
+      directory_name: name,
+    },
+    claude_code: {
+      personal_path: `~/.claude/skills/${name}/SKILL.md`,
+      project_path: `.claude/skills/${name}/SKILL.md`,
+      docs: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview",
+    },
+    hermes_agent: {
+      command: `hermes skills install ${markdownUrl}`,
+      docs: "https://hermes-agent.nousresearch.com/docs/guides/work-with-skills",
+    },
+    openclaw: {
+      workspace_path: `<workspace>/skills/${name}/SKILL.md`,
+      global_path: `~/.openclaw/skills/${name}/SKILL.md`,
+      docs: "https://github.com/openclaw/openclaw/blob/main/docs/tools/skills.md",
+    },
+  };
+}
+
+function skillJson(entry, markdown) {
+  const digest = sha256(markdown);
+  if (!sha256Pattern.test(digest)) throw new Error(`Could not create SHA-256 for ${entry.slug}`);
   return {
     schema_version: 1,
     name: skillName(entry.slug),
@@ -103,11 +149,35 @@ function skillJson(entry) {
     topics: topicTitles(entry),
     license: licenseId,
     source_feed: `${base}/life-os/datasets/protocols.json`,
+    format: {
+      name: "Agent Skills",
+      specification: specUrl,
+      artifact: "SKILL.md",
+    },
+    compatible_hosts: ["Claude Code", "Hermes Agent", "OpenClaw", "AgentSkills.io-compatible hosts"],
+    install: installInfo(entry),
+    verification: {
+      status: "brali-ci-verified",
+      scope: "format + trusted-feed provenance + stable links + SHA-256; not third-party vendor endorsement",
+      sha256: digest,
+      trust_gate: entry.evidence?.status ?? "unknown",
+      source_protocol_id: entry.protocol_id,
+    },
   };
 }
 
-function skillPage(entry) {
-  const data = skillJson(entry);
+function installCards(data) {
+  const name = escapeHtml(data.name);
+  const mdUrl = escapeHtml(data.skill_markdown_url);
+  return `<div class="install-grid">
+    <article class="install-card"><span class="card-label">Claude Code</span><h3>Drop into a skill folder</h3><p>Personal: <code>~/.claude/skills/${name}/SKILL.md</code><br>Project: <code>.claude/skills/${name}/SKILL.md</code></p><p><a href="https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview">Claude Agent Skills docs</a></p></article>
+    <article class="install-card"><span class="card-label">Hermes Agent</span><h3>Install directly from this URL</h3><pre><code>hermes skills install ${mdUrl}</code></pre><p><a href="https://hermes-agent.nousresearch.com/docs/guides/work-with-skills">Hermes skills docs</a></p></article>
+    <article class="install-card"><span class="card-label">OpenClaw</span><h3>Place in a discovered skill root</h3><p>Workspace: <code>&lt;workspace&gt;/skills/${name}/SKILL.md</code><br>Global: <code>~/.openclaw/skills/${name}/SKILL.md</code></p><p><a href="https://github.com/openclaw/openclaw/blob/main/docs/tools/skills.md">OpenClaw skills docs</a></p></article>
+  </div>`;
+}
+
+function skillPage(entry, markdown) {
+  const data = skillJson(entry, markdown);
   const description = clean(entry.description);
   const action = clean(entry.action);
   const checkIn = clean(entry.check_in) || "Ask what changed, what was difficult, and whether the next attempt should be kept, changed, or stopped.";
@@ -116,13 +186,14 @@ function skillPage(entry) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "CreativeWork",
-    name: `${data.title} — Brali Agent Skill`,
+    name: `${data.title} Agent Skill`,
     description: data.description,
     url: data.skill_page_url,
     isAccessibleForFree: true,
     inLanguage: "en",
     license: licenseUrl,
     isBasedOn: data.canonical_protocol_url,
+    keywords: ["Agent Skills", "SKILL.md", "Claude Code", "Hermes Agent", "OpenClaw", ...topics],
     encoding: [
       { "@type": "MediaObject", encodingFormat: "text/markdown", contentUrl: data.skill_markdown_url },
       { "@type": "MediaObject", encodingFormat: "application/json", contentUrl: `${data.skill_page_url}skill.json` },
@@ -134,39 +205,40 @@ function skillPage(entry) {
     ? "Reviewed evidence is attached to the canonical protocol. Follow that source boundary rather than extending the claim."
     : "This is practical guidance, not a scientific-evidence claim. Do not borrow authority from unrelated sources.";
   const reviewed = entry.evidence?.reviewed_at ? `<span class="skill-chip">reviewed ${escapeHtml(entry.evidence.reviewed_at)}</span>` : "";
+  const shortHash = data.verification.sha256.slice(0, 16);
 
   return `<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>${escapeHtml(data.title)} — Free AI Skill | Brali</title>
-  <meta name="description" content="${escapeHtml(data.description.slice(0, 250))}">
+  <title>${escapeHtml(data.title)} Agent Skill | Brali</title>
+  <meta name="description" content="Free portable Agent Skill for Claude Code, Hermes Agent, OpenClaw and compatible hosts: ${escapeHtml(description.slice(0, 180))}">
   <link rel="canonical" href="${escapeHtml(data.skill_page_url)}">
   <link rel="alternate" type="text/markdown" href="${escapeHtml(data.skill_markdown_url)}" title="SKILL.md">
-  <link rel="alternate" type="application/json" href="${escapeHtml(data.skill_page_url)}skill.json" title="Skill metadata">
+  <link rel="alternate" type="application/json" href="${escapeHtml(data.skill_page_url)}skill.json" title="Skill metadata and verification">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Brali">
-  <meta property="og:title" content="${escapeHtml(data.title)} — Free Brali Agent Skill">
-  <meta property="og:description" content="${escapeHtml(data.description.slice(0, 250))}">
+  <meta property="og:title" content="${escapeHtml(data.title)} — Free AI Agent Skill">
+  <meta property="og:description" content="Portable SKILL.md with Brali provenance and trust boundary preserved.">
   <meta property="og:url" content="${escapeHtml(data.skill_page_url)}">
   <meta property="og:image" content="${base}/assets/images/brali-mascot-hero.png">
   <link rel="icon" href="/assets/images/brali-logo.png">
   <link rel="stylesheet" href="/styles.css">
   <link rel="license" href="${licenseUrl}">
   <script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>
-  <style>.skill-detail{max-width:920px}.skill-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.4rem}.skill-chip{display:inline-flex;padding:.35rem .65rem;border-radius:999px;background:#f2efe8;font-size:.82rem}.skill-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.2rem 0 2rem}.skill-contract{border:1px solid var(--border,#d9d5ca);border-radius:20px;padding:1.2rem;margin:1.2rem 0;background:var(--surface,#fff)}.skill-contract h2{margin-top:0}.skill-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}</style>
+  <style>.skill-detail{max-width:1040px}.skill-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 1.4rem}.skill-chip{display:inline-flex;padding:.35rem .65rem;border-radius:999px;background:#f2efe8;font-size:.82rem}.skill-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1.2rem 0 2rem}.skill-contract,.install-card{border:1px solid var(--border,#d9d5ca);border-radius:20px;padding:1.2rem;background:var(--surface,#fff)}.skill-contract{margin:1.2rem 0}.skill-contract h2,.install-card h3{margin-top:.25rem}.skill-code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}.install-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1rem 0 2rem}.install-card pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#171717;color:#f6f4ee;border-radius:12px;padding:.8rem}.verification-line{font-size:.9rem;opacity:.82}@media(max-width:850px){.install-grid{grid-template-columns:1fr}}</style>
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
-<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/problems/">Problems</a><a href="/life-os/methodology/">Evidence</a><a href="/for-ai/">For AI</a><a class="button" href="/skill-packs/">Free skills</a></div></nav></header>
+<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/problems/">Problems</a><a href="/life-os/methodology/">Evidence</a><a href="/for-ai/">For AI</a><a class="button" href="/skill-packs/">Agent Skills</a></div></nav></header>
 <main id="content" class="page wrap skill-detail">
   <p class="eyebrow">Free Brali Agent Skill · ${escapeHtml(state)}</p>
   <h1>${escapeHtml(data.title)}</h1>
   <p class="lead">${escapeHtml(description)}</p>
-  <div class="skill-meta"><span class="skill-chip">${escapeHtml(state)}</span>${reviewed}${topicChips}</div>
-  <div class="skill-actions"><a class="button yellow" href="./SKILL.md">Open SKILL.md</a><a class="button quiet" href="${escapeHtml(data.canonical_protocol_url)}">Canonical protocol</a><a href="./skill.json">Skill JSON</a><a href="/skill-packs/">All free skills</a></div>
+  <div class="skill-meta"><span class="skill-chip">AgentSkills.io format</span><span class="skill-chip">Claude Code</span><span class="skill-chip">Hermes</span><span class="skill-chip">OpenClaw</span><span class="skill-chip">${escapeHtml(state)}</span>${reviewed}${topicChips}</div>
+  <div class="skill-actions"><a class="button yellow" href="./SKILL.md">Open SKILL.md</a><a class="button quiet" href="${escapeHtml(data.canonical_protocol_url)}">Canonical protocol</a><a href="./skill.json">Verification JSON</a><a href="/skill-packs/">All Agent Skills</a></div>
 
   <section class="skill-contract">
     <p class="card-label">Portable instruction</p>
@@ -176,17 +248,24 @@ function skillPage(entry) {
     <p>${escapeHtml(checkIn)}</p>
   </section>
 
+  <section aria-labelledby="install-title">
+    <p class="eyebrow">Install</p>
+    <h2 id="install-title">Install this skill in the agent you already use.</h2>
+    <p>Inspect <a href="./SKILL.md">SKILL.md</a> first. The file uses the open Agent Skills structure; the host-specific step is only where that file lives.</p>
+    ${installCards(data)}
+  </section>
+
   <section class="skill-contract">
-    <p class="card-label">Trust boundary</p>
-    <h2>Keep evidence and provenance attached</h2>
+    <p class="card-label">Brali verification</p>
+    <h2>Format and provenance are checked together.</h2>
     <p>${escapeHtml(evidenceNote)}</p>
-    <p>Canonical ID: <code>${escapeHtml(data.protocol_id)}</code><br>Canonical protocol: <a class="skill-code" href="${escapeHtml(data.canonical_protocol_url)}">${escapeHtml(data.canonical_protocol_url)}</a></p>
+    <p>Canonical ID: <code>${escapeHtml(data.protocol_id)}</code><br>SHA-256: <code class="skill-code">${data.verification.sha256}</code></p>
+    <p class="verification-line">Status: <strong>Brali CI verified</strong> · checksum <code>${shortHash}…</code>. This is a Brali integrity/provenance check, not third-party vendor endorsement.</p>
   </section>
 
   <section class="prose">
-    <h2>Use this as an Agent Skill</h2>
-    <p>The portable file follows the open Agent Skills folder convention: place <code>SKILL.md</code> inside a folder named <code>${escapeHtml(data.name)}</code> in a skill location supported by your agent host. Inspect the file before installing or reusing it.</p>
-    <p>This skill is generated from Brali's trusted protocol feed. The protocol page remains the editorial source of truth; this page and the skill file are distribution surfaces, not independent advice copies.</p>
+    <h2>Why the skill stays small</h2>
+    <p>The protocol page remains the editorial source of truth. The skill carries the bounded action, check-in, evidence state and canonical identity so an agent can use it without silently turning a practical routine into a stronger claim.</p>
     <h2>License</h2>
     <p>Original Brali knowledge is available for non-commercial reuse under <a rel="license" href="${licenseUrl}">CC BY-NC-SA 4.0</a>. Keep attribution, the canonical protocol link, and the evidence state. Commercial use requires separate permission.</p>
   </section>
@@ -229,20 +308,23 @@ for (const entry of entries) {
   const directory = path.join(skillRoot, entry.slug);
   await mkdir(directory, { recursive: true });
   const markdown = skillMarkdown(entry);
-  const data = skillJson(entry);
+  const data = skillJson(entry, markdown);
   await writeFile(path.join(directory, "SKILL.md"), markdown);
   await writeFile(path.join(directory, "skill.json"), `${JSON.stringify(data, null, 2)}\n`);
-  await writeFile(path.join(directory, "index.html"), skillPage(entry));
+  await writeFile(path.join(directory, "index.html"), skillPage(entry, markdown));
   catalogEntries.push(data);
 }
 
 const catalog = {
   schema_version: 1,
-  name: "Brali Free Agent Skills",
-  description: "Portable Agent Skills generated from Brali protocols that currently meet the reviewed/practical trust gate.",
+  name: "Brali Free AI Agent Skills Library",
+  description: "Free portable Agent Skills generated from Brali protocols that currently meet the reviewed/practical trust gate.",
   canonical_url: `${base}/skill-packs/`,
+  specification: specUrl,
+  compatible_hosts: ["Claude Code", "Hermes Agent", "OpenClaw", "AgentSkills.io-compatible hosts"],
   source_feed: `${base}/life-os/datasets/protocols.json`,
   generation_rule: "One generated distribution skill per reviewed/practical protocol; the canonical Brali protocol remains the editorial source of truth.",
+  verification_policy: "Every generated skill is checked for naming/frontmatter constraints, trusted-feed provenance, stable links and SHA-256 integrity. Brali verification is not third-party vendor endorsement.",
   count: catalogEntries.length,
   license: `${licenseId}; Brali names and logos are not licensed for reuse.`,
   entries: catalogEntries.sort((a, b) => a.title.localeCompare(b.title)),
@@ -258,4 +340,4 @@ for (const directoryName of directoryNames) {
   }
 }
 
-console.log(`Skill packs generated: ${catalogEntries.length} reviewed/practical protocols -> stable pages, SKILL.md files, skill.json records, and catalog.json.`);
+console.log(`Skill packs generated: ${catalogEntries.length} trusted protocols -> AgentSkills.io SKILL.md artifacts, stable pages, verification JSON and catalog.json.`);

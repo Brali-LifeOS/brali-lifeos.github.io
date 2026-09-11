@@ -56,3 +56,4 @@ console.log(`Editorial normalizations applied: ${changedEntries} entries changed
 // deterministic Trustverse cleanup only after explicit curated overrides and reviewed
 // normalizations have been applied, so hand-reviewed content remains authoritative.
 await import("./apply-trustverse-mass-curation.mjs");
+await import("./finalize-trustverse-mass-curation.mjs");

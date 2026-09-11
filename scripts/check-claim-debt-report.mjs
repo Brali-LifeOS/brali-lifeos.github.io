@@ -68,13 +68,14 @@ const debtSlugs = new Set((claimDebt.entries ?? [])
 const expectedQueue = (reviewQueue.entries ?? [])
   .filter(entry => debtSlugs.has(entry.slug))
   .slice(0, 12);
-if (expectedQueue.length === 0) fail('expected at least one claim-debt queue row');
 for (const [index, entry] of expectedQueue.entries()) {
   const marker = `data-claim-queue-rank="${index + 1}" data-claim-queue-slug="${entry.slug}"`;
   if (!page.includes(marker)) fail(`queue order drift at rank ${index + 1}: ${entry.slug}`);
 }
 const renderedQueueRows = (page.match(/data-claim-queue-rank=/g) ?? []).length;
 if (renderedQueueRows !== expectedQueue.length) fail(`queue row count drift: ${renderedQueueRows}/${expectedQueue.length}`);
+if ((counts.debt_entries ?? 0) === 0 && expectedQueue.length !== 0) fail('zero debt must produce an empty priority queue');
+if ((counts.debt_entries ?? 0) > 0 && expectedQueue.length === 0) fail('unresolved debt exists but no claim-debt queue row is available');
 
 if (!methodology.includes('href="/quality/claims/"')) fail('methodology page does not link to public report');
 if (!datasets.includes('href="/quality/claims/"')) fail('dataset catalog does not link to public report');

@@ -13,7 +13,8 @@
   const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
   const searchable = (entry) => [entry.title, entry.description, entry.name, entry.skill_mode, entry.evidence_state, ...(entry.topics ?? []), ...(entry.methods ?? []), ...(entry.lenses ?? []), ...(entry.compatible_hosts ?? [])].join(" ").toLowerCase();
   const isTrusted = (entry) => trustedStates.has(entry.evidence_state) && entry.skill_mode === "usable" && entry.recommendation_eligible === true;
-  const modeLabel = (entry) => entry.skill_mode === "usable" ? "Usable" : entry.skill_mode === "review-required" ? "Review required" : "Restricted reference";
+  const isRestricted = (entry) => entry.skill_mode === "restricted-reference";
+  const modeLabel = (entry) => entry.skill_mode === "usable" ? "Usable" : entry.skill_mode === "review-required" ? "Review required" : isRestricted(entry) ? "Restricted reference" : "Unknown mode";
 
   function button(label, className = "button") {
     const el = document.createElement("button");
@@ -178,7 +179,7 @@
       if (needle && !searchable(entry).includes(needle)) return false;
       if (mode === "usable" && !isTrusted(entry)) return false;
       if (mode === "review-required" && entry.skill_mode !== "review-required") return false;
-      if (mode === "restricted-reference" && entry.skill_mode !== "restricted-reference") return false;
+      if (mode === "restricted-reference" && !isRestricted(entry)) return false;
       return true;
     });
   }

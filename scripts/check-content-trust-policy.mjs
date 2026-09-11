@@ -61,6 +61,27 @@ assert.equal(sensitiveWithSource.status, "pending-review", "Direct sensitive gui
 const cardioAlwaysSensitive = classifyEvidence(article(), entry("simple-cardio-note", "cardio-doc"));
 assert.equal(cardioAlwaysSensitive.status, "restricted", "Cardio guidance keeps a zone-level hard gate even when wording is claim-clean.");
 
+const reclassifiedWorkArticle = article();
+reclassifiedWorkArticle.zone = { slug: "work", title: "Work" };
+reclassifiedWorkArticle.lifeOsSource.zoneSlug = "work";
+reclassifiedWorkArticle.trustverseCuration = {
+  mode: "claim-cleanup",
+  retained_high_risk_gate: false,
+  taxonomy_reclassification: {
+    from: "cardio-doc",
+    to: "work",
+    reason: "The inherited medical-zone placement was caused by analogy text; the retained protocol is ordinary workplace guidance.",
+    reviewed_at: "2026-09-11",
+  },
+};
+const reclassifiedWork = classifyEvidence(reclassifiedWorkArticle, entry("reclassified-work", "work"));
+assert.equal(reclassifiedWork.status, "practical", "An explicit, provenance-bearing taxonomy correction must be evaluated in its corrected zone.");
+assert.equal(reclassifiedWork.zone, "work");
+assert.equal(reclassifiedWork.sourceZone, "cardio-doc");
+assert.equal(reclassifiedWork.taxonomyReclassified, true);
+assert.equal(reclassifiedWork.sensitiveZoneOrigin, true);
+assert.equal(reclassifiedWork.sensitive, false);
+
 const manualReviewed = classifyEvidence(
   article({ description: "Research shows a bounded effect.", sourceUrl: "https://example.org/reviewed-source" }),
   entry("manual-reviewed"),
@@ -68,4 +89,4 @@ const manualReviewed = classifyEvidence(
 );
 assert.equal(manualReviewed.status, "reviewed", "Explicit review decisions must remain authoritative.");
 
-console.log("Content trust policy verified: provenance alone does not block low-risk guidance; cleaned everyday practices are judged by actual risk surface; direct sensitive and evidence-bearing material remains review-gated.");
+console.log("Content trust policy verified: provenance alone does not block low-risk guidance; cleaned everyday practices and explicit taxonomy corrections are judged by actual risk surface; direct sensitive and evidence-bearing material remains review-gated.");

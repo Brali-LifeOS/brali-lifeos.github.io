@@ -1,0 +1,119 @@
+{
+  "slug": "ready-to-resume-plan",
+  "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+  "subtitle": "Give unfinished work a restart point before your attention moves elsewhere",
+  "description": "When you must leave unfinished work, capture where you stopped, the next concrete action, and one critical restart detail before switching. The goal is a cleaner return, not eliminating every cost of interruption.",
+  "canonical": "/life-os/ready-to-resume-plan/",
+  "domain_ids": ["focus-action"],
+  "topic_ids": ["focus", "task-initiation", "planning"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["ready to resume plan", "attention residue", "task switching", "interruption recovery", "unfinished work", "focus"],
+  "zone": {
+    "slug": "do-it",
+    "title": "Do It"
+  },
+  "lifeOsSource": {
+    "hack": "Before leaving an unfinished task, write a tiny restart note: where you stopped, what the next concrete action is, and one detail you will need when you return.",
+    "zone": "Do It",
+    "zoneSlug": "do-it",
+    "whatYouDo": "Use this only when unfinished work is about to be interrupted or deliberately parked. Before switching, capture three pieces of information in whatever format fits the task: your current state, the next concrete action, and one critical detail or open question that would otherwise have to be reconstructed. Then switch. When you return, read the note and start from the recorded next action rather than re-scanning the entire task.",
+    "checkIn": "When I returned, could I identify the next action quickly, or did I still have to reconstruct the task from scratch?",
+    "reference": "Leroy & Glomb (2018) — Ready-to-resume planning and attention residue after task interruption",
+    "sourceUrl": "https://doi.org/10.1287/orsc.2017.1184"
+  },
+  "faq": [
+    {
+      "id": "ready-to-resume-faq-1",
+      "question": "Do I need exactly three lines?",
+      "answer": "No. The evidence supports making a resumption plan, not a validated three-line template. Brali uses three prompts because they are a compact way to preserve task state. Use less or more detail when the work requires it.",
+      "answerHtml": "<p>No. The evidence supports making a resumption plan, not a validated three-line template. Brali uses three prompts because they are a compact way to preserve task state. Use less or more detail when the work requires it.</p>"
+    },
+    {
+      "id": "ready-to-resume-faq-2",
+      "question": "Does this remove the cost of context switching?",
+      "answer": "No. Interruptions can still be costly. The reviewed studies support a narrower claim: a ready-to-resume plan can reduce attention residue and protect performance in studied interruption contexts. Prevent avoidable switches first; use the note when a switch still has to happen.",
+      "answerHtml": "<p>No. Interruptions can still be costly. The reviewed studies support a narrower claim: a ready-to-resume plan can reduce attention residue and protect performance in studied interruption contexts. Prevent avoidable switches first; use the note when a switch still has to happen.</p>"
+    },
+    {
+      "id": "ready-to-resume-faq-3",
+      "question": "When is this most useful?",
+      "answer": "When the current task is unfinished and you expect to return later: before a meeting, an urgent request, the end of a work block, or another deliberate switch. It adds little value when the task is already complete or trivial to reconstruct.",
+      "answerHtml": "<p>When the current task is unfinished and you expect to return later: before a meeting, an urgent request, the end of a work block, or another deliberate switch. It adds little value when the task is already complete or trivial to reconstruct.</p>"
+    },
+    {
+      "id": "ready-to-resume-faq-4",
+      "question": "What should the note contain?",
+      "answer": "Prefer state over history. Record where the work currently stands, the next executable action, and the one dependency, decision, location, file, or question most likely to slow your restart.",
+      "answerHtml": "<p>Prefer state over history. Record where the work currently stands, the next executable action, and the one dependency, decision, location, file, or question most likely to slow your restart.</p>"
+    }
+  ],
+  "meta": {
+    "publishedISO": "2026-09-11T19:05:00Z",
+    "updatedISO": "2026-09-11T19:05:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
+  "body": {
+    "intro": {
+      "html": "<p>An interruption does not necessarily end when you close the tab. Part of your attention can remain attached to the unfinished task while you are trying to work on the next one. In a series of studies, Leroy and Glomb found that anticipating a pressured return to unfinished work increased attention residue and hurt performance on the interrupting task; making a brief ready-to-resume plan mitigated those effects. A separate line of experiments by Masicampo and Baumeister found that making specific plans for unfinished goals reduced their cognitive interference. Brali turns that mechanism into a small handoff to your future self, without pretending that a note makes context switching free.</p>"
+    },
+    "sections": [
+      {
+        "slug": "use-before-switch",
+        "title": "1. Use it before a real switch",
+        "html": "<p>This protocol is for unfinished work you are about to leave. If the switch is optional and the current task matters, finishing a sensible unit may still be better. If the interruption cannot wait, spend a moment preserving the state before your attention moves elsewhere.</p>"
+      },
+      {
+        "slug": "capture-state",
+        "title": "2. Capture where you stopped",
+        "html": "<p>Write the current state, not a diary entry. Examples: <em>comparison complete through row 420</em>, <em>draft has the argument but the evidence section is missing</em>, or <em>bug reproduced; failing path starts after validation</em>. The note should let you recognize the exact frontier of the work.</p>"
+      },
+      {
+        "slug": "next-action",
+        "title": "3. Name the next concrete action",
+        "html": "<p>A vague instruction such as <em>continue report</em> forces you to decide again later. Prefer an executable restart: <em>check the unmatched rows against source export</em>, <em>write the first paragraph of the evidence section</em>, or <em>inspect validation output for the failing request</em>.</p>"
+      },
+      {
+        "slug": "save-critical-context",
+        "title": "4. Save one piece of fragile context",
+        "html": "<p>Record the detail most likely to disappear from working memory: a file name, hypothesis, dependency, open question, relevant row, command, or decision. Add more only when the task genuinely needs it. The mechanism is resumption planning, not documentation theatre.</p>"
+      },
+      {
+        "slug": "resume",
+        "title": "5. Resume from the note",
+        "html": "<p>When you return, read the note before reopening the whole context. Start with the recorded next action. If the note repeatedly fails to get you moving, improve the restart cue rather than making the template longer by default.</p>"
+      },
+      {
+        "slug": "boundary",
+        "title": "6. Keep the boundary honest",
+        "html": "<p>The studies do not establish a universal percentage improvement, an optimal note length, or a claim that all switching costs disappear. The useful evidence-backed idea is narrower: a concrete resumption plan can help the mind disengage from unfinished work and make the eventual return less reconstructive.</p>"
+      }
+    ]
+  },
+  "references": [
+    {
+      "title": "Tasks Interrupted: How Anticipating Time Pressure on Resumption of an Interrupted Task Causes Attention Residue and Low Performance on Interrupting Tasks and How a Ready-to-Resume Plan Mitigates the Effects",
+      "url": "https://doi.org/10.1287/orsc.2017.1184",
+      "doi": "10.1287/orsc.2017.1184",
+      "source_type": "primary-study",
+      "claim_scope": "Across four studies, supports a brief ready-to-resume plan as a way to mitigate attention residue and performance costs in studied interruption contexts. It does not establish a universal template, exact duration, or elimination of all switching costs."
+    },
+    {
+      "title": "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals",
+      "url": "https://doi.org/10.1037/a0024192",
+      "doi": "10.1037/a0024192",
+      "source_type": "primary-study",
+      "claim_scope": "Provides convergent experimental evidence that forming specific plans for unfinished goals can reduce cognitive interference. It does not validate a particular note-taking app or fixed resumption template."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "reviewed",
+    "reviewedAt": "2026-09-11",
+    "reviewedBy": "Brali Evidence Reviewer",
+    "reason": "Publish the strongest new productivity mechanism from the 2026-09-11 deep run as a bounded interruption-recovery protocol, preserving the study's actual scope and avoiding invented timing or performance claims.",
+    "registry": "review-registry-research-watch-2026-09-11-productivity-deep-run.json"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "reviewedAt": "2026-09-11",
+  "site": "https://brali-lifeos.github.io/",
+  "arwpRevision": "73bd2a64e2e746deeb8de792ca01f654f0a7d33a",
+  "mode": "deep-run-execute",
+  "scope": "ARWP Image Discovery IDL-01 through IDL-08 applied to canonical Brali sitemap pages that expose a visible informative same-origin image.",
+  "findings": [
+    {"id":"IDL-01-crawlable-image-and-landing-page","status":"implemented-final-and-live-gate","evidence":"Representative images are selected only from visible informative images inside main content, mapped to same-origin local assets, and verified again after deployment."},
+    {"id":"IDL-02-preferred-image-signal-convergence","status":"implemented-regression-gate","evidence":"The finalizer aligns og:image, twitter:image and WebPage.primaryImageOfPage; Article.image is aligned where an Article node exists."},
+    {"id":"IDL-03-image-sitemap-canonical-cohort","status":"implemented-regression-gate","evidence":"Only final canonical sitemap pages with a selected representative image receive image:image/image:loc entries; deprecated image sitemap fields are rejected."},
+    {"id":"IDL-04-context-and-alt-semantics","status":"implemented-existing-reviewed-copy","evidence":"Image Discovery reuses non-empty human-authored alt text from the visible page image and does not generate unseen visual details."},
+    {"id":"IDL-05-image-preview-and-serving-controls","status":"covered-and-regression-gated","evidence":"Existing max-image-preview:large behavior is preserved and noimageindex is treated as a conflict for Image Discovery records."},
+    {"id":"IDL-06-representative-quality-and-discover-readiness","status":"applicability-watch","evidence":"Many Brali protocol covers are large editorial assets; Discover-specific size requirements remain a separate quality check and are not treated as universal image-indexing requirements."},
+    {"id":"IDL-07-responsive-delivery-with-crawlable-fallback","status":"existing-mixed-implementation","evidence":"Stable crawlable image src URLs remain authoritative; responsive delivery is preserved where already implemented and is not fabricated as an indexing prerequisite."},
+    {"id":"IDL-08-license-and-creator-metadata-boundary","status":"covered-by-existing-site-license","evidence":"Existing Brali licensing remains authoritative; deprecated image-sitemap licensing fields are not introduced."}
+  ],
+  "guardrails": {
+    "noRankingGuarantee": true,
+    "noImageIndexingGuarantee": true,
+    "discoverSpecificGuidanceSeparated": true,
+    "noUnreviewedVisualClaims": true,
+    "noDeprecatedImageSitemapFields": true,
+    "finalArtifactBeforeRelease": true,
+    "liveAssetVerificationAfterDeploy": true
+  }
+}

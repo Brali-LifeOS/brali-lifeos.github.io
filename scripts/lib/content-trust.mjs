@@ -93,8 +93,25 @@ export function claimFlags(article) {
   };
 }
 
+export function resolveTrustZone(article = {}, entry = {}) {
+  const sourceZone = entry.zone?.slug ?? article.zone?.slug ?? article.lifeOsSource?.zoneSlug ?? null;
+  const reclassification = article.trustverseCuration?.taxonomy_reclassification ?? null;
+  const explicitlyReviewed = Boolean(
+    reclassification?.from
+      && reclassification?.to
+      && reclassification?.reviewed_at
+      && reclassification.from === sourceZone,
+  );
+  return {
+    sourceZone,
+    effectiveZone: explicitlyReviewed ? reclassification.to : sourceZone,
+    reclassified: explicitlyReviewed,
+    reclassification: explicitlyReviewed ? reclassification : null,
+  };
+}
+
 export function isSensitiveGuidance(article, entry) {
-  const zone = entry.zone?.slug ?? null;
+  const zone = resolveTrustZone(article, entry).effectiveZone;
   if (!sensitiveZones.has(zone)) return false;
   if (article.trustverseCuration?.retained_high_risk_gate === true) return true;
   if (intrinsicallySensitiveZones.has(zone)) return true;
@@ -105,7 +122,8 @@ export function isSensitiveGuidance(article, entry) {
 export function classifyEvidence(article, entry, overrides = {}) {
   const source = sourceDetails(article);
   const claims = claimFlags(article);
-  const sensitiveZone = sensitiveZones.has(entry.zone?.slug);
+  const trustZone = resolveTrustZone(article, entry);
+  const sensitiveZoneOrigin = sensitiveZones.has(trustZone.sourceZone);
   const sensitive = isSensitiveGuidance(article, entry);
   const override = overrides?.entries?.[entry.slug] ?? null;
   const allowed = new Set(["reviewed", "practical", "pending-review", "restricted"]);
@@ -135,11 +153,13 @@ export function classifyEvidence(article, entry, overrides = {}) {
 
   return {
     slug: entry.slug,
-    zone: entry.zone?.slug ?? null,
+    zone: trustZone.effectiveZone,
+    sourceZone: trustZone.sourceZone,
+    taxonomyReclassified: trustZone.reclassified,
     status,
     reason,
     sensitive,
-    sensitiveZoneOrigin: sensitiveZone,
+    sensitiveZoneOrigin,
     indexable,
     indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
     content: {

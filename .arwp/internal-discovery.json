@@ -1,0 +1,29 @@
+{
+  "version": "0.1",
+  "reviewedAt": "2026-09-11",
+  "site": "https://brali-lifeos.github.io/",
+  "arwpRevision": "793483e3404a97f7892e86bcda3fd317d5c7427c",
+  "mode": "deep-run-execute",
+  "scope": "canonical indexable Growth Library protocols and their maintained hierarchy",
+  "findings": [
+    {"id":"IDD-01-canonical-crawlable-paths","status":"implemented-final-gate","evidence":"Only evidence records with indexable=true receive the layer; their canonical URLs and hierarchy continuation targets must remain in the final sitemap."},
+    {"id":"IDD-02-descriptive-anchor-text","status":"implemented","evidence":"Continuation anchors name the Growth Zone, Life Area or ontology Topic and describe the navigation job rather than using generic link text."},
+    {"id":"IDD-03-reachability-and-global-only-review","status":"implemented-hierarchy","evidence":"Each canonical protocol gains explicit contextual paths back to maintained hierarchy surfaces while existing global navigation remains separate."},
+    {"id":"IDD-04-semantic-related-and-reverse-relations","status":"implemented-existing-plus-gate","evidence":"Existing Related protocols remains the peer relation graph; the new gate verifies its protocol targets remain indexable instead of recomputing similarity."},
+    {"id":"IDD-05-visible-breadcrumbs-and-schema","status":"covered-existing","evidence":"Canonical protocol pages already expose visible breadcrumbs and BreadcrumbList structured data; this rollout preserves that established contract."},
+    {"id":"IDD-06-intentional-continuation","status":"implemented","evidence":"Continue from here connects each protocol to its Growth Zone, Life Area and published ontology Topic, with Growth Library fallback when needed."},
+    {"id":"IDD-07-share-copy-save-cite-utilities","status":"implemented","evidence":"Canonical indexable protocol pages expose browser-local Save plus Share, Copy link and Cite controls using their canonical URL."},
+    {"id":"IDD-08-citation-contract","status":"implemented-conservative","evidence":"Cite copies Brali, the visible protocol title and canonical URL; it does not invent an author, DOI, efficacy claim or review outcome."},
+    {"id":"IDD-09-preferred-sources-applicability","status":"watch","evidence":"No Preferred Sources control is published until current source-preference availability and publisher applicability are verified independently."},
+    {"id":"IDD-10-regression-safe-graph-gates","status":"implemented","evidence":"Final and live checks verify canonical utilities, hierarchy continuation, sitemap targets and indexable-only Related protocol edges after the full generated-site pipeline."}
+  ],
+  "guardrails": {
+    "noRankingGuarantee": true,
+    "noEfficacyInference": true,
+    "onlyIndexableProtocolCohort": true,
+    "existingRelatedGraphPreserved": true,
+    "localSaveOnly": true,
+    "canonicalUrlsForDistribution": true,
+    "liveVerificationAfterDeploy": true
+  }
+}

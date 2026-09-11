@@ -10,6 +10,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: brali-pages-${{ github.event_name == 'pull_request' && github.ref || 'production' }}
+  cancel-in-progress: true
+
 jobs:
   verify:
     runs-on: ubuntu-latest
@@ -24,7 +28,15 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_PROMPT_DISABLED: 1
         run: gh skill publish agent-skills --dry-run
-      - run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
+      - name: Build and run full repository checks
+        run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
+      - name: Gate exact final Pages artifact
+        run: node scripts/check-search-release.mjs
+      - name: Upload verified Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
 
   deploy:
     if: github.event_name != 'pull_request'
@@ -37,19 +49,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    concurrency:
-      group: pages
-      cancel-in-progress: false
     steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 22
-          package-manager-cache: false
-      - run: npm run build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
       - id: deployment
         uses: actions/deploy-pages@v4

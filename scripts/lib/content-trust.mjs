@@ -94,17 +94,24 @@ export function claimFlags(article) {
 }
 
 export function resolveTrustZone(article = {}, entry = {}) {
-  const sourceZone = entry.zone?.slug ?? article.zone?.slug ?? article.lifeOsSource?.zoneSlug ?? null;
+  const observedZone = entry.zone?.slug ?? article.zone?.slug ?? article.lifeOsSource?.zoneSlug ?? null;
   const reclassification = article.trustverseCuration?.taxonomy_reclassification ?? null;
+  const observedTargets = new Set([
+    entry.zone?.slug,
+    article.zone?.slug,
+    article.lifeOsSource?.zoneSlug,
+  ].filter(Boolean));
   const explicitlyReviewed = Boolean(
-    reclassification?.from
+    article.trustverseCuration?.mode === "claim-cleanup"
+      && reclassification?.from
       && reclassification?.to
+      && reclassification?.reason
       && reclassification?.reviewed_at
-      && reclassification.from === sourceZone,
+      && (observedTargets.has(reclassification.from) || observedTargets.has(reclassification.to)),
   );
   return {
-    sourceZone,
-    effectiveZone: explicitlyReviewed ? reclassification.to : sourceZone,
+    sourceZone: explicitlyReviewed ? reclassification.from : observedZone,
+    effectiveZone: explicitlyReviewed ? reclassification.to : observedZone,
     reclassified: explicitlyReviewed,
     reclassification: explicitlyReviewed ? reclassification : null,
   };

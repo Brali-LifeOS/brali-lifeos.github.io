@@ -30,6 +30,8 @@ jobs:
         run: gh skill publish agent-skills --dry-run
       - name: Build and run full repository checks
         run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
+      - name: Normalize final sitemap to canonical indexable URLs
+        run: node scripts/normalize-search-sitemap.mjs
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact

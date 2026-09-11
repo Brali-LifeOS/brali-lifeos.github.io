@@ -32,6 +32,10 @@ jobs:
         run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
       - name: Normalize final sitemap to canonical indexable URLs
         run: node scripts/normalize-search-sitemap.mjs
+      - name: Apply Image Discovery to exact final artifact
+        run: node scripts/apply-image-discovery.mjs
+      - name: Gate final Image Discovery surface
+        run: node scripts/check-image-discovery.mjs
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact
@@ -54,3 +58,11 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+      - name: Checkout deployed source revision
+        uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Verify live Image Discovery surface
+        run: node scripts/check-live-image-discovery.mjs

@@ -4,12 +4,12 @@
   "period_start": "2026-09-01",
   "period_end_exclusive": "2026-10-01",
   "digest_cutoff_inclusive": "2026-09-11",
-  "generated_at": "2026-09-11T11:20:00Z",
+  "generated_at": "2026-09-11T12:22:00Z",
   "status": "partial",
   "counts": {
-    "candidates_discovered_in_review_batches": 14,
-    "decisions_reviewed": 13,
-    "propose-protocol": 6,
+    "candidates_discovered_in_review_batches": 19,
+    "decisions_reviewed": 18,
+    "propose-protocol": 11,
     "support-existing": 6,
     "watch": 1,
     "screening_without_decision": 1,
@@ -19,7 +19,9 @@
     "deep_run_new_source_screened_candidates": 8,
     "deep_run_corrective_findings": 5,
     "deep_run_deduplicated_existing": 5,
-    "deep_run_next_search_hypotheses": 27
+    "deep_run_next_search_hypotheses": 27,
+    "deep_run_full_source_reviews_completed": 5,
+    "deep_run_reviewed_protocols_published": 5
   },
   "reviewed_batches": [
     {
@@ -90,10 +92,19 @@
     {
       "date": "2026-09-11",
       "added_or_strengthened": [
-        "Existing progressive muscle relaxation protocol strengthened with a 2026 systematic review/meta-analysis for subjective sleep quality in heterogeneous clinical populations."
+        "Existing progressive muscle relaxation protocol strengthened with a 2026 systematic review/meta-analysis for subjective sleep quality in heterogeneous clinical populations.",
+        "New reviewed grayscale-phone protocol for reducing habitual smartphone screen time through reversible interface friction.",
+        "New reviewed notification-batching protocol that preserves urgent channels and avoids a magic three-batches-per-day rule.",
+        "New reviewed email-checking-windows protocol anchored to the direct experimental stress result rather than a productivity claim.",
+        "New reviewed savoring protocol that attends to genuine positive experience without forced-positivity or treatment framing.",
+        "New reviewed post-meal-walking protocol bounded to an acute postprandial-glucose signal and ordinary safe movement."
       ],
       "claim_narrowing": [
-        "No universal healthy-adult sleep claim, objective sleep-architecture claim, or evidence-based exact PMR timer."
+        "No universal healthy-adult sleep claim, objective sleep-architecture claim, or evidence-based exact PMR timer.",
+        "Grayscale is presented as screen-time friction, not a productivity, sleep, or mental-health upgrade.",
+        "Three notification batches and three email checks are study conditions, not universal optimal doses.",
+        "Savoring evidence supports the broader intervention construct; the exact Brali micro-practice is labeled as a conservative implementation choice.",
+        "Post-meal walking is not presented as diabetes treatment, a medication substitute, or a fixed-duration prescription."
       ]
     }
   ],
@@ -123,9 +134,26 @@
       "Movement breaks",
       "Exercise snacks"
     ],
-    "development_zone_candidate": "Digital Attention is strong enough for a future dedicated hub, but the current public hub contract is intentionally fixed at seven. It remains an existing ontology Topic and a Focus-related surface for now.",
-    "promotion_state": "screening-only",
-    "registry": "data/review-registry-research-watch-2026-09-11-deep-run.json"
+    "full_source_review_wave_2": {
+      "reviewed_and_published": [
+        "grayscale-phone-friction",
+        "batch-non-urgent-notifications",
+        "deliberate-email-checking-windows",
+        "savor-positive-moment",
+        "post-meal-walk"
+      ],
+      "evidence_decisions": [
+        "grayscale-screen-time-friction-boundary-2026",
+        "notification-batching-boundary-2019",
+        "email-checking-frequency-stress-boundary-2015",
+        "savoring-emotional-outcomes-boundary-2026",
+        "post-meal-exercise-acute-glucose-boundary-2023"
+      ],
+      "registry": "data/review-registry-research-watch-2026-09-11-deep-run-wave-2.json"
+    },
+    "development_zone_candidate": "Digital Attention is the strongest next development surface, but the current public hub contract is intentionally fixed at seven. It remains an existing ontology Topic and a Focus-related surface while reviewed Digital Attention protocols accumulate.",
+    "promotion_state": "mixed: five candidates completed full-source review and were published as reviewed protocols; remaining candidates and hypotheses stay in discovery/review queues.",
+    "discovery_registry": "data/review-registry-research-watch-2026-09-11-deep-run.json"
   },
   "fresh_external_scan": [
     {
@@ -167,7 +195,9 @@
     "Added Agent Skills and question-oriented discovery surfaces.",
     "Improved search identity, indexing, snippets, attribution, and ARWP-oriented discovery layers.",
     "Identified Digital Attention as the strongest next development surface; kept it inside the existing ontology because the current public hub contract is intentionally fixed at seven.",
-    "Added a Deep Run research registry with explicit screening, corrective, deduplication, and next-search states."
+    "Added a Deep Run research registry with explicit screening, corrective, deduplication, and next-search states.",
+    "Promoted five Deep Run candidates only after full-source review and recorded matching Evidence Decisions.",
+    "Added an agent-friendly supplemental content registry so future reviewed protocols can join the large historical library without replacing the 20k+ line legacy index by hand."
   ],
   "next_monthly_loop": {
     "close_month_on": "2026-10-01",
@@ -179,5 +209,5 @@
       "Report what was reviewed, what changed, what was rejected or held, and why."
     ]
   },
-  "note": "Partial September digest through 2026-09-11 inclusive. Deep Run candidates are a screening layer and are not canonical trusted evidence until a full-source Evidence Review is completed. The requested ceiling of 50 was treated as a ceiling, not a quota; near-duplicates and weak ideas were intentionally not promoted."
+  "note": "Partial September digest through 2026-09-11 inclusive. The Deep Run treated 50 as a ceiling, not a quota. Five candidates have now passed full-source review and become reviewed protocols; the rest remain discovery or review work until they meet the same bar."
 }

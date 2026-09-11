@@ -3,17 +3,23 @@
   "month": "2026-09",
   "period_start": "2026-09-01",
   "period_end_exclusive": "2026-10-01",
-  "generated_at": "2026-09-05T11:30:00Z",
+  "digest_cutoff_inclusive": "2026-09-11",
+  "generated_at": "2026-09-11T11:20:00Z",
   "status": "partial",
   "counts": {
-    "candidates_discovered_in_review_batches": 9,
-    "decisions_reviewed": 8,
+    "candidates_discovered_in_review_batches": 14,
+    "decisions_reviewed": 13,
     "propose-protocol": 6,
-    "support-existing": 1,
+    "support-existing": 6,
     "watch": 1,
     "screening_without_decision": 1,
     "fresh_september_publications_screened": 4,
-    "fresh_september_publications_promoted": 0
+    "fresh_september_publications_promoted": 0,
+    "deep_run_items_considered": 45,
+    "deep_run_new_source_screened_candidates": 8,
+    "deep_run_corrective_findings": 5,
+    "deep_run_deduplicated_existing": 5,
+    "deep_run_next_search_hypotheses": 27
   },
   "reviewed_batches": [
     {
@@ -53,8 +59,74 @@
         "Protect off-work time from work apps protocol proposal",
         "Existing prolonged-sitting break protocol strengthened and its cognitive claims narrowed"
       ]
+    },
+    {
+      "date": "2026-09-06",
+      "added_or_strengthened": [
+        "Existing caffeine cutoff rewritten as dose-aware, bedtime-relative guidance after full review of a randomized crossover trial"
+      ],
+      "claim_narrowing": [
+        "Removed the universal after-lunch/1 p.m. cutoff and did not turn the 100 mg null result into a clearance rule."
+      ]
+    },
+    {
+      "date": "2026-09-08",
+      "added_or_strengthened": [
+        "Walking-meeting guidance rebuilt around the actual supported mechanism: replacing some prolonged sitting with physical activity."
+      ],
+      "claim_narrowing": [
+        "No special creativity/productivity effect, universal timer, fixed step target, or long-term disease-prevention claim."
+      ]
+    },
+    {
+      "date": "2026-09-09",
+      "added_or_strengthened": [
+        "Existing short-HIIT/Tabata content strengthened with exercise-snack evidence from a 2026 RCT-only meta-analysis and a real-world randomized trial."
+      ],
+      "claim_narrowing": [
+        "Kept cardiorespiratory-fitness evidence separate from weak or null body-composition, lipid, HbA1c, and exact-dose claims."
+      ]
+    },
+    {
+      "date": "2026-09-11",
+      "added_or_strengthened": [
+        "Existing progressive muscle relaxation protocol strengthened with a 2026 systematic review/meta-analysis for subjective sleep quality in heterogeneous clinical populations."
+      ],
+      "claim_narrowing": [
+        "No universal healthy-adult sleep claim, objective sleep-architecture claim, or evidence-based exact PMR timer."
+      ]
     }
   ],
+  "deep_run_2026_09_11": {
+    "purpose": "Search beyond the current research queue for independent practical mechanisms, deduplicate them against Brali, and build new discovery surfaces without lowering evidence standards.",
+    "new_source_screened_candidates": [
+      "Grayscale smartphone friction for reducing screen time",
+      "Batching non-urgent notifications",
+      "Deliberate email-checking windows",
+      "Savoring micro-practice",
+      "Bounded gratitude practice",
+      "Nature break framed primarily as a mood reset",
+      "Daily steps as a possible sleep-support habit",
+      "Social-interaction intervention cluster that still needs decomposition"
+    ],
+    "corrective_findings": [
+      "Do not present a complete social-media detox as a universal wellbeing intervention.",
+      "Do not promise a large cognitive benefit from merely moving a phone out of sight.",
+      "Do not sell nature exposure as a reliable cognition booster when mood evidence is stronger.",
+      "Do not turn small average gratitude effects into a happiness-transformation claim.",
+      "Do not invent one optimal movement-break schedule from low-certainty heterogeneous cognition evidence."
+    ],
+    "deduplicated": [
+      "Wakeful rest",
+      "Progressive muscle relaxation",
+      "Caffeine timing",
+      "Movement breaks",
+      "Exercise snacks"
+    ],
+    "new_surface": "Digital Attention topic hub",
+    "promotion_state": "screening-only",
+    "registry": "data/review-registry-research-watch-2026-09-11-deep-run.json"
+  },
   "fresh_external_scan": [
     {
       "publication_date": "2026-09-02",
@@ -90,11 +162,12 @@
     }
   ],
   "project_changes": [
-    "Opened Brali AI discovery surfaces",
-    "Added a Google Search indexing loop and pinned a valid indexing runner",
-    "Expanded research search lenses for pretesting, personal finance, leisure crafting, and related topics",
-    "Added and corrected daily evidence-review batches through September 5",
-    "Added a machine-readable and human-readable monthly digest generator"
+    "Opened and then hardened Brali AI discovery and retrieval surfaces.",
+    "Expanded topic mappings and trusted search-review coverage while keeping pending-review material out of trusted retrieval.",
+    "Added Agent Skills and question-oriented discovery surfaces.",
+    "Improved search identity, indexing, snippets, attribution, and ARWP-oriented discovery layers.",
+    "Added the Digital Attention topic hub instead of inventing another core Growth Zone.",
+    "Added a Deep Run research registry with explicit screening, corrective, deduplication, and next-search states."
   ],
   "next_monthly_loop": {
     "close_month_on": "2026-10-01",
@@ -106,5 +179,5 @@
       "Report what was reviewed, what changed, what was rejected or held, and why."
     ]
   },
-  "note": "Partial September digest through 2026-09-05. The fresh external scan is a screening layer only; none of those four September publications is promoted to canonical Brali evidence by this digest."
+  "note": "Partial September digest through 2026-09-11 inclusive. Deep Run candidates are a screening layer and are not canonical trusted evidence until a full-source Evidence Review is completed. The requested ceiling of 50 was treated as a ceiling, not a quota; near-duplicates and weak ideas were intentionally not promoted."
 }

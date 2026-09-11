@@ -3,9 +3,9 @@
   "entries": {
     "guided-pmr-muscle-relaxation": {
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited PMR article containing unsupported anxiety/tension percentages, arbitrary force targets, rigid 35-second timing, invented internal observations and treatment-like expectations with a conservative progressive muscle relaxation protocol grounded in current NHS clinical relaxation guidance. The public version presents PMR as a relaxation skill for noticing and releasing muscle tension, not as a treatment for depression or a guaranteed percentage reduction in anxiety.",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Refresh the existing reviewed progressive muscle relaxation protocol with a 2026 systematic review and meta-analysis of randomized controlled trials focused on subjective sleep quality. The new synthesis supports PMR as a plausible low-cost sleep-support practice in the studied clinical populations, but high heterogeneity, possible publication bias, subjective outcomes, heterogeneous protocols and the absence of healthy-general-population trials in the review make a universal sleep claim inappropriate. The public protocol therefore keeps the conservative NHS technique, adds a sleep-specific use case and observation loop, and explicitly rejects magic session counts, mechanistic certainty and the claim that older adults do not benefit.",
       "forbidden_public_fragments": [
         "15–30% reduction in reported anxiety",
         "10–30% subjective drop in tension",
@@ -18,15 +18,22 @@
         "reduce daily baseline tension by roughly 10–15%",
         "long exhalations help trigger the parasympathetic response",
         "Research shows habits can take 21-66 days to form",
-        "At MetalHatsCats"
+        "At MetalHatsCats",
+        "PMR reliably improves sleep in everyone",
+        "older adults do not benefit from PMR",
+        "more PMR sessions are better",
+        "PMR lowers cortisol",
+        "PMR activates the parasympathetic nervous system"
       ],
       "lifeOsSource": {
-        "whatYouDo": "Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort.",
-        "checkIn": "Did I practise without pain or straining? Which areas felt tense, and did I notice any difference after releasing them?",
+        "whatYouDo": "Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort. If sleep is your target, use PMR as a repeatable wind-down experiment rather than a one-night sleep test.",
+        "checkIn": "Did I practise without pain or straining? If I am using PMR for sleep, across several attempts did winding down or my subjective sleep feel meaningfully easier, unchanged, or worse?",
         "sourceUrl": "https://www.rbht.nhs.uk/our-services/clinical_support/rehabilitation-and-therapies/psychological-medicine/relaxation-exercises",
         "reference": "Royal Brompton & Harefield hospitals — Progressive muscle relaxation"
       },
       "references": [
+        "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1906525/full",
+        "https://pubmed.ncbi.nlm.nih.gov/42625730/",
         "https://www.rbht.nhs.uk/our-services/clinical_support/rehabilitation-and-therapies/psychological-medicine/relaxation-exercises",
         "https://oxfordhealth.nhs.uk/camhs/self-care/sleep/relaxation/progressive-muscle-relaxation/",
         "https://www.berkshirehealthcare.nhs.uk/services/talking-therapies/calm-your-anxiety-workshops"
@@ -35,7 +42,7 @@
         {
           "id": "guided-pmr-muscle-relaxation-faq-1",
           "question": "Do I need an exact 5-second tense and 30-second relax timer?",
-          "answer": "No. NHS sources commonly use a brief tension phase, and Royal Brompton advises holding tension for no more than five seconds before releasing. Brali does not claim that a fixed 30-second release or 35-second cycle is an evidence-based optimum."
+          "answer": "No. NHS sources commonly use a brief tension phase, and Royal Brompton advises holding tension for no more than five seconds before releasing. The 2026 sleep meta-analysis included widely different PMR schedules, so it does not establish a fixed release interval, session length or timer as an optimum."
         },
         {
           "id": "guided-pmr-muscle-relaxation-faq-2",
@@ -44,13 +51,28 @@
         },
         {
           "id": "guided-pmr-muscle-relaxation-faq-3",
-          "question": "Is PMR a treatment for depression or anxiety?",
-          "answer": "Brali presents PMR as a relaxation skill, not as a treatment plan or a guaranteed way to reduce symptoms by a particular amount. If anxiety or low mood is persistent or significantly affects daily life, use appropriate professional support rather than relying on this protocol alone."
+          "question": "What does the 2026 evidence actually say about sleep?",
+          "answer": "A systematic review and meta-analysis of 14 randomized trials with 957 participants found better subjective sleep quality with PMR on average. But the studies involved people with cancer and other clinical conditions, used different protocols, and showed very high heterogeneity. Sleep was measured with the subjective Pittsburgh Sleep Quality Index rather than objective sleep recording. This is useful evidence, not a universal sleep guarantee."
+        },
+        {
+          "id": "guided-pmr-muscle-relaxation-faq-4",
+          "question": "How often should I do PMR for sleep?",
+          "answer": "The review does not give a scientifically optimized cadence. Included interventions ranged from a few days to 12 weeks and varied greatly in session count. Meta-regression did not find a statistically significant association between session count and sleep effect, which is a reason to avoid a magic frequency—not proof that frequency never matters."
+        },
+        {
+          "id": "guided-pmr-muscle-relaxation-faq-5",
+          "question": "Does the review show that PMR does not work after age 55?",
+          "answer": "No. The pooled estimate in the 55-and-older subgroup was imprecise and crossed the null, but the formal test did not find a significant difference between age groups. The defensible conclusion is that the evidence for older adults is uncertain, not that PMR stops working at a birthday."
+        },
+        {
+          "id": "guided-pmr-muscle-relaxation-faq-6",
+          "question": "Is PMR a treatment for depression, anxiety or persistent insomnia?",
+          "answer": "Brali presents PMR as a relaxation skill and, for sleep, a low-risk supportive experiment—not as a diagnosis or complete treatment plan. Persistent or severe symptoms deserve appropriate clinical assessment rather than a larger timer."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>Progressive muscle relaxation is a simple relaxation exercise built around noticing the difference between muscle tension and release. NHS clinical resources describe moving through major muscle groups, tensing each briefly and then relaxing it. Brali keeps the practice deliberately modest: no percentage promises, no force targets and no claim that one session will produce a predictable mental-health outcome.</p>"
+          "html": "<p>Progressive muscle relaxation is a simple skill: create gentle tension in one muscle group, release it, and pay attention to the contrast. That makes it useful as a body-based wind-down practice without requiring a story about ‘switching on’ a particular branch of your nervous system.</p><p>A 2026 systematic review and meta-analysis of 14 randomized trials (957 participants) found better <strong>subjective</strong> sleep quality with PMR on average. That is worth taking seriously. It is not permission to turn PMR into a sleep spell: the studies were clinically heterogeneous, the protocols varied widely, heterogeneity was very high, possible publication bias was detected, and the outcome was a questionnaire rather than objective sleep recording.</p>"
         },
         "sections": [
           {
@@ -79,9 +101,24 @@
             "html": "<p>If tensing a muscle causes significant discomfort, release it and skip that area. If you have a physical health issue that could make the exercise unsuitable, get appropriate clinical advice before using a general relaxation routine.</p>"
           },
           {
+            "slug": "sleep-experiment",
+            "title": "6. If sleep is the target, run an experiment—not a ritual",
+            "html": "<p>Use PMR as part of your wind-down routine across several attempts and notice whether settling down or your subjective sleep is meaningfully easier. Do not judge it from one heroic bedtime. The trials in the 2026 review used programs ranging from 3 days to 12 weeks and very different numbers of sessions, and meta-regression did not identify a dose-response relationship with session count. In other words: the literature does not contain a sacred PMR frequency waiting to be copied into a productivity app.</p>"
+          },
+          {
+            "slug": "what-the-evidence-supports",
+            "title": "7. Keep the evidence boundary visible",
+            "html": "<p>The strongest fresh evidence here concerns <strong>subjective sleep quality in clinical populations</strong>. The 14 trials included people with cancer and a range of other conditions; they did not establish the same effect in a general healthy population. The pooled result was large, but heterogeneity was also very high (I² 85.5%), and Egger's test suggested possible publication bias. A trim-and-fill analysis reduced the pooled estimate while leaving its direction unchanged.</p><p>The older-adult subgroup was inconclusive, but the difference between age subgroups was not statistically significant. So ‘PMR does not work after 55’ would be a headline, not a result. Mechanistic explanations involving sympathetic activity, cortisol or anxiety are hypotheses discussed by the review; the meta-analysis did not test those mechanisms.</p>"
+          },
+          {
             "slug": "review-the-experience",
-            "title": "6. Review the experience, not a promised effect",
-            "html": "<p>In Brali, record whether you practised, whether any area was uncomfortable, and what you noticed about tension and release. Do not expect a required percentage improvement in anxiety, tension or sleep. After a few attempts, decide whether PMR is a useful relaxation skill for you.</p>"
+            "title": "8. Review what changed",
+            "html": "<p>Record whether you practised without discomfort and, if sleep is the target, whether winding down or subjective sleep changed across repeated attempts. Keep PMR if it is useful and easy enough to repeat. Simplify it if the full sequence becomes another bedtime project. Stop or seek appropriate advice if the practice causes pain, cramping, dizziness or another concerning symptom.</p>"
+          },
+          {
+            "slug": "evidence-source",
+            "title": "Evidence",
+            "html": "<p><strong>Reviewed source:</strong> Li K, Chen S, Liu Y, Yu N. <em>The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials.</em> Frontiers in Public Health. Published 6 August 2026. DOI: 10.3389/fpubh.2026.1906525. Fourteen RCTs, 957 participants. Reviewed by Brali on 11 September 2026.</p><p><strong>What it supports:</strong> PMR improved subjective sleep-quality scores on average in the included clinical populations. <strong>What it does not establish:</strong> an optimal timer or session count, objective sleep improvement, the same effect in healthy adults, a proven cortisol/autonomic mechanism, or absence of benefit in everyone aged 55+.</p>"
           }
         ]
       }

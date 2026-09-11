@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-11. A fresh 2026 systematic review and meta-analysis of randomized controlled trials on progressive muscle relaxation (PMR) and subjective sleep quality completed full-source review. Brali already has a reviewed PMR protocol, so the evidence is used to strengthen and narrow that existing protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.3389/fpubh.2026.1906525",
+      "source": "crossref",
+      "source_id": "10.3389/fpubh.2026.1906525",
+      "doi": "10.3389/fpubh.2026.1906525",
+      "pmid": "42625730",
+      "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "authors": [
+        "Kehan Li",
+        "Shiwei Chen",
+        "Yixuan Liu",
+        "Nanding Yu"
+      ],
+      "container_title": "Frontiers in Public Health",
+      "publication_date": "2026-08-06",
+      "type": "journal-article",
+      "subjects": [
+        "progressive muscle relaxation",
+        "sleep quality",
+        "systematic review",
+        "meta-analysis",
+        "randomized controlled trials"
+      ],
+      "reference_url": "https://doi.org/10.3389/fpubh.2026.1906525",
+      "discovered_at": "2026-09-11T00:00:00Z",
+      "last_seen_at": "2026-09-11T00:00:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "health-sleep-regularity"
+      ],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [
+        "sleep-circadian"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref",
+        "europepmc"
+      ],
+      "review_notes": "Full open-access publisher article reviewed, not just discovery metadata. The review searched CINAHL, Embase, PubMed, Scopus and Web of Science through May 2026 and included 14 randomized controlled trials with 957 participants. All included populations had cancer or other clinical/chronic conditions; the review did not establish the same effect in a general healthy population. The pooled result favored PMR for subjective PSQI sleep quality (Hedges g -1.24, 95% CI -1.71 to -0.77), but heterogeneity was very high (I2 85.5%). Egger's test suggested possible publication bias (p=0.004); trim-and-fill reduced the estimate to g -0.92 while retaining the same direction. Intervention duration ranged from 3 days to 12 weeks and session counts varied widely. Meta-regression did not find a statistically significant association between session count and effect size (p=0.2106), which does not establish an optimal cadence. The age >=55 subgroup was imprecise, and the formal test for difference between age groups was not significant, so the review does not support a claim that PMR stops working after age 55."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "pmr-subjective-sleep-quality-boundary-2026",
+      "candidate_id": "crossref:10.3389/fpubh.2026.1906525",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1906525/full",
+      "source_title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.3389/fpubh.2026.1906525",
+      "citation_text": "Li K, Chen S, Liu Y, Yu N. Front Public Health. 2026;14:1906525.",
+      "source_reviewed": true,
+      "study_design": "PROSPERO-registered systematic review and random-effects meta-analysis of randomized controlled trials. Five databases were searched through May 2026; 14 RCTs were included. The review used RoB 2, Hartung-Knapp-adjusted random-effects models, subgroup analyses, leave-one-out sensitivity analysis, meta-regression for session count and publication-bias analyses.",
+      "population": "957 adults across 14 randomized trials from China, Turkey, Iran and Egypt. Participants had cancer or other clinical conditions including coronary artery bypass graft, lung resection, restless legs syndrome, hemodialysis, rheumatoid arthritis, fractures, epilepsy, COPD and obstructive sleep apnea. The review did not include a clearly healthy general-population trial.",
+      "intervention_or_exposure": "Progressive muscle relaxation delivered with heterogeneous protocols. Intervention duration ranged from 3 days to 12 weeks, and the number, frequency and length of sessions varied substantially across studies. Controls included routine care, no intervention, light activity and standard pulmonary rehabilitation.",
+      "outcomes": [
+        "Subjective sleep quality measured with the Pittsburgh Sleep Quality Index (PSQI)",
+        "Subgroup estimates by cancer versus non-cancer clinical populations",
+        "Subgroup estimates by mean age below versus at least 55 years",
+        "Association between number of PMR sessions and sleep-quality effect size"
+      ],
+      "supported_claim": "Across the included randomized trials, PMR improved subjective PSQI sleep-quality scores on average in clinically heterogeneous adult populations. The direction of the pooled effect remained after sensitivity and trim-and-fill analyses. This supports adding sleep as a bounded use case to Brali's existing conservative PMR protocol. It does not establish an optimal timer, session count or frequency, and the evidence should be described as subjective sleep-quality evidence in the studied clinical populations rather than a universal sleep effect.",
+      "unsupported_or_overstated_claims": [
+        "PMR reliably improves sleep for every adult or for healthy adults in general.",
+        "The meta-analysis proves that PMR shortens sleep latency, increases total sleep time or improves objective sleep architecture.",
+        "A specific 5/30-second timer, 7-minute routine, 12-group sequence, 18-group sequence or weekly frequency is the evidence-based optimum.",
+        "More PMR sessions produce larger sleep benefits.",
+        "PMR improves sleep because it lowers cortisol, reduces sympathetic activity or activates parasympathetic activity; these mechanisms were discussed, not tested by this meta-analysis.",
+        "PMR does not work in adults aged 55 years or older.",
+        "The pooled effect size can be treated as an expected individual improvement.",
+        "PMR should replace assessment or treatment for persistent or severe sleep problems."
+      ],
+      "limitations": [
+        "Between-study heterogeneity was very high (I2 85.5%) and was not explained by the reported subgroup analyses.",
+        "The included trials involved diverse clinical populations, limiting direct generalization to healthy adults or any one condition.",
+        "Sleep quality was assessed with the subjective PSQI rather than objective sleep measures.",
+        "Intervention duration, frequency, session count and protocol details varied substantially across studies.",
+        "Egger's test suggested possible publication bias; trim-and-fill reduced the pooled estimate while retaining the direction.",
+        "Only 14 studies were available, limiting subgroup and meta-regression precision.",
+        "The age >=55 subgroup estimate was imprecise, and the formal between-subgroup difference was not significant.",
+        "The review did not establish long-term persistence of benefit after PMR stopped."
+      ],
+      "target_hack_ids": [
+        "guided-pmr-muscle-relaxation"
+      ],
+      "target_protocol_ids": [
+        "brali:guided-pmr-muscle-relaxation"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: strengthen the existing reviewed PMR page rather than create a duplicate sleep-relaxation hack. Preserve the NHS-derived technique and safety details, add a sleep-specific observation loop, and teach the evidence boundary: subjective sleep quality improved on average in heterogeneous clinical populations, while exact dose, healthy-population generalization, objective sleep effects and proposed autonomic/cortisol mechanisms remain unproven here."
+    }
+  ]
+}

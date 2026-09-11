@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "description": "Small, reviewable additions to the historical Growth Library index. scripts/apply-content-additions.mjs merges these records into data/life-os-content/index.json before build/check so agents do not need to replace the 20k+ line legacy index for each new reviewed protocol.",
+  "entries": [
+    {
+      "slug": "batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "subtitle": "Make interruptions predictable without pretending every alert should disappear",
+      "description": "Group non-urgent smartphone notifications into a few predictable delivery windows while keeping genuinely urgent channels available. The useful idea is predictable batching, not a magic number of batches.",
+      "zone": {"slug": "do-it", "title": "Do It"},
+      "publishedISO": "2026-09-11T12:12:00Z",
+      "updatedISO": "2026-09-11T12:12:00Z",
+      "keywords": ["notification batching", "digital attention", "phone interruptions", "focus", "scheduled notifications"],
+      "stats": {"wordCount": 780, "readingMinutes": 4}
+    },
+    {
+      "slug": "deliberate-email-checking-windows",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "subtitle": "Reduce inbox switching without pretending every role can ignore email",
+      "description": "If constant inbox checking fragments your day, test a few deliberate email windows and close the inbox between them. Match the schedule to real response expectations rather than copying a fixed number from a study.",
+      "zone": {"slug": "work", "title": "Work"},
+      "publishedISO": "2026-09-11T12:14:00Z",
+      "updatedISO": "2026-09-11T12:14:00Z",
+      "keywords": ["email checking", "email stress", "digital attention", "work systems", "inbox batching"],
+      "stats": {"wordCount": 760, "readingMinutes": 4}
+    },
+    {
+      "slug": "grayscale-phone-friction",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "subtitle": "A reversible interface nudge for reducing habitual screen time",
+      "description": "If you want to spend less time on your phone, try switching the display to grayscale for a bounded trial. Treat it as friction against habitual use, not as a productivity, sleep, or mental-health upgrade.",
+      "zone": {"slug": "do-it", "title": "Do It"},
+      "publishedISO": "2026-09-11T12:10:00Z",
+      "updatedISO": "2026-09-11T12:10:00Z",
+      "keywords": ["grayscale phone", "screen time", "digital attention", "environment design", "smartphone friction"],
+      "stats": {"wordCount": 760, "readingMinutes": 4}
+    },
+    {
+      "slug": "post-meal-walk",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "subtitle": "A simple movement option with an acute post-meal glucose signal",
+      "description": "When it is safe and practical, replace some sitting after a meal with comfortable walking. Evidence supports an acute effect on post-meal glucose, not a universal walking dose or long-term treatment claim.",
+      "zone": {"slug": "fit-life", "title": "Fit Life"},
+      "publishedISO": "2026-09-11T12:18:00Z",
+      "updatedISO": "2026-09-11T12:18:00Z",
+      "keywords": ["post-meal walk", "walking after meals", "movement", "postprandial glucose", "sedentary time"],
+      "stats": {"wordCount": 790, "readingMinutes": 4}
+    },
+    {
+      "slug": "savor-positive-moment",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "subtitle": "A small savoring practice without forced positivity",
+      "description": "When something genuinely pleasant is already happening, give it a little deliberate attention instead of rushing past it. This is a conservative savoring practice, not a rule to feel positive or reinterpret difficult experiences.",
+      "zone": {"slug": "be-positive", "title": "Be Positive"},
+      "publishedISO": "2026-09-11T12:16:00Z",
+      "updatedISO": "2026-09-11T12:16:00Z",
+      "keywords": ["savoring", "positive experience", "wellbeing", "attention", "positive emotion"],
+      "stats": {"wordCount": 760, "readingMinutes": 4}
+    }
+  ]
+}

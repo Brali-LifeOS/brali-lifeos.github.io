@@ -96,6 +96,7 @@ export function claimFlags(article) {
 export function isSensitiveGuidance(article, entry) {
   const zone = entry.zone?.slug ?? null;
   if (!sensitiveZones.has(zone)) return false;
+  if (article.trustverseCuration?.retained_high_risk_gate === true) return true;
   if (intrinsicallySensitiveZones.has(zone)) return true;
   const text = `${entry.slug ?? ''} ${JSON.stringify(publicClaimSurface(article))}`;
   return sensitiveContentPattern.test(text);

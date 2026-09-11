@@ -39,17 +39,23 @@ requireCondition(updates.includes("google.com/preferences/source?q=brali-lifeos.
 const skillPageRequirements = [
   ['<link rel="canonical" href="https://brali-lifeos.github.io/skill-packs/">', "skill-packs: canonical link is missing"],
   ['/life-os/datasets/protocols.json', "skill-packs: Trusted Protocol Feed link is missing"],
-  ['/skill-packs/catalog.json', "skill-packs: machine-readable catalog link is missing"],
+  ['/skill-packs/library.json', "skill-packs: complete one-skill-per-hack library link is missing"],
+  ['/skill-packs/catalog.json', "skill-packs: trusted machine-readable catalog link is missing"],
   ['SKILL.md', "skill-packs: SKILL.md capability marker is missing"],
   ['reviewed', "skill-packs: reviewed trust-state explanation is missing"],
   ['practical', "skill-packs: practical trust-state explanation is missing"],
+  ['Review required', "skill-packs: pending-review skill mode explanation is missing"],
+  ['Restricted', "skill-packs: restricted skill mode explanation is missing"],
   ['not a ranking shortcut', "skill-packs: ranking-boundary disclaimer is missing"],
   ['gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os', "skill-packs: router install command is missing"],
 ];
 for (const [marker, label] of skillPageRequirements) requireCondition(skillPackHtml.includes(marker), label);
 try { new Function(skillPackApp); } catch (error) { fail(`skill-packs/app.js: syntax error: ${error.message}`); }
+requireCondition(skillPackApp.includes('catalogUrl = "/skill-packs/library.json"'), "skill-packs/app.js: complete skill library is not the UI source");
 requireCondition(skillPackApp.includes('trustedStates = new Set(["reviewed", "practical"])'), "skill-packs/app.js: trusted-state filter is missing");
-requireCondition(skillPackApp.includes("Brali does not package review-gated records as skills"), "skill-packs/app.js: review-gated refusal is missing");
+requireCondition(skillPackApp.includes("Brali does not recommend review-gated records as trusted skills"), "skill-packs/app.js: review-gated recommendation boundary is missing");
+requireCondition(skillPackApp.includes('entry.skill_mode === "review-required"'), "skill-packs/app.js: review-required mode is missing");
+requireCondition(skillPackApp.includes('entry.skill_mode === "restricted-reference"'), "skill-packs/app.js: restricted-reference mode is missing");
 requireCondition(sitemap.includes(`<loc>${base}/skill-packs/</loc>`), "sitemap: /skill-packs/ is missing");
 
 for (const entry of index) {
@@ -61,8 +67,8 @@ for (const entry of index) {
   const evidenceRecord = evidenceBySlug.get(entry.slug);
   const trusted = isTrusted(evidenceRecord);
   const reference = isPendingReference(evidenceRecord);
-  const searchIndexable = trusted || reference;
   const inSitemap = sitemap.includes(`<loc>${base}${pathname}</loc>`);
+  const skillInSitemap = sitemap.includes(`<loc>${base}${stableSkillPath}</loc>`);
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(html);
   const required = [
     ['data-agent-reuse="true"', "agent reuse marker"],
@@ -83,9 +89,11 @@ for (const entry of index) {
     requireCondition(!html.includes(`href="/skill-packs/?hack=${entry.slug}"`), `${entry.slug}: trusted page still uses query-only skill link`);
     requireCondition(html.includes('href="/for-ai/integrations/"'), `${entry.slug}: trusted page missing AI integrations link`);
     requireCondition(!noindex && inSitemap && /max-image-preview:large/i.test(html), `${entry.slug}: trusted search visibility contract failed`);
+    requireCondition(skillInSitemap, `${entry.slug}: trusted skill page missing from sitemap`);
   } else {
     requireCondition(html.includes('data-agent-skill="review-gated"'), `${entry.slug}: review-gated page missing review-gated skill marker`);
-    requireCondition(!html.includes(`href="${stableSkillPath}"`), `${entry.slug}: review-gated page leaked a stable skill link`);
+    requireCondition(!html.includes(`href="${stableSkillPath}"`), `${entry.slug}: review-gated source page leaked a promoted stable skill link`);
+    requireCondition(!skillInSitemap, `${entry.slug}: review-gated skill page leaked into sitemap`);
     if (reference) {
       pendingReference += 1;
       requireCondition(!noindex && inSitemap && /max-image-preview:large/i.test(html), `${entry.slug}: pending-review reference search visibility contract failed`);
@@ -109,9 +117,7 @@ for (const entry of index) {
     requireCondition(webPage?.license === license && webPage?.mainEntity?.["@id"] === article?.["@id"], `${entry.slug}: WebPage mainEntity/license schema drift`);
     const actionTarget = article?.potentialAction?.target;
     requireCondition(trusted ? actionTarget === `${base}${stableSkillPath}` : !actionTarget, `${entry.slug}: stable skill potentialAction trust parity failed`);
-    if (reference) {
-      requireCondition(article?.creativeWorkStatus === 'Pending review' && article?.genre === 'Brali review record', `${entry.slug}: pending-review structured-data framing drift`);
-    }
+    if (reference) requireCondition(article?.creativeWorkStatus === 'Pending review' && article?.genre === 'Brali review record', `${entry.slug}: pending-review structured-data framing drift`);
     if (isRepresentative(ogImage)) {
       representative += 1;
       requireCondition(metaContent(html, "twitter:card") === "summary_large_image", `${entry.slug}: representative image missing summary_large_image card`);
@@ -133,4 +139,4 @@ if (violations.length) {
   const preview = violations.slice(0, 25).map((item) => `- ${item}`).join("\n");
   throw new Error(`Hack discovery validation failed with ${violations.length} contract violation(s):\n${preview}${violations.length > 25 ? `\n- ... ${violations.length - 25} more` : ""}`);
 }
-console.log(`Hack discovery verified for ${index.length} pages: ${skillAvailable} trusted stable skill-enabled, ${pendingReference} pending-review neutral references, ${restricted} restricted search-withheld; ${representative} expose representative large-image metadata.`);
+console.log(`Hack discovery verified for ${index.length} pages: complete skill library exposed; ${skillAvailable} trusted promoted skill pages, ${pendingReference} pending-review neutral references, ${restricted} restricted search-withheld; ${representative} expose representative large-image metadata.`);

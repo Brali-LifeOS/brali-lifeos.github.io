@@ -4,13 +4,13 @@
   "period_start": "2026-09-01",
   "period_end_exclusive": "2026-10-01",
   "digest_cutoff_inclusive": "2026-09-11",
-  "generated_at": "2026-09-11T12:22:00Z",
+  "generated_at": "2026-09-11T12:36:00Z",
   "status": "partial",
   "counts": {
-    "candidates_discovered_in_review_batches": 19,
-    "decisions_reviewed": 18,
-    "propose-protocol": 11,
-    "support-existing": 6,
+    "candidates_discovered_in_review_batches": 23,
+    "decisions_reviewed": 22,
+    "propose-protocol": 14,
+    "support-existing": 7,
     "watch": 1,
     "screening_without_decision": 1,
     "fresh_september_publications_screened": 4,
@@ -20,8 +20,8 @@
     "deep_run_corrective_findings": 5,
     "deep_run_deduplicated_existing": 5,
     "deep_run_next_search_hypotheses": 27,
-    "deep_run_full_source_reviews_completed": 5,
-    "deep_run_reviewed_protocols_published": 5
+    "deep_run_full_source_sources_reviewed": 9,
+    "deep_run_reviewed_protocols_published": 8
   },
   "reviewed_batches": [
     {
@@ -33,27 +33,17 @@
     },
     {
       "date": "2026-09-02",
-      "added_or_strengthened": [
-        "Guess-before-reveal vocabulary pretesting protocol proposal"
-      ],
-      "held_back": [
-        "Personal-finance goal-setting RCT remains screening pending complete source review"
-      ]
+      "added_or_strengthened": ["Guess-before-reveal vocabulary pretesting protocol proposal"],
+      "held_back": ["Personal-finance goal-setting RCT remains screening pending complete source review"]
     },
     {
       "date": "2026-09-03",
-      "added_or_strengthened": [
-        "Leisure-crafting protocol proposal"
-      ],
-      "held_back": [
-        "Supervisory-feedback meta-analysis remains watch because the evidence base is mostly correlational and highly heterogeneous"
-      ]
+      "added_or_strengthened": ["Leisure-crafting protocol proposal"],
+      "held_back": ["Supervisory-feedback meta-analysis remains watch because the evidence base is mostly correlational and highly heterogeneous"]
     },
     {
       "date": "2026-09-04",
-      "added_or_strengthened": [
-        "Recurring records-maintenance block protocol proposal"
-      ]
+      "added_or_strengthened": ["Recurring records-maintenance block protocol proposal"]
     },
     {
       "date": "2026-09-05",
@@ -64,30 +54,18 @@
     },
     {
       "date": "2026-09-06",
-      "added_or_strengthened": [
-        "Existing caffeine cutoff rewritten as dose-aware, bedtime-relative guidance after full review of a randomized crossover trial"
-      ],
-      "claim_narrowing": [
-        "Removed the universal after-lunch/1 p.m. cutoff and did not turn the 100 mg null result into a clearance rule."
-      ]
+      "added_or_strengthened": ["Existing caffeine cutoff rewritten as dose-aware, bedtime-relative guidance after full review of a randomized crossover trial"],
+      "claim_narrowing": ["Removed the universal after-lunch/1 p.m. cutoff and did not turn the 100 mg null result into a clearance rule."]
     },
     {
       "date": "2026-09-08",
-      "added_or_strengthened": [
-        "Walking-meeting guidance rebuilt around the actual supported mechanism: replacing some prolonged sitting with physical activity."
-      ],
-      "claim_narrowing": [
-        "No special creativity/productivity effect, universal timer, fixed step target, or long-term disease-prevention claim."
-      ]
+      "added_or_strengthened": ["Walking-meeting guidance rebuilt around the actual supported mechanism: replacing some prolonged sitting with physical activity."],
+      "claim_narrowing": ["No special creativity/productivity effect, universal timer, fixed step target, or long-term disease-prevention claim."]
     },
     {
       "date": "2026-09-09",
-      "added_or_strengthened": [
-        "Existing short-HIIT/Tabata content strengthened with exercise-snack evidence from a 2026 RCT-only meta-analysis and a real-world randomized trial."
-      ],
-      "claim_narrowing": [
-        "Kept cardiorespiratory-fitness evidence separate from weak or null body-composition, lipid, HbA1c, and exact-dose claims."
-      ]
+      "added_or_strengthened": ["Existing short-HIIT/Tabata content strengthened with exercise-snack evidence from a 2026 RCT-only meta-analysis and a real-world randomized trial."],
+      "claim_narrowing": ["Kept cardiorespiratory-fitness evidence separate from weak or null body-composition, lipid, HbA1c, and exact-dose claims."]
     },
     {
       "date": "2026-09-11",
@@ -97,14 +75,20 @@
         "New reviewed notification-batching protocol that preserves urgent channels and avoids a magic three-batches-per-day rule.",
         "New reviewed email-checking-windows protocol anchored to the direct experimental stress result rather than a productivity claim.",
         "New reviewed savoring protocol that attends to genuine positive experience without forced-positivity or treatment framing.",
-        "New reviewed post-meal-walking protocol bounded to an acute postprandial-glucose signal and ordinary safe movement."
+        "New reviewed post-meal-walking protocol bounded to an acute postprandial-glucose signal and ordinary safe movement.",
+        "New reviewed micro-conversation protocol for adding a little social connection to an already-occurring low-pressure interaction.",
+        "New reviewed consider-the-opposite protocol for challenging one-sided judgments without pretending bias can be eliminated.",
+        "New reviewed temptation-bundling protocol for pairing a delayed-benefit activity with a compatible immediate reward, with exercise as the strongest empirical anchor."
       ],
       "claim_narrowing": [
         "No universal healthy-adult sleep claim, objective sleep-architecture claim, or evidence-based exact PMR timer.",
         "Grayscale is presented as screen-time friction, not a productivity, sleep, or mental-health upgrade.",
         "Three notification batches and three email checks are study conditions, not universal optimal doses.",
         "Savoring evidence supports the broader intervention construct; the exact Brali micro-practice is labeled as a conservative implementation choice.",
-        "Post-meal walking is not presented as diabetes treatment, a medication substitute, or a fixed-duration prescription."
+        "Post-meal walking is not presented as diabetes treatment, a medication substitute, or a fixed-duration prescription.",
+        "Micro-conversation evidence is kept to immediate affect and belonging in an appropriate context, not loneliness treatment or a stranger-conversation quota.",
+        "Consider-the-opposite is a bounded decision check; broader debiasing evidence shows only small average effects and uncertain real-world transfer.",
+        "Temptation bundling is not generalized as a universal habit formula, and the article makes effect decay, task compatibility, and safety explicit."
       ]
     }
   ],
@@ -151,8 +135,22 @@
       ],
       "registry": "data/review-registry-research-watch-2026-09-11-deep-run-wave-2.json"
     },
+    "full_source_review_wave_3": {
+      "reviewed_and_published": [
+        "genuine-micro-conversation",
+        "consider-the-opposite",
+        "temptation-bundling"
+      ],
+      "evidence_decisions": [
+        "micro-conversation-belonging-affect-boundary-2014",
+        "consider-opposite-social-judgment-boundary-1984",
+        "debiasing-education-transfer-boundary-2025",
+        "temptation-bundling-exercise-boundary-2020"
+      ],
+      "registry": "data/review-registry-research-watch-2026-09-11-deep-run-wave-3.json"
+    },
     "development_zone_candidate": "Digital Attention is the strongest next development surface, but the current public hub contract is intentionally fixed at seven. It remains an existing ontology Topic and a Focus-related surface while reviewed Digital Attention protocols accumulate.",
-    "promotion_state": "mixed: five candidates completed full-source review and were published as reviewed protocols; remaining candidates and hypotheses stay in discovery/review queues.",
+    "promotion_state": "Eight protocols have now passed full-source review and been published as reviewed guidance. Remaining candidates and hypotheses stay in discovery or review queues until they meet the same bar.",
     "discovery_registry": "data/review-registry-research-watch-2026-09-11-deep-run.json"
   },
   "fresh_external_scan": [
@@ -196,7 +194,7 @@
     "Improved search identity, indexing, snippets, attribution, and ARWP-oriented discovery layers.",
     "Identified Digital Attention as the strongest next development surface; kept it inside the existing ontology because the current public hub contract is intentionally fixed at seven.",
     "Added a Deep Run research registry with explicit screening, corrective, deduplication, and next-search states.",
-    "Promoted five Deep Run candidates only after full-source review and recorded matching Evidence Decisions.",
+    "Promoted eight Deep Run protocols only after source review and recorded matching Evidence Decisions and claim boundaries.",
     "Added an agent-friendly supplemental content registry so future reviewed protocols can join the large historical library without replacing the 20k+ line legacy index by hand."
   ],
   "next_monthly_loop": {
@@ -209,5 +207,5 @@
       "Report what was reviewed, what changed, what was rejected or held, and why."
     ]
   },
-  "note": "Partial September digest through 2026-09-11 inclusive. The Deep Run treated 50 as a ceiling, not a quota. Five candidates have now passed full-source review and become reviewed protocols; the rest remain discovery or review work until they meet the same bar."
+  "note": "Partial September digest through 2026-09-11 inclusive. The Deep Run treated 50 as a ceiling, not a quota. Eight protocols have passed source review and become reviewed guidance; the rest remain discovery or review work until they meet the same bar."
 }

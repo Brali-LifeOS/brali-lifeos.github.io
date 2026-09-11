@@ -1,5 +1,6 @@
 (() => {
   const catalogUrl = "/skill-packs/catalog.json";
+  const trustedStates = new Set(["reviewed", "practical"]);
   const listEl = document.querySelector("#skill-list");
   const resultEl = document.querySelector("#skill-result");
   const searchEl = document.querySelector("#skill-search");
@@ -50,7 +51,7 @@
 
   async function renderSelected(entry) {
     if (!entry) {
-      resultEl.innerHTML = '<div class="skill-empty"><h3>Skill not found</h3><p>This skill is not in the current trusted catalog. Brali only emits reviewed/practical records as installable Agent Skills.</p><p><a href="/life-os/methodology/">See the evidence policy</a></p></div>';
+      resultEl.innerHTML = '<div class="skill-empty"><h3>Skill not found</h3><p>Brali does not package review-gated records as skills. This skill is not in the current reviewed/practical catalog.</p><p><a href="/life-os/methodology/">See the evidence policy</a></p></div>';
       return;
     }
 
@@ -181,7 +182,9 @@
       const response = await fetch(catalogUrl, { headers: { Accept: "application/json" } });
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const catalog = await response.json();
-      entries = (catalog.entries ?? []).sort((a, b) => clean(a.title).localeCompare(clean(b.title)));
+      entries = (catalog.entries ?? [])
+        .filter((entry) => trustedStates.has(entry.evidence_state))
+        .sort((a, b) => clean(a.title).localeCompare(clean(b.title)));
       renderList();
       if (selectedSlug) choose(entries.find((entry) => entry.slug === selectedSlug), false);
       else if (entries.length) choose(entries[0], false);

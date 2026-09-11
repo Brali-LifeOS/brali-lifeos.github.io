@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "description": "Brali Deep Run research batch, 2026-09-11. This batch deliberately separates discovery from evidence review. Web searches and abstract/full-page screening can generate candidates, but no candidate in this file becomes trusted guidance merely by appearing here. Existing Brali protocols were deduplicated before proposing new work.",
+  "run": {
+    "date": "2026-09-11",
+    "mode": "deep-run",
+    "requested_ceiling": 50,
+    "screening_rule": "Prefer independent mechanisms over cosmetic variants. Record null/negative findings. Promote only after full-source Evidence Review.",
+    "writing_rule": "Natural B2 English, source-native terminology, short clear sentences, no SEO filler, and explicit separation of claim, recommendation, and interpretation."
+  },
+  "source_screened_candidates": [
+    {
+      "id": "deep-run:grayscale-smartphone-friction",
+      "working_title": "Turn your phone grayscale when you want less screen time",
+      "topic_ids": ["digital-attention", "environment-design"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-candidate",
+      "supported_screening_claim": "Randomized field evidence suggests grayscale display settings can reduce objectively tracked smartphone screen time. The evidence does not establish a general productivity, sleep, or mental-health benefit.",
+      "sources": [
+        "https://www.frontiersin.org/journals/digital-health/articles/10.3389/fdgth.2026.1600833/full",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10323499/"
+      ],
+      "editorial_note": "Strongest new low-risk Digital Attention candidate. Keep the endpoint as screen-time friction, not a wellbeing cure."
+    },
+    {
+      "id": "deep-run:notification-batching",
+      "working_title": "Batch non-urgent notifications instead of receiving them one by one",
+      "topic_ids": ["digital-attention", "attention-focus"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-candidate",
+      "supported_screening_claim": "A randomized field experiment found that batching notifications three times per day reduced perceived interruption and stress compared with usual delivery; turning notifications off completely increased anxiety/FoMO in that study.",
+      "sources": ["https://www.sciencedirect.com/science/article/pii/S0747563218303823"],
+      "editorial_note": "Promising, but avoid turning one field experiment into an exact universal three-times-per-day prescription."
+    },
+    {
+      "id": "deep-run:email-checking-windows",
+      "working_title": "Check email in deliberate windows instead of continuously",
+      "topic_ids": ["digital-attention", "work-systems"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-candidate",
+      "supported_screening_claim": "A within-person field experiment reported lower daily stress when participants limited email checking to three times per day than when checking without restriction.",
+      "sources": ["https://www.sciencedirect.com/science/article/pii/S0747563214005810"],
+      "editorial_note": "Useful work-system candidate. The exact number of checks should be treated as study context, not a magic dose."
+    },
+    {
+      "id": "deep-run:savoring-micro-practice",
+      "working_title": "Spend a short moment deliberately noticing a positive experience",
+      "topic_ids": ["mood-wellbeing", "self-awareness"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-candidate",
+      "supported_screening_claim": "A 2026 meta-analysis of 20 randomized trials with 4,805 participants reported a moderate pooled effect for savoring interventions on emotional outcomes, with uncertainty around active-control comparisons and intervention formats.",
+      "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC12968602/"],
+      "editorial_note": "Potential new wellbeing protocol. Needs intervention-component review before Brali chooses a concrete executable version."
+    },
+    {
+      "id": "deep-run:gratitude-bounded",
+      "working_title": "Use a small gratitude practice without promising a happiness transformation",
+      "topic_ids": ["mood-wellbeing", "self-awareness"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-or-support-existing",
+      "supported_screening_claim": "A preregistered meta-analysis across 145 studies and 28 countries found small average improvements in wellbeing, with meaningful variation across countries and methods.",
+      "sources": ["https://doi.org/10.1073/pnas.2425193122"],
+      "editorial_note": "Before creating anything new, check overlap with existing journaling/reflection protocols. The likely value is small and context-dependent."
+    },
+    {
+      "id": "deep-run:nature-mood-reset",
+      "working_title": "Use a brief nature break mainly as a mood reset, not a brain-performance hack",
+      "topic_ids": ["mood-wellbeing", "recovery-energy"],
+      "status": "review-next",
+      "proposed_action": "new-protocol-candidate",
+      "supported_screening_claim": "A 2025 systematic review of adult randomized trials found stronger evidence for mood benefits from natural environments than for cognition or stress outcomes, which were inconsistent.",
+      "sources": ["https://www.sciencedirect.com/science/article/pii/S0272494425002853"],
+      "editorial_note": "Good example of claim narrowing: mood is the defensible target; 'nature makes you cognitively sharper' is too broad."
+    },
+    {
+      "id": "deep-run:daily-steps-sleep-support",
+      "working_title": "Use more daily walking as a possible sleep-support habit",
+      "topic_ids": ["movement", "sleep-circadian"],
+      "status": "review-next",
+      "proposed_action": "support-existing-or-new-protocol",
+      "supported_screening_claim": "A 2026 systematic review/meta-analysis reported that step-increasing interventions improved some sleep outcomes, while associations were not consistent for all sleep measures.",
+      "sources": ["https://www.sciencedirect.com/science/article/pii/S138994572502372X"],
+      "editorial_note": "Health-adjacent. Full-source review is required before any public prescription or threshold."
+    },
+    {
+      "id": "deep-run:social-interaction-loneliness",
+      "working_title": "Build a repeatable social-interaction action rather than vague 'be more social' advice",
+      "topic_ids": ["relationships", "social-confidence"],
+      "status": "research-cluster",
+      "proposed_action": "decompose-before-protocol",
+      "supported_screening_claim": "A 2025 rapid systematic review covering 101 interventions found benefits across psychological, social-interaction, and social-support approaches, but the category is too broad to justify one generic Brali hack.",
+      "sources": ["https://pmc.ncbi.nlm.nih.gov/articles/PMC12119363/"],
+      "editorial_note": "Promising new cluster. Next step is to extract low-risk, general-population intervention components rather than publish a loneliness 'fix'."
+    }
+  ],
+  "corrective_findings": [
+    {
+      "id": "deep-run:blanket-digital-detox",
+      "decision": "challenge",
+      "claim_to_avoid": "A complete social-media detox reliably improves wellbeing.",
+      "reason": "Recent meta-analyses are mixed: complete abstinence can show no significant wellbeing effect, while broader restriction studies report small heterogeneous effects. Prefer targeted mechanism-based interventions."
+    },
+    {
+      "id": "deep-run:phone-presence-cognition",
+      "decision": "challenge",
+      "claim_to_avoid": "Putting the phone in another room reliably makes cognition much better.",
+      "reason": "Meta-analytic evidence on mere smartphone presence is small and heterogeneous. Friction and notification design are stronger practical targets."
+    },
+    {
+      "id": "deep-run:nature-cognition",
+      "decision": "challenge",
+      "claim_to_avoid": "A short nature break reliably boosts cognition.",
+      "reason": "Recent systematic reviews find cognitive results weak or inconsistent even when mood effects are more credible."
+    },
+    {
+      "id": "deep-run:gratitude-large-effect",
+      "decision": "challenge",
+      "claim_to_avoid": "Gratitude exercises create large, universal happiness gains.",
+      "reason": "The large cross-cultural meta-analysis found a small average effect and substantial variation."
+    },
+    {
+      "id": "deep-run:movement-break-magic-dose",
+      "decision": "challenge",
+      "claim_to_avoid": "There is one proven movement-break schedule that maximizes cognition.",
+      "reason": "A 2026 meta-analysis found small domain-specific effects with low or very-low certainty and did not justify a standardized prescription."
+    }
+  ],
+  "deduplicated_existing": [
+    {"concept": "Wakeful rest after learning", "reason": "Existing Brali override/protocol content already covers wakeful rest."},
+    {"concept": "Progressive muscle relaxation for sleep", "reason": "Existing PMR protocol was strengthened on 2026-09-11 with a new systematic review/meta-analysis."},
+    {"concept": "Caffeine cutoff", "reason": "Existing caffeine protocol was updated on 2026-09-06 to a dose-aware bedtime-relative framing."},
+    {"concept": "Movement breaks", "reason": "Existing prolonged-sitting/movement-break guidance was already strengthened in the September review wave."},
+    {"concept": "Exercise snacks", "reason": "Existing September 9 evidence review already covers this mechanism."}
+  ],
+  "next_search_hypotheses": [
+    "Website/app blockers as deliberate access friction rather than willpower.",
+    "Home-screen decluttering or removal of high-cue app icons.",
+    "Scheduled Do Not Disturb periods with emergency bypass.",
+    "Phone-free meals as a relationship-quality intervention rather than a detox claim.",
+    "Single-task browser/workspace setup to reduce context-switch cues.",
+    "Default calendar buffers between meetings.",
+    "Meeting-free focus blocks and their real productivity trade-offs.",
+    "Implementation-intention prompts for recurring digital habits.",
+    "Commitment devices for personally chosen behavior limits.",
+    "Temptation bundling for low-motivation beneficial tasks.",
+    "Environment-reset rituals that reduce task-start friction.",
+    "Brief outdoor light exposure as a circadian cue, with timing and health boundaries.",
+    "Consistent wake-time interventions versus generic sleep-hygiene bundles.",
+    "Short post-meal walking with metabolic outcomes and appropriate health boundaries.",
+    "Stair or walking micro-bouts as exercise snacks without cognition overclaiming.",
+    "Acts-of-kindness micro-interventions versus active controls.",
+    "Weak-tie micro-conversations as a social-connection practice.",
+    "Self-compassion micro-practices with active-control comparisons.",
+    "Pre-mortem / prospective hindsight for decision quality.",
+    "Consider-the-opposite prompts for bias correction.",
+    "Decision checklists for recurring high-cost personal decisions.",
+    "Retrieval-before-review as a general learning protocol.",
+    "Interleaving versus blocked practice by skill type.",
+    "Generation-before-explanation / pretesting for learning.",
+    "Feedback delay and timing for durable learning.",
+    "Walking meetings for feasible low-intensity movement without productivity overclaiming.",
+    "Standing-meeting trade-offs: duration, comfort, participation, and no health hype."
+  ],
+  "summary": {
+    "new_source_screened_candidates": 8,
+    "corrective_findings": 5,
+    "deduplicated_existing": 5,
+    "next_search_hypotheses": 27,
+    "total_items_considered": 45,
+    "trusted_protocols_created_by_this_batch": 0,
+    "reason_no_automatic_promotion": "The batch is a discovery and screening layer. Full-source Evidence Review is still required before new candidates become trusted canonical guidance."
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "visible-progress-monitoring",
+  "title": "Make Goal Progress Visible Instead of Guessing",
+  "subtitle": "Track one useful signal closely enough to adjust what you do next",
+  "description": "For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better.",
+  "canonical": "/life-os/visible-progress-monitoring/",
+  "domain_ids": ["focus-action"],
+  "topic_ids": ["goals", "planning", "habits-consistency"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["goal progress monitoring", "progress tracking", "goal attainment", "self monitoring", "visible progress", "feedback loop"],
+  "zone": {
+    "slug": "do-it",
+    "title": "Do It"
+  },
+  "lifeOsSource": {
+    "hack": "Make progress on one active goal visible with a simple measure you can record and use to choose the next action.",
+    "zone": "Do It",
+    "zoneSlug": "do-it",
+    "whatYouDo": "Choose one goal where feedback can still change what you do. Pick one observable indicator that is close to the real outcome or behavior you care about. Record it at checkpoints that match the task, compare it with the target or previous checkpoint, and decide one adjustment. Prefer a small trace you will actually use over a dashboard full of decorative metrics.",
+    "checkIn": "What changed in the progress signal, and what is the one next action that follows from that information?",
+    "reference": "Harkin et al. (2016) — Meta-analysis of experimental evidence on monitoring goal progress",
+    "sourceUrl": "https://doi.org/10.1037/bul0000025"
+  },
+  "faq": [
+    {
+      "id": "visible-progress-faq-1",
+      "question": "Should I track progress every day?",
+      "answer": "Not necessarily. The meta-analysis supports increasing progress monitoring, but it does not identify daily tracking as universally optimal. Match the checkpoint to how quickly useful information can change and how often you can still adjust behavior.",
+      "answerHtml": "<p>Not necessarily. The meta-analysis supports increasing progress monitoring, but it does not identify daily tracking as universally optimal. Match the checkpoint to how quickly useful information can change and how often you can still adjust behavior.</p>"
+    },
+    {
+      "id": "visible-progress-faq-2",
+      "question": "What should I measure?",
+      "answer": "Prefer the closest practical signal to the real goal. If the outcome moves slowly, track an actionable leading behavior as well, but do not quietly replace the original goal with an easier vanity metric.",
+      "answerHtml": "<p>Prefer the closest practical signal to the real goal. If the outcome moves slowly, track an actionable leading behavior as well, but do not quietly replace the original goal with an easier vanity metric.</p>"
+    },
+    {
+      "id": "visible-progress-faq-3",
+      "question": "Do public streaks or leaderboards work better?",
+      "answer": "The reviewed meta-analysis found larger effects when progress was physically recorded or reported, but that does not make public leaderboards or streaks universally beneficial. Accountability can help some goals and distort others. Use the least intrusive form that improves the feedback loop.",
+      "answerHtml": "<p>The reviewed meta-analysis found larger effects when progress was physically recorded or reported, but that does not make public leaderboards or streaks universally beneficial. Accountability can help some goals and distort others. Use the least intrusive form that improves the feedback loop.</p>"
+    },
+    {
+      "id": "visible-progress-faq-4",
+      "question": "Can tracking become counterproductive?",
+      "answer": "Yes. Stop or simplify when measurement consumes more effort than the behavior, creates compulsive checking, or optimizes the metric at the expense of the goal. The record exists to guide action, not to become another project.",
+      "answerHtml": "<p>Yes. Stop or simplify when measurement consumes more effort than the behavior, creates compulsive checking, or optimizes the metric at the expense of the goal. The record exists to guide action, not to become another project.</p>"
+    }
+  ],
+  "meta": {
+    "publishedISO": "2026-09-11T19:08:00Z",
+    "updatedISO": "2026-09-11T19:08:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
+  "body": {
+    "intro": {
+      "html": "<p>A goal that exists only as a feeling is hard to steer. Harkin and colleagues synthesized 138 randomized studies with 19,951 participants and found that interventions designed to increase monitoring of goal progress improved goal attainment on average. Effects were larger when progress was physically recorded or reported. That is a useful signal, but not permission to track everything. Brali uses the evidence as a feedback-loop protocol: make one important progress signal visible, inspect it at useful checkpoints, and let it change the next action.</p>"
+    },
+    "sections": [
+      {
+        "slug": "choose-goal",
+        "title": "1. Choose a goal you can still influence",
+        "html": "<p>Monitoring is useful when new information can change behavior. Pick an active goal with a decision still ahead of you. A completed outcome or a metric you cannot influence gives you observation without much control.</p>"
+      },
+      {
+        "slug": "choose-signal",
+        "title": "2. Choose one signal close to the goal",
+        "html": "<p>Use the real outcome when it updates often enough. When it does not, add a leading behavior that plausibly contributes to it. Examples: completed practice problems for an exam, qualified conversations for a sales target, or resolved high-priority defects for a release. Keep the connection explicit so the proxy does not become the goal by accident.</p>"
+      },
+      {
+        "slug": "record",
+        "title": "3. Record the checkpoint",
+        "html": "<p>Write the value down somewhere stable: a Brali check-in, task field, note, spreadsheet, or another simple record. The evidence suggests that recorded or reported monitoring can be more effective than merely thinking about progress. The medium is secondary; the trace should be easy to inspect.</p>"
+      },
+      {
+        "slug": "compare",
+        "title": "4. Compare, then decide",
+        "html": "<p>A number without a reference point is mostly decoration. Compare it with the target, the previous checkpoint, or the expected trajectory. Then ask what the difference changes. Increase effort, change the method, remove a bottleneck, keep the current approach, or revise an unrealistic target when warranted.</p>"
+      },
+      {
+        "slug": "cadence",
+        "title": "5. Use the slowest cadence that still informs action",
+        "html": "<p>Do not inherit a daily streak simply because apps like streaks. A fast-changing operational goal may need frequent checks; a slow learning or financial outcome may not. If repeated measurements rarely change the next action, reduce the cadence.</p>"
+      },
+      {
+        "slug": "stop-overtracking",
+        "title": "6. Stop when the measurement starts running the goal",
+        "html": "<p>Tracking can create its own failure modes: vanity metrics, compulsive checking, gaming the measure, or spending more time maintaining the system than doing the work. The research supports monitoring as part of self-regulation; it does not say that more monitoring is always better. Keep only the signal that improves decisions.</p>"
+      }
+    ]
+  },
+  "references": [
+    {
+      "title": "Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence",
+      "url": "https://doi.org/10.1037/bul0000025",
+      "doi": "10.1037/bul0000025",
+      "source_type": "meta-analysis",
+      "claim_scope": "Meta-analysis of 138 randomized studies with 19,951 participants. Interventions increasing progress monitoring improved goal attainment on average, with larger effects when progress was physically recorded or reported. It does not establish a universal tracking cadence, dashboard, streak system, or optimal metric."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "reviewed",
+    "reviewedAt": "2026-09-11",
+    "reviewedBy": "Brali Evidence Reviewer",
+    "reason": "Translate experimental meta-analytic evidence on progress monitoring into a minimal decision-oriented feedback loop while explicitly rejecting universal daily tracking and metric maximalism.",
+    "registry": "review-registry-research-watch-2026-09-11-productivity-deep-run.json"
+  }
+}

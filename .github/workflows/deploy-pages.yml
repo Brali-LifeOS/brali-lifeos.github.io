@@ -36,6 +36,10 @@ jobs:
         run: node scripts/apply-image-discovery.mjs
       - name: Gate final Image Discovery surface
         run: node scripts/check-image-discovery.mjs
+      - name: Apply Internal Discovery & Distribution to exact final artifact
+        run: node scripts/apply-internal-discovery-distribution.mjs
+      - name: Gate final Internal Discovery & Distribution surface
+        run: node scripts/check-internal-discovery-distribution.mjs
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact
@@ -66,3 +70,5 @@ jobs:
           package-manager-cache: false
       - name: Verify live Image Discovery surface
         run: node scripts/check-live-image-discovery.mjs
+      - name: Verify live Internal Discovery & Distribution surface
+        run: node scripts/check-live-internal-discovery-distribution.mjs

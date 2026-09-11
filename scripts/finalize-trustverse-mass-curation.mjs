@@ -43,7 +43,7 @@ for (const entry of index) {
     article.title = "Test a New Work Tool on a Low-Risk Task";
     article.subtitle = "Adopt tools deliberately instead of adopting them because they are new.";
     article.description = "Pick one recurring work problem, try one tool on a noncritical task, compare the old and new workflow, then keep, adjust, or drop it based on what you observe.";
-    article.lifeOsSource.hack = "Treat a new work tool as a small operational experiment rather than a commitment to change the whole workflow.";
+    article.lifeOsSource.hack = "Treat a new work tool as a small reversible comparison rather than a commitment to change the whole workflow.";
     article.lifeOsSource.whatYouDo = "Choose one recurring low-risk work task, note how you handle it now, try one new tool on a test or noncritical case, compare the result and friction, and decide whether to repeat, adjust, or stop.";
     article.lifeOsSource.checkIn = "What task did I test, what changed in the workflow, what friction appeared, and is the next step to keep, adjust, or drop the tool?";
     article.faq = [
@@ -61,7 +61,7 @@ for (const entry of index) {
       },
       {
         id: `${entry.slug}-faq-3`,
-        question: "When should I stop the trial?",
+        question: "When should I stop trying the tool?",
         answer: "Stop when the tool creates unacceptable risk, requires access you should not grant, handles data in a way your rules do not permit, or simply does not improve the task enough to justify the added friction.",
         answerHtml: "<p>Stop when the tool creates unacceptable risk, requires access you should not grant, handles data in a way your rules do not permit, or simply does not improve the task enough to justify the added friction.</p>",
       },
@@ -70,9 +70,9 @@ for (const entry of index) {
       intro: { html: `<p>${article.description}</p>` },
       sections: [
         { slug: "problem", title: "1. Pick one recurring problem", html: "<p>Choose a narrow work task with visible friction. Describe the current workflow before choosing a tool, so the test is tied to a real problem rather than novelty.</p>" },
-        { slug: "trial", title: "2. Run a reversible trial", html: "<p>Use a test, draft or other noncritical case. Keep the first trial small enough that you can undo it and avoid exposing sensitive data or production work to an unapproved tool.</p>" },
+        { slug: "try", title: "2. Try it in a reversible setting", html: "<p>Use a test, draft or other noncritical case. Keep the first run small enough that you can undo it and avoid exposing sensitive data or production work to an unapproved tool.</p>" },
         { slug: "compare", title: "3. Compare the workflows", html: "<p>Look at the few observable measures that matter for the task, such as steps, time, rework, errors or handoffs. Record what became easier and what new friction appeared.</p>" },
-        { slug: "decision", title: "4. Keep, adjust or drop", html: "<p>Repeat the tool only when the next trial is justified by what you observed. Otherwise change the setup or stop. A failed small test is useful if it prevents a larger bad adoption decision.</p>" },
+        { slug: "decision", title: "4. Keep, adjust or drop", html: "<p>Repeat the tool only when another run is justified by what you observed. Otherwise change the setup or stop. A failed small test is useful if it prevents a larger bad adoption decision.</p>" },
       ],
     };
     article.trustverseCuration = {

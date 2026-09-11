@@ -1,0 +1,114 @@
+{
+  "slug": "consider-the-opposite",
+  "title": "Before You Commit to a Judgment, Consider the Opposite",
+  "subtitle": "Generate a plausible case that your current conclusion could be wrong",
+  "description": "When a judgment matters and you already feel convinced, deliberately generate a plausible explanation, evidence pattern, or outcome that would point the other way. Use it as a bias check, not as a rule to distrust every conclusion.",
+  "canonical": "/life-os/consider-the-opposite/",
+  "domain_ids": ["focus-action", "learning-thinking"],
+  "topic_ids": ["decision-making", "cognitive-biases", "critical-thinking"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["consider the opposite", "confirmation bias", "debiasing", "decision making", "critical thinking"],
+  "zone": {
+    "slug": "avoid-errors",
+    "title": "Avoid Errors"
+  },
+  "lifeOsSource": {
+    "hack": "Before finalizing an important judgment, generate at least one plausible case in which your current interpretation or preferred conclusion would be wrong.",
+    "zone": "Avoid Errors",
+    "zoneSlug": "avoid-errors",
+    "whatYouDo": "Write your current conclusion in one sentence. Then ask: what evidence, mechanism, or alternative explanation could make the opposite conclusion reasonable? Generate a concrete alternative rather than telling yourself to be objective. Check whether your decision would change if that alternative were true. Use this on decisions where biased assimilation or one-sided hypothesis testing is a real risk; do not turn it into endless doubt about routine choices.",
+    "checkIn": "What plausible disconfirming case did I generate, and did it reveal a missing fact, a weak assumption, or no meaningful reason to change course?",
+    "reference": "Lord, Lepper & Preston (1984), bounded by Swaryandini et al. (2025) debiasing meta-analysis",
+    "sourceUrl": "https://doi.org/10.1037/0022-3514.47.6.1231"
+  },
+  "faq": [
+    {
+      "id": "consider-opposite-faq-1",
+      "question": "Is this just playing devil's advocate?",
+      "answer": "It is similar, but the useful part is concrete generation. The classic experiments asked people to consider possibilities opposed to their current belief or impression. Simply telling yourself to be fair and unbiased was less effective in those tasks.",
+      "answerHtml": "<p>It is similar, but the useful part is concrete generation. The classic experiments asked people to consider possibilities opposed to their current belief or impression. Simply telling yourself to be fair and unbiased was less effective in those tasks.</p>"
+    },
+    {
+      "id": "consider-opposite-faq-2",
+      "question": "Does this remove confirmation bias?",
+      "answer": "No. The original experiments showed correction in specific social-judgment tasks, and a 2025 meta-analysis found only a small average effect for educational debiasing interventions overall. Transfer to real-world decisions remains uncertain.",
+      "answerHtml": "<p>No. The original experiments showed correction in specific social-judgment tasks, and a 2025 meta-analysis found only a small average effect for educational debiasing interventions overall. Transfer to real-world decisions remains uncertain.</p>"
+    },
+    {
+      "id": "consider-opposite-faq-3",
+      "question": "Should I always reverse my first answer?",
+      "answer": "No. The purpose is to expose neglected alternatives, not to assume your first answer is wrong. After considering the opposite, the original conclusion may still be the best one.",
+      "answerHtml": "<p>No. The purpose is to expose neglected alternatives, not to assume your first answer is wrong. After considering the opposite, the original conclusion may still be the best one.</p>"
+    },
+    {
+      "id": "consider-opposite-faq-4",
+      "question": "When is this most useful?",
+      "answer": "Use it when you are evaluating ambiguous evidence, judging why someone behaved a certain way, testing a favored hypothesis, or making a consequential decision where you notice yourself collecting only supporting reasons. It is less useful as a ritual for trivial reversible choices.",
+      "answerHtml": "<p>Use it when you are evaluating ambiguous evidence, judging why someone behaved a certain way, testing a favored hypothesis, or making a consequential decision where you notice yourself collecting only supporting reasons. It is less useful as a ritual for trivial reversible choices.</p>"
+    }
+  ],
+  "meta": {
+    "publishedISO": "2026-09-11T12:30:00Z",
+    "updatedISO": "2026-09-11T12:30:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "yellow"
+  },
+  "body": {
+    "intro": {
+      "html": "<p>'Be objective' sounds sensible and often does very little. A classic pair of experiments tested a more specific move: ask people to consider possibilities opposed to what they currently believed. Across biased assimilation of evidence and hypothesis testing about personality, the consider-the-opposite strategy reduced bias more effectively than generic instructions to be fair and unbiased. A much newer meta-analysis of educational debiasing interventions gives the larger picture: across 54 randomized trials and 10,941 participants, targeted debiasing training produced a small average improvement, but all included studies had unclear or high risk of bias and transfer beyond trained tasks remains a major question. Brali therefore treats consider-the-opposite as a structured check, not a vaccine against bad judgment.</p>"
+    },
+    "sections": [
+      {
+        "slug": "state-conclusion",
+        "title": "1. State what you currently believe",
+        "html": "<p>Write the judgment in one sentence. 'This proposal will fail because demand is weak.' 'She ignored the message because she is angry.' 'This vendor is clearly the safest option.' A vague belief is difficult to challenge because it can move every time new information arrives.</p>"
+      },
+      {
+        "slug": "generate-opposite",
+        "title": "2. Generate a real opposite case",
+        "html": "<p>Do more than say 'maybe I am wrong.' Ask what would make the opposite interpretation plausible. Perhaps demand is strong but onboarding is bad. Perhaps the message was missed. Perhaps the familiar vendor only looks safer because its problems are better known. The alternative should be concrete enough that you could look for evidence.</p>"
+      },
+      {
+        "slug": "find-discriminator",
+        "title": "3. Ask what evidence would separate the two stories",
+        "html": "<p>Now look for a fact that behaves differently under the competing explanations. What observation would be more likely if your original view is right? What would be more likely if the opposite case is right? This turns a debate with yourself into a small hypothesis test.</p>"
+      },
+      {
+        "slug": "avoid-permanent-doubt",
+        "title": "4. Stop after the useful challenge",
+        "html": "<p>Debiasing should not become paralysis. If the opposite case is weak or the missing evidence is not worth obtaining, make the decision. The protocol is meant to interrupt one-sided reasoning, not to produce perfect certainty.</p>"
+      },
+      {
+        "slug": "keep-boundary",
+        "title": "5. Keep transfer claims modest",
+        "html": "<p>The original consider-the-opposite evidence came from specific social-judgment experiments. The 2025 meta-analysis found a small average benefit from debiasing education on targeted tasks, while warning that real-world transfer is uncertain and study quality was limited. So use this as a lightweight decision check. If it repeatedly catches missing assumptions in your own work, that is useful personal evidence; it is still not proof that you have become unbiased.</p>"
+      }
+    ]
+  },
+  "references": [
+    {
+      "title": "Considering the opposite: A corrective strategy for social judgment",
+      "url": "https://doi.org/10.1037/0022-3514.47.6.1231",
+      "doi": "10.1037/0022-3514.47.6.1231",
+      "source_type": "primary-study",
+      "claim_scope": "Supports the specific consider-the-opposite strategy in two experiments on biased assimilation and hypothesis testing with 150 undergraduates. It does not establish universal debiasing across domains or long-term transfer."
+    },
+    {
+      "title": "Systematic review and meta-analysis of educational approaches to reduce cognitive biases among students",
+      "url": "https://www.nature.com/articles/s41562-025-02253-y",
+      "doi": "10.1038/s41562-025-02253-y",
+      "source_type": "systematic-review-meta-analysis",
+      "claim_scope": "Provides a broader boundary: educational debiasing interventions produced a small average reduction in targeted cognitive biases across randomized studies, but transfer beyond trained tasks remains uncertain, study risk of bias was unclear or high, and no single strategy was established as universally superior."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "reviewed",
+    "reviewedAt": "2026-09-11",
+    "reviewedBy": "Brali Evidence Reviewer",
+    "reason": "Combine a fully reviewed classic consider-the-opposite experiment with a 2025 randomized-trial meta-analysis to create a narrow decision check. The article explicitly rejects universal debiasing, automatic reversal of first judgments, and strong real-world transfer claims.",
+    "registry": "review-registry-research-watch-2026-09-11-deep-run-wave-3.json"
+  }
+}

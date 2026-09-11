@@ -19,6 +19,14 @@ export const sensitiveZones = new Set([
   "cbt",
 ]);
 
+// A historical zone label is not, by itself, enough to make every rewritten practice
+// high risk. The corpus contains many ordinary planning, journaling and communication
+// exercises that were grouped under therapy/health-oriented zones. Keep hard gates on
+// direct high-stakes content while allowing claim-cleaned, bounded everyday practices
+// to be evaluated on their actual public surface.
+export const intrinsicallySensitiveZones = new Set(["cardio-doc"]);
+export const sensitiveContentPattern = /\b(?:suicid(?:e|al)?|self[- ]?harm|depress(?:ion|ive)?|panic(?: attack)?|trauma(?:tic)?|ptsd|phobi(?:a|c)|exposure(?: therapy)?|diagnos(?:e|is|ed)|treat(?:ment|s|ed)?|medicat(?:ion|e|ed)|prescription|dose|symptoms?|disease|disorder|insomnia|blood pressure|heart rate|cardiac|cardiovascular|cold shower|ice bath|fasting|breath[- ]?hold|hyperventilat(?:e|ion)|eating disorder|purging|calorie restriction|extreme exercise|max(?:imum)? effort)\b/i;
+
 export const claimPattern = /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic review|meta-analysis|evidence shows|clinically)\b|\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
 export const quantitativeClaimPattern = /\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
 
@@ -85,10 +93,19 @@ export function claimFlags(article) {
   };
 }
 
+export function isSensitiveGuidance(article, entry) {
+  const zone = entry.zone?.slug ?? null;
+  if (!sensitiveZones.has(zone)) return false;
+  if (intrinsicallySensitiveZones.has(zone)) return true;
+  const text = `${entry.slug ?? ''} ${JSON.stringify(publicClaimSurface(article))}`;
+  return sensitiveContentPattern.test(text);
+}
+
 export function classifyEvidence(article, entry, overrides = {}) {
   const source = sourceDetails(article);
   const claims = claimFlags(article);
-  const sensitive = sensitiveZones.has(entry.zone?.slug);
+  const sensitiveZone = sensitiveZones.has(entry.zone?.slug);
+  const sensitive = isSensitiveGuidance(article, entry);
   const override = overrides?.entries?.[entry.slug] ?? null;
   const allowed = new Set(["reviewed", "practical", "pending-review", "restricted"]);
 
@@ -121,6 +138,7 @@ export function classifyEvidence(article, entry, overrides = {}) {
     status,
     reason,
     sensitive,
+    sensitiveZoneOrigin: sensitiveZone,
     indexable,
     indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
     content: {

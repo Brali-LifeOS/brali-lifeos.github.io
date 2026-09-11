@@ -20,17 +20,40 @@ const decodeHtml = (value) => value
   .replaceAll("&gt;", ">")
   .replaceAll("&amp;", "&");
 
+function reviewedTaxonomyCorrection(article) {
+  const correction = article.trustverseCuration?.taxonomy_reclassification ?? null;
+  if (!correction) return null;
+  const complete = Boolean(correction.from && correction.to && correction.reason && correction.reviewed_at);
+  if (!complete) return null;
+  if (article.trustverseCuration?.mode !== "claim-cleanup") return null;
+  return correction;
+}
+
 for (const [slug, override] of Object.entries(registry.entries ?? {})) {
   const article = JSON.parse(await readFile(path.join(contentRoot, `${slug}.json`), "utf8"));
   const page = await readFile(path.join(root, "life-os", slug, "index.html"), "utf8");
   const renderedPage = decodeHtml(page);
   const publicClaims = JSON.stringify(publicClaimSurface(article));
   const expectedStatus = override.evidence_status ?? "practical";
+  const taxonomyCorrection = reviewedTaxonomyCorrection(article);
+  const expectedAction = taxonomyCorrection
+    ? article.lifeOsSource?.whatYouDo ?? ""
+    : override.lifeOsSource?.whatYouDo ?? "";
+
   if (article.editorialCuration?.status !== "curated") failures.push(`${slug}: article is not marked curated`);
   if (article.editorialCuration?.evidenceStatus !== expectedStatus) failures.push(`${slug}: editorial evidence status mismatch`);
   if (article.editorialCuration?.reviewedAt !== override.reviewed_at) failures.push(`${slug}: review date mismatch`);
   if (article.editorialCuration?.registry !== registry.sources?.[slug]) failures.push(`${slug}: registry source mismatch`);
-  if (!renderedPage.includes(override.lifeOsSource?.whatYouDo ?? "")) failures.push(`${slug}: public page does not contain the curated action`);
+  if (!expectedAction || !renderedPage.includes(expectedAction)) {
+    failures.push(`${slug}: public page does not contain the ${taxonomyCorrection ? "reviewed post-curation" : "curated"} action`);
+  }
+  if (taxonomyCorrection) {
+    const trust = evidenceBySlug.get(slug);
+    if (trust?.taxonomyReclassified !== true) failures.push(`${slug}: reviewed taxonomy correction is not reflected in evidence metadata`);
+    if (trust?.sourceZone !== taxonomyCorrection.from || trust?.zone !== taxonomyCorrection.to) {
+      failures.push(`${slug}: reviewed taxonomy correction does not match effective evidence zone`);
+    }
+  }
   for (const fragment of override.forbidden_public_fragments ?? []) {
     if (publicClaims.includes(fragment)) failures.push(`${slug}: forbidden fragment remains in effective public claims: ${fragment}`);
   }
@@ -45,4 +68,4 @@ if (failures.length) {
   throw new Error(`Curated protocol validation failed with ${failures.length} problem(s):\n- ${failures.join("\n- ")}`);
 }
 const reviewed = Object.values(registry.entries ?? {}).filter((override) => override.evidence_status === "reviewed").length;
-console.log(`Curated protocol overrides verified: ${Object.keys(registry.entries ?? {}).length} entry override(s) from ${registry.files.length} registry file(s); ${reviewed} reviewed-source protocol(s); all are indexable and present in the trusted feed.`);
+console.log(`Curated protocol overrides verified: ${Object.keys(registry.entries ?? {}).length} entry override(s) from ${registry.files.length} registry file(s); ${reviewed} reviewed-source protocol(s); all are indexable and present in the trusted feed; explicit reviewed taxonomy corrections validated against final public actions.`);

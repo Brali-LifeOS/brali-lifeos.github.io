@@ -19,6 +19,14 @@ export const sensitiveZones = new Set([
   "cbt",
 ]);
 
+// A historical zone label is not, by itself, enough to make every rewritten practice
+// high risk. The corpus contains many ordinary planning, journaling and communication
+// exercises that were grouped under therapy/health-oriented zones. Keep hard gates on
+// direct high-stakes content while allowing claim-cleaned, bounded everyday practices
+// to be evaluated on their actual public surface.
+export const intrinsicallySensitiveZones = new Set(["cardio-doc"]);
+export const sensitiveContentPattern = /\b(?:suicid(?:e|al)?|self[- ]?harm|depress(?:ion|ive)?|panic(?: attack)?|trauma(?:tic)?|ptsd|phobi(?:a|c)|exposure(?: therapy)?|diagnos(?:e|is|ed)|treat(?:ment|s|ed)?|medicat(?:ion|e|ed)|prescription|dose|symptoms?|disease|disorder|insomnia|blood pressure|heart rate|cardiac|cardiovascular|cold shower|ice bath|fasting|breath[- ]?hold|hyperventilat(?:e|ion)|eating disorder|purging|calorie restriction|extreme exercise|max(?:imum)? effort)\b/i;
+
 export const claimPattern = /\b(?:research|studies?|trial|pilot|participants?|randomi[sz]ed|systematic review|meta-analysis|evidence shows|clinically)\b|\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
 export const quantitativeClaimPattern = /\b\d{1,3}(?:\.\d+)?%\b|\bn\s*=\s*\d+\b/i;
 
@@ -85,10 +93,45 @@ export function claimFlags(article) {
   };
 }
 
+export function resolveTrustZone(article = {}, entry = {}) {
+  const observedZone = entry.zone?.slug ?? article.zone?.slug ?? article.lifeOsSource?.zoneSlug ?? null;
+  const reclassification = article.trustverseCuration?.taxonomy_reclassification ?? null;
+  const observedTargets = new Set([
+    entry.zone?.slug,
+    article.zone?.slug,
+    article.lifeOsSource?.zoneSlug,
+  ].filter(Boolean));
+  const explicitlyReviewed = Boolean(
+    article.trustverseCuration?.mode === "claim-cleanup"
+      && reclassification?.from
+      && reclassification?.to
+      && reclassification?.reason
+      && reclassification?.reviewed_at
+      && (observedTargets.has(reclassification.from) || observedTargets.has(reclassification.to)),
+  );
+  return {
+    sourceZone: explicitlyReviewed ? reclassification.from : observedZone,
+    effectiveZone: explicitlyReviewed ? reclassification.to : observedZone,
+    reclassified: explicitlyReviewed,
+    reclassification: explicitlyReviewed ? reclassification : null,
+  };
+}
+
+export function isSensitiveGuidance(article, entry) {
+  const zone = resolveTrustZone(article, entry).effectiveZone;
+  if (!sensitiveZones.has(zone)) return false;
+  if (article.trustverseCuration?.retained_high_risk_gate === true) return true;
+  if (intrinsicallySensitiveZones.has(zone)) return true;
+  const text = `${entry.slug ?? ''} ${JSON.stringify(publicClaimSurface(article))}`;
+  return sensitiveContentPattern.test(text);
+}
+
 export function classifyEvidence(article, entry, overrides = {}) {
   const source = sourceDetails(article);
   const claims = claimFlags(article);
-  const sensitive = sensitiveZones.has(entry.zone?.slug);
+  const trustZone = resolveTrustZone(article, entry);
+  const sensitiveZoneOrigin = sensitiveZones.has(trustZone.sourceZone);
+  const sensitive = isSensitiveGuidance(article, entry);
   const override = overrides?.entries?.[entry.slug] ?? null;
   const allowed = new Set(["reviewed", "practical", "pending-review", "restricted"]);
 
@@ -101,12 +144,15 @@ export function classifyEvidence(article, entry, overrides = {}) {
   } else if (sensitive && !source.hasSource) {
     status = "restricted";
     reason = "sensitive-without-usable-source";
-  } else if (source.hasSource || claims.evidenceLanguage) {
+  } else if (sensitive) {
     status = "pending-review";
-    reason = source.hasSource ? "source-recorded-not-reviewed" : "evidence-like-claim-without-source";
+    reason = "sensitive-source-review-required";
+  } else if (claims.evidenceLanguage || (claims.enforcedCategories ?? []).length > 0) {
+    status = "pending-review";
+    reason = source.hasSource ? "claim-source-review-required" : "evidence-like-claim-without-source";
   } else {
     status = "practical";
-    reason = "low-risk-practical-guidance";
+    reason = source.hasSource ? "low-risk-practical-guidance-with-provenance" : "low-risk-practical-guidance";
   }
 
   const indexable = status === "reviewed" || status === "practical";
@@ -114,10 +160,13 @@ export function classifyEvidence(article, entry, overrides = {}) {
 
   return {
     slug: entry.slug,
-    zone: entry.zone?.slug ?? null,
+    zone: trustZone.effectiveZone,
+    sourceZone: trustZone.sourceZone,
+    taxonomyReclassified: trustZone.reclassified,
     status,
     reason,
     sensitive,
+    sensitiveZoneOrigin,
     indexable,
     indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
     content: {

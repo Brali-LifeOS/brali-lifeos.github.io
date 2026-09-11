@@ -50,3 +50,10 @@ const report = {
 await writeFile(path.join(root, ".editorial-normalizations-applied.json"), JSON.stringify(report, null, 2));
 
 console.log(`Editorial normalizations applied: ${changedEntries} entries changed across ${rules.length} reviewed rule(s).`);
+
+// The legacy corpus contains large amounts of inherited generated copy with unsupported
+// percentages, pseudo-study language and fabricated first-party outcomes. Run the
+// deterministic Trustverse cleanup only after explicit curated overrides and reviewed
+// normalizations have been applied, so hand-reviewed content remains authoritative.
+await import("./apply-trustverse-mass-curation.mjs");
+await import("./finalize-trustverse-mass-curation.mjs");

@@ -28,10 +28,18 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_PROMPT_DISABLED: 1
         run: gh skill publish agent-skills --dry-run
-      - name: Build site and generated Agent Skills
+      - name: Validate Trustverse classification policy
+        run: node scripts/check-content-trust-policy.mjs
+      - name: Build site
         run: npm run build
+      - name: Build one Agent Skill per hack from final evidence state
+        run: npm run skills:build
       - name: Validate generated Agent Skills library
         run: npm run skills:check
+      - name: Gate Trustverse coverage at 900 usable records
+        env:
+          TRUSTVERSE_TARGET: 900
+        run: node scripts/check-trustverse-target.mjs
       - name: Run full repository checks
         run: npm run check
       - name: Check AI search profile

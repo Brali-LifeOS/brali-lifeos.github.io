@@ -85,7 +85,24 @@ for (const batchRecord of history.batches) {
     if (trust.source?.recorded !== false) fail(`${decision.slug}: restricted disposition unexpectedly records a source`);
     if (indexable.has(decision.slug)) fail(`${decision.slug}: restricted disposition remains in the indexable set`);
     if (feedBySlug.has(decision.slug)) fail(`${decision.slug}: restricted disposition remains in the trusted protocol feed`);
-    if (!claimDebtBySlug.has(decision.slug)) fail(`${decision.slug}: restricted disposition lost its unresolved claim-debt record`);
+
+    // Restriction and claim debt are separate contracts. A record may remain withheld for
+    // safety/context reasons after inherited evidence-like wording has been removed. In
+    // that state there is no honest unresolved claim to keep in the debt queue. However,
+    // any restricted record that still exposes enforced/evidence-like public wording must
+    // retain claim debt so it cannot silently disappear from editorial review.
+    const hasClaimDebt = claimDebtBySlug.has(decision.slug);
+    const hasActiveEvidenceClaim = Boolean(
+      trust.claims?.evidenceLanguage
+      || (trust.claims?.enforcedCategories ?? []).length > 0,
+    );
+    if (hasActiveEvidenceClaim && !hasClaimDebt) {
+      fail(`${decision.slug}: restricted record still exposes evidence-like/enforced claims but lost unresolved claim debt`);
+    }
+    if (!hasActiveEvidenceClaim && hasClaimDebt) {
+      fail(`${decision.slug}: claim-clean restricted record still carries stale unresolved claim debt`);
+    }
+
     if (decision.resulting_topics && !same((trust.ontology?.topics ?? []).map(topic => topic.id), decision.resulting_topics)) {
       fail(`${decision.slug}: restricted ontology topics drift`);
     }
@@ -97,4 +114,4 @@ const dispositionCounts = Object.fromEntries(
     .sort((left, right) => left.localeCompare(right))
     .map(disposition => [disposition, history.entries.filter(entry => entry.disposition === disposition).length]),
 );
-console.log(`Claim cleanup decisions verified: ${history.entries.length} completed decisions across ${history.batches.length} batch(es); dispositions=${JSON.stringify(dispositionCounts)}; practical rewrites are claim-clean, indexable and trusted while restricted dispositions remain withheld with debt preserved.`);
+console.log(`Claim cleanup decisions verified: ${history.entries.length} completed decisions across ${history.batches.length} batch(es); dispositions=${JSON.stringify(dispositionCounts)}; practical rewrites are claim-clean, indexable and trusted while restricted dispositions stay withheld and carry claim debt only when unresolved evidence-like wording remains.`);

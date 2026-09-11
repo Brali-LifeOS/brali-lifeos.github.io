@@ -41,14 +41,25 @@ const quantitativeClaim = classifyEvidence(
 );
 assert.equal(quantitativeClaim.status, "pending-review");
 
-const sensitiveWithoutSource = classifyEvidence(article(), entry("sensitive-no-source", "cbt"));
-assert.equal(sensitiveWithoutSource.status, "restricted", "Sensitive guidance without a usable source must remain restricted.");
+const cleanedCbtPractice = classifyEvidence(article(), entry("cleaned-planning-practice", "cbt"));
+assert.equal(cleanedCbtPractice.status, "practical", "A historical sensitive-zone label alone must not block a claim-cleaned everyday practice.");
+assert.equal(cleanedCbtPractice.sensitiveZoneOrigin, true);
+assert.equal(cleanedCbtPractice.sensitive, false);
+
+const sensitiveWithoutSource = classifyEvidence(
+  article({ description: "Use this during a panic attack to treat anxiety symptoms." }),
+  entry("panic-support", "cbt"),
+);
+assert.equal(sensitiveWithoutSource.status, "restricted", "Direct mental-health guidance without a usable source must remain restricted.");
 
 const sensitiveWithSource = classifyEvidence(
-  article({ sourceUrl: "https://example.org/clinical-source" }),
-  entry("sensitive-with-source", "cbt"),
+  article({ description: "Use this during a panic attack to treat anxiety symptoms.", sourceUrl: "https://example.org/clinical-source" }),
+  entry("panic-support-sourced", "cbt"),
 );
-assert.equal(sensitiveWithSource.status, "pending-review", "Sensitive guidance must still require review before trusted use.");
+assert.equal(sensitiveWithSource.status, "pending-review", "Direct sensitive guidance must still require review before trusted use.");
+
+const cardioAlwaysSensitive = classifyEvidence(article(), entry("simple-cardio-note", "cardio-doc"));
+assert.equal(cardioAlwaysSensitive.status, "restricted", "Cardio guidance keeps a zone-level hard gate even when wording is claim-clean.");
 
 const manualReviewed = classifyEvidence(
   article({ description: "Research shows a bounded effect.", sourceUrl: "https://example.org/reviewed-source" }),
@@ -57,4 +68,4 @@ const manualReviewed = classifyEvidence(
 );
 assert.equal(manualReviewed.status, "reviewed", "Explicit review decisions must remain authoritative.");
 
-console.log("Content trust policy verified: provenance alone does not block low-risk practical guidance; evidence-like and sensitive material remains review-gated.");
+console.log("Content trust policy verified: provenance alone does not block low-risk guidance; cleaned everyday practices are judged by actual risk surface; direct sensitive and evidence-bearing material remains review-gated.");

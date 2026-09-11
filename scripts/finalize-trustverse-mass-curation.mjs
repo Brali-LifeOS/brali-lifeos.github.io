@@ -6,6 +6,7 @@ const contentRoot = path.join(root, "data/life-os-content");
 const indexPath = path.join(contentRoot, "index.json");
 const index = JSON.parse(await readFile(indexPath, "utf8"));
 let changed = 0;
+let taxonomyCorrectionsApplied = 0;
 
 const taxonomyReassignments = new Map([
   ["adopt-new-tools-at-work", {
@@ -23,13 +24,17 @@ for (const entry of index) {
   const file = path.join(contentRoot, `${entry.slug}.json`);
   const raw = await readFile(file, "utf8");
   const article = JSON.parse(raw);
-  if (!article.trustverseCuration) continue;
+  const reassignment = taxonomyReassignments.get(entry.slug);
 
-  if (typeof article.subtitle === "string") {
+  // Most finalization work applies only to records mass-curated in the previous step.
+  // Explicit taxonomy corrections are different: they may target a hand-curated record
+  // that the mass curator intentionally skipped, so they must run independently.
+  if (!article.trustverseCuration && !reassignment) continue;
+
+  if (article.trustverseCuration && typeof article.subtitle === "string") {
     article.subtitle = article.subtitle.replace(/without assuming a guaranteed result\.?/gi, "without assuming the outcome in advance.");
   }
 
-  const reassignment = taxonomyReassignments.get(entry.slug);
   if (reassignment) {
     article.zone = { ...reassignment.to };
     article.lifeOsSource = {
@@ -76,7 +81,11 @@ for (const entry of index) {
       ],
     };
     article.trustverseCuration = {
-      ...article.trustverseCuration,
+      schema_version: article.trustverseCuration?.schema_version ?? 1,
+      mode: article.trustverseCuration?.mode ?? "claim-cleanup",
+      curated_at: article.trustverseCuration?.curated_at ?? "2026-09-11",
+      rule: article.trustverseCuration?.rule ?? "Targeted taxonomy correction and bounded practical rewrite; inherited medical analogy is not retained as current guidance.",
+      ...(article.trustverseCuration ?? {}),
       retained_high_risk_gate: false,
       taxonomy_reclassification: {
         from: reassignment.from.slug,
@@ -89,6 +98,7 @@ for (const entry of index) {
     entry.keywords = unique((entry.keywords ?? [])
       .map((value) => value === reassignment.from.title ? reassignment.to.title : value)
       .concat([reassignment.to.title, "work tools", "tool adoption"]));
+    taxonomyCorrectionsApplied += 1;
   }
 
   for (const field of ["title", "subtitle", "description"]) {
@@ -103,4 +113,4 @@ for (const entry of index) {
 }
 
 await writeFile(indexPath, `${JSON.stringify(index, null, 2)}\n`);
-console.log(`Trustverse mass curation finalized: ${changed} article file(s) normalized; source index synchronized; ${taxonomyReassignments.size} taxonomy correction(s) applied.`);
+console.log(`Trustverse mass curation finalized: ${changed} article file(s) normalized; source index synchronized; ${taxonomyCorrectionsApplied} taxonomy correction(s) applied.`);

@@ -33,12 +33,12 @@
       <p class="eyebrow">Free AI Agent Skills · SKILL.md · provenance included</p>
       <h1>Install a small practical skill without throwing away where it came from.</h1>
       <p class="lead">Brali turns each trusted practical protocol into a portable Agent Skill for Claude Code, Hermes Agent, OpenClaw and other compatible hosts. Every skill keeps the canonical protocol, evidence state, limits and a Brali verification record attached.</p>
-      <div class="skill-actions"><a class="button yellow" href="#catalog">Browse Agent Skills</a><a class="button quiet" href="/skill-packs/catalog.json">Open catalog.json</a><a href="https://agentskills.io/specification">Agent Skills specification</a></div>
+      <div class="skill-actions"><a class="button yellow" href="#catalog">Browse Agent Skills</a><a class="button quiet" href="/skill-packs/catalog.json">Open catalog.json</a><a href="/life-os/datasets/protocols.json">Trusted Protocol Feed</a><a href="https://agentskills.io/specification">Agent Skills specification</a></div>
     </div>
     <aside class="skill-hero-card" aria-label="Agent Skills trust contract">
       <span class="card-label">Free library, not a black box</span>
       <h2>One protocol becomes one inspectable skill.</h2>
-      <p>The skill layer is generated from Brali's trusted protocol feed. It is not a second editorial database.</p>
+      <p>The skill layer is generated from Brali's <a href="/life-os/datasets/protocols.json">Trusted Protocol Feed</a>. It is not a second editorial database.</p>
       <ul><li>Only <strong>reviewed</strong> and eligible <strong>practical</strong> protocols become public skills.</li><li>Every skill gets a crawlable page, raw <code>SKILL.md</code>, JSON record and SHA-256 checksum.</li><li><strong>Pending-review</strong> and <strong>restricted</strong> records do not enter the executable catalog.</li></ul>
       <p>A Brali verification badge means the format and provenance passed Brali checks. It does not imply endorsement by Anthropic, Nous Research, OpenClaw or another vendor.</p>
     </aside>
@@ -85,7 +85,7 @@
     <p>The open Agent Skills structure is also useful for progressive loading: the host can discover a skill from its name and description, then load the full instructions only when the task matches. Brali does not bundle executable scripts into these protocol skills; they are inspectable instruction files backed by canonical records.</p>
 
     <h2>What “verified” means here</h2>
-    <p>Brali CI checks that a generated skill came from the trusted protocol feed, has a valid deterministic name and frontmatter, retains the canonical protocol ID and evidence state, exposes stable links, and matches its published SHA-256 checksum. That is a provenance and integrity check—not a security certification or vendor approval.</p>
+    <p>Brali CI checks that a generated skill came from the trusted protocol feed, has a valid deterministic name and frontmatter, retains the canonical protocol ID and evidence state, exposes stable links, and matches its published SHA-256 checksum. It is not a ranking shortcut, security certification, or vendor approval; it is a provenance and integrity check.</p>
 
     <h2>Machine-readable Agent Skills catalog</h2>
     <p>Agents and developers can read <a href="/skill-packs/catalog.json"><code>/skill-packs/catalog.json</code></a> without scraping this page. Each catalog entry exposes the raw skill URL, canonical protocol, supported-host hints, evidence state, installation metadata and verification checksum.</p>

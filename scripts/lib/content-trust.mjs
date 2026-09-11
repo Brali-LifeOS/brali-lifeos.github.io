@@ -101,12 +101,15 @@ export function classifyEvidence(article, entry, overrides = {}) {
   } else if (sensitive && !source.hasSource) {
     status = "restricted";
     reason = "sensitive-without-usable-source";
-  } else if (source.hasSource || claims.evidenceLanguage) {
+  } else if (sensitive) {
     status = "pending-review";
-    reason = source.hasSource ? "source-recorded-not-reviewed" : "evidence-like-claim-without-source";
+    reason = "sensitive-source-review-required";
+  } else if (claims.evidenceLanguage || (claims.enforcedCategories ?? []).length > 0) {
+    status = "pending-review";
+    reason = source.hasSource ? "claim-source-review-required" : "evidence-like-claim-without-source";
   } else {
     status = "practical";
-    reason = "low-risk-practical-guidance";
+    reason = source.hasSource ? "low-risk-practical-guidance-with-provenance" : "low-risk-practical-guidance";
   }
 
   const indexable = status === "reviewed" || status === "practical";

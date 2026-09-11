@@ -1,0 +1,107 @@
+{
+  "slug": "batch-non-urgent-notifications",
+  "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+  "subtitle": "Make interruptions predictable without pretending every alert should disappear",
+  "description": "Group non-urgent smartphone notifications into a few predictable delivery windows while keeping genuinely urgent channels available. The useful idea is predictable batching, not a magic number of batches.",
+  "canonical": "/life-os/batch-non-urgent-notifications/",
+  "domain_ids": ["environment-digital", "focus-action"],
+  "topic_ids": ["digital-attention", "attention-focus"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["notification batching", "digital attention", "phone interruptions", "focus", "scheduled notifications"],
+  "zone": {
+    "slug": "do-it",
+    "title": "Do It"
+  },
+  "lifeOsSource": {
+    "hack": "Move non-urgent smartphone notifications from a continuous stream into predictable batches, while preserving immediate delivery for people and events that truly need it.",
+    "zone": "Do It",
+    "zoneSlug": "do-it",
+    "whatYouDo": "Choose the apps whose alerts are useful but rarely urgent. Use your phone's notification summary, scheduled focus mode, or another reversible setting to deliver those alerts in predictable windows. Keep calls, selected contacts, security alerts, calendars, or other genuinely time-sensitive channels outside the batch. Start with a schedule that fits your day rather than copying the study's three-times-a-day condition as a universal rule.",
+    "checkIn": "Did I feel interrupted less often without creating missed urgent information, compulsive manual checking, or anxiety about what I could not see?",
+    "reference": "Fitz et al. (2019) — Randomized field experiment on batching smartphone notifications",
+    "sourceUrl": "https://doi.org/10.1016/j.chb.2019.07.016"
+  },
+  "faq": [
+    {
+      "id": "notification-batching-faq-1",
+      "question": "Should I batch notifications exactly three times a day?",
+      "answer": "No. Three daily batches performed better than the control condition in the reviewed field experiment, while hourly batching changed little. That comparison is evidence about the tested schedules, not proof that three is optimal for every job, family, or device.",
+      "answerHtml": "<p>No. Three daily batches performed better than the control condition in the reviewed field experiment, while hourly batching changed little. That comparison is evidence about the tested schedules, not proof that three is optimal for every job, family, or device.</p>"
+    },
+    {
+      "id": "notification-batching-faq-2",
+      "question": "Would turning every notification off be even better?",
+      "answer": "Not necessarily. In the same experiment, the no-notification condition produced few of the batching benefits and was associated with more anxiety and fear of missing out. Keep urgent channels available and test predictable delivery before assuming total silence is better.",
+      "answerHtml": "<p>Not necessarily. In the same experiment, the no-notification condition produced few of the batching benefits and was associated with more anxiety and fear of missing out. Keep urgent channels available and test predictable delivery before assuming total silence is better.</p>"
+    },
+    {
+      "id": "notification-batching-faq-3",
+      "question": "Does this prove notifications make me unproductive?",
+      "answer": "No. The study measured several subjective outcomes in one two-week field experiment. Brali uses it to support a narrower intervention: make non-urgent interruptions more predictable and see whether that helps your attention and stress in practice.",
+      "answerHtml": "<p>No. The study measured several subjective outcomes in one two-week field experiment. Brali uses it to support a narrower intervention: make non-urgent interruptions more predictable and see whether that helps your attention and stress in practice.</p>"
+    },
+    {
+      "id": "notification-batching-faq-4",
+      "question": "What if I start opening apps manually all the time?",
+      "answer": "That is a failed version of the experiment, not a character flaw. If batching alerts causes more manual checking, change the schedule, exempt an important channel, or drop the intervention. The goal is fewer unwanted interruptions, not a stricter phone ritual.",
+      "answerHtml": "<p>That is a failed version of the experiment, not a character flaw. If batching alerts causes more manual checking, change the schedule, exempt an important channel, or drop the intervention. The goal is fewer unwanted interruptions, not a stricter phone ritual.</p>"
+    }
+  ],
+  "meta": {
+    "publishedISO": "2026-09-11T12:12:00Z",
+    "updatedISO": "2026-09-11T12:12:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
+  "body": {
+    "intro": {
+      "html": "<p>The usual notification system is almost perfectly designed to be unpredictable: a message now, a delivery update two minutes later, a promotion after that. A 2019 randomized field experiment with 237 smartphone users tested a different arrangement. Participants received alerts as usual, in hourly batches, in three daily batches, or not at all. The three-batch condition reduced perceived interruption and stress and improved several self-reported outcomes compared with usual delivery; hourly batching changed little, while receiving no notifications increased anxiety and fear of missing out. Brali takes one practical lesson from this: predictable batching can be worth testing. It does not turn three delivery windows into a law of attention.</p>"
+    },
+    "sections": [
+      {
+        "slug": "separate-urgent",
+        "title": "1. Separate urgent from merely immediate-looking",
+        "html": "<p>Do not batch an alert just because batching sounds disciplined. A call from family, a security warning, a calendar reminder, an on-call channel, or a delivery you must receive may deserve immediate attention. Promotions, social updates, news alerts, and routine app activity usually have a different time value. Make that distinction before changing settings.</p>"
+      },
+      {
+        "slug": "make-predictable",
+        "title": "2. Make the rest predictable",
+        "html": "<p>Choose a few points in the day when non-urgent alerts can arrive together. Modern operating systems may offer scheduled summaries or focus modes; otherwise, you can approximate the idea by silencing selected apps and reviewing them at chosen times. Predictability matters more here than copying a branded productivity system.</p>"
+      },
+      {
+        "slug": "avoid-magic-three",
+        "title": "3. Do not worship the number three",
+        "html": "<p>The experiment found a difference for three batches a day and little change for hourly batching. That is informative, but it does not identify a universal optimum. Someone working in customer support has a different response horizon from someone writing a report. Use the study to justify testing less frequent, predictable delivery—not to force your life into three notification ceremonies.</p>"
+      },
+      {
+        "slug": "keep-bypass",
+        "title": "4. Keep an emergency bypass",
+        "html": "<p>Total silence is not automatically the stronger intervention. The no-notification group in the reviewed study reported more anxiety and fear of missing out. Preserve a small set of immediate channels so the system remains trustworthy. If you keep wondering whether something urgent is hidden, you may simply replace external interruptions with self-interruptions.</p>"
+      },
+      {
+        "slug": "review",
+        "title": "5. Review the interruption pattern",
+        "html": "<p>After a bounded trial, ask whether the day contained fewer unwanted attention breaks and whether anything important was missed. Also notice manual checking. The source is one two-week field experiment with many self-reported outcomes, so Brali does not claim that notification batching reliably increases productivity, mood, or health for everyone. Keep it if the environment feels calmer and still works.</p>"
+      }
+    ]
+  },
+  "references": [
+    {
+      "title": "Batching smartphone notifications can improve well-being",
+      "url": "https://doi.org/10.1016/j.chb.2019.07.016",
+      "doi": "10.1016/j.chb.2019.07.016",
+      "source_type": "primary-study",
+      "claim_scope": "Supports testing predictable batching of smartphone notifications based on a two-week randomized field experiment of 237 participants. Three daily batches reduced perceived interruption and stress relative to usual delivery in this study, while hourly batching changed little and complete notification removal increased anxiety/FoMO. It does not establish an optimal universal schedule or durable effects."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "reviewed",
+    "reviewedAt": "2026-09-11",
+    "reviewedBy": "Brali Evidence Reviewer",
+    "reason": "Turn a reviewed randomized field experiment into a mechanism-first Digital Attention protocol: preserve urgent channels, batch non-urgent alerts predictably, and explicitly avoid treating the study's three-times-daily schedule or broad self-reported outcomes as universal prescriptions.",
+    "registry": "review-registry-research-watch-2026-09-11-deep-run-wave-2.json"
+  }
+}

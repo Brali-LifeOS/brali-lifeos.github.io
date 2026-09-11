@@ -24,6 +24,9 @@ const imageUrl = (value) => typeof value === "string" ? value : value?.url ?? va
 const isRepresentative = (url) => Boolean(url) && !/\/brali-logo\.png(?:[?#]|$)/i.test(url);
 const isTrusted = (record) => record?.indexable === true && ["reviewed", "practical"].includes(record?.status);
 const isPendingReference = (record) => record?.status === "pending-review" && record?.sensitive !== true;
+const expectedTrusted = (evidence.entries ?? []).filter(isTrusted).length;
+const expectedPendingReferences = (evidence.entries ?? []).filter(isPendingReference).length;
+const expectedRestricted = (evidence.entries ?? []).filter((record) => !isTrusted(record) && !isPendingReference(record)).length;
 
 requireCondition(/User-agent:\s*OAI-SearchBot[\s\S]*?Allow:\s*\//i.test(robots), "robots: OAI-SearchBot is not explicitly allowed");
 requireCondition(/User-agent:\s*GPTBot[\s\S]*?(?:Allow|Disallow):\s*\//i.test(robots), "robots: GPTBot policy is missing");
@@ -131,9 +134,9 @@ for (const entry of index) {
 }
 
 requireCondition(representative > 0, "site: no representative hack image was found");
-requireCondition(skillAvailable > 0, "site: no trusted skill-enabled hack was found");
-requireCondition(pendingReference > 0, "site: no pending-review reference page was found");
-requireCondition(restricted > 0, "site: no restricted search-withheld hack was found");
+requireCondition(skillAvailable === expectedTrusted, `site: trusted skill-page count drift (${skillAvailable} != ${expectedTrusted})`);
+requireCondition(pendingReference === expectedPendingReferences, `site: pending-review reference-page count drift (${pendingReference} != ${expectedPendingReferences})`);
+requireCondition(restricted === expectedRestricted, `site: restricted search-withheld count drift (${restricted} != ${expectedRestricted})`);
 
 if (violations.length) {
   const preview = violations.slice(0, 25).map((item) => `- ${item}`).join("\n");

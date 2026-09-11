@@ -82,12 +82,22 @@ function types(node) {
   return Array.isArray(node?.["@type"]) ? node["@type"] : [node?.["@type"]].filter(Boolean);
 }
 
+function containsType(value, type) {
+  if (Array.isArray(value)) return value.some((item) => containsType(item, type));
+  if (!value || typeof value !== "object") return false;
+  if (types(value).includes(type)) return true;
+  return Object.values(value).some((child) => containsType(child, type));
+}
+
+function imageObject(image) {
+  return { "@type": "ImageObject", url: image, contentUrl: image };
+}
+
 function enrichStructuredData(value, image) {
   if (Array.isArray(value)) return value.map((item) => enrichStructuredData(item, image));
   if (!value || typeof value !== "object") return value;
   const nodeTypes = types(value);
-  const imageObject = { "@type": "ImageObject", url: image, contentUrl: image };
-  if (nodeTypes.includes("WebPage")) value.primaryImageOfPage = imageObject;
+  if (nodeTypes.includes("WebPage")) value.primaryImageOfPage = imageObject(image);
   if (nodeTypes.includes("Article")) value.image = image;
   for (const [key, child] of Object.entries(value)) {
     if (key === "primaryImageOfPage" || key === "image") continue;
@@ -96,14 +106,28 @@ function enrichStructuredData(value, image) {
   return value;
 }
 
-function alignStructuredData(html, image) {
-  return html.replace(/(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi, (whole, open, raw, close) => {
+function alignStructuredData(html, image, page) {
+  let sawWebPage = false;
+  let result = html.replace(/(<script\b[^>]*type=["']application\/ld\+json["'][^>]*>)([\s\S]*?)(<\/script>)/gi, (whole, open, raw, close) => {
     try {
-      return `${open}${JSON.stringify(enrichStructuredData(JSON.parse(raw), image))}${close}`;
+      const parsed = JSON.parse(raw);
+      if (containsType(parsed, "WebPage")) sawWebPage = true;
+      return `${open}${JSON.stringify(enrichStructuredData(parsed, image))}${close}`;
     } catch {
       return whole;
     }
   });
+  if (!sawWebPage) {
+    const webpage = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": `${page}#webpage`,
+      url: page,
+      primaryImageOfPage: imageObject(image)
+    };
+    result = result.replace(/<\/head>/i, `<script type="application/ld+json" data-image-discovery="true">${JSON.stringify(webpage)}</script></head>`);
+  }
+  return result;
 }
 
 let sitemap = await readFile(sitemapPath, "utf8");
@@ -125,7 +149,7 @@ for (const inner of blocks) {
   html = setMeta(html, "name", "twitter:card", "summary_large_image");
   html = setMeta(html, "name", "twitter:image", representative.url);
   html = setMeta(html, "name", "twitter:image:alt", representative.alt);
-  html = alignStructuredData(html, representative.url);
+  html = alignStructuredData(html, representative.url, page);
   await writeFile(file, html);
   records.push({ page, image: representative.url, alt: representative.alt, source: representative.source });
 }

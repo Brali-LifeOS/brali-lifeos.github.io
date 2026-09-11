@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Publication-state bridge for the 2026-09-11 productivity Deep Run. Marks the two newly published protocols and the rewritten implementation-intention protocol as reviewed, and attaches the taxonomy used by the public Life OS surfaces. The underlying Evidence Decisions and research candidates remain in review-registry-research-watch-2026-09-11-productivity-deep-run.json.",
+  "evidence_overrides": {
+    "ready-to-resume-plan": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Reviewed against Leroy & Glomb's interruption studies with convergent plan-making evidence from Masicampo & Baumeister. Public guidance is limited to creating a concrete resumption plan before leaving unfinished work. It does not claim that switching costs disappear, prescribe an exact note length, or promise a universal productivity effect."
+    },
+    "visible-progress-monitoring": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Reviewed against Harkin et al.'s meta-analysis of 138 randomized studies and 19,951 participants. Public guidance supports making goal progress observable and using it for adjustment, while explicitly avoiding claims that daily tracking, streaks, public leaderboards, or more monitoring are universally optimal."
+    },
+    "if-then-rules-productivity": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Legacy article replaced after review against the 2024 meta-analysis of 642 independent implementation-intention tests. Public guidance now uses the bounded contingent form If [observable cue], then I will [specific feasible response] and removes unsupported fixed counts, durations, effect sizes, stress claims, and productivity estimates."
+    }
+  },
+  "ontology_overrides": {
+    "ready-to-resume-plan": {
+      "domain_ids": ["focus-action"],
+      "topic_ids": ["focus", "task-initiation", "planning"],
+      "method_ids": [],
+      "lens_ids": [],
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The protocol concerns interruption recovery and preserving a concrete restart point for unfinished work."
+    },
+    "visible-progress-monitoring": {
+      "domain_ids": ["focus-action"],
+      "topic_ids": ["goals", "planning", "habits-consistency"],
+      "method_ids": [],
+      "lens_ids": [],
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The protocol is a self-regulation feedback loop linking observable goal progress to the next action."
+    },
+    "if-then-rules-productivity": {
+      "domain_ids": ["focus-action"],
+      "topic_ids": ["goals", "habits-consistency", "task-initiation"],
+      "method_ids": ["implementation-intentions"],
+      "lens_ids": [],
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "Implementation intentions are a cue-response self-regulation method used to support goal follow-through and task initiation."
+    }
+  }
+}

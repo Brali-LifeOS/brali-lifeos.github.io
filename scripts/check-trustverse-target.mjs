@@ -19,7 +19,12 @@ const summary = `Trustverse coverage: trusted=${trusted.length}/${evidence.entri
 console.log(summary);
 
 if (unsafePractical.length) {
-  throw new Error(`Trustverse target gate rejected ${unsafePractical.length} practical record(s) that still carry a sensitive flag or enforced/evidence-like claim: ${unsafePractical.slice(0, 20).map((entry) => entry.slug).join(", ")}`);
+  const details = unsafePractical.slice(0, 20).map((entry) => {
+    const enforced = entry.claims?.enforcedCategories ?? [];
+    const categories = entry.claims?.categories ?? [];
+    return `${entry.slug}{sensitive=${entry.sensitive === true}, evidenceLanguage=${Boolean(entry.claims?.evidenceLanguage)}, enforced=${enforced.join("|") || "none"}, categories=${categories.join("|") || "none"}}`;
+  });
+  throw new Error(`Trustverse target gate rejected ${unsafePractical.length} practical record(s) that still carry a sensitive flag or enforced/evidence-like claim: ${details.join(", ")}`);
 }
 if (usable !== trusted.length) {
   throw new Error(`Trustverse/Agent Skill parity failed: trusted=${trusted.length}, usable-skills=${usable}.`);

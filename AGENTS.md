@@ -10,6 +10,7 @@ Read only the context required for the task:
 2. `SOURCE_POLICY.md` — source and provenance rules for evidence-like material.
 3. `CONTENT_QUALITY.md` — publication/content-quality boundaries.
 4. Relevant docs under `docs/` only when the task touches versioning, integrations, demos, releases, citation, or data contracts.
+5. `.arwp/README.md` and `.arwp/image-discovery.json` when the task changes public Search/discovery imagery, social/preferred-image metadata, sitemap image coverage or deployment verification.
 
 Do not start by loading all generated API files, all research candidates, or the entire public site.
 
@@ -23,7 +24,7 @@ Do not start by loading all generated API files, all research candidates, or the
 | Public API / data release | canonical datasets and generator code | `/api/v1/`, manifest, checksums, schemas, release docs | `npm run build`, `npm run check`; release tasks also use `npm run release:check -- --version <version>` |
 | AI/agent integration | canonical generated data plus `agents/`, `contracts/`, `skills/`, integration examples | `/for-ai/`, demos, OpenAPI/MCP surfaces | `npm run build`, `npm run check`, plus relevant `mcp:check`, `demos:check`, `adoption:check`, or `query:check` |
 | Identity/localization | canonical IDs and alias registries | multilingual labels, historical aliases, API identity surfaces | `npm run build` and `npm run check` |
-| Site/discovery | human source pages plus build generators | llms/discovery files, generated API/site pages, links | `npm run build` and `npm run check` |
+| Site/discovery | human source pages plus build generators | llms/discovery files, generated API/site pages, links, representative images, sitemap image entries, `.arwp/image-discovery.json` | `npm run build`, `npm run check`, `node scripts/apply-image-discovery.mjs`, `node scripts/check-image-discovery.mjs`; review live Image Discovery after deploy |
 
 ## Source-of-truth rules
 
@@ -35,6 +36,8 @@ Do not start by loading all generated API files, all research candidates, or the
 - `/api/v1/` and other generated outputs are views over canonical data. Fix the source/generator, then rebuild; do not hand-edit generated output as the source.
 - The MCP server is currently local stdio, not a hosted remote Brali MCP service. Do not imply otherwise.
 - Do not invent adoption, download, user, efficacy, or external search metrics.
+- Image Discovery must reuse an actually visible informative image and its existing human-authored alt text. Do not manufacture an image description from a filename or concept title. Logos, favicons and utility icons are not promoted as representative page imagery merely to increase sitemap coverage.
+- Keep Discover-specific image-size guidance separate from ordinary image crawl/index eligibility. A passing image gate does not establish Google Images indexing, Search thumbnail selection, Discover placement, ranking or traffic.
 
 ## GitHub / publication boundary
 
@@ -60,6 +63,10 @@ npm run mcp:check
 npm run demos:check
 npm run adoption:check
 npm run query:check
+node scripts/apply-image-discovery.mjs
+node scripts/check-image-discovery.mjs
 ```
+
+For a Search/discovery release, run Image Discovery against the exact final sitemap after sitemap normalization, then gate the artifact before upload. After a successful production deployment, `scripts/check-live-image-discovery.mjs` provides bounded live evidence for the published sitemap, page metadata and image responses.
 
 Use the release commands documented in `README.md` for versioned data-release work. Do not claim a check passed unless it ran for the changed revision.

@@ -28,8 +28,12 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           GH_PROMPT_DISABLED: 1
         run: gh skill publish agent-skills --dry-run
-      - name: Build and run full repository checks
-        run: npm run build && npm run check && node scripts/check-ai-search-profile.mjs
+      - name: Build site and generated Agent Skills
+        run: npm run build
+      - name: Run full repository checks
+        run: npm run check
+      - name: Check AI search profile
+        run: node scripts/check-ai-search-profile.mjs
       - name: Normalize final sitemap to canonical indexable URLs
         run: node scripts/normalize-search-sitemap.mjs
       - name: Apply Image Discovery to exact final artifact

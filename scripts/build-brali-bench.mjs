@@ -70,6 +70,7 @@ for (const rel of published) {
 }
 datasetManifest.files.sort((a, b) => String(a.path || a).localeCompare(String(b.path || b)));
 datasetManifest.counts ||= {};
+datasetManifest.counts.files = datasetManifest.files.length;
 datasetManifest.counts.bench_cases = suite.cases.length;
 writeJson('life-os/datasets/manifest.json', datasetManifest);
 writeJson(`api/${platform.api_version}/manifest.json`, datasetManifest);

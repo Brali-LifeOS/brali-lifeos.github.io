@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-12",
+  "policy": {
+    "purpose": "Store only decision-changing applicability constraints for trusted protocols used by Brali troubleshooters.",
+    "source_rule": "Every constraint must point to an exact eligibility or when-not-to-use statement in the protocol's Gold manual review. Validation fails if the source wording drifts.",
+    "unknown_rule": "Missing applicability metadata or unanswered required constraints never default to compatible.",
+    "trust_rule": "Only gold-ready protocols whose generated evidence state is reviewed or practical can enter a trusted troubleshooter."
+  },
+  "entries": {
+    "25-minute-pomodoro-focus-sprints": {
+      "protocol_id": "brali:25-minute-pomodoro-focus-sprints",
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "review_basis": {
+        "required_review_status": "gold-ready",
+        "reviewed_at": "2026-09-05"
+      },
+      "constraints": [
+        {
+          "id": "immediate-responsiveness",
+          "question": "For the next work block, can non-urgent interruptions wait until a sensible stopping point?",
+          "required": true,
+          "source_field": "when_not_to_use",
+          "source_text": "Do not use a focus timer where continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes deliberate disengagement inappropriate.",
+          "options": [
+            {
+              "value": "can-delay",
+              "label": "Yes — non-urgent interruptions can wait briefly.",
+              "effect": "allow"
+            },
+            {
+              "value": "must-respond",
+              "label": "No — I must stay immediately responsive.",
+              "effect": "reject",
+              "reason": "A deliberate focus boundary is a poor fit when the work requires immediate responsiveness."
+            }
+          ]
+        },
+        {
+          "id": "concrete-outcome",
+          "question": "Can you name one concrete, low-risk outcome for the next block?",
+          "required": true,
+          "source_field": "eligibility",
+          "source_text": "The user has one concrete low-risk work or study outcome that can be advanced during a bounded focus block.",
+          "options": [
+            {
+              "value": "yes",
+              "label": "Yes — I know what should be different when the block ends.",
+              "effect": "allow"
+            },
+            {
+              "value": "not-yet",
+              "label": "Not yet — the task is still vague.",
+              "effect": "reject",
+              "reason": "This protocol needs one concrete outcome first. Define the next visible result before adding a timer."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

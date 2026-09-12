@@ -14,7 +14,7 @@ const dataset = read('problems/index.json');
 const platform = read('data/platform.json');
 const api = read(`api/${platform.api_version}/problem-collections.json`);
 const feed = read('life-os/datasets/protocols.json');
-const { entries: goldReviews } = loadGoldReviewRegistry(ROOT);
+const { entries: goldReviews } = await loadGoldReviewRegistry(ROOT);
 const sourceProblems = new Set((problemSource.collections ?? []).map(item => item.slug));
 const feedBySlug = new Map((feed.entries ?? []).map(item => [item.slug, item]));
 const datasetBySlug = new Map((dataset.collections ?? []).map(item => [item.slug, item]));

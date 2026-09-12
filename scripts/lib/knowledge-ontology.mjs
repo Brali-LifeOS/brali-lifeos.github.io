@@ -70,16 +70,17 @@ export async function loadKnowledgeOntology(root) {
     };
   }
 
-  function buildClassification({ domainIds, topicIds, methodIds, lensIds, source, legacy }) {
+  function buildClassification({ domainIds, topicIds, methodIds, lensIds, source, legacy, context }) {
+    const label = context ? `Record ${context}` : "Record";
     const inferredDomainIds = topicIds.map((id) => {
       const topic = topics.get(id);
-      if (!topic) throw new Error(`Record references unknown topic ${id}`);
+      if (!topic) throw new Error(`${label} references unknown topic ${id}`);
       return topic.domain_id;
     });
     const resolvedDomainIds = unique([...domainIds, ...inferredDomainIds]);
-    for (const id of resolvedDomainIds) if (!domains.has(id)) throw new Error(`Record references unknown domain ${id}`);
-    for (const id of methodIds) if (!methods.has(id)) throw new Error(`Record references unknown method ${id}`);
-    for (const id of lensIds) if (!lenses.has(id)) throw new Error(`Record references unknown lens ${id}`);
+    for (const id of resolvedDomainIds) if (!domains.has(id)) throw new Error(`${label} references unknown domain ${id}`);
+    for (const id of methodIds) if (!methods.has(id)) throw new Error(`${label} references unknown method ${id}`);
+    for (const id of lensIds) if (!lenses.has(id)) throw new Error(`${label} references unknown lens ${id}`);
 
     return {
       domains: resolvedDomainIds.map((id) => entity(domains, id)),
@@ -107,7 +108,8 @@ export async function loadKnowledgeOntology(root) {
         methodIds: unique([...legacy.methods.map((item) => item.id), ...explicitMethodIds]),
         lensIds: unique([...legacy.lenses.map((item) => item.id), ...explicitLensIds]),
         source: "record-fields",
-        legacy: legacy.legacy
+        legacy: legacy.legacy,
+        context: slug
       });
     }
 
@@ -121,7 +123,8 @@ export async function loadKnowledgeOntology(root) {
       methodIds: unique([...legacyMethodIds, ...(override.method_ids ?? [])]),
       lensIds: unique([...legacyLensIds, ...(override.lens_ids ?? [])]),
       source: "reviewed-ontology-override",
-      legacy: legacy.legacy
+      legacy: legacy.legacy,
+      context: slug
     });
   }
 

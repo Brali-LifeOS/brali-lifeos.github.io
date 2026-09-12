@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "conversation-chunking-nlp-coach": {
+      "title": "Move Between Purpose and Specifics in a Conversation",
+      "subtitle": "When a discussion is stuck, ask either a broader-purpose question or a concrete-detail question.",
+      "description": "When people are talking at different levels of detail, ask a broader question to clarify the shared purpose or a narrower question to identify a concrete example, constraint or next step. Use the answer as information rather than assuming the question itself resolves disagreement.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported NLP mechanism claims, fabricated team outcomes, fixed timing rules, emotional-state inferences and pseudo-precise alignment effects with a bounded communication-clarification technique.",
+      "forbidden_public_fragments": [
+        "70–80% of the time",
+        "reduces follow-up clarifications by roughly 30%",
+        "first 90 seconds",
+        "classic NLP",
+        "small shifts in phrasing produce measurable increases in alignment"
+      ],
+      "lifeOsSource": {
+        "hack": "When a conversation is stuck at the wrong level of detail, move one level broader to clarify purpose or one level narrower to clarify facts and action.",
+        "whatYouDo": "Notice whether the discussion is too abstract to act on or too detailed to reveal the shared purpose. Ask one relevant question such as 'What outcome are we trying to protect?' or 'Can you give a concrete example?'. Listen to the answer, correct your understanding if needed, and use the new information to choose the next discussion point.",
+        "checkIn": "Was the conversation missing shared purpose or concrete detail, what did the question reveal, and what changed in the next step?"
+      },
+      "faq": [
+        {
+          "id": "conversation-chunking-nlp-coach-faq-1",
+          "question": "Is this an NLP claim?",
+          "answer": "No mechanism or NLP effect is assumed here. The retained protocol is simply a communication move: change the level of abstraction to request information that is currently missing."
+        },
+        {
+          "id": "conversation-chunking-nlp-coach-faq-2",
+          "question": "Which direction should I use?",
+          "answer": "Go broader when people are debating details without an agreed purpose. Go narrower when the discussion uses vague labels, generalizations or goals without examples, constraints or an actionable next step."
+        },
+        {
+          "id": "conversation-chunking-nlp-coach-faq-3",
+          "question": "Will this resolve a conflict?",
+          "answer": "Not necessarily. A clearer question can expose agreement, disagreement or missing information. Treat that result as input to the conversation rather than as a guaranteed conflict-resolution technique."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Some conversations stall because people are speaking at different levels: one person is discussing purpose while another is discussing implementation, or everyone is using a broad label without a concrete example. Instead of repeating the same argument, deliberately request the missing level of information.</p>"},
+        "sections": [
+          {"slug": "diagnose", "title": "1. Identify the missing level", "html": "<p>Ask whether the current problem is too abstract to act on or too detailed to show why the work matters. Do not infer motives or emotional states; use what was actually said and what information is still absent.</p>"},
+          {"slug": "broader", "title": "2. Ask a broader-purpose question", "html": "<p>When details are competing without a shared criterion, ask what outcome, constraint or requirement the parties are trying to protect. A broader answer can provide a criterion for evaluating the details, but it does not erase real trade-offs.</p>"},
+          {"slug": "narrower", "title": "3. Ask for a concrete example", "html": "<p>When a statement is vague, ask for a specific case, observable behavior, affected item, constraint or next action. Prefer clarification over turning a broad statement into your own interpretation.</p>"},
+          {"slug": "use", "title": "4. Use the answer, then reassess", "html": "<p>Paraphrase the new information if confirmation matters, then decide what should happen next: resolve a detail, compare options, capture an unresolved disagreement or gather another fact. Change levels again only when another information gap makes it useful.</p>"}
+        ]
+      }
+    },
+    "count-the-moments-tracker": {
+      "title": "Keep a Small Log of Moments You Want to Remember",
+      "subtitle": "Capture experiences worth revisiting without turning daily life into a score.",
+      "description": "When something happens that you would like to remember, save a short note describing the moment and why it mattered to you. Review the notes occasionally if they are useful; the count is an archive aid, not a measure of happiness, memory quality or how well you lived.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported attention and memory mechanisms, fabricated field trials, arbitrary moment thresholds, prescribed daily counts and quantified wellbeing implications with a lightweight personal capture practice.",
+      "forbidden_public_fragments": [
+        "language is a practical lever: it changes attention in <1 second",
+        "about 112 minutes weekly",
+        "field trials with small groups (n≈30)",
+        "logged about 40% more moments",
+        "average of 7.2 moments per day vs. 4.9"
+      ],
+      "lifeOsSource": {
+        "hack": "Save a short note when an experience occurs that you personally want to remember, then review the notes when that archive is useful.",
+        "whatYouDo": "Capture a brief label for the experience, optionally add where or with whom it happened and one detail that made it worth keeping, then return to what you were doing. Review or group the notes later if you want an archive of memorable experiences; do not optimize for a target count.",
+        "checkIn": "What happened, what detail do I want to keep, and is recording it adding value rather than interrupting the experience?"
+      },
+      "faq": [
+        {
+          "id": "count-the-moments-tracker-faq-1",
+          "question": "How many moments should I log?",
+          "answer": "There is no required number. Log only when the record is useful to you. A higher count does not mean a better day or a better life."
+        },
+        {
+          "id": "count-the-moments-tracker-faq-2",
+          "question": "Does logging improve memory or wellbeing?",
+          "answer": "This protocol does not make that claim. It creates an external record you can revisit. Any effect on memory, mood or attention should not be inferred from the existence of the log."
+        },
+        {
+          "id": "count-the-moments-tracker-faq-3",
+          "question": "What if logging makes me less present?",
+          "answer": "Skip the capture and stay with the experience. You can write a note later or not at all. The archive is optional and should not become a requirement for an experience to count."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>A personal archive can preserve small experiences that would otherwise be hard to find among photos, messages and calendar events. The useful unit is not a scientifically defined 'moment'; it is simply an experience you decide is worth a short record.</p>"},
+        "sections": [
+          {"slug": "capture", "title": "1. Capture only what is worth keeping", "html": "<p>When something happens that you want to revisit, write a short label. It can be an ordinary detail, conversation, observation, idea, place or small success. Do not interrupt an experience merely to satisfy a tracking rule.</p>"},
+          {"slug": "context", "title": "2. Add enough context for future you", "html": "<p>If useful, record one or two retrieval cues such as the person, place, event or detail that made the experience distinctive to you. Keep the note as short or as detailed as the future use requires.</p>"},
+          {"slug": "review", "title": "3. Review when the archive has a purpose", "html": "<p>Browse the notes when you want to recall a period, prepare a journal entry, collect ideas or notice what you chose to preserve. You do not need a fixed review schedule.</p>"},
+          {"slug": "boundary", "title": "4. Keep the count descriptive", "html": "<p>If the system shows a tally, treat it as the number of records created, not a score for happiness, presence, gratitude, productivity or memory. A day with zero entries can be completely normal.</p>"}
+        ]
+      }
+    },
+    "couples-cooldown-protocol": {
+      "title": "Pause a Heated Conversation and Agree How to Resume",
+      "subtitle": "Use a temporary pause without turning it into disappearance, punishment or a promise of emotional control.",
+      "description": "When a low-risk disagreement is no longer productive, either person can propose a pause. State that the conversation is paused rather than abandoned, agree on a realistic time or trigger to revisit it, use the break for ordinary non-confrontational activity, and resume only when both people are willing to continue constructively.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace clinical and physiological mechanism claims, fabricated couples outcomes, fixed break durations, prescribed heart-rate and breathing targets and unsupported habit-formation rules with a bounded communication pause and explicit re-entry plan.",
+      "forbidden_public_fragments": [
+        "effective in about 60–70%",
+        "reduce the chance of escalation by 30–60%",
+        "a drop of 5–10 beats per minute",
+        "quick breathing helped 60% of attempts, walking helped 80%",
+        "about 10–14 exposures"
+      ],
+      "lifeOsSource": {
+        "hack": "When a low-risk disagreement stops being productive, pause it explicitly and agree how the conversation will be resumed rather than continuing or disappearing indefinitely.",
+        "whatYouDo": "Say that you want to pause the current discussion, confirm that the issue is not being abandoned, agree on a realistic return time or trigger, avoid continuing the argument through messages during the pause, and check whether both people are willing to resume constructively when the agreed point arrives.",
+        "checkIn": "Was the pause clearly communicated, is there a credible return plan, and when we resumed were both people willing to continue the discussion rather than simply restart the same exchange?"
+      },
+      "faq": [
+        {
+          "id": "couples-cooldown-protocol-faq-1",
+          "question": "How long should the pause be?",
+          "answer": "There is no universal duration in this protocol. Choose a period that is practical for the situation and short enough that the return plan remains credible, or schedule a specific later time when immediate resumption is unrealistic."
+        },
+        {
+          "id": "couples-cooldown-protocol-faq-2",
+          "question": "What if the other person does not want to resume?",
+          "answer": "A pause cannot force cooperation. State what you are available to discuss and when, respect the other person's autonomy, and use an appropriate support or mediation process if an important issue cannot be handled safely or constructively between you."
+        },
+        {
+          "id": "couples-cooldown-protocol-faq-3",
+          "question": "When is this protocol inappropriate?",
+          "answer": "Do not treat a negotiated conversation pause as a solution to threats, coercion, violence or another situation where personal safety is at risk. Prioritize safety and appropriate qualified or emergency support instead."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Continuing a disagreement after the exchange has stopped producing new information can make the discussion harder to repair. A temporary pause can be used as a communication boundary when it is explicit, time-bounded by agreement or a clear trigger, and followed by a credible plan to return.</p>"},
+        "sections": [
+          {"slug": "signal", "title": "1. Propose the pause directly", "html": "<p>Say what you are pausing and why in neutral terms: the current discussion is no longer productive and you want to continue it later. Avoid using the pause as a threat, punishment or way to make the other person guess whether you will return.</p>"},
+          {"slug": "return", "title": "2. Create a re-entry point", "html": "<p>Agree on a realistic time, event or check-in for revisiting the issue. If the timing cannot be fixed immediately, state how the next contact will be initiated so the pause does not silently become indefinite avoidance.</p>"},
+          {"slug": "break", "title": "3. Stop the argument during the pause", "html": "<p>Use the interval for ordinary activity that does not continue the confrontation. Do not treat a specific exercise, breathing rate, heart-rate target or duration as required by this protocol.</p>"},
+          {"slug": "resume", "title": "4. Check willingness before resuming", "html": "<p>At the return point, ask whether both people are ready to continue constructively. If not, agree on the next appropriate step rather than forcing the conversation. When the issue is high-stakes or repeatedly unsafe, use the relevant support process instead of relying on this quick protocol.</p>"}
+        ]
+      }
+    },
+    "cross-disciplinary-insight-lenses": {
+      "title": "Borrow a Model From Another Field, Then Test the Mapping",
+      "subtitle": "Use cross-disciplinary analogies as idea generators, not as proof.",
+      "description": "For a problem you are working on, borrow one relevant concept, constraint or pattern from another field, state exactly what maps and what does not, identify the assumptions behind the analogy, and test the resulting idea against evidence from the actual problem before adopting it.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated internal experiments, unsupported decision-improvement effects, arbitrary timeboxes and field counts, and pseudo-statistical A/B test rules with a disciplined analogy-transfer workflow that requires domain-specific validation.",
+      "forbidden_public_fragments": [
+        "improve decisions by 15–30%",
+        "raised the number of viable ideas by ~40%",
+        "source: aggregated internal experiments",
+        "N ≈ 200 visitors",
+        "p<0.05 we pilot"
+      ],
+      "lifeOsSource": {
+        "hack": "Use a concept from another field to generate a possible new angle, but write the mapping and assumptions explicitly before treating the analogy as useful.",
+        "whatYouDo": "State the current problem, choose one concept or pattern from another field that may be relevant, write what corresponds between the two situations and where the analogy breaks, derive one candidate action or question, and validate it using information from the actual domain before committing to it.",
+        "checkIn": "What did I borrow, which parts genuinely map to this problem, which assumptions could fail, and what evidence from the real domain would confirm or reject the idea?"
+      },
+      "faq": [
+        {
+          "id": "cross-disciplinary-insight-lenses-faq-1",
+          "question": "How many fields should I compare?",
+          "answer": "There is no required number. Start with one analogy that is relevant enough to examine. Add another only when it produces a distinct question or option rather than decorative variety."
+        },
+        {
+          "id": "cross-disciplinary-insight-lenses-faq-2",
+          "question": "Does a good analogy validate the solution?",
+          "answer": "No. An analogy can generate hypotheses or design options. The resulting idea still needs to be checked against the constraints, evidence and failure modes of the domain where it will actually be used."
+        },
+        {
+          "id": "cross-disciplinary-insight-lenses-faq-3",
+          "question": "How should I test the transferred idea?",
+          "answer": "Use a method appropriate to the real decision and its stakes. A reversible prototype, data check, expert review or properly designed experiment may be appropriate; do not infer a universal sample size or statistical threshold from this protocol."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Ideas from another discipline can expose a constraint or pattern that your usual vocabulary hides. The risk is treating resemblance as evidence. Use cross-disciplinary transfer to generate hypotheses, then make the mapping explicit and return to the actual domain for validation.</p>"},
+        "sections": [
+          {"slug": "problem", "title": "1. State the real problem first", "html": "<p>Describe the decision, constraint or failure mode you are trying to address before searching for analogies. This keeps the borrowed model tied to a concrete question rather than becoming an exercise in collecting interesting concepts.</p>"},
+          {"slug": "borrow", "title": "2. Borrow one relevant pattern", "html": "<p>Choose a concept from another field and write what makes it potentially relevant. Prefer a specific mechanism, constraint, representation or process over a vague slogan such as 'think like biology' or 'use psychology'.</p>"},
+          {"slug": "limits", "title": "3. Write the mapping and its limits", "html": "<p>List what corresponds between the source field and your problem, which important variables differ, and which assumption must be true for the transfer to be useful. If the analogy breaks on a critical constraint, keep it as an idea rather than a recommendation.</p>"},
+          {"slug": "validate", "title": "4. Validate in the destination domain", "html": "<p>Turn the analogy into one candidate action, design question or hypothesis and check it with evidence appropriate to the real context. Use reversible tests when uncertainty is high, and escalate the validation standard with the stakes of the decision.</p>"}
+        ]
+      }
+    }
+  }
+}

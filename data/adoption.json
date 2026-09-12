@@ -13,7 +13,7 @@
     "transport": "stdio",
     "remote_transport": "streamable-http",
     "hosted_remote": false,
-    "note": "Brali operates a local stdio MCP path and now ships a deployment-ready web-standard Streamable HTTP handler backed by the same trust rules. Brali does not claim a public hosted remote MCP URL until a provider deployment is completed and verified."
+    "note": "Brali operates a local stdio MCP path and ships a deployment-ready web-standard Streamable HTTP handler backed by the same trust rules. Brali does not claim a public hosted remote MCP URL until a provider deployment is completed and verified."
   },
   "github_skill": {
     "router_name": "brali-life-os",
@@ -23,8 +23,22 @@
     "preview_command": "gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os",
     "install_command": "gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user",
     "docs": "https://cli.github.com/manual/gh_skill",
-    "published_release": null,
+    "published_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.0",
+    "published_tag": "v1.0.0",
+    "publication_verified": true,
+    "registry_search_verified": false,
+    "discovery_blocker": "GitHub published the skill release, but the Actions token could not add the repository topic agent-skills. Do not claim GitHub skill-search discovery until the topic/search result is provider-visible.",
     "note": "Preview the router before installation. Replace --agent claude-code with the supported host you actually use. The dedicated distribution package contains only the router and preserves Brali's trusted recommendation layer."
+  },
+  "dataset_release": {
+    "tag": "data-v1.1.0",
+    "github_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/data-v1.1.0",
+    "publication_verified": true,
+    "archive_asset": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/download/data-v1.1.0/brali-data-1.1.0.tar.gz",
+    "checksum_asset": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/download/data-v1.1.0/brali-data-1.1.0.tar.gz.sha256",
+    "huggingface_mirror": null,
+    "zenodo_doi": null,
+    "note": "The immutable GitHub release is live and verified. Hugging Face and Zenodo remain unclaimed until their own provider-visible artifacts exist."
   },
   "evaluation": {
     "page": "https://brali-lifeos.github.io/for-ai/evaluation/",

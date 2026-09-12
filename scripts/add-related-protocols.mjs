@@ -16,6 +16,27 @@ const sourceBySlug = new Map(sourceIndex.map((entry) => [entry.slug, entry]));
 const areaByZone = new Map();
 for (const area of areas) for (const zone of area.zones) areaByZone.set(zone, area.slug);
 
+const ECOSYSTEM_RELATION_POLICIES = {
+  understand_with: {
+    targetProject: "cognitive-biases",
+    targetKind: "cognitive_bias",
+    targetIdPrefix: "cognitive-biases:bias:",
+    targetHostname: "cognitive-biases.github.io",
+    targetPathPrefix: "/biases/",
+    heading: "Understand the mechanism",
+    intro: "This Brali page is the action layer. The specialist reference below explains the concept, evidence and limits. It does not validate this Brali protocol or any inherited effect-size claim.",
+  },
+  structure_with: {
+    targetProject: "metkagram",
+    targetKind: "method_guide",
+    targetIdPrefix: "metkagram:method-guide:",
+    targetHostname: "metkagram.github.io",
+    targetPathPrefix: "/en/method/guides/",
+    heading: "Add language structure",
+    intro: "Brali owns the short-session protocol. For a speaking-focused session, the specialist reference below supplies language structure and a different practice step. It does not validate this Brali protocol, prove learning transfer, or make Brali the source of the language material.",
+  },
+};
+
 function keywordSet(entry) {
   return new Set((entry.keywords ?? []).map(normalize).filter((value) => value && value !== "life os"));
 }
@@ -39,7 +60,7 @@ function candidateScore(current, candidate) {
 }
 
 function validateEcosystemRelations() {
-  if (ecosystemData.schemaVersion !== "1.0" || ecosystemData.publisher !== "brali") {
+  if (ecosystemData.schemaVersion !== "1.0" || ecosystemData.publisher !== "brali" || ecosystemData.contract !== "outbound-contextual-relations-v1") {
     throw new Error("Unsupported ecosystem relation contract.");
   }
 
@@ -48,7 +69,9 @@ function validateEcosystemRelations() {
   for (const relation of ecosystemData.relations ?? []) {
     if (!relation.id || seen.has(relation.id)) throw new Error(`Duplicate or missing ecosystem relation id: ${relation.id ?? "<missing>"}`);
     seen.add(relation.id);
-    if (relation.relationType !== "understand_with" || relation.basis !== "curated-semantic-handoff" || relation.confidence !== "high") {
+
+    const policy = ECOSYSTEM_RELATION_POLICIES[relation.relationType];
+    if (!policy || relation.basis !== "curated-semantic-handoff" || relation.confidence !== "high") {
       throw new Error(`Unsupported ecosystem relation semantics: ${relation.id}`);
     }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(relation.reviewedAt ?? "")) throw new Error(`Missing ecosystem review date: ${relation.id}`);
@@ -61,16 +84,20 @@ function validateEcosystemRelations() {
     if (source.id !== `brali:hack:${source.slug}` || source.url !== `https://brali-lifeos.github.io/life-os/${source.slug}/`) {
       throw new Error(`Unstable Brali ecosystem source identity: ${relation.id}`);
     }
-    if (target.project !== "cognitive-biases" || target.kind !== "cognitive_bias" || !String(target.id ?? "").startsWith("cognitive-biases:bias:")) {
+    if (evidenceBySlug.get(source.slug)?.indexable !== true) {
+      throw new Error(`Ecosystem source is not current indexable guidance: ${relation.id}`);
+    }
+    if (target.project !== policy.targetProject || target.kind !== policy.targetKind || !String(target.id ?? "").startsWith(policy.targetIdPrefix)) {
       throw new Error(`Unsupported ecosystem target identity: ${relation.id}`);
     }
+
     let targetUrl;
     try {
       targetUrl = new URL(target.url);
     } catch {
       throw new Error(`Invalid ecosystem target URL: ${relation.id}`);
     }
-    if (targetUrl.protocol !== "https:" || targetUrl.hostname !== "cognitive-biases.github.io" || !target.label || !target.description || !relation.userJob) {
+    if (targetUrl.protocol !== "https:" || targetUrl.hostname !== policy.targetHostname || !targetUrl.pathname.startsWith(policy.targetPathPrefix) || !target.label || !target.description || !relation.userJob) {
       throw new Error(`Unsafe or incomplete ecosystem target: ${relation.id}`);
     }
 
@@ -120,8 +147,18 @@ for (const current of sourceIndex) {
   html = html.replace(/<section class="prose ecosystem-context" data-ecosystem-context="true">[\s\S]*?<\/section>/g, "");
   const ecosystemRelations = ecosystemBySource.get(current.slug) ?? [];
   if (ecosystemRelations.length) {
-    const ecosystemItems = ecosystemRelations.map((relation) => `<li data-ecosystem-relation-id="${escapeHtml(relation.id)}"><a href="${escapeHtml(relation.target.url)}">${escapeHtml(relation.target.label)}</a><span>${escapeHtml(relation.target.description)}</span></li>`).join("");
-    const ecosystemSection = `<section class="prose ecosystem-context" data-ecosystem-context="true"><h2>Understand the mechanism</h2><p>This Brali page is the action layer. The specialist reference below explains the concept, evidence and limits. It does not validate this Brali protocol or any inherited effect-size claim.</p><ul class="article-list">${ecosystemItems}</ul></section>`;
+    const grouped = new Map();
+    for (const relation of ecosystemRelations) {
+      const relations = grouped.get(relation.relationType) ?? [];
+      relations.push(relation);
+      grouped.set(relation.relationType, relations);
+    }
+    const groups = [...grouped.entries()].map(([relationType, relations]) => {
+      const policy = ECOSYSTEM_RELATION_POLICIES[relationType];
+      const ecosystemItems = relations.map((relation) => `<li data-ecosystem-relation-id="${escapeHtml(relation.id)}"><a href="${escapeHtml(relation.target.url)}">${escapeHtml(relation.target.label)}</a><span>${escapeHtml(relation.target.description)}</span></li>`).join("");
+      return `<div class="ecosystem-context-group" data-ecosystem-relation-type="${escapeHtml(relationType)}"><h2>${escapeHtml(policy.heading)}</h2><p>${escapeHtml(policy.intro)}</p><ul class="article-list">${ecosystemItems}</ul></div>`;
+    }).join("");
+    const ecosystemSection = `<section class="prose ecosystem-context" data-ecosystem-context="true">${groups}</section>`;
     const relatedMarker = '<section class="prose related-protocols" data-related-protocols="true">';
     if (html.includes(relatedMarker)) html = html.replace(relatedMarker, `${ecosystemSection}${relatedMarker}`);
     else html = html.replace("</main>", `${ecosystemSection}</main>`);

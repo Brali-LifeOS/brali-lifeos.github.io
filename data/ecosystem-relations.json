@@ -4,9 +4,9 @@
   "updated": "2026-09-12",
   "contract": "outbound-contextual-relations-v1",
   "policy": {
-    "ownership": "The source project owns the handoff semantics. The target project keeps ownership of its own content, evidence and interpretation.",
+    "ownership": "The source project owns the handoff semantics. The target project keeps ownership of its own content, evidence, interpretation, safety boundaries and current product state.",
     "displayRule": "Render only curated relations that provide a materially different next step for the user.",
-    "evidenceBoundary": "A linked concept reference may explain a mechanism or decision pattern. It does not validate the Brali protocol, its efficacy, or inherited quantitative claims.",
+    "evidenceBoundary": "A linked specialist reference may explain a mechanism or supply a different specialist learning object. It does not validate the Brali protocol, transfer evidence between projects, or authorize inherited quantitative claims.",
     "seoBoundary": "Do not generate site-wide project lists, keyword-driven relations, reciprocal links, or links whose primary purpose is search ranking."
   },
   "relations": [
@@ -123,6 +123,29 @@
         "url": "https://cognitive-biases.github.io/biases/cognitive-bias-sunk-cost-effect/",
         "label": "Sunk Cost Effect: evidence and continuation checks",
         "description": "Use the Cognitive Biases reference for the reviewed concept, boundary cases, evidence and continuation-decision checks."
+      }
+    },
+    {
+      "id": "brali:relation:10-minute-language-microsprints:structure-with:metkagram-method-guide-pattern-to-speech",
+      "relationType": "structure_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "When the short session is a spoken-production task, move from a chosen language pattern into retrieval, varied wording and spoken reuse without making Brali the language-structure source.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "10-minute-language-microsprints",
+        "id": "brali:hack:10-minute-language-microsprints",
+        "url": "https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/"
+      },
+      "target": {
+        "project": "metkagram",
+        "kind": "method_guide",
+        "id": "metkagram:method-guide:pattern-to-speech",
+        "url": "https://metkagram.github.io/en/method/guides/from-language-pattern-to-speech-reuse-loop/",
+        "label": "From language pattern to spoken reuse",
+        "description": "For a speaking-focused microsprint, use Metkagram's research-aware guide to keep the communicative Move, retrieve the Frame, vary the content and produce it in a new context. Metkagram owns the language structure; speech capture or scoring remains downstream-owned."
       }
     }
   ]

@@ -25,6 +25,18 @@ Start at `/for-ai/` and `/api/v1/index.json`. Ontology coverage is at `/ontology
 
 API v1 exposes `openapi.json`, `topics.json`, `protocols.json`, `hacks.json`, `evidence.json`, `evidence-decisions.json`, `search.json`, `identity.json`, and `manifest.json`. Lower-level datasets under `/life-os/datasets/` also expose ontology coverage, the prioritized migration queue, evidence metrics, identity aliases, retrieval benchmark, and canonical checksums.
 
+## Cross-project contextual relations
+
+Canonical outbound handoffs are published at https://brali-lifeos.github.io/data/ecosystem-relations.json under the `outbound-contextual-relations-v1` contract. These are manually curated directional relations from a Brali object to a distinct external object when the destination adds a different kind of value.
+
+Relation boundaries are strict:
+
+- Brali owns the meaning and review state of the outbound handoff.
+- The destination project owns its canonical content, evidence, interpretation, safety boundaries, and subsequent changes.
+- A relation is not evidence transfer, endorsement, efficacy validation, or a reciprocal link requirement.
+- Do not infer additional relations from shared keywords, taxonomy labels, citations, backlinks, or entity similarity.
+- Preserve source and target stable IDs and canonical URLs. Resolve the destination directly when its current content or evidence state matters.
+
 ## Agent Skills: one skill per hack
 
 Brali generates exactly one Agent Skill artifact for every hack in the canonical corpus. New hacks receive a skill automatically on the next normal build; there is no manual skill allow-list.

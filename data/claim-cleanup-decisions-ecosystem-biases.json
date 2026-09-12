@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "batch_id": "claim-cleanup-ecosystem-biases-2026-09-12",
+  "selected_at": "2026-09-12",
+  "selection_basis": "These five Brali records already participate in curated outbound Action -> Mechanism handoffs to Cognitive Biases. They were selected before further ecosystem expansion because unsupported local claims could borrow perceived authority from the reviewed destination.",
+  "guardrail": "The external Cognitive Biases relation is not evidence for the Brali protocol. Each record is independently reviewed here as a bounded low-risk practical prompt; unsupported quantitative, first-party, efficacy, adherence, internal-pilot and universal-threshold claims are removed. No Cognitive Biases evidence or interpretation is copied into Brali.",
+  "entries": [
+    {
+      "slug": "pause-to-avoid-anchoring-bias",
+      "previous_status": "pending-review",
+      "disposition": "rewrite-practical",
+      "decision": "Preserve a small pre-decision pause that identifies the first number/frame and deliberately seeks one independent alternative. Remove invented field effects, lab-effect percentages, internal procurement stories, arbitrary dollar/time/people thresholds, fixed timings and app telemetry. The protocol does not diagnose anchoring and does not claim that pausing removes it."
+    },
+    {
+      "slug": "challenge-confirmation-bias-checklist",
+      "previous_status": "pending-review",
+      "disposition": "rewrite-practical",
+      "decision": "Preserve a claim-evaluation checklist: state the claim, ask what would change the conclusion, seek credible counterevidence, compare source quality and record remaining uncertainty. Remove fixed search durations and obsolete app logging. The protocol is a reasoning prompt, not proof that a person has confirmation bias."
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "previous_status": "pending-review",
+      "disposition": "rewrite-practical",
+      "decision": "Differentiate this record from the checklist by making it a personal-assumption checkpoint before an important decision: write the assumption, strongest contrary observation, one alternative explanation and one small discriminating check. Remove invented trials, adherence/effect claims, fixed doses, base-rate pseudo-statistics and emotion-intervention claims."
+    },
+    {
+      "slug": "cut-your-losses-sunk-cost",
+      "previous_status": "pending-review",
+      "disposition": "rewrite-practical",
+      "decision": "Preserve a personal resource-commitment review: ignore unrecoverable past cost for the next-step comparison, list future cost/benefit/obligations, then continue, pause, stop or gather more information. Remove invented prototype effects, arbitrary subscription/project thresholds, savings examples presented as outcomes, fixed experiment durations and social-adherence percentages."
+    },
+    {
+      "slug": "sunk-cost-decision-coach",
+      "previous_status": "pending-review",
+      "disposition": "rewrite-practical",
+      "decision": "Differentiate this record as a project/team decision checkpoint: define the next decision, separate sunk from future costs, set a context-specific review criterion before the next tranche of work, document obligations and choose continue/pause/stop/re-scope. Remove fabricated volunteer/team results, pseudo-precise EV assumptions, universal stopping thresholds and claims that public checkpoints or micro-experiments produce quantified effects."
+    }
+  ]
+}

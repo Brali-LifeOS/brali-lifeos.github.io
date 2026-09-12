@@ -3,9 +3,9 @@
   "entries": {
     "10-minute-stress-walk": {
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited stress-walking article containing unsupported percentages, heart-rate claims, calorie estimates, adherence claims, breathing prescriptions and invented internal observations with a conservative walking protocol grounded in current WHO and NHS guidance. Walking is presented as one accessible form of physical activity that may support wellbeing and stress management, not as a guaranteed acute treatment or a precise ten-minute dose.",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "A 2026 full-source meta-analysis of 56 controlled urban-green experiments adds a useful route-choice refinement to the existing stress-walk protocol. Urban green exposure showed small-to-moderate average benefits across several short-term psychological outcomes, including self-reported stress, but effects were heterogeneous, the stress estimate attenuated after trim-and-fill, working-memory effects were not significant, and no clear duration dose-response emerged. A 2025 meta-analysis of 15 RCTs on urban green exercise provides supporting evidence but its subgroup findings do not establish an optimal session duration or frequency. Update the existing hack rather than create a duplicate: keep the short walk as the intervention, use nearby green as a convenient tie-breaker, and preserve explicit evidence boundaries.",
       "forbidden_public_fragments": [
         "reduced rumination, and a clearer decision frame — but it is reliable",
         "reduces subjective stress ratings in many small trials",
@@ -18,70 +18,87 @@
         "5–15 bpm reduction",
         "improves encoding and increases future adherence by ~30%",
         "Research shows habits can take 21-66 days to form",
-        "At MetalHatsCats"
+        "At MetalHatsCats",
+        "10 minutes is optimal",
+        "20 minutes is optimal",
+        "green space always reduces stress",
+        "nature lowers cortisol",
+        "green walking improves working memory",
+        "nature improves working memory"
       ],
       "lifeOsSource": {
-        "whatYouDo": "When you notice stress building, consider taking a short walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. Walk at a comfortable pace in a safe place, then notice whether you feel any different before returning to the next task.",
-        "checkIn": "Did I take the walk? How did my stress or tension feel before and after, and did the walk feel safe and useful enough to try again?",
-        "sourceUrl": "https://www.who.int/news-room/questions-and-answers/item/stress/",
-        "reference": "World Health Organization — Stress (30 March 2026)"
+        "whatYouDo": "When stress is making the next block of work sticky, take a short, comfortable walk if walking is safe and practical. Treat ten minutes as a convenient boundary, not a proven dose. If a genuinely green route such as a park, tree-lined street or garden is just as easy to use, prefer it. Do not add a commute or a complicated ritual just to chase greenery. Return and notice whether the next block feels easier to enter.",
+        "checkIn": "Did I take the walk? Was the route mostly green, mixed or built? How did stress or tension feel before and after, and was the next block of work any easier to enter?",
+        "sourceUrl": "https://doi.org/10.1002/pan3.70250",
+        "reference": "Herchet M, Venený M, Kauls L, Mentzel C, Krause T, Surrey C, Hofmann M. Mental health benefits of urban green—A systematic review and meta-analysis of 56 pre-post control experiments. People and Nature. 2026. doi:10.1002/pan3.70250"
       },
       "references": [
+        "https://doi.org/10.1002/pan3.70250",
+        "https://doi.org/10.3389/fpubh.2025.1677223",
         "https://www.who.int/news-room/questions-and-answers/item/stress/",
-        "https://www.who.int/health-topics/physical-activity/physical-activity",
-        "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/exercise-for-depression/"
+        "https://www.who.int/health-topics/physical-activity/physical-activity"
       ],
       "faq": [
         {
           "id": "10-minute-stress-walk-faq-1",
           "question": "Does the walk need to last exactly 10 minutes?",
-          "answer": "No. Ten minutes is a convenient practical boundary, not a universal therapeutic dose. WHO guidance emphasizes that physical activity includes walking and that any amount of activity is better than none; choose a duration that is realistic and appropriate for you."
+          "answer": "No. Ten minutes is an operational boundary, not an evidence-based optimum. The 2026 urban-green meta-analysis found no clear dose-response pattern between intervention duration and effect size for the outcomes where duration could be explored. Use a duration that is practical enough to repeat."
         },
         {
           "id": "10-minute-stress-walk-faq-2",
-          "question": "Will a short walk always reduce stress immediately?",
-          "answer": "No. WHO includes regular exercise, including walking, among strategies that can help reduce stress, and physical activity can support mental health and wellbeing. That does not mean every short walk will produce an immediate or measurable reduction in stress for every person."
+          "question": "Is a green route actually better?",
+          "answer": "On average, controlled experiments suggest urban green exposure can improve several short-term psychological outcomes versus control settings, including state anxiety, mood, restoration, attention and self-reported stress. But the effects vary. For self-reported stress, the pooled effect was 0.40 and fell to 0.19 in a trim-and-fill sensitivity analysis. So green is a sensible tie-breaker when it is convenient, not a guarantee and not a reason to turn a ten-minute reset into a thirty-minute logistics project."
         },
         {
           "id": "10-minute-stress-walk-faq-3",
+          "question": "Will it improve focus or working memory?",
+          "answer": "Do not use this protocol as a cognitive-upgrade promise. The 2026 meta-analysis found a positive average effect for attention, but the pooled working-memory result was not statistically significant. If the walk makes the next task easier to enter, that is useful personal feedback; it is not proof that your working memory improved."
+        },
+        {
+          "id": "10-minute-stress-walk-faq-4",
           "question": "What should I track in Brali?",
-          "answer": "Keep it simple: whether you walked, roughly how long, and how your stress or tension felt before and after. Use your own repeated observations to decide whether this is a useful reset for you rather than chasing a target percentage or step count."
+          "answer": "Keep the observation small: whether you walked, roughly how long, whether the route was mostly green, mixed or built, how stress or tension felt before and after, and whether the next block was easier to enter. A tree is not a nervous-system cheat code; the useful question is whether this repeatable reset helps in your actual day."
         }
       ],
       "body": {
         "intro": {
-          "html": "<p>A short walk can be a simple way to step away from a stressful moment and add some physical activity to the day. WHO guidance on stress includes regular exercise, including walking, among strategies that can help reduce stress. WHO also recognizes walking as a common form of physical activity that can support mental health and wellbeing. Brali treats this as a small experiment, not a guaranteed treatment: walk when it is safe and practical, then observe what happens for you.</p>"
+          "html": "<p>When stress makes the next task feel sticky, a short walk can be a low-friction way to change state and context. Newer controlled evidence gives one useful refinement: if a genuinely green route is just as easy to use, it is reasonable to prefer it. A 2026 meta-analysis of 56 experiments found small-to-moderate average benefits of urban green exposure across several short-term psychological outcomes, including self-reported stress. The same evidence also gives us reasons not to oversell the trick: effects varied, the stress estimate became smaller after a publication-bias adjustment, working-memory effects were not significant, and no magic duration emerged. So the protocol stays deliberately boring: take the walk, choose green when convenient, then observe whether it helped.</p>"
         },
         "sections": [
           {
             "slug": "notice-the-trigger",
             "title": "1. Notice a useful trigger",
-            "html": "<p>Use a concrete signal such as feeling mentally stuck, tense or overloaded as a cue to consider a short break. The goal is not to diagnose stress or measure it perfectly. The cue only needs to be clear enough to help you decide whether changing context for a few minutes would be useful.</p>"
+            "html": "<p>Use a concrete signal such as feeling mentally stuck, tense or overloaded as the cue. You do not need a stress score precise to two decimal places. The trigger only needs to tell you that continuing to stare at the same task may be less useful than changing context for a few minutes.</p>"
           },
           {
             "slug": "choose-a-safe-walk",
-            "title": "2. Choose a safe, easy route",
-            "html": "<p>Walk somewhere safe and practical: outside, through a building, or along another familiar route. A comfortable walk is enough. You do not need a special pace, step count, heart-rate target, staircase interval or calorie goal for this protocol.</p>"
+            "title": "2. Take the easiest safe walk",
+            "html": "<p>Use a familiar, safe route and keep the pace comfortable. Outside is useful when practical, but the protocol should not create extra friction. If heat, cold, air quality, mobility limits or local safety make an outdoor walk a bad idea, choose an appropriate alternative rather than forcing the ritual.</p>"
+          },
+          {
+            "slug": "green-as-tiebreaker",
+            "title": "3. Use green as a tie-breaker",
+            "html": "<p>If two routes are similarly easy, prefer the one with genuine green exposure: a park, garden, tree-lined street or comparable urban greenery. Controlled experiments suggest that green exposure itself can add short-term psychological benefit beyond some control settings. That does not make greenery mandatory. A ten-minute reset that requires twenty minutes of travel has failed the practicality test before the first tree appears.</p>"
           },
           {
             "slug": "use-ten-minutes-as-a-boundary",
-            "title": "3. Treat ten minutes as a boundary, not a dose",
-            "html": "<p>If ten minutes fits the moment, use it as a simple timer. If less time is available, a shorter walk can still count as physical activity. WHO guidance emphasizes that all physical activity counts and that some activity is better than none. Brali therefore does not claim that ten minutes is an optimal duration for acute stress relief.</p>"
+            "title": "4. Treat ten minutes as a boundary, not a dose",
+            "html": "<p>If ten minutes fits the moment, use it. If you have less or a little more, adapt. The 2026 synthesis did not show a clear duration dose-response relationship for the outcomes where duration could be explored, so Brali does not promote 10, 20 or any other number as the scientifically optimal stress-walk dose.</p>"
           },
           {
             "slug": "leave-the-walk-simple",
-            "title": "4. Keep the walk simple",
-            "html": "<p>You do not need to combine the walk with prescribed breathing ratios, productivity targets or a complicated reflection exercise. The experiment is deliberately small: leave the stressful context for a short walk, then return and notice whether anything changed.</p>"
+            "title": "5. Keep the walk simple",
+            "html": "<p>You do not need a prescribed breathing ratio, heart-rate zone, step target, cortisol story or productivity soundtrack. Walking changes the context; nearby green may improve the odds of a useful psychological shift on average. That is enough mechanism for this protocol. Extra decoration is mostly productivity theatre.</p>"
           },
           {
             "slug": "check-in-afterward",
-            "title": "5. Check in after the walk",
-            "html": "<p>In Brali, record whether you walked and how your stress or tension felt before and after. A simple personal rating or short note is enough. Do not expect a fixed percentage improvement. After several attempts, review whether walking tends to be useful for you, neutral, or inconvenient in the situations where you tried it.</p>"
+            "title": "6. Check the next block, not just the mood",
+            "html": "<p>After the walk, note whether stress or tension changed and whether the next task became easier to enter. Also note the route context: green, mixed or built. After several attempts, you can ask a more useful personal question than “did the hack work?”: does a short walk reliably help me, and does nearby green seem worth choosing when the routes are equally convenient?</p>"
           },
           {
             "slug": "know-the-limit",
-            "title": "6. Know what this protocol is not",
-            "html": "<p>A short walk is general wellbeing guidance, not treatment for depression, anxiety or another mental-health condition. If stress is persistent, severe, difficult to cope with or significantly affecting your life, use appropriate professional support rather than relying on this protocol alone. Choose physical activity that is suitable for your health and circumstances.</p>"
+            "title": "7. Know what the evidence does not say",
+            "html": "<p>The green-space evidence is promising but heterogeneous. In the 2026 meta-analysis, about half of the study samples were majority students and studies were concentrated in Europe and North America. The pooled working-memory effect was not significant, and the self-reported stress estimate was smaller after trim-and-fill. A 2025 RCT-only meta-analysis also favored urban green exercise overall, but its duration and frequency subgroup findings are exploratory rather than proof of an optimal prescription. This protocol is general wellbeing guidance, not treatment for persistent or severe anxiety, depression or stress.</p>"
           }
         ]
       }

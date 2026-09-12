@@ -47,6 +47,8 @@ const buildCandidate = slug => {
     slug,
     title: source.title,
     canonical_url: source.url || `${BASE}/life-os/${slug}/`,
+    skill_page_url: `${BASE}/skill-packs/${slug}/`,
+    skill_markdown_url: `${BASE}/skill-packs/${slug}/SKILL.md`,
     evidence_status: source.evidence.status,
     gold_review_status: gold.review_status,
     first_action: gold.first_action,

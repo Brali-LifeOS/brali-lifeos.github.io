@@ -15,6 +15,13 @@ const copyPayload = (sourceRel, outDir, files, role) => {
   const bytes = fs.readFileSync(source);
   files.push({ path: sourceRel, role, sha256: digest(bytes), bytes: bytes.length });
 };
+const addGenerated = (outDir, rel, text, files, role) => {
+  const destination = path.join(outDir, rel);
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  fs.writeFileSync(destination, text);
+  const bytes = Buffer.from(text);
+  files.push({ path: rel, role, sha256: digest(bytes), bytes: bytes.length });
+};
 
 const config = readJson('data/platform.json');
 const arg = process.argv.indexOf('--version');
@@ -49,6 +56,9 @@ for (const rel of [`${apiDir}/index.json`, `${apiDir}/openapi.json`, `${apiDir}/
 const releaseNotes = `docs/releases/${version}.md`;
 for (const rel of ['data/platform.json', 'CITATION.cff', 'LICENSE', 'LICENSING.md', 'SOURCE_POLICY.md', 'CONTENT_QUALITY.md', 'docs/DATA_VERSIONING.md', releaseNotes]) add(rel, 'metadata');
 
+const datasetCard = `---\npretty_name: Brali Practical Knowledge Library\nlicense: cc-by-nc-sa-4.0\nlanguage:\n- en\n- ru\ntags:\n- practical-knowledge\n- ai-agents\n- evidence\n- retrieval\n- agent-skills\n---\n\n# Brali Practical Knowledge Library — ${tag}\n\nThis directory is the Hugging Face-ready mirror package for the immutable Brali release \`${tag}\`. Publish or mirror this exact release rather than a moving snapshot of \`main\`.\n\nSource release: https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/${tag}\nCanonical project: https://brali-lifeos.github.io/\nCitation: \`CITATION.cff\`\nLicense: CC BY-NC-SA 4.0; commercial use requires separate permission under the repository licensing policy.\n\n## Contents\n\nThe release contains Brali's canonical machine-readable datasets, Knowledge API v1 surface, evidence states, provenance metadata, Agent Skills metadata, and Brali Bench evaluation artifacts. The authoritative inventory and checksums are in \`release-manifest.json\` and \`SHA256SUMS\`.\n\n## Trust model\n\nNormal trusted retrieval is limited to records marked \`reviewed\` or \`practical\`. \`pending-review\` and \`restricted\` records must not be silently promoted into recommendations. Research discovery candidates are leads, not evidence. Preserve canonical IDs, evidence state, source boundaries, and deliberate no-answer behavior downstream.\n\n## Evaluation\n\nBrali Bench is included as a deterministic retrieval/grounding evaluation artifact. It tests relevance, provenance, evidence boundaries, safety/no-answer behavior and a usefulness proxy. It is not a benchmark of an unpinned language model.\n\n## Reproducibility\n\nUse the immutable tag, verify \`SHA256SUMS\`, and cite the exact \`data-v*\` release. Do not describe a Hugging Face mirror, DOI, downloads, or citations as live until the relevant external provider exposes a verifiable public artifact.\n`;
+addGenerated(out, 'README.md', datasetCard, files, 'dataset-card');
+
 files.sort((a, b) => a.path.localeCompare(b.path));
 const release = {
   schema_version: 1,
@@ -64,8 +74,12 @@ const release = {
   citation_file: 'CITATION.cff',
   license_file: 'LICENSE',
   release_notes_file: releaseNotes,
+  distribution: {
+    huggingface: { ready_to_mirror: true, dataset_card: 'README.md', source_tag: tag, public_mirror_url: null },
+    zenodo: { ready_to_archive: true, metadata_source: 'CITATION.cff', source_tag: tag, doi: null }
+  },
   files
 };
 fs.writeFileSync(path.join(out, 'release-manifest.json'), `${JSON.stringify(release, null, 2)}\n`);
 fs.writeFileSync(path.join(out, 'SHA256SUMS'), `${files.map(item => `${item.sha256}  ${item.path}`).join('\n')}\n`);
-console.log(`packaged ${files.length} files in releases/${tag}`);
+console.log(`packaged ${files.length} files in releases/${tag}; Hugging Face card ready; Zenodo metadata source=CITATION.cff`);

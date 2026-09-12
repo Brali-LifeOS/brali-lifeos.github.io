@@ -1,0 +1,30 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
+const fail = message => { throw new Error(`Brali Bench check failed: ${message}`); };
+const suite = read('data/agent-evaluation-suite.json');
+const report = read('life-os/datasets/agent-evaluation.json');
+const manifest = read('bench/manifest.json');
+const cases = read('bench/cases.json');
+const results = read('bench/results.json');
+const platform = read('data/platform.json');
+
+if (JSON.stringify(cases) !== JSON.stringify(suite)) fail('portable cases differ from the canonical suite');
+if (JSON.stringify(results) !== JSON.stringify(report)) fail('portable results differ from the canonical report');
+if (manifest.dataset_version !== platform.dataset_version || report.dataset_version !== platform.dataset_version) fail('dataset version drift');
+if (manifest.case_count !== suite.cases?.length || report.summary?.cases !== suite.cases?.length) fail('case count drift');
+const layerIds = (manifest.comparison_layers || []).map(item => item.id);
+for (const id of ['no-knowledge-control','lexical-brali','structured-brali']) if (!layerIds.includes(id)) fail(`missing comparison layer ${id}`);
+for (const cue of ['safety','evidence','provenance']) if (!(manifest.required_gates || []).some(item => item.toLowerCase().includes(cue))) fail(`missing required ${cue} gate`);
+if (!String(manifest.not_a_claim || '').toLowerCase().includes('not a benchmark')) fail('model-benchmark boundary is missing');
+const html = fs.readFileSync(path.join(ROOT, 'bench/index.html'), 'utf8');
+for (const cue of ['/bench/manifest.json','/bench/cases.json','/bench/results.json','npm run evaluate:check']) if (!html.includes(cue)) fail(`bench page missing ${cue}`);
+const readme = fs.readFileSync(path.join(ROOT, 'bench/README.md'), 'utf8');
+if (!readme.includes('data-v*') || !readme.includes('not a benchmark')) fail('README must preserve pinning and model-benchmark boundaries');
+const datasetManifest = read('life-os/datasets/manifest.json');
+for (const rel of ['bench/manifest.json','bench/cases.json','bench/results.json']) if (!(datasetManifest.files || []).some(item => item.path === rel)) fail(`dataset manifest missing ${rel}`);
+console.log(`Brali Bench verified: ${manifest.case_count} cases, ${layerIds.length} comparison layers, portable artifacts match canonical evaluation.`);
+await import('./check-acquisition-clusters.mjs');

@@ -23,15 +23,26 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Validate installable Brali Agent Skill
+      - name: Validate installable Brali Agent Skills library
         env:
           GH_TOKEN: ${{ github.token }}
           GH_PROMPT_DISABLED: 1
         run: gh skill publish agent-skills --dry-run
+      - name: Validate single-router Agent Skill distribution
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_PROMPT_DISABLED: 1
+        run: node scripts/check-router-skill-distribution.mjs && gh skill publish distribution/github-skill --dry-run
+      - name: Validate MCP v2 imports
+        run: cd mcp && npm install --ignore-scripts --package-lock=false && node -e "import('./remote.mjs')"
       - name: Validate Trustverse classification policy
         run: node scripts/check-content-trust-policy.mjs
       - name: Build site
         run: npm run build
+      - name: Build portable Brali Bench
+        run: node scripts/build-brali-bench.mjs && node scripts/check-brali-bench.mjs
+      - name: Validate shared stdio and remote MCP source
+        run: node --check mcp/core.mjs && node --check mcp/server.mjs && node --check mcp/remote.mjs && node scripts/check-mcp-contract.mjs
       - name: Build one Agent Skill per hack from final evidence state
         run: npm run skills:build
       - name: Validate generated Agent Skills library
@@ -42,6 +53,8 @@ jobs:
         run: node scripts/check-trustverse-target.mjs
       - name: Run full repository checks
         run: npm run check
+      - name: Recheck portable Brali Bench after repository checks
+        run: node scripts/check-brali-bench.mjs
       - name: Check AI search profile
         run: node scripts/check-ai-search-profile.mjs
       - name: Normalize final sitemap to canonical indexable URLs
@@ -54,6 +67,15 @@ jobs:
         run: node scripts/apply-internal-discovery-distribution.mjs
       - name: Gate final Internal Discovery & Distribution surface
         run: node scripts/check-internal-discovery-distribution.mjs
+      - name: Gate Brali Bench final artifact
+        shell: bash
+        run: |
+          test -s bench/index.html
+          test -s bench/manifest.json
+          test -s bench/cases.json
+          test -s bench/results.json
+          grep -q 'https://brali-lifeos.github.io/bench/' sitemap.xml
+          grep -q 'https://brali-lifeos.github.io/bench/' llms.txt
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact
@@ -82,6 +104,11 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Verify live Brali Bench
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/ | grep -q 'Brali Bench'
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/manifest.json | grep -q 'structured-brali'
       - name: Verify live Image Discovery surface
         run: node scripts/check-live-image-discovery.mjs
       - name: Verify live Internal Discovery & Distribution surface

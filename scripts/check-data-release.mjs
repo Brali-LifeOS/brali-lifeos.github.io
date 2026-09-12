@@ -27,7 +27,7 @@ if (release.source_manifest_sha256 !== hashFile(sourceManifestPath)) fail('sourc
 
 const required = [
   'data/platform.json', 'CITATION.cff', 'LICENSE', 'LICENSING.md', 'SOURCE_POLICY.md', 'CONTENT_QUALITY.md',
-  'docs/DATA_VERSIONING.md', `docs/releases/${version}.md`, 'life-os/datasets/manifest.json',
+  'docs/DATA_VERSIONING.md', `docs/releases/${version}.md`, 'life-os/datasets/manifest.json', 'README.md',
   `api/${config.api_version}/index.json`, `api/${config.api_version}/openapi.json`, `api/${config.api_version}/manifest.json`
 ];
 const byPath = new Map();
@@ -53,4 +53,11 @@ if (!notes.includes(`Brali data ${version}`)) fail('release notes do not identif
 if (!/## Known limitations/i.test(notes)) fail('release notes must contain Known limitations');
 if (!/## Trust model/i.test(notes)) fail('release notes must contain Trust model');
 
-console.log(`data release check passed: ${release.files.length} payload files for ${tag}`);
+const card = fs.readFileSync(path.join(out, 'README.md'), 'utf8');
+for (const cue of ['pretty_name: Brali Practical Knowledge Library', `data-v${version}`, 'CITATION.cff', 'not a benchmark']) if (!card.includes(cue)) fail(`Hugging Face-ready dataset card missing ${cue}`);
+if (release.distribution?.huggingface?.dataset_card !== 'README.md' || release.distribution?.huggingface?.source_tag !== tag) fail('Hugging Face mirror contract mismatch');
+if (release.distribution?.huggingface?.public_mirror_url !== null) fail('release must not fabricate a Hugging Face mirror URL');
+if (release.distribution?.zenodo?.metadata_source !== 'CITATION.cff' || release.distribution?.zenodo?.source_tag !== tag) fail('Zenodo archive contract mismatch');
+if (release.distribution?.zenodo?.doi !== null) fail('release must not fabricate a Zenodo DOI');
+
+console.log(`data release check passed: ${release.files.length} payload files for ${tag}; HF-ready card and Zenodo CFF boundary verified`);

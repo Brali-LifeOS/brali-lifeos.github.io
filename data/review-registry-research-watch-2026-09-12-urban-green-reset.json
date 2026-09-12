@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-12. Two recent full-text systematic reviews were checked against existing Brali content. A 2026 meta-analysis of controlled urban-green experiments provides a useful refinement for the existing 10-minute stress-walk hack; a 2025 RCT meta-analysis of urban green exercise supports the direction while also showing why subgroup-derived 'optimal' duration and frequency should not become a prescription. No duplicate hack is created. Discovery metadata remains separate from the Evidence Decisions.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.1002/pan3.70250",
+      "source": "crossref",
+      "source_id": "10.1002/pan3.70250",
+      "doi": "10.1002/pan3.70250",
+      "title": "Mental health benefits of urban green—A systematic review and meta-analysis of 56 pre-post control experiments",
+      "authors": [
+        "Marilisa Herchet",
+        "Marek Venený",
+        "Lukas Kauls",
+        "Clara Mentzel",
+        "Timon Krause",
+        "Caroline Surrey",
+        "Mathias Hofmann"
+      ],
+      "container_title": "People and Nature",
+      "publication_date": "2026-02-13",
+      "type": "journal-article",
+      "subjects": [
+        "urban green",
+        "mental health",
+        "stress",
+        "attention",
+        "systematic review",
+        "meta-analysis",
+        "controlled experiments"
+      ],
+      "reference_url": "https://doi.org/10.1002/pan3.70250",
+      "discovered_at": "2026-09-12T00:00:00Z",
+      "last_seen_at": "2026-09-12T00:00:00Z",
+      "status": "support-existing",
+      "query_ids": [],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "no-depression"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref",
+        "publisher-full-text"
+      ],
+      "review_notes": "Full publisher article reviewed, not just discovery metadata. The synthesis meta-analysed 107 pre-post controlled measurements from 56 experiments and quasi-experiments across state anxiety, positive and negative mood, self-reported stress, depression, restoration, attention and working memory. About half of study samples were majority university students; studies were concentrated in Europe and North America. The pooled self-reported stress effect was 0.40 (95% CI 0.16 to 0.64; k=11), but the 95% prediction interval crossed zero and trim-and-fill reduced the estimate to 0.19. Attention showed a positive pooled effect, whereas working memory was not statistically significant (0.22, 95% CI -0.12 to 0.56). For outcomes where duration could be explored, the authors found no clear dose-response pattern. The review included both in-situ and mediated/virtual forms of urban nature; in-situ evidence is therefore more directly relevant to a walking route than the pooled estimate alone."
+    },
+    {
+      "id": "crossref:10.3389/fpubh.2025.1677223",
+      "source": "crossref",
+      "source_id": "10.3389/fpubh.2025.1677223",
+      "doi": "10.3389/fpubh.2025.1677223",
+      "title": "Effects of urban green exercise on mental health: a systematic review and meta-analysis",
+      "authors": [
+        "Guidan Hu",
+        "Qingyuan Luo",
+        "Peng Zhang",
+        "Hao Zeng",
+        "Xiujie Ma"
+      ],
+      "container_title": "Frontiers in Public Health",
+      "publication_date": "2025-09-25",
+      "type": "journal-article",
+      "subjects": [
+        "urban green exercise",
+        "mental health",
+        "randomized controlled trials",
+        "systematic review",
+        "meta-analysis"
+      ],
+      "reference_url": "https://doi.org/10.3389/fpubh.2025.1677223",
+      "discovered_at": "2026-09-12T00:00:00Z",
+      "last_seen_at": "2026-09-12T00:00:00Z",
+      "status": "support-existing",
+      "query_ids": [],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "no-depression"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref",
+        "publisher-full-text"
+      ],
+      "review_notes": "Full open-access publisher article reviewed. The meta-analysis included 15 RCTs with 980 adults and reported an overall mental-health effect favoring urban green exercise (SMD -0.40, 95% CI -0.56 to -0.25; I2 33.9%). Six trials were rated low risk of bias across all RoB 2 domains, eight had some concerns and one was high risk; the authors also note small samples, heterogeneous activity modalities and limited follow-up. Subgroup results by duration, frequency, intensity and sex are useful hypothesis signals but should not be converted into a Brali rule such as '20 minutes is optimal' because subgroup comparisons across a small heterogeneous evidence base do not establish an individual causal dose."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "urban-green-route-refinement-stress-walk-2026",
+      "candidate_id": "crossref:10.1002/pan3.70250",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://besjournals.onlinelibrary.wiley.com/doi/10.1002/pan3.70250",
+      "source_title": "Mental health benefits of urban green—A systematic review and meta-analysis of 56 pre-post control experiments",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.1002/pan3.70250",
+      "citation_text": "Herchet M, Venený M, Kauls L, Mentzel C, Krause T, Surrey C, Hofmann M. People and Nature. 2026. doi:10.1002/pan3.70250.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and random-effects meta-analysis of quantitative experimental and quasi-experimental studies with control groups/conditions and pre-post measurements. It synthesised 107 controlled measurements from 56 experiments across eight mental-health and cognitive outcome groups.",
+      "population": "General-population samples across included experiments, with about half of study samples majority university students. Studies were geographically concentrated in Europe and North America; children, older adults and people with illness or disability were underrepresented.",
+      "intervention_or_exposure": "Contact with urban or peri-urban green elements or spaces. The evidence base mixed in-situ exposure with still images, video, VR, window views and sound. Several included in-situ studies compared walking or sitting in greener urban settings with built or less-natural controls.",
+      "outcomes": [
+        "State anxiety",
+        "Self-reported stress",
+        "Positive and negative mood",
+        "Self-reported restoration",
+        "Depression",
+        "Attention",
+        "Working memory"
+      ],
+      "supported_claim": "Controlled evidence supports a modest average short-term psychological advantage of urban green exposure over comparison settings for several outcomes. For Brali, this is enough to refine the existing stress-walk protocol: when a genuinely green route is equally convenient, it is reasonable to prefer it. The evidence does not make greenery mandatory and does not establish a specific duration.",
+      "unsupported_or_overstated_claims": [
+        "Green space reliably or immediately reduces stress for every person.",
+        "Ten minutes, twenty minutes or another fixed duration is the evidence-based optimum.",
+        "The evidence proves a cortisol, parasympathetic or other specific physiological mechanism for this protocol.",
+        "Urban green exposure reliably improves working memory.",
+        "The pooled effects can be translated into an expected individual percentage improvement.",
+        "A short green walk should replace clinical assessment or treatment for persistent or severe anxiety, depression or stress."
+      ],
+      "limitations": [
+        "The self-reported stress estimate was heterogeneous: pooled effect 0.40, 95% CI 0.16 to 0.64, with a prediction interval crossing zero; trim-and-fill reduced the estimate to 0.19.",
+        "The working-memory pooled effect was not statistically significant.",
+        "About half of study samples were majority students, and studies were concentrated in Europe and North America.",
+        "The intervention category mixed in-situ urban green with mediated and virtual nature exposure, so pooled estimates are broader than the walking-route use case.",
+        "For outcomes where duration was explored, there were no clear signs of a dose-response relationship.",
+        "The review focuses mainly on short-term pre-post outcomes and does not establish durable long-term effects."
+      ],
+      "target_hack_ids": [
+        "10-minute-stress-walk"
+      ],
+      "target_protocol_ids": [
+        "brali:10-minute-stress-walk"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: update the existing reviewed stress-walk page rather than create a nature-walk duplicate. Keep the walk low-friction. Present nearby green as a route-choice tie-breaker, not a requirement. Teach the user what to observe after the walk and explicitly reject magic duration, cortisol stories and working-memory overclaiming."
+    },
+    {
+      "schema_version": 1,
+      "id": "urban-green-exercise-corroboration-2025",
+      "candidate_id": "crossref:10.3389/fpubh.2025.1677223",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2025.1677223/full",
+      "source_title": "Effects of urban green exercise on mental health: a systematic review and meta-analysis",
+      "source_type": "systematic-review-meta-analysis-rcts",
+      "doi": "10.3389/fpubh.2025.1677223",
+      "citation_text": "Hu G, Luo Q, Zhang P, Zeng H, Ma X. Front Public Health. 2025;13:1677223.",
+      "source_reviewed": true,
+      "study_design": "Systematic review and meta-analysis of 15 randomized controlled trials. Risk of bias was assessed with RoB 2 and subgroup/meta-regression analyses explored intervention duration, frequency, session duration, intensity and sex.",
+      "population": "980 adults aged 18 years and older across 15 RCTs of urban green exercise.",
+      "intervention_or_exposure": "Exercise conducted in urban green settings, with heterogeneous activities including walking, cycling and aerobic exercise, compared with varied control conditions.",
+      "outcomes": [
+        "Composite mental-health outcomes across included trials"
+      ],
+      "supported_claim": "The RCT-only synthesis supports the direction of the Brali refinement: urban green exercise was associated with better mental-health outcomes on average (SMD -0.40, 95% CI -0.56 to -0.25; I2 33.9%). It is supporting evidence for choosing an easy green route when practical, not evidence for a precise Brali dose.",
+      "unsupported_or_overstated_claims": [
+        "Twenty minutes or less is the proven optimal session duration.",
+        "One, two or three sessions per week is the proven optimal frequency for an individual.",
+        "Low-intensity green exercise is universally superior to other useful physical activity.",
+        "The subgroup findings establish a causal sex difference.",
+        "The intervention works through GABA, cortisol or a specific neural mechanism.",
+        "Short-term study effects establish durable long-term mental-health protection."
+      ],
+      "limitations": [
+        "Only 15 RCTs and 980 participants were included.",
+        "Activities, populations, control conditions and psychological outcomes varied.",
+        "Six studies were low risk of bias across all domains, eight had some concerns and one was high risk.",
+        "Many trials were small, and follow-up was generally short.",
+        "Subgroup patterns can be hypothesis-generating but do not establish an optimal causal prescription."
+      ],
+      "target_hack_ids": [
+        "10-minute-stress-walk"
+      ],
+      "target_protocol_ids": [
+        "brali:10-minute-stress-walk"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Use as corroborating evidence only. Do not import the paper's subgroup-derived dosing language into Brali as a hard rule; the stronger editorial value is to support green-route preference while keeping the protocol simple and individualized."
+    }
+  ]
+}

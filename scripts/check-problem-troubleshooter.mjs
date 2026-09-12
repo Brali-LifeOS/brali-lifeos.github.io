@@ -6,6 +6,7 @@ import { evaluateTroubleshooter } from '../assets/problem-troubleshooter.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const TRUSTED = new Set(['reviewed', 'practical']);
+const BASE = 'https://brali-lifeos.github.io';
 const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const cfg = read('data/problem-troubleshooters.json');
 const applicability = read('data/protocol-applicability.json');
@@ -62,6 +63,14 @@ for (const spec of cfg.troubleshooters) {
   for (const candidate of model.candidate_protocols) {
     if (!TRUSTED.has(candidate.evidence_status)) throw new Error(`${spec.problem_slug} exposes non-trusted candidate ${candidate.slug}.`);
     if (candidate.gold_review_status !== 'gold-ready') throw new Error(`${spec.problem_slug} exposes non-gold-ready candidate ${candidate.slug}.`);
+    const expectedSkillPage = `${BASE}/skill-packs/${candidate.slug}/`;
+    const expectedSkillMarkdown = `${BASE}/skill-packs/${candidate.slug}/SKILL.md`;
+    if (candidate.skill_page_url !== expectedSkillPage || candidate.skill_markdown_url !== expectedSkillMarkdown) throw new Error(`${spec.problem_slug}/${candidate.slug} skill links drifted from the canonical skill route.`);
+    const skillPath = `skill-packs/${candidate.slug}/skill.json`;
+    if (!fs.existsSync(path.join(ROOT, skillPath))) throw new Error(`${spec.problem_slug}/${candidate.slug} has no generated skill verification record.`);
+    const skill = read(skillPath);
+    if (skill.skill_page_url !== candidate.skill_page_url || skill.skill_markdown_url !== candidate.skill_markdown_url) throw new Error(`${spec.problem_slug}/${candidate.slug} troubleshooter/skill URL parity failed.`);
+    if (skill.skill_mode !== 'usable' || skill.recommendation_eligible !== true) throw new Error(`${spec.problem_slug}/${candidate.slug} links a non-usable Agent Skill.`);
   }
   const html = fs.readFileSync(path.join(ROOT, 'problems', spec.problem_slug, 'index.html'), 'utf8');
   for (const marker of ['data-brali-troubleshooter', 'data-brali-troubleshooter-model', '/assets/problem-troubleshooter.mjs', 'Machine-readable decision packet']) if (!html.includes(marker)) throw new Error(`${spec.problem_slug} HTML lacks ${marker}.`);
@@ -69,10 +78,13 @@ for (const spec of cfg.troubleshooters) {
     const decision = evaluateTroubleshooter(model, example.answers);
     if (decision.status !== example.expected_status) throw new Error(`${spec.problem_slug}/${example.id} expected ${example.expected_status}, got ${decision.status}.`);
     if (example.expected_protocol_slug && decision.selected?.slug !== example.expected_protocol_slug) throw new Error(`${spec.problem_slug}/${example.id} selected ${decision.selected?.slug ?? 'nothing'} instead of ${example.expected_protocol_slug}.`);
-    if (decision.status === 'selected') sawSelected = true;
+    if (decision.status === 'selected') {
+      sawSelected = true;
+      if (!decision.packet.selected_protocol?.skill_page_url || !decision.packet.selected_protocol?.skill_markdown_url) throw new Error(`${spec.problem_slug}/${example.id} selected packet lacks Agent Skill links.`);
+    }
     if (decision.status === 'abstain') sawAbstain = true;
   }
 }
 if (!datasetBySlug.get('resume-after-interruption')?.troubleshooter) throw new Error('The #193 resume-after-interruption pilot is missing.');
 if (!sawSelected || !sawAbstain) throw new Error('Troubleshooter fixtures must cover both selection and safe abstention.');
-console.log(`Problem troubleshooter verified: ${cfg.troubleshooters.length} flow(s), with trusted selection and safe-abstention regression cases.`);
+console.log(`Problem troubleshooter verified: ${cfg.troubleshooters.length} flow(s), with trusted selection, Agent Skill parity and safe-abstention regression cases.`);

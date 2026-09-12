@@ -21,6 +21,19 @@ assert(String(githubSkill.preview_command || '').startsWith('gh skill preview ')
 assert(String(githubSkill.install_command || '').includes('gh skill install '), 'GitHub Skill contract must provide an install command');
 assert(String(githubSkill.install_command || '').includes('brali-life-os'), 'GitHub Skill install command must install the maintained router');
 assert(/^https:\/\//.test(githubSkill.docs || ''), 'GitHub Skill contract must link to official CLI documentation');
+assert(githubSkill.publication_verified === true, 'GitHub router skill publication must reflect the provider-verified release');
+assert(githubSkill.published_tag === 'v1.0.0', 'GitHub router skill published tag drifted');
+assert(githubSkill.published_release === 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.0', 'GitHub router skill release URL drifted');
+assert(githubSkill.registry_search_verified === false, 'Do not claim GitHub skill-search discovery until it is provider-verified');
+assert(String(githubSkill.discovery_blocker || '').includes('agent-skills'), 'GitHub skill-search boundary must explain the missing agent-skills topic');
+
+const datasetRelease = config.dataset_release || {};
+assert(datasetRelease.tag === 'data-v1.1.0', 'Pinned dataset release tag drifted');
+assert(datasetRelease.publication_verified === true, 'Pinned dataset release must reflect the provider-verified GitHub release');
+assert(datasetRelease.github_release === 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/data-v1.1.0', 'Pinned dataset release URL drifted');
+assert(/^https:\/\//.test(datasetRelease.archive_asset || '') && /^https:\/\//.test(datasetRelease.checksum_asset || ''), 'Pinned dataset release must expose archive and checksum assets');
+assert(datasetRelease.huggingface_mirror === null, 'Do not claim a Hugging Face mirror before provider verification');
+assert(datasetRelease.zenodo_doi === null, 'Do not claim a Zenodo DOI before provider verification');
 
 const evaluation = config.evaluation || {};
 assert(evaluation.case_count === 50, 'Adoption evaluation contract must keep the current 50-case suite count');
@@ -64,12 +77,14 @@ assert(integrations.dataset_version === config.dataset_version, 'Public integrat
 assert(JSON.stringify(integrations) === JSON.stringify(apiIntegrations), 'Public and API integration metadata must be identical');
 assert(integrations.mcp.hosted_remote === false, 'Published integration metadata must preserve remote MCP limitation');
 assert(integrations.github_skill?.router_name === 'brali-life-os', 'Published integration metadata must include the Brali router skill');
+assert(integrations.github_skill?.published_release === githubSkill.published_release, 'Published integration metadata must expose the verified router release');
+assert(integrations.dataset_release?.github_release === datasetRelease.github_release, 'Published integration metadata must expose the verified dataset release');
 assert(integrations.evaluation?.case_count === 50, 'Published integration metadata must include the current evaluation suite');
 assert(integrations.evaluation?.reproduce?.check_command === 'npm run evaluate:check', 'Published integration metadata must expose evaluation reproduction');
 
 const integrationHtml = read('for-ai/integrations/index.html');
-for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/', "Reproduce Brali's evaluation", 'npm run evaluate:check', '/for-ai/evaluation/']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
-assert(integrationHtml.includes('does not exist') || integrationHtml.includes('does not currently'), 'Integration page must state the hosted remote MCP limitation');
+for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/', "Reproduce Brali's evaluation", 'npm run evaluate:check', '/for-ai/evaluation/', 'data-brali-verified-distribution', githubSkill.published_release, datasetRelease.github_release, 'GitHub skill-search visibility is not yet verified', 'Hugging Face and Zenodo are not shown as live']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
+assert(integrationHtml.includes('does not claim a hosted remote MCP') || integrationHtml.includes('does not claim a public hosted remote MCP'), 'Integration page must state the hosted remote MCP limitation');
 
 const citation = json('cite/index.json');
 const citationHtml = read('cite/index.html');
@@ -86,7 +101,7 @@ assert(forAi.includes('data-brali-fast-start'), 'For-AI page must expose the 60-
 for (const required of ['gh skill preview', 'gh skill install', '/for-ai/query/', '/for-ai/evaluation/', '/life-os/datasets/protocols.json']) assert(forAi.includes(required), `For-AI fast-start path missing ${required}`);
 assert(forAi.includes('data-brali-adoption') && forAi.includes('/for-ai/integrations/') && forAi.includes('/cite/'), 'For-AI page must expose integrations and citation entry points');
 const llms = read('llms.txt');
-for (const required of ['/for-ai/integrations/', `/api/${platform.api_version}/integrations.json`, '/cite/', 'local stdio MCP server', '## Reproduce Brali evaluation', '/for-ai/evaluation/', 'npm run evaluate:check', 'no-knowledge-control, lexical-brali, structured-brali']) assert(llms.includes(required), `llms.txt missing adoption entry ${required}`);
+for (const required of ['/for-ai/integrations/', `/api/${platform.api_version}/integrations.json`, '/cite/', 'local stdio MCP server', '## Reproduce Brali evaluation', '/for-ai/evaluation/', 'npm run evaluate:check', 'no-knowledge-control, lexical-brali, structured-brali', '## Verified external distribution', githubSkill.published_release, datasetRelease.github_release, 'GitHub skill-search discovery verified: false']) assert(llms.includes(required), `llms.txt missing adoption entry ${required}`);
 const readme = read('README.md');
 for (const required of ['/for-ai/integrations/', '/cite/', 'examples/integrations/', 'gh skill preview', 'gh skill install', 'docs/DISTRIBUTION_STRATEGY.md']) assert(readme.includes(required), `README missing adoption entry ${required}`);
 
@@ -105,4 +120,4 @@ assert(manifest.counts?.integration_runtimes === 3, 'Manifest integration runtim
 const licensing = read('LICENSING.md');
 assert(licensing.includes('CC BY-NC-SA 4.0') && licensing.includes('Commercial use requires separate written permission'), 'Public adoption guidance must remain aligned with licensing policy');
 
-console.log('Adoption surfaces verified: preview-first router skill path, reproducible 50-case evaluation contract, 3 runtime kits, truthful local-MCP boundary, Dzmitryi Kharlanau citation contract, API metadata, sitemap and AI discovery links.');
+console.log('Adoption surfaces verified: provider-visible router and dataset releases, explicit search/mirror/hosted-MCP boundaries, reproducible 50-case evaluation contract, 3 runtime kits, citation contract, API metadata, sitemap and AI discovery links.');

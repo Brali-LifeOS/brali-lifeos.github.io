@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "pause-to-avoid-anchoring-bias": {
+      "title": "Pause Before Accepting the First Number or Frame",
+      "subtitle": "Separate the first reference point from the decision you still need to make.",
+      "description": "When a decision arrives with a strong first number, suggestion or frame, name it, find at least one independent reference point that is relevant to the decision, and then compare the options. The pause is a decision aid, not a guarantee that anchoring has been removed.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali ecosystem claim cleanup agent",
+      "reason": "Remove unsupported effect sizes, fabricated field/internal results, universal thresholds, fixed timings and obsolete app behavior before the Brali -> Cognitive Biases handoff can transfer perceived authority.",
+      "forbidden_public_fragments": [
+        "40–50% in lab tasks",
+        "awareness alone decreases the effect by only about 10–15%",
+        "reducing fixation by roughly 20–40%",
+        "cost is >$50",
+        "affects 3+ people",
+        "reduced the chance of mis‑hire by an estimated 15–25%",
+        "based on our internal HR data",
+        "Tap the Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "Before accepting the first number, suggestion or frame in a decision, name it and compare it with at least one independent reference point that is relevant to the choice.",
+        "whatYouDo": "Write down the first number, option or framing that is pulling your attention. Ask what information you would want if that first reference had never been shown. Find one relevant alternative estimate, comparison, constraint or option, then make the decision using the full set of information you actually have.",
+        "checkIn": "What was the first reference point, what independent information did I add, and did that new information materially change the decision?"
+      },
+      "faq": [
+        {
+          "id": "pause-to-avoid-anchoring-bias-faq-1",
+          "question": "How long should I pause?",
+          "answer": "There is no universal timer. Use enough time to identify the first reference and obtain a relevant alternative. A trivial choice may need almost no review; a consequential or hard-to-reverse decision may justify more work."
+        },
+        {
+          "id": "pause-to-avoid-anchoring-bias-faq-2",
+          "question": "Does this prove I was anchored?",
+          "answer": "No. A first number or frame can be relevant information. The practice simply prevents it from becoming the only reference point without examination."
+        },
+        {
+          "id": "pause-to-avoid-anchoring-bias-faq-3",
+          "question": "Where can I read about the bias itself?",
+          "answer": "Use the linked Cognitive Biases reference for the reviewed concept, evidence and boundary cases. That reference does not validate this Brali protocol or imply a particular effect size."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>The first number, option or framing in a decision can become disproportionately influential, but not every first reference is misleading. The practical job here is narrower: make sure an important choice has at least one relevant reference point that was not inherited from the opening suggestion.</p>"},
+        "sections": [
+          {"slug": "name-first-reference", "title": "1. Name the first reference", "html": "<p>Write the first number, proposal, estimate or interpretation in plain language. Do not label yourself or another person as biased; capture what information arrived first.</p>"},
+          {"slug": "independent-reference", "title": "2. Add an independent reference", "html": "<p>Ask what comparison you would seek if the opening reference had not been provided. Depending on the decision, this might be a prior case, another quote, a base rate, a constraint, an alternative estimate or a different option.</p>"},
+          {"slug": "compare", "title": "3. Compare rather than automatically reverse", "html": "<p>The goal is not to reject the first reference. Compare its relevance and quality with the additional information. If the first value remains the best supported, keeping it can be reasonable.</p>"},
+          {"slug": "decide", "title": "4. Record the reason for consequential choices", "html": "<p>For decisions worth revisiting, note the information that actually drove the choice. This makes later review easier without pretending the protocol measures whether anchoring was eliminated.</p>"}
+        ]
+      }
+    },
+    "challenge-confirmation-bias-checklist": {
+      "title": "Look for Evidence That Could Change a Claim",
+      "subtitle": "Use a bounded counterevidence check when evaluating information.",
+      "description": "State the claim precisely, ask what evidence would change your conclusion, deliberately look for credible information that challenges it, compare source quality, and record what remains uncertain. This is a reasoning checklist, not a diagnosis of confirmation bias.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali ecosystem claim cleanup agent",
+      "reason": "Replace generic app tracking and fixed-duration search instructions with a bounded claim-evaluation workflow that remains distinct from the Cognitive Biases concept reference.",
+      "forbidden_public_fragments": [
+        "Spend 10-20 minutes searching",
+        "track it in the Life OS app",
+        "Check in with LifeOS Brali app",
+        "Visit https://metalhatscats.com",
+        "Tap the Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "When evaluating an important claim, deliberately look for credible evidence that could weaken or overturn it instead of collecting only supportive material.",
+        "whatYouDo": "Write the claim in a form that could be wrong. State what observation or evidence would change your view. Search for at least one credible source or data point that challenges the claim, compare it with the supporting evidence, and finish by recording your current conclusion and uncertainty rather than forcing a yes/no answer.",
+        "checkIn": "What evidence could have changed my mind, what counterevidence did I actually find, and how did it affect my confidence or next action?"
+      },
+      "faq": [
+        {
+          "id": "challenge-confirmation-bias-checklist-faq-1",
+          "question": "Do I need to find evidence against every claim?",
+          "answer": "No. Use the check when the claim matters enough that one-sided information could change a decision. The depth of review should match the stakes and available evidence."
+        },
+        {
+          "id": "challenge-confirmation-bias-checklist-faq-2",
+          "question": "What if the opposing source is weak?",
+          "answer": "Do not count disagreement as evidence by itself. Compare source quality, relevance, methods and recency where those matter. A weak counterclaim may add little information."
+        },
+        {
+          "id": "challenge-confirmation-bias-checklist-faq-3",
+          "question": "Does using the checklist mean I have confirmation bias?",
+          "answer": "No. The checklist is a general reasoning safeguard. Use the linked Cognitive Biases reference for the reviewed concept and its diagnostic limits."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Searching for information is easy to steer unintentionally: the wording of the query, sources already familiar to us and the examples we remember can all make one side easier to find. A small counterevidence check makes the evaluation process more explicit.</p>"},
+        "sections": [
+          {"slug": "claim", "title": "1. Write the claim precisely", "html": "<p>Turn a vague belief into a statement you can evaluate. Separate the claim from the decision you might make because of it.</p>"},
+          {"slug": "change-mind", "title": "2. Define what could change the conclusion", "html": "<p>Before searching, write one or more observations that would weaken the claim, strengthen an alternative explanation or make you postpone the decision.</p>"},
+          {"slug": "counterevidence", "title": "3. Seek credible counterevidence", "html": "<p>Look deliberately for relevant evidence that does not support your starting view. Prefer evidence quality over the number of disagreeing links.</p>"},
+          {"slug": "update", "title": "4. Update without forcing certainty", "html": "<p>Record whether the new evidence strengthened, weakened or left the claim unresolved. If important information is missing, make that uncertainty part of the decision.</p>"}
+        ]
+      }
+    },
+    "confirmation-bias-challenge": {
+      "title": "Run a Countercheck on an Important Assumption",
+      "subtitle": "Before committing, test one assumption against a plausible alternative explanation.",
+      "description": "For an important decision, write the assumption you are relying on, identify the strongest observation against it, name one plausible alternative explanation, and choose a small check that could distinguish between them. Do not treat the exercise as a bias diagnosis or a guaranteed debiasing method.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali ecosystem claim cleanup agent",
+      "reason": "Remove fabricated trials, outcome/adherence effects, fixed daily doses, pseudo-statistical thresholds and obsolete app routines while keeping a distinct decision-time assumption challenge.",
+      "forbidden_public_fragments": [
+        "reduce forecast error by roughly 10–30%",
+        "fails 70% of the time",
+        "small pilots",
+        "trials with 150 people",
+        "effect size ~0.4",
+        "field trials with 60 volunteers",
+        "reduced passive confirmation behaviors by 30%",
+        "15-minute conversations produced actionable tests in 62% of cases",
+        "tested short rituals with 90 participants",
+        "reduced defensive argumentation by 40%",
+        "Tap the Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "Before an important decision, challenge one assumption by writing a plausible alternative explanation and one observation that would distinguish between them.",
+        "whatYouDo": "Choose the assumption that matters most to the decision. Write the strongest concrete observation that does not fit it, then state one plausible alternative explanation. Define one proportionate check, question or data point that could help distinguish the two before you commit further resources.",
+        "checkIn": "What assumption was I relying on, what alternative explanation did I consider, and what evidence would actually distinguish them?"
+      },
+      "faq": [
+        {
+          "id": "confirmation-bias-challenge-faq-1",
+          "question": "How is this different from the counterevidence checklist?",
+          "answer": "The checklist is for evaluating a claim or information set. This protocol is a decision-time checkpoint focused on one assumption and one plausible competing explanation before further commitment."
+        },
+        {
+          "id": "confirmation-bias-challenge-faq-2",
+          "question": "Do I need a numeric threshold?",
+          "answer": "Only when the decision naturally has a defensible numeric criterion. Do not invent a percentage or sample size merely to make the check look objective."
+        },
+        {
+          "id": "confirmation-bias-challenge-faq-3",
+          "question": "Will this remove confirmation bias?",
+          "answer": "No such outcome is claimed. The protocol creates a concrete opportunity to examine a competing explanation before acting."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Important decisions often depend on one or two assumptions that quietly organize the rest of the evidence. Instead of trying to become perfectly unbiased, make one critical assumption visible and give a plausible alternative a fair chance to explain the same situation.</p>"},
+        "sections": [
+          {"slug": "assumption", "title": "1. Name the assumption that drives the decision", "html": "<p>Write the assumption in one sentence. Choose the one whose failure would materially change the decision, not every belief connected to the topic.</p>"},
+          {"slug": "against", "title": "2. Find the strongest contrary observation", "html": "<p>Use an observation, source or fact that genuinely creates tension with the assumption. Do not manufacture an artificial objection just to complete the exercise.</p>"},
+          {"slug": "alternative", "title": "3. State a plausible alternative explanation", "html": "<p>Describe another explanation that could account for the same facts. Keep it plausible enough that evidence could distinguish it from the starting assumption.</p>"},
+          {"slug": "check", "title": "4. Run the smallest useful discriminating check", "html": "<p>Choose a question, observation, comparison or test proportionate to the stakes. If the evidence cannot distinguish the explanations, keep the uncertainty visible rather than declaring a winner.</p>"}
+        ]
+      }
+    },
+    "cut-your-losses-sunk-cost": {
+      "title": "Review a Commitment Using Future Costs and Benefits",
+      "subtitle": "Decide what to do next without making unrecoverable past investment the reason to continue.",
+      "description": "When a project, subscription or personal commitment feels hard to stop because of what you already spent, separate unrecoverable past cost from the next decision. Compare future costs, expected benefits, obligations and alternatives, then continue, pause, stop or gather more information.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali ecosystem claim cleanup agent",
+      "reason": "Remove unsupported continuation-effect claims, fabricated internal prototype results, arbitrary thresholds, guaranteed savings, fixed experiment windows and social-adherence claims from a personal resource-allocation prompt.",
+      "forbidden_public_fragments": [
+        "reduce continuation of suboptimal commitments by roughly 20–40%",
+        "our internal prototype",
+        "reduced continued spending on low-use subscriptions by 36%",
+        "costs > $5/month",
+        "consumes >120 minutes/week",
+        "monthly cost > $10",
+        "Public commitments increase adherence by about 30%",
+        "Tap the Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "When past time, money or effort is making a commitment feel difficult to stop, separate those unrecoverable costs from the costs and benefits of the next step.",
+        "whatYouDo": "Name the commitment and the next decision. Put past unrecoverable investment in a separate note rather than using it as a reason to continue. List the future cost of continuing, expected future value, obligations to other people and realistic alternatives. Choose continue, pause, stop or gather more information, and record what future evidence would make you review the choice again.",
+        "checkIn": "If the past investment disappeared from the story, what future costs, benefits and obligations would still justify the next step?"
+      },
+      "faq": [
+        {
+          "id": "cut-your-losses-sunk-cost-faq-1",
+          "question": "Does this mean I should quit when something becomes difficult?",
+          "answer": "No. Past cost should not be the only reason to continue, but future value, commitments, switching costs, learning value and strategic reasons can all justify persistence."
+        },
+        {
+          "id": "cut-your-losses-sunk-cost-faq-2",
+          "question": "What counts as a sunk cost?",
+          "answer": "For this prompt, focus on time, money or effort that cannot be recovered by the decision you are making now. The linked Cognitive Biases reference covers the concept and boundary cases in more depth."
+        },
+        {
+          "id": "cut-your-losses-sunk-cost-faq-3",
+          "question": "Should I use fixed cancellation thresholds?",
+          "answer": "No universal threshold is assumed. Choose criteria from the actual costs, obligations, alternatives and goals of the situation."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>A commitment can be worth continuing even after a large investment, and it can be worth stopping after a small one. The useful question is what the next unit of time, money or effort is expected to accomplish from this point forward.</p>"},
+        "sections": [
+          {"slug": "next-decision", "title": "1. Define the next decision", "html": "<p>Be concrete: renew or cancel, fund another phase or pause, spend another evening or stop. Avoid evaluating the entire history when the immediate choice is smaller.</p>"},
+          {"slug": "separate-past", "title": "2. Separate unrecoverable past cost", "html": "<p>Record what has already been spent if it helps learning or accounting, then keep it out of the justification for the next investment unless it changes a real future consequence.</p>"},
+          {"slug": "future", "title": "3. Compare future value, cost and obligations", "html": "<p>List what continuing is expected to cost from now on, what useful outcome could still result, what obligations exist and what alternatives become available if you stop or pause.</p>"},
+          {"slug": "choose", "title": "4. Choose and set a review trigger", "html": "<p>Continue, pause, stop or gather more information. If uncertainty is high, record what future observation would justify revisiting the decision rather than inventing a universal deadline.</p>"}
+        ]
+      }
+    },
+    "sunk-cost-decision-coach": {
+      "title": "Set a Forward-Looking Checkpoint for a Project Decision",
+      "subtitle": "For team or project commitments, define what justifies the next tranche of work before spending it.",
+      "description": "At a project checkpoint, separate past investment from the next tranche of cost, make remaining obligations explicit, define a context-specific criterion for continuing, and choose whether to continue, pause, stop or re-scope. The criterion is a decision aid, not a universal stopping rule.",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-12",
+      "reviewed_by": "Brali ecosystem claim cleanup agent",
+      "reason": "Remove fabricated volunteer/team experiments, pseudo-precise expected-value assumptions, quantified checkpoint effects, universal metrics and fixed experiment limits while retaining a distinct project/team continuation review.",
+      "forbidden_public_fragments": [
+        "reduced fudging by about 40%",
+        "change their decision 30–50% of the time",
+        "120 volunteers over 3 months",
+        "reduced continuation purely from shame avoidance by 40%",
+        "inflated probability estimates by roughly 20 percentage points",
+        "reduced average probability estimates by 0.18",
+        "reduced time spent on failing directions by about 62%",
+        "public checklists reduce the probability of continuation when EV is negative by approximately 40%",
+        "Tap the Flame Counter"
+      ],
+      "lifeOsSource": {
+        "hack": "Before committing the next tranche of work to a project, review what future evidence and obligations justify continuing rather than using past investment as the reason.",
+        "whatYouDo": "State the project decision and the resources required for the next step. Separate past unrecoverable investment from future consequences. List remaining obligations, alternatives and the evidence you would expect if continuing is worthwhile. Agree on a context-specific checkpoint or criterion before committing more resources, then choose continue, pause, stop or re-scope and record the rationale.",
+        "checkIn": "What specifically justifies the next tranche of work, what evidence would make us change course, and are we continuing for future value rather than because we already invested?"
+      },
+      "faq": [
+        {
+          "id": "sunk-cost-decision-coach-faq-1",
+          "question": "Is this an expected-value calculator?",
+          "answer": "No. Quantification can help when inputs are defensible, but uncertain probabilities and benefits should not be given fake precision. The core protocol is a structured continuation decision."
+        },
+        {
+          "id": "sunk-cost-decision-coach-faq-2",
+          "question": "Should every project have the same stopping rule?",
+          "answer": "No. A useful criterion depends on the project's objective, uncertainty, obligations, reversibility and measurement quality."
+        },
+        {
+          "id": "sunk-cost-decision-coach-faq-3",
+          "question": "How is this different from the personal commitment review?",
+          "answer": "This protocol is designed for a project or team checkpoint where future work, shared obligations and an explicit continuation criterion need to be documented. The personal review is a lighter resource-allocation prompt."
+        }
+      ],
+      "body": {
+        "intro": {"html": "<p>Teams can keep funding work because stopping would make earlier effort feel wasted, but they can also abandon worthwhile work too early. A useful checkpoint focuses on the next tranche: what it costs, what it is expected to learn or deliver, and what evidence would justify another tranche after that.</p>"},
+        "sections": [
+          {"slug": "decision", "title": "1. Define the tranche and decision", "html": "<p>State what is actually being approved next: another sprint, a contract renewal, an experiment, a hiring phase or another bounded commitment. Make the future resource request visible.</p>"},
+          {"slug": "past-future", "title": "2. Separate past investment from future consequences", "html": "<p>Record past investment for learning and accountability, but do not use it by itself as the reason for the next tranche. Include contractual, reputational or operational consequences only when they genuinely affect the future.</p>"},
+          {"slug": "criterion", "title": "3. Define a decision-relevant checkpoint", "html": "<p>Choose evidence or a criterion linked to the project's actual objective. Avoid arbitrary percentages, sample sizes or deadlines when the context cannot support them.</p>"},
+          {"slug": "record", "title": "4. Decide and preserve the rationale", "html": "<p>Choose continue, pause, stop or re-scope. Record the evidence, uncertainty, obligations and the next review condition so later decisions do not have to reconstruct the reasoning from memory.</p>"}
+        ]
+      }
+    }
+  }
+}

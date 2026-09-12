@@ -25,6 +25,14 @@ assert(/^https:\/\//.test(githubSkill.docs || ''), 'GitHub Skill contract must l
 const evaluation = config.evaluation || {};
 assert(evaluation.case_count === 50, 'Adoption evaluation contract must keep the current 50-case suite count');
 for (const key of ['page', 'source_cases', 'report', 'methodology']) assert(/^https:\/\//.test(evaluation[key] || ''), `Evaluation contract missing URL: ${key}`);
+assert(evaluation.reproduce?.build_command === 'npm run build', 'Evaluation contract must expose the canonical build command');
+assert(evaluation.reproduce?.check_command === 'npm run evaluate:check', 'Evaluation contract must expose the strict evaluation check command');
+assert(evaluation.reproduce?.runner === 'scripts/run-agent-evaluation.mjs', 'Evaluation contract runner drifted');
+assert(evaluation.reproduce?.checker === 'scripts/check-agent-evaluation.mjs', 'Evaluation contract checker drifted');
+const evaluationLayerIds = (evaluation.comparison_layers || []).map(x => x.id);
+assert(JSON.stringify(evaluationLayerIds) === JSON.stringify(['no-knowledge-control','lexical-brali','structured-brali']), 'Evaluation comparison layers must remain explicit and ordered');
+const evaluationGates = (evaluation.required_gates || []).join(' ').toLowerCase();
+for (const cue of ['no-answer', 'evidence-state', 'provenance', 'unsupported', 'lexical baseline']) assert(evaluationGates.includes(cue), `Evaluation adoption contract missing gate cue: ${cue}`);
 
 const runtimeIds = new Set((config.runtimes || []).map(x => x.id));
 for (const id of ['cursor', 'claude-code', 'openai-api']) assert(runtimeIds.has(id), `Missing adoption runtime ${id}`);
@@ -57,9 +65,10 @@ assert(JSON.stringify(integrations) === JSON.stringify(apiIntegrations), 'Public
 assert(integrations.mcp.hosted_remote === false, 'Published integration metadata must preserve remote MCP limitation');
 assert(integrations.github_skill?.router_name === 'brali-life-os', 'Published integration metadata must include the Brali router skill');
 assert(integrations.evaluation?.case_count === 50, 'Published integration metadata must include the current evaluation suite');
+assert(integrations.evaluation?.reproduce?.check_command === 'npm run evaluate:check', 'Published integration metadata must expose evaluation reproduction');
 
 const integrationHtml = read('for-ai/integrations/index.html');
-for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
+for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/', "Reproduce Brali's evaluation", 'npm run evaluate:check', '/for-ai/evaluation/']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
 assert(integrationHtml.includes('does not exist') || integrationHtml.includes('does not currently'), 'Integration page must state the hosted remote MCP limitation');
 
 const citation = json('cite/index.json');
@@ -77,7 +86,7 @@ assert(forAi.includes('data-brali-fast-start'), 'For-AI page must expose the 60-
 for (const required of ['gh skill preview', 'gh skill install', '/for-ai/query/', '/for-ai/evaluation/', '/life-os/datasets/protocols.json']) assert(forAi.includes(required), `For-AI fast-start path missing ${required}`);
 assert(forAi.includes('data-brali-adoption') && forAi.includes('/for-ai/integrations/') && forAi.includes('/cite/'), 'For-AI page must expose integrations and citation entry points');
 const llms = read('llms.txt');
-for (const required of ['/for-ai/integrations/', `/api/${platform.api_version}/integrations.json`, '/cite/', 'local stdio MCP server']) assert(llms.includes(required), `llms.txt missing adoption entry ${required}`);
+for (const required of ['/for-ai/integrations/', `/api/${platform.api_version}/integrations.json`, '/cite/', 'local stdio MCP server', '## Reproduce Brali evaluation', '/for-ai/evaluation/', 'npm run evaluate:check', 'no-knowledge-control, lexical-brali, structured-brali']) assert(llms.includes(required), `llms.txt missing adoption entry ${required}`);
 const readme = read('README.md');
 for (const required of ['/for-ai/integrations/', '/cite/', 'examples/integrations/', 'gh skill preview', 'gh skill install', 'docs/DISTRIBUTION_STRATEGY.md']) assert(readme.includes(required), `README missing adoption entry ${required}`);
 
@@ -96,4 +105,4 @@ assert(manifest.counts?.integration_runtimes === 3, 'Manifest integration runtim
 const licensing = read('LICENSING.md');
 assert(licensing.includes('CC BY-NC-SA 4.0') && licensing.includes('Commercial use requires separate written permission'), 'Public adoption guidance must remain aligned with licensing policy');
 
-console.log('Adoption surfaces verified: preview-first router skill path, 50-case evaluation entry, 3 runtime kits, truthful local-MCP boundary, Dzmitryi Kharlanau citation contract, API metadata, sitemap and AI discovery links.');
+console.log('Adoption surfaces verified: preview-first router skill path, reproducible 50-case evaluation contract, 3 runtime kits, truthful local-MCP boundary, Dzmitryi Kharlanau citation contract, API metadata, sitemap and AI discovery links.');

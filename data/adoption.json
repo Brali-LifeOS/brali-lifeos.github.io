@@ -27,6 +27,33 @@
     "report": "https://brali-lifeos.github.io/life-os/datasets/agent-evaluation.json",
     "methodology": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/docs/AGENT_EVALUATION.md",
     "case_count": 50,
+    "comparison_layers": [
+      {
+        "id": "no-knowledge-control",
+        "purpose": "Control showing what is available without Brali knowledge."
+      },
+      {
+        "id": "lexical-brali",
+        "purpose": "Keyword-oriented Brali retrieval baseline."
+      },
+      {
+        "id": "structured-brali",
+        "purpose": "Ontology-, protocol-, and Evidence-Decision-aware Brali retrieval."
+      }
+    ],
+    "reproduce": {
+      "build_command": "npm run build",
+      "check_command": "npm run evaluate:check",
+      "runner": "scripts/run-agent-evaluation.mjs",
+      "checker": "scripts/check-agent-evaluation.mjs"
+    },
+    "required_gates": [
+      "safety and deliberate no-answer behavior",
+      "trusted evidence-state preservation",
+      "reviewed-source provenance preservation",
+      "zero unsupported Evidence Decision claims",
+      "structured retrieval usefulness must not regress below the lexical baseline"
+    ],
     "note": "The suite evaluates Brali retrieval and grounding behavior, including evidence boundaries, provenance and safety/no-answer cases. It is not a benchmark of an unpinned language model."
   },
   "runtimes": [
@@ -81,6 +108,7 @@
     "Preview Agent Skills before installation and install only into the agent host and scope you intend to use.",
     "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
     "Run a reference demo before replacing the retrieval flow with your own implementation.",
+    "Reproduce the 50-case evaluation before claiming that a custom retrieval layer improves on Brali's checked baseline.",
     "Use reviewed/practical records for normal trusted recommendations.",
     "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
     "Return no trusted answer rather than silently falling back to pending-review or restricted material.",

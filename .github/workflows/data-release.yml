@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: Dataset version, for example 1.0.0
+        description: Dataset version, for example 1.1.0
         required: true
         type: string
   push:
@@ -57,8 +57,12 @@ jobs:
           TAG="data-v${{ steps.version.outputs.version }}"
           git fetch --force origin "refs/tags/${TAG}:refs/tags/${TAG}"
           git checkout --detach "$TAG"
+      - name: Install MCP v2 package dependencies for import smoke test
+        run: cd mcp && npm install --ignore-scripts --package-lock=false && node -e "import('./remote.mjs')"
       - name: Build and validate
         run: npm run build && npm run check
+      - name: Build portable Brali Bench
+        run: node scripts/build-brali-bench.mjs && node scripts/check-brali-bench.mjs
       - name: Package immutable dataset snapshot
         run: npm run release:data -- --version "${{ steps.version.outputs.version }}"
       - name: Verify packaged snapshot
@@ -105,6 +109,7 @@ jobs:
               "releases/brali-data-${VERSION}.tar.gz.sha256" \
               "${BUNDLE}/release-manifest.json" \
               "${BUNDLE}/SHA256SUMS" \
+              "${BUNDLE}/README.md" \
               "${BUNDLE}/CITATION.cff" \
               "${BUNDLE}/LICENSE" \
               --title "Brali data ${VERSION}" \
@@ -126,12 +131,13 @@ jobs:
             -p "brali-data-${VERSION}.tar.gz.sha256" \
             -p "release-manifest.json" \
             -p "SHA256SUMS" \
+            -p "README.md" \
             -p "CITATION.cff" \
             -p "LICENSE" \
             -D "$VERIFY_DIR"
           cd "$VERIFY_DIR"
           sha256sum -c "brali-data-${VERSION}.tar.gz.sha256"
-          for file in release-manifest.json SHA256SUMS CITATION.cff LICENSE; do
+          for file in release-manifest.json SHA256SUMS README.md CITATION.cff LICENSE; do
             test -s "$file" || { echo "Missing or empty release asset: $file" >&2; exit 1; }
           done
       - name: Record Brali 1.0 release verification
@@ -143,3 +149,12 @@ jobs:
           TAG="data-v1.0.0"
           TAG_SHA="$(git rev-parse HEAD)"
           gh issue comment 65 --body "Automated release verification passed for \`${TAG}\` at \`${TAG_SHA}\`. The immutable tag builds cleanly, the packaged snapshot verifies, required GitHub Release assets are present, and the published archive SHA-256 validates."
+      - name: Record distribution-ready data release
+        if: steps.version.outputs.mode == 'create'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          TAG="data-v${{ steps.version.outputs.version }}"
+          URL="$(gh release view "$TAG" --json url --jq .url)"
+          gh issue comment 192 --body "Immutable Brali dataset release \`${TAG}\` is published and verified at ${URL}. The bundle includes a Hugging Face-ready Dataset Card and \`CITATION.cff\` for archive metadata. This does **not** claim that a Hugging Face mirror or Zenodo DOI exists yet; those remain open until provider-visible URLs are recorded."

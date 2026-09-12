@@ -6,9 +6,14 @@ It exposes Brali Topics, trusted Protocols, Hacks, Evidence metadata and related
 
 ## Status
 
-This directory is prepared for npm and Official MCP Registry publication. Until the package is actually published, use the repository checkout instructions below. Do not assume `npx brali-knowledge-mcp` is available merely because the package metadata exists here.
+The repository contains two transports backed by the same tool factory and trust rules:
 
-## From a repository checkout
+- `server.mjs` — local stdio server for repository/package use.
+- `remote.mjs` — deployment-ready web-standard Streamable HTTP handler backed by Brali's public static API.
+
+Brali does **not** claim a public hosted remote MCP endpoint until a provider deployment has been completed and verified. Do not invent a remote URL from the presence of `remote.mjs`.
+
+## Local stdio from a repository checkout
 
 ```bash
 npm run build
@@ -17,7 +22,21 @@ npm install
 npm start
 ```
 
-The server prefers the repository's generated `../api/v1` data while running from a checkout.
+The stdio server prefers the repository's generated `../api/v1` data while running from a checkout.
+
+## Remote Streamable HTTP source
+
+`remote.mjs` exports a web-standard MCP handler created with the official v2 `createMcpHandler` entry point. Deploy that module in a web-standard runtime and route the provider's `/mcp` request to its default export.
+
+By default it reads trusted source data from:
+
+```text
+https://brali-lifeos.github.io/api/v1
+```
+
+For a controlled mirror, instantiate `createRemoteMcpHandler({ dataOrigin: "https://example.org/api/v1" })`. In Node-compatible runtimes, `BRALI_REMOTE_DATA_ORIGIN` may also override the source origin.
+
+The remote implementation deliberately reuses `core.mjs`; it must not reimplement retrieval or trust filtering in provider-specific code.
 
 ## Published-package command
 
@@ -27,7 +46,7 @@ After npm publication, MCP clients will be able to launch the package with:
 npx -y brali-knowledge-mcp@latest
 ```
 
-No Brali API key is required. The npm package bundles the minimal generated API snapshot needed by the server.
+No Brali API key is required. The npm package bundles the minimal generated API snapshot needed by the stdio server.
 
 ## MCP tools
 
@@ -40,9 +59,9 @@ No Brali API key is required. The npm package bundles the minimal generated API 
 
 ## Data selection
 
-`npm run prepare:data` copies only the API files the server actually needs into `dist-data/api/v1` before packing. A packaged install therefore does not depend on a sibling Brali repository checkout.
+`npm run prepare:data` copies only the API files the package actually needs into `dist-data/api/v1` before packing. A packaged stdio install therefore does not depend on a sibling Brali repository checkout.
 
-Set `BRALI_API_DIR=/path/to/api/v1` to deliberately override the data directory.
+Set `BRALI_API_DIR=/path/to/api/v1` to deliberately override the local stdio data directory.
 
 ## Registry identity
 
@@ -52,7 +71,7 @@ Official MCP Registry name:
 io.github.dkharlanau/brali-knowledge
 ```
 
-Registry metadata is in `server.json`. Package and registry versions are checked together.
+Registry metadata is in `server.json`. It continues to declare the published stdio package only until a real public remote endpoint exists and is provider-verifiable.
 
 ## Trust and attribution
 

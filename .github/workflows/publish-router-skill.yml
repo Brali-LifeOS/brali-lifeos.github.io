@@ -1,0 +1,72 @@
+name: Publish Brali router skill
+
+on:
+  push:
+    branches:
+      - 'publish/router-skill-v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Router skill version, for example 1.0.0
+        required: true
+        default: '1.0.0'
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_PROMPT_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Resolve release tag
+        id: version
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF_TYPE}" == "branch" && "${GITHUB_REF_NAME}" == publish/router-skill-v* ]]; then
+            VERSION="${GITHUB_REF_NAME#publish/router-skill-v}"
+          else
+            VERSION="${{ inputs.version }}"
+          fi
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Invalid router skill version: $VERSION" >&2
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "tag=v$VERSION" >> "$GITHUB_OUTPUT"
+      - name: Verify single-router distribution package
+        run: node scripts/check-router-skill-distribution.mjs
+      - name: Validate GitHub Agent Skill package
+        run: gh skill publish distribution/github-skill --dry-run
+      - name: Publish router skill release if missing
+        id: publish
+        shell: bash
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "GitHub release $TAG already exists; preserving it."
+          else
+            gh skill publish distribution/github-skill --tag "$TAG"
+          fi
+          URL="$(gh release view "$TAG" --json url --jq .url)"
+          test -n "$URL"
+          echo "url=$URL" >> "$GITHUB_OUTPUT"
+      - name: Verify provider-visible release
+        shell: bash
+        run: |
+          TAG="${{ steps.version.outputs.tag }}"
+          gh release view "$TAG" --json tagName,url,name,isDraft,isPrerelease
+          test "$(gh release view "$TAG" --json isDraft --jq .isDraft)" = "false"
+      - name: Record publication evidence
+        shell: bash
+        run: |
+          gh issue comment 192 --body "GitHub Agent Skills router publication completed for \`brali-life-os\` at tag \`${{ steps.version.outputs.tag }}\`. Provider-visible release: ${{ steps.publish.outputs.url }}. This records GitHub publication only; ClawHub/Hugging Face/Zenodo remain separate until their own public artifacts are verified."

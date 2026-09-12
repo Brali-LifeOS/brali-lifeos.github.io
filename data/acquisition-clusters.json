@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-12",
+  "strategy": "Problem intent -> trusted Brali protocol -> Query/Agent Skill/API reuse -> canonical citation.",
+  "activation_gate": {
+    "external_distribution": "At least one provider-visible external distribution artifact must be live and recorded before expanding these candidates into a large new page set.",
+    "search_demand": "Prefer clusters with observed search impressions, clicks, queries, backlinks, or integration demand. Do not infer demand from inventory size.",
+    "content_rule": "Strengthen existing canonical problem/topic/protocol surfaces first. Do not generate thin keyword permutations."
+  },
+  "clusters": [
+    {"id":"focus-after-interruption","problem_intent":"regain focus after interruptions and task switching","topic_ids":["attention-focus","digital-attention","work-systems"],"seed_questions":["how to refocus after an interruption","how to stop switching tasks at work","how to recover concentration after notifications"],"status":"candidate"},
+    {"id":"procrastination-task-start","problem_intent":"start important work when procrastinating","topic_ids":["task-initiation","goals","planning-prioritization"],"seed_questions":["how to start a task when procrastinating","how to make myself begin an important task","how to turn a vague goal into a first action"],"status":"candidate"},
+    {"id":"weekly-prioritization","problem_intent":"choose priorities and make a realistic weekly plan","topic_ids":["planning-prioritization","goals","decision-making"],"seed_questions":["how to prioritize work for the week","how to decide what not to do this week","how to plan a week without overloading it"],"status":"candidate"},
+    {"id":"habit-consistency","problem_intent":"make a useful habit easier to repeat consistently","topic_ids":["habits-consistency","environment-design"],"seed_questions":["how to make a habit more consistent","how to make a good habit easier to start","how to change my environment to support a habit"],"status":"candidate"},
+    {"id":"remember-what-you-study","problem_intent":"remember and apply material instead of only rereading it","topic_ids":["memory","skill-learning","metacognition"],"seed_questions":["how to remember what I study","active recall versus rereading","how to tell whether I really understand something"],"status":"candidate"},
+    {"id":"sleep-regularity","problem_intent":"build a more regular sleep routine without overstating causality","topic_ids":["sleep-circadian","recovery-energy"],"seed_questions":["how to make my sleep schedule more regular","how to recover when my sleep routine drifts","does sleep regularity improve cognition"],"status":"candidate"},
+    {"id":"stress-rumination-reset","problem_intent":"interrupt a worry loop and reset after a stressful work period","topic_ids":["stress-regulation","worry-rumination","emotion-regulation"],"seed_questions":["how to stop replaying a worry","how to reset after a stressful workday","how to notice an emotion before reacting"],"status":"candidate"},
+    {"id":"difficult-conversation","problem_intent":"prepare for a difficult conversation and reduce escalation","topic_ids":["difficult-conversations","clear-communication","listening","conflict-repair"],"seed_questions":["how to prepare for a difficult conversation","how to avoid escalating a disagreement","how to repair a misunderstanding after conflict"],"status":"candidate"},
+    {"id":"decision-under-uncertainty","problem_intent":"make a bounded decision when outcomes are uncertain","topic_ids":["decision-making","cognitive-biases","critical-thinking"],"seed_questions":["how to make a decision under uncertainty","how to check cognitive bias before deciding","how to evaluate a claim before acting on it"],"status":"candidate"},
+    {"id":"prevent-recurring-errors","problem_intent":"reduce preventable mistakes in recurring work","topic_ids":["error-prevention","work-systems"],"seed_questions":["how to stop making the same work mistakes","when should I use a checklist","how to make a recurring process more reliable"],"status":"candidate"},
+    {"id":"digital-distraction","problem_intent":"reduce distraction from notifications, feeds, and information overload","topic_ids":["digital-attention","information-management","attention-focus"],"seed_questions":["how to reduce notification distraction","how to stop checking feeds while working","how to capture information without overbuilding a system"],"status":"candidate"},
+    {"id":"workspace-friction","problem_intent":"change a workspace to reduce friction, distraction, and preventable mistakes","topic_ids":["workspace","environment-design"],"seed_questions":["how to set up a workspace with less friction","how to change my environment to make work easier","how to reduce mistakes with workspace design"],"status":"candidate"}
+  ]
+}

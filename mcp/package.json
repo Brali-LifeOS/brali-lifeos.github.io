@@ -1,6 +1,6 @@
 {
   "name": "brali-knowledge-mcp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Read-only MCP server for Brali's evidence-aware practical knowledge library.",
   "type": "module",
   "license": "CC-BY-NC-SA-4.0",
@@ -15,8 +15,14 @@
   "bin": {
     "brali-knowledge-mcp": "./server.mjs"
   },
+  "exports": {
+    ".": "./core.mjs",
+    "./remote": "./remote.mjs"
+  },
   "files": [
+    "core.mjs",
     "server.mjs",
+    "remote.mjs",
     "server.json",
     "README.md",
     "dist-data/**"
@@ -24,11 +30,11 @@
   "scripts": {
     "start": "node server.mjs",
     "prepare:data": "node prepare-package.mjs",
-    "check": "node --check server.mjs && node check-package.mjs",
+    "check": "node --check core.mjs && node --check server.mjs && node --check remote.mjs && node check-package.mjs",
     "prepack": "node prepare-package.mjs && node check-package.mjs"
   },
   "publishConfig": {"access": "public"},
-  "keywords": ["mcp", "model-context-protocol", "knowledge", "evidence", "ai-agents", "brali"],
+  "keywords": ["mcp", "model-context-protocol", "knowledge", "evidence", "ai-agents", "brali", "streamable-http"],
   "dependencies": {
     "@modelcontextprotocol/server": "^2.0.0",
     "zod": "^4.0.0"

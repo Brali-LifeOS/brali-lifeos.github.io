@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "canonical_site": "https://brali-lifeos.github.io",
   "developer_entry": "https://brali-lifeos.github.io/for-ai/",
   "integrations_page": "https://brali-lifeos.github.io/for-ai/integrations/",
@@ -8,38 +8,38 @@
   "api_base": "https://brali-lifeos.github.io/api/v1",
   "mcp": {
     "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/server.mjs",
+    "shared_core": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/core.mjs",
+    "remote_source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/remote.mjs",
     "transport": "stdio",
+    "remote_transport": "streamable-http",
     "hosted_remote": false,
-    "note": "The repository MCP server runs locally over stdio. Brali does not currently operate a hosted remote MCP endpoint; consumers that require remote MCP must deploy the server themselves."
+    "note": "Brali operates a local stdio MCP path and now ships a deployment-ready web-standard Streamable HTTP handler backed by the same trust rules. Brali does not claim a public hosted remote MCP URL until a provider deployment is completed and verified."
   },
   "github_skill": {
     "router_name": "brali-life-os",
     "path": "agent-skills/skills/brali-life-os/SKILL.md",
+    "distribution_path": "distribution/github-skill/skills/brali-life-os/SKILL.md",
     "minimum_github_cli": "2.90.0",
     "preview_command": "gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os",
     "install_command": "gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user",
     "docs": "https://cli.github.com/manual/gh_skill",
-    "note": "Preview the router before installation. Replace --agent claude-code with the supported host you actually use. The router retrieves only from Brali's trusted recommendation layer."
+    "published_release": null,
+    "note": "Preview the router before installation. Replace --agent claude-code with the supported host you actually use. The dedicated distribution package contains only the router and preserves Brali's trusted recommendation layer."
   },
   "evaluation": {
     "page": "https://brali-lifeos.github.io/for-ai/evaluation/",
+    "bench_page": "https://brali-lifeos.github.io/bench/",
+    "bench_manifest": "https://brali-lifeos.github.io/bench/manifest.json",
     "source_cases": "https://brali-lifeos.github.io/data/agent-evaluation-suite.json",
+    "portable_cases": "https://brali-lifeos.github.io/bench/cases.json",
     "report": "https://brali-lifeos.github.io/life-os/datasets/agent-evaluation.json",
+    "portable_results": "https://brali-lifeos.github.io/bench/results.json",
     "methodology": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/docs/AGENT_EVALUATION.md",
     "case_count": 50,
     "comparison_layers": [
-      {
-        "id": "no-knowledge-control",
-        "purpose": "Control showing what is available without Brali knowledge."
-      },
-      {
-        "id": "lexical-brali",
-        "purpose": "Keyword-oriented Brali retrieval baseline."
-      },
-      {
-        "id": "structured-brali",
-        "purpose": "Ontology-, protocol-, and Evidence-Decision-aware Brali retrieval."
-      }
+      {"id": "no-knowledge-control", "purpose": "Control showing what is available without Brali knowledge."},
+      {"id": "lexical-brali", "purpose": "Keyword-oriented Brali retrieval baseline."},
+      {"id": "structured-brali", "purpose": "Ontology-, protocol-, and Evidence-Decision-aware Brali retrieval."}
     ],
     "reproduce": {
       "build_command": "npm run build",
@@ -54,39 +54,12 @@
       "zero unsupported Evidence Decision claims",
       "structured retrieval usefulness must not regress below the lexical baseline"
     ],
-    "note": "The suite evaluates Brali retrieval and grounding behavior, including evidence boundaries, provenance and safety/no-answer cases. It is not a benchmark of an unpinned language model."
+    "note": "The suite evaluates Brali retrieval and grounding behavior, including evidence boundaries, provenance and safety/no-answer cases. Brali Bench packages these artifacts for reuse. It is not a benchmark of an unpinned language model."
   },
   "runtimes": [
-    {
-      "id": "cursor",
-      "title": "Cursor",
-      "status": "supported-local-mcp",
-      "transport": "stdio",
-      "example": "examples/integrations/cursor-mcp.json",
-      "configuration": ".cursor/mcp.json",
-      "official_docs": "https://docs.cursor.com/context/model-context-protocol",
-      "note": "Point Cursor at the local Brali MCP server after building the repository and installing the MCP package dependencies."
-    },
-    {
-      "id": "claude-code",
-      "title": "Claude Code",
-      "status": "supported-local-mcp",
-      "transport": "stdio",
-      "example": "examples/integrations/claude-code.sh",
-      "configuration": "claude mcp add",
-      "official_docs": "https://docs.anthropic.com/en/docs/claude-code/mcp",
-      "note": "Register the local Brali MCP server with Claude Code. The example uses user scope so Brali can be reused across projects."
-    },
-    {
-      "id": "openai-api",
-      "title": "OpenAI API",
-      "status": "supported-static-api",
-      "transport": "https-json",
-      "example": "examples/integrations/openai-api.mjs",
-      "configuration": "Brali API prefetch -> bounded context packet -> Responses API",
-      "official_docs": "https://platform.openai.com/docs/quickstart",
-      "note": "Use Brali's hosted static API directly. OpenAI remote MCP requires a remotely reachable MCP server URL, which Brali does not currently host."
-    }
+    {"id":"cursor","title":"Cursor","status":"supported-local-mcp","transport":"stdio","example":"examples/integrations/cursor-mcp.json","configuration":".cursor/mcp.json","official_docs":"https://docs.cursor.com/context/model-context-protocol","note":"Point Cursor at the local Brali MCP server after building the repository and installing the MCP package dependencies."},
+    {"id":"claude-code","title":"Claude Code","status":"supported-local-mcp","transport":"stdio","example":"examples/integrations/claude-code.sh","configuration":"claude mcp add","official_docs":"https://docs.anthropic.com/en/docs/claude-code/mcp","note":"Register the local Brali MCP server with Claude Code. The example uses user scope so Brali can be reused across projects."},
+    {"id":"openai-api","title":"OpenAI API","status":"supported-static-api","transport":"https-json","example":"examples/integrations/openai-api.mjs","configuration":"Brali API prefetch -> bounded context packet -> Responses API","official_docs":"https://platform.openai.com/docs/quickstart","note":"Use Brali's hosted static API directly. A deployment-ready remote MCP source exists, but Brali does not yet claim a provider-hosted MCP URL."}
   ],
   "citation": {
     "author": "Dzmitryi Kharlanau",
@@ -96,19 +69,14 @@
     "guidance_page": "https://brali-lifeos.github.io/cite/",
     "answer_attribution_template": "Source: Brali — <record title> (<canonical_id>), <record_url>. Evidence: <evidence_state>.",
     "dataset_citation_template": "Dzmitryi Kharlanau. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
-    "preserve": [
-      "canonical Brali record URL or canonical_id",
-      "evidence state and review metadata where supplied",
-      "data-v release version for reproducible dataset use",
-      "an indication when material is changed or translated"
-    ]
+    "preserve": ["canonical Brali record URL or canonical_id","evidence state and review metadata where supplied","data-v release version for reproducible dataset use","an indication when material is changed or translated"]
   },
   "adoption_checklist": [
     "Start with the zero-install Query Playground or preview the Brali router skill before writing custom integration code.",
     "Preview Agent Skills before installation and install only into the agent host and scope you intend to use.",
-    "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
+    "Use the hosted static API or local stdio MCP today; treat mcp/remote.mjs as deployment-ready source, not as proof of a Brali-hosted remote endpoint.",
     "Run a reference demo before replacing the retrieval flow with your own implementation.",
-    "Reproduce the 50-case evaluation before claiming that a custom retrieval layer improves on Brali's checked baseline.",
+    "Reproduce the 50-case evaluation or reuse Brali Bench before claiming that a custom retrieval layer improves on Brali's checked baseline.",
     "Use reviewed/practical records for normal trusted recommendations.",
     "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
     "Return no trusted answer rather than silently falling back to pending-review or restricted material.",

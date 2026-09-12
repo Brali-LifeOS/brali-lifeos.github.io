@@ -12,8 +12,20 @@ Read only the context required for the task:
 4. `docs/agent-skills.md` when the task adds/changes hacks, Agent Skills, agent integrations, skill discovery, or trust-mode behavior.
 5. Relevant docs under `docs/` only when the task touches versioning, integrations, demos, releases, citation, or data contracts.
 6. `.arwp/README.md` and `.arwp/image-discovery.json` when the task changes public Search/discovery imagery, social/preferred-image metadata, sitemap image coverage or deployment verification.
+7. `docs/DISTRIBUTION_EXECUTION.md` when the task touches hosted MCP, external Agent Skill publication/discovery, Brali Bench, Hugging Face, Zenodo, or distribution/adoption. Treat that runbook as the current execution order; do not redo already-verified preparation merely because an older strategy document still describes it as future work.
 
 Do not start by loading all generated API files, all research candidates, or the entire public site.
+
+## Current distribution priority
+
+For distribution work, execute in this order unless the active user request or new provider-visible evidence changes it:
+
+1. #113 — Hosted Remote MCP: one public read-only URL with trusted retrieval and no repository checkout.
+2. #192 — Agent Skill acquisition: verify GitHub discovery and publish the single `brali-life-os` router to ClawHub.
+3. #197 — Brali Bench: standalone downloadable/versioned grounded-retrieval evaluation product.
+4. #146 — Dataset distribution: mirror immutable `data-v1.1.0` to Hugging Face and archive it on Zenodo with a verified DOI.
+
+Source readiness is not external publication. A file, release-preparation check, or CI success must not be described as a live hosted/registry/dataset/archive surface until the provider-visible artifact is observed.
 
 ## Task router
 
@@ -40,7 +52,7 @@ Do not start by loading all generated API files, all research candidates, or the
 - Research-scout metadata is discovery input. It must not be promoted directly to reviewed evidence without reading and reviewing the actual source.
 - Preserve canonical identities `brali:<kind>:<local-id>` and treat titles, URLs, localized labels, and historical IDs as aliases.
 - `/api/v1/`, `/skill-packs/`, and other generated outputs are views over canonical data. Fix the source/generator, then rebuild; do not hand-edit generated per-hack output as the source.
-- The MCP server is currently local stdio, not a hosted remote Brali MCP service. Do not imply otherwise.
+- The MCP server is currently local stdio plus deployment-ready remote source, not a verified hosted remote Brali MCP service. Do not imply otherwise until #113's provider-visible gate passes.
 - Do not invent adoption, download, user, efficacy, or external search metrics.
 - Image Discovery must reuse an actually visible informative image and its existing human-authored alt text. Do not manufacture an image description from a filename or concept title. Logos, favicons and utility icons are not promoted as representative page imagery merely to increase sitemap coverage.
 - Keep Discover-specific image-size guidance separate from ordinary image crawl/index eligibility. A passing image gate does not establish Google Images indexing, Search thumbnail selection, Discover placement, ranking or traffic.

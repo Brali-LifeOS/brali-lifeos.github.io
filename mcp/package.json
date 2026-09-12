@@ -1,7 +1,7 @@
 {
   "name": "brali-knowledge-mcp",
-  "version": "1.1.0",
-  "description": "Read-only MCP server for Brali's evidence-aware practical knowledge library.",
+  "version": "1.2.0",
+  "description": "Read-only trusted MCP server for Brali's evidence-aware practical knowledge library.",
   "type": "module",
   "license": "CC-BY-NC-SA-4.0",
   "homepage": "https://brali-lifeos.github.io/for-ai/integrations/",
@@ -23,20 +23,30 @@
     "core.mjs",
     "server.mjs",
     "remote.mjs",
+    "http-server.mjs",
+    "check-remote-canary.mjs",
     "server.json",
     "README.md",
     "dist-data/**"
   ],
   "scripts": {
     "start": "node server.mjs",
+    "start:http": "node http-server.mjs",
+    "canary:remote": "node check-remote-canary.mjs",
     "prepare:data": "node prepare-package.mjs",
-    "check": "node --check core.mjs && node --check server.mjs && node --check remote.mjs && node check-package.mjs",
+    "check": "node --check core.mjs && node --check server.mjs && node --check remote.mjs && node --check http-server.mjs && node --check check-remote-canary.mjs && node check-package.mjs",
     "prepack": "node prepare-package.mjs && node check-package.mjs"
   },
   "publishConfig": {"access": "public"},
   "keywords": ["mcp", "model-context-protocol", "knowledge", "evidence", "ai-agents", "brali", "streamable-http"],
   "dependencies": {
+    "@modelcontextprotocol/express": "^2.0.0",
+    "@modelcontextprotocol/node": "^2.0.0",
     "@modelcontextprotocol/server": "^2.0.0",
+    "express": "^5.1.0",
     "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/client": "^2.0.0"
   }
 }

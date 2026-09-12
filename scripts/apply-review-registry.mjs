@@ -32,6 +32,21 @@ if (fs.existsSync(correctionsPath)) {
   }
 }
 
+const incomplete = [];
+for (const decision of evidenceDecisions.entries ?? []) {
+  const missing = [];
+  if (decision.source_reviewed !== true) missing.push("source_reviewed");
+  if (!decision.source_url) missing.push("source_url");
+  if (!decision.source_title) missing.push("source_title");
+  if (!decision.supported_claim) missing.push("supported_claim");
+  if (!(decision.unsupported_or_overstated_claims ?? []).length) missing.push("unsupported_or_overstated_claims");
+  if (!(decision.limitations ?? []).length) missing.push("limitations");
+  if (missing.length) incomplete.push(`${decision.id}: ${missing.join(", ")}`);
+}
+if (incomplete.length) {
+  throw new Error(`Incomplete Evidence Decisions after corrections (${incomplete.length}):\n- ${incomplete.join("\n- ")}`);
+}
+
 write("data/evidence-overrides.json", evidenceOverrides);
 write("data/ontology-overrides.json", ontologyOverrides);
 write("data/evidence-decisions.json", evidenceDecisions);

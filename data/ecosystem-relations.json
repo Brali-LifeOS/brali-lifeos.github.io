@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "1.0",
+  "publisher": "brali",
+  "updated": "2026-09-12",
+  "contract": "outbound-contextual-relations-v1",
+  "policy": {
+    "ownership": "The source project owns the handoff semantics. The target project keeps ownership of its own content, evidence and interpretation.",
+    "displayRule": "Render only curated relations that provide a materially different next step for the user.",
+    "evidenceBoundary": "A linked concept reference may explain a mechanism or decision pattern. It does not validate the Brali protocol, its efficacy, or inherited quantitative claims.",
+    "seoBoundary": "Do not generate site-wide project lists, keyword-driven relations, reciprocal links, or links whose primary purpose is search ranking."
+  },
+  "relations": [
+    {
+      "id": "brali:relation:pause-to-avoid-anchoring-bias:understand-with:cognitive-bias-anchoring-effect",
+      "relationType": "understand_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "Understand the evidence-backed concept behind a practical anti-anchoring prompt.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "pause-to-avoid-anchoring-bias",
+        "id": "brali:hack:pause-to-avoid-anchoring-bias",
+        "url": "https://brali-lifeos.github.io/life-os/pause-to-avoid-anchoring-bias/"
+      },
+      "target": {
+        "project": "cognitive-biases",
+        "kind": "cognitive_bias",
+        "id": "cognitive-biases:bias:cognitive-bias-anchoring-effect",
+        "url": "https://cognitive-biases.github.io/biases/cognitive-bias-anchoring-effect/",
+        "label": "Anchoring Effect: evidence and decision checks",
+        "description": "Use the Cognitive Biases reference for the reviewed definition, boundaries, examples, evidence and decision checks around anchoring."
+      }
+    },
+    {
+      "id": "brali:relation:challenge-confirmation-bias-checklist:understand-with:cognitive-bias-confirmation-bias",
+      "relationType": "understand_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "Separate a practical confirmation-bias checklist from the broader evidence-backed concept.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "challenge-confirmation-bias-checklist",
+        "id": "brali:hack:challenge-confirmation-bias-checklist",
+        "url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/"
+      },
+      "target": {
+        "project": "cognitive-biases",
+        "kind": "cognitive_bias",
+        "id": "cognitive-biases:bias:cognitive-bias-confirmation-bias",
+        "url": "https://cognitive-biases.github.io/biases/cognitive-bias-confirmation-bias/",
+        "label": "Confirmation Bias: evidence and decision checks",
+        "description": "Use the Cognitive Biases reference for the broader concept, diagnostic limits, competing explanations and reviewed decision checks."
+      }
+    },
+    {
+      "id": "brali:relation:confirmation-bias-challenge:understand-with:cognitive-bias-confirmation-bias",
+      "relationType": "understand_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "Understand the broader concept behind a practical belief-challenge prompt.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "confirmation-bias-challenge",
+        "id": "brali:hack:confirmation-bias-challenge",
+        "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/"
+      },
+      "target": {
+        "project": "cognitive-biases",
+        "kind": "cognitive_bias",
+        "id": "cognitive-biases:bias:cognitive-bias-confirmation-bias",
+        "url": "https://cognitive-biases.github.io/biases/cognitive-bias-confirmation-bias/",
+        "label": "Confirmation Bias: evidence and decision checks",
+        "description": "Use the Cognitive Biases reference for the broader concept, diagnostic limits, competing explanations and reviewed decision checks."
+      }
+    },
+    {
+      "id": "brali:relation:cut-your-losses-sunk-cost:understand-with:cognitive-bias-sunk-cost-effect",
+      "relationType": "understand_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "Understand why past investment can distort a continuation decision without treating every commitment as a sunk-cost error.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "cut-your-losses-sunk-cost",
+        "id": "brali:hack:cut-your-losses-sunk-cost",
+        "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/"
+      },
+      "target": {
+        "project": "cognitive-biases",
+        "kind": "cognitive_bias",
+        "id": "cognitive-biases:bias:cognitive-bias-sunk-cost-effect",
+        "url": "https://cognitive-biases.github.io/biases/cognitive-bias-sunk-cost-effect/",
+        "label": "Sunk Cost Effect: evidence and continuation checks",
+        "description": "Use the Cognitive Biases reference for the reviewed concept, boundary cases, evidence and continuation-decision checks."
+      }
+    },
+    {
+      "id": "brali:relation:sunk-cost-decision-coach:understand-with:cognitive-bias-sunk-cost-effect",
+      "relationType": "understand_with",
+      "basis": "curated-semantic-handoff",
+      "confidence": "high",
+      "reviewedAt": "2026-09-12",
+      "userJob": "Understand the evidence-backed concept behind a practical sunk-cost decision prompt.",
+      "source": {
+        "project": "brali",
+        "kind": "hack",
+        "slug": "sunk-cost-decision-coach",
+        "id": "brali:hack:sunk-cost-decision-coach",
+        "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/"
+      },
+      "target": {
+        "project": "cognitive-biases",
+        "kind": "cognitive_bias",
+        "id": "cognitive-biases:bias:cognitive-bias-sunk-cost-effect",
+        "url": "https://cognitive-biases.github.io/biases/cognitive-bias-sunk-cost-effect/",
+        "label": "Sunk Cost Effect: evidence and continuation checks",
+        "description": "Use the Cognitive Biases reference for the reviewed concept, boundary cases, evidence and continuation-decision checks."
+      }
+    }
+  ]
+}

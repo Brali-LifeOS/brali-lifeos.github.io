@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-12",
+  "policy": {
+    "purpose": "Configure a deliberately small set of constraint-aware troubleshooters on top of existing canonical Brali problem pages.",
+    "growth_rule": "Prove one useful end-to-end flow before adding more. Do not create a new indexable URL for each answer combination or personalized result.",
+    "selection_rule": "Ask only constraints that can change protocol eligibility. Select only trusted gold-ready candidates; otherwise abstain rather than weakening the trust boundary.",
+    "interpretation_rule": "A selected protocol is a transparent bounded trial under represented constraints, not a psychological fit score or a claim that the method will work."
+  },
+  "troubleshooters": [
+    {
+      "problem_slug": "resume-after-interruption",
+      "title": "Should you protect a focus block — or not?",
+      "summary": "Two constraints decide whether Brali's current trusted focus-boundary protocol is a sensible trial after interruptions. This check does not diagnose why you were interrupted.",
+      "candidate_protocol_slugs": ["25-minute-pomodoro-focus-sprints"],
+      "abstention_message": "Brali does not currently have a trusted focus-block recommendation for these conditions. Use the re-entry decision path on this page, change the work conditions if you can, or inspect other trusted protocols instead of forcing a timer.",
+      "examples": [
+        {"id": "protected-block", "answers": {"immediate-responsiveness": "can-delay", "concrete-outcome": "yes"}, "expected_status": "selected", "expected_protocol_slug": "25-minute-pomodoro-focus-sprints"},
+        {"id": "must-stay-responsive", "answers": {"immediate-responsiveness": "must-respond", "concrete-outcome": "yes"}, "expected_status": "abstain"},
+        {"id": "task-still-vague", "answers": {"immediate-responsiveness": "can-delay", "concrete-outcome": "not-yet"}, "expected_status": "abstain"}
+      ]
+    }
+  ]
+}

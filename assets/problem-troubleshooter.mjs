@@ -5,6 +5,8 @@ const candidateSummary = candidate => ({
   slug: candidate.slug,
   title: candidate.title,
   canonical_url: candidate.canonical_url,
+  skill_page_url: candidate.skill_page_url,
+  skill_markdown_url: candidate.skill_markdown_url,
   evidence_status: candidate.evidence_status,
   gold_review_status: candidate.gold_review_status
 });
@@ -97,7 +99,13 @@ const renderDecision = (root, decision) => {
     const first = el('p'); first.append(el('strong', 'Try: ')); first.append(document.createTextNode(decision.selected.first_action)); card.append(first);
     const observe = el('p'); observe.append(el('strong', 'Notice: ')); observe.append(document.createTextNode(decision.selected.observable_signal)); card.append(observe);
     const change = el('p'); change.append(el('strong', 'Change or stop when: ')); change.append(document.createTextNode(decision.selected.stop_or_change_rule)); card.append(change);
-    const link = el('a', 'Open the canonical protocol →'); link.href = decision.selected.canonical_url; card.append(link);
+    const links = el('p');
+    const protocolLink = el('a', 'Open canonical protocol'); protocolLink.href = decision.selected.canonical_url; links.append(protocolLink);
+    if (decision.selected.skill_page_url) {
+      links.append(document.createTextNode(' · '));
+      const skillLink = el('a', 'Use as Agent Skill →'); skillLink.href = decision.selected.skill_page_url; links.append(skillLink);
+    }
+    card.append(links);
   } else if (decision.status === 'incomplete') {
     card.append(el('span', 'More information needed', 'card-label')); card.append(el('h3', 'Answer both fit questions')); card.append(el('p', decision.summary));
   } else if (decision.status === 'needs-choice') {

@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
@@ -7,6 +8,7 @@ const pkg = JSON.parse(fs.readFileSync(path.join(HERE, 'package.json'), 'utf8'))
 const server = JSON.parse(fs.readFileSync(path.join(HERE, 'server.json'), 'utf8'));
 const bundled = path.join(HERE, 'dist-data', 'api', 'v1');
 const required = ['index.json','topics.json','protocols.json','hacks.json','evidence.json','search.json','identity.json'];
+const sources = ['core.mjs','server.mjs','remote.mjs','http-server.mjs','check-remote-canary.mjs'];
 
 const fail = message => { throw new Error(message); };
 if (pkg.private === true) fail('MCP package must not be private.');
@@ -15,9 +17,11 @@ if (pkg.mcpName !== server.name) fail('package.json mcpName must match server.js
 if (pkg.name !== server.packages?.[0]?.identifier) fail('npm package name must match server.json package identifier.');
 if (pkg.version !== server.version || pkg.version !== server.packages?.[0]?.version) fail('Package and Registry versions must match.');
 if (server.packages?.[0]?.transport?.type !== 'stdio') fail('Registry transport must remain stdio until a remote MCP service exists.');
-for (const rel of ['core.mjs','server.mjs','remote.mjs','http-server.mjs','check-remote-canary.mjs']) {
+for (const rel of sources) {
   if (!pkg.files?.includes(rel)) fail(`MCP package files must include ${rel}.`);
-  if (!fs.existsSync(path.join(HERE, rel))) fail(`MCP source missing ${rel}.`);
+  const file = path.join(HERE, rel);
+  if (!fs.existsSync(file)) fail(`MCP source missing ${rel}.`);
+  execFileSync(process.execPath, ['--check', file], { stdio: 'pipe' });
 }
 if (pkg.exports?.['./remote'] !== './remote.mjs') fail('MCP package must export the remote handler source.');
 for (const name of required) {

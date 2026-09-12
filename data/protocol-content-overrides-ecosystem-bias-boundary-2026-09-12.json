@@ -51,31 +51,6 @@
         ]
       }
     },
-    "confirmation-bias-challenge": {
-      "title": "Challenge One Working Belief Before Acting",
-      "subtitle": "Make a decision belief easier to test",
-      "description": "Choose one belief that matters to a current decision, write what would make it less likely, and identify the next observation that could update your view before increasing commitment.",
-      "evidence_status": "pending-review",
-      "reviewed_at": "2026-09-12",
-      "reviewed_by": "Brali ecosystem deep-run agent",
-      "reason": "Remove fabricated pilots, effect sizes, fixed daily doses, pseudo-telemetry and broad mechanism claims. Retain a distinct live-decision workflow instead of duplicating the evidence-search checklist.",
-      "forbidden_public_fragments": ["10–30%", "trials with 150 people", "60 volunteers", "90 participants", "62% of cases", "At MetalHatsCats"],
-      "references": [],
-      "lifeOsSource": {
-        "hack": "Before acting on an important working belief, write what you would expect to observe if it were wrong.",
-        "whatYouDo": "Pick one belief tied to a current decision. Write the strongest credible reason it may be wrong, one observable sign that would lower your confidence, and one small check you can perform before increasing commitment.",
-        "checkIn": "What belief did I test, what observation would have changed my mind, and what did I decide after checking?"
-      },
-      "body": {
-        "intro": {"html":"<p>A working belief often hides inside a decision. This protocol turns one such belief into something you can test before you invest more. It is a decision workflow, not a diagnosis or a claim that confirmation bias has been removed.</p>"},
-        "sections": [
-          {"slug":"choose-belief","title":"1. Choose the belief that drives the decision","html":"<p>Write one sentence that connects the belief to a real choice. If it is too vague to be wrong, make it more concrete.</p>"},
-          {"slug":"counter","title":"2. Write the strongest credible counter","html":"<p>State the best reason the belief may be incomplete or wrong. Do not use a deliberately weak counterargument or invent another person's view.</p>"},
-          {"slug":"observable","title":"3. Define an observable update","html":"<p>Name one observation that would lower confidence or change the next action. Prefer something you can check without turning the exercise into open-ended research.</p>"},
-          {"slug":"test","title":"4. Run the smallest useful check","html":"<p>Gather the observation, ask the relevant person, inspect the data or run a reversible test. Then proceed, change the plan or keep the uncertainty visible. Use Cognitive Biases for the mechanism and research context.</p>"}
-        ]
-      }
-    },
     "cut-your-losses-sunk-cost": {
       "title": "Judge a Commitment by What Comes Next",
       "subtitle": "A quick stop, continue or change check",

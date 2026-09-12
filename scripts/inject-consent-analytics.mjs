@@ -51,6 +51,11 @@ const banner = `<aside id="brali-analytics-consent" data-nosnippet role="dialog"
 </aside>
 <script>(function(){try{if(localStorage.getItem('brali-analytics-consent-v1')){var n=document.getElementById('brali-analytics-consent');if(n)n.remove();}}catch(e){}})();</script>`;
 
+// Apply final noindex/canonical handoffs before analytics walks the generated HTML.
+// This is intentionally the last content-state transform in the normal build so
+// later generators cannot accidentally re-publish a retired search intent.
+await import("./apply-life-os-retirements.mjs");
+
 if (!fs.existsSync(root)) throw new Error(`Missing analytics target: ${root}`);
 const files = walk(root);
 if (!files.length) throw new Error(`No HTML files below ${root}`);

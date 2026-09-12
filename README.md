@@ -1,10 +1,60 @@
-# Brali website and knowledge platform
+# Brali — evidence-aware practical knowledge for humans and AI agents
 
 Official public site and knowledge repository for Brali, published at `https://brali-lifeos.github.io`.
 
-Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first: practical hacks, executable protocols, an explicit ontology, evidence states, machine-readable data, research and integration surfaces for humans and AI systems. The original LifeOS app remains an optional application layer.
+Brali is not another advice blog. It is a versioned practical-knowledge layer: bounded protocols, explicit evidence states, stable identities, provenance, machine-readable data, Agent Skills, retrieval/evaluation artifacts, and integration surfaces. People can use the same knowledge in the browser; agents can retrieve it without stripping away trust metadata.
+
+Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first. The original LifeOS app remains an optional application layer rather than the product boundary.
 
 For repository work from ChatGPT or another coding agent, start with [AGENTS.md](AGENTS.md).
+
+## Use Brali in 60 seconds
+
+### 1. Ask it in the browser
+
+Open the zero-install [Query Playground](https://brali-lifeos.github.io/for-ai/query/) and inspect the returned `Topic → Protocol → Evidence/provenance` packet before integrating anything.
+
+### 2. Preview or install the Brali router skill
+
+GitHub CLI 2.90+ can discover and install Agent Skills from public repositories. Preview the skill before installation:
+
+```bash
+gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os
+```
+
+Then install it for the agent you actually use, for example Claude Code:
+
+```bash
+gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user
+```
+
+Change `--agent` to another host supported by `gh skill`, such as `codex`, `cursor`, `github-copilot`, or `gemini-cli`. The router selects only from Brali's trusted recommendation layer; individual per-hack skills are available under `/skill-packs/`.
+
+### 3. Read the trusted data directly
+
+- Trusted Protocol Feed: `https://brali-lifeos.github.io/life-os/datasets/protocols.json`
+- API index: `https://brali-lifeos.github.io/api/v1/index.json`
+- OpenAPI: `https://brali-lifeos.github.io/api/v1/openapi.json`
+- Complete Agent Skills library: `https://brali-lifeos.github.io/skill-packs/library.json`
+- Trusted Agent Skills catalog: `https://brali-lifeos.github.io/skill-packs/catalog.json`
+
+### 4. Reproduce the evaluation
+
+Brali publishes the source cases and generated evaluation report instead of presenting a vague "AI quality" score:
+
+- `/data/agent-evaluation-suite.json` — 50 practical evaluation cases.
+- `/for-ai/evaluation/` — human-readable results and limitations.
+- `/life-os/datasets/agent-evaluation.json` — machine-readable evaluation output.
+
+The suite evaluates retrieval, evidence boundaries, provenance, safety/no-answer behavior, and a deterministic usefulness proxy. It is not presented as a benchmark of a particular LLM unless a model/provider is explicitly pinned.
+
+## Why Brali is different
+
+- **Trust state travels with the content.** `reviewed`, `practical`, `pending-review`, and `restricted` are operational states, not decorative labels.
+- **Stable identity survives format changes.** Canonical IDs remain stable while titles, URLs, labels, and localized aliases can evolve.
+- **One knowledge model feeds many surfaces.** Human pages, JSON, API, Agent Skills, MCP, demos, and evaluation artifacts derive from the same canonical records.
+- **Uncertainty is a valid output.** Pending or restricted material does not silently become a recommendation because an agent found it.
+- **Distribution is inspectable.** Skills, releases, datasets, citations, and evaluation cases are designed to be reused and checked outside the site.
 
 ## Knowledge model v2
 
@@ -18,8 +68,10 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 - `/life-os/` and `/life-os/datasets/` — public library and machine-readable data.
 - `/research/` — research notes and discovery pipeline.
 - `/agents/`, `/contracts/`, `/skills/` — guarded agent/editorial workflows.
+- `/skill-packs/` — complete one-skill-per-hack Agent Skills library with trust modes.
 - `/for-ai/` — guidance for AI tools and developers.
 - `/for-ai/query/` — zero-install browser query that returns transparent Topic → Protocol → Evidence/provenance packets.
+- `/for-ai/evaluation/` — reproducible retrieval/evidence evaluation suite.
 - `/for-ai/demos/` — deterministic reference agent scenarios.
 - `/for-ai/integrations/` — copy-paste OpenAI API, Claude Code, and Cursor integration kits.
 - `/cite/` — citation and attribution guidance for people and downstream AI systems.
@@ -70,7 +122,7 @@ npm run release:check -- --version 1.0.0
 
 `adoption:openai` prints a request preview when `OPENAI_API_KEY` is absent. With a key it sends the bounded Brali packet to the OpenAI Responses API.
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, agent evaluation/reference demos, zero-install query behavior, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, Agent Skills, agent evaluation/reference demos, zero-install query behavior, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
 
 ## Releases and citation
 
@@ -88,7 +140,9 @@ External adopters are encouraged to report what they integrated, which Brali sur
 
 ## Direction
 
-Near-term work should improve the knowledge asset and external utility rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, and make the same trusted data easy to consume through static APIs, local MCP, versioned releases, verifiable third-party integrations, and a zero-install browser query.
+Near-term work should improve external utility and distribution rather than recreate the retired feature race: reduce evidence and taxonomy debt, improve retrieval quality, expand multilingual identity, make trusted data easy to consume, and distribute the strongest Brali surfaces through the ecosystems where agents, datasets, and research artifacts are already discovered.
+
+See `docs/DISTRIBUTION_STRATEGY.md` for the current distribution loops and measurement rules.
 
 ## License
 

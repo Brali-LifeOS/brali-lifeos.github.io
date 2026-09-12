@@ -14,6 +14,18 @@ assert(config.dataset_version === platform.dataset_version, 'Adoption dataset ve
 assert(config.mcp?.transport === 'stdio', 'Brali MCP adoption contract must remain stdio until a remote server is actually deployed');
 assert(config.mcp?.hosted_remote === false, 'Do not claim Brali hosts remote MCP before such an endpoint exists');
 
+const githubSkill = config.github_skill || {};
+assert(githubSkill.router_name === 'brali-life-os', 'GitHub Skill contract must expose the maintained brali-life-os router');
+assert(githubSkill.path === 'agent-skills/skills/brali-life-os/SKILL.md', 'GitHub Skill path drifted');
+assert(String(githubSkill.preview_command || '').startsWith('gh skill preview '), 'GitHub Skill contract must provide a preview-first command');
+assert(String(githubSkill.install_command || '').includes('gh skill install '), 'GitHub Skill contract must provide an install command');
+assert(String(githubSkill.install_command || '').includes('brali-life-os'), 'GitHub Skill install command must install the maintained router');
+assert(/^https:\/\//.test(githubSkill.docs || ''), 'GitHub Skill contract must link to official CLI documentation');
+
+const evaluation = config.evaluation || {};
+assert(evaluation.case_count === 50, 'Adoption evaluation contract must keep the current 50-case suite count');
+for (const key of ['page', 'source_cases', 'report', 'methodology']) assert(/^https:\/\//.test(evaluation[key] || ''), `Evaluation contract missing URL: ${key}`);
+
 const runtimeIds = new Set((config.runtimes || []).map(x => x.id));
 for (const id of ['cursor', 'claude-code', 'openai-api']) assert(runtimeIds.has(id), `Missing adoption runtime ${id}`);
 assert(runtimeIds.size === 3, `Expected exactly 3 maintained runtime recipes, found ${runtimeIds.size}`);
@@ -43,6 +55,8 @@ const apiIntegrations = json(`api/${platform.api_version}/integrations.json`);
 assert(integrations.dataset_version === config.dataset_version, 'Public integration JSON version mismatch');
 assert(JSON.stringify(integrations) === JSON.stringify(apiIntegrations), 'Public and API integration metadata must be identical');
 assert(integrations.mcp.hosted_remote === false, 'Published integration metadata must preserve remote MCP limitation');
+assert(integrations.github_skill?.router_name === 'brali-life-os', 'Published integration metadata must include the Brali router skill');
+assert(integrations.evaluation?.case_count === 50, 'Published integration metadata must include the current evaluation suite');
 
 const integrationHtml = read('for-ai/integrations/index.html');
 for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
@@ -51,19 +65,21 @@ assert(integrationHtml.includes('does not exist') || integrationHtml.includes('d
 const citation = json('cite/index.json');
 const citationHtml = read('cite/index.html');
 const cff = read('CITATION.cff');
-assert(citation.author === 'MetalHatsCats', 'Citation JSON author drifted');
+assert(citation.author === 'Dzmitryi Kharlanau', 'Citation JSON author drifted');
 assert(citation.dataset_title === 'Brali Practical Knowledge Library', 'Citation dataset title drifted');
 assert(citation.license === 'CC-BY-NC-SA-4.0', 'Citation JSON license drifted');
-assert(cff.includes('name: "MetalHatsCats"'), 'CITATION.cff author does not match public citation guidance');
+assert(cff.includes('family-names: "Kharlanau"') && cff.includes('given-names: "Dzmitryi"'), 'CITATION.cff author does not match public citation guidance');
 assert(cff.includes('license: CC-BY-NC-SA-4.0'), 'CITATION.cff license does not match public citation guidance');
-for (const required of ['MetalHatsCats', 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
+for (const required of ['Dzmitryi Kharlanau', 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
 
 const forAi = read('for-ai/index.html');
+assert(forAi.includes('data-brali-fast-start'), 'For-AI page must expose the 60-second adoption path');
+for (const required of ['gh skill preview', 'gh skill install', '/for-ai/query/', '/for-ai/evaluation/', '/life-os/datasets/protocols.json']) assert(forAi.includes(required), `For-AI fast-start path missing ${required}`);
 assert(forAi.includes('data-brali-adoption') && forAi.includes('/for-ai/integrations/') && forAi.includes('/cite/'), 'For-AI page must expose integrations and citation entry points');
 const llms = read('llms.txt');
 for (const required of ['/for-ai/integrations/', `/api/${platform.api_version}/integrations.json`, '/cite/', 'local stdio MCP server']) assert(llms.includes(required), `llms.txt missing adoption entry ${required}`);
 const readme = read('README.md');
-for (const required of ['/for-ai/integrations/', '/cite/', 'examples/integrations/']) assert(readme.includes(required), `README missing adoption entry ${required}`);
+for (const required of ['/for-ai/integrations/', '/cite/', 'examples/integrations/', 'gh skill preview', 'gh skill install', 'docs/DISTRIBUTION_STRATEGY.md']) assert(readme.includes(required), `README missing adoption entry ${required}`);
 
 const apiIndex = json(`api/${platform.api_version}/index.json`);
 assert((apiIndex.endpoints || []).includes('integrations.json'), 'API index missing integrations.json');
@@ -80,4 +96,4 @@ assert(manifest.counts?.integration_runtimes === 3, 'Manifest integration runtim
 const licensing = read('LICENSING.md');
 assert(licensing.includes('CC BY-NC-SA 4.0') && licensing.includes('Commercial use requires separate written permission'), 'Public adoption guidance must remain aligned with licensing policy');
 
-console.log('Adoption surfaces verified: 3 runtime kits, truthful local-MCP boundary, citation/attribution contract, API metadata, sitemap and AI discovery links.');
+console.log('Adoption surfaces verified: preview-first router skill path, 50-case evaluation entry, 3 runtime kits, truthful local-MCP boundary, Dzmitryi Kharlanau citation contract, API metadata, sitemap and AI discovery links.');

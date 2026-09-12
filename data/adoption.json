@@ -12,6 +12,23 @@
     "hosted_remote": false,
     "note": "The repository MCP server runs locally over stdio. Brali does not currently operate a hosted remote MCP endpoint; consumers that require remote MCP must deploy the server themselves."
   },
+  "github_skill": {
+    "router_name": "brali-life-os",
+    "path": "agent-skills/skills/brali-life-os/SKILL.md",
+    "minimum_github_cli": "2.90.0",
+    "preview_command": "gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os",
+    "install_command": "gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user",
+    "docs": "https://cli.github.com/manual/gh_skill",
+    "note": "Preview the router before installation. Replace --agent claude-code with the supported host you actually use. The router retrieves only from Brali's trusted recommendation layer."
+  },
+  "evaluation": {
+    "page": "https://brali-lifeos.github.io/for-ai/evaluation/",
+    "source_cases": "https://brali-lifeos.github.io/data/agent-evaluation-suite.json",
+    "report": "https://brali-lifeos.github.io/life-os/datasets/agent-evaluation.json",
+    "methodology": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/docs/AGENT_EVALUATION.md",
+    "case_count": 50,
+    "note": "The suite evaluates Brali retrieval and grounding behavior, including evidence boundaries, provenance and safety/no-answer cases. It is not a benchmark of an unpinned language model."
+  },
   "runtimes": [
     {
       "id": "cursor",
@@ -45,13 +62,13 @@
     }
   ],
   "citation": {
-    "author": "MetalHatsCats",
+    "author": "Dzmitryi Kharlanau",
     "dataset_title": "Brali Practical Knowledge Library",
     "license": "CC-BY-NC-SA-4.0",
     "citation_file": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/CITATION.cff",
     "guidance_page": "https://brali-lifeos.github.io/cite/",
     "answer_attribution_template": "Source: Brali — <record title> (<canonical_id>), <record_url>. Evidence: <evidence_state>.",
-    "dataset_citation_template": "MetalHatsCats. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
+    "dataset_citation_template": "Dzmitryi Kharlanau. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
     "preserve": [
       "canonical Brali record URL or canonical_id",
       "evidence state and review metadata where supplied",
@@ -60,9 +77,10 @@
     ]
   },
   "adoption_checklist": [
+    "Start with the zero-install Query Playground or preview the Brali router skill before writing custom integration code.",
+    "Preview Agent Skills before installation and install only into the agent host and scope you intend to use.",
     "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
-    "Try the zero-install Query Playground before writing custom integration code; copy its agent context or JSON packet to inspect the contract.",
-    "Run a reference demo before integrating your own retrieval flow.",
+    "Run a reference demo before replacing the retrieval flow with your own implementation.",
     "Use reviewed/practical records for normal trusted recommendations.",
     "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
     "Return no trusted answer rather than silently falling back to pending-review or restricted material.",

@@ -1,91 +1,70 @@
 {
   "slug": "challenge-confirmation-bias-checklist",
-  "title": "When Evaluating Information: - Seek Opposing Views: Actively Search for Evidence That Challenges Your",
-  "subtitle": "Challenge Confirmation Bias",
-  "description": "When evaluating information:\n- Seek opposing views: Actively search for evidence that challenges your beliefs.\n- Ask questions: “What would change my mind about this?”\n- Stay curious: Approach topics with an open mind, looking for new perspectives.\n\nExample: If you believe a certain diet works, read studies that critique it.\n",
+  "title": "Run a Disconfirming-Evidence Check",
+  "subtitle": "Test one claim against evidence that could weaken it",
+  "description": "State one claim precisely, define what evidence would make you less confident, inspect relevant credible evidence, and update the decision if the evidence warrants it.",
   "canonical": "/life-os/challenge-confirmation-bias-checklist/",
-  "keywords": [
-    "Cognitive Biases",
-    "Life OS",
-    "Cognitive Biases",
-    "Challenge Confirmation Bias"
-  ],
+  "keywords": ["confirmation bias", "evidence check", "disconfirming evidence", "critical thinking", "decision making"],
   "zone": {
     "slug": "cognitive-biases",
     "title": "Cognitive Biases"
   },
   "lifeOsSource": {
-    "hack": "When evaluating information:\n- Seek opposing views: Actively search for evidence that challenges your beliefs.\n- Ask questions: “What would change my mind about this?”\n- Stay curious: Approach topics with an open mind, looking for new perspectives.\n\nExample: If you believe a certain diet works, read studies that critique it.\n",
+    "hack": "When evaluating a claim, define what evidence would weaken it before searching for more support.",
     "zone": "Cognitive Biases",
     "zoneSlug": "cognitive-biases",
-    "whatYouDo": "When evaluating information:\n- Seek opposing views: Actively search for evidence that challenges your beliefs.\n- Ask questions: “What would change my mind about this?”\n- Stay curious: Approach topics with an open mind, looking for new perspectives.\n\nExample: If you believe a certain diet works, read studies that critique it.\n",
-    "checkIn": "Check in when you deliberately consider views that challenge your beliefs.",
+    "whatYouDo": "Write one precise claim and one result or observation that would lower your confidence. Then deliberately inspect credible evidence that bears on that test. Record whether your confidence or next action changed.",
+    "checkIn": "What evidence would have weakened the claim, what did I find, and did my confidence or action change?",
     "reference": null,
     "sourceUrl": null
   },
   "faq": [
     {
       "id": "challenge-confirmation-bias-checklist-faq-1",
-      "question": "How do I track my progress with this habit?",
-      "answer": "Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.",
-      "answerHtml": "<p>Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.</p>"
+      "question": "Do I need to find an opposing opinion?",
+      "answer": "No. The useful target is evidence that could change the claim, not disagreement for its own sake. A contrary opinion without relevant evidence may add noise rather than information.",
+      "answerHtml": "<p>No. The useful target is evidence that could change the claim, not disagreement for its own sake. A contrary opinion without relevant evidence may add noise rather than information.</p>"
     },
     {
       "id": "challenge-confirmation-bias-checklist-faq-2",
-      "question": "What if I miss a day or forget to do this habit?",
-      "answer": "Don't worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.",
-      "answerHtml": "<p>Don&#x27;t worry! Life OS habits are designed to be flexible. Just get back on track the next day without judgment.</p>"
-    },
-    {
-      "id": "challenge-confirmation-bias-checklist-faq-3",
-      "question": "How long does it take to form this habit?",
-      "answer": "There is no fixed number of days for a habit to become automatic. Keep the context consistent, notice whether the action is getting easier to repeat, and review the practice over time instead of treating a countdown as a success criterion. Focus on consistency rather than perfection, and use the app to build momentum.",
-      "answerHtml": "<p>There is no fixed number of days for a habit to become automatic. Keep the context consistent, notice whether the action is getting easier to repeat, and review the practice over time instead of treating a countdown as a success criterion. Focus on consistency rather than perfection, and use the app to build momentum.</p>"
+      "question": "What counts as a useful source?",
+      "answer": "Match the source to the claim. Primary data, original research, official documentation, or a well-scoped review may be useful depending on the question. Source quality does not come from whether it agrees with you.",
+      "answerHtml": "<p>Match the source to the claim. Primary data, original research, official documentation, or a well-scoped review may be useful depending on the question. Source quality does not come from whether it agrees with you.</p>"
     }
   ],
   "meta": {
     "publishedISO": "2025-10-06T11:41:04.799Z",
-    "updatedISO": "2025-10-06T11:41:04.799Z",
-    "authorName": "MetalHatsCats Team",
+    "updatedISO": "2026-09-12T18:31:00Z",
+    "authorName": "Brali",
     "authorUrl": "/",
     "accent": "mint"
   },
   "body": {
-    "markdown": "<!-- Content will be generated by OpenAI -->",
-    "html": "&lt;!-- Content will be generated by OpenAI --&gt;",
     "intro": {
-      "markdown": "<!-- Content will be generated by OpenAI -->",
-      "html": "&lt;!-- Content will be generated by OpenAI --&gt;"
+      "html": "<p>This checklist is for a concrete information problem: you have a claim or interpretation and want to test whether the evidence you are considering could actually change it. Brali owns the workflow. Cognitive Biases owns the broader mechanism, evidence, and diagnostic limits.</p>"
     },
-    "sections": [],
-    "headings": [],
-    "stats": {
-      "wordCount": 8,
-      "readingMinutes": 1
-    }
-  },
-  "structuredMeta": {
-    "howTo": [
+    "sections": [
       {
-        "title": "Define the claim",
-        "summary": "Identify a specific claim you want to evaluate. Use precise wording to ensure clarity, as vague claims invite vague searches."
+        "slug": "state-claim",
+        "title": "1. State the claim precisely",
+        "html": "<p>Write the claim in a form that could be wrong. Replace broad labels with an observable statement, forecast, or interpretation tied to the decision.</p>"
       },
       {
-        "title": "Ask the disconfirming question",
-        "summary": "Formulate the question, 'What would change my mind about this?' Write a brief statement in the Brali app to clarify your current belief."
+        "slug": "define-test",
+        "title": "2. Define what would weaken it",
+        "html": "<p>Before searching, name at least one result, observation, or credible source that would make you less confident. This gives the search a real test instead of a vague instruction to be open-minded.</p>"
       },
       {
-        "title": "Conduct a focused opposing search",
-        "summary": "Spend 10-20 minutes searching for credible evidence that contradicts the claim. Look for peer-reviewed studies, expert critiques, and high-quality articles."
+        "slug": "inspect",
+        "title": "3. Inspect relevant evidence",
+        "html": "<p>Look deliberately for evidence that bears on the test. Prefer sources appropriate to the claim. Disagreement alone does not make a source stronger, and agreement alone does not make it weaker.</p>"
       },
       {
-        "title": "Synthesize findings",
-        "summary": "Summarize your findings in one sentence, noting any changes in confidence levels. Decide on an action based on the strength of the opposing evidence."
-      },
-      {
-        "title": "Check in with LifeOS Brali app",
-        "summary": "Log your results in the Brali LifeOS app, including the claim, sources, confidence changes, and any actions taken. Visit https://metalhatscats.com/life-os/challenge-confirmation-bias-checklist/."
+        "slug": "update",
+        "title": "4. Update the decision, not just the notes",
+        "html": "<p>Record what you found and whether it changes confidence, the next action, or the need for more information. The success condition is a fair test, not a forced reversal.</p>"
       }
     ]
-  }
+  },
+  "references": []
 }

@@ -51,6 +51,22 @@ export function loadReviewRegistry(root) {
   const ontologyOverrides = clone(read(path.join(dataRoot, "ontology-overrides.json")));
   const evidenceDecisions = clone(read(path.join(dataRoot, "evidence-decisions.json")));
   const researchCandidates = clone(read(path.join(dataRoot, "research-candidates.json")));
+  const correctionsPath = path.join(dataRoot, "evidence-decision-corrections.json");
+  const decisionCorrections = fs.existsSync(correctionsPath) ? read(correctionsPath) : { entries: {} };
+  const correctionEntries = decisionCorrections?.entries ?? {};
+
+  const normalizeDecision = (entry) => {
+    const normalized = clone(entry);
+    const patch = correctionEntries[normalized.id];
+    if (patch && typeof patch === "object" && !Array.isArray(patch)) Object.assign(normalized, patch);
+    return normalized;
+  };
+
+  // Corrections are part of the effective Evidence Decision state. Normalize both
+  // the persisted base and supplemental inputs before conflict comparison so a
+  // build followed by check remains idempotent instead of comparing corrected
+  // base records with their pre-correction historical registry form.
+  evidenceDecisions.entries = (evidenceDecisions.entries ?? []).map(normalizeDecision);
 
   const supplemental = fs.readdirSync(dataRoot)
     .filter((name) => /^review-registry-.*\.json$/.test(name))
@@ -63,7 +79,7 @@ export function loadReviewRegistry(root) {
     loaded.push(name);
     mergeKeyed(evidenceOverrides, document.evidence_overrides, "evidence override");
     mergeKeyed(ontologyOverrides, document.ontology_overrides, "ontology override");
-    mergeList(evidenceDecisions, "entries", document.evidence_decisions, "Evidence Decision id");
+    mergeList(evidenceDecisions, "entries", (document.evidence_decisions ?? []).map(normalizeDecision), "Evidence Decision id");
     mergeList(researchCandidates, "candidates", document.research_candidates, "research candidate id");
     applyCandidateUpdates(researchCandidates, document.research_candidate_updates, name);
   }

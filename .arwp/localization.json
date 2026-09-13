@@ -1,0 +1,118 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dkharlanau/agent-ready-web-profile/main/schema/localization-profile.schema.json",
+  "version": "0.2",
+  "site": "https://brali-lifeos.github.io/",
+  "sourceLocale": "en",
+  "defaultLocale": "en",
+  "fallbackPolicy": "explicit-by-surface-no-silent-human-fallback",
+  "glossaryFile": "data/localization/glossary.json",
+  "debtLedger": "data/localization/quality-debt.json",
+  "sitemapManifest": "ru/sitemap.xml",
+  "localeManifest": "ru/manifest.json",
+  "xDefaultPolicy": "source-locale",
+  "locales": [
+    {
+      "code": "en",
+      "label": "English",
+      "role": "canonical",
+      "status": "published",
+      "markets": [],
+      "searchPublication": "full"
+    },
+    {
+      "code": "ru",
+      "label": "Русский",
+      "role": "human-interface",
+      "status": "reviewed-partial",
+      "markets": [],
+      "searchPublication": "limited"
+    }
+  ],
+  "markets": [],
+  "surfaces": [
+    {
+      "id": "core-ui",
+      "kind": "rendered-page-manifest",
+      "parity": "adapted",
+      "canonicalSource": "index.html",
+      "localePattern": "{locale}/index.html",
+      "membership": "subset",
+      "requiredForRoles": ["human-interface"],
+      "requireNfc": true,
+      "checks": ["localized-navigation", "localized-accessible-names", "no-silent-fallback"]
+    },
+    {
+      "id": "flagship-content",
+      "kind": "json-record-set",
+      "parity": "semantic",
+      "canonicalSource": "life-os/datasets/flagships.json",
+      "localePattern": "data/localization/{locale}/flagships.json",
+      "stableIdField": "slug",
+      "sourceHashField": "sourceFingerprint",
+      "membership": "exact",
+      "requiredFields": ["slug", "title", "description", "action", "check_in", "evidence_status", "sourceFingerprint"],
+      "valueFields": ["title", "description", "action", "check_in", "boundary", "alternative"],
+      "requiredForRoles": ["human-interface"],
+      "checks": ["exact-id-parity", "required-fields", "source-current", "evidence-state-preserved"]
+    },
+    {
+      "id": "methodology",
+      "kind": "rendered-page-manifest",
+      "parity": "semantic",
+      "canonicalSource": "life-os/methodology/index.html",
+      "localePattern": "{locale}/life-os/methodology/index.html",
+      "membership": "subset",
+      "requiredForRoles": ["human-interface"],
+      "checks": ["trust-state-semantics", "recommendation-boundary-preserved"]
+    },
+    {
+      "id": "accessibility",
+      "kind": "manual",
+      "parity": "adapted",
+      "requiredForRoles": ["human-interface"],
+      "checks": ["localized-accessible-names", "localized-skip-link", "narrow-layout-review"]
+    },
+    {
+      "id": "seo-search",
+      "kind": "rendered-page-manifest",
+      "parity": "adapted",
+      "canonicalSource": "sitemap.xml",
+      "localePattern": "{locale}/sitemap.xml",
+      "membership": "subset",
+      "requiredForRoles": ["human-interface"],
+      "requireHreflang": true,
+      "requireSitemap": true,
+      "requireSearchMetadata": true,
+      "requireStructuredDataLanguage": true,
+      "checks": ["html-lang", "self-canonical", "reciprocal-hreflang", "sitemap-membership", "structured-data-language"]
+    },
+    {
+      "id": "ai-agent",
+      "kind": "machine-files",
+      "parity": "semantic",
+      "localePattern": "{locale}/llms.txt",
+      "requiredForRoles": ["human-interface"],
+      "requiredTokens": ["Locale: ru", "Canonical locale: en", "No silent fallback: true"],
+      "checks": ["declared-machine-surface", "locale-routing-semantics", "coverage-boundary-visible"]
+    }
+  ],
+  "impactRules": [
+    {
+      "paths": ["index.html", "homepage.js", "styles.css", "scripts/apply-brand-shell.mjs"],
+      "surfaces": ["core-ui", "accessibility", "seo-search"]
+    },
+    {
+      "paths": ["life-os/datasets/flagships.json", "scripts/build-flagship-collection.mjs", "scripts/build-protocol-feed.mjs"],
+      "surfaces": ["flagship-content", "seo-search", "ai-agent"]
+    },
+    {
+      "paths": ["scripts/build-content-methodology.mjs", "life-os/methodology/index.html"],
+      "surfaces": ["methodology", "seo-search", "ai-agent"]
+    },
+    {
+      "paths": ["data/localization/**", "scripts/build-localizations.mjs", "scripts/check-localizations.mjs"],
+      "surfaces": ["core-ui", "flagship-content", "methodology", "accessibility", "seo-search", "ai-agent"]
+    }
+  ],
+  "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published Russian scope. It does not prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion."
+}

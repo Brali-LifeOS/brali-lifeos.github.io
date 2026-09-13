@@ -67,6 +67,8 @@ jobs:
         run: node scripts/apply-internal-discovery-distribution.mjs
       - name: Gate final Internal Discovery & Distribution surface
         run: node scripts/check-internal-discovery-distribution.mjs
+      - name: Stage Goose ARWP Proof Mark
+        run: node scripts/inject-goose-proof-mark.mjs .
       - name: Gate Brali Bench final artifact
         shell: bash
         run: |

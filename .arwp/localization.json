@@ -78,6 +78,36 @@
       "checks": ["trust-state-semantics", "recommendation-boundary-preserved"]
     },
     {
+      "id": "research-hub",
+      "kind": "rendered-page-manifest",
+      "parity": "semantic",
+      "canonicalSource": "research/index.html",
+      "localePattern": "{locale}/research/index.html",
+      "membership": "exact",
+      "requiredForRoles": ["human-interface"],
+      "checks": ["source-current", "native-localized-copy", "explicit-human-fallback", "reciprocal-hreflang"]
+    },
+    {
+      "id": "partners-hub",
+      "kind": "rendered-page-manifest",
+      "parity": "adapted",
+      "canonicalSource": "partners/index.html",
+      "localePattern": "{locale}/partners/index.html",
+      "membership": "exact",
+      "requiredForRoles": ["human-interface"],
+      "checks": ["source-current", "native-localized-copy", "explicit-human-fallback", "reciprocal-hreflang"]
+    },
+    {
+      "id": "ai-developer-hub",
+      "kind": "rendered-page-manifest",
+      "parity": "adapted",
+      "canonicalSource": "for-ai/index.html",
+      "localePattern": "{locale}/for-ai/index.html",
+      "membership": "exact",
+      "requiredForRoles": ["human-interface"],
+      "checks": ["source-current", "native-localized-copy", "machine-contract-preserved", "explicit-human-fallback", "reciprocal-hreflang"]
+    },
+    {
       "id": "accessibility",
       "kind": "manual",
       "parity": "adapted",
@@ -114,7 +144,11 @@
     {"paths":["data/life-os-content/index.json","data/life-os-content/**","life-os/datasets/evidence.json"],"surfaces":["library-content","seo-search","ai-agent"]},
     {"paths":["data/life-os-zones.json"],"surfaces":["growth-zones","seo-search"]},
     {"paths":["scripts/build-content-methodology.mjs","life-os/methodology/index.html"],"surfaces":["methodology","seo-search","ai-agent"]},
-    {"paths":["data/localization/**","scripts/build-localizations.mjs","scripts/build-ru-library.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","accessibility","seo-search","ai-agent"]}
+    {"paths":["research/index.html"],"surfaces":["research-hub","seo-search"]},
+    {"paths":["partners/index.html"],"surfaces":["partners-hub","seo-search"]},
+    {"paths":["for-ai/index.html"],"surfaces":["ai-developer-hub","seo-search","ai-agent"]},
+    {"paths":["data/localization/ru/primary-pages.json","data/localization/ru/pages/**","scripts/build-ru-primary-pages.mjs","scripts/check-ru-primary-pages.mjs"],"surfaces":["research-hub","partners-hub","ai-developer-hub","core-ui","seo-search","ai-agent"]},
+    {"paths":["data/localization/**","scripts/build-localizations.mjs","scripts/build-ru-library.mjs","scripts/patch-ru-discovery.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]}
   ],
   "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published Russian scope. It does not by itself prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion. Localization quality state is tracked separately from canonical evidence state."
 }

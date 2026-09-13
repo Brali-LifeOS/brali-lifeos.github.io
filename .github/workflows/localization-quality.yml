@@ -23,8 +23,12 @@ jobs:
           package-manager-cache: false
       - name: Check live localization verifier syntax
         run: node --check scripts/check-live-localizations.mjs
+      - name: Check Russian discovery patch syntax
+        run: node --check scripts/patch-ru-discovery.mjs
       - name: Build declared localized surfaces
         run: npm run localization:build
+      - name: Patch Russian discovery shell
+        run: node scripts/patch-ru-discovery.mjs
       - name: Check localization contract and rendered invariants
         run: npm run localization:check
       - name: Check localization impact against PR base

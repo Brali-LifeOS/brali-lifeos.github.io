@@ -4,7 +4,7 @@
   "issue": 210,
   "source_dataset": "data/life-os-content/index.json",
   "evidence_dataset": "life-os/datasets/evidence.json",
-  "coverage_mode": "exact",
+  "coverage_mode": "batched",
   "target": "exact-canonical-public-corpus",
   "batch_glob": "data/localization/ru/library/*.json",
   "quality_states": [

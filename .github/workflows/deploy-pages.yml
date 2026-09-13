@@ -39,6 +39,8 @@ jobs:
         run: node scripts/check-content-trust-policy.mjs
       - name: Build site
         run: npm run build
+      - name: Patch Russian discovery shell
+        run: node scripts/patch-ru-discovery.mjs
       - name: Build portable Brali Bench
         run: node scripts/build-brali-bench.mjs && node scripts/check-brali-bench.mjs
       - name: Validate shared stdio and remote MCP source

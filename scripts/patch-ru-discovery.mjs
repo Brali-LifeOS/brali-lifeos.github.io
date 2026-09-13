@@ -4,7 +4,14 @@ import path from "node:path";
 const root = process.cwd();
 const ruRoot = path.join(root, "ru");
 const site = JSON.parse(await readFile(path.join(root, "data", "localization", "ru", "site.json"), "utf8"));
-const libraryLabel = site.shell?.nav_library || "Библиотека";
+const labels = {
+  library: site.shell?.nav_library || "Библиотека",
+  flagships: site.shell?.nav_flagships || "7 стартовых протоколов",
+  methodology: site.shell?.nav_methodology || "Как мы проверяем",
+  research: site.shell?.nav_research || "Исследования",
+  partners: site.shell?.nav_partners || "Партнёрства",
+  forAi: site.shell?.nav_for_ai || "Для AI",
+};
 const primaryCta = site.home?.primary_cta || "Открыть русскую библиотеку";
 
 function russianPlural(count, one, few, many) {
@@ -29,14 +36,8 @@ function fixRussianCounters(html) {
 
 function assertCounterGrammar(html, file) {
   const checks = [
-    {
-      pattern: /(\d+) (русская запись|русские записи|русских записей)/g,
-      forms: ["русская запись", "русские записи", "русских записей"],
-    },
-    {
-      pattern: /(\d+) (локализованная запись|локализованные записи|локализованных записей)/g,
-      forms: ["локализованная запись", "локализованные записи", "локализованных записей"],
-    },
+    { pattern: /(\d+) (русская запись|русские записи|русских записей)/g, forms: ["русская запись", "русские записи", "русских записей"] },
+    { pattern: /(\d+) (локализованная запись|локализованные записи|локализованных записей)/g, forms: ["локализованная запись", "локализованные записи", "локализованных записей"] },
   ];
   for (const { pattern, forms } of checks) {
     for (const match of html.matchAll(pattern)) {
@@ -47,6 +48,32 @@ function assertCounterGrammar(html, file) {
       }
     }
   }
+}
+
+function routeForFile(file) {
+  const relative = path.relative(ruRoot, path.dirname(file)).replaceAll(path.sep, "/");
+  return relative === "" ? "/ru/" : `/ru/${relative}/`;
+}
+
+function navLink(href, label, currentRoute, { button = false } = {}) {
+  const className = button ? ' class="button"' : "";
+  const current = href === currentRoute ? ' aria-current="page"' : "";
+  return `<a${className} href="${href}"${current}>${label}</a>`;
+}
+
+function englishPath(html) {
+  const alternate = html.match(/<link rel="alternate" hreflang="en" href="https:\/\/brali-lifeos\.github\.io([^\"]+)">/);
+  if (alternate) return alternate[1];
+  const switchLink = html.match(/<a lang="en" hreflang="en" href="([^\"]+)">English<\/a>/);
+  return switchLink?.[1] || "/";
+}
+
+function unifiedHeaderLinks(currentRoute, enPath) {
+  return `<div class="links">${navLink("/ru/life-os/", labels.library, currentRoute)}${navLink("/ru/life-os/methodology/", labels.methodology, currentRoute)}${navLink("/ru/research/", labels.research, currentRoute)}${navLink("/ru/partners/", labels.partners, currentRoute)}${navLink("/ru/for-ai/", labels.forAi, currentRoute, { button: true })}<a lang="en" hreflang="en" href="${enPath}">${site.shell.language_switch}</a></div>`;
+}
+
+function unifiedFooterLinks(enPath) {
+  return `<div class="footer-links"><a href="/ru/life-os/">${labels.library}</a><a href="/ru/life-os/flagships/">${labels.flagships}</a><a href="/ru/research/">${labels.research}</a><a href="/ru/for-ai/">${labels.forAi}</a><a href="/ru/partners/">${labels.partners}</a><a href="/ru/life-os/methodology/">${labels.methodology}</a><a href="/ru/llms.txt">llms.txt</a><a lang="en" hreflang="en" href="${enPath}">English</a></div>`;
 }
 
 async function walk(directory) {
@@ -68,24 +95,17 @@ for (const file of files) {
   let html = await readFile(file, "utf8");
   const isLegacyRuShell = html.includes('data-brali-cluster="localized-ru"');
   const isRuLibraryShell = html.includes('data-brali-cluster="localized-ru-library"');
-  if (!isLegacyRuShell && !isRuLibraryShell) continue;
+  const isRuPrimaryShell = html.includes('data-brali-cluster="localized-ru-primary"');
+  if (!isLegacyRuShell && !isRuLibraryShell && !isRuPrimaryShell) continue;
 
   const before = html;
+  const currentRoute = routeForFile(file);
+  const enPath = englishPath(html);
+
+  html = html.replace(/<div class="links">[\s\S]*?<\/div><\/nav><\/header>/, `${unifiedHeaderLinks(currentRoute, enPath)}</nav></header>`);
+  html = html.replace(/<div class="footer-links">[\s\S]*?<\/div><\/div><\/footer>/, `${unifiedFooterLinks(enPath)}</div></footer>`);
 
   if (isLegacyRuShell) {
-    if (!html.includes('<div class="links"><a href="/ru/life-os/">')) {
-      html = html.replace(
-        '<div class="links"><a href="/ru/life-os/flagships/">',
-        `<div class="links"><a href="/ru/life-os/">${libraryLabel}</a><a href="/ru/life-os/flagships/">`,
-      );
-    }
-    if (!html.includes('<div class="footer-links"><a href="/ru/life-os/">')) {
-      html = html.replace(
-        '<div class="footer-links"><a href="/ru/life-os/flagships/">',
-        `<div class="footer-links"><a href="/ru/life-os/">${libraryLabel}</a><a href="/ru/life-os/flagships/">`,
-      );
-    }
-
     const relative = path.relative(root, file).replaceAll(path.sep, "/");
     if (relative === "ru/index.html") {
       html = html.replace(
@@ -114,8 +134,16 @@ for (const file of files) {
 }
 
 const home = await readFile(path.join(ruRoot, "index.html"), "utf8");
-if (!home.includes(`<a href="/ru/life-os/">${libraryLabel}</a>`)) {
-  throw new Error("Russian homepage navigation must expose the localized library");
+for (const [href, label] of [
+  ["/ru/life-os/", labels.library],
+  ["/ru/life-os/methodology/", labels.methodology],
+  ["/ru/research/", labels.research],
+  ["/ru/partners/", labels.partners],
+  ["/ru/for-ai/", labels.forAi],
+]) {
+  if (!home.includes(`href="${href}"`) || !home.includes(`>${label}</a>`)) {
+    throw new Error(`Russian homepage navigation must expose ${label} (${href})`);
+  }
 }
 if (!home.includes(`<a class="button yellow" href="/ru/life-os/">${primaryCta}</a>`)) {
   throw new Error("Russian homepage primary CTA must open the localized library");

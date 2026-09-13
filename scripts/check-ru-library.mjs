@@ -1,5 +1,6 @@
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { loadRussianLocalizationAuthoringIndex, localizationSourceSnapshot } from "./lib/ru-localization-source.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -10,9 +11,10 @@ const fail = (message) => { throw new Error(`[ru-library] ${message}`); };
 const assert = (condition, message) => { if (!condition) fail(message); };
 const cyrillic = /[А-Яа-яЁё]/;
 
-const [config, canonicalIndex, evidence, zonesRu, zonesEn, flagships, manifest, machine] = await Promise.all([
+const [config, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn, flagships, manifest, machine] = await Promise.all([
   readJson("data/localization/ru/library-manifest.json"),
   readJson("data/life-os-content/index.json"),
+  loadRussianLocalizationAuthoringIndex(root),
   readJson("life-os/datasets/evidence.json"),
   readJson("data/localization/ru/zones.json"),
   readJson("data/life-os-zones.json"),
@@ -28,6 +30,7 @@ const qualityRank = { "localized-draft": 0, "language-reviewed": 1, "editorial-r
 for (const state of Object.keys(qualityRank)) assert(allowedQuality.has(state), `quality state missing from contract: ${state}`);
 
 const indexBySlug = new Map(canonicalIndex.map((entry) => [entry.slug, entry]));
+const authoringBySlug = new Map(authoringIndex.map((entry) => [entry.slug, entry]));
 const evidenceBySlug = new Map((evidence.entries || []).map((entry) => [entry.slug, entry]));
 const flagshipSlugs = new Set((flagships.entries || []).map((entry) => entry.slug));
 assert(evidenceBySlug.size === canonicalIndex.length, "evidence dataset must cover the canonical corpus before localization is checked");
@@ -55,8 +58,9 @@ for (const name of files) {
     assert(!flagshipSlugs.has(record.slug), `${record.slug} duplicates the flagship localization source`);
     assert(!localized.has(record.slug), `duplicate localized slug ${record.slug}`);
     const source = indexBySlug.get(record.slug);
-    assert(source, `unknown canonical slug ${record.slug}`);
-    const expectedSource = { title: source.title, subtitle: source.subtitle || "", description: source.description || "", updatedISO: source.updatedISO || "" };
+    assert(source, `unknown canonical slug in the current build: ${record.slug}`);
+    const authoringSource = authoringBySlug.get(record.slug) || source;
+    const expectedSource = localizationSourceSnapshot(authoringSource);
     for (const [field, value] of Object.entries(expectedSource)) assert(record.source?.[field] === value, `stale source snapshot ${record.slug}.${field}`);
     assert(allowedQuality.has(record.quality_state), `invalid quality state ${record.slug}: ${record.quality_state}`);
     for (const field of ["title", "subtitle", "description"]) {

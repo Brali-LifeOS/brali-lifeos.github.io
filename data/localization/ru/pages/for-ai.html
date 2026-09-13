@@ -1,0 +1,95 @@
+<p class="eyebrow">Для AI и разработчиков</p>
+<h1 class="long-heading">Используйте практические знания, не отрывая их от границ доказательности.</h1>
+<p class="lead">Brali — версионируемый слой практических знаний для людей и агентов. Одни и те же канонические записи питают читаемые протоколы, Agent Skills, API, локальный MCP, datasets и evaluation. Evidence-state, происхождение и стабильная идентичность должны переживать интеграцию вместе с самим советом.</p>
+
+<section class="prose" data-brali-fast-start>
+  <p class="card-label">Начать быстро</p>
+  <h2>Сначала попробуйте полезную часть, потом изучайте архитектуру.</h2>
+  <p>Чтобы проверить Brali, не нужно сразу клонировать репозиторий или разбираться в ontology. Выберите минимальный путь под свою задачу.</p>
+  <div class="grid two">
+    <article class="card">
+      <span class="card-label">Без установки</span>
+      <h3>Задайте практический вопрос</h3>
+      <p>Query Playground показывает найденную тему, доверенные протоколы, evidence-state и provenance. Интерфейс пока английский; это явно отдельная неподдержанная русская поверхность, а не скрытый fallback.</p>
+      <p><a class="button yellow" lang="en" hreflang="en" href="/for-ai/query/">Открыть Query Playground — английский интерфейс</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Agent Skill</span>
+      <h3>Сначала просмотрите Brali router</h3>
+      <p>Router выбирает только из доверенного recommendation layer. Перед установкой его можно просмотреть:</p>
+      <pre><code>gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os</code></pre>
+      <p>Затем установите его только для того host и scope, которые действительно используете. Например, для Claude Code:</p>
+      <pre><code>gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user</code></pre>
+      <p><a lang="en" hreflang="en" href="/skill-packs/">Каталог Agent Skills — английская версия →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">JSON / API</span>
+      <h3>Забирайте только доверенные протоколы</h3>
+      <p>Для приложения лучше начать с компактного Trusted Protocol Feed или API v1, а не вставлять весь корпус в каждый prompt. Машинные endpoints остаются каноническими и не требуют перевода ключей.</p>
+      <p><a href="/life-os/datasets/protocols.json">Trusted Protocol Feed →</a> · <a href="/api/v1/index.json">API index →</a> · <a href="/api/v1/openapi.json">OpenAPI →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Проверяемость</span>
+      <h3>Посмотрите evaluation, а не маркетинговый балл</h3>
+      <p>Открытая evaluation suite хранит вопросы, ожидаемые trust boundaries и результаты. Она оценивает retrieval и grounding Brali и не выдаёт себя за универсальный benchmark неприкреплённой версии LLM.</p>
+      <p><a class="button" lang="en" hreflang="en" href="/for-ai/evaluation/">Agent Evaluation — английская версия</a></p>
+    </article>
+  </div>
+  <aside class="callout"><strong>Правило доверия:</strong> наличие записи или skill-файла ещё не делает материал доверенной рекомендацией. В обычную выдачу входят только разрешённые reviewed/practical записи. <code>pending-review</code> и <code>restricted</code> сохраняют ограничения. Если подходящего доверенного ответа нет, корректный результат может быть «нет ответа».</aside>
+</section>
+
+<section class="prose">
+  <h2>Выбирайте самую маленькую поверхность интеграции, которая решает задачу</h2>
+  <p>Если среда поддерживает Agent Skills, начните с router <code>brali-life-os</code> или одного ограниченного skill. Для структурированного поиска используйте API v1. Локальный MCP подходит, когда ваша среда уже работает с MCP. Не копируйте полный корпус в каждый prompt по умолчанию: это дороже, труднее проверяется и легче отрывает совет от контекста.</p>
+
+  <h2>Рекомендуемый retrieval-процесс</h2>
+  <ol>
+    <li>Определите конкретную тему или проблему пользователя.</li>
+    <li>Ищите через <code>/api/v1/search.json</code> и разрешайте результат в canonical ID.</li>
+    <li>Получите Topic, Hack, Protocol или сгенерированный Agent Skill.</li>
+    <li>До практического или evidence-like утверждения прочитайте evidence metadata и skill mode.</li>
+    <li>Для материалов из исследований проверьте Evidence Decision: поддерживаемый вывод, неподдерживаемые выводы, ограничения и редакционное решение.</li>
+    <li>Передавайте downstream evidence-state, skill mode, source scope, canonical ID и URL Brali вместе с содержанием.</li>
+    <li>Если знания нет, возвращайте отсутствие покрытия вместо выдуманного ответа.</li>
+  </ol>
+
+  <h2>Agent Skills</h2>
+  <p>Каждый хак Brali может быть собран в стабильный <code>SKILL.md</code>. Trust mode определяет, разрешено ли практическое использование: доверенные записи становятся <code>usable</code>, материалы на проверке — <code>review-required</code>, а чувствительные ограниченные записи — неоперационными <code>restricted-reference</code>. Полная библиотека и доверенный каталог остаются машинными каноническими поверхностями: <a href="/skill-packs/library.json"><code>/skill-packs/library.json</code></a> и <a href="/skill-packs/catalog.json"><code>/skill-packs/catalog.json</code></a>.</p>
+
+  <h2>Не стирайте неопределённость</h2>
+  <p>Trust metadata — часть знания, а не декоративный badge. Страница, source record или skill-файл не становятся рекомендацией только потому, что доступны поиску или API. Система, которая использует Brali, должна сохранять различие между <code>reviewed</code>, <code>practical</code>, <code>pending-review</code> и <code>restricted</code>.</p>
+
+  <h2>MCP</h2>
+  <p>В репозитории есть read-only MCP server с инструментами <code>search_knowledge</code>, <code>get_hack</code>, <code>get_protocol</code>, <code>get_evidence</code>, <code>list_topics</code> и <code>get_related</code>. Он читает те же сгенерированные API-файлы, а не поддерживает вторую модель знаний. Текущая доказанная поверхность — локальный stdio MCP; Brali не заявляет о hosted remote MCP endpoint без фактической публикации и проверки.</p>
+
+  <h2>Мультиязычный retrieval</h2>
+  <p>Английский остаётся каноническим редакционным языком и источником идентичности. Русский слой добавляет естественные названия, описания и маршруты, сохраняя тот же canonical ID, slug и evidence-state. Если русского маршрута нет в manifest, агент должен явно использовать английский канон, а не выдавать английскую страницу за локализованную.</p>
+
+  <h2>Evaluation</h2>
+  <p>Публичная Agent Evaluation Suite сравнивает базовый вариант без knowledge grounding, lexical retrieval и структурированный retrieval Brali, включая safety, provenance и evidence-boundary кейсы. Исходные вопросы и отчёт открыты, чтобы результат можно было разобрать, а не просто принять как рекламное число. <a lang="en" hreflang="en" href="/for-ai/evaluation/">Открыть evaluation — английская версия</a>.</p>
+
+  <h2>Канонические машинные файлы</h2>
+  <ul>
+    <li><a href="/skill-packs/library.json">Полная библиотека Agent Skills</a></li>
+    <li><a href="/skill-packs/catalog.json">Доверенный каталог Agent Skills</a></li>
+    <li><a href="/api/v1/index.json">API index</a></li>
+    <li><a href="/api/v1/openapi.json">OpenAPI contract</a></li>
+    <li><a href="/life-os/datasets/protocols.json">Доверенные протоколы</a></li>
+    <li><a href="/life-os/datasets/evidence.json">Evidence index</a></li>
+    <li><a href="/life-os/datasets/evidence-decisions.json">Evidence decisions</a></li>
+    <li><a href="/life-os/datasets/manifest.json">Canonical manifest</a></li>
+  </ul>
+
+  <h2>Воспроизводимое использование</h2>
+  <p>Для исследования или долгоживущей интеграции фиксируйте versioned release, а не следуйте за <code>main</code>. Так набор данных, checksums, лицензия и известные ограничения остаются воспроизводимыми. Текущая стабильная базовая линия публикуется вместе с release metadata.</p>
+
+  <h2>Интеграция, исследование или лицензирование</h2>
+  <p>Для продуктовой интеграции, локализации, research collaboration или коммерческого использования перейдите к <a href="/ru/partners/">русской странице партнёрств</a>.</p>
+</section>
+
+<aside class="callout">
+  <h3>Что ещё не локализовано</h3>
+  <p>Query Playground, Agent Evaluation, demos, integration kits и каталог Agent Skills пока остаются англоязычными human-interface страницами. Машинные JSON/API endpoints намеренно сохраняют канонические имена полей. Русская версия не маскирует эти границы.</p>
+  <a class="button" href="/ru/life-os/">Открыть русскую библиотеку</a>
+  <a class="button quiet" href="/ru/life-os/methodology/">Как Brali проверяет рекомендации</a>
+</aside>

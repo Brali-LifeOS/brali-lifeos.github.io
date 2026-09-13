@@ -21,6 +21,8 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Check live localization verifier syntax
+        run: node --check scripts/check-live-localizations.mjs
       - name: Build declared localized surfaces
         run: npm run localization:build
       - name: Check localization contract and rendered invariants

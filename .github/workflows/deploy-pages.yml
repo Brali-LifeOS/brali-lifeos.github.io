@@ -106,6 +106,8 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Verify live Russian localization
+        run: node scripts/check-live-localizations.mjs
       - name: Verify live Brali Bench
         shell: bash
         run: |

@@ -1,5 +1,6 @@
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { loadRussianLocalizationAuthoringIndex, localizationSourceSnapshot } from "./lib/ru-localization-source.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -17,11 +18,12 @@ const ruPathFor = (enPath) => enPath === "/" ? "/ru/" : `/ru${enPath}`;
 const jsonForHtml = (value) => JSON.stringify(value).replace(/</g, "\\u003c");
 const text = (value = "") => String(value).replace(/\s+/g, " ").trim();
 
-const [config, site, localizedFlagships, canonicalIndex, evidence, zonesRu, zonesEn] = await Promise.all([
+const [config, site, localizedFlagships, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn] = await Promise.all([
   readJson(path.join(sourceRoot, "library-manifest.json")),
   readJson(path.join(sourceRoot, "site.json")),
   readJson(path.join(sourceRoot, "flagships.json")),
   readJson(path.join(root, "data", "life-os-content", "index.json")),
+  loadRussianLocalizationAuthoringIndex(root),
   readJson(path.join(root, "life-os", "datasets", "evidence.json")),
   readJson(path.join(sourceRoot, "zones.json")),
   readJson(path.join(root, "data", "life-os-zones.json")),
@@ -32,11 +34,9 @@ if (config.locale !== locale || config.source_dataset !== "data/life-os-content/
 }
 
 const allowedQuality = new Set(config.quality_states || []);
-const qualityRank = new Map(["localized-draft", 0, "language-reviewed", 1, "editorial-reviewed", 2].reduce((pairs, value, index, array) => {
-  if (index % 2 === 0) pairs.push([value, array[index + 1]]);
-  return pairs;
-}, []));
+const qualityRank = new Map([["localized-draft", 0], ["language-reviewed", 1], ["editorial-reviewed", 2]]);
 const indexBySlug = new Map(canonicalIndex.map((entry) => [entry.slug, entry]));
+const authoringBySlug = new Map(authoringIndex.map((entry) => [entry.slug, entry]));
 const evidenceBySlug = new Map((evidence.entries || []).map((entry) => [entry.slug, entry]));
 const flagshipBySlug = new Map((localizedFlagships.entries || []).map((entry) => [entry.slug, entry]));
 const zoneEnBySlug = new Map(zonesEn.map((entry) => [entry.slug, entry]));
@@ -68,8 +68,9 @@ for (const record of batchRecords) {
   if (batchBySlug.has(record.slug)) throw new Error(`Duplicate Russian library localization: ${record.slug}`);
   if (flagshipBySlug.has(record.slug)) throw new Error(`Flagship ${record.slug} must stay in flagships.json, not a library batch`);
   const source = indexBySlug.get(record.slug);
-  if (!source) throw new Error(`Russian library record references unknown canonical slug: ${record.slug}`);
-  const expectedSource = { title: source.title, subtitle: source.subtitle || "", description: source.description || "", updatedISO: source.updatedISO || "" };
+  if (!source) throw new Error(`Russian library record references unknown canonical slug in the current build: ${record.slug}`);
+  const authoringSource = authoringBySlug.get(record.slug) || source;
+  const expectedSource = localizationSourceSnapshot(authoringSource);
   for (const [field, value] of Object.entries(expectedSource)) {
     if ((record.source || {})[field] !== value) throw new Error(`Stale Russian source snapshot for ${record.slug}.${field}`);
   }
@@ -81,6 +82,7 @@ const allLocalized = new Map();
 for (const [slug, entry] of flagshipBySlug) {
   const source = indexBySlug.get(slug);
   if (!source) throw new Error(`Flagship source missing from canonical index: ${slug}`);
+  const sourceForSnapshot = authoringBySlug.get(slug) || source;
   allLocalized.set(slug, {
     slug,
     zone_slug: source.zone.slug,
@@ -92,7 +94,7 @@ for (const [slug, entry] of flagshipBySlug) {
     check_in: entry.check_in,
     boundary: entry.boundary,
     alternative: entry.alternative,
-    source: { title: source.title, subtitle: source.subtitle || "", description: source.description || "", updatedISO: source.updatedISO || "" },
+    source: localizationSourceSnapshot(sourceForSnapshot),
   });
 }
 for (const [slug, record] of batchBySlug) {

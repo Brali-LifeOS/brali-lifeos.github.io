@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-13. A fresh 2026 systematic review and meta-analysis of randomized and crossover-randomized trials on green exercise and mental health completed full-source review. Brali already has a reviewed short stress-walk protocol, so the evidence is used to strengthen that existing protocol with a bounded green-route modifier rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
+  "research_candidates": [
+    {
+      "id": "crossref:10.3389/fpsyg.2026.1802759",
+      "source": "crossref",
+      "source_id": "10.3389/fpsyg.2026.1802759",
+      "doi": "10.3389/fpsyg.2026.1802759",
+      "title": "Effects of green exercise on mental health: a systematic review and meta-analysis",
+      "authors": [
+        "Xinyi Liu",
+        "Zongyi Sun",
+        "Xiaolin Wang",
+        "Delong Dong",
+        "Shamsulariffin Bin Samsudin"
+      ],
+      "container_title": "Frontiers in Psychology",
+      "publication_date": "2026-04-14",
+      "type": "journal-article",
+      "subjects": [
+        "green exercise",
+        "walking",
+        "mental health",
+        "wellbeing",
+        "affect",
+        "systematic review",
+        "meta-analysis",
+        "randomized controlled trials"
+      ],
+      "reference_url": "https://doi.org/10.3389/fpsyg.2026.1802759",
+      "discovered_at": "2026-09-13T00:00:00Z",
+      "last_seen_at": "2026-09-13T00:00:00Z",
+      "status": "support-existing",
+      "query_ids": [
+        "health-stress-recovery"
+      ],
+      "domain_ids": [
+        "health-energy"
+      ],
+      "topic_ids": [
+        "stress-recovery"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "health-energy"
+      ],
+      "zone_slugs": [
+        "be-healthy"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "crossref",
+        "publisher-full-text"
+      ],
+      "review_notes": "Full open-access publisher article reviewed, not just discovery metadata. The PROSPERO-registered review searched five databases through 7 November 2025 and included 51 peer-reviewed RCTs or crossover RCTs with 3,092 healthy adults aged 18-85. Most interventions were walking (72.5%); the authors state the findings primarily reflect low-intensity walking in natural environments. Green exercise improved overall wellbeing and affect across pooled comparisons with non-exercise, indoor exercise and built-up outdoor exercise. Stress-specific pooled effects favored green exercise versus non-exercise (SMD -0.51, 95% CI -0.81 to -0.20; I2 0%; 3 studies), indoor exercise (SMD -0.34, 95% CI -0.56 to -0.11; I2 53.5%; 6 studies) and built-up exercise (SMD -0.38, 95% CI -0.67 to -0.09; I2 0%; 2 studies). Several other outcomes had high heterogeneity. Most interventions were short-term with follow-up generally under three months; many individual studies were small and had limitations in randomization reporting/blinding. The review does not establish an optimal duration, a required type of green space, a unique mechanism, or durable long-term effects."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "green-route-stress-walk-boundary-2026",
+      "candidate_id": "crossref:10.3389/fpsyg.2026.1802759",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-13",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+      "source_title": "Effects of green exercise on mental health: a systematic review and meta-analysis",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.3389/fpsyg.2026.1802759",
+      "citation_text": "Liu X, Sun Z, Wang X, Dong D, Samsudin SB. Front Psychol. 2026;17:1802759.",
+      "source_reviewed": true,
+      "study_design": "PROSPERO-registered systematic review and random-effects meta-analysis restricted to peer-reviewed randomized controlled trials and crossover RCTs. PubMed, Web of Science, EBSCOhost, PsycINFO and CENTRAL were searched through 7 November 2025. The review included 51 studies, used duplicate screening/data extraction, PEDro study-quality assessment, GRADE certainty assessment and sensitivity analyses.",
+      "population": "3,092 healthy adults aged 18-85 across 51 studies. Ten studies included only men, three only women and 38 included both. Most interventions were walking; the review authors state that the findings primarily reflect low-intensity walking in natural environments.",
+      "intervention_or_exposure": "Physical activity performed in environments containing natural green elements, compared with non-exercise, indoor exercise or outdoor exercise in built-up environments with minimal greenery. Intervention formats and settings varied; most studies were short-term and follow-up was generally under three months.",
+      "outcomes": [
+        "Overall wellbeing",
+        "Positive and negative affect",
+        "Stress, anxiety and depression symptom scores",
+        "Calm, vigor, anger, fatigue and confusion"
+      ],
+      "supported_claim": "For an existing Brali stress-walk protocol, a safe greener route can be offered as a low-friction optional modifier when it is as convenient as an ordinary route. In the reviewed randomized evidence, green exercise improved average wellbeing and affect relative to pooled non-exercise, indoor-exercise and built-up outdoor comparators. Stress-specific pooled effects favored green exercise in all three comparator categories. This supports 'prefer green when equally practical', not a stronger prescription.",
+      "unsupported_or_overstated_claims": [
+        "A park, forest or specific amount of vegetation is required for a useful reset walk.",
+        "Ten minutes, or any other fixed duration, is the evidence-based optimal dose for stress relief.",
+        "Green exercise guarantees an immediate reduction in stress for an individual.",
+        "The pooled effects prove that greenery itself, rather than movement, context, expectations or their interaction, uniquely caused the benefit.",
+        "Green walking reliably treats depression, anxiety disorders, burnout or another mental-health condition.",
+        "The review establishes durable long-term mental-health benefits after the intervention ends.",
+        "The evidence supports a specific pace, heart-rate target, breathing pattern, mindfulness routine or screen rule.",
+        "Subgroup or setting differences should be converted into a ranked route prescription."
+      ],
+      "limitations": [
+        "Several pooled outcomes showed substantial or high heterogeneity, although sensitivity analyses suggested some results were driven by a small number of studies.",
+        "Most individual studies were small, and the authors noted incomplete reporting of randomization procedures and limited blinding in some trials.",
+        "Most interventions were walking, so generalization to other forms or intensities of exercise is limited.",
+        "Most interventions were short-term, with follow-up generally under three months, so long-term durability is uncertain.",
+        "Settings, exercise formats and psychological measures varied across studies.",
+        "Stress-specific comparisons contained relatively few studies: three versus non-exercise, six versus indoor exercise and two versus built-up exercise.",
+        "The meta-analysis does not isolate a unique biological or psychological mechanism for any observed advantage of greener settings."
+      ],
+      "target_hack_ids": [
+        "10-minute-stress-walk"
+      ],
+      "target_protocol_ids": [
+        "brali:10-minute-stress-walk"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: update the existing reviewed stress-walk page rather than create a second green-walk hack. Preserve the anti-magic-timer framing, make safety and convenience primary, add 'prefer a greener route when it costs essentially nothing' as an optional modifier, and add a simple observation loop comparing ordinary versus greener routes without presenting N-of-1 impressions as causal proof."
+    }
+  ]
+}

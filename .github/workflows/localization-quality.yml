@@ -4,7 +4,7 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [main]
+    branches: [main, agent/ru-localization-next-scan2-20260913]
   workflow_dispatch:
 
 permissions:
@@ -21,6 +21,29 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Print next RU localization candidates
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, readdir } from 'node:fs/promises';
+          import { loadRussianLocalizationAuthoringIndex, localizationSourceSnapshot } from './scripts/lib/ru-localization-source.mjs';
+          const canonical = JSON.parse(await readFile('data/life-os-content/index.json', 'utf8'));
+          const authoring = await loadRussianLocalizationAuthoringIndex(process.cwd());
+          const sourceBySlug = new Map(authoring.map((entry) => [entry.slug, entry]));
+          const flagships = JSON.parse(await readFile('data/localization/ru/flagships.json', 'utf8'));
+          const localized = new Set((flagships.entries || []).map((entry) => entry.slug));
+          for (const name of (await readdir('data/localization/ru/library')).filter((name) => name.endsWith('.json')).sort()) {
+            const batch = JSON.parse(await readFile(`data/localization/ru/library/${name}`, 'utf8'));
+            for (const record of batch.records || []) localized.add(record.slug);
+          }
+          const next = canonical.filter((entry) => !localized.has(entry.slug)).slice(0, 30).map((entry) => ({
+            slug: entry.slug,
+            source: localizationSourceSnapshot(sourceBySlug.get(entry.slug) || entry),
+          }));
+          console.log('RU_NEXT_BEGIN');
+          console.log(JSON.stringify(next, null, 2));
+          console.log('RU_NEXT_END');
+          console.log(`RU_LOCALIZED=${localized.size}; RU_CANONICAL=${canonical.length}; RU_MISSING=${canonical.length - localized.size}`);
+          NODE
       - name: Check live localization verifier syntax
         run: node --check scripts/check-live-localizations.mjs
       - name: Build declared localized surfaces

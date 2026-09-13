@@ -21,6 +21,21 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Report remaining Russian localization gaps
+        run: |
+          node --input-type=module <<'NODE'
+          import { readFile, readdir } from 'node:fs/promises';
+          const canonical = JSON.parse(await readFile('data/life-os-content/index.json', 'utf8'));
+          const flagships = JSON.parse(await readFile('data/localization/ru/flagships.json', 'utf8'));
+          const localized = new Set((flagships.entries || []).map((entry) => entry.slug));
+          for (const name of (await readdir('data/localization/ru/library')).filter((name) => name.endsWith('.json')).sort()) {
+            const batch = JSON.parse(await readFile(`data/localization/ru/library/${name}`, 'utf8'));
+            for (const record of batch.records || []) localized.add(record.slug);
+          }
+          const missing = canonical.filter((entry) => !localized.has(entry.slug)).map((entry) => entry.slug);
+          console.log(`RU_LOCALIZED=${localized.size}; RU_CANONICAL=${canonical.length}; RU_MISSING=${missing.length}`);
+          console.log(`RU_MISSING_SLUGS=${missing.join(', ')}`);
+          NODE
       - name: Check live localization verifier syntax
         run: node --check scripts/check-live-localizations.mjs
       - name: Check Russian discovery patch syntax

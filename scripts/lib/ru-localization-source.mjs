@@ -37,10 +37,17 @@ export async function loadRussianLocalizationAuthoringIndex(root = process.cwd()
     throw new Error("Content additions registry must use schema_version 1 and entries[]");
   }
 
+  // Existing tracked records are the stable localization snapshot anchors. The
+  // additions registry also refreshes a few existing records during the full
+  // build; treating those runtime refreshes as a new authoring source makes the
+  // fast localization job and the full Pages build disagree. Only entries that
+  // do not yet exist in the tracked index are sourced from the additions
+  // registry. Final published membership/evidence is still validated against
+  // the fully built corpus separately.
   const bySlug = new Map(trackedIndex.map((entry) => [entry.slug, entry]));
   for (const entry of additions.entries) {
     if (!entry?.slug) throw new Error("Content additions registry contains an entry without a slug");
-    bySlug.set(entry.slug, entry);
+    if (!bySlug.has(entry.slug)) bySlug.set(entry.slug, entry);
   }
   return [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
 }

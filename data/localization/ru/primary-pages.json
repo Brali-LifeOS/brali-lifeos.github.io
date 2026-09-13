@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "locale": "ru",
+  "source_locale": "en",
+  "quality": "language-reviewed",
+  "pages": [
+    {
+      "id": "research",
+      "kind": "primary-hub",
+      "source_path": "research/index.html",
+      "source_route": "/research/",
+      "route": "/ru/research/",
+      "fragment": "data/localization/ru/pages/research.html",
+      "title": "Исследования и сигналы",
+      "description": "Исследовательские заметки Brali: что новые источники действительно поддерживают, где заканчивается вывод и как исследование может изменить практический протокол.",
+      "schema_type": "CollectionPage",
+      "source_markers": [
+        "Useful research, connected to things people can try.",
+        "Living research pipeline",
+        "Why the queue is deliberately untrusted",
+        "From research to the library"
+      ]
+    },
+    {
+      "id": "partners",
+      "kind": "primary-hub",
+      "source_path": "partners/index.html",
+      "source_route": "/partners/",
+      "route": "/ru/partners/",
+      "fragment": "data/localization/ru/pages/partners.html",
+      "title": "Партнёрства с Brali",
+      "description": "Интеграции, исследовательские коллаборации, локализация и коммерческое использование данных Brali — с явными границами доказательности, происхождения и лицензирования.",
+      "schema_type": "CollectionPage",
+      "source_markers": [
+        "Choose a partnership path with clear evidence and licensing boundaries.",
+        "Partnership paths",
+        "Contribute without a partnership",
+        "One boundary across every path"
+      ]
+    },
+    {
+      "id": "for-ai",
+      "kind": "primary-hub",
+      "source_path": "for-ai/index.html",
+      "source_route": "/for-ai/",
+      "route": "/ru/for-ai/",
+      "fragment": "data/localization/ru/pages/for-ai.html",
+      "title": "Brali для AI и разработчиков",
+      "description": "Как использовать практические знания Brali через Agent Skills, API, MCP, datasets и evaluation, не теряя evidence-state, происхождение и каноническую идентичность.",
+      "schema_type": "WebPage",
+      "source_markers": [
+        "Use practical knowledge without throwing away its evidence boundary.",
+        "Start in 60 seconds",
+        "Choose the smallest integration surface that fits",
+        "Do not erase uncertainty",
+        "Multilingual retrieval"
+      ]
+    }
+  ]
+}

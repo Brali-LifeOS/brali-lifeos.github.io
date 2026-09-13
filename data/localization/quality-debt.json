@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "locale": "ru",
+  "status": "reviewed-partial",
+  "items": [
+    {
+      "id": "ru-long-form-library-expansion",
+      "surface": "long-form-library",
+      "state": "planned",
+      "scope": "Canonical Growth Library entries outside the seven flagship protocols",
+      "reason": "The first Russian release deliberately optimizes for native writing, evidence-boundary fidelity and reviewability instead of bulk machine translation.",
+      "release_rule": "Promote records in reviewed batches only after glossary, semantic reconciliation, Search/AI parity and built-UI checks pass."
+    },
+    {
+      "id": "ru-secondary-product-surfaces",
+      "surface": "secondary-pages",
+      "state": "planned",
+      "scope": "Research, partners, query playground, problem collections, updates and other secondary product surfaces",
+      "reason": "These surfaces remain explicitly outside the first human-interface Russian slice; no silent Russian fallback is claimed.",
+      "release_rule": "Add each surface to .arwp/localization.json before publishing it as localized."
+    },
+    {
+      "id": "ru-rendered-narrow-layout-review",
+      "surface": "accessibility",
+      "state": "requires-rendered-review",
+      "scope": "Russian pages on narrow/mobile layouts",
+      "reason": "Deterministic checks can verify language, links and structure but cannot prove that long Russian strings render well on every viewport.",
+      "release_rule": "Complete a rendered UI pass before upgrading the locale from reviewed-partial to a full human-interface release."
+    }
+  ]
+}

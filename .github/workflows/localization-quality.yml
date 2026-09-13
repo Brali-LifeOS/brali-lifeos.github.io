@@ -1,0 +1,32 @@
+name: Localization quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  localization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Build declared localized surfaces
+        run: npm run localization:build
+      - name: Check localization contract and rendered invariants
+        run: npm run localization:check
+      - name: Check localization impact against PR base
+        if: github.event_name == 'pull_request'
+        env:
+          LOCALIZATION_BASE_REF: origin/${{ github.base_ref }}
+        run: npm run localization:check

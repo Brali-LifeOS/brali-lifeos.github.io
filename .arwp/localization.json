@@ -11,22 +11,8 @@
   "localeManifest": "ru/manifest.json",
   "xDefaultPolicy": "source-locale",
   "locales": [
-    {
-      "code": "en",
-      "label": "English",
-      "role": "canonical",
-      "status": "published",
-      "markets": [],
-      "searchPublication": "full"
-    },
-    {
-      "code": "ru",
-      "label": "Русский",
-      "role": "human-interface",
-      "status": "reviewed-partial",
-      "markets": [],
-      "searchPublication": "limited"
-    }
+    {"code":"en","label":"English","role":"canonical","status":"published","markets":[],"searchPublication":"full"},
+    {"code":"ru","label":"Русский","role":"human-interface","status":"reviewed-partial","markets":[],"searchPublication":"limited"}
   ],
   "markets": [],
   "surfaces": [
@@ -54,6 +40,32 @@
       "valueFields": ["title", "description", "action", "check_in", "boundary", "alternative"],
       "requiredForRoles": ["human-interface"],
       "checks": ["exact-id-parity", "required-fields", "source-current", "evidence-state-preserved"]
+    },
+    {
+      "id": "library-content",
+      "kind": "json-record-set",
+      "parity": "semantic",
+      "canonicalSource": "data/life-os-content/index.json",
+      "localePattern": "data/localization/{locale}/library/*.json",
+      "stableIdField": "slug",
+      "membership": "subset",
+      "requiredFields": ["slug", "title", "subtitle", "description", "quality_state", "source"],
+      "valueFields": ["title", "subtitle", "description", "action", "check_in", "boundary", "alternative"],
+      "requiredForRoles": ["human-interface"],
+      "checks": ["stable-identity", "source-current", "quality-state-explicit", "evidence-state-derived-not-translated", "no-silent-fallback"]
+    },
+    {
+      "id": "growth-zones",
+      "kind": "json-record-set",
+      "parity": "semantic",
+      "canonicalSource": "data/life-os-zones.json",
+      "localePattern": "data/localization/{locale}/zones.json",
+      "stableIdField": "slug",
+      "membership": "exact",
+      "requiredFields": ["slug", "title", "subtitle"],
+      "valueFields": ["title", "subtitle"],
+      "requiredForRoles": ["human-interface"],
+      "checks": ["exact-id-parity", "natural-localized-copy"]
     },
     {
       "id": "methodology",
@@ -97,22 +109,12 @@
     }
   ],
   "impactRules": [
-    {
-      "paths": ["index.html", "homepage.js", "styles.css", "scripts/apply-brand-shell.mjs"],
-      "surfaces": ["core-ui", "accessibility", "seo-search"]
-    },
-    {
-      "paths": ["life-os/datasets/flagships.json", "scripts/build-flagship-collection.mjs", "scripts/build-protocol-feed.mjs"],
-      "surfaces": ["flagship-content", "seo-search", "ai-agent"]
-    },
-    {
-      "paths": ["scripts/build-content-methodology.mjs", "life-os/methodology/index.html"],
-      "surfaces": ["methodology", "seo-search", "ai-agent"]
-    },
-    {
-      "paths": ["data/localization/**", "scripts/build-localizations.mjs", "scripts/check-localizations.mjs"],
-      "surfaces": ["core-ui", "flagship-content", "methodology", "accessibility", "seo-search", "ai-agent"]
-    }
+    {"paths":["index.html","homepage.js","styles.css","scripts/apply-brand-shell.mjs"],"surfaces":["core-ui","accessibility","seo-search"]},
+    {"paths":["life-os/datasets/flagships.json","scripts/build-flagship-collection.mjs","scripts/build-protocol-feed.mjs"],"surfaces":["flagship-content","seo-search","ai-agent"]},
+    {"paths":["data/life-os-content/index.json","data/life-os-content/**","life-os/datasets/evidence.json"],"surfaces":["library-content","seo-search","ai-agent"]},
+    {"paths":["data/life-os-zones.json"],"surfaces":["growth-zones","seo-search"]},
+    {"paths":["scripts/build-content-methodology.mjs","life-os/methodology/index.html"],"surfaces":["methodology","seo-search","ai-agent"]},
+    {"paths":["data/localization/**","scripts/build-localizations.mjs","scripts/build-ru-library.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","accessibility","seo-search","ai-agent"]}
   ],
-  "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published Russian scope. It does not prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion."
+  "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published Russian scope. It does not by itself prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion. Localization quality state is tracked separately from canonical evidence state."
 }

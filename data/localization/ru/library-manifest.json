@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "locale": "ru",
+  "issue": 210,
+  "source_dataset": "data/life-os-content/index.json",
+  "evidence_dataset": "life-os/datasets/evidence.json",
+  "coverage_mode": "batched",
+  "target": "exact-canonical-public-corpus",
+  "batch_glob": "data/localization/ru/library/*.json",
+  "quality_states": [
+    "localized-draft",
+    "language-reviewed",
+    "editorial-reviewed"
+  ],
+  "minimum_public_quality": "language-reviewed",
+  "trusted_minimum_quality": "language-reviewed",
+  "policy": "Route coverage and language/editorial quality are separate. Russian localization never changes canonical evidence status, provenance, citations or stable identity. Long inherited English filler is not translated merely to preserve length; each Russian record should provide a concise, useful semantic layer written as natural Russian.",
+  "status": "active"
+}

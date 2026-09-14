@@ -40,7 +40,10 @@ export async function loadLocalizationAuthoringIndex(root = process.cwd()) {
   const bySlug = new Map(trackedIndex.map((entry) => [entry.slug, entry]));
   for (const entry of additions.entries) {
     if (!entry?.slug) throw new Error("Content additions registry contains an entry without a slug");
-    if (!bySlug.has(entry.slug)) bySlug.set(entry.slug, entry);
+    // apply-content-additions.mjs treats this registry as authoritative for both
+    // newly added and deliberately refreshed existing records. Mirror that
+    // precedence here so localization snapshots validate the build-time truth.
+    bySlug.set(entry.slug, entry);
   }
   return [...bySlug.values()].sort((a, b) => a.slug.localeCompare(b.slug));
 }

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "canonical_locale": "en",
+  "reference_locale": "ru",
+  "principles": {
+    "canonical_identity": "Stable canonical IDs and machine keys never change across locales.",
+    "effective_corpus": "Coverage is measured against the canonical corpus after build-time additions and refreshes, not only against the tracked source snapshot.",
+    "semantic_not_literal": "Localized prose may adapt wording but must preserve identity, practical meaning, evidence boundaries, uncertainty and safety limits.",
+    "evidence_independence": "Localization quality never upgrades canonical evidence or recommendation eligibility.",
+    "fallback": "Human-facing fallback is explicit; machine consumers can always recover canonical identity and source locale.",
+    "completion": "A locale cannot be called mature solely because every string or slug exists."
+  },
+  "required_authoring": [
+    "locale identity",
+    "canonical ID preservation",
+    "localized title",
+    "localized subtitle",
+    "localized description",
+    "quality state",
+    "source snapshot",
+    "coverage mode",
+    "zone localization",
+    "primary pages",
+    "locale switch",
+    "evidence-state preservation"
+  ],
+  "required_generated": [
+    "canonical/hreflang graph",
+    "machine-readable localized library",
+    "localized llms.txt",
+    "localized sitemap",
+    "structured data language",
+    "AI-agent fallback behavior",
+    "recommendation eligibility",
+    "build artifact checks",
+    "live deployment checks"
+  ],
+  "maturity_dimensions": {
+    "A": {"id": "structural-coverage", "automation": "required"},
+    "B": {"id": "semantic-parity", "automation": "source-drift-plus-review"},
+    "C": {"id": "language-quality", "automation": "lint-plus-human-review"},
+    "D": {"id": "evidence-safety-parity", "automation": "required"},
+    "E": {"id": "ux-localization", "automation": "required-plus-rendered-review"},
+    "F": {"id": "seo-hreflang-integrity", "automation": "required"},
+    "G": {"id": "ai-facing-integrity", "automation": "required"},
+    "H": {"id": "generated-live-parity", "automation": "required-on-deploy"},
+    "I": {"id": "manual-language-review", "automation": "explicit-review-state"}
+  },
+  "release_states": {
+    "localized-draft": "Structural work may exist, but human language review is incomplete.",
+    "language-reviewed": "All required localized prose has explicit human language-review state.",
+    "reference-core-complete": "The effective canonical knowledge corpus, primary localized surfaces, Search/AI surfaces and deployment gates pass; separately declared non-core surfaces may still use explicit fallback.",
+    "published": "All surfaces declared by the locale profile, including required rendered/manual reviews, are complete."
+  },
+  "patterns": {
+    "locale_root": "data/localization/{locale}",
+    "library_batches": "data/localization/{locale}/library/*.json",
+    "generated_manifest": "{locale}/manifest.json",
+    "generated_library": "{locale}/library.json",
+    "generated_llms": "{locale}/llms.txt",
+    "generated_sitemap": "{locale}/sitemap.xml"
+  },
+  "non_automatable_truth": [
+    "Natural language quality cannot be proven by Cyrillic or token counts.",
+    "Cultural fit cannot be proven by route coverage.",
+    "Rendered narrow-layout quality needs a rendered review or equivalent browser evidence.",
+    "Search ranking, AI citation, traffic and conversion are outcomes, not localization gate results."
+  ]
+}

@@ -1,0 +1,58 @@
+name: German localization bounded fill
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'data/localization/de/library/**'
+      - 'data/localization/de/flagships.json'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions.json'
+      - 'scripts/generate-de-missing-localization.mjs'
+      - 'scripts/lib/localization-source.mjs'
+      - '.github/workflows/de-localization-fill.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  models: read
+
+concurrency:
+  group: de-localization-fill-agent
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Fill next bounded German batches
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GERMAN_LOCALIZATION_MODEL: openai/gpt-4.1-mini
+          GERMAN_LOCALIZATION_BATCH_SIZE: '8'
+          GERMAN_LOCALIZATION_MAX_BATCHES: '12'
+        run: node scripts/generate-de-missing-localization.mjs
+      - name: Validate source parity before commit
+        run: node scripts/check-interface-locale-sources.mjs
+      - name: Commit generated German batches
+        shell: bash
+        run: |
+          if git diff --quiet -- data/localization/de/library; then
+            echo "No German library changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/localization/de/library
+          git commit -m "Fill next German localization batches"
+          git push origin HEAD:${{ github.ref_name }}

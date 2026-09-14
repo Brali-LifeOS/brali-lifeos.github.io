@@ -43,5 +43,11 @@
     "TRIZ"
   ],
   "policy": "Discouraged fragments are checked only in localized user-facing fields, never in canonical source snapshots. A genuine method or standard identifier may remain Latin when it is clearer than an invented Russian substitute. Exceptions must be explicit and slug-scoped rather than silently weakening the global gate.",
-  "exceptions": []
+  "exceptions": [
+    {
+      "slug": "qa-checklist-templates-runbook",
+      "fragments": ["чек-лист"],
+      "reason": "In a QA runbook, «чек-лист» is established professional terminology and is clearer to the target audience than an artificial replacement."
+    }
+  ]
 }

@@ -7,12 +7,14 @@ Use this file as the root entry point for ChatGPT and other repository agents. B
 Read only the context required for the task:
 
 1. `README.md` — current product direction, knowledge model, public surfaces, integrations, releases, and checks.
-2. `SOURCE_POLICY.md` — source and provenance rules for evidence-like material.
-3. `CONTENT_QUALITY.md` — publication/content-quality boundaries.
-4. `docs/agent-skills.md` when the task adds/changes hacks, Agent Skills, agent integrations, skill discovery, or trust-mode behavior.
-5. Relevant docs under `docs/` only when the task touches versioning, integrations, demos, releases, citation, or data contracts.
-6. `.arwp/README.md` and `.arwp/image-discovery.json` when the task changes public Search/discovery imagery, social/preferred-image metadata, sitemap image coverage or deployment verification.
-7. `docs/DISTRIBUTION_EXECUTION.md` when the task touches hosted MCP, external Agent Skill publication/discovery, Brali Bench, Hugging Face, Zenodo, or distribution/adoption. Treat that runbook as the current execution order; do not redo already-verified preparation merely because an older strategy document still describes it as future work.
+2. `docs/REPOSITORY_MAP.md` — compact architecture, source/generated ownership, workflow map, and task entry points.
+3. `SOURCE_POLICY.md` — source and provenance rules for evidence-like material.
+4. `CONTENT_QUALITY.md` — publication/content-quality boundaries.
+5. `docs/LOCALIZATION.md` when the task changes a locale, localized UI/content, hreflang/canonical language signals, or locale release gates.
+6. `docs/agent-skills.md` when the task adds/changes hacks, Agent Skills, agent integrations, skill discovery, or trust-mode behavior.
+7. Relevant docs under `docs/` only when the task touches versioning, integrations, demos, releases, citation, or data contracts.
+8. `.arwp/README.md` and `.arwp/image-discovery.json` when the task changes public Search/discovery imagery, social/preferred-image metadata, sitemap image coverage or deployment verification.
+9. `docs/DISTRIBUTION_EXECUTION.md` when the task touches hosted MCP, external Agent Skill publication/discovery, Brali Bench, Hugging Face, Zenodo, or distribution/adoption. Treat that runbook as the current execution order; do not redo already-verified preparation merely because an older strategy document still describes it as future work.
 
 Do not start by loading all generated API files, all research candidates, or the entire public site.
 
@@ -37,7 +39,7 @@ Source readiness is not external publication. A file, release-preparation check,
 | Agent Skills | full hack corpus in `data/life-os-content/index.json` plus generated evidence state | `scripts/build-skill-packs.mjs`, `/skill-packs/`, `docs/agent-skills.md` | `npm run skills:build`, `npm run skills:check`, then normal build/check |
 | Public API / data release | canonical datasets and generator code | `/api/v1/`, manifest, checksums, schemas, release docs | `npm run build`, `npm run check`; release tasks also use `npm run release:check -- --version <version>` |
 | AI/agent integration | canonical generated data plus `agents/`, `contracts/`, `skills/`, integration examples | `/for-ai/`, `/skill-packs/`, demos, OpenAPI/MCP surfaces | `npm run build`, `npm run check`, plus relevant `skills:check`, `mcp:check`, `demos:check`, `adoption:check`, or `query:check` |
-| Identity/localization | canonical IDs and alias registries | multilingual labels, historical aliases, API identity surfaces | `npm run build` and `npm run check` |
+| Identity/localization | canonical IDs, `.arwp/localization.json`, and `data/localization/<locale>/` | multilingual labels, historical aliases, generated locale/search/AI surfaces | `npm run localization:check`, then `npm run build` and `npm run check`; a published release also requires deployed live/browser gates |
 | Site/discovery | human source pages plus build generators | llms/discovery files, generated API/site pages, links, representative images, sitemap image entries, `.arwp/image-discovery.json` | `npm run build`, `npm run check`, `node scripts/apply-image-discovery.mjs`, `node scripts/check-image-discovery.mjs`; review live Image Discovery after deploy |
 
 ## Source-of-truth rules

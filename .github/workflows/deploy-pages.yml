@@ -37,6 +37,8 @@ jobs:
         run: cd mcp && npm install --ignore-scripts --package-lock=false && node -e "import('./remote.mjs')"
       - name: Validate Trustverse classification policy
         run: node scripts/check-content-trust-policy.mjs
+      - name: Validate live mature-locale checker syntax
+        run: node --check scripts/check-live-locale-readiness.mjs
       - name: Build site
         run: npm run build
       - name: Patch Russian discovery shell
@@ -110,6 +112,8 @@ jobs:
           package-manager-cache: false
       - name: Verify live Russian localization
         run: node scripts/check-live-localizations.mjs
+      - name: Verify live mature locale contract
+        run: node scripts/check-live-locale-readiness.mjs
       - name: Verify live Brali Bench
         shell: bash
         run: |

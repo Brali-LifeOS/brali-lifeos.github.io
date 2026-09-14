@@ -41,4 +41,4 @@ jobs:
         run: node scripts/audit-de-library-language.mjs
 
       - name: Show remaining canonical German records
-        run: node scripts/plan-de-library-next.mjs --limit=100
+        run: node scripts/plan-de-library-next.mjs --limit=250

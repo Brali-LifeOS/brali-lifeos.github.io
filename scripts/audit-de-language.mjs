@@ -5,7 +5,8 @@ const root = process.cwd();
 const locale = "de";
 const sourceRoot = path.join(root, "data", "localization", locale);
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
-const fail = (message) => { throw new Error(`[de-language] ${message}`); };
+const findings = [];
+const fail = (message) => { findings.push(message); };
 const cyrillic = /[А-Яа-яЁё]/;
 // Keep this detector to English function words that are not normal standalone German vocabulary.
 // Common German borrowings such as “Start” and “Check” are reviewed by normal editorial passes instead.
@@ -13,7 +14,9 @@ const englishFunctionWords = /\b(?:the|your|you|with|from|before|after|when|what
 
 const allowlist = await readJson("data/localization/de/language-allowlist.json");
 if (allowlist.locale !== locale || !Array.isArray(allowlist.terms)) fail("invalid language allowlist");
-const allowedTerms = allowlist.terms.map((item) => item.term).filter(Boolean).sort((a, b) => b.length - a.length);
+const allowedTerms = Array.isArray(allowlist.terms)
+  ? allowlist.terms.map((item) => item.term).filter(Boolean).sort((a, b) => b.length - a.length)
+  : [];
 
 function normalizeVisible(value) {
   let result = String(value || "");
@@ -73,8 +76,9 @@ for (const name of batchFiles) {
   const batch = JSON.parse(await readFile(path.join(sourceRoot, "library", name), "utf8"));
   for (const record of batch.records || []) {
     recordCount += 1;
+    const localized = record.localized && typeof record.localized === "object" ? record.localized : record;
     for (const field of ["title", "subtitle", "description", "action", "check_in", "boundary", "alternative"]) {
-      if (record[field]) checkText(`${name}:${record.slug}.${field}`, record[field]);
+      if (localized[field]) checkText(`${name}:${record.slug}.${field}`, localized[field]);
     }
   }
 }
@@ -83,6 +87,13 @@ for (const page of primary.pages || []) {
   let html = await readFile(path.join(root, page.fragment), "utf8");
   html = html.replace(/<pre[\s\S]*?<\/pre>/gi, " ").replace(/<code[\s\S]*?<\/code>/gi, " ").replace(/<[^>]+>/g, " ");
   checkText(`fragment:${page.id}`, html);
+}
+
+if (findings.length) {
+  console.error(`[de-language] ${findings.length} finding(s)`);
+  for (const finding of findings.slice(0, 300)) console.error(`  ${finding}`);
+  if (findings.length > 300) console.error(`  ... ${findings.length - 300} more`);
+  throw new Error(`German language audit found ${findings.length} issue(s).`);
 }
 
 console.log(`German language audit passed: ${recordCount} library batch records, ${(zones.records || []).length} zones, ${(flagships.entries || []).length} flagships, ${(primary.pages || []).length} primary pages.`);

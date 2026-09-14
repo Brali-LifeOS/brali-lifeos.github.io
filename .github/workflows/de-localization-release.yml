@@ -51,5 +51,7 @@ jobs:
         run: node scripts/audit-de-library-language.mjs --strict
       - name: Audit German public-interface language
         run: node scripts/audit-de-language.mjs
+      - name: Build exact site artifact
+        run: npm run build
       - name: Check generated interface-locale contract
         run: node scripts/check-interface-locales.mjs

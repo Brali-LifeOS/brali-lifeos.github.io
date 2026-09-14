@@ -108,12 +108,12 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Verify live Russian localization over HTTP
-        run: npm run localization:live
+      - name: Verify all release locales over live HTTP
+        run: node scripts/run-localization-release-gates.mjs live
       - name: Install Chromium localization verification runtime
         run: npm install --no-save --package-lock=false playwright@1.55.0 && npx playwright install --with-deps chromium
-      - name: Verify live Russian localization in real Chromium
-        run: npm run localization:browser
+      - name: Verify all release locales in real Chromium
+        run: node scripts/run-localization-release-gates.mjs browser
       - name: Upload localization browser evidence
         if: always()
         uses: actions/upload-artifact@v4

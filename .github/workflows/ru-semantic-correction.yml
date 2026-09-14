@@ -1,0 +1,35 @@
+name: Apply Russian semantic correction
+
+on:
+  push:
+    branches:
+      - deep-run/ru-final-closure-20260914
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: deep-run/ru-final-closure-20260914
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - run: node scripts/apply-ru-semantic-correction.mjs
+      - name: Commit correction when needed
+        shell: bash
+        run: |
+          if git diff --quiet -- data/localization/ru/library; then
+            echo "No correction required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/localization/ru/library
+          git commit -m "fix(localization): preserve tension-sprint semantic fidelity"
+          git push origin HEAD:deep-run/ru-final-closure-20260914

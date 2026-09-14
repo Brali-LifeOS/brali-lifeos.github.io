@@ -1,5 +1,6 @@
 import { readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import "./patch-localized-responsive-css.mjs";
 
 const root = process.cwd();
 const ruRoot = path.join(root, "ru");

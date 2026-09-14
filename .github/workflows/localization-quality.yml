@@ -21,6 +21,12 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Check live localization verifier syntax
+        run: node --check scripts/check-live-localizations.mjs
+      - name: Check Russian discovery patch syntax
+        run: node --check scripts/patch-ru-discovery.mjs
+      - name: Build effective canonical corpus and localized surfaces
+        run: npm run build
       - name: Report remaining Russian localization gaps
         run: |
           node --input-type=module <<'NODE'
@@ -36,14 +42,6 @@ jobs:
           console.log(`RU_LOCALIZED=${localized.size}; RU_CANONICAL=${canonical.length}; RU_MISSING=${missing.length}`);
           console.log(`RU_MISSING_SLUGS=${missing.join(', ')}`);
           NODE
-      - name: Check live localization verifier syntax
-        run: node --check scripts/check-live-localizations.mjs
-      - name: Check Russian discovery patch syntax
-        run: node --check scripts/patch-ru-discovery.mjs
-      - name: Build declared localized surfaces
-        run: npm run localization:build
-      - name: Patch Russian discovery shell
-        run: node scripts/patch-ru-discovery.mjs
       - name: Check localization contract and rendered invariants
         run: npm run localization:check
       - name: Check localization impact against PR base

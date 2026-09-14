@@ -4,7 +4,7 @@
   "issue": 228,
   "source_dataset": "data/life-os-content/index.json",
   "evidence_dataset": "life-os/datasets/evidence.json",
-  "coverage_mode": "batched",
+  "coverage_mode": "exact",
   "target": "exact-canonical-public-corpus",
   "batch_glob": "data/localization/de/library/*.json",
   "quality_states": [
@@ -15,5 +15,5 @@
   "minimum_public_quality": "language-reviewed",
   "trusted_minimum_quality": "language-reviewed",
   "policy": "Routenabdeckung und Sprach-/Redaktionsqualität werden getrennt bewertet. Die deutsche Lokalisierung verändert niemals den kanonischen Evidenzstatus, Provenienz, Quellen, Review-Daten oder stabile Identitäten. Langer geerbter englischer Fülltext wird nicht allein der Länge wegen übersetzt; jeder deutsche Eintrag soll eine natürliche, präzise und nützliche semantische Schicht bieten.",
-  "status": "in-progress"
+  "status": "complete"
 }

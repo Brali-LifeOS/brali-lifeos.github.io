@@ -27,6 +27,7 @@ jobs:
           node --check scripts/check-browser-localizations.mjs
           node --check scripts/check-localization-contract.mjs
           node --check scripts/check-localization-faults.mjs
+          node --check scripts/check-ru-consent-localization.mjs
           node --check scripts/audit-ru-language.mjs
           node --check scripts/patch-ru-discovery.mjs
       - name: Validate reusable locale contract and adversarial failures
@@ -35,6 +36,8 @@ jobs:
         run: npm run localization:audit:ru
       - name: Build effective canonical corpus and localized surfaces
         run: npm run build
+      - name: Verify localized analytics consent
+        run: node scripts/check-ru-consent-localization.mjs
       - name: Report remaining Russian localization gaps
         run: |
           node --input-type=module <<'NODE'

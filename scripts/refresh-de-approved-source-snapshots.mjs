@@ -13,7 +13,11 @@ const approved = new Set([
 ]);
 const canonical = new Map((await loadLocalizationAuthoringIndex(root)).map((entry) => [entry.slug, entry]));
 const flagshipsDoc = JSON.parse(fs.readFileSync(path.join(root, 'data/localization/de/flagships.json'), 'utf8'));
-const flagshipRecords = Array.isArray(flagshipsDoc.records) ? flagshipsDoc.records : [];
+const flagshipRecords = Array.isArray(flagshipsDoc.entries)
+  ? flagshipsDoc.entries
+  : Array.isArray(flagshipsDoc.records)
+    ? flagshipsDoc.records
+    : [];
 const flagshipSlugs = new Set(flagshipRecords.map((record) => record.slug));
 const found = new Set();
 let changedFiles = 0;

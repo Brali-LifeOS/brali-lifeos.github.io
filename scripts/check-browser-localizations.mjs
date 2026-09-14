@@ -18,7 +18,7 @@ const artifactRoot = path.join(root, "artifacts", "localization-browser", locale
 const failures = [];
 
 const manifestResponse = await fetch(manifestUrl, {
-  headers: { "user-agent": "Brali-localization-browser-gate/2.1" },
+  headers: { "user-agent": "Brali-localization-browser-gate/2.2" },
   redirect: "follow",
 });
 if (!manifestResponse.ok) throw new Error(`[localization-browser] cannot load deployed manifest ${manifestUrl}: HTTP ${manifestResponse.status}`);
@@ -37,12 +37,38 @@ function artifactSlug(route) {
   return route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9-]+/gi, "-") || `${localeCode}-home`;
 }
 
+async function navigateWithTransientRetry(page, url, route, maxAttempts = 3) {
+  let response = null;
+  let lastError = null;
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 45_000 });
+      lastError = null;
+    } catch (error) {
+      response = null;
+      lastError = error;
+    }
+    const status = response?.status();
+    const retryable = !response || status >= 500;
+    if (!retryable) return { response, lastError: null, attempts: attempt };
+    if (attempt < maxAttempts) await page.waitForTimeout(350 * attempt);
+  }
+  return { response, lastError, attempts: maxAttempts };
+}
+
 async function inspectPage(page, route, viewport, { keyboard = false, screenshot = false } = {}) {
   await page.setViewportSize(viewport);
-  const response = await page.goto(`${base}${route}`, { waitUntil: "domcontentloaded", timeout: 45_000 });
+  const navigation = await navigateWithTransientRetry(page, `${base}${route}`, route);
+  const response = navigation.response;
   if (!response || response.status() !== 200) {
-    fail(route, "HTTP 200", response ? `status=${response.status()}` : "no response");
+    const detail = response
+      ? `status=${response.status()}; attempts=${navigation.attempts}`
+      : `no response; attempts=${navigation.attempts}; ${navigation.lastError?.message || "navigation failed"}`;
+    fail(route, "HTTP 200", detail);
     return;
+  }
+  if (navigation.attempts > 1) {
+    console.warn(`[localization-browser] recovered transient navigation failure for ${route} on attempt ${navigation.attempts}`);
   }
   await page.waitForTimeout(120);
 

@@ -1,4 +1,4 @@
-import { mkdir, readFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { chromium } from "playwright";
 
@@ -23,7 +23,7 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
     fail(route, "HTTP 200", response ? `status=${response.status()}` : "no response");
     return;
   }
-  await page.waitForLoadState("networkidle", { timeout: 8_000 }).catch(() => {});
+  await page.waitForTimeout(120);
 
   const result = await page.evaluate(() => {
     const canonical = document.querySelector('link[rel="canonical"]')?.href || "";
@@ -62,13 +62,10 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
     const focus = await page.evaluate(() => {
       const active = document.activeElement;
       if (!active || active === document.body || active === document.documentElement) return null;
-      const style = getComputedStyle(active);
       return {
         tag: active.tagName,
         text: active.textContent?.trim().slice(0, 120) || "",
         aria: active.getAttribute("aria-label") || "",
-        outlineStyle: style.outlineStyle,
-        outlineWidth: style.outlineWidth,
       };
     });
     if (!focus) fail(route, "keyboard focus after Tab");
@@ -79,7 +76,7 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
     const slug = route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9-]+/gi, "-") || "ru-home";
     await page.screenshot({ path: path.join(artifactRoot, `${slug}-${viewport.width}.png`), fullPage: true });
     const aria = await page.locator("body").ariaSnapshot().catch(() => "");
-    await import("node:fs/promises").then(({ writeFile }) => writeFile(path.join(artifactRoot, `${slug}-${viewport.width}.aria.txt`), aria || "", "utf8"));
+    await writeFile(path.join(artifactRoot, `${slug}-${viewport.width}.aria.txt`), aria || "", "utf8");
   }
 }
 

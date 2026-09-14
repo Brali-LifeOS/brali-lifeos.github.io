@@ -7,7 +7,9 @@ const sourceRoot = path.join(root, "data", "localization", locale);
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
 const fail = (message) => { throw new Error(`[de-language] ${message}`); };
 const cyrillic = /[А-Яа-яЁё]/;
-const englishFunctionWords = /\b(?:the|your|you|with|from|before|after|when|what|why|how|into|without|should|must|this|that|these|those|more|less|start|learn|choose|check|open|read)\b/i;
+// Keep this detector to English function words that are not normal standalone German vocabulary.
+// Common German borrowings such as “Start” and “Check” are reviewed by normal editorial passes instead.
+const englishFunctionWords = /\b(?:the|your|you|with|from|before|after|when|what|why|how|into|without|should|must|this|that|these|those|more|less|learn|choose|open|read)\b/i;
 
 const allowlist = await readJson("data/localization/de/language-allowlist.json");
 if (allowlist.locale !== locale || !Array.isArray(allowlist.terms)) fail("invalid language allowlist");

@@ -2,40 +2,68 @@
   "schema_version": 1,
   "locale": "ru",
   "status": "reviewed-partial",
+  "last_verified": "2026-09-14",
   "items": [
     {
       "id": "ru-long-form-library-expansion",
       "surface": "long-form-library",
-      "state": "active",
+      "state": "closed",
+      "release_blocking": false,
       "issue": 210,
       "scope": "Every canonical public Growth Library entry outside the seven already curated flagship protocols",
-      "reason": "The Russian corpus is being expanded in language-reviewed semantic batches. Route coverage, language quality and canonical evidence status remain separate signals so bulk page creation cannot masquerade as reviewed localization.",
-      "release_rule": "Close only after exact canonical membership, source freshness, Russian language quality, Search/AI parity and the production live gate all pass."
+      "reason": "Exact Russian membership is complete for the canonical public knowledge corpus. The governed source/build checks verify 957/957 canonical records, current source snapshots, explicit localization quality and preserved canonical evidence state; the production release gates then verified the deployed human and machine surfaces.",
+      "release_rule": "Reopen automatically as actionable debt if canonical membership, source freshness, language quality, Search/AI parity or a required production release gate regresses.",
+      "closure_evidence": {
+        "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
+        "production_run": 34848001024,
+        "library_entries": "957/957",
+        "declared_ru_routes": 1013,
+        "live_gate": "passed",
+        "browser_gate": "passed"
+      }
     },
     {
       "id": "ru-primary-product-hubs",
       "surface": "primary-pages",
-      "state": "implemented-awaiting-live-verification",
+      "state": "closed",
+      "release_blocking": false,
       "issue": 210,
       "scope": "Research, Partnerships, and For AI & Developers primary hubs declared by the Site Focus profile",
-      "reason": "These top-level product routes now have native Russian adapted/semantic copies, explicit English fallback boundaries, reciprocal hreflang, manifest membership and deterministic checks. They remain part of the open debt until the production live gate confirms the deployed routes.",
-      "release_rule": "Mark closed only after localization quality and production Pages/live verification pass for all three routes."
+      "reason": "All three primary hubs have native Russian adapted/semantic copies, explicit English fallback boundaries, reciprocal hreflang, manifest membership and deterministic checks. The merged production SHA passed both live HTTP and real-browser release gates.",
+      "release_rule": "Reopen if a primary hub loses native Russian copy, source freshness, reciprocal language signals, explicit fallback boundaries or production verification.",
+      "closure_evidence": {
+        "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
+        "production_run": 34848001024,
+        "primary_hubs": "3/3",
+        "live_gate": "passed",
+        "browser_gate": "passed"
+      }
     },
     {
       "id": "ru-secondary-product-surfaces",
       "surface": "secondary-pages",
       "state": "planned",
+      "release_blocking": false,
       "scope": "Query Playground, Agent Evaluation, demos, integration kits, research articles and gaps, problem/topic/question collections, updates, evidence/trust utilities, contact/legal pages and other secondary human-interface routes",
-      "reason": "The primary hubs are localized first. Secondary human pages must remain explicitly English when linked from Russian surfaces until each is added to the localization contract and receives native copy.",
-      "release_rule": "Add each surface to the localization contract and publish native Russian copy before calling the whole site fully localized."
+      "reason": "These routes remain canonical English surfaces outside the declared Russian human-interface release. Links from localized pages must keep the English boundary explicit; they are not silent fallback and do not block the governed Russian knowledge-corpus release under docs/LOCALIZATION.md.",
+      "release_rule": "If a secondary surface is promoted into primary Russian navigation or an exact localized surface contract, add it to the locale contract and publish native Russian copy before retaining the same release claim. Do not call the entire website fully localized while this item remains planned."
     },
     {
       "id": "ru-rendered-narrow-layout-review",
       "surface": "accessibility",
-      "state": "requires-rendered-review",
+      "state": "closed",
+      "release_blocking": false,
       "scope": "Russian pages on narrow/mobile layouts",
-      "reason": "Deterministic checks verify language, links, identity and structure but cannot prove visual quality for every long Russian string and viewport.",
-      "release_rule": "Complete a rendered UI pass before upgrading Russian from reviewed-partial to a fully reviewed human-interface release."
+      "reason": "The deployed Chromium gate now visits every declared Russian route at 320 px and representative routes at 768/1280 px, exercises keyboard focus, captures ARIA snapshots and checks filled-button contrast. Manual evidence review exposed a real invisible-CTA false-green; the CSS defect was fixed and a contrast regression gate was added before closure.",
+      "release_rule": "Reopen on any browser-gate regression in narrow layout, visible control contrast, keyboard behavior, accessibility labels or representative rendered evidence.",
+      "closure_evidence": {
+        "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
+        "production_run": 34848001024,
+        "routes_at_320px": 1013,
+        "representative_viewports": [768, 1280],
+        "contrast_gate": "passed",
+        "keyboard_and_aria": "passed"
+      }
     }
   ]
 }

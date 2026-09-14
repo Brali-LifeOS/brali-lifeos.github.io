@@ -11,7 +11,7 @@ if (!locale || locale.role !== "human-interface") throw new Error(`[localization
 const sourceLocale = profile.sourceLocale;
 const base = (process.env.LOCALIZATION_LIVE_BASE || profile.site || "https://brali-lifeos.github.io/").replace(/\/$/, "");
 const languageTag = process.env.LOCALIZATION_LANGUAGE_TAG || locale.languageTag;
-const browserLocale = process.env.LOCALIZATION_BROWSER_LOCALE || locale.browserLocale || languageTag;
+const browserLocale = process.env.LOCALIZATION_BROWSER_LOCALE || locale.browserLocale || (localeCode === "ru" ? "ru-RU" : languageTag);
 const routePrefix = locale.routePrefix;
 const manifestUrl = process.env.LOCALIZATION_MANIFEST_URL || `${base}${routePrefix}manifest.json`;
 const artifactRoot = path.join(root, "artifacts", "localization-browser", localeCode);
@@ -142,11 +142,8 @@ try {
   const page = await context.newPage();
 
   for (const route of allRoutes) {
-    try {
-      await inspectPage(page, route, { width: 320, height: 800 });
-    } catch (error) {
-      fail(route, "browser execution", error?.message || String(error));
-    }
+    try { await inspectPage(page, route, { width: 320, height: 800 }); }
+    catch (error) { fail(route, "browser execution", error?.message || String(error)); }
   }
 
   const preferred = [
@@ -165,11 +162,8 @@ try {
   const representatives = [...new Set(preferred.filter((route) => allRoutes.includes(route)))];
   for (const route of representatives) {
     for (const viewport of [{ width: 768, height: 1024 }, { width: 1280, height: 800 }]) {
-      try {
-        await inspectPage(page, route, viewport, { keyboard: true, screenshot: true });
-      } catch (error) {
-        fail(route, `representative browser ${viewport.width}`, error?.message || String(error));
-      }
+      try { await inspectPage(page, route, viewport, { keyboard: true, screenshot: true }); }
+      catch (error) { fail(route, `representative browser ${viewport.width}`, error?.message || String(error)); }
     }
   }
 

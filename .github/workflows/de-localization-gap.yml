@@ -1,0 +1,32 @@
+name: German localization gap dump
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/print-de-localization-gap.mjs'
+      - '.github/workflows/de-localization-gap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  gap:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        offset: [0, 60, 120, 180, 240, 300, 360, 420]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Print German localization gap slice
+        env:
+          GAP_OFFSET: ${{ matrix.offset }}
+          GAP_LIMIT: 60
+        run: node scripts/print-de-localization-gap.mjs

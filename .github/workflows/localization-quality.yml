@@ -21,10 +21,18 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Check live localization verifier syntax
-        run: node --check scripts/check-live-localizations.mjs
-      - name: Check Russian discovery patch syntax
-        run: node --check scripts/patch-ru-discovery.mjs
+      - name: Check localization verifier syntax
+        run: |
+          node --check scripts/check-live-localizations.mjs
+          node --check scripts/check-browser-localizations.mjs
+          node --check scripts/check-localization-contract.mjs
+          node --check scripts/check-localization-faults.mjs
+          node --check scripts/audit-ru-language.mjs
+          node --check scripts/patch-ru-discovery.mjs
+      - name: Validate reusable locale contract and adversarial failures
+        run: npm run localization:contract && npm run localization:faults
+      - name: Audit Russian source language deterministically
+        run: npm run localization:audit:ru
       - name: Build effective canonical corpus and localized surfaces
         run: npm run build
       - name: Report remaining Russian localization gaps

@@ -3,7 +3,7 @@ import path from "node:path";
 
 const containerId = "GTM-5TJVLJG9";
 const marker = "brali-consent-analytics";
-const ignored = new Set([".git", ".github", ".tmp", "node_modules", "releases", "reports", "test-results"]);
+const ignored = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);
 const root = path.resolve(process.argv[2] || ".");
 
 function walk(directory) {

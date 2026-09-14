@@ -35,24 +35,32 @@ export function validateLanguageRecords(records, profile) {
   const fields = profile.required_fields || ["title", "subtitle", "description"];
   const exceptions = new Map((profile.exceptions || []).map((entry) => [entry.slug, new Set(entry.fragments || [])]));
   const titleOwners = new Map();
+  const issues = [];
 
   for (const record of records) {
     const exceptionSet = exceptions.get(record.slug) || new Set();
     for (const field of fields) {
       const value = text(record[field]).normalize("NFC");
-      invariant(value.trim().length > 0, `${record.slug}.${field} is empty`);
-      if (profile.locale === "ru") invariant(/[А-Яа-яЁё]/.test(value), `${record.slug}.${field} lacks Russian copy`);
+      if (value.trim().length === 0) issues.push(`${record.slug}.${field} is empty`);
+      if (profile.locale === "ru" && !/[А-Яа-яЁё]/.test(value)) issues.push(`${record.slug}.${field} lacks Russian copy`);
       for (const fragment of profile.discouraged_fragments || []) {
         if (exceptionSet.has(fragment)) continue;
-        invariant(!value.toLocaleLowerCase(profile.locale).includes(fragment.toLocaleLowerCase(profile.locale)), `${record.slug}.${field} contains discouraged fragment ${JSON.stringify(fragment)}`);
+        if (value.toLocaleLowerCase(profile.locale).includes(fragment.toLocaleLowerCase(profile.locale))) {
+          issues.push(`${record.slug}.${field} contains discouraged fragment ${JSON.stringify(fragment)}`);
+        }
       }
     }
     const key = text(record.title).normalize("NFC").toLocaleLowerCase(profile.locale).replace(/[\s\p{P}\p{S}]+/gu, " ").trim();
-    invariant(key.length > 0, `${record.slug}.title has no searchable text`);
+    if (!key) {
+      issues.push(`${record.slug}.title has no searchable text`);
+      continue;
+    }
     const previous = titleOwners.get(key);
-    invariant(!previous, `localized title collision: ${previous} and ${record.slug}`);
-    titleOwners.set(key, record.slug);
+    if (previous) issues.push(`localized title collision: ${previous} and ${record.slug}`);
+    else titleOwners.set(key, record.slug);
   }
+
+  invariant(issues.length === 0, `language quality violations (${issues.length}):\n- ${issues.slice(0, 100).join("\n- ")}${issues.length > 100 ? `\n- … ${issues.length - 100} more` : ""}`);
   return true;
 }
 

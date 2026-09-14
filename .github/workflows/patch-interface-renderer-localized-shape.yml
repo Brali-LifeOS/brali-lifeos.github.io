@@ -1,0 +1,39 @@
+name: Patch generic locale renderer record shape
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/patch-interface-renderer-localized-shape.mjs'
+      - '.github/workflows/patch-interface-renderer-localized-shape.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/de-localization
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Patch generic locale renderer
+        run: node scripts/patch-interface-renderer-localized-shape.mjs
+      - name: Commit renderer compatibility fix
+        run: |
+          if git diff --quiet -- scripts/build-interface-locales.mjs; then
+            echo "Renderer already compatible."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/build-interface-locales.mjs
+          git commit -m "fix(localization): render nested localized authoring records"
+          git push origin HEAD:agent/de-localization

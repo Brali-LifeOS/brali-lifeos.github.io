@@ -1,8 +1,11 @@
 const CYRILLIC_PATTERN = /[\p{Script=Cyrillic}]/u;
 
+// Keep this list to English function words that are not also ordinary German function words.
+// In particular, "an" and "in" are valid German words; counting them as English evidence caused
+// false positives in otherwise fully German prose such as "... in ... an ...".
 const ENGLISH_FUNCTION_WORDS = new Set([
-  "a", "an", "and", "are", "as", "at", "be", "before", "between", "but", "by", "each", "every",
-  "for", "from", "how", "if", "in", "into", "is", "it", "of", "on", "or", "that", "the", "their",
+  "a", "and", "are", "as", "at", "be", "before", "between", "but", "by", "each", "every",
+  "for", "from", "how", "if", "into", "is", "it", "of", "on", "or", "that", "the", "their",
   "then", "this", "to", "when", "while", "with", "without", "you", "your",
 ]);
 
@@ -76,8 +79,8 @@ export function scanGermanText(text, { source = "", field = "text" } = {}) {
   }
 
   // English fragments such as framework names are normal in German technical copy. We only
-  // flag sentence-like runs with several English function words; this avoids treating a single
-  // loanword (Feedback, Team, Follow-up, etc.) as proof of untranslated prose.
+  // flag sentence-like runs with several unambiguous English function words; this avoids treating
+  // German "an"/"in" or a single loanword (Feedback, Team, Follow-up, etc.) as untranslated prose.
   if (tokenCount >= 7 && englishFunctionWordScore(value) >= 4) review.push(`english-prose:${field}`);
 
   return {

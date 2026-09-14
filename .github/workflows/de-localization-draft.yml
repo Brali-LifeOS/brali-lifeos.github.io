@@ -7,6 +7,7 @@ on:
       - "scripts/check-de-library-contract.mjs"
       - "scripts/audit-de-library-language.mjs"
       - "scripts/lib/de-language-audit.mjs"
+      - "scripts/plan-de-library-next.mjs"
       - ".github/workflows/de-localization-draft.yml"
   pull_request:
     paths:
@@ -14,6 +15,7 @@ on:
       - "scripts/check-de-library-contract.mjs"
       - "scripts/audit-de-library-language.mjs"
       - "scripts/lib/de-language-audit.mjs"
+      - "scripts/plan-de-library-next.mjs"
       - ".github/workflows/de-localization-draft.yml"
 
 permissions:
@@ -32,3 +34,5 @@ jobs:
         run: node scripts/check-de-library-contract.mjs
       - name: Audit German library language
         run: node scripts/audit-de-library-language.mjs
+      - name: Show next canonical German records
+        run: node scripts/plan-de-library-next.mjs --limit=30

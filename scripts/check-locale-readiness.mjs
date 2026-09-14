@@ -44,6 +44,13 @@ for (const key of dimensionKeys) {
 const ruProfile = (profile.locales || []).find((entry) => entry.code === "ru");
 invariant(ruProfile?.role === "human-interface", "Russian profile role drift");
 invariant(profile.fallbackPolicy?.includes("no-silent"), "human fallback must remain explicit");
+const librarySurface = (profile.surfaces || []).find((surface) => surface.id === "library-content");
+invariant(librarySurface?.membership === "exact", "reference locale profile must declare exact library membership");
+invariant((librarySurface?.checks || []).includes("effective-corpus-parity"), "reference locale profile must gate effective-corpus parity");
+const additionsImpact = (profile.impactRules || []).some((rule) =>
+  (rule.paths || []).includes("data/life-os-content-additions.json") && (rule.surfaces || []).includes("library-content")
+);
+invariant(additionsImpact, "build-time content additions must trigger the library localization surface");
 invariant(config.coverage_mode === "exact" && config.target === "exact-canonical-public-corpus", "reference locale must measure exact effective-corpus coverage");
 invariant(config.minimum_public_quality === "language-reviewed", "reference locale cannot claim completion with draft public copy");
 

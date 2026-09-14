@@ -1,0 +1,55 @@
+name: German localization release guards
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'data/localization/de/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions.json'
+      - 'scripts/check-interface-locale-sources.mjs'
+      - 'scripts/check-interface-locales.mjs'
+      - 'scripts/audit-de-language.mjs'
+      - 'scripts/audit-de-library-language.mjs'
+      - 'scripts/check-de-library-contract.mjs'
+      - 'scripts/lib/de-language-audit.mjs'
+      - 'scripts/lib/localization-source.mjs'
+      - '.github/workflows/de-localization-release.yml'
+  pull_request:
+    paths:
+      - 'data/localization/de/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions.json'
+      - 'scripts/check-interface-locale-sources.mjs'
+      - 'scripts/check-interface-locales.mjs'
+      - 'scripts/audit-de-language.mjs'
+      - 'scripts/audit-de-library-language.mjs'
+      - 'scripts/check-de-library-contract.mjs'
+      - 'scripts/lib/de-language-audit.mjs'
+      - 'scripts/lib/localization-source.mjs'
+      - '.github/workflows/de-localization-release.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  german-release-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Check localization source parity
+        run: node scripts/check-interface-locale-sources.mjs
+      - name: Require complete German canonical corpus
+        run: node scripts/check-de-library-contract.mjs --complete
+      - name: Run strict German library language audit
+        run: node scripts/audit-de-library-language.mjs --strict
+      - name: Audit German public-interface language
+        run: node scripts/audit-de-language.mjs
+      - name: Check generated interface-locale contract
+        run: node scripts/check-interface-locales.mjs

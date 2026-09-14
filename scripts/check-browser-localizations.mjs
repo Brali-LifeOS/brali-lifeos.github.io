@@ -29,6 +29,10 @@ function fail(route, check, detail = "") {
   failures.push(`${route} :: ${check}${detail ? ` :: ${detail}` : ""}`);
 }
 
+function artifactSlug(route) {
+  return route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9-]+/gi, "-") || `${locale}-home`;
+}
+
 async function inspectPage(page, route, viewport, { keyboard = false, screenshot = false } = {}) {
   await page.setViewportSize(viewport);
   const response = await page.goto(`${base}${route}`, { waitUntil: "domcontentloaded", timeout: 45_000 });
@@ -48,6 +52,29 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
     const h1 = document.querySelector("h1");
     const body = document.body?.innerText || "";
     const overflow = Math.max(document.documentElement.scrollWidth, document.body?.scrollWidth || 0) - window.innerWidth;
+    const overflowers = overflow > 2
+      ? [...document.querySelectorAll("body *")]
+          .map((element) => {
+            const rect = element.getBoundingClientRect();
+            const style = getComputedStyle(element);
+            const visibleInternalOverflow = element.scrollWidth > element.clientWidth + 2
+              && !["auto", "scroll", "hidden", "clip"].includes(style.overflowX);
+            const escapesViewport = rect.right > window.innerWidth + 2 || rect.left < -2 || rect.width > window.innerWidth + 2;
+            if (!visibleInternalOverflow && !escapesViewport) return null;
+            return {
+              tag: element.tagName.toLowerCase(),
+              className: typeof element.className === "string" ? element.className.slice(0, 80) : "",
+              text: (element.textContent || "").replace(/\s+/g, " ").trim().slice(0, 100),
+              clientWidth: element.clientWidth,
+              scrollWidth: element.scrollWidth,
+              left: Math.round(rect.left),
+              right: Math.round(rect.right),
+              overflowX: style.overflowX,
+            };
+          })
+          .filter(Boolean)
+          .slice(0, 8)
+      : [];
     const englishShell = [...document.querySelectorAll("a,button,[aria-label]")]
       .map((element) => `${element.textContent || ""} ${element.getAttribute("aria-label") || ""}`.trim())
       .filter((value) => /\b(?:Skip to content|Main navigation|Explore)\b/i.test(value));
@@ -59,6 +86,7 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
       h1Visible: Boolean(h1 && h1.getClientRects().length),
       hasCyrillic: /[А-Яа-яЁё]/.test(body),
       overflow,
+      overflowers,
       englishShell,
     };
   });
@@ -71,7 +99,10 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
   if (!enAlt.startsWith(base)) fail(route, "en hreflang", enAlt);
   if (!result.h1Visible || !result.h1Text) fail(route, "visible H1", result.h1Text);
   if (locale === "ru" && !result.hasCyrillic) fail(route, "rendered Cyrillic body");
-  if (viewport.width === 320 && result.overflow > 2) fail(route, "320px horizontal overflow", `${result.overflow}px`);
+  if (viewport.width === 320 && result.overflow > 2) {
+    fail(route, "320px horizontal overflow", `${result.overflow}px; offenders=${JSON.stringify(result.overflowers)}`);
+    await page.screenshot({ path: path.join(artifactRoot, `${artifactSlug(route)}-320-failure.png`), fullPage: true });
+  }
   if (locale === "ru" && result.englishShell.length) fail(route, "English shell leakage", result.englishShell.slice(0, 3).join(" | "));
 
   if (keyboard) {
@@ -92,7 +123,7 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
   }
 
   if (screenshot) {
-    const slug = route.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9-]+/gi, "-") || `${locale}-home`;
+    const slug = artifactSlug(route);
     await page.screenshot({ path: path.join(artifactRoot, `${slug}-${viewport.width}.png`), fullPage: true });
     const aria = await page.locator("body").ariaSnapshot().catch(() => "");
     await writeFile(path.join(artifactRoot, `${slug}-${viewport.width}.aria.txt`), aria || "", "utf8");

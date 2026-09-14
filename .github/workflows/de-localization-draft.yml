@@ -1,0 +1,34 @@
+name: German localization draft guards
+
+on:
+  push:
+    paths:
+      - "data/localization/de/**"
+      - "scripts/check-de-library-contract.mjs"
+      - "scripts/audit-de-library-language.mjs"
+      - "scripts/lib/de-language-audit.mjs"
+      - ".github/workflows/de-localization-draft.yml"
+  pull_request:
+    paths:
+      - "data/localization/de/**"
+      - "scripts/check-de-library-contract.mjs"
+      - "scripts/audit-de-library-language.mjs"
+      - "scripts/lib/de-language-audit.mjs"
+      - ".github/workflows/de-localization-draft.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  german-draft-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check German canonical subset and source snapshots
+        run: node scripts/check-de-library-contract.mjs
+      - name: Audit German library language
+        run: node scripts/audit-de-library-language.mjs

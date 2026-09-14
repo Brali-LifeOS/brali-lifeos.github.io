@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const libraryDir = path.join(root, "data", "localization", "de", "library");
 const limitArg = process.argv.find((arg) => arg.startsWith("--limit="));
-const limit = Math.max(1, Math.min(100, Number(limitArg?.split("=")[1] || 25)));
+const limit = Math.max(1, Math.min(250, Number(limitArg?.split("=")[1] || 25)));
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
 
 const canonical = await readJson("data/life-os-content/index.json");

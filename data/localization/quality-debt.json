@@ -6,27 +6,27 @@
     {
       "id": "ru-long-form-library-expansion",
       "surface": "long-form-library",
-      "state": "active",
+      "state": "closed-verified",
       "issue": 210,
       "scope": "Every canonical public Growth Library entry outside the seven already curated flagship protocols",
-      "reason": "The Russian corpus is being expanded in language-reviewed semantic batches. Route coverage, language quality and canonical evidence status remain separate signals so bulk page creation cannot masquerade as reviewed localization.",
-      "release_rule": "Close only after exact canonical membership, source freshness, Russian language quality, Search/AI parity and the production live gate all pass."
+      "reason": "Closed after the effective production build reached exact 957/957 Russian coverage, all public records met at least language-reviewed quality, source snapshots matched the localization authoring corpus, and generated/live localization gates passed.",
+      "release_rule": "Reopen automatically as a release blocker if effective canonical membership, source freshness, language quality, Search/AI parity or live parity regresses."
     },
     {
       "id": "ru-primary-product-hubs",
       "surface": "primary-pages",
-      "state": "implemented-awaiting-live-verification",
+      "state": "closed-verified",
       "issue": 210,
       "scope": "Research, Partnerships, and For AI & Developers primary hubs declared by the Site Focus profile",
-      "reason": "These top-level product routes now have native Russian adapted/semantic copies, explicit English fallback boundaries, reciprocal hreflang, manifest membership and deterministic checks. They remain part of the open debt until the production live gate confirms the deployed routes.",
-      "release_rule": "Mark closed only after localization quality and production Pages/live verification pass for all three routes."
+      "reason": "Closed after all three language-reviewed hubs passed generated checks and the canonical Pages deployment live verifier confirmed the deployed routes, reciprocal hreflang, explicit fallback boundaries and manifest/sitemap membership.",
+      "release_rule": "Reopen if any declared primary hub loses native Russian copy, source-current markers, reciprocal hreflang, sitemap membership or live deployment parity."
     },
     {
       "id": "ru-secondary-product-surfaces",
       "surface": "secondary-pages",
       "state": "planned",
       "scope": "Query Playground, Agent Evaluation, demos, integration kits, research articles and gaps, problem/topic/question collections, updates, evidence/trust utilities, contact/legal pages and other secondary human-interface routes",
-      "reason": "The primary hubs are localized first. Secondary human pages must remain explicitly English when linked from Russian surfaces until each is added to the localization contract and receives native copy.",
+      "reason": "These surfaces are outside the current Russian reference-core contract. Links from Russian pages must remain explicit English fallbacks until each surface is added to the locale profile and receives native copy.",
       "release_rule": "Add each surface to the localization contract and publish native Russian copy before calling the whole site fully localized."
     },
     {
@@ -34,8 +34,8 @@
       "surface": "accessibility",
       "state": "requires-rendered-review",
       "scope": "Russian pages on narrow/mobile layouts",
-      "reason": "Deterministic checks verify language, links, identity and structure but cannot prove visual quality for every long Russian string and viewport.",
-      "release_rule": "Complete a rendered UI pass before upgrading Russian from reviewed-partial to a fully reviewed human-interface release."
+      "reason": "Deterministic checks verify language, links, identity, metadata and structure but cannot prove visual quality for every long Russian string and viewport.",
+      "release_rule": "Complete a rendered mobile/narrow-layout review before upgrading the whole Russian human-interface locale from reviewed-partial to published."
     }
   ]
 }

@@ -26,6 +26,7 @@ jobs:
           node --check scripts/check-live-localizations.mjs
           node --check scripts/check-browser-localizations.mjs
           node --check scripts/run-localization-release-gates.mjs
+          node --check scripts/check-localization-release-artifacts.mjs
           node --check scripts/check-localization-contract.mjs
           node --check scripts/check-localization-faults.mjs
           node --check scripts/check-ru-consent-localization.mjs
@@ -37,6 +38,8 @@ jobs:
         run: npm run localization:audit:ru
       - name: Build effective canonical corpus and localized surfaces
         run: npm run build
+      - name: Gate generated artifacts for every release locale
+        run: node scripts/check-localization-release-artifacts.mjs
       - name: Verify localized analytics consent
         run: node scripts/check-ru-consent-localization.mjs
       - name: Report remaining Russian localization gaps

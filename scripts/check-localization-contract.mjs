@@ -23,15 +23,44 @@ for (const surface of profile.surfaces || []) {
   if (surface.localePattern) assert(surface.localePattern.includes("{locale}"), `${surface.id}.localePattern must use {locale}`);
 }
 
+const releaseStates = new Set(["reviewed-partial", "published"]);
+const predeployProof = ["contract", "corpus", "language", "rendered"];
+const publishedProof = [...predeployProof, "browser", "live"];
+const commonReleaseGates = [
+  "scripts/check-localization-contract.mjs",
+  "scripts/check-localization-release-artifacts.mjs",
+  "scripts/check-localization-faults.mjs",
+  "scripts/check-browser-localizations.mjs",
+  "scripts/check-live-localizations.mjs",
+];
+
 for (const locale of byCode.values()) {
   if (locale.role !== "human-interface") continue;
   await access(path.join(root, locale.datasetRoot));
   assert(Array.isArray(locale.requiredGates) && locale.requiredGates.length > 0, `${locale.code}.requiredGates[] is required`);
-  for (const gate of locale.requiredGates) assert(typeof gate === "string" && gate.startsWith("scripts/"), `${locale.code} has invalid gate path ${gate}`);
-  if (locale.status === "published") {
-    for (const required of ["contract", "corpus", "language", "rendered", "browser", "live"]) {
-      assert(locale.releaseProof?.includes(required), `${locale.code} published release proof must include ${required}`);
+  assert(new Set(locale.requiredGates).size === locale.requiredGates.length, `${locale.code}.requiredGates[] contains duplicates`);
+
+  for (const gate of locale.requiredGates) {
+    assert(typeof gate === "string" && gate.startsWith("scripts/"), `${locale.code} has invalid gate path ${gate}`);
+    await access(path.join(root, gate));
+  }
+
+  if (releaseStates.has(locale.status)) {
+    assert(typeof locale.searchPublication === "string" && locale.searchPublication.length > 0, `${locale.code}.searchPublication is required in release state`);
+    assert(Array.isArray(locale.releaseProof), `${locale.code}.releaseProof[] is required in release state`);
+    for (const proof of predeployProof) {
+      assert(locale.releaseProof.includes(proof), `${locale.code} ${locale.status} release proof must include ${proof}`);
     }
+    for (const gate of commonReleaseGates) {
+      assert(locale.requiredGates.includes(gate), `${locale.code} ${locale.status} requiredGates[] must include ${gate}`);
+    }
+  }
+
+  if (locale.status === "published") {
+    for (const proof of publishedProof) {
+      assert(locale.releaseProof.includes(proof), `${locale.code} published release proof must include ${proof}`);
+    }
+    assert(locale.searchPublication === "full", `${locale.code} published locale must use searchPublication=full`);
   }
 }
 

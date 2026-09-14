@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
-import { findUnexpectedLatinRuns, scanRussianText, scanRussianValue } from "./lib/ru-language-audit.mjs";
+import { findUnexpectedLatinRuns, isRussianLanguageExceptionAllowed, scanRussianText, scanRussianValue } from "./lib/ru-language-audit.mjs";
 
 const root = process.cwd();
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
@@ -13,12 +13,19 @@ for (const entry of allowlistDoc.entries) {
 }
 const allowlist = allowlistDoc.entries;
 const findings = [];
-const latinRuns = [];
+const reviewedLatinRuns = [];
 
 function inspectText(text, location) {
   const result = scanRussianText(text, { location, allowlist });
   if (result.blocking.length || result.review.length) findings.push({ location, ...result });
-  for (const run of findUnexpectedLatinRuns(text)) latinRuns.push({ location, run });
+  for (const run of findUnexpectedLatinRuns(text)) {
+    const term = `latin:${run}`;
+    if (isRussianLanguageExceptionAllowed(allowlist, location, term)) {
+      reviewedLatinRuns.push({ location, run });
+    } else {
+      findings.push({ location, blocking: [], review: [term] });
+    }
+  }
 }
 
 function inspectRecord(record, base) {
@@ -51,12 +58,6 @@ for (const page of primary.pages || []) {
 const site = await readJson("data/localization/ru/site.json");
 for (const finding of scanRussianValue(site, { location: "site", allowlist })) findings.push(finding);
 
-if (latinRuns.length) {
-  console.log(`[ru-language] informational Latin runs requiring human awareness: ${latinRuns.length}`);
-  for (const item of latinRuns.slice(0, 30)) console.log(`  ${item.location}: ${JSON.stringify(item.run)}`);
-  if (latinRuns.length > 30) console.log(`  ... ${latinRuns.length - 30} more`);
-}
-
 if (findings.length) {
   console.error(`[ru-language] unresolved editorial terms: ${findings.length}`);
   for (const finding of findings) {
@@ -66,4 +67,5 @@ if (findings.length) {
   throw new Error("Russian language audit failed. Rewrite the copy or add a narrow, justified location-specific exception.");
 }
 
+console.log(`[ru-language] reviewed named/technical Latin exceptions: ${reviewedLatinRuns.length}`);
 console.log(`Russian deterministic language audit passed across ${batches.length} library batches, ${flagships.entries?.length || 0} flagships, ${zones.records?.length || 0} zones and ${primary.pages?.length || 0} primary pages.`);

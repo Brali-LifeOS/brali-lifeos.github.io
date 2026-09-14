@@ -41,7 +41,7 @@ const TECHNICAL_TOKENS = new Set([
   "MCP", "DOI", "URL", "HTML", "SMART", "SWOT", "TED", "Pomodoro", "Tabata", "Brali",
 ]);
 
-function isAllowed(allowlist, location, term) {
+export function isRussianLanguageExceptionAllowed(allowlist, location, term) {
   return (allowlist || []).some((entry) => {
     if (!entry || entry.term !== term) return false;
     if (entry.location === location) return true;
@@ -56,10 +56,10 @@ export function scanRussianText(text, { location = "unknown", allowlist = [] } =
   const review = [];
 
   for (const [term, pattern] of BLOCKING_PATTERNS) {
-    if (pattern.test(text) && !isAllowed(allowlist, location, term)) blocking.push(term);
+    if (pattern.test(text) && !isRussianLanguageExceptionAllowed(allowlist, location, term)) blocking.push(term);
   }
   for (const [term, pattern] of REVIEW_PATTERNS) {
-    if (pattern.test(text) && !isAllowed(allowlist, location, term)) review.push(term);
+    if (pattern.test(text) && !isRussianLanguageExceptionAllowed(allowlist, location, term)) review.push(term);
   }
 
   return { blocking: [...new Set(blocking)], review: [...new Set(review)] };
@@ -90,7 +90,8 @@ export function scanRussianValue(value, { location = "root", allowlist = [] } = 
 
 export function findUnexpectedLatinRuns(text) {
   if (typeof text !== "string") return [];
-  const runs = text.match(/\b[A-Za-z][A-Za-z0-9+.-]*(?:\s+[A-Za-z][A-Za-z0-9+.-]*)+\b/g) || [];
+  const word = "[\\p{Script=Latin}][\\p{Script=Latin}0-9+.'’.-]*";
+  const runs = text.match(new RegExp(`(?<![\\p{L}])${word}(?:\\s+${word})+(?![\\p{L}])`, "gu")) || [];
   return runs.filter((run) => {
     const tokens = run.split(/\s+/).filter(Boolean);
     if (tokens.length < 2) return false;

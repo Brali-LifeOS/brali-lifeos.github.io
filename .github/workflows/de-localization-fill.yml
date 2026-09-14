@@ -43,7 +43,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
           GERMAN_LOCALIZATION_MODEL: openai/gpt-4.1-mini
           GERMAN_LOCALIZATION_BATCH_SIZE: '8'
-          GERMAN_LOCALIZATION_MAX_BATCHES: '12'
+          GERMAN_LOCALIZATION_MAX_BATCHES: '24'
         run: node scripts/generate-de-missing-localization.mjs
       - name: Validate source parity before commit
         run: node scripts/check-interface-locale-sources.mjs

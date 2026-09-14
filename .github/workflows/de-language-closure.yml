@@ -1,0 +1,39 @@
+name: German language closure fixer
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/apply-de-language-closure.mjs'
+      - '.github/workflows/de-language-closure.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/de-localization
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Apply reviewed German editorial fixes
+        run: node scripts/apply-de-language-closure.mjs
+      - name: Commit reviewed fixes
+        run: |
+          if git diff --quiet -- data/localization/de/library; then
+            echo "No German language closure changes required."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/localization/de/library
+          git commit -m "fix(localization): close remaining German language leaks"
+          git push origin HEAD:agent/de-localization

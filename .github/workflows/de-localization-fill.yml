@@ -10,6 +10,7 @@ on:
       - 'data/life-os-content/**'
       - 'data/life-os-content-additions.json'
       - 'scripts/generate-de-missing-localization.mjs'
+      - 'scripts/refresh-de-approved-source-snapshots.mjs'
       - 'scripts/lib/localization-source.mjs'
       - '.github/workflows/de-localization-fill.yml'
   workflow_dispatch:
@@ -35,6 +36,8 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Refresh explicitly reviewed source snapshots
+        run: node scripts/refresh-de-approved-source-snapshots.mjs
       - name: Fill next bounded German batches
         env:
           GITHUB_TOKEN: ${{ github.token }}

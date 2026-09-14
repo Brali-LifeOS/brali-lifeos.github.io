@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "locale": "ru",
+  "contract_version": 1,
+  "core_release_state": "reference-core-complete",
+  "whole_site_surface_state": "reviewed-partial",
+  "dimensions": {
+    "A": {"id": "structural-coverage", "state": "automated-pass"},
+    "B": {"id": "semantic-parity", "state": "language-reviewed-with-source-drift-gate"},
+    "C": {"id": "language-quality", "state": "language-reviewed-with-lint"},
+    "D": {"id": "evidence-safety-parity", "state": "automated-pass"},
+    "E": {"id": "ux-localization", "state": "primary-surfaces-pass; narrow-layout-review-explicit-debt"},
+    "F": {"id": "seo-hreflang-integrity", "state": "generated-and-live-gated"},
+    "G": {"id": "ai-facing-integrity", "state": "automated-pass"},
+    "H": {"id": "generated-live-parity", "state": "deploy-gated"},
+    "I": {"id": "manual-language-review", "state": "language-reviewed"}
+  },
+  "scope_boundary": "The canonical 957-record knowledge corpus, 49 zones, localized homepage/library/methodology, seven curated starting protocols, Research, Partnerships and For AI & Developers are the reference localized core. Secondary product and editorial surfaces remain explicit English fallback until separately added to the locale profile.",
+  "manual_debt": ["ru-rendered-narrow-layout-review"],
+  "do_not_infer": [
+    "reviewed-partial does not mean partial canonical library coverage",
+    "language-reviewed does not mean scientifically proven",
+    "reference-core-complete does not mean every secondary site route has Russian copy"
+  ]
+}

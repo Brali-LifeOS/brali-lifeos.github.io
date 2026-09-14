@@ -19,6 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: 22
@@ -37,10 +39,27 @@ jobs:
         run: cd mcp && npm install --ignore-scripts --package-lock=false && node -e "import('./remote.mjs')"
       - name: Validate Trustverse classification policy
         run: node scripts/check-content-trust-policy.mjs
+      - name: Check localization release verifier syntax
+        run: |
+          node --check scripts/check-live-localizations.mjs
+          node --check scripts/check-browser-localizations.mjs
+          node --check scripts/run-localization-release-gates.mjs
+          node --check scripts/check-localization-contract.mjs
+          node --check scripts/check-localization-faults.mjs
+          node --check scripts/check-ru-consent-localization.mjs
+          node --check scripts/audit-ru-language.mjs
+          node --check scripts/patch-ru-discovery.mjs
+      - name: Validate localization source contract and adversarial failures
+        run: npm run localization:contract && npm run localization:faults && npm run localization:audit:ru
       - name: Build site
         run: npm run build
-      - name: Patch Russian discovery shell
-        run: node scripts/patch-ru-discovery.mjs
+      - name: Verify localized analytics consent
+        run: node scripts/check-ru-consent-localization.mjs
+      - name: Check localization impact against PR base
+        if: github.event_name == 'pull_request'
+        env:
+          LOCALIZATION_BASE_REF: origin/${{ github.base_ref }}
+        run: npm run localization:check
       - name: Build portable Brali Bench
         run: node scripts/build-brali-bench.mjs && node scripts/check-brali-bench.mjs
       - name: Validate shared stdio and remote MCP source

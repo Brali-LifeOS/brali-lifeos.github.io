@@ -25,6 +25,7 @@ jobs:
         run: |
           node --check scripts/check-live-localizations.mjs
           node --check scripts/check-browser-localizations.mjs
+          node --check scripts/run-localization-release-gates.mjs
           node --check scripts/check-localization-contract.mjs
           node --check scripts/check-localization-faults.mjs
           node --check scripts/check-ru-consent-localization.mjs

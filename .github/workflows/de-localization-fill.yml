@@ -1,6 +1,17 @@
 name: German localization progress planner
 
 on:
+  push:
+    branches:
+      - deep-run/de-full-localization-20260914
+    paths:
+      - 'data/localization/de/library/**'
+      - 'data/life-os-content/**'
+      - 'scripts/check-de-library-contract.mjs'
+      - 'scripts/audit-de-library-language.mjs'
+      - 'scripts/lib/de-language-audit.mjs'
+      - 'scripts/plan-de-library-next.mjs'
+      - '.github/workflows/de-localization-fill.yml'
   workflow_dispatch:
 
 permissions:
@@ -30,4 +41,4 @@ jobs:
         run: node scripts/audit-de-library-language.mjs
 
       - name: Show remaining canonical German records
-        run: node scripts/plan-de-library-next.mjs
+        run: node scripts/plan-de-library-next.mjs --limit=100

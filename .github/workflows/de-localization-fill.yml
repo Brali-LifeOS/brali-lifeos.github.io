@@ -1,53 +1,33 @@
-name: German localization bounded fill
+name: German localization progress planner
 
 on:
-  push:
-    branches:
-      - deep-run/de-full-localization-20260914
   workflow_dispatch:
 
 permissions:
-  contents: write
-  models: read
+  contents: read
 
 concurrency:
-  group: de-localization-fill
-  cancel-in-progress: false
+  group: de-localization-progress
+  cancel-in-progress: true
 
 jobs:
-  fill:
-    if: github.actor != 'github-actions[bot]'
+  progress:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     steps:
       - name: Checkout branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.ref_name }}
-          fetch-depth: 0
+        uses: actions/checkout@v5
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
+          node-version: '24'
 
-      - name: Fill the next bounded German batches
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-          GERMAN_LOCALIZATION_MODEL: openai/gpt-4.1-mini
-          GERMAN_LOCALIZATION_BATCH_SIZE: '8'
-          GERMAN_LOCALIZATION_MAX_BATCHES: '8'
-        run: node scripts/generate-de-missing-localization.mjs
+      - name: Check current German canonical subset
+        run: node scripts/check-de-library-contract.mjs
 
-      - name: Commit generated German batches
-        shell: bash
-        run: |
-          if git diff --quiet -- data/localization/de/library; then
-            echo "No German library changes to commit."
-            exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/localization/de/library
-          git commit -m "Fill next German localization batches"
-          git push origin HEAD:${{ github.ref_name }}
+      - name: Audit current German language quality
+        run: node scripts/audit-de-library-language.mjs
+
+      - name: Show remaining canonical German records
+        run: node scripts/plan-de-library-next.mjs

@@ -77,18 +77,21 @@ for (const localeEntry of locales) {
       const expected = localizationSourceSnapshot(authoringBySlug.get(record.slug) || source);
       for (const [field, value] of Object.entries(expected)) assert(locale, record.source?.[field] === value, `stale source snapshot ${record.slug}.${field}`);
       assert(locale, allowedQuality.has(record.quality_state), `invalid quality state ${record.slug}: ${record.quality_state}`);
+      const localizedRecord = record.localized && typeof record.localized === "object"
+        ? { ...record, ...record.localized }
+        : record;
       for (const field of ["title", "subtitle", "description"]) {
-        assert(locale, typeof record[field] === "string" && record[field].trim(), `${record.slug}.${field} is required`);
-        assert(locale, record[field] === record[field].normalize("NFC"), `${record.slug}.${field} is not NFC`);
-        assert(locale, record[field] !== expected[field], `${record.slug}.${field} silently falls back to English`);
+        assert(locale, typeof localizedRecord[field] === "string" && localizedRecord[field].trim(), `${record.slug}.${field} is required`);
+        assert(locale, localizedRecord[field] === localizedRecord[field].normalize("NFC"), `${record.slug}.${field} is not NFC`);
+        assert(locale, localizedRecord[field] !== expected[field], `${record.slug}.${field} silently falls back to English`);
       }
-      assert(locale, record.description.length >= 45, `${record.slug}.description is too thin for a useful semantic layer`);
+      assert(locale, localizedRecord.description.length >= 45, `${record.slug}.description is too thin for a useful semantic layer`);
       const trust = evidenceBySlug.get(record.slug);
       assert(locale, trust, `evidence entry missing ${record.slug}`);
       if (["reviewed", "practical"].includes(trust.status)) {
         assert(locale, qualityRank[record.quality_state] >= qualityRank[config.trusted_minimum_quality], `trusted ${record.slug} needs at least ${config.trusted_minimum_quality}`);
       }
-      localized.set(record.slug, { ...record, zone_slug: source.zone.slug });
+      localized.set(record.slug, { ...localizedRecord, zone_slug: source.zone.slug });
     }
   }
 

@@ -94,9 +94,11 @@ If an original-language term is genuinely required because it is a proper name, 
 
 ## Browser proof
 
-`scripts/check-browser-localizations.mjs` reads the generated locale manifest and visits every Russian route in real Chromium at 320 px. It also rechecks representative routes at tablet/desktop viewports, exercises keyboard focus, captures screenshots and ARIA snapshots, and fails on structural localization regressions or horizontal overflow.
+`scripts/check-browser-localizations.mjs` reads the generated locale manifest and visits every declared route for the release locale in real Chromium at 320 px. It also rechecks representative routes at tablet/desktop viewports, exercises keyboard focus, captures screenshots and ARIA snapshots, and fails on structural localization regressions, horizontal overflow, source-language shell leakage or unreadable filled-button contrast.
 
-The browser script is intentionally separate from `scripts/check-live-localizations.mjs`: HTTP/HTML verification is not evidence of rendered browser behavior.
+The browser script is intentionally separate from `scripts/check-live-localizations.mjs`: HTTP/HTML verification is not evidence of rendered browser behavior. The Russian closure pass demonstrated why this distinction matters: DOM/ARIA checks were green while a higher-specificity prose-link rule made filled CTA text visually disappear. That defect is now covered by computed foreground/background contrast checks.
+
+Hosting noise must not be converted into product debt, but retries must stay narrow. Browser navigation may retry a transient navigation failure or HTTP 5xx response with bounded backoff. HTTP 4xx responses and DOM, language, canonical/hreflang, overflow, contrast, keyboard or accessibility findings are not retried away.
 
 ## Secondary English-only surfaces
 
@@ -106,8 +108,10 @@ Brali may keep secondary technical/reference surfaces in the canonical locale wh
 2. links from localized pages explicitly declare `lang="en"`/the English boundary;
 3. the surface is not part of primary localized navigation or an exact localized surface contract.
 
-If any of those conditions changes, the route must be added to the locale contract and localized before the release can remain `published`.
+If any of those conditions changes, the route must be added to the locale contract and localized before the release can retain the same claim.
 
 ## Closure rule
 
 Do not close localization from commit messages, coverage percentages or green CI alone. Close it from the merged SHA only after generated artifacts and deployed production agree, the real-browser evidence is green, and release-blocking debt is resolved.
+
+When a debt item is closed, keep its closure evidence inspectable: record the deployed SHA/run or equivalent immutable evidence, the verified scope and the gate that proved it. Keep intentionally English-only secondary surfaces explicit instead of silently treating them as localized.

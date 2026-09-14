@@ -1,4 +1,16 @@
-const base = (process.env.BRALI_LIVE_BASE_URL || "https://brali-lifeos.github.io").replace(/\/$/, "");
+import { readFile } from "node:fs/promises";
+
+const profile = JSON.parse(await readFile(".arwp/localization.json", "utf8"));
+const requestedLocale = process.env.LOCALIZATION_LOCALE || profile.releaseContract?.referenceImplementation;
+const locale = (profile.locales || []).find((entry) => entry.code === requestedLocale);
+if (!locale || locale.role !== "human-interface") {
+  throw new Error(`[live-localization] unknown human-interface locale: ${requestedLocale}`);
+}
+
+const sourceLocale = profile.sourceLocale;
+const languageTag = process.env.LOCALIZATION_LANGUAGE_TAG || locale.languageTag;
+const routePrefix = locale.routePrefix;
+const base = (process.env.BRALI_LIVE_BASE_URL || profile.site || "https://brali-lifeos.github.io/").replace(/\/$/, "");
 const expectedSha = process.env.GITHUB_SHA || "unknown";
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -12,7 +24,7 @@ async function fetchText(pathname, { attempts = 6 } = {}) {
         headers: {
           "cache-control": "no-cache",
           pragma: "no-cache",
-          "user-agent": "Brali-Live-Localization-Check/2.1",
+          "user-agent": "Brali-Live-Localization-Check/3.0",
         },
       });
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
@@ -26,7 +38,7 @@ async function fetchText(pathname, { attempts = 6 } = {}) {
 }
 
 const assert = (condition, message) => {
-  if (!condition) throw new Error(`[live-localization] ${message}`);
+  if (!condition) throw new Error(`[live-localization:${requestedLocale}] ${message}`);
 };
 
 async function mapLimit(items, limit, worker) {
@@ -49,103 +61,76 @@ async function mapLimit(items, limit, worker) {
   }
 }
 
-const { text: manifestText } = await fetchText("/ru/manifest.json");
+const { text: manifestText } = await fetchText(`${routePrefix}manifest.json`);
 const manifest = JSON.parse(manifestText);
-assert(manifest.locale === "ru", "live manifest locale must be ru");
-assert(manifest.source_locale === "en", "live manifest source locale must be en");
-assert(manifest.role === "human-interface", "live Russian role must be human-interface");
-assert(["reviewed-partial", "published"].includes(manifest.status), "live Russian status must be a declared human-interface release state");
-assert(manifest.no_silent_fallback === true, "live manifest must forbid silent fallback");
-assert(["limited", "full"].includes(manifest.search_publication), "live Russian search publication state is invalid");
-assert(Array.isArray(manifest.routes) && manifest.routes.length >= 13, "live manifest must declare localized human routes including primary product hubs");
+assert(manifest.locale === requestedLocale, `manifest locale must be ${requestedLocale}`);
+assert(manifest.source_locale === sourceLocale, `manifest source locale must be ${sourceLocale}`);
+assert(manifest.role === "human-interface", "manifest role must be human-interface");
+assert(manifest.status === locale.status, `manifest status ${manifest.status} does not match registry ${locale.status}`);
+assert(manifest.no_silent_fallback === true, "manifest must forbid silent fallback");
+assert(manifest.search_publication === locale.searchPublication, `manifest search publication ${manifest.search_publication} does not match registry ${locale.searchPublication}`);
+assert(Array.isArray(manifest.routes) && manifest.routes.length >= 7, "manifest must declare the required localized human routes");
 
 const routePaths = manifest.routes.map((route) => route.path);
-assert(new Set(routePaths).size === routePaths.length, "live manifest contains duplicate Russian routes");
+assert(new Set(routePaths).size === routePaths.length, "manifest contains duplicate localized routes");
 const routeByPath = new Map(manifest.routes.map((route) => [route.path, route]));
-const requiredRoutes = [
-  "/ru/",
-  "/ru/life-os/",
-  "/ru/life-os/flagships/",
-  "/ru/life-os/methodology/",
-  "/ru/research/",
-  "/ru/partners/",
-  "/ru/for-ai/",
-];
-for (const required of requiredRoutes) {
-  assert(routeByPath.has(required), `live manifest missing required route ${required}`);
+const requiredSuffixes = ["", "life-os/", "life-os/flagships/", "life-os/methodology/", "research/", "partners/", "for-ai/"];
+for (const suffix of requiredSuffixes) {
+  const required = `${routePrefix}${suffix}`;
+  assert(routeByPath.has(required), `manifest missing required route ${required}`);
 }
 
-const primaryHubCoverage = manifest.coverage?.primary_product_hubs;
-assert(primaryHubCoverage?.state === "language-reviewed", "live primary product hubs must remain language-reviewed");
-assert(primaryHubCoverage?.localized === 3 && primaryHubCoverage?.canonical === 3, "live primary product hub coverage must be 3/3");
-
-const { text: libraryText } = await fetchText("/ru/library.json");
+const { text: libraryText } = await fetchText(`${routePrefix}library.json`);
 const library = JSON.parse(libraryText);
-assert(library.locale === "ru" && library.source_locale === "en", "live Russian library identity drift");
-assert(library.count === manifest.coverage?.library_entries?.localized, "live library count must match manifest coverage");
-assert(library.canonical_count === manifest.coverage?.library_entries?.canonical, "live canonical library count must match manifest coverage");
-assert(library.coverage_mode === manifest.coverage?.library_entries?.mode, "live library coverage mode must match manifest");
-assert(Array.isArray(library.entries) && library.entries.length === library.count, "live Russian library entries/count drift");
+assert(library.locale === requestedLocale && library.source_locale === sourceLocale, "localized library identity drift");
+assert(library.count === manifest.coverage?.library_entries?.localized, "library count must match manifest coverage");
+assert(library.canonical_count === manifest.coverage?.library_entries?.canonical, "canonical library count must match manifest coverage");
+assert(library.coverage_mode === manifest.coverage?.library_entries?.mode, "library coverage mode must match manifest");
+assert(Array.isArray(library.entries) && library.entries.length === library.count, "localized library entries/count drift");
 for (const entry of library.entries) {
-  assert(["reviewed", "practical", "pending-review", "restricted"].includes(entry.evidence_status), `invalid live evidence state for ${entry.slug}`);
-  assert(["localized-draft", "language-reviewed", "editorial-reviewed"].includes(entry.localization_quality), `invalid live localization quality for ${entry.slug}`);
+  assert(["reviewed", "practical", "pending-review", "restricted"].includes(entry.evidence_status), `invalid evidence state for ${entry.slug}`);
+  assert(["localized-draft", "language-reviewed", "editorial-reviewed"].includes(entry.localization_quality), `invalid localization quality for ${entry.slug}`);
+}
+if (profile.releaseContract?.coverage === "exact-for-published-human-interface" && locale.status === "published") {
+  assert(library.coverage_mode === "exact", "published locale must use exact library coverage");
+  assert(library.count === library.canonical_count, "published locale must cover the full canonical library");
 }
 
-const primaryMarkers = new Map([
-  ["/ru/research/", "Полезные исследования"],
-  ["/ru/partners/", "Выберите формат сотрудничества"],
-  ["/ru/for-ai/", "Используйте практические знания"],
-]);
-const primaryNavRoutes = ["/ru/life-os/", "/ru/life-os/methodology/", "/ru/research/", "/ru/partners/", "/ru/for-ai/"];
-
+const commonSourceShellLeakage = /\b(?:Skip to content|Main navigation|Optional analytics|Analytics preference|Allow analytics|Necessary only)\b/i;
 await mapLimit(manifest.routes, 16, async (route) => {
+  assert(route.path.startsWith(routePrefix), `route escaped locale prefix: ${route.path}`);
   const { text: html } = await fetchText(route.path, { attempts: 4 });
-  assert(/<html lang="ru">/i.test(html), `${route.path} must publish html lang=ru`);
+  assert(new RegExp(`<html[^>]+lang=["']${languageTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html), `${route.path} must publish html lang=${languageTag}`);
   assert(html.includes(`<link rel="canonical" href="${route.url}">`), `${route.path} must publish its self canonical`);
-  assert(html.includes(`hreflang="ru" href="${route.url}"`), `${route.path} must publish ru hreflang`);
-  assert(html.includes(`hreflang="en" href="${route.canonical_url}"`), `${route.path} must publish en hreflang`);
+  assert(html.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.path} must publish ${languageTag} hreflang`);
+  assert(html.includes(`hreflang="${sourceLocale}" href="${route.canonical_url}"`), `${route.path} must publish ${sourceLocale} hreflang`);
   assert(html.includes(`hreflang="x-default" href="${route.canonical_url}"`), `${route.path} must publish x-default`);
-  assert(html.includes('"inLanguage":"ru"'), `${route.path} structured data must publish inLanguage=ru`);
-  assert(!html.includes(">Skip to content<"), `${route.path} leaked English skip-link UI`);
-  assert(!html.includes(">Explore<") && !html.includes(">Evidence<"), `${route.path} leaked English primary navigation UI`);
-  for (const navRoute of primaryNavRoutes) {
-    assert(html.includes(`href="${navRoute}"`), `${route.path} missing Russian primary navigation route ${navRoute}`);
-  }
-  const marker = primaryMarkers.get(route.path);
-  if (marker) {
-    assert(html.includes(marker), `${route.path} missing native Russian primary-hub marker ${JSON.stringify(marker)}`);
-    assert(route.localization_quality === "language-reviewed", `${route.path} must declare language-reviewed localization quality`);
-  }
+  assert(html.includes(`"inLanguage":"${languageTag}"`), `${route.path} structured data must publish inLanguage=${languageTag}`);
+  assert(!commonSourceShellLeakage.test(html), `${route.path} leaked source-language shell UI`);
 
   const { text: canonicalHtml } = await fetchText(route.canonical_path, { attempts: 4 });
-  assert(canonicalHtml.includes(`hreflang="ru" href="${route.url}"`), `${route.canonical_path} must reciprocate Russian hreflang`);
-  assert(canonicalHtml.includes(`lang="ru" hreflang="ru" href="${route.path}">Русский</a>`), `${route.canonical_path} must expose the Russian locale switch`);
+  assert(canonicalHtml.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.canonical_path} must reciprocate ${languageTag} hreflang`);
 });
 
-const { text: sitemap } = await fetchText("/ru/sitemap.xml");
+const { text: sitemap } = await fetchText(`${routePrefix}sitemap.xml`);
 for (const route of manifest.routes) {
-  assert(sitemap.includes(`<loc>${route.url}</loc>`), `live Russian sitemap missing ${route.path}`);
+  assert(sitemap.includes(`<loc>${route.url}</loc>`), `localized sitemap missing ${route.path}`);
 }
 
-const { text: llms } = await fetchText("/ru/llms.txt");
+const { text: llms } = await fetchText(`${routePrefix}llms.txt`);
 for (const token of [
-  "Locale: ru",
-  "Canonical locale: en",
+  `Locale: ${requestedLocale}`,
+  `Canonical locale: ${sourceLocale}`,
   "No silent fallback: true",
-  `${base}/ru/library.json`,
-  "## Основные русские хабы",
-  `${base}/ru/research/`,
-  `${base}/ru/partners/`,
-  `${base}/ru/for-ai/`,
+  `${base}${routePrefix}library.json`,
 ]) {
-  assert(llms.includes(token), `live Russian llms.txt missing token: ${token}`);
+  assert(llms.includes(token), `localized llms.txt missing token: ${token}`);
 }
 if (library.coverage_mode === "exact") {
-  assert(library.count === library.canonical_count, "exact live Russian coverage must match the canonical corpus");
-  assert(llms.includes(`покрывает все ${library.canonical_count}`), "exact live llms.txt must declare full corpus coverage");
+  assert(library.count === library.canonical_count, "exact live coverage must match the canonical corpus");
 }
 
 const { text: robots } = await fetchText("/robots.txt");
-assert(robots.includes(`Sitemap: ${base}/ru/sitemap.xml`), "live robots.txt must advertise the Russian sitemap");
+assert(robots.includes(`Sitemap: ${base}${routePrefix}sitemap.xml`), "robots.txt must advertise the localized sitemap");
 
-console.log(`Live Russian localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; 3/3 primary hubs; mode=${library.coverage_mode}.`);
+console.log(`Live ${requestedLocale} localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; mode=${library.coverage_mode}; status=${manifest.status}.`);

@@ -9,8 +9,9 @@ const findings = [];
 const fail = (message) => { findings.push(message); };
 const cyrillic = /[А-Яа-яЁё]/;
 // Keep this detector to English function words that are not normal standalone German vocabulary.
-// Common German borrowings such as “Start” and “Check” are reviewed by normal editorial passes instead.
-const englishFunctionWords = /\b(?:the|your|you|with|from|before|after|when|what|why|how|into|without|should|must|this|that|these|those|more|less|learn|choose|open|read)\b/i;
+// Common German borrowings and homographs such as “Start”, “Check” and the noun “These” are
+// reviewed by normal editorial passes instead of this lightweight leakage detector.
+const englishFunctionWords = /\b(?:the|your|you|with|from|before|after|when|what|why|how|into|without|should|must|this|that|those|more|less|learn|choose|open|read)\b/i;
 
 const allowlist = await readJson("data/localization/de/language-allowlist.json");
 if (allowlist.locale !== locale || !Array.isArray(allowlist.terms)) fail("invalid language allowlist");

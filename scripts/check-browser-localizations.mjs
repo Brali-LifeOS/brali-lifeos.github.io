@@ -18,7 +18,7 @@ const artifactRoot = path.join(root, "artifacts", "localization-browser", locale
 const failures = [];
 
 const manifestResponse = await fetch(manifestUrl, {
-  headers: { "user-agent": "Brali-localization-browser-gate/2.0" },
+  headers: { "user-agent": "Brali-localization-browser-gate/2.1" },
   redirect: "follow",
 });
 if (!manifestResponse.ok) throw new Error(`[localization-browser] cannot load deployed manifest ${manifestUrl}: HTTP ${manifestResponse.status}`);
@@ -82,6 +82,44 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
     const shellText = [...document.querySelectorAll("a,button,[aria-label],#brali-analytics-consent")]
       .map((element) => `${element.textContent || ""} ${element.getAttribute("aria-label") || ""}`.replace(/\s+/g, " ").trim())
       .filter((value) => /\b(?:Skip to content|Main navigation|Explore|Analytics preference|Optional analytics|Allow analytics|Necessary only)\b/i.test(value));
+
+    const parseColor = (value) => {
+      const match = String(value).match(/^rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:\s*[,/]\s*([\d.]+))?\s*\)$/i);
+      if (!match) return null;
+      return { r: Number(match[1]), g: Number(match[2]), b: Number(match[3]), a: match[4] === undefined ? 1 : Number(match[4]) };
+    };
+    const channel = (value) => {
+      const normalized = value / 255;
+      return normalized <= 0.04045 ? normalized / 12.92 : ((normalized + 0.055) / 1.055) ** 2.4;
+    };
+    const luminance = (rgb) => 0.2126 * channel(rgb.r) + 0.7152 * channel(rgb.g) + 0.0722 * channel(rgb.b);
+    const contrastRatio = (foreground, background) => {
+      const a = luminance(foreground);
+      const b = luminance(background);
+      return (Math.max(a, b) + 0.05) / (Math.min(a, b) + 0.05);
+    };
+    const buttonContrastFailures = [...document.querySelectorAll("a.button,button.button")]
+      .map((element) => {
+        const rect = element.getBoundingClientRect();
+        const style = getComputedStyle(element);
+        const text = (element.textContent || "").replace(/\s+/g, " ").trim();
+        if (!text || !element.getClientRects().length || rect.width < 1 || rect.height < 1 || style.visibility === "hidden" || Number(style.opacity) === 0) return null;
+        const foreground = parseColor(style.color);
+        const background = parseColor(style.backgroundColor);
+        if (!foreground || !background || background.a < 0.95) return null;
+        const ratio = contrastRatio(foreground, background);
+        if (ratio >= 3) return null;
+        return {
+          text: text.slice(0, 120),
+          className: typeof element.className === "string" ? element.className.slice(0, 80) : "",
+          color: style.color,
+          background: style.backgroundColor,
+          contrast: Number(ratio.toFixed(2)),
+        };
+      })
+      .filter(Boolean)
+      .slice(0, 8);
+
     return {
       lang: document.documentElement.lang,
       dir: document.documentElement.dir || "ltr",
@@ -93,6 +131,7 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
       overflow,
       overflowers,
       shellText,
+      buttonContrastFailures,
     };
   });
 
@@ -108,6 +147,12 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
   if (viewport.width === 320 && result.overflow > 2) {
     fail(route, "320px horizontal overflow", `${result.overflow}px; offenders=${JSON.stringify(result.overflowers)}`);
     await page.screenshot({ path: path.join(artifactRoot, `${artifactSlug(route)}-320-failure.png`), fullPage: true });
+  }
+  if (result.buttonContrastFailures.length) {
+    fail(route, "filled button text contrast", JSON.stringify(result.buttonContrastFailures));
+    if (viewport.width === 320) {
+      await page.screenshot({ path: path.join(artifactRoot, `${artifactSlug(route)}-320-contrast-failure.png`), fullPage: true });
+    }
   }
   if (localeCode !== sourceLocale && result.shellText.length) fail(route, "source-language shell leakage", result.shellText.slice(0, 3).join(" | "));
 
@@ -178,5 +223,5 @@ if (failures.length) {
   if (failures.length > 100) console.error(`  ... ${failures.length - 100} more`);
   process.exitCode = 1;
 } else {
-  console.log(`Real-browser ${localeCode} localization gate passed from deployed manifest ${manifestUrl}: ${allRoutes.length} routes at 320px; representative desktop/tablet, keyboard and ARIA snapshots captured.`);
+  console.log(`Real-browser ${localeCode} localization gate passed from deployed manifest ${manifestUrl}: ${allRoutes.length} routes at 320px; filled-button contrast, representative desktop/tablet, keyboard and ARIA snapshots captured.`);
 }

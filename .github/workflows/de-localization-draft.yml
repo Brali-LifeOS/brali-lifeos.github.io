@@ -36,3 +36,16 @@ jobs:
         run: node scripts/audit-de-library-language.mjs
       - name: Show next canonical German records
         run: node scripts/plan-de-library-next.mjs --limit=30
+
+  german-release-contract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Require complete German canonical corpus
+        run: node scripts/check-de-library-contract.mjs --complete
+      - name: Run strict German language audit
+        run: node scripts/audit-de-library-language.mjs --strict

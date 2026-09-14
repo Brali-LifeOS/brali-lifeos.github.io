@@ -1,0 +1,36 @@
+name: Interface localization draft guards
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'data/localization/de/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions.json'
+      - 'scripts/check-interface-locale-sources.mjs'
+      - 'scripts/lib/localization-source.mjs'
+      - '.github/workflows/interface-localization-draft.yml'
+  pull_request:
+    paths:
+      - 'data/localization/de/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions.json'
+      - 'scripts/check-interface-locale-sources.mjs'
+      - 'scripts/lib/localization-source.mjs'
+      - '.github/workflows/interface-localization-draft.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  source-parity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Check localization source parity
+        run: node scripts/check-interface-locale-sources.mjs

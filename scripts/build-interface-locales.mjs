@@ -133,7 +133,10 @@ async function buildLocale(localeEntry) {
     for (const [field, value] of Object.entries(expected)) {
       if (record.source?.[field] !== value) throw new Error(`[${locale}] stale source snapshot ${record.slug}.${field}`);
     }
-    localizedBySlug.set(record.slug, { ...record, zone_slug: source.zone.slug });
+    const localized = record.localized && typeof record.localized === "object"
+      ? { ...record, ...record.localized }
+      : record;
+    localizedBySlug.set(record.slug, { ...localized, zone_slug: source.zone.slug });
   }
 
   if (config.coverage_mode === "exact" && localizedBySlug.size !== canonicalIndex.length) {

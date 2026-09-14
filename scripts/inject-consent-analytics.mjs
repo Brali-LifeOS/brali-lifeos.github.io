@@ -10,11 +10,7 @@ function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
     if (ignored.has(entry.name)) return [];
     const target = path.join(directory, entry.name);
-    return entry.isDirectory()
-      ? walk(target)
-      : entry.isFile() && entry.name.endsWith(".html")
-        ? [target]
-        : [];
+    return entry.isDirectory() ? walk(target) : entry.isFile() && entry.name.endsWith(".html") ? [target] : [];
   });
 }
 
@@ -41,15 +37,35 @@ const head = `<!-- ${marker} -->
 })(window,document,'${containerId}');
 </script>`;
 
-const banner = `<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
-  <strong style="display:block;margin-bottom:6px;font-size:17px">Optional analytics</strong>
-  <span>Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.</span>
+const copy = {
+  en: {
+    aria: "Analytics preference",
+    title: "Optional analytics",
+    body: "Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.",
+    allow: "Allow analytics",
+    deny: "Necessary only",
+  },
+  ru: {
+    aria: "Настройки аналитики",
+    title: "Необязательная аналитика",
+    body: "Разрешить анонимное измерение использования с помощью Google Analytics? До вашего согласия данные в Google не отправляются.",
+    allow: "Разрешить аналитику",
+    deny: "Только необходимое",
+  },
+};
+
+function bannerFor(lang) {
+  const text = copy[lang] || copy.en;
+  return `<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="${text.aria}" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
+  <strong style="display:block;margin-bottom:6px;font-size:17px">${text.title}</strong>
+  <span>${text.body}</span>
   <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
-    <button type="button" onclick="braliAnalyticsConsent.grant()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#171717;color:#fff;font:inherit;font-weight:700;cursor:pointer">Allow analytics</button>
-    <button type="button" onclick="braliAnalyticsConsent.deny()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#fff;color:#171717;font:inherit;font-weight:700;cursor:pointer">Necessary only</button>
+    <button type="button" onclick="braliAnalyticsConsent.grant()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#171717;color:#fff;font:inherit;font-weight:700;cursor:pointer">${text.allow}</button>
+    <button type="button" onclick="braliAnalyticsConsent.deny()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#fff;color:#171717;font:inherit;font-weight:700;cursor:pointer">${text.deny}</button>
   </span>
 </aside>
 <script>(function(){try{if(localStorage.getItem('brali-analytics-consent-v1')){var n=document.getElementById('brali-analytics-consent');if(n)n.remove();}}catch(e){}})();</script>`;
+}
 
 if (!fs.existsSync(root)) throw new Error(`Missing analytics target: ${root}`);
 const files = walk(root);
@@ -62,11 +78,10 @@ for (const file of files) {
   if (/googletagmanager\.com\/(?:gtag\/js|gtm\.js)|GTM-[A-Z0-9]+|gtag\s*\(/i.test(html)) {
     throw new Error(`Existing analytics/tag manager detected in ${file}; refusing duplicate installation`);
   }
-  if (!/<\/head>/i.test(html) || !/<body(?:\s[^>]*)?>/i.test(html)) {
-    throw new Error(`Missing head/body in ${file}`);
-  }
+  if (!/<\/head>/i.test(html) || !/<body(?:\s[^>]*)?>/i.test(html)) throw new Error(`Missing head/body in ${file}`);
+  const lang = html.match(/<html[^>]*\blang=["']([^"']+)["']/i)?.[1]?.split("-")[0]?.toLowerCase() || "en";
   html = html.replace(/<\/head>/i, `${head}\n</head>`);
-  html = html.replace(/<body(?:\s[^>]*)?>/i, (opening) => `${opening}\n${banner}`);
+  html = html.replace(/<body(?:\s[^>]*)?>/i, (opening) => `${opening}\n${bannerFor(lang)}`);
   fs.writeFileSync(file, html);
   changed += 1;
 }
@@ -74,9 +89,7 @@ for (const file of files) {
 for (const file of files) {
   const html = fs.readFileSync(file, "utf8");
   const loaders = (html.match(/googletagmanager\.com\/gtm\.js/g) || []).length;
-  if (!html.includes(marker) || loaders !== 1) {
-    throw new Error(`Analytics invariant failed for ${file}: marker=${html.includes(marker)} loaders=${loaders}`);
-  }
+  if (!html.includes(marker) || loaders !== 1) throw new Error(`Analytics invariant failed for ${file}: marker=${html.includes(marker)} loaders=${loaders}`);
 }
 
 console.log(`analytics_id=${containerId} html=${files.length} changed=${changed} duplicate_loaders=0`);

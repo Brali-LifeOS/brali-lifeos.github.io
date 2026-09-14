@@ -6,6 +6,15 @@ const stylesPath = path.join(root, "styles.css");
 const marker = "/* brali-localized-responsive-boundary-v1 */";
 const block = `
 ${marker}
+/* Keep filled localized CTAs readable inside .prose. The base .prose a rule has
+   higher specificity than .button and otherwise turns dark-button text dark. */
+body[data-brali-cluster^="localized-"] .page .prose a.button {
+  color:var(--white);
+}
+body[data-brali-cluster^="localized-"] .page .prose a.button.yellow,
+body[data-brali-cluster^="localized-"] .page .prose a.button.quiet {
+  color:var(--ink);
+}
 @media (max-width:720px) {
   body[data-brali-cluster^="localized-"] .page h1,
   body[data-brali-cluster^="localized-"] .page h2,
@@ -39,7 +48,7 @@ ${marker}
 const styles = await readFile(stylesPath, "utf8");
 if (!styles.includes(marker)) {
   await writeFile(stylesPath, `${styles.trimEnd()}\n${block}`);
-  console.log("Patched localized narrow-screen wrapping into styles.css.");
+  console.log("Patched localized CTA contrast and narrow-screen wrapping into styles.css.");
 } else {
-  console.log("Localized narrow-screen wrapping already present.");
+  console.log("Localized CTA contrast and narrow-screen wrapping already present.");
 }

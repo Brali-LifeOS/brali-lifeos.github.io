@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brali-lifeos.github.io/bench/schema/case.schema.json",
+  "title": "Brali Bench case",
+  "type": "object",
+  "required": ["id", "category", "language", "query", "mode", "expected", "grading"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "category": {"type": "string", "minLength": 1},
+    "language": {"type": "string", "minLength": 2},
+    "query": {"type": "string", "minLength": 1},
+    "mode": {"enum": ["retrieve", "bounded-evidence", "no-answer"]},
+    "expect_boundary_only": {"type": "boolean"},
+    "expected": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topic_ids", "acceptable_topic_ids", "protocol_slugs", "evidence_decision_ids"],
+      "properties": {
+        "topic_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "acceptable_topic_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "protocol_slugs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "evidence_decision_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
+      }
+    },
+    "grading": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["expected_no_answer", "expected_canonical_protocol_ids", "expected_evidence_states", "measured_dimensions"],
+      "properties": {
+        "expected_no_answer": {"type": "boolean"},
+        "expected_canonical_protocol_ids": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+        "expected_evidence_states": {"type": "object", "additionalProperties": {"type": "string"}},
+        "measured_dimensions": {"type": "array", "items": {"enum": ["routing", "protocol_selection", "evidence_decision_recall", "safe_abstention", "canonical_identity", "evidence_state", "provenance", "unsupported_claim_leakage", "top_k_ranking"]}, "uniqueItems": true}
+      }
+    }
+  }
+}

@@ -6,6 +6,8 @@ const base = "https://brali-lifeos.github.io";
 const readJson = (relative) => JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
 const fail = (message) => { throw new Error(`[lifecycle-research] ${message}`); };
 const assert = (condition, message) => { if (!condition) fail(message); };
+const hasRussianHtmlContract = (html) => /<html\b[^>]*\blang=["']ru["'][^>]*>/i.test(html)
+  && /<html\b[^>]*\bdir=["']ltr["'][^>]*>/i.test(html);
 
 const canonicalIndex = readJson("data/life-os-content/index.json");
 const reviews = readJson("life-os/datasets/reviews.json");
@@ -139,10 +141,10 @@ const ruSponsorPath = path.join(root, "ru", "sponsorship", "index.html");
 assert(fs.existsSync(ruLedgerPath) && fs.existsSync(ruSponsorPath), "Russian lifecycle/support policy pages are missing");
 const ruLedger = fs.readFileSync(ruLedgerPath, "utf8");
 const ruSponsor = fs.readFileSync(ruSponsorPath, "utf8");
-assert(/<html lang="ru">/i.test(ruLedger) && ruLedger.includes("Журнал проверок"), "Russian review ledger shell/content drift");
+assert(hasRussianHtmlContract(ruLedger) && ruLedger.includes("Журнал проверок"), "Russian review ledger shell/content drift");
 assert(ruLedger.includes(`<link rel="canonical" href="${base}/ru/life-os/review-log/">`), "Russian review ledger canonical drift");
 assert(ruLedger.includes(`hreflang="en" href="${base}/life-os/review-log/"`), "Russian review ledger English hreflang missing");
-assert(/<html lang="ru">/i.test(ruSponsor) && ruSponsor.includes("Покупать вывод — нельзя"), "Russian sponsorship policy shell/content drift");
+assert(hasRussianHtmlContract(ruSponsor) && ruSponsor.includes("Покупать вывод — нельзя"), "Russian sponsorship policy shell/content drift");
 assert(ruSponsor.includes(`<link rel="canonical" href="${base}/ru/sponsorship/">`), "Russian sponsorship canonical drift");
 assert(ruSponsor.includes(`hreflang="en" href="${base}/sponsorship/"`), "Russian sponsorship English hreflang missing");
 

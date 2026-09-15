@@ -10,6 +10,7 @@ const steps = [
   "scripts/finalize-interface-locales.mjs",
   ...(withConsent ? ["scripts/inject-consent-analytics.mjs"] : []),
   "scripts/finalize-localization-cluster.mjs",
+  "scripts/build-indexability-registry.mjs",
 ];
 
 for (const script of steps) {

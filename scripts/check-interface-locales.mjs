@@ -9,6 +9,7 @@ const profile = await readJson(".arwp/localization.json");
 const locales = (profile.locales || []).filter((entry) => entry.role === "human-interface" && entry.generator === "generic-v1");
 const fail = (locale, message) => { throw new Error(`[${locale}-localization] ${message}`); };
 const assert = (locale, condition, message) => { if (!condition) fail(locale, message); };
+const advertised = (entry) => ["reviewed-partial", "published"].includes(entry.status) && entry.searchPublication !== "none";
 
 const canonicalIndex = await readJson("data/life-os-content/index.json");
 const authoringIndex = await loadLocalizationAuthoringIndex(root);
@@ -32,6 +33,7 @@ for (const localeEntry of locales) {
     readJson(`${locale}/library.json`),
   ]);
   assert(locale, config.locale === locale && site.locale === locale && zones.locale === locale && flagships.locale === locale && primary.locale === locale, "source locale declarations disagree");
+  assert(locale, site.status === localeEntry.status, `site status ${site.status} must match registry ${localeEntry.status}`);
   assert(locale, ["batched", "exact"].includes(config.coverage_mode), "coverage_mode must be batched or exact");
   const allowedQuality = new Set(config.quality_states || []);
   for (const state of Object.keys(qualityRank)) assert(locale, allowedQuality.has(state), `quality state missing: ${state}`);
@@ -113,6 +115,12 @@ for (const localeEntry of locales) {
   }
 
   assert(locale, manifest.locale === locale && manifest.language_tag === localeEntry.languageTag, "generated manifest locale drift");
+  assert(locale, manifest.source_locale === profile.sourceLocale, "generated manifest source locale drift");
+  assert(locale, manifest.role === localeEntry.role, "generated manifest role drift");
+  assert(locale, manifest.status === localeEntry.status, "generated manifest status drift");
+  assert(locale, manifest.search_publication === localeEntry.searchPublication, "generated manifest search-publication drift");
+  assert(locale, manifest.route_prefix === localeEntry.routePrefix, "generated manifest route-prefix drift");
+  assert(locale, manifest.no_silent_fallback === true, "generated manifest must forbid silent fallback");
   assert(locale, manifest.coverage?.library_entries?.localized === localized.size, "manifest localized library count drift");
   assert(locale, manifest.coverage?.library_entries?.canonical === canonicalIndex.length, "manifest canonical library count drift");
   assert(locale, manifest.coverage?.library_entries?.mode === config.coverage_mode, "manifest coverage mode drift");
@@ -135,20 +143,31 @@ for (const localeEntry of locales) {
     const relative = localizedPath === `/${locale}/` ? "" : localizedPath.replace(new RegExp(`^/${locale}/`), "").replace(/\/$/, "");
     const file = path.join(root, locale, relative, "index.html");
     const html = await readFile(file, "utf8");
-    assert(locale, new RegExp(`<html lang="${localeEntry.languageTag}">`, "i").test(html), `${localizedPath} must render lang=${localeEntry.languageTag}`);
+    assert(locale, new RegExp(`<html[^>]+lang="${localeEntry.languageTag}"`, "i").test(html), `${localizedPath} must render lang=${localeEntry.languageTag}`);
+    assert(locale, new RegExp(`<html[^>]+dir="${localeEntry.direction || "ltr"}"`, "i").test(html), `${localizedPath} must render dir=${localeEntry.direction || "ltr"}`);
     assert(locale, html.includes(`<link rel="canonical" href="${route.url}">`), `${localizedPath} must self-canonicalize`);
     assert(locale, html.includes(`hreflang="${localeEntry.languageTag}" href="${route.url}"`), `${localizedPath} missing self hreflang`);
-    assert(locale, html.includes(`hreflang="en" href="${route.canonical_url}"`), `${localizedPath} missing English hreflang`);
+    assert(locale, html.includes(`hreflang="${profile.sourceLocale}" href="${route.canonical_url}"`), `${localizedPath} missing source hreflang`);
     assert(locale, html.includes(`"inLanguage":"${localeEntry.languageTag}"`), `${localizedPath} structured data language drift`);
     assert(locale, !html.includes(">Skip to content<") && !html.includes(">Explore<") && !html.includes(">Read more<"), `${localizedPath} leaked English shell UI`);
+    const noindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
+    if (localeEntry.searchPublication === "none") assert(locale, noindex, `${localizedPath} must be noindex while searchPublication=none`);
+    else assert(locale, !noindex, `${localizedPath} must be indexable for searchPublication=${localeEntry.searchPublication}`);
   }
 
   for (const route of manifest.routes || []) {
     const canonicalPath = route.canonical_path;
     const file = canonicalPath === "/" ? path.join(root, "index.html") : path.join(root, canonicalPath.replace(/^\//, "").replace(/\/$/, ""), "index.html");
     const html = await readFile(file, "utf8");
-    assert(locale, html.includes(`hreflang="${localeEntry.languageTag}" href="${route.url}"`), `${canonicalPath} missing reciprocal ${locale} hreflang`);
-    assert(locale, html.includes(`lang="${localeEntry.languageTag}" hreflang="${localeEntry.languageTag}" href="${route.path}">${localeEntry.label}</a>`), `${canonicalPath} missing ${localeEntry.label} locale switch`);
+    const reciprocal = html.includes(`hreflang="${localeEntry.languageTag}" href="${route.url}"`);
+    const switchLink = html.includes(`lang="${localeEntry.languageTag}" hreflang="${localeEntry.languageTag}" href="${route.path}">${localeEntry.label}</a>`);
+    if (advertised(localeEntry)) {
+      assert(locale, reciprocal, `${canonicalPath} missing reciprocal ${locale} hreflang`);
+      assert(locale, switchLink, `${canonicalPath} missing ${localeEntry.label} locale switch`);
+    } else {
+      assert(locale, !reciprocal, `${canonicalPath} must not advertise draft ${locale} hreflang`);
+      assert(locale, !switchLink, `${canonicalPath} must not advertise draft ${localeEntry.label} switch`);
+    }
   }
 
   for (const page of primary.pages || []) {
@@ -159,9 +178,18 @@ for (const localeEntry of locales) {
   const sitemap = await readFile(path.join(root, locale, "sitemap.xml"), "utf8");
   for (const localizedPath of requiredPaths) assert(locale, sitemap.includes(`<loc>${base}${localizedPath}</loc>`), `sitemap missing ${localizedPath}`);
   const llms = await readFile(path.join(root, locale, "llms.txt"), "utf8");
-  assert(locale, llms.includes(`Locale: ${locale}`) && llms.includes("Canonical locale: en") && llms.includes("No silent fallback: true"), "llms.txt locale contract missing");
-  assert(locale, llms.includes(`${base}/${locale}/library.json`), "llms.txt must expose localized library.json");
-  if (config.coverage_mode === "exact") assert(locale, llms.includes(`alle ${canonicalIndex.length} kanonischen`), "exact llms.txt must declare full coverage");
+  for (const token of [
+    `Locale: ${locale}`,
+    `Language tag: ${localeEntry.languageTag}`,
+    `Canonical locale: ${profile.sourceLocale}`,
+    `Status: ${localeEntry.status}`,
+    `Search publication: ${localeEntry.searchPublication}`,
+    "No silent fallback: true",
+    `Coverage mode: ${config.coverage_mode}`,
+    `Localized entries: ${localized.size}`,
+    `Canonical entries: ${canonicalIndex.length}`,
+    `${base}/${locale}/library.json`,
+  ]) assert(locale, llms.includes(token), `llms.txt missing token: ${token}`);
 
-  console.log(`${localeEntry.label} localization gate passed: ${localized.size}/${canonicalIndex.length} entries; ${canonicalZones.length} zones; mode=${config.coverage_mode}.`);
+  console.log(`${localeEntry.label} localization gate passed: ${localized.size}/${canonicalIndex.length} entries; ${canonicalZones.length} zones; mode=${config.coverage_mode}; status=${localeEntry.status}; search=${localeEntry.searchPublication}.`);
 }

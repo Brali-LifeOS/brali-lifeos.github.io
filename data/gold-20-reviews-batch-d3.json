@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Gold 20 completion reviews for control allocation and two reviewed wellbeing protocols. These source reviews preserve safety boundaries, inspected source citations, and existing passing structured retrieval coverage.",
+  "description": "Gold 20 completion reviews for control allocation and two reviewed wellbeing protocols. These source reviews preserve safety boundaries, inspected source citations, and canonical structured retrieval coverage.",
   "entries": {
     "circles-of-control-planner": {
       "schema_version": 1,
@@ -10,55 +10,20 @@
       "reviewed_by": "Brali Gold Reviewer",
       "review_status": "gold-ready",
       "user_problem": "I am spending attention on an uncertain outcome that depends partly on other people or external events, and I need to separate what I can actually do from what I can only influence, monitor, or accept.",
-      "eligibility": [
-        "The user can name one ordinary concern and identify at least one observable action that is genuinely under their control.",
-        "Separating outcome from behavior would help allocate effort without denying that external factors still matter.",
-        "The situation is low-risk enough for a self-guided planning exercise and does not require immediate crisis, legal, medical, safety, or other professional intervention."
-      ],
-      "when_not_to_use": [
-        "Do not use the framework to blame a person for structural constraints, discrimination, coercion, unsafe conditions, missing resources, or another external barrier.",
-        "Do not relabel an outcome as controllable simply because the user can influence its probability.",
-        "Do not use acceptance language to discourage monitoring, support-seeking, escalation, advocacy, contingency planning, or other appropriate responses to external risk."
-      ],
+      "eligibility": ["The user can name one ordinary concern and identify at least one observable action that is genuinely under their control.","Separating outcome from behavior would help allocate effort without denying that external factors still matter.","The situation is low-risk enough for a self-guided planning exercise and does not require immediate crisis, legal, medical, safety, or other professional intervention."],
+      "when_not_to_use": ["Do not use the framework to blame a person for structural constraints, discrimination, coercion, unsafe conditions, missing resources, or another external barrier.","Do not relabel an outcome as controllable simply because the user can influence its probability.","Do not use acceptance language to discourage monitoring, support-seeking, escalation, advocacy, contingency planning, or other appropriate responses to external risk."],
       "first_action": "Write one concern, separate the uncertain outcome from your own observable actions, and choose the smallest useful behavior you can take without pretending it guarantees the result.",
-      "steps": [
-        "State the concern in plain language before trying to solve it.",
-        "Place outcomes that depend on other people, chance, timing, or external conditions outside direct control.",
-        "List your own observable choices and actions separately.",
-        "For factors you can influence but not control, translate influence into a behavior you can take while keeping the uncertain outcome separate.",
-        "Choose one concrete next action or, when no action is useful now, decide whether to monitor, wait, prepare a fallback, seek help, or accept uncertainty.",
-        "After acting, check whether attention moved toward useful behavior and whether any supposedly controllable item was actually an uncertain outcome."
-      ],
-      "review_horizon": {
-        "value": "After the chosen action or at the next meaningful change in the external situation",
-        "rationale": "The exercise is useful only if it changes allocation of attention or behavior; the review point should therefore follow the controllable action or a material change in what can be influenced."
-      },
+      "steps": ["State the concern in plain language before trying to solve it.","Place outcomes that depend on other people, chance, timing, or external conditions outside direct control.","List your own observable choices and actions separately.","For factors you can influence but not control, translate influence into a behavior you can take while keeping the uncertain outcome separate.","Choose one concrete next action or, when no action is useful now, decide whether to monitor, wait, prepare a fallback, seek help, or accept uncertainty.","After acting, check whether attention moved toward useful behavior and whether any supposedly controllable item was actually an uncertain outcome."],
+      "review_horizon": {"value":"After the chosen action or at the next meaningful change in the external situation","rationale":"The exercise is useful only if it changes allocation of attention or behavior; the review point should therefore follow the controllable action or a material change in what can be influenced."},
       "observable_signal": "Whether the user can distinguish an outcome from a behavior, name one real controllable action, and decide what to do with remaining uncertainty without claiming control over the final result.",
       "stop_or_change_rule": "Change or stop the exercise when it becomes self-blame, suppresses legitimate escalation or support, or produces no useful action. Reassess when the external situation changes because the boundary of what can be influenced may also change.",
       "fallback": "Skip the circles and write two lines: the next action I can take, and the external condition or decision I must monitor or ask someone else to address.",
-      "evidence_boundary": {
-        "status": "practical",
-        "statement": "This is a practical action-allocation reflection. Brali does not attach reviewed evidence that drawing control circles, using this wording, or this exact sequence reliably reduces stress or improves decision quality.",
-        "source_decision_ids": []
-      },
-      "limitations": [
-        "The boundary between control and influence can be ambiguous and can change over time.",
-        "Self-guided sorting cannot determine what another person, institution, or system will do.",
-        "The framework can become harmful if it reframes structural or unsafe conditions as personal responsibility.",
-        "A clearer next action is an operational signal, not evidence of improved mental health or decision outcomes."
-      ],
-      "citation": {
-        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-        "source_citations": []
-      },
+      "evidence_boundary": {"status":"practical","statement":"This is a practical action-allocation reflection. Brali does not attach reviewed evidence that drawing control circles, using this wording, or this exact sequence reliably reduces stress or improves decision quality.","source_decision_ids":[]},
+      "limitations": ["The boundary between control and influence can be ambiguous and can change over time.","Self-guided sorting cannot determine what another person, institution, or system will do.","The framework can become harmful if it reframes structural or unsafe conditions as personal responsibility.","A clearer next action is an operational signal, not evidence of improved mental health or decision outcomes."],
+      "citation": {"canonical_protocol_url":"https://brali-lifeos.github.io/life-os/circles-of-control-planner/","source_citations":[]},
       "agent_summary": "Use the control-circle idea to separate uncertain outcomes from observable behaviors, turn influence into one concrete action, and keep external uncertainty visible. Do not use it for self-blame or to erase structural, safety, or support needs.",
-      "retrieval_paths": [
-        "/life-os/circles-of-control-planner/",
-        "/for-ai/query/?q=How%20can%20I%20make%20a%20better%20decision%20when%20the%20outcome%20is%20uncertain"
-      ],
-      "evaluation_case_ids": [
-        "gold-circles-control-exact"
-      ]
+      "retrieval_paths": ["/life-os/circles-of-control-planner/","/for-ai/query/?q=Show%20me%20a%20circles%20of%20control%20planner%20for%20a%20decision%20with%20an%20uncertain%20outcome"],
+      "evaluation_case_ids": ["decision-uncertainty"]
     },
     "10-minute-stress-walk": {
       "schema_version": 1,
@@ -68,59 +33,20 @@
       "reviewed_by": "Brali Gold Reviewer",
       "review_status": "gold-ready",
       "user_problem": "Stress or tension has built during an ordinary day, and I want a small safe movement option that changes context without treating ten minutes of walking as a therapeutic dose or a replacement for care.",
-      "eligibility": [
-        "Walking is safe and practical for the user in the current setting and circumstances.",
-        "The user is looking for a small general-wellbeing reset rather than diagnosis or treatment of a mental-health condition.",
-        "The user can notice a simple before-and-after subjective signal without treating one walk as proof of causality."
-      ],
-      "when_not_to_use": [
-        "Do not use the protocol when walking is medically inappropriate, unsafe in the current environment, or would interfere with an immediate duty that requires attention.",
-        "Do not present a ten-minute walk as treatment for depression, anxiety, severe stress, or another condition, or as a substitute for appropriate professional support.",
-        "Do not prescribe a pace, heart-rate target, step count, breathing ratio, calorie goal, or ten-minute duration as a universal therapeutic dose."
-      ],
+      "eligibility": ["Walking is safe and practical for the user in the current setting and circumstances.","The user is looking for a small general-wellbeing reset rather than diagnosis or treatment of a mental-health condition.","The user can notice a simple before-and-after subjective signal without treating one walk as proof of causality."],
+      "when_not_to_use": ["Do not use the protocol when walking is medically inappropriate, unsafe in the current environment, or would interfere with an immediate duty that requires attention.","Do not present a ten-minute walk as treatment for depression, anxiety, severe stress, or another condition, or as a substitute for appropriate professional support.","Do not prescribe a pace, heart-rate target, step count, breathing ratio, calorie goal, or ten-minute duration as a universal therapeutic dose."],
       "first_action": "When stress builds, choose a safe familiar place and take a comfortable short walk if walking is appropriate for you, treating ten minutes only as a convenient boundary.",
-      "steps": [
-        "Notice a simple cue such as feeling tense, overloaded, or mentally stuck without turning the cue into a diagnosis.",
-        "Choose a safe route and a comfortable pace appropriate to the current environment and your own health circumstances.",
-        "Use ten minutes only when it fits; a shorter or longer walk can be reasonable without implying a therapeutic dose.",
-        "Keep the walk simple rather than adding mandatory breathing, speed, step, or productivity targets.",
-        "Afterward, notice whether stress or tension feels different, unchanged, or worse and return to the next task only when ready.",
-        "After several attempts, keep the walk as a reset only if it is safe, practical, and personally useful; seek appropriate help when persistent or severe stress requires more than a self-guided wellbeing practice."
-      ],
-      "review_horizon": {
-        "value": "Immediately after the walk, with a broader review after several ordinary attempts",
-        "rationale": "The immediate review captures the user's subjective response without claiming causality; repeated observation can show whether the reset is practically useful for that person."
-      },
+      "steps": ["Notice a simple cue such as feeling tense, overloaded, or mentally stuck without turning the cue into a diagnosis.","Choose a safe route and a comfortable pace appropriate to the current environment and your own health circumstances.","Use ten minutes only when it fits; a shorter or longer walk can be reasonable without implying a therapeutic dose.","Keep the walk simple rather than adding mandatory breathing, speed, step, or productivity targets.","Afterward, notice whether stress or tension feels different, unchanged, or worse and return to the next task only when ready.","After several attempts, keep the walk as a reset only if it is safe, practical, and personally useful; seek appropriate help when persistent or severe stress requires more than a self-guided wellbeing practice."],
+      "review_horizon": {"value":"Immediately after the walk, with a broader review after several ordinary attempts","rationale":"The immediate review captures the user's subjective response without claiming causality; repeated observation can show whether the reset is practically useful for that person."},
       "observable_signal": "Whether the walk happened safely, whether the user's stress or tension felt different afterward, and whether the practice remains useful enough to repeat without replacing appropriate care.",
       "stop_or_change_rule": "Stop or change the practice if walking causes pain, dizziness, worsening symptoms, environmental risk, or repeated inconvenience without benefit. Persistent, severe, or functionally impairing stress should prompt appropriate professional support rather than more self-experimentation.",
       "fallback": "If walking is not safe or practical, use another low-risk brief change of context such as sitting away from the screen, stepping into a safe quiet area, or taking an ordinary pause that fits the situation.",
-      "evidence_boundary": {
-        "status": "reviewed",
-        "statement": "WHO guidance on stress includes regular exercise, including walking, among strategies that can help reduce stress, and WHO physical-activity guidance recognizes walking as physical activity that can support health and wellbeing. These sources do not establish ten minutes as a universal therapeutic dose or guarantee an immediate stress reduction for every person, so Brali keeps the action as a bounded general-wellbeing option.",
-        "source_decision_ids": []
-      },
-      "limitations": [
-        "General public-health guidance does not establish the effect of one ten-minute walk for one person's acute stress episode.",
-        "The sources do not validate a specific pace, route, step count, heart-rate target, or exact ten-minute duration.",
-        "A before-and-after subjective rating cannot prove that walking caused the change.",
-        "The protocol is not treatment for depression, anxiety, severe stress, or another mental-health condition and cannot replace professional care when needed."
-      ],
-      "citation": {
-        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
-        "source_citations": [
-          "World Health Organization. Stress. 30 March 2026. https://www.who.int/news-room/questions-and-answers/item/stress/",
-          "World Health Organization. Physical activity. https://www.who.int/health-topics/physical-activity/physical-activity",
-          "NHS. Exercise for depression. https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/exercise-for-depression/"
-        ]
-      },
+      "evidence_boundary": {"status":"reviewed","statement":"WHO guidance on stress includes regular exercise, including walking, among strategies that can help reduce stress, and WHO physical-activity guidance recognizes walking as physical activity that can support health and wellbeing. These sources do not establish ten minutes as a universal therapeutic dose or guarantee an immediate stress reduction for every person, so Brali keeps the action as a bounded general-wellbeing option.","source_decision_ids":[]},
+      "limitations": ["General public-health guidance does not establish the effect of one ten-minute walk for one person's acute stress episode.","The sources do not validate a specific pace, route, step count, heart-rate target, or exact ten-minute duration.","A before-and-after subjective rating cannot prove that walking caused the change.","The protocol is not treatment for depression, anxiety, severe stress, or another mental-health condition and cannot replace professional care when needed."],
+      "citation": {"canonical_protocol_url":"https://brali-lifeos.github.io/life-os/10-minute-stress-walk/","source_citations":["World Health Organization. Stress. 30 March 2026. https://www.who.int/news-room/questions-and-answers/item/stress/","World Health Organization. Physical activity. https://www.who.int/health-topics/physical-activity/physical-activity","NHS. Exercise for depression. https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/exercise-for-depression/"]},
       "agent_summary": "Use this as a bounded general-wellbeing option: take a safe comfortable short walk when stress builds, treat ten minutes as adjustable, and notice the personal before-and-after signal. Do not present it as treatment or a guaranteed stress-reduction dose.",
-      "retrieval_paths": [
-        "/life-os/10-minute-stress-walk/",
-        "/topics/stress/"
-      ],
-      "evaluation_case_ids": [
-        "gold-stress-walk-exact"
-      ]
+      "retrieval_paths": ["/life-os/10-minute-stress-walk/","/topics/stress/","/for-ai/query/?q=Show%20me%20a%20short%20stress%20walk%20I%20can%20use%20as%20a%20low-risk%20reset%20after%20work"],
+      "evaluation_case_ids": ["stress-overload"]
     },
     "20-20-20-eye-break-reminder": {
       "schema_version": 1,
@@ -130,58 +56,20 @@
       "reviewed_by": "Brali Gold Reviewer",
       "review_status": "gold-ready",
       "user_problem": "Long screen sessions are making my eyes feel tired or uncomfortable, and I want a simple distance-looking break cue without treating the 20-20-20 rule as treatment or a substitute for eye care.",
-      "eligibility": [
-        "The user is doing ordinary prolonged screen work where a brief visual break can be taken safely.",
-        "A reminder to look at a distant object can be used without interfering with driving, monitoring, or another safety-critical duty.",
-        "The user understands that persistent eye strain, dryness, headaches, blurred vision, or other vision changes may require professional assessment."
-      ],
-      "when_not_to_use": [
-        "Do not use a screen-break reminder as treatment for an eye condition, as a substitute for regular eye care, or as a reason to ignore persistent or changing symptoms.",
-        "Do not force a reminder during driving, machinery use, safety monitoring, or another task where looking away at that moment would be unsafe.",
-        "Do not claim that the exact 20-minute interval, 20-foot distance, or 20-second duration prevents eye disease, improves vision, or guarantees symptom relief."
-      ],
+      "eligibility": ["The user is doing ordinary prolonged screen work where a brief visual break can be taken safely.","A reminder to look at a distant object can be used without interfering with driving, monitoring, or another safety-critical duty.","The user understands that persistent eye strain, dryness, headaches, blurred vision, or other vision changes may require professional assessment."],
+      "when_not_to_use": ["Do not use a screen-break reminder as treatment for an eye condition, as a substitute for regular eye care, or as a reason to ignore persistent or changing symptoms.","Do not force a reminder during driving, machinery use, safety monitoring, or another task where looking away at that moment would be unsafe.","Do not claim that the exact 20-minute interval, 20-foot distance, or 20-second duration prevents eye disease, improves vision, or guarantees symptom relief."],
       "first_action": "During a long screen session, take a brief safe visual break around a natural pause and look at something roughly 20 feet away for about 20 seconds.",
-      "steps": [
-        "Use the 20-20-20 rule as a simple reminder during prolonged close screen viewing rather than as a rigid compliance target.",
-        "Look at a clearly distant object or view so the break actually changes near-screen focus.",
-        "Relax the gaze and blink normally instead of adding a special breathing or blinking count.",
-        "When a reminder arrives during an unsafe or important uninterrupted task, defer it to the next safe natural pause rather than forcing the break immediately.",
-        "Return to the screen after the brief break without assuming the rule has treated any underlying cause of discomfort.",
-        "If eye strain, dryness, headaches, blurred vision, or other changes persist or concern you, use appropriate eye-care assessment instead of relying on reminders alone."
-      ],
-      "review_horizon": {
-        "value": "After each long screen session, with professional follow-up when symptoms are persistent, worsening, or otherwise concerning",
-        "rationale": "The practical signal is whether regular distance-looking breaks are feasible and whether symptoms still require attention; the protocol is not a diagnostic experiment."
-      },
+      "steps": ["Use the 20-20-20 rule as a simple reminder during prolonged close screen viewing rather than as a rigid compliance target.","Look at a clearly distant object or view so the break actually changes near-screen focus.","Relax the gaze and blink normally instead of adding a special breathing or blinking count.","When a reminder arrives during an unsafe or important uninterrupted task, defer it to the next safe natural pause rather than forcing the break immediately.","Return to the screen after the brief break without assuming the rule has treated any underlying cause of discomfort.","If eye strain, dryness, headaches, blurred vision, or other changes persist or concern you, use appropriate eye-care assessment instead of relying on reminders alone."],
+      "review_horizon": {"value":"After each long screen session, with professional follow-up when symptoms are persistent, worsening, or otherwise concerning","rationale":"The practical signal is whether regular distance-looking breaks are feasible and whether symptoms still require attention; the protocol is not a diagnostic experiment."},
       "observable_signal": "Whether the user took safe visual breaks during prolonged screen use and whether discomfort remains frequent, persistent, worsening, or significant enough to warrant eye-care evaluation.",
       "stop_or_change_rule": "Adapt the timing when rigid reminders disrupt important work, and stop self-managing with break cues alone when symptoms persist, worsen, or include vision changes that need professional assessment.",
       "fallback": "If an exact 20-20-20 reminder is distracting, use safe natural pauses during long screen work to look into the distance and relax the eyes, while keeping persistent symptoms as a separate eye-care question.",
-      "evidence_boundary": {
-        "status": "reviewed",
-        "statement": "The U.S. National Eye Institute recommends the 20-20-20 screen-break habit during prolonged computer use: every 20 minutes, look about 20 feet away for 20 seconds. Brali preserves that public-health recommendation while explicitly avoiding claims that the rule treats eye disease, improves vision, or guarantees symptom relief.",
-        "source_decision_ids": []
-      },
-      "limitations": [
-        "The public guidance provides a simple habit rule rather than evidence that the exact interval or distance is an optimal dose for every person.",
-        "A short visual break does not diagnose or treat the cause of persistent dryness, headache, blurred vision, or other symptoms.",
-        "The rule can be impractical in tasks that require uninterrupted visual attention and should be deferred to a safe pause.",
-        "Following the reminder does not replace regular eye exams or appropriate professional care."
-      ],
-      "citation": {
-        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
-        "source_citations": [
-          "National Eye Institute. Keep Your Eyes Healthy. https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
-          "American Optometric Association. Computer Vision Syndrome. https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome"
-        ]
-      },
+      "evidence_boundary": {"status":"reviewed","statement":"The U.S. National Eye Institute recommends the 20-20-20 screen-break habit during prolonged computer use: every 20 minutes, look about 20 feet away for 20 seconds. Brali preserves that public-health recommendation while explicitly avoiding claims that the rule treats eye disease, improves vision, or guarantees symptom relief.","source_decision_ids":[]},
+      "limitations": ["The public guidance provides a simple habit rule rather than evidence that the exact interval or distance is an optimal dose for every person.","A short visual break does not diagnose or treat the cause of persistent dryness, headache, blurred vision, or other symptoms.","The rule can be impractical in tasks that require uninterrupted visual attention and should be deferred to a safe pause.","Following the reminder does not replace regular eye exams or appropriate professional care."],
+      "citation": {"canonical_protocol_url":"https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/","source_citations":["National Eye Institute. Keep Your Eyes Healthy. https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy","American Optometric Association. Computer Vision Syndrome. https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome"]},
       "agent_summary": "Use 20-20-20 as a simple screen-rest cue during prolonged close viewing: look away to a distant object for a brief safe pause, blink normally, and keep persistent symptoms as an eye-care issue. Do not present the rule as treatment or a guarantee.",
-      "retrieval_paths": [
-        "/life-os/20-20-20-eye-break-reminder/",
-        "/for-ai/query/?q=How%20should%20I%20think%20about%20breaks%20and%20recovery%20when%20my%20energy%20drops"
-      ],
-      "evaluation_case_ids": [
-        "gold-eye-break-exact"
-      ]
+      "retrieval_paths": ["/life-os/20-20-20-eye-break-reminder/","/for-ai/query/?q=Show%20me%20a%2020%2020%2020%20eye%20break%20reminder%20for%20recovery%20during%20long%20screen%20sessions"],
+      "evaluation_case_ids": ["recovery-breaks"]
     }
   }
 }

@@ -24,6 +24,7 @@ const FINAL_BUILD_STEPS = [
 
 const CHECK_FIRST = ["scripts/check-localization-contract.mjs"];
 const CHECK_BEFORE_GRAPH = [
+  "scripts/check-localization-quality-states.mjs",
   "scripts/check-localization-quality-debt.mjs",
   "scripts/check-localized-consent.mjs",
   "scripts/check-localization-cluster.mjs",

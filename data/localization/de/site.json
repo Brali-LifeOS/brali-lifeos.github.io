@@ -15,7 +15,7 @@
     "nav_for_ai": "Für KI",
     "language_switch": "English",
     "footer_line": "Ein hilfreicher nächster Schritt – mit einer Erklärung, woher er kommt.",
-    "coverage_label": "Deutsche Version: kontrollierter Ausbau"
+    "coverage_label": "Deutsche Version: vollständige Abdeckung der Kernbibliothek"
   },
   "home": {
     "title": "Brali: praktische Protokolle für Aufgaben im Alltag",
@@ -25,19 +25,19 @@
     "lead": "Brali soll nicht noch hundert Tipps sammeln. Es hilft, für eine konkrete Aufgabe ein kleines Protokoll auszuwählen, es auszuprobieren und anschließend zu prüfen, was sich tatsächlich geändert hat. Evidenzstatus und Grenzen bleiben sichtbar – denn „einfach glauben“ ist keine Methode.",
     "primary_cta": "Deutsche Bibliothek öffnen",
     "secondary_cta": "Wie Brali Empfehlungen prüft",
-    "coverage_eyebrow": "Deutsch als kontrollierte Lokalisierung",
-    "coverage_heading": "Deutsche Inhalte werden gegen den kanonischen englischen Bestand geprüft.",
-    "coverage_lead": "Eine deutsche Route gilt nur dort als lokalisiert, wo ein eigenständiger deutscher Inhalt mit stabiler kanonischer Identität vorliegt. Fehlende Einträge bleiben als Lücke sichtbar; stiller englischer Fallback zählt nicht als Übersetzung.",
+    "coverage_eyebrow": "Deutsche Kernbibliothek vollständig lokalisiert",
+    "coverage_heading": "Die kanonische öffentliche Brali-Bibliothek ist vollständig auf Deutsch abgedeckt.",
+    "coverage_lead": "Die sieben ausgewählten Protokolle bleiben eine einfache Startkollektion, aber die deutsche Version ist nicht auf sie beschränkt: Für jeden Eintrag des kanonischen öffentlichen Korpus gibt es einen geprüften deutschen Bedeutungs-Layer. Neue und geänderte Einträge durchlaufen weiterhin Sprach- und Bedeutungsprüfung; der exakte Korpusabgleich wird automatisch in CI kontrolliert.",
     "evidence_eyebrow": "Evidenz ohne wissenschaftliche Dekoration",
     "evidence_heading": "Auffindbar heißt nicht automatisch empfehlenswert.",
     "evidence_body": "Brali trennt zwei Fragen: Ist ein Eintrag zugänglich, und ist er ausreichend geprüft, um Menschen oder KI-Agenten empfohlen zu werden? Geprüfte und risikoarme praktische Einträge können in vertrauenswürdige Ergebnisse gelangen; ungeprüfte und sensible Themen erhalten strengere Grenzen.",
     "evidence_cta": "Evidenzstatus verstehen",
     "machine_eyebrow": "Für KI und Entwickler",
-    "machine_heading": "Deutsche Abdeckung ist maschinenlesbar.",
-    "machine_body": "Manifest, library.json, Sitemap, hreflang und llms.txt machen den deutschen Umfang explizit. Kanonische Slugs und Evidenzstatus werden nicht übersetzt; Abdeckung und Textqualität werden getrennt geprüft.",
+    "machine_heading": "Vollständige deutsche Abdeckung ist maschinenlesbar.",
+    "machine_body": "Manifest, library.json, Sitemap, hreflang und llms.txt machen die vollständige deutsche Abdeckung der Kernbibliothek explizit. Kanonische Slugs und Evidenzstatus werden nicht übersetzt; der Exact-Modus verlangt vollständige Korpusparität und prüft die Textqualität getrennt davon.",
     "machine_cta": "Deutsches llms.txt öffnen",
-    "boundary_heading": "Was weiterhin englisch bleiben kann",
-    "boundary_body": "Die Lokalisierung der Wissensbibliothek bedeutet nicht automatisch, dass jede technische Nebenfläche übersetzt ist. Query Playground, Evaluation, Demos und weitere Referenzseiten können vorerst kanonisch englisch bleiben; Links dorthin kennzeichnen die Sprachgrenze ausdrücklich."
+    "boundary_heading": "Was noch teilweise Englisch bleibt",
+    "boundary_body": "Die vollständige Lokalisierung der Kernbibliothek bedeutet nicht automatisch, dass jede technische Nebenfläche übersetzt ist. Query Playground, Evaluation, Demos und weitere Referenzseiten können vorerst kanonisch englisch bleiben; Links dorthin kennzeichnen die Sprachgrenze ausdrücklich."
   },
   "collection": {
     "title": "7 Brali-Startprotokolle auf Deutsch",
@@ -65,7 +65,7 @@
     "claims_heading": "Keine Wissenschaftskulisse",
     "claims_body": "Brali ergänzt keine Neurowissenschaftsbegriffe, Prozentzahlen oder „optimalen“ Werte nur für einen seriösen Anstrich. Wenn eine Empfehlung auf Forschung beruht, zählt, was tatsächlich untersucht wurde, bei wem, womit verglichen wurde und welche Schlussfolgerung gerade nicht zulässig ist.",
     "locale_heading": "Was das für die deutsche Version bedeutet",
-    "locale_body": "Eine Übersetzung erhöht niemals den Evidenzstatus. Slugs, Quellen, Review-Daten und maschinelle Vertrauenszustände bleiben kanonisch. Deutsche Texte sollen die Idee klar und natürlich wiedergeben, ohne schwache Ausgangsbehauptungen sprachlich stärker zu machen.",
+    "locale_body": "Eine Übersetzung erhöht niemals den Evidenzstatus. Slugs, Quellen, Review-Daten und maschinelle Vertrauenszustände bleiben kanonisch. Der gesamte kanonische öffentliche Korpus der Kernbibliothek besitzt inzwischen einen deutschen Bedeutungs-Layer; der Exact-Modus blockiert die Veröffentlichung, wenn ein kanonischer Eintrag fehlt, doppelt vorkommt oder auf einem veralteten Quellstand basiert.",
     "health_heading": "Gesundheit und psychische Belastung",
     "health_body": "Brali ist eine allgemeine Bildungsressource, keine Diagnose und keine Behandlung. Bei sensiblen Themen ist Sicherheit wichtiger als eine elegante Einheitsanweisung. Schmerzen, deutliche Verschlechterung, Krisen oder ernsthafte Symptome gehören in eine angemessene professionelle oder – je nach Situation – akute medizinische Abklärung.",
     "machine_heading": "Maschinelle Transparenz",

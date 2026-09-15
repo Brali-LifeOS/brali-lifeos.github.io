@@ -1,0 +1,43 @@
+name: German zone sync
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/add-de-using-ai-zone.mjs'
+      - '.github/workflows/de-zone-sync.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/de-localization
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Add German Using AI zone
+        run: node scripts/add-de-using-ai-zone.mjs
+      - name: Verify German language and source contract
+        run: |
+          node scripts/audit-de-language.mjs
+          node scripts/check-interface-locale-sources.mjs
+      - name: Commit German zone alignment
+        run: |
+          if git diff --quiet -- data/localization/de/zones.json; then
+            echo 'German zones already aligned.'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/localization/de/zones.json
+          git commit -m "Localize Using AI zone in German"
+          git push origin HEAD:agent/de-localization

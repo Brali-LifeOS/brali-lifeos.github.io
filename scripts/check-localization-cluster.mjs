@@ -48,17 +48,36 @@ const exactLocales = releaseLocales.filter((locale) => {
   return coverage?.mode === "exact" && coverage.localized === coverage.canonical;
 });
 if (exactLocales.length > 1) {
-  const librarySets = exactLocales.map((locale) => {
-    const routes = (manifests.get(locale.code)?.routes || [])
-      .filter((route) => ["flagship", "library-entry"].includes(route.kind))
-      .map((route) => route.canonical_path)
-      .sort();
-    return { locale, routes };
-  });
-  const baseline = JSON.stringify(librarySets[0].routes);
+  const librarySets = [];
+  for (const locale of exactLocales) {
+    const library = await readJson(`${locale.code}/library.json`);
+    if (library.locale !== locale.code || library.coverage_mode !== "exact") {
+      throw new Error(`[localization-cluster-check] ${locale.code} exact locale has an invalid machine library contract`);
+    }
+    if (!Array.isArray(library.entries) || library.entries.length !== library.count || library.count !== library.canonical_count) {
+      throw new Error(`[localization-cluster-check] ${locale.code} exact machine library count drift`);
+    }
+    const slugs = library.entries.map((entry) => entry.slug).sort();
+    if (new Set(slugs).size !== slugs.length) {
+      throw new Error(`[localization-cluster-check] ${locale.code} machine library contains duplicate slugs`);
+    }
+    for (const slug of slugs) {
+      const canonicalPath = `/life-os/${slug}/`;
+      if (!routeMaps.get(locale.code)?.has(canonicalPath)) {
+        throw new Error(`[localization-cluster-check] ${locale.code} exact library ID ${slug} has no localized manifest route`);
+      }
+    }
+    librarySets.push({ locale, slugs });
+  }
+
+  const baseline = librarySets[0];
+  const baselineSet = new Set(baseline.slugs);
   for (const current of librarySets.slice(1)) {
-    if (JSON.stringify(current.routes) !== baseline) {
-      throw new Error(`[localization-cluster-check] exact library route parity drift between ${librarySets[0].locale.code} and ${current.locale.code}`);
+    const currentSet = new Set(current.slugs);
+    const missing = baseline.slugs.filter((slug) => !currentSet.has(slug));
+    const extra = current.slugs.filter((slug) => !baselineSet.has(slug));
+    if (missing.length || extra.length) {
+      throw new Error(`[localization-cluster-check] exact library ID parity drift between ${baseline.locale.code} and ${current.locale.code}; missing=${missing.slice(0, 10).join(",") || "none"}; extra=${extra.slice(0, 10).join(",") || "none"}`);
     }
   }
 }

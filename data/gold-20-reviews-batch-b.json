@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "description": "Manual Gold-contract completion reviews for two evidence-reviewed protocols with existing passing retrieval coverage. These entries are additive and must not shadow the base Gold review registry.",
+  "entries": {
+    "avoid-list-interference-memory-retention": {
+      "schema_version": 1,
+      "protocol_id": "brali:avoid-list-interference-memory-retention",
+      "slug": "avoid-list-interference-memory-retention",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I just finished learning facts or other declarative material I need to remember and want to reduce immediate interference without pretending that a fixed rest period guarantees better memory.",
+      "eligibility": [
+        "The user has completed a focused learning episode where later recall of declarative material matters.",
+        "A brief quiet, low-stimulation period while staying awake is practical and safe in the current setting.",
+        "The user can check recall later and is willing to treat the result as a personal observation rather than proof of causality."
+      ],
+      "when_not_to_use": [
+        "Do not use wakeful rest as a replacement for active recall, feedback, adequate sleep, or other learning methods that directly train the required outcome.",
+        "Do not generalize this protocol to comprehension, complex problem solving, skill acquisition, creativity, or other outcomes that the reviewed declarative-memory evidence does not establish.",
+        "Do not treat ten minutes, eye closure, a posture, breathing pattern, or another ritual as an evidence-backed universal dose or requirement.",
+        "Do not use a self-guided memory experiment to evaluate or treat persistent memory problems that warrant professional assessment."
+      ],
+      "first_action": "After one memory-heavy learning episode, put the material away and spend a brief period awake with relatively little new cognitive input before switching to another demanding task.",
+      "steps": [
+        "Choose material where later recall matters, such as vocabulary, facts, definitions, or other declarative information, rather than assuming the protocol improves every kind of learning.",
+        "When the learning episode ends, put the material aside and avoid immediately starting another cognitively demanding task.",
+        "Stay awake in a relatively quiet, low-stimulation setting for a short practical interval; do not add a required meditation, breathing, rehearsal, posture, or eye-closure routine.",
+        "Return to normal activity without treating the pause as a substitute for self-testing or further study.",
+        "At a later normal review opportunity, attempt recall without looking first and note whether recall seems better, unchanged, or worse than on comparable occasions."
+      ],
+      "review_horizon": {
+        "value": "At the next normal recall or study opportunity",
+        "rationale": "The useful signal is later declarative recall, not how restful the pause felt. The reviewed literature does not establish one universal rest duration or a fixed delay at which an individual should judge the protocol."
+      },
+      "observable_signal": "Whether the user actually created a low-interference pause and whether later unaided recall of the target material appears better, unchanged, or worse on comparable learning occasions.",
+      "stop_or_change_rule": "Change or drop the protocol when the pause is impractical, repeatedly adds friction without a useful recall signal, or the real learning goal is comprehension or performance rather than declarative recall. Seek appropriate assessment rather than extending the experiment when persistent memory difficulty is the problem.",
+      "fallback": "If a quiet pause is not useful or practical, move directly to a learning method that tests the target outcome, such as active recall with correction for retention or a representative application task for comprehension and skill.",
+      "evidence_boundary": {
+        "status": "reviewed",
+        "statement": "A 2026 meta-analysis of 142 effect sizes from 51 experiments found less forgetting on average after wakeful rest than after cognitively engaging interference, but effects were heterogeneous and smallest in healthy young to middle-aged adults. A separate 2026 randomized classroom study of 161 university students found no consistent wakeful-rest advantage for factual recall or conceptual understanding after a complex expository text. Brali therefore keeps this as an optional declarative-memory experiment, not a universal learning upgrade or fixed ten-minute dose.",
+        "source_decision_ids": [
+          "wakeful-rest-memory-2026",
+          "wakeful-rest-complex-learning-challenge-2026"
+        ]
+      },
+      "limitations": [
+        "The meta-analysis combined heterogeneous populations, learning materials, interference tasks, test procedures, and rest implementations, and its overall prediction interval included negative effects.",
+        "Healthy young to middle-aged adults had the smallest pooled effect in the meta-analysis, so the average result should not be presented as a likely benefit for every typical learner.",
+        "The classroom challenge tested one complex expository task and one eight-minute implementation in university students; its null result does not prove that wakeful rest never helps other memory tasks.",
+        "The evidence does not establish an optimal rest duration, required posture, eye-closure rule, special breathing pattern, or replacement for sleep and active learning."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
+        "source_citations": [
+          "Parra D, Zhang Z, Radvansky G. Should we all just take 10? A meta-analysis of wakeful rest. Psychonomic Bulletin & Review. 2026;33:49. https://doi.org/10.3758/s13423-025-02778-3",
+          "Seban P, Šikl R, Prošek T, Urban K. Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks. Psychological Research. 2026;90:42. https://doi.org/10.1007/s00426-026-02265-x"
+        ]
+      },
+      "agent_summary": "Use this protocol after learning declarative material when a short low-interference pause is safe and convenient. Keep the user awake, avoid inventing a ten-minute dose or ritual, and judge usefulness by later unaided recall. Do not generalize it to comprehension or skill and do not replace active learning or adequate sleep.",
+      "retrieval_paths": [
+        "/life-os/avoid-list-interference-memory-retention/",
+        "/topics/memory/",
+        "/for-ai/query/?q=Is%20ten%20minutes%20of%20quiet%20rest%20after%20learning%20proven%20to%20improve%20memory%20for%20everyone"
+      ],
+      "evaluation_case_ids": [
+        "wakeful-rest-boundary"
+      ]
+    },
+    "ideal-sleep-hours-finder": {
+      "schema_version": 1,
+      "protocol_id": "brali:ideal-sleep-hours-finder",
+      "slug": "ideal-sleep-hours-finder",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "My schedule may be leaving too little time for sleep, and I want a conservative way to protect sleep opportunity and notice daytime trends without running a sleep-restriction experiment or chasing a fake personal optimum.",
+      "eligibility": [
+        "The user is an adult dealing with an ordinary schedule or habit problem where insufficient sleep opportunity may be part of the issue.",
+        "The user can adjust at least one practical schedule constraint and can observe rough sleep timing and daytime alertness over several ordinary days.",
+        "There are no obvious red-flag symptoms that make a self-directed scheduling experiment an inappropriate substitute for professional assessment."
+      ],
+      "when_not_to_use": [
+        "Do not deliberately restrict sleep, vary sleep duration aggressively, or use daytime impairment as a way to discover the minimum sleep a person can tolerate.",
+        "Do not use this protocol as treatment for insomnia or as a diagnostic test for sleep apnea, hypersomnolence, parasomnias, or another sleep disorder.",
+        "Do not reduce marked daytime sleepiness, loud snoring or breathing pauses, persistent difficulty sleeping despite adequate opportunity, unusual sleep behavior, or another concerning pattern to a tracking problem.",
+        "Do not apply the adult population recommendation as a personalized prescription for children, adolescents, pregnancy, shift work, illness, recovery, or other contexts where sleep needs and timing may differ."
+      ],
+      "first_action": "Choose a realistic bedtime-to-wake window that does not routinely cap sleep below the healthy-adult recommendation, then record only rough sleep timing and daytime alertness for several ordinary days.",
+      "steps": [
+        "Start with sleep opportunity rather than optimization: identify whether work, screens, routines, caregiving, or another controllable constraint is routinely leaving too little time for sleep.",
+        "Choose a repeatable bedtime-to-wake window that gives sleep enough room without imposing a minute-level bedtime or wake-time tolerance.",
+        "Track only a few useful signals: roughly when you tried to sleep, when you got up, whether the night was unusually disrupted, and whether daytime alertness or sleepiness was broadly better or worse.",
+        "Review patterns across several days rather than treating one night, one wearable score, or consumer sleep-stage estimates as the answer.",
+        "If the schedule repeatedly restricts sleep opportunity, change one practical constraint at a time, such as protecting an earlier wind-down or bedtime, then observe the next ordinary run of days.",
+        "Stop self-optimization and seek appropriate assessment when persistent symptoms or safety-relevant sleepiness suggest that the problem is not merely insufficient opportunity."
+      ],
+      "review_horizon": {
+        "value": "After several ordinary days, typically about one to two weeks for a simple trend check",
+        "rationale": "The public protocol uses a short observation window to avoid overreacting to one night. The evidence supports sleep extension in aggregate but does not validate a 21-day optimization cycle, one ideal tracking period, or a personal dose-response algorithm."
+      },
+      "observable_signal": "Whether the user is consistently protecting enough time for sleep, what the rough sleep/wake pattern looks like, and whether daytime alertness or sleepiness shows a repeated trend rather than a single-night fluctuation.",
+      "stop_or_change_rule": "Change the schedule when it still routinely restricts sleep opportunity or is too rigid to sustain. Stop the self-tracking experiment and seek appropriate professional assessment when significant sleep difficulty persists despite adequate opportunity, daytime sleepiness is marked or safety-relevant, or symptoms suggest a sleep disorder.",
+      "fallback": "If detailed tracking adds friction or anxiety, keep only one schedule change and a simple daytime alertness note. If the problem persists despite adequate opportunity, move from self-optimization to professional assessment rather than collecting more consumer sleep data.",
+      "evidence_boundary": {
+        "status": "reviewed",
+        "statement": "A 2021 systematic review and meta-analysis of 42 behavioral sleep-extension studies found that interventions designed to extend sleep increased sleep duration on average, but results were highly heterogeneous and did not establish one ideal personal sleep duration or one best intervention. Professional AASM/SRS consensus recommends seven or more hours of sleep per night on a regular basis for healthy adults, while individual needs can vary. Brali therefore supports adequate sleep opportunity and trend observation, not a homemade optimization or sleep-restriction experiment.",
+        "source_decision_ids": [
+          "sleep-opportunity-extension-2021"
+        ]
+      },
+      "limitations": [
+        "The sleep-extension literature spans heterogeneous populations, interventions, durations, and measurement methods, with very high statistical heterogeneity.",
+        "The primary reviewed outcome is sleep duration; it does not establish a single personal optimum for cognition, health, mood, or productivity.",
+        "The adult seven-or-more-hours recommendation is a population-level consensus statement, not an individualized prescription or diagnostic threshold.",
+        "A short diary or consumer wearable cannot diagnose a sleep disorder, prove causality, or validate consumer sleep-stage estimates as a target for optimization."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
+        "source_citations": [
+          "Baron KG, Duffecy J, Reutrakul S, et al. Behavioral interventions to extend sleep duration: A systematic review and meta-analysis. Sleep Medicine Reviews. 2021;60:101532. https://doi.org/10.1016/j.smrv.2021.101532",
+          "Recommended Amount of Sleep for a Healthy Adult: A Joint Consensus Statement of the American Academy of Sleep Medicine and Sleep Research Society. Journal of Clinical Sleep Medicine. 2015. https://doi.org/10.5664/jcsm.4758"
+        ]
+      },
+      "agent_summary": "Use this protocol for ordinary adult schedule-related short sleep: protect enough sleep opportunity, track only rough timing and daytime function, and adjust one practical constraint at a time. Do not run a sleep-restriction experiment, claim a personal optimum, or substitute self-tracking for assessment when persistent symptoms or safety-relevant sleepiness are present.",
+      "retrieval_paths": [
+        "/life-os/ideal-sleep-hours-finder/",
+        "/topics/sleep/",
+        "/for-ai/query/?q=How%20can%20I%20make%20my%20sleep%20schedule%20more%20regular"
+      ],
+      "evaluation_case_ids": [
+        "sleep-routine"
+      ]
+    }
+  }
+}

@@ -1,10 +1,10 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
+import { loadKnowledgeOntology } from "./lib/knowledge-ontology.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
-const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
-const overrides = JSON.parse(await readFile(path.join(root, "data/ontology-overrides.json"), "utf8"));
+const { ontology, overrides } = await loadKnowledgeOntology(root);
 const zones = JSON.parse(await readFile(path.join(root, "data/life-os-zones.json"), "utf8"));
 const sourceIndex = JSON.parse(await readFile(path.join(root, "data/life-os-content/index.json"), "utf8"));
 const hacksSchema = JSON.parse(await readFile(path.join(root, "contracts/hack.schema.json"), "utf8"));

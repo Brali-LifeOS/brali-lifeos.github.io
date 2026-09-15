@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "suite_version": "2026-09-15",
+  "match_threshold": 12,
+  "description": "Natural-language discovery cases for the canonical Brali problem graph. Positive cases must route to the expected problem as top-1; unrelated cases must fail closed below the maintained threshold.",
+  "cases": [
+    {"id":"start-1","query":"I keep procrastinating on an important task and need to finally begin","expected_problem_slug":"start-important-work"},
+    {"id":"start-2","query":"work feels heavy and I cannot get myself across the start line","expected_problem_slug":"start-important-work"},
+    {"id":"resume-1","query":"how do I refocus after an interruption at work","expected_problem_slug":"resume-after-interruption"},
+    {"id":"resume-2","query":"notifications broke my concentration and I need to get back into the task","expected_problem_slug":"resume-after-interruption"},
+    {"id":"learn-time-1","query":"I have very little study time. How should I learn efficiently?","expected_problem_slug":"learn-under-time-pressure"},
+    {"id":"learn-time-2","query":"I need useful practice instead of cramming more material tonight","expected_problem_slug":"learn-under-time-pressure"},
+    {"id":"desk-1","query":"I sit at a desk all day and want to move more","expected_problem_slug":"desk-day-movement"},
+    {"id":"desk-2","query":"how can I break up long sitting and screen time while working","expected_problem_slug":"desk-day-movement"},
+    {"id":"conversation-1","query":"I need to prepare for a difficult conversation without making it worse","expected_problem_slug":"prepare-difficult-conversation"},
+    {"id":"conversation-2","query":"how do I keep a disagreement from escalating and understand the other person","expected_problem_slug":"prepare-difficult-conversation"},
+    {"id":"week-1","query":"how do I prioritize my work for this week without overloading it","expected_problem_slug":"plan-realistic-week"},
+    {"id":"week-2","query":"too many things look important and I need to decide what not to do this week","expected_problem_slug":"plan-realistic-week"},
+    {"id":"memory-1","query":"I reread my notes but cannot remember what I studied later","expected_problem_slug":"remember-what-you-study"},
+    {"id":"memory-2","query":"I want active recall instead of just recognizing the page","expected_problem_slug":"remember-what-you-study"},
+    {"id":"stress-1","query":"I keep replaying the same worry after a stressful workday","expected_problem_slug":"stress-rumination-reset"},
+    {"id":"stress-2","query":"how can I interrupt a rumination loop when there is nothing useful to do right now","expected_problem_slug":"stress-rumination-reset"},
+    {"id":"decision-1","query":"I need to make a decision under uncertainty without pretending I control the outcome","expected_problem_slug":"decision-under-uncertainty"},
+    {"id":"decision-2","query":"how can I test an assumption cheaply before committing to a decision","expected_problem_slug":"decision-under-uncertainty"},
+    {"id":"errors-1","query":"the same work mistake keeps happening and I need to find why","expected_problem_slug":"prevent-recurring-errors"},
+    {"id":"errors-2","query":"how can I reduce recurring errors in a process instead of fixing them one by one","expected_problem_slug":"prevent-recurring-errors"},
+    {"id":"no-match-bicycle","query":"how do I replace a broken bicycle chain","expect_no_match":true},
+    {"id":"no-match-physics","query":"quantum chromodynamics hadron collider cross section","expect_no_match":true}
+  ]
+}

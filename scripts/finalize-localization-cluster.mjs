@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
+const maintainerLine = "Maintained by MetalHatsCats.";
 const profile = JSON.parse(await readFile(path.join(root, ".arwp", "localization.json"), "utf8"));
 const sourceLocale = (profile.locales || []).find((entry) => entry.code === profile.sourceLocale);
 if (!sourceLocale) throw new Error("[localization-cluster] canonical source locale is not registered");
@@ -66,6 +67,17 @@ function normalizeSwitchContainer(html, className, currentCode, canonicalPath, v
   };
 }
 
+function ensureMaintainerAttribution(html) {
+  if (html.includes(maintainerLine)) return html;
+  const footerIndex = html.indexOf('<footer class="footer">');
+  if (footerIndex < 0) throw new Error("[localization-cluster] missing site footer while applying maintainer attribution");
+  const head = html.slice(0, footerIndex);
+  const footer = html.slice(footerIndex);
+  const marker = '</div><div class="footer-links">';
+  if (!footer.includes(marker)) throw new Error("[localization-cluster] footer structure drifted while applying maintainer attribution");
+  return `${head}${footer.replace(marker, `<small>${maintainerLine}</small></div><div class="footer-links">`)}`;
+}
+
 async function normalizePage(file, currentCode, canonicalPath, variants) {
   let html = await readFile(file, "utf8");
   html = stripLanguageAlternates(html);
@@ -77,6 +89,8 @@ async function normalizePage(file, currentCode, canonicalPath, variants) {
   if (!nav.found) throw new Error(`[localization-cluster] missing primary navigation switch container in ${path.relative(root, file)}`);
   const footer = normalizeSwitchContainer(html, "footer-links", currentCode, canonicalPath, variants);
   html = footer.html;
+  html = ensureMaintainerAttribution(html);
+  if (!html.includes(maintainerLine)) throw new Error(`[localization-cluster] maintainer attribution missing in ${path.relative(root, file)}`);
   await writeFile(file, html);
 }
 
@@ -147,4 +161,4 @@ for (const locale of releaseLocales) robots += `\nSitemap: ${base}${locale.route
 robots += "\n";
 await writeFile(robotsPath, robots);
 
-console.log(`[localization-cluster] finalized ${clusterRoutes.length} reciprocal route cluster(s) for ${[sourceLocale.code, ...releaseLocales.map((locale) => locale.code)].join(", ")}`);
+console.log(`[localization-cluster] finalized ${clusterRoutes.length} reciprocal route cluster(s) for ${[sourceLocale.code, ...releaseLocales.map((locale) => locale.code)].join(", ")}; maintainer=${maintainerLine}`);

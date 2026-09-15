@@ -6,6 +6,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = rel => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 const json = rel => JSON.parse(read(rel));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const expectedMaintainer = 'MetalHatsCats';
+const oldPersonalAttribution = ['Dzmitryi', 'Kharlanau'].join(' ');
 
 const config = json('data/adoption.json');
 const platform = json('data/platform.json');
@@ -13,6 +15,7 @@ assert(config.schema_version === 1, 'data/adoption.json schema_version must be 1
 assert(config.dataset_version === platform.dataset_version, 'Adoption dataset version must match platform dataset version');
 assert(config.mcp?.transport === 'stdio', 'Brali MCP adoption contract must remain stdio until a remote server is actually deployed');
 assert(config.mcp?.hosted_remote === false, 'Do not claim Brali hosts remote MCP before such an endpoint exists');
+assert(config.citation?.author === expectedMaintainer, `Public citation author must be ${expectedMaintainer}`);
 
 const githubSkill = config.github_skill || {};
 assert(githubSkill.router_name === 'brali-life-os', 'GitHub Skill contract must expose the maintained brali-life-os router');
@@ -85,16 +88,26 @@ assert(integrations.evaluation?.reproduce?.check_command === 'npm run evaluate:c
 const integrationHtml = read('for-ai/integrations/index.html');
 for (const required of ['Cursor', 'Claude Code', 'OpenAI API', '/for-ai/demos/', '/cite/', '/partners/', "Reproduce Brali's evaluation", 'npm run evaluate:check', '/for-ai/evaluation/', 'data-brali-verified-distribution', githubSkill.published_release, datasetRelease.github_release, 'GitHub skill-search visibility is not yet verified', 'Hugging Face and Zenodo are not shown as live']) assert(integrationHtml.includes(required), `Integration page missing ${required}`);
 assert(integrationHtml.includes('does not claim a hosted remote MCP') || integrationHtml.includes('does not claim a public hosted remote MCP'), 'Integration page must state the hosted remote MCP limitation');
+assert(integrationHtml.includes(expectedMaintainer), `Integration page must attribute ${expectedMaintainer}`);
+assert(!integrationHtml.includes(oldPersonalAttribution), 'Integration page must not expose the former personal attribution');
 
 const citation = json('cite/index.json');
 const citationHtml = read('cite/index.html');
 const cff = read('CITATION.cff');
-assert(citation.author === 'Dzmitryi Kharlanau', 'Citation JSON author drifted');
+assert(citation.author === expectedMaintainer, 'Citation JSON author drifted');
 assert(citation.dataset_title === 'Brali Practical Knowledge Library', 'Citation dataset title drifted');
 assert(citation.license === 'CC-BY-NC-SA-4.0', 'Citation JSON license drifted');
-assert(cff.includes('family-names: "Kharlanau"') && cff.includes('given-names: "Dzmitryi"'), 'CITATION.cff author does not match public citation guidance');
+assert(cff.includes('- name: "MetalHatsCats"'), 'CITATION.cff entity author does not match public citation guidance');
 assert(cff.includes('license: CC-BY-NC-SA-4.0'), 'CITATION.cff license does not match public citation guidance');
-for (const required of ['Dzmitryi Kharlanau', 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
+for (const required of [expectedMaintainer, 'Brali Practical Knowledge Library', 'CC-BY-NC-SA-4.0', 'canonical', 'evidence state', '/partners/']) assert(citationHtml.includes(required), `Citation page missing ${required}`);
+assert(!citationHtml.includes(oldPersonalAttribution), 'Citation page must not expose the former personal attribution');
+assert(!cff.includes(oldPersonalAttribution), 'CITATION.cff must not expose the former personal attribution');
+const citationGuidance = read('docs/CITATION_AND_ATTRIBUTION.md');
+assert(citationGuidance.includes(expectedMaintainer), `Citation documentation must attribute ${expectedMaintainer}`);
+assert(!citationGuidance.includes(oldPersonalAttribution), 'Citation documentation must not expose the former personal attribution');
+const brandShell = read('scripts/apply-brand-shell.mjs');
+assert(brandShell.includes('Maintained by MetalHatsCats'), 'Shared site footer must expose Maintained by MetalHatsCats');
+assert(!brandShell.includes(oldPersonalAttribution), 'Shared site shell must not expose the former personal attribution');
 
 const forAi = read('for-ai/index.html');
 assert(forAi.includes('data-brali-fast-start'), 'For-AI page must expose the 60-second adoption path');
@@ -120,4 +133,4 @@ assert(manifest.counts?.integration_runtimes === 3, 'Manifest integration runtim
 const licensing = read('LICENSING.md');
 assert(licensing.includes('CC BY-NC-SA 4.0') && licensing.includes('Commercial use requires separate written permission'), 'Public adoption guidance must remain aligned with licensing policy');
 
-console.log('Adoption surfaces verified: provider-visible router and dataset releases, explicit search/mirror/hosted-MCP boundaries, reproducible 50-case evaluation contract, 3 runtime kits, citation contract, API metadata, sitemap and AI discovery links.');
+console.log('Adoption surfaces verified: MetalHatsCats attribution, provider-visible router and dataset releases, explicit search/mirror/hosted-MCP boundaries, reproducible 50-case evaluation contract, 3 runtime kits, citation contract, API metadata, sitemap and AI discovery links.');

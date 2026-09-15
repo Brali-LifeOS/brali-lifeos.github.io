@@ -5,9 +5,13 @@ on:
     branches: [main]
     paths:
       - "data/evidence-decisions.json"
+      - "data/evidence-decision-corrections.json"
+      - "data/review-registry-*.json"
       - "data/hack-identity-migrations.json"
       - "data/life-os-content/**"
+      - "data/life-os-content-additions.json"
       - "life-os/datasets/hacks.json"
+      - "scripts/lib/review-registry.mjs"
       - "scripts/audit-hack-identity-migrations.mjs"
       - ".github/workflows/identity-migration-audit.yml"
   workflow_dispatch:
@@ -26,5 +30,5 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Discover exact-provenance identity mappings
-        run: node scripts/audit-hack-identity-migrations.mjs --discover
+      - name: Require complete exact-provenance identity dispositions
+        run: node scripts/audit-hack-identity-migrations.mjs --discover --require-complete

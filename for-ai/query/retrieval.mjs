@@ -132,8 +132,8 @@ function rankEvidenceBoundaries(decisionCandidates, selected, limit = 3) {
       .filter(rank => Number.isInteger(rank));
     return ranks.length ? { ...item, selected_protocol_rank: Math.min(...ranks) } : null;
   }).filter(Boolean).sort((a, b) =>
-    a.selected_protocol_rank - b.selected_protocol_rank ||
     b.score - a.score ||
+    a.selected_protocol_rank - b.selected_protocol_rank ||
     a.decision.id.localeCompare(b.decision.id)
   );
   const strongRelated = decisionCandidates.filter(item => item.score >= 9);

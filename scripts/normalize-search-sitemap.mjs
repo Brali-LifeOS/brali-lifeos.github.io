@@ -63,7 +63,8 @@ console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.le
 for (const item of removed.slice(0, 30)) console.log(`- ${item.loc} (${item.reason})`);
 if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed entries`);
 
-// The normalized root sitemap is the final search publication set. Re-derive the
-// multilingual indexability registry and locale sitemaps from that exact state so
-// later artifact checks never validate a stale pre-normalization graph.
+// The normalized root sitemap is the final search publication set. Re-derive and
+// validate the multilingual graph from that exact state before later release
+// enrichment can be uploaded.
 await import("./build-indexability-registry.mjs");
+await import("./check-indexability-contract.mjs");

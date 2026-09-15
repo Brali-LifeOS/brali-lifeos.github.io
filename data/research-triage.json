@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-08-18T15:56:00Z",
+  "policy": "Operational research triage only. Metadata may schedule source review but is never publishable evidence and never changes hack evidence or lifecycle status automatically.",
+  "summary": {
+    "open_candidates": 3,
+    "source_integrity_alerts": 1,
+    "strong_review_leads": 0,
+    "critical_triage": 1,
+    "high_priority": 0
+  },
+  "items": [
+    {
+      "candidate_id": "crossref:10.1177/09567976261488042",
+      "workflow_status": "challenge-existing",
+      "signal_kind": "source-integrity-alert",
+      "review_class": null,
+      "priority": "critical-triage",
+      "priority_score": 130,
+      "source_review_required": true,
+      "title": "Retraction: Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+      "publication_date": "2026-09-01",
+      "reference_url": "https://doi.org/10.1177/09567976261488042",
+      "doi": "10.1177/09567976261488042",
+      "pmid": null,
+      "source_provider": "crossref",
+      "discovery_sources": [
+        "crossref"
+      ],
+      "query_ids": [
+        "focus-procrastination",
+        "focus-deadlines"
+      ],
+      "domain_ids": [
+        "focus-action"
+      ],
+      "topic_ids": [
+        "task-initiation",
+        "planning-prioritization"
+      ],
+      "method_ids": [],
+      "risk_flags": [],
+      "suggested_action": "Verify the correction, retraction, withdrawal, erratum, or expression-of-concern record against the publisher or primary source immediately. If a Brali source or claim is affected, create a reviewed Evidence Decision and an explicit lifecycle event when warranted."
+    },
+    {
+      "candidate_id": "crossref:10.1038/s41598-026-69126-w",
+      "workflow_status": "screening",
+      "signal_kind": "discovery",
+      "review_class": null,
+      "priority": "normal",
+      "priority_score": 50,
+      "source_review_required": true,
+      "title": "Model-based control predicts financial behaviour change: a randomised behavioural trial of habit substitution and goal-setting assessed using computational phenotyping",
+      "publication_date": "2026-08-31",
+      "reference_url": "https://doi.org/10.1038/s41598-026-69126-w",
+      "doi": "10.1038/s41598-026-69126-w",
+      "pmid": null,
+      "source_provider": "crossref",
+      "discovery_sources": [
+        "crossref"
+      ],
+      "query_ids": [
+        "money-financial-behavior"
+      ],
+      "domain_ids": [
+        "work-money"
+      ],
+      "topic_ids": [
+        "personal-finance"
+      ],
+      "method_ids": [],
+      "risk_flags": [],
+      "suggested_action": "Screen the actual source for relevance and quality. Discovery metadata may schedule review but cannot validate, refute, downgrade, restore, or otherwise change a Brali evidence or lifecycle state."
+    },
+    {
+      "candidate_id": "pubmed:21688924",
+      "workflow_status": "support-existing",
+      "signal_kind": "possible-support",
+      "review_class": null,
+      "priority": "normal",
+      "priority_score": 35,
+      "source_review_required": true,
+      "title": "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals",
+      "publication_date": "2011-10-01",
+      "reference_url": "https://doi.org/10.1037/a0024192",
+      "doi": "10.1037/a0024192",
+      "pmid": "21688924",
+      "source_provider": "europepmc",
+      "discovery_sources": [
+        "europepmc"
+      ],
+      "query_ids": [
+        "focus-interruption-recovery"
+      ],
+      "domain_ids": [
+        "focus-action"
+      ],
+      "topic_ids": [
+        "planning-prioritization",
+        "attention-focus",
+        "goals"
+      ],
+      "method_ids": [],
+      "risk_flags": [],
+      "suggested_action": "Review the actual source before treating it as support. If it adds useful provenance, record an Evidence Decision before considering any evidence-added lifecycle event."
+    }
+  ],
+  "source": "effective research candidate workflow + reviewed Evidence Decisions",
+  "reviewed_candidate_count": 62
+}

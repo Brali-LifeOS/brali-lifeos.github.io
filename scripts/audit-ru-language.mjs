@@ -35,6 +35,22 @@ function inspectRecord(record, base) {
   }
 }
 
+function inspectProblemCollections(document) {
+  for (const [key, value] of Object.entries(document.labels || {})) inspectText(value, `problem-collections.labels.${key}`);
+  for (const item of document.collections || []) {
+    const base = `problem-collections.${item.slug}`;
+    for (const field of ["title", "question", "summary", "stop_rule"]) inspectText(item[field] || "", `${base}.${field}`);
+    for (const [index, alias] of (item.aliases || []).entries()) inspectText(alias, `${base}.aliases[${index}]`);
+    for (const [index, step] of (item.decision_path || []).entries()) {
+      inspectText(step.if || "", `${base}.decision_path[${index}].if`);
+      inspectText(step.try || "", `${base}.decision_path[${index}].try`);
+    }
+    for (const edge of item.protocol_edges || []) {
+      for (const field of ["when", "why", "caveat"]) inspectText(edge[field] || "", `${base}.protocol_edges.${edge.slug}.${field}`);
+    }
+  }
+}
+
 const batches = (await readdir(path.join(root, "data", "localization", "ru", "library")))
   .filter((name) => name.endsWith(".json"))
   .sort();
@@ -65,6 +81,10 @@ for (const [section, value] of Object.entries(lifecycle)) {
   for (const finding of scanRussianValue(value, { location: `lifecycle.${section}`, allowlist })) findings.push(finding);
 }
 
+const problems = await readJson("data/localization/ru/problem-collections.json");
+if (problems.schema_version !== 1 || problems.locale !== "ru") throw new Error("[ru-language] invalid data/localization/ru/problem-collections.json");
+inspectProblemCollections(problems);
+
 if (findings.length) {
   console.error(`[ru-language] unresolved editorial terms: ${findings.length}`);
   for (const finding of findings) {
@@ -75,4 +95,4 @@ if (findings.length) {
 }
 
 console.log(`[ru-language] reviewed named/technical Latin exceptions: ${reviewedLatinRuns.length}`);
-console.log(`Russian deterministic language audit passed across ${batches.length} library batches, ${flagships.entries?.length || 0} flagships, ${zones.records?.length || 0} zones, ${primary.pages?.length || 0} primary pages and lifecycle/commercial copy.`);
+console.log(`Russian deterministic language audit passed across ${batches.length} library batches, ${flagships.entries?.length || 0} flagships, ${zones.records?.length || 0} zones, ${primary.pages?.length || 0} primary pages, ${problems.collections?.length || 0} problem guides and lifecycle/commercial copy.`);

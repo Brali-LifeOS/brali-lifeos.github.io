@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "locale": "de",
+  "source_locale": "en",
+  "source_dataset": "data/problem-collections.json",
+  "source_updated_at": "2026-09-15",
+  "labels": {
+    "index_title": "Praktische Leitfäden für konkrete Probleme",
+    "index_description": "Beginnen Sie mit einem konkreten Problem, finden Sie den Engpass und wählen Sie ein passendes geprüftes Brali-Protokoll mit sichtbaren Grenzen.",
+    "index_eyebrow": "Mit der Aufgabe beginnen",
+    "index_heading": "Erst das Problem, dann die Methode.",
+    "index_lead": "Eine kleine Sammlung verbindet reale Aufgaben mit geprüften Protokollen. Entscheidend ist ein passender nächster Schritt, nicht ein universeller Ratschlag.",
+    "card_cta": "Leitfaden öffnen",
+    "page_eyebrow": "Problemlösungsleitfaden",
+    "how_heading": "Wie Brali eine Option auswählt",
+    "how_body": "Bestimmen Sie zuerst, wo der eigentliche Engpass liegt. Die Verbindung zwischen Problem und Protokoll ist eine redaktionelle Entscheidung, keine Behauptung, dass eine Methode immer die beste ist.",
+    "choose_heading": "Zuerst den Engpass finden",
+    "recommend_heading": "Was Sie ausprobieren können",
+    "best_fit": "Erste Wahl",
+    "alternative": "Alternative",
+    "when": "Wann es passt",
+    "why": "Warum",
+    "caveat": "Grenze",
+    "stop_rule": "Wann Sie den Ansatz wechseln sollten",
+    "trust_note": "Brali zeigt hier nur Protokolle aus dem vertrauenswürdigen Bestand mit manueller Prüfung. Evidenzstatus und Grenzen des kanonischen Protokolls ändern sich durch die Übersetzung nicht.",
+    "source_heading": "Kanonische Quelle",
+    "source_body": "Die englische Seite bleibt die kanonische Quelle für Identität und maschinenlesbare Daten dieses Problems.",
+    "source_cta": "Englische Seite öffnen",
+    "all_problems": "Alle Problemlösungsleitfäden",
+    "home_cta": "Eine konkrete Aufgabe lösen",
+    "home_body": "Wenn Sie nicht nach einer Methode, sondern mit einer konkreten Aufgabe kommen, beginnen Sie mit einem kurzen Entscheidungsweg und wählen Sie erst danach ein Protokoll."
+  },
+  "collections": [
+    {
+      "slug": "start-important-work",
+      "title": "Wichtige Arbeit anfangen, die Sie immer wieder aufschieben",
+      "question": "Wie beginne ich mit wichtiger Arbeit, wenn ich sie ständig aufschiebe?",
+      "aliases": ["Aufschieben beenden und anfangen", "wichtige Aufgabe nicht anfangen können", "schwer in eine Aufgabe hineinkommen"],
+      "summary": "Unterscheiden Sie zuerst zwischen einer unklaren Aufgabe, Startwiderstand und ständigem Aufmerksamkeitswechsel – und wählen Sie erst dann ein Protokoll.",
+      "decision_path": [
+        {"if": "Die Aufgabe ist noch zu unklar", "try": "Formulieren Sie eine sichtbare nächste Handlung, bevor Sie Timer, Blocker oder Motivationstechniken hinzufügen."},
+        {"if": "Die nächste Handlung ist klar, aber der Anfang fühlt sich trotzdem schwer an", "try": "Verkleinern Sie die Verpflichtung bewusst auf einen kurzen ersten Arbeitsblock. Das Ziel ist, die Startlinie zu überschreiten, nicht das gesamte Projekt fertigzustellen."},
+        {"if": "Sie beginnen, wechseln aber schnell wieder weg", "try": "Schützen Sie einen kurzen Fokusblock und entfernen Sie eine vorhersehbare Unterbrechung, statt Ihr gesamtes Produktivitätssystem neu zu bauen."}
+      ],
+      "stop_rule": "Wenn der Fortschritt von fehlenden Informationen, einer Freigabe, einem Zugang oder einer anderen Person abhängt, behandeln Sie diese Abhängigkeit als nächste Handlung statt als Motivationsproblem.",
+      "protocol_edges": [
+        {"slug": "woop-goal-planner", "when": "Das Ziel ist wichtig, aber ein wiederkehrendes inneres Hindernis blockiert die erste sinnvolle Handlung.", "why": "Das Protokoll macht das Hindernis und eine vorher gewählte Reaktion darauf explizit, statt nur auf Motivation zu setzen.", "caveat": "Nutzen Sie es für innere Hindernisse. Fehlende Ressourcen, Erlaubnis, Geld, Sicherheit oder andere äußere Einschränkungen sollten nicht als Selbstregulationsproblem umgedeutet werden."},
+        {"slug": "25-minute-pomodoro-focus-sprints", "when": "Die nächste Handlung ist bereits klar, aber der Arbeit fehlt eine Grenze und die Aufmerksamkeit wandert ständig ab.", "why": "Ein kurzer anpassbarer Fokusblock kann die Unklarheit rund um ein konkretes Ergebnis verringern.", "caveat": "Fünfundzwanzig Minuten sind ein bekannter Ausgangswert, keine wissenschaftlich optimale Dauer. Die Methode passt schlecht zu Arbeit, die ständige Reaktionsbereitschaft verlangt."},
+        {"slug": "30-minute-deadline-sprints", "when": "Perfektionismus oder optionale Verfeinerung verhindert, dass überhaupt ein risikoarmer erster Entwurf entsteht.", "why": "Ein begrenzter Rohdurchlauf trennt ein minimal brauchbares Ergebnis von optionaler Nacharbeit.", "caveat": "Opfern Sie Genauigkeit, Sicherheit, Freigaben oder Prüfung nicht der Geschwindigkeit; die genaue Dauer ist nicht als allgemeines Optimum belegt."}
+      ]
+    },
+    {
+      "slug": "resume-after-interruption",
+      "title": "Nach Unterbrechungen wieder sinnvoll in die Arbeit einsteigen",
+      "question": "Wie komme ich nach einer Unterbrechung zurück, ohne den Rest des Tages zu verlieren?",
+      "aliases": ["nach einer Unterbrechung wieder konzentrieren", "nach Benachrichtigungen Konzentration zurückgewinnen", "nach Aufgabenwechsel wieder einsteigen"],
+      "summary": "Nutzen Sie eine kleine Wiedereinstiegsfolge: Kontext wiederherstellen, nächste Handlung wählen und einen kurzen Neustartblock schützen.",
+      "decision_path": [
+        {"if": "Sie wissen nicht mehr, wo Sie aufgehört haben", "try": "Rekonstruieren Sie zuerst den Kontext: Was ist erledigt, was bleibt offen und was war die nächste konkrete Handlung?"},
+        {"if": "Mehrere Aufgaben konkurrieren jetzt um Aufmerksamkeit", "try": "Priorisieren Sie einmal neu. Wählen Sie die Aufgabe für den nächsten Block, statt alle paar Minuten erneut zu entscheiden."},
+        {"if": "Sie wissen, was zu tun ist, fühlen sich aber zerstreut", "try": "Nutzen Sie einen kurzen Neustartblock mit einem sichtbaren Abschlusskriterium. Ein sauberer Wiedereinstieg ist nützlicher als der Versuch, den vermeintlich perfekten Tag wiederherzustellen."}
+      ],
+      "stop_rule": "Wenn die Unterbrechung eine wirklich neue dringende Verpflichtung geschaffen hat, planen Sie den restlichen Tag ausdrücklich neu. Zwingen Sie den alten Plan nicht dazu, veränderte Bedingungen zu ignorieren.",
+      "protocol_edges": [
+        {"slug": "25-minute-pomodoro-focus-sprints", "when": "Der Kontext ist wiederhergestellt und Sie brauchen einen geschützten Wiedereinstiegsblock für eine konkrete Aufgabe.", "why": "Das Protokoll macht aus dem Wiedereinstieg ein begrenztes Ergebnis, statt zu verlangen, den gesamten verlorenen Tag auf einmal zurückzugewinnen.", "caveat": "Passen Sie die Blocklänge an die Arbeit an; geschützter Fokus passt nicht zu Tätigkeiten, die Überwachung oder sofortige Reaktion verlangen."},
+        {"slug": "90-30-focus-rest-schedule", "when": "Sie haben die Aufgabe wieder aufgenommen und benötigen einen längeren geschützten Block mit einer echten Pause danach.", "why": "Die Struktur bietet einen anpassbaren Arbeits- und Erholungsrhythmus mit einem klaren Wiedereinstiegspunkt.", "caveat": "Neunzig zu dreißig ist nur ein möglicher Ausgangsrhythmus, kein biologisches Gesetz und kein allgemeiner Produktivitätsplan."},
+        {"slug": "3-3-3-workday-planner", "when": "Die Unterbrechung hat Prioritäten deutlich verändert und der restliche Tag braucht eine leichte Neuplanung.", "why": "Das Protokoll hält feste Einschränkungen sichtbar und ordnet den Rest des Tages um einige beobachtbare Ergebnisse herum neu.", "caveat": "Bewahren Sie keinen überholten Plan, wenn neue dringende Arbeit oder Abhängigkeiten den Tag tatsächlich verändert haben."}
+      ]
+    },
+    {
+      "slug": "learn-under-time-pressure",
+      "title": "Sinnvoll lernen, wenn die Lernzeit knapp ist",
+      "question": "Wie lerne ich wirksam, wenn ich nur wenig Zeit habe?",
+      "aliases": ["wirksam lernen mit wenig Zeit", "lernen bei knapper Zeit", "üben statt immer mehr Stoff aufzunehmen"],
+      "summary": "Priorisieren Sie Abruf aus dem Gedächtnis, gezielte Praxis, Rückmeldung und Anwendung statt einfach mehr Material zu konsumieren.",
+      "decision_path": [
+        {"if": "Sie müssen Fakten oder Begriffe behalten", "try": "Verbringen Sie einen Teil der Sitzung damit, Wissen aus dem Gedächtnis abzurufen, statt denselben Stoff erneut zu lesen."},
+        {"if": "Sie müssen eine Fähigkeit ausführen können", "try": "Üben Sie die tatsächliche Handlung und holen Sie Rückmeldung ein. Eine Erklärung zu erinnern ist nicht dasselbe, wie sie anwenden zu können."},
+        {"if": "Sie nicht sicher sind, was Sie wirklich können", "try": "Testen Sie sich früh genug, um Lücken sichtbar zu machen, und richten Sie die verbleibende Zeit auf diese Lücken statt alles gleichmäßig zu wiederholen."}
+      ],
+      "stop_rule": "Eine erfolgreiche Abrufrunde ist kein Beweis für dauerhaftes Beherrschen. Nutzen Sie spätere Prüfungen oder reale Anwendung, wenn die Bedeutung des Ergebnisses das rechtfertigt.",
+      "protocol_edges": [
+        {"slug": "active-recall-test-yourself", "when": "Sie möchten gelerntes Material behalten und können Ihre Antworten mit einer verlässlichen Quelle prüfen.", "why": "Abruf zeigt, was tatsächlich aus dem Gedächtnis verfügbar ist, sodass knappe Lernzeit auf Fehler statt auf bloßes Vertrautheitsgefühl gerichtet werden kann.", "caveat": "Abruf ist nicht gleich Anwendung. Wenn das Ziel Handeln, Beurteilen, Sprechen, Rechnen oder Produzieren ist, ergänzen Sie eine passende Leistungsaufgabe."},
+        {"slug": "weekly-theme-learning-sprints", "when": "Die knappe Zeit verteilt sich auf zu viele Themen statt auf ein konkretes Lernziel.", "why": "Ein enges Thema und ein sichtbares Ergebnis verringern Zerstreuung und verbinden neuen Input mit beobachteten Schwierigkeiten.", "caveat": "Eine Woche ist eine organisatorische Rahmung, kein optimaler Lernplan und kein Nachweis von Beherrschung."},
+        {"slug": "10-minute-language-microsprints", "when": "Das Ziel ist Sprachpraxis und eine kurze Sitzungsgrenze würde die Einstiegshürde senken.", "why": "Das Protokoll verlangt einen echten Versuch des Erinnerns, Verstehens oder Produzierens, statt die kurze Zeit mit dem Umordnen von Lernmaterial zu verbringen.", "caveat": "Zehn Minuten sind weder eine minimale wirksame Dosis noch ein vollständiges Lernprogramm; wichtige Fehler brauchen weiterhin verlässliche Rückmeldung."}
+      ]
+    },
+    {
+      "slug": "desk-day-movement",
+      "title": "Mehr Bewegung in einen sitzenden Arbeitstag bringen, ohne perfekten Zeitplan",
+      "question": "Wie kann ich mich mehr bewegen, wenn ich den Großteil des Tages am Schreibtisch sitze?",
+      "aliases": ["mehr Bewegung im Schreibtischalltag", "langes Sitzen unterbrechen", "Bildschirmpausen und Bewegung"],
+      "summary": "Wählen Sie wiederholbare Bewegungsgelegenheiten und sichere Erholungspausen, ohne einen wissenschaftlich perfekten Abstand vorzutäuschen.",
+      "decision_path": [
+        {"if": "Das Hauptproblem ist langes ununterbrochenes Sitzen", "try": "Verbinden Sie kurze Bewegung mit Übergängen, die ohnehin stattfinden: Anrufen, Wasserholen, Aufgabenwechseln oder natürlichen Pausen."},
+        {"if": "Stress oder Spannung sich aufbauen", "try": "Wenn Gehen für Sie sicher ist, nutzen Sie einen kurzen Spaziergang als Kontextwechsel."},
+        {"if": "Beschwerden durch den Bildschirm das unmittelbarere Signal sind", "try": "Nutzen Sie sichere Pausen mit Blick in die Ferne und behandeln Sie anhaltende Symptome als eigene Frage der Augengesundheit."}
+      ],
+      "stop_rule": "Schmerzen, Verletzungen, neue starke Symptome, anhaltende Sehveränderungen oder medizinische Bewegungseinschränkungen gehören nicht in eine allgemeine Wissensbibliothek und sollten angemessen fachlich abgeklärt werden.",
+      "protocol_edges": [
+        {"slug": "10-minute-stress-walk", "when": "Ein sicherer kurzer Spaziergang ist praktikabel und Sie möchten im normalen Schreibtischalltag Bewegung und Kontextwechsel verbinden.", "why": "Gehen schafft eine konkrete Unterbrechung langen Sitzens und hält die Maßnahme einfach und anpassbar.", "caveat": "Das ist eine Option für allgemeines Wohlbefinden, keine Behandlung; zehn Minuten sind keine allgemeingültige therapeutische oder trainingsbezogene Dosis."},
+        {"slug": "20-20-20-eye-break-reminder", "when": "Langes Arbeiten am Bildschirm verursacht müde oder unangenehme Augen und eine kurze Sehunterbrechung ist sicher möglich.", "why": "Die Regel liefert einen leicht merkbaren Hinweis, den Nahfokus während längerer Bildschirmarbeit zu wechseln.", "caveat": "Sie diagnostiziert oder behandelt die Ursache anhaltender Beschwerden nicht und sollte nie erzwungen werden, wenn Wegsehen von der Aufgabe unsicher wäre."}
+      ]
+    },
+    {
+      "slug": "prepare-difficult-conversation",
+      "title": "Ein schwieriges Gespräch vorbereiten, ohne es unnötig zu verschärfen",
+      "question": "Wie bereite ich mich auf ein schwieriges Gespräch bei der Arbeit oder zu Hause vor?",
+      "aliases": ["schwieriges Gespräch vorbereiten", "Konflikt nicht verschärfen", "schwieriges Gespräch klarer machen"],
+      "summary": "Klären Sie das gewünschte Ergebnis, trennen Sie Beobachtungen von Deutungen, hören Sie auf das Modell der anderen Person und lassen Sie Raum für Korrekturen.",
+      "decision_path": [
+        {"if": "Sie üben vor allem Vorwürfe", "try": "Notieren Sie die beobachtbare Situation, ihre Wirkung und das gewünschte Ergebnis, bevor Sie festlegen, welche Absicht Sie der anderen Person zuschreiben."},
+        {"if": "Sie mit Widerspruch rechnen", "try": "Bereiten Sie ein oder zwei echte Fragen vor. Das Gespräch braucht eine Möglichkeit, Ihr Verständnis zu aktualisieren, nicht nur Ihre Schlussfolgerung zu übertragen."},
+        {"if": "Die Beziehung auch nach dem Gespräch wichtig ist", "try": "Planen Sie, wie Sie Verständnis prüfen und Fehlinterpretationen korrigieren, statt das Gespräch auf einen Sieg auszurichten."}
+      ],
+      "stop_rule": "Bei Zwang, Missbrauch, Drohungen oder einem ernsthaften Sicherheitsproblem reichen gewöhnliche Kommunikationstechniken als Handlungsplan nicht aus.",
+      "protocol_edges": [
+        {"slug": "active-listening-exercises", "when": "Es ist wichtig, den Kernpunkt der anderen Person zu verstehen, und die Situation ist gewöhnlich und sicher genug für einen Kreislauf aus Paraphrase und Korrektur.", "why": "Das Protokoll macht Missverständnisse sichtbar, indem es Korrektur ermöglicht, bevor Sie gegen Ihre eigene Interpretation argumentieren.", "caveat": "Erzwingen Sie die Technik nicht in unsicheren oder zwanghaften Situationen und behandeln Sie eine gelungene Paraphrase nicht als Beweis, dass der Konflikt gelöst ist."},
+        {"slug": "5w1h-communication-checklist", "when": "Das schwierige Gespräch ist vor allem eine operative Übergabe oder Anfrage, bei der fehlende Angaben zu Handlung, Zuständigkeit, Zeitpunkt oder Kontext Reibung erzeugen.", "why": "Eine kurze Prüfung auf Kontextlücken kann Mehrdeutigkeit entfernen, bevor zwischenmenschliche Deutung zum Hauptproblem wird.", "caveat": "Zwingen Sie nicht alle sechs Elemente in jede Nachricht und legen Sie keine sensiblen Informationen nur zur Vervollständigung einer Liste offen."}
+      ]
+    },
+    {
+      "slug": "plan-realistic-week",
+      "title": "Eine realistische Woche planen, wenn alles wichtig erscheint",
+      "question": "Wie setze ich Wochenprioritäten, ohne den Plan zu überladen?",
+      "aliases": ["Arbeit für die Woche priorisieren", "Woche ohne Überlastung planen", "entscheiden was diese Woche nicht getan wird"],
+      "summary": "Schützen Sie feste Einschränkungen, machen Sie wenige Ergebnisse sichtbar und trennen Sie kontrollierbare Handlungen von unsicheren Ergebnissen.",
+      "decision_path": [
+        {"if": "Der Kalender bereits feste Einschränkungen enthält", "try": "Machen Sie sie sichtbar, bevor Sie zusätzliche Arbeit verteilen. Kapazität ist das, was übrig bleibt, nicht das, was Sie gern übrig hätten."},
+        {"if": "Zu viele Ergebnisse wichtig erscheinen", "try": "Wählen Sie eine kleine Menge, die sich diese Woche wirklich bewegen lässt, und verschieben Sie den Rest ausdrücklich."},
+        {"if": "Eine Priorität von einer anderen Person oder einem externen Ereignis abhängt", "try": "Trennen Sie die Handlung, die Sie kontrollieren, vom Ergebnis, das Sie nur beeinflussen oder beobachten können."}
+      ],
+      "stop_rule": "Planen Sie neu, wenn sich eine wesentliche Einschränkung ändert. Ein Wochenplan ist eine Entscheidungshilfe, kein Versprechen, dass die Realität die Annahmen vom Montag bewahrt.",
+      "protocol_edges": [
+        {"slug": "3-3-3-workday-planner", "when": "Sie brauchen eine leichte Struktur, die feste Einschränkungen sichtbar hält und einen großen Aufgabenbestand auf wenige beobachtbare Ergebnisse reduziert.", "why": "Die Blocklogik eignet sich als Vorlage für Kapazität und Prioritäten, auch wenn die genaue Zahl der Blöcke an den echten Zeitplan angepasst wird.", "caveat": "Die Zahl drei ist kein evidenzbasiertes Optimum; verwenden Sie weniger oder andere Blöcke, wenn die Arbeit stark unterbrechungsgetrieben oder eng begrenzt ist."},
+        {"slug": "circles-of-control-planner", "when": "Ein großer Teil der Wochenunsicherheit von anderen Menschen, Freigaben, Zeitpunkten oder externen Ereignissen abhängt.", "why": "Das Protokoll trennt kontrollierbares Verhalten von Ergebnissen, die beeinflusst, beobachtet, eskaliert oder akzeptiert werden sollten, statt sie wie Garantien einzuplanen.", "caveat": "Nutzen Sie die Sprache der Kontrolle nicht, um strukturelle Einschränkungen, Sicherheitsfragen oder berechtigte Eskalation wegzuerklären."},
+        {"slug": "woop-goal-planner", "when": "Eine wichtige Wochenpriorität machbar ist, aber ein wiederkehrendes inneres Hindernis die Umsetzung stört.", "why": "Das Protokoll verwandelt das Hindernis in eine ausdrückliche vorbereitete Reaktion, die sich während der Woche prüfen lässt.", "caveat": "Halten Sie äußere Blockaden getrennt; das Protokoll garantiert nicht, dass das Wochenergebnis erreicht wird."}
+      ]
+    },
+    {
+      "slug": "remember-what-you-study",
+      "title": "Gelerntes erinnern, statt es nur wiederzuerkennen",
+      "question": "Wie behalte ich mehr von dem, was ich lerne, statt es nur erneut zu lesen?",
+      "aliases": ["Gelerntes besser behalten", "aktiver Abruf statt Wiederlesen", "Lernstoff später erinnern"],
+      "summary": "Nutzen Sie Abruf, um das Gedächtnis zu prüfen und Fehler zu korrigieren, und trennen Sie Behalten klar von Anwendung oder Beherrschung.",
+      "decision_path": [
+        {"if": "Der Stoff nur vertraut wirkt, solange er sichtbar ist", "try": "Verbergen Sie die Quelle und versuchen Sie den Inhalt abzurufen, bevor Sie erneut nachsehen."},
+        {"if": "Sie Elemente auslassen oder verzerren", "try": "Prüfen Sie an einer verlässlichen Quelle und korrigieren Sie den Fehler, statt eine ungeklärte Vermutung weiter einzuüben."},
+        {"if": "Das eigentliche Ziel Anwendung ist", "try": "Fügen Sie eine eigene repräsentative Praxisaufgabe hinzu. Eine Erklärung zu erinnern beweist nicht, dass Sie sie anwenden können."}
+      ],
+      "stop_rule": "Wenn der Abruf zuverlässig wird, die reale Anwendung aber schwach bleibt, ändern Sie das Übungsziel statt standardmäßig noch mehr Abrufwiederholungen hinzuzufügen.",
+      "protocol_edges": [
+        {"slug": "active-recall-test-yourself", "when": "Sie gelernte Informationen behalten müssen und Ihre Abrufversuche zeitnah prüfen können.", "why": "Abruf testet direkt, ob Informationen ohne sichtbare Quelle produziert werden können, und macht Fehler zur Korrektur sichtbar.", "caveat": "Späteres Erinnern ist nicht dasselbe wie Anwendung, Urteil, flüssige Produktion oder prozedurale Kompetenz."},
+        {"slug": "avoid-list-interference-memory-retention", "when": "Sie gerade eine gedächtnisintensive Lerneinheit beendet haben und eine kurze ruhige Phase mit wenig neuer Information sicher und praktikabel ist.", "why": "Wachruhe kann als begrenztes optionales Experiment nach dem Lernen dienen, statt sofort noch mehr Input hinzuzufügen.", "caveat": "Die Effekte sind uneinheitlich; übertragen Sie sie nicht automatisch auf Verständnis oder Fertigkeiten und behandeln Sie zehn Minuten nicht als allgemeine Dosis."},
+        {"slug": "weekly-theme-learning-sprints", "when": "Das größere Problem verstreute Praxis über zu viele Themen ist und nicht der Abruf selbst.", "why": "Ein enges Wochenziel schafft wiederholte Übungsgelegenheiten und ein sichtbares Ergebnis, ohne ein großes Lernsystem zu erfordern.", "caveat": "Der Wochenrahmen organisiert Praxis; er beweist weder dauerhaftes Behalten noch Beherrschung."}
+      ]
+    },
+    {
+      "slug": "stress-rumination-reset",
+      "title": "Aussteigen, wenn Stress in eine wiederkehrende Gedankenschleife kippt",
+      "question": "Was kann ich tun, wenn ich nach einer stressigen Phase dieselbe Sorge immer wieder durchspiele?",
+      "aliases": ["Sorge nicht ständig wiederholen", "nach stressigem Arbeitstag umschalten", "Gedankenschleife unterbrechen"],
+      "summary": "Trennen Sie sinnvolle Handlungen von unsicheren Ergebnissen und wechseln Sie den Kontext auf risikoarme Weise, wenn weiteres Nachdenken keinen nächsten Schritt mehr erzeugt.",
+      "decision_path": [
+        {"if": "Die Sorge eine konkrete kontrollierbare Handlung enthält", "try": "Schreiben Sie die Handlung auf und trennen Sie sie vom Ergebnis, das Sie nicht garantieren können."},
+        {"if": "Die verbleibende Unsicherheit von anderen Menschen oder Ereignissen abhängt", "try": "Entscheiden Sie bewusst, ob Sie beobachten, einen Plan B vorbereiten, Hilfe holen, eskalieren oder abwarten."},
+        {"if": "Gerade keine sinnvolle Handlung möglich und Bewegung sicher ist", "try": "Nutzen Sie einen kurzen Spaziergang oder einen anderen gewöhnlichen Kontextwechsel und prüfen Sie danach, ob Sie zur nächsten Aufgabe zurückkehren können."}
+      ],
+      "stop_rule": "Anhaltender, schwerer oder deutlich funktionsbeeinträchtigender Stress ist kein Signal, Selbsthilfe-Protokolle immer weiter zu optimieren. Nutzen Sie angemessene professionelle Unterstützung, wenn die Situation sie erfordert.",
+      "protocol_edges": [
+        {"slug": "circles-of-control-planner", "when": "Die Sorge von einem unsicheren Ergebnis angetrieben wird, das teilweise von anderen Menschen oder äußeren Ereignissen abhängt.", "why": "Das Protokoll trennt beobachtbare Handlungen von Ergebnissen, die nur beeinflusst oder überwacht werden können, und macht sichtbar, ob weiteres Grübeln überhaupt nützliches Verhalten erzeugt.", "caveat": "Verwandeln Sie unkontrollierbare strukturelle oder sicherheitsbezogene Einschränkungen nicht in Selbstvorwürfe und nutzen Sie Akzeptanz nicht als Ersatz für Eskalation oder Unterstützung."},
+        {"slug": "10-minute-stress-walk", "when": "Im Moment gibt es nichts Sinnvolles mehr zu analysieren und ein sicherer kurzer Spaziergang ist praktikabel.", "why": "Eine einfache Veränderung von Bewegung und Kontext kann als begrenzter allgemeiner Neustart dienen, bevor Sie zur nächsten Aufgabe zurückkehren.", "caveat": "Das ist keine Behandlung für Angststörungen, Depression, schweren Stress oder andere Erkrankungen; keine genaue Dauer garantiert Erleichterung."}
+      ]
+    },
+    {
+      "slug": "decision-under-uncertainty",
+      "title": "Eine begrenzte Entscheidung treffen, wenn das Ergebnis unsicher ist",
+      "question": "Wie treffe ich eine sinnvolle Entscheidung, wenn ich das Ergebnis nicht im Voraus kennen kann?",
+      "aliases": ["Entscheidung unter Unsicherheit treffen", "Kontrolle von Einfluss trennen", "Annahme vor größerer Festlegung prüfen"],
+      "summary": "Trennen Sie kontrollierbare Handlungen von unsicheren Ergebnissen und testen Sie Annahmen günstig, wenn eine Entscheidung reversibel und sicher genug zum Lernen ist.",
+      "decision_path": [
+        {"if": "Sie ein Ergebnis behandeln, als könnten Sie es vollständig kontrollieren", "try": "Trennen Sie Ihr Verhalten von dem, was von anderen Menschen, Zufall, Zeitpunkt oder äußeren Bedingungen abhängt."},
+        {"if": "Eine einzige Erklärung die Entscheidung antreibt", "try": "Formulieren Sie sie als Hypothese und schreiben Sie auf, welche Beobachtung dafür sprechen würde, sie beizubehalten oder zu verwerfen."},
+        {"if": "Zwei Optionen günstig und reversibel sind", "try": "Vergleichen Sie sie anhand eines vorher festgelegten Ergebnisses, ohne einen kleinen informellen Test als Kausalitätsnachweis darzustellen."}
+      ],
+      "stop_rule": "Führen Sie keine lockeren Experimente durch, wenn der Test selbst erhebliche Risiken für Gesundheit, Sicherheit, Recht, Finanzen, Privatsphäre, Informationssicherheit oder Produktionssysteme schaffen kann. Bei höheren Risiken braucht die Entscheidung stärkere Evidenz und formellere Kontrollen.",
+      "protocol_edges": [
+        {"slug": "circles-of-control-planner", "when": "Die Entscheidung feststeckt, weil kontrollierbare Handlungen und unsichere Ergebnisse vermischt werden.", "why": "Die Trennung von Kontrolle, Einfluss, Beobachtung und Unsicherheit schafft eine klarere Handlungsgrenze, bevor Sie einen Test oder eine Festlegung wählen.", "caveat": "Die Grenze kann sich verändern und darf nicht genutzt werden, um strukturelle Einschränkungen, Risiken oder berechtigte Eskalation zu ignorieren."},
+        {"slug": "start-with-a-hypothesis", "when": "Sie eine plausible Erklärung für ein unklares Arbeitsproblem haben und sie durch eine kleine reversible Beobachtung oder einen Test sicher prüfen können.", "why": "Hypothese und Vorhersage machen widerlegende Beobachtungen sichtbar und reduzieren zufälliges Wechseln zwischen Erklärungen und Lösungen.", "caveat": "Experimentieren Sie in folgenreichen Systemen nicht beiläufig und behandeln Sie die erste plausible Erklärung nicht als Schlussfolgerung."},
+        {"slug": "ab-test-learning-loop", "when": "Zwei Ansätze plausibel, die Wahl risikoarm und reversibel ist und ein beobachtbares Ergebnis vor dem Vergleich festgelegt werden kann.", "why": "Ein begrenzter Vergleich kann ein nützliches lokales Signal für die nächste günstige Entscheidung liefern.", "caveat": "Ein informeller Vergleich ist kein randomisiertes kontrolliertes Experiment und belegt weder statistische Sicherheit noch Kausalität oder allgemeine Übertragbarkeit."}
+      ]
+    },
+    {
+      "slug": "prevent-recurring-errors",
+      "title": "Vermeidbare wiederkehrende Fehler in der Arbeit reduzieren",
+      "question": "Wie verhindere ich, dass derselbe Fehlertyp bei der Arbeit immer wieder auftritt?",
+      "aliases": ["gleiche Arbeitsfehler nicht wiederholen", "Fehler in wiederkehrendem Prozess reduzieren", "Ursache eines wiederkehrenden Fehlers finden"],
+      "summary": "Machen Sie aus dem wiederkehrenden Fehler eine prüfbare Hypothese, klären Sie Übergabe- oder Entscheidungspunkte und testen Sie eine kleine Prozessänderung vor der Standardisierung.",
+      "decision_path": [
+        {"if": "Sie nicht wissen, wo der Fehler entsteht", "try": "Formulieren Sie eine prüfbare Erklärung und bestimmen Sie eine Beobachtung, die sie stärken oder schwächen würde."},
+        {"if": "Der Fehler an einer Übergabe auftritt", "try": "Prüfen Sie, ob tatsächlich Angaben zu Handlung, Zuständigkeit, Zeitpunkt, Ort, Grund oder Prozess fehlen."},
+        {"if": "Sie zwei plausible risikoarme Prozessänderungen haben", "try": "Vergleichen Sie sie anhand eines beobachtbaren Fehler- oder Abschlusssignals, bevor Sie eine davon standardisieren."}
+      ],
+      "stop_rule": "Wenn Fehler sicherheitskritisch, reguliert, sicherheitsrelevant für Systeme oder Daten, finanziell, medizinisch oder anderweitig folgenreich sind, verwenden Sie die vorgeschriebenen formalen Kontrollen und qualifizierte Prüfung statt eines leichten Selbstexperiments.",
+      "protocol_edges": [
+        {"slug": "start-with-a-hypothesis", "when": "Derselbe Fehler wiederkehrt, sein Mechanismus aber noch unklar ist und sicher untersucht werden kann.", "why": "Das Protokoll verwandelt eine vage Erklärung in eine Vorhersage und eine reversible Prüfung – informativer als wechselnde Lösungen ohne Modell.", "caveat": "Eine kleine Prüfung kann eine Hypothese aktualisieren, beweist aber besonders in komplexen oder folgenreichen Systemen keine Kausalität."},
+        {"slug": "5w1h-communication-checklist", "when": "Der wiederkehrende Fehler durch fehlenden oder mehrdeutigen operativen Kontext in einer Nachricht oder Übergabe entsteht.", "why": "Die Prüfung macht die Informationen sichtbar, die für Handeln ohne Raten nötig sind, und hilft unnötige Details zu entfernen.", "caveat": "Eine vollständig ausgefüllte Liste beweist weder, dass die zugrunde liegenden Fakten richtig sind, noch dass die empfangende Person alles verstanden hat."},
+        {"slug": "ab-test-learning-loop", "when": "Zwei sichere reversible Prozessänderungen verglichen werden können und ein relevantes Ergebnis vor der Beobachtung festgelegt wird.", "why": "Ein begrenzter Vergleichs- und Lernzyklus zeigt, ob eine lokale Änderung vielversprechend genug für den nächsten reversiblen Schritt ist.", "caveat": "Bezeichnen Sie einen kleinen informellen Vergleich nicht als statistisch schlüssig und nutzen Sie ihn für risikoreiche Änderungen nicht ohne die dafür nötige Planung und Freigabe."}
+      ]
+    }
+  ]
+}

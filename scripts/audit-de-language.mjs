@@ -45,11 +45,12 @@ function walkJson(value, label) {
   }
 }
 
-const [site, zones, flagships, primary] = await Promise.all([
+const [site, zones, flagships, primary, problems] = await Promise.all([
   readJson("data/localization/de/site.json"),
   readJson("data/localization/de/zones.json"),
   readJson("data/localization/de/flagships.json"),
   readJson("data/localization/de/primary-pages.json"),
+  readJson("data/localization/de/problem-collections.json"),
 ]);
 walkJson(site, "site");
 walkJson(zones.records || [], "zones");
@@ -65,6 +66,8 @@ walkJson((flagships.entries || []).map((entry) => ({
   search: entry.search,
 })), "flagships");
 walkJson((primary.pages || []).map((page) => ({ title: page.title, description: page.description })), "primary-pages");
+walkJson(problems.labels || {}, "problem-collections.labels");
+walkJson(problems.collections || [], "problem-collections.collections");
 
 let batchFiles = [];
 try {
@@ -97,4 +100,4 @@ if (findings.length) {
   throw new Error(`German language audit found ${findings.length} issue(s).`);
 }
 
-console.log(`German language audit passed: ${recordCount} library batch records, ${(zones.records || []).length} zones, ${(flagships.entries || []).length} flagships, ${(primary.pages || []).length} primary pages.`);
+console.log(`German language audit passed: ${recordCount} library batch records, ${(zones.records || []).length} zones, ${(flagships.entries || []).length} flagships, ${(primary.pages || []).length} primary pages, ${(problems.collections || []).length} problem guides.`);

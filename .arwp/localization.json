@@ -63,7 +63,7 @@
       "routePrefix": "/de/",
       "datasetRoot": "data/localization/de",
       "role": "human-interface",
-      "status": "draft",
+      "status": "reviewed-partial",
       "markets": [],
       "searchPublication": "none",
       "generator": "generic-v1",
@@ -79,7 +79,7 @@
         "scripts/check-browser-localizations.mjs",
         "scripts/check-live-localizations.mjs"
       ],
-      "releaseProof": []
+      "releaseProof": ["contract", "corpus", "language"]
     }
   ],
   "markets": [],

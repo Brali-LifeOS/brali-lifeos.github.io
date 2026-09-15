@@ -30,14 +30,14 @@ for (const field of ['trust', 'source', 'limit']) {
   }
 }
 
-for (const key of ['focus', 'memory', 'stress', 'sleep']) {
-  const blockStart = matcher.indexOf(`${key}: {`);
-  if (blockStart < 0) throw new Error(`Matcher lacks ${key} protocol.`);
-  const nextBlock = matcher.indexOf('\n    },', blockStart);
-  const block = matcher.slice(blockStart, nextBlock < 0 ? undefined : nextBlock + 7);
-  for (const field of ['trust:', 'source:', 'limit:', 'href:']) {
-    if (!block.includes(field)) throw new Error(`${key} matcher record lacks ${field.slice(0, -1)}.`);
-  }
+if (!matcher.includes("fetch('/homepage-matcher.json'")) {
+  throw new Error('Homepage matcher must load the generated canonical homepage payload.');
+}
+if (matcher.includes('const protocols = {')) {
+  throw new Error('Homepage matcher must not ship duplicated hardcoded protocol records.');
+}
+if (!matcher.includes('No fallback recommendation is substituted without its evidence state and provenance.')) {
+  throw new Error('Homepage matcher must fail closed when canonical protocol metadata is unavailable.');
 }
 
 const problemFirst = homepage.indexOf('Start with the problem');
@@ -56,6 +56,8 @@ console.log(JSON.stringify({
   contract: 'Cite Goose Site Focus v0.3',
   primaryLane: focus.homepage.primaryLane,
   dynamicEvidenceMetadata: true,
+  canonicalMatcherPayload: true,
+  failClosedWithoutCanonicalData: true,
   staleUniversalEvidenceClaims: false,
   secondaryReuseAfterEvidence: true
 }, null, 2));

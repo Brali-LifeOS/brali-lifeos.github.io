@@ -11,7 +11,10 @@ const GENERATOR_BUILD_STEPS = new Map([
   ["generic-v1", ["scripts/build-interface-locales.mjs"]],
 ]);
 
-const COMMON_BUILD_STEPS = ["scripts/finalize-interface-locales.mjs"];
+const COMMON_BUILD_STEPS = [
+  "scripts/build-localized-problem-collections.mjs",
+  "scripts/finalize-interface-locales.mjs",
+];
 const CONSENT_BUILD_STEPS = [
   "scripts/inject-consent-analytics.mjs",
   "scripts/finalize-hack-lifecycle-discovery.mjs",

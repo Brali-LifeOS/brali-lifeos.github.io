@@ -1,6 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
-import { scanGermanLocalizedRecord } from "./lib/de-language-audit.mjs";
+import { scanGermanLocalizedRecord, scanGermanText } from "./lib/de-language-audit.mjs";
 
 const root = process.cwd();
 const strict = process.argv.includes("--strict");
@@ -14,6 +14,7 @@ const seen = new Map();
 const blocking = [];
 const review = [];
 let recordCount = 0;
+let flagshipCount = 0;
 
 function push(target, location, term) {
   target.push({ location, term });
@@ -64,6 +65,30 @@ for (const name of files) {
   }
 }
 
+const flagships = await readJson(path.join(root, "data", "localization", "de", "flagships.json"));
+if (flagships.locale !== "de" || !Array.isArray(flagships.entries)) push(blocking, "flagships.json", "invalid-flagship-localization-shape");
+else {
+  for (const entry of flagships.entries) {
+    flagshipCount += 1;
+    const location = `flagships.json/${entry.slug || `record-${flagshipCount}`}`;
+    for (const [field, value] of [
+      ["life_area.title", entry.life_area?.title],
+      ["life_area.subtitle", entry.life_area?.subtitle],
+      ["title", entry.title],
+      ["description", entry.description],
+      ["action", entry.action],
+      ["check_in", entry.check_in],
+      ["boundary", entry.boundary],
+      ["alternative", entry.alternative],
+      ["evidence_label", entry.evidence_label],
+    ]) {
+      const result = scanGermanText(value, { field, source: "" });
+      for (const term of result.blocking) push(blocking, `${location}.${field}`, term);
+      for (const term of result.review) push(review, `${location}.${field}`, term);
+    }
+  }
+}
+
 if (blocking.length) {
   console.error(`[de-language] blocking findings: ${blocking.length}`);
   for (const finding of blocking) console.error(`  ${finding.location}: ${finding.term}`);
@@ -76,12 +101,12 @@ if (review.length) {
 if (blocking.length || (strict && review.length)) {
   throw new Error(
     strict
-      ? "German library language audit failed in strict mode. Resolve both blocking and editorial-review findings."
-      : "German library language audit found blocking structural/language defects."
+      ? "German localization language audit failed in strict mode. Resolve both blocking and editorial-review findings."
+      : "German localization language audit found blocking structural/language defects."
   );
 }
 
 console.log(
-  `[de-language] ${strict ? "strict" : "draft"} audit passed across ${recordCount} records in ${files.length} batches` +
+  `[de-language] ${strict ? "strict" : "draft"} audit passed across ${recordCount} library records in ${files.length} batches and ${flagshipCount} rich flagship records` +
     (review.length ? ` with ${review.length} editorial review finding(s) still open.` : ".")
 );

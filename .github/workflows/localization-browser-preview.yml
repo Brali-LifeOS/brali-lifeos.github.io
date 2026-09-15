@@ -1,0 +1,86 @@
+name: Localization browser preview
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - '.arwp/localization.json'
+      - 'data/localization/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions*.json'
+      - 'data/life-os-zones.json'
+      - 'scripts/build-interface-locales.mjs'
+      - 'scripts/build-localized-machine-surfaces.mjs'
+      - 'scripts/complete-localization-clusters.mjs'
+      - 'scripts/check-browser-localizations.mjs'
+      - '.github/workflows/localization-browser-preview.yml'
+  pull_request:
+    paths:
+      - '.arwp/localization.json'
+      - 'data/localization/**'
+      - 'data/life-os-content/**'
+      - 'data/life-os-content-additions*.json'
+      - 'data/life-os-zones.json'
+      - 'scripts/build-interface-locales.mjs'
+      - 'scripts/build-localized-machine-surfaces.mjs'
+      - 'scripts/complete-localization-clusters.mjs'
+      - 'scripts/check-browser-localizations.mjs'
+      - '.github/workflows/localization-browser-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  chromium-locales:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Build exact multilingual artifact
+        run: |
+          npm run build
+          node scripts/complete-localization-clusters.mjs
+          node scripts/check-localization-artifact.mjs
+      - name: Install Chromium verification runtime
+        run: |
+          npm install --no-save --package-lock=false playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Serve exact artifact locally
+        shell: bash
+        run: |
+          python3 -m http.server 4173 --bind 127.0.0.1 > "$RUNNER_TEMP/brali-preview.log" 2>&1 &
+          echo $! > "$RUNNER_TEMP/brali-preview.pid"
+          for attempt in {1..20}; do
+            if curl --fail --silent http://127.0.0.1:4173/ru/manifest.json > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat "$RUNNER_TEMP/brali-preview.log"
+          exit 1
+      - name: Browser-audit Russian artifact
+        env:
+          LOCALIZATION_LOCALE: ru
+          LOCALIZATION_LIVE_BASE: http://127.0.0.1:4173
+          LOCALIZATION_BROWSER_LOCALE: ru-RU
+        run: node scripts/check-browser-localizations.mjs
+      - name: Browser-audit German draft artifact
+        env:
+          LOCALIZATION_LOCALE: de
+          LOCALIZATION_LIVE_BASE: http://127.0.0.1:4173
+          LOCALIZATION_BROWSER_LOCALE: de-DE
+        run: node scripts/check-browser-localizations.mjs
+      - name: Upload browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: localization-browser-preview-${{ github.sha }}
+          path: artifacts/localization-browser/
+          if-no-files-found: warn
+          retention-days: 14

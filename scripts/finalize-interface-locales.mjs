@@ -27,6 +27,15 @@ function formatDate(iso, locale) {
   }).format(date);
 }
 
+function normalizeRobotsMeta(html, locale) {
+  html = html.replace(/<meta\b[^>]*name=["']robots["'][^>]*>\s*/gi, "");
+  if (locale.searchPublication === "none") {
+    if (!html.includes("</head>")) throw new Error(`[${locale.code}-finalize] cannot add noindex: missing </head>`);
+    html = html.replace("</head>", `<meta name="robots" content="noindex,follow">\n</head>`);
+  }
+  return html;
+}
+
 for (const locale of locales) {
   const site = await readJson(`${locale.datasetRoot}/site.json`);
   if (site.locale !== locale.code) throw new Error(`[${locale.code}-finalize] site locale drift`);
@@ -59,6 +68,7 @@ for (const locale of locales) {
       if (/\bdir=["']/i.test(tag)) return tag.replace(/\bdir=["'][^"']*["']/i, `dir="${locale.direction || "ltr"}"`);
       return tag.replace(/>$/, ` dir="${locale.direction || "ltr"}">`);
     });
+    html = normalizeRobotsMeta(html, locale);
     html = html.replace(/>Locale manifest</g, ">manifest.json<");
     html = html.replace(/<time\b([^>]*?)datetime=["'](\d{4}-\d{2}-\d{2})["']([^>]*)>[\s\S]*?<\/time>/gi, (_whole, before, iso, after) => (
       `<time${before}datetime="${iso}"${after}>${formatDate(iso, locale)}</time>`

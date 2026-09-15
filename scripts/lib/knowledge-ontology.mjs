@@ -5,8 +5,27 @@ const unique = (values = []) => [...new Set(values.filter(Boolean))];
 
 export async function loadKnowledgeOntology(root) {
   const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
+  const additions = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology-additions.json"), "utf8"));
   const areas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
   const overrides = JSON.parse(await readFile(path.join(root, "data/ontology-overrides.json"), "utf8"));
+
+  if (additions.schema_version !== 1) throw new Error("Knowledge ontology additions must use schema_version 1");
+  for (const key of ["domains", "topics", "methods", "lenses"]) {
+    const base = ontology[key] ?? [];
+    const extra = additions[key] ?? [];
+    const known = new Set(base.map((item) => item.id));
+    for (const item of extra) {
+      if (!item?.id) throw new Error(`Knowledge ontology addition in ${key} is missing id`);
+      if (known.has(item.id)) throw new Error(`Knowledge ontology addition duplicates ${key} id: ${item.id}`);
+      known.add(item.id);
+    }
+    ontology[key] = [...base, ...extra];
+  }
+  ontology.legacy_zone_map ??= {};
+  for (const [zoneSlug, mapping] of Object.entries(additions.legacy_zone_map ?? {})) {
+    if (ontology.legacy_zone_map[zoneSlug]) throw new Error(`Knowledge ontology addition duplicates legacy zone mapping: ${zoneSlug}`);
+    ontology.legacy_zone_map[zoneSlug] = mapping;
+  }
 
   const domains = new Map(ontology.domains.map((item) => [item.id, item]));
   const topics = new Map(ontology.topics.map((item) => [item.id, item]));

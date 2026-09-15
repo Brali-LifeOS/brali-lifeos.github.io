@@ -16,7 +16,27 @@ await import("./build-ru-lifecycle-surfaces.mjs");
 const containerId = "GTM-5TJVLJG9";
 const marker = "brali-consent-analytics";
 const ignored = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);
+const repoRoot = process.cwd();
 const root = path.resolve(process.argv[2] || ".");
+const profile = JSON.parse(fs.readFileSync(path.join(repoRoot, ".arwp", "localization.json"), "utf8"));
+const consentRegistry = JSON.parse(fs.readFileSync(path.join(repoRoot, "data", "localization", "consent.json"), "utf8"));
+
+if (consentRegistry.schema_version !== 1 || consentRegistry.source_locale !== profile.sourceLocale || !consentRegistry.locales || typeof consentRegistry.locales !== "object") {
+  throw new Error("Localized analytics consent registry does not match the localization profile");
+}
+
+const requiredConsentFields = ["aria", "title", "body", "allow", "deny"];
+const requiredConsentLocales = new Set([
+  profile.sourceLocale,
+  ...(profile.locales || []).filter((entry) => entry.role === "human-interface").map((entry) => entry.code),
+]);
+for (const locale of requiredConsentLocales) {
+  const localized = consentRegistry.locales[locale];
+  if (!localized) throw new Error(`Missing analytics consent copy for declared locale ${locale}`);
+  for (const field of requiredConsentFields) {
+    if (typeof localized[field] !== "string" || !localized[field].trim()) throw new Error(`Missing analytics consent field ${locale}.${field}`);
+  }
+}
 
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -49,25 +69,12 @@ const head = `<!-- ${marker} -->
 })(window,document,'${containerId}');
 </script>`;
 
-const copy = {
-  en: {
-    aria: "Analytics preference",
-    title: "Optional analytics",
-    body: "Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.",
-    allow: "Allow analytics",
-    deny: "Necessary only",
-  },
-  ru: {
-    aria: "Настройки аналитики",
-    title: "Необязательная аналитика",
-    body: "Разрешить анонимное измерение использования с помощью Google Analytics? До вашего согласия данные в Google не отправляются.",
-    allow: "Разрешить аналитику",
-    deny: "Только необходимое",
-  },
-};
+function consentCopyFor(lang) {
+  return consentRegistry.locales[lang] || consentRegistry.locales[profile.sourceLocale];
+}
 
 function bannerFor(lang) {
-  const text = copy[lang] || copy.en;
+  const text = consentCopyFor(lang);
   return `<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="${text.aria}" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
   <strong style="display:block;margin-bottom:6px;font-size:17px">${text.title}</strong>
   <span>${text.body}</span>
@@ -91,7 +98,7 @@ for (const file of files) {
     throw new Error(`Existing analytics/tag manager detected in ${file}; refusing duplicate installation`);
   }
   if (!/<\/head>/i.test(html) || !/<body(?:\s[^>]*)?>/i.test(html)) throw new Error(`Missing head/body in ${file}`);
-  const lang = html.match(/<html[^>]*\blang=["']([^"']+)["']/i)?.[1]?.split("-")[0]?.toLowerCase() || "en";
+  const lang = html.match(/<html[^>]*\blang=["']([^"']+)["']/i)?.[1]?.split("-")[0]?.toLowerCase() || profile.sourceLocale;
   html = html.replace(/<\/head>/i, `${head}\n</head>`);
   html = html.replace(/<body(?:\s[^>]*)?>/i, (opening) => `${opening}\n${bannerFor(lang)}`);
   fs.writeFileSync(file, html);
@@ -104,4 +111,4 @@ for (const file of files) {
   if (!html.includes(marker) || loaders !== 1) throw new Error(`Analytics invariant failed for ${file}: marker=${html.includes(marker)} loaders=${loaders}`);
 }
 
-console.log(`analytics_id=${containerId} html=${files.length} changed=${changed} duplicate_loaders=0`);
+console.log(`analytics_id=${containerId} html=${files.length} changed=${changed} duplicate_loaders=0 consent_locales=${[...requiredConsentLocales].sort().join(",")}`);

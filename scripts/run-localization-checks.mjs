@@ -11,6 +11,7 @@ const checks = [
   ["scripts/audit-de-library-language.mjs", "--strict"],
   ["scripts/audit-de-language.mjs"],
   ["scripts/check-interface-locales.mjs"],
+  ["scripts/check-localized-consent.mjs"],
   ["scripts/check-localization-cluster.mjs"],
   ["scripts/check-pages-localization-artifact.mjs"],
   ["scripts/check-localization-faults.mjs"],

@@ -76,6 +76,64 @@ const output = {
 
 await writeFile(path.join(root, "life-os/datasets/protocols.json"), JSON.stringify(output, null, 2));
 
+const homepageRoutes = {
+  focus: {
+    slug: "top-3-daily-focus-planner",
+    match: "A bounded plan that reduces competing priorities",
+  },
+  memory: {
+    slug: "active-recall-test-yourself",
+    match: "Retrieval practice with its evidence boundary visible",
+  },
+  stress: {
+    slug: "box-breathing-for-speakers",
+    match: "A short breathing practice with its boundary visible",
+  },
+  sleep: {
+    slug: "stop-caffeine-after-lunch",
+    match: "A repeatable cutoff to inspect for your sleep routine",
+  },
+};
+const protocolBySlug = new Map(protocols.map((entry) => [entry.slug, entry]));
+const homepageGoals = {};
+const trustLabel = (status) => status === "reviewed" ? "Reviewed" : "Practical";
+const trustLimit = (status) => status === "reviewed"
+  ? "Reviewed evidence record. Open the full protocol for supported claims, limitations, and source context."
+  : "Practical guidance without a reviewed effectiveness claim. Open the full protocol for boundaries and context.";
+
+for (const [goal, route] of Object.entries(homepageRoutes)) {
+  const protocol = protocolBySlug.get(route.slug);
+  if (!protocol) throw new Error(`Homepage matcher route is not present in the trusted Protocol Feed: ${goal}/${route.slug}`);
+  const sourceHref = protocol.evidence?.source_url || protocol.url;
+  const steps = [
+    ["Try", protocol.action, "Now"],
+    ...(protocol.check_in ? [["Check in", protocol.check_in, "After"]] : []),
+    ["Inspect", "Read the full protocol for evidence notes, limitations, and source context.", "Before relying"],
+  ];
+  homepageGoals[goal] = {
+    slug: protocol.slug,
+    protocol_id: protocol.protocol_id,
+    match: route.match,
+    title: protocol.title,
+    summary: protocol.description || protocol.action,
+    trust: trustLabel(protocol.evidence.status),
+    evidence_status: protocol.evidence.status,
+    source: protocol.evidence?.source_url ? "Reviewed source attached" : "Brali protocol record",
+    source_href: sourceHref,
+    limit: trustLimit(protocol.evidence.status),
+    href: new URL(protocol.url).pathname,
+    steps,
+  };
+}
+
+const homepageMatcher = {
+  schema_version: 1,
+  generated_from: "/life-os/datasets/protocols.json",
+  generated_from_schema_version: output.schema_version,
+  goals: homepageGoals,
+};
+await writeFile(path.join(root, "homepage-matcher.json"), `${JSON.stringify(homepageMatcher, null, 2)}\n`);
+
 const manifestPath = path.join(root, "life-os/datasets/manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "protocols.json"] )];
@@ -98,4 +156,4 @@ if (!datasetsHtml.includes("/life-os/datasets/protocols.json")) {
   await writeFile(datasetsPath, datasetsHtml);
 }
 
-console.log(`Protocol feed generated: ${protocols.length} discovery-ready entries; ${topicMapped} topic-mapped, ${topicPending} topic-pending.`);
+console.log(`Protocol feed generated: ${protocols.length} discovery-ready entries; ${topicMapped} topic-mapped, ${topicPending} topic-pending; homepage matcher generated from ${Object.keys(homepageGoals).length} canonical protocol records.`);

@@ -1,0 +1,42 @@
+name: Sync main into localization branch
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - '.github/workflows/sync-main-localization.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-main-localization
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/de-localization
+          fetch-depth: 0
+      - name: Fetch current main
+        run: git fetch origin main
+      - name: Probe merge conflicts without publishing
+        shell: bash
+        run: |
+          set +e
+          git merge --no-commit --no-ff origin/main
+          status=$?
+          if [ "$status" -ne 0 ]; then
+            echo 'CONFLICTS_START'
+            git diff --name-only --diff-filter=U
+            echo 'CONFLICTS_END'
+            git merge --abort || true
+            exit 1
+          fi
+          git merge --abort || true
+          echo 'Main merges cleanly.'

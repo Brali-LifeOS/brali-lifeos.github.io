@@ -29,6 +29,8 @@ jobs:
           node --check scripts/repair-final-internal-links.mjs
           node --check scripts/check-final-internal-links.mjs
           node --check scripts/check-live-localizations.mjs
+          node --check scripts/optimize-final-image-markup.mjs
+          node --check scripts/stage-pages-artifact.mjs
       - name: Materialize effective canonical additions
         run: npm run content:additions
       - name: Validate reusable locale registry
@@ -47,6 +49,8 @@ jobs:
         run: node scripts/check-hreflang-graph.mjs
       - name: Repair final internal link debt
         run: node scripts/repair-final-internal-links.mjs
+      - name: Optimize final image markup
+        run: node scripts/optimize-final-image-markup.mjs
       - name: Gate final internal links
         run: node scripts/check-final-internal-links.mjs
       - name: Gate rendered German release files
@@ -69,3 +73,20 @@ jobs:
           grep -q 'hreflang="x-default"' de/index.html
           grep -q 'Sitemap: https://brali-lifeos.github.io/de/sitemap.xml' robots.txt
           node -e "const m=require('./de/manifest.json'); if(m.coverage.library_entries.localized!==973||m.coverage.library_entries.canonical!==973||m.coverage.zones.localized!==50) process.exit(1); console.log('German rendered coverage',m.coverage.library_entries,m.coverage.zones)"
+      - name: Stage clean Pages artifact
+        run: node scripts/stage-pages-artifact.mjs
+      - name: Gate staged Pages artifact links
+        env:
+          BRALI_SITE_ROOT: _site
+        run: node scripts/check-final-internal-links.mjs
+      - name: Ensure development/runtime internals are absent from staged Pages artifact
+        shell: bash
+        run: |
+          test ! -e _site/.github
+          test ! -e _site/.arwp
+          test ! -e _site/scripts
+          test ! -e _site/node_modules
+          test ! -e _site/mcp/node_modules
+          test ! -e _site/AGENTS.md
+          test ! -e _site/AGENT_LOOP.md
+          test ! -e _site/CONTRIBUTING.md

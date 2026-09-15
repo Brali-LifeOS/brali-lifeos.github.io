@@ -1,4 +1,4 @@
-import { access, readFile } from "node:fs/promises";
+import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { validateLocalizationProfile } from "./lib/localization-contract.mjs";
 
@@ -23,11 +23,24 @@ for (const surface of profile.surfaces || []) {
   if (surface.localePattern) assert(surface.localePattern.includes("{locale}"), `${surface.id}.localePattern must use {locale}`);
 }
 
+const localizationRoot = path.join(root, "data", "localization");
+const declaredHumanLocales = new Set([...byCode.values()].filter((locale) => locale.role === "human-interface").map((locale) => locale.code));
+for (const entry of await readdir(localizationRoot, { withFileTypes: true })) {
+  if (!entry.isDirectory() || !/^[a-z]{2,3}(?:-[A-Z]{2})?$/.test(entry.name)) continue;
+  assert(declaredHumanLocales.has(entry.name), `orphan locale directory data/localization/${entry.name}; register it or remove it`);
+}
+
 for (const locale of byCode.values()) {
   if (locale.role !== "human-interface") continue;
   await access(path.join(root, locale.datasetRoot));
+  await access(path.join(root, locale.datasetRoot, "site.json"));
+  await access(path.join(root, locale.datasetRoot, "zones.json"));
+  await access(path.join(root, locale.datasetRoot, "library"));
   assert(Array.isArray(locale.requiredGates) && locale.requiredGates.length > 0, `${locale.code}.requiredGates[] is required`);
-  for (const gate of locale.requiredGates) assert(typeof gate === "string" && gate.startsWith("scripts/"), `${locale.code} has invalid gate path ${gate}`);
+  for (const gate of locale.requiredGates) {
+    assert(typeof gate === "string" && gate.startsWith("scripts/"), `${locale.code} has invalid gate path ${gate}`);
+    await access(path.join(root, gate));
+  }
   if (locale.status === "published") {
     for (const required of ["contract", "corpus", "language", "rendered", "browser", "live"]) {
       assert(locale.releaseProof?.includes(required), `${locale.code} published release proof must include ${required}`);
@@ -35,4 +48,4 @@ for (const locale of byCode.values()) {
   }
 }
 
-console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces.`);
+console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; no orphan locale directories.`);

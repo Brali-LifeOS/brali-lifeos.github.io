@@ -11,7 +11,7 @@ permissions:
   contents: read
 
 jobs:
-  german-effective-corpus:
+  localization-hardening:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -19,9 +19,46 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
+      - name: Validate new localization tooling syntax
+        run: |
+          node --check scripts/build-profile-locales.mjs
+          node --check scripts/normalize-localization-hreflang.mjs
+          node --check scripts/check-hreflang-graph.mjs
+          node --check scripts/check-de-library-contract.mjs
+          node --check scripts/audit-de-library-language.mjs
       - name: Materialize effective canonical additions
         run: npm run content:additions
+      - name: Validate reusable locale registry
+        run: node scripts/check-localization-contract.mjs
       - name: Require German parity with effective canonical corpus
         run: node scripts/check-de-library-contract.mjs --complete
       - name: Require strict German language quality
         run: node scripts/audit-de-library-language.mjs --strict
+      - name: Build canonical and Russian site
+        run: npm run build
+      - name: Build profile-driven supplemental locales
+        run: node scripts/build-profile-locales.mjs
+      - name: Normalize complete reciprocal hreflang graph
+        run: node scripts/normalize-localization-hreflang.mjs
+      - name: Gate complete hreflang graph
+        run: node scripts/check-hreflang-graph.mjs
+      - name: Gate rendered German release files
+        shell: bash
+        run: |
+          test -s de/index.html
+          test -s de/life-os/index.html
+          test -s de/life-os/methodology/index.html
+          test -s de/research/index.html
+          test -s de/partners/index.html
+          test -s de/for-ai/index.html
+          test -s de/manifest.json
+          test -s de/library.json
+          test -s de/sitemap.xml
+          test -s de/llms.txt
+          grep -q '<html lang="de"' de/index.html
+          grep -q 'hreflang="en"' de/index.html
+          grep -q 'hreflang="ru"' de/index.html
+          grep -q 'hreflang="de"' de/index.html
+          grep -q 'hreflang="x-default"' de/index.html
+          grep -q 'Sitemap: https://brali-lifeos.github.io/de/sitemap.xml' robots.txt
+          node -e "const m=require('./de/manifest.json'); if(m.coverage.library_entries.localized!==973||m.coverage.library_entries.canonical!==973||m.coverage.zones.localized!==50) process.exit(1); console.log('German rendered coverage',m.coverage.library_entries,m.coverage.zones)"

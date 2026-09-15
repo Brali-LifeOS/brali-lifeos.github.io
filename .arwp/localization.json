@@ -65,7 +65,7 @@
       "role": "human-interface",
       "status": "reviewed-partial",
       "markets": [],
-      "searchPublication": "none",
+      "searchPublication": "limited",
       "generator": "generic-v1",
       "requiredGates": [
         "scripts/check-localization-contract.mjs",
@@ -79,7 +79,7 @@
         "scripts/check-browser-localizations.mjs",
         "scripts/check-live-localizations.mjs"
       ],
-      "releaseProof": ["contract", "corpus", "language"]
+      "releaseProof": ["contract", "corpus", "language", "rendered", "browser", "live"]
     }
   ],
   "markets": [],

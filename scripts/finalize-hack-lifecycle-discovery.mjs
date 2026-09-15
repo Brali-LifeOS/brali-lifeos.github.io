@@ -3,7 +3,6 @@ import path from "node:path";
 
 const root = process.cwd();
 const site = "https://brali-lifeos.github.io";
-const asOf = process.env.BRALI_AS_OF || new Date().toISOString().slice(0, 10);
 const sitemapPath = path.join(root, "sitemap.xml");
 const llmsPath = path.join(root, "llms.txt");
 const markerStart = "<!-- brali-hack-lifecycle-discovery:start -->";
@@ -50,13 +49,13 @@ let sitemapAdded = 0;
 for (const page of indexablePages) {
   const loc = `${site}${page.path}`;
   if (sitemap.includes(`<loc>${loc}</loc>`)) continue;
-  const block = `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${asOf}</lastmod>\n  </url>\n`;
+  // No lastmod is emitted here. These pages aggregate multiple governed sources
+  // and the build date is not a truthful content-modification date.
+  const block = `  <url>\n    <loc>${loc}</loc>\n  </url>\n`;
   sitemap = sitemap.replace(/<\/urlset>\s*$/i, `${block}</urlset>\n`);
   sitemapAdded += 1;
 }
-if (sitemap.includes(`<loc>${site}${watchlistPage.path}</loc>`)) {
-  throw new Error("Noindex research lifecycle watchlist must not enter the canonical sitemap");
-}
+if (sitemap.includes(`<loc>${site}${watchlistPage.path}</loc>`)) throw new Error("Noindex research lifecycle watchlist must not enter the canonical sitemap");
 fs.writeFileSync(sitemapPath, sitemap);
 
 const section = `${markerStart}\n## Hack lifecycle, research triage, localization and commercial independence\n\n- Human review ledger: ${site}/life-os/review-log/\n- Machine-readable lifecycle and linked reviewed Evidence Decisions: ${site}/life-os/datasets/reviews.json\n- Discovery-only research review watchlist (noindex): ${site}/research/review-watchlist/\n- Machine-readable research watchlist: ${site}/life-os/datasets/research-lifecycle-watchlist.json\n- Sponsorship and commercial-independence policy: ${site}/sponsorship/\n- Russian review ledger: ${site}/ru/life-os/review-log/\n- Russian commercial-independence policy: ${site}/ru/sponsorship/\n\nTreat lifecycle status as maintenance metadata layered on top of Brali's evidence state. Reviewed Evidence Decisions may be linked to a hack for provenance, but only an explicit append-only lifecycle event may materially change lifecycle status. Research Scout and provider metadata can create a review task, never an evidence verdict; the watchlist is intentionally noindex. A challenge, refutation, restoration or retirement stays in history rather than being silently overwritten. Implementation observations may trigger review but cannot change an evidence conclusion by themselves. Sponsorship must not change evidence, lifecycle status, retrieval, ranking, Agent Skill eligibility or review outcomes.\n${markerEnd}`;
@@ -65,4 +64,4 @@ const existing = new RegExp(`${markerStart}[\\s\\S]*?${markerEnd}`, "g");
 llms = existing.test(llms) ? llms.replace(existing, section) : `${llms.trimEnd()}\n\n${section}\n`;
 fs.writeFileSync(llmsPath, llms);
 
-console.log(`Hack lifecycle discovery finalized: sitemap_added=${sitemapAdded}, llms_surface=present, indexable_pages=${indexablePages.length}, watchlist_noindex=true.`);
+console.log(`Hack lifecycle discovery finalized: sitemap_added=${sitemapAdded}, llms_surface=present, indexable_pages=${indexablePages.length}, watchlist_noindex=true, truthful_lastmod=omitted.`);

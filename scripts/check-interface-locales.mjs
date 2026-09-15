@@ -22,16 +22,18 @@ const qualityRank = { "localized-draft": 0, "language-reviewed": 1, "editorial-r
 for (const localeEntry of locales) {
   const locale = localeEntry.code;
   const sourceRoot = `data/localization/${locale}`;
-  const [config, site, zones, flagships, primary, manifest, machine] = await Promise.all([
+  const [config, site, machineCopy, zones, flagships, primary, manifest, machine] = await Promise.all([
     readJson(`${sourceRoot}/library-manifest.json`),
     readJson(`${sourceRoot}/site.json`),
+    readJson(`${sourceRoot}/machine.json`),
     readJson(`${sourceRoot}/zones.json`),
     readJson(`${sourceRoot}/flagships.json`),
     readJson(`${sourceRoot}/primary-pages.json`),
     readJson(`${locale}/manifest.json`),
     readJson(`${locale}/library.json`),
   ]);
-  assert(locale, config.locale === locale && site.locale === locale && zones.locale === locale && flagships.locale === locale && primary.locale === locale, "source locale declarations disagree");
+  assert(locale, config.locale === locale && site.locale === locale && machineCopy.locale === locale && zones.locale === locale && flagships.locale === locale && primary.locale === locale, "source locale declarations disagree");
+  assert(locale, machineCopy.source_locale === profile.sourceLocale, "machine copy source locale drift");
   assert(locale, ["batched", "exact"].includes(config.coverage_mode), "coverage_mode must be batched or exact");
   const allowedQuality = new Set(config.quality_states || []);
   for (const state of Object.keys(qualityRank)) assert(locale, allowedQuality.has(state), `quality state missing: ${state}`);
@@ -161,7 +163,10 @@ for (const localeEntry of locales) {
   const llms = await readFile(path.join(root, locale, "llms.txt"), "utf8");
   assert(locale, llms.includes(`Locale: ${locale}`) && llms.includes("Canonical locale: en") && llms.includes("No silent fallback: true"), "llms.txt locale contract missing");
   assert(locale, llms.includes(`${base}/${locale}/library.json`), "llms.txt must expose localized library.json");
-  if (config.coverage_mode === "exact") assert(locale, llms.includes(`alle ${canonicalIndex.length} kanonischen`), "exact llms.txt must declare full coverage");
+  if (config.coverage_mode === "exact") {
+    const exactCoverage = machineCopy.coverage_exact.replace("{canonical_count}", String(canonicalIndex.length));
+    assert(locale, llms.includes(exactCoverage), "exact llms.txt must declare full localized coverage using locale-owned copy");
+  }
 
   console.log(`${localeEntry.label} localization gate passed: ${localized.size}/${canonicalIndex.length} entries; ${canonicalZones.length} zones; mode=${config.coverage_mode}.`);
 }

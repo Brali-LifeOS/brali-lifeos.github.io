@@ -10,7 +10,7 @@ const requireComplete = args.has("--require-complete");
 const readJson = (relative) => JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
 const text = (value = "") => String(value).replace(/\s+/g, " ").trim();
 
-const { evidenceDecisions: decisions } = loadReviewRegistry(root);
+const { evidenceDecisions: decisions, supplemental } = loadReviewRegistry(root);
 const baseIndex = readJson("data/life-os-content/index.json");
 const additions = readJson("data/life-os-content-additions.json");
 const registry = readJson("data/hack-identity-migrations.json");
@@ -43,9 +43,47 @@ for (const item of historical.values()) {
   item.candidate_ids = [...new Set(item.candidate_ids)].sort();
 }
 
-const allowedDispositions = new Set(["mapped", "retired"]);
-const allowedEvidenceTypes = new Set(["git-rename", "source-alias", "source-record", "manual-reviewed"]);
+const allowedDispositions = new Set(["mapped", "retired", "not-published-target"]);
+const allowedEvidenceTypes = new Set(["git-rename", "source-alias", "source-record", "manual-reviewed", "repository-history"]);
 const registryByHistorical = new Map();
+
+function gitLines(argsList) {
+  try {
+    return execFileSync("git", argsList, { cwd: root, encoding: "utf8", maxBuffer: 32 * 1024 * 1024 })
+      .split(/\r?\n/)
+      .map((line) => line.trim())
+      .filter(Boolean);
+  } catch (error) {
+    throw new Error(`Git history check failed (${argsList.join(" ")}): ${error.message}`);
+  }
+}
+
+function canonicalHistoryEvidence(historicalId) {
+  const escaped = historicalId.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const articlePath = `data/life-os-content/${historicalId}.json`;
+  const articleCommits = gitLines(["log", "--all", "--format=%H", "--", articlePath]);
+  const slugPattern = `\\"slug\\"[[:space:]]*:[[:space:]]*\\"${escaped}\\"`;
+  const indexCommits = gitLines(["log", "--all", "--format=%H", `-G${slugPattern}`, "--", "data/life-os-content/index.json"]);
+  const additionCommits = gitLines(["log", "--all", "--format=%H", `-G${slugPattern}`, "--", "data/life-os-content-additions.json"]);
+  const reviewRegistryFiles = supplemental.filter((name) => {
+    const file = path.join(root, "data", name);
+    return fs.existsSync(file) && fs.readFileSync(file, "utf8").includes(`\"${historicalId}\"`);
+  });
+  return {
+    article_path_commits: [...new Set(articleCommits)],
+    canonical_index_commits: [...new Set(indexCommits)],
+    content_addition_commits: [...new Set(additionCommits)],
+    effective_review_registry_files: reviewRegistryFiles,
+    ever_canonical: articleCommits.length > 0 || indexCommits.length > 0 || additionCommits.length > 0,
+  };
+}
+
+const historyByHistorical = new Map();
+function historyFor(id) {
+  if (!historyByHistorical.has(id)) historyByHistorical.set(id, canonicalHistoryEvidence(id));
+  return historyByHistorical.get(id);
+}
+
 for (const entry of registry.entries) {
   if (!entry || typeof entry !== "object" || Array.isArray(entry)) throw new Error("Identity migration entry must be an object");
   if (!historical.has(entry.historical_id)) throw new Error(`Identity migration references a target with no current reviewed linkage debt: ${entry.historical_id}`);
@@ -57,7 +95,17 @@ for (const entry of registry.entries) {
     if (!entry.current_slug || !currentSlugs.has(entry.current_slug)) throw new Error(`${entry.historical_id}: mapped current_slug is not canonical: ${entry.current_slug}`);
     if (entry.current_slug === entry.historical_id) throw new Error(`${entry.historical_id}: historical id cannot map to itself when it is absent from the current corpus`);
   } else if (entry.current_slug) {
-    throw new Error(`${entry.historical_id}: retired identities cannot also declare current_slug`);
+    throw new Error(`${entry.historical_id}: ${entry.disposition} identities cannot also declare current_slug`);
+  }
+  if (entry.disposition === "not-published-target") {
+    if (entry.evidence.type !== "repository-history") throw new Error(`${entry.historical_id}: not-published-target requires repository-history evidence`);
+    const history = historyFor(entry.historical_id);
+    if (history.ever_canonical) throw new Error(`${entry.historical_id}: cannot be not-published-target because canonical Git history exists`);
+    if (!history.effective_review_registry_files.length) throw new Error(`${entry.historical_id}: not-published-target must still be traceable to an effective review registry`);
+  }
+  if (entry.disposition === "retired") {
+    const history = historyFor(entry.historical_id);
+    if (!history.ever_canonical) throw new Error(`${entry.historical_id}: retired requires proof that the identifier was once canonical; use not-published-target otherwise`);
   }
   registryByHistorical.set(entry.historical_id, entry);
 }
@@ -209,6 +257,7 @@ if (discover) {
   for (const historicalId of historical.keys()) {
     const proposal = exactGitProposal(historicalId, graph);
     if (proposal) addProposal(historicalId, proposal);
+    historyFor(historicalId);
   }
 }
 
@@ -234,6 +283,7 @@ if (discover) {
       candidate_ids: item.candidate_ids,
       registry: registryByHistorical.get(historicalId) || null,
       exact_proposals: candidateList,
+      canonical_history: historyFor(historicalId),
       uniquely_resolved_current_slug: currentSlugsFound.length === 1 ? currentSlugsFound[0] : null,
       ambiguous: currentSlugsFound.length > 1,
     };

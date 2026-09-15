@@ -51,6 +51,28 @@ Brali can record implementation observations: where a protocol felt difficult, w
 
 Those observations can trigger a review. They cannot on their own upgrade, downgrade, refute, or restore an evidence conclusion. This prevents anecdotal popularity from becoming an evidence score.
 
+## Research-to-lifecycle triage
+
+Research discovery and lifecycle decisions are deliberately separate.
+
+`data/research-candidates.json` contains provider metadata and editorial workflow state. A candidate may be useful enough to schedule attention, but metadata is not evidence and never changes a hack status by itself.
+
+The build creates a derived research lifecycle watchlist using the effective Brali ontology:
+
+- candidates already represented by a reviewed Evidence Decision are excluded from the open watchlist;
+- unresolved candidates are matched to existing hacks primarily through Topic and Method, with Domain, Lens and legacy Zone used only as weaker context;
+- existing editorial candidate states such as `challenge-existing`, `watch`, `screening`, `new` and `support-existing` determine the starting triage priority;
+- possible correction/retraction wording, review/meta-analysis metadata and risk flags may increase review priority, but never evidence confidence;
+- the human watchlist is intentionally `noindex,follow` so discovery metadata cannot masquerade as a public evidence verdict.
+
+A reviewed Evidence Decision may link directly to its `target_hack_ids`. Those links are published inside the lifecycle dataset and the canonical hack review-history surface as provenance. They still do not mutate lifecycle status automatically. A material lifecycle change requires an explicit append-only lifecycle event after the source has actually been reviewed.
+
+The safe flow is therefore:
+
+`Research Scout metadata -> review watchlist -> actual source review -> Evidence Decision -> explicit lifecycle event when warranted`.
+
+Never shorten this to `Research Scout -> status change`.
+
 ## Review triggers
 
 Create a lifecycle event or request a re-review when any of the following happens:
@@ -65,14 +87,30 @@ Create a lifecycle event or request a re-review when any of the following happen
 
 The review should result in one of: no material change, narrower wording, changed evidence framing, `watch`, `needs-review`, `contested`, `refuted`, `restored`, or `retired`.
 
+## Localization boundary
+
+English remains the canonical evidence/provenance layer. Russian lifecycle pages mirror the canonical lifecycle status and use localized presentation copy; they do not create a separate Russian verdict.
+
+- lifecycle status keys remain canonical and identical across locales;
+- `summary_i18n.ru` is used when an append-only event has a reviewed Russian summary;
+- legacy events without localized prose use a bounded Russian provenance statement instead of inventing a translation of the historical review reasoning;
+- a new event without Russian copy is disclosed as English-only detail rather than silently rendered in English under the Russian route;
+- Evidence Decisions remain canonical English machine records; the Russian hack surface may expose their count and an explicit English-language handoff without translating scientific conclusions ad hoc.
+
+The Russian review ledger and commercial-independence page are declared routes in the locale manifest and therefore participate in the same live/browser release proof as the rest of the published Russian surface.
+
 ## Public contract
 
 The build generates:
 
-- a review-history block on hack pages;
-- a current lifecycle status derived from provenance and events;
+- a review-history block on canonical and Russian hack pages;
+- a current lifecycle status derived from provenance and append-only events;
+- linked reviewed Evidence Decisions inside the lifecycle dataset and canonical review-history UI;
 - `life-os/datasets/reviews.json` for machines and agents;
-- `/life-os/review-log/` as the human review ledger.
+- `/life-os/review-log/` and `/ru/life-os/review-log/` as human review ledgers;
+- `life-os/datasets/research-lifecycle-watchlist.json` as discovery-only review triage;
+- `/research/review-watchlist/` as a human `noindex` triage surface;
+- `/sponsorship/` and `/ru/sponsorship/` as the commercial-independence contract.
 
 The review dataset is evidence/editorial metadata. Sponsorship is never allowed to modify it.
 
@@ -99,7 +137,7 @@ Example:
 }
 ```
 
-The build rejects unknown hacks, duplicate event IDs, invalid status transitions, unsafe event shapes, and material challenge events without references.
+The build rejects unknown hacks, duplicate event IDs, invalid status transitions, unsafe event shapes, and material challenge events without references. CI also compares the append-only stream with the PR base so already-published events cannot be removed, reordered, or edited.
 
 ## Commercial independence
 

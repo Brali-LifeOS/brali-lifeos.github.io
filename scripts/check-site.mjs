@@ -50,6 +50,7 @@ const required = [
   "life-os/datasets/indexing.json",
   "life-os/datasets/protocols.json",
   "life-os/datasets/editorial-normalizations.json",
+  "data/site-identity.json",
   "sitemap.xml",
   "robots.txt",
   "llms.txt",
@@ -59,15 +60,16 @@ const required = [
 
 for (const file of required) await access(path.join(root, file));
 
+const identity = JSON.parse(await readFile(path.join(root, "data/site-identity.json"), "utf8"));
 const homepage = await readFile(path.join(root, "index.html"), "utf8");
 if (!homepage.includes('class="protocol-demo"')) throw new Error("Homepage lacks the protocol example.");
 if (!homepage.includes('href="/life-os/areas/"')) throw new Error("Homepage does not provide a Life Areas entry point.");
 if (!homepage.includes('href="/for-ai/"')) throw new Error("Homepage does not expose the AI/developer entry point.");
 if (!homepage.includes('href="/research/"')) throw new Error("Homepage does not expose the research entry point.");
 if (!homepage.includes('href="/partners/"')) throw new Error("Homepage does not expose the partnership entry point.");
-if (!homepage.includes("Brali: practical protocols for everyday life")) throw new Error("Homepage lost the canonical Brali search title.");
-if (!homepage.includes('property="og:site_name" content="Brali"')) throw new Error("Homepage lost the Brali site-name declaration.");
-if (!homepage.includes("Brali is a practical knowledge library for focus, stress, memory, sleep, habits, learning and movement")) throw new Error("Homepage lost the product-specific search description.");
+if (!homepage.includes(identity.homepageTitle)) throw new Error("Homepage lost the canonical Brali search title from site identity.");
+if (!homepage.includes(`property="og:site_name" content="${identity.siteName}"`)) throw new Error("Homepage lost the Brali site-name declaration.");
+if (!homepage.includes(identity.homepageDescription)) throw new Error("Homepage lost the product-specific search description from site identity.");
 if (/class="app-card"/.test(homepage)) throw new Error("Homepage still uses the logo-only hero card.");
 if (/protocols\.jsonl|protocols\.schema\.json/.test(homepage)) throw new Error("Homepage advertises an unpublished protocol interface.");
 

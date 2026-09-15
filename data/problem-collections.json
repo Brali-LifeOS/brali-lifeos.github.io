@@ -1,16 +1,23 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-15",
   "policy": {
-    "purpose": "Publish a deliberately small set of problem-first collections that add decision logic on top of Brali's trusted protocol feed.",
-    "quality_rule": "A problem page may recommend only reviewed or practical protocols already present in the trusted protocol feed. It must add distinct decision guidance rather than restating a Topic hub.",
-    "growth_rule": "Do not create a page for every wording variation. Add a new collection only when Brali can support a materially different problem, decision path, or evidence boundary."
+    "purpose": "Maintain a deliberately small canonical problem graph that maps real user intent to Gold-ready Brali protocols, explicit fit logic, evidence boundaries, and a machine-readable answer packet.",
+    "quality_rule": "A problem page may recommend only protocols with a Gold-ready manual review and a reviewed or practical state in the trusted Protocol Feed. Every edge must explain when the protocol fits, why it fits, and one important caveat.",
+    "growth_rule": "Do not create a page for every wording variation. Add a new collection only when Brali can support a materially different problem or decision path. Search Console evidence should guide expansion after the baseline is captured.",
+    "identity_rule": "Aliases, human pages, Query Playground routing, JSON/API packets, and downstream agent reuse must resolve through this same canonical graph rather than maintaining separate recommendation lists."
   },
   "collections": [
     {
       "slug": "start-important-work",
+      "acquisition_cluster_id": "procrastination-task-start",
       "title": "Start important work when you keep putting it off",
       "question": "How do I start important work when I keep procrastinating?",
+      "aliases": [
+        "how to stop procrastinating and start",
+        "cannot start an important task",
+        "task initiation when work feels heavy"
+      ],
       "summary": "Separate a vague task, start-friction, and attention-switching problem before choosing a protocol.",
       "primary_topic_ids": ["task-initiation", "attention-focus"],
       "related_topic_ids": ["planning-prioritization", "goals"],
@@ -21,12 +28,23 @@
         {"if": "The next action is clear but starting still feels heavy", "try": "Shrink the commitment to a deliberately small first block. The goal is to cross the start line, not finish the whole project."},
         {"if": "You start but quickly switch away", "try": "Protect one short focus block and remove one predictable interruption instead of redesigning your entire productivity system."}
       ],
-      "stop_rule": "If progress depends on missing information, approval, access, or another person, treat that dependency as the next action rather than diagnosing yourself with a motivation problem."
+      "stop_rule": "If progress depends on missing information, approval, access, or another person, treat that dependency as the next action rather than diagnosing yourself with a motivation problem.",
+      "protocol_edges": [
+        {"slug": "woop-goal-planner", "fit": "best-fit", "when": "The goal matters, but a recurring internal obstacle keeps blocking the first useful action.", "why": "WOOP makes the obstacle and a cue-triggered response explicit instead of relying on motivation alone.", "caveat": "Use it for an internal obstacle, not to relabel missing resources, permission, money, safety, or another external constraint as a self-regulation failure."},
+        {"slug": "25-minute-pomodoro-focus-sprints", "fit": "alternative", "when": "The next action is already clear, but the work has no boundary and attention keeps drifting.", "why": "A short adjustable focus boundary can reduce ambiguity around one concrete outcome.", "caveat": "Twenty-five minutes is a familiar default, not a scientifically optimal dose, and the method is a poor fit for work that requires continuous responsiveness."},
+        {"slug": "30-minute-deadline-sprints", "fit": "alternative", "when": "Perfectionism or optional polish is preventing a low-risk first pass from existing at all.", "why": "A bounded rough pass forces a distinction between minimum useful output and optional refinement.", "caveat": "Do not trade essential accuracy, safety, approval, or verification for speed; the exact duration is not evidence-backed."}
+      ]
     },
     {
       "slug": "resume-after-interruption",
+      "acquisition_cluster_id": "focus-after-interruption",
       "title": "Resume useful work after interruptions derail the day",
       "question": "How do I recover after interruptions without losing the rest of the day?",
+      "aliases": [
+        "how to refocus after an interruption",
+        "recover concentration after notifications",
+        "get back to work after task switching"
+      ],
       "summary": "Use a small re-entry sequence: recover context, choose the next action, then protect a short restart block.",
       "primary_topic_ids": ["attention-focus", "planning-prioritization"],
       "related_topic_ids": ["information-management", "work-systems"],
@@ -37,12 +55,22 @@
         {"if": "Several tasks now compete for attention", "try": "Re-prioritize once. Pick the one task that deserves the next block rather than repeatedly choosing again every few minutes."},
         {"if": "You know what to do but feel scattered", "try": "Use a short restart block with a visible finish condition. A clean restart is more useful than trying to recover the imagined perfect day."}
       ],
-      "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints."
+      "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints.",
+      "protocol_edges": [
+        {"slug": "25-minute-pomodoro-focus-sprints", "fit": "best-fit", "when": "Context is recovered and you need one protected restart boundary for a concrete task.", "why": "The protocol turns re-entry into one bounded outcome instead of asking you to recover an entire lost day at once.", "caveat": "Adjust the block length to the work; do not use protected focus where monitoring or immediate response is required."},
+        {"slug": "90-30-focus-rest-schedule", "fit": "alternative", "when": "You have recovered the task and need a longer protected block followed by a genuine break.", "why": "It provides an adjustable focus-and-recovery structure and an explicit resume point.", "caveat": "Ninety/thirty is only a possible starting pattern, not a biological law or universal productivity schedule."},
+        {"slug": "3-3-3-workday-planner", "fit": "alternative", "when": "The interruption materially changed priorities and the rest of the day needs a lightweight re-plan.", "why": "It keeps fixed constraints visible and reorganizes the remaining day around a few observable outcomes.", "caveat": "Do not preserve an obsolete plan when new urgent work or dependencies have genuinely changed the day."}
+      ]
     },
     {
       "slug": "learn-under-time-pressure",
       "title": "Learn something useful when study time is limited",
       "question": "How do I learn effectively when I do not have much time?",
+      "aliases": [
+        "learn effectively with little time",
+        "study when time is limited",
+        "practice instead of cramming more material"
+      ],
       "summary": "Prioritize retrieval, targeted practice, feedback, and application instead of trying to consume more material.",
       "primary_topic_ids": ["skill-learning", "memory"],
       "related_topic_ids": ["metacognition", "revision-feedback"],
@@ -53,28 +81,48 @@
         {"if": "You need to perform a skill", "try": "Practice the actual operation and get feedback. Remembering an explanation is not the same as being able to apply it."},
         {"if": "You are unsure what you know", "try": "Test yourself early enough to expose gaps, then direct the remaining time toward those gaps instead of reviewing everything equally."}
       ],
-      "stop_rule": "Do not interpret one successful recall session as proof of durable mastery. Use delayed checks or real application when the stakes justify it."
+      "stop_rule": "Do not interpret one successful recall session as proof of durable mastery. Use delayed checks or real application when the stakes justify it.",
+      "protocol_edges": [
+        {"slug": "active-recall-test-yourself", "fit": "best-fit", "when": "The immediate target is remembering learned material and you can check attempted answers against a trustworthy source.", "why": "Retrieval exposes what is actually available from memory so limited study time can be directed toward misses instead of familiarity.", "caveat": "Recall is not the same as application; add a representative performance task when the real outcome is doing, judging, speaking, calculating, or producing."},
+        {"slug": "weekly-theme-learning-sprints", "fit": "alternative", "when": "Limited time is being fragmented across too many topics rather than one specific learning target.", "why": "A narrow theme and visible artifact reduce scattering and tie new input to observed friction.", "caveat": "A one-week frame is an organizational convenience, not an optimal learning schedule or proof of mastery."},
+        {"slug": "10-minute-language-microsprints", "fit": "alternative", "when": "The target is language practice and a small session boundary would reduce setup friction.", "why": "It requires a real recall, comprehension, or production attempt instead of spending the short session reorganizing study materials.", "caveat": "Ten minutes is not a minimum effective dose or complete curriculum; important errors still need reliable feedback."}
+      ]
     },
     {
       "slug": "desk-day-movement",
       "title": "Add movement to a desk-heavy day without a perfect schedule",
       "question": "How can I move more when I sit at a desk most of the day?",
-      "summary": "Choose repeatable movement opportunities and sustainable exercise without pretending there is one scientifically perfect break interval.",
+      "aliases": [
+        "move more during a desk day",
+        "break up long sitting while working",
+        "screen and movement breaks at a desk"
+      ],
+      "summary": "Choose repeatable movement opportunities and safe recovery breaks without pretending there is one scientifically perfect interval.",
       "primary_topic_ids": ["movement", "fitness-strength"],
       "related_topic_ids": ["recovery-energy", "health-basics"],
       "related_url": "/topics/movement/",
       "query": "I sit for hours while working. How can I add more movement to my day?",
       "decision_path": [
         {"if": "The main problem is uninterrupted sitting", "try": "Attach brief movement to transitions you already have: calls, refills, task changes, or natural breaks."},
-        {"if": "You want a sustainable exercise routine", "try": "Choose a small repeatable strength, mobility, or walking commitment that survives ordinary workdays."},
-        {"if": "You are searching for the perfect cognitive break interval", "try": "Use practicality and adherence as the decision criteria. Brali does not treat exploratory cognition findings as a universal dose prescription."}
+        {"if": "Stress or tension is accumulating", "try": "Use a safe short walk as a change of context when walking is appropriate for you."},
+        {"if": "Screen discomfort is the more immediate signal", "try": "Use safe distance-looking breaks and keep persistent symptoms as a separate eye-care question."}
       ],
-      "stop_rule": "Pain, injury, new severe symptoms, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance."
+      "stop_rule": "Pain, injury, new severe symptoms, persistent vision changes, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance.",
+      "protocol_edges": [
+        {"slug": "10-minute-stress-walk", "fit": "best-fit", "when": "A safe short walk is practical and you want a simple movement-and-context reset during an ordinary desk day.", "why": "Walking creates a concrete break from prolonged sitting while keeping the intervention simple and adjustable.", "caveat": "It is a general-wellbeing option, not treatment, and ten minutes is not a universal therapeutic or exercise dose."},
+        {"slug": "20-20-20-eye-break-reminder", "fit": "alternative", "when": "Long screen viewing is creating eye tiredness or discomfort and a brief visual break can be taken safely.", "why": "The rule supplies a memorable cue to change near-screen focus during prolonged computer use.", "caveat": "It does not diagnose or treat the cause of persistent symptoms and should never be forced during a task where looking away is unsafe."}
+      ]
     },
     {
       "slug": "prepare-difficult-conversation",
+      "acquisition_cluster_id": "difficult-conversation",
       "title": "Prepare for a difficult conversation without escalating it",
       "question": "How do I prepare for a difficult conversation at work or at home?",
+      "aliases": [
+        "prepare for a difficult conversation",
+        "avoid escalating a disagreement",
+        "make a hard conversation clearer"
+      ],
       "summary": "Clarify the outcome, separate observations from interpretations, listen for the other person's model, and leave room for repair.",
       "primary_topic_ids": ["difficult-conversations", "listening", "clear-communication", "conflict-repair"],
       "related_topic_ids": [],
@@ -85,7 +133,145 @@
         {"if": "You expect disagreement", "try": "Prepare one or two genuine questions. The conversation needs a way to update your model, not only transmit your conclusion."},
         {"if": "The relationship matters after the conversation", "try": "Plan how you will check understanding and repair misinterpretation instead of optimizing for winning the exchange."}
       ],
-      "stop_rule": "If there is coercion, abuse, threats, or a serious safety issue, ordinary communication techniques are not an adequate response plan."
+      "stop_rule": "If there is coercion, abuse, threats, or a serious safety issue, ordinary communication techniques are not an adequate response plan.",
+      "protocol_edges": [
+        {"slug": "active-listening-exercises", "fit": "best-fit", "when": "Understanding the other person's main point matters and the conversation is ordinary and safe enough for a paraphrase-and-correction loop.", "why": "The protocol makes misunderstanding observable by inviting correction before you argue with an interpretation.", "caveat": "Do not force it in unsafe or coercive situations, and do not treat one paraphrase as proof that the conflict is resolved."},
+        {"slug": "5w1h-communication-checklist", "fit": "alternative", "when": "The difficult conversation is mainly an operational handoff or request where missing action, ownership, timing, or context is causing friction.", "why": "A concise context-gap check can remove ambiguity before interpersonal interpretation becomes the main problem.", "caveat": "Do not force all six elements into every message or expose sensitive information just to complete a checklist."}
+      ]
+    },
+    {
+      "slug": "plan-realistic-week",
+      "acquisition_cluster_id": "weekly-prioritization",
+      "title": "Plan a realistic week when everything looks important",
+      "question": "How do I choose priorities for the week without overloading the plan?",
+      "aliases": [
+        "prioritize work for the week",
+        "plan a week without overloading it",
+        "decide what not to do this week"
+      ],
+      "summary": "Protect fixed constraints, make a small number of outcomes visible, and separate controllable actions from uncertain results.",
+      "primary_topic_ids": ["planning-prioritization", "goals", "work-systems"],
+      "related_topic_ids": ["decision-making"],
+      "related_url": "/life-os/areas/work-money-strategy/",
+      "query": "How do I prioritize my work for this week without overloading the plan?",
+      "decision_path": [
+        {"if": "The calendar already contains fixed constraints", "try": "Make them visible before assigning discretionary work. Capacity is what remains, not what you wish remained."},
+        {"if": "Too many outcomes look important", "try": "Choose a small set that can actually move this week and explicitly defer the rest."},
+        {"if": "A priority depends on another person or external event", "try": "Separate the action you control from the outcome you can only influence or monitor."}
+      ],
+      "stop_rule": "Re-plan when a material constraint changes. A weekly plan is a decision aid, not a promise that reality must preserve Monday's assumptions.",
+      "protocol_edges": [
+        {"slug": "3-3-3-workday-planner", "fit": "best-fit", "when": "You need a lightweight structure that keeps fixed constraints visible and reduces a large task inventory to a few observable outcomes.", "why": "Its block logic is useful as a capacity-and-priority template even when the exact number of blocks is adjusted to the real schedule.", "caveat": "The number three is not an evidence-backed optimum; use fewer or different blocks when the work is interrupt-driven or tightly constrained."},
+        {"slug": "circles-of-control-planner", "fit": "alternative", "when": "A large part of the week's uncertainty depends on other people, approvals, timing, or external events.", "why": "It separates controllable behavior from outcomes that should be influenced, monitored, escalated, or accepted rather than scheduled as if guaranteed.", "caveat": "Do not use control language to erase structural constraints, safety concerns, or legitimate escalation needs."},
+        {"slug": "woop-goal-planner", "fit": "alternative", "when": "One meaningful weekly priority is feasible but a recurring internal obstacle keeps derailing execution.", "why": "It turns the obstacle into an explicit if-then response that can be tested during the week.", "caveat": "Keep external blockers separate; WOOP is not a guarantee that the weekly outcome will be achieved."}
+      ]
+    },
+    {
+      "slug": "remember-what-you-study",
+      "acquisition_cluster_id": "remember-what-you-study",
+      "title": "Remember what you study instead of only recognizing it",
+      "question": "How do I remember more of what I study without just rereading it?",
+      "aliases": [
+        "remember what I study",
+        "active recall instead of rereading",
+        "retain material after studying"
+      ],
+      "summary": "Use retrieval to test memory, correct misses, and keep retention separate from application or mastery.",
+      "primary_topic_ids": ["memory", "skill-learning"],
+      "related_topic_ids": ["metacognition", "revision-feedback"],
+      "related_url": "/topics/memory/",
+      "query": "I reread material but do not remember it later. What should I do?",
+      "decision_path": [
+        {"if": "The material feels familiar only while it is visible", "try": "Hide the source and attempt retrieval before looking again."},
+        {"if": "You miss or distort items", "try": "Check against a trustworthy source and correct the error instead of rehearsing an unresolved guess."},
+        {"if": "The real goal is application", "try": "Add a separate representative task. Memory for an explanation is not proof that you can use it."}
+      ],
+      "stop_rule": "When recall becomes reliable but real application remains weak, change the practice target instead of adding more recall repetitions by default.",
+      "protocol_edges": [
+        {"slug": "active-recall-test-yourself", "fit": "best-fit", "when": "You need to retain learned information and can verify attempted answers soon after retrieval.", "why": "Retrieval practice directly tests whether information can be produced without the source and exposes misses for correction.", "caveat": "Later remembering is not the same as application, judgment, fluent production, or procedural competence."},
+        {"slug": "avoid-list-interference-memory-retention", "fit": "alternative", "when": "You just finished a memory-heavy learning episode and a brief quiet low-interference pause is safe and practical.", "why": "Wakeful rest is a bounded optional experiment for declarative retention after learning, not another input-heavy study step.", "caveat": "Effects are heterogeneous; do not generalize it to comprehension or skill, and do not treat ten minutes or a ritual as a universal dose."},
+        {"slug": "weekly-theme-learning-sprints", "fit": "alternative", "when": "The bigger problem is scattered practice across too many subjects rather than retrieval itself.", "why": "A narrow weekly target creates repeated practice opportunities and a visible artifact without requiring a large learning system.", "caveat": "The weekly frame organizes practice; it does not prove durable retention or mastery."}
+      ]
+    },
+    {
+      "slug": "stress-rumination-reset",
+      "acquisition_cluster_id": "stress-rumination-reset",
+      "title": "Reset when stress turns into a repeating worry loop",
+      "question": "What can I do when I keep replaying a worry after a stressful period?",
+      "aliases": [
+        "stop replaying a worry",
+        "reset after a stressful workday",
+        "interrupt a rumination loop"
+      ],
+      "summary": "Separate useful action from uncertain outcomes, then use a low-risk change of context when more thinking is no longer producing a next step.",
+      "primary_topic_ids": ["stress-regulation", "worry-rumination", "emotion-regulation"],
+      "related_topic_ids": ["decision-making"],
+      "related_url": "/topics/stress/",
+      "query": "I keep replaying a worry after a stressful day and need a simple reset",
+      "decision_path": [
+        {"if": "The worry contains a concrete controllable action", "try": "Write the action down and separate it from the outcome you cannot guarantee."},
+        {"if": "The remaining uncertainty depends on other people or events", "try": "Choose whether to monitor, prepare a fallback, ask for help, escalate, or deliberately wait."},
+        {"if": "There is no useful action right now and movement is safe", "try": "Use a brief walk or another ordinary change of context, then check whether you are ready to return to the next task."}
+      ],
+      "stop_rule": "Persistent, severe, or functionally impairing stress is not a signal to keep optimizing self-help protocols; use appropriate professional support when the situation requires it.",
+      "protocol_edges": [
+        {"slug": "circles-of-control-planner", "fit": "best-fit", "when": "The worry is being fueled by an uncertain result that depends partly on other people or external events.", "why": "The protocol separates observable actions from outcomes that can only be influenced or monitored, which can expose whether more rumination is producing any useful behavior.", "caveat": "Do not turn uncontrollable structural or safety constraints into self-blame, and do not use acceptance language to suppress escalation or support-seeking."},
+        {"slug": "10-minute-stress-walk", "fit": "alternative", "when": "There is no more useful analysis to do right now and a safe short walk is practical.", "why": "A simple movement-and-context change can serve as a bounded general-wellbeing reset before returning to the next task.", "caveat": "It is not treatment for anxiety, depression, severe stress, or another condition, and no exact duration guarantees relief."}
+      ]
+    },
+    {
+      "slug": "decision-under-uncertainty",
+      "acquisition_cluster_id": "decision-under-uncertainty",
+      "title": "Make a bounded decision when the outcome is uncertain",
+      "question": "How do I make a useful decision when I cannot know the outcome in advance?",
+      "aliases": [
+        "make a decision under uncertainty",
+        "separate control from influence",
+        "test an assumption before committing"
+      ],
+      "summary": "Separate controllable action from uncertain outcomes, then test assumptions cheaply when the decision is reversible and safe enough to learn by doing.",
+      "primary_topic_ids": ["decision-making", "critical-thinking"],
+      "related_topic_ids": ["cognitive-biases", "work-systems"],
+      "related_url": "/life-os/areas/work-money-strategy/",
+      "query": "How do I make a decision under uncertainty and test assumptions before committing too much?",
+      "decision_path": [
+        {"if": "You are treating an outcome as controllable", "try": "Separate your behavior from what depends on other people, chance, timing, or external conditions."},
+        {"if": "One explanation is driving the decision", "try": "State it as a hypothesis and write what evidence would make you keep or reject it."},
+        {"if": "Two options are cheap and reversible", "try": "Compare them against one pre-declared outcome without pretending a small informal test proves causality."}
+      ],
+      "stop_rule": "Do not run casual experiments when the test itself can create material health, safety, legal, financial, privacy, security, or production risk. Escalate the decision method when the stakes require stronger evidence.",
+      "protocol_edges": [
+        {"slug": "circles-of-control-planner", "fit": "best-fit", "when": "The decision feels stuck because controllable actions and uncertain outcomes are mixed together.", "why": "Separating control, influence, monitoring, and uncertainty creates a cleaner action boundary before choosing a test or commitment.", "caveat": "The boundary can change over time and must not be used to dismiss structural constraints, risk, or legitimate escalation."},
+        {"slug": "start-with-a-hypothesis", "fit": "alternative", "when": "You have a plausible explanation for an unclear work problem and can check it with a small reversible observation or test.", "why": "A hypothesis plus a prediction makes disconfirming evidence visible and reduces random switching between theories and fixes.", "caveat": "Do not experiment casually in consequential systems and do not treat the first plausible explanation as a conclusion."},
+        {"slug": "ab-test-learning-loop", "fit": "alternative", "when": "Two approaches are both plausible, the choice is low-risk and reversible, and one observable outcome can be declared before comparing them.", "why": "A bounded comparison can generate a useful local signal for a cheap next decision.", "caveat": "An informal comparison is not a randomized controlled experiment and does not establish statistical confidence, causality, or generalizability."}
+      ]
+    },
+    {
+      "slug": "prevent-recurring-errors",
+      "acquisition_cluster_id": "prevent-recurring-errors",
+      "title": "Reduce preventable mistakes in recurring work",
+      "question": "How do I stop the same type of work mistake from happening again?",
+      "aliases": [
+        "stop making the same work mistakes",
+        "reduce errors in a recurring process",
+        "find why a repeated mistake keeps happening"
+      ],
+      "summary": "Turn a repeated mistake into an observable hypothesis, make the handoff or decision point clearer, and test a small process change before standardizing it.",
+      "primary_topic_ids": ["error-prevention", "work-systems"],
+      "related_topic_ids": ["critical-thinking", "clear-communication"],
+      "related_url": "/life-os/areas/work-money-strategy/",
+      "query": "I keep making the same work mistake. How can I find the cause and change the process?",
+      "decision_path": [
+        {"if": "You do not know where the error enters", "try": "State one testable explanation and identify the observation that would support or weaken it."},
+        {"if": "The error appears at a handoff", "try": "Check whether action, ownership, timing, location, reason, or process information is genuinely missing."},
+        {"if": "You have two plausible low-risk process changes", "try": "Compare them against one observable error or completion signal before standardizing either one."}
+      ],
+      "stop_rule": "When errors are safety-critical, regulated, security-sensitive, financial, medical, or otherwise consequential, use the required formal controls and qualified review rather than treating a lightweight self-experiment as sufficient.",
+      "protocol_edges": [
+        {"slug": "start-with-a-hypothesis", "fit": "best-fit", "when": "The same failure repeats but the mechanism is still unclear and can be investigated safely.", "why": "The protocol converts a vague explanation into a prediction and a reversible check, which is more informative than cycling through fixes without a model.", "caveat": "A small check can update a hypothesis but does not prove causality, especially in complex or consequential systems."},
+        {"slug": "5w1h-communication-checklist", "fit": "alternative", "when": "The recurring mistake is caused by missing or ambiguous operational context at a message or handoff.", "why": "It checks the specific information needed to act without guessing while encouraging removal of unnecessary detail.", "caveat": "Checklist completion does not prove the underlying facts are correct or that the recipient understood them."},
+        {"slug": "ab-test-learning-loop", "fit": "alternative", "when": "Two safe reversible process changes can be compared and one relevant outcome can be declared before observing results.", "why": "A bounded compare-and-learn loop can tell you whether one local change is promising enough for the next reversible step.", "caveat": "Do not call an informal small comparison statistically conclusive or use it for high-stakes changes without the design and approvals those changes require."}
+      ]
     }
   ]
 }

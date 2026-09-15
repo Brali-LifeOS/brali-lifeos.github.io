@@ -7,8 +7,20 @@ const BASE = 'https://brali-lifeos.github.io';
 const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 const writeJson = (rel, value) => { const file = path.join(ROOT, rel); fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, `${JSON.stringify(value, null, 2)}\n`); };
 const pct = (n, d) => d ? Number((100 * n / d).toFixed(1)) : 100;
+
+// Query is a consumer of the canonical Problem Discovery Graph. Build that graph
+// before parity so repository build order cannot silently test Query against stale
+// problem routes from a previous generation.
+await import('./build-problem-collections.mjs');
+
 const suite = read('data/agent-evaluation-suite.json');
-const data = { topics: read('api/v1/topics.json'), identity: read('api/v1/identity.json'), flagships: read('api/v1/flagships.json'), decisions: read('api/v1/evidence-decisions.json') };
+const data = {
+  topics: read('api/v1/topics.json'),
+  identity: read('api/v1/identity.json'),
+  flagships: read('api/v1/flagships.json'),
+  decisions: read('api/v1/evidence-decisions.json'),
+  problems: read('api/v1/problem-collections.json')
+};
 
 const rows = [];
 for (const test of suite.cases || []) {
@@ -63,6 +75,7 @@ for (const test of suite.cases || []) {
     },
     observed: {
       status: packet.status,
+      problem_slug: packet.route?.problem?.slug || null,
       topic_ids: [...routed],
       protocol_slugs: [...gotProtocols],
       decision_ids: [...gotDecisions]
@@ -79,6 +92,7 @@ const safetyRows = rows.filter((_, i) => suite.cases[i].safety_sensitive);
 const noAnswerRows = rows.filter((_, i) => suite.cases[i].mode === 'no-answer');
 const enRows = rows.filter(x => x.language === 'en');
 const ruRows = rows.filter(x => x.language === 'ru');
+const problemRoutedRows = rows.filter(row => row.observed.problem_slug);
 const summary = {
   cases: rows.length,
   passed: rows.filter(x => x.pass).length,
@@ -92,6 +106,7 @@ const summary = {
   no_answer_pct: pct(noAnswerRows.filter(x => x.gates.no_answer_pass && x.gates.status_pass).length, noAnswerRows.length),
   en_pass_pct: pct(enRows.filter(x => x.pass).length, enRows.length),
   ru_pass_pct: pct(ruRows.filter(x => x.pass).length, ruRows.length),
+  canonical_problem_routes_used: problemRoutedRows.length,
   failed_case_ids: rows.filter(x => !x.pass).map(x => x.id)
 };
 
@@ -100,7 +115,7 @@ const report = {
   dataset_version: data.flagships.dataset_version,
   source_suite_version: suite.suite_version,
   name: 'Brali Query Playground Parity Report',
-  description: 'Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. The browser core uses the same Flagship 100 hybrid retrieval contract; failures remain visible rather than being removed from the suite.',
+  description: 'Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. Query may route through the canonical Problem Discovery Graph before Topic/Protocol ranking; existing trust, provenance, safety, no-answer, and expected-result gates remain authoritative.',
   page_url: `${BASE}/for-ai/query/`,
   report_url: `${BASE}/for-ai/query/parity.json`,
   summary,
@@ -111,10 +126,10 @@ writeJson('for-ai/query/parity.json', report);
 const pagePath = path.join(ROOT, 'for-ai/query/index.html');
 let html = fs.readFileSync(pagePath, 'utf8');
 const failures = summary.failed_case_ids.length ? `<p><strong>Visible gaps:</strong> ${summary.failed_case_ids.map(x => `<code>${x}</code>`).join(', ')}</p>` : '<p><strong>Visible gaps:</strong> none in the maintained suite.</p>';
-const block = `<aside class="callout" data-query-parity-summary><h2>Browser parity against the maintained evaluation suite</h2><p><strong>${summary.passed}/${summary.cases}</strong> cases pass · Topic hit ${summary.topic_hit_pct}% · pinned Protocol hit ${summary.expected_protocol_hit_pct}% · Evidence Decision recall ${summary.evidence_decision_recall_pct}% · safety ${summary.safety_pct}% · RU ${summary.ru_pass_pct}%.</p>${failures}<p><a href="/for-ai/query/parity.json">Open machine-readable parity report</a></p></aside>`;
+const block = `<aside class="callout" data-query-parity-summary><h2>Browser parity against the maintained evaluation suite</h2><p><strong>${summary.passed}/${summary.cases}</strong> cases pass · Topic hit ${summary.topic_hit_pct}% · pinned Protocol hit ${summary.expected_protocol_hit_pct}% · Evidence Decision recall ${summary.evidence_decision_recall_pct}% · safety ${summary.safety_pct}% · RU ${summary.ru_pass_pct}% · canonical Problem route used in ${summary.canonical_problem_routes_used} cases.</p>${failures}<p><a href="/for-ai/query/parity.json">Open machine-readable parity report</a></p></aside>`;
 if (html.includes('data-query-parity-summary')) html = html.replace(/<aside class="callout" data-query-parity-summary>[\s\S]*?<\/aside>/, block);
 else html = html.replace('<section class="prose">', `${block}<section class="prose">`);
 fs.writeFileSync(pagePath, html);
 
-console.log(`Query parity: ${summary.passed}/${summary.cases} pass; Topic ${summary.topic_hit_pct}%; Protocol ${summary.expected_protocol_hit_pct}%; Decision ${summary.evidence_decision_recall_pct}%; safety ${summary.safety_pct}%; no-answer ${summary.no_answer_pct}%; RU ${summary.ru_pass_pct}%; gaps=${summary.failed_case_ids.join(',') || 'none'}.`);
-for (const row of rows.filter(x => !x.pass)) console.log(`QUERY_GAP ${row.id}: status=${row.observed.status}; topics=${row.observed.topic_ids.join('|') || '-'}; protocols=${row.observed.protocol_slugs.join('|') || '-'}; decisions=${row.observed.decision_ids.join('|') || '-'}; failed=${Object.entries(row.gates).filter(([,ok]) => !ok).map(([gate]) => gate).join('|')}`);
+console.log(`Query parity: ${summary.passed}/${summary.cases} pass; Topic ${summary.topic_hit_pct}%; Protocol ${summary.expected_protocol_hit_pct}%; Decision ${summary.evidence_decision_recall_pct}%; safety ${summary.safety_pct}%; no-answer ${summary.no_answer_pct}%; RU ${summary.ru_pass_pct}%; Problem routes=${summary.canonical_problem_routes_used}; gaps=${summary.failed_case_ids.join(',') || 'none'}.`);
+for (const row of rows.filter(x => !x.pass)) console.log(`QUERY_GAP ${row.id}: status=${row.observed.status}; problem=${row.observed.problem_slug || '-'}; topics=${row.observed.topic_ids.join('|') || '-'}; protocols=${row.observed.protocol_slugs.join('|') || '-'}; decisions=${row.observed.decision_ids.join('|') || '-'}; failed=${Object.entries(row.gates).filter(([,ok]) => !ok).map(([gate]) => gate).join('|')}`);

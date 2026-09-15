@@ -1,8 +1,10 @@
-# Brali — evidence-aware practical knowledge for humans and AI agents
+# Brali — an evidence-informed decision layer for humans and AI agents
 
-Official public site and knowledge repository for Brali, published at `https://brali-lifeos.github.io`.
+Official public site and knowledge repository for Brali, maintained by **MetalHatsCats** and published at `https://brali-lifeos.github.io`.
 
-Brali is not another advice blog. It is a versioned practical-knowledge layer: bounded protocols, explicit evidence states, stable identities, provenance, machine-readable data, Agent Skills, retrieval/evaluation artifacts, and integration surfaces. People can use the same knowledge in the browser; agents can retrieve it without stripping away trust metadata.
+Brali is not another advice blog. It is a versioned decision and practical-knowledge layer: start with a real problem, resolve it to a canonical problem when coverage is strong enough, inspect a bounded recommendation with explicit fit and evidence limits, then run or reuse the underlying protocol. Stable identities, provenance, machine-readable data, Agent Skills, retrieval/evaluation artifacts, and integration surfaces keep that contract inspectable.
+
+The human path is `Problem -> bounded recommendation -> Protocol -> action`. The machine path is `natural language -> canonical Problem -> trusted Protocol -> evidence/provenance`. Both are generated from the same guarded knowledge model rather than separate SEO and agent recommendation lists.
 
 Brali started as a feature-rich personal organizer. The maintained direction is now knowledge-first. The original LifeOS app remains an optional application layer rather than the product boundary.
 
@@ -12,7 +14,7 @@ For repository work from ChatGPT or another coding agent, start with [AGENTS.md]
 
 ### 1. Ask it in the browser
 
-Open the zero-install [Query Playground](https://brali-lifeos.github.io/for-ai/query/) and inspect the returned `Topic → Protocol → Evidence/provenance` packet before integrating anything.
+Open the zero-install [Query Playground](https://brali-lifeos.github.io/for-ai/query/). When Brali has strong enough coverage, the response exposes a canonical `Problem -> Protocol -> Evidence/provenance` path; otherwise no Problem route is invented. You can also inspect the small curated [Problem Discovery Graph](https://brali-lifeos.github.io/problems/) directly.
 
 ### 2. Preview or install the Brali router skill
 
@@ -32,6 +34,7 @@ Change `--agent` to another host supported by `gh skill`, such as `codex`, `curs
 
 ### 3. Read the trusted data directly
 
+- Problem Discovery Graph: `https://brali-lifeos.github.io/api/v1/problem-collections.json`
 - Trusted Protocol Feed: `https://brali-lifeos.github.io/life-os/datasets/protocols.json`
 - API index: `https://brali-lifeos.github.io/api/v1/index.json`
 - OpenAPI: `https://brali-lifeos.github.io/api/v1/openapi.json`
@@ -43,6 +46,7 @@ Change `--agent` to another host supported by `gh skill`, such as `codex`, `curs
 Brali publishes the source cases and generated evaluation report instead of presenting a vague "AI quality" score:
 
 - `/data/agent-evaluation-suite.json` — 50 practical evaluation cases.
+- `/data/problem-discovery-benchmark.json` — natural-language tests for the canonical Problem Discovery Graph.
 - `/for-ai/evaluation/` — human-readable results and limitations.
 - `/life-os/datasets/agent-evaluation.json` — machine-readable evaluation output.
 
@@ -51,26 +55,28 @@ The suite evaluates retrieval, evidence boundaries, provenance, safety/no-answer
 ## Why Brali is different
 
 - **Trust state travels with the content.** `reviewed`, `practical`, `pending-review`, and `restricted` are operational states, not decorative labels.
+- **Problem discovery is a graph, not a keyword-page generator.** Curated problem routes use explicit aliases and Gold-ready protocol edges with `when`, `why`, and `caveat` logic.
 - **Stable identity survives format changes.** Canonical IDs remain stable while titles, URLs, labels, and localized aliases can evolve.
-- **One knowledge model feeds many surfaces.** Human pages, JSON, API, Agent Skills, MCP, demos, and evaluation artifacts derive from the same canonical records.
+- **One knowledge model feeds many surfaces.** Human pages, JSON, API, Agent Skills, MCP, demos, evaluation artifacts, and Query routing derive from the same canonical records.
 - **Uncertainty is a valid output.** Pending or restricted material does not silently become a recommendation because an agent found it.
 - **Distribution is inspectable.** Skills, releases, datasets, citations, and evaluation cases are designed to be reused and checked outside the site.
 
 ## Knowledge model v2
 
-Preferred model: `Domain -> Topic -> Hack -> Protocol`, with optional Method and Lens metadata and separate Evidence/source provenance. Legacy Life Area and Growth Zone URLs remain a compatibility layer. `topic-pending` is explicit editorial debt, not permission to invent a Topic.
+Preferred model: `Domain -> Topic -> Hack -> Protocol`, with optional Method and Lens metadata and separate Evidence/source provenance. The Problem Discovery Graph is a decision overlay over trusted Protocols; it does not replace their canonical identity. Legacy Life Area and Growth Zone URLs remain a compatibility layer. `topic-pending` is explicit editorial debt, not permission to invent a Topic.
 
-Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricted`. Only `reviewed` and `practical` entries qualify for normal trusted retrieval.
+Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricted`. Only `reviewed` and `practical` entries qualify for normal trusted retrieval, and curated Problem edges additionally require a Gold-ready manual review.
 
 ## Main entry points
 
+- `/problems/` — small canonical problem-first discovery graph with explicit fit and caveat logic.
 - `/ontology/` and `/ontology/coverage/` — semantic model and migration coverage.
 - `/life-os/` and `/life-os/datasets/` — public library and machine-readable data.
 - `/research/` — research notes and discovery pipeline.
 - `/agents/`, `/contracts/`, `/skills/` — guarded agent/editorial workflows.
 - `/skill-packs/` — complete one-skill-per-hack Agent Skills library with trust modes.
 - `/for-ai/` — guidance for AI tools and developers.
-- `/for-ai/query/` — zero-install browser query that returns transparent Topic → Protocol → Evidence/provenance packets.
+- `/for-ai/query/` — zero-install browser query that can resolve natural language through Problem -> Topic -> Protocol -> Evidence/provenance.
 - `/for-ai/evaluation/` — reproducible retrieval/evidence evaluation suite.
 - `/for-ai/demos/` — deterministic reference agent scenarios.
 - `/for-ai/integrations/` — copy-paste OpenAI API, Claude Code, and Cursor integration kits.
@@ -80,9 +86,9 @@ Evidence states remain `reviewed`, `practical`, `pending-review`, and `restricte
 
 ## Stable identity and integrations
 
-Generated entities expose canonical IDs as `brali:<kind>:<local-id>`. Titles, URLs, localized labels, and historical IDs are aliases around that identity. See `docs/DATA_VERSIONING.md`.
+Generated entities expose canonical IDs as `brali:<kind>:<local-id>`, including `brali:problem:<slug>` for curated discovery routes. Titles, URLs, localized labels, and historical IDs are aliases around canonical identity. See `docs/DATA_VERSIONING.md`.
 
-`npm run build` generates a canonical dataset manifest with SHA-256 checksums, identity and multilingual alias registries, an actionable ontology migration queue, evidence-debt metrics, retrieval/evaluation outputs, and `/api/v1/` files for Topics, Hacks, Protocols, Evidence, search, identity, demos, integrations, manifest, and OpenAPI.
+`npm run build` generates a canonical dataset manifest with SHA-256 checksums, identity and multilingual alias registries, an actionable ontology migration queue, evidence-debt metrics, Problem Discovery and retrieval/evaluation outputs, and `/api/v1/` files for Topics, Hacks, Protocols, Evidence, search, identity, demos, integrations, manifest, and OpenAPI.
 
 The optional read-only MCP server in `mcp/` exposes `search_knowledge`, `get_hack`, `get_protocol`, `get_evidence`, `list_topics`, and `get_related` over the same generated data. It is currently a **local stdio server**, not a hosted remote MCP service. Cursor and Claude Code starter configs use that local server. The OpenAI example uses the hosted static Brali API and a bounded answer packet instead of pretending a hosted Brali MCP endpoint exists.
 
@@ -97,6 +103,10 @@ Start with `/for-ai/query/` to inspect the live retrieval contract with no setup
 5. Protocol Builder and Taxonomy Curator preserve canonical identity and legacy URL compatibility.
 
 The scout may find weak, negative, null, or contradictory results. It may not promote search metadata directly into `reviewed` content.
+
+## Search growth rule
+
+Brali does not use raw page count as an SEO target. Search Console measurement is segmented into trusted current guidance, problem/question discovery, Topic Hubs, research/data/AI, review-required neutral records, legacy/archive, and other pages. High-impression unmatched or weakly matched queries are prioritization input; they are not permission to create thin keyword pages. Large index-policy expansion remains gated on a real Search Console baseline and repeated evidence.
 
 ## Local build
 
@@ -116,13 +126,14 @@ npm run demos:check
 npm run adoption:check
 npm run query:check
 npm run adoption:openai -- "How can I remember what I study?"
+node scripts/build-search-console-measurement.mjs --config-check
 npm run release:data -- --version 1.0.0
 npm run release:check -- --version 1.0.0
 ```
 
 `adoption:openai` prints a request preview when `OPENAI_API_KEY` is absent. With a key it sends the bounded Brali packet to the OpenAI Responses API.
 
-`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, Agent Skills, agent evaluation/reference demos, zero-install query behavior, adoption/citation contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
+`npm run check` validates ontology and legacy mappings, source provenance, evidence/indexing rules, canonical identities, aliases, manifest checksums, API surfaces, Agent Skills, agent evaluation/reference demos, zero-install query behavior, adoption/citation contracts, canonical Problem Discovery, Search Console measurement contracts, MCP syntax, research-provider contracts, release tooling syntax, and the existing strict content audit.
 
 ## Releases and citation
 
@@ -130,7 +141,7 @@ The first stable dataset baseline is `1.0.0`, using the immutable tag convention
 
 The `Package Brali data release` workflow rebuilds and checks the repository, packages every canonical dataset plus the complete API v1 surface, then verifies the release manifest and SHA-256 checksums before publishing tag assets. The bundle also includes `CITATION.cff`, license/licensing terms, evidence/source policies, versioning rules, and version-specific release notes. Consumers that need reproducibility should pin a release instead of `main`.
 
-When Brali materially informs a downstream answer, keep the canonical record URL/ID and evidence state. Dataset-level or research use should cite **Dzmitryi Kharlanau, Brali Practical Knowledge Library**, together with the pinned `data-v*` release. See `docs/CITATION_AND_ATTRIBUTION.md` and `/cite/`.
+When Brali materially informs a downstream answer, keep the canonical record URL/ID and evidence state. Dataset-level or research use should cite **MetalHatsCats, Brali Practical Knowledge Library**, together with the pinned `data-v*` release. See `docs/CITATION_AND_ATTRIBUTION.md` and `/cite/`.
 
 ## Contributing and partnerships
 

@@ -17,3 +17,40 @@ jobs:
       inspection_mode: ${{ github.event_name == 'schedule' && 'rotate' || inputs.inspection_mode }}
     secrets:
       google_search_console_service_account: ${{ secrets.GOOGLE_SEARCH_CONSOLE_SERVICE_ACCOUNT }}
+
+  brali-measurement:
+    needs: google-search
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Brali measurement contract
+        uses: actions/checkout@v7
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+
+      - name: Download current Google Search report
+        uses: actions/download-artifact@v4
+        with:
+          name: google-search-report
+          path: reports/seo/google-search
+
+      - name: Build Brali segmented search measurement
+        run: |
+          node scripts/build-search-console-measurement.mjs --config-check
+          node scripts/build-search-console-measurement.mjs
+
+      - name: Add Brali measurement to workflow summary
+        run: cat reports/seo/google-search/brali-search-measurement.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload Brali search measurement
+        uses: actions/upload-artifact@v4
+        with:
+          name: brali-search-measurement
+          path: |
+            reports/seo/google-search/brali-search-measurement.json
+            reports/seo/google-search/brali-search-measurement.md
+          if-no-files-found: error
+          retention-days: 90

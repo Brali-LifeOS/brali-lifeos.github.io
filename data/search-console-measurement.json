@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-09-15",
+  "purpose": "Measure whether Brali's trusted and problem-first surfaces are gaining useful search discovery before expanding the indexable corpus again.",
+  "baseline_gate": "Do not use raw sitemap size as a growth target and do not start another broad promotion/index-policy wave until a real Search Console baseline has been captured under this segmentation.",
+  "segments": [
+    {"id":"trusted-current-guidance","label":"Trusted current guidance","definition":"Canonical /life-os/ protocol records present in the reviewed/practical Protocol Feed."},
+    {"id":"problem-question","label":"Problem and question discovery","definition":"Curated /problems/ and /questions/ surfaces that map human intent to Brali knowledge."},
+    {"id":"topic-hubs","label":"Topic hubs","definition":"Canonical /topics/ discovery surfaces."},
+    {"id":"research-data-ai","label":"Research, data and AI","definition":"Research, For-AI, API, dataset, agent, skill and benchmark surfaces intended for evidence inspection or machine reuse."},
+    {"id":"review-required-neutral","label":"Review-required neutral records","definition":"Other /life-os/<slug>/ records that are not in the current trusted Protocol Feed. Search discovery does not make them recommendable."},
+    {"id":"legacy-archive","label":"Legacy and archive surfaces","definition":"Compatibility, archived, or explicitly legacy discovery surfaces."},
+    {"id":"other","label":"Other indexable surfaces","definition":"Pages that do not fit a maintained Brali measurement segment yet; inspect before assigning conclusions."}
+  ],
+  "opportunity_rules": {
+    "problem_match_threshold": 12,
+    "minimum_impressions_in_top_query_sample": 1,
+    "rule": "Rank high-impression queries from the Search Console top-query sample that do not resolve to a canonical Problem Discovery Graph entry. Treat them as review/prioritization input, not proof that a new page should be created."
+  },
+  "interpretation_limits": [
+    "Search Console top page and top query arrays are samples from the configured row limit, not complete zero-filled inventories.",
+    "Clicks, impressions, CTR and average position are observational search metrics and do not prove that a repository change caused a ranking movement.",
+    "An indexed review-required record remains non-recommendable until its evidence state changes through Brali's review workflow.",
+    "A query with impressions is a demand signal, not permission to generate a thin keyword page or weaken evidence gates.",
+    "Segment comparisons should be repeated over time with the same definitions before making index-policy decisions."
+  ],
+  "decision_options": [
+    "retain",
+    "narrow index eligibility",
+    "promote after evidence review",
+    "consolidate or redirect",
+    "noindex"
+  ]
+}

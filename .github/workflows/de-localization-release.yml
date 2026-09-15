@@ -1,4 +1,4 @@
-name: Interface localization release guards
+name: Localization release guards
 
 on:
   push:
@@ -7,10 +7,10 @@ on:
     paths:
       - 'package.json'
       - '.arwp/localization.json'
-      - 'data/localization/de/**'
-      - 'data/localization/ru/**'
+      - 'data/localization/**'
       - 'data/life-os-content/**'
-      - 'data/life-os-content-additions.json'
+      - 'data/life-os-content-additions*.json'
+      - 'data/life-os-zones.json'
       - 'scripts/build-interface-locales.mjs'
       - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
@@ -28,10 +28,10 @@ on:
     paths:
       - 'package.json'
       - '.arwp/localization.json'
-      - 'data/localization/de/**'
-      - 'data/localization/ru/**'
+      - 'data/localization/**'
       - 'data/life-os-content/**'
-      - 'data/life-os-content-additions.json'
+      - 'data/life-os-content-additions*.json'
+      - 'data/life-os-zones.json'
       - 'scripts/build-interface-locales.mjs'
       - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'

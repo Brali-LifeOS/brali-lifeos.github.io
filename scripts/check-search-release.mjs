@@ -122,4 +122,6 @@ try {
 
 await import('./check-rss-feed.mjs');
 await access(join(root, "index.html"));
-console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt, AI profile and RSS subscription surface.`);
+process.argv.push("--final");
+await import("./check-indexability-contract.mjs");
+console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt, AI profile, RSS subscription surface and final crawl/indexability graph.`);

@@ -1,9 +1,8 @@
 import { access } from "node:fs/promises";
 import path from "node:path";
 
-const REFERENCE_GENERATOR = "reference-v1";
 const GENERATOR_BUILD_STEPS = new Map([
-  [REFERENCE_GENERATOR, [
+  ["reference-v1", [
     "scripts/build-localizations.mjs",
     "scripts/build-ru-primary-pages.mjs",
     "scripts/build-ru-library.mjs",
@@ -62,10 +61,9 @@ function humanInterfaceLocales(profile) {
   return (profile.locales || []).filter((locale) => locale.role === "human-interface");
 }
 
-function generatorFor(profile, locale) {
-  if (locale.generator) return locale.generator;
-  if (locale.code === profile.releaseContract?.referenceImplementation) return REFERENCE_GENERATOR;
-  throw new Error(`[localization-pipeline] ${locale.code} has no generator; declare one or make it the explicit reference implementation`);
+function generatorFor(locale) {
+  if (typeof locale.generator === "string" && locale.generator.trim()) return locale.generator;
+  throw new Error(`[localization-pipeline] ${locale.code} has no explicit generator`);
 }
 
 function step(script) {
@@ -73,7 +71,7 @@ function step(script) {
 }
 
 export function getLocalizationBuildSteps(profile, { withConsent = false } = {}) {
-  const generators = unique(humanInterfaceLocales(profile).map((locale) => generatorFor(profile, locale)));
+  const generators = unique(humanInterfaceLocales(profile).map(generatorFor));
   const adapterSteps = [];
   for (const generator of generators) {
     const scripts = GENERATOR_BUILD_STEPS.get(generator);
@@ -116,7 +114,7 @@ export async function validateLocalizationPipeline(root, profile) {
   const scripts = new Set([...allBuildScripts, ...coveredChecks, ...releaseOnly]);
 
   for (const locale of humanInterfaceLocales(profile)) {
-    generatorFor(profile, locale);
+    generatorFor(locale);
     for (const gate of locale.requiredGates || []) {
       if (!coveredChecks.has(gate) && !releaseOnly.has(gate)) {
         throw new Error(`[localization-pipeline] ${locale.code}.requiredGates includes ${gate}, but the deterministic or release pipeline does not execute it`);

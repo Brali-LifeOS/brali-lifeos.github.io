@@ -1,6 +1,13 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// These final-surface generators intentionally run after the core site, brand shell,
+// discovery and localization builds, but before analytics walks the HTML corpus.
+// New review/sponsorship pages therefore receive the same consent gate as every
+// other public page without hand-editing generated output.
+await import("./build-hack-lifecycle.mjs");
+await import("./apply-sponsorships.mjs");
+
 const containerId = "GTM-5TJVLJG9";
 const marker = "brali-consent-analytics";
 const ignored = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);

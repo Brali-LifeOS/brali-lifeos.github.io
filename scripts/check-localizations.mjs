@@ -9,7 +9,7 @@ const readJson = async (relative) => JSON.parse(await readFile(path.join(root, r
 const fail = (message) => { throw new Error(`[localization] ${message}`); };
 const assert = (condition, message) => { if (!condition) fail(message); };
 
-const [profile, glossary, debt, site, localized, canonical, manifest, libraryConfig] = await Promise.all([
+const [profile, glossary, debtDocument, site, localized, canonical, manifest, libraryConfig] = await Promise.all([
   readJson(".arwp/localization.json"),
   readJson("data/localization/glossary.json"),
   readJson("data/localization/quality-debt.json"),
@@ -38,8 +38,10 @@ for (const id of requiredConcepts) {
   assert(concept.preferred === concept.preferred.normalize("NFC"), `Russian glossary concept ${id} is not NFC`);
 }
 
-assert(debt.locale === "ru", "localization debt ledger must remain Russian");
-assert(debt.items.some((item) => item.id === "ru-rendered-narrow-layout-review"), "rendered narrow-layout debt must remain explicit until observed");
+const ruDebt = debtDocument?.locales?.ru || (debtDocument?.locale === "ru" ? debtDocument : null);
+assert(ruDebt, "shared localization debt ledger must contain a Russian entry");
+assert(ruDebt.status === ruProfile.status, `Russian debt status ${ruDebt.status} must match registry status ${ruProfile.status}`);
+assert(ruDebt.items?.some((item) => item.id === "ru-rendered-narrow-layout-review"), "Russian rendered narrow-layout review history must remain auditable");
 assert(libraryConfig.issue === 210, "full-corpus expansion must stay linked to issue #210");
 
 const canonicalize = (value) => {
@@ -101,7 +103,7 @@ for (const route of baseRoutes) assert(sitemap.includes(`<loc>${base}${route.ru}
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
 assert(robots.includes(`Sitemap: ${base}/ru/sitemap.xml`), "robots.txt must advertise Russian sitemap");
 const llms = await readFile(path.join(root, "ru", "llms.txt"), "utf8");
-for (const token of ["Locale: ru", "Role: human-interface", "Language tag: ru", "Canonical locale: en", "Status: reviewed-partial", "Search publication: limited", "No silent fallback: true", `Coverage mode: ${libraryConfig.coverage_mode}`]) {
+for (const token of ["Locale: ru", "Role: human-interface", "Language tag: ru", "Canonical locale: en", `Status: ${ruProfile.status}`, `Search publication: ${ruProfile.searchPublication}`, "No silent fallback: true", `Coverage mode: ${libraryConfig.coverage_mode}`]) {
   assert(llms.includes(token), `Russian llms.txt missing ${token}`);
 }
 if (libraryConfig.coverage_mode === "batched") assert(llms.includes("расширяется проверенными пакетами"), "batched coverage must be explicit in Russian llms.txt");

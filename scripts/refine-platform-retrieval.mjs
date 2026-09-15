@@ -14,9 +14,11 @@ const slug = value => String(value || '').toLowerCase().replace(/^brali:/, '').r
 const canonicalId = (kind, local) => `brali:${kind}:${slug(local)}`;
 const list = (doc, key) => Array.isArray(doc) ? doc : Array.isArray(doc?.[key]) ? doc[key] : Array.isArray(doc?.entries) ? doc.entries : [];
 const clean = value => String(value || '').replace(/\s+/g, ' ').trim();
+const localProtocolId = value => clean(value).replace(/^brali:protocol:/, '').replace(/^brali:/, '');
 
 const config = read('data/platform.json');
 const protocolsDoc = read('life-os/datasets/protocols.json');
+const identityDoc = read('life-os/datasets/identity-aliases.json');
 const searchPath = `api/${config.api_version}/search.json`;
 const searchDoc = read(searchPath);
 const benchmarkConfig = read('data/retrieval-benchmark.json');
@@ -25,6 +27,13 @@ const protocolById = new Map();
 for (const protocol of list(protocolsDoc, 'protocols')) {
   const local = protocol.protocol_id || protocol.id || protocol.slug || protocol.url;
   protocolById.set(canonicalId('protocol', local), protocol);
+}
+const aliasesByProtocol = new Map();
+for (const alias of identityDoc.aliases || []) {
+  if (alias.kind !== 'protocol') continue;
+  const id = String(alias.canonical_id || '');
+  if (!aliasesByProtocol.has(id)) aliasesByProtocol.set(id, []);
+  aliasesByProtocol.get(id).push(alias.value);
 }
 
 const semanticText = ontology => [
@@ -37,20 +46,23 @@ for (const item of searchDoc.items ?? []) {
   if (item.kind !== 'protocol') continue;
   const protocol = protocolById.get(item.id);
   if (!protocol) continue;
+  const protocolAliases = aliasesByProtocol.get(item.id) || [];
   item.search_text = [
     protocol.title,
     protocol.description,
     protocol.action,
     protocol.check_in,
+    localProtocolId(protocol.slug || protocol.protocol_id || protocol.id),
+    ...protocolAliases,
     semanticText(protocol.ontology),
   ].map(clean).filter(Boolean).join(' ');
   refinedProtocols += 1;
 }
 searchDoc.retrieval_policy = {
-  version: 2,
-  lexical_fields: ['title', 'description', 'action', 'check_in', 'ontology.domains', 'ontology.topics'],
+  version: 3,
+  lexical_fields: ['title', 'description', 'action', 'check_in', 'canonical protocol slug', 'protocol aliases', 'ontology.domains', 'ontology.topics'],
   excluded_from_free_text: ['ontology.methods', 'ontology.lenses', 'ontology.legacy'],
-  reason: 'Legacy Method/Lens labels and compatibility navigation are structured metadata, not unrestricted lexical evidence. Excluding them prevents historical labels such as Quantum from matching unrelated scientific queries.',
+  reason: 'Canonical protocol identity and reviewed aliases are lexical evidence for direct protocol lookup. Legacy Method/Lens labels and compatibility navigation remain structured metadata so historical labels cannot create unrelated scientific matches.',
 };
 write(searchPath, searchDoc);
 
@@ -99,7 +111,7 @@ const benchmark = {
   schema_version: 2,
   dataset_version: config.dataset_version,
   k: benchmarkConfig.k || 5,
-  ranking_policy: 'Lexical score first; canonical Topic wins equal-score ties over protocols. Protocol free text excludes legacy compatibility metadata and legacy Method/Lens labels.',
+  ranking_policy: 'Lexical score first; canonical Topic wins equal-score ties over protocols. Protocol free text includes canonical protocol identity and reviewed aliases while excluding legacy compatibility metadata and legacy Method/Lens labels.',
   summary: {
     cases: scored,
     recall_at_k: scored ? Number((recalls / scored).toFixed(4)) : 1,

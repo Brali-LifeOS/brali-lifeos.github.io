@@ -10,6 +10,7 @@ const readJson = async (relative) => JSON.parse(await readFile(path.join(root, r
 const fail = (message) => { throw new Error(`[ru-library] ${message}`); };
 const assert = (condition, message) => { if (!condition) fail(message); };
 const cyrillic = /[А-Яа-яЁё]/;
+const robotsNoindex = /<meta\b(?=[^>]*name=["']robots["'])[^>]*content=["'][^"']*(?:noindex|none)[^"']*["'][^>]*>/i;
 
 const [config, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn, flagships, manifest, machine] = await Promise.all([
   readJson("data/localization/ru/library-manifest.json"),
@@ -116,6 +117,8 @@ for (const ruPath of requiredPaths) {
   assert(html.includes(`hreflang="en" href="${route.canonical_url}"`), `${ruPath} missing en hreflang`);
   assert(html.includes('"inLanguage":"ru"'), `${ruPath} structured data missing inLanguage=ru`);
   assert(!html.includes(">Skip to content<") && !html.includes(">Explore<"), `${ruPath} leaked English shell UI`);
+  assert(typeof route.index_eligible === "boolean", `${ruPath} missing route-level index_eligible decision`);
+  assert(route.index_eligible ? !robotsNoindex.test(html) : robotsNoindex.test(html), `${ruPath} robots state disagrees with canonical search eligibility`);
 }
 
 for (const slug of unionSlugs) {
@@ -128,7 +131,21 @@ for (const slug of unionSlugs) {
 }
 
 const sitemap = await readFile(path.join(root, "ru", "sitemap.xml"), "utf8");
-for (const ruPath of requiredPaths) assert(sitemap.includes(`<loc>${base}${ruPath}</loc>`), `Russian sitemap missing ${ruPath}`);
+let eligibleRoutes = 0;
+let withheldRoutes = 0;
+for (const ruPath of requiredPaths) {
+  const route = routeByPath.get(ruPath);
+  const inSitemap = sitemap.includes(`<loc>${base}${ruPath}</loc>`);
+  if (route.index_eligible) {
+    eligibleRoutes += 1;
+    assert(inSitemap, `Russian sitemap missing index-eligible ${ruPath}`);
+  } else {
+    withheldRoutes += 1;
+    assert(!inSitemap, `Russian sitemap leaked canonically withheld ${ruPath}`);
+  }
+}
+assert(manifest.coverage?.indexability?.eligible >= eligibleRoutes, "manifest eligible coverage is lower than required Russian library surface");
+assert(manifest.coverage?.indexability?.withheld >= withheldRoutes, "manifest withheld coverage is lower than required Russian library surface");
 
 const llms = await readFile(path.join(root, "ru", "llms.txt"), "utf8");
 assert(llms.includes(`${base}/ru/library.json`), "Russian llms.txt must expose the machine-readable localized library");
@@ -137,4 +154,4 @@ if (config.coverage_mode === "exact") {
   assert(!llms.includes("Остальная библиотека НЕ считается локализованной"), "exact coverage cannot retain the old partial-coverage disclaimer");
 }
 
-console.log(`Russian full-corpus quality gate passed: ${unionSlugs.size}/${canonicalIndex.length} entries; ${zonesEn.length} zones; mode=${config.coverage_mode}.`);
+console.log(`Russian full-corpus quality gate passed: ${unionSlugs.size}/${canonicalIndex.length} entries; ${zonesEn.length} zones; mode=${config.coverage_mode}; required-indexable=${eligibleRoutes}; required-withheld=${withheldRoutes}.`);

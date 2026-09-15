@@ -13,7 +13,13 @@ const checks = [
   ["scripts/check-interface-locales.mjs"],
   ["scripts/check-localized-consent.mjs"],
   ["scripts/check-localization-cluster.mjs"],
+  // Other site builders (for example Brali Bench) can legitimately add canonical
+  // EN routes after the first localization build. Re-derive the generated search
+  // graph from the current sitemap before validating the final locale artifacts;
+  // do not let indexability.json become a second manually synchronized URL list.
+  ["scripts/build-indexability-registry.mjs"],
   ["scripts/check-pages-localization-artifact.mjs"],
+  ["scripts/check-indexability-contract.mjs"],
   ["scripts/check-localization-faults.mjs"],
 ];
 

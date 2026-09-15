@@ -62,15 +62,21 @@ function breadcrumb(rel, html) {
   const current = plainText(h1[1]);
   const shortCurrent = current.length > 58 ? `${current.slice(0, 55).trim()}…` : current;
   const root = directories[0];
-  const section = {
+  const explicitSection = {
     'life-os': ['Explore', '/life-os/'],
     topics: ['Topics', '/topics/'],
     research: ['Research', '/research/'],
     'for-ai': ['For AI', '/for-ai/'],
     problems: ['Problems', '/problems/'],
     evidence: ['Evidence', '/evidence/']
-  }[root] || [root.replace(/-/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase()), `/${root}/`];
-  return `<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><a href="${section[1]}">${section[0]}</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i><span aria-current="page" title="${escapeAttribute(current)}">${escapeAttribute(shortCurrent)}</span></nav>`;
+  }[root];
+  const sectionLabel = explicitSection?.[0] || root.replace(/-/g, ' ').replace(/\b\w/g, letter => letter.toUpperCase());
+  const candidateHref = explicitSection?.[1] || `/${root}/`;
+  const candidateFile = path.join(ROOT, root, 'index.html');
+  const sectionCrumb = explicitSection || fs.existsSync(candidateFile)
+    ? `<a href="${candidateHref}">${sectionLabel}</a>`
+    : `<span>${sectionLabel}</span>`;
+  return `<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><i class="ri-arrow-right-s-line" aria-hidden="true"></i>${sectionCrumb}<i class="ri-arrow-right-s-line" aria-hidden="true"></i><span aria-current="page" title="${escapeAttribute(current)}">${escapeAttribute(shortCurrent)}</span></nav>`;
 }
 
 function markLongHeadings(html, isHomepage) {

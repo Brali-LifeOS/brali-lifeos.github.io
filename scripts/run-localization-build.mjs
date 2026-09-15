@@ -8,8 +8,15 @@ const steps = [
   "scripts/patch-ru-discovery.mjs",
   "scripts/build-interface-locales.mjs",
   "scripts/finalize-interface-locales.mjs",
-  ...(withConsent ? ["scripts/inject-consent-analytics.mjs"] : []),
+  ...(withConsent ? [
+    "scripts/inject-consent-analytics.mjs",
+    // Consent generation also builds the governed lifecycle/trust surfaces. Publish
+    // their canonical discovery entries before constructing the indexability graph;
+    // the later workflow finalizer remains an idempotent exact-artifact recheck.
+    "scripts/finalize-hack-lifecycle-discovery.mjs",
+  ] : []),
   "scripts/finalize-localization-cluster.mjs",
+  "scripts/build-indexability-registry.mjs",
 ];
 
 for (const script of steps) {

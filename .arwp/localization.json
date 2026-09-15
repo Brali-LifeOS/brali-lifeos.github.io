@@ -50,6 +50,7 @@
         "scripts/check-ru-primary-pages.mjs",
         "scripts/check-localization-cluster.mjs",
         "scripts/check-pages-localization-artifact.mjs",
+        "scripts/check-indexability-contract.mjs",
         "scripts/check-browser-localizations.mjs",
         "scripts/check-live-localizations.mjs"
       ],
@@ -76,6 +77,7 @@
         "scripts/check-interface-locales.mjs",
         "scripts/check-localization-cluster.mjs",
         "scripts/check-pages-localization-artifact.mjs",
+        "scripts/check-indexability-contract.mjs",
         "scripts/check-browser-localizations.mjs",
         "scripts/check-live-localizations.mjs"
       ],
@@ -116,7 +118,7 @@
       "canonicalSource": "data/life-os-content/index.json",
       "localePattern": "data/localization/{locale}/library/*.json",
       "stableIdField": "slug",
-      "membership": "subset",
+      "membership": "exact",
       "requiredFields": ["slug", "title", "subtitle", "description", "quality_state", "source"],
       "valueFields": ["title", "subtitle", "description", "action", "check_in", "boundary", "alternative"],
       "requiredForRoles": ["human-interface"],
@@ -216,7 +218,7 @@
     {"paths":["partners/index.html"],"surfaces":["partners-hub","seo-search"]},
     {"paths":["for-ai/index.html"],"surfaces":["ai-developer-hub","seo-search","ai-agent"]},
     {"paths":["data/localization/**"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]},
-    {"paths":["scripts/build-localizations.mjs","scripts/build-ru-primary-pages.mjs","scripts/build-ru-library.mjs","scripts/patch-ru-discovery.mjs","scripts/build-interface-locales.mjs","scripts/finalize-interface-locales.mjs","scripts/finalize-localization-cluster.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs","scripts/check-ru-primary-pages.mjs","scripts/check-interface-locale-sources.mjs","scripts/check-interface-locales.mjs","scripts/check-de-library-contract.mjs","scripts/audit-ru-language.mjs","scripts/audit-de-language.mjs","scripts/audit-de-library-language.mjs","scripts/check-localization-cluster.mjs","scripts/check-pages-localization-artifact.mjs","scripts/check-live-localization-cluster.mjs","scripts/check-localization-contract.mjs","scripts/check-localization-faults.mjs","scripts/check-browser-localizations.mjs","scripts/check-live-localizations.mjs","scripts/run-localization-release-gates.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]}
+    {"paths":["scripts/build-localizations.mjs","scripts/build-ru-primary-pages.mjs","scripts/build-ru-library.mjs","scripts/patch-ru-discovery.mjs","scripts/build-interface-locales.mjs","scripts/finalize-interface-locales.mjs","scripts/finalize-localization-cluster.mjs","scripts/build-indexability-registry.mjs","scripts/check-indexability-contract.mjs","scripts/normalize-search-sitemap.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs","scripts/check-ru-primary-pages.mjs","scripts/check-interface-locale-sources.mjs","scripts/check-interface-locales.mjs","scripts/check-de-library-contract.mjs","scripts/audit-ru-language.mjs","scripts/audit-de-language.mjs","scripts/audit-de-library-language.mjs","scripts/check-localization-cluster.mjs","scripts/check-pages-localization-artifact.mjs","scripts/check-live-localization-cluster.mjs","scripts/check-localization-contract.mjs","scripts/check-localization-faults.mjs","scripts/check-browser-localizations.mjs","scripts/check-live-localizations.mjs","scripts/run-localization-release-gates.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]}
   ],
   "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published locale scope. It does not by itself prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion. Localization quality state is tracked separately from canonical evidence state."
 }

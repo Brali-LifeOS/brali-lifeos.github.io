@@ -64,6 +64,8 @@ jobs:
           node --check scripts/build-interface-locales.mjs
           node --check scripts/finalize-interface-locales.mjs
           node --check scripts/finalize-localization-cluster.mjs
+          node --check scripts/build-indexability-registry.mjs
+          node --check scripts/check-indexability-contract.mjs
           node --check scripts/check-interface-locale-sources.mjs
           node --check scripts/check-interface-locales.mjs
           node --check scripts/check-de-library-contract.mjs
@@ -152,7 +154,7 @@ jobs:
           test -s life-os/datasets/research-lifecycle-watchlist.json
           npm run lifecycle:check
       - name: Gate exact final localization Pages artifact
-        run: npm run localization:cluster && npm run localization:artifact
+        run: npm run localization:cluster && npm run localization:artifact && node scripts/check-indexability-contract.mjs
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact

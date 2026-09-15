@@ -28,6 +28,14 @@ for (const entry of localeEntries) {
   const manifestFile = path.join(root, locale, "manifest.json");
   if (!(await exists(manifestFile))) continue;
   const manifest = JSON.parse(await readFile(manifestFile, "utf8"));
+  if (manifest.locale !== locale) fail(`${locale}/manifest.json locale drift`);
+  if (manifest.role !== entry.role) fail(`${locale}/manifest.json role drift: expected ${entry.role}, got ${manifest.role ?? "missing"}`);
+  if (manifest.no_silent_fallback !== true) fail(`${locale}/manifest.json must forbid silent fallback`);
+  if (manifest.coverage?.flagships && manifest.coverage?.flagship_protocols) {
+    if (JSON.stringify(manifest.coverage.flagships) !== JSON.stringify(manifest.coverage.flagship_protocols)) {
+      fail(`${locale}/manifest.json flagship compatibility alias drift`);
+    }
+  }
   manifests.set(locale, manifest);
   routeMaps.set(locale, new Map((manifest.routes || []).map((route) => [route.canonical_path, route])));
 }
@@ -99,6 +107,7 @@ for (const entry of localeEntries) {
   }
   const llms = await readFile(path.join(root, locale, "llms.txt"), "utf8");
   if (!llms.includes(`Locale: ${locale}`)) fail(`${locale}/llms.txt missing locale declaration`);
+  if (!llms.includes(`Role: ${entry.role}`)) fail(`${locale}/llms.txt missing role declaration`);
   if (!llms.includes(`Canonical locale: ${sourceLocale}`)) fail(`${locale}/llms.txt missing canonical locale declaration`);
   if (!llms.includes("No silent fallback: true")) fail(`${locale}/llms.txt missing no-silent-fallback declaration`);
 }

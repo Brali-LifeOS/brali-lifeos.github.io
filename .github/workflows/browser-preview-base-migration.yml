@@ -1,0 +1,41 @@
+name: Browser preview base migration
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/migrate-browser-preview-base.mjs'
+      - '.github/workflows/browser-preview-base-migration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: agent/de-localization
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Separate preview navigation base from canonical base
+        run: node scripts/migrate-browser-preview-base.mjs
+      - name: Verify browser checker syntax
+        run: node --check scripts/check-browser-localizations.mjs
+      - name: Commit browser checker migration
+        run: |
+          if git diff --quiet -- scripts/check-browser-localizations.mjs; then
+            echo 'Browser checker already migrated.'
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/check-browser-localizations.mjs
+          git commit -m "Support local browser preview with production canonicals"
+          git push origin HEAD:agent/de-localization

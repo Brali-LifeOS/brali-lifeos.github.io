@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
+import { loadReviewRegistry } from "./lib/review-registry.mjs";
 
 const root = process.cwd();
 const args = new Set(process.argv.slice(2));
@@ -9,17 +10,23 @@ const requireComplete = args.has("--require-complete");
 const readJson = (relative) => JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));
 const text = (value = "") => String(value).replace(/\s+/g, " ").trim();
 
-const decisions = readJson("data/evidence-decisions.json");
-const index = readJson("data/life-os-content/index.json");
+const { evidenceDecisions: decisions } = loadReviewRegistry(root);
+const baseIndex = readJson("data/life-os-content/index.json");
+const additions = readJson("data/life-os-content-additions.json");
 const registry = readJson("data/hack-identity-migrations.json");
 const hacks = readJson("life-os/datasets/hacks.json");
 
-if (decisions.schema_version !== 1 || !Array.isArray(decisions.entries)) throw new Error("Evidence Decisions must use schema_version 1 with entries[]");
-if (!Array.isArray(index)) throw new Error("Canonical content index must be an array");
+if (decisions.schema_version !== 1 || !Array.isArray(decisions.entries)) throw new Error("Effective Evidence Decisions must use schema_version 1 with entries[]");
+if (!Array.isArray(baseIndex)) throw new Error("Canonical content index must be an array");
+if (additions.schema_version !== 1 || !Array.isArray(additions.entries)) throw new Error("Content additions registry must use schema_version 1 with entries[]");
 if (registry.schema_version !== 1 || !Array.isArray(registry.entries)) throw new Error("Hack identity migration registry must use schema_version 1 with entries[]");
 if (!Array.isArray(hacks)) throw new Error("life-os/datasets/hacks.json must be an array");
 
-const currentSlugs = new Set(index.map((entry) => entry.slug));
+const indexBySlug = new Map(baseIndex.map((entry) => [entry.slug, entry]));
+for (const entry of additions.entries) indexBySlug.set(entry.slug, entry);
+const index = [...indexBySlug.values()];
+const currentSlugs = new Set(indexBySlug.keys());
+
 const historical = new Map();
 for (const decision of decisions.entries) {
   if (decision.source_reviewed !== true) continue;

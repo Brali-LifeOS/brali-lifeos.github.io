@@ -33,9 +33,9 @@ for (const entry of await readdir(localizationRoot, { withFileTypes: true })) {
 for (const locale of byCode.values()) {
   if (locale.role !== "human-interface") continue;
   await access(path.join(root, locale.datasetRoot));
-  await access(path.join(root, locale.datasetRoot, "site.json"));
-  await access(path.join(root, locale.datasetRoot, "zones.json"));
-  await access(path.join(root, locale.datasetRoot, "library"));
+  for (const requiredSource of ["site.json", "zones.json", "flagships.json", "library"]) {
+    await access(path.join(root, locale.datasetRoot, requiredSource));
+  }
   assert(Array.isArray(locale.requiredGates) && locale.requiredGates.length > 0, `${locale.code}.requiredGates[] is required`);
   for (const gate of locale.requiredGates) {
     assert(typeof gate === "string" && gate.startsWith("scripts/"), `${locale.code} has invalid gate path ${gate}`);
@@ -48,4 +48,4 @@ for (const locale of byCode.values()) {
   }
 }
 
-console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; no orphan locale directories.`);
+console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; required locale sources present; no orphan locale directories.`);

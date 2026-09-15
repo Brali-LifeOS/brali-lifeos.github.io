@@ -53,18 +53,34 @@ function normalizeHead(html, canonicalPath, alternates) {
   return html.replace(canonicalPattern, `$1\n${tags}`);
 }
 
-function normalizeSwitchers(html, alternates, currentCode) {
-  const links = alternates
+function localeLinks(alternates, currentCode) {
+  return alternates
     .filter((item) => item.code !== currentCode)
     .map((item) => `<a lang="${htmlEscape(item.languageTag)}" hreflang="${htmlEscape(item.languageTag)}" href="${htmlEscape(item.path)}">${htmlEscape(item.label)}</a>`)
     .join("");
-  const languageAnchor = /<a\s+lang=["'](?:en|ru|de)["'][^>]*hreflang=["'](?:en|ru|de)["'][^>]*>[^<]+<\/a>/gi;
-  let first = true;
-  return html.replace(languageAnchor, (match) => {
-    if (!first) return "";
-    first = false;
-    return links || match;
-  });
+}
+
+function replaceLanguageLinks(block, links) {
+  const languageAnchor = /<a\s+lang=["'][^"']+["'][^>]*hreflang=["'][^"']+["'][^>]*>[^<]+<\/a>/gi;
+  const cleaned = block.replace(languageAnchor, "");
+  return `${cleaned}${links}`;
+}
+
+function normalizeSwitchers(html, alternates, currentCode) {
+  const links = localeLinks(alternates, currentCode);
+  if (!links) return html;
+
+  let updated = html.replace(
+    /(<header\s+class=["']site-header["'][\s\S]*?<div\s+class=["']links["']>)([\s\S]*?)(<\/div>\s*<\/nav>\s*<\/header>)/i,
+    (_match, start, body, end) => `${start}${replaceLanguageLinks(body, links)}${end}`,
+  );
+
+  updated = updated.replace(
+    /(<div\s+class=["']footer-links["']>)([\s\S]*?)(<\/div>)/i,
+    (_match, start, body, end) => `${start}${replaceLanguageLinks(body, links)}${end}`,
+  );
+
+  return updated;
 }
 
 let patched = 0;

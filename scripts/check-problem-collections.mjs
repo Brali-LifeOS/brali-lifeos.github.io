@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { loadGoldReviewRegistry } from './lib/gold-review-registry.mjs';
 import { matchProblems } from '../for-ai/query/retrieval.mjs';
 import { validateSearchMeasurementContract } from './build-search-console-measurement.mjs';
+import { validateProductIdentity } from './check-product-identity.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const read = rel => JSON.parse(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
@@ -20,6 +21,7 @@ const acquisitionIds = new Set((acquisition.clusters ?? []).map(item => item.id)
 const normalize = value => String(value ?? '').toLocaleLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g, '').replace(/[^\p{L}\p{N}]+/gu, ' ').replace(/\s+/g, ' ').trim();
 
 const searchMeasurement = validateSearchMeasurementContract();
+const productIdentity = validateProductIdentity();
 if ((cfg.collections ?? []).length < 10) throw new Error('Canonical Problem Discovery Graph requires at least 10 distinct problem guides.');
 if (dataset.count !== (dataset.collections ?? []).length || dataset.count !== cfg.collections.length) throw new Error('Problem collection dataset count mismatch.');
 const slugs = dataset.collections.map(c => c.slug);
@@ -99,4 +101,4 @@ if (!questions.includes('data-brali-problem-collections')) throw new Error('Ques
 const llms = fs.readFileSync(path.join(ROOT, 'llms.txt'), 'utf8');
 if (!llms.includes('/problems/')) throw new Error('llms.txt does not expose Problem Discovery Graph.');
 
-console.log(`Problem discovery graph verified: ${dataset.count} problems, ${aliasOwner.size} unique aliases, ${benchmark.cases.length}/${benchmark.cases.length} natural-language discovery cases, all protocol edges Gold-ready and trusted; Search Console contract=${searchMeasurement.segment_count} stable segments.`);
+console.log(`Problem discovery graph verified: ${dataset.count} problems, ${aliasOwner.size} unique aliases, ${benchmark.cases.length}/${benchmark.cases.length} natural-language discovery cases, all protocol edges Gold-ready and trusted; product publisher=${productIdentity.publisher}; Search Console contract=${searchMeasurement.segment_count} stable segments.`);

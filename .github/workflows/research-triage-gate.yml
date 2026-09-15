@@ -1,0 +1,45 @@
+name: Research triage gate
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/research-candidates.json"
+      - "data/research-triage.json"
+      - "data/evidence-decisions.json"
+      - "data/evidence-decision-corrections.json"
+      - "data/review-registry-*.json"
+      - "scripts/lib/review-registry.mjs"
+      - "scripts/lib/research-triage.mjs"
+      - "scripts/build-research-scout-triage.mjs"
+      - "scripts/check-research-triage.mjs"
+      - ".github/workflows/research-triage-gate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Rebuild expected research triage
+        run: node scripts/build-research-scout-triage.mjs
+      - name: Show rebuilt triage for audit evidence
+        if: always()
+        run: cat data/research-triage.json
+      - name: Require committed triage to match effective research state
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain -- data/research-triage.json)" ]; then
+            echo "data/research-triage.json is missing or stale; rebuild it with node scripts/build-research-scout-triage.mjs" >&2
+            git status --short -- data/research-triage.json
+            exit 1
+          fi
+      - name: Validate research triage safety contract
+        run: node scripts/check-research-triage.mjs

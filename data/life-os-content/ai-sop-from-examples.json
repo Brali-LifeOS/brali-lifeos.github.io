@@ -1,0 +1,36 @@
+{
+  "slug": "ai-sop-from-examples",
+  "title": "Turn Real Examples into a Draft SOP with AI",
+  "subtitle": "Extract the repeated pattern, then test it on the next case",
+  "description": "When a recurring task lives mostly in someone's head, give AI a few sanitized examples and ask for a draft procedure with inputs, steps, decisions, outputs, and exceptions. Validate the draft with the person who does the work and test it on a fresh case before treating it as process documentation.",
+  "canonical": "/life-os/ai-sop-from-examples/",
+  "domain_ids": ["work-money"],
+  "topic_ids": ["work-systems"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["AI SOP", "standard operating procedure", "process documentation", "workflow documentation", "knowledge capture", "AI process"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Use AI to infer a draft procedure from real examples, then validate the sequence, exceptions, and decision rules on a fresh case.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "Choose several representative examples and remove information you should not share. Ask AI to separate inputs, steps, decisions, outputs, exceptions, and unresolved questions. Review the draft with the actual operator, then run one new case using only the SOP and revise where the procedure breaks.",
+    "checkIn": "Could another competent person complete a fresh case from the checked SOP without relying on the hidden knowledge that created the examples?"
+  },
+  "faq": [
+    {"id":"ai-sop-from-examples-1","question":"Why use examples instead of asking AI to write a generic SOP?","answer":"Examples expose the real sequence and exceptions in your workflow. A generic SOP can sound professional while describing a process nobody actually follows."},
+    {"id":"ai-sop-from-examples-2","question":"What if the examples disagree?","answer":"Do not force them into one clean story. Ask the model to surface the inconsistency and let the process owner decide whether it reflects a valid branch, an outdated practice, or an error."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:28:00Z","updatedISO":"2026-09-15T09:28:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>AI can draft the manual nobody had time to write. The useful version starts from what the team actually does and survives contact with the next real case.</p>"},
+    "sections": [
+      {"slug":"examples","title":"1. Choose representative examples","html":"<p>Include a normal case and at least one meaningful exception. Sanitise confidential information before using any external model.</p>"},
+      {"slug":"structure","title":"2. Extract the procedure","html":"<p>Ask for inputs, ordered steps, decision points, outputs, exceptions, and unanswered questions. Require the model to distinguish what appears in the examples from what it is inferring.</p>"},
+      {"slug":"review","title":"3. Review with the operator","html":"<p>Have the person who performs the work correct missing branches, hidden prerequisites, unsafe shortcuts, and steps that exist only in theory.</p>"},
+      {"slug":"dry-run","title":"4. Dry-run a fresh case","html":"<p>Use the SOP on a new example. Record every point where the operator needs knowledge that is absent from the document, then update the procedure.</p>"}
+    ]
+  },
+  "references": [],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"A practical knowledge-capture workflow where generated documentation is validated against real operator behavior and a fresh case before adoption.","registry":"review-registry-using-ai-starters.json"}
+}

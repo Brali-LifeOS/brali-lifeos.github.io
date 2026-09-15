@@ -1,0 +1,34 @@
+name: Hack identity migration audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/evidence-decisions.json"
+      - "data/evidence-decision-corrections.json"
+      - "data/review-registry-*.json"
+      - "data/hack-identity-migrations.json"
+      - "data/life-os-content/**"
+      - "data/life-os-content-additions.json"
+      - "life-os/datasets/hacks.json"
+      - "scripts/lib/review-registry.mjs"
+      - "scripts/audit-hack-identity-migrations.mjs"
+      - ".github/workflows/identity-migration-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Require complete exact-provenance identity dispositions
+        run: node scripts/audit-hack-identity-migrations.mjs --discover --require-complete

@@ -58,6 +58,13 @@ for (const page of primary.pages || []) {
 const site = await readJson("data/localization/ru/site.json");
 for (const finding of scanRussianValue(site, { location: "site", allowlist })) findings.push(finding);
 
+const lifecycle = await readJson("data/localization/ru/lifecycle.json");
+if (lifecycle.schema_version !== 1 || lifecycle.locale !== "ru") throw new Error("[ru-language] invalid data/localization/ru/lifecycle.json");
+for (const [section, value] of Object.entries(lifecycle)) {
+  if (["schema_version", "locale"].includes(section)) continue;
+  for (const finding of scanRussianValue(value, { location: `lifecycle.${section}`, allowlist })) findings.push(finding);
+}
+
 if (findings.length) {
   console.error(`[ru-language] unresolved editorial terms: ${findings.length}`);
   for (const finding of findings) {
@@ -68,4 +75,4 @@ if (findings.length) {
 }
 
 console.log(`[ru-language] reviewed named/technical Latin exceptions: ${reviewedLatinRuns.length}`);
-console.log(`Russian deterministic language audit passed across ${batches.length} library batches, ${flagships.entries?.length || 0} flagships, ${zones.records?.length || 0} zones and ${primary.pages?.length || 0} primary pages.`);
+console.log(`Russian deterministic language audit passed across ${batches.length} library batches, ${flagships.entries?.length || 0} flagships, ${zones.records?.length || 0} zones, ${primary.pages?.length || 0} primary pages and lifecycle/commercial copy.`);

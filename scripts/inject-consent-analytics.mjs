@@ -1,6 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 
+// These final-surface generators intentionally run after the core site, brand shell,
+// discovery and localization builds, but before analytics walks the HTML corpus.
+// Lifecycle provenance is built first, reviewed Evidence Decisions are linked without
+// changing verdicts, unresolved research metadata becomes a noindex review watchlist,
+// sponsorship remains downstream of lifecycle status, and localized lifecycle/trust
+// pages are generated before the shared consent-aware analytics pass.
+await import("./build-hack-lifecycle.mjs");
+await import("./enrich-hack-lifecycle-evidence.mjs");
+await import("./build-research-lifecycle-watchlist.mjs");
+await import("./apply-sponsorships.mjs");
+await import("./build-ru-lifecycle-surfaces.mjs");
+
 const containerId = "GTM-5TJVLJG9";
 const marker = "brali-consent-analytics";
 const ignored = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);

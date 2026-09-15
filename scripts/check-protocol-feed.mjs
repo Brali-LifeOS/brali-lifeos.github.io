@@ -1,10 +1,11 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import { loadKnowledgeOntology } from "./lib/knowledge-ontology.mjs";
 
 const root = process.cwd();
 const evidence = JSON.parse(await readFile(path.join(root, "life-os/datasets/evidence.json"), "utf8"));
 const feed = JSON.parse(await readFile(path.join(root, "life-os/datasets/protocols.json"), "utf8"));
-const ontology = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology.json"), "utf8"));
+const { ontology } = await loadKnowledgeOntology(root);
 const eligible = new Set((evidence.entries ?? []).filter((record) => record.indexable).map((record) => record.slug));
 const domainIds = new Set(ontology.domains.map((item) => item.id));
 const topicIds = new Set(ontology.topics.map((item) => item.id));
@@ -51,3 +52,5 @@ if (invalid || missing.length) {
 }
 const sourced = (feed.entries ?? []).filter((protocol) => protocol.evidence?.source_url).length;
 console.log(`Protocol feed verified: ${feed.entries.length} trusted protocols; ${topicMapped} topic-mapped, ${topicPending} topic-pending; ${sourced} reviewed source link(s).`);
+
+await import('./check-rss-feed.mjs');

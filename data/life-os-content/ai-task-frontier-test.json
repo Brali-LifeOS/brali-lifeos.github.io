@@ -1,0 +1,38 @@
+{
+  "slug": "ai-task-frontier-test",
+  "title": "Benchmark AI on the Task Before You Trust the Workflow",
+  "subtitle": "Test a small representative sample before turning assistance into a process",
+  "description": "AI performance is uneven across tasks that can look similarly difficult. Before redesigning a workflow around a model, run it on representative cases, score the outputs against a human-defined standard, and identify where human review is still mandatory.",
+  "canonical": "/life-os/ai-task-frontier-test/",
+  "domain_ids": ["work-money"],
+  "topic_ids": ["work-systems", "strategy"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["AI benchmark", "AI workflow", "jagged frontier", "AI evaluation", "human AI collaboration", "workflow design"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Before adopting AI for a recurring task, test representative cases against a human-defined acceptance standard and record the failure modes.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "Choose a small sample containing easy, ordinary, and awkward cases. Define what counts as acceptable before running the model. Compare AI output with the source or a trusted human result, record failure patterns, and decide which cases can be assisted, which need review, and which should stay human-first.",
+    "checkIn": "Do I know the cases where AI is reliable enough to help and the cases where its polished answer should not be trusted?",
+    "reference": "Dell'Acqua et al. — Navigating the Jagged Technological Frontier",
+    "sourceUrl": "https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/"
+  },
+  "faq": [
+    {"id":"ai-task-frontier-test-1","question":"Why test the task instead of judging the model in general?","answer":"Because performance can change sharply between tasks that look similar. A model that is useful for one step in a workflow may be unreliable on the next step."},
+    {"id":"ai-task-frontier-test-2","question":"What should I score?","answer":"Use criteria tied to the real task: factual correctness, completeness, required format, safety, policy compliance, calculation accuracy, or another observable acceptance condition."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:17:00Z","updatedISO":"2026-09-15T09:17:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>The useful question is rarely “Is this model smart?” It is “Does this model help on this exact step, with these inputs, under these failure costs?” The difference saves a great deal of automation theatre.</p>"},
+    "sections": [
+      {"slug":"sample","title":"1. Build a representative sample","html":"<p>Include ordinary cases and the awkward cases that usually create rework. If you test only clean examples, you learn how the demo behaves, not how the workflow behaves.</p>"},
+      {"slug":"criteria","title":"2. Define acceptance before seeing output","html":"<p>Write the criteria first. Otherwise a fluent answer can quietly lower the standard after the fact.</p>"},
+      {"slug":"compare","title":"3. Compare and classify failures","html":"<p>Mark errors by type: missing fact, invented fact, wrong calculation, bad judgment, format drift, privacy problem, or another failure that matters in your context.</p>"},
+      {"slug":"route","title":"4. Route work by risk","html":"<p>Use the result to separate safe assistance from mandatory review and human-only cases. Re-test after major model, prompt, data, or workflow changes.</p>"}
+    ]
+  },
+  "references": [{"title":"Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality","url":"https://aiinstitute.hbs.edu/navigating-the-jagged-technological-frontier/","source_type":"field experiment / peer-reviewed research program","claim_scope":"In a field experiment with 758 consultants, AI improved performance on tasks inside the tested capability frontier while performance could deteriorate on a task outside it. The finding supports task-level evaluation rather than a blanket assumption that AI helps every adjacent task."}],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Make the jagged-frontier result executable as a low-risk workflow evaluation protocol rather than a generic claim about AI productivity.","registry":"review-registry-using-ai-starters.json"}
+}

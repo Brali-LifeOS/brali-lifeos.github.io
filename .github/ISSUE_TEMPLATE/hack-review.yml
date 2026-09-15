@@ -1,0 +1,57 @@
+name: Hack review or challenge
+description: Request a re-review, submit contradicting evidence, or report an implementation observation.
+title: "Hack review: "
+labels: ["content-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when a published Brali hack may need a new review event. Observations are welcome, but an observation alone does not change an evidence conclusion.
+  - type: input
+    id: hack
+    attributes:
+      label: Hack URL or slug
+      placeholder: https://brali-lifeos.github.io/life-os/example-hack/
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What changed?
+      options:
+        - New or updated evidence
+        - Contradicting evidence / challenge
+        - Source correction or retraction
+        - Safety or scope concern
+        - Implementation observation
+        - Request for periodic re-review
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim or recommendation affected
+      description: Point to the exact part of the hack that may need review.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or references
+      description: Prefer stable URLs, DOI links, primary sources, systematic reviews, or official corrections where applicable.
+      placeholder: One reference per line
+  - type: textarea
+    id: observation
+    attributes:
+      label: What did you observe or find?
+      description: Explain the change, contradiction, limitation, or implementation issue. Separate personal observation from source-backed claims.
+    validations:
+      required: true
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Disclosure
+      options:
+        - label: I disclosed any commercial relationship relevant to this submission, or I have none.
+          required: true

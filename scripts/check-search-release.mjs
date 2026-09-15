@@ -120,5 +120,6 @@ try {
   fail("ai/site-profile.json is missing from the final artifact");
 }
 
+await import('./check-rss-feed.mjs');
 await access(join(root, "index.html"));
-console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt and AI profile.`);
+console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt, AI profile and RSS subscription surface.`);

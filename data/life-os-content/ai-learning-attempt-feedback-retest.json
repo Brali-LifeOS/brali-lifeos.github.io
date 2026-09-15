@@ -1,0 +1,41 @@
+{
+  "slug": "ai-learning-attempt-feedback-retest",
+  "title": "Attempt First, Use AI for Feedback, Retest Without It",
+  "subtitle": "Keep the cognitive work you are trying to learn on your side of the conversation",
+  "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+  "canonical": "/life-os/ai-learning-attempt-feedback-retest/",
+  "domain_ids": ["learning-thinking"],
+  "topic_ids": ["skill-learning", "metacognition", "memory"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["AI tutor", "AI learning", "human first AI", "feedback", "retrieval", "learning with AI"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Do the target thinking once before AI helps, use AI for feedback or examples, then retest the skill without the generated answer in front of you.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI.",
+    "checkIn": "Can I now perform or explain the target skill without leaning on the AI output?",
+    "reference": "Boolzen et al. (2026) — systematic review and meta-analysis of generative AI in STEM education",
+    "sourceUrl": "https://doi.org/10.1007/s10462-026-11665-9"
+  },
+  "faq": [
+    {"id":"ai-learning-attempt-feedback-retest-1","question":"Why attempt before asking AI?","answer":"Because if the model performs the exact operation you are trying to learn, the finished answer can hide whether you can perform that operation yourself. The attempt gives you something concrete to compare and correct."},
+    {"id":"ai-learning-attempt-feedback-retest-2","question":"Is AI tutoring proven to improve learning?","answer":"Some well-designed studies report strong gains, but a 2026 systematic review and meta-analysis found extreme heterogeneity and no stable overall positive effect after robust publication-bias correction. Design and retained learner activity matter."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:20:00Z","updatedISO":"2026-09-15T09:20:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>If the AI performs the exact thinking you are trying to learn, excellent news for the AI. The learner still needs a turn.</p>"},
+    "sections": [
+      {"slug":"target","title":"1. Name the target operation","html":"<p>Decide what you want to become able to do: retrieve facts, explain a mechanism, solve a type of problem, write in a language, debug code, or another observable skill.</p>"},
+      {"slug":"attempt","title":"2. Make a meaningful attempt","html":"<p>Work far enough to expose what you know and where you get stuck. Do not ask AI to erase the diagnostic value of the attempt before it exists.</p>"},
+      {"slug":"feedback","title":"3. Ask for feedback, not replacement","html":"<p>Request a critique, hint, counterexample, alternative explanation, or one next step. Compare important factual feedback with course material or another trusted source.</p>"},
+      {"slug":"retest","title":"4. Retest without the answer","html":"<p>Close the AI response and try a fresh example or explanation. Learning is the part that remains when the generated answer is gone.</p>"}
+    ]
+  },
+  "references": [
+    {"title":"Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes","url":"https://doi.org/10.1007/s10462-026-11665-9","doi":"10.1007/s10462-026-11665-9","source_type":"systematic review and meta-analysis","claim_scope":"The review found extreme heterogeneity and substantial publication-bias concerns; a robust correction did not support a stable overall positive or negative main effect. Moderator evidence suggested the degree to which AI augments versus substitutes learner cognitive activity is an important design consideration."},
+    {"title":"AI tutoring outperforms in-class active learning: an RCT introducing a novel research-based design in an authentic educational setting","url":"https://doi.org/10.1038/s41598-025-97652-6","doi":"10.1038/s41598-025-97652-6","source_type":"randomized controlled trial","claim_scope":"A custom research-based AI tutor produced higher learning gains in less time than the comparison active-learning class in the studied college setting. This is evidence for a specific tutor design, not generic chatbot use."}
+  ],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Turn mixed education evidence into a conservative human-first protocol that preserves the learner's target cognitive operation and requires an unaided retest.","registry":"review-registry-using-ai-starters.json"}
+}

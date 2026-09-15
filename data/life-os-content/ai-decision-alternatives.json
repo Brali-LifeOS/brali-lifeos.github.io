@@ -1,0 +1,36 @@
+{
+  "slug": "ai-decision-alternatives",
+  "title": "Use AI to Widen the Option Set, Not Make the Decision",
+  "subtitle": "Generate alternatives and counterarguments before applying your own criteria",
+  "description": "When a decision feels binary or prematurely settled, ask AI for plausible alternatives, missing criteria, and arguments against your current favorite. Verify factual claims independently and keep the final weighting of trade-offs human.",
+  "canonical": "/life-os/ai-decision-alternatives/",
+  "domain_ids": ["focus-action"],
+  "topic_ids": ["decision-making", "error-prevention"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["AI decision making", "decision alternatives", "AI second opinion", "counterarguments", "options", "human judgment"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Ask AI to expand and challenge the option set, then score verified alternatives against criteria you chose before seeing the recommendation.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "Write your objective, constraints, and current leading option. Ask AI for materially different alternatives, missing criteria, and the strongest case against your favorite. Verify any external facts, then compare options using your own criteria and downside limits. Do not ask the model to hide the trade-off inside a single confident recommendation.",
+    "checkIn": "Did AI reveal an option, criterion, or counterargument I had missed without becoming the authority that decides what I value?"
+  },
+  "faq": [
+    {"id":"ai-decision-alternatives-1","question":"Why not ask AI which option is best?","answer":"Because the model may not know your real constraints, may invent supporting facts, and can sound persuasive when wrong. Use it to widen and challenge the decision, then make the trade-off explicit yourself."},
+    {"id":"ai-decision-alternatives-2","question":"When should I avoid this?","answer":"Do not use a general chatbot as the decision-maker for medical, legal, financial, safety-critical, employment, or other high-stakes choices that require qualified expertise or controlled evidence."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:24:00Z","updatedISO":"2026-09-15T09:24:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>AI is often more useful as an opponent to premature closure than as a synthetic oracle. Ask it to make the decision harder in productive ways before you make it clearer.</p>"},
+    "sections": [
+      {"slug":"criteria","title":"1. Write your criteria first","html":"<p>Capture the objective, constraints, unacceptable downsides, and what matters most before seeing an AI recommendation. This reduces the temptation to retrofit your values to a fluent answer.</p>"},
+      {"slug":"expand","title":"2. Expand the option set","html":"<p>Ask for alternatives that differ in mechanism, timing, reversibility, cost, or risk. Reject superficial rewordings.</p>"},
+      {"slug":"challenge","title":"3. Challenge the favorite","html":"<p>Ask what assumptions would make your preferred option fail and what evidence would favor another path. Treat claims as leads to verify.</p>"},
+      {"slug":"decide","title":"4. Make the trade-off yourself","html":"<p>Compare verified options against the original criteria. Record why you chose one and what new information would make you reconsider.</p>"}
+    ]
+  },
+  "references": [{"title":"Explainability does not mitigate the negative impact of incorrect AI advice in a personnel selection task","url":"https://doi.org/10.1038/s41598-024-60220-5","doi":"10.1038/s41598-024-60220-5","source_type":"preregistered experiments","claim_scope":"Participants could over-rely on incorrect AI advice, and explainability did not reliably remove that effect. The study supports keeping independent decision criteria and verification rather than treating fluent AI advice as authoritative."}],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish AI as an option-expansion and challenge mechanism with explicit high-stakes exclusions and independent verification, not as a decision authority.","registry":"review-registry-using-ai-starters.json"}
+}

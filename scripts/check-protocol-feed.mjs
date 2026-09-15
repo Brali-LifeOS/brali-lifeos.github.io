@@ -51,3 +51,5 @@ if (invalid || missing.length) {
 }
 const sourced = (feed.entries ?? []).filter((protocol) => protocol.evidence?.source_url).length;
 console.log(`Protocol feed verified: ${feed.entries.length} trusted protocols; ${topicMapped} topic-mapped, ${topicPending} topic-pending; ${sourced} reviewed source link(s).`);
+
+await import('./check-rss-feed.mjs');

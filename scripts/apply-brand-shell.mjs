@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import './build-rss-feed.mjs';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 const BASE = 'https://brali-lifeos.github.io';
@@ -8,6 +9,7 @@ const SKIP = new Set(['node_modules', '.git', 'reports']);
 const header = `<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>`;
 const footer = `<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>`;
 const arwpDiscovery = '  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">\n';
+const rssDiscovery = '  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Brali Updates RSS">\n';
 const preferredSource = '<aside class="callout" data-brali-preferred-source="true"><h2>Follow Brali as a preferred source</h2><p>If Google offers Brali in Preferred Sources for your account, you can choose this site so Brali can be highlighted for you in supported Search surfaces.</p><p><a class="button" href="https://www.google.com/preferences/source?q=brali-lifeos.github.io" rel="noopener" target="_blank">Add Brali as a Preferred Source on Google</a></p><small>This is a user preference, not a ranking guarantee and not a claim that Brali is currently eligible in every locale or account.</small></aside>';
 const organizationIdentity = `<script type="application/ld+json" data-brali-growth-identity="true">${JSON.stringify({
   '@context': 'https://schema.org',
@@ -113,6 +115,9 @@ for (const file of files(ROOT)) {
   if (!/href="\/ai\/site-profile\.json"/.test(html) && /<\/head>/i.test(html)) {
     html = html.replace(/<\/head>/i, `${arwpDiscovery}</head>`);
   }
+  if (!/rel=["']alternate["'][^>]*type=["']application\/rss\+xml["']/.test(html) && /<\/head>/i.test(html)) {
+    html = html.replace(/<\/head>/i, `${rssDiscovery}</head>`);
+  }
   if (rel === 'index.html' && !html.includes('data-brali-growth-identity="true"')) {
     html = html.replace(/<\/head>/i, `${organizationIdentity}</head>`);
   }
@@ -151,4 +156,4 @@ for (const file of files(ROOT)) {
   }
 }
 
-console.log(`Applied Brali brand shell and ARWP Growth discovery defaults to ${changed} HTML files.`);
+console.log(`Applied Brali brand shell, ARWP Growth discovery, and RSS discovery defaults to ${changed} HTML files.`);

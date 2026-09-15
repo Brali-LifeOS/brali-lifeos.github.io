@@ -17,12 +17,8 @@ function routeFile(pathname) {
 }
 
 async function exists(file) {
-  try {
-    await access(file);
-    return true;
-  } catch {
-    return false;
-  }
+  try { await access(file); return true; }
+  catch { return false; }
 }
 
 for (const locale of humanLocales) {
@@ -59,6 +55,8 @@ for (const locale of humanLocales) {
   const routePaths = (manifest.routes || []).map((route) => route.path);
   if (!routePaths.length) fail(locale.code, "manifest has no routes");
   if (new Set(routePaths).size !== routePaths.length) fail(locale.code, "manifest contains duplicate routes");
+  let eligibleCount = 0;
+  let withheldCount = 0;
 
   for (const route of manifest.routes || []) {
     if (!route.path.startsWith(locale.routePrefix)) fail(locale.code, `route escaped prefix: ${route.path}`);
@@ -76,11 +74,29 @@ for (const locale of humanLocales) {
     if (!html.includes(`"inLanguage":"${locale.languageTag}"`)) fail(locale.code, `${route.path} structured-data language drift`);
 
     const robotsMeta = html.match(/<meta\b[^>]*name=["']robots["'][^>]*>/gi) || [];
-    const noindex = robotsMeta.some((tag) => /content=["'][^"']*noindex/i.test(tag));
-    if (locale.searchPublication === "none" && !noindex) fail(locale.code, `${route.path} draft/search-none route must publish noindex,follow`);
-    if (locale.searchPublication !== "none" && noindex) fail(locale.code, `${route.path} release route must not publish noindex`);
+    const noindex = robotsMeta.some((tag) => /content=["'][^"']*(?:noindex|none)/i.test(tag));
+    const inSitemap = sitemap.includes(`<loc>${route.url}</loc>`);
+    if (locale.searchPublication === "none") {
+      if (!noindex) fail(locale.code, `${route.path} staged/search-none route must publish noindex,follow`);
+      if (inSitemap) fail(locale.code, `${route.path} staged/search-none route must stay out of sitemap`);
+      continue;
+    }
+    if (route.index_eligible === true) {
+      eligibleCount += 1;
+      if (noindex) fail(locale.code, `${route.path} index-eligible route must not publish noindex`);
+      if (!inSitemap) fail(locale.code, `sitemap missing index-eligible ${route.path}`);
+    } else if (route.index_eligible === false) {
+      withheldCount += 1;
+      if (!noindex) fail(locale.code, `${route.path} canonically withheld route must publish noindex,follow`);
+      if (inSitemap) fail(locale.code, `sitemap leaked withheld ${route.path}`);
+    } else {
+      fail(locale.code, `${route.path} missing route-level index_eligible decision`);
+    }
+  }
 
-    if (!sitemap.includes(`<loc>${route.url}</loc>`)) fail(locale.code, `sitemap missing ${route.path}`);
+  if (locale.searchPublication !== "none") {
+    if (manifest.coverage?.indexability?.eligible !== eligibleCount) fail(locale.code, `indexability eligible count drift ${eligibleCount}/${manifest.coverage?.indexability?.eligible}`);
+    if (manifest.coverage?.indexability?.withheld !== withheldCount) fail(locale.code, `indexability withheld count drift ${withheldCount}/${manifest.coverage?.indexability?.withheld}`);
   }
 
   for (const token of [
@@ -106,10 +122,12 @@ for (const locale of humanLocales) {
     if (library.coverage_mode !== "exact" || library.count !== library.canonical_count) fail(locale.code, "published locale lacks exact canonical coverage");
   }
 
-  console.log(`[pages-localization-artifact] ${locale.code}: ${manifest.routes?.length || 0} routes; ${library.count}/${library.canonical_count}; status=${locale.status}; search=${locale.searchPublication}`);
+  console.log(`[pages-localization-artifact] ${locale.code}: ${manifest.routes?.length || 0} routes; indexable=${eligibleCount}; withheld=${withheldCount}; ${library.count}/${library.canonical_count}; status=${locale.status}; search=${locale.searchPublication}`);
 }
 
-if (!(await exists(path.join(root, "localization-cluster.json")))) fail("cluster", "missing localization-cluster.json from final Pages artifact");
+for (const required of ["localization-cluster.json", "indexability.json"]) {
+  if (!(await exists(path.join(root, required)))) fail("cluster", `missing ${required} from final Pages artifact`);
+}
 
 if (failures.length) {
   console.error(`[pages-localization-artifact] ${failures.length} failure(s)`);

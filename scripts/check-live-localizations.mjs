@@ -24,7 +24,7 @@ async function fetchText(pathname, { attempts = 6 } = {}) {
         headers: {
           "cache-control": "no-cache",
           pragma: "no-cache",
-          "user-agent": "Brali-Live-Localization-Check/3.0",
+          "user-agent": "Brali-Live-Localization-Check/3.1",
         },
       });
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
@@ -97,19 +97,25 @@ if (profile.releaseContract?.coverage === "exact-for-published-human-interface" 
 }
 
 const commonSourceShellLeakage = /\b(?:Skip to content|Main navigation|Optional analytics|Analytics preference|Allow analytics|Necessary only)\b/i;
+const robotsNoindex = /<meta\b(?=[^>]*name=["']robots["'])[^>]*content=["'][^"']*noindex[^"']*["'][^>]*>/i;
 await mapLimit(manifest.routes, 16, async (route) => {
   assert(route.path.startsWith(routePrefix), `route escaped locale prefix: ${route.path}`);
   const { text: html } = await fetchText(route.path, { attempts: 4 });
   assert(new RegExp(`<html[^>]+lang=["']${languageTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html), `${route.path} must publish html lang=${languageTag}`);
+  assert(new RegExp(`<html[^>]+dir=["']${(locale.direction || "ltr").replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html), `${route.path} must publish html dir=${locale.direction || "ltr"}`);
   assert(html.includes(`<link rel="canonical" href="${route.url}">`), `${route.path} must publish its self canonical`);
   assert(html.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.path} must publish ${languageTag} hreflang`);
   assert(html.includes(`hreflang="${sourceLocale}" href="${route.canonical_url}"`), `${route.path} must publish ${sourceLocale} hreflang`);
   assert(html.includes(`hreflang="x-default" href="${route.canonical_url}"`), `${route.path} must publish x-default`);
   assert(html.includes(`"inLanguage":"${languageTag}"`), `${route.path} structured data must publish inLanguage=${languageTag}`);
   assert(!commonSourceShellLeakage.test(html), `${route.path} leaked source-language shell UI`);
+  if (locale.searchPublication === "none") assert(robotsNoindex.test(html), `${route.path} staged locale must publish noindex`);
+  else assert(!robotsNoindex.test(html), `${route.path} search-published locale must not publish noindex`);
 
-  const { text: canonicalHtml } = await fetchText(route.canonical_path, { attempts: 4 });
-  assert(canonicalHtml.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.canonical_path} must reciprocate ${languageTag} hreflang`);
+  if (locale.searchPublication !== "none") {
+    const { text: canonicalHtml } = await fetchText(route.canonical_path, { attempts: 4 });
+    assert(canonicalHtml.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.canonical_path} must reciprocate ${languageTag} hreflang`);
+  }
 });
 
 const { text: sitemap } = await fetchText(`${routePrefix}sitemap.xml`);
@@ -131,6 +137,11 @@ if (library.coverage_mode === "exact") {
 }
 
 const { text: robots } = await fetchText("/robots.txt");
-assert(robots.includes(`Sitemap: ${base}${routePrefix}sitemap.xml`), "robots.txt must advertise the localized sitemap");
+const sitemapLine = `Sitemap: ${base}${routePrefix}sitemap.xml`;
+if (locale.searchPublication === "none") {
+  assert(!robots.includes(sitemapLine), "robots.txt must not advertise a staged/noindex localized sitemap");
+} else {
+  assert(robots.includes(sitemapLine), "robots.txt must advertise the search-published localized sitemap");
+}
 
-console.log(`Live ${requestedLocale} localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; mode=${library.coverage_mode}; status=${manifest.status}.`);
+console.log(`Live ${requestedLocale} localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; mode=${library.coverage_mode}; status=${manifest.status}; search=${locale.searchPublication}.`);

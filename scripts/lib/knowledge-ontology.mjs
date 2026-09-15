@@ -8,6 +8,7 @@ export async function loadKnowledgeOntology(root) {
   const additions = JSON.parse(await readFile(path.join(root, "data/knowledge-ontology-additions.json"), "utf8"));
   const areas = JSON.parse(await readFile(path.join(root, "data/life-areas.json"), "utf8"));
   const overrides = JSON.parse(await readFile(path.join(root, "data/ontology-overrides.json"), "utf8"));
+  const overrideAdditions = JSON.parse(await readFile(path.join(root, "data/ontology-overrides-additions.json"), "utf8"));
 
   if (additions.schema_version !== 1) throw new Error("Knowledge ontology additions must use schema_version 1");
   for (const key of ["domains", "topics", "methods", "lenses"]) {
@@ -25,6 +26,14 @@ export async function loadKnowledgeOntology(root) {
   for (const [zoneSlug, mapping] of Object.entries(additions.legacy_zone_map ?? {})) {
     if (ontology.legacy_zone_map[zoneSlug]) throw new Error(`Knowledge ontology addition duplicates legacy zone mapping: ${zoneSlug}`);
     ontology.legacy_zone_map[zoneSlug] = mapping;
+  }
+
+  if (overrides.schema_version !== 1) throw new Error("Knowledge ontology overrides must use schema_version 1");
+  if (overrideAdditions.schema_version !== 1) throw new Error("Knowledge ontology override additions must use schema_version 1");
+  overrides.entries ??= {};
+  for (const [slug, override] of Object.entries(overrideAdditions.entries ?? {})) {
+    if (overrides.entries[slug]) throw new Error(`Knowledge ontology override addition duplicates reviewed entry: ${slug}`);
+    overrides.entries[slug] = override;
   }
 
   const domains = new Map(ontology.domains.map((item) => [item.id, item]));

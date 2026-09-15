@@ -157,15 +157,21 @@ jobs:
       - name: Verify live Brali Bench
         shell: bash
         run: |
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/ | grep -q 'Brali Bench'
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/manifest.json | grep -q 'structured-brali'
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/ --output "$RUNNER_TEMP/brali-bench.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/manifest.json --output "$RUNNER_TEMP/brali-bench-manifest.json"
+          grep -q 'Brali Bench' "$RUNNER_TEMP/brali-bench.html"
+          grep -q 'structured-brali' "$RUNNER_TEMP/brali-bench-manifest.json"
       - name: Verify live hack lifecycle surfaces
         shell: bash
         run: |
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/review-log/ | grep -q 'Hack review log'
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/datasets/reviews.json | grep -q '"schema_version": 1'
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/sponsorship/ | grep -q 'Sponsor the work, never the verdict'
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/ | grep -q 'Review history'
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/review-log/ --output "$RUNNER_TEMP/brali-review-log.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/datasets/reviews.json --output "$RUNNER_TEMP/brali-reviews.json"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/sponsorship/ --output "$RUNNER_TEMP/brali-sponsorship.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/ --output "$RUNNER_TEMP/brali-representative-hack.html"
+          grep -q 'Hack review log' "$RUNNER_TEMP/brali-review-log.html"
+          grep -q '"schema_version": 1' "$RUNNER_TEMP/brali-reviews.json"
+          grep -q 'Sponsor the work, never the verdict' "$RUNNER_TEMP/brali-sponsorship.html"
+          grep -q 'Review history' "$RUNNER_TEMP/brali-representative-hack.html"
       - name: Verify live Image Discovery surface
         run: node scripts/check-live-image-discovery.mjs
       - name: Verify live Internal Discovery & Distribution surface

@@ -23,7 +23,11 @@ const FINAL_BUILD_STEPS = [
 ];
 
 const CHECK_FIRST = ["scripts/check-localization-contract.mjs"];
-const CHECK_BEFORE_GRAPH = ["scripts/check-localized-consent.mjs", "scripts/check-localization-cluster.mjs"];
+const CHECK_BEFORE_GRAPH = [
+  "scripts/check-localization-quality-debt.mjs",
+  "scripts/check-localized-consent.mjs",
+  "scripts/check-localization-cluster.mjs",
+];
 const CHECK_GRAPH_BUILD = ["scripts/build-indexability-registry.mjs"];
 const CHECK_AFTER_GRAPH = [
   "scripts/check-pages-localization-artifact.mjs",
@@ -103,10 +107,11 @@ export function getLocalizationCheckSteps(profile) {
 
 export async function validateLocalizationPipeline(root, profile) {
   const buildScripts = getLocalizationBuildSteps(profile);
+  const allBuildScripts = getLocalizationBuildSteps(profile, { withConsent: true });
   const checkSteps = getLocalizationCheckSteps(profile);
   const coveredChecks = new Set(checkSteps.map(({ script }) => script));
   const releaseOnly = new Set(RELEASE_ONLY_GATES);
-  const scripts = new Set([...buildScripts, ...coveredChecks, ...releaseOnly]);
+  const scripts = new Set([...allBuildScripts, ...coveredChecks, ...releaseOnly]);
 
   for (const locale of humanInterfaceLocales(profile)) {
     generatorFor(profile, locale);

@@ -130,12 +130,25 @@ for (const block of blocks) {
   blockByUrl.set(url, block);
 }
 
-for (const [url] of blockByUrl) {
+// The root sitemap can be extended by many independent generators. Normalize any
+// already-generated HTML route here before it becomes part of the machine index:
+// aliases and noindex pages are not index-eligible merely because an earlier
+// generator inserted a <loc>. Routes whose HTML is intentionally generated later
+// in the deployment pipeline are left for the exact final normalization pass.
+for (const [url] of [...blockByUrl]) {
   const pathname = pathnameFromUrl(url);
   const locale = localeForPath(pathname);
   if (locale && !localizedRouteByPath.has(pathname)) {
     throw new Error(`[indexability-build] localized sitemap URL exists outside ${locale.code} manifest: ${pathname}`);
   }
+  let html;
+  try {
+    html = await readFile(routeFile(pathname), "utf8");
+  } catch {
+    continue;
+  }
+  const pageCanonical = canonical(html);
+  if (noindex(html) || (pageCanonical && pageCanonical !== url)) blockByUrl.delete(url);
 }
 
 // Search eligibility belongs to the canonical content decision, not to translation

@@ -15,6 +15,11 @@ on:
       - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
+      - 'scripts/check-localizations.mjs'
+      - 'scripts/check-localization-contract.mjs'
+      - 'scripts/check-localization-faults.mjs'
+      - 'scripts/check-ru-library.mjs'
+      - 'scripts/check-ru-primary-pages.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
       - 'scripts/audit-ru-language.mjs'
@@ -36,6 +41,11 @@ on:
       - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
+      - 'scripts/check-localizations.mjs'
+      - 'scripts/check-localization-contract.mjs'
+      - 'scripts/check-localization-faults.mjs'
+      - 'scripts/check-ru-library.mjs'
+      - 'scripts/check-ru-primary-pages.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
       - 'scripts/audit-ru-language.mjs'
@@ -79,6 +89,8 @@ jobs:
         run: npm run build
       - name: Complete EN/RU/DE locale clusters
         run: node scripts/complete-localization-clusters.mjs
+      - name: Run full localization compatibility suite
+        run: npm run localization:check
       - name: Check generated interface-locale contract
         run: node scripts/check-interface-locales.mjs
       - name: Gate exact multilingual artifact

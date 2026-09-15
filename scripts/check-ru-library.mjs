@@ -11,7 +11,7 @@ const fail = (message) => { throw new Error(`[ru-library] ${message}`); };
 const assert = (condition, message) => { if (!condition) fail(message); };
 const cyrillic = /[А-Яа-яЁё]/;
 
-const [config, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn, flagships, manifest, machine] = await Promise.all([
+const [config, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn, flagships, manifest, machine, machineCopy] = await Promise.all([
   readJson("data/localization/ru/library-manifest.json"),
   readJson("data/life-os-content/index.json"),
   loadRussianLocalizationAuthoringIndex(root),
@@ -21,10 +21,12 @@ const [config, canonicalIndex, authoringIndex, evidence, zonesRu, zonesEn, flags
   readJson("data/localization/ru/flagships.json"),
   readJson("ru/manifest.json"),
   readJson("ru/library.json"),
+  readJson("data/localization/ru/machine.json"),
 ]);
 
 assert(config.locale === "ru" && config.issue === 210, "library manifest must belong to the Russian full-corpus loop (#210)");
 assert(["batched", "exact"].includes(config.coverage_mode), "coverage_mode must be batched or exact");
+assert(machineCopy.locale === "ru" && machineCopy.source_locale === "en", "Russian machine-copy locale contract drift");
 const allowedQuality = new Set(config.quality_states || []);
 const qualityRank = { "localized-draft": 0, "language-reviewed": 1, "editorial-reviewed": 2 };
 for (const state of Object.keys(qualityRank)) assert(allowedQuality.has(state), `quality state missing from contract: ${state}`);
@@ -132,8 +134,8 @@ for (const ruPath of requiredPaths) assert(sitemap.includes(`<loc>${base}${ruPat
 const llms = await readFile(path.join(root, "ru", "llms.txt"), "utf8");
 assert(llms.includes(`${base}/ru/library.json`), "Russian llms.txt must expose the machine-readable localized library");
 if (config.coverage_mode === "exact") {
-  assert(llms.includes(`покрывает все ${canonicalIndex.length}`), "exact Russian llms.txt must state exact full-corpus coverage");
-  assert(!llms.includes("Остальная библиотека НЕ считается локализованной"), "exact coverage cannot retain the old partial-coverage disclaimer");
+  const expectedCoverage = machineCopy.coverage_exact.replace("{canonical_count}", String(canonicalIndex.length));
+  assert(llms.includes(expectedCoverage), "exact Russian llms.txt must state locale-owned exact full-corpus coverage");
 }
 
 console.log(`Russian full-corpus quality gate passed: ${unionSlugs.size}/${canonicalIndex.length} entries; ${zonesEn.length} zones; mode=${config.coverage_mode}.`);

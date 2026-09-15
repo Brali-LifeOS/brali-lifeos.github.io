@@ -109,7 +109,8 @@ for (const ruPath of requiredPaths) {
   const relative = ruPath.replace(/^\/ru\//, "").replace(/\/$/, "");
   const file = path.join(root, "ru", relative, "index.html");
   const html = await readFile(file, "utf8");
-  assert(/<html lang="ru">/i.test(html), `${ruPath} must render lang=ru`);
+  assert(/<html\b[^>]*\blang=["']ru["'][^>]*>/i.test(html), `${ruPath} must render lang=ru`);
+  assert(/<html\b[^>]*\bdir=["']ltr["'][^>]*>/i.test(html), `${ruPath} must render dir=ltr`);
   assert(html.includes(`<link rel="canonical" href="${route.url}">`), `${ruPath} must self-canonicalize`);
   assert(html.includes(`hreflang="ru" href="${route.url}"`), `${ruPath} missing ru hreflang`);
   assert(html.includes(`hreflang="en" href="${route.canonical_url}"`), `${ruPath} missing en hreflang`);

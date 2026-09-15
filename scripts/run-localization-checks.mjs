@@ -14,6 +14,7 @@ const checks = [
   ["scripts/check-localized-consent.mjs"],
   ["scripts/check-localization-cluster.mjs"],
   ["scripts/check-pages-localization-artifact.mjs"],
+  ["scripts/check-indexability-contract.mjs"],
   ["scripts/check-localization-faults.mjs"],
 ];
 

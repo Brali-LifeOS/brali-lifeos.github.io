@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const libraryDir = path.join(root, "data", "localization", "de", "library");
+const reviewPath = path.join(root, "data", "localization", "de", "source-reviews.json");
 const complete = process.argv.includes("--complete");
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
 
@@ -16,11 +17,20 @@ try {
 const canonical = await readJson("data/life-os-content/index.json");
 if (!Array.isArray(canonical)) throw new Error("[de-contract] canonical data/life-os-content/index.json must be an array");
 
+let reviewLedger = { records: [] };
+try {
+  reviewLedger = JSON.parse(await readFile(reviewPath, "utf8"));
+} catch (error) {
+  if (error?.code !== "ENOENT") throw error;
+}
+const reviews = new Map((reviewLedger.records || []).map((entry) => [entry.slug, entry]));
+
 const canonicalBySlug = new Map(canonical.map((record) => [record.slug, record]));
 const files = (await readdir(libraryDir)).filter((name) => name.endsWith(".json")).sort();
 const seen = new Map();
 const errors = [];
 let localizedCount = 0;
+let reconciledCount = 0;
 
 function fail(location, message) {
   errors.push({ location, message });
@@ -33,6 +43,14 @@ function currentSourceSnapshot(record) {
     description: record?.description,
     updatedISO: record?.updatedISO,
   };
+}
+
+function localizedTitle(record) {
+  return String(record?.localized?.title ?? record?.title ?? "").trim();
+}
+
+function sourceMatches(actual, expected) {
+  return ["title", "subtitle", "description", "updatedISO"].every((field) => actual?.[field] === expected[field]);
 }
 
 for (const name of files) {
@@ -68,12 +86,30 @@ for (const name of files) {
       continue;
     }
 
-    for (const field of ["title", "subtitle", "description", "updatedISO"]) {
-      if (actual[field] !== expected[field]) {
-        fail(location, `stale source.${field}; refresh from current canonical record before reviewing German copy`);
+    if (!sourceMatches(actual, expected)) {
+      const review = reviews.get(slug);
+      if (!review) {
+        for (const field of ["title", "subtitle", "description", "updatedISO"]) {
+          if (actual[field] !== expected[field]) fail(location, `stale source.${field}; semantic re-review is required`);
+        }
+        continue;
       }
+      if (!sourceMatches(review.source, expected)) {
+        fail(location, "source-review ledger is stale against current canonical source");
+        continue;
+      }
+      if (review.reviewed_localized_title !== localizedTitle(record)) {
+        fail(location, "localized copy changed after source-drift review; re-review is required");
+        continue;
+      }
+      reconciledCount += 1;
     }
   }
+}
+
+for (const slug of reviews.keys()) {
+  if (!canonicalBySlug.has(slug)) fail(`source-reviews/${slug}`, "review references a non-canonical slug");
+  if (!seen.has(slug)) fail(`source-reviews/${slug}`, "review references a missing German record");
 }
 
 if (complete) {
@@ -94,5 +130,5 @@ if (errors.length) {
 }
 
 console.log(
-  `[de-contract] ${complete ? "complete" : "draft"} parity passed: ${localizedCount}/${canonical.length} canonical records localized across ${files.length} batch(es).`
+  `[de-contract] ${complete ? "complete" : "draft"} parity passed: ${localizedCount}/${canonical.length} canonical records localized across ${files.length} batch(es); ${reconciledCount} source-drift review(s) reconciled.`
 );

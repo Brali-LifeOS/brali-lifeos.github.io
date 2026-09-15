@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "description": "Additive ontology entities and compatibility mappings for post-v2 Growth Zones. Keep the stable base ontology compact; new zones must still map to a real Topic, Method, or Lens and pass the same validation path.",
+  "domains": [],
+  "topics": [],
+  "methods": [],
+  "lenses": [
+    {
+      "id": "ai-collaboration",
+      "title": "AI Collaboration",
+      "description": "Use AI as a bounded collaborator for drafting, exploration, transformation, critique, and checking while keeping verification, judgment, privacy, and target human skills explicit.",
+      "status": "active"
+    }
+  ],
+  "legacy_zone_map": {
+    "using-ai": {
+      "kind": "lens",
+      "target_id": "ai-collaboration"
+    }
+  }
+}

@@ -145,6 +145,27 @@ manifest.direction = "ltr";
 manifest.route_prefix = "/ru/";
 await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
+const library = JSON.parse(await readFile(path.join(ruRoot, "library.json"), "utf8"));
+const llmsPath = path.join(ruRoot, "llms.txt");
+let llms = await readFile(llmsPath, "utf8");
+const machineContractLines = [
+  "Role: human-interface",
+  "Language tag: ru",
+  "Status: reviewed-partial",
+  "Search publication: limited",
+  `Coverage mode: ${library.coverage_mode}`,
+  `Localized entries: ${library.count}`,
+  `Canonical entries: ${library.canonical_count}`,
+  "https://brali-lifeos.github.io/ru/library.json",
+];
+for (const line of machineContractLines) {
+  if (llms.includes(line)) continue;
+  const marker = "\n## Покрытие";
+  if (llms.includes(marker)) llms = llms.replace(marker, `\n${line}\n${marker}`);
+  else llms = `${llms.trimEnd()}\n${line}\n`;
+}
+await writeFile(llmsPath, llms);
+
 const home = await readFile(path.join(ruRoot, "index.html"), "utf8");
 for (const [href, label] of [
   ["/ru/life-os/", labels.library],
@@ -161,4 +182,4 @@ if (!home.includes(`<a class="button yellow" href="/ru/life-os/">${primaryCta}</
   throw new Error("Russian homepage primary CTA must open the localized library");
 }
 
-console.log(`Patched Russian discovery/localization UX on ${patched} page(s); corrected counters on ${counterPages} page(s).`);
+console.log(`Patched Russian discovery/localization UX on ${patched} page(s); corrected counters on ${counterPages} page(s); normalized RU locale contract.`);

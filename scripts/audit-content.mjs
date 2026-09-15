@@ -14,6 +14,7 @@ const trustedStates = new Set(["reviewed", "practical"]);
 const isTrusted = evidence => evidence?.indexable === true && trustedStates.has(evidence?.status);
 const isReference = evidence => evidence?.status === "pending-review" && evidence?.sensitive !== true;
 const isSearchIndexable = evidence => isTrusted(evidence) || isReference(evidence);
+const maintainerAttribution = /Maintained by MetalHatsCats\./gi;
 
 const counts = { reviewed: 0, practical: 0, "pending-review": 0, restricted: 0 };
 let legacySourceEntries = 0;
@@ -77,7 +78,8 @@ for (const entry of index) {
 
   const generatedPath = path.join(root, "life-os", entry.slug, "index.html");
   const generated = await readFile(generatedPath, "utf8");
-  if (/metalhatscats/i.test(generated)) legacyGeneratedPages += 1;
+  const generatedWithoutMaintainer = generated.replace(maintainerAttribution, "");
+  if (/metalhatscats/i.test(generatedWithoutMaintainer)) legacyGeneratedPages += 1;
   if (!generated.includes('data-protocol-summary="true"')) missingProtocolSummaries += 1;
   if (!generated.includes(`data-evidence-status="${evidence.status}"`)) evidenceStatusMismatches += 1;
   const noindex = /<meta\s+name=["']robots["'][^>]*noindex/i.test(generated);
@@ -145,7 +147,7 @@ console.log(`- Topic claim groups: ${Object.keys(claimDebt.counts.by_topic ?? {}
 console.log(`- Topic debt groups: ${Object.keys(claimDebt.counts.debt_by_topic ?? {}).length}`);
 console.log(`- Topic-pending claim/debt records: ${claimDebt.counts.topic_pending_marker_records}/${claimDebt.counts.topic_pending_debt_entries}`);
 console.log(`- Source records containing legacy MetalHatsCats branding: ${legacySourceEntries}`);
-console.log(`- Generated pages containing legacy branding: ${legacyGeneratedPages}`);
+console.log(`- Generated pages containing legacy branding outside the maintainer attribution: ${legacyGeneratedPages}`);
 console.log(`- Trusted current-guidance pages with disallowed generated claim markers: ${unsupportedGeneratedClaimPages}`);
 console.log(`- Search-indexable pages incorrectly carrying noindex: ${searchIndexablePagesWithNoindex}`);
 console.log(`- Search-withheld pages incorrectly missing noindex: ${searchWithheldPagesMissingNoindex}`);

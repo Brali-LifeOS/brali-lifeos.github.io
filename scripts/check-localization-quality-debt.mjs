@@ -17,6 +17,11 @@ function ledgerFor(locale) {
   return document?.locale === locale.code ? document : null;
 }
 
+function hasInspectableClosureEvidence(item) {
+  const proof = item?.closure_evidence;
+  return Boolean(proof && typeof proof === "object" && !Array.isArray(proof) && Object.keys(proof).length > 0);
+}
+
 const failures = [];
 for (const locale of profile.locales || []) {
   if (locale.role !== "human-interface" || locale.status === "draft") continue;
@@ -42,6 +47,19 @@ for (const locale of profile.locales || []) {
     if (!allowedStates.has(item?.state)) failures.push(`${locale.code}/${item?.id || "<missing-id>"}: invalid state ${item?.state}`);
     if (typeof item?.release_blocking !== "boolean") failures.push(`${locale.code}/${item?.id || "<missing-id>"}: release_blocking must be boolean`);
     if (item?.state !== "closed") active += 1;
+    if (item?.state === "closed") {
+      if (!hasInspectableClosureEvidence(item)) {
+        failures.push(`${locale.code}/${item?.id || "<missing-id>"}: closed debt must retain non-empty closure_evidence`);
+      } else {
+        const proof = item.closure_evidence;
+        if (proof.production_sha !== undefined && !/^[0-9a-f]{40}$/i.test(String(proof.production_sha))) {
+          failures.push(`${locale.code}/${item.id}: closure_evidence.production_sha must be a full commit SHA when present`);
+        }
+        if (proof.production_run !== undefined && (!Number.isInteger(proof.production_run) || proof.production_run <= 0)) {
+          failures.push(`${locale.code}/${item.id}: closure_evidence.production_run must be a positive integer when present`);
+        }
+      }
+    }
     if (locale.status === "published" && item?.release_blocking === true && item?.state !== "closed") {
       failures.push(`${locale.code}/${item.id}: published locale cannot retain release-blocking debt`);
     }

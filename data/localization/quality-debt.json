@@ -12,13 +12,13 @@
           "release_blocking": false,
           "issue": 210,
           "scope": "Every canonical public Growth Library entry outside the seven already curated flagship protocols",
-          "reason": "Exact Russian membership is complete for the canonical public knowledge corpus. The governed source/build checks verify 957/957 canonical records, current source snapshots, explicit localization quality and preserved canonical evidence state; the production release gates then verified the deployed human and machine surfaces.",
+          "reason": "Exact Russian membership is complete for the current canonical public knowledge corpus. The governed source/build checks verify 973/973 canonical records, current source snapshots, explicit localization quality and preserved canonical evidence state; the current production release gates verify the deployed human, machine and indexability surfaces.",
           "release_rule": "Reopen automatically as actionable debt if canonical membership, source freshness, language quality, Search/AI parity or a required production release gate regresses.",
           "closure_evidence": {
-            "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
-            "production_run": 34848001024,
-            "library_entries": "957/957",
-            "declared_ru_routes": 1013,
+            "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
+            "production_run": 35013795774,
+            "library_entries": "973/973",
+            "indexability_contract": "passed",
             "live_gate": "passed",
             "browser_gate": "passed"
           }
@@ -30,12 +30,13 @@
           "release_blocking": false,
           "issue": 210,
           "scope": "Research, Partnerships, and For AI & Developers primary hubs declared by the Site Focus profile",
-          "reason": "All three primary hubs have native Russian adapted/semantic copies, explicit English fallback boundaries, reciprocal hreflang, manifest membership and deterministic checks. The merged production SHA passed both live HTTP and real-browser release gates.",
+          "reason": "All three primary hubs have native Russian adapted/semantic copies, explicit English fallback boundaries, reciprocal hreflang, manifest membership and deterministic checks. The current production SHA passed live HTTP, indexability and real-browser release gates.",
           "release_rule": "Reopen if a primary hub loses native Russian copy, source freshness, reciprocal language signals, explicit fallback boundaries or production verification.",
           "closure_evidence": {
-            "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
-            "production_run": 34848001024,
+            "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
+            "production_run": 35013795774,
             "primary_hubs": "3/3",
+            "indexability_contract": "passed",
             "live_gate": "passed",
             "browser_gate": "passed"
           }
@@ -45,6 +46,7 @@
           "surface": "homepage-interaction",
           "state": "planned",
           "release_blocking": false,
+          "issue": 252,
           "scope": "Interactive protocol matcher on the canonical English homepage, including canonical Protocol Feed-derived recommendation metadata, fail-closed behavior and evidence/provenance presentation",
           "reason": "The English homepage matcher now derives its displayed protocol facts from a generated canonical Protocol Feed payload instead of duplicated JavaScript records. The Russian homepage is a separately authored localized product surface and does not currently expose this interactive matcher, so no English matcher strings are silently rendered under /ru/. This is an explicit experience-parity gap, not a translation fallback.",
           "release_rule": "If the protocol matcher is added to the Russian homepage or becomes part of an exact localized homepage-interaction contract, generate its labels and explanatory copy from reviewed Russian locale data while preserving canonical protocol IDs, evidence state and provenance. Do not reuse the English runtime copy under /ru/."
@@ -54,6 +56,7 @@
           "surface": "secondary-pages",
           "state": "planned",
           "release_blocking": false,
+          "issue": 252,
           "scope": "Query Playground, Agent Evaluation, demos, integration kits, research articles and gaps, problem/topic/question collections, updates, evidence/trust utilities, contact/legal pages and other secondary human-interface routes",
           "reason": "These routes remain canonical English surfaces outside the declared Russian human-interface release. Links from localized pages must keep the English boundary explicit; they are not silent fallback and do not block the governed Russian knowledge-corpus release under docs/LOCALIZATION.md.",
           "release_rule": "If a secondary surface is promoted into primary Russian navigation or an exact localized surface contract, add it to the locale contract and publish native Russian copy before retaining the same release claim. Do not call the entire website fully localized while this item remains planned."
@@ -64,12 +67,12 @@
           "state": "closed",
           "release_blocking": false,
           "scope": "Russian pages on narrow/mobile layouts",
-          "reason": "The deployed Chromium gate now visits every declared Russian route at 320 px and representative routes at 768/1280 px, exercises keyboard focus, captures ARIA snapshots and checks filled-button contrast. Manual evidence review exposed a real invisible-CTA false-green; the CSS defect was fixed and a contrast regression gate was added before closure.",
+          "reason": "The deployed Chromium gate visits every declared Russian route at 320 px and representative routes at 768/1280 px, exercises keyboard focus, captures ARIA snapshots and checks filled-button contrast. Manual evidence review previously exposed a real invisible-CTA false-green; the CSS defect was fixed and the current release still passes the browser regression gate.",
           "release_rule": "Reopen on any browser-gate regression in narrow layout, visible control contrast, keyboard behavior, accessibility labels or representative rendered evidence.",
           "closure_evidence": {
-            "production_sha": "77845f6f7dad98f35239a894f2ec43d303da060f",
-            "production_run": 34848001024,
-            "routes_at_320px": 1013,
+            "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
+            "production_run": 35013795774,
+            "all_declared_routes_at_320px": "passed",
             "representative_viewports": [768, 1280],
             "contrast_gate": "passed",
             "keyboard_and_aria": "passed"
@@ -81,11 +84,49 @@
       "status": "reviewed-partial",
       "items": [
         {
+          "id": "de-long-form-library-expansion",
+          "surface": "long-form-library",
+          "state": "closed",
+          "release_blocking": false,
+          "issue": 228,
+          "scope": "The complete canonical public knowledge corpus plus all Growth Zones and seven curated flagship protocols",
+          "reason": "German exact source parity is complete for the current canonical public corpus: 973/973 library records, all 50 Growth Zones and all 7 flagships. Strict language, source-freshness, quality-state and adversarial localization gates pass, and the current production release verifies the resulting human, machine and indexability surfaces.",
+          "release_rule": "Reopen automatically if exact membership, source freshness, German language quality, preserved trust metadata, indexability parity or production release proof regresses.",
+          "closure_evidence": {
+            "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
+            "production_run": 35013795774,
+            "library_entries": "973/973",
+            "growth_zones": "50/50",
+            "flagships": "7/7",
+            "indexability_contract": "passed",
+            "live_gate": "passed",
+            "browser_gate": "passed"
+          }
+        },
+        {
+          "id": "de-primary-product-hubs",
+          "surface": "primary-pages",
+          "state": "closed",
+          "release_blocking": false,
+          "issue": 228,
+          "scope": "Research, Partnerships, and For AI & Developers primary hubs declared by the localization contract",
+          "reason": "All three primary hubs have independent German semantic/adapted copies, source markers, explicit English fallback boundaries, reciprocal hreflang and manifest membership. The current production SHA passes live HTTP, indexability and real-browser release gates.",
+          "release_rule": "Reopen if a primary hub loses native German copy, source freshness, reciprocal language signals, explicit fallback boundaries or production verification.",
+          "closure_evidence": {
+            "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
+            "production_run": 35013795774,
+            "primary_hubs": "3/3",
+            "indexability_contract": "passed",
+            "live_gate": "passed",
+            "browser_gate": "passed"
+          }
+        },
+        {
           "id": "de-homepage-protocol-matcher-parity",
           "surface": "homepage-interaction",
           "state": "planned",
           "release_blocking": false,
-          "issue": 228,
+          "issue": 252,
           "scope": "Interactive protocol matcher on the canonical English homepage, including Protocol Feed-derived recommendation metadata and provenance presentation",
           "reason": "The German homepage is an independently authored localized surface and does not currently expose the English interactive matcher. No English matcher copy is silently rendered under /de/. This is an explicit experience-parity gap rather than a translation fallback.",
           "release_rule": "If the matcher becomes part of the declared German homepage contract, localize its labels and explanations from reviewed German data while preserving canonical protocol IDs, evidence state and provenance."
@@ -95,7 +136,7 @@
           "surface": "secondary-pages",
           "state": "planned",
           "release_blocking": false,
-          "issue": 228,
+          "issue": 252,
           "scope": "Query Playground, Agent Evaluation, demos, integration kits, research articles and gaps, problem/topic/question collections, updates, evidence/trust utilities, contact/legal pages and other secondary human-interface routes",
           "reason": "These routes remain canonical English surfaces outside the declared German human-interface release. Localized pages must keep the English language boundary explicit; English-only secondary routes do not count as German localization coverage.",
           "release_rule": "If a secondary surface is promoted into primary German navigation or an exact German surface contract, add it to the locale contract and publish native German copy before retaining the same release claim."

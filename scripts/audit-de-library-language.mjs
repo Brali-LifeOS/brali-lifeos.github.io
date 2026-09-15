@@ -6,6 +6,14 @@ const root = process.cwd();
 const strict = process.argv.includes("--strict");
 const libraryDir = path.join(root, "data", "localization", "de", "library");
 const readJson = async (file) => JSON.parse(await readFile(file, "utf8"));
+const manifest = await readJson(path.join(root, "data", "localization", "de", "library-manifest.json"));
+const qualityStates = Array.isArray(manifest.quality_states) ? manifest.quality_states : [];
+const allowedQualityStates = new Set(qualityStates);
+const minimumPublicQuality = manifest.minimum_public_quality;
+const minimumQualityIndex = qualityStates.indexOf(minimumPublicQuality);
+if (!qualityStates.length || minimumQualityIndex < 0) {
+  throw new Error("[de-language] library manifest must declare ordered quality_states and a valid minimum_public_quality");
+}
 
 const files = (await readdir(libraryDir)).filter((name) => name.endsWith(".json")).sort();
 if (!files.length) throw new Error("[de-language] no German library batches found");
@@ -53,8 +61,11 @@ for (const name of files) {
     }
 
     const qualityState = record?.quality_state;
-    if (!new Set(["language-reviewed", "human-reviewed"]).has(qualityState)) {
-      push(review, location, `unexpected-quality-state:${qualityState || "missing"}`);
+    const qualityIndex = qualityStates.indexOf(qualityState);
+    if (!allowedQualityStates.has(qualityState)) {
+      push(blocking, location, `invalid-quality-state:${qualityState || "missing"}`);
+    } else if (qualityIndex < minimumQualityIndex) {
+      push(review, location, `below-minimum-public-quality:${qualityState}`);
     }
 
     for (const finding of scanGermanLocalizedRecord(record)) {
@@ -82,6 +93,6 @@ if (blocking.length || (strict && review.length)) {
 }
 
 console.log(
-  `[de-language] ${strict ? "strict" : "draft"} audit passed across ${recordCount} records in ${files.length} batches` +
+  `[de-language] ${strict ? "strict" : "draft"} audit passed across ${recordCount} records in ${files.length} batches; minimum public quality=${minimumPublicQuality}` +
     (review.length ? ` with ${review.length} editorial review finding(s) still open.` : ".")
 );

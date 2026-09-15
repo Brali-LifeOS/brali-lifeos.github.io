@@ -12,6 +12,10 @@ const esc = value => clean(value).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<':
 const list = values => (values ?? []).map(value => `<li>${esc(value)}</li>`).join('');
 
 const data = read('data/evidence-decisions.json');
+const identityMigrations = read('data/hack-identity-migrations.json');
+const contentIndex = read('data/life-os-content/index.json');
+const publishedSlugs = new Set(contentIndex.map(entry => entry.slug));
+const migrationByHistoricalId = new Map((identityMigrations.entries ?? []).map(entry => [entry.historical_id, entry]));
 const decisions = [...(data.entries ?? [])].sort((a, b) => String(b.reviewed_at).localeCompare(String(a.reviewed_at)) || a.id.localeCompare(b.id));
 if (!decisions.length) throw new Error('Evidence Ledger requires reviewed Evidence Decisions.');
 
@@ -23,6 +27,15 @@ const labels = {
   'retire-claim': { label: 'Retire claim', summary: 'The reviewed source makes an existing claim unsuitable for continued publication.' }
 };
 const decisionMeta = decision => labels[decision] ?? { label: clean(decision).replaceAll('-', ' '), summary: 'Reviewed evidence decision.' };
+const targetDisposition = id => {
+  if (publishedSlugs.has(id)) return { kind: 'published', id };
+  const migration = migrationByHistoricalId.get(id);
+  if (migration?.disposition === 'mapped' && migration.canonical_id && publishedSlugs.has(migration.canonical_id)) {
+    return { kind: 'published', id: migration.canonical_id, historicalId: id };
+  }
+  if (migration?.disposition === 'not-published-target') return { kind: 'historical', id };
+  throw new Error(`Evidence Decision target ${id} is neither a published protocol nor a reviewed identity migration.`);
+};
 
 const records = decisions.map(decision => ({
   schema_version: 1,
@@ -60,7 +73,7 @@ const ledger = {
   updated_at: records.map(r => r.reviewed_at).sort().at(-1),
   name: 'Brali Evidence Ledger',
   description: 'Reviewed source-by-source decisions showing what evidence supports, what it does not establish, its limitations, and how Brali changes guidance in response.',
-  methodology_url: `${BASE}/methodology/`,
+  methodology_url: `${BASE}/life-os/methodology/`,
   evidence_dataset_url: `${BASE}/life-os/datasets/evidence-decisions.json`,
   count: records.length,
   decision_counts: counts,
@@ -70,7 +83,7 @@ const ledger = {
 writeJson('evidence/index.json', ledger);
 
 const nav = `<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt="Brali"><span>Brali</span></a><div class="links"><a href="/problems/">Problems</a><a href="/topics/">Topics</a><a href="/evidence/">Evidence</a><a href="/research/">Research</a><a href="/for-ai/">For AI</a></div></nav></header>`;
-const footer = `<footer class="footer"><div class="wrap footer-row"><small>Brali · practical knowledge with visible evidence boundaries</small><div class="footer-links"><a href="/methodology/">Methodology</a><a href="/life-os/datasets/">Data</a><a href="/cite/">Cite Brali</a></div></div></footer>`;
+const footer = `<footer class="footer"><div class="wrap footer-row"><small>Brali · practical knowledge with visible evidence boundaries</small><div class="footer-links"><a href="/life-os/methodology/">Methodology</a><a href="/life-os/datasets/">Data</a><a href="/cite/">Cite Brali</a></div></div></footer>`;
 const head = ({ title, description, canonical, schema }) => `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)}</title><meta name="description" content="${esc(description)}"><link rel="canonical" href="${canonical}"><meta property="og:type" content="article"><meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:url" content="${canonical}"><meta property="og:image" content="${BASE}/assets/images/brali-logo.png"><link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(schema).replace(/</g, '\\u003c')}</script></head>`;
 
 for (const record of records) {
@@ -84,7 +97,15 @@ for (const record of records) {
     record.source.outcomes.length ? `<li><strong>Outcomes:</strong> ${esc(record.source.outcomes.join('; '))}</li>` : ''
   ].join('');
   const affected = record.target_hack_ids.length
-    ? `<div class="grid two">${record.target_hack_ids.map(slug => `<article class="card"><span class="card-label">Affected Brali protocol</span><h3><a href="/life-os/${esc(slug)}/">${esc(slug.replaceAll('-', ' '))}</a></h3><p>This evidence decision is attached to the maintained Brali entry above. The public protocol may be narrowed, reviewed, or kept practical according to the decision.</p></article>`).join('')}</div>`
+    ? `<div class="grid two">${record.target_hack_ids.map(targetId => {
+        const target = targetDisposition(targetId);
+        const title = esc(target.id.replaceAll('-', ' '));
+        if (target.kind === 'published') {
+          const historical = target.historicalId ? `<p class="query-note">Historical review target: <code>${esc(target.historicalId)}</code>.</p>` : '';
+          return `<article class="card"><span class="card-label">Affected Brali protocol</span><h3><a href="/life-os/${esc(target.id)}/">${title}</a></h3>${historical}<p>This evidence decision is attached to the maintained Brali entry above. The public protocol may be narrowed, reviewed, or kept practical according to the decision.</p></article>`;
+        }
+        return `<article class="card"><span class="card-label">Historical review target</span><h3>${title}</h3><p>This identifier was used as an evidence-review target but was never published as a canonical Brali protocol. It is retained as provenance and deliberately does not link to a public route.</p></article>`;
+      }).join('')}</div>`
     : '<p>No maintained protocol is directly changed by this decision yet. The evidence remains a research boundary or watch signal.</p>';
   const schema = {
     '@context': 'https://schema.org',
@@ -115,7 +136,7 @@ const indexSchema = {
   url: `${BASE}/evidence/`,
   hasPart: records.map(record => ({ '@type': 'Article', name: `Evidence review: ${record.source.title}`, url: record.canonical_url }))
 };
-write('evidence/index.html', `${head({ title: 'Evidence Ledger: what research supports and what it does not | Brali', description: ledger.description, canonical: `${BASE}/evidence/`, schema: indexSchema })}<body><a class="skip" href="#content">Skip to content</a>${nav}<main id="content" class="page wrap"><p class="eyebrow">Brali Evidence Ledger</p><h1>What the evidence supports, and where Brali draws the line.</h1><p class="lead">A source-by-source ledger of reviewed claims, limitations, overstatements, and changes to Brali guidance. The useful part of evidence is often the sentence after “but”.</p><div class="grid three">${countCards}</div><div class="callout"><strong>${records.length} reviewed decisions · ${unsupportedCount} explicit boundaries.</strong> Discovery candidates do not appear here until a source has been reviewed and an Evidence Decision has been recorded.</div><section><h2>Reviewed Evidence Decisions</h2><div class="grid two">${cards}</div></section><section class="prose"><h2>Claims Brali deliberately does not make</h2><p>These are examples of claims that a reviewed source did not justify strongly enough for Brali to publish as established guidance.</p><ul>${claimExamples}</ul></section><section class="prose"><h2>For researchers and AI systems</h2><p>Use <a href="/evidence/index.json">the machine-readable ledger</a> or the canonical <a href="/life-os/datasets/evidence-decisions.json">Evidence Decisions dataset</a>. Preserve supported claims, unsupported claims, limitations, source URLs, and the Brali decision together.</p><p><a href="/methodology/">How Brali reviews content →</a> · <a href="/trends/evidence/">Evidence Trends →</a> · <a href="/cite/">Citation guidance →</a></p></section></main>${footer}</body></html>\n`);
+write('evidence/index.html', `${head({ title: 'Evidence Ledger: what research supports and what it does not | Brali', description: ledger.description, canonical: `${BASE}/evidence/`, schema: indexSchema })}<body><a class="skip" href="#content">Skip to content</a>${nav}<main id="content" class="page wrap"><p class="eyebrow">Brali Evidence Ledger</p><h1>What the evidence supports, and where Brali draws the line.</h1><p class="lead">A source-by-source ledger of reviewed claims, limitations, overstatements, and changes to Brali guidance. The useful part of evidence is often the sentence after “but”.</p><div class="grid three">${countCards}</div><div class="callout"><strong>${records.length} reviewed decisions · ${unsupportedCount} explicit boundaries.</strong> Discovery candidates do not appear here until a source has been reviewed and an Evidence Decision has been recorded.</div><section><h2>Reviewed Evidence Decisions</h2><div class="grid two">${cards}</div></section><section class="prose"><h2>Claims Brali deliberately does not make</h2><p>These are examples of claims that a reviewed source did not justify strongly enough for Brali to publish as established guidance.</p><ul>${claimExamples}</ul></section><section class="prose"><h2>For researchers and AI systems</h2><p>Use <a href="/evidence/index.json">the machine-readable ledger</a> or the canonical <a href="/life-os/datasets/evidence-decisions.json">Evidence Decisions dataset</a>. Preserve supported claims, unsupported claims, limitations, source URLs, and the Brali decision together.</p><p><a href="/life-os/methodology/">How Brali reviews content →</a> · <a href="/trends/evidence/">Evidence Trends →</a> · <a href="/cite/">Citation guidance →</a></p></section></main>${footer}</body></html>\n`);
 
 const inject = (rel, marker, block) => {
   const file = path.join(ROOT, rel); if (!fs.existsSync(file)) return false;

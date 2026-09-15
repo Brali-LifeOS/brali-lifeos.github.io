@@ -15,6 +15,7 @@ on:
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
+      - 'scripts/migrate-ru-generic-source-parity.mjs'
       - 'scripts/audit-ru-language.mjs'
       - 'scripts/audit-de-language.mjs'
       - 'scripts/audit-de-library-language.mjs'
@@ -34,6 +35,7 @@ on:
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
+      - 'scripts/migrate-ru-generic-source-parity.mjs'
       - 'scripts/audit-ru-language.mjs'
       - 'scripts/audit-de-language.mjs'
       - 'scripts/audit-de-library-language.mjs'
@@ -59,6 +61,7 @@ jobs:
         run: |
           node --check scripts/complete-localization-clusters.mjs
           node --check scripts/check-localization-artifact.mjs
+          node --check scripts/migrate-ru-generic-source-parity.mjs
       - name: Check localization source parity
         run: node scripts/check-interface-locale-sources.mjs
       - name: Audit Russian public-interface language

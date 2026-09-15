@@ -1,0 +1,63 @@
+<p class="eyebrow">Forschung und Signale</p>
+<h1 class="long-heading">Nützliche Forschung – mit einer klaren Grenze zwischen Studienergebnis und praktischem Rat.</h1>
+<p class="lead">Brali sammelt wissenschaftliche Arbeiten nicht für eine beeindruckende Linkliste. Eine neue Quelle kann ein Protokoll stützen, eine alte Behauptung enger machen, einen Widerspruch sichtbar machen oder zunächst nur ein Signal bleiben, wenn die Daten für eine praktische Empfehlung noch nicht ausreichen.</p>
+
+<section aria-labelledby="de-research-notes">
+  <h2 id="de-research-notes">Was Brali derzeit untersucht</h2>
+  <div class="grid two">
+    <article class="card">
+      <span class="card-label">Geprüfte Evidenz · 8. September 2026</span>
+      <h3>Sitzpausen: Bewegung ist wichtiger als die Verehrung eines Timers</h3>
+      <p>Zwei systematische Reviews aus 2026 stützen die Idee, langes Sitzen durch Bewegung zu unterbrechen. Sie begründen jedoch keine universelle Büroregel wie „alle zwanzig Minuten aufstehen“.</p>
+      <p><a lang="en" hreflang="en" href="/research/movement-breaks-metabolic-evidence/">Vollständige Analyse auf Englisch →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Evidenzgrenze · 18. August 2026</span>
+      <h3>Abrufübungen: Erinnern ist noch nicht dasselbe wie Anwenden</h3>
+      <p>Aktives Abrufen bleibt für das Gedächtnis nützlich. Brali trennt jedoch das Erinnern prüfbaren Materials, weiteres Lernen und den Transfer in eine reale Aufgabe – das sind nicht dieselben Ergebnisse.</p>
+      <p><a lang="en" hreflang="en" href="/research/retrieval-practice-memory-is-not-application/">Vollständige Analyse auf Englisch →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Forschungssignal · 18. August 2026</span>
+      <h3>Regelmäßiger Schlaf ist ein nützliches Signal, aber noch kein Rezept</h3>
+      <p>Eine Metaanalyse aus 2026 verbindet größere Schwankungen im Schlaf mit ungünstigeren kognitiven Ergebnissen. Der Zusammenhang ist beobachtenswert, beweist für sich allein aber keine Kausalität und legt keinen individuellen Schlafplan fest.</p>
+      <p><a lang="en" hreflang="en" href="/research/sleep-regularity-signal-not-prescription/">Vollständige Analyse auf Englisch →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Forschungsnotiz · 18. August 2026</span>
+      <h3>Gewohnheiten passen meist nicht in magische 21 Tage</h3>
+      <p>Ein systematischer Review zeigt eine große Streuung bei der Gewohnheitsbildung. Eine feste Zahl von Tagen beschreibt Fortschritt schlechter als eine wiederholbare Handlung, die tatsächlich in den Alltag passt.</p>
+      <p><a lang="en" hreflang="en" href="/research/habits-take-time/">Vollständige Analyse auf Englisch →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">KI · 18. August 2026</span>
+      <h3>RAG hilft, macht eine KI-Antwort aber nicht automatisch verlässlich</h3>
+      <p>Retrieval kann Antworten verbessern; schlechte Suche und schwache Quellenauswahl können sie auch verschlechtern. Eine belastbare Wissensbasis braucht weiterhin Retrieval-Evaluation, Provenienz und klare Behauptungsgrenzen.</p>
+      <p><a lang="en" hreflang="en" href="/research/rag-is-not-a-trust-button/">Vollständige Analyse auf Englisch →</a></p>
+    </article>
+  </div>
+</section>
+
+<section class="prose">
+  <h2>Wie Forschung in Brali gelangt</h2>
+  <ol>
+    <li><strong>Suche:</strong> gepflegte Forschungsfragen beschreiben, was beobachtet wird.</li>
+    <li><strong>Kandidat:</strong> eine neue Veröffentlichung kommt zunächst als unbestätigtes Signal in die Warteschlange – nicht als fertige Empfehlung.</li>
+    <li><strong>Evidence Decision:</strong> die Quelle selbst wird geprüft: welche enge Schlussfolgerung sie stützt, was sie nicht zeigt und welche Grenzen wichtig sind.</li>
+    <li><strong>Änderung der Bibliothek:</strong> erst danach kann eine Quelle einen bestehenden Eintrag stärken, eine Aussage enger machen, einen neuen atomaren Hack vorschlagen oder ein Protokoll verändern.</li>
+  </ol>
+  <p>Die maschinenlesbaren Forschungsflächen bleiben kanonisch englisch: <a href="/data/research-queries.json">research-queries.json</a>, <a href="/data/research-candidates.json">research-candidates.json</a> und <a href="/life-os/datasets/evidence-decisions.json">evidence-decisions.json</a>.</p>
+
+  <h2>Warum die Kandidaten-Warteschlange absichtlich nicht als vertrauenswürdig gilt</h2>
+  <p>Titel und Abstract helfen beim Finden einer Arbeit, ersetzen aber nicht die Prüfung der Quelle. Population, Studiendesign, Vergleich, Endpunkt, Effektgröße und Einschränkungen können die zulässige Schlussfolgerung stark einengen. Eine gefundene Veröffentlichung erhält deshalb nicht allein durch ihre Existenz den Status <code>reviewed</code>.</p>
+
+  <h2>Von Forschung zur Bibliothek</h2>
+  <p>Eine Forschungsnotiz wird nicht automatisch zu vertrauenswürdigem Rat. Sie kann nur einen Teil einer älteren Behauptung stützen, diese einschränken, nach eigener Prüfung den Evidenzstatus verändern, einen neuen Hack vorschlagen, einen Widerspruch zeigen oder im Beobachtungsmodus bleiben. Diese Verzögerung schützt davor, aus einer frischen Studie zu schnell einen selbstsicheren Lifehack zu machen.</p>
+</section>
+
+<aside class="callout">
+  <h3>Quellenentscheidungen selbst ansehen?</h3>
+  <p>Das Evidence Ledger zeigt, was eine konkrete Quelle stützt, was sie nicht belegt und welche Änderung nach der Prüfung in der Bibliothek erfolgt ist.</p>
+  <a class="button" lang="en" hreflang="en" href="/evidence/">Evidence Ledger – englische Version</a>
+  <a class="button quiet" lang="en" hreflang="en" href="/research/gaps/">Research gaps – englische Version</a>
+</aside>

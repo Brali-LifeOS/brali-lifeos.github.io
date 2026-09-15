@@ -1,0 +1,83 @@
+<p class="eyebrow">Für KI und Entwickler</p>
+<h1 class="long-heading">Nutzen Sie praktisches Wissen, ohne seine Evidenzgrenzen abzuschneiden.</h1>
+<p class="lead">Brali ist eine versionierbare Wissensschicht für Menschen und Agenten. Dieselben kanonischen Einträge speisen lesbare Protokolle, Agent Skills, API, lokalen MCP, Datensätze und Evaluation. Evidenzstatus, Provenienz und stabile Identität müssen die Integration zusammen mit dem eigentlichen Rat überleben.</p>
+
+<section class="prose" data-brali-fast-start>
+  <p class="card-label">Schnell starten</p>
+  <h2>Probieren Sie zuerst den nützlichen Teil – die Architektur kann danach kommen.</h2>
+  <p>Für einen ersten Brali-Test müssen Sie nicht sofort das Repository klonen oder die Ontologie verstehen. Wählen Sie die kleinste Oberfläche für Ihre Aufgabe.</p>
+  <div class="grid two">
+    <article class="card">
+      <span class="card-label">Ohne Installation</span>
+      <h3>Eine praktische Frage stellen</h3>
+      <p>Der Query Playground zeigt gefundene Themen, vertrauenswürdige Protokolle, Evidenzstatus und Provenienz. Seine Oberfläche bleibt derzeit englisch; das ist eine ausdrücklich englische Nebenfläche und kein versteckter deutscher Fallback.</p>
+      <p><a class="button yellow" lang="en" hreflang="en" href="/for-ai/query/">Query Playground öffnen – englische Oberfläche</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Agent Skill</span>
+      <h3>Zuerst den Brali-Router ansehen</h3>
+      <p>Der Router wählt nur aus der vertrauenswürdigen Empfehlungsschicht. Vor einer Installation kann er geprüft werden:</p>
+      <pre><code>gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os</code></pre>
+      <p><a lang="en" hreflang="en" href="/skill-packs/">Agent-Skills-Katalog – englische Version →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">JSON / API</span>
+      <h3>Nur die benötigte vertrauenswürdige Oberfläche abrufen</h3>
+      <p>Für Anwendungen ist der kompakte Trusted Protocol Feed oder API v1 meist der bessere Start als der gesamte Korpus in jedem Prompt. Maschinen-Endpunkte bleiben kanonisch; Feldnamen werden absichtlich nicht lokalisiert.</p>
+      <p><a href="/life-os/datasets/protocols.json">Trusted Protocol Feed →</a> · <a href="/api/v1/index.json">API index →</a> · <a href="/api/v1/openapi.json">OpenAPI →</a></p>
+    </article>
+    <article class="card">
+      <span class="card-label">Überprüfbarkeit</span>
+      <h3>Evaluation statt Marketing-Score</h3>
+      <p>Die offene Evaluation Suite enthält Fragen, erwartete Trust Boundaries und Ergebnisse. Sie prüft Retrieval und Grounding von Brali und gibt sich nicht als universeller Benchmark eines ungebundenen LLM aus.</p>
+      <p><a class="button" lang="en" hreflang="en" href="/for-ai/evaluation/">Agent Evaluation – englische Version</a></p>
+    </article>
+  </div>
+  <aside class="callout"><strong>Vertrauensregel:</strong> Ein vorhandener Eintrag oder eine Skill-Datei ist noch keine vertrauenswürdige Empfehlung. Reguläre Ausgaben dürfen nur dafür freigegebene <code>reviewed</code>/<code>practical</code>-Einträge verwenden. <code>pending-review</code> und <code>restricted</code> behalten ihre Einschränkungen. Wenn es keine passende vertrauenswürdige Antwort gibt, kann „keine Antwort“ das richtige Ergebnis sein.</aside>
+</section>
+
+<section class="prose">
+  <h2>Wählen Sie die kleinste Integrationsoberfläche, die das Problem löst</h2>
+  <p>Unterstützt die Umgebung Agent Skills, beginnen Sie mit dem Router <code>brali-life-os</code> oder einem eng begrenzten Skill. Für strukturierte Suche eignet sich API v1. Lokaler MCP ist sinnvoll, wenn Ihre Umgebung bereits mit MCP arbeitet. Den kompletten Korpus standardmäßig in jeden Prompt zu kopieren ist teurer, schwerer zu prüfen und trennt Rat leichter vom Kontext.</p>
+
+  <h2>Empfohlener Retrieval-Ablauf</h2>
+  <ol>
+    <li>Bestimmen Sie das konkrete Thema oder Problem des Nutzers.</li>
+    <li>Suchen Sie über <code>/api/v1/search.json</code> und lösen Sie das Ergebnis auf eine canonical ID auf.</li>
+    <li>Laden Sie Topic, Hack, Protocol oder den erzeugten Agent Skill.</li>
+    <li>Lesen Sie vor praktischen oder evidenzartigen Aussagen die Evidence-Metadaten und den Skill-Modus.</li>
+    <li>Prüfen Sie bei Forschungsmaterial die Evidence Decision: gestützte Schlussfolgerung, nicht gestützte Schlussfolgerungen, Grenzen und redaktionelle Entscheidung.</li>
+    <li>Geben Sie Evidenzstatus, Skill-Modus, Quellenumfang, canonical ID und Brali-URL zusammen mit dem Inhalt weiter.</li>
+    <li>Wenn Wissen fehlt, geben Sie fehlende Abdeckung zurück, statt eine Antwort zu erfinden.</li>
+  </ol>
+
+  <h2>Unsicherheit nicht wegübersetzen</h2>
+  <p>Trust-Metadaten sind Teil des Wissens, kein dekoratives Badge. Eine Seite, ein Source Record oder eine Skill-Datei wird nicht zur Empfehlung, nur weil sie über Suche oder API erreichbar ist. Systeme, die Brali nutzen, müssen zwischen <code>reviewed</code>, <code>practical</code>, <code>pending-review</code> und <code>restricted</code> unterscheiden.</p>
+
+  <h2>MCP</h2>
+  <p>Das Repository enthält einen ausschließlich lesenden MCP-Server mit Werkzeugen wie <code>search_knowledge</code>, <code>get_hack</code>, <code>get_protocol</code>, <code>get_evidence</code>, <code>list_topics</code> und <code>get_related</code>. Er liest dieselben erzeugten API-Dateien und pflegt kein zweites Wissensmodell. Als nachgewiesene Oberfläche gilt derzeit lokaler stdio-MCP; Brali behauptet keinen gehosteten Remote-MCP-Endpunkt ohne tatsächliche Veröffentlichung und Prüfung.</p>
+
+  <h2>Mehrsprachiges Retrieval</h2>
+  <p>Englisch bleibt kanonische Redaktionssprache und Quelle der Identität. Lokalisierte Ebenen ergänzen natürliche Titel, Beschreibungen und Routen, behalten aber dieselbe canonical ID, denselben Slug und Evidenzstatus. Fehlt eine deutsche Route im Manifest, muss ein Agent ausdrücklich auf den englischen Kanon wechseln, statt eine englische Seite als lokalisiert auszugeben.</p>
+
+  <h2>Kanonische maschinenlesbare Dateien</h2>
+  <ul>
+    <li><a href="/skill-packs/library.json">Vollständige Agent-Skills-Bibliothek</a></li>
+    <li><a href="/skill-packs/catalog.json">Vertrauenswürdiger Agent-Skills-Katalog</a></li>
+    <li><a href="/api/v1/index.json">API index</a></li>
+    <li><a href="/api/v1/openapi.json">OpenAPI contract</a></li>
+    <li><a href="/life-os/datasets/protocols.json">Trusted Protocol Feed</a></li>
+    <li><a href="/life-os/datasets/evidence.json">Evidence index</a></li>
+    <li><a href="/life-os/datasets/evidence-decisions.json">Evidence decisions</a></li>
+  </ul>
+
+  <h2>Integration, Forschung oder Lizenzierung</h2>
+  <p>Für Produktintegration, Lokalisierung, Forschungskooperation oder kommerzielle Nutzung wechseln Sie zur <a href="/de/partners/">deutschen Partnerschaftsseite</a>.</p>
+</section>
+
+<aside class="callout">
+  <h3>Was noch nicht lokalisiert ist</h3>
+  <p>Query Playground, Agent Evaluation, Demos, Integration Kits und der Agent-Skills-Katalog bleiben vorerst englische Human-Interface-Seiten. Maschinenlesbare JSON/API-Endpunkte behalten absichtlich ihre kanonischen Feldnamen. Die deutsche Version macht diese Grenze sichtbar.</p>
+  <a class="button" href="/de/life-os/">Deutsche Bibliothek öffnen</a>
+  <a class="button quiet" href="/de/life-os/methodology/">Wie Brali Empfehlungen prüft</a>
+</aside>

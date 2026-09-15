@@ -17,6 +17,8 @@ const ruCopy = readJson("data/localization/ru/lifecycle.json");
 assert(Array.isArray(canonicalIndex), "canonical hack index must be an array");
 assert(reviews.schema_version === 1 && Array.isArray(reviews.entries), "lifecycle dataset must be schema_version 1 with entries[]");
 assert(reviews.entries.length === canonicalIndex.length, `lifecycle coverage drift ${reviews.entries.length}/${canonicalIndex.length}`);
+assert(Array.isArray(reviews.unresolved_decision_targets), "lifecycle dataset must expose unresolved_decision_targets[]");
+assert(reviews.unresolved_decision_target_count === reviews.unresolved_decision_targets.length, "unresolved Evidence Decision target count drift");
 assert(decisions.schema_version === 1 && Array.isArray(decisions.entries), "Evidence Decisions must be schema_version 1 with entries[]");
 assert(watchlist.schema_version === 1 && Array.isArray(watchlist.candidates), "research lifecycle watchlist must be schema_version 1 with candidates[]");
 assert(ruCopy.schema_version === 1 && ruCopy.locale === "ru", "Russian lifecycle source must declare schema_version 1 and locale ru");
@@ -25,6 +27,16 @@ const canonicalSlugs = new Set(canonicalIndex.map((entry) => entry.slug));
 const reviewBySlug = new Map(reviews.entries.map((entry) => [entry.slug, entry]));
 assert(reviewBySlug.size === canonicalSlugs.size, "lifecycle dataset contains duplicate or missing slugs");
 for (const slug of canonicalSlugs) assert(reviewBySlug.has(slug), `lifecycle dataset missing canonical hack ${slug}`);
+
+const unresolvedByKey = new Map();
+for (const item of reviews.unresolved_decision_targets) {
+  const key = `${item.decision_id}::${item.target_hack_id}`;
+  assert(!unresolvedByKey.has(key), `duplicate unresolved Evidence Decision target ${key}`);
+  assert(!canonicalSlugs.has(item.target_hack_id), `${key}: unresolved target unexpectedly exists in current canonical corpus`);
+  assert(item.reason === "target-hack-not-current-canonical", `${key}: unsupported unresolved target reason`);
+  assert(typeof item.required_action === "string" && item.required_action.includes("Do not guess"), `${key}: unresolved target must preserve an explicit no-guess boundary`);
+  unresolvedByKey.set(key, item);
+}
 
 const allowedLifecycle = new Set(["active", "reviewed", "watch", "needs-review", "contested", "refuted", "retired"]);
 let linkedDecisionCount = 0;
@@ -39,7 +51,12 @@ for (const entry of reviews.entries) {
 for (const decision of decisions.entries) {
   if (decision.source_reviewed !== true) continue;
   for (const slug of [...new Set(decision.target_hack_ids || [])]) {
-    assert(canonicalSlugs.has(slug), `${decision.id}: Evidence Decision targets unknown hack ${slug}`);
+    if (!canonicalSlugs.has(slug)) {
+      const unresolved = unresolvedByKey.get(`${decision.id}::${slug}`);
+      assert(unresolved, `${decision.id}: non-canonical target ${slug} was neither linked nor recorded as explicit linkage debt`);
+      assert(unresolved.source_url === decision.source_url, `${decision.id}/${slug}: unresolved target source_url drift`);
+      continue;
+    }
     const linked = reviewBySlug.get(slug).evidence_decisions.find((item) => item.id === decision.id);
     assert(linked, `${decision.id}: reviewed Evidence Decision is not linked into lifecycle record ${slug}`);
     assert(linked.source_url === decision.source_url, `${decision.id}: source_url drift in lifecycle enrichment for ${slug}`);
@@ -65,11 +82,17 @@ for (const candidate of watchlist.candidates) {
   }
 }
 assert(watchlist.policy.includes("never an evidence or lifecycle verdict"), "watchlist policy must explicitly forbid metadata-driven verdicts");
+assert(Array.isArray(watchlist.reviewed_linkage_debt), "research watchlist must expose reviewed_linkage_debt[]");
+assert(watchlist.reviewed_linkage_debt.length === reviews.unresolved_decision_targets.length, "research watchlist reviewed linkage debt drift");
+for (const debt of watchlist.reviewed_linkage_debt) {
+  assert(unresolvedByKey.has(`${debt.decision_id}::${debt.target_hack_id}`), `${debt.decision_id}/${debt.target_hack_id}: watchlist linkage debt is not grounded in lifecycle dataset`);
+}
 
 const watchlistPage = fs.readFileSync(path.join(root, "research", "review-watchlist", "index.html"), "utf8");
 assert(/<meta\b(?=[^>]*name=["']robots["'])[^>]*content=["'][^"']*noindex[^"']*["']/i.test(watchlistPage) || /<meta\b(?=[^>]*content=["'][^"']*noindex[^"']*["'])[^>]*name=["']robots["']/i.test(watchlistPage), "research watchlist human page must remain noindex");
 assert(watchlistPage.includes("Metadata is not a verdict"), "research watchlist must visibly explain that metadata is not a verdict");
 assert(watchlistPage.includes(`<link rel="canonical" href="${base}/research/review-watchlist/">`), "research watchlist canonical URL drift");
+if (reviews.unresolved_decision_targets.length) assert(watchlistPage.includes("Reviewed linkage debt"), "research watchlist must visibly expose unresolved reviewed target mappings");
 
 const statusCopy = ruCopy.status || {};
 for (const status of allowedLifecycle) {
@@ -123,4 +146,4 @@ assert(ruSitemap.includes(`<loc>${base}/ru/sponsorship/</loc>`), "Russian sitema
 const ruLlms = fs.readFileSync(path.join(root, "ru", "llms.txt"), "utf8");
 assert(ruLlms.includes(`${base}/ru/life-os/review-log/`) && ruLlms.includes(`${base}/ru/sponsorship/`), "Russian llms.txt missing lifecycle/trust surfaces");
 
-console.log(`Lifecycle/research/localization gate passed: hacks=${reviews.entries.length}, linked_decisions=${linkedDecisionCount}, open_watch=${watchlist.candidates.length}, ru_lifecycle_pages=${ruLifecyclePages}, ru_trust_surfaces=2.`);
+console.log(`Lifecycle/research/localization gate passed: hacks=${reviews.entries.length}, linked_decisions=${linkedDecisionCount}, unresolved_targets=${reviews.unresolved_decision_targets.length}, open_watch=${watchlist.candidates.length}, ru_lifecycle_pages=${ruLifecyclePages}, ru_trust_surfaces=2.`);

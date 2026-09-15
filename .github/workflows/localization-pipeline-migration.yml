@@ -1,0 +1,42 @@
+name: Localization pipeline convergence
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/migrate-localization-pipeline.mjs'
+      - '.github/workflows/localization-pipeline-migration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Converge localization build pipeline
+        run: node scripts/migrate-localization-pipeline.mjs
+      - name: Verify package JSON
+        run: node -e "JSON.parse(require('fs').readFileSync('package.json','utf8')); console.log('package.json valid')"
+      - name: Commit localization pipeline convergence
+        shell: bash
+        run: |
+          if git diff --quiet -- package.json; then
+            echo "No package.json changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package.json
+          git commit -m "Converge localization build on generic renderer"
+          git push origin HEAD:${{ github.ref_name }}

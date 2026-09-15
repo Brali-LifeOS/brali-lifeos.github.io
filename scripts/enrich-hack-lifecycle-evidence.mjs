@@ -19,27 +19,44 @@ if (!Array.isArray(decisions.entries)) throw new Error("data/evidence-decisions.
 
 const reviewBySlug = new Map(reviews.entries.map((entry) => [entry.slug, entry]));
 const linksBySlug = new Map();
+const unresolvedTargets = [];
 let linkedDecisions = 0;
+
+function decisionLink(decision) {
+  return {
+    id: decision.id,
+    candidate_id: decision.candidate_id || null,
+    decision: decision.decision,
+    reviewed_at: decision.reviewed_at,
+    reviewed_by: decision.reviewed_by,
+    source_url: decision.source_url,
+    source_title: decision.source_title,
+    source_type: decision.source_type || null,
+    supported_claim: decision.supported_claim,
+    limitations: decision.limitations || [],
+    notes: decision.notes || null,
+  };
+}
 
 for (const decision of decisions.entries) {
   if (decision.source_reviewed !== true) continue;
   const targets = [...new Set(decision.target_hack_ids || [])];
   for (const slug of targets) {
-    if (!reviewBySlug.has(slug)) throw new Error(`Evidence Decision ${decision.id} targets unknown lifecycle hack ${slug}`);
+    if (!reviewBySlug.has(slug)) {
+      unresolvedTargets.push({
+        decision_id: decision.id,
+        candidate_id: decision.candidate_id || null,
+        target_hack_id: slug,
+        reviewed_at: decision.reviewed_at || null,
+        source_url: decision.source_url || null,
+        source_title: decision.source_title || null,
+        reason: "target-hack-not-current-canonical",
+        required_action: "Resolve the historical target to a current canonical hack only with explicit identity/provenance evidence, or record that the target is retired. Do not guess a replacement slug.",
+      });
+      continue;
+    }
     const list = linksBySlug.get(slug) || [];
-    list.push({
-      id: decision.id,
-      candidate_id: decision.candidate_id || null,
-      decision: decision.decision,
-      reviewed_at: decision.reviewed_at,
-      reviewed_by: decision.reviewed_by,
-      source_url: decision.source_url,
-      source_title: decision.source_title,
-      source_type: decision.source_type || null,
-      supported_claim: decision.supported_claim,
-      limitations: decision.limitations || [],
-      notes: decision.notes || null,
-    });
+    list.push(decisionLink(decision));
     linksBySlug.set(slug, list);
     linkedDecisions += 1;
   }
@@ -49,6 +66,8 @@ for (const entry of reviews.entries) {
   entry.evidence_decisions = (linksBySlug.get(entry.slug) || []).sort((a, b) => (a.reviewed_at || "").localeCompare(b.reviewed_at || "") || a.id.localeCompare(b.id));
   entry.evidence_decision_count = entry.evidence_decisions.length;
 }
+reviews.unresolved_decision_targets = unresolvedTargets.sort((a, b) => a.target_hack_id.localeCompare(b.target_hack_id) || a.decision_id.localeCompare(b.decision_id));
+reviews.unresolved_decision_target_count = reviews.unresolved_decision_targets.length;
 fs.writeFileSync(reviewsPath, `${JSON.stringify(reviews, null, 2)}\n`);
 
 function evidenceBlock(items) {
@@ -80,4 +99,4 @@ for (const entry of reviews.entries) {
   fs.writeFileSync(file, html);
 }
 
-console.log(`lifecycle_evidence decisions=${decisions.entries.length} linked=${linkedDecisions} hacks=${linksBySlug.size} patched_pages=${patchedPages}`);
+console.log(`lifecycle_evidence decisions=${decisions.entries.length} linked=${linkedDecisions} hacks=${linksBySlug.size} unresolved_targets=${unresolvedTargets.length} patched_pages=${patchedPages}`);

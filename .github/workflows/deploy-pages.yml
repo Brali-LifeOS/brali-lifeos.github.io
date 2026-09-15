@@ -39,6 +39,15 @@ jobs:
         run: cd mcp && npm install --ignore-scripts --package-lock=false && node -e "import('./remote.mjs')"
       - name: Validate Trustverse classification policy
         run: node scripts/check-content-trust-policy.mjs
+      - name: Enforce append-only hack review history
+        run: node scripts/check-hack-review-append-only.mjs
+      - name: Check lifecycle research and localization syntax
+        run: |
+          node --check scripts/enrich-hack-lifecycle-evidence.mjs
+          node --check scripts/build-research-lifecycle-watchlist.mjs
+          node --check scripts/build-ru-lifecycle-surfaces.mjs
+          node --check scripts/check-lifecycle-research-localization.mjs
+          node --check scripts/finalize-hack-lifecycle-discovery.mjs
       - name: Check localization release verifier syntax
         run: |
           node --check scripts/check-live-localizations.mjs
@@ -57,6 +66,8 @@ jobs:
         run: npm run build
       - name: Complete multilingual locale clusters
         run: node scripts/complete-localization-clusters.mjs
+      - name: Gate research lifecycle and Russian trust parity
+        run: npm run lifecycle:check
       - name: Verify localized analytics consent
         run: node scripts/check-ru-consent-localization.mjs
       - name: Check localization impact against PR base
@@ -86,6 +97,8 @@ jobs:
         run: node scripts/check-brali-bench.mjs
       - name: Check AI search profile
         run: node scripts/check-ai-search-profile.mjs
+      - name: Finalize hack lifecycle discovery
+        run: node scripts/finalize-hack-lifecycle-discovery.mjs
       - name: Normalize final sitemap to canonical indexable URLs
         run: node scripts/normalize-search-sitemap.mjs
       - name: Apply Image Discovery to exact final artifact
@@ -107,6 +120,26 @@ jobs:
           test -s bench/results.json
           grep -q 'https://brali-lifeos.github.io/bench/' sitemap.xml
           grep -q 'https://brali-lifeos.github.io/bench/' llms.txt
+      - name: Gate hack lifecycle final artifact
+        shell: bash
+        run: |
+          grep -q 'https://brali-lifeos.github.io/life-os/review-log/' sitemap.xml
+          grep -q 'https://brali-lifeos.github.io/sponsorship/' sitemap.xml
+          grep -q 'https://brali-lifeos.github.io/ru/life-os/review-log/' sitemap.xml
+          grep -q 'https://brali-lifeos.github.io/ru/sponsorship/' sitemap.xml
+          ! grep -q 'https://brali-lifeos.github.io/research/review-watchlist/' sitemap.xml
+          grep -q 'https://brali-lifeos.github.io/life-os/datasets/reviews.json' llms.txt
+          grep -q 'https://brali-lifeos.github.io/life-os/datasets/research-lifecycle-watchlist.json' llms.txt
+          grep -q 'https://brali-lifeos.github.io/ru/life-os/review-log/' llms.txt
+          grep -q 'Hack review log' life-os/review-log/index.html
+          grep -q 'Sponsor the work, never the verdict' sponsorship/index.html
+          grep -q 'Metadata is not a verdict' research/review-watchlist/index.html
+          grep -q 'noindex,follow' research/review-watchlist/index.html
+          grep -q 'Журнал проверок' ru/life-os/review-log/index.html
+          grep -q 'Покупать вывод — нельзя' ru/sponsorship/index.html
+          test -s life-os/datasets/reviews.json
+          test -s life-os/datasets/research-lifecycle-watchlist.json
+          npm run lifecycle:check
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Final multilingual localization gate
@@ -154,8 +187,32 @@ jobs:
       - name: Verify live Brali Bench
         shell: bash
         run: |
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/ | grep -q 'Brali Bench'
-          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/manifest.json | grep -q 'structured-brali'
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/ --output "$RUNNER_TEMP/brali-bench.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/bench/manifest.json --output "$RUNNER_TEMP/brali-bench-manifest.json"
+          grep -q 'Brali Bench' "$RUNNER_TEMP/brali-bench.html"
+          grep -q 'structured-brali' "$RUNNER_TEMP/brali-bench-manifest.json"
+      - name: Verify live hack lifecycle surfaces
+        shell: bash
+        run: |
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/review-log/ --output "$RUNNER_TEMP/brali-review-log.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/datasets/reviews.json --output "$RUNNER_TEMP/brali-reviews.json"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/datasets/research-lifecycle-watchlist.json --output "$RUNNER_TEMP/brali-research-watchlist.json"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/research/review-watchlist/ --output "$RUNNER_TEMP/brali-research-watchlist.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/sponsorship/ --output "$RUNNER_TEMP/brali-sponsorship.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/ --output "$RUNNER_TEMP/brali-representative-hack.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/ru/life-os/review-log/ --output "$RUNNER_TEMP/brali-ru-review-log.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/ru/sponsorship/ --output "$RUNNER_TEMP/brali-ru-sponsorship.html"
+          curl --fail --silent --show-error --location --retry 5 --retry-delay 3 https://brali-lifeos.github.io/ru/life-os/10-minute-language-microsprints/ --output "$RUNNER_TEMP/brali-ru-representative-hack.html"
+          grep -q 'Hack review log' "$RUNNER_TEMP/brali-review-log.html"
+          grep -q '"schema_version": 1' "$RUNNER_TEMP/brali-reviews.json"
+          grep -q '"source_review_required": true' "$RUNNER_TEMP/brali-research-watchlist.json"
+          grep -q 'Metadata is not a verdict' "$RUNNER_TEMP/brali-research-watchlist.html"
+          grep -q 'noindex,follow' "$RUNNER_TEMP/brali-research-watchlist.html"
+          grep -q 'Sponsor the work, never the verdict' "$RUNNER_TEMP/brali-sponsorship.html"
+          grep -q 'Review history' "$RUNNER_TEMP/brali-representative-hack.html"
+          grep -q 'Журнал проверок' "$RUNNER_TEMP/brali-ru-review-log.html"
+          grep -q 'Покупать вывод — нельзя' "$RUNNER_TEMP/brali-ru-sponsorship.html"
+          grep -q 'История проверок' "$RUNNER_TEMP/brali-ru-representative-hack.html"
       - name: Verify live Image Discovery surface
         run: node scripts/check-live-image-discovery.mjs
       - name: Verify live Internal Discovery & Distribution surface

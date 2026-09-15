@@ -19,13 +19,16 @@ jobs:
         with:
           node-version: 22
           package-manager-cache: false
-      - name: Validate new localization tooling syntax
+      - name: Validate hardening tooling syntax
         run: |
           node --check scripts/build-profile-locales.mjs
           node --check scripts/normalize-localization-hreflang.mjs
           node --check scripts/check-hreflang-graph.mjs
           node --check scripts/check-de-library-contract.mjs
           node --check scripts/audit-de-library-language.mjs
+          node --check scripts/repair-final-internal-links.mjs
+          node --check scripts/check-final-internal-links.mjs
+          node --check scripts/check-live-localizations.mjs
       - name: Materialize effective canonical additions
         run: npm run content:additions
       - name: Validate reusable locale registry
@@ -42,6 +45,10 @@ jobs:
         run: node scripts/normalize-localization-hreflang.mjs
       - name: Gate complete hreflang graph
         run: node scripts/check-hreflang-graph.mjs
+      - name: Repair final internal link debt
+        run: node scripts/repair-final-internal-links.mjs
+      - name: Gate final internal links
+        run: node scripts/check-final-internal-links.mjs
       - name: Gate rendered German release files
         shell: bash
         run: |

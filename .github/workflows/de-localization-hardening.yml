@@ -31,6 +31,7 @@ jobs:
           node --check scripts/check-live-localizations.mjs
           node --check scripts/optimize-final-image-markup.mjs
           node --check scripts/stage-pages-artifact.mjs
+          node --check scripts/build-navigation-hubs.mjs
       - name: Materialize effective canonical additions
         run: npm run content:additions
       - name: Validate reusable locale registry
@@ -41,6 +42,8 @@ jobs:
         run: node scripts/audit-de-library-language.mjs --strict
       - name: Build canonical and Russian site
         run: npm run build
+      - name: Build production parity surfaces used by internal links
+        run: node scripts/build-brali-bench.mjs && node scripts/build-navigation-hubs.mjs
       - name: Build profile-driven supplemental locales
         run: node scripts/build-profile-locales.mjs
       - name: Normalize complete reciprocal hreflang graph

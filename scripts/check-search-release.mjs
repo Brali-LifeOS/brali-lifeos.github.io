@@ -124,4 +124,5 @@ await import('./check-rss-feed.mjs');
 await access(join(root, "index.html"));
 process.argv.push("--final");
 await import("./check-indexability-contract.mjs");
-console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt, AI profile, RSS subscription surface and final crawl/indexability graph.`);
+await import("./check-crawlable-links.mjs");
+console.log(`Brali Search Release gate passed: ${locs.length} canonical sitemap pages, exact homepage identity, one WebSite node, ${width}x${height} favicon, robots, noindex 404, llms.txt, AI profile, RSS subscription surface and complete multilingual crawl/indexability graph.`);

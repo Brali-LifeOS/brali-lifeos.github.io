@@ -12,11 +12,11 @@ on:
       - 'data/life-os-content/**'
       - 'data/life-os-content-additions.json'
       - 'scripts/build-interface-locales.mjs'
+      - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
-      - 'scripts/migrate-ru-generic-source-parity.mjs'
       - 'scripts/audit-ru-language.mjs'
       - 'scripts/audit-de-language.mjs'
       - 'scripts/audit-de-library-language.mjs'
@@ -33,11 +33,11 @@ on:
       - 'data/life-os-content/**'
       - 'data/life-os-content-additions.json'
       - 'scripts/build-interface-locales.mjs'
+      - 'scripts/build-localized-machine-surfaces.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'
       - 'scripts/check-localization-artifact.mjs'
-      - 'scripts/migrate-ru-generic-source-parity.mjs'
       - 'scripts/audit-ru-language.mjs'
       - 'scripts/audit-de-language.mjs'
       - 'scripts/audit-de-library-language.mjs'
@@ -61,9 +61,10 @@ jobs:
           package-manager-cache: false
       - name: Check localization hardening syntax
         run: |
+          node --check scripts/build-localized-machine-surfaces.mjs
           node --check scripts/complete-localization-clusters.mjs
           node --check scripts/check-localization-artifact.mjs
-          node --check scripts/migrate-ru-generic-source-parity.mjs
+          node --check scripts/check-interface-locales.mjs
       - name: Check localization source parity
         run: node scripts/check-interface-locale-sources.mjs
       - name: Audit Russian public-interface language

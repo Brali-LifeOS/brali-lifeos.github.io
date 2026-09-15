@@ -10,6 +10,7 @@ const locales = (profile.locales || []).filter((entry) => entry.role === "human-
 const fail = (locale, message) => { throw new Error(`[${locale}-localization] ${message}`); };
 const assert = (locale, condition, message) => { if (!condition) fail(locale, message); };
 const advertised = (entry) => ["reviewed-partial", "published"].includes(entry.status) && entry.searchPublication !== "none";
+const robotsNoindex = /<meta\b(?=[^>]*name=["']robots["'])[^>]*content=["'][^"']*(?:noindex|none)[^"']*["'][^>]*>/i;
 
 const canonicalIndex = await readJson("data/life-os-content/index.json");
 const authoringIndex = await loadLocalizationAuthoringIndex(root);
@@ -137,6 +138,8 @@ for (const localeEntry of locales) {
     ...[...localized.keys()].map((slug) => `/${locale}/life-os/${slug}/`),
     ...(primary.pages || []).map((page) => page.route),
   ];
+  let requiredEligible = 0;
+  let requiredWithheld = 0;
   for (const localizedPath of requiredPaths) {
     const route = routeByPath.get(localizedPath);
     assert(locale, route, `generated manifest missing ${localizedPath}`);
@@ -150,9 +153,15 @@ for (const localeEntry of locales) {
     assert(locale, html.includes(`hreflang="${profile.sourceLocale}" href="${route.canonical_url}"`), `${localizedPath} missing source hreflang`);
     assert(locale, html.includes(`"inLanguage":"${localeEntry.languageTag}"`), `${localizedPath} structured data language drift`);
     assert(locale, !html.includes(">Skip to content<") && !html.includes(">Explore<") && !html.includes(">Read more<"), `${localizedPath} leaked English shell UI`);
-    const noindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*noindex/i.test(html);
-    if (localeEntry.searchPublication === "none") assert(locale, noindex, `${localizedPath} must be noindex while searchPublication=none`);
-    else assert(locale, !noindex, `${localizedPath} must be indexable for searchPublication=${localeEntry.searchPublication}`);
+    const noindex = robotsNoindex.test(html);
+    if (localeEntry.searchPublication === "none") {
+      assert(locale, noindex, `${localizedPath} must be noindex while searchPublication=none`);
+    } else {
+      assert(locale, typeof route.index_eligible === "boolean", `${localizedPath} missing route-level index_eligible decision`);
+      assert(locale, route.index_eligible ? !noindex : noindex, `${localizedPath} robots state disagrees with canonical search eligibility`);
+      if (route.index_eligible) requiredEligible += 1;
+      else requiredWithheld += 1;
+    }
   }
 
   for (const route of manifest.routes || []) {
@@ -176,7 +185,18 @@ for (const localeEntry of locales) {
   }
 
   const sitemap = await readFile(path.join(root, locale, "sitemap.xml"), "utf8");
-  for (const localizedPath of requiredPaths) assert(locale, sitemap.includes(`<loc>${base}${localizedPath}</loc>`), `sitemap missing ${localizedPath}`);
+  for (const localizedPath of requiredPaths) {
+    const route = routeByPath.get(localizedPath);
+    const inSitemap = sitemap.includes(`<loc>${base}${localizedPath}</loc>`);
+    if (localeEntry.searchPublication === "none") assert(locale, !inSitemap, `staged sitemap leaked ${localizedPath}`);
+    else if (route.index_eligible) assert(locale, inSitemap, `sitemap missing index-eligible ${localizedPath}`);
+    else assert(locale, !inSitemap, `sitemap leaked canonically withheld ${localizedPath}`);
+  }
+  if (localeEntry.searchPublication !== "none") {
+    assert(locale, manifest.coverage?.indexability?.eligible >= requiredEligible, "manifest eligible coverage is lower than required localized surface");
+    assert(locale, manifest.coverage?.indexability?.withheld >= requiredWithheld, "manifest withheld coverage is lower than required localized surface");
+  }
+
   const llms = await readFile(path.join(root, locale, "llms.txt"), "utf8");
   for (const token of [
     `Locale: ${locale}`,
@@ -191,5 +211,5 @@ for (const localeEntry of locales) {
     `${base}/${locale}/library.json`,
   ]) assert(locale, llms.includes(token), `llms.txt missing token: ${token}`);
 
-  console.log(`${localeEntry.label} localization gate passed: ${localized.size}/${canonicalIndex.length} entries; ${canonicalZones.length} zones; mode=${config.coverage_mode}; status=${localeEntry.status}; search=${localeEntry.searchPublication}.`);
+  console.log(`${localeEntry.label} localization gate passed: ${localized.size}/${canonicalIndex.length} entries; ${canonicalZones.length} zones; mode=${config.coverage_mode}; status=${localeEntry.status}; search=${localeEntry.searchPublication}; required-indexable=${requiredEligible}; required-withheld=${requiredWithheld}.`);
 }

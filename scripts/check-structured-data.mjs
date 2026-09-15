@@ -13,6 +13,17 @@ let missingIndexableLastmod = 0;
 let prematureCitations = 0;
 let indexableChecked = 0;
 
+function decode(value = "") {
+  return String(value).replaceAll("&amp;", "&").trim();
+}
+
+const sitemapBlocks = new Map();
+for (const match of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
+  const block = match[1];
+  const loc = decode(block.match(/<loc>([^<]+)<\/loc>/)?.[1] || "");
+  if (loc) sitemapBlocks.set(loc, block);
+}
+
 for (const entry of index) {
   const page = await readFile(path.join(root, "life-os", entry.slug, "index.html"), "utf8");
   const articleData = JSON.parse(await readFile(path.join(contentRoot, `${entry.slug}.json`), "utf8"));
@@ -37,9 +48,10 @@ for (const entry of index) {
   if (evidence.indexable) {
     indexableChecked += 1;
     const url = `${base}/life-os/${entry.slug}/`;
-    const escaped = url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const pattern = new RegExp(`<url><loc>${escaped}</loc><lastmod>\\d{4}-\\d{2}-\\d{2}</lastmod></url>`);
-    if (!pattern.test(sitemap)) missingIndexableLastmod += 1;
+    const block = sitemapBlocks.get(url) || "";
+    // A sitemap URL may legitimately contain xhtml:link alternates after lastmod.
+    // Validate the meaningful invariant instead of depending on compact XML order.
+    if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(block)) missingIndexableLastmod += 1;
   }
 }
 

@@ -36,6 +36,17 @@ function setMeta(html, key, value, content) {
   return pattern.test(html) ? html.replace(pattern, replacement) : html.replace(/<\/head>/i, `${replacement}</head>`);
 }
 
+function allowLargeImagePreview(html) {
+  const current = metaContent(html, "name", "robots");
+  const directives = current
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean)
+    .filter((value) => !/^max-image-preview\s*:/i.test(value));
+  directives.push("max-image-preview:large");
+  return setMeta(html, "name", "robots", directives.join(", "));
+}
+
 function mainHtml(html) {
   return html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || "";
 }
@@ -144,6 +155,11 @@ for (const inner of blocks) {
   const representative = await selectRepresentativeImage(html);
   if (!representative) continue;
 
+  // Image discovery now runs over the aggregate multilingual sitemap. Keep the
+  // preview contract aligned for every index-eligible page selected for an image,
+  // including localized routes that did not previously carry an explicit robots
+  // preview directive. Restricted/noindex routes never enter this sitemap.
+  html = allowLargeImagePreview(html);
   html = setMeta(html, "property", "og:image", representative.url);
   html = setMeta(html, "property", "og:image:alt", representative.alt);
   html = setMeta(html, "name", "twitter:card", "summary_large_image");
@@ -168,4 +184,4 @@ sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (whole, inner) => {
 await writeFile(sitemapPath, sitemap);
 await writeFile(join(ROOT, "data", "image-discovery.json"), `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`);
 
-console.log(`Brali Image Discovery applied to ${records.length} canonical sitemap page(s) with visible informative images.`);
+console.log(`Brali Image Discovery applied to ${records.length} index-eligible sitemap page(s) with visible informative images.`);

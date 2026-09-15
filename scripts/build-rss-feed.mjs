@@ -5,6 +5,7 @@ const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 const BASE = 'https://brali-lifeos.github.io';
 const UPDATES_URL = `${BASE}/updates/`;
 const FEED_URL = `${BASE}/feed.xml`;
+const SOURCE_PATH = path.join(ROOT, 'updates/feed.json');
 
 function escapeXml(value = '') {
   return String(value)
@@ -15,49 +16,42 @@ function escapeXml(value = '') {
     .replace(/'/g, '&apos;');
 }
 
-function blogSchema(html) {
-  const scripts = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)];
-  for (const match of scripts) {
-    try {
-      const value = JSON.parse(match[1]);
-      const candidates = Array.isArray(value) ? value : [value];
-      const blog = candidates.find((entry) => entry?.['@type'] === 'Blog');
-      if (blog) return blog;
-    } catch {
-      // Other JSON-LD blocks are allowed to be unrelated to the updates surface.
-    }
-  }
-  throw new Error('Brali Updates must expose a valid Blog JSON-LD block.');
-}
-
-function publishedDate(value) {
+function sourceDate(value, label) {
   const raw = String(value ?? '').trim();
-  if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) throw new Error(`Invalid update date: ${raw || '(missing)'}`);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(raw)) throw new Error(`Invalid ${label}: ${raw || '(missing)'}`);
   const parsed = new Date(`${raw}T00:00:00Z`);
-  if (Number.isNaN(parsed.getTime())) throw new Error(`Invalid update date: ${raw}`);
+  if (Number.isNaN(parsed.getTime())) throw new Error(`Invalid ${label}: ${raw}`);
   return parsed;
 }
 
-const updatesPath = path.join(ROOT, 'updates/index.html');
-const updatesHtml = fs.readFileSync(updatesPath, 'utf8');
-const schema = blogSchema(updatesHtml);
-const posts = (Array.isArray(schema.blogPost) ? schema.blogPost : [])
-  .filter((entry) => entry?.['@type'] === 'BlogPosting')
-  .map((entry) => {
-    const title = String(entry.headline ?? '').trim();
-    const url = String(entry.url ?? '').trim();
-    const date = publishedDate(entry.datePublished);
-    if (!title) throw new Error('Every Brali update needs a headline before it can enter RSS.');
-    if (!url.startsWith(`${UPDATES_URL}`)) throw new Error(`Update URL must stay under ${UPDATES_URL}: ${url}`);
-    return { title, url, date };
-  })
-  .sort((a, b) => b.date - a.date || a.url.localeCompare(b.url));
+const source = JSON.parse(fs.readFileSync(SOURCE_PATH, 'utf8'));
+const reports = (Array.isArray(source.reports) ? source.reports : []).map((report) => {
+  const slug = String(report.slug ?? '').trim();
+  const title = String(report.title ?? '').trim();
+  const summary = String(report.summary ?? '').trim();
+  if (!/^[a-z0-9-]+$/.test(slug)) throw new Error(`Invalid update slug: ${slug || '(missing)'}`);
+  if (!title) throw new Error(`Update ${slug} needs a title before it can enter RSS.`);
+  if (!summary) throw new Error(`Update ${slug} needs a summary before it can enter RSS.`);
+  return {
+    slug,
+    title,
+    summary,
+    url: `${UPDATES_URL}${slug}/`,
+    date: sourceDate(report.period_end, `period_end for ${slug}`),
+  };
+}).sort((a, b) => b.date - a.date || a.slug.localeCompare(b.slug));
 
-if (!posts.length) throw new Error('Brali RSS cannot be generated without at least one published update.');
+if (!reports.length) throw new Error('Brali RSS cannot be generated without at least one release/update report.');
 
-const items = posts.map((post) => `    <item>\n      <title>${escapeXml(post.title)}</title>\n      <link>${escapeXml(post.url)}</link>\n      <guid isPermaLink="true">${escapeXml(post.url)}</guid>\n      <pubDate>${post.date.toUTCString()}</pubDate>\n    </item>`).join('\n');
+const updatedAt = sourceDate(source.updated_at, 'updates.feed updated_at');
+const latestReportDate = reports.reduce((latest, report) => report.date > latest ? report.date : latest, reports[0].date);
+if (updatedAt < latestReportDate) {
+  throw new Error(`updates/feed.json updated_at (${source.updated_at}) predates the latest report (${latestReportDate.toISOString().slice(0, 10)}).`);
+}
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>Brali Updates</title>\n    <link>${UPDATES_URL}</link>\n    <description>Published Brali updates on practical knowledge, evidence, research, datasets, and agent-ready product changes.</description>\n    <language>en</language>\n    <atom:link href="${FEED_URL}" rel="self" type="application/rss+xml" />\n${items}\n  </channel>\n</rss>\n`;
+const items = reports.map((report) => `    <item>\n      <title>${escapeXml(report.title)}</title>\n      <link>${escapeXml(report.url)}</link>\n      <guid isPermaLink="true">${escapeXml(report.url)}</guid>\n      <pubDate>${report.date.toUTCString()}</pubDate>\n      <description>${escapeXml(report.summary)}</description>\n    </item>`).join('\n');
+
+const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n  <channel>\n    <title>Brali Updates</title>\n    <link>${UPDATES_URL}</link>\n    <description>Published Brali updates on practical knowledge, evidence, research, datasets, and agent-ready product changes.</description>\n    <language>en</language>\n    <lastBuildDate>${updatedAt.toUTCString()}</lastBuildDate>\n    <atom:link href="${FEED_URL}" rel="self" type="application/rss+xml" />\n${items}\n  </channel>\n</rss>\n`;
 
 fs.writeFileSync(path.join(ROOT, 'feed.xml'), xml);
-console.log(`Generated RSS feed with ${posts.length} published Brali updates.`);
+console.log(`Generated RSS feed from updates/feed.json with ${reports.length} release/update reports.`);

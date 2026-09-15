@@ -34,6 +34,9 @@ function meta(html, key, value) {
 function canonical(html) {
   return attr(tag(html, "link", "rel", "canonical"), "href");
 }
+function isNoindex(html) {
+  return /\b(?:noindex|none)\b/i.test(meta(html, "name", "robots"));
+}
 function title(html) {
   return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "").replace(/\s+/g, " ").trim();
 }
@@ -72,11 +75,7 @@ function anchors(html, currentPath) {
     try { url = new URL(href, `${base}${currentPath}`); }
     catch { continue; }
     if (url.origin !== base) continue;
-    result.push({
-      path: url.pathname,
-      fragment: url.hash ? decodeURIComponent(url.hash.slice(1)) : "",
-      raw: href,
-    });
+    result.push({ path: url.pathname, fragment: url.hash ? decodeURIComponent(url.hash.slice(1)) : "", raw: href });
   }
   return result;
 }
@@ -117,6 +116,7 @@ if (new Set(rootUrls).size !== rootUrls.length) fail("root sitemap contains dupl
 const rootPaths = new Set(rootUrls.map(pathnameFromUrl));
 
 const manifests = new Map();
+const allLocalizedByPath = new Map();
 const eligibleByPath = new Map();
 const manifestRouteCount = new Map();
 for (const locale of releaseLocales) {
@@ -144,31 +144,63 @@ for (const locale of releaseLocales) {
   if (new Set(routeUrls).size !== routeUrls.length) fail(`${locale.code}: duplicate route URL in manifest`);
   if (new Set(canonicalPaths).size !== canonicalPaths.length) fail(`${locale.code}: duplicate canonical mapping in manifest`);
 
+  const eligibleRoutes = routes.filter((route) => route.index_eligible === true);
+  const withheldRoutes = routes.filter((route) => route.index_eligible === false);
+  if (eligibleRoutes.length + withheldRoutes.length !== routes.length) fail(`${locale.code}: every route must declare boolean index_eligible`);
+  if (manifest.coverage?.indexability?.eligible !== eligibleRoutes.length || manifest.coverage?.indexability?.withheld !== withheldRoutes.length) {
+    fail(`${locale.code}: manifest indexability coverage drift`);
+  }
+
   const sitemapUrls = locs(localeSitemap);
   if (new Set(sitemapUrls).size !== sitemapUrls.length) fail(`${locale.code}: locale sitemap contains duplicate URLs`);
-  const expected = [...routeUrls].sort();
+  const expected = eligibleRoutes.map((route) => route.url).sort();
   const actual = [...sitemapUrls].sort();
   if (JSON.stringify(expected) !== JSON.stringify(actual)) {
     const actualSet = new Set(actual);
     const expectedSet = new Set(expected);
     const missing = expected.filter((url) => !actualSet.has(url));
     const extra = actual.filter((url) => !expectedSet.has(url));
-    fail(`${locale.code}: locale sitemap != manifest; missing=${missing.slice(0, 5).join(",") || "none"}; extra=${extra.slice(0, 5).join(",") || "none"}`);
+    fail(`${locale.code}: locale sitemap != index-eligible manifest subset; missing=${missing.slice(0, 5).join(",") || "none"}; extra=${extra.slice(0, 5).join(",") || "none"}`);
   }
 
   for (const route of routes) {
     if (!route.path.startsWith(locale.routePrefix)) fail(`${locale.code}: route escaped locale prefix ${route.path}`);
-    if (eligibleByPath.has(route.path)) fail(`route collision across locales: ${route.path}`);
-    eligibleByPath.set(route.path, { locale, route });
-    if (!rootPaths.has(route.path)) fail(`${locale.code}: root aggregate sitemap missing ${route.path}`);
+    if (allLocalizedByPath.has(route.path)) fail(`route collision across locales: ${route.path}`);
+    allLocalizedByPath.set(route.path, { locale, route });
+    const html = await readFile(routeFile(route.path), "utf8");
+    if (route.index_eligible === true) {
+      eligibleByPath.set(route.path, { locale, route });
+      if (!rootPaths.has(route.path)) fail(`${locale.code}: root aggregate sitemap missing eligible ${route.path}`);
+      if (isNoindex(html)) fail(`${locale.code}: eligible route is noindex ${route.path}`);
+    } else {
+      if (rootPaths.has(route.path)) fail(`${locale.code}: withheld route leaked into root sitemap ${route.path}`);
+      if (!isNoindex(html)) fail(`${locale.code}: withheld route must publish noindex,follow ${route.path}`);
+    }
   }
 }
 
 for (const pathname of rootPaths) {
   for (const locale of releaseLocales) {
     if (pathname.startsWith(locale.routePrefix) && !eligibleByPath.has(pathname)) {
-      fail(`${locale.code}: localized root-sitemap URL exists outside manifest/indexability graph: ${pathname}`);
+      fail(`${locale.code}: localized root-sitemap URL exists outside eligible manifest graph: ${pathname}`);
     }
+  }
+}
+
+// Re-prove that every route-level eligibility decision is inherited from the
+// canonical source page instead of being granted by translation presence.
+for (const row of cluster.routes || []) {
+  const sourceHtml = await readFile(routeFile(row.canonical_path), "utf8");
+  const expectedEligible = !isNoindex(sourceHtml);
+  if (canonical(sourceHtml) !== row.canonical_url) fail(`${row.canonical_path}: source canonical drift`);
+  if (expectedEligible !== rootPaths.has(row.canonical_path)) {
+    fail(`${row.canonical_path}: canonical search eligibility/sitemap parity drift`);
+  }
+  for (const locale of releaseLocales) {
+    const route = (manifests.get(locale.code)?.routes || []).find((candidate) => candidate.canonical_path === row.canonical_path);
+    if (!route) continue;
+    if (route.index_eligible !== expectedEligible) fail(`${route.path}: localized eligibility does not inherit canonical source state`);
+    if (row.alternates?.[locale.languageTag] !== route.url) fail(`${row.canonical_path}: cluster/manifest alternate drift for ${locale.code}`);
   }
 }
 
@@ -202,15 +234,11 @@ for (const pathname of expectedRegistryPaths) {
   htmlByPath.set(pathname, html);
   for (const link of anchors(html, pathname)) {
     if (expectedRegistryPaths.has(link.path) && link.path !== pathname) inbound.get(link.path)?.add(pathname);
-    if (link.path.endsWith("/") && !(await exists(routeFile(link.path)))) {
-      fail(`${pathname}: broken internal route ${link.raw}`);
-    }
+    if (link.path.endsWith("/") && !(await exists(routeFile(link.path)))) fail(`${pathname}: broken internal route ${link.raw}`);
     if (link.fragment && await exists(routeFile(link.path))) {
       const targetHtml = link.path === pathname ? html : (htmlByPath.get(link.path) || await readFile(routeFile(link.path), "utf8"));
       const escaped = link.fragment.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-      if (!new RegExp(`\\b(?:id|name)=["']${escaped}["']`, "i").test(targetHtml)) {
-        fail(`${pathname}: broken fragment ${link.raw}`);
-      }
+      if (!new RegExp(`\\b(?:id|name)=["']${escaped}["']`, "i").test(targetHtml)) fail(`${pathname}: broken fragment ${link.raw}`);
     }
   }
 }
@@ -225,17 +253,12 @@ for (const [pathname, html] of htmlByPath) {
   const route = localized?.route || null;
   const expectedUrl = route?.url || `${base}${pathname}`;
   const expectedLanguage = locale.languageTag;
-  if (!new RegExp(`<html\\b[^>]*\\blang=["']${expectedLanguage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html)) {
-    fail(`${pathname}: html lang must be ${expectedLanguage}`);
-  }
+  if (!new RegExp(`<html\\b[^>]*\\blang=["']${expectedLanguage.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html)) fail(`${pathname}: html lang must be ${expectedLanguage}`);
   if (!title(html)) fail(`${pathname}: missing title`);
   if (!meta(html, "name", "description")) fail(`${pathname}: missing meta description`);
   if (canonical(html) !== expectedUrl) fail(`${pathname}: canonical must be self (${expectedUrl}); got ${canonical(html) || "missing"}`);
-  if (meta(html, "property", "og:url") && meta(html, "property", "og:url") !== expectedUrl) {
-    fail(`${pathname}: og:url is not canonical self URL`);
-  }
-  const robots = meta(html, "name", "robots").toLowerCase();
-  if (/\b(?:noindex|none)\b/.test(robots)) fail(`${pathname}: index-eligible page is noindex`);
+  if (meta(html, "property", "og:url") && meta(html, "property", "og:url") !== expectedUrl) fail(`${pathname}: og:url is not canonical self URL`);
+  if (isNoindex(html)) fail(`${pathname}: index-eligible page is noindex`);
 
   const languages = await jsonLdLanguages(html);
   if (languages.length && !languages.includes(expectedLanguage)) fail(`${pathname}: structured data has no inLanguage=${expectedLanguage}`);
@@ -246,22 +269,11 @@ for (const [pathname, html] of htmlByPath) {
     const alternates = languageAlternates(html);
     for (const [language, href] of Object.entries(clusterRow.alternates || {})) {
       const values = alternates.get(language) || [];
-      if (values.length !== 1 || values[0] !== href) {
-        fail(`${pathname}: hreflang ${language} must be exactly ${href}; got ${values.join(",") || "missing"}`);
-      }
+      if (values.length !== 1 || values[0] !== href) fail(`${pathname}: hreflang ${language} must be exactly ${href}; got ${values.join(",") || "missing"}`);
     }
     for (const language of alternates.keys()) {
       if (!(language in (clusterRow.alternates || {}))) fail(`${pathname}: stale/unexpected hreflang ${language}`);
     }
-  }
-}
-
-for (const row of cluster.routes || []) {
-  if (!rootPaths.has(row.canonical_path)) fail(`${row.canonical_path}: canonical translation source absent from root sitemap`);
-  for (const locale of releaseLocales) {
-    const route = (manifests.get(locale.code)?.routes || []).find((candidate) => candidate.canonical_path === row.canonical_path);
-    if (!route) continue;
-    if (row.alternates?.[locale.languageTag] !== route.url) fail(`${row.canonical_path}: cluster/manifest alternate drift for ${locale.code}`);
   }
 }
 
@@ -272,4 +284,5 @@ if (failures.length) {
   throw new Error("Indexability contract failed.");
 }
 
-console.log(`[indexability-check] passed ${registryRows.length} routes, ${cluster.routes?.length || 0} translation sets, ${[...manifestRouteCount.entries()].map(([locale, count]) => `${locale}=${count}`).join(", ")}; zero sitemap drift, locale orphans, bad canonicals, broken hreflang or crawlable-link gaps.`);
+const eligibleCounts = [...manifests.entries()].map(([locale, manifest]) => `${locale}=${(manifest.routes || []).filter((route) => route.index_eligible).length}/${manifest.routes?.length || 0}`);
+console.log(`[indexability-check] passed ${registryRows.length} index-eligible routes, ${registry.translation_set_count} indexable translation sets, ${eligibleCounts.join(", ")}; zero sitemap drift, restricted-page leakage, locale orphans, bad canonicals, broken hreflang or crawlable-link gaps.`);

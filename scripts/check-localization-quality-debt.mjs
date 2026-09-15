@@ -1,42 +1,34 @@
-import { access, readFile } from "node:fs/promises";
+import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
 const readJson = async (relative) => JSON.parse(await readFile(path.join(root, relative), "utf8"));
 const profile = await readJson(".arwp/localization.json");
-const fallbackLedger = profile.debtLedger ? await readJson(profile.debtLedger) : null;
+if (!profile.debtLedger) throw new Error("[localization-debt] profile.debtLedger is required");
+const document = await readJson(profile.debtLedger);
 const allowedStates = new Set(["planned", "open", "closed"]);
 
-async function localLedgerPath(locale) {
-  const candidate = path.join(locale.datasetRoot, "quality-debt.json");
-  try {
-    await access(path.join(root, candidate));
-    return candidate;
-  } catch {
-    return null;
+function ledgerFor(locale) {
+  if (document?.locales && typeof document.locales === "object") {
+    const ledger = document.locales[locale.code];
+    return ledger ? { ...ledger, locale: locale.code } : null;
   }
+  // Backward compatibility for the original single-locale ledger shape.
+  return document?.locale === locale.code ? document : null;
 }
 
 const failures = [];
 for (const locale of profile.locales || []) {
   if (locale.role !== "human-interface" || locale.status === "draft") continue;
 
-  const localPath = await localLedgerPath(locale);
-  const ledger = localPath
-    ? await readJson(localPath)
-    : fallbackLedger?.locale === locale.code
-      ? fallbackLedger
-      : null;
-  const ledgerPath = localPath || (ledger ? profile.debtLedger : null);
-
+  const ledger = ledgerFor(locale);
   if (!ledger) {
-    failures.push(`${locale.code}: ${locale.status} locale has no auditable quality-debt ledger`);
+    failures.push(`${locale.code}: ${locale.status} locale has no entry in ${profile.debtLedger}`);
     continue;
   }
-  if (ledger.locale !== locale.code) failures.push(`${locale.code}: ${ledgerPath} declares locale=${ledger.locale}`);
   if (ledger.status !== locale.status) failures.push(`${locale.code}: debt status ${ledger.status} != registry status ${locale.status}`);
   if (!Array.isArray(ledger.items)) {
-    failures.push(`${locale.code}: ${ledgerPath}.items must be an array`);
+    failures.push(`${locale.code}: quality-debt items must be an array`);
     continue;
   }
 
@@ -56,10 +48,10 @@ for (const locale of profile.locales || []) {
   }
 
   if (locale.status === "reviewed-partial" && active === 0) {
-    failures.push(`${locale.code}: reviewed-partial status has no active debt; either record the remaining boundary or promote only after release proof is complete`);
+    failures.push(`${locale.code}: reviewed-partial status has no active debt; record the remaining boundary or promote only after release proof is complete`);
   }
 
-  console.log(`[localization-debt] ${locale.code}: ${ledger.items.length} item(s), ${active} active, source=${ledgerPath}`);
+  console.log(`[localization-debt] ${locale.code}: ${ledger.items.length} item(s), ${active} active, source=${profile.debtLedger}`);
 }
 
 if (failures.length) {

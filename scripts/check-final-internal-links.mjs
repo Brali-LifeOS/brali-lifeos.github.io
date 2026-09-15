@@ -1,7 +1,8 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-const root = process.cwd();
+const workspaceRoot = process.cwd();
+const root = process.env.BRALI_SITE_ROOT ? path.resolve(workspaceRoot, process.env.BRALI_SITE_ROOT) : workspaceRoot;
 const siteOrigin = "https://brali-lifeos.github.io";
 const excluded = new Set([".git", "node_modules", "_site", "artifacts"]);
 
@@ -74,10 +75,10 @@ for (const file of files) {
 }
 
 if (failures.length) {
-  console.error(`[internal-links] ${failures.length} broken internal reference(s) found across ${files.length} HTML files:`);
+  console.error(`[internal-links] ${failures.length} broken internal reference(s) found across ${files.length} HTML files under ${path.relative(workspaceRoot, root) || "."}:`);
   for (const failure of failures.slice(0, 100)) console.error(`  ${failure.page} -> ${failure.reference} (${failure.resolved})`);
   if (failures.length > 100) console.error(`  ... ${failures.length - 100} more`);
   process.exitCode = 1;
 } else {
-  console.log(`[internal-links] passed: ${checked} internal href/src reference(s) resolved across ${files.length} HTML files.`);
+  console.log(`[internal-links] passed: ${checked} internal href/src reference(s) resolved across ${files.length} HTML files under ${path.relative(workspaceRoot, root) || "."}.`);
 }

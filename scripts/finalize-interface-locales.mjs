@@ -36,6 +36,15 @@ function normalizeRobotsMeta(html, locale) {
   return html;
 }
 
+async function normalizeRobotsSitemap(locale) {
+  const robotsPath = path.join(root, "robots.txt");
+  const sitemapLine = `Sitemap: ${base}${locale.routePrefix}sitemap.xml`;
+  const robots = await readFile(robotsPath, "utf8");
+  const lines = robots.split(/\r?\n/).filter((line) => line.trim() !== sitemapLine);
+  if (locale.searchPublication !== "none") lines.push(sitemapLine);
+  await writeFile(robotsPath, `${lines.filter((line, index, all) => line || index < all.length - 1).join("\n").trimEnd()}\n`);
+}
+
 for (const locale of locales) {
   const site = await readJson(`${locale.datasetRoot}/site.json`);
   if (site.locale !== locale.code) throw new Error(`[${locale.code}-finalize] site locale drift`);
@@ -47,6 +56,8 @@ for (const locale of locales) {
   const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   if (manifest.locale !== locale.code) throw new Error(`[${locale.code}-finalize] manifest locale drift`);
 
+  manifest.language_tag = locale.languageTag;
+  manifest.direction = locale.direction || "ltr";
   manifest.role = locale.role;
   manifest.status = locale.status;
   manifest.search_publication = locale.searchPublication;
@@ -76,5 +87,6 @@ for (const locale of locales) {
     await writeFile(file, html);
   }
 
+  await normalizeRobotsSitemap(locale);
   console.log(`[${locale.code}-finalize] normalized ${manifest.routes?.length || 0} routes; status=${locale.status}; search=${locale.searchPublication}`);
 }

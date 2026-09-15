@@ -1,4 +1,4 @@
-name: Sync main into localization branch
+name: Prealign localization package with main
 
 on:
   push:
@@ -16,41 +16,22 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  sync:
+  prealign-package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
         with:
           ref: agent/de-localization
           fetch-depth: 0
-      - name: Configure merge identity
+      - name: Configure identity
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Fetch current main
-        run: git fetch origin main
-      - name: Merge current main and resolve known localization conflicts
-        shell: bash
+      - name: Fetch current main package
         run: |
-          set +e
-          git merge --no-commit --no-ff origin/main
-          status=$?
-          set -e
-          if [ "$status" -ne 0 ]; then
-            conflicts="$(git diff --name-only --diff-filter=U | sort)"
-            expected="$(printf '%s\n' '.github/workflows/deploy-pages.yml' 'package.json' | sort)"
-            echo 'CONFLICTS_START'
-            printf '%s\n' "$conflicts"
-            echo 'CONFLICTS_END'
-            if [ "$conflicts" != "$expected" ]; then
-              echo 'Unexpected merge conflicts; refusing automatic resolution.'
-              git merge --abort || true
-              exit 1
-            fi
-            git checkout --theirs -- package.json .github/workflows/deploy-pages.yml
-          fi
-      - name: Reapply generic localization pipeline over current main package
-        shell: bash
+          git fetch origin main
+          git show origin/main:package.json > package.json
+      - name: Reapply generic localization pipeline
         run: |
           node <<'NODE'
           const fs = require('fs');
@@ -72,62 +53,21 @@ jobs:
           pkg.scripts.check = extendChecks(pkg.scripts.check);
           fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
           NODE
-          git add package.json
-      - name: Reapply multilingual Pages artifact gates over current main workflow
-        shell: bash
+      - name: Verify main and localization features coexist
         run: |
-          node <<'NODE'
-          const fs = require('fs');
-          const file = '.github/workflows/deploy-pages.yml';
-          let y = fs.readFileSync(file, 'utf8');
-          const insertOnce = (marker, addition, label) => {
-            if (y.includes(addition.trim())) return;
-            if (!y.includes(marker)) throw new Error(`Pages workflow marker missing: ${label}`);
-            y = y.replace(marker, marker + addition);
-          };
-          insertOnce(
-            '          node --check scripts/patch-ru-discovery.mjs\n',
-            '          node --check scripts/complete-localization-clusters.mjs\n          node --check scripts/check-localization-artifact.mjs\n',
-            'localization verifier syntax'
-          );
-          insertOnce(
-            '      - name: Build site\n        run: npm run build\n',
-            '      - name: Complete multilingual locale clusters\n        run: node scripts/complete-localization-clusters.mjs\n',
-            'post-build clusters'
-          );
-          insertOnce(
-            '        run: npm run localization:check\n',
-            '      - name: Gate exact multilingual localization artifact\n        run: node scripts/check-localization-artifact.mjs\n',
-            'post-impact artifact gate'
-          );
-          insertOnce(
-            '      - name: Run full repository checks\n        run: npm run check\n',
-            '      - name: Recheck multilingual localization artifact after repository checks\n        run: node scripts/check-localization-artifact.mjs\n',
-            'post-check artifact gate'
-          );
-          insertOnce(
-            '      - name: Upload verified Pages artifact\n',
-            '      - name: Final multilingual localization gate\n        run: node scripts/check-localization-artifact.mjs\n',
-            'pre-upload artifact gate'
-          );
-          fs.writeFileSync(file, y);
-          NODE
-          git add .github/workflows/deploy-pages.yml
-      - name: Verify resolved merge surface
-        run: |
-          test -z "$(git diff --name-only --diff-filter=U)"
-          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8')); console.log('package.json valid')"
+          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
           grep -q 'publish-knowledge-ontology-dataset.mjs' package.json
           grep -q 'check-research-triage.mjs' package.json
           grep -q 'check-lifecycle-research-localization.mjs' package.json
           grep -q 'build-interface-locales.mjs' package.json
           grep -q 'build-localized-machine-surfaces.mjs' package.json
-          grep -q 'Gate hack lifecycle final artifact' .github/workflows/deploy-pages.yml
-          grep -q 'Gate exact multilingual localization artifact' .github/workflows/deploy-pages.yml
-          grep -q 'Final multilingual localization gate' .github/workflows/deploy-pages.yml
-      - name: Commit and publish synchronized branch
-        shell: bash
+          grep -q 'audit-de-language.mjs' package.json
+      - name: Commit package alignment
         run: |
-          git add -A
-          git commit -m "Merge current main into localization hardening"
+          if git diff --quiet -- package.json; then
+            echo 'package.json already aligned.'
+            exit 0
+          fi
+          git add package.json
+          git commit -m "Align localization package with current main"
           git push origin HEAD:agent/de-localization

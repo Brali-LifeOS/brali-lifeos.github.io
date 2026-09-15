@@ -1,0 +1,38 @@
+{
+  "slug": "ai-code-scaffold-test-loop",
+  "title": "Use AI to Scaffold Code, Then Make Tests Decide",
+  "subtitle": "Accelerate the first implementation without treating generated code as reviewed code",
+  "description": "Use AI to produce a first implementation for a bounded coding task, then inspect the diff, run tests, add missing edge cases, and reject code you cannot explain. A controlled experiment found faster completion on one coding task; it did not establish universal software quality gains.",
+  "canonical": "/life-os/ai-code-scaffold-test-loop/",
+  "domain_ids": ["work-money"],
+  "topic_ids": ["work-systems"],
+  "method_ids": [],
+  "lens_ids": ["qa"],
+  "keywords": ["AI coding", "coding assistant", "AI pair programming", "tests", "code review", "software development"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Let AI scaffold a bounded coding task, then require tests, diff review, and human explanation before accepting the change.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "Define the behavior and constraints first. Ask AI for a small implementation. Read the diff, run the existing test suite, add tests for edge cases and failure paths, and inspect security or data-handling implications. Keep only code you can explain and maintain.",
+    "checkIn": "Did AI shorten implementation time without increasing code I do not understand, test, or want to own?",
+    "reference": "Peng et al. (2023) — The Impact of AI on Developer Productivity: Evidence from GitHub Copilot",
+    "sourceUrl": "https://arxiv.org/abs/2302.06590"
+  },
+  "faq": [
+    {"id":"ai-code-scaffold-test-loop-1","question":"What did the coding experiment show?","answer":"In a controlled experiment on a JavaScript HTTP-server task, developers with GitHub Copilot completed the task faster on average. It was a specific task and the result should not be generalized to every language, repository, or quality dimension."},
+    {"id":"ai-code-scaffold-test-loop-2","question":"What is the minimum review?","answer":"Read the diff, run relevant tests, add missing edge cases, inspect dependencies and secrets, and understand the code path well enough to debug it later."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:19:00Z","updatedISO":"2026-09-15T09:19:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>Generated code can be fast to obtain and expensive to misunderstand. Use the speed; do not outsource the acceptance criteria.</p>"},
+    "sections": [
+      {"slug":"contract","title":"1. Define behavior before code","html":"<p>State inputs, outputs, failure behavior, constraints, and the tests that would convince you the task is complete. This gives the model less room to solve a different problem elegantly.</p>"},
+      {"slug":"small","title":"2. Generate a small change","html":"<p>Prefer a reviewable diff over a repository-wide rewrite. Small generated changes are easier to test, explain, and revert.</p>"},
+      {"slug":"test","title":"3. Let executable checks disagree","html":"<p>Run the existing suite and add edge cases the generated code may have missed. When tests and the explanation conflict, investigate instead of asking the model to sound more confident.</p>"},
+      {"slug":"own","title":"4. Keep only maintainable code","html":"<p>Reject code you cannot explain, secure, or support. AI assistance changes how the code was drafted; it does not change who inherits the bug.</p>"}
+    ]
+  },
+  "references": [{"title":"The Impact of AI on Developer Productivity: Evidence from GitHub Copilot","url":"https://arxiv.org/abs/2302.06590","source_type":"controlled experiment / preprint","claim_scope":"In a controlled experiment on a specific JavaScript implementation task, participants with access to GitHub Copilot completed the task 55.8% faster on average. The evidence does not establish universal gains in code quality, security, maintainability, or performance across software work."}],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Keep the productivity signal narrow and pair it with ordinary software QA so generated code is treated as an implementation candidate, not a correctness proof.","registry":"review-registry-using-ai-starters.json"}
+}

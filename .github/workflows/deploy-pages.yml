@@ -99,6 +99,8 @@ jobs:
           test -s bench/results.json
           grep -q 'https://brali-lifeos.github.io/bench/' sitemap.xml
           grep -q 'https://brali-lifeos.github.io/bench/' llms.txt
+      - name: Gate final RSS subscription surface
+        run: npm run rss:check
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact

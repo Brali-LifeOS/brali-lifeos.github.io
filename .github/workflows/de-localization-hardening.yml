@@ -1,0 +1,27 @@
+name: EN RU DE localization hardening
+
+on:
+  push:
+    branches: [deep-run/en-ru-de-hardening-20260915]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  german-effective-corpus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Materialize effective canonical additions
+        run: npm run content:additions
+      - name: Require German parity with effective canonical corpus
+        run: node scripts/check-de-library-contract.mjs --complete
+      - name: Require strict German language quality
+        run: node scripts/audit-de-library-language.mjs --strict

@@ -7,6 +7,7 @@ const base = "https://brali-lifeos.github.io";
 const asOf = process.env.BRALI_AS_OF || new Date().toISOString().slice(0, 10);
 const candidatesPath = path.join(root, "data", "research-candidates.json");
 const decisionsPath = path.join(root, "data", "evidence-decisions.json");
+const reviewsPath = path.join(root, "life-os", "datasets", "reviews.json");
 const indexPath = path.join(root, "data", "life-os-content", "index.json");
 const outputPath = path.join(root, "life-os", "datasets", "research-lifecycle-watchlist.json");
 const pagePath = path.join(root, "research", "review-watchlist", "index.html");
@@ -61,12 +62,15 @@ function suggestedAction(candidate) {
 
 const candidates = readJson(candidatesPath);
 const decisions = readJson(decisionsPath);
+const reviews = readJson(reviewsPath);
 const index = readJson(indexPath);
 if (!Array.isArray(candidates.candidates)) throw new Error("data/research-candidates.json must contain candidates[]");
 if (!Array.isArray(decisions.entries)) throw new Error("data/evidence-decisions.json must contain entries[]");
+if (!Array.isArray(reviews.entries) || !Array.isArray(reviews.unresolved_decision_targets)) throw new Error("life-os/datasets/reviews.json must be enriched before research lifecycle watchlist generation");
 if (!Array.isArray(index)) throw new Error("data/life-os-content/index.json must be an array");
 
 const reviewedCandidateIds = new Set(decisions.entries.map((entry) => entry.candidate_id).filter(Boolean));
+const linkageDebt = reviews.unresolved_decision_targets.map((item) => ({ ...item, priority: "high", source_reviewed: true }));
 const { classifyRecord } = await loadKnowledgeOntology(root);
 const hackClassifications = [];
 for (const entry of index) {
@@ -146,8 +150,8 @@ const impacted = new Set(queue.flatMap((item) => item.affected_hacks.map((hack) 
 const watchlist = {
   schema_version: 1,
   generated_at: asOf,
-  source: "research-candidates + effective Brali ontology + reviewed Evidence Decisions",
-  policy: "Discovery metadata may create a review task, never an evidence or lifecycle verdict. Candidates already covered by an Evidence Decision are excluded from the open watchlist. Any lifecycle status change requires actual source review and an explicit append-only lifecycle event.",
+  source: "research-candidates + effective Brali ontology + reviewed Evidence Decisions + lifecycle linkage debt",
+  policy: "Discovery metadata may create a review task, never an evidence or lifecycle verdict. Candidates already covered by an Evidence Decision are excluded from the open metadata watchlist. Reviewed decisions whose historical target IDs no longer resolve are kept as explicit linkage debt and must not be guessed onto a current hack. Any lifecycle status change requires actual source review and an explicit append-only lifecycle event.",
   summary: {
     research_candidates: candidates.candidates.length,
     candidates_with_evidence_decisions: reviewedCandidateIds.size,
@@ -155,7 +159,9 @@ const watchlist = {
     impacted_hacks: impacted.size,
     critical_triage: queue.filter((item) => item.priority === "critical-triage").length,
     high_priority: queue.filter((item) => item.priority === "high").length,
+    reviewed_linkage_debt: linkageDebt.length,
   },
+  reviewed_linkage_debt: linkageDebt,
   candidates: queue,
 };
 fs.mkdirSync(path.dirname(outputPath), { recursive: true });
@@ -169,7 +175,10 @@ const items = top.length ? top.map((item) => {
   const source = item.reference_url ? `<a href="${escapeHtml(item.reference_url)}" rel="noopener noreferrer">source record</a>` : "source record unavailable";
   return `<li><strong>${escapeHtml(item.priority)} · ${escapeHtml(item.workflow_status)}</strong> — ${escapeHtml(item.title)}<span>${source}. Potentially related hacks: ${targets}. ${escapeHtml(item.suggested_action)}</span></li>`;
 }).join("") : "<li>No unresolved research candidates currently map strongly enough to an existing hack.</li>";
-const body = `<p class="eyebrow">Research triage</p><h1>Research lifecycle watchlist.</h1><p class="lead">A discovery queue for maintainers. It identifies research leads that may justify re-checking existing hacks, but it deliberately does not change evidence or lifecycle status.</p><aside class="callout"><h2>Metadata is not a verdict</h2><p>Every item below still requires the actual source to be read. A title, abstract record, Crossref entry, Europe PMC record, or automated match cannot refute, validate, downgrade, or restore a Brali hack.</p></aside><div class="grid three"><article class="card"><span class="card-label">Open watch candidates</span><h3>${queue.length}</h3><p>Unresolved metadata leads with a meaningful ontology match.</p></article><article class="card"><span class="card-label">Potentially affected hacks</span><h3>${impacted.size}</h3><p>Unique hacks surfaced for human review, not automatically changed.</p></article><article class="card"><span class="card-label">Already reviewed candidates</span><h3>${reviewedCandidateIds.size}</h3><p>Excluded because an Evidence Decision already records the actual source review.</p></article></div><section class="prose"><h2>Highest-priority review leads</h2><ul class="article-list">${items}</ul><h2>How priority works</h2><p>Priority starts from the editorial candidate workflow state, then adds narrow signals for possible source-integrity notices, review/meta-analysis titles, risk flags and strength of Topic/Method matching. The score schedules attention; it is not an evidence score.</p><p><a class="button" href="/life-os/datasets/research-lifecycle-watchlist.json">Machine-readable watchlist</a> <a class="button" href="/life-os/review-log/">Lifecycle review log</a></p></section>`;
+const debtItems = linkageDebt.length
+  ? linkageDebt.map((item) => `<li><strong>${escapeHtml(item.decision_id)}</strong> → <code>${escapeHtml(item.target_hack_id)}</code><span>${item.source_url ? `<a href="${escapeHtml(item.source_url)}" rel="noopener noreferrer">Reviewed source</a>. ` : ""}${escapeHtml(item.required_action)}</span></li>`).join("")
+  : "<li>No reviewed Evidence Decision target currently has unresolved canonical identity.</li>";
+const body = `<p class="eyebrow">Research triage</p><h1>Research lifecycle watchlist.</h1><p class="lead">A discovery queue for maintainers. It identifies research leads that may justify re-checking existing hacks, but it deliberately does not change evidence or lifecycle status.</p><aside class="callout"><h2>Metadata is not a verdict</h2><p>Every discovery item below still requires the actual source to be read. A title, abstract record, Crossref entry, Europe PMC record, or automated match cannot refute, validate, downgrade, or restore a Brali hack.</p></aside><div class="grid three"><article class="card"><span class="card-label">Open watch candidates</span><h3>${queue.length}</h3><p>Unresolved metadata leads with a meaningful ontology match.</p></article><article class="card"><span class="card-label">Potentially affected hacks</span><h3>${impacted.size}</h3><p>Unique hacks surfaced for human review, not automatically changed.</p></article><article class="card"><span class="card-label">Reviewed linkage debt</span><h3>${linkageDebt.length}</h3><p>Reviewed decisions whose historical target hack IDs no longer resolve to the current corpus.</p></article></div><section class="prose"><h2>Reviewed linkage debt</h2><p>This is not unreviewed evidence. The source review already exists, but its historical target identity cannot be attached to a current hack without explicit provenance. Do not guess a replacement slug.</p><ul class="article-list">${debtItems}</ul><h2>Highest-priority review leads</h2><ul class="article-list">${items}</ul><h2>How priority works</h2><p>Priority starts from the editorial candidate workflow state, then adds narrow signals for possible source-integrity notices, review/meta-analysis titles, risk flags and strength of Topic/Method matching. The score schedules attention; it is not an evidence score.</p><p><a class="button" href="/life-os/datasets/research-lifecycle-watchlist.json">Machine-readable watchlist</a> <a class="button" href="/life-os/review-log/">Lifecycle review log</a></p></section>`;
 let html = fs.readFileSync(templatePath, "utf8");
 html = html.replace(/<title>[\s\S]*?<\/title>/i, "<title>Research lifecycle watchlist — Brali</title>");
 html = html.replace(/<meta name="description" content="[^"]*">/i, '<meta name="description" content="Discovery-only research triage for Brali hacks. Metadata can trigger source review but cannot change evidence or lifecycle status.">');
@@ -197,4 +206,4 @@ html = html.replace(/<main id="content" class="page wrap">[\s\S]*?<\/main>/i, `<
 fs.mkdirSync(path.dirname(pagePath), { recursive: true });
 fs.writeFileSync(pagePath, html);
 
-console.log(`research_lifecycle_watchlist open=${queue.length} impacted_hacks=${impacted.size} reviewed_candidates=${reviewedCandidateIds.size} critical=${watchlist.summary.critical_triage} high=${watchlist.summary.high_priority}`);
+console.log(`research_lifecycle_watchlist open=${queue.length} impacted_hacks=${impacted.size} reviewed_candidates=${reviewedCandidateIds.size} linkage_debt=${linkageDebt.length} critical=${watchlist.summary.critical_triage} high=${watchlist.summary.high_priority}`);

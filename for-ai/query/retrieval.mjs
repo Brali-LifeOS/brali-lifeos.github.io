@@ -80,6 +80,21 @@ function topicSearch(query, topics, identity, k = 3) {
     return score > 0 ? { topic, id, score } : null;
   }).filter(Boolean).sort((a,b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, k);
 }
+function protocolAliasMap(identity) {
+  const aliasesByProtocol = new Map();
+  for (const alias of identity?.aliases || []) {
+    if (alias.kind !== 'protocol') continue;
+    const id = protocolSlug(alias.canonical_id);
+    if (!id) continue;
+    if (!aliasesByProtocol.has(id)) aliasesByProtocol.set(id, []);
+    aliasesByProtocol.get(id).push(alias.value);
+  }
+  return aliasesByProtocol;
+}
+function protocolLexicalText(entry, aliasesByProtocol) {
+  const slug = protocolSlug(entry);
+  return [entry.title, entry.description, entry.action, entry.check_in, slug, ...(aliasesByProtocol.get(slug) || [])].filter(Boolean).join(' ');
+}
 function decisionSearch(query, decisions) {
   const q = tokenSet(query), qNorm = normalize(query);
   return decisions.map(decision => {
@@ -130,15 +145,18 @@ export function queryBrali(question, data, options = {}) {
   if (isSafetyBoundary(question)) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: true, reason: 'Safety-sensitive diagnosis/treatment or self-harm requests are outside normal Brali trusted retrieval.' } };
 
   const matchedTopics = topicSearch(question, topics, identity, 3);
+  const aliasesByProtocol = protocolAliasMap(identity);
+  const trustedFlagships = flagships.filter(entry => TRUSTED.has(evidenceState(entry)));
+  const protocolLexicalScores = new Map(trustedFlagships.map(entry => [protocolSlug(entry), lexicalScore(question, protocolLexicalText(entry, aliasesByProtocol))]));
   const decisionCandidates = decisionSearch(question, decisions);
   const strongDecisions = decisionCandidates.filter(item => item.score >= 9);
   const bestTopicScore = matchedTopics[0]?.score || 0;
   const bestDecisionScore = strongDecisions[0]?.score || 0;
-  if (bestTopicScore < 4 && bestDecisionScore < 9) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: false } };
+  const bestProtocolLexicalScore = Math.max(0, ...protocolLexicalScores.values());
+  if (bestTopicScore < 4 && bestDecisionScore < 9 && bestProtocolLexicalScore < 9) return { schema_version: 1, question, status: 'no-trusted-answer', dataset_version: datasetVersion, route: { topics: [] }, recommendations: [], evidence_boundaries: [], safety: { blocked: false } };
 
   const topicRank = new Map(matchedTopics.map((item, index) => [item.id, matchedTopics.length - index]));
-  let ranked = flagships
-    .filter(entry => TRUSTED.has(evidenceState(entry)))
+  let ranked = trustedFlagships
     .map(entry => {
       const ids = topicIds(entry);
       // Rank by the strongest routed Topic instead of summing all matching Topic weights.
@@ -146,7 +164,7 @@ export function queryBrali(question, data, options = {}) {
       // lexical match. Secondary Topic matches remain useful for candidate inclusion, while
       // the best Topic + lexical fit determine order.
       const semantic = ids.reduce((best, id) => Math.max(best, topicRank.get(id) || 0), 0);
-      const lexical = lexicalScore(question, [entry.title, entry.description, entry.action, entry.check_in].filter(Boolean).join(' '));
+      const lexical = protocolLexicalScores.get(protocolSlug(entry)) || 0;
       if (semantic === 0 && lexical === 0) return null;
       const score = semantic * 20 + lexical * 3 + Number(entry.quality_score || 0) / 20 + (evidenceState(entry) === 'reviewed' ? 4 : 0);
       return { entry, semantic_score: semantic, lexical_score: lexical, retrieval_score: Number(score.toFixed(3)) };

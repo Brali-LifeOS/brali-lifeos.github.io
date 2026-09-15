@@ -103,6 +103,10 @@ for (const file of files) {
   const currentRoute = routeForFile(file);
   const enPath = englishPath(html);
 
+  if (!/<html\b[^>]*\bdir=["'][^"']+["'][^>]*>/i.test(html)) {
+    html = html.replace(/<html\b([^>]*)>/i, '<html$1 dir="ltr">');
+  }
+
   html = html.replace(/<div class="links">[\s\S]*?<\/div><\/nav><\/header>/, `${unifiedHeaderLinks(currentRoute, enPath)}</nav></header>`);
   html = html.replace(/<div class="footer-links">[\s\S]*?<\/div><\/div><\/footer>/, `${unifiedFooterLinks(enPath)}</div></footer>`);
 
@@ -133,6 +137,13 @@ for (const file of files) {
     patched += 1;
   }
 }
+
+const manifestPath = path.join(ruRoot, "manifest.json");
+const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
+manifest.language_tag = "ru";
+manifest.direction = "ltr";
+manifest.route_prefix = "/ru/";
+await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
 
 const home = await readFile(path.join(ruRoot, "index.html"), "utf8");
 for (const [href, label] of [

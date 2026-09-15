@@ -1,71 +1,7 @@
 {
   "schema_version": 1,
-  "description": "Gold 20 completion reviews for communication and compare-and-learn protocols. These source reviews preserve evidence boundaries, explicit correction paths, and existing passing structured retrieval coverage.",
+  "description": "Gold 20 completion reviews for communication and compare-and-learn protocols. These source reviews preserve practical evidence boundaries and existing passing structured retrieval coverage.",
   "entries": {
-    "active-listening-exercises": {
-      "schema_version": 1,
-      "protocol_id": "brali:active-listening-exercises",
-      "slug": "active-listening-exercises",
-      "reviewed_at": "2026-09-15",
-      "reviewed_by": "Brali Gold Reviewer",
-      "review_status": "gold-ready",
-      "user_problem": "I may be misunderstanding someone and want a simple correction-friendly listening loop that tests my interpretation before I jump to advice, argument, or a new topic.",
-      "eligibility": [
-        "The conversation is safe enough for ordinary listening practice and both people can correct or clarify what was said.",
-        "Understanding the speaker's meaning matters more than demonstrating a scripted technique.",
-        "The listener can paraphrase tentatively and accept correction without defending the first interpretation."
-      ],
-      "when_not_to_use": [
-        "Do not use paraphrasing as a manipulation, interrogation, or pressure technique, especially in abusive, coercive, threatening, or otherwise unsafe interactions.",
-        "Do not infer motives, emotions, diagnoses, or hidden intentions as facts; ask when an interpretation matters.",
-        "Do not claim that one paraphrase-and-question sequence guarantees accurate understanding, trust, conflict resolution, empathy, or better relationship outcomes."
-      ],
-      "first_action": "In one conversation, wait until the person finishes a thought, paraphrase the main point briefly in your own words, and invite correction before giving advice or changing the topic.",
-      "steps": [
-        "Choose one conversation where understanding matters and use the protocol only when a correction check would be useful.",
-        "Listen through one complete thought before composing the response.",
-        "Paraphrase the main point briefly in tentative language rather than repeating the speaker verbatim or asserting an interpretation as fact.",
-        "Pause and make correction easy; treat a correction as useful information rather than a failure of the technique.",
-        "After the meaning is clearer, ask one open question if the person needs room to continue before moving to advice, decisions, or your own position.",
-        "Afterward, note what assumption, detail, or interpretation was confirmed or corrected and carry only that learning into the next conversation."
-      ],
-      "review_horizon": {
-        "value": "During the same conversation and immediately afterward",
-        "rationale": "The method is a correction loop: its useful signal appears when the speaker confirms, narrows, or corrects the paraphrase, not from counting eye contact, nods, or time spent listening."
-      },
-      "observable_signal": "Whether the listener paraphrased before reacting, whether the speaker confirmed or corrected the interpretation, and whether the correction changed the next part of the conversation.",
-      "stop_or_change_rule": "Drop or adapt the sequence when it feels scripted, slows an urgent exchange, the other person wants a direct answer, or the interaction is unsafe. In unsafe or coercive situations, prioritize boundaries and appropriate support over conversational technique.",
-      "fallback": "Ask one direct clarification question such as what matters most or what the person needs from you, or simply respond normally when a formal paraphrase would add friction.",
-      "evidence_boundary": {
-        "status": "practical",
-        "statement": "Two reviewed studies provide boundaries rather than proof for Brali's exact sequence. A small trained-interviewer experiment found an immediate self-reported emotional difference after empathic paraphrasing but did not establish comprehension accuracy or conflict outcomes. A multicomponent cardiologist coaching trial did not isolate or significantly increase reflective statements or open-ended questions. Brali therefore keeps this as a practical correction loop, not a validated communication treatment.",
-        "source_decision_ids": [
-          "communication-coaching-reflective-statements-boundary-2023",
-          "empathic-paraphrasing-immediate-emotion-boundary-2012"
-        ]
-      },
-      "limitations": [
-        "The small paraphrasing experiment used one highly trained interviewer and a nonclinical conflict sample, so ordinary listeners may not reproduce its immediate effects.",
-        "The paraphrasing study did not measure comprehension accuracy, durable conflict resolution, trust, or relationship outcomes.",
-        "The cardiologist coaching study trained several behaviors together and did not show a significant intervention-versus-control increase in reflective statements or open-ended questions.",
-        "Neither source validates Brali's exact self-guided sequence or supports using it in unsafe interactions."
-      ],
-      "citation": {
-        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/active-listening-exercises/",
-        "source_citations": [
-          "Seehausen M, Kazzer P, Bajbouj M, Prehn K. Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict. Frontiers in Psychology. 2012;3:482. https://doi.org/10.3389/fpsyg.2012.00482",
-          "Pollak KI, Olsen MK, Yang H, et al. Effect of a Coaching Intervention to Improve Cardiologist Communication: A Randomized Clinical Trial. JAMA Internal Medicine. 2023;183(6):544-553. https://doi.org/10.1001/jamainternmed.2023.0629"
-        ]
-      },
-      "agent_summary": "Use active listening here as a correction loop: listen through a thought, paraphrase tentatively, invite correction, then ask one open question when useful. Treat correction as success and do not claim the sequence guarantees empathy, understanding, trust, or conflict resolution.",
-      "retrieval_paths": [
-        "/life-os/active-listening-exercises/",
-        "/for-ai/query/?q=Show%20me%20active%20listening%20exercises"
-      ],
-      "evaluation_case_ids": [
-        "active-listening-exact"
-      ]
-    },
     "5w1h-communication-checklist": {
       "schema_version": 1,
       "protocol_id": "brali:5w1h-communication-checklist",

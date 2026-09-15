@@ -9,7 +9,8 @@ const locale = (profile.locales || []).find((entry) => entry.code === localeCode
 if (!locale || locale.role !== "human-interface") throw new Error(`[localization-browser] unknown human-interface locale ${localeCode}`);
 
 const sourceLocale = profile.sourceLocale;
-const base = (process.env.LOCALIZATION_LIVE_BASE || profile.site || "https://brali-lifeos.github.io/").replace(/\/$/, "");
+const publicBase = (process.env.LOCALIZATION_EXPECTED_BASE || profile.site || "https://brali-lifeos.github.io/").replace(/\/$/, "");
+const base = (process.env.LOCALIZATION_LIVE_BASE || publicBase).replace(/\/$/, "");
 const languageTag = process.env.LOCALIZATION_LANGUAGE_TAG || locale.languageTag;
 const browserLocale = process.env.LOCALIZATION_BROWSER_LOCALE || locale.browserLocale || (localeCode === "ru" ? "ru-RU" : languageTag);
 const routePrefix = locale.routePrefix;
@@ -165,9 +166,9 @@ async function inspectPage(page, route, viewport, { keyboard = false, screenshot
   const sourceAlt = result.alternates[sourceLocale] || "";
   if (result.lang !== languageTag) fail(route, `html lang=${languageTag}`, `got=${JSON.stringify(result.lang)}`);
   if (result.dir !== (locale.direction || "ltr")) fail(route, `html dir=${locale.direction || "ltr"}`, `got=${JSON.stringify(result.dir)}`);
-  if (!result.canonical.startsWith(base) || !result.canonical.includes(routePrefix)) fail(route, `self ${localeCode} canonical`, result.canonical);
-  if (!localeAlt.startsWith(base) || !localeAlt.includes(routePrefix)) fail(route, `${languageTag} hreflang`, localeAlt);
-  if (!sourceAlt.startsWith(base)) fail(route, `${sourceLocale} hreflang`, sourceAlt);
+  if (!result.canonical.startsWith(publicBase) || !result.canonical.includes(routePrefix)) fail(route, `self ${localeCode} canonical`, result.canonical);
+  if (!localeAlt.startsWith(publicBase) || !localeAlt.includes(routePrefix)) fail(route, `${languageTag} hreflang`, localeAlt);
+  if (!sourceAlt.startsWith(publicBase)) fail(route, `${sourceLocale} hreflang`, sourceAlt);
   if (!result.h1Visible || !result.h1Text) fail(route, "visible H1", result.h1Text);
   if (localeCode === "ru" && !result.hasCyrillic) fail(route, "rendered Cyrillic body");
   if (viewport.width === 320 && result.overflow > 2) {

@@ -22,6 +22,7 @@ jobs:
       - name: Validate hardening tooling syntax
         run: |
           node --check scripts/build-profile-locales.mjs
+          node --check scripts/enrich-profile-locale-flagships.mjs
           node --check scripts/normalize-localization-hreflang.mjs
           node --check scripts/check-hreflang-graph.mjs
           node --check scripts/check-de-library-contract.mjs
@@ -46,6 +47,8 @@ jobs:
         run: node scripts/build-brali-bench.mjs && node scripts/build-navigation-hubs.mjs
       - name: Build profile-driven supplemental locales
         run: node scripts/build-profile-locales.mjs
+      - name: Enrich exact localized flagship surfaces
+        run: node scripts/enrich-profile-locale-flagships.mjs
       - name: Normalize complete reciprocal hreflang graph
         run: node scripts/normalize-localization-hreflang.mjs
       - name: Gate complete hreflang graph
@@ -61,6 +64,7 @@ jobs:
         run: |
           test -s de/index.html
           test -s de/life-os/index.html
+          test -s de/life-os/flagships/index.html
           test -s de/life-os/methodology/index.html
           test -s de/research/index.html
           test -s de/partners/index.html
@@ -74,8 +78,10 @@ jobs:
           grep -q 'hreflang="ru"' de/index.html
           grep -q 'hreflang="de"' de/index.html
           grep -q 'hreflang="x-default"' de/index.html
+          grep -q 'Was ausprobieren' de/life-os/25-minute-pomodoro-focus-sprints/index.html
+          grep -q 'Wo die Empfehlung endet' de/life-os/25-minute-pomodoro-focus-sprints/index.html
           grep -q 'Sitemap: https://brali-lifeos.github.io/de/sitemap.xml' robots.txt
-          node -e "const m=require('./de/manifest.json'); if(m.coverage.library_entries.localized!==973||m.coverage.library_entries.canonical!==973||m.coverage.zones.localized!==50) process.exit(1); console.log('German rendered coverage',m.coverage.library_entries,m.coverage.zones)"
+          node -e "const m=require('./de/manifest.json'); if(m.coverage.library_entries.localized!==973||m.coverage.library_entries.canonical!==973||m.coverage.zones.localized!==50||m.coverage.flagship_protocols.localized!==7||m.coverage.flagship_protocols.state!=='editorial-reviewed-exact') process.exit(1); console.log('German rendered coverage',m.coverage.library_entries,m.coverage.zones,m.coverage.flagship_protocols)"
       - name: Stage clean Pages artifact
         run: node scripts/stage-pages-artifact.mjs
       - name: Gate staged Pages artifact links

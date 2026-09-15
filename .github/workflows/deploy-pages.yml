@@ -49,10 +49,14 @@ jobs:
           node --check scripts/check-ru-consent-localization.mjs
           node --check scripts/audit-ru-language.mjs
           node --check scripts/patch-ru-discovery.mjs
+          node --check scripts/complete-localization-clusters.mjs
+          node --check scripts/check-localization-artifact.mjs
       - name: Validate localization source contract and adversarial failures
         run: npm run localization:contract && npm run localization:faults && npm run localization:audit:ru
       - name: Build site
         run: npm run build
+      - name: Complete multilingual locale clusters
+        run: node scripts/complete-localization-clusters.mjs
       - name: Verify localized analytics consent
         run: node scripts/check-ru-consent-localization.mjs
       - name: Check localization impact against PR base
@@ -60,6 +64,8 @@ jobs:
         env:
           LOCALIZATION_BASE_REF: origin/${{ github.base_ref }}
         run: npm run localization:check
+      - name: Gate exact multilingual localization artifact
+        run: node scripts/check-localization-artifact.mjs
       - name: Build portable Brali Bench
         run: node scripts/build-brali-bench.mjs && node scripts/check-brali-bench.mjs
       - name: Validate shared stdio and remote MCP source
@@ -74,6 +80,8 @@ jobs:
         run: node scripts/check-trustverse-target.mjs
       - name: Run full repository checks
         run: npm run check
+      - name: Recheck multilingual localization artifact after repository checks
+        run: node scripts/check-localization-artifact.mjs
       - name: Recheck portable Brali Bench after repository checks
         run: node scripts/check-brali-bench.mjs
       - name: Check AI search profile
@@ -101,6 +109,8 @@ jobs:
           grep -q 'https://brali-lifeos.github.io/bench/' llms.txt
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
+      - name: Final multilingual localization gate
+        run: node scripts/check-localization-artifact.mjs
       - name: Upload verified Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3

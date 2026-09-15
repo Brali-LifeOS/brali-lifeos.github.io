@@ -28,6 +28,7 @@ on:
       - 'scripts/check-de-library-contract.mjs'
       - 'scripts/lib/de-language-audit.mjs'
       - 'scripts/lib/localization-source.mjs'
+      - 'scripts/lib/ru-localization-source.mjs'
       - '.github/workflows/de-localization-release.yml'
   pull_request:
     paths:
@@ -54,6 +55,7 @@ on:
       - 'scripts/check-de-library-contract.mjs'
       - 'scripts/lib/de-language-audit.mjs'
       - 'scripts/lib/localization-source.mjs'
+      - 'scripts/lib/ru-localization-source.mjs'
       - '.github/workflows/de-localization-release.yml'
 
 permissions:
@@ -75,6 +77,8 @@ jobs:
           node --check scripts/complete-localization-clusters.mjs
           node --check scripts/check-localization-artifact.mjs
           node --check scripts/check-interface-locales.mjs
+          node --check scripts/lib/localization-source.mjs
+          node --check scripts/lib/ru-localization-source.mjs
       - name: Check localization source parity
         run: node scripts/check-interface-locale-sources.mjs
       - name: Audit Russian public-interface language

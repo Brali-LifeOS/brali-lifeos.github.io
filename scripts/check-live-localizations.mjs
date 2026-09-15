@@ -8,6 +8,9 @@ if (!locale || locale.role !== "human-interface") {
 }
 
 const sourceLocale = profile.sourceLocale;
+const source = (profile.locales || []).find((entry) => entry.code === sourceLocale);
+if (!source) throw new Error(`[live-localization] missing source locale registry entry: ${sourceLocale}`);
+const sourceLanguageTag = source.languageTag;
 const languageTag = process.env.LOCALIZATION_LANGUAGE_TAG || locale.languageTag;
 const routePrefix = locale.routePrefix;
 const base = (process.env.BRALI_LIVE_BASE_URL || profile.site || "https://brali-lifeos.github.io/").replace(/\/$/, "");
@@ -24,7 +27,7 @@ async function fetchText(pathname, { attempts = 6 } = {}) {
         headers: {
           "cache-control": "no-cache",
           pragma: "no-cache",
-          "user-agent": "Brali-Live-Localization-Check/3.0",
+          "user-agent": "Brali-Live-Localization-Check/3.1",
         },
       });
       if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
@@ -103,13 +106,15 @@ await mapLimit(manifest.routes, 16, async (route) => {
   assert(new RegExp(`<html[^>]+lang=["']${languageTag.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}["']`, "i").test(html), `${route.path} must publish html lang=${languageTag}`);
   assert(html.includes(`<link rel="canonical" href="${route.url}">`), `${route.path} must publish its self canonical`);
   assert(html.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.path} must publish ${languageTag} hreflang`);
-  assert(html.includes(`hreflang="${sourceLocale}" href="${route.canonical_url}"`), `${route.path} must publish ${sourceLocale} hreflang`);
+  assert(html.includes(`hreflang="${sourceLanguageTag}" href="${route.canonical_url}"`), `${route.path} must publish ${sourceLanguageTag} hreflang`);
   assert(html.includes(`hreflang="x-default" href="${route.canonical_url}"`), `${route.path} must publish x-default`);
   assert(html.includes(`"inLanguage":"${languageTag}"`), `${route.path} structured data must publish inLanguage=${languageTag}`);
   assert(!commonSourceShellLeakage.test(html), `${route.path} leaked source-language shell UI`);
 
   const { text: canonicalHtml } = await fetchText(route.canonical_path, { attempts: 4 });
   assert(canonicalHtml.includes(`hreflang="${languageTag}" href="${route.url}"`), `${route.canonical_path} must reciprocate ${languageTag} hreflang`);
+  assert(canonicalHtml.includes(`hreflang="${sourceLanguageTag}" href="${route.canonical_url}"`), `${route.canonical_path} must publish its own ${sourceLanguageTag} hreflang`);
+  assert(canonicalHtml.includes(`hreflang="x-default" href="${route.canonical_url}"`), `${route.canonical_path} must publish x-default to source locale`);
 });
 
 const { text: sitemap } = await fetchText(`${routePrefix}sitemap.xml`);
@@ -133,4 +138,4 @@ if (library.coverage_mode === "exact") {
 const { text: robots } = await fetchText("/robots.txt");
 assert(robots.includes(`Sitemap: ${base}${routePrefix}sitemap.xml`), "robots.txt must advertise the localized sitemap");
 
-console.log(`Live ${requestedLocale} localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; mode=${library.coverage_mode}; status=${manifest.status}.`);
+console.log(`Live ${requestedLocale} localization passed: ${manifest.routes.length} human routes; ${library.count}/${library.canonical_count} library entries; mode=${library.coverage_mode}; status=${manifest.status}; canonical self-hreflang verified.`);

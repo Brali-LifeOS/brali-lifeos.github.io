@@ -9,6 +9,7 @@ const overrides = JSON.parse(await readFile(path.join(root, "data/title-override
 const knownSlugs = new Set(index.map((entry) => entry.slug));
 
 const escapeHtml = (value = "") => String(value).replace(/[&<>'"]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[character]);
+const escapeRegExp = (value = "") => String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
 const overrideTitle = (override) => clean(typeof override === "string" ? override : override?.display_title);
 const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|while|when|if|of|in|on|at|by|the|a|an)|[,;:—-])$/i;
@@ -53,11 +54,13 @@ for (const entry of index) {
   let html = await readFile(pagePath, "utf8");
   const originalEscaped = escapeHtml(clean(entry.title));
   const displayEscaped = escapeHtml(result.title);
+  const titlePattern = new RegExp(`<title>${escapeRegExp(originalEscaped)} — Brali(?: LifeOS)?</title>`);
+  const h1Pattern = new RegExp(`(<h1(?:\\s+[^>]*)?>)${escapeRegExp(originalEscaped)}</h1>`);
 
   html = html
-    .replace(`<title>${originalEscaped} — Brali LifeOS</title>`, `<title>${displayEscaped} — Brali LifeOS</title>`)
+    .replace(titlePattern, `<title>${displayEscaped} — Brali</title>`)
     .replace(`<meta property="og:title" content="${originalEscaped}">`, `<meta property="og:title" content="${displayEscaped}">`)
-    .replace(`<h1>${originalEscaped}</h1>`, `<h1>${displayEscaped}</h1>`);
+    .replace(h1Pattern, `$1${displayEscaped}</h1>`);
 
   if (result.title === clean(entry.subtitle) && entry.subtitle) {
     html = html.replace(`<p class="lead">${escapeHtml(clean(entry.subtitle))}</p>`, "");

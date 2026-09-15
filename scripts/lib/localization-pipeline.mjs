@@ -45,11 +45,12 @@ const RELEASE_ONLY_GATES = new Set([
   "scripts/check-live-localizations.mjs",
 ]);
 
-// This adapter is intentionally narrow. The German checker supports a draft mode
-// for incremental authoring, while the registered reviewed-partial release must
-// prove exact current-corpus coverage in the deterministic repository gate.
+// Transitional adapters stay explicit until gate arguments themselves move into
+// the locale registry. Release-state checks must preserve the strictness of the
+// previous hand-written orchestration.
 const CHECK_ARGS = new Map([
   ["scripts/check-de-library-contract.mjs", ["--complete"]],
+  ["scripts/audit-de-library-language.mjs", ["--strict"]],
 ]);
 
 function unique(values) {

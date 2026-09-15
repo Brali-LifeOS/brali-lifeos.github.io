@@ -5,10 +5,12 @@ on:
     branches:
       - agent/de-localization
     paths:
+      - '.arwp/localization.json'
       - 'data/localization/de/**'
       - 'data/localization/ru/**'
       - 'data/life-os-content/**'
       - 'data/life-os-content-additions.json'
+      - 'scripts/build-interface-locales.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'
@@ -21,10 +23,12 @@ on:
       - '.github/workflows/de-localization-release.yml'
   pull_request:
     paths:
+      - '.arwp/localization.json'
       - 'data/localization/de/**'
       - 'data/localization/ru/**'
       - 'data/life-os-content/**'
       - 'data/life-os-content-additions.json'
+      - 'scripts/build-interface-locales.mjs'
       - 'scripts/check-interface-locale-sources.mjs'
       - 'scripts/check-interface-locales.mjs'
       - 'scripts/complete-localization-clusters.mjs'

@@ -14,6 +14,7 @@ const GENERATOR_BUILD_STEPS = new Map([
 const COMMON_BUILD_STEPS = [
   "scripts/build-localized-problem-collections.mjs",
   "scripts/finalize-interface-locales.mjs",
+  "scripts/finalize-localized-discovery-llms.mjs",
 ];
 const CONSENT_BUILD_STEPS = [
   "scripts/inject-consent-analytics.mjs",

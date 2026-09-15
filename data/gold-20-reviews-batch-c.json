@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "description": "Manual Gold-contract reviews for five low-risk practical protocols whose public copy and passing retrieval coverage are already aligned with the Gold contract. These reviews deliberately avoid turning editorial templates into evidence-backed efficacy claims.",
+  "entries": {
+    "brainwriting-group-idea-generation": {
+      "schema_version": 1,
+      "protocol_id": "brali:brainwriting-group-idea-generation",
+      "slug": "brainwriting-group-idea-generation",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "Our group keeps converging on the first idea or the first speaker, and I want a simple way to let people generate and build on options before discussion takes over.",
+      "eligibility": [
+        "The group has one reasonably clear low-risk question that benefits from generating multiple options before evaluation.",
+        "Participants can contribute short written ideas independently and can safely let others build on them.",
+        "The group has a real decision, experiment, or next step to choose after the idea-generation phase."
+      ],
+      "when_not_to_use": [
+        "Do not use brainwriting when the situation requires immediate operational coordination, emergency response, or a decision that cannot wait for an ideation round.",
+        "Do not assume written participation removes power dynamics, accessibility barriers, language barriers, confidentiality concerns, or fear of retaliation; use anonymous or facilitated methods when those are material.",
+        "Do not claim that a particular number of people, ideas, rounds, or minutes is scientifically optimal or that brainwriting guarantees more or better ideas."
+      ],
+      "first_action": "Write one concrete question for the group, including the main constraint if it matters, then give everyone a quiet first pass to write ideas before anyone discusses them.",
+      "steps": [
+        "Frame one specific question that gives the group something concrete to change, create, or solve.",
+        "Let each participant write a few short ideas independently before discussion begins.",
+        "Pass or rotate the written ideas so another participant can add a detail, combine ideas, challenge an assumption, or suggest a smaller test.",
+        "Keep generation separate from evaluation until the group has built several options, then cluster and discuss them.",
+        "Finish by choosing one or a few options for a concrete next test, with an owner and a point at which the group will inspect the result."
+      ],
+      "review_horizon": {
+        "value": "At the end of the ideation session and after the selected next test",
+        "rationale": "The immediate review checks whether the sequence produced usable options and broad participation; the later review checks whether any selected option was useful in practice. No evidence-backed idea-count or session-length target is claimed."
+      },
+      "observable_signal": "Whether participants contributed before discussion, whether ideas were materially built on by others, and whether the group left with a concrete option or next test rather than only a larger idea list.",
+      "stop_or_change_rule": "Change the format when passing ideas creates more overhead than value, participants cannot contribute safely or accessibly, or the group has already moved from generation into a decision that needs different criteria. Stop once there are enough distinct options to choose a useful next test.",
+      "fallback": "If passing ideas is awkward, have people generate independently and submit ideas to a shared or anonymous pool, then cluster them before discussion. If the problem is already well defined and options are known, skip ideation and move to decision criteria or a small experiment.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a low-risk editorial group-ideation template. Brali does not currently attach reviewed evidence establishing a universal brainwriting advantage, an optimal group size, an optimal number of rounds, or a predictable increase in idea quantity or quality.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "The protocol does not establish that brainwriting outperforms discussion for every team, problem, culture, or accessibility need.",
+        "Written contribution can still reproduce power, language, expertise, and psychological-safety differences.",
+        "Generating more options is not the same as choosing a good option; evaluation criteria and real-world testing remain separate work.",
+        "The sequence is an organizational convenience, not an evidence-backed dose or productivity metric."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/brainwriting-group-idea-generation/",
+        "source_citations": []
+      },
+      "agent_summary": "Use brainwriting when a group needs independent options before discussion converges. Start with one clear question, let people write first, rotate ideas for building rather than judging, then switch deliberately into evaluation and choose a concrete next test. Do not promise better ideas or invent a magic group size, round count, or timer.",
+      "retrieval_paths": [
+        "/life-os/brainwriting-group-idea-generation/",
+        "/for-ai/query/?q=Show%20me%20a%20brainwriting%20group%20idea%20generation%20protocol"
+      ],
+      "evaluation_case_ids": [
+        "brainwriting-exact"
+      ]
+    },
+    "90-30-focus-rest-schedule": {
+      "schema_version": 1,
+      "protocol_id": "brali:90-30-focus-rest-schedule",
+      "slug": "90-30-focus-rest-schedule",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "Long work periods are becoming less useful, and I want a clear focus-and-break rhythm without treating 90 minutes of work and 30 minutes of rest as a biological law.",
+      "eligibility": [
+        "The user is doing low-risk knowledge or creative work where a protected block can be chosen without neglecting a monitoring or response duty.",
+        "The task benefits from fewer avoidable switches and has a concrete outcome that can be advanced inside one block.",
+        "The user can take a genuine break afterward and is willing to adjust both work and break lengths from experience."
+      ],
+      "when_not_to_use": [
+        "Do not use protected focus blocks when continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes disengagement inappropriate.",
+        "Do not present 90/30, ultradian-cycle language, hydration rules, caffeine timing, or any other fixed routine as a scientifically validated universal productivity dose.",
+        "Do not use completed blocks as a proxy for value when the work depends mainly on collaboration, waiting, exploration, or external events."
+      ],
+      "first_action": "Choose one important outcome for the next work block, pick a realistic focus duration for today's schedule, and decide what a real break will look like when the block ends.",
+      "steps": [
+        "Name one demanding task or observable outcome for the block instead of scheduling a vague period called work.",
+        "Choose a focus duration that fits the task, energy, and real calendar; treat ninety minutes only as one possible starting experiment.",
+        "Remove avoidable interruptions while keeping genuinely important responsibilities reachable.",
+        "Before stopping, leave one sentence that makes the next resume point obvious.",
+        "Take a real break that changes activity rather than immediately replacing one demanding work stream with another.",
+        "After one or several cycles, adjust the work and break lengths from observed progress, fatigue, interruption, and recovery instead of treating the original numbers as a discipline test."
+      ],
+      "review_horizon": {
+        "value": "After each focus-and-break cycle, with a broader review after a few ordinary workdays",
+        "rationale": "The protocol is an adjustable work-boundary experiment. The useful signal is whether the block protected meaningful progress and whether the break actually restored capacity; no fixed number of cycles is required before adjustment."
+      },
+      "observable_signal": "Whether the intended outcome moved, how often avoidable switching occurred, whether the break felt like a genuine change of pace, and whether returning to the next block was easier or harder.",
+      "stop_or_change_rule": "Shorten, lengthen, or abandon the fixed-block pattern when the timer repeatedly interrupts useful flow, the break is impractical, responsibilities require responsiveness, or managing the schedule costs more attention than it saves.",
+      "fallback": "Use a natural task milestone or a shorter focus boundary when a long timer is fragile, and use ordinary calendar or queue-based work when the job is primarily event-driven rather than self-scheduled.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a practical focus-and-recovery structure. Brali does not currently claim that 90/30 corresponds to a universal ultradian productivity cycle, that either duration is optimal, or that the protocol produces a predictable performance or wellbeing gain.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "Different tasks, energy states, responsibilities, and work environments can require very different block and break lengths.",
+        "A protected block cannot remove external dependencies, interruptions that genuinely matter, or poor task definition.",
+        "Feeling restored after a break is a personal operational signal, not evidence that one schedule changed physiology or long-term productivity.",
+        "The protocol is poorly suited to continuous-response and safety-critical work."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
+        "source_citations": []
+      },
+      "agent_summary": "Use this when a user wants protected focus followed by a real break. Choose one concrete outcome, fit the block to the actual task and calendar, leave a resume point, take a genuine break, and adjust from observed progress and fatigue. Treat 90/30 as an optional starting pattern, never as a biological rule.",
+      "retrieval_paths": [
+        "/life-os/90-30-focus-rest-schedule/",
+        "/topics/focus/",
+        "/for-ai/query/?q=How%20should%20I%20think%20about%20breaks%20and%20recovery%20when%20my%20energy%20drops"
+      ],
+      "evaluation_case_ids": [
+        "recovery-breaks"
+      ]
+    },
+    "10-minute-language-microsprints": {
+      "schema_version": 1,
+      "protocol_id": "brali:10-minute-language-microsprints",
+      "slug": "10-minute-language-microsprints",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "A large language-study plan is hard to start or fit into the day, and I want one small practice unit that produces a real attempt without pretending ten minutes is an optimal learning dose.",
+      "eligibility": [
+        "The learner can choose one narrow low-risk language target such as recalling a few words, understanding a short clip, reading a small passage, pronunciation practice, or one brief spoken response.",
+        "A short session would reduce setup friction and the learner has material or prompts that are good enough to use now.",
+        "The learner can check at least part of the attempt against a trustworthy answer, transcript, dictionary, teacher, or other feedback source when accuracy matters."
+      ],
+      "when_not_to_use": [
+        "Do not treat ten minutes as a minimum effective dose, a complete daily curriculum, or a guarantee of retention, fluency, pronunciation improvement, or proficiency growth.",
+        "Do not rely on short unsupervised practice alone for high-stakes interpreting, safety-critical communication, formal assessment, or errors that require qualified feedback.",
+        "Do not let choosing apps, reorganizing decks, or tracking streaks consume most of the practice boundary."
+      ],
+      "first_action": "Pick one language skill small enough to attempt now, set a short session boundary, and begin with an act of recall, comprehension, or production rather than reorganizing study materials.",
+      "steps": [
+        "Choose one narrow skill or prompt for this session instead of trying to cover the whole language.",
+        "Use ten minutes only as a convenient starting boundary; shorten or lengthen it when another duration fits the task better.",
+        "Do something with the language: recall before checking, answer a question, speak a short response, write a sentence, or listen for a target phrase.",
+        "Check important errors with an appropriate source rather than rehearsing an unresolved guess.",
+        "Record one phrase, sound, error, or question worth revisiting so the next short session has an immediate starting point.",
+        "After several sessions, change the duration, material, or target if the format is not helping you practise consistently or the tasks are too easy or too hard."
+      ],
+      "review_horizon": {
+        "value": "After each short session, with a pattern review after several sessions",
+        "rationale": "The immediate check identifies what was attempted and what needs another pass; a later pattern review tests whether short sessions reduce friction and remain challenging enough. Ten minutes is not treated as an evidence-backed learning dose."
+      },
+      "observable_signal": "Whether the learner completed a real recall, comprehension, or production attempt; what could be done without help; which errors were corrected; and whether the next practice target became clearer.",
+      "stop_or_change_rule": "Change the session length or practice type when the boundary repeatedly cuts off useful work, feels too trivial, or turns into passive exposure without feedback. Escalate to qualified instruction or assessment when the required outcome is high stakes or persistent errors cannot be checked confidently.",
+      "fallback": "If a timed microsprint adds friction, use one tiny untimed task such as recalling five phrases or answering one speaking prompt. If self-study feedback is weak, spend the short session preparing one focused question for a teacher, tutor, or reliable reference.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a practical session-design template, not an efficacy claim about a ten-minute dose. Brali does not currently attach reviewed evidence establishing that short sessions of this exact format are optimal or that they produce a predictable improvement in vocabulary, fluency, pronunciation, or adherence.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "A short practice boundary can make starting easier but can also fragment work that benefits from longer feedback or interaction.",
+        "Self-correction quality depends on the reliability of the learner's source or feedback.",
+        "Repeated practice of a narrow target does not by itself ensure broad comprehension, spontaneous production, transfer, or communicative competence.",
+        "The protocol specifies no evidence-backed duration, repetition count, streak target, or daily frequency."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/",
+        "source_citations": []
+      },
+      "agent_summary": "Use this when a learner needs a small language practice unit. Pick one narrow skill, use a short boundary only to reduce startup friction, require a real recall/comprehension/production attempt, check important errors, and leave one next target. Ten minutes is a convenient default, not an optimal dose or a promise of proficiency gains.",
+      "retrieval_paths": [
+        "/life-os/10-minute-language-microsprints/",
+        "/topics/learning/",
+        "/for-ai/query/?q=How%20can%20I%20practice%20vocabulary%20and%20useful%20phrases%20in%20a%20new%20language"
+      ],
+      "evaluation_case_ids": [
+        "language-vocabulary"
+      ]
+    },
+    "start-with-a-hypothesis": {
+      "schema_version": 1,
+      "protocol_id": "brali:start-with-a-hypothesis",
+      "slug": "start-with-a-hypothesis",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "A work problem is unclear and I keep jumping between logs, theories, fixes, and meetings without stating what evidence would make me keep or reject an explanation.",
+      "eligibility": [
+        "The problem can be described through observable facts and at least one plausible explanation can be checked without creating disproportionate risk.",
+        "The user can state a prediction that would differ depending on whether the hypothesis is useful.",
+        "A small reversible check, sample, comparison, log inspection, or safe reproduction can meaningfully update the explanation."
+      ],
+      "when_not_to_use": [
+        "Do not experiment casually on production, people, finances, safety, security, health, legal obligations, or other consequential systems when the test itself could create material harm.",
+        "Do not treat the first plausible explanation as a conclusion; a hypothesis should make it easier to notice disconfirming evidence, not rationalize it away.",
+        "Do not infer causality from a tiny exploratory check when the final decision requires stronger validation, controls, expert review, or a formal incident process."
+      ],
+      "first_action": "Write the observable problem separately from your explanation, then write one plausible hypothesis and one concrete pattern you would expect to see if it were useful.",
+      "steps": [
+        "Describe the observable problem in one or two sentences before explaining it, separating known facts from suspicions.",
+        "Write one narrow plausible explanation that could be wrong.",
+        "Turn the explanation into a prediction: specify what pattern you expect to observe if the hypothesis is useful.",
+        "Choose the smallest safe check that could change your mind, such as inspecting a sample, comparing before and after a change, querying a relevant log, or reproducing the case in an appropriate environment.",
+        "Record expected versus observed results, then explicitly keep, revise, or reject the explanation and choose the next check.",
+        "Match the strength of later validation to the consequences of the decision rather than promoting an exploratory result into proof."
+      ],
+      "review_horizon": {
+        "value": "Immediately after the smallest safe check",
+        "rationale": "The protocol exists to force an evidence update. The first useful review point is therefore when the prediction can be compared with the observation; consequential decisions may require additional validation afterward."
+      },
+      "observable_signal": "Whether the problem, hypothesis, prediction, and observation were kept distinct and whether the result actually caused the explanation or next check to change when evidence disagreed.",
+      "stop_or_change_rule": "Stop the exploratory loop when the next test is unsafe, costly, irreversible, or requires formal approval or expertise. Change the hypothesis when the prediction fails, and change the whole approach when the problem statement itself is unstable or evidence cannot distinguish competing explanations.",
+      "fallback": "If no safe discriminating test is available, document what is known, what remains uncertain, and what evidence or approval is needed next instead of performing a weak or risky experiment.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a practical reasoning and troubleshooting template. Brali does not currently attach reviewed evidence claiming that this exact sequence reduces incident time, improves diagnosis by a predictable amount, or provides a statistical test of causality.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "A plausible hypothesis can still be biased by missing data, poor measurement, confounding, or the user's prior beliefs.",
+        "One small check may eliminate an explanation without proving the remaining explanation is correct.",
+        "The method does not replace experiment design, statistical analysis, security review, incident command, or domain expertise when those are required.",
+        "A clear reasoning trail improves auditability but does not guarantee a correct diagnosis."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/",
+        "source_citations": []
+      },
+      "agent_summary": "Use this for an unclear low-risk problem: separate observation from explanation, state one falsifiable-enough hypothesis, write the expected pattern, run the smallest safe check that could change your mind, and update the explanation from the result. Never promote an exploratory check into proof when consequences require stronger validation.",
+      "retrieval_paths": [
+        "/life-os/start-with-a-hypothesis/",
+        "/for-ai/query/?q=How%20can%20I%20frame%20a%20problem%20and%20test%20a%20hypothesis"
+      ],
+      "evaluation_case_ids": [
+        "problem-hypothesis"
+      ]
+    },
+    "5-whys-goal-clarity": {
+      "schema_version": 1,
+      "protocol_id": "brali:5-whys-goal-clarity",
+      "slug": "5-whys-goal-clarity",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "A goal or recurring problem feels vague, and I want a short reflection that exposes a useful reason, assumption, or constraint without pretending there must be one hidden root cause exactly five questions deep.",
+      "eligibility": [
+        "The user has one low-risk goal or problem that can benefit from clarifying motives, assumptions, constraints, or dependencies.",
+        "The user can distinguish at least roughly between facts, interpretations, and guesses that may need verification.",
+        "The exercise can end in a concrete next action, question, or evidence check rather than becoming indefinite introspection."
+      ],
+      "when_not_to_use": [
+        "Do not force exactly five why questions or claim that the final answer is the unique root cause of a complex personal, organizational, or technical problem.",
+        "Do not turn guesses about another person's motives, a market, or your own ability into facts merely because they appear later in the chain.",
+        "Do not use repeated why questions as therapy, diagnosis, blame allocation, or a substitute for evidence, specialist assessment, or formal root-cause analysis when the stakes require those tools."
+      ],
+      "first_action": "Write one goal or problem in plain language, ask why it matters or happens, and mark any answer that is actually an assumption rather than a known fact.",
+      "steps": [
+        "Start with one concrete goal or problem rather than a broad life category.",
+        "Ask why it matters or why it happens, then ask why again only while each answer adds useful information.",
+        "Split branches when several causes or motives appear instead of squeezing them into one chain.",
+        "Mark answers that are assumptions about people, markets, ability, or future outcomes so they can be checked rather than introspected indefinitely.",
+        "Turn the clearest useful insight into one next action, information request, comparison, experiment, or change to the goal.",
+        "Stop when the answers become repetitive, speculative, or emotionally circular; the number of whys is not the success metric."
+      ],
+      "review_horizon": {
+        "value": "At the end of the reflection and after the chosen next action or evidence check",
+        "rationale": "The immediate result should be a clearer assumption, constraint, or next step. A later check determines whether that insight improved the decision; there is no evidence-backed requirement to reach five layers."
+      },
+      "observable_signal": "Whether the exercise surfaced a useful reason, assumption, branch, or constraint and whether that changed the next action or identified something concrete that needs evidence.",
+      "stop_or_change_rule": "Stop asking why when answers repeat, become increasingly speculative, intensify blame without producing action, or move into a domain that needs qualified support. Change to evidence gathering when the useful output is an assumption that can be checked.",
+      "fallback": "If repeated why questions do not help, write the goal, the main constraint, the smallest controllable next action, and one uncertainty to verify. For complex operational failures, switch to a structured root-cause method appropriate to the system and stakes.",
+      "evidence_boundary": {
+        "status": "practical",
+        "statement": "This is a practical reflection template adapted for goal clarity. Brali does not currently attach reviewed evidence that five questions are optimal, that the sequence reveals a unique root cause, or that it produces a predictable improvement in motivation or decision quality.",
+        "source_decision_ids": []
+      },
+      "limitations": [
+        "Complex outcomes often have multiple interacting causes, dependencies, incentives, and constraints that a single why chain cannot represent.",
+        "Introspection cannot by itself verify assumptions about external systems or other people.",
+        "The exercise can create false certainty if the user treats a coherent story as evidence.",
+        "A useful next action is a stronger success signal than reaching a particular depth or number of questions."
+      ],
+      "citation": {
+        "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/5-whys-goal-clarity/",
+        "source_citations": []
+      },
+      "agent_summary": "Use repeated why questions only as a bounded clarity prompt: start from one concrete goal or problem, branch when several causes appear, mark assumptions, and stop when the chain becomes repetitive or speculative. The output should be one useful action or evidence check, not a claim that five questions exposed the single root cause.",
+      "retrieval_paths": [
+        "/life-os/5-whys-goal-clarity/",
+        "/for-ai/query/?q=How%20can%20I%20turn%20a%20vague%20goal%20into%20actions%20I%20can%20control"
+      ],
+      "evaluation_case_ids": [
+        "goals-control"
+      ]
+    }
+  }
+}

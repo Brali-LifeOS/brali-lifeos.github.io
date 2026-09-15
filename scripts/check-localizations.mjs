@@ -83,12 +83,13 @@ const baseRoutes = [
 ];
 const manifestByPath = new Map(manifest.routes.map((route) => [route.path, route]));
 assert(manifest.locale === "ru" && manifest.role === "human-interface" && manifest.no_silent_fallback === true, "generated Russian manifest role/fallback contract drift");
+assert(manifest.language_tag === "ru" && manifest.route_prefix === "/ru/" && manifest.direction === "ltr", "generated Russian manifest locale metadata drift");
 assert(manifest.coverage?.flagship_protocols?.localized === 7 && manifest.coverage?.flagship_protocols?.canonical === 7, "generated manifest must retain exact 7/7 flagship coverage");
 for (const route of baseRoutes) {
   const declared = manifestByPath.get(route.ru);
   assert(declared, `generated manifest missing base localized route ${route.ru}`);
   const html = await readFile(path.join(root, route.file), "utf8");
-  assert(/<html lang="ru">/.test(html), `${route.ru} must render lang=ru`);
+  assert(/<html\b[^>]*\blang="ru"[^>]*\bdir="ltr"[^>]*>/i.test(html), `${route.ru} must render lang=ru and dir=ltr`);
   assert(html.includes(`<link rel="canonical" href="${base}${route.ru}">`), `${route.ru} needs self canonical`);
   assert(html.includes(`hreflang="en" href="${base}${route.en}"`), `${route.ru} needs English hreflang`);
   assert(html.includes('"inLanguage":"ru"'), `${route.ru} structured data must declare Russian`);
@@ -100,7 +101,9 @@ for (const route of baseRoutes) assert(sitemap.includes(`<loc>${base}${route.ru}
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");
 assert(robots.includes(`Sitemap: ${base}/ru/sitemap.xml`), "robots.txt must advertise Russian sitemap");
 const llms = await readFile(path.join(root, "ru", "llms.txt"), "utf8");
-for (const token of ["Locale: ru", "Role: human-interface", "Canonical locale: en", "No silent fallback: true"]) assert(llms.includes(token), `Russian llms.txt missing ${token}`);
+for (const token of ["Locale: ru", "Role: human-interface", "Language tag: ru", "Canonical locale: en", "Status: reviewed-partial", "Search publication: limited", "No silent fallback: true", `Coverage mode: ${libraryConfig.coverage_mode}`]) {
+  assert(llms.includes(token), `Russian llms.txt missing ${token}`);
+}
 if (libraryConfig.coverage_mode === "batched") assert(llms.includes("расширяется проверенными пакетами"), "batched coverage must be explicit in Russian llms.txt");
 
 const baseRef = process.env.LOCALIZATION_BASE_REF;

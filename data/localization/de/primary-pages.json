@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "locale": "de",
+  "source_locale": "en",
+  "quality": "language-reviewed",
+  "pages": [
+    {
+      "id": "research",
+      "kind": "primary-hub",
+      "source_path": "research/index.html",
+      "source_route": "/research/",
+      "route": "/de/research/",
+      "fragment": "data/localization/de/pages/research.html",
+      "title": "Forschung und Signale",
+      "description": "Forschungsnotizen von Brali: was neue Quellen tatsächlich stützen, wo die Schlussfolgerung endet und wie Evidenz ein praktisches Protokoll verändern kann.",
+      "schema_type": "CollectionPage",
+      "source_markers": [
+        "Useful research, connected to things people can try.",
+        "Living research pipeline",
+        "Why the queue is deliberately untrusted",
+        "From research to the library"
+      ]
+    },
+    {
+      "id": "partners",
+      "kind": "primary-hub",
+      "source_path": "partners/index.html",
+      "source_route": "/partners/",
+      "route": "/de/partners/",
+      "fragment": "data/localization/de/pages/partners.html",
+      "title": "Mit Brali zusammenarbeiten",
+      "description": "Integrationen, Forschungskooperationen, Lokalisierung und kommerzielle Nutzung von Brali-Daten – mit klaren Evidenz-, Provenienz- und Lizenzgrenzen.",
+      "schema_type": "CollectionPage",
+      "source_markers": [
+        "Choose a partnership path with clear evidence and licensing boundaries.",
+        "Partnership paths",
+        "Contribute without a partnership",
+        "One boundary across every path"
+      ]
+    },
+    {
+      "id": "for-ai",
+      "kind": "primary-hub",
+      "source_path": "for-ai/index.html",
+      "source_route": "/for-ai/",
+      "route": "/de/for-ai/",
+      "fragment": "data/localization/de/pages/for-ai.html",
+      "title": "Brali für KI und Entwickler",
+      "description": "Brali-Wissen über Agent Skills, API, MCP, Datensätze und Evaluation nutzen, ohne Evidenzstatus, Provenienz oder kanonische Identität zu verlieren.",
+      "schema_type": "WebPage",
+      "source_markers": [
+        "Use practical knowledge without throwing away its evidence boundary.",
+        "Start in 60 seconds",
+        "Choose the smallest integration surface that fits",
+        "Do not erase uncertainty",
+        "Multilingual retrieval"
+      ]
+    }
+  ]
+}

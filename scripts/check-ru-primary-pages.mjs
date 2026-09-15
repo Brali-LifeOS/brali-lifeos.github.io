@@ -29,7 +29,8 @@ for (const page of config.pages) {
     assert(source.includes(marker), `Canonical source marker drift for ${page.id}: ${JSON.stringify(marker)}`);
   }
 
-  assert(html.includes('<html lang="ru">'), `Missing lang=ru for ${page.id}`);
+  assert(/<html\b[^>]*\blang=["']ru["'][^>]*>/i.test(html), `Missing lang=ru for ${page.id}`);
+  assert(/<html\b[^>]*\bdir=["']ltr["'][^>]*>/i.test(html), `Missing dir=ltr for ${page.id}`);
   assert(html.includes('data-brali-cluster="localized-ru-primary"'), `Missing RU primary cluster marker for ${page.id}`);
   assert(/[А-Яа-яЁё]/.test(html), `No Cyrillic rendered for ${page.id}`);
   assert(html.includes(`<link rel="canonical" href="${absolute(page.route)}">`), `Wrong canonical for ${page.id}`);

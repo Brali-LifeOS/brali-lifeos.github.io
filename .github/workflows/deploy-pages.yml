@@ -51,15 +51,34 @@ jobs:
       - name: Check localization release verifier syntax
         run: |
           node --check scripts/check-live-localizations.mjs
+          node --check scripts/check-live-localization-cluster.mjs
           node --check scripts/check-browser-localizations.mjs
           node --check scripts/run-localization-release-gates.mjs
+          node --check scripts/run-localization-build.mjs
+          node --check scripts/run-localization-checks.mjs
           node --check scripts/check-localization-contract.mjs
           node --check scripts/check-localization-faults.mjs
           node --check scripts/check-ru-consent-localization.mjs
           node --check scripts/audit-ru-language.mjs
           node --check scripts/patch-ru-discovery.mjs
+          node --check scripts/build-interface-locales.mjs
+          node --check scripts/finalize-interface-locales.mjs
+          node --check scripts/finalize-localization-cluster.mjs
+          node --check scripts/check-interface-locale-sources.mjs
+          node --check scripts/check-interface-locales.mjs
+          node --check scripts/check-de-library-contract.mjs
+          node --check scripts/audit-de-library-language.mjs
+          node --check scripts/audit-de-language.mjs
+          node --check scripts/check-localization-cluster.mjs
+          node --check scripts/check-pages-localization-artifact.mjs
       - name: Validate localization source contract and adversarial failures
-        run: npm run localization:contract && npm run localization:faults && npm run localization:audit:ru
+        run: |
+          npm run localization:contract
+          npm run localization:faults
+          npm run localization:audit:ru
+          npm run localization:sources
+          node scripts/check-de-library-contract.mjs --complete
+          npm run localization:audit:de
       - name: Build site
         run: npm run build
       - name: Gate research lifecycle and Russian trust parity
@@ -132,6 +151,8 @@ jobs:
           test -s life-os/datasets/reviews.json
           test -s life-os/datasets/research-lifecycle-watchlist.json
           npm run lifecycle:check
+      - name: Gate exact final localization Pages artifact
+        run: npm run localization:cluster && npm run localization:artifact
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
       - name: Upload verified Pages artifact
@@ -162,6 +183,8 @@ jobs:
           package-manager-cache: false
       - name: Verify all release locales over live HTTP
         run: node scripts/run-localization-release-gates.mjs live
+      - name: Verify reciprocal locale cluster for deployed SHA
+        run: node scripts/check-live-localization-cluster.mjs
       - name: Install Chromium localization verification runtime
         run: npm install --no-save --package-lock=false playwright@1.55.0 && npx playwright install --with-deps chromium
       - name: Verify all release locales in real Chromium

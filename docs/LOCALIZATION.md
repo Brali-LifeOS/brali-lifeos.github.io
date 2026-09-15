@@ -11,6 +11,7 @@ Russian (`ru`) is Brali's reference human-interface localization. It is a refere
 5. Generated files are derived artifacts. Edit the locale datasets, registry, generators or validators that own them.
 6. Search and AI surfaces are part of the locale release: `lang`, canonical, reciprocal `hreflang`, sitemap, structured-data language, locale manifest, machine-readable library and `llms.txt` must agree.
 7. Green source checks are necessary but insufficient. A published locale also requires a post-deploy real-browser pass.
+8. Translation presence never grants search eligibility. A localized route inherits the canonical source page's search eligibility; restricted/noindex canonical records stay generated and usable in every locale but remain `noindex,follow` and outside search sitemaps.
 
 ## Locale registry
 
@@ -91,6 +92,38 @@ A localization validator must reject at least:
 Russian source text is scanned by `scripts/audit-ru-language.mjs`. The scan covers library batches, flagships, zones, primary-page metadata and site UI data. Terms that are likely untranslated leakage or avoidable calques fail the build.
 
 If an original-language term is genuinely required because it is a proper name, formal method name, identifier or clearer technical token, add the smallest possible location-specific exception to `data/localization/ru/language-allowlist.json` and record the reason. A broad wildcard exception is not a substitute for editing.
+
+## Indexability contract
+
+`indexability.json` is the generated machine-readable inventory of URLs that are eligible for search publication. It is not an authored URL list. `scripts/build-indexability-registry.mjs` derives it from the canonical HTML search state, the root sitemap, the locale manifests and `localization-cluster.json`.
+
+An index-eligible localized URL must satisfy all of these conditions:
+
+1. its canonical source page exists and is self-canonical;
+2. the canonical source page is not `noindex`;
+3. the canonical source URL is present in the canonical root sitemap;
+4. the localized route exists in the released locale manifest;
+5. the generated localized page is self-canonical and uses the correct `html lang`;
+6. the localized page is not `noindex`;
+7. reciprocal locale relationships come from the shared localization cluster;
+8. the localized URL appears in the locale sitemap and root aggregate sitemap;
+9. the URL is reachable through a normal crawlable HTML link from another index-eligible page.
+
+Routes that fail the canonical search-eligibility decision are still allowed to exist as useful human routes. They are explicitly marked `index_eligible: false` in the generated locale manifest, publish `noindex,follow`, and must be absent from the locale sitemap, root sitemap and `indexability.json`. This keeps full EN/RU/DE content parity separate from search-publication parity.
+
+The sitemap architecture intentionally stays simple:
+
+- `https://brali-lifeos.github.io/sitemap.xml` is the aggregate production sitemap and the primary Search Console submission endpoint;
+- `https://brali-lifeos.github.io/ru/sitemap.xml` is the generated Russian index-eligible subset;
+- `https://brali-lifeos.github.io/de/sitemap.xml` is the generated German index-eligible subset;
+- `robots.txt` advertises release-locale sitemaps;
+- sitemap `hreflang` and HTML `hreflang` are derived from the same localization cluster rather than independently maintained tables.
+
+`scripts/check-indexability-contract.mjs` fails the build for route collisions, stable-ID collisions, missing generated pages, route-level search-policy drift, sitemap leakage or omission, wrong language/canonical state, malformed or stale `hreflang`, broken crawlable links/fragments, and index-eligible orphan pages. `scripts/normalize-search-sitemap.mjs` rebuilds and re-runs this contract against the exact final sitemap immediately before the final Pages artifact gates.
+
+A future locale should therefore need only registry registration, valid localized source data and the generic build path. Canonicals, alternates, manifest search eligibility, locale sitemap entries, aggregate sitemap membership, machine index rows and validation are derived from the same route identity rather than copied into locale-specific tables.
+
+`IndexNow` is intentionally not part of the core publication contract. Brali's authoritative discovery path is crawlable internal navigation plus canonical HTML and generated sitemaps. IndexNow may be added later as a best-effort notification accelerator if change frequency justifies key management and changed-URL delivery; it must never become a prerequisite for a valid deployment. Google's Indexing API is not used for ordinary Brali pages.
 
 ## Browser proof
 

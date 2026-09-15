@@ -1,4 +1,4 @@
-name: Prealign localization package with main
+name: Probe main localization merge
 
 on:
   push:
@@ -9,14 +9,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-
-concurrency:
-  group: sync-main-localization
-  cancel-in-progress: false
+  contents: read
 
 jobs:
-  prealign-package:
+  probe:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -27,47 +23,21 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      - name: Fetch current main package
+      - name: Probe merge against current main
+        shell: bash
         run: |
           git fetch origin main
-          git show origin/main:package.json > package.json
-      - name: Reapply generic localization pipeline
-        run: |
-          node <<'NODE'
-          const fs = require('fs');
-          const file = 'package.json';
-          const pkg = JSON.parse(fs.readFileSync(file, 'utf8'));
-          const generic = 'node scripts/build-interface-locales.mjs && node scripts/build-localized-machine-surfaces.mjs';
-          const legacy = 'node scripts/build-localizations.mjs && node scripts/build-ru-primary-pages.mjs && node scripts/build-ru-library.mjs && node scripts/patch-ru-discovery.mjs';
-          if (!pkg.scripts.build.includes(legacy)) throw new Error('Current main localization build chain not found');
-          pkg.scripts.build = pkg.scripts.build.replace(legacy, generic);
-          pkg.scripts['localization:build'] = generic;
-          pkg.scripts['localization:audit:de'] = 'node scripts/audit-de-language.mjs';
-          const extendChecks = (value) => {
-            if (value.includes('scripts/check-interface-locales.mjs')) return value;
-            const marker = 'node scripts/check-ru-primary-pages.mjs && node scripts/check-localization-faults.mjs';
-            if (!value.includes(marker)) throw new Error('Localization check insertion point not found');
-            return value.replace(marker, 'node scripts/check-ru-primary-pages.mjs && node scripts/check-interface-locales.mjs && node scripts/audit-de-language.mjs && node scripts/check-localization-faults.mjs');
-          };
-          pkg.scripts['localization:check'] = extendChecks(pkg.scripts['localization:check']);
-          pkg.scripts.check = extendChecks(pkg.scripts.check);
-          fs.writeFileSync(file, JSON.stringify(pkg, null, 2) + '\n');
-          NODE
-      - name: Verify main and localization features coexist
-        run: |
-          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
-          grep -q 'publish-knowledge-ontology-dataset.mjs' package.json
-          grep -q 'check-research-triage.mjs' package.json
-          grep -q 'check-lifecycle-research-localization.mjs' package.json
-          grep -q 'build-interface-locales.mjs' package.json
-          grep -q 'build-localized-machine-surfaces.mjs' package.json
-          grep -q 'audit-de-language.mjs' package.json
-      - name: Commit package alignment
-        run: |
-          if git diff --quiet -- package.json; then
-            echo 'package.json already aligned.'
+          set +e
+          git merge --no-commit --no-ff origin/main
+          status=$?
+          set -e
+          if [ "$status" -eq 0 ]; then
+            echo 'MERGE_CLEAN'
+            git merge --abort || true
             exit 0
           fi
-          git add package.json
-          git commit -m "Align localization package with current main"
-          git push origin HEAD:agent/de-localization
+          echo 'CONFLICTS_START'
+          git diff --name-only --diff-filter=U
+          echo 'CONFLICTS_END'
+          git merge --abort || true
+          exit 1

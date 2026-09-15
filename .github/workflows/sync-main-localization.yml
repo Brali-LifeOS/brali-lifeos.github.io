@@ -23,6 +23,10 @@ jobs:
         with:
           ref: agent/de-localization
           fetch-depth: 0
+      - name: Configure merge identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
       - name: Fetch current main
         run: git fetch origin main
       - name: Probe merge conflicts without publishing

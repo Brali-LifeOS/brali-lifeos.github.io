@@ -1,23 +1,12 @@
+import { readFile } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { getLocalizationBuildSteps, validateLocalizationPipeline } from "./lib/localization-pipeline.mjs";
 
+const root = process.cwd();
+const profile = JSON.parse(await readFile(".arwp/localization.json", "utf8"));
 const withConsent = process.argv.includes("--with-consent");
-const steps = [
-  "scripts/build-localizations.mjs",
-  "scripts/build-ru-primary-pages.mjs",
-  "scripts/build-ru-library.mjs",
-  "scripts/patch-ru-discovery.mjs",
-  "scripts/build-interface-locales.mjs",
-  "scripts/finalize-interface-locales.mjs",
-  ...(withConsent ? [
-    "scripts/inject-consent-analytics.mjs",
-    // Consent generation also builds the governed lifecycle/trust surfaces. Publish
-    // their canonical discovery entries before constructing the indexability graph;
-    // the later workflow finalizer remains an idempotent exact-artifact recheck.
-    "scripts/finalize-hack-lifecycle-discovery.mjs",
-  ] : []),
-  "scripts/finalize-localization-cluster.mjs",
-  "scripts/build-indexability-registry.mjs",
-];
+await validateLocalizationPipeline(root, profile);
+const steps = getLocalizationBuildSteps(profile, { withConsent });
 
 for (const script of steps) {
   console.log(`[localization-build] ${script}`);

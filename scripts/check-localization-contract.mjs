@@ -1,6 +1,7 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { validateLocalizationProfile } from "./lib/localization-contract.mjs";
+import { validateLocalizationPipeline } from "./lib/localization-pipeline.mjs";
 
 const root = process.cwd();
 const profile = JSON.parse(await readFile(path.join(root, ".arwp", "localization.json"), "utf8"));
@@ -41,4 +42,6 @@ for (const locale of byCode.values()) {
   }
 }
 
-console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; library parity and release indexability are explicit.`);
+await validateLocalizationPipeline(root, profile);
+
+console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; registry-to-pipeline wiring, library parity and release indexability are explicit.`);

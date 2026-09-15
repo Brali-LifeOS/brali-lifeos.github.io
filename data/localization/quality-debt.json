@@ -2,7 +2,7 @@
   "schema_version": 1,
   "locale": "ru",
   "status": "reviewed-partial",
-  "last_verified": "2026-09-14",
+  "last_verified": "2026-09-15",
   "items": [
     {
       "id": "ru-long-form-library-expansion",
@@ -38,6 +38,15 @@
         "live_gate": "passed",
         "browser_gate": "passed"
       }
+    },
+    {
+      "id": "ru-homepage-protocol-matcher-parity",
+      "surface": "homepage-interaction",
+      "state": "planned",
+      "release_blocking": false,
+      "scope": "Interactive protocol matcher on the canonical English homepage, including canonical Protocol Feed-derived recommendation metadata, fail-closed behavior and evidence/provenance presentation",
+      "reason": "The English homepage matcher now derives its displayed protocol facts from a generated canonical Protocol Feed payload instead of duplicated JavaScript records. The Russian homepage is a separately authored localized product surface and does not currently expose this interactive matcher, so no English matcher strings are silently rendered under /ru/. This is an explicit experience-parity gap, not a translation fallback.",
+      "release_rule": "If the protocol matcher is added to the Russian homepage or becomes part of an exact localized homepage-interaction contract, generate its labels and explanatory copy from reviewed Russian locale data while preserving canonical protocol IDs, evidence state and provenance. Do not reuse the English runtime copy under /ru/."
     },
     {
       "id": "ru-secondary-product-surfaces",

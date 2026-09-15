@@ -3,65 +3,6 @@
   const picker = document.querySelector('#goal-picker');
   if (!form || !picker) return;
 
-  const protocols = {
-    focus: {
-      match: 'A small plan that reduces competing priorities',
-      title: '3-Task Reset',
-      summary: 'Clear mental clutter with three meaningful tasks chosen for impact, not urgency.',
-      trust: 'Practical',
-      source: 'Brali protocol record',
-      limit: 'A bounded planning routine; inspect the full protocol before treating it as trusted guidance.',
-      href: '/life-os/top-3-daily-focus-planner/',
-      steps: [
-        ['Capture', 'Dump everything on your mind.', '5 min'],
-        ['Choose', 'Pick three tasks that move the needle.', '10 min'],
-        ['Focus', 'Do the first one distraction-free.', '25 min']
-      ]
-    },
-    memory: {
-      match: 'Retrieval practice with its evidence boundary visible',
-      title: 'Active Recall',
-      summary: 'Close the material and retrieve the key idea from memory before checking what you missed.',
-      trust: 'Reviewed boundary',
-      source: 'Protocol + evidence decision',
-      limit: 'Useful for learning practice; the full protocol keeps the evidence boundary and source context attached.',
-      href: '/life-os/active-recall-test-yourself/',
-      steps: [
-        ['Close', 'Put the source out of sight.', '2 min'],
-        ['Recall', 'Write the key points from memory.', '10 min'],
-        ['Check', 'Compare, correct, and try again later.', '5 min']
-      ]
-    },
-    stress: {
-      match: 'A short pause before choosing the next action',
-      title: 'Two-Minute Reset',
-      summary: 'Slow the pace briefly, notice the body, and return to one controllable next step.',
-      trust: 'Practical',
-      source: 'Brali protocol record',
-      limit: 'A low-stakes practical reset, not a diagnosis, treatment, crisis tool, or guaranteed stress reduction.',
-      href: '/life-os/box-breathing-for-speakers/',
-      steps: [
-        ['Pause', 'Stop adding new input for two minutes.', '2 min'],
-        ['Breathe', 'Use a slow, comfortable breathing rhythm.', '4 min'],
-        ['Choose', 'Name one action you can control now.', '2 min']
-      ]
-    },
-    sleep: {
-      match: 'A repeatable cue that protects the sleep window',
-      title: 'Evening Cutoff',
-      summary: 'Choose one evening boundary and make it easier to repeat than to negotiate each night.',
-      trust: 'Practical',
-      source: 'Brali protocol record',
-      limit: 'A routine experiment for consistency; it is not medical sleep advice or a treatment claim.',
-      href: '/life-os/stop-caffeine-after-lunch/',
-      steps: [
-        ['Pick', 'Choose one cue or cutoff that matters.', '5 min'],
-        ['Prepare', 'Remove the most likely obstacle early.', '10 min'],
-        ['Review', 'Notice what changed after a week.', '7 days']
-      ]
-    }
-  };
-
   const match = document.querySelector('#goal-result');
   const title = document.querySelector('#protocol-title');
   const summary = document.querySelector('#protocol-summary');
@@ -72,8 +13,48 @@
   const link = document.querySelector('#protocol-link');
   const topicLink = document.querySelector('.topic-more');
 
-  const render = () => {
+  const matcherPromise = fetch('/homepage-matcher.json', { cache: 'no-cache' })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Homepage matcher payload returned HTTP ${response.status}`);
+      return response.json();
+    })
+    .then((payload) => {
+      if (payload?.schema_version !== 1 || !payload?.goals?.focus) {
+        throw new Error('Homepage matcher payload does not satisfy schema v1.');
+      }
+      return payload.goals;
+    })
+    .catch((error) => {
+      console.error('Brali homepage matcher unavailable:', error);
+      return null;
+    });
+
+  const renderUnavailable = () => {
+    const topic = picker.value || 'focus';
+    match.textContent = 'Canonical protocol data is temporarily unavailable';
+    title.textContent = 'Browse this topic instead';
+    summary.textContent = 'Brali will not show a protocol match when its canonical metadata cannot be loaded.';
+    if (trust) trust.textContent = 'Unavailable';
+    if (source) source.textContent = 'Canonical Protocol Feed';
+    if (limit) limit.textContent = 'No fallback recommendation is substituted without its evidence state and provenance.';
+    link.href = `/topics/${topic}/`;
+    if (topicLink) topicLink.href = `/topics/${topic}/`;
+    steps.replaceChildren();
+  };
+
+  const render = async () => {
+    const protocols = await matcherPromise;
+    if (!protocols) {
+      renderUnavailable();
+      return;
+    }
+
     const protocol = protocols[picker.value] || protocols.focus;
+    if (!protocol) {
+      renderUnavailable();
+      return;
+    }
+
     match.textContent = protocol.match;
     title.textContent = protocol.title;
     summary.textContent = protocol.summary;
@@ -99,10 +80,11 @@
     }));
   };
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    render();
+    await render();
     title.focus?.();
   });
   picker.addEventListener('change', render);
+  render();
 })();

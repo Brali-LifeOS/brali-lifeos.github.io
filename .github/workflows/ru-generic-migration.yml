@@ -1,0 +1,46 @@
+name: Russian generic locale migration
+
+on:
+  push:
+    branches:
+      - agent/de-localization
+    paths:
+      - 'scripts/migrate-ru-generic-source-parity.mjs'
+      - '.github/workflows/ru-generic-migration.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ru-generic-migration
+  cancel-in-progress: false
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          package-manager-cache: false
+      - name: Apply reviewed Russian source-parity migration
+        run: node scripts/migrate-ru-generic-source-parity.mjs
+      - name: Verify generic locale source parity
+        run: node scripts/check-interface-locale-sources.mjs
+      - name: Commit reviewed Russian records
+        shell: bash
+        run: |
+          if git diff --quiet -- data/localization/ru/library; then
+            echo "No Russian localization changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/localization/ru/library
+          git commit -m "Refresh reviewed Russian localization source parity"
+          git push origin HEAD:${{ github.ref_name }}

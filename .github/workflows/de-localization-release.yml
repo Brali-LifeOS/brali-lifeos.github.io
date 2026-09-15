@@ -5,6 +5,7 @@ on:
     branches:
       - agent/de-localization
     paths:
+      - 'package.json'
       - '.arwp/localization.json'
       - 'data/localization/de/**'
       - 'data/localization/ru/**'
@@ -25,6 +26,7 @@ on:
       - '.github/workflows/de-localization-release.yml'
   pull_request:
     paths:
+      - 'package.json'
       - '.arwp/localization.json'
       - 'data/localization/de/**'
       - 'data/localization/ru/**'

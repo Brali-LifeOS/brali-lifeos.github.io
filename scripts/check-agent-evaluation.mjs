@@ -21,7 +21,7 @@ const page = fs.readFileSync(path.join(ROOT, 'for-ai/evaluation/index.html'), 'u
 const sitemap = fs.readFileSync(path.join(ROOT, 'sitemap.xml'), 'utf8');
 
 if (suite.schema_version !== 1 || report.schema_version !== 1) fail('unexpected schema version');
-if ((suite.cases || []).length < 30 || (suite.cases || []).length > 50) fail('suite must contain 30-50 cases');
+if ((suite.cases || []).length < 30 || (suite.cases || []).length > 100) fail('suite must contain 30-100 cases');
 const ids = (suite.cases || []).map(item => item.id);
 if (new Set(ids).size !== ids.length) fail('duplicate case ids');
 if (report.summary?.cases !== ids.length || (report.cases || []).length !== ids.length) fail('report case count differs from source suite');

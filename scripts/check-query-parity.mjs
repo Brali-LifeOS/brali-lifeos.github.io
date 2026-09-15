@@ -5,11 +5,14 @@ const ROOT = process.cwd();
 const read = rel => fs.readFileSync(path.join(ROOT, rel), 'utf8');
 const json = rel => JSON.parse(read(rel));
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const sourceSuite = json('data/agent-evaluation-suite.json');
+const expectedCaseCount = (sourceSuite.cases || []).length;
 const report = json('for-ai/query/parity.json');
 const summary = report.summary || {};
 const cases = report.cases || [];
 
-assert(cases.length === 50, `Expected all 50 maintained Agent Evaluation cases, got ${cases.length}`);
+assert(expectedCaseCount >= 30, `Agent Evaluation source suite unexpectedly small: ${expectedCaseCount}`);
+assert(cases.length === expectedCaseCount, `Expected all ${expectedCaseCount} maintained Agent Evaluation cases, got ${cases.length}`);
 assert(cases.some(x => x.language === 'ru') && cases.some(x => x.language === 'en'), 'Parity suite must include both EN and RU cases');
 assert(cases.some(x => x.expected?.boundary_only), 'Parity suite must include boundary-only cases');
 assert(cases.some(x => x.expected?.safety_sensitive), 'Parity suite must include safety-sensitive cases');

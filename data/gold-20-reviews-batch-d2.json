@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "description": "Gold 20 completion reviews for communication and compare-and-learn protocols. These source reviews preserve practical evidence boundaries and canonical structured retrieval coverage.",
+  "entries": {
+    "5w1h-communication-checklist": {
+      "schema_version": 1,
+      "protocol_id": "brali:5w1h-communication-checklist",
+      "slug": "5w1h-communication-checklist",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "An operational message or handoff is easy to misread because the action, owner, timing, place, reason, or next step may be missing, and I want a quick gap check before sending.",
+      "eligibility": ["The message carries an operational request, handoff, meeting detail, decision, or other information where missing context could create delay or avoidable follow-up.","The sender can identify the reader's actual next action and add only details required to make that action clear.","Sensitive information can be omitted or moved to an appropriate channel rather than included merely to satisfy a checklist."],
+      "when_not_to_use": ["Do not force all six labels into every message when shared context already makes some answers obvious.","Do not add private, confidential, security-sensitive, or otherwise inappropriate detail merely to make the checklist look complete.","Do not treat 5W1H as proof that a message is correct, persuasive, legally sufficient, or understood by the recipient."],
+      "first_action": "Write the action or outcome the reader needs first, then scan Who, What, Where, When, Why, and How and add only the missing details required to act without guessing.",
+      "steps": ["State the requested action, decision, delivery, or response clearly enough that the reader can find it quickly.","Check who owns the action or is materially involved rather than relying on a long recipient list to imply responsibility.","Add place, link, deadline, date, or time-zone information only when it changes the reader's ability to act.","Add the reason when it changes priority, preparation, trade-offs, or the decision the reader must make.","Add process, file, tool, format, or next-step information only when the reader would otherwise have to guess.","Remove duplicated background, unnecessary labels, and sensitive detail, leaving the shortest message that is still operationally clear."],
+      "review_horizon": {"value":"Before sending the message, with a quick follow-up after the recipient acts or asks for clarification","rationale":"The pre-send review catches obvious context gaps; the later signal shows whether the reader could act or whether a missing or unnecessary detail created friction."},
+      "observable_signal": "Whether the recipient could identify the action, owner, relevant timing or location, and next step without avoidable clarification, while unnecessary or sensitive details stayed out.",
+      "stop_or_change_rule": "Simplify the checklist when it makes a message longer without adding usable context. Escalate to a richer specification, ticket, meeting, or private channel when the task cannot be made safe or clear in a short message.",
+      "fallback": "Use a simpler three-part message: what I need, by when or under what condition, and where the necessary context lives.",
+      "evidence_boundary": {"status":"practical","statement":"This is an operational clarity checklist. Brali does not attach reviewed evidence that the six questions, this order, or this message format produces a predictable improvement in communication outcomes.","source_decision_ids":[]},
+      "limitations": ["A complete checklist can still contain incorrect facts, unclear priorities, or a poor underlying decision.","Shared context means many messages do not need all six elements explicitly.","Adding information can reduce clarity when detail is unnecessary, duplicated, or sensitive.","Recipient understanding ultimately requires feedback or observable action rather than sender-side checklist completion alone."],
+      "citation": {"canonical_protocol_url":"https://brali-lifeos.github.io/life-os/5w1h-communication-checklist/","source_citations":[]},
+      "agent_summary": "Use 5W1H as a gap check for important operational messages: make the action visible, add only missing ownership, timing, place, reason, or process details, and remove unnecessary or sensitive context. It is a clarity aid, not a guarantee of understanding.",
+      "retrieval_paths": ["/life-os/5w1h-communication-checklist/","/for-ai/query/?q=Show%20me%20a%205W1H%20communication%20checklist%20for%20a%20clear%20work%20message"],
+      "evaluation_case_ids": ["clear-message"]
+    },
+    "ab-test-learning-loop": {
+      "schema_version": 1,
+      "protocol_id": "brali:ab-test-learning-loop",
+      "slug": "ab-test-learning-loop",
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Gold Reviewer",
+      "review_status": "gold-ready",
+      "user_problem": "I have two plausible approaches to a reversible low-risk choice and want to learn from a comparison without treating a tiny informal test as statistical proof.",
+      "eligibility": ["The decision is reversible or low-risk enough that trying two approaches does not create disproportionate harm.","The user can state one clear question and one outcome that matters before observing the result.","The comparison can keep major surrounding conditions reasonably similar or can explicitly record when they differ."],
+      "when_not_to_use": ["Do not run informal experiments on people, production systems, health, safety, security, finances, legal obligations, privacy, or other consequential settings when the test itself can create material harm or requires approval.","Do not call a small uncontrolled comparison a randomized A/B test or use it to claim statistical confidence, causality, or generalizability.","Do not change the outcome measure after seeing which version looks better without clearly marking the analysis as exploratory."],
+      "first_action": "Choose one reversible decision, write what you want to learn and the outcome you will inspect, then define versions A and B so one main difference is visible.",
+      "steps": ["Write one comparison question before testing so the exercise is tied to a decision rather than a vague preference.","Choose the observable outcome first, such as completion, error count, response, time, or another signal relevant to the decision.","Change one main factor and keep other important conditions as similar as practical, recording material differences that remain.","Run the comparison only where the test is safe, permitted, and proportionate to the value of the decision.","Record the observed result including null, mixed, or unclear outcomes without upgrading the evidence beyond the design.","Choose whether the result is sufficient for a cheap reversible next step or whether the decision needs a better-designed experiment, more data, or statistical help."],
+      "review_horizon": {"value":"After each comparison, before making the next decision","rationale":"The useful review point is when both approaches have produced enough observable information for the current low-risk decision; no universal sample size or test duration is implied."},
+      "observable_signal": "Whether the question and outcome were defined in advance, one main difference was interpretable, the observed result was recorded honestly, and the user can distinguish a tentative signal from stronger evidence.",
+      "stop_or_change_rule": "Stop the informal comparison when conditions differ too much to interpret, the result would drive a consequential decision without adequate design, or the test creates material risk. Move to proper experimental or analytical methods when stronger inference is required.",
+      "fallback": "When a side-by-side test is not safe or practical, compare existing observations, run a paper simulation, ask for expert review, or make the cheapest reversible choice while keeping uncertainty explicit.",
+      "evidence_boundary": {"status":"practical","statement":"This is a practical compare-and-learn template. Brali does not claim that an informal two-version comparison establishes causality, statistical significance, a generalizable winner, or an evidence-backed optimal test design.","source_decision_ids":[]},
+      "limitations": ["Small or non-randomized comparisons can be dominated by noise, selection, timing, audience, task difficulty, or other confounding factors.","Changing several factors at once makes attribution difficult or impossible.","A result useful for one cheap reversible decision may be inadequate for a high-cost or general policy decision.","Proper randomized testing and statistical inference require design choices not specified by this protocol."],
+      "citation": {"canonical_protocol_url":"https://brali-lifeos.github.io/life-os/ab-test-learning-loop/","source_citations":[]},
+      "agent_summary": "Use this for low-risk reversible learning: define one question and outcome, compare two approaches with one main difference, record unclear results as well as apparent wins, and escalate to proper experimental design when the conclusion matters.",
+      "retrieval_paths": ["/life-os/ab-test-learning-loop/","/for-ai/query/?q=Show%20me%20an%20A%20B%20test%20learning%20loop%20for%20problem%20solving"],
+      "evaluation_case_ids": ["data-uncertainty"]
+    }
+  }
+}

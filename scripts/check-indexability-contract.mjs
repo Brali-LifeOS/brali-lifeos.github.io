@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
+const finalMode = process.argv.includes("--final");
 const profile = JSON.parse(await readFile(path.join(root, ".arwp", "localization.json"), "utf8"));
 const sourceLocale = (profile.locales || []).find((entry) => entry.code === profile.sourceLocale);
 if (!sourceLocale) throw new Error("[indexability-check] source locale missing from registry");
@@ -234,8 +235,8 @@ for (const pathname of expectedRegistryPaths) {
   htmlByPath.set(pathname, html);
   for (const link of anchors(html, pathname)) {
     if (expectedRegistryPaths.has(link.path) && link.path !== pathname) inbound.get(link.path)?.add(pathname);
-    if (link.path.endsWith("/") && !(await exists(routeFile(link.path)))) fail(`${pathname}: broken internal route ${link.raw}`);
-    if (link.fragment && await exists(routeFile(link.path))) {
+    if (finalMode && link.path.endsWith("/") && !(await exists(routeFile(link.path)))) fail(`${pathname}: broken internal route ${link.raw}`);
+    if (finalMode && link.fragment && await exists(routeFile(link.path))) {
       const targetHtml = link.path === pathname ? html : (htmlByPath.get(link.path) || await readFile(routeFile(link.path), "utf8"));
       const escaped = link.fragment.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       if (!new RegExp(`\\b(?:id|name)=["']${escaped}["']`, "i").test(targetHtml)) fail(`${pathname}: broken fragment ${link.raw}`);
@@ -243,8 +244,10 @@ for (const pathname of expectedRegistryPaths) {
   }
 }
 
-for (const pathname of expectedRegistryPaths) {
-  if ((inbound.get(pathname)?.size || 0) === 0) fail(`${pathname}: index-eligible orphan has no crawlable incoming link from another index-eligible page`);
+if (finalMode) {
+  for (const pathname of expectedRegistryPaths) {
+    if ((inbound.get(pathname)?.size || 0) === 0) fail(`${pathname}: index-eligible orphan has no crawlable incoming link from another index-eligible page`);
+  }
 }
 
 for (const [pathname, html] of htmlByPath) {
@@ -278,11 +281,12 @@ for (const [pathname, html] of htmlByPath) {
 }
 
 if (failures.length) {
-  console.error(`[indexability-check] ${failures.length} failure(s)`);
+  console.error(`[indexability-check${finalMode ? ":final" : ""}] ${failures.length} failure(s)`);
   for (const message of failures.slice(0, 250)) console.error(`  - ${message}`);
   if (failures.length > 250) console.error(`  - ... ${failures.length - 250} more`);
   throw new Error("Indexability contract failed.");
 }
 
 const eligibleCounts = [...manifests.entries()].map(([locale, manifest]) => `${locale}=${(manifest.routes || []).filter((route) => route.index_eligible).length}/${manifest.routes?.length || 0}`);
-console.log(`[indexability-check] passed ${registryRows.length} index-eligible routes, ${registry.translation_set_count} indexable translation sets, ${eligibleCounts.join(", ")}; zero sitemap drift, restricted-page leakage, locale orphans, bad canonicals, broken hreflang or crawlable-link gaps.`);
+const scope = finalMode ? "final crawl/link" : "structural";
+console.log(`[indexability-check] ${scope} contract passed ${registryRows.length} index-eligible routes, ${registry.translation_set_count} indexable translation sets, ${eligibleCounts.join(", ")}; zero sitemap drift, restricted-page leakage, bad canonical or hreflang state${finalMode ? ", broken crawlable links or index-eligible orphans" : ""}.`);

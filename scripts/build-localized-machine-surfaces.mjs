@@ -23,14 +23,27 @@ for (const entry of locales) {
   if (copy.locale !== locale || copy.source_locale !== profile.sourceLocale) {
     throw new Error(`[${locale}] machine copy locale contract mismatch`);
   }
+  if (entry.role !== "human-interface") throw new Error(`[${locale}] generic machine surface requires human-interface role`);
+
   const vars = { localized_count: library.count, canonical_count: library.canonical_count };
   const coverage = library.coverage_mode === "exact"
     ? interpolate(copy.coverage_exact, vars)
     : interpolate(copy.coverage_partial, vars);
-  const llms = `# ${copy.title}\n\nLocale: ${locale}\nCanonical locale: ${profile.sourceLocale}\nNo silent fallback: true\nCoverage mode: ${library.coverage_mode}\n${coverage}\n\n## ${copy.machine_surfaces_heading}\n- ${base}/${locale}/manifest.json\n- ${base}/${locale}/library.json\n- ${base}/${locale}/sitemap.xml\n\n${copy.boundary}\n`;
+  const llms = `# ${copy.title}\n\nLocale: ${locale}\nRole: ${entry.role}\nCanonical locale: ${profile.sourceLocale}\nNo silent fallback: true\nCoverage mode: ${library.coverage_mode}\n${coverage}\n\n## ${copy.machine_surfaces_heading}\n- ${base}/${locale}/manifest.json\n- ${base}/${locale}/library.json\n- ${base}/${locale}/sitemap.xml\n\n${copy.boundary}\n`;
   await writeFile(path.join(root, locale, "llms.txt"), llms);
 
+  // Preserve the stable machine contract used by the original Russian
+  // localization while all human-interface locales move through generic-v1.
+  // `flagships` is the generic key; `flagship_protocols` remains as a
+  // compatibility alias so existing agents and release checks do not lose a
+  // useful invariant during the migration.
+  manifest.role = entry.role;
+  manifest.no_silent_fallback = true;
+  manifest.coverage ||= {};
+  if (manifest.coverage.flagships) {
+    manifest.coverage.flagship_protocols = { ...manifest.coverage.flagships };
+  }
   manifest.machine_copy_source = `data/localization/${locale}/machine.json`;
   await writeFile(path.join(root, locale, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
-  console.log(`[${locale}] localized machine surfaces written.`);
+  console.log(`[${locale}] localized machine surfaces written with role/fallback compatibility contract.`);
 }

@@ -177,6 +177,19 @@ html = html.replace(/<link rel="canonical" href="[^"]*">/i, `<link rel="canonica
 html = html.replace(/<meta property="og:title" content="[^"]*">/i, '<meta property="og:title" content="Research lifecycle watchlist">');
 html = html.replace(/<meta property="og:description" content="[^"]*">/i, '<meta property="og:description" content="Discovery-only research triage. Actual source review is required before any evidence or lifecycle conclusion.">');
 html = html.replace(/<meta property="og:url" content="[^"]*">/i, `<meta property="og:url" content="${base}/research/review-watchlist/">`);
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Research lifecycle watchlist",
+  description: "Discovery-only research triage. Metadata can schedule review but cannot change Brali evidence or lifecycle status.",
+  url: `${base}/research/review-watchlist/`,
+  isPartOf: { "@type": "WebSite", name: "Brali", url: `${base}/` },
+};
+if (/<script type="application\/ld\+json">[\s\S]*?<\/script>/i.test(html)) {
+  html = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/i, `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`);
+} else {
+  html = html.replace("</head>", `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script></head>`);
+}
 if (/<meta\b(?=[^>]*name=["']robots["'])[^>]*>/i.test(html)) html = html.replace(/<meta\b(?=[^>]*name=["']robots["'])[^>]*>/i, '<meta name="robots" content="noindex,follow">');
 else html = html.replace("</head>", '<meta name="robots" content="noindex,follow"></head>');
 if (!/<main id="content" class="page wrap">[\s\S]*?<\/main>/i.test(html)) throw new Error("Research watchlist template is missing the expected main element");

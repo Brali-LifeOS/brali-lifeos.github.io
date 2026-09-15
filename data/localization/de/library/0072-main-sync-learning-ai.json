@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "locale": "de",
+  "batch": "0072-main-sync-learning-ai",
+  "quality": "language-reviewed",
+  "records": [
+    {
+      "slug": "ai-code-scaffold-test-loop",
+      "quality_state": "language-reviewed",
+      "title": "Lassen Sie KI einen ersten Code-Entwurf bauen – Tests und Review entscheiden",
+      "subtitle": "Beschleunigen Sie den Einstieg, ohne generierten Code mit geprüftem Code zu verwechseln",
+      "description": "Begrenzen Sie die Aufgabe und beschreiben Sie das erwartete Verhalten, bevor KI den ersten Entwurf erstellt. Lesen Sie die Änderungen selbst, führen Sie vorhandene Tests aus, ergänzen Sie Grenz- und Fehlerszenarien und verwerfen Sie Code, den Sie nicht erklären oder verantworten können. Ein schnellerer erster Entwurf ist noch kein Nachweis für bessere Softwarequalität.",
+      "source": {
+        "title": "Use AI to Scaffold Code, Then Make Tests Decide",
+        "subtitle": "Accelerate the first implementation without treating generated code as reviewed code",
+        "description": "Use AI to produce a first implementation for a bounded coding task, then inspect the diff, run tests, add missing edge cases, and reject code you cannot explain. A controlled experiment found faster completion on one coding task; it did not establish universal software quality gains.",
+        "updatedISO": "2026-09-15T09:19:00Z"
+      }
+    },
+    {
+      "slug": "ai-conversation-rehearsal",
+      "quality_state": "language-reviewed",
+      "title": "Proben Sie ein schwieriges Gespräch mit KI, bevor es wirklich stattfindet",
+      "subtitle": "Üben Sie Formulierungen und mögliche Reaktionen, ohne die Simulation mit der Person zu verwechseln",
+      "description": "Nutzen Sie KI vor einem schwierigen, aber gewöhnlichen Gespräch, um mehrere plausible Reaktionen durchzuspielen, einen klaren Einstieg zu üben und Stellen zu finden, an denen Ihre Botschaft unklar oder defensiv werden könnte. Behandeln Sie das Rollenspiel als Probe. Es sagt nicht zuverlässig voraus, was die andere Person denken, fühlen oder sagen wird.",
+      "source": {
+        "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+        "subtitle": "Practise wording and likely responses without pretending the simulation predicts a person",
+        "description": "Before a difficult but ordinary conversation, use AI to role-play several plausible reactions, practise a concise opening, and identify points where you may become unclear or defensive. Treat the simulation as rehearsal, not as a model of the other person's mind.",
+        "updatedISO": "2026-09-15T09:26:00Z"
+      }
+    },
+    {
+      "slug": "ai-customer-reply-coach",
+      "quality_state": "language-reviewed",
+      "title": "Lassen Sie KI Routineantworten vorformulieren – das Kundengespräch bleibt beim Menschen",
+      "subtitle": "Reduzieren Sie wiederkehrende Schreibarbeit, ohne Diagnose, Richtlinien oder Zusagen zu delegieren",
+      "description": "Geben Sie der KI nur zulässige Falldaten und freigegebene Regeln oder Wissensquellen. Lassen Sie einen kurzen Antwortentwurf erstellen und prüfen Sie anschließend selbst, ob er das tatsächliche Problem trifft, keine Richtlinie oder Frist erfindet und einen korrekten nächsten Schritt nennt. Verpflichtungen gegenüber Kundinnen und Kunden brauchen besondere menschliche Prüfung.",
+      "source": {
+        "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+        "subtitle": "Use suggestions to reduce repetitive wording without delegating the relationship",
+        "description": "For repetitive support or service messages, AI can propose a response from the case facts and approved guidance while the human checks diagnosis, policy, tone, and the actual next step. Large-scale field evidence supports gains in one customer-support setting, especially for less experienced workers.",
+        "updatedISO": "2026-09-15T09:18:00Z"
+      }
+    },
+    {
+      "slug": "ai-decision-alternatives",
+      "quality_state": "language-reviewed",
+      "title": "Nutzen Sie KI, um die Auswahl zu verbreitern – nicht um die Entscheidung abzugeben",
+      "subtitle": "Erzeugen Sie Alternativen und Gegenargumente, bevor Sie Ihre eigenen Kriterien anwenden",
+      "description": "Wenn eine Entscheidung vorschnell binär wirkt, notieren Sie zunächst Ziel, Einschränkungen und Auswahlkriterien. Bitten Sie KI danach um wirklich unterschiedliche Alternativen, fehlende Kriterien und starke Gegenargumente zu Ihrem Favoriten. Externe Tatsachen prüfen Sie unabhängig; die Gewichtung von Nutzen, Kosten und Risiken bleibt bei Ihnen.",
+      "source": {
+        "title": "Use AI to Widen the Option Set, Not Make the Decision",
+        "subtitle": "Generate alternatives and counterarguments before applying your own criteria",
+        "description": "When a decision feels binary or prematurely settled, ask AI for plausible alternatives, missing criteria, and arguments against your current favorite. Verify factual claims independently and keep the final weighting of trade-offs human.",
+        "updatedISO": "2026-09-15T09:24:00Z"
+      }
+    },
+    {
+      "slug": "ai-idea-divergence-pass",
+      "quality_state": "language-reviewed",
+      "title": "Nutzen Sie KI, um vor der Auswahl mehr echte Alternativen zu erzeugen",
+      "subtitle": "Fordern Sie unterschiedliche Richtungen statt vieler Varianten derselben Idee",
+      "description": "Wenn Sie an der ersten naheliegenden Idee festhängen, lassen Sie KI Optionen mit unterschiedlichen Annahmen, Einschränkungen, Zielgruppen oder Mechanismen erzeugen. Gruppieren Sie ähnliche Vorschläge und behalten Sie nur eigenständige Richtungen. KI erweitert hier den Suchraum; Eignung, Aufwand und endgültige Auswahl müssen Sie im realen Kontext beurteilen.",
+      "source": {
+        "title": "Use AI to Widen the Idea Set Before You Choose",
+        "subtitle": "Ask for meaningfully different directions, then judge them yourself",
+        "description": "When you are stuck on the first obvious idea, use AI to generate alternatives across different assumptions or constraints. Experimental evidence suggests generative AI can raise judged creativity in some ideation tasks; it does not decide which idea fits your real context.",
+        "updatedISO": "2026-09-15T09:16:00Z"
+      }
+    },
+    {
+      "slug": "ai-learning-attempt-feedback-retest",
+      "quality_state": "language-reviewed",
+      "title": "Versuchen Sie es zuerst selbst, holen Sie dann KI-Feedback ein und testen Sie sich erneut ohne Hilfe",
+      "subtitle": "Behalten Sie die Denkarbeit, die Sie lernen möchten, auf Ihrer Seite des Gesprächs",
+      "description": "Machen Sie zuerst einen ernsthaften eigenen Versuch: lösen, erklären, schreiben oder die Zielhandlung ausführen. Bitten Sie KI anschließend um Kritik, einen Hinweis oder ein Gegenbeispiel und gleichen Sie wichtige Aussagen bei Bedarf mit einer verlässlichen Quelle ab. Wiederholen Sie die Aufgabe danach ohne die KI-Antwort vor Augen. Die Unterstützung soll Lernen ergänzen, nicht die zu lernende Leistung ersetzen.",
+      "source": {
+        "title": "Attempt First, Use AI for Feedback, Retest Without It",
+        "subtitle": "Keep the cognitive work you are trying to learn on your side of the conversation",
+        "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+        "updatedISO": "2026-09-15T09:20:00Z"
+      }
+    },
+    {
+      "slug": "ai-meeting-notes-to-actions",
+      "quality_state": "language-reviewed",
+      "title": "Machen Sie aus Besprechungsnotizen konkrete Aktionen – und gleichen Sie das Ergebnis danach ab",
+      "subtitle": "KI strukturiert das Material; Entscheidungen, Zuständigkeiten und Termine müssen im Original belegt sein",
+      "description": "Lassen Sie zulässige Notizen oder ein Transkript in Entscheidungen, Aufgaben, Verantwortliche, Termine und offene Fragen strukturieren. Vergleichen Sie anschließend jede Verpflichtung mit der ursprünglichen Aufzeichnung. Wenn Zuständigkeit oder Termin nicht tatsächlich vereinbart wurden, lassen Sie die Angabe offen, statt eine plausible Vermutung der KI als Beschluss zu übernehmen.",
+      "source": {
+        "title": "Turn Meeting Notes into Actions, Then Reconcile Them",
+        "subtitle": "Use AI to structure the mess; verify owners, decisions, and dates before publishing",
+        "description": "After a meeting, use AI to convert permitted notes or a transcript into decisions, actions, owners, dates, and open questions. Then reconcile the structured output against the original record before it becomes the team's memory.",
+        "updatedISO": "2026-09-15T09:22:00Z"
+      }
+    },
+    {
+      "slug": "ai-professional-writing-draft",
+      "quality_state": "language-reviewed",
+      "title": "Lassen Sie KI den ersten Entwurf schreiben – und übernehmen Sie die Endredaktion selbst",
+      "subtitle": "Beschleunigen Sie den ersten Durchgang, ohne Absicht, Fakten, Ton und Schlussfassung abzugeben",
+      "description": "Geben Sie für gewöhnliche berufliche Texte Zweck, Zielgruppe, Einschränkungen und geprüfte Ausgangsfakten vor und lassen Sie einen ersten Entwurf erstellen. Überarbeiten Sie ihn anschließend selbst: Namen, Zahlen, Zusagen, Ton und Schlussfolgerungen werden überprüft und die Formulierungen wieder zu Ihren. Produktivitätsgewinne bei einzelnen Schreibaufgaben sind kein Garant für automatische Richtigkeit oder gutes Urteil.",
+      "source": {
+        "title": "Draft Professional Writing with AI, Then Take Back the Edit",
+        "subtitle": "Use AI for a fast first pass; keep intent, facts, tone, and final wording under human control",
+        "description": "For routine professional writing, give AI the purpose, audience, constraints, and source facts, ask for a draft, then revise it yourself. Controlled evidence supports productivity gains for some professional writing tasks, not automatic accuracy or judgment.",
+        "updatedISO": "2026-09-15T09:15:00Z"
+      }
+    },
+    {
+      "slug": "ai-rubric-critique",
+      "quality_state": "language-reviewed",
+      "title": "Geben Sie der KI ein Kriterienraster und verlangen Sie konkrete Kritik",
+      "subtitle": "Prüfen Sie einen Entwurf gegen klare Kriterien, statt nur nach allgemeinem Feedback zu fragen",
+      "description": "Beschreiben Sie Zweck und wenige explizite Kriterien für einen eigenen Entwurf. Lassen Sie KI konkrete Stellen markieren, an denen diese Kriterien nicht erfüllt sind, und eine Begründung liefern. Entscheiden Sie danach selbst, welche Hinweise die Arbeit tatsächlich verbessern. Kritik ist ein zusätzlicher Prüfkanal, kein automatischer Auftrag zum Umschreiben.",
+      "source": {
+        "title": "Give AI a Rubric and Ask for Specific Critique",
+        "subtitle": "Turn vague feedback into a check against explicit criteria",
+        "description": "For a draft you own, give AI the purpose and a short rubric, ask it to point to specific places that miss the criteria, then decide which suggestions actually improve the work. Use critique as input, not as an automatic rewrite command.",
+        "updatedISO": "2026-09-15T09:25:00Z"
+      }
+    },
+    {
+      "slug": "ai-sop-from-examples",
+      "quality_state": "language-reviewed",
+      "title": "Lassen Sie KI aus echten Beispielen einen Entwurf für eine Arbeitsanweisung ableiten",
+      "subtitle": "Extrahieren Sie das wiederkehrende Muster und testen Sie es am nächsten frischen Fall",
+      "description": "Wenn ein wiederkehrender Ablauf vor allem im Kopf einer erfahrenen Person steckt, geben Sie der KI einige bereinigte Beispiele und lassen Sie daraus Eingaben, Schritte, Entscheidungen, Ausgaben und Ausnahmen strukturieren. Die Person, die die Arbeit tatsächlich ausführt, prüft den Entwurf. Erst ein Test an einem neuen Fall zeigt, ob daraus brauchbare Prozessdokumentation werden kann.",
+      "source": {
+        "title": "Turn Real Examples into a Draft SOP with AI",
+        "subtitle": "Extract the repeated pattern, then test it on the next case",
+        "description": "When a recurring task lives mostly in someone's head, give AI a few sanitized examples and ask for a draft procedure with inputs, steps, decisions, outputs, and exceptions. Validate the draft with the person who does the work and test it on a fresh case before treating it as process documentation.",
+        "updatedISO": "2026-09-15T09:28:00Z"
+      }
+    },
+    {
+      "slug": "ai-source-summary-verification",
+      "quality_state": "language-reviewed",
+      "title": "Fassen Sie mit KI zusammen – und gleichen Sie wichtige Aussagen mit der Quelle ab",
+      "subtitle": "Nutzen Sie Verdichtung zur Navigation, ohne die Zusammenfassung zum Ersatz für Belege zu machen",
+      "description": "Lassen Sie ein Dokument, das Sie verarbeiten dürfen, entlang Ihrer Aufgabe strukturieren und zusammenfassen. Verlangen Sie nach Möglichkeit Verweise auf Abschnitte oder Quellstellen. Aussagen, die eine Entscheidung, Nachricht oder Verpflichtung beeinflussen, prüfen Sie anschließend direkt im Original. Die Zusammenfassung verkürzt den Weg zur relevanten Stelle; die Quelle bleibt maßgeblich.",
+      "source": {
+        "title": "Summarize with AI, Then Reconcile Against the Source",
+        "subtitle": "Use compression for speed without turning a summary into a substitute for evidence",
+        "description": "For a long document you are allowed to process, ask AI for a structured summary tied to the source, then verify the claims that will affect a decision, message, or deliverable. The summary is navigation; the source remains the authority.",
+        "updatedISO": "2026-09-15T09:21:00Z"
+      }
+    },
+    {
+      "slug": "ai-structured-extraction-check",
+      "quality_state": "language-reviewed",
+      "title": "Extrahieren Sie mit KI eine Tabelle – und prüfen Sie anschließend Stichproben der Zeilen",
+      "subtitle": "Machen Sie aus wiederholtem Text Struktur, ohne Extraktion mit Grundwahrheit zu verwechseln",
+      "description": "Definieren Sie für zulässige unstrukturierte Texte ein festes Schema und lassen Sie zu jeder Zeile die zugehörige Quellstelle sowie Unsicherheit ausgeben. Prüfen Sie anschließend Stichproben gegen das Original. Felder, die Geld, Zugriffsrechte, Compliance oder andere teure Aktionen steuern, sollten vollständig verifiziert werden, bevor ein nachgelagerter Prozess ihnen vertraut.",
+      "source": {
+        "title": "Extract a Table with AI, Then Sample-Check the Rows",
+        "subtitle": "Turn repeated text into structure without confusing extraction with ground truth",
+        "description": "For repeated unstructured text you are allowed to process, ask AI to extract a fixed schema, include the source span for each row, and flag uncertainty. Then sample-check rows and fully verify fields that drive money, access, compliance, or other high-cost actions.",
+        "updatedISO": "2026-09-15T09:27:00Z"
+      }
+    },
+    {
+      "slug": "ai-task-frontier-test",
+      "quality_state": "language-reviewed",
+      "title": "Testen Sie KI an der konkreten Aufgabe, bevor Sie ihr den Arbeitsablauf anvertrauen",
+      "subtitle": "Eine kleine repräsentative Stichprobe ist aussagekräftiger als ein allgemeiner Eindruck von der Modellleistung",
+      "description": "Wählen Sie typische, einfache und schwierige Fälle und definieren Sie vorab einen menschlich festgelegten Bewertungsmaßstab. Vergleichen Sie die KI-Ausgaben damit und dokumentieren Sie typische Fehler. Erst danach entscheiden Sie, welche Schritte sich sinnvoll beschleunigen lassen, wo menschliche Prüfung verpflichtend bleibt und welche Aufgaben vorerst vollständig beim Menschen bleiben sollten.",
+      "source": {
+        "title": "Benchmark AI on the Task Before You Trust the Workflow",
+        "subtitle": "Test a small representative sample before turning assistance into a process",
+        "description": "AI performance is uneven across tasks that can look similarly difficult. Before redesigning a workflow around a model, run it on representative cases, score the outputs against a human-defined standard, and identify where human review is still mandatory.",
+        "updatedISO": "2026-09-15T09:17:00Z"
+      }
+    },
+    {
+      "slug": "ai-test-case-generator",
+      "quality_state": "language-reviewed",
+      "title": "Lassen Sie KI vor der Veröffentlichung nach Fehlerszenarien suchen",
+      "subtitle": "Nutzen Sie das Modell als adversarialen Ideengeber und machen Sie aus brauchbaren Kandidaten echte Prüfungen",
+      "description": "Beschreiben Sie erwartetes Verhalten, Einschränkungen und teure Fehlerarten und bitten Sie KI um Grenzwerte, ungültige Eingaben, Zustandsprobleme, Wiederholungen, Berechtigungsfehler, Zeitprobleme und Integrationsausfälle. Entfernen Sie Duplikate, prüfen Sie die Relevanz und überführen Sie brauchbare Ideen in ausführbare Tests, Monitoring oder Checklisten. Eine Liste plausibler Fehler ist noch kein Nachweis, dass sie tatsächlich auftreten.",
+      "source": {
+        "title": "Ask AI for Failure Cases Before You Ship",
+        "subtitle": "Use the model as an adversarial idea generator, then turn useful candidates into real checks",
+        "description": "Give AI a feature, process, calculation, message, or workflow and ask for edge cases and failure modes. Treat the output as a candidate list, deduplicate it, verify relevance, and convert the useful cases into executable tests or checklist items.",
+        "updatedISO": "2026-09-15T09:23:00Z"
+      }
+    },
+    {
+      "slug": "prequestions-before-learning",
+      "quality_state": "language-reviewed",
+      "title": "Stellen Sie vor dem Lernen ein paar konkrete Fragen",
+      "subtitle": "Vorfragen können gezielte Informationen leichter auffindbar und erinnerbar machen",
+      "description": "Formulieren Sie vor dem Lesen, Anschauen oder Lernen einige konkrete Fragen zu genau den Informationen, die Sie aufnehmen möchten. Versuchen Sie zunächst eine Antwort, arbeiten Sie dann das Material durch und prüfen Sie Ihre Vermutung. Die Evidenz spricht für bessere Erinnerung an die vorab erfragten Inhalte; daraus folgt kein allgemeiner Lernschub für alles übrige Material.",
+      "source": {
+        "title": "Ask a Few Questions Before You Start Learning",
+        "subtitle": "Use prequestions to make specific information easier to notice and remember",
+        "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+        "updatedISO": "2026-09-15T05:00:00Z"
+      }
+    },
+    {
+      "slug": "self-explain-what-you-learn",
+      "quality_state": "language-reviewed",
+      "title": "Erklären Sie das Gelernte anschließend mit eigenen Worten",
+      "subtitle": "Selbsterklärung macht Verständnislücken sichtbarer als bloßes erneutes Lesen",
+      "description": "Halten Sie nach einem sinnvollen Lernabschnitt kurz an und erklären Sie die Idee, den Zusammenhang oder den Ablauf mit eigenen Worten. Vergleichen Sie Ihre Erklärung danach mit der Quelle und korrigieren Sie Lücken oder Fehler. Meta-analytische Befunde unterstützen Selbsterklärung im digitalen Lernen, zeigen aber deutliche Unterschiede je nach Kontext und Material.",
+      "source": {
+        "title": "Explain What You Just Learned in Your Own Words",
+        "subtitle": "Use self-explanation to expose gaps and connect ideas instead of only rereading",
+        "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+        "updatedISO": "2026-09-15T05:00:00Z"
+      }
+    }
+  ]
+}

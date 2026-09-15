@@ -15,7 +15,7 @@ await import("./build-ru-lifecycle-surfaces.mjs");
 
 const containerId = "GTM-5TJVLJG9";
 const marker = "brali-consent-analytics";
-const ignored = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);
+const ignoredTopLevel = new Set([".git", ".github", ".tmp", "data", "node_modules", "releases", "reports", "test-results"]);
 const repoRoot = process.cwd();
 const root = path.resolve(process.argv[2] || ".");
 const profile = JSON.parse(fs.readFileSync(path.join(repoRoot, ".arwp", "localization.json"), "utf8"));
@@ -38,10 +38,17 @@ for (const locale of requiredConsentLocales) {
   }
 }
 
+function isIgnoredTarget(target) {
+  const relative = path.relative(root, target);
+  if (!relative || relative.startsWith("..") || path.isAbsolute(relative)) return false;
+  const [topLevel] = relative.split(path.sep);
+  return ignoredTopLevel.has(topLevel);
+}
+
 function walk(directory) {
   return fs.readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
-    if (ignored.has(entry.name)) return [];
     const target = path.join(directory, entry.name);
+    if (isIgnoredTarget(target)) return [];
     return entry.isDirectory() ? walk(target) : entry.isFile() && entry.name.endsWith(".html") ? [target] : [];
   });
 }

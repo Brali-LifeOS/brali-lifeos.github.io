@@ -6,6 +6,20 @@
   "integrations_page": "https://brali-lifeos.github.io/for-ai/integrations/",
   "reference_demos": "https://brali-lifeos.github.io/for-ai/demos/",
   "api_base": "https://brali-lifeos.github.io/api/v1",
+  "product_identity": {
+    "short": "Brali is an evidence-informed decision layer for everyday problems.",
+    "publisher": "MetalHatsCats",
+    "human_contract": "Problem -> bounded recommendation -> protocol -> action",
+    "machine_contract": "Natural language -> canonical problem -> trusted protocol -> evidence/provenance",
+    "not_a_claim": "Brali does not claim that every problem has one universally best protocol or that indexed content is automatically trusted for recommendation."
+  },
+  "human_funnel": [
+    {"step":"ask","route":"/for-ai/query/","purpose":"Describe the situation in natural language and let Brali resolve a canonical problem when coverage is strong enough."},
+    {"step":"decide","route":"/problems/","purpose":"Inspect best-fit and alternative protocols with explicit when/why/caveat logic before choosing an action."},
+    {"step":"inspect","route":"/life-os/","purpose":"Open the canonical protocol record and preserve evidence state, provenance, limits, and stop/change rules."},
+    {"step":"act","route":"/run/","purpose":"Run a bounded protocol without turning the knowledge layer into an unsupported outcome guarantee."},
+    {"step":"reuse","route":"/for-ai/","purpose":"Reuse the same canonical graph through API, Agent Skills, MCP, datasets, and citation-aware agent contexts."}
+  ],
   "mcp": {
     "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/server.mjs",
     "shared_core": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/core.mjs",
@@ -87,12 +101,13 @@
   },
   "adoption_checklist": [
     "Start with the zero-install Query Playground or preview the Brali router skill before writing custom integration code.",
+    "For a human decision, follow the same canonical path: natural-language problem -> bounded recommendation -> protocol -> action.",
     "Preview Agent Skills before installation and install only into the agent host and scope you intend to use.",
     "Use the hosted static API or local stdio MCP today; treat mcp/remote.mjs as deployment-ready source, not as proof of a Brali-hosted remote endpoint.",
     "Run a reference demo before replacing the retrieval flow with your own implementation.",
     "Reproduce the 50-case evaluation or reuse Brali Bench before claiming that a custom retrieval layer improves on Brali's checked baseline.",
     "Use reviewed/practical records for normal trusted recommendations.",
-    "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
+    "Preserve canonical Problem and Protocol IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
     "Return no trusted answer rather than silently falling back to pending-review or restricted material.",
     "For reproducible work, pin a data-v release instead of following main.",
     "Follow CC BY-NC-SA 4.0 attribution/share-alike terms for public non-commercial use; request separate permission for commercial use.",

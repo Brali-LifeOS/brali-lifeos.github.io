@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "description": "Additive reviewed record-level ontology classifications. Entries are merged with data/ontology-overrides.json and may not shadow an existing reviewed override.",
+  "entries": {
+    "30-minute-deadline-sprints": {
+      "topic_ids": [
+        "task-initiation",
+        "planning-prioritization"
+      ],
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol uses a short, adjustable timebox to start a rough first pass on an important task and deliberately narrows scope. Task Initiation and Planning & Prioritization describe the practical use more accurately than the inherited Idea Generation collection."
+    },
+    "2-minute-desk-tidy-timer": {
+      "topic_ids": [
+        "workspace",
+        "task-initiation"
+      ],
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol removes one or two visible sources of workspace friction before work begins. Workspace is the primary Topic; Task Initiation captures the bounded start cue."
+    },
+    "ab-test-learning-loop": {
+      "topic_ids": [
+        "problem-solving",
+        "decision-making",
+        "data-literacy"
+      ],
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The effective protocol compares two approaches under a reversible decision, records a predefined signal and updates the next choice. Problem Solving, Decision Making and Data Literacy are more precise than the inherited Marketing Positioning collection."
+    },
+    "10-minute-stress-walk": {
+      "topic_ids": [
+        "stress-regulation",
+        "movement"
+      ],
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol uses a comfortable short walk as an optional low-risk reset when everyday stress builds. Stress Regulation is the user problem and Movement is the action; the duration and green setting are not treated as universal requirements."
+    },
+    "20-20-20-eye-break-reminder": {
+      "topic_ids": [
+        "health-basics",
+        "digital-wellbeing",
+        "recovery-energy"
+      ],
+      "reviewed_at": "2026-09-15",
+      "reviewed_by": "Brali Taxonomy Curator",
+      "reason": "The reviewed protocol is a conservative screen-break reminder intended to interrupt prolonged near-focus and prompt recovery. Everyday Health Basics, Digital Wellbeing and Recovery & Energy describe the bounded use without implying diagnosis or treatment."
+    }
+  }
+}

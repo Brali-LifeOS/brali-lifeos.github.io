@@ -141,7 +141,11 @@ export function queryBrali(question, data, options = {}) {
     .filter(entry => TRUSTED.has(evidenceState(entry)))
     .map(entry => {
       const ids = topicIds(entry);
-      const semantic = ids.reduce((sum, id) => sum + (topicRank.get(id) || 0), 0);
+      // Rank by the strongest routed Topic instead of summing all matching Topic weights.
+      // Summation rewards broadly multi-tagged protocols enough to displace a more specific
+      // lexical match. Secondary Topic matches remain useful for candidate inclusion, while
+      // the best Topic + lexical fit determine order.
+      const semantic = ids.reduce((best, id) => Math.max(best, topicRank.get(id) || 0), 0);
       const lexical = lexicalScore(question, [entry.title, entry.description, entry.action, entry.check_in].filter(Boolean).join(' '));
       if (semantic === 0 && lexical === 0) return null;
       const score = semantic * 20 + lexical * 3 + Number(entry.quality_score || 0) / 20 + (evidenceState(entry) === 'reviewed' ? 4 : 0);

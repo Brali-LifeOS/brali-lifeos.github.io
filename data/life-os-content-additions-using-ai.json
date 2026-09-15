@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "description": "Reviewed starter protocols for the Using AI zone. Kept in a supplemental additions registry so AI-use content can expand in small, reviewable batches without rewriting the historical additions file.",
+  "entries": [
+    {
+      "slug": "ai-professional-writing-draft",
+      "title": "Draft Professional Writing with AI, Then Take Back the Edit",
+      "subtitle": "Use AI for a fast first pass; keep intent, facts, tone, and final wording under human control",
+      "description": "For routine professional writing, give AI the purpose, audience, constraints, and source facts, ask for a draft, then revise it yourself. Controlled evidence supports productivity gains for some professional writing tasks, not automatic accuracy or judgment.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:15:00Z","updatedISO":"2026-09-15T09:15:00Z",
+      "keywords":["AI writing","professional writing","first draft","editing","generative AI","human review"],
+      "stats":{"wordCount":520,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-idea-divergence-pass",
+      "title": "Use AI to Widen the Idea Set Before You Choose",
+      "subtitle": "Ask for meaningfully different directions, then judge them yourself",
+      "description": "When you are stuck on the first obvious idea, use AI to generate alternatives across different assumptions or constraints. Experimental evidence suggests generative AI can raise judged creativity in some ideation tasks; it does not decide which idea fits your real context.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:16:00Z","updatedISO":"2026-09-15T09:16:00Z",
+      "keywords":["AI brainstorming","idea generation","divergent thinking","creative options","generative AI"],
+      "stats":{"wordCount":500,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-task-frontier-test",
+      "title": "Benchmark AI on the Task Before You Trust the Workflow",
+      "subtitle": "Test a small representative sample before turning assistance into a process",
+      "description": "AI performance is uneven across tasks that can look similarly difficult. Before redesigning a workflow around a model, run it on representative cases, score the outputs against a human-defined standard, and identify where human review is still mandatory.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:17:00Z","updatedISO":"2026-09-15T09:17:00Z",
+      "keywords":["AI benchmark","AI workflow","jagged frontier","AI evaluation","human AI collaboration","workflow design"],
+      "stats":{"wordCount":520,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-customer-reply-coach",
+      "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+      "subtitle": "Use suggestions to reduce repetitive wording without delegating the relationship",
+      "description": "For repetitive support or service messages, AI can propose a response from the case facts and approved guidance while the human checks diagnosis, policy, tone, and the actual next step. Large-scale field evidence supports gains in one customer-support setting, especially for less experienced workers.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:18:00Z","updatedISO":"2026-09-15T09:18:00Z",
+      "keywords":["AI customer support","AI reply drafting","customer service","support agent","human review","response drafting"],
+      "stats":{"wordCount":520,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-code-scaffold-test-loop",
+      "title": "Use AI to Scaffold Code, Then Make Tests Decide",
+      "subtitle": "Accelerate the first implementation without treating generated code as reviewed code",
+      "description": "Use AI to produce a first implementation for a bounded coding task, then inspect the diff, run tests, add missing edge cases, and reject code you cannot explain. A controlled experiment found faster completion on one coding task; it did not establish universal software quality gains.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:19:00Z","updatedISO":"2026-09-15T09:19:00Z",
+      "keywords":["AI coding","coding assistant","AI pair programming","tests","code review","software development"],
+      "stats":{"wordCount":530,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-learning-attempt-feedback-retest",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "subtitle": "Keep the cognitive work you are trying to learn on your side of the conversation",
+      "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:20:00Z","updatedISO":"2026-09-15T09:20:00Z",
+      "keywords":["AI tutor","AI learning","human first AI","feedback","retrieval","learning with AI"],
+      "stats":{"wordCount":560,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-source-summary-verification",
+      "title": "Summarize with AI, Then Reconcile Against the Source",
+      "subtitle": "Use compression for speed without turning a summary into a substitute for evidence",
+      "description": "For a long document you are allowed to process, ask AI for a structured summary tied to the source, then verify the claims that will affect a decision, message, or deliverable. The summary is navigation; the source remains the authority.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:21:00Z","updatedISO":"2026-09-15T09:21:00Z",
+      "keywords":["AI summarization","document summary","source verification","information management","LLM hallucination"],
+      "stats":{"wordCount":470,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-meeting-notes-to-actions",
+      "title": "Turn Meeting Notes into Actions, Then Reconcile Them",
+      "subtitle": "Use AI to structure the mess; verify owners, decisions, and dates before publishing",
+      "description": "After a meeting, use AI to convert permitted notes or a transcript into decisions, actions, owners, dates, and open questions. Then reconcile the structured output against the original record before it becomes the team's memory.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:22:00Z","updatedISO":"2026-09-15T09:22:00Z",
+      "keywords":["AI meeting notes","action items","meeting summary","work systems","transcript","follow up"],
+      "stats":{"wordCount":460,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-test-case-generator",
+      "title": "Ask AI for Failure Cases Before You Ship",
+      "subtitle": "Use the model as an adversarial idea generator, then turn useful candidates into real checks",
+      "description": "Give AI a feature, process, calculation, message, or workflow and ask for edge cases and failure modes. Treat the output as a candidate list, deduplicate it, verify relevance, and convert the useful cases into executable tests or checklist items.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:23:00Z","updatedISO":"2026-09-15T09:23:00Z",
+      "keywords":["AI test cases","edge cases","failure modes","QA","error prevention","AI testing"],
+      "stats":{"wordCount":450,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-decision-alternatives",
+      "title": "Use AI to Widen the Option Set, Not Make the Decision",
+      "subtitle": "Generate alternatives and counterarguments before applying your own criteria",
+      "description": "When a decision feels binary or prematurely settled, ask AI for plausible alternatives, missing criteria, and arguments against your current favorite. Verify factual claims independently and keep the final weighting of trade-offs human.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:24:00Z","updatedISO":"2026-09-15T09:24:00Z",
+      "keywords":["AI decision making","decision alternatives","AI second opinion","counterarguments","options","human judgment"],
+      "stats":{"wordCount":500,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-rubric-critique",
+      "title": "Give AI a Rubric and Ask for Specific Critique",
+      "subtitle": "Turn vague feedback into a check against explicit criteria",
+      "description": "For a draft you own, give AI the purpose and a short rubric, ask it to point to specific places that miss the criteria, then decide which suggestions actually improve the work. Use critique as input, not as an automatic rewrite command.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:25:00Z","updatedISO":"2026-09-15T09:25:00Z",
+      "keywords":["AI critique","rubric","writing feedback","draft review","revision","AI editing"],
+      "stats":{"wordCount":450,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-conversation-rehearsal",
+      "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+      "subtitle": "Practise wording and likely responses without pretending the simulation predicts a person",
+      "description": "Before a difficult but ordinary conversation, use AI to role-play several plausible reactions, practise a concise opening, and identify points where you may become unclear or defensive. Treat the simulation as rehearsal, not as a model of the other person's mind.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:26:00Z","updatedISO":"2026-09-15T09:26:00Z",
+      "keywords":["AI role play","difficult conversation","conversation rehearsal","communication practice","AI coach"],
+      "stats":{"wordCount":470,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-structured-extraction-check",
+      "title": "Extract a Table with AI, Then Sample-Check the Rows",
+      "subtitle": "Turn repeated text into structure without confusing extraction with ground truth",
+      "description": "For repeated unstructured text you are allowed to process, ask AI to extract a fixed schema, include the source span for each row, and flag uncertainty. Then sample-check rows and fully verify fields that drive money, access, compliance, or other high-cost actions.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:27:00Z","updatedISO":"2026-09-15T09:27:00Z",
+      "keywords":["AI data extraction","structured extraction","text to table","LLM extraction","data verification","information management"],
+      "stats":{"wordCount":480,"readingMinutes":3}
+    },
+    {
+      "slug": "ai-sop-from-examples",
+      "title": "Turn Real Examples into a Draft SOP with AI",
+      "subtitle": "Extract the repeated pattern, then test it on the next case",
+      "description": "When a recurring task lives mostly in someone's head, give AI a few sanitized examples and ask for a draft procedure with inputs, steps, decisions, outputs, and exceptions. Validate the draft with the person who does the work and test it on a fresh case before treating it as process documentation.",
+      "zone": {"slug":"using-ai","title":"Using AI"},
+      "publishedISO":"2026-09-15T09:28:00Z","updatedISO":"2026-09-15T09:28:00Z",
+      "keywords":["AI SOP","standard operating procedure","process documentation","workflow documentation","knowledge capture","AI process"],
+      "stats":{"wordCount":480,"readingMinutes":3}
+    }
+  ]
+}

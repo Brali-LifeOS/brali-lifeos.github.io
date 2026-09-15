@@ -1,0 +1,38 @@
+{
+  "slug": "ai-idea-divergence-pass",
+  "title": "Use AI to Widen the Idea Set Before You Choose",
+  "subtitle": "Ask for meaningfully different directions, then judge them yourself",
+  "description": "When you are stuck on the first obvious idea, use AI to generate alternatives across different assumptions or constraints. Experimental evidence suggests generative AI can raise judged creativity in some ideation tasks; it does not decide which idea fits your real context.",
+  "canonical": "/life-os/ai-idea-divergence-pass/",
+  "domain_ids": ["creativity-expression"],
+  "topic_ids": ["idea-generation", "creative-problem-solving"],
+  "method_ids": [],
+  "lens_ids": [],
+  "keywords": ["AI brainstorming", "idea generation", "divergent thinking", "creative options", "generative AI"],
+  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lifeOsSource": {
+    "hack": "Ask AI for alternatives that differ in mechanism, audience, constraint, or trade-off instead of asking for one best idea.",
+    "zone": "Using AI",
+    "zoneSlug": "using-ai",
+    "whatYouDo": "State the problem and constraints. Ask for several directions that must differ from one another in a named way. Cluster similar answers, discard obvious filler, and evaluate the remaining options against real constraints and evidence.",
+    "checkIn": "Did AI add genuinely different options, or merely rephrase the same idea several times?",
+    "reference": "Lee & Chung (2024) — An empirical investigation of the impact of ChatGPT on creativity",
+    "sourceUrl": "https://doi.org/10.1038/s41562-024-01953-1"
+  },
+  "faq": [
+    {"id":"ai-idea-divergence-pass-1","question":"Why not ask AI for the best idea?","answer":"Because selection depends on context the model may not have. It is often more useful as an option generator than as the authority that chooses the option."},
+    {"id":"ai-idea-divergence-pass-2","question":"How do I get less repetitive ideas?","answer":"Force variation: ask for different mechanisms, target users, constraints, price levels, failure assumptions, or implementation paths. Then remove near-duplicates before judging."}
+  ],
+  "meta": {"publishedISO":"2026-09-15T09:16:00Z","updatedISO":"2026-09-15T09:16:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "body": {
+    "intro": {"html":"<p>AI brainstorming is most useful before convergence. Its job here is to increase the number of plausible paths you can inspect, not to crown a winner after reading half your situation.</p>"},
+    "sections": [
+      {"slug":"frame","title":"1. Define the problem and constraints","html":"<p>Give the model the problem, what cannot change, and what success would look like. Without constraints, variety can become decorative nonsense.</p>"},
+      {"slug":"force-variation","title":"2. Force meaningful variation","html":"<p>Request alternatives that differ by mechanism or trade-off: cheaper versus faster, manual versus automated, conservative versus aggressive, individual versus team, or another dimension that matters.</p>"},
+      {"slug":"cluster","title":"3. Cluster before judging","html":"<p>Group rephrasings of the same concept together. Keep only distinct approaches. This prevents a list of fifteen bullets from masquerading as fifteen ideas.</p>"},
+      {"slug":"select","title":"4. Apply human constraints","html":"<p>Evaluate the surviving options against cost, risk, evidence, ethics, dependencies, and your real objective. Generate broadly; decide narrowly.</p>"}
+    ]
+  },
+  "references": [{"title":"An empirical investigation of the impact of ChatGPT on creativity","url":"https://doi.org/10.1038/s41562-024-01953-1","doi":"10.1038/s41562-024-01953-1","source_type":"multi-experiment peer-reviewed article","claim_scope":"Across five experiments, participants using ChatGPT generated ideas judged more creative than comparison conditions on several everyday and innovation-related tasks. This does not establish superior selection, feasibility, or real-world implementation outcomes."}],
+  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish as a bounded divergence protocol: empirical evidence supports creativity gains in specific ideation tasks, while selection remains tied to the user's real constraints.","registry":"review-registry-using-ai-starters.json"}
+}

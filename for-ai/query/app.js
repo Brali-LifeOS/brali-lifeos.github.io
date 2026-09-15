@@ -31,13 +31,13 @@ const runnerHref = canonicalId => `/run/?protocol=${encodeURIComponent(canonical
 async function loadApi() {
   if (apiData) return apiData;
   statusEl.textContent = 'Loading Brali API…';
-  const names = ['topics.json', 'identity.json', 'flagships.json', 'evidence-decisions.json'];
-  const [topics, identity, flagships, decisions] = await Promise.all(names.map(async name => {
+  const names = ['topics.json', 'identity.json', 'flagships.json', 'evidence-decisions.json', 'problem-collections.json'];
+  const [topics, identity, flagships, decisions, problems] = await Promise.all(names.map(async name => {
     const response = await fetch(`/api/v1/${name}`, { headers: { accept: 'application/json' } });
     if (!response.ok) throw new Error(`${name} returned ${response.status}`);
     return response.json();
   }));
-  apiData = { topics, identity, flagships, decisions };
+  apiData = { topics, identity, flagships, decisions, problems };
   return apiData;
 }
 
@@ -95,11 +95,15 @@ function chooseOutcome(choice) {
 function render(packet) {
   lastPacket = packet;
   setCopyState(true);
-  const topicHtml = packet.route.topics.length
-    ? packet.route.topics.map(topic => `<span class="query-pill">${escapeHtml(topic.title)} <code>${escapeHtml(topic.canonical_id)}</code></span>`).join('')
+  const topics = packet.route?.topics || [];
+  const topicHtml = topics.length
+    ? topics.map(topic => `<span class="query-pill">${escapeHtml(topic.title)} <code>${escapeHtml(topic.canonical_id)}</code></span>`).join('')
     : '<span class="muted">No normal Topic route.</span>';
+  const problemHtml = packet.route?.problem
+    ? `<div class="callout"><strong>Problem route:</strong> <a href="${escapeHtml(packet.route.problem.url)}">${escapeHtml(packet.route.problem.title)}</a> <code>${escapeHtml(packet.route.problem.canonical_id)}</code><p>This is the canonical decision path used to rank the fit explanations below; it is not a keyword landing-page guess.</p></div>`
+    : '';
 
-  let body = `<div class="query-meta"><strong>Status:</strong> <code>${escapeHtml(packet.status)}</code>${packet.dataset_version ? ` · dataset <code>${escapeHtml(packet.dataset_version)}</code>` : ''}</div><div class="query-topics">${topicHtml}</div>`;
+  let body = `<div class="query-meta"><strong>Status:</strong> <code>${escapeHtml(packet.status)}</code>${packet.dataset_version ? ` · dataset <code>${escapeHtml(packet.dataset_version)}</code>` : ''}</div>${problemHtml}<div class="query-topics">${topicHtml}</div>`;
 
   if (packet.safety?.blocked) {
     body += `<div class="callout"><strong>Safety boundary</strong><p>${escapeHtml(packet.safety.reason)}</p><p>Brali does not convert this query into a normal self-help recommendation.</p></div>`;
@@ -112,7 +116,8 @@ function render(packet) {
     for (const item of packet.recommendations) {
       const source = item.provenance.source_url ? `<a href="${escapeHtml(item.provenance.source_url)}" target="_blank" rel="noopener">Reviewed source</a>` : '<span class="muted">No direct reviewed-source link on this record</span>';
       const run = `<a href="${escapeHtml(runnerHref(item.canonical_id))}"><strong>Run protocol</strong></a>`;
-      body += `<article class="card query-result"><span class="card-label">${escapeHtml(item.evidence_state)}</span><h2>${escapeHtml(item.title)}</h2><p><code>${escapeHtml(item.canonical_id)}</code></p>${item.action ? `<p>${escapeHtml(item.action)}</p>` : ''}${item.check_in ? `<p><strong>Check-in:</strong> ${escapeHtml(item.check_in)}</p>` : ''}<p>${run} · <a href="${escapeHtml(item.provenance.record_url)}">Open Brali record</a> · ${source}</p></article>`;
+      const fit = item.problem_fit ? `<div class="callout"><strong>${item.problem_fit.fit === 'best-fit' ? 'Best fit' : 'Alternative'} for this problem</strong><p><strong>When:</strong> ${escapeHtml(item.problem_fit.when)}</p><p><strong>Why:</strong> ${escapeHtml(item.problem_fit.why)}</p><p><strong>Caveat:</strong> ${escapeHtml(item.problem_fit.caveat)}</p></div>` : '';
+      body += `<article class="card query-result"><span class="card-label">${escapeHtml(item.evidence_state)}</span><h2>${escapeHtml(item.title)}</h2><p><code>${escapeHtml(item.canonical_id)}</code></p>${fit}${item.action ? `<p>${escapeHtml(item.action)}</p>` : ''}${item.check_in ? `<p><strong>Check-in:</strong> ${escapeHtml(item.check_in)}</p>` : ''}<p>${run} · <a href="${escapeHtml(item.provenance.record_url)}">Open Brali record</a> · ${source}</p></article>`;
     }
     body += '</div>';
   }
@@ -125,7 +130,7 @@ function render(packet) {
     body += '</section>';
   }
   resultsEl.innerHTML = body;
-  statusEl.textContent = packet.status === 'trusted-answer' ? `Found ${packet.recommendations.length} trusted Brali protocol${packet.recommendations.length === 1 ? '' : 's'}.` : packet.status === 'boundary-only' ? 'Reviewed evidence boundary returned; no normal recommendation.' : 'No normal trusted recommendation returned.';
+  statusEl.textContent = packet.status === 'trusted-answer' ? `Found ${packet.recommendations.length} trusted Brali protocol${packet.recommendations.length === 1 ? '' : 's'}${packet.route?.problem ? ' through a canonical problem route' : ''}.` : packet.status === 'boundary-only' ? 'Reviewed evidence boundary returned; no normal recommendation.' : 'No normal trusted recommendation returned.';
 }
 
 async function run(question, push = true) {
@@ -136,7 +141,7 @@ async function run(question, push = true) {
   lastQueryId = newQueryId();
   setCopyState(false);
   setOutcomeState(false);
-  resultsEl.innerHTML = '<p class="muted">Resolving Topic and high-trust Protocols…</p>';
+  resultsEl.innerHTML = '<p class="muted">Resolving Problem → Topic → high-trust Protocols…</p>';
   try {
     const data = await loadApi();
     const packet = queryBrali(q, data);
@@ -200,7 +205,7 @@ shareEl.addEventListener('click', async event => {
 const initial = new URL(location.href).searchParams.get('q');
 if (initial) run(initial, false);
 else {
-  statusEl.textContent = 'Ask about focus, sleep, memory, habits, stress, learning, movement, communication, or another covered Topic.';
+  statusEl.textContent = 'Ask about focus, sleep, memory, habits, stress, learning, movement, communication, or another covered problem.';
   setCopyState(false);
   setOutcomeState(false);
 }

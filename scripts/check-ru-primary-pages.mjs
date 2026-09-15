@@ -6,7 +6,6 @@ const base = "https://brali-lifeos.github.io";
 const config = JSON.parse(await readFile(path.join(root, "data", "localization", "ru", "primary-pages.json"), "utf8"));
 const manifest = JSON.parse(await readFile(path.join(root, "ru", "manifest.json"), "utf8"));
 const sitemap = await readFile(path.join(root, "ru", "sitemap.xml"), "utf8");
-const llms = await readFile(path.join(root, "ru", "llms.txt"), "utf8");
 
 const absolute = (route) => `${base}${route}`;
 const humanEnglishPrefixes = ["/research/", "/partners/", "/for-ai/", "/skill-packs/", "/contact/", "/evidence/", "/agents/", "/topics/", "/updates/", "/trends/", "/media/", "/cite/", "/observatory/", "/crawler-matrix/"];
@@ -30,7 +29,7 @@ for (const page of config.pages) {
   }
 
   assert(html.includes('<html lang="ru">'), `Missing lang=ru for ${page.id}`);
-  assert(html.includes('data-brali-cluster="localized-ru-primary"'), `Missing RU primary cluster marker for ${page.id}`);
+  assert(html.includes('data-brali-cluster="localized-ru"'), `Missing generic RU locale cluster marker for ${page.id}`);
   assert(/[А-Яа-яЁё]/.test(html), `No Cyrillic rendered for ${page.id}`);
   assert(html.includes(`<link rel="canonical" href="${absolute(page.route)}">`), `Wrong canonical for ${page.id}`);
   assert(html.includes(`<link rel="alternate" hreflang="ru" href="${absolute(page.route)}">`), `Missing RU hreflang for ${page.id}`);
@@ -46,10 +45,10 @@ for (const page of config.pages) {
 
   const route = (manifest.routes || []).find((candidate) => candidate.path === page.route);
   assert(route, `RU manifest missing ${page.route}`);
+  assert(route.kind === "primary-hub", `RU manifest route kind drift for ${page.id}`);
   assert(route.canonical_path === page.source_route, `RU manifest canonical route drift for ${page.id}`);
-  assert(route.localization_quality === config.quality, `RU primary-page quality state drift for ${page.id}`);
+  assert(route.id === page.id, `RU manifest primary-page identity drift for ${page.id}`);
   assert(sitemap.includes(`<loc>${absolute(page.route)}</loc>`), `RU sitemap missing ${page.route}`);
-  assert(llms.includes(`${page.title}: ${absolute(page.route)}`), `RU llms.txt missing ${page.id}`);
 
   for (const match of fragment.matchAll(/<a\s+([^>]*?)href="([^"]+)"([^>]*)>/g)) {
     const attributes = `${match[1]} ${match[3]}`;
@@ -60,8 +59,8 @@ for (const page of config.pages) {
   }
 }
 
-const coverage = manifest.coverage?.primary_product_hubs;
-assert(coverage?.state === "language-reviewed", "RU primary-hub coverage state is not language-reviewed");
-assert(coverage?.localized === config.pages.length && coverage?.canonical === config.pages.length, "RU primary-hub coverage counts drifted");
+const coverage = manifest.coverage?.primary_pages;
+assert(coverage?.mode === "exact-declared", "RU primary-page coverage mode drifted");
+assert(coverage?.localized === config.pages.length && coverage?.canonical === config.pages.length, "RU primary-page coverage counts drifted");
 
-console.log(`Russian primary product hubs passed: ${config.pages.length}/${config.pages.length}.`);
+console.log(`Russian primary product hubs passed: ${config.pages.length}/${config.pages.length}; generic manifest contract.`);

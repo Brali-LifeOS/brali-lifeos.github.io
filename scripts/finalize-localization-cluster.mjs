@@ -82,6 +82,10 @@ async function normalizePage(file, currentCode, canonicalPath, variants) {
   let html = await readFile(file, "utf8");
   html = stripLanguageAlternates(html);
   if (!html.includes("</head>")) throw new Error(`[localization-cluster] missing </head> in ${path.relative(root, file)}`);
+  // Stripped alternate links leave their newline separators behind; collapse
+  // blank-line runs inside the head only (head whitespace is insignificant)
+  // so repeated builds cannot accumulate empty lines before re-injection.
+  html = html.replace(/<head[\s\S]*?<\/head>/i, (head) => head.replace(/\n{3,}/g, "\n\n"));
   html = html.replace("</head>", `${alternateMarkup(canonicalPath, variants)}</head>`);
 
   const nav = normalizeSwitchContainer(html, "links", currentCode, canonicalPath, variants);

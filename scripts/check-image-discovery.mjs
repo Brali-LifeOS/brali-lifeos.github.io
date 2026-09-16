@@ -4,8 +4,16 @@ import { join } from "node:path";
 const ROOT = process.cwd();
 const SITE = "https://brali-lifeos.github.io";
 const IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1";
+const TITLE_MAX = 65;
+const DESCRIPTION_MAX = 160;
 const fail = (message) => { throw new Error(`image_discovery:${message}`); };
-const decode = (value = "") => String(value).replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#39;", "'").trim();
+const decode = (value = "") => String(value)
+  .replaceAll("&amp;", "&")
+  .replaceAll("&quot;", '"')
+  .replaceAll("&#39;", "'")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">")
+  .trim();
 
 function htmlPath(urlValue) {
   const url = new URL(urlValue);
@@ -22,6 +30,7 @@ function attr(source, name) {
   return decode(source.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "");
 }
 function meta(html, key, value) { return attr(tag(html, "meta", key, value), "content"); }
+function pageTitle(html) { return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ""); }
 function walk(value, visitor) {
   if (Array.isArray(value)) { for (const item of value) walk(item, visitor); return; }
   if (!value || typeof value !== "object") return;
@@ -66,11 +75,18 @@ for (const page of blocks.keys()) {
   const file = htmlPath(page);
   if (!file) fail(`cannot map HTML path: ${page}`);
   const html = await readFile(file, "utf8");
-  if (!meta(html, "property", "og:title")) fail(`missing og:title: ${page}`);
-  if (!meta(html, "property", "og:description")) fail(`missing og:description: ${page}`);
+  const title = pageTitle(html);
+  const description = meta(html, "name", "description");
+  if (!title) fail(`missing title: ${page}`);
+  if (!description) fail(`missing description: ${page}`);
+  if (title.length > TITLE_MAX) fail(`SERP title exceeds ${TITLE_MAX} chars (${title.length}): ${page}`);
+  if (description.length > DESCRIPTION_MAX) fail(`SERP description exceeds ${DESCRIPTION_MAX} chars (${description.length}): ${page}`);
+
+  if (meta(html, "property", "og:title") !== title) fail(`og:title is not aligned to final SERP title: ${page}`);
+  if (meta(html, "property", "og:description") !== description) fail(`og:description is not aligned to final SERP description: ${page}`);
   if (meta(html, "property", "og:url") !== page) fail(`og:url is not canonical self URL: ${page}`);
-  if (!meta(html, "name", "twitter:title")) fail(`missing twitter:title: ${page}`);
-  if (!meta(html, "name", "twitter:description")) fail(`missing twitter:description: ${page}`);
+  if (meta(html, "name", "twitter:title") !== title) fail(`twitter:title is not aligned to final SERP title: ${page}`);
+  if (meta(html, "name", "twitter:description") !== description) fail(`twitter:description is not aligned to final SERP description: ${page}`);
   const card = meta(html, "name", "twitter:card");
   if (!new Set(["summary", "summary_large_image"]).has(card)) fail(`invalid or missing twitter:card: ${page}`);
 
@@ -115,4 +131,4 @@ for (const record of manifest.records) {
   await access(join(ROOT, decodeURIComponent(imageUrl.pathname).replace(/^\//, "")));
 }
 
-console.log(`Brali social/Image Discovery gate passed for ${blocks.size} canonical page(s): universal OG/Twitter metadata, ${manifest.records.length} representative-image page(s), schema/sitemap convergence and homepage loading priorities verified.`);
+console.log(`Brali SERP/social/Image Discovery gate passed for ${blocks.size} canonical page(s): title<=${TITLE_MAX}, description<=${DESCRIPTION_MAX}, universal OG/Twitter metadata, ${manifest.records.length} representative-image page(s), schema/sitemap convergence and homepage loading priorities verified.`);

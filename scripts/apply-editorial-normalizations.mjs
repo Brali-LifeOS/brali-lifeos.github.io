@@ -5,21 +5,38 @@ const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");
 const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "utf8"));
 const registry = JSON.parse(await readFile(path.join(root, "data/editorial-normalizations.json"), "utf8"));
-const rules = (registry.rules ?? []).filter((rule) => rule.status === "reviewed" && rule.match && rule.replacement);
+const rules = (registry.rules ?? []).filter((rule) => rule.status === "reviewed" && (rule.match || rule.pattern) && typeof rule.replacement === "string");
 
 const stats = new Map(rules.map((rule) => [rule.id, { id: rule.id, replacements: 0, entries: new Set() }]));
+
+function applyRule(output, rule) {
+  if (rule.match) {
+    if (!output.includes(rule.match)) return { output, occurrences: 0 };
+    const occurrences = output.split(rule.match).length - 1;
+    return { output: output.split(rule.match).join(rule.replacement), occurrences };
+  }
+  const flags = [...new Set(`${rule.flags || "giu"}g`.split(""))].join("");
+  const regex = new RegExp(rule.pattern, flags);
+  const occurrences = [...output.matchAll(regex)].length;
+  if (!occurrences) return { output, occurrences: 0 };
+  return { output: output.replace(regex, rule.replacement), occurrences };
+}
 
 function normalizeValue(value, slug) {
   if (typeof value === "string") {
     let output = value;
     for (const rule of rules) {
-      if (!output.includes(rule.match)) continue;
-      const occurrences = output.split(rule.match).length - 1;
-      output = output.split(rule.match).join(rule.replacement);
+      const applied = applyRule(output, rule);
+      if (!applied.occurrences) continue;
+      output = applied.output;
       const stat = stats.get(rule.id);
-      stat.replacements += occurrences;
+      stat.replacements += applied.occurrences;
       stat.entries.add(slug);
     }
+    // Reviewed removal rules may leave empty HTML paragraphs behind in stored
+    // body/section fragments. Remove only structurally empty paragraphs; do not
+    // rewrite surrounding prose.
+    output = output.replace(/<p>\s*<\/p>/g, "").replace(/\n{3,}/g, "\n\n");
     return output;
   }
   if (Array.isArray(value)) return value.map((item) => normalizeValue(item, slug));

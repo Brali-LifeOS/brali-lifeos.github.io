@@ -10,6 +10,69 @@
       "replacement": "There is no fixed number of days for a habit to become automatic. Keep the context consistent, notice whether the action is getting easier to repeat, and review the practice over time instead of treating a countdown as a success criterion.",
       "reason": "The inherited sentence presents a fixed-looking 21-66 day range that is not supported by the cited habit-formation literature. The replacement removes unsupported precision rather than substituting another universal countdown.",
       "review_source": "https://doi.org/10.1002/ejsp.674"
+    },
+    {
+      "id": "legacy-metalhatscats-product-intro",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "match": "At MetalHatsCats, we investigate and collect practical knowledge to help you. We share it for free, we educate, and we provide tools to apply it.",
+      "replacement": "",
+      "reason": "This inherited site-wide paragraph fragment is obsolete product identity and duplicated template copy. It adds no protocol-specific value and exposes the pre-Brali MetalHatsCats positioning in search-facing canonical content. Remove it rather than replacing it with a new repeated boilerplate.",
+      "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-mini-app-product-intro",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "match": "We learn from patterns in daily life, prototype mini‑apps to improve specific areas, and teach what works.",
+      "replacement": "",
+      "reason": "This repeated mini-app sentence belongs to the previous product identity and is not protocol-specific content. It appears both adjacent to and separated from the MetalHatsCats boilerplate, so it is normalized independently.",
+      "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-mini-app-product-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "[^\\n.!?]{0,260}\\bprototype\\s+mini[-‑–— ]?apps?\\b[^\\n.!?]{0,260}[.!?]",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "A smaller set of inherited pages embeds the old mini-app positioning inside otherwise unique introductory sentences. Remove the sentence containing that obsolete product mechanic while preserving the surrounding protocol-specific prose.",
+      "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-metalhatscats-app-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "<p>[^<]{0,1200}\\bApp link:\\s*https://metalhatscats\\.com/life-os/[a-z0-9-]+/?[^<]*</p>",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "The old app CTA sends readers to the pre-Brali MetalHatsCats route and repeats obsolete product positioning. Remove the entire CTA paragraph rather than exposing a stale brand/domain or inventing an unverified replacement workflow.",
+      "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-metalhatscats-lifeos-url",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "https://metalhatscats\\.com/life-os/([a-z0-9-]+)/?",
+      "flags": "giu",
+      "replacement": "https://brali-lifeos.github.io/life-os/$1/",
+      "reason": "Some structured source fields still carry the pre-Brali LifeOS domain even after visible legacy CTA cleanup. Preserve the useful deep link while moving it to the maintained canonical Brali site so old product identity cannot leak into generated metadata or search surfaces.",
+      "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-flame-counter-label",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "match": "Flame Counter",
+      "replacement": "Progress check",
+      "reason": "Flame Counter is a residual mechanic from the previous product identity. Keep the surrounding protocol content but replace the obsolete mechanic label with a neutral description.",
+      "review_source": "issue-260"
     }
   ]
 }

@@ -4,8 +4,16 @@ import { join } from "node:path";
 const ROOT = process.cwd();
 const SITE = "https://brali-lifeos.github.io";
 const IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1";
+const TITLE_MAX = 65;
+const DESCRIPTION_MAX = 160;
 const fail = (message) => { throw new Error(`image_discovery:${message}`); };
-const decode = (value = "") => String(value).replaceAll("&amp;", "&").replaceAll("&quot;", '"').replaceAll("&#39;", "'").trim();
+const decode = (value = "") => String(value)
+  .replaceAll("&amp;", "&")
+  .replaceAll("&quot;", '"')
+  .replaceAll("&#39;", "'")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">")
+  .trim();
 
 function htmlPath(urlValue) {
   const url = new URL(urlValue);
@@ -19,9 +27,12 @@ function tag(html, element, key, value) {
   return html.match(new RegExp(`<${element}\\b(?=[^>]*\\b${key}=["']${escaped}["'])[^>]*>`, "i"))?.[0] || "";
 }
 function attr(source, name) {
-  return decode(source.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "");
+  const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = String(source).match(new RegExp(`\\b${escaped}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return decode(match?.[2] || "");
 }
 function meta(html, key, value) { return attr(tag(html, "meta", key, value), "content"); }
+function pageTitle(html) { return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ""); }
 function walk(value, visitor) {
   if (Array.isArray(value)) { for (const item of value) walk(item, visitor); return; }
   if (!value || typeof value !== "object") return;
@@ -44,6 +55,13 @@ function preferredImages(html) {
   }
   return found;
 }
+function imageTags(html) {
+  return [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
+}
+
+if (attr(`<meta content="Build on Ideas with 'yes, and">`, "content") !== "Build on Ideas with 'yes, and") {
+  fail("quoted attribute parser must preserve apostrophes inside double-quoted values");
+}
 
 const manifest = JSON.parse(await readFile(join(ROOT, "data", "image-discovery.json"), "utf8"));
 const sitemap = await readFile(join(ROOT, "sitemap.xml"), "utf8");
@@ -56,6 +74,45 @@ const blocks = new Map();
 for (const match of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
   const page = decode(match[1].match(/<loc>([^<]+)<\/loc>/)?.[1] || "");
   if (page) blocks.set(page, match[1]);
+}
+const recordByPage = new Map(manifest.records.map((record) => [record.page, record]));
+
+for (const page of blocks.keys()) {
+  const file = htmlPath(page);
+  if (!file) fail(`cannot map HTML path: ${page}`);
+  const html = await readFile(file, "utf8");
+  const title = pageTitle(html);
+  const description = meta(html, "name", "description");
+  if (!title) fail(`missing title: ${page}`);
+  if (!description) fail(`missing description: ${page}`);
+  if (title.length > TITLE_MAX) fail(`SERP title exceeds ${TITLE_MAX} chars (${title.length}): ${page}`);
+  if (description.length > DESCRIPTION_MAX) fail(`SERP description exceeds ${DESCRIPTION_MAX} chars (${description.length}): ${page}`);
+
+  if (meta(html, "property", "og:title") !== title) fail(`og:title is not aligned to final SERP title: ${page}`);
+  if (meta(html, "property", "og:description") !== description) fail(`og:description is not aligned to final SERP description: ${page}`);
+  if (meta(html, "property", "og:url") !== page) fail(`og:url is not canonical self URL: ${page}`);
+  if (meta(html, "name", "twitter:title") !== title) fail(`twitter:title is not aligned to final SERP title: ${page}`);
+  if (meta(html, "name", "twitter:description") !== description) fail(`twitter:description is not aligned to final SERP description: ${page}`);
+  const card = meta(html, "name", "twitter:card");
+  if (!new Set(["summary", "summary_large_image"]).has(card)) fail(`invalid or missing twitter:card: ${page}`);
+
+  const record = recordByPage.get(page);
+  if (record && card !== "summary_large_image") fail(`representative image page must use summary_large_image: ${page}`);
+  if (!record && card !== "summary") fail(`page without representative image must use summary card: ${page}`);
+
+  if (page === `${SITE}/`) {
+    const tags = imageTags(html);
+    const hero = tags.find((image) => /\bhero-mascot\b/.test(attr(image, "class")));
+    if (!hero || attr(hero, "fetchpriority") !== "high") fail("homepage hero mascot must use fetchpriority=high");
+    if (attr(hero, "decoding") !== "async") fail("homepage hero mascot must use decoding=async");
+    const belowFold = tags.filter((image) => /\baudience-visual\b/.test(attr(image, "class")) || /\/assets\/images\/brali-category-/i.test(attr(image, "src")));
+    if (!belowFold.length) fail("homepage performance cohort was not found");
+    for (const image of belowFold) {
+      if (attr(image, "loading") !== "lazy") fail(`homepage below-fold image is not lazy: ${attr(image, "src")}`);
+      if (attr(image, "decoding") !== "async") fail(`homepage below-fold image is not async-decoded: ${attr(image, "src")}`);
+      if (attr(image, "fetchpriority") !== "low") fail(`homepage below-fold image is not low priority: ${attr(image, "src")}`);
+    }
+  }
 }
 
 for (const record of manifest.records) {
@@ -80,4 +137,4 @@ for (const record of manifest.records) {
   await access(join(ROOT, decodeURIComponent(imageUrl.pathname).replace(/^\//, "")));
 }
 
-console.log(`Brali Image Discovery gate passed for ${manifest.records.length} canonical page(s): sitemap, og/Twitter/schema convergence, preview controls, informative alt and local assets verified.`);
+console.log(`Brali SERP/social/Image Discovery gate passed for ${blocks.size} canonical page(s): title<=${TITLE_MAX}, description<=${DESCRIPTION_MAX}, universal OG/Twitter metadata, ${manifest.records.length} representative-image page(s), schema/sitemap convergence and homepage loading priorities verified.`);

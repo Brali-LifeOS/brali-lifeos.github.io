@@ -5,17 +5,22 @@ const ROOT = process.cwd();
 const SITE = "https://brali-lifeos.github.io";
 const IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1";
 const sitemapPath = join(ROOT, "sitemap.xml");
+const TITLE_MAX = 65;
+const DESCRIPTION_MAX = 160;
 
 const decode = (value = "") => String(value)
   .replaceAll("&amp;", "&")
   .replaceAll("&quot;", '"')
   .replaceAll("&#39;", "'")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">")
   .trim();
 const escapeAttr = (value = "") => String(value)
   .replaceAll("&", "&amp;")
   .replaceAll('"', "&quot;")
   .replaceAll("<", "&lt;")
   .replaceAll(">", "&gt;");
+const cleanText = (value = "") => decode(value).replace(/\s+/g, " ").trim();
 
 function htmlPath(urlValue) {
   const url = new URL(urlValue);
@@ -25,15 +30,68 @@ function htmlPath(urlValue) {
   return join(ROOT, url.pathname.slice(1), "index.html");
 }
 
+function attribute(source, name) {
+  const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = String(source).match(new RegExp(`\\b${escaped}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return decode(match?.[2] || "");
+}
+
 function metaContent(html, key, value) {
   const tag = html.match(new RegExp(`<meta\\b(?=[^>]*\\b${key}=["']${value}["'])[^>]*>`, "i"))?.[0] || "";
-  return decode(tag.match(/\bcontent=["']([^"']*)["']/i)?.[1] || "");
+  return attribute(tag, "content");
 }
 
 function setMeta(html, key, value, content) {
   const pattern = new RegExp(`<meta\\b(?=[^>]*\\b${key}=["']${value}["'])[^>]*>`, "i");
   const replacement = `<meta ${key}="${value}" content="${escapeAttr(content)}">`;
   return pattern.test(html) ? html.replace(pattern, replacement) : html.replace(/<\/head>/i, `${replacement}</head>`);
+}
+
+function pageTitle(html) {
+  return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "");
+}
+
+function setPageTitle(html, title) {
+  const replacement = `<title>${escapeAttr(title)}</title>`;
+  return /<title\b[^>]*>[\s\S]*?<\/title>/i.test(html)
+    ? html.replace(/<title\b[^>]*>[\s\S]*?<\/title>/i, replacement)
+    : html.replace(/<\/head>/i, `${replacement}</head>`);
+}
+
+function truncateAtWord(value, max) {
+  const text = cleanText(value);
+  if (text.length <= max) return text;
+  const budget = Math.max(1, max - 1);
+  const probe = text.slice(0, budget + 1);
+  const boundary = probe.lastIndexOf(" ");
+  const safeBoundary = boundary >= Math.max(24, Math.floor(budget * 0.6));
+  const cut = (safeBoundary ? probe.slice(0, boundary) : text.slice(0, budget)).replace(/[\s,:;—-]+$/u, "");
+  return `${cut}…`;
+}
+
+function conciseTitle(value) {
+  const title = cleanText(value);
+  if (title.length <= TITLE_MAX) return title;
+  const brand = title.match(/(\s+[—|-]\s+Brali(?: LifeOS)?)$/i)?.[1] || "";
+  if (!brand) return truncateAtWord(title, TITLE_MAX);
+  const core = title.slice(0, -brand.length).trim();
+  const coreBudget = TITLE_MAX - brand.length;
+  if (coreBudget < 24) return truncateAtWord(title, TITLE_MAX);
+  return `${truncateAtWord(core, coreBudget)}${brand}`;
+}
+
+function conciseDescription(value) {
+  const description = cleanText(value);
+  if (description.length <= DESCRIPTION_MAX) return description;
+  const sentences = description.match(/[^.!?]+[.!?]+/g) ?? [];
+  let candidate = "";
+  for (const sentence of sentences) {
+    const next = cleanText(candidate ? `${candidate} ${sentence}` : sentence);
+    if (next.length > DESCRIPTION_MAX) break;
+    candidate = next;
+  }
+  if (candidate.length >= 80) return candidate;
+  return truncateAtWord(description, DESCRIPTION_MAX);
 }
 
 function allowLargeImagePreview(html) {
@@ -45,6 +103,29 @@ function allowLargeImagePreview(html) {
     .filter((value) => !/^max-image-preview\s*:/i.test(value));
   directives.push("max-image-preview:large");
   return setMeta(html, "name", "robots", directives.join(", "));
+}
+
+function setImageAttributes(tag, attributes) {
+  let result = tag;
+  for (const [name, value] of Object.entries(attributes)) {
+    const pattern = new RegExp(`\\s${name}=(["'])([\\s\\S]*?)\\1`, "i");
+    if (pattern.test(result)) result = result.replace(pattern, ` ${name}="${value}"`);
+    else result = result.replace(/\s*\/>$|>$/, (ending) => ` ${name}="${value}"${ending}`);
+  }
+  return result;
+}
+
+function optimizeHomepageImageLoading(html) {
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    const className = attribute(tag, "class");
+    const src = attribute(tag, "src");
+    if (className.split(/\s+/).includes("hero-mascot")) {
+      return setImageAttributes(tag, { fetchpriority: "high", decoding: "async" });
+    }
+    const belowFold = className.split(/\s+/).includes("audience-visual") || /\/assets\/images\/brali-category-/i.test(src);
+    if (belowFold) return setImageAttributes(tag, { loading: "lazy", decoding: "async", fetchpriority: "low" });
+    return tag;
+  });
 }
 
 function mainHtml(html) {
@@ -65,10 +146,6 @@ function imageCandidates(html) {
   }
   for (const match of main.matchAll(/<img\b([^>]*)>/gi)) candidates.push(match[1]);
   return candidates;
-}
-
-function attribute(attrs, name) {
-  return decode(String(attrs).match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "");
 }
 
 async function selectRepresentativeImage(html) {
@@ -152,13 +229,31 @@ for (const inner of blocks) {
   if (!file) continue;
   let html;
   try { html = await readFile(file, "utf8"); } catch { continue; }
-  const representative = await selectRepresentativeImage(html);
-  if (!representative) continue;
 
-  // Image discovery now runs over the aggregate multilingual sitemap. Keep the
-  // preview contract aligned for every index-eligible page selected for an image,
-  // including localized routes that did not previously carry an explicit robots
-  // preview directive. Restricted/noindex routes never enter this sitemap.
+  if (page === `${SITE}/`) html = optimizeHomepageImageLoading(html);
+
+  const serpTitle = conciseTitle(pageTitle(html));
+  const serpDescription = conciseDescription(metaContent(html, "name", "description"));
+  if (!serpTitle || !serpDescription) throw new Error(`Cannot finalize SERP/social metadata without title/description: ${page}`);
+
+  html = setPageTitle(html, serpTitle);
+  html = setMeta(html, "name", "description", serpDescription);
+  html = setMeta(html, "property", "og:title", serpTitle);
+  html = setMeta(html, "property", "og:description", serpDescription);
+  html = setMeta(html, "property", "og:url", page);
+  html = setMeta(html, "name", "twitter:title", serpTitle);
+  html = setMeta(html, "name", "twitter:description", serpDescription);
+
+  const representative = await selectRepresentativeImage(html);
+  if (!representative) {
+    html = setMeta(html, "name", "twitter:card", "summary");
+    await writeFile(file, html);
+    continue;
+  }
+
+  // Image discovery runs over the aggregate multilingual sitemap. Keep preview
+  // semantics aligned for every index-eligible page selected for a real visible
+  // informative image. Restricted/noindex routes never enter this sitemap.
   html = allowLargeImagePreview(html);
   html = setMeta(html, "property", "og:image", representative.url);
   html = setMeta(html, "property", "og:image:alt", representative.alt);
@@ -184,4 +279,4 @@ sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (whole, inner) => {
 await writeFile(sitemapPath, sitemap);
 await writeFile(join(ROOT, "data", "image-discovery.json"), `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`);
 
-console.log(`Brali Image Discovery applied to ${records.length} index-eligible sitemap page(s) with visible informative images.`);
+console.log(`Brali SERP/social metadata finalized for ${blocks.length} sitemap page(s); Image Discovery applied to ${records.length} page(s) with visible informative images.`);

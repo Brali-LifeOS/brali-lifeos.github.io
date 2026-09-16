@@ -1,5 +1,5 @@
-import { readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
+import { readFile, readdir, writeFile } from "node:fs/promises";
+import { join, relative, sep } from "node:path";
 
 const root = process.cwd();
 const SITE = "https://brali-lifeos.github.io";
@@ -24,6 +24,34 @@ function htmlPath(urlValue) {
   if (url.pathname === "/") return join(root, "index.html");
   if (url.pathname.endsWith(".html")) return join(root, url.pathname.slice(1));
   return join(root, url.pathname.slice(1), "index.html");
+}
+function routeFromFile(file) {
+  const rel = relative(root, file).split(sep).join("/");
+  if (rel === "index.html") return "/";
+  if (rel.endsWith("/index.html")) return `/${rel.slice(0, -"index.html".length)}`;
+  return `/${rel}`;
+}
+function relativePath(file) {
+  return relative(root, file).split(sep).join("/");
+}
+function setNoindex(html) {
+  const pattern = /<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i;
+  const existing = pattern.test(html) ? robots(html).split(",").map((item) => item.trim()).filter(Boolean) : [];
+  const directives = existing.filter((item) => !/^(?:index|all|none|noindex|follow|nofollow)$/i.test(item));
+  directives.unshift("noindex", "follow");
+  const replacement = `<meta name="robots" content="${[...new Set(directives)].join(", ")}">`;
+  if (pattern.test(html)) return html.replace(pattern, replacement);
+  if (/<\/head>/i.test(html)) return html.replace(/<\/head>/i, `${replacement}</head>`);
+  throw new Error("Cannot apply noindex to HTML without a closing head tag");
+}
+async function collectHtml(dir, found = []) {
+  for (const entry of await readdir(dir, { withFileTypes: true })) {
+    if (entry.name === ".git" || entry.name === "node_modules") continue;
+    const file = join(dir, entry.name);
+    if (entry.isDirectory()) await collectHtml(file, found);
+    else if (entry.isFile() && entry.name.endsWith(".html")) found.push(file);
+  }
+  return found;
 }
 
 const kept = [];
@@ -59,9 +87,43 @@ for (const block of blocks) {
 const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${kept.map((block) => `  ${block}`).join("\n")}\n</urlset>\n`;
 await writeFile(sitemapPath, xml);
 
-console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}.`);
-for (const item of removed.slice(0, 30)) console.log(`- ${item.loc} (${item.reason})`);
-if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed entries`);
+// The normalized root sitemap is the authoritative public search inventory.
+// Full HTML documents outside it are forced to noindex. Source/QA fragments
+// that happen to use an .html suffix but have no document head are not mutated:
+// the release staging step classifies and physically removes those fragments
+// from the Pages artifact instead of pretending they are crawlable documents.
+const publishedPaths = new Set(kept.map((block) => new URL(decode(block.match(/<loc>([^<]+)<\/loc>/)?.[1] || "")).pathname));
+const offSitemap = [];
+let noindexApplied = 0;
+let nonDocumentFragments = 0;
+for (const file of await collectHtml(root)) {
+  const route = routeFromFile(file);
+  if (publishedPaths.has(route)) continue;
+  const html = await readFile(file, "utf8");
+  const alreadyNoindex = /\b(?:noindex|none)\b/.test(robots(html));
+  const hasRobotsTag = /<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i.test(html);
+  const hasHeadClose = /<\/head>/i.test(html);
+
+  if (alreadyNoindex) {
+    offSitemap.push({ path: relativePath(file), route, action: "preserved-noindex" });
+    continue;
+  }
+
+  if (!hasRobotsTag && !hasHeadClose) {
+    offSitemap.push({ path: relativePath(file), route, action: "non-document-prune-required" });
+    nonDocumentFragments += 1;
+    continue;
+  }
+
+  offSitemap.push({ path: relativePath(file), route, action: "noindex-applied" });
+  await writeFile(file, setNoindex(html));
+  noindexApplied += 1;
+}
+
+console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}; off-sitemap HTML ${offSitemap.length}; applied noindex to ${noindexApplied} document(s); non-document fragments queued for pruning ${nonDocumentFragments}.`);
+for (const item of removed.slice(0, 30)) console.log(`- sitemap remove ${item.loc} (${item.reason})`);
+if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed sitemap entries`);
+for (const item of offSitemap) console.log(`- off-sitemap ${item.path} -> ${item.route} (${item.action})`);
 
 // The normalized root sitemap is the final search publication set. Re-derive and
 // validate the multilingual graph from that exact state before later release

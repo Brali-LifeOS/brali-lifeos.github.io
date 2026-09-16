@@ -25,8 +25,9 @@ assert(String(githubSkill.install_command || '').includes('gh skill install '), 
 assert(String(githubSkill.install_command || '').includes('brali-life-os'), 'GitHub Skill install command must install the maintained router');
 assert(/^https:\/\//.test(githubSkill.docs || ''), 'GitHub Skill contract must link to official CLI documentation');
 assert(githubSkill.publication_verified === true, 'GitHub router skill publication must reflect the provider-verified release');
-assert(githubSkill.published_tag === 'v1.0.0', 'GitHub router skill published tag drifted');
-assert(githubSkill.published_release === 'https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.0', 'GitHub router skill release URL drifted');
+assert(/^v\d+\.\d+\.\d+$/.test(githubSkill.published_tag || ''), 'GitHub router skill published tag must be semver-like');
+assert(githubSkill.published_tag === 'v1.0.1', 'GitHub router skill published tag must match the latest provider-verified release');
+assert(githubSkill.published_release === `https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/${githubSkill.published_tag}`, 'GitHub router skill release URL must match published_tag');
 assert(githubSkill.registry_search_verified === false, 'Do not claim GitHub skill-search discovery until it is provider-verified');
 assert(String(githubSkill.discovery_blocker || '').includes('agent-skills'), 'GitHub skill-search boundary must explain the missing agent-skills topic');
 

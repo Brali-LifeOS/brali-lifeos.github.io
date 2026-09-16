@@ -31,6 +31,9 @@ function routeFromFile(file) {
   if (rel.endsWith("/index.html")) return `/${rel.slice(0, -"index.html".length)}`;
   return `/${rel}`;
 }
+function relativePath(file) {
+  return relative(root, file).split(sep).join("/");
+}
 function setNoindex(html) {
   const pattern = /<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i;
   const existing = pattern.test(html) ? robots(html).split(",").map((item) => item.trim()).filter(Boolean) : [];
@@ -89,19 +92,27 @@ await writeFile(sitemapPath, xml);
 // secondary artifacts cannot become accidental search results merely because
 // GitHub Pages serves the repository tree.
 const publishedPaths = new Set(kept.map((block) => new URL(decode(block.match(/<loc>([^<]+)<\/loc>/)?.[1] || "")).pathname));
+const offSitemap = [];
 let noindexApplied = 0;
 for (const file of await collectHtml(root)) {
   const route = routeFromFile(file);
   if (publishedPaths.has(route)) continue;
   const html = await readFile(file, "utf8");
-  if (/\b(?:noindex|none)\b/.test(robots(html))) continue;
+  const alreadyNoindex = /\b(?:noindex|none)\b/.test(robots(html));
+  offSitemap.push({
+    path: relativePath(file),
+    route,
+    action: alreadyNoindex ? "preserved-noindex" : "noindex-applied",
+  });
+  if (alreadyNoindex) continue;
   await writeFile(file, setNoindex(html));
   noindexApplied += 1;
 }
 
-console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}; applied noindex to ${noindexApplied} off-sitemap HTML file(s).`);
-for (const item of removed.slice(0, 30)) console.log(`- ${item.loc} (${item.reason})`);
-if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed entries`);
+console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}; off-sitemap HTML ${offSitemap.length}; applied noindex to ${noindexApplied} file(s).`);
+for (const item of removed.slice(0, 30)) console.log(`- sitemap remove ${item.loc} (${item.reason})`);
+if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed sitemap entries`);
+for (const item of offSitemap) console.log(`- off-sitemap ${item.path} -> ${item.route} (${item.action})`);
 
 // The normalized root sitemap is the final search publication set. Re-derive and
 // validate the multilingual graph from that exact state before later release

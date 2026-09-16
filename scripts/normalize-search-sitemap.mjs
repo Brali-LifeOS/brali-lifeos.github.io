@@ -88,28 +88,39 @@ const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.s
 await writeFile(sitemapPath, xml);
 
 // The normalized root sitemap is the authoritative public search inventory.
-// Any other shipped HTML must explicitly opt out, so QA fragments, aliases and
-// secondary artifacts cannot become accidental search results merely because
-// GitHub Pages serves the repository tree.
+// Full HTML documents outside it are forced to noindex. Source/QA fragments
+// that happen to use an .html suffix but have no document head are not mutated:
+// the release staging step classifies and physically removes those fragments
+// from the Pages artifact instead of pretending they are crawlable documents.
 const publishedPaths = new Set(kept.map((block) => new URL(decode(block.match(/<loc>([^<]+)<\/loc>/)?.[1] || "")).pathname));
 const offSitemap = [];
 let noindexApplied = 0;
+let nonDocumentFragments = 0;
 for (const file of await collectHtml(root)) {
   const route = routeFromFile(file);
   if (publishedPaths.has(route)) continue;
   const html = await readFile(file, "utf8");
   const alreadyNoindex = /\b(?:noindex|none)\b/.test(robots(html));
-  offSitemap.push({
-    path: relativePath(file),
-    route,
-    action: alreadyNoindex ? "preserved-noindex" : "noindex-applied",
-  });
-  if (alreadyNoindex) continue;
+  const hasRobotsTag = /<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i.test(html);
+  const hasHeadClose = /<\/head>/i.test(html);
+
+  if (alreadyNoindex) {
+    offSitemap.push({ path: relativePath(file), route, action: "preserved-noindex" });
+    continue;
+  }
+
+  if (!hasRobotsTag && !hasHeadClose) {
+    offSitemap.push({ path: relativePath(file), route, action: "non-document-prune-required" });
+    nonDocumentFragments += 1;
+    continue;
+  }
+
+  offSitemap.push({ path: relativePath(file), route, action: "noindex-applied" });
   await writeFile(file, setNoindex(html));
   noindexApplied += 1;
 }
 
-console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}; off-sitemap HTML ${offSitemap.length}; applied noindex to ${noindexApplied} file(s).`);
+console.log(`Final sitemap normalized: kept ${kept.length}; removed ${removed.length}; off-sitemap HTML ${offSitemap.length}; applied noindex to ${noindexApplied} document(s); non-document fragments queued for pruning ${nonDocumentFragments}.`);
 for (const item of removed.slice(0, 30)) console.log(`- sitemap remove ${item.loc} (${item.reason})`);
 if (removed.length > 30) console.log(`- ... ${removed.length - 30} more removed sitemap entries`);
 for (const item of offSitemap) console.log(`- off-sitemap ${item.path} -> ${item.route} (${item.action})`);

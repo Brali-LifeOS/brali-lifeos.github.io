@@ -73,6 +73,8 @@ jobs:
           node --check scripts/audit-de-language.mjs
           node --check scripts/check-localization-cluster.mjs
           node --check scripts/check-pages-localization-artifact.mjs
+          node --check scripts/optimize-homepage-images.mjs
+          node --check scripts/check-homepage-images.mjs
       - name: Validate localization source contract and adversarial failures
         run: |
           npm run localization:contract
@@ -114,6 +116,12 @@ jobs:
         run: node scripts/finalize-hack-lifecycle-discovery.mjs
       - name: Normalize final sitemap to canonical indexable URLs
         run: node scripts/normalize-search-sitemap.mjs
+      - name: Build responsive homepage image artifact
+        run: |
+          mkdir -p "$RUNNER_TEMP/brali-image-tools"
+          npm install --prefix "$RUNNER_TEMP/brali-image-tools" --no-save --package-lock=false sharp@0.34.4
+          BRALI_SHARP_MODULE="$RUNNER_TEMP/brali-image-tools/node_modules/sharp/lib/index.js" node scripts/optimize-homepage-images.mjs
+          node scripts/check-homepage-images.mjs
       - name: Apply Image Discovery to exact final artifact
         run: node scripts/apply-image-discovery.mjs
       - name: Gate final Image Discovery surface

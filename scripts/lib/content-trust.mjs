@@ -156,6 +156,12 @@ export function classifyEvidence(article, entry, overrides = {}) {
   }
 
   const indexable = status === "reviewed" || status === "practical";
+  const longformVisible = status !== "restricted";
+  const displayState = indexable
+    ? "current-guidance-visible"
+    : status === "pending-review"
+      ? "review-pending-longform-visible"
+      : "historical-source-only";
   const historicalSourceUrl = `/data/life-os-content/${encodeURIComponent(entry.slug)}.json`;
 
   return {
@@ -171,9 +177,10 @@ export function classifyEvidence(article, entry, overrides = {}) {
     indexingReason: indexable ? "quality-bar-met" : "editorial-review-required",
     content: {
       current_guidance: indexable,
-      display_state: indexable ? "current-guidance-visible" : "historical-source-only",
+      longform_visible: longformVisible,
+      display_state: displayState,
       historical_source_url: historicalSourceUrl,
-      historical_source_role: "provenance-only-not-current-guidance",
+      historical_source_role: status === "restricted" ? "provenance-only-not-current-guidance" : "canonical-source-record",
     },
     claims,
     source: {

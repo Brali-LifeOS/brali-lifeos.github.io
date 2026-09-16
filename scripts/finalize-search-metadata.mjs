@@ -41,26 +41,26 @@ function setImageAttributes(tag, attrs) {
   return next;
 }
 function hardenHomepageImages(html) {
-  const dimensions = new Map([
-    ["/assets/images/brali-mascot-pointing.png", [1122, 1402, false]],
-    ["/assets/images/brali-category-focus.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-stress.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-memory.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-sleep.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-habits.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-learning.png", [1254, 1254, true]],
-    ["/assets/images/brali-category-movement.png", [1254, 1254, true]],
-    ["/assets/images/brali-logo.png", [1254, 1254, true]],
-    ["/assets/images/brali-audience-people.png?v=20260822e", [1448, 1086, true]],
-    ["/assets/images/brali-audience-research.png?v=20260822e", [1448, 1086, true]],
-    ["/assets/images/brali-audience-ai.png?v=20260822e", [1448, 1086, true]],
+  const assets = new Map([
+    ["/assets/images/brali-mascot-pointing.png", ["/assets/images/brali-mascot-pointing.webp", 768, 960, false]],
+    ["/assets/images/brali-category-focus.png", ["/assets/images/brali-category-focus.webp", 640, 640, true]],
+    ["/assets/images/brali-category-stress.png", ["/assets/images/brali-category-stress.webp", 640, 640, true]],
+    ["/assets/images/brali-category-memory.png", ["/assets/images/brali-category-memory.webp", 640, 640, true]],
+    ["/assets/images/brali-category-sleep.png", ["/assets/images/brali-category-sleep.webp", 640, 640, true]],
+    ["/assets/images/brali-category-habits.png", ["/assets/images/brali-category-habits.webp", 640, 640, true]],
+    ["/assets/images/brali-category-learning.png", ["/assets/images/brali-category-learning.webp", 640, 640, true]],
+    ["/assets/images/brali-category-movement.png", ["/assets/images/brali-category-movement.webp", 640, 640, true]],
+    ["/assets/images/brali-logo.png", ["/assets/images/brali-mark.svg", 128, 128, true]],
+    ["/assets/images/brali-audience-people.png?v=20260822e", ["/assets/images/brali-audience-people.webp", 960, 720, true]],
+    ["/assets/images/brali-audience-research.png?v=20260822e", ["/assets/images/brali-audience-research.webp", 960, 720, true]],
+    ["/assets/images/brali-audience-ai.png?v=20260822e", ["/assets/images/brali-audience-ai.webp", 960, 720, true]],
   ]);
   return html.replace(/<img\b[^>]*>/gi, (tag) => {
     const src = attrValue(tag, "src");
-    const spec = dimensions.get(src);
+    const spec = assets.get(src);
     if (!spec) return tag;
-    const [width, height, lazy] = spec;
-    const attrs = { width, height, decoding: "async" };
+    const [optimizedSrc, width, height, lazy] = spec;
+    const attrs = { src: optimizedSrc, width, height, decoding: "async" };
     if (lazy && !/\bhero-mascot\b/.test(tag)) attrs.loading = "lazy";
     if (/\bhero-mascot\b/.test(tag)) attrs.fetchpriority = "high";
     return setImageAttributes(tag, attrs);
@@ -101,7 +101,7 @@ for (const file of await walk(root)) {
       explicitlyWithheld += 1;
     }
   }
-  if (rel === "index.html") html = hardenHomepageImages(html);
+  if (/^(?:(?:ru|de)\/)?index\.html$/.test(rel)) html = hardenHomepageImages(html);
   await writeFile(file, html);
 }
 

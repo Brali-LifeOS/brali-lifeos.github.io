@@ -32,6 +32,17 @@
       "review_source": "issue-260"
     },
     {
+      "id": "legacy-mini-app-product-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "[^\\n.!?]{0,260}\\bprototype\\s+mini[-‑–— ]?apps?\\b[^\\n.!?]{0,260}[.!?]",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "A smaller set of inherited pages embeds the old mini-app positioning inside otherwise unique introductory sentences. Remove the sentence containing that obsolete product mechanic while preserving the surrounding protocol-specific prose.",
+      "review_source": "issue-260"
+    },
+    {
       "id": "legacy-flame-counter-label",
       "status": "reviewed",
       "reviewed_at": "2026-09-16",

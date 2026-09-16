@@ -27,7 +27,9 @@ function tag(html, element, key, value) {
   return html.match(new RegExp(`<${element}\\b(?=[^>]*\\b${key}=["']${escaped}["'])[^>]*>`, "i"))?.[0] || "";
 }
 function attr(source, name) {
-  return decode(source.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "");
+  const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = String(source).match(new RegExp(`\\b${escaped}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return decode(match?.[2] || "");
 }
 function meta(html, key, value) { return attr(tag(html, "meta", key, value), "content"); }
 function pageTitle(html) { return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || ""); }
@@ -55,6 +57,10 @@ function preferredImages(html) {
 }
 function imageTags(html) {
   return [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
+}
+
+if (attr(`<meta content="Build on Ideas with 'yes, and">`, "content") !== "Build on Ideas with 'yes, and") {
+  fail("quoted attribute parser must preserve apostrophes inside double-quoted values");
 }
 
 const manifest = JSON.parse(await readFile(join(ROOT, "data", "image-discovery.json"), "utf8"));

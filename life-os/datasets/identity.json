@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "generated_at": null,
   "identities": [
     {
@@ -60,11 +60,51 @@
       "status": "active"
     },
     {
+      "id": "brali:evidence-decision:activity-breaks-postprandial-metabolism-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "activity-breaks-postprandial-metabolism-boundary-2026",
+      "title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "candidate_id": "crossref:10.1111/obr.70152",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:ai-review-correction-friction-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "ai-review-correction-friction-boundary-2026",
+      "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+      "candidate_id": "crossref:10.1162/99608f92.0e98898d",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:ai-structured-intake-human-judgment-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "ai-structured-intake-human-judgment-boundary-2026",
+      "title": "Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews",
+      "candidate_id": "crossref:10.2139/ssrn.5395709",
+      "decision": "propose-protocol"
+    },
+    {
       "id": "brali:evidence-decision:apology-repair-2021",
       "kind": "evidence-decision",
       "local_id": "apology-repair-2021",
       "title": "Experimental evidence that apologies promote forgiveness by communicating relationship value",
       "candidate_id": "crossref:10.1038/s41598-021-92373-y",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:caffeine-dose-timing-sleep-boundary-2025",
+      "kind": "evidence-decision",
+      "local_id": "caffeine-dose-timing-sleep-boundary-2025",
+      "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "candidate_id": "crossref:10.1093/sleep/zsae230",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:chatbot-difficult-conversation-rehearsal-2026",
+      "kind": "evidence-decision",
+      "local_id": "chatbot-difficult-conversation-rehearsal-2026",
+      "title": "Harnessing Artificial Intelligence to Facilitate Difficult Conversations",
+      "candidate_id": "crossref:10.1177/19485506261444068",
       "decision": "propose-protocol"
     },
     {
@@ -76,12 +116,60 @@
       "decision": "challenge-existing"
     },
     {
+      "id": "brali:evidence-decision:consider-opposite-social-judgment-boundary-1984",
+      "kind": "evidence-decision",
+      "local_id": "consider-opposite-social-judgment-boundary-1984",
+      "title": "Considering the opposite: A corrective strategy for social judgment",
+      "candidate_id": "crossref:10.1037/0022-3514.47.6.1231",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:couple-conflict-channel-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "couple-conflict-channel-boundary-2026",
+      "title": "A systematic review of technology-mediated conflict management in couples",
+      "candidate_id": "crossref:10.1177/02654075261420989",
+      "decision": "challenge-existing"
+    },
+    {
+      "id": "brali:evidence-decision:custom-social-media-brake-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "custom-social-media-brake-boundary-2026",
+      "title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "candidate_id": "crossref:10.2196/56824",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:deadline-evidence-reversal-2026",
+      "kind": "evidence-decision",
+      "local_id": "deadline-evidence-reversal-2026",
+      "title": "Replication of Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+      "candidate_id": "pubmed:42456006",
+      "decision": "challenge-existing"
+    },
+    {
+      "id": "brali:evidence-decision:debiasing-education-transfer-boundary-2025",
+      "kind": "evidence-decision",
+      "local_id": "debiasing-education-transfer-boundary-2025",
+      "title": "Systematic review and meta-analysis of educational approaches to reduce cognitive biases among students",
+      "candidate_id": "crossref:10.1038/s41562-025-02253-y",
+      "decision": "support-existing"
+    },
+    {
       "id": "brali:evidence-decision:distributed-practice-verbal-recall-boundary-2006",
       "kind": "evidence-decision",
       "local_id": "distributed-practice-verbal-recall-boundary-2006",
       "title": "Distributed practice in verbal recall tasks: A review and quantitative synthesis",
       "candidate_id": "crossref:10.1037/0033-2909.132.3.354",
       "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:email-checking-frequency-stress-boundary-2015",
+      "kind": "evidence-decision",
+      "local_id": "email-checking-frequency-stress-boundary-2015",
+      "title": "Checking email less frequently reduces stress",
+      "candidate_id": "crossref:10.1016/j.chb.2014.11.005",
+      "decision": "propose-protocol"
     },
     {
       "id": "brali:evidence-decision:empathic-paraphrasing-immediate-emotion-boundary-2012",
@@ -92,11 +180,115 @@
       "decision": "support-existing"
     },
     {
+      "id": "brali:evidence-decision:exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+      "title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+      "candidate_id": "crossref:10.1016/j.jnha.2026.100940",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:exercise-snacks-real-world-t2d-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "exercise-snacks-real-world-t2d-boundary-2026",
+      "title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+      "candidate_id": "crossref:10.1111/dom.71052",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:genai-learning-augmentation-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "genai-learning-augmentation-boundary-2026",
+      "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "candidate_id": "crossref:10.1007/s10462-026-11665-9",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:grayscale-screen-time-friction-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "grayscale-screen-time-friction-boundary-2026",
+      "title": "A cross-over feasibility trial of smartphone grayscale mode in medical students",
+      "candidate_id": "crossref:10.3389/fdgth.2026.1816095",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:green-route-stress-walk-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "green-route-stress-walk-boundary-2026",
+      "title": "Effects of green exercise on mental health: a systematic review and meta-analysis",
+      "candidate_id": "crossref:10.3389/fpsyg.2026.1802759",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:hourly-microexercise-workplace-watch-2026",
+      "kind": "evidence-decision",
+      "local_id": "hourly-microexercise-workplace-watch-2026",
+      "title": "Micro-exercise breaks every hour: a feasible strategy to improve metabolic health in sedentary office workers",
+      "candidate_id": "crossref:10.1186/s12889-026-26484-4",
+      "decision": "watch"
+    },
+    {
+      "id": "brali:evidence-decision:human-first-ai-collaboration-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "human-first-ai-collaboration-boundary-2026",
+      "title": "Relying on AI at work reduces self-efficacy, ownership, and meaning while active collaboration mitigates the effects",
+      "candidate_id": "crossref:10.1038/s41598-026-42312-6",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:if-then-fruit-vegetable-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "if-then-fruit-vegetable-boundary-2026",
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "candidate_id": "crossref:10.1186/s12966-026-01915-y",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:implementation-intentions-meta-boundary-2024",
+      "kind": "evidence-decision",
+      "local_id": "implementation-intentions-meta-boundary-2024",
+      "title": "The when and how of planning: Meta-analysis of implementation intentions in 642 tests",
+      "candidate_id": "crossref:10.1080/10463283.2024.2334563",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:leisure-crafting-work-spillover-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "leisure-crafting-work-spillover-boundary-2026",
+      "title": "The leisure crafting intervention: Effects on work and non-work outcomes and the moderating role of age",
+      "candidate_id": "crossref:10.1177/00187267251407641",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:micro-conversation-belonging-affect-boundary-2014",
+      "kind": "evidence-decision",
+      "local_id": "micro-conversation-belonging-affect-boundary-2014",
+      "title": "Is Efficiency Overrated?: Minimal Social Interactions Lead to Belonging and Positive Affect",
+      "candidate_id": "crossref:10.1177/1948550613502990",
+      "decision": "propose-protocol"
+    },
+    {
       "id": "brali:evidence-decision:microbreak-wellbeing-performance-boundary-2022",
       "kind": "evidence-decision",
       "local_id": "microbreak-wellbeing-performance-boundary-2022",
       "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
       "candidate_id": "crossref:10.1371/journal.pone.0272460",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:mobile-internet-block-attention-boundary-2025",
+      "kind": "evidence-decision",
+      "local_id": "mobile-internet-block-attention-boundary-2025",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "candidate_id": "crossref:10.1093/pnasnexus/pgaf017",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:movement-breaks-cardiometabolic-vanherle-2026",
+      "kind": "evidence-decision",
+      "local_id": "movement-breaks-cardiometabolic-vanherle-2026",
+      "title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+      "candidate_id": "crossref:10.1093/eurjpc/zwag079",
       "decision": "support-existing"
     },
     {
@@ -108,6 +300,46 @@
       "decision": "watch"
     },
     {
+      "id": "brali:evidence-decision:notification-batching-boundary-2019",
+      "kind": "evidence-decision",
+      "local_id": "notification-batching-boundary-2019",
+      "title": "Batching smartphone notifications can improve well-being",
+      "candidate_id": "crossref:10.1016/j.chb.2019.07.016",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:notification-blocking-workday-boundary-2023",
+      "kind": "evidence-decision",
+      "local_id": "notification-blocking-workday-boundary-2023",
+      "title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "candidate_id": "crossref:10.1002/1348-9585.12408",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:pmr-subjective-sleep-quality-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "pmr-subjective-sleep-quality-boundary-2026",
+      "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "candidate_id": "crossref:10.3389/fpubh.2026.1906525",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:post-meal-exercise-acute-glucose-boundary-2023",
+      "kind": "evidence-decision",
+      "local_id": "post-meal-exercise-acute-glucose-boundary-2023",
+      "title": "After Dinner Rest a While, After Supper Walk a Mile? A Systematic Review with Meta-analysis on the Acute Postprandial Glycemic Response to Exercise Before and After Meal Ingestion in Healthy Subjects and Patients with Impaired Glucose Tolerance",
+      "candidate_id": "crossref:10.1007/s40279-022-01808-7",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:prequestions-targeted-learning-boundary-2025",
+      "kind": "evidence-decision",
+      "local_id": "prequestions-targeted-learning-boundary-2025",
+      "title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "candidate_id": "crossref:10.1007/s10648-025-10075-7",
+      "decision": "propose-protocol"
+    },
+    {
       "id": "brali:evidence-decision:procrastination-treatment-exact-protocol-boundary-2018",
       "kind": "evidence-decision",
       "local_id": "procrastination-treatment-exact-protocol-boundary-2018",
@@ -116,12 +348,76 @@
       "decision": "challenge-existing"
     },
     {
+      "id": "brali:evidence-decision:progress-monitoring-goal-attainment-meta-2016",
+      "kind": "evidence-decision",
+      "local_id": "progress-monitoring-goal-attainment-meta-2016",
+      "title": "Does monitoring goal progress promote goal attainment?",
+      "candidate_id": "pubmed:26479070",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:protect-off-work-time-from-work-apps-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "protect-off-work-time-from-work-apps-boundary-2026",
+      "title": "Reducing Work-Related Screen-Time in Healthcare Workers During Leisure Time (REDUCE SCREEN) – A Randomized Controlled Trial",
+      "candidate_id": "crossref:10.1007/s10916-026-02338-9",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:ready-to-resume-interruption-boundary-2018",
+      "kind": "evidence-decision",
+      "local_id": "ready-to-resume-interruption-boundary-2018",
+      "title": "Tasks Interrupted: Ready-to-Resume Plan",
+      "candidate_id": "crossref:10.1287/orsc.2017.1184",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:records-maintenance-precommitment-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "records-maintenance-precommitment-boundary-2026",
+      "title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "candidate_id": "crossref:10.1016/j.giq.2026.102106",
+      "decision": "propose-protocol"
+    },
+    {
       "id": "brali:evidence-decision:retrieval-procedural-application-2026",
       "kind": "evidence-decision",
       "local_id": "retrieval-procedural-application-2026",
       "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
       "candidate_id": "crossref:10.1016/j.learninstruc.2026.102377",
       "decision": "challenge-existing"
+    },
+    {
+      "id": "brali:evidence-decision:savoring-emotional-outcomes-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "savoring-emotional-outcomes-boundary-2026",
+      "title": "Effectiveness of savoring interventions: A systematic review and meta-analysis of randomized controlled trials",
+      "candidate_id": "crossref:10.1111/aphw.70134",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:self-explanation-digital-learning-boundary-2025",
+      "kind": "evidence-decision",
+      "local_id": "self-explanation-digital-learning-boundary-2025",
+      "title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "candidate_id": "crossref:10.1007/s10648-025-10001-x",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:sitting-breaks-cognition-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "sitting-breaks-cognition-boundary-2026",
+      "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "candidate_id": "crossref:10.1186/s12966-026-01953-6",
+      "decision": "watch"
+    },
+    {
+      "id": "brali:evidence-decision:situational-digital-disconnection-procrastination-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "situational-digital-disconnection-procrastination-boundary-2026",
+      "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "candidate_id": "crossref:10.1038/s41598-026-46218-1",
+      "decision": "support-existing"
     },
     {
       "id": "brali:evidence-decision:sleep-opportunity-extension-2021",
@@ -140,6 +436,46 @@
       "decision": "watch"
     },
     {
+      "id": "brali:evidence-decision:spoken-vs-written-disagreement-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "spoken-vs-written-disagreement-boundary-2026",
+      "title": "Spoken disagreement is more constructive than written disagreement",
+      "candidate_id": "crossref:10.1038/s41467-026-71669-5",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:structured-peer-feedback-provision-2025",
+      "kind": "evidence-decision",
+      "local_id": "structured-peer-feedback-provision-2025",
+      "title": "Enhancing the Peer-Feedback Process Through Instructional Support: A Meta-Analysis",
+      "candidate_id": "crossref:10.1007/s10648-025-10017-3",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:supervisory-feedback-characteristics-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "supervisory-feedback-characteristics-boundary-2026",
+      "title": "Examining the relationship between supervisory feedback characteristics and employee feedback processing: a systematic review and meta-analysis",
+      "candidate_id": "crossref:10.1007/s12144-026-09323-y",
+      "decision": "watch"
+    },
+    {
+      "id": "brali:evidence-decision:task-choice-response-latency-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "task-choice-response-latency-boundary-2026",
+      "title": "Give Me a Choice! A Field Experiment on Task Choice Enabled by Wearables",
+      "candidate_id": "crossref:10.1177/10591478251400469",
+      "decision": "watch"
+    },
+    {
+      "id": "brali:evidence-decision:temptation-bundling-exercise-boundary-2020",
+      "kind": "evidence-decision",
+      "local_id": "temptation-bundling-exercise-boundary-2020",
+      "title": "Teaching temptation bundling to boost exercise: A field experiment",
+      "candidate_id": "crossref:10.1016/j.obhdp.2020.09.003",
+      "decision": "propose-protocol"
+    },
+    {
       "id": "brali:evidence-decision:testing-effect-direct-forward-2026",
       "kind": "evidence-decision",
       "local_id": "testing-effect-direct-forward-2026",
@@ -156,12 +492,68 @@
       "decision": "support-existing"
     },
     {
+      "id": "brali:evidence-decision:time-management-specificity-boundary-2021",
+      "kind": "evidence-decision",
+      "local_id": "time-management-specificity-boundary-2021",
+      "title": "Does time management work? A meta-analysis",
+      "candidate_id": "pubmed:33428644",
+      "decision": "challenge-existing"
+    },
+    {
+      "id": "brali:evidence-decision:vocabulary-pretesting-guess-feedback-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+      "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "candidate_id": "crossref:10.1186/s41235-026-00708-y",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:wakeful-rest-complex-learning-challenge-2026",
+      "kind": "evidence-decision",
+      "local_id": "wakeful-rest-complex-learning-challenge-2026",
+      "title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "candidate_id": "crossref:10.1007/s00426-026-02265-x",
+      "decision": "challenge-existing"
+    },
+    {
       "id": "brali:evidence-decision:wakeful-rest-memory-2026",
       "kind": "evidence-decision",
       "local_id": "wakeful-rest-memory-2026",
       "title": "Should we all just take 10? A meta-analysis of wakeful rest",
       "candidate_id": "crossref:10.3758/s13423-025-02778-3",
       "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:walking-divergent-thinking-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "walking-divergent-thinking-boundary-2026",
+      "title": "The impact of walking on creative thinking: A systematic review and meta-analysis",
+      "candidate_id": "crossref:10.1371/journal.pone.0347878",
+      "decision": "propose-protocol"
+    },
+    {
+      "id": "brali:evidence-decision:wellbeing-multiple-pathways-boundary-2026",
+      "kind": "evidence-decision",
+      "local_id": "wellbeing-multiple-pathways-boundary-2026",
+      "title": "A systematic review and network meta-analysis of randomized controlled trials of well-being-focused interventions",
+      "candidate_id": "crossref:10.1038/s41562-025-02369-1",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:woop-mcii-academic-procrastination-rct-2026",
+      "kind": "evidence-decision",
+      "local_id": "woop-mcii-academic-procrastination-rct-2026",
+      "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
+      "candidate_id": "crossref:10.1016/j.actpsy.2025.106168",
+      "decision": "support-existing"
+    },
+    {
+      "id": "brali:evidence-decision:woop-mcii-goal-attainment-meta-analysis-2021",
+      "kind": "evidence-decision",
+      "local_id": "woop-mcii-goal-attainment-meta-analysis-2021",
+      "title": "A Meta-Analysis of the Effects of Mental Contrasting With Implementation Intentions on Goal Attainment",
+      "candidate_id": "crossref:10.3389/fpsyg.2021.565202",
+      "decision": "support-existing"
     },
     {
       "id": "brali:evidence-decision:writing-feedback-level-match-2024",
@@ -197,7 +589,7 @@
       "kind": "evidence",
       "local_id": "10x-goal-sprints-tracker",
       "title": "10x-goal-sprints-tracker",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:2-minute-desk-tidy-timer",
@@ -302,7 +694,7 @@
       "kind": "evidence",
       "local_id": "7-breath-decision-pause",
       "title": "7-breath-decision-pause",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:90-30-focus-rest-schedule",
@@ -407,7 +799,7 @@
       "kind": "evidence",
       "local_id": "active-listening-coach",
       "title": "active-listening-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:active-listening-exercises",
@@ -498,14 +890,42 @@
       "kind": "evidence",
       "local_id": "adopt-new-tools-at-work",
       "title": "adopt-new-tools-at-work",
-      "evidence_state": "restricted"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:affirmation-habit-tracker",
       "kind": "evidence",
       "local_id": "affirmation-habit-tracker",
       "title": "affirmation-habit-tracker",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-code-scaffold-test-loop",
+      "kind": "evidence",
+      "local_id": "ai-code-scaffold-test-loop",
+      "title": "ai-code-scaffold-test-loop",
+      "evidence_state": "reviewed"
+    },
+    {
+      "id": "brali:evidence:ai-conversation-rehearsal",
+      "kind": "evidence",
+      "local_id": "ai-conversation-rehearsal",
+      "title": "ai-conversation-rehearsal",
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-customer-reply-coach",
+      "kind": "evidence",
+      "local_id": "ai-customer-reply-coach",
+      "title": "ai-customer-reply-coach",
+      "evidence_state": "reviewed"
+    },
+    {
+      "id": "brali:evidence:ai-decision-alternatives",
+      "kind": "evidence",
+      "local_id": "ai-decision-alternatives",
+      "title": "ai-decision-alternatives",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:ai-empathy-conversation-coach",
@@ -513,6 +933,27 @@
       "local_id": "ai-empathy-conversation-coach",
       "title": "ai-empathy-conversation-coach",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:ai-idea-divergence-pass",
+      "kind": "evidence",
+      "local_id": "ai-idea-divergence-pass",
+      "title": "ai-idea-divergence-pass",
+      "evidence_state": "reviewed"
+    },
+    {
+      "id": "brali:evidence:ai-learning-attempt-feedback-retest",
+      "kind": "evidence",
+      "local_id": "ai-learning-attempt-feedback-retest",
+      "title": "ai-learning-attempt-feedback-retest",
+      "evidence_state": "reviewed"
+    },
+    {
+      "id": "brali:evidence:ai-meeting-notes-to-actions",
+      "kind": "evidence",
+      "local_id": "ai-meeting-notes-to-actions",
+      "title": "ai-meeting-notes-to-actions",
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:ai-personal-okr-coach",
@@ -529,32 +970,81 @@
       "evidence_state": "practical"
     },
     {
+      "id": "brali:evidence:ai-professional-writing-draft",
+      "kind": "evidence",
+      "local_id": "ai-professional-writing-draft",
+      "title": "ai-professional-writing-draft",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:ai-question-bank-builder",
       "kind": "evidence",
       "local_id": "ai-question-bank-builder",
       "title": "ai-question-bank-builder",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-rubric-critique",
+      "kind": "evidence",
+      "local_id": "ai-rubric-critique",
+      "title": "ai-rubric-critique",
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:ai-six-hats-facilitator",
       "kind": "evidence",
       "local_id": "ai-six-hats-facilitator",
       "title": "ai-six-hats-facilitator",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-sop-from-examples",
+      "kind": "evidence",
+      "local_id": "ai-sop-from-examples",
+      "title": "ai-sop-from-examples",
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-source-summary-verification",
+      "kind": "evidence",
+      "local_id": "ai-source-summary-verification",
+      "title": "ai-source-summary-verification",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:ai-speaking-practice-tracker",
       "kind": "evidence",
       "local_id": "ai-speaking-practice-tracker",
       "title": "ai-speaking-practice-tracker",
-      "evidence_state": "pending-review"
+      "evidence_state": "restricted"
+    },
+    {
+      "id": "brali:evidence:ai-structured-extraction-check",
+      "kind": "evidence",
+      "local_id": "ai-structured-extraction-check",
+      "title": "ai-structured-extraction-check",
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:ai-task-frontier-test",
+      "kind": "evidence",
+      "local_id": "ai-task-frontier-test",
+      "title": "ai-task-frontier-test",
+      "evidence_state": "reviewed"
+    },
+    {
+      "id": "brali:evidence:ai-test-case-generator",
+      "kind": "evidence",
+      "local_id": "ai-test-case-generator",
+      "title": "ai-test-case-generator",
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:aida-message-optimizer",
       "kind": "evidence",
       "local_id": "aida-message-optimizer",
       "title": "aida-message-optimizer",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:alternative-action-tracker",
@@ -617,7 +1107,7 @@
       "kind": "evidence",
       "local_id": "apply-80-20-principle",
       "title": "apply-80-20-principle",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:articulation-exercises-tongue-twisters",
@@ -666,7 +1156,7 @@
       "kind": "evidence",
       "local_id": "attention-to-detail-trainer",
       "title": "attention-to-detail-trainer",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:attribution-bias-checker",
@@ -694,7 +1184,7 @@
       "kind": "evidence",
       "local_id": "automate-routine-data-reports",
       "title": "automate-routine-data-reports",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:automatic-paycheck-to-savings",
@@ -743,7 +1233,7 @@
       "kind": "evidence",
       "local_id": "avoid-availability-heuristic-decisions",
       "title": "avoid-availability-heuristic-decisions",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:avoid-bandwagon-think-for-yourself",
@@ -886,11 +1376,18 @@
       "evidence_state": "pending-review"
     },
     {
+      "id": "brali:evidence:batch-non-urgent-notifications",
+      "kind": "evidence",
+      "local_id": "batch-non-urgent-notifications",
+      "title": "batch-non-urgent-notifications",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:batch-similar-tasks-planner",
       "kind": "evidence",
       "local_id": "batch-similar-tasks-planner",
       "title": "batch-similar-tasks-planner",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:bedtime-gratitude-list",
@@ -1002,7 +1499,7 @@
       "kind": "evidence",
       "local_id": "boost-focus-with-40hz-binaural-beats",
       "title": "boost-focus-with-40hz-binaural-beats",
-      "evidence_state": "pending-review"
+      "evidence_state": "restricted"
     },
     {
       "id": "brali:evidence:box-breathing-for-speakers",
@@ -1023,7 +1520,7 @@
       "kind": "evidence",
       "local_id": "brag-doc-wins-hub",
       "title": "brag-doc-wins-hub",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:brainwriting-group-idea-generation",
@@ -1037,21 +1534,21 @@
       "kind": "evidence",
       "local_id": "break-big-goals-into-steps",
       "title": "break-big-goals-into-steps",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:break-down-big-problems-triz",
       "kind": "evidence",
       "local_id": "break-down-big-problems-triz",
       "title": "break-down-big-problems-triz",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:break-familiarity-bias",
       "kind": "evidence",
       "local_id": "break-familiarity-bias",
       "title": "break-familiarity-bias",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:break-functional-fixedness-creative-reframing",
@@ -1086,14 +1583,14 @@
       "kind": "evidence",
       "local_id": "build-your-support-network",
       "title": "build-your-support-network",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:bullet-point-coach",
       "kind": "evidence",
       "local_id": "bullet-point-coach",
       "title": "bullet-point-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:burnout-boundary-tracker",
@@ -1107,7 +1604,7 @@
       "kind": "evidence",
       "local_id": "calibrate-task-estimates",
       "title": "calibrate-task-estimates",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:calm-decision-check",
@@ -1212,7 +1709,7 @@
       "kind": "evidence",
       "local_id": "challenge-assumed-intent",
       "title": "challenge-assumed-intent",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:challenge-confirmation-bias-checklist",
@@ -1289,7 +1786,7 @@
       "kind": "evidence",
       "local_id": "check-base-rates-before-deciding",
       "title": "check-base-rates-before-deciding",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:check-blame-bias",
@@ -1310,7 +1807,7 @@
       "kind": "evidence",
       "local_id": "chef-taste-and-adjust",
       "title": "chef-taste-and-adjust",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:choice-supportive-bias-check-in",
@@ -1324,14 +1821,14 @@
       "kind": "evidence",
       "local_id": "choose-best-resources",
       "title": "choose-best-resources",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:chunk-complex-ideas-for-clarity",
       "kind": "evidence",
       "local_id": "chunk-complex-ideas-for-clarity",
       "title": "chunk-complex-ideas-for-clarity",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:chunk-long-lists-memory-helper",
@@ -1366,7 +1863,7 @@
       "kind": "evidence",
       "local_id": "clarity-ladder-analyzer",
       "title": "clarity-ladder-analyzer",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:clean-as-you-go-desk-habit",
@@ -1387,7 +1884,7 @@
       "kind": "evidence",
       "local_id": "clustering-illusion-guard",
       "title": "clustering-illusion-guard",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:cognitive-bias-coach",
@@ -1415,7 +1912,7 @@
       "kind": "evidence",
       "local_id": "cognitive-dissonance-resolution",
       "title": "cognitive-dissonance-resolution",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:color-coded-progress-tracker",
@@ -1443,14 +1940,14 @@
       "kind": "evidence",
       "local_id": "common-source-radar",
       "title": "common-source-radar",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:communication-blocks-scheduler",
       "kind": "evidence",
       "local_id": "communication-blocks-scheduler",
       "title": "communication-blocks-scheduler",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:compare-contrast-coach",
@@ -1506,21 +2003,28 @@
       "kind": "evidence",
       "local_id": "confidence-calibration-habit",
       "title": "confidence-calibration-habit",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:confirmation-bias-challenge",
       "kind": "evidence",
       "local_id": "confirmation-bias-challenge",
       "title": "confirmation-bias-challenge",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:conjunction-fallacy-coach",
       "kind": "evidence",
       "local_id": "conjunction-fallacy-coach",
       "title": "conjunction-fallacy-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
+    },
+    {
+      "id": "brali:evidence:consider-the-opposite",
+      "kind": "evidence",
+      "local_id": "consider-the-opposite",
+      "title": "consider-the-opposite",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:consistency-bias-tracker",
@@ -1562,21 +2066,21 @@
       "kind": "evidence",
       "local_id": "context-guard-for-decisions",
       "title": "context-guard-for-decisions",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:context-planner-for-writers",
       "kind": "evidence",
       "local_id": "context-planner-for-writers",
       "title": "context-planner-for-writers",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:contextual-language-coach",
       "kind": "evidence",
       "local_id": "contextual-language-coach",
       "title": "contextual-language-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:continued-influence-effect-misinformation",
@@ -1590,7 +2094,7 @@
       "kind": "evidence",
       "local_id": "control-to-action-compass",
       "title": "control-to-action-compass",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:conversation-chunking-nlp-coach",
@@ -1604,7 +2108,7 @@
       "kind": "evidence",
       "local_id": "conversational-storytelling-coach",
       "title": "conversational-storytelling-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:cooking-technique-drills-coach",
@@ -1618,7 +2122,7 @@
       "kind": "evidence",
       "local_id": "coot-ai-growth-journal",
       "title": "coot-ai-growth-journal",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:count-morning-steps-to-kitchen",
@@ -1688,7 +2192,7 @@
       "kind": "evidence",
       "local_id": "creativity-within-constraints",
       "title": "creativity-within-constraints",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:cross-disciplinary-insight-lenses",
@@ -1730,7 +2234,7 @@
       "kind": "evidence",
       "local_id": "cut-your-losses-sunk-cost",
       "title": "cut-your-losses-sunk-cost",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:daily-act-value-action-tracker",
@@ -1905,7 +2409,7 @@
       "kind": "evidence",
       "local_id": "daily-priority-review-coach",
       "title": "daily-priority-review-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:daily-problem-solver-coach",
@@ -1940,7 +2444,7 @@
       "kind": "evidence",
       "local_id": "daily-squat-challenge-tracker",
       "title": "daily-squat-challenge-tracker",
-      "evidence_state": "restricted"
+      "evidence_state": "pending-review"
     },
     {
       "id": "brali:evidence:daily-vitamin-d-sunlight-habit",
@@ -2129,7 +2633,7 @@
       "kind": "evidence",
       "local_id": "default-choice-audit",
       "title": "default-choice-audit",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:delay-gratification-future-gains",
@@ -2137,6 +2641,13 @@
       "local_id": "delay-gratification-future-gains",
       "title": "delay-gratification-future-gains",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:deliberate-email-checking-windows",
+      "kind": "evidence",
+      "local_id": "deliberate-email-checking-windows",
+      "title": "deliberate-email-checking-windows",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:design-thinking-playbook",
@@ -2388,7 +2899,7 @@
       "kind": "evidence",
       "local_id": "ergonomic-workspace-assessment",
       "title": "ergonomic-workspace-assessment",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:ergonomic-workspace-setup-guide",
@@ -2867,6 +3378,13 @@
       "evidence_state": "pending-review"
     },
     {
+      "id": "brali:evidence:genuine-micro-conversation",
+      "kind": "evidence",
+      "local_id": "genuine-micro-conversation",
+      "title": "genuine-micro-conversation",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:gestalt-empty-chair-dialogue",
       "kind": "evidence",
       "local_id": "gestalt-empty-chair-dialogue",
@@ -2942,6 +3460,13 @@
       "local_id": "gratitude-sandwich-relationship-talks",
       "title": "gratitude-sandwich-relationship-talks",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:grayscale-phone-friction",
+      "kind": "evidence",
+      "local_id": "grayscale-phone-friction",
+      "title": "grayscale-phone-friction",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:green-upgrade-roi-planner",
@@ -3200,7 +3725,7 @@
       "kind": "evidence",
       "local_id": "if-then-rules-productivity",
       "title": "if-then-rules-productivity",
-      "evidence_state": "pending-review"
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:illusory-correlation-checklist",
@@ -3354,7 +3879,7 @@
       "kind": "evidence",
       "local_id": "judge-decisions-by-process",
       "title": "judge-decisions-by-process",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:judge-groups-fairly",
@@ -4068,7 +4593,7 @@
       "kind": "evidence",
       "local_id": "oblique-strategies-prompt-cards",
       "title": "oblique-strategies-prompt-cards",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:observe-negative-thoughts-metacognition",
@@ -4187,7 +4712,7 @@
       "kind": "evidence",
       "local_id": "pause-before-checking-phone",
       "title": "pause-before-checking-phone",
-      "evidence_state": "restricted"
+      "evidence_state": "pending-review"
     },
     {
       "id": "brali:evidence:pause-before-reacting-three-breaths-stoic",
@@ -4271,7 +4796,7 @@
       "kind": "evidence",
       "local_id": "phase-transition-ritual-tracker",
       "title": "phase-transition-ritual-tracker",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:physical-sensation-grounding-exercise",
@@ -4292,7 +4817,7 @@
       "kind": "evidence",
       "local_id": "plan-tasks-by-peak-energy",
       "title": "plan-tasks-by-peak-energy",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:plank-challenge-tracker",
@@ -4335,6 +4860,13 @@
       "local_id": "positive-reinforcement-tracker",
       "title": "positive-reinforcement-tracker",
       "evidence_state": "restricted"
+    },
+    {
+      "id": "brali:evidence:post-meal-walk",
+      "kind": "evidence",
+      "local_id": "post-meal-walk",
+      "title": "post-meal-walk",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:post-meeting-follow-up-email",
@@ -4463,6 +4995,13 @@
       "evidence_state": "pending-review"
     },
     {
+      "id": "brali:evidence:prequestions-before-learning",
+      "kind": "evidence",
+      "local_id": "prequestions-before-learning",
+      "title": "prequestions-before-learning",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:present-bias-check",
       "kind": "evidence",
       "local_id": "present-bias-check",
@@ -4537,7 +5076,7 @@
       "kind": "evidence",
       "local_id": "process-of-elimination-tracker",
       "title": "process-of-elimination-tracker",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:productive-day-sketch-planner",
@@ -4649,14 +5188,14 @@
       "kind": "evidence",
       "local_id": "qa-checklist-templates-runbook",
       "title": "qa-checklist-templates-runbook",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:qa-clear-feedback-templates",
       "kind": "evidence",
       "local_id": "qa-clear-feedback-templates",
       "title": "qa-clear-feedback-templates",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:qa-documentation-tracker",
@@ -4804,6 +5343,13 @@
       "local_id": "read-the-room-trainer",
       "title": "read-the-room-trainer",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:ready-to-resume-plan",
+      "kind": "evidence",
+      "local_id": "ready-to-resume-plan",
+      "title": "ready-to-resume-plan",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:realistic-planning-optimizer",
@@ -5069,7 +5615,7 @@
       "kind": "evidence",
       "local_id": "revive-neglected-hobby-cbt",
       "title": "revive-neglected-hobby-cbt",
-      "evidence_state": "restricted"
+      "evidence_state": "pending-review"
     },
     {
       "id": "brali:evidence:rhetorical-triangle-coach",
@@ -5147,6 +5693,13 @@
       "local_id": "sandwich-feedback-examples-guide",
       "title": "sandwich-feedback-examples-guide",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:savor-positive-moment",
+      "kind": "evidence",
+      "local_id": "savor-positive-moment",
+      "title": "savor-positive-moment",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:say-no-boundary-coach",
@@ -5268,6 +5821,13 @@
       "evidence_state": "pending-review"
     },
     {
+      "id": "brali:evidence:self-explain-what-you-learn",
+      "kind": "evidence",
+      "local_id": "self-explain-what-you-learn",
+      "title": "self-explain-what-you-learn",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:self-serving-bias-reflection",
       "kind": "evidence",
       "local_id": "self-serving-bias-reflection",
@@ -5307,7 +5867,7 @@
       "kind": "evidence",
       "local_id": "separate-to-decide-decision-evaluator",
       "title": "separate-to-decide-decision-evaluator",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:set-screen-at-eye-level",
@@ -5776,7 +6336,7 @@
       "kind": "evidence",
       "local_id": "stop-caffeine-after-lunch",
       "title": "stop-caffeine-after-lunch",
-      "evidence_state": "restricted"
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:stop-illusory-correlations",
@@ -5860,7 +6420,7 @@
       "kind": "evidence",
       "local_id": "structure-writing-with-visuals",
       "title": "structure-writing-with-visuals",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:success-model-message-checklist",
@@ -5881,7 +6441,7 @@
       "kind": "evidence",
       "local_id": "sunk-cost-decision-coach",
       "title": "sunk-cost-decision-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:swap-tv-for-walking-daily",
@@ -5959,6 +6519,13 @@
       "local_id": "temptation-barrier-planner",
       "title": "temptation-barrier-planner",
       "evidence_state": "pending-review"
+    },
+    {
+      "id": "brali:evidence:temptation-bundling",
+      "kind": "evidence",
+      "local_id": "temptation-bundling",
+      "title": "temptation-bundling",
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:tension-sprints-for-problem-solving",
@@ -6049,7 +6616,7 @@
       "kind": "evidence",
       "local_id": "top-3-daily-focus-planner",
       "title": "top-3-daily-focus-planner",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:top-3-daily-tasks",
@@ -6395,6 +6962,13 @@
       "evidence_state": "pending-review"
     },
     {
+      "id": "brali:evidence:visible-progress-monitoring",
+      "kind": "evidence",
+      "local_id": "visible-progress-monitoring",
+      "title": "visible-progress-monitoring",
+      "evidence_state": "reviewed"
+    },
+    {
       "id": "brali:evidence:vision-board-habit-system",
       "kind": "evidence",
       "local_id": "vision-board-habit-system",
@@ -6518,7 +7092,7 @@
       "kind": "evidence",
       "local_id": "walking-meeting-assistant",
       "title": "walking-meeting-assistant",
-      "evidence_state": "restricted"
+      "evidence_state": "reviewed"
     },
     {
       "id": "brali:evidence:walt-disney-method-workshop",
@@ -6560,7 +7134,7 @@
       "kind": "evidence",
       "local_id": "weekly-goal-review-coach",
       "title": "weekly-goal-review-coach",
-      "evidence_state": "pending-review"
+      "evidence_state": "practical"
     },
     {
       "id": "brali:evidence:weekly-language-goal-tracker",
@@ -13083,15 +13657,6 @@
       ]
     },
     {
-      "id": "brali:hack:6040",
-      "kind": "hack",
-      "local_id": "6040",
-      "title": "Step Up to Lead",
-      "legacy_ids": [
-        "6040"
-      ]
-    },
-    {
       "id": "brali:hack:6050",
       "kind": "hack",
       "local_id": "6050",
@@ -15493,6 +16058,15 @@
       ]
     },
     {
+      "id": "brali:protocol:10x-goal-sprints-tracker",
+      "kind": "protocol",
+      "local_id": "brali:10x-goal-sprints-tracker",
+      "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
+      "legacy_ids": [
+        "brali:10x-goal-sprints-tracker"
+      ]
+    },
+    {
       "id": "brali:protocol:2-minute-desk-tidy-timer",
       "kind": "protocol",
       "local_id": "brali:2-minute-desk-tidy-timer",
@@ -15610,6 +16184,15 @@
       ]
     },
     {
+      "id": "brali:protocol:7-breath-decision-pause",
+      "kind": "protocol",
+      "local_id": "brali:7-breath-decision-pause",
+      "title": "Use a Short Pause Before an Ordinary Decision",
+      "legacy_ids": [
+        "brali:7-breath-decision-pause"
+      ]
+    },
+    {
       "id": "brali:protocol:90-30-focus-rest-schedule",
       "kind": "protocol",
       "local_id": "brali:90-30-focus-rest-schedule",
@@ -15646,6 +16229,15 @@
       ]
     },
     {
+      "id": "brali:protocol:active-listening-coach",
+      "kind": "protocol",
+      "local_id": "brali:active-listening-coach",
+      "title": "Use a Brief Summary to Check What You Heard",
+      "legacy_ids": [
+        "brali:active-listening-coach"
+      ]
+    },
+    {
       "id": "brali:protocol:active-listening-exercises",
       "kind": "protocol",
       "local_id": "brali:active-listening-exercises",
@@ -15667,7 +16259,7 @@
       "id": "brali:protocol:active-recall-test-yourself",
       "kind": "protocol",
       "local_id": "brali:active-recall-test-yourself",
-      "title": "Use Active Recall for Retention, Then Practice Application",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
       "legacy_ids": [
         "brali:active-recall-test-yourself"
       ]
@@ -15682,12 +16274,183 @@
       ]
     },
     {
+      "id": "brali:protocol:adopt-new-tools-at-work",
+      "kind": "protocol",
+      "local_id": "brali:adopt-new-tools-at-work",
+      "title": "Test a New Work Tool on a Low-Risk Task",
+      "legacy_ids": [
+        "brali:adopt-new-tools-at-work"
+      ]
+    },
+    {
+      "id": "brali:protocol:affirmation-habit-tracker",
+      "kind": "protocol",
+      "local_id": "brali:affirmation-habit-tracker",
+      "title": "Replace grand claims with a grounded statement and one next action.",
+      "legacy_ids": [
+        "brali:affirmation-habit-tracker"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-code-scaffold-test-loop",
+      "kind": "protocol",
+      "local_id": "brali:ai-code-scaffold-test-loop",
+      "title": "Use AI to Scaffold Code, Then Make Tests Decide",
+      "legacy_ids": [
+        "brali:ai-code-scaffold-test-loop"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-conversation-rehearsal",
+      "kind": "protocol",
+      "local_id": "brali:ai-conversation-rehearsal",
+      "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+      "legacy_ids": [
+        "brali:ai-conversation-rehearsal"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-customer-reply-coach",
+      "kind": "protocol",
+      "local_id": "brali:ai-customer-reply-coach",
+      "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+      "legacy_ids": [
+        "brali:ai-customer-reply-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-decision-alternatives",
+      "kind": "protocol",
+      "local_id": "brali:ai-decision-alternatives",
+      "title": "Use AI to Widen the Option Set, Not Make the Decision",
+      "legacy_ids": [
+        "brali:ai-decision-alternatives"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-idea-divergence-pass",
+      "kind": "protocol",
+      "local_id": "brali:ai-idea-divergence-pass",
+      "title": "Use AI to Widen the Idea Set Before You Choose",
+      "legacy_ids": [
+        "brali:ai-idea-divergence-pass"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-learning-attempt-feedback-retest",
+      "kind": "protocol",
+      "local_id": "brali:ai-learning-attempt-feedback-retest",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "legacy_ids": [
+        "brali:ai-learning-attempt-feedback-retest"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-meeting-notes-to-actions",
+      "kind": "protocol",
+      "local_id": "brali:ai-meeting-notes-to-actions",
+      "title": "Turn Meeting Notes into Actions, Then Reconcile Them",
+      "legacy_ids": [
+        "brali:ai-meeting-notes-to-actions"
+      ]
+    },
+    {
       "id": "brali:protocol:ai-premortem-risk-planner",
       "kind": "protocol",
       "local_id": "brali:ai-premortem-risk-planner",
       "title": "AI-Assisted Premortem",
       "legacy_ids": [
         "brali:ai-premortem-risk-planner"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-professional-writing-draft",
+      "kind": "protocol",
+      "local_id": "brali:ai-professional-writing-draft",
+      "title": "Draft Professional Writing with AI, Then Take Back the Edit",
+      "legacy_ids": [
+        "brali:ai-professional-writing-draft"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-question-bank-builder",
+      "kind": "protocol",
+      "local_id": "brali:ai-question-bank-builder",
+      "title": "Build an AI-Assisted Question Bank You Can Verify",
+      "legacy_ids": [
+        "brali:ai-question-bank-builder"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-rubric-critique",
+      "kind": "protocol",
+      "local_id": "brali:ai-rubric-critique",
+      "title": "Give AI a Rubric and Ask for Specific Critique",
+      "legacy_ids": [
+        "brali:ai-rubric-critique"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-six-hats-facilitator",
+      "kind": "protocol",
+      "local_id": "brali:ai-six-hats-facilitator",
+      "title": "Run a Six-Perspective Thinking Pass",
+      "legacy_ids": [
+        "brali:ai-six-hats-facilitator"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-sop-from-examples",
+      "kind": "protocol",
+      "local_id": "brali:ai-sop-from-examples",
+      "title": "Turn Real Examples into a Draft SOP with AI",
+      "legacy_ids": [
+        "brali:ai-sop-from-examples"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-source-summary-verification",
+      "kind": "protocol",
+      "local_id": "brali:ai-source-summary-verification",
+      "title": "Summarize with AI, Then Reconcile Against the Source",
+      "legacy_ids": [
+        "brali:ai-source-summary-verification"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-structured-extraction-check",
+      "kind": "protocol",
+      "local_id": "brali:ai-structured-extraction-check",
+      "title": "Extract a Table with AI, Then Sample-Check the Rows",
+      "legacy_ids": [
+        "brali:ai-structured-extraction-check"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-task-frontier-test",
+      "kind": "protocol",
+      "local_id": "brali:ai-task-frontier-test",
+      "title": "Benchmark AI on the Task Before You Trust the Workflow",
+      "legacy_ids": [
+        "brali:ai-task-frontier-test"
+      ]
+    },
+    {
+      "id": "brali:protocol:ai-test-case-generator",
+      "kind": "protocol",
+      "local_id": "brali:ai-test-case-generator",
+      "title": "Ask AI for Failure Cases Before You Ship",
+      "legacy_ids": [
+        "brali:ai-test-case-generator"
+      ]
+    },
+    {
+      "id": "brali:protocol:aida-message-optimizer",
+      "kind": "protocol",
+      "local_id": "brali:aida-message-optimizer",
+      "title": "Use AIDA as a Message Clarity Checklist",
+      "legacy_ids": [
+        "brali:aida-message-optimizer"
       ]
     },
     {
@@ -15715,6 +16478,15 @@
       "title": "Expect the Unexpected",
       "legacy_ids": [
         "brali:anticipate-sudden-trend-shifts"
+      ]
+    },
+    {
+      "id": "brali:protocol:apply-80-20-principle",
+      "kind": "protocol",
+      "local_id": "brali:apply-80-20-principle",
+      "title": "Use 80/20 as a Prioritization Hypothesis",
+      "legacy_ids": [
+        "brali:apply-80-20-principle"
       ]
     },
     {
@@ -15754,6 +16526,15 @@
       ]
     },
     {
+      "id": "brali:protocol:attention-to-detail-trainer",
+      "kind": "protocol",
+      "local_id": "brali:attention-to-detail-trainer",
+      "title": "Run a Detail Check Before You Ship",
+      "legacy_ids": [
+        "brali:attention-to-detail-trainer"
+      ]
+    },
+    {
       "id": "brali:protocol:attribution-bias-checker",
       "kind": "protocol",
       "local_id": "brali:attribution-bias-checker",
@@ -15772,6 +16553,15 @@
       ]
     },
     {
+      "id": "brali:protocol:automate-routine-data-reports",
+      "kind": "protocol",
+      "local_id": "brali:automate-routine-data-reports",
+      "title": "Automate a Routine Report with Validation and Fallback",
+      "legacy_ids": [
+        "brali:automate-routine-data-reports"
+      ]
+    },
+    {
       "id": "brali:protocol:automatic-paycheck-to-savings",
       "kind": "protocol",
       "local_id": "brali:automatic-paycheck-to-savings",
@@ -15787,6 +16577,15 @@
       "title": "Separate Observation from Human-Like Interpretation",
       "legacy_ids": [
         "brali:avoid-anthropocentric-bias"
+      ]
+    },
+    {
+      "id": "brali:protocol:avoid-availability-heuristic-decisions",
+      "kind": "protocol",
+      "local_id": "brali:avoid-availability-heuristic-decisions",
+      "title": "Run a Missing-Evidence Check Before a Decision",
+      "legacy_ids": [
+        "brali:avoid-availability-heuristic-decisions"
       ]
     },
     {
@@ -15862,6 +16661,24 @@
       ]
     },
     {
+      "id": "brali:protocol:batch-non-urgent-notifications",
+      "kind": "protocol",
+      "local_id": "brali:batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "legacy_ids": [
+        "brali:batch-non-urgent-notifications"
+      ]
+    },
+    {
+      "id": "brali:protocol:batch-similar-tasks-planner",
+      "kind": "protocol",
+      "local_id": "brali:batch-similar-tasks-planner",
+      "title": "Batch Similar Tasks When Switching Is the Problem",
+      "legacy_ids": [
+        "brali:batch-similar-tasks-planner"
+      ]
+    },
+    {
       "id": "brali:protocol:belief-update-coach",
       "kind": "protocol",
       "local_id": "brali:belief-update-coach",
@@ -15916,12 +16733,75 @@
       ]
     },
     {
+      "id": "brali:protocol:brag-doc-wins-hub",
+      "kind": "protocol",
+      "local_id": "brali:brag-doc-wins-hub",
+      "title": "Keep a Work Wins Log You Can Reuse",
+      "legacy_ids": [
+        "brali:brag-doc-wins-hub"
+      ]
+    },
+    {
       "id": "brali:protocol:brainwriting-group-idea-generation",
       "kind": "protocol",
       "local_id": "brali:brainwriting-group-idea-generation",
       "title": "In a Group, Write Down Ideas and Pass Them Around for Others to Build",
       "legacy_ids": [
         "brali:brainwriting-group-idea-generation"
+      ]
+    },
+    {
+      "id": "brali:protocol:break-big-goals-into-steps",
+      "kind": "protocol",
+      "local_id": "brali:break-big-goals-into-steps",
+      "title": "Turn a Large Goal into the Next Verifiable Step",
+      "legacy_ids": [
+        "brali:break-big-goals-into-steps"
+      ]
+    },
+    {
+      "id": "brali:protocol:break-down-big-problems-triz",
+      "kind": "protocol",
+      "local_id": "brali:break-down-big-problems-triz",
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "legacy_ids": [
+        "brali:break-down-big-problems-triz"
+      ]
+    },
+    {
+      "id": "brali:protocol:break-familiarity-bias",
+      "kind": "protocol",
+      "local_id": "brali:break-familiarity-bias",
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "legacy_ids": [
+        "brali:break-familiarity-bias"
+      ]
+    },
+    {
+      "id": "brali:protocol:build-your-support-network",
+      "kind": "protocol",
+      "local_id": "brali:build-your-support-network",
+      "title": "Build a Support Map Around Specific Needs",
+      "legacy_ids": [
+        "brali:build-your-support-network"
+      ]
+    },
+    {
+      "id": "brali:protocol:bullet-point-coach",
+      "kind": "protocol",
+      "local_id": "brali:bullet-point-coach",
+      "title": "Use a Short Bullet Outline Before You Speak",
+      "legacy_ids": [
+        "brali:bullet-point-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:calibrate-task-estimates",
+      "kind": "protocol",
+      "local_id": "brali:calibrate-task-estimates",
+      "title": "Calibrate Task Estimates With Planned vs Actual Work",
+      "legacy_ids": [
+        "brali:calibrate-task-estimates"
       ]
     },
     {
@@ -15940,6 +16820,15 @@
       "title": "Action and Mood Observation Note",
       "legacy_ids": [
         "brali:cbt-action-mood-tracker"
+      ]
+    },
+    {
+      "id": "brali:protocol:challenge-assumed-intent",
+      "kind": "protocol",
+      "local_id": "brali:challenge-assumed-intent",
+      "title": "Separate Observed Facts From Assumed Intent",
+      "legacy_ids": [
+        "brali:challenge-assumed-intent"
       ]
     },
     {
@@ -15970,6 +16859,15 @@
       ]
     },
     {
+      "id": "brali:protocol:check-base-rates-before-deciding",
+      "kind": "protocol",
+      "local_id": "brali:check-base-rates-before-deciding",
+      "title": "Check a Relevant Baseline Before Interpreting One Case",
+      "legacy_ids": [
+        "brali:check-base-rates-before-deciding"
+      ]
+    },
+    {
       "id": "brali:protocol:check-blame-bias",
       "kind": "protocol",
       "local_id": "brali:check-blame-bias",
@@ -15979,12 +16877,39 @@
       ]
     },
     {
+      "id": "brali:protocol:chef-taste-and-adjust",
+      "kind": "protocol",
+      "local_id": "brali:chef-taste-and-adjust",
+      "title": "Taste and Adjust One Variable at a Time",
+      "legacy_ids": [
+        "brali:chef-taste-and-adjust"
+      ]
+    },
+    {
       "id": "brali:protocol:choice-supportive-bias-check-in",
       "kind": "protocol",
       "local_id": "brali:choice-supportive-bias-check-in",
       "title": "Spot Choice-Supportive Bias",
       "legacy_ids": [
         "brali:choice-supportive-bias-check-in"
+      ]
+    },
+    {
+      "id": "brali:protocol:choose-best-resources",
+      "kind": "protocol",
+      "local_id": "brali:choose-best-resources",
+      "title": "Choose Resources for the Next Concrete Step",
+      "legacy_ids": [
+        "brali:choose-best-resources"
+      ]
+    },
+    {
+      "id": "brali:protocol:chunk-complex-ideas-for-clarity",
+      "kind": "protocol",
+      "local_id": "brali:chunk-complex-ideas-for-clarity",
+      "title": "Organize Complex Information Around One Decision",
+      "legacy_ids": [
+        "brali:chunk-complex-ideas-for-clarity"
       ]
     },
     {
@@ -16000,7 +16925,7 @@
       "id": "brali:protocol:circles-of-control-planner",
       "kind": "protocol",
       "local_id": "brali:circles-of-control-planner",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "title": "Separate Outcomes From Actions You Can Control",
       "legacy_ids": [
         "brali:circles-of-control-planner"
       ]
@@ -16012,6 +16937,24 @@
       "title": "Clarify Probabilities",
       "legacy_ids": [
         "brali:clarify-probabilities-risk-breakdown"
+      ]
+    },
+    {
+      "id": "brali:protocol:clarity-ladder-analyzer",
+      "kind": "protocol",
+      "local_id": "brali:clarity-ladder-analyzer",
+      "title": "Connect a General Point to a Concrete Example",
+      "legacy_ids": [
+        "brali:clarity-ladder-analyzer"
+      ]
+    },
+    {
+      "id": "brali:protocol:clustering-illusion-guard",
+      "kind": "protocol",
+      "local_id": "brali:clustering-illusion-guard",
+      "title": "Check a Streak Before Treating It as a Pattern",
+      "legacy_ids": [
+        "brali:clustering-illusion-guard"
       ]
     },
     {
@@ -16033,6 +16976,69 @@
       ]
     },
     {
+      "id": "brali:protocol:cognitive-dissonance-resolution",
+      "kind": "protocol",
+      "local_id": "brali:cognitive-dissonance-resolution",
+      "title": "Stress-Test a Belief With Strong Counter-Information",
+      "legacy_ids": [
+        "brali:cognitive-dissonance-resolution"
+      ]
+    },
+    {
+      "id": "brali:protocol:common-source-radar",
+      "kind": "protocol",
+      "local_id": "brali:common-source-radar",
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "legacy_ids": [
+        "brali:common-source-radar"
+      ]
+    },
+    {
+      "id": "brali:protocol:communication-blocks-scheduler",
+      "kind": "protocol",
+      "local_id": "brali:communication-blocks-scheduler",
+      "title": "Batch Routine Messages Around Real Response Obligations",
+      "legacy_ids": [
+        "brali:communication-blocks-scheduler"
+      ]
+    },
+    {
+      "id": "brali:protocol:confidence-calibration-habit",
+      "kind": "protocol",
+      "local_id": "brali:confidence-calibration-habit",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "legacy_ids": [
+        "brali:confidence-calibration-habit"
+      ]
+    },
+    {
+      "id": "brali:protocol:confirmation-bias-challenge",
+      "kind": "protocol",
+      "local_id": "brali:confirmation-bias-challenge",
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "legacy_ids": [
+        "brali:confirmation-bias-challenge"
+      ]
+    },
+    {
+      "id": "brali:protocol:conjunction-fallacy-coach",
+      "kind": "protocol",
+      "local_id": "brali:conjunction-fallacy-coach",
+      "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+      "legacy_ids": [
+        "brali:conjunction-fallacy-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:consider-the-opposite",
+      "kind": "protocol",
+      "local_id": "brali:consider-the-opposite",
+      "title": "Before You Commit to a Judgment, Consider the Opposite",
+      "legacy_ids": [
+        "brali:consider-the-opposite"
+      ]
+    },
+    {
       "id": "brali:protocol:consistency-bias-tracker",
       "kind": "protocol",
       "local_id": "brali:consistency-bias-tracker",
@@ -16051,12 +17057,66 @@
       ]
     },
     {
+      "id": "brali:protocol:context-guard-for-decisions",
+      "kind": "protocol",
+      "local_id": "brali:context-guard-for-decisions",
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "legacy_ids": [
+        "brali:context-guard-for-decisions"
+      ]
+    },
+    {
+      "id": "brali:protocol:context-planner-for-writers",
+      "kind": "protocol",
+      "local_id": "brali:context-planner-for-writers",
+      "title": "Write a Context Brief Before Drafting",
+      "legacy_ids": [
+        "brali:context-planner-for-writers"
+      ]
+    },
+    {
+      "id": "brali:protocol:contextual-language-coach",
+      "kind": "protocol",
+      "local_id": "brali:contextual-language-coach",
+      "title": "Rehearse One Real Language Scenario",
+      "legacy_ids": [
+        "brali:contextual-language-coach"
+      ]
+    },
+    {
       "id": "brali:protocol:continued-influence-effect-misinformation",
       "kind": "protocol",
       "local_id": "brali:continued-influence-effect-misinformation",
       "title": "Combat the Continued Influence Effect",
       "legacy_ids": [
         "brali:continued-influence-effect-misinformation"
+      ]
+    },
+    {
+      "id": "brali:protocol:control-to-action-compass",
+      "kind": "protocol",
+      "local_id": "brali:control-to-action-compass",
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "legacy_ids": [
+        "brali:control-to-action-compass"
+      ]
+    },
+    {
+      "id": "brali:protocol:conversational-storytelling-coach",
+      "kind": "protocol",
+      "local_id": "brali:conversational-storytelling-coach",
+      "title": "Use a Short Story to Explain One Point in Conversation",
+      "legacy_ids": [
+        "brali:conversational-storytelling-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:coot-ai-growth-journal",
+      "kind": "protocol",
+      "local_id": "brali:coot-ai-growth-journal",
+      "title": "Turn an AI Reflection into One Next Action",
+      "legacy_ids": [
+        "brali:coot-ai-growth-journal"
       ]
     },
     {
@@ -16069,12 +17129,39 @@
       ]
     },
     {
+      "id": "brali:protocol:creativity-within-constraints",
+      "kind": "protocol",
+      "local_id": "brali:creativity-within-constraints",
+      "title": "Use One Constraint to Produce a Different Creative Draft",
+      "legacy_ids": [
+        "brali:creativity-within-constraints"
+      ]
+    },
+    {
+      "id": "brali:protocol:cut-your-losses-sunk-cost",
+      "kind": "protocol",
+      "local_id": "brali:cut-your-losses-sunk-cost",
+      "title": "Judge a Commitment by What Comes Next",
+      "legacy_ids": [
+        "brali:cut-your-losses-sunk-cost"
+      ]
+    },
+    {
       "id": "brali:protocol:daily-gratitude-journal-three-things",
       "kind": "protocol",
       "local_id": "brali:daily-gratitude-journal-three-things",
       "title": "Specific Gratitude Note",
       "legacy_ids": [
         "brali:daily-gratitude-journal-three-things"
+      ]
+    },
+    {
+      "id": "brali:protocol:daily-priority-review-coach",
+      "kind": "protocol",
+      "local_id": "brali:daily-priority-review-coach",
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "legacy_ids": [
+        "brali:daily-priority-review-coach"
       ]
     },
     {
@@ -16111,6 +17198,33 @@
       "title": "Deepen Memory with Levels of Processing",
       "legacy_ids": [
         "brali:deepen-memory-levels-of-processing"
+      ]
+    },
+    {
+      "id": "brali:protocol:default-choice-audit",
+      "kind": "protocol",
+      "local_id": "brali:default-choice-audit",
+      "title": "Audit a Default Before Letting It Decide for You",
+      "legacy_ids": [
+        "brali:default-choice-audit"
+      ]
+    },
+    {
+      "id": "brali:protocol:deliberate-email-checking-windows",
+      "kind": "protocol",
+      "local_id": "brali:deliberate-email-checking-windows",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "legacy_ids": [
+        "brali:deliberate-email-checking-windows"
+      ]
+    },
+    {
+      "id": "brali:protocol:ergonomic-workspace-assessment",
+      "kind": "protocol",
+      "local_id": "brali:ergonomic-workspace-assessment",
+      "title": "Audit Workspace Friction Before Buying More Gear",
+      "legacy_ids": [
+        "brali:ergonomic-workspace-assessment"
       ]
     },
     {
@@ -16213,12 +17327,30 @@
       ]
     },
     {
+      "id": "brali:protocol:genuine-micro-conversation",
+      "kind": "protocol",
+      "local_id": "brali:genuine-micro-conversation",
+      "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+      "legacy_ids": [
+        "brali:genuine-micro-conversation"
+      ]
+    },
+    {
       "id": "brali:protocol:goal-journaling-insights",
       "kind": "protocol",
       "local_id": "brali:goal-journaling-insights",
       "title": "Goal Journal Review",
       "legacy_ids": [
         "brali:goal-journaling-insights"
+      ]
+    },
+    {
+      "id": "brali:protocol:grayscale-phone-friction",
+      "kind": "protocol",
+      "local_id": "brali:grayscale-phone-friction",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "legacy_ids": [
+        "brali:grayscale-phone-friction"
       ]
     },
     {
@@ -16285,6 +17417,15 @@
       ]
     },
     {
+      "id": "brali:protocol:if-then-rules-productivity",
+      "kind": "protocol",
+      "local_id": "brali:if-then-rules-productivity",
+      "title": "Turn a Good Intention into an If-Then Plan",
+      "legacy_ids": [
+        "brali:if-then-rules-productivity"
+      ]
+    },
+    {
       "id": "brali:protocol:intent-vs-accident-coach",
       "kind": "protocol",
       "local_id": "brali:intent-vs-accident-coach",
@@ -16300,6 +17441,15 @@
       "title": "Understand Motivations",
       "legacy_ids": [
         "brali:intrinsic-vs-extrinsic-motivation-check"
+      ]
+    },
+    {
+      "id": "brali:protocol:judge-decisions-by-process",
+      "kind": "protocol",
+      "local_id": "brali:judge-decisions-by-process",
+      "title": "Review a Decision Using What Was Known at the Time",
+      "legacy_ids": [
+        "brali:judge-decisions-by-process"
       ]
     },
     {
@@ -16378,7 +17528,7 @@
       "id": "brali:protocol:mood-memory-matcher",
       "kind": "protocol",
       "local_id": "brali:mood-memory-matcher",
-      "title": "Use Mood to Boost Memory",
+      "title": "Use Mood Context Carefully When Practicing Recall",
       "legacy_ids": [
         "brali:mood-memory-matcher"
       ]
@@ -16402,12 +17552,57 @@
       ]
     },
     {
+      "id": "brali:protocol:oblique-strategies-prompt-cards",
+      "kind": "protocol",
+      "local_id": "brali:oblique-strategies-prompt-cards",
+      "title": "Use One Random Constraint to Break a Creative Stalemate",
+      "legacy_ids": [
+        "brali:oblique-strategies-prompt-cards"
+      ]
+    },
+    {
       "id": "brali:protocol:pause-before-assuming-hostility",
       "kind": "protocol",
       "local_id": "brali:pause-before-assuming-hostility",
       "title": "Pause Before Assuming Hostility",
       "legacy_ids": [
         "brali:pause-before-assuming-hostility"
+      ]
+    },
+    {
+      "id": "brali:protocol:phase-transition-ritual-tracker",
+      "kind": "protocol",
+      "local_id": "brali:phase-transition-ritual-tracker",
+      "title": "Create a Clear Handoff Between Two Activities",
+      "legacy_ids": [
+        "brali:phase-transition-ritual-tracker"
+      ]
+    },
+    {
+      "id": "brali:protocol:plan-tasks-by-peak-energy",
+      "kind": "protocol",
+      "local_id": "brali:plan-tasks-by-peak-energy",
+      "title": "Match Demanding Work to Your Own High-Energy Windows",
+      "legacy_ids": [
+        "brali:plan-tasks-by-peak-energy"
+      ]
+    },
+    {
+      "id": "brali:protocol:post-meal-walk",
+      "kind": "protocol",
+      "local_id": "brali:post-meal-walk",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "legacy_ids": [
+        "brali:post-meal-walk"
+      ]
+    },
+    {
+      "id": "brali:protocol:prequestions-before-learning",
+      "kind": "protocol",
+      "local_id": "brali:prequestions-before-learning",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "legacy_ids": [
+        "brali:prequestions-before-learning"
       ]
     },
     {
@@ -16429,6 +17624,15 @@
       ]
     },
     {
+      "id": "brali:protocol:process-of-elimination-tracker",
+      "kind": "protocol",
+      "local_id": "brali:process-of-elimination-tracker",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "legacy_ids": [
+        "brali:process-of-elimination-tracker"
+      ]
+    },
+    {
       "id": "brali:protocol:proportionality-bias-big-events",
       "kind": "protocol",
       "local_id": "brali:proportionality-bias-big-events",
@@ -16447,10 +17651,28 @@
       ]
     },
     {
+      "id": "brali:protocol:qa-checklist-templates-runbook",
+      "kind": "protocol",
+      "local_id": "brali:qa-checklist-templates-runbook",
+      "title": "Build a QA Checklist from Real Failure Modes",
+      "legacy_ids": [
+        "brali:qa-checklist-templates-runbook"
+      ]
+    },
+    {
+      "id": "brali:protocol:qa-clear-feedback-templates",
+      "kind": "protocol",
+      "local_id": "brali:qa-clear-feedback-templates",
+      "title": "Write an Actionable QA Report Another Person Can Use",
+      "legacy_ids": [
+        "brali:qa-clear-feedback-templates"
+      ]
+    },
+    {
       "id": "brali:protocol:question-default-portions",
       "kind": "protocol",
       "local_id": "brali:question-default-portions",
-      "title": "When Consuming (e",
+      "title": "Rethink Default Quantities",
       "legacy_ids": [
         "brali:question-default-portions"
       ]
@@ -16471,6 +17693,15 @@
       "title": "Question Purposeful Explanations",
       "legacy_ids": [
         "brali:question-purpose-in-random-events"
+      ]
+    },
+    {
+      "id": "brali:protocol:ready-to-resume-plan",
+      "kind": "protocol",
+      "local_id": "brali:ready-to-resume-plan",
+      "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+      "legacy_ids": [
+        "brali:ready-to-resume-plan"
       ]
     },
     {
@@ -16555,12 +17786,39 @@
       ]
     },
     {
+      "id": "brali:protocol:savor-positive-moment",
+      "kind": "protocol",
+      "local_id": "brali:savor-positive-moment",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "legacy_ids": [
+        "brali:savor-positive-moment"
+      ]
+    },
+    {
       "id": "brali:protocol:searchless-memory-coach",
       "kind": "protocol",
       "local_id": "brali:searchless-memory-coach",
       "title": "Combat the Google Effect",
       "legacy_ids": [
         "brali:searchless-memory-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:self-explain-what-you-learn",
+      "kind": "protocol",
+      "local_id": "brali:self-explain-what-you-learn",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "legacy_ids": [
+        "brali:self-explain-what-you-learn"
+      ]
+    },
+    {
+      "id": "brali:protocol:separate-to-decide-decision-evaluator",
+      "kind": "protocol",
+      "local_id": "brali:separate-to-decide-decision-evaluator",
+      "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+      "legacy_ids": [
+        "brali:separate-to-decide-decision-evaluator"
       ]
     },
     {
@@ -16618,6 +17876,24 @@
       ]
     },
     {
+      "id": "brali:protocol:stop-caffeine-after-lunch",
+      "kind": "protocol",
+      "local_id": "brali:stop-caffeine-after-lunch",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "legacy_ids": [
+        "brali:stop-caffeine-after-lunch"
+      ]
+    },
+    {
+      "id": "brali:protocol:structure-writing-with-visuals",
+      "kind": "protocol",
+      "local_id": "brali:structure-writing-with-visuals",
+      "title": "Structure Dense Writing for Fast Navigation",
+      "legacy_ids": [
+        "brali:structure-writing-with-visuals"
+      ]
+    },
+    {
       "id": "brali:protocol:suggestibility-defense-trainer",
       "kind": "protocol",
       "local_id": "brali:suggestibility-defense-trainer",
@@ -16627,12 +17903,30 @@
       ]
     },
     {
+      "id": "brali:protocol:sunk-cost-decision-coach",
+      "kind": "protocol",
+      "local_id": "brali:sunk-cost-decision-coach",
+      "title": "Review a High-Commitment Continue-or-Stop Decision",
+      "legacy_ids": [
+        "brali:sunk-cost-decision-coach"
+      ]
+    },
+    {
       "id": "brali:protocol:talk-about-fears-coach",
       "kind": "protocol",
       "local_id": "brali:talk-about-fears-coach",
       "title": "Talk About a Fear With Someone You Trust",
       "legacy_ids": [
         "brali:talk-about-fears-coach"
+      ]
+    },
+    {
+      "id": "brali:protocol:temptation-bundling",
+      "kind": "protocol",
+      "local_id": "brali:temptation-bundling",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "legacy_ids": [
+        "brali:temptation-bundling"
       ]
     },
     {
@@ -16654,6 +17948,15 @@
       ]
     },
     {
+      "id": "brali:protocol:top-3-daily-focus-planner",
+      "kind": "protocol",
+      "local_id": "brali:top-3-daily-focus-planner",
+      "title": "Choose Up to Three Priority Outcomes for the Day",
+      "legacy_ids": [
+        "brali:top-3-daily-focus-planner"
+      ]
+    },
+    {
       "id": "brali:protocol:verify-claims-ask-for-sources",
       "kind": "protocol",
       "local_id": "brali:verify-claims-ask-for-sources",
@@ -16672,12 +17975,39 @@
       ]
     },
     {
+      "id": "brali:protocol:visible-progress-monitoring",
+      "kind": "protocol",
+      "local_id": "brali:visible-progress-monitoring",
+      "title": "Make Goal Progress Visible Instead of Guessing",
+      "legacy_ids": [
+        "brali:visible-progress-monitoring"
+      ]
+    },
+    {
       "id": "brali:protocol:visual-mnemonics-memory-booster",
       "kind": "protocol",
       "local_id": "brali:visual-mnemonics-memory-booster",
       "title": "Improve Memory: - Use Visuals: Add Images to Your Notes or Presentations",
       "legacy_ids": [
         "brali:visual-mnemonics-memory-booster"
+      ]
+    },
+    {
+      "id": "brali:protocol:walking-meeting-assistant",
+      "kind": "protocol",
+      "local_id": "brali:walking-meeting-assistant",
+      "title": "Turn a Screen-Free Meeting Into a Walking Meeting",
+      "legacy_ids": [
+        "brali:walking-meeting-assistant"
+      ]
+    },
+    {
+      "id": "brali:protocol:weekly-goal-review-coach",
+      "kind": "protocol",
+      "local_id": "brali:weekly-goal-review-coach",
+      "title": "Run a Weekly Review That Produces One Clear Change",
+      "legacy_ids": [
+        "brali:weekly-goal-review-coach"
       ]
     },
     {
@@ -16727,6 +18057,96 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1002-1348-9585-12408",
+      "kind": "research-candidate",
+      "local_id": "10.1002/1348-9585.12408",
+      "title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "legacy_ids": [
+        "crossref:10.1002/1348-9585.12408"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s00426-026-02265-x",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s00426-026-02265-x",
+      "title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "legacy_ids": [
+        "crossref:10.1007/s00426-026-02265-x"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s10462-026-11665-9",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s10462-026-11665-9",
+      "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "legacy_ids": [
+        "crossref:10.1007/s10462-026-11665-9"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s10648-025-10001-x",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s10648-025-10001-x",
+      "title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "legacy_ids": [
+        "crossref:10.1007/s10648-025-10001-x"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s10648-025-10017-3",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s10648-025-10017-3",
+      "title": "Enhancing the Peer-Feedback Process Through Instructional Support: A Meta-Analysis",
+      "legacy_ids": [
+        "crossref:10.1007/s10648-025-10017-3"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s10648-025-10075-7",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s10648-025-10075-7",
+      "title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "legacy_ids": [
+        "crossref:10.1007/s10648-025-10075-7"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s10916-026-02338-9",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s10916-026-02338-9",
+      "title": "Reducing Work-Related Screen-Time in Healthcare Workers During Leisure Time (REDUCE SCREEN) – A Randomized Controlled Trial",
+      "legacy_ids": [
+        "crossref:10.1007/s10916-026-02338-9"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s12144-026-09323-y",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s12144-026-09323-y",
+      "title": "Examining the relationship between supervisory feedback characteristics and employee feedback processing: a systematic review and meta-analysis",
+      "legacy_ids": [
+        "crossref:10.1007/s12144-026-09323-y"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1007-s40279-022-01808-7",
+      "kind": "research-candidate",
+      "local_id": "10.1007/s40279-022-01808-7",
+      "title": "After Dinner Rest a While, After Supper Walk a Mile? A Systematic Review with Meta-analysis on the Acute Postprandial Glycemic Response to Exercise Before and After Meal Ingestion in Healthy Subjects and Patients with Impaired Glucose Tolerance",
+      "legacy_ids": [
+        "crossref:10.1007/s40279-022-01808-7"
+      ],
+      "source": "crossref"
+    },
+    {
       "id": "brali:research-candidate:10-1016-j-actpsy-2025-106168",
       "kind": "research-candidate",
       "local_id": "10.1016/j.actpsy.2025.106168",
@@ -16737,12 +18157,52 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1016-j-chb-2014-11-005",
+      "kind": "research-candidate",
+      "local_id": "10.1016/j.chb.2014.11.005",
+      "title": "Checking email less frequently reduces stress",
+      "legacy_ids": [
+        "crossref:10.1016/j.chb.2014.11.005"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1016-j-chb-2019-07-016",
+      "kind": "research-candidate",
+      "local_id": "10.1016/j.chb.2019.07.016",
+      "title": "Batching smartphone notifications can improve well-being",
+      "legacy_ids": [
+        "crossref:10.1016/j.chb.2019.07.016"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1016-j-giq-2026-102106",
+      "kind": "research-candidate",
+      "local_id": "10.1016/j.giq.2026.102106",
+      "title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "legacy_ids": [
+        "crossref:10.1016/j.giq.2026.102106"
+      ],
+      "source": "crossref"
+    },
+    {
       "id": "brali:research-candidate:10-1016-j-jad-2025-120481",
       "kind": "research-candidate",
       "local_id": "10.1016/j.jad.2025.120481",
       "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
       "legacy_ids": [
         "crossref:10.1016/j.jad.2025.120481"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1016-j-jnha-2026-100940",
+      "kind": "research-candidate",
+      "local_id": "10.1016/j.jnha.2026.100940",
+      "title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+      "legacy_ids": [
+        "crossref:10.1016/j.jnha.2026.100940"
       ],
       "source": "crossref"
     },
@@ -16767,12 +18227,32 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1016-j-obhdp-2020-09-003",
+      "kind": "research-candidate",
+      "local_id": "10.1016/j.obhdp.2020.09.003",
+      "title": "Teaching temptation bundling to boost exercise: A field experiment",
+      "legacy_ids": [
+        "crossref:10.1016/j.obhdp.2020.09.003"
+      ],
+      "source": "crossref"
+    },
+    {
       "id": "brali:research-candidate:10-1016-j-smrv-2021-101532",
       "kind": "research-candidate",
       "local_id": "10.1016/j.smrv.2021.101532",
       "title": "Behavioral interventions to extend sleep duration: A systematic review and meta-analysis",
       "legacy_ids": [
         "crossref:10.1016/j.smrv.2021.101532"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1037-0022-3514-47-6-1231",
+      "kind": "research-candidate",
+      "local_id": "10.1037/0022-3514.47.6.1231",
+      "title": "Considering the opposite: A corrective strategy for social judgment",
+      "legacy_ids": [
+        "crossref:10.1037/0022-3514.47.6.1231"
       ],
       "source": "crossref"
     },
@@ -16787,6 +18267,16 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1037-a0024192",
+      "kind": "research-candidate",
+      "local_id": "10.1037/a0024192",
+      "title": "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals",
+      "legacy_ids": [
+        "pubmed:21688924"
+      ],
+      "source": "europepmc"
+    },
+    {
       "id": "brali:research-candidate:10-1037-a0037559",
       "kind": "research-candidate",
       "local_id": "10.1037/a0037559",
@@ -16797,12 +18287,52 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1037-bul0000025",
+      "kind": "research-candidate",
+      "local_id": "10.1037/bul0000025",
+      "title": "Does monitoring goal progress promote goal attainment? A meta-analysis of the experimental evidence",
+      "legacy_ids": [
+        "pubmed:26479070"
+      ],
+      "source": "europepmc"
+    },
+    {
       "id": "brali:research-candidate:10-1037-xlm0001634",
       "kind": "research-candidate",
       "local_id": "10.1037/xlm0001634",
       "title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
       "legacy_ids": [
         "crossref:10.1037/xlm0001634"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1038-s41467-026-71669-5",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41467-026-71669-5",
+      "title": "Spoken disagreement is more constructive than written disagreement",
+      "legacy_ids": [
+        "crossref:10.1038/s41467-026-71669-5"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1038-s41562-025-02253-y",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41562-025-02253-y",
+      "title": "Systematic review and meta-analysis of educational approaches to reduce cognitive biases among students",
+      "legacy_ids": [
+        "crossref:10.1038/s41562-025-02253-y"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1038-s41562-025-02369-1",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41562-025-02369-1",
+      "title": "A systematic review and network meta-analysis of randomized controlled trials of well-being-focused interventions",
+      "legacy_ids": [
+        "crossref:10.1038/s41562-025-02369-1"
       ],
       "source": "crossref"
     },
@@ -16817,6 +18347,206 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1038-s41598-026-42312-6",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41598-026-42312-6",
+      "title": "Relying on AI at work reduces self-efficacy, ownership, and meaning while active collaboration mitigates the effects",
+      "legacy_ids": [
+        "crossref:10.1038/s41598-026-42312-6"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1038-s41598-026-46218-1",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41598-026-46218-1",
+      "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "legacy_ids": [
+        "crossref:10.1038/s41598-026-46218-1"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1038-s41598-026-69126-w",
+      "kind": "research-candidate",
+      "local_id": "10.1038/s41598-026-69126-w",
+      "title": "Model-based control predicts financial behaviour change: a randomised behavioural trial of habit substitution and goal-setting assessed using computational phenotyping",
+      "legacy_ids": [
+        "crossref:10.1038/s41598-026-69126-w"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1080-10463283-2024-2334563",
+      "kind": "research-candidate",
+      "local_id": "10.1080/10463283.2024.2334563",
+      "title": "The when and how of planning: Meta-analysis of the scope and components of implementation intentions in 642 tests",
+      "legacy_ids": [
+        "crossref:10.1080/10463283.2024.2334563"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1093-eurjpc-zwag079",
+      "kind": "research-candidate",
+      "local_id": "10.1093/eurjpc/zwag079",
+      "title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+      "legacy_ids": [
+        "crossref:10.1093/eurjpc/zwag079"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1093-pnasnexus-pgaf017",
+      "kind": "research-candidate",
+      "local_id": "10.1093/pnasnexus/pgaf017",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "legacy_ids": [
+        "crossref:10.1093/pnasnexus/pgaf017"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1093-sleep-zsae230",
+      "kind": "research-candidate",
+      "local_id": "10.1093/sleep/zsae230",
+      "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "legacy_ids": [
+        "crossref:10.1093/sleep/zsae230"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1111-aphw-70134",
+      "kind": "research-candidate",
+      "local_id": "10.1111/aphw.70134",
+      "title": "Effectiveness of savoring interventions: A systematic review and meta-analysis of randomized controlled trials",
+      "legacy_ids": [
+        "crossref:10.1111/aphw.70134"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1111-dom-71052",
+      "kind": "research-candidate",
+      "local_id": "10.1111/dom.71052",
+      "title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+      "legacy_ids": [
+        "crossref:10.1111/dom.71052"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1111-obr-70152",
+      "kind": "research-candidate",
+      "local_id": "10.1111/obr.70152",
+      "title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "legacy_ids": [
+        "crossref:10.1111/obr.70152"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1162-99608f92-0e98898d",
+      "kind": "research-candidate",
+      "local_id": "10.1162/99608f92.0e98898d",
+      "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+      "legacy_ids": [
+        "crossref:10.1162/99608f92.0e98898d"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-00187267251407641",
+      "kind": "research-candidate",
+      "local_id": "10.1177/00187267251407641",
+      "title": "The leisure crafting intervention: Effects on work and non-work outcomes and the moderating role of age",
+      "legacy_ids": [
+        "crossref:10.1177/00187267251407641"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-02654075261420989",
+      "kind": "research-candidate",
+      "local_id": "10.1177/02654075261420989",
+      "title": "A systematic review of technology-mediated conflict management in couples",
+      "legacy_ids": [
+        "crossref:10.1177/02654075261420989"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-09567976261460772",
+      "kind": "research-candidate",
+      "local_id": "10.1177/09567976261460772",
+      "title": "Replication of Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+      "legacy_ids": [
+        "pubmed:42456006"
+      ],
+      "source": "europepmc"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-09567976261488042",
+      "kind": "research-candidate",
+      "local_id": "10.1177/09567976261488042",
+      "title": "Retraction: Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+      "legacy_ids": [
+        "crossref:10.1177/09567976261488042"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-10591478251400469",
+      "kind": "research-candidate",
+      "local_id": "10.1177/10591478251400469",
+      "title": "Give Me a Choice! A Field Experiment on Task Choice Enabled by Wearables",
+      "legacy_ids": [
+        "crossref:10.1177/10591478251400469"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-1948550613502990",
+      "kind": "research-candidate",
+      "local_id": "10.1177/1948550613502990",
+      "title": "Is Efficiency Overrated?: Minimal Social Interactions Lead to Belonging and Positive Affect",
+      "legacy_ids": [
+        "crossref:10.1177/1948550613502990"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1177-19485506261444068",
+      "kind": "research-candidate",
+      "local_id": "10.1177/19485506261444068",
+      "title": "Harnessing Artificial Intelligence to Facilitate Difficult Conversations",
+      "legacy_ids": [
+        "crossref:10.1177/19485506261444068"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1186-s12889-026-26484-4",
+      "kind": "research-candidate",
+      "local_id": "10.1186/s12889-026-26484-4",
+      "title": "Micro-exercise breaks every hour: a feasible strategy to improve metabolic health in sedentary office workers",
+      "legacy_ids": [
+        "crossref:10.1186/s12889-026-26484-4"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1186-s12966-026-01915-y",
+      "kind": "research-candidate",
+      "local_id": "10.1186/s12966-026-01915-y",
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "legacy_ids": [
+        "crossref:10.1186/s12966-026-01915-y"
+      ],
+      "source": "crossref"
+    },
+    {
       "id": "brali:research-candidate:10-1186-s12966-026-01953-6",
       "kind": "research-candidate",
       "local_id": "10.1186/s12966-026-01953-6",
@@ -16827,12 +18557,82 @@
       "source": "crossref"
     },
     {
+      "id": "brali:research-candidate:10-1186-s41235-026-00708-y",
+      "kind": "research-candidate",
+      "local_id": "10.1186/s41235-026-00708-y",
+      "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "legacy_ids": [
+        "crossref:10.1186/s41235-026-00708-y"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1287-orsc-2017-1184",
+      "kind": "research-candidate",
+      "local_id": "10.1287/orsc.2017.1184",
+      "title": "Tasks Interrupted: How Anticipating Time Pressure on Resumption of an Interrupted Task Causes Attention Residue and Low Performance on Interrupting Tasks and How a Ready-to-Resume Plan Mitigates the Effects",
+      "legacy_ids": [
+        "crossref:10.1287/orsc.2017.1184"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1371-journal-pone-0245066",
+      "kind": "research-candidate",
+      "local_id": "10.1371/journal.pone.0245066",
+      "title": "Does time management work? A meta-analysis",
+      "legacy_ids": [
+        "pubmed:33428644"
+      ],
+      "source": "europepmc"
+    },
+    {
       "id": "brali:research-candidate:10-1371-journal-pone-0272460",
       "kind": "research-candidate",
       "local_id": "10.1371/journal.pone.0272460",
       "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
       "legacy_ids": [
         "crossref:10.1371/journal.pone.0272460"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-1371-journal-pone-0347878",
+      "kind": "research-candidate",
+      "local_id": "10.1371/journal.pone.0347878",
+      "title": "The impact of walking on creative thinking: A systematic review and meta-analysis",
+      "legacy_ids": [
+        "crossref:10.1371/journal.pone.0347878"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-2139-ssrn-5395709",
+      "kind": "research-candidate",
+      "local_id": "10.2139/ssrn.5395709",
+      "title": "Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews",
+      "legacy_ids": [
+        "crossref:10.2139/ssrn.5395709"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-2196-56824",
+      "kind": "research-candidate",
+      "local_id": "10.2196/56824",
+      "title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "legacy_ids": [
+        "crossref:10.2196/56824"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-3389-fdgth-2026-1816095",
+      "kind": "research-candidate",
+      "local_id": "10.3389/fdgth.2026.1816095",
+      "title": "A cross-over feasibility trial of smartphone grayscale mode in medical students",
+      "legacy_ids": [
+        "crossref:10.3389/fdgth.2026.1816095"
       ],
       "source": "crossref"
     },
@@ -16853,6 +18653,36 @@
       "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
       "legacy_ids": [
         "crossref:10.3389/fpsyg.2018.01588"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-3389-fpsyg-2021-565202",
+      "kind": "research-candidate",
+      "local_id": "10.3389/fpsyg.2021.565202",
+      "title": "A Meta-Analysis of the Effects of Mental Contrasting With Implementation Intentions on Goal Attainment",
+      "legacy_ids": [
+        "crossref:10.3389/fpsyg.2021.565202"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-3389-fpsyg-2026-1802759",
+      "kind": "research-candidate",
+      "local_id": "10.3389/fpsyg.2026.1802759",
+      "title": "Effects of green exercise on mental health: a systematic review and meta-analysis",
+      "legacy_ids": [
+        "crossref:10.3389/fpsyg.2026.1802759"
+      ],
+      "source": "crossref"
+    },
+    {
+      "id": "brali:research-candidate:10-3389-fpubh-2026-1906525",
+      "kind": "research-candidate",
+      "local_id": "10.3389/fpubh.2026.1906525",
+      "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "legacy_ids": [
+        "crossref:10.3389/fpubh.2026.1906525"
       ],
       "source": "crossref"
     },

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "last_verified": "2026-09-15",
+  "last_verified": "2026-09-16",
   "locales": {
     "ru": {
       "status": "reviewed-partial",
@@ -73,9 +73,29 @@
             "production_sha": "a318fc3e00ee37ba3c1b6d5a4e88bd1d87e2218c",
             "production_run": 35013795774,
             "all_declared_routes_at_320px": "passed",
-            "representative_viewports": [768, 1280],
+            "representative_viewports": [
+              768,
+              1280
+            ],
             "contrast_gate": "passed",
             "keyboard_and_aria": "passed"
+          }
+        },
+        {
+          "id": "ru-source-snapshot-refresh-2026-09-16",
+          "surface": "library",
+          "state": "closed",
+          "release_blocking": false,
+          "issue": 279,
+          "scope": "RU Growth Library records whose canonical English title/subtitle/description was rewritten by the 2026-09-16 claim-cleanup and app-claim removal work",
+          "reason": "The canonical English records were rewritten to bounded claim-cleaned wording while the RU localization layer had already been authored against the same bounded semantics during the issue-210 expansion. Each of the 68 stale source snapshots was re-checked against the new canonical text: the localized title/subtitle/description still matches the canonical meaning, so only the embedded source snapshot was refreshed via scripts/refresh-localization-source-snapshots.mjs with an explicit review manifest.",
+          "release_rule": "Reopen automatically as actionable debt if canonical source freshness, language audit or rendered-page checks regress for these records.",
+          "closure_evidence": {
+            "pr": 280,
+            "branch": "deep-run/restore-longform-articles-2026-09-16",
+            "date": "2026-09-16",
+            "refreshed_records": 68,
+            "tool": "scripts/refresh-localization-source-snapshots.mjs"
           }
         }
       ]
@@ -140,6 +160,23 @@
           "scope": "Query Playground, Agent Evaluation, demos, integration kits, research articles and gaps, problem/topic/question collections, updates, evidence/trust utilities, contact/legal pages and other secondary human-interface routes",
           "reason": "These routes remain canonical English surfaces outside the declared German human-interface release. Localized pages must keep the English language boundary explicit; English-only secondary routes do not count as German localization coverage.",
           "release_rule": "If a secondary surface is promoted into primary German navigation or an exact German surface contract, add it to the locale contract and publish native German copy before retaining the same release claim."
+        },
+        {
+          "id": "de-source-snapshot-refresh-2026-09-16",
+          "surface": "library",
+          "state": "closed",
+          "release_blocking": false,
+          "issue": 279,
+          "scope": "DE Growth Library records whose canonical English title/subtitle/description was rewritten by the 2026-09-16 claim-cleanup and app-claim removal work",
+          "reason": "The canonical English records were rewritten to bounded claim-cleaned wording while the DE localization layer had already been authored against the same bounded semantics during the issue-210 expansion. Each of the 63 stale source snapshots was re-checked against the new canonical text: the localized title/subtitle/description still matches the canonical meaning, so only the embedded source snapshot was refreshed via scripts/refresh-localization-source-snapshots.mjs with an explicit review manifest.",
+          "release_rule": "Reopen automatically as actionable debt if canonical source freshness, language audit or rendered-page checks regress for these records.",
+          "closure_evidence": {
+            "pr": 280,
+            "branch": "deep-run/restore-longform-articles-2026-09-16",
+            "date": "2026-09-16",
+            "refreshed_records": 63,
+            "tool": "scripts/refresh-localization-source-snapshots.mjs"
+          }
         }
       ]
     }

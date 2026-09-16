@@ -9,9 +9,9 @@
   "question": "Which gradual practice or communication interventions improve everyday social confidence without over-medicalizing normal discomfort?",
   "evidence_target": "Prefer non-clinical or clearly bounded evidence with behavioral outcomes.",
   "guardrail": "Do not turn clinical social-anxiety treatment evidence into generic self-help claims.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/social-confidence/",
   "research_queries": [
     {
@@ -22,16 +22,39 @@
       ]
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
-  "trusted_protocols": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1177/1948550613502990",
+      "title": "Is Efficiency Overrated?: Minimal Social Interactions Lead to Belonging and Positive Affect",
+      "status": "propose-protocol",
+      "publication_date": "2013-09-12",
+      "reference_url": "https://doi.org/10.1177/1948550613502990"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "micro-conversation-belonging-affect-boundary-2014",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Is Efficiency Overrated?: Minimal Social Interactions Lead to Belonging and Positive Affect",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/micro-conversation-belonging-affect-boundary-2014/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "genuine-micro-conversation",
+      "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/genuine-micro-conversation/",
+      "evidence_status": "reviewed"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "social-confidence",
     "title": "Social Confidence",
     "domain_id": "communication-relationships",
     "status": "growth-gap",
-    "entries": 1,
-    "research_candidates": 0
+    "entries": 2,
+    "research_candidates": 1
   }
 }

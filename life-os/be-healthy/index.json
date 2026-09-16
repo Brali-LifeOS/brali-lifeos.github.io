@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "be-healthy",
   "title": "Be Healthy",
-  "description": "Discover simple ways to take care of your body and mind, keeping you feeling great.",
+  "description": "Everyday health and movement practices with clear evidence and safety boundaries — not diagnosis in a nicer font.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/be-healthy/",
   "machine_url": "https://brali-lifeos.github.io/life-os/be-healthy/index.json",
   "indexable": true,
@@ -14,13 +14,13 @@
   },
   "counts": {
     "library_entries": 61,
-    "trusted_protocols": 3,
-    "reviewed": 3,
+    "trusted_protocols": 5,
+    "reviewed": 5,
     "practical": 0,
-    "pending_review": 0,
-    "restricted": 58,
-    "mapped_topics": 2,
-    "research_gaps": 1
+    "pending_review": 1,
+    "restricted": 55,
+    "mapped_topics": 4,
+    "research_gaps": 3
   },
   "topics": [
     {
@@ -32,8 +32,20 @@
     {
       "id": "sleep-circadian",
       "title": "Sleep & Circadian Rhythm",
-      "count": 1,
+      "count": 2,
       "url": "https://brali-lifeos.github.io/ontology/topics/sleep-circadian/"
+    },
+    {
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/digital-wellbeing/"
+    },
+    {
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/recovery-energy/"
     }
   ],
   "research_gaps": [
@@ -42,9 +54,27 @@
       "title": "Sleep & Circadian Rhythm",
       "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/"
+    },
+    {
+      "topic_id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/"
+    },
+    {
+      "topic_id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/"
     }
   ],
   "trusted_protocols": [
+    {
+      "slug": "stop-caffeine-after-lunch",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "ideal-sleep-hours-finder",
       "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
@@ -55,6 +85,12 @@
       "slug": "5-minute-meditation-habit-tracker",
       "title": "Try a Short Breath Meditation",
       "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "walking-meeting-assistant",
+      "title": "Turn a Screen-Free Meeting Into a Walking Meeting",
+      "url": "https://brali-lifeos.github.io/life-os/walking-meeting-assistant/",
       "evidence_status": "reviewed"
     },
     {
@@ -111,7 +147,7 @@
       "slug": "pause-before-checking-phone",
       "title": "Before You Pick up Your Phone or Go Online, Pause and Ask Yourself: ‘do",
       "url": "https://brali-lifeos.github.io/life-os/pause-before-checking-phone/",
-      "evidence_status": "restricted",
+      "evidence_status": "pending-review",
       "indexable": false
     },
     {
@@ -234,13 +270,6 @@
       "indexable": false
     },
     {
-      "slug": "walking-meeting-assistant",
-      "title": "Have Meetings While Walking, Whether in-Person or over the Phone",
-      "url": "https://brali-lifeos.github.io/life-os/walking-meeting-assistant/",
-      "evidence_status": "restricted",
-      "indexable": false
-    },
-    {
       "slug": "wait-before-brushing-after-acidic-foods",
       "title": "Hold Off on Brushing After Acidic Foods",
       "url": "https://brali-lifeos.github.io/life-os/wait-before-brushing-after-acidic-foods/",
@@ -316,6 +345,13 @@
       "url": "https://brali-lifeos.github.io/life-os/eyes-closed-morning-routine/",
       "evidence_status": "restricted",
       "indexable": false
+    },
+    {
+      "slug": "stop-caffeine-after-lunch",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "medication-reminder-savings",
@@ -437,13 +473,6 @@
       "indexable": false
     },
     {
-      "slug": "stop-caffeine-after-lunch",
-      "title": "Stop Drinking Caffeine After Lunch Each Day",
-      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
-      "evidence_status": "restricted",
-      "indexable": false
-    },
-    {
       "slug": "eat-fatty-fish-twice-weekly",
       "title": "Supercharge with Seafood",
       "url": "https://brali-lifeos.github.io/life-os/eat-fatty-fish-twice-weekly/",
@@ -468,6 +497,13 @@
       "slug": "5-minute-meditation-habit-tracker",
       "title": "Try a Short Breath Meditation",
       "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "walking-meeting-assistant",
+      "title": "Turn a Screen-Free Meeting Into a Walking Meeting",
+      "url": "https://brali-lifeos.github.io/life-os/walking-meeting-assistant/",
       "evidence_status": "reviewed",
       "indexable": true
     },

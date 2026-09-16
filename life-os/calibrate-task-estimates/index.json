@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:calibrate-task-estimates",
   "slug": "calibrate-task-estimates",
-  "title": "Balance Your Expectations",
-  "description": "Be realistic about task difficulty: - Set milestones: Break hard tasks into smaller, achievable steps. - Reassess easy tasks: Don’t rush through just because they seem simple. - Check your assumptions: Look at past experiences for patterns of over- or underestimation. Example: Planning a complex project? Start with a detailed breakdown to avoid feeling overwhelmed or underprepared.",
+  "title": "Calibrate Task Estimates With Planned vs Actual Work",
+  "description": "Define a concrete deliverable, make an initial estimate, record what completion actually required, note the main source of difference, and use that local record when planning similar work again.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
   "machine_url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "work-money",
+        "title": "Work & Money"
       }
     ],
     "topics": [
       {
-        "id": "cognitive-biases",
-        "title": "Cognitive Biases"
+        "id": "planning-prioritization",
+        "title": "Planning & Prioritization"
+      },
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +56,77 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:calibrate-task-estimates",
+    "language": "en",
+    "slug": "calibrate-task-estimates",
+    "url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
+    "title": "Calibrate Task Estimates With Planned vs Actual Work",
+    "description": "Define a concrete deliverable, make an initial estimate, record what completion actually required, note the main source of difference, and use that local record when planning similar work again.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "planning-prioritization",
+          "title": "Planning & Prioritization"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Write the deliverable and important assumptions, make an estimate that includes the work you currently know about, complete or reassess the task, record the actual conditions and the main reason for any difference, then consult that record before estimating similar work again.",
+    "check_in": "What did I estimate, what actually happened, what caused the largest difference, and what will I change in the next comparable estimate?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Balance Your Expectations"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/calibrate-task-estimates.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

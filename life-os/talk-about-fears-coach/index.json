@@ -49,7 +49,10 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:talk-about-fears-coach",
@@ -101,5 +104,13 @@
       "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-talk-about-your-mental-health/",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/talk-about-fears-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

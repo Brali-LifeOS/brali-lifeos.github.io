@@ -9,24 +9,113 @@
   "question": "Which lightweight decision-hygiene practices improve judgment or reduce avoidable errors outside tightly controlled laboratory tasks?",
   "evidence_target": "Prefer systematic reviews, meta-analyses, or field experiments on checklists, premortems, debiasing, or structured decision processes.",
   "guardrail": "Keep effects task-specific; do not promise that a checklist removes bias.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/decision-making/",
   "research_queries": [
     {
       "id": "work-decision-hygiene",
       "query": "decision making checklist premortem debiasing systematic review workplace",
       "risk_flags": []
+    },
+    {
+      "id": "work-human-ai-decision-calibration",
+      "query": "generative AI human AI collaboration workflow calibration delegation agency self-efficacy systematic review randomized experiment organizational",
+      "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1037/0022-3514.47.6.1231",
+      "title": "Considering the opposite: A corrective strategy for social judgment",
+      "status": "propose-protocol",
+      "publication_date": "1984-12-01",
+      "reference_url": "https://doi.org/10.1037/0022-3514.47.6.1231"
+    },
+    {
+      "id": "crossref:10.1038/s41562-025-02253-y",
+      "title": "Systematic review and meta-analysis of educational approaches to reduce cognitive biases among students",
+      "status": "support-existing",
+      "publication_date": "2025-08-26",
+      "reference_url": "https://doi.org/10.1038/s41562-025-02253-y"
+    },
+    {
+      "id": "crossref:10.1038/s41598-026-42312-6",
+      "title": "Relying on AI at work reduces self-efficacy, ownership, and meaning while active collaboration mitigates the effects",
+      "status": "propose-protocol",
+      "publication_date": "2026-03-15",
+      "reference_url": "https://doi.org/10.1038/s41598-026-42312-6"
+    },
+    {
+      "id": "crossref:10.1162/99608f92.0e98898d",
+      "title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+      "status": "propose-protocol",
+      "publication_date": "2026-04-30",
+      "reference_url": "https://doi.org/10.1162/99608f92.0e98898d"
+    },
+    {
+      "id": "crossref:10.2139/ssrn.5395709",
+      "title": "Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews",
+      "status": "propose-protocol",
+      "publication_date": "2025-08-18",
+      "reference_url": "https://doi.org/10.2139/ssrn.5395709"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "ai-review-correction-friction-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-29",
+      "source_title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/ai-review-correction-friction-boundary-2026/"
+    },
+    {
+      "id": "ai-structured-intake-human-judgment-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-29",
+      "source_title": "Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/ai-structured-intake-human-judgment-boundary-2026/"
+    },
+    {
+      "id": "consider-opposite-social-judgment-boundary-1984",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Considering the opposite: A corrective strategy for social judgment",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/consider-opposite-social-judgment-boundary-1984/"
+    },
+    {
+      "id": "debiasing-education-transfer-boundary-2025",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Systematic review and meta-analysis of educational approaches to reduce cognitive biases among students",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/debiasing-education-transfer-boundary-2025/"
+    },
+    {
+      "id": "human-first-ai-collaboration-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-26",
+      "source_title": "Relying on AI at work reduces self-efficacy, ownership, and meaning while active collaboration mitigates the effects",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/human-first-ai-collaboration-boundary-2026/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "ai-premortem-risk-planner",
       "title": "AI-Assisted Premortem",
       "url": "https://brali-lifeos.github.io/life-os/ai-premortem-risk-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "consider-the-opposite",
+      "title": "Before You Commit to a Judgment, Consider the Opposite",
+      "url": "https://brali-lifeos.github.io/life-os/consider-the-opposite/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "context-guard-for-decisions",
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
       "evidence_status": "practical"
     },
     {
@@ -36,21 +125,63 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "break-familiarity-bias",
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ab-test-learning-loop",
+      "title": "Compare Two Approaches and Learn From the Result",
+      "url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "decision-calibration-journal",
       "title": "Decision Calibration Journal",
       "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
       "evidence_status": "practical"
     },
     {
+      "slug": "avoid-contrast-effect",
+      "title": "Judge Each Option Against the Same Criteria",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "control-to-action-compass",
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "circles-of-control-planner",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "title": "Separate Outcomes From Actions You Can Control",
       "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
       "evidence_status": "practical"
     },
     {
-      "slug": "avoid-contrast-effect",
-      "title": "Judge Each Option Against the Same Criteria",
-      "url": "https://brali-lifeos.github.io/life-os/avoid-contrast-effect/",
+      "slug": "ai-decision-alternatives",
+      "title": "Use AI to Widen the Option Set, Not Make the Decision",
+      "url": "https://brali-lifeos.github.io/life-os/ai-decision-alternatives/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "process-of-elimination-tracker",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
       "evidence_status": "practical"
     }
   ],
@@ -60,7 +191,7 @@
     "title": "Decision Making",
     "domain_id": "focus-action",
     "status": "growth-gap",
-    "entries": 6,
-    "research_candidates": 0
+    "entries": 15,
+    "research_candidates": 5
   }
 }

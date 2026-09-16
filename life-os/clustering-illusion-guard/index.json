@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:clustering-illusion-guard",
   "slug": "clustering-illusion-guard",
-  "title": "Break the Clustering Illusion",
-  "description": "Train yourself to spot when you're overestimating the importance of random patterns or streaks. Here’s how: - Step back: Ask, “Is this pattern meaningful or could it be random?” - Check the data size: Patterns in small samples are often misleading—look for larger trends. - Seek expert advice: For complex data, consult someone with statistical expertise to avoid jumping to conclusions. Example: If you see a streak of good or bad luck, remind yourself that random events can cluster together without meaning anything.",
+  "title": "Check a Streak Before Treating It as a Pattern",
+  "description": "When a short streak looks meaningful, record the complete observation window and denominator, compare the cluster with the broader history, check whether measurement or operating conditions changed, and avoid changing a plan solely because the sequence looks striking.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
   "machine_url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -35,12 +35,16 @@
       {
         "id": "cognitive-biases",
         "title": "Cognitive Biases"
+      },
+      {
+        "id": "data-literacy",
+        "title": "Data Literacy"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +52,73 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:clustering-illusion-guard",
+    "language": "en",
+    "slug": "clustering-illusion-guard",
+    "url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
+    "title": "Check a Streak Before Treating It as a Pattern",
+    "description": "When a short streak looks meaningful, record the complete observation window and denominator, compare the cluster with the broader history, check whether measurement or operating conditions changed, and avoid changing a plan solely because the sequence looks striking.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        },
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Record what happened, the full period or set you are looking at, and the denominator behind the visible cluster. Compare it with the earlier history when available, note any change in measurement or operating conditions, identify plausible alternative explanations, and choose whether to act, gather more information or keep the current plan.",
+    "check_in": "What streak caught my attention, what is the full denominator and observation window, what changed in the context, and would I make the same decision if the sequence looked less visually striking?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Break the Clustering Illusion"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/clustering-illusion-guard.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

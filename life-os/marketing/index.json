@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "marketing",
   "title": "Marketing",
-  "description": "Boost your personal brand and communication with easy marketing hacks.",
+  "description": "Clarify audience, value, message, proof, and distribution without turning ordinary communication into growth-hacking theatre.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/marketing/",
   "machine_url": "https://brali-lifeos.github.io/life-os/marketing/index.json",
   "indexable": true,
@@ -19,18 +19,49 @@
     "practical": 1,
     "pending_review": 9,
     "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 4,
+    "research_gaps": 2
   },
   "topics": [
     {
       "id": "marketing-positioning",
       "title": "Marketing & Positioning",
-      "count": 10,
+      "count": 9,
       "url": "https://brali-lifeos.github.io/ontology/topics/marketing-positioning/"
+    },
+    {
+      "id": "data-literacy",
+      "title": "Data Literacy",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/data-literacy/"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/problem-solving/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
+    {
+      "topic_id": "problem-solving",
+      "title": "Problem Solving",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "ab-test-learning-loop",

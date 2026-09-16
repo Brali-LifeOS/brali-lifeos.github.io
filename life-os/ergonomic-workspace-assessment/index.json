@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:ergonomic-workspace-assessment",
   "slug": "ergonomic-workspace-assessment",
-  "title": "Set up Your Workspace to Be Comfortable and Efficient",
-  "description": "Set up your workspace to be comfortable and efficient. For example, adjust your chair and desk height, and use a keyboard tray to prevent strain.",
+  "title": "Audit Workspace Friction Before Buying More Gear",
+  "description": "Inspect where a workspace makes the actual task harder to see, reach, switch, connect, or reset; change one layout variable; and keep the change only when it removes friction without creating a new problem.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
   "machine_url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -57,14 +57,84 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
+    "trusted_protocol_feed": true,
     "research_gaps": [
       {
         "topic_id": "workspace",
         "stage": "discovery-ready",
         "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:ergonomic-workspace-assessment",
+    "language": "en",
+    "slug": "ergonomic-workspace-assessment",
+    "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+    "title": "Audit Workspace Friction Before Buying More Gear",
+    "description": "Inspect where a workspace makes the actual task harder to see, reach, switch, connect, or reset; change one layout variable; and keep the change only when it removes friction without creating a new problem.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        }
+      ],
+      "topics": [
+        {
+          "id": "workspace",
+          "title": "Workspace"
+        },
+        {
+          "id": "environment-design",
+          "title": "Environment Design"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "architecture",
+          "title": "Architecture"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-architector"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-architector",
+      "title": "As Architector"
+    },
+    "action": "Choose one frequent task, walk through it slowly, note every unnecessary reach, obstruction, visibility issue, cable move, device swap, or reset, rank the friction points, change one reversible layout variable, use the task again, and keep or undo the change based on what became easier or harder.",
+    "check_in": "Which step in the task had avoidable friction, what single workspace change did I make, and did it remove that friction without moving the problem somewhere else?",
+    "keywords": [
+      "As Architector",
+      "Life OS",
+      "Ergonomic Design"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/ergonomic-workspace-assessment.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

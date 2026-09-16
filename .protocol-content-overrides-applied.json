@@ -5,10 +5,17 @@
     "protocol-content-overrides-ab-test.json",
     "protocol-content-overrides-active-recall.json",
     "protocol-content-overrides-brainwriting.json",
+    "protocol-content-overrides-caffeine-cutoff.json",
     "protocol-content-overrides-claim-cleanup-batch-1.json",
     "protocol-content-overrides-claim-cleanup-batch-2.json",
     "protocol-content-overrides-claim-cleanup-batch-3a.json",
     "protocol-content-overrides-claim-cleanup-batch-3b.json",
+    "protocol-content-overrides-claim-cleanup-batch-4.json",
+    "protocol-content-overrides-claim-cleanup-batch-5.json",
+    "protocol-content-overrides-claim-cleanup-batch-6.json",
+    "protocol-content-overrides-claim-cleanup-batch-7.json",
+    "protocol-content-overrides-claim-cleanup-batch-8.json",
+    "protocol-content-overrides-claim-cleanup-batch-9.json",
     "protocol-content-overrides-conflict-repair.json",
     "protocol-content-overrides-control-circles.json",
     "protocol-content-overrides-deadline-sprint.json",
@@ -24,6 +31,13 @@
     "protocol-content-overrides-language-microsprint.json",
     "protocol-content-overrides-metacognitive-attention.json",
     "protocol-content-overrides-pmr.json",
+    "protocol-content-overrides-search-review-wave-1.json",
+    "protocol-content-overrides-search-review-wave-2.json",
+    "protocol-content-overrides-search-review-wave-3.json",
+    "protocol-content-overrides-search-review-wave-4.json",
+    "protocol-content-overrides-search-review-wave-5.json",
+    "protocol-content-overrides-search-review-wave-6.json",
+    "protocol-content-overrides-search-review-wave-7.json",
     "protocol-content-overrides-sensitive-zone-starters-2.json",
     "protocol-content-overrides-sensitive-zone-starters.json",
     "protocol-content-overrides-sensory-mindfulness.json",
@@ -34,6 +48,7 @@
     "protocol-content-overrides-tabata-timer.json",
     "protocol-content-overrides-talk-about-fears.json",
     "protocol-content-overrides-wakeful-rest.json",
+    "protocol-content-overrides-walking-meeting.json",
     "protocol-content-overrides-woop.json",
     "protocol-content-overrides-workday-blocks.json",
     "protocol-content-overrides-writing-feedback.json",
@@ -60,9 +75,9 @@
     {
       "slug": "active-recall-test-yourself",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
+      "reviewed_at": "2026-09-05",
       "reviewed_by": "Brali Evidence Reviewer",
-      "reason": "Replace an inherited active-recall article containing unsupported percentage gains, arbitrary thirty-minute sessions, generic neuroscience language, invented progress targets, and broad claims about learning performance with a bounded retrieval-practice protocol. A 2021 systematic review supports retrieval practice for classroom learning/retention; two 2026 sources narrow interpretation by distinguishing direct and forward testing effects and showing that improved rule retention did not automatically produce better rule application in one classroom study.",
+      "reason": "Retain the bounded retrieval-practice evidence while rewriting the reviewed protocol in Brali's explanatory voice. The page now teaches the difference between familiarity, retrieval, and application; removes inherited unsupported precision; and uses dry humor only to challenge learning theatre, not the reader. A 2021 systematic review supports retrieval practice for classroom learning/retention; two 2026 sources narrow interpretation by distinguishing direct and forward testing effects and showing that improved rule retention did not automatically produce better rule application in one classroom study.",
       "registry": "protocol-content-overrides-active-recall.json"
     },
     {
@@ -72,6 +87,14 @@
       "reviewed_by": "Brali editorial agent",
       "reason": "Replace an inherited brainwriting draft containing unsupported idea-yield percentages, invented internal observations, and excessive timing/count prescriptions with a compact group ideation protocol.",
       "registry": "protocol-content-overrides-brainwriting.json"
+    },
+    {
+      "slug": "stop-caffeine-after-lunch",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-09-06",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace a rigid, unsupported after-lunch/1 p.m. rule and inherited dosing advice with a bounded protocol based on a fully reviewed 2025 randomized crossover trial. The trial directly tests caffeine dose and timing relative to bedtime. It supports a stronger caution around a single 400 mg dose and shows why dose matters, while its small all-male sample and acute capsule design do not justify universal personal cutoffs or claims that 100 mg four hours before bed is harmless for everyone.",
+      "registry": "protocol-content-overrides-caffeine-cutoff.json"
     },
     {
       "slug": "ad-astra-per-aspera-motivation-tracker",
@@ -170,6 +193,190 @@
       "registry": "protocol-content-overrides-claim-cleanup-batch-3b.json"
     },
     {
+      "slug": "10x-goal-sprints-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated output and completion statistics, invented internal observations, arbitrary effort prescriptions, and projection-like 10x claims with a bounded stretch-goal experiment.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-4.json"
+    },
+    {
+      "slug": "7-breath-decision-pause",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pilots, unsupported physiological and decision-quality claims, prescriptive breathing mechanics, and arbitrary frequency and duration rules with an optional decision pause.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-4.json"
+    },
+    {
+      "slug": "ai-six-hats-facilitator",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported effectiveness claims, invented team observations, fabricated timing and conversion examples, and arbitrary experiment thresholds with a neutral six-perspective facilitation checklist.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-4.json"
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated colleague and user results, unsupported uncertainty and risk-reduction percentages, guarantee-like language, and arbitrary thresholds with a bounded missing-evidence checklist.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-4.json"
+    },
+    {
+      "slug": "brag-doc-wins-hub",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pilot outcomes, unsupported confidence and motivation claims, invented adherence figures, arbitrary logging targets and pseudo-precise review schedules with a bounded work-record workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-5.json"
+    },
+    {
+      "slug": "break-familiarity-bias",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated prototype outcomes, invented satisfaction changes, mechanism claims, arbitrary experiment counts and universal statements about cues or habit formation with a bounded low-stakes choice check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-5.json"
+    },
+    {
+      "slug": "bullet-point-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated clarity and meeting outcomes, unsupported working-memory explanations, invented client observations and rigid prescriptions for bullet counts, word counts, rehearsal doses and speaking rhythm with a bounded speaking-outline workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-5.json"
+    },
+    {
+      "slug": "calibrate-task-estimates",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported planning-fallacy authority language, universal milestone sizes, fixed correction percentages, invented quick-task timing rules and claimed calibration gains with a bounded planned-versus-actual feedback loop.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-6.json"
+    },
+    {
+      "slug": "challenge-assumed-intent",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated conflict outcomes, unsupported neurological mechanism claims, arbitrary evidence-count thresholds, fixed response delays and overbroad high-stakes scripts with a bounded fact-versus-inference check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-6.json"
+    },
+    {
+      "slug": "check-base-rates-before-deciding",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported accuracy claims, fabricated outcomes, arbitrary sample-size confidence rules and medical, political, hiring and relationship prescriptions with a bounded reference-class and applicability workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-6.json"
+    },
+    {
+      "slug": "choose-best-resources",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated internal project outcomes, universal freshness windows, arbitrary time and price thresholds and claimed follow-through improvements with a bounded resource-selection and evaluation workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-6.json"
+    },
+    {
+      "slug": "chunk-complex-ideas-for-clarity",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported working-memory and comprehension claims, fabricated internal outcomes, universal chunk counts, fixed timing and word limits and pseudo-precise audience or template multipliers with a bounded information-structure workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-7.json"
+    },
+    {
+      "slug": "clarity-ladder-analyzer",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported cognitive and rhetoric authority, fabricated recall and throughput effects, invented internal examples and rigid abstract-to-concrete ratios and timing prescriptions with a bounded message-editing move.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-7.json"
+    },
+    {
+      "slug": "clustering-illusion-guard",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated time savings and internal experiments, arbitrary sample cutoffs, probability thresholds, fold-change rules and financial action bands with a bounded denominator-and-context check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-7.json"
+    },
+    {
+      "slug": "cognitive-dissonance-resolution",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported named-study and forecasting claims, fabricated bias effects, health examples, numeric source scoring, fixed search durations and equal-weight both-sides framing with a bounded claim-update workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-7.json"
+    },
+    {
+      "slug": "common-source-radar",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported claims about repetition, judgment improvement and training targets, fabricated tracing outcomes, rigid timing rules and high-stakes examples with a bounded source-lineage procedure.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-8.json"
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated calibration statistics, effect claims, fixed probability increments, action thresholds, reminder schedules and first-party examples with a qualitative judgment-and-feedback loop.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-8.json"
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported historical and cognitive claims, fabricated volunteer and cohort outcomes, fixed habit targets, emotional mechanisms, high-stakes examples and arbitrary numerical thresholds with a narrow decision-preflight check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-8.json"
+    },
+    {
+      "slug": "conjunction-fallacy-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated pause experiments, cognitive-mechanism claims, arbitrary probability bins, daily quotas and inappropriate high-stakes examples with the underlying logical subset check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-8.json"
+    },
+    {
+      "slug": "context-guard-for-decisions",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated project outcomes, psychological mechanism claims, universal timing and sample rules, health and emotional examples and assumptions about other people's motives with a bounded operating-context check.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-9.json"
+    },
+    {
+      "slug": "context-planner-for-writers",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace fabricated editing and publication outcomes, invented user tests, fixed word-count menus, pseudo-precise timing and unsupported audience-response claims with a bounded pre-draft context brief.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-9.json"
+    },
+    {
+      "slug": "contextual-language-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace unsupported language-learning effects, fabricated classroom and pilot outcomes, rigid phrase counts and repetition schedules, anxiety claims and unsafe pharmacy examples with a bounded scenario-rehearsal workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-9.json"
+    },
+    {
+      "slug": "control-to-action-compass",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali claim cleanup agent",
+      "reason": "Replace therapy and physiological framing, medical and family-health examples, fabricated completion outcomes, fixed concern counts, timing prescriptions and attention claims with a bounded action-allocation workflow.",
+      "registry": "protocol-content-overrides-claim-cleanup-batch-9.json"
+    },
+    {
       "slug": "relationship-repair-coach",
       "evidence_status": "reviewed",
       "reviewed_at": "2026-08-19",
@@ -252,9 +459,9 @@
     {
       "slug": "4-minute-hiit-tabata-workout",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited HIIT article containing unsupported heart-rate targets, calorie estimates, injury-risk claims, arbitrary eight-week progression rules and broad claims attributed to the Tabata format with a conservative high-intensity-interval protocol grounded in NHS physical-activity guidance and the original Tabata study. The public version makes clear that the original research used a specific laboratory cycling protocol and does not justify prescribing maximal 20/10 intervals to every user.",
+      "reviewed_at": "2026-09-09",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Update the reviewed short-HIIT page with 2026 exercise-snack evidence. The strongest fresh synthesis is an RCT-only systematic review/meta-analysis of 21 studies (921 adults) showing moderate-certainty improvements in VO2max and peak power, while body-composition and blood-lipid findings remain low-certainty or inconclusive. A 2026 real-world randomized trial in 69 insufficiently active adults with type 2 diabetes provides an important boundary: four 1-minute vigorous bouts on at least five days per week were feasible, but did not outperform an active mobility/stretching comparator on most secondary cardiometabolic or fitness outcomes. The page therefore distinguishes a short interval session from exercise snacks spread through the day, keeps safety boundaries, and rejects one magic timer or cadence as an optimized prescription.",
       "registry": "protocol-content-overrides-hiit-tabata.json"
     },
     {
@@ -284,10 +491,266 @@
     {
       "slug": "guided-pmr-muscle-relaxation",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited PMR article containing unsupported anxiety/tension percentages, arbitrary force targets, rigid 35-second timing, invented internal observations and treatment-like expectations with a conservative progressive muscle relaxation protocol grounded in current NHS clinical relaxation guidance. The public version presents PMR as a relaxation skill for noticing and releasing muscle tension, not as a treatment for depression or a guaranteed percentage reduction in anxiety.",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Refresh the existing reviewed progressive muscle relaxation protocol with a 2026 systematic review and meta-analysis of randomized controlled trials focused on subjective sleep quality. The new synthesis supports PMR as a plausible low-cost sleep-support practice in the studied clinical populations, but high heterogeneity, possible publication bias, subjective outcomes, heterogeneous protocols and the absence of healthy-general-population trials in the review make a universal sleep claim inappropriate. The public protocol therefore keeps the conservative NHS technique, adds a sleep-specific use case and observation loop, and explicitly rejects magic session counts, mechanistic certainty and the claim that older adults do not benefit.",
       "registry": "protocol-content-overrides-pmr.json"
+    },
+    {
+      "slug": "apply-80-20-principle",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace an inherited Pareto article containing pseudo-precise effect sizes, arbitrary work intervals, fabricated observations, and ROI-style claims with a bounded prioritization exercise.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "batch-similar-tasks-planner",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported productivity percentages, invented switching costs, rigid batch durations, and fabricated observations with a reversible workflow exercise.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "adopt-new-tools-at-work",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated pilots, unsupported adoption metrics, medical-adjacent examples, and arbitrary success thresholds with a low-risk tool-evaluation protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "ai-question-bank-builder",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported learning-effect percentages, rigid question ratios, fixed timing prescriptions, and research-sounding claims with a source-checked question-authoring workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "break-big-goals-into-steps",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported completion-rate claims, fabricated experiments, arbitrary duration rules, and broad motivational promises with a concrete decomposition protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "break-down-big-problems-triz",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace pseudo-quantified TRIZ outcomes, fabricated pilots, arbitrary timing rules, and broad superiority claims with a bounded problem-structuring exercise inspired by contradiction and separation.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "aida-message-optimizer",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported response-rate improvements, fabricated A/B outcomes, and formula-like persuasion claims with a bounded editing checklist.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "attention-to-detail-trainer",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported perception statistics, fabricated improvement timelines, invented pilot outcomes, and people-observation prompts with a bounded artifact verification routine.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "automate-routine-data-reports",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated team savings, unsupported reliability targets, arbitrary engineering thresholds, and broad automation claims with a bounded report-automation readiness and control protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-1.json"
+    },
+    {
+      "slug": "qa-checklist-templates-runbook",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated release observations, unsupported defect-rate claims, rigid checklist-size rules, and invented benchmarks with a bounded QA execution protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-2.json"
+    },
+    {
+      "slug": "structure-writing-with-visuals",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated usability observations, unsupported comprehension gains, support-ticket claims, and arbitrary visual thresholds with a bounded document-structure review protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-2.json"
+    },
+    {
+      "slug": "chef-taste-and-adjust",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated kitchen outcomes, pseudo-precise seasoning formulas, unsupported physiological claims, and unsafe overgeneralization of tasting with a conservative feedback workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-2.json"
+    },
+    {
+      "slug": "build-your-support-network",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated response rates and observational samples, rigid network-size targets, broad psychological claims, and pseudo-optimized social scripts with a consent- and boundary-aware support mapping protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-2.json"
+    },
+    {
+      "slug": "ergonomic-workspace-assessment",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported productivity and discomfort outcomes, pseudo-medical posture rules, rigid dimensions and timing prescriptions, and fabricated observations with a bounded workspace-friction audit.",
+      "registry": "protocol-content-overrides-search-review-wave-3.json"
+    },
+    {
+      "slug": "affirmation-habit-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace therapy-adjacent framing, unsupported behavioral outcomes, fabricated first-party observations, rigid repetition schedules, and selectively presented literature claims with a bounded statement-to-action exercise.",
+      "registry": "protocol-content-overrides-search-review-wave-3.json"
+    },
+    {
+      "slug": "coot-ai-growth-journal",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace obsolete Coot.AI branding, fabricated completion-rate observations, pseudo-optimized session lengths, mental-health-adjacent language, and unsupported follow-through claims with a vendor-neutral AI reflection and decision protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-3.json"
+    },
+    {
+      "slug": "process-of-elimination-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated decision-time and satisfaction statistics, invented first-party observations, arbitrary universal numeric thresholds, and pseudo-optimized probe rules with a bounded elimination workflow for low-stakes decisions.",
+      "registry": "protocol-content-overrides-search-review-wave-4.json"
+    },
+    {
+      "slug": "plan-tasks-by-peak-energy",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported chronobiology effect sizes, fabricated productivity observations, caffeine and nutrition prescriptions, health-adjacent advice, and rigid timing claims with a self-observation and scheduling experiment.",
+      "registry": "protocol-content-overrides-search-review-wave-4.json"
+    },
+    {
+      "slug": "oblique-strategies-prompt-cards",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated internal pilots, completion-rate and idea-count effects, pseudo-optimal deck sizes and timers, and overclaimed creativity mechanisms with a simple reversible prompt-constraint exercise.",
+      "registry": "protocol-content-overrides-search-review-wave-4.json"
+    },
+    {
+      "slug": "phase-transition-ritual-tracker",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace physics analogies presented as behavioral mechanisms, fabricated field trials and self-report effects, health-adjacent breathing and mobility prescriptions, arbitrary optimized durations, and unsupported psychological claims with a practical context-handoff checklist.",
+      "registry": "protocol-content-overrides-search-review-wave-4.json"
+    },
+    {
+      "slug": "communication-blocks-scheduler",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported context-switching statistics, invented time-savings, rigid universal message schedules, fabricated observations, and pseudo-optimized block lengths with a role-aware communication batching workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-5.json"
+    },
+    {
+      "slug": "if-then-rules-productivity",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-09-11",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace unsupported effect-size claims, fabricated outcomes and observations, health-adjacent triggers, wearable thresholds, and rigid repetition schedules with a bounded cue-action decision rule for ordinary work.",
+      "registry": "protocol-content-overrides-search-review-wave-5.json"
+    },
+    {
+      "slug": "top-3-daily-focus-planner",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated completion samples, unsupported habit-decay and estimation claims, universal time budgets, morning-work prescriptions, and invented first-party observations with a capacity-based daily prioritization checklist.",
+      "registry": "protocol-content-overrides-search-review-wave-5.json"
+    },
+    {
+      "slug": "default-choice-audit",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported uptake effects, invented attention savings and annualized impact, fabricated personal observations, arbitrary audit cadences, and overgeneralized privacy or security conclusions with a bounded default-choice review.",
+      "registry": "protocol-content-overrides-search-review-wave-5.json"
+    },
+    {
+      "slug": "judge-decisions-by-process",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported debiasing effects, invented timing and memory thresholds, fabricated first-party process results, arbitrary scoring systems, and therapy-adjacent framing with a bounded retrospective decision review.",
+      "registry": "protocol-content-overrides-search-review-wave-6.json"
+    },
+    {
+      "slug": "qa-clear-feedback-templates",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated engineering-org results, unsupported cycle-time reductions, pseudo-optimal evidence quantities, invented social effects, and over-specific universal QA prescriptions with a practical defect-reporting template.",
+      "registry": "protocol-content-overrides-search-review-wave-6.json"
+    },
+    {
+      "slug": "creativity-within-constraints",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported creativity mechanisms, fabricated output comparisons and observations, physiological engagement claims, pseudo-optimal session lengths, and arbitrary completion targets with a reversible constraint-based drafting exercise.",
+      "registry": "protocol-content-overrides-search-review-wave-6.json"
+    },
+    {
+      "slug": "daily-priority-review-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated user cohorts and retention results, unsupported time-savings, arbitrary review durations and archival thresholds, and pseudo-optimized task counts with a bounded task-list maintenance workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-6.json"
+    },
+    {
+      "slug": "weekly-goal-review-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace fabricated adherence and execution results, unsupported optimal review windows, pseudo-precise weekly time leverage, health and nutrition examples, and arbitrary metric targets with a bounded operational weekly review.",
+      "registry": "protocol-content-overrides-search-review-wave-7.json"
+    },
+    {
+      "slug": "separate-to-decide-decision-evaluator",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported cognitive-bias mechanisms, fabricated team experiments, invented satisfaction and speed effects, arbitrary universal timeboxes and score scales, and high-stakes insurance or job-offer prescriptions with a criteria-stability decision workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-7.json"
+    },
+    {
+      "slug": "active-listening-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported empathy and speed effects, fabricated interpersonal observations, prescriptive eye-contact and nodding percentages, physiological instructions, and culture-insensitive nonverbal rules with an accessible comprehension-check protocol.",
+      "registry": "protocol-content-overrides-search-review-wave-7.json"
+    },
+    {
+      "slug": "conversational-storytelling-coach",
+      "evidence_status": "practical",
+      "reviewed_at": "2026-09-10",
+      "reviewed_by": "Brali editorial agent (AI-assisted)",
+      "reason": "Replace unsupported recall and credibility effects, fabricated training outcomes, pseudo-optimal story lengths and beat timing, and overgeneralized listener-state prescriptions with a concise relevance-and-privacy storytelling workflow.",
+      "registry": "protocol-content-overrides-search-review-wave-7.json"
     },
     {
       "slug": "dbt-distress-tolerance-coach",
@@ -340,9 +803,9 @@
     {
       "slug": "5-minute-meditation-habit-tracker",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
-      "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited meditation article containing invented adherence results, pulse-change claims, fixed twice-daily dosing, prescriptive breathing ratios and pseudo-clinical expectations with a conservative short breath-meditation protocol grounded in current NHS mindfulness and meditation guidance. The public version treats five minutes as a convenient starting container, not an evidence-based dose, and acknowledges that mindfulness is not helpful for everyone.",
+      "reviewed_at": "2026-09-05",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Keep the conservative short breath-meditation protocol while replacing brochure-like copy with Brali's teaching voice. NHS guidance supports a simple beginner practice with no universal session length and warns that mindfulness is not helpful for everyone. A 2026 preregistered network meta-analysis of 183 RCTs and 22,811 adults without diagnosed conditions adds a useful boundary: mindfulness is one evidence-informed route to general well-being alongside exercise, yoga, compassion and positive-psychology approaches, with no clear reason to present one as the universal winner. The page therefore teaches the attention-return loop, treats five minutes as a convenience rather than a dose, and normalizes switching practices when the method is unhelpful.",
       "registry": "protocol-content-overrides-short-meditation.json"
     },
     {
@@ -364,9 +827,9 @@
     {
       "slug": "10-minute-stress-walk",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
+      "reviewed_at": "2026-09-13",
       "reviewed_by": "Brali editorial agent",
-      "reason": "Replace an inherited stress-walking article containing unsupported percentages, heart-rate claims, calorie estimates, adherence claims, breathing prescriptions and invented internal observations with a conservative walking protocol grounded in current WHO and NHS guidance. Walking is presented as one accessible form of physical activity that may support wellbeing and stress management, not as a guaranteed acute treatment or a precise ten-minute dose.",
+      "reason": "Strengthen the existing conservative stress-walk protocol with a full-source-reviewed 2026 systematic review and meta-analysis of randomized and crossover-randomized trials of green exercise. The new evidence supports treating a safe green route as an optional modifier for short-term wellbeing and affect, while preserving the existing boundaries: ten minutes is not an evidence-defined dose, a forest is not required, effects are not guaranteed, and the review does not establish a unique biological mechanism or long-term treatment effect.",
       "registry": "protocol-content-overrides-stress-walk.json"
     },
     {
@@ -388,10 +851,18 @@
     {
       "slug": "avoid-list-interference-memory-retention",
       "evidence_status": "reviewed",
-      "reviewed_at": "2026-08-18",
+      "reviewed_at": "2026-08-28",
       "reviewed_by": "Brali Evidence Reviewer",
-      "reason": "Replace an inherited list-memory tip containing arbitrary three-second pauses, fixed item counts, app-tracking instructions, generic habit claims and unsupported optimization language with a conservative post-learning wakeful-rest protocol grounded in a 2026 open-access meta-analysis of 142 effect sizes from 51 experimental studies. The public claim is intentionally narrower than the pooled result because effects were heterogeneous and smallest in healthy young to middle-aged adults.",
+      "reason": "Keep the conservative post-learning wakeful-rest protocol grounded in a 2026 meta-analysis of 142 effect sizes from 51 experimental studies, while adding a 2026 randomized classroom challenge study of 161 university students. The newer study found no consistent wakeful-rest advantage for factual recall or conceptual understanding of a complex expository text, so the public protocol is explicitly restricted to an optional declarative-memory experiment and must not claim better comprehension or general learning performance.",
       "registry": "protocol-content-overrides-wakeful-rest.json"
+    },
+    {
+      "slug": "walking-meeting-assistant",
+      "evidence_status": "reviewed",
+      "reviewed_at": "2026-09-08",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "reason": "Replace an inherited walking-meeting article containing unsupported cognition percentages, step and heart-rate estimates, wind and battery pseudo-precision, and overbroad cardiometabolic claims. Two full-text 2026 systematic reviews/meta-analyses support a narrower claim: in acute controlled settings, interrupting prolonged sitting with physical activity, especially walking or light-to-moderate movement, improves postprandial glucose and insulin outcomes. The evidence does not test walking meetings as a format, establish a universal timer, or show long-term disease prevention.",
+      "registry": "protocol-content-overrides-walking-meeting.json"
     },
     {
       "slug": "woop-goal-planner",

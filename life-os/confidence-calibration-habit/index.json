@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:confidence-calibration-habit",
   "slug": "confidence-calibration-habit",
-  "title": "Think in Percentages (Overconfidence Bias)",
-  "description": "Estimate how certain you are about something in percentages rather than absolute terms. Ask, 'How sure am I, really?'",
+  "title": "Record What Would Change Your Confidence Before You Commit",
+  "description": "State your current confidence in plain language, record the main support and unknowns, name an observable fact that would change the judgment, then compare the expectation with what later happened and update future decisions accordingly.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
   "machine_url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
     "topics": [
       {
-        "id": "critical-thinking",
-        "title": "Critical Thinking"
+        "id": "metacognition",
+        "title": "Metacognition"
+      },
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "thinking"
@@ -48,8 +56,88 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "metacognition",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+      },
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:confidence-calibration-habit",
+    "language": "en",
+    "slug": "confidence-calibration-habit",
+    "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+    "title": "Record What Would Change Your Confidence Before You Commit",
+    "description": "State your current confidence in plain language, record the main support and unknowns, name an observable fact that would change the judgment, then compare the expectation with what later happened and update future decisions accordingly.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "metacognition",
+          "title": "Metacognition"
+        },
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "thinking"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "thinking",
+      "title": "Thinking"
+    },
+    "action": "State the decision or prediction, label your confidence in ordinary language, list the strongest support and the most important unknown, name one observable condition that would make you update, then revisit the record when the outcome or new information becomes available.",
+    "check_in": "What did I expect, how confident was I, what would have changed my view, what actually happened, and what should I update next time?",
+    "keywords": [
+      "Thinking",
+      "Life OS",
+      "Think in Percentages (Overconfidence Bias)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/confidence-calibration-habit.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

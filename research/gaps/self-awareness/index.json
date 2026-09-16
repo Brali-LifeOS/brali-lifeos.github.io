@@ -9,9 +9,9 @@
   "question": "Which forms of self-monitoring or structured reflection improve useful self-awareness without merely increasing tracking burden?",
   "evidence_target": "Prefer reviews or experiments linking reflection or self-monitoring to behavior, calibration, or decision quality.",
   "guardrail": "Do not assume more journaling or more tracking is inherently beneficial.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/self-awareness/",
   "research_queries": [
     {
@@ -20,8 +20,24 @@
       "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1111/aphw.70134",
+      "title": "Effectiveness of savoring interventions: A systematic review and meta-analysis of randomized controlled trials",
+      "status": "propose-protocol",
+      "publication_date": "2026-03-08",
+      "reference_url": "https://doi.org/10.1111/aphw.70134"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "savoring-emotional-outcomes-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Effectiveness of savoring interventions: A systematic review and meta-analysis of randomized controlled trials",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/savoring-emotional-outcomes-boundary-2026/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "cbt-action-mood-tracker",
@@ -33,6 +49,12 @@
       "slug": "dbt-distress-tolerance-coach",
       "title": "Pause Before Acting on a High-Stress Urge",
       "url": "https://brali-lifeos.github.io/life-os/dbt-distress-tolerance-coach/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "savor-positive-moment",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "url": "https://brali-lifeos.github.io/life-os/savor-positive-moment/",
       "evidence_status": "reviewed"
     },
     {
@@ -54,7 +76,7 @@
     "title": "Self-Awareness",
     "domain_id": "mind-resilience",
     "status": "growth-gap",
-    "entries": 4,
-    "research_candidates": 0
+    "entries": 5,
+    "research_candidates": 1
   }
 }

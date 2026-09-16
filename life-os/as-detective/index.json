@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "as-detective",
   "title": "As Detective",
-  "description": "Boost your detective skills to solve everyday mysteries with ease.",
+  "description": "Separate observations from stories, test competing explanations, and look for the clue that would change your mind.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/as-detective/",
   "machine_url": "https://brali-lifeos.github.io/life-os/as-detective/index.json",
   "indexable": true,
@@ -14,15 +14,21 @@
   },
   "counts": {
     "library_entries": 36,
-    "trusted_protocols": 1,
+    "trusted_protocols": 4,
     "reviewed": 0,
-    "practical": 1,
-    "pending_review": 35,
+    "practical": 4,
+    "pending_review": 32,
     "restricted": 0,
-    "mapped_topics": 5,
-    "research_gaps": 2
+    "mapped_topics": 10,
+    "research_gaps": 4
   },
   "topics": [
+    {
+      "id": "error-prevention",
+      "title": "Error Prevention",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
+    },
     {
       "id": "clear-communication",
       "title": "Clear Communication",
@@ -36,10 +42,16 @@
       "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
     },
     {
-      "id": "error-prevention",
-      "title": "Error Prevention",
+      "id": "decision-making",
+      "title": "Decision Making",
       "count": 1,
-      "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
+    },
+    {
+      "id": "goals",
+      "title": "Goals",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/goals/"
     },
     {
       "id": "listening",
@@ -52,9 +64,33 @@
       "title": "Memory",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/memory/"
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/planning-prioritization/"
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/problem-solving/"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
     }
   ],
   "research_gaps": [
+    {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
     {
       "topic_id": "listening",
       "title": "Listening",
@@ -66,13 +102,37 @@
       "title": "Memory",
       "stage": "resolved",
       "url": "https://brali-lifeos.github.io/research/gaps/memory/"
+    },
+    {
+      "topic_id": "problem-solving",
+      "title": "Problem Solving",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
     }
   ],
   "trusted_protocols": [
     {
+      "slug": "attention-to-detail-trainer",
+      "title": "Run a Detail Check Before You Ship",
+      "url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "ask-better-interview-questions",
       "title": "Run a Short, Concrete Information Interview",
       "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "break-big-goals-into-steps",
+      "title": "Turn a Large Goal into the Next Verifiable Step",
+      "url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "process-of-elimination-tracker",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
       "evidence_status": "practical"
     }
   ],
@@ -162,13 +222,6 @@
       "indexable": false
     },
     {
-      "slug": "break-big-goals-into-steps",
-      "title": "Divide Big Problems or Goals into Smaller, Manageable Parts",
-      "url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "deductive-games-progress-tracker",
       "title": "Engage in Games and Puzzles That Require Deductive Reasoning",
       "url": "https://brali-lifeos.github.io/life-os/deductive-games-progress-tracker/",
@@ -218,13 +271,6 @@
       "indexable": false
     },
     {
-      "slug": "process-of-elimination-tracker",
-      "title": "Narrow Down Options by Systematically Ruling Out the Least Viable Ones",
-      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "notice-details-like-experts",
       "title": "Observe How Experts in Different Fields Notice and Interpret Details",
       "url": "https://brali-lifeos.github.io/life-os/notice-details-like-experts/",
@@ -235,13 +281,6 @@
       "slug": "read-body-language-better",
       "title": "Pay Attention to Non-Verbal Cues in Conversations to Gain Deeper Understanding",
       "url": "https://brali-lifeos.github.io/life-os/read-body-language-better/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "attention-to-detail-trainer",
-      "title": "Pay Close Attention to the Details Around You",
-      "url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -265,6 +304,13 @@
       "url": "https://brali-lifeos.github.io/life-os/scenario-reconstruction-coach/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "attention-to-detail-trainer",
+      "title": "Run a Detail Check Before You Ship",
+      "url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "ask-better-interview-questions",
@@ -309,6 +355,13 @@
       "indexable": false
     },
     {
+      "slug": "break-big-goals-into-steps",
+      "title": "Turn a Large Goal into the Next Verifiable Step",
+      "url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "detective-observation-notebook",
       "title": "Use a Detective’s Notebook",
       "url": "https://brali-lifeos.github.io/life-os/detective-observation-notebook/",
@@ -321,6 +374,13 @@
       "url": "https://brali-lifeos.github.io/life-os/weighted-decision-matrix-tool/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "process-of-elimination-tracker",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "verify-source-credibility",

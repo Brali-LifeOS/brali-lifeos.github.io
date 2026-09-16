@@ -1,16 +1,117 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "canonical_site": "https://brali-lifeos.github.io",
   "developer_entry": "https://brali-lifeos.github.io/for-ai/",
   "integrations_page": "https://brali-lifeos.github.io/for-ai/integrations/",
   "reference_demos": "https://brali-lifeos.github.io/for-ai/demos/",
   "api_base": "https://brali-lifeos.github.io/api/v1",
+  "product_identity": {
+    "short": "Brali is an evidence-informed decision layer for everyday problems.",
+    "publisher": "MetalHeadsCats",
+    "human_contract": "Problem -> bounded recommendation -> protocol -> action",
+    "machine_contract": "Natural language -> canonical problem -> trusted protocol -> evidence/provenance",
+    "not_a_claim": "Brali does not claim that every problem has one universally best protocol or that indexed content is automatically trusted for recommendation."
+  },
+  "human_funnel": [
+    {
+      "step": "ask",
+      "route": "/for-ai/query/",
+      "purpose": "Describe the situation in natural language and let Brali resolve a canonical problem when coverage is strong enough."
+    },
+    {
+      "step": "decide",
+      "route": "/problems/",
+      "purpose": "Inspect best-fit and alternative protocols with explicit when/why/caveat logic before choosing an action."
+    },
+    {
+      "step": "inspect",
+      "route": "/life-os/",
+      "purpose": "Open the canonical protocol record and preserve evidence state, provenance, limits, and stop/change rules."
+    },
+    {
+      "step": "act",
+      "route": "/run/",
+      "purpose": "Run a bounded protocol without turning the knowledge layer into an unsupported outcome guarantee."
+    },
+    {
+      "step": "reuse",
+      "route": "/for-ai/",
+      "purpose": "Reuse the same canonical graph through API, Agent Skills, MCP, datasets, and citation-aware agent contexts."
+    }
+  ],
   "mcp": {
     "source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/server.mjs",
+    "shared_core": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/core.mjs",
+    "remote_source": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/mcp/remote.mjs",
     "transport": "stdio",
+    "remote_transport": "streamable-http",
     "hosted_remote": false,
-    "note": "The repository MCP server runs locally over stdio. Brali does not currently operate a hosted remote MCP endpoint; consumers that require remote MCP must deploy the server themselves."
+    "note": "Brali operates a local stdio MCP path and ships a deployment-ready web-standard Streamable HTTP handler backed by the same trust rules. Brali does not claim a public hosted remote MCP URL until a provider deployment is completed and verified."
+  },
+  "github_skill": {
+    "router_name": "brali-life-os",
+    "path": "agent-skills/skills/brali-life-os/SKILL.md",
+    "distribution_path": "distribution/github-skill/skills/brali-life-os/SKILL.md",
+    "minimum_github_cli": "2.90.0",
+    "preview_command": "gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os",
+    "install_command": "gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user",
+    "docs": "https://cli.github.com/manual/gh_skill",
+    "published_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.1",
+    "published_tag": "v1.0.1",
+    "publication_verified": true,
+    "registry_search_verified": false,
+    "discovery_blocker": "GitHub published the skill release, but the Actions token could not add the repository topic agent-skills. Do not claim GitHub skill-search discovery until the topic/search result is provider-visible.",
+    "note": "Preview the router before installation. Replace --agent claude-code with the supported host you actually use. The dedicated distribution package contains only the router and preserves Brali's trusted recommendation layer."
+  },
+  "dataset_release": {
+    "tag": "data-v1.1.0",
+    "github_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/data-v1.1.0",
+    "publication_verified": true,
+    "archive_asset": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/download/data-v1.1.0/brali-data-1.1.0.tar.gz",
+    "checksum_asset": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/download/data-v1.1.0/brali-data-1.1.0.tar.gz.sha256",
+    "huggingface_mirror": null,
+    "zenodo_doi": null,
+    "note": "The immutable GitHub release is live and verified. Hugging Face and Zenodo remain unclaimed until their own provider-visible artifacts exist."
+  },
+  "evaluation": {
+    "page": "https://brali-lifeos.github.io/for-ai/evaluation/",
+    "bench_page": "https://brali-lifeos.github.io/bench/",
+    "bench_manifest": "https://brali-lifeos.github.io/bench/manifest.json",
+    "source_cases": "https://brali-lifeos.github.io/data/agent-evaluation-suite.json",
+    "portable_cases": "https://brali-lifeos.github.io/bench/cases.json",
+    "report": "https://brali-lifeos.github.io/life-os/datasets/agent-evaluation.json",
+    "portable_results": "https://brali-lifeos.github.io/bench/results.json",
+    "methodology": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/docs/AGENT_EVALUATION.md",
+    "case_count": 50,
+    "comparison_layers": [
+      {
+        "id": "no-knowledge-control",
+        "purpose": "Control showing what is available without Brali knowledge."
+      },
+      {
+        "id": "lexical-brali",
+        "purpose": "Keyword-oriented Brali retrieval baseline."
+      },
+      {
+        "id": "structured-brali",
+        "purpose": "Ontology-, protocol-, and Evidence-Decision-aware Brali retrieval."
+      }
+    ],
+    "reproduce": {
+      "build_command": "npm run build",
+      "check_command": "npm run evaluate:check",
+      "runner": "scripts/run-agent-evaluation.mjs",
+      "checker": "scripts/check-agent-evaluation.mjs"
+    },
+    "required_gates": [
+      "safety and deliberate no-answer behavior",
+      "trusted evidence-state preservation",
+      "reviewed-source provenance preservation",
+      "zero unsupported Evidence Decision claims",
+      "structured retrieval usefulness must not regress below the lexical baseline"
+    ],
+    "note": "The suite evaluates Brali retrieval and grounding behavior, including evidence boundaries, provenance and safety/no-answer cases. Brali Bench packages these artifacts for reuse. It is not a benchmark of an unpinned language model."
   },
   "runtimes": [
     {
@@ -41,17 +142,17 @@
       "example": "examples/integrations/openai-api.mjs",
       "configuration": "Brali API prefetch -> bounded context packet -> Responses API",
       "official_docs": "https://platform.openai.com/docs/quickstart",
-      "note": "Use Brali's hosted static API directly. OpenAI remote MCP requires a remotely reachable MCP server URL, which Brali does not currently host."
+      "note": "Use Brali's hosted static API directly. A deployment-ready remote MCP source exists, but Brali does not yet claim a provider-hosted MCP URL."
     }
   ],
   "citation": {
-    "author": "Dzmitryi Kharlanau",
+    "author": "MetalHeadsCats",
     "dataset_title": "Brali Practical Knowledge Library",
     "license": "CC-BY-NC-SA-4.0",
     "citation_file": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/CITATION.cff",
     "guidance_page": "https://brali-lifeos.github.io/cite/",
     "answer_attribution_template": "Source: Brali — <record title> (<canonical_id>), <record_url>. Evidence: <evidence_state>.",
-    "dataset_citation_template": "Kharlanau, Dzmitryi. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
+    "dataset_citation_template": "MetalHeadsCats. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
     "preserve": [
       "canonical Brali record URL or canonical_id",
       "evidence state and review metadata where supplied",
@@ -60,11 +161,15 @@
     ]
   },
   "adoption_checklist": [
-    "Choose hosted static API or local stdio MCP; do not assume Brali provides hosted remote MCP.",
+    "Start with the zero-install Query Playground or preview the Brali router skill before writing custom integration code.",
     "Try the zero-install Query Playground before writing custom integration code; copy its agent context or JSON packet to inspect the contract.",
-    "Run a reference demo before integrating your own retrieval flow.",
+    "For a human decision, follow the same canonical path: natural-language problem -> bounded recommendation -> protocol -> action.",
+    "Preview Agent Skills before installation and install only into the agent host and scope you intend to use.",
+    "Use the hosted static API or local stdio MCP today; treat mcp/remote.mjs as deployment-ready source, not as proof of a Brali-hosted remote endpoint.",
+    "Run a reference demo before replacing the retrieval flow with your own implementation.",
+    "Reproduce the 50-case evaluation or reuse Brali Bench before claiming that a custom retrieval layer improves on Brali's checked baseline.",
     "Use reviewed/practical records for normal trusted recommendations.",
-    "Preserve canonical IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
+    "Preserve canonical Problem and Protocol IDs, Brali record URLs, evidence state, and reviewed-source boundaries.",
     "Return no trusted answer rather than silently falling back to pending-review or restricted material.",
     "For reproducible work, pin a data-v release instead of following main.",
     "Follow CC BY-NC-SA 4.0 attribution/share-alike terms for public non-commercial use; request separate permission for commercial use.",

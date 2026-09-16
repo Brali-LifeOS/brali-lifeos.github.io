@@ -63,7 +63,10 @@
         "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/movement/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:cardio-health-daily-habits",
@@ -123,5 +126,13 @@
       "source_url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
       "reviewed_at": "2026-08-20"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/cardio-health-daily-habits.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

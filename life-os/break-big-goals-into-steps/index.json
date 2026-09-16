@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:break-big-goals-into-steps",
   "slug": "break-big-goals-into-steps",
-  "title": "Divide Big Problems or Goals into Smaller, Manageable Parts",
-  "description": "Divide big problems or goals into smaller, manageable parts.",
+  "title": "Turn a Large Goal into the Next Verifiable Step",
+  "description": "Define the finish condition, expose dependencies, split the goal into observable deliverables, and choose the smallest next step that creates information or progress.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
   "machine_url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/index.json",
   "growth_zone": {
@@ -16,22 +16,31 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "goals",
+        "title": "Goals"
+      },
+      {
+        "id": "planning-prioritization",
+        "title": "Planning & Prioritization"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +48,8 @@
         "title": "Detective"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "as-detective"
@@ -48,8 +57,78 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:break-big-goals-into-steps",
+    "language": "en",
+    "slug": "break-big-goals-into-steps",
+    "url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
+    "title": "Turn a Large Goal into the Next Verifiable Step",
+    "description": "Define the finish condition, expose dependencies, split the goal into observable deliverables, and choose the smallest next step that creates information or progress.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        },
+        {
+          "id": "planning-prioritization",
+          "title": "Planning & Prioritization"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "detective",
+          "title": "Detective"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-detective"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-detective",
+      "title": "As Detective"
+    },
+    "action": "Write what done looks like, list the major deliverables and external dependencies, split uncertain work until each next step has an observable output, choose the smallest useful step, complete it, and update the map from what you learned.",
+    "check_in": "What became complete or clearer, what dependency blocks the next step, and what is the smallest observable deliverable now?",
+    "keywords": [
+      "As Detective",
+      "Life OS",
+      "Break It Down"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/break-big-goals-into-steps.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

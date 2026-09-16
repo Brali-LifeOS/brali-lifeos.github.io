@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:7-breath-decision-pause",
   "slug": "7-breath-decision-pause",
-  "title": "Take Seven Deep Breaths While Focusing on the Decision or Problem at Hand",
-  "description": "Take seven deep breaths while focusing on the decision or problem at hand. If you still haven’t reached a decision after seven breaths, it might mean that it’s not the right time to decide or you need more information to evaluate all the factors.",
+  "title": "Use a Short Pause Before an Ordinary Decision",
+  "description": "Pause briefly before a reactive low-risk choice, breathe comfortably or simply sit quietly, then decide whether to act, gather one missing fact, or defer deliberately.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
   "machine_url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:7-breath-decision-pause",
+    "language": "en",
+    "slug": "7-breath-decision-pause",
+    "url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
+    "title": "Use a Short Pause Before an Ordinary Decision",
+    "description": "Pause briefly before a reactive low-risk choice, breathe comfortably or simply sit quietly, then decide whether to act, gather one missing fact, or defer deliberately.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Name the decision in one sentence. Take a few comfortable breaths or use a quiet pause; seven is only a memorable optional count. Ask what is known, what is missing, and whether the choice is reversible. Then act, gather one specific piece of information, or set a deliberate time to revisit it.",
+    "check_in": "After the pause, did I act, identify one missing fact, or defer the decision intentionally—and what made that the appropriate next step?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "7 Breaths Decision-Making (Samurai Style)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/7-breath-decision-pause.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

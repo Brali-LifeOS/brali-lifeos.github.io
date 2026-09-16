@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:stoic-acceptance-tracker",
   "slug": "stoic-acceptance-tracker",
-  "title": "When Faced with Difficulties, Breathe Deeply and Accept the Situation as It Is, Without",
+  "title": "Separate What Happened From What You Can Change Next",
   "description": "When faced with difficulties, breathe deeply and accept the situation as it is, without resistance.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/index.json",
@@ -64,7 +64,18 @@
         "stage": "discovery-ready",
         "url": "https://brali-lifeos.github.io/research/gaps/psychological-flexibility/"
       }
-    ]
+    ],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/stoic-acceptance-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

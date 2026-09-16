@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "fit-life",
   "title": "Fit Life",
-  "description": "Implement effective exercises and routines to stay fit and healthy.",
+  "description": "Make movement easier to repeat with small, measurable routines and realistic evidence boundaries.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/fit-life/",
   "machine_url": "https://brali-lifeos.github.io/life-os/fit-life/index.json",
   "indexable": true,
@@ -13,14 +13,14 @@
     "title": "Health & Energy"
   },
   "counts": {
-    "library_entries": 10,
-    "trusted_protocols": 3,
-    "reviewed": 3,
+    "library_entries": 11,
+    "trusted_protocols": 4,
+    "reviewed": 4,
     "practical": 0,
-    "pending_review": 0,
-    "restricted": 7,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "pending_review": 1,
+    "restricted": 6,
+    "mapped_topics": 3,
+    "research_gaps": 1
   },
   "topics": [
     {
@@ -28,9 +28,28 @@
       "title": "Fitness & Strength",
       "count": 10,
       "url": "https://brali-lifeos.github.io/ontology/topics/fitness-strength/"
+    },
+    {
+      "id": "health-basics",
+      "title": "Everyday Health Basics",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/health-basics/"
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/movement/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "movement",
+      "title": "Movement",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/movement/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "10-minute-morning-stretch-routine",
@@ -49,6 +68,12 @@
       "title": "Use a High-Intensity Interval Timer Safely",
       "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
       "evidence_status": "reviewed"
+    },
+    {
+      "slug": "post-meal-walk",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "url": "https://brali-lifeos.github.io/life-os/post-meal-walk/",
+      "evidence_status": "reviewed"
     }
   ],
   "entries": [
@@ -56,7 +81,7 @@
       "slug": "daily-squat-challenge-tracker",
       "title": "Do Bodyweight Squats Every Day",
       "url": "https://brali-lifeos.github.io/life-os/daily-squat-challenge-tracker/",
-      "evidence_status": "restricted",
+      "evidence_status": "pending-review",
       "indexable": false
     },
     {
@@ -119,6 +144,13 @@
       "slug": "4-minute-tabata-hiit-timer",
       "title": "Use a High-Intensity Interval Timer Safely",
       "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "post-meal-walk",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "url": "https://brali-lifeos.github.io/life-os/post-meal-walk/",
       "evidence_status": "reviewed",
       "indexable": true
     }

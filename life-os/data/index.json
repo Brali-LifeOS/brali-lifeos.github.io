@@ -3,21 +3,21 @@
   "type": "brali-growth-zone",
   "slug": "data",
   "title": "Data",
-  "description": "Use smart data tips to make better choices and improve your daily life.",
+  "description": "Use simple measurement, uncertainty, and comparison to make decisions without pretending every number deserves a dashboard.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/data/",
   "machine_url": "https://brali-lifeos.github.io/life-os/data/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "learning-thinking",
     "title": "Learning & Thinking"
   },
   "counts": {
     "library_entries": 10,
-    "trusted_protocols": 0,
+    "trusted_protocols": 1,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 10,
+    "practical": 1,
+    "pending_review": 9,
     "restricted": 0,
     "mapped_topics": 1,
     "research_gaps": 0
@@ -31,14 +31,21 @@
     }
   ],
   "research_gaps": [],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "automate-routine-data-reports",
+      "title": "Automate a Routine Report with Validation and Fallback",
+      "url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
     {
       "slug": "automate-routine-data-reports",
-      "title": "Data Analysts Automate Routine Reports",
+      "title": "Automate a Routine Report with Validation and Fallback",
       "url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "data-cleaning-routine",

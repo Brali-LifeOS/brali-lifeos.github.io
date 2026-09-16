@@ -60,15 +60,18 @@
     "research_gaps": [
       {
         "topic_id": "decision-making",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
       },
       {
         "topic_id": "metacognition",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:decision-calibration-journal",
@@ -128,5 +131,13 @@
       "source_url": null,
       "reviewed_at": "2026-08-20"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/decision-calibration-journal.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

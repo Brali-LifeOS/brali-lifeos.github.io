@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:qa-checklist-templates-runbook",
   "slug": "qa-checklist-templates-runbook",
-  "title": "QA Specialists Use Checklists to Ensure Nothing Is Missed",
-  "description": "QA specialists use checklists to ensure nothing is missed. Create checklists for your tasks to stay organized and ensure all steps are completed.",
+  "title": "Build a QA Checklist from Real Failure Modes",
+  "description": "Turn a recurring QA task into a short checklist with clear expected results, exception handling, an owner, and a revision step when reality exposes a missing check.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
   "machine_url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -61,8 +61,82 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:qa-checklist-templates-runbook",
+    "language": "en",
+    "slug": "qa-checklist-templates-runbook",
+    "url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
+    "title": "Build a QA Checklist from Real Failure Modes",
+    "description": "Turn a recurring QA task into a short checklist with clear expected results, exception handling, an owner, and a revision step when reality exposes a missing check.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "error-prevention",
+          "title": "Error Prevention"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "qa",
+          "title": "Quality Assurance"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-qa"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-qa",
+      "title": "As QA"
+    },
+    "action": "Choose one recurring QA activity, list the failure modes that would matter, turn each necessary check into an action plus expected result, define what to capture when the result differs, run the checklist on real work, and revise it when a new recurring miss appears.",
+    "check_in": "Which check changed the release or review decision, which item was ambiguous, and what should be added, removed, or rewritten before the next run?",
+    "keywords": [
+      "As QA",
+      "Life OS",
+      "Use Checklists"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/qa-checklist-templates-runbook.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

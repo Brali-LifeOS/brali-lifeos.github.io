@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:process-of-elimination-tracker",
   "slug": "process-of-elimination-tracker",
-  "title": "Narrow Down Options by Systematically Ruling Out the Least Viable Ones",
-  "description": "Narrow down options by systematically ruling out the least viable ones.",
+  "title": "Use Elimination Rules to Narrow a Decision",
+  "description": "Define a few decision constraints, eliminate options that clearly fail them, then compare the smaller remaining set without pretending arbitrary thresholds are universal rules.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      },
+      {
+        "id": "problem-solving",
+        "title": "Problem Solving"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +52,8 @@
         "title": "Detective"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "as-detective"
@@ -48,8 +61,93 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      },
+      {
+        "topic_id": "problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:process-of-elimination-tracker",
+    "language": "en",
+    "slug": "process-of-elimination-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
+    "title": "Use Elimination Rules to Narrow a Decision",
+    "description": "Define a few decision constraints, eliminate options that clearly fail them, then compare the smaller remaining set without pretending arbitrary thresholds are universal rules.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        },
+        {
+          "id": "problem-solving",
+          "title": "Problem Solving"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "detective",
+          "title": "Detective"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-detective"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-detective",
+      "title": "As Detective"
+    },
+    "action": "List the viable options, write two to four constraints that are genuinely relevant to this decision, eliminate only options that clearly fail a constraint, inspect what remains for missing information and trade-offs, then choose the next reversible test or decision step.",
+    "check_in": "Which constraint removed an option, what uncertainty remains among the survivors, and what is the smallest next step that would improve the decision?",
+    "keywords": [
+      "As Detective",
+      "Life OS",
+      "Use Process of Elimination"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/process-of-elimination-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

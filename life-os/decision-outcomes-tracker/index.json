@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:decision-outcomes-tracker",
   "slug": "decision-outcomes-tracker",
-  "title": "Use the App to Log Meaningful Events or Decisions as They Happen",
-  "description": "Use the app to log meaningful events or decisions as they happen. Reflect on why they stood out to you and how they shaped your day. Over time, review your entries to see how your life develops and unfolds.",
+  "title": "Use Your Tracker to Log Meaningful Events or Decisions as They Happen",
+  "description": "Use your tracker to log meaningful events or decisions as they happen. Reflect on why they stood out to you and how they shaped your day. Over time, review your entries to see how your life develops and unfolds.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/decision-outcomes-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/decision-outcomes-tracker/index.json",
   "growth_zone": {
@@ -18,7 +18,7 @@
   "evidence": {
     "status": "restricted",
     "indexable": false,
-    "search_indexable": true,
+    "search_indexable": false,
     "sensitive": true,
     "source_recorded": false,
     "source_url": null,
@@ -47,9 +47,20 @@
     }
   },
   "discovery": {
-    "search_indexable": true,
+    "search_indexable": false,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "withheld-review-required",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": false,
+    "display_state": "historical-source-only",
+    "historical_source_url": "/data/life-os-content/decision-outcomes-tracker.json",
+    "historical_source_role": "provenance-only-not-current-guidance",
+    "search_role": "withheld-review-required"
+  }
 }

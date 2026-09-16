@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:separate-to-decide-decision-evaluator",
   "slug": "separate-to-decide-decision-evaluator",
-  "title": "Evaluate Options Individually to Reduce Unnecessary Distinctions",
-  "description": "Evaluate options individually to reduce unnecessary distinctions. Here’s how: - Look at them one by one: Avoid comparing them side-by-side. - Focus on your priorities: Ask which option meets your needs best. - Simplify the decision: Don’t overanalyze minor differences. Example: If choosing between two similar laptops, evaluate one fully before moving to the next instead of flipping between them.",
+  "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+  "description": "Define the must-have criteria first, inspect each option against the same criteria, record unknowns separately, and compare survivors only after the individual evaluations are complete.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/",
   "machine_url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:separate-to-decide-decision-evaluator",
+    "language": "en",
+    "slug": "separate-to-decide-decision-evaluator",
+    "url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/",
+    "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+    "description": "Define the must-have criteria first, inspect each option against the same criteria, record unknowns separately, and compare survivors only after the individual evaluations are complete.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Write the must-have constraints and relevant preferences before opening the comparison, evaluate each option against that same list, mark missing information as unknown rather than pass or fail, remove options that clearly violate a must-have, and compare the remaining trade-offs only after the individual evaluations are recorded.",
+    "check_in": "Did I keep the same criteria across options, which unknown could still change the result, and which remaining trade-off actually matters?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Separate to Decide"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/separate-to-decide-decision-evaluator.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

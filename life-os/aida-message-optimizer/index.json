@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:aida-message-optimizer",
   "slug": "aida-message-optimizer",
-  "title": "Follow the AIDA Model",
-  "description": "Structure your persuasive messages using the AIDA model (Attention, Interest, Desire, Action). Grab attention, build interest, create a desire for your message, and call for action.",
+  "title": "Use AIDA as a Message Clarity Checklist",
+  "description": "Check whether a message earns attention, makes the relevant point understandable, explains why it matters, and gives the reader a clear next action without treating AIDA as a persuasion guarantee.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
   "machine_url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:aida-message-optimizer",
+    "language": "en",
+    "slug": "aida-message-optimizer",
+    "url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
+    "title": "Use AIDA as a Message Clarity Checklist",
+    "description": "Check whether a message earns attention, makes the relevant point understandable, explains why it matters, and gives the reader a clear next action without treating AIDA as a persuasion guarantee.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Name the audience and desired next step, review the opening for relevance, remove information that does not help understanding, explain the concrete value or consequence honestly, and end with one clear action the reader can accept, decline, or ignore.",
+    "check_in": "Can the reader quickly tell why this matters, what is being asked, and what they should do next without exaggerated claims or hidden pressure?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Follow the AIDA Model"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/aida-message-optimizer.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

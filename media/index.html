@@ -9,8 +9,41 @@
   <style>
     :root{color-scheme:light dark;--bg:#0d0f12;--panel:#15191f;--text:#f4f6f8;--muted:#aab2bd;--line:#2b333d;--accent:#d8ff4f}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}main{max-width:940px;margin:auto;padding:56px 24px 80px}a{color:var(--accent)}h1{font-size:clamp(2.2rem,6vw,4.8rem);line-height:.95;letter-spacing:-.04em;margin:0 0 20px}.lede{max-width:760px;color:var(--muted);font-size:1.08rem}.fact{padding:20px;border-bottom:1px solid var(--line)}.facts{margin-top:28px;border:1px solid var(--line);border-radius:18px;background:var(--panel);overflow:hidden}.fact h2{font-size:1rem;margin:0 0 8px}.meta{color:var(--muted);font-size:.88rem}.boundary{margin:28px 0;padding:18px 20px;border-left:3px solid var(--accent);background:var(--panel)}footer{margin-top:30px;color:var(--muted);font-size:.92rem}
   </style>
+<meta name="robots" content="max-image-preview:large">  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Brali Updates RSS">
+<!-- brali-consent-analytics -->
+<script>
+(function(w,d,id){
+  var key='brali-analytics-consent-v1';
+  function load(){
+    if(w.__braliGtmLoaded||d.querySelector('script[data-brali-gtm="'+id+'"]'))return;
+    w.__braliGtmLoaded=true;
+    w.dataLayer=w.dataLayer||[];
+    w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var s=d.createElement('script');
+    s.async=true;
+    s.dataset.braliGtm=id;
+    s.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(id);
+    d.head.appendChild(s);
+  }
+  w.braliAnalyticsConsent={
+    grant:function(){try{localStorage.setItem(key,'granted');}catch(e){}load();var n=d.getElementById('brali-analytics-consent');if(n)n.remove();},
+    deny:function(){try{localStorage.setItem(key,'denied');}catch(e){}var n=d.getElementById('brali-analytics-consent');if(n)n.remove();}
+  };
+  try{if(localStorage.getItem(key)==='granted')load();}catch(e){}
+})(window,document,'GTM-5TJVLJG9');
+</script>
 </head>
-<body>
+<body data-brali-cluster="general">
+<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
+  <strong style="display:block;margin-bottom:6px;font-size:17px">Optional analytics</strong>
+  <span>Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.</span>
+  <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+    <button type="button" onclick="braliAnalyticsConsent.grant()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#171717;color:#fff;font:inherit;font-weight:700;cursor:pointer">Allow analytics</button>
+    <button type="button" onclick="braliAnalyticsConsent.deny()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#fff;color:#171717;font:inherit;font-weight:700;cursor:pointer">Necessary only</button>
+  </span>
+</aside>
+<script>(function(){try{if(localStorage.getItem('brali-analytics-consent-v1')){var n=document.getElementById('brali-analytics-consent');if(n)n.remove();}}catch(e){}})();</script><a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>
 <main>
   <p><a href="/cite/">Citation</a> / media facts</p>
   <h1>Media & attribution facts</h1>
@@ -22,5 +55,5 @@
 <script>
 fetch('/media/press-facts.json').then(r=>r.json()).then(data=>{const root=document.getElementById('facts');root.textContent='';for(const f of data.facts){const el=document.createElement('article');el.className='fact';const h=document.createElement('h2');h.textContent=f.text;el.appendChild(h);const p=document.createElement('p');p.className='meta';const a=document.createElement('a');a.href=f.source;a.textContent=f.source;p.appendChild(a);el.appendChild(p);root.appendChild(el)}}).catch(()=>{document.getElementById('facts').textContent='Facts registry unavailable.'});
 </script>
-</body>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small><small>Maintained by MetalHeadsCats.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer></body>
 </html>

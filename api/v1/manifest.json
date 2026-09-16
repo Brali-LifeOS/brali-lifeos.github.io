@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "api_version": "v1",
   "canonical_url": "https://brali-lifeos.github.io/life-os/datasets/manifest.json",
   "files": [
@@ -12,20 +12,20 @@
     },
     {
       "path": "cite/index.json",
-      "sha256": "a345a97e0962fccf9fd4a1fe06b80d10fe0b6b961c5e48f7012ed931c99acdcc",
-      "bytes": 1271,
+      "sha256": "c9e299fe53087f34f3dbd4875e89fd5e87546d7d2e721301dc6cc947a4467ec1",
+      "bytes": 1262,
       "count": null
     },
     {
       "path": "data/adoption.json",
-      "sha256": "29a3060edb26e0e479faf1b7f5611bc4e482bb7016ec72708f61310e8fb0cb12",
-      "bytes": 4081,
+      "sha256": "d225659284d8894f9868537f7b94525a8febd3c21d23c6100de209bca9ed7bf9",
+      "bytes": 10213,
       "count": 3
     },
     {
       "path": "data/agent-evaluation-suite.json",
-      "sha256": "7139ce2fc0b41bc6c41e63af05603254ee5ee7d41145d049e3dd1677ab563109",
-      "bytes": 11379,
+      "sha256": "3b2fabea9917f6b133826545dc055edfa7e7ae33fc945551ae099270779091c2",
+      "bytes": 11965,
       "count": 50
     },
     {
@@ -47,10 +47,46 @@
       "count": 4
     },
     {
+      "path": "data/claim-cleanup-decisions-batch-4.json",
+      "sha256": "c6aa9b8da7afaf4f1c5e377660ea05cd9d4634feefbb395a00a34dd858abe514",
+      "bytes": 3752,
+      "count": 4
+    },
+    {
+      "path": "data/claim-cleanup-decisions-batch-5.json",
+      "sha256": "5732e70e5e00d35b8c926b77a5744bcaa20684c5039c5af14bfc2c1d3c363adf",
+      "bytes": 3949,
+      "count": 4
+    },
+    {
+      "path": "data/claim-cleanup-decisions-batch-6.json",
+      "sha256": "bf5a0f1c8947c81fc66f69d992b1e438cdfefdfb1c011d3290f78270a0a5c1ac",
+      "bytes": 3993,
+      "count": 4
+    },
+    {
+      "path": "data/claim-cleanup-decisions-batch-7.json",
+      "sha256": "faaa3187c962da8983710e4cbacb1b3fe9ac1c2148d26d204e1ee73dffacdefb",
+      "bytes": 4210,
+      "count": 4
+    },
+    {
+      "path": "data/claim-cleanup-decisions-batch-8.json",
+      "sha256": "0d069b82a3d296743688c69574eec950d4bf0fbea5bb99663dd90156e217c754",
+      "bytes": 4034,
+      "count": 4
+    },
+    {
+      "path": "data/claim-cleanup-decisions-batch-9.json",
+      "sha256": "01a3e1f5ee126b88cce694b96707370a7617c4011219a1af2d35af97ca29a346",
+      "bytes": 4102,
+      "count": 4
+    },
+    {
       "path": "data/evidence-decisions.json",
-      "sha256": "e8dfaac1646ab36d35c9f5afd4bc8fe802fd91cd44fb2f21764e1c9f70a98fae",
-      "bytes": 58546,
-      "count": 14
+      "sha256": "dbc83ebe8693f88fea9e81a655ff3ca2cd06e51290325e694507b88fc301f916",
+      "bytes": 258067,
+      "count": 63
     },
     {
       "path": "data/flagship-100-policy.json",
@@ -66,15 +102,15 @@
     },
     {
       "path": "data/research-candidates.json",
-      "sha256": "0baa547585caccd102d69e96e4613cf5b461ce16bc0356713b61e16c362d8d92",
-      "bytes": 26937,
-      "count": 15
+      "sha256": "7124c13e0cb6a65ba2849ae6802cdb95d86e7784843ce7941125101e862e6bb0",
+      "bytes": 138757,
+      "count": 65
     },
     {
       "path": "data/research-queries.json",
-      "sha256": "25ea03beb899d35b3a56e7360ca5d768b54b209d3dfbbfb2775ebdbb267d5ac3",
-      "bytes": 9734,
-      "count": 29
+      "sha256": "624dea4474544a1a5d0bcd15a7cfe0bd3abc47e3c83171f651ca3ea69eb2643d",
+      "bytes": 14022,
+      "count": 41
     },
     {
       "path": "data/topic-hubs.json",
@@ -84,104 +120,104 @@
     },
     {
       "path": "for-ai/integrations/index.json",
-      "sha256": "c4ddedfe5e2c1373d069ac6d7c11371e25129c3a8c7926644f059d3ac7457199",
-      "bytes": 4296,
+      "sha256": "d42be62e1c199cad68b9cc27bbe3c3b2089a106ca21a9dc12a419c36c07a30fd",
+      "bytes": 10428,
       "count": 3
     },
     {
       "path": "life-os/datasets/agent-evaluation.json",
-      "sha256": "8aa11afe314589bb33c55f613dd2d1233df013794a9ffd83da9ca0b386ac9060",
-      "bytes": 271194,
+      "sha256": "a6303fc02ddad2545c1cd240821fcd3ff651283909c8d1cff9957241b87df77f",
+      "bytes": 372768,
       "count": 50
     },
     {
       "path": "life-os/datasets/claim-cleanup-batch.json",
-      "sha256": "327b9d45589322ff51ea32475509c3670f29a0744955672600378ca3b13b2d44",
-      "bytes": 16709,
+      "sha256": "d5ccd47b61d4d7a8a52918093c3288d295f7f427dd711e4809457489afe7234c",
+      "bytes": 22453,
       "count": null
     },
     {
       "path": "life-os/datasets/claim-cleanup-history.json",
-      "sha256": "fb93bb12ecd558ba28c6763d9efeb88ff4275ac0693898b2594b84fc8c3fd344",
-      "bytes": 3360,
-      "count": 3
+      "sha256": "b99a1dc6dd8dfc89571bb6b3f263fe2fcd02c2e8b997684383e440c3b75fa0a8",
+      "bytes": 9801,
+      "count": 9
     },
     {
       "path": "life-os/datasets/claim-debt.json",
-      "sha256": "058fe2c1508d275987d445ce543fe95b263d9802416a640673a5b560b2ff5b98",
-      "bytes": 2188788,
-      "count": 825
+      "sha256": "61e646b5dc4c8c8ae3ae2671918620b6e8425e30ec687dd8160fd9b9f0ef95ca",
+      "bytes": 2065275,
+      "count": 786
     },
     {
       "path": "life-os/datasets/editorial-normalizations.json",
-      "sha256": "56117196c387537ecdf5d9b5a88fe479b424f96bdf5f4c04ae90cca5a405f613",
-      "bytes": 1150,
+      "sha256": "2e1322eb234ebbf75011061535ba6b3de60f7037c0be0a3f123579eef20988eb",
+      "bytes": 40317,
       "count": null
     },
     {
       "path": "life-os/datasets/evidence-decisions.json",
-      "sha256": "29de6f8e4ceea302f775249de2f25a6db8e050b1176885331cee7e459fe6e54f",
-      "bytes": 58598,
-      "count": 14
+      "sha256": "1aacd4000960b3566bdb89696a02b2563bf2880da307d6d12480a466f5fd3274",
+      "bytes": 258119,
+      "count": 63
     },
     {
       "path": "life-os/datasets/evidence-metrics.json",
-      "sha256": "eb0f1939fa2a4c50e0a72ca2ea7dd7b40ebffc1e39299499125be62c4e413f94",
-      "bytes": 742,
+      "sha256": "a836f8d7707ce19f26e4a34863798465cff18121f79c5e8daf096a96d485b931",
+      "bytes": 768,
       "count": null
     },
     {
       "path": "life-os/datasets/evidence.json",
-      "sha256": "0409f483196f9cde0ef5e84bea757af9bbb214700407b1c84db3f5932821bdbe",
-      "bytes": 2948762,
-      "count": 947
+      "sha256": "918e0319818d8ee8fb8354cdfc4c858e5e408251be9026b9df2c91c4da38725a",
+      "bytes": 3315763,
+      "count": 973
     },
     {
       "path": "life-os/datasets/flagship-100-candidates.json",
-      "sha256": "044db2ba48f583d36552afc582636ed4b47f925865d094e4c40b1758253e119c",
-      "bytes": 396322,
-      "count": 139
+      "sha256": "ea05c33f2f3c493fc0dab35fa6ed2582034cef4e157705263bb5daaca2e6bb86",
+      "bytes": 642704,
+      "count": 224
     },
     {
       "path": "life-os/datasets/flagship-100.json",
-      "sha256": "85651761fd5c146c46bdb03e6dcccfcc18f7e47d8b2a099a5cf65aaab6df9b2b",
-      "bytes": 277382,
+      "sha256": "3bfcf48bb117eeaff68b94131b19954a8175b2ed37091556b0b6be6beb4bd63f",
+      "bytes": 285468,
       "count": 100
     },
     {
       "path": "life-os/datasets/flagships.json",
-      "sha256": "7ff88b859ec34a6227f068c1812372ac4c848c09f18263c98a06c29c72b41cbc",
-      "bytes": 7507,
+      "sha256": "b5ce428d24cfe2f9420b5c59104735a1025fc9b88b73ce1a19c143d835192fbd",
+      "bytes": 7478,
       "count": 7
     },
     {
       "path": "life-os/datasets/hacks.json",
-      "sha256": "4a77ee989f40c670502c884e705b9cce8753dadcfd476978c7eef7d73013e828",
-      "bytes": 5856905,
-      "count": 948
+      "sha256": "d0bca62705eb7c3ce4d215faf865539f6bb9575b5de0d5590f31ba837f85676e",
+      "bytes": 5851960,
+      "count": 947
     },
     {
       "path": "life-os/datasets/identity-aliases.json",
-      "sha256": "61efde23630d73407fd96f661d4759296ce265c34872c259ca6919bfe67ca6dd",
-      "bytes": 410382,
-      "count": 2217
+      "sha256": "ade081006567964762c3c9819fe1cf3a67221396b710cb70c696135ef28e7847",
+      "bytes": 467191,
+      "count": 2445
     },
     {
       "path": "life-os/datasets/identity.json",
-      "sha256": "3d0a44130599410eb22a9f6cab6b3ebf781258318abcd7819ce1c3408568b3ac",
-      "bytes": 456023,
-      "count": 2140
+      "sha256": "6e7bce53de5a63f3337333428541b4b69a2f7c65f973053880cfc239312fd364",
+      "bytes": 525659,
+      "count": 2349
     },
     {
       "path": "life-os/datasets/indexing.json",
-      "sha256": "06f59dba518242ace4a48de3cb419d7bc0ab90fb27638939d98509920064fd29",
-      "bytes": 67314,
+      "sha256": "54b45c70c7bd86e0f5d217efaa2d8538b296f2aeb8cff720a44eccb28935e06c",
+      "bytes": 91131,
       "count": null
     },
     {
       "path": "life-os/datasets/legacy-sensitive-collections.json",
-      "sha256": "aee21db77599e465bf9844975664971116c956375b0b3e15b7d1043f41be9244",
-      "bytes": 5743,
+      "sha256": "a1e91d695a7e5dd48192236764e5a078abaa08f2edc33a14d2d58b411ba096c3",
+      "bytes": 6220,
       "count": 4
     },
     {
@@ -192,137 +228,138 @@
     },
     {
       "path": "life-os/datasets/ontology-coverage.json",
-      "sha256": "914d3c279a9ca71a939dd5a04a099c6077d05cd6aea5228d956d0fa4a47a4b6b",
-      "bytes": 24663,
+      "sha256": "7bd9340a767aa602eae4d58f97afabe586b94828c52e8fe55f0ec50f3b8975cf",
+      "bytes": 24667,
       "count": null
     },
     {
       "path": "life-os/datasets/ontology-migration-queue.json",
-      "sha256": "73490bf77c610c92ff935697c3876238c74640d1e206a147b5c1b7f5adae1025",
-      "bytes": 21757,
+      "sha256": "154df083ac5f91fb66a5278271a99319a72f90c53fcde49d2462aa31e15b516c",
+      "bytes": 21842,
       "count": 45
     },
     {
       "path": "life-os/datasets/ontology.json",
-      "sha256": "ba52189f4002a5aecc82f10712acd598da9b6ca60101b78a02fbc6b4e26d08e3",
-      "bytes": 26472,
+      "sha256": "22e99dbc228cc9667a2b56bd026e610bf539f5de639f129dd7f12928eff4d310",
+      "bytes": 26866,
       "count": null
     },
     {
       "path": "life-os/datasets/protocols.json",
-      "sha256": "1c70b95e270bbb80518a0d0cb8cb14a4452fca17375218e5b067d11e6ca0889b",
-      "bytes": 297708,
-      "count": 139
+      "sha256": "fc70d72cdfe1768edd9296b42fe25c28ceca02730bb9eabcd853509476b05e0c",
+      "bytes": 486930,
+      "count": 224
     },
     {
       "path": "life-os/datasets/reference-agent-demos.json",
-      "sha256": "2775072654e41405abb595aa6f28fdb17cc7f46d93d50cbe9f6a1b6a7258972a",
-      "bytes": 29778,
+      "sha256": "5986190de62b93e7df21645baaaf6220b99ebd2e1975c3edfdb8d33c423fc7f3",
+      "bytes": 43316,
       "count": 4
     },
     {
       "path": "life-os/datasets/research-gaps.json",
-      "sha256": "40603d1bb9e1c1b41cf3b90e633427c32bfe7df00d2278a451d6a59c61a22773",
-      "bytes": 57317,
+      "sha256": "da4a1aebf7bcfd4d165519b19c73f23e4002453ee08b3d45cc7e0495575a8e75",
+      "bytes": 107057,
       "count": 24
     },
     {
       "path": "life-os/datasets/retrieval-benchmark.json",
-      "sha256": "f78895599b509b3825f218ccc4953e6a917fc598326aba193a4a742178e3997c",
-      "bytes": 3835,
+      "sha256": "df3fdb6a9c74bc52f01af6b72fae64e54120d4faae2fc5ed7f3c3f245fe2cd80",
+      "bytes": 3846,
       "count": null
     },
     {
       "path": "life-os/datasets/review-queue.json",
-      "sha256": "a8bfd3b4ed35491aa3f5206700ec4ff99eeab2b83632a554773343ac6c0ea528",
-      "bytes": 2974808,
-      "count": 808
+      "sha256": "16fc1dd82fe5aec2bbe1c7095fa661b162da9ab13d0a4fbfc4edb53eec19582a",
+      "bytes": 3064104,
+      "count": 749
     },
     {
       "path": "life-os/datasets/topic-hubs.json",
-      "sha256": "f93d498c7bd78bb42f14e5da2e8a30457da6400498203394e2b15cfc5cb99e4b",
-      "bytes": 106245,
+      "sha256": "d3a8271c702c07db431f1b84d874df7a9a117ec90e2d158ed99b15662e228f3c",
+      "bytes": 224137,
       "count": 7
     },
     {
       "path": "life-os/datasets/zone-coverage-backlog.json",
-      "sha256": "1e645e9408b0850be04606ccdbf95decba1242f02b6bfeca33f4b6315dac2a14",
-      "bytes": 54788,
-      "count": 15
-    },
-    {
-      "path": "life-os/datasets/zones.json",
-      "sha256": "939a56ea4e7c69eb1a93a44975e4703a30879c7937f8a054a6c8fa9122a9c8fe",
-      "bytes": 8604,
-      "count": 49
-    },
-    {
-      "path": "topics/focus/index.json",
-      "sha256": "1485a44e2fd23fe74bae507c723a9df294a082c52b043de00b62e0c19b1473b7",
-      "bytes": 15677,
-      "count": 4
-    },
-    {
-      "path": "topics/habits/index.json",
-      "sha256": "3b23222117b9eae267c62dd24971f0c2d1b3c1c73881a70e68f186faad68c433",
-      "bytes": 6249,
-      "count": 0
-    },
-    {
-      "path": "topics/learning/index.json",
-      "sha256": "ed00abf1cfd61ff62faf650e8e782e8e9b79e04e2426f60e485462561c54b43e",
-      "bytes": 20496,
-      "count": 7
-    },
-    {
-      "path": "topics/memory/index.json",
-      "sha256": "677ad104435c127a5d90a99eff385532cf204a5c866da3c3bbb795967194d25e",
-      "bytes": 21763,
-      "count": 3
-    },
-    {
-      "path": "topics/movement/index.json",
-      "sha256": "af14be0f9c18b02bc47f1e97e2a45ec27b5410b89c70cd708dc86a55dcf9bbad",
-      "bytes": 15071,
+      "sha256": "68057f248be8e83eb79d5ee6cbcfd69ae131fce0662bdb17e1f78a00a6b7c4cc",
+      "bytes": 15637,
       "count": 5
     },
     {
+      "path": "life-os/datasets/zones.json",
+      "sha256": "ff2c743f26ed99059334f5f9c18ec08462dee27db69823f3711a4202e52f642b",
+      "bytes": 10474,
+      "count": 50
+    },
+    {
+      "path": "topics/focus/index.json",
+      "sha256": "488eb0ebfec404744a766bd9bbdca6ec526e8e6a5cf2b53852f1d2173ebe2662",
+      "bytes": 44022,
+      "count": 8
+    },
+    {
+      "path": "topics/habits/index.json",
+      "sha256": "f60f2b4953a3f9fa884693120de185982a051e39aee8fb2337a57efc04977c80",
+      "bytes": 24050,
+      "count": 5
+    },
+    {
+      "path": "topics/learning/index.json",
+      "sha256": "d78774e3c926c2d127f69dc5f92f853c1cdfb2f63e8b430b9fea7e678470dfdc",
+      "bytes": 34083,
+      "count": 8
+    },
+    {
+      "path": "topics/memory/index.json",
+      "sha256": "afb2a050ae7620fed1101ab908586c5e8bca095bec3a743fb4a3a6b4a3b44048",
+      "bytes": 35516,
+      "count": 6
+    },
+    {
+      "path": "topics/movement/index.json",
+      "sha256": "117c8e11b42e227958c40dc9a6ccb57d40588e3147c4eda70971b7a0a3751087",
+      "bytes": 43033,
+      "count": 8
+    },
+    {
       "path": "topics/sleep/index.json",
-      "sha256": "16178f3a2623ec36b40f3d8c0e29951e0de6ce2ed0caf58c86572c2578aa6e2d",
-      "bytes": 7942,
-      "count": 1
+      "sha256": "1e7f5ea6cbbdd520cd73d76d978ffaf1b02b2c9ca7148b679a156149acb9b150",
+      "bytes": 16725,
+      "count": 2
     },
     {
       "path": "topics/stress/index.json",
-      "sha256": "76b4f46a6828135a0bb74d98b59580e74b66fb049f60f47d145439f2b0ff76d6",
-      "bytes": 11795,
-      "count": 7
+      "sha256": "43954487d19ede0f5bca28512485d0022944c882d1ff385634b1d0777fa561a9",
+      "bytes": 13300,
+      "count": 8
     },
     {
       "path": "life-os/datasets/gold-20.json",
-      "sha256": "e656c02b3aed09e657e2866c549f7e70f5fa331b20c58c443dd8f3a5abffb736",
-      "bytes": 28201,
+      "sha256": "9392c78ec9abed096ed7181f4f348315f560665cf9a1abd5b39ee9337067a066",
+      "bytes": 18326,
       "count": 20
     }
   ],
   "counts": {
-    "files": 50,
-    "identities": 2140,
-    "aliases": 2217,
+    "files": 56,
+    "identities": 2349,
+    "aliases": 2445,
     "topics": 50,
-    "research_candidates": 15,
-    "evidence_entries": 947,
-    "evidence_decisions": 14,
+    "research_candidates": 65,
+    "evidence_entries": 973,
+    "evidence_decisions": 63,
     "start_here_flagships": 7,
     "flagship_protocols": 100,
+    "gold_candidate_flagships": 20,
     "agent_evaluation_cases": 50,
     "topic_hubs": 7,
     "reference_agent_scenarios": 4,
     "integration_runtimes": 3,
-    "claim_debt_entries": 658,
+    "claim_debt_entries": 607,
     "claim_cleanup_selected": 4,
-    "claim_cleanup_completed": 12,
-    "claim_cleanup_batches": 3
+    "claim_cleanup_completed": 36,
+    "claim_cleanup_batches": 9
   },
   "research_gaps": {
     "baseline": 24,
@@ -330,7 +367,7 @@
     "resolved": 2
   },
   "zone_coverage_backlog": {
-    "zero_trust_zones": 15,
+    "zero_trust_zones": 5,
     "purpose": "Editorial triage only; candidate ranking never changes evidence status automatically."
   },
   "legacy_sensitive_collections": {
@@ -339,21 +376,31 @@
     "empty_legacy_collections": 1,
     "scope": "Brali corpus/review state only; not a scientific verdict on the underlying therapy or school."
   },
+  "indexing_policy": {
+    "web_rule": "Canonical reviewed/practical Growth Library entries are indexable as trusted current guidance. Non-sensitive pending-review entries keep their substantive long-form article visible and may be indexable with an explicit review-pending boundary. Sensitive pending-review and restricted entries remain noindex until their review/safety bar is met.",
+    "recommendation_rule": "Only reviewed and practical entries with an eligible evidence decision enter normal trusted recommendations, the Trusted Protocol Feed, and usable Agent Skills. Visibility or search indexing of a pending-review long-form article never makes it recommendation-eligible.",
+    "machine_rule": "Per-entry HTML robots metadata, sitemap membership, machine discovery.search_indexable, content.longform_visible, content.current_guidance and discovery.recommendation_eligible are separate explicit states. Pending-review articles may be visible without being trusted guidance.",
+    "search_indexable_entries": 822,
+    "reference_indexable_entries": 598,
+    "withheld_entries": 151,
+    "trusted_recommendation_entries": 224,
+    "review_required_entries": 749
+  },
   "claim_cleanup_batch_schema_version": 2,
   "claim_cleanup_history_schema_version": 1,
   "claim_cleanup_batch_counts": {
-    "unresolved_claim_debt": 658,
-    "actionable_under_policy": 539,
+    "unresolved_claim_debt": 607,
+    "actionable_under_policy": 492,
     "selected": 4,
     "blocked_preview": 8,
-    "completed_total": 12,
-    "completed_batches": 3
+    "completed_total": 36,
+    "completed_batches": 9
   },
   "gold_20": {
     "schema_version": 1,
     "target_count": 20,
     "candidate_count": 20,
-    "gold_ready_count": 0,
+    "gold_ready_count": 20,
     "observed_user_demand_available": false
   }
 }

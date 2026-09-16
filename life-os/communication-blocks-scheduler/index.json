@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:communication-blocks-scheduler",
   "slug": "communication-blocks-scheduler",
-  "title": "Schedule Specific Times to Check Your Messages and Emails",
-  "description": "Schedule specific times to check your messages and emails.",
+  "title": "Batch Routine Messages Around Real Response Obligations",
+  "description": "Set predictable windows for non-urgent messages, keep an explicit path for work that genuinely cannot wait, and adjust the schedule when it conflicts with actual response duties.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
   "machine_url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:communication-blocks-scheduler",
+    "language": "en",
+    "slug": "communication-blocks-scheduler",
+    "url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
+    "title": "Batch Routine Messages Around Real Response Obligations",
+    "description": "Set predictable windows for non-urgent messages, keep an explicit path for work that genuinely cannot wait, and adjust the schedule when it conflicts with actual response duties.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "task-initiation",
+          "title": "Task Initiation"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "do-it"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "action": "List the communication channels you monitor, separate channels that require rapid coverage from routine messages, place routine processing into predictable windows, define an exception path for genuinely time-sensitive items, turn longer requests into tasks, and review whether your response obligations are still being met.",
+    "check_in": "Which messages waited until the planned window, which exception was genuinely time-sensitive, and did the schedule still meet the response expectations of my role?",
+    "keywords": [
+      "Do It",
+      "Life OS",
+      "Cut the Noise with Communication Blocks"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/communication-blocks-scheduler.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

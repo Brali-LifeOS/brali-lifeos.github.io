@@ -3,21 +3,21 @@
   "type": "brali-growth-zone",
   "slug": "as-architector",
   "title": "As Architector",
-  "description": "Apply design strategies to organize and improve various aspects of your daily life.",
+  "description": "Design environments, information flows, and constraints so the system helps instead of requiring daily heroics.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/as-architector/",
   "machine_url": "https://brali-lifeos.github.io/life-os/as-architector/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "learning-thinking",
     "title": "Learning & Thinking"
   },
   "counts": {
     "library_entries": 18,
-    "trusted_protocols": 0,
+    "trusted_protocols": 1,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 18,
+    "practical": 1,
+    "pending_review": 17,
     "restricted": 0,
     "mapped_topics": 3,
     "research_gaps": 2
@@ -46,7 +46,7 @@
     {
       "topic_id": "digital-wellbeing",
       "title": "Digital Wellbeing",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/"
     },
     {
@@ -56,8 +56,22 @@
       "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
     }
   ],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "ergonomic-workspace-assessment",
+      "title": "Audit Workspace Friction Before Buying More Gear",
+      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
+    {
+      "slug": "ergonomic-workspace-assessment",
+      "title": "Audit Workspace Friction Before Buying More Gear",
+      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
     {
       "slug": "declutter-desk-coach",
       "title": "Declutter and Simplify Your Space",
@@ -153,13 +167,6 @@
       "slug": "creative-constraint-solutions",
       "title": "See Limits as Chances to Get Creative",
       "url": "https://brali-lifeos.github.io/life-os/creative-constraint-solutions/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "ergonomic-workspace-assessment",
-      "title": "Set up Your Workspace to Be Comfortable and Efficient",
-      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
       "evidence_status": "pending-review",
       "indexable": false
     },

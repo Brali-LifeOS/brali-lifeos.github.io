@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:cognitive-dissonance-resolution",
   "slug": "cognitive-dissonance-resolution",
-  "title": "Cognitive Dissonance Resolution",
-  "description": "When new information clashes with what you believe, research both sides to understand better.",
+  "title": "Stress-Test a Belief With Strong Counter-Information",
+  "description": "Write the specific claim you currently accept, note the strongest support you have, seek credible information that could challenge it, compare relevance and independence, then keep, narrow or revise the claim without giving weak counterclaims equal weight.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
   "machine_url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -33,14 +33,18 @@
     ],
     "topics": [
       {
-        "id": "skill-learning",
-        "title": "Skill Learning"
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "cognitive-biases",
+        "title": "Cognitive Biases"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "skill-sprint"
@@ -48,8 +52,73 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:cognitive-dissonance-resolution",
+    "language": "en",
+    "slug": "cognitive-dissonance-resolution",
+    "url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
+    "title": "Stress-Test a Belief With Strong Counter-Information",
+    "description": "Write the specific claim you currently accept, note the strongest support you have, seek credible information that could challenge it, compare relevance and independence, then keep, narrow or revise the claim without giving weak counterclaims equal weight.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "skill-sprint"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "skill-sprint",
+      "title": "Skill Sprint"
+    },
+    "action": "Write the claim precisely, record what currently supports it, identify what kind of information would materially challenge it, seek the strongest relevant counter-information you can verify, compare source directness, relevance and independence, and record whether the claim stays, narrows or changes.",
+    "check_in": "What is the exact claim, what currently supports it, what strong counter-information did I find, and did I keep, narrow or revise the claim for a stated reason?",
+    "keywords": [
+      "Skill Sprint",
+      "Life OS",
+      "Cognitive Dissonance Resolution"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/cognitive-dissonance-resolution.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

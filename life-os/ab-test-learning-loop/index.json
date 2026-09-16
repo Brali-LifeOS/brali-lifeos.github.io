@@ -27,20 +27,32 @@
   "ontology": {
     "domains": [
       {
-        "id": "work-money",
-        "title": "Work & Money"
+        "id": "learning-thinking",
+        "title": "Learning & Thinking"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
     "topics": [
       {
-        "id": "marketing-positioning",
-        "title": "Marketing & Positioning"
+        "id": "problem-solving",
+        "title": "Problem Solving"
+      },
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      },
+      {
+        "id": "data-literacy",
+        "title": "Data Literacy"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "work-money-strategy",
       "growth_zone_slug": "marketing"
@@ -49,7 +61,21 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [
+      {
+        "topic_id": "problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+      },
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:ab-test-learning-loop",
@@ -61,20 +87,32 @@
     "ontology": {
       "domains": [
         {
-          "id": "work-money",
-          "title": "Work & Money"
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
         }
       ],
       "topics": [
         {
-          "id": "marketing-positioning",
-          "title": "Marketing & Positioning"
+          "id": "problem-solving",
+          "title": "Problem Solving"
+        },
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        },
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
         }
       ],
       "methods": [],
       "lenses": [],
-      "classification_status": "topic-mapped",
-      "classification_source": "legacy-zone-map",
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
       "legacy": {
         "life_area_slug": "work-money-strategy",
         "growth_zone_slug": "marketing"
@@ -101,5 +139,13 @@
       "source_url": null,
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/ab-test-learning-loop.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "avoid-errors",
   "title": "Avoid Errors",
-  "description": "Learn how to avoid common mistakes in everyday situations.",
+  "description": "Reduce avoidable mistakes with checks, constraints, review points, and less faith in memory at the worst possible moment.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-errors/",
   "machine_url": "https://brali-lifeos.github.io/life-os/avoid-errors/index.json",
   "indexable": true,
@@ -13,14 +13,14 @@
     "title": "Focus & Execution"
   },
   "counts": {
-    "library_entries": 7,
-    "trusted_protocols": 2,
-    "reviewed": 1,
+    "library_entries": 8,
+    "trusted_protocols": 3,
+    "reviewed": 2,
     "practical": 1,
     "pending_review": 5,
     "restricted": 0,
-    "mapped_topics": 4,
-    "research_gaps": 2
+    "mapped_topics": 7,
+    "research_gaps": 3
   },
   "topics": [
     {
@@ -28,6 +28,24 @@
       "title": "Error Prevention",
       "count": 6,
       "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
+    },
+    {
+      "id": "cognitive-biases",
+      "title": "Cognitive Biases",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/cognitive-biases/"
+    },
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
     },
     {
       "id": "digital-attention",
@@ -50,9 +68,15 @@
   ],
   "research_gaps": [
     {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
+    {
       "topic_id": "digital-attention",
       "title": "Digital Attention",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/digital-attention/"
     },
     {
@@ -63,6 +87,12 @@
     }
   ],
   "trusted_protocols": [
+    {
+      "slug": "consider-the-opposite",
+      "title": "Before You Commit to a Judgment, Consider the Opposite",
+      "url": "https://brali-lifeos.github.io/life-os/consider-the-opposite/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "ask-a-peer-to-proofread",
       "title": "Match Feedback to the Revision Target",
@@ -83,6 +113,13 @@
       "url": "https://brali-lifeos.github.io/life-os/document-accuracy-checklist/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "consider-the-opposite",
+      "title": "Before You Commit to a Judgment, Consider the Opposite",
+      "url": "https://brali-lifeos.github.io/life-os/consider-the-opposite/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "document-review-checklist-template",

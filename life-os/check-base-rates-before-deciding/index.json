@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:check-base-rates-before-deciding",
   "slug": "check-base-rates-before-deciding",
-  "title": "Before Jumping to Conclusions, Focus on the General Information",
-  "description": "Before jumping to conclusions, focus on the general information. Here’s how: - Check the base rate: Ask, “What do the overall statistics say?” - Pause before judging: Look for the larger trends instead of just the specifics. - Combine both perspectives: Use general information to inform the specific case. Example: If 90% of a population recovers from an illness, don’t let one extreme story make you believe the illness is fatal.",
+  "title": "Check a Relevant Baseline Before Interpreting One Case",
+  "description": "For an ordinary data-informed decision, define the relevant reference class, find a comparable baseline, inspect its scope and denominator, then combine that general context with the facts that are specific to the case.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
   "machine_url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -33,14 +33,18 @@
     ],
     "topics": [
       {
-        "id": "cognitive-biases",
-        "title": "Cognitive Biases"
+        "id": "data-literacy",
+        "title": "Data Literacy"
+      },
+      {
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +52,73 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:check-base-rates-before-deciding",
+    "language": "en",
+    "slug": "check-base-rates-before-deciding",
+    "url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
+    "title": "Check a Relevant Baseline Before Interpreting One Case",
+    "description": "For an ordinary data-informed decision, define the relevant reference class, find a comparable baseline, inspect its scope and denominator, then combine that general context with the facts that are specific to the case.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        },
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "State the decision, define the reference class, find a baseline with a clear denominator and scope, check whether it is comparable to the current case, add the case-specific information that genuinely differs, and keep the conclusion tentative when the baseline or fit is weak.",
+    "check_in": "What reference class did I use, where did its baseline come from, how comparable is it to this case, and which case-specific fact could justify departing from it?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Trust the Bigger Picture"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/check-base-rates-before-deciding.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

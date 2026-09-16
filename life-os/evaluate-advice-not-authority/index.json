@@ -49,7 +49,10 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:evaluate-advice-not-authority",
@@ -101,5 +104,13 @@
       "source_url": null,
       "reviewed_at": null
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/evaluate-advice-not-authority.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

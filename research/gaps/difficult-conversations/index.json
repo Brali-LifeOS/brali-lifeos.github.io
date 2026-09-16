@@ -9,9 +9,9 @@
   "question": "What preparation and conversational practices reduce escalation or improve clarity in difficult but non-abusive conversations?",
   "evidence_target": "Prefer workplace/interpersonal evidence and research that distinguishes conflict management from therapy or crisis response.",
   "guardrail": "Coercion, abuse, threats, and safety risks require a different response path.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/difficult-conversations/",
   "research_queries": [
     {
@@ -20,16 +20,73 @@
       "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
-  "trusted_protocols": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1038/s41467-026-71669-5",
+      "title": "Spoken disagreement is more constructive than written disagreement",
+      "status": "propose-protocol",
+      "publication_date": "2026-04-27",
+      "reference_url": "https://doi.org/10.1038/s41467-026-71669-5"
+    },
+    {
+      "id": "crossref:10.1177/02654075261420989",
+      "title": "A systematic review of technology-mediated conflict management in couples",
+      "status": "challenge-existing",
+      "publication_date": "2026-01-27",
+      "reference_url": "https://doi.org/10.1177/02654075261420989"
+    },
+    {
+      "id": "crossref:10.1177/19485506261444068",
+      "title": "Harnessing Artificial Intelligence to Facilitate Difficult Conversations",
+      "status": "propose-protocol",
+      "publication_date": "2026-05-05",
+      "reference_url": "https://doi.org/10.1177/19485506261444068"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "chatbot-difficult-conversation-rehearsal-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-31",
+      "source_title": "Harnessing Artificial Intelligence to Facilitate Difficult Conversations",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/chatbot-difficult-conversation-rehearsal-2026/"
+    },
+    {
+      "id": "couple-conflict-channel-boundary-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-26",
+      "source_title": "A systematic review of technology-mediated conflict management in couples",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/couple-conflict-channel-boundary-2026/"
+    },
+    {
+      "id": "spoken-vs-written-disagreement-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-26",
+      "source_title": "Spoken disagreement is more constructive than written disagreement",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/spoken-vs-written-disagreement-boundary-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "ai-customer-reply-coach",
+      "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/ai-customer-reply-coach/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "ai-conversation-rehearsal",
+      "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+      "url": "https://brali-lifeos.github.io/life-os/ai-conversation-rehearsal/",
+      "evidence_status": "practical"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "difficult-conversations",
     "title": "Difficult Conversations",
     "domain_id": "communication-relationships",
     "status": "growth-gap",
-    "entries": 0,
-    "research_candidates": 0
+    "entries": 2,
+    "research_candidates": 3
   }
 }

@@ -29,18 +29,30 @@
       {
         "id": "health-energy",
         "title": "Health & Energy"
+      },
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
       }
     ],
     "topics": [
       {
         "id": "health-basics",
         "title": "Everyday Health Basics"
+      },
+      {
+        "id": "digital-wellbeing",
+        "title": "Digital Wellbeing"
+      },
+      {
+        "id": "recovery-energy",
+        "title": "Recovery & Energy"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "health-energy",
       "growth_zone_slug": "be-healthy"
@@ -49,7 +61,21 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [
+      {
+        "topic_id": "digital-wellbeing",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/"
+      },
+      {
+        "topic_id": "recovery-energy",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:20-20-20-eye-break-reminder",
@@ -63,18 +89,30 @@
         {
           "id": "health-energy",
           "title": "Health & Energy"
+        },
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
         }
       ],
       "topics": [
         {
           "id": "health-basics",
           "title": "Everyday Health Basics"
+        },
+        {
+          "id": "digital-wellbeing",
+          "title": "Digital Wellbeing"
+        },
+        {
+          "id": "recovery-energy",
+          "title": "Recovery & Energy"
         }
       ],
       "methods": [],
       "lenses": [],
-      "classification_status": "topic-mapped",
-      "classification_source": "legacy-zone-map",
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
       "legacy": {
         "life_area_slug": "health-energy",
         "growth_zone_slug": "be-healthy"
@@ -101,5 +139,13 @@
       "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/20-20-20-eye-break-reminder.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

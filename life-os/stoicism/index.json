@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "stoicism",
   "title": "Stoicism",
-  "description": "Cultivate resilience and clarity by embracing the wisdom of Stoic philosophy.",
+  "description": "Use Stoic ideas as a lens for control, perspective, and action — philosophy first, motivational mythology second.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/stoicism/",
   "machine_url": "https://brali-lifeos.github.io/life-os/stoicism/index.json",
   "indexable": true,
@@ -14,10 +14,10 @@
   },
   "counts": {
     "library_entries": 13,
-    "trusted_protocols": 1,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 1,
-    "pending_review": 12,
+    "practical": 2,
+    "pending_review": 11,
     "restricted": 0,
     "mapped_topics": 4,
     "research_gaps": 3
@@ -26,7 +26,7 @@
     {
       "id": "decision-making",
       "title": "Decision Making",
-      "count": 2,
+      "count": 3,
       "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
     },
     {
@@ -52,7 +52,7 @@
     {
       "topic_id": "decision-making",
       "title": "Decision Making",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
     },
     {
@@ -70,8 +70,14 @@
   ],
   "trusted_protocols": [
     {
+      "slug": "control-to-action-compass",
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "circles-of-control-planner",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "title": "Separate Outcomes From Actions You Can Control",
       "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
       "evidence_status": "practical"
     }
@@ -92,23 +98,9 @@
       "indexable": false
     },
     {
-      "slug": "circles-of-control-planner",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
-      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-      "evidence_status": "practical",
-      "indexable": true
-    },
-    {
       "slug": "stoic-circle-of-control",
       "title": "Each Evening, Think Back on Your Day and Sort Out Which Challenges Were Within",
       "url": "https://brali-lifeos.github.io/life-os/stoic-circle-of-control/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "control-to-action-compass",
-      "title": "Each Morning, Write Down Your Main Concerns for the Day",
-      "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -123,6 +115,27 @@
       "slug": "memento-mori-action-tracker",
       "title": "Reflect Daily on the Impermanence of Life, Assess Your Priorities, and Act on What",
       "url": "https://brali-lifeos.github.io/life-os/memento-mori-action-tracker/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "control-to-action-compass",
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "circles-of-control-planner",
+      "title": "Separate Outcomes From Actions You Can Control",
+      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "stoic-acceptance-tracker",
+      "title": "Separate What Happened From What You Can Change Next",
+      "url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -151,13 +164,6 @@
       "slug": "reframe-negative-thoughts-stoic-cbt",
       "title": "When a Negative Thought Strikes, Pause to Question Its Validity and Try to Reframe",
       "url": "https://brali-lifeos.github.io/life-os/reframe-negative-thoughts-stoic-cbt/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "stoic-acceptance-tracker",
-      "title": "When Faced with Difficulties, Breathe Deeply and Accept the Situation as It Is, Without",
-      "url": "https://brali-lifeos.github.io/life-os/stoic-acceptance-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },

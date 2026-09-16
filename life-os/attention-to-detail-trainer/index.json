@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:attention-to-detail-trainer",
   "slug": "attention-to-detail-trainer",
-  "title": "Pay Close Attention to the Details Around You",
-  "description": "Pay close attention to the details around you.",
+  "title": "Run a Detail Check Before You Ship",
+  "description": "Inspect a concrete artifact against a small checklist, run a second pass from a different angle, log anomalies, and improve the checklist from real misses rather than training vague hypervigilance.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
   "machine_url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "work-money",
+        "title": "Work & Money"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      },
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +52,8 @@
         "title": "Detective"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "as-detective"
@@ -48,8 +61,82 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:attention-to-detail-trainer",
+    "language": "en",
+    "slug": "attention-to-detail-trainer",
+    "url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
+    "title": "Run a Detail Check Before You Ship",
+    "description": "Inspect a concrete artifact against a small checklist, run a second pass from a different angle, log anomalies, and improve the checklist from real misses rather than training vague hypervigilance.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "error-prevention",
+          "title": "Error Prevention"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "detective",
+          "title": "Detective"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-detective"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-detective",
+      "title": "As Detective"
+    },
+    "action": "Choose an artifact or environment where errors matter, write a short checklist from known failure modes, inspect once for completeness and once from a different perspective such as data consistency or user flow, record anomalies, fix them, and update the checklist when a new recurring miss appears.",
+    "check_in": "What defect or ambiguity did the check find, which checklist item caught it, and what recurring miss should change the next review?",
+    "keywords": [
+      "As Detective",
+      "Life OS",
+      "Observe Closely"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/attention-to-detail-trainer.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

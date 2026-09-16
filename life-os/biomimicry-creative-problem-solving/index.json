@@ -56,10 +56,13 @@
     "research_gaps": [
       {
         "topic_id": "creative-problem-solving",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:biomimicry-creative-problem-solving",
@@ -115,5 +118,13 @@
       "source_url": null,
       "reviewed_at": "2026-08-22"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/biomimicry-creative-problem-solving.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

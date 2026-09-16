@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:context-guard-for-decisions",
   "slug": "context-guard-for-decisions",
-  "title": "Always Factor in the Human or Situational Context",
-  "description": "Always factor in the human or situational context. Here’s how: - Ask about the ‘why’: What’s the situation behind this problem? - Step into their shoes: Consider the human side of the issue. - Adapt accordingly: Tailor your approach based on the specific context. Example: When designing a product, think about how real people will use it in their everyday lives.",
+  "title": "Check the Operating Context Before Reusing a Decision",
+  "description": "Before applying a familiar solution, state what changed, identify the people and system constraints that matter, separate verified facts from assumptions, and choose a reversible next step when important context is still missing.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
   "machine_url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/index.json",
   "growth_zone": {
@@ -16,31 +16,31 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
     "topics": [
       {
-        "id": "cognitive-biases",
-        "title": "Cognitive Biases"
+        "id": "decision-making",
+        "title": "Decision Making"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +48,75 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:context-guard-for-decisions",
+    "language": "en",
+    "slug": "context-guard-for-decisions",
+    "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
+    "title": "Check the Operating Context Before Reusing a Decision",
+    "description": "Before applying a familiar solution, state what changed, identify the people and system constraints that matter, separate verified facts from assumptions, and choose a reversible next step when important context is still missing.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "State the decision, note what changed since the comparable case, list the concrete constraints and stakeholders that affect execution, mark assumptions separately from verified facts, and choose a reversible next step or clarification when a missing condition could change the choice.",
+    "check_in": "What changed, which constraint matters now, what am I assuming rather than verifying, and what is the smallest next step that fits the current context?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Context Matters"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/context-guard-for-decisions.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:step-logging-reflection",
   "slug": "step-logging-reflection",
-  "title": "As You Work on a Task, Log Each Step You Take in Real-Time)",
+  "title": "Protocolls: Track and Reflect on Steps",
   "description": "As you work on a task, log each step you take in real-time. Focus on writing down: - What action you performed. - Why you chose that action. - The immediate result or outcome. At the end, review your log to assess: - Which steps were effective. - Where adjustments might be needed.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/",
   "machine_url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/step-logging-reflection.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

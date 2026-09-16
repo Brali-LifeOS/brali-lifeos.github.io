@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:break-familiarity-bias",
   "slug": "break-familiarity-bias",
-  "title": "Question Your Preferences",
-  "description": "Next time you feel drawn to something familiar: - Pause and reflect: Ask yourself, \"Do I like this because it’s better, or just because it’s familiar?\" - Try alternatives: Challenge yourself to explore options you don’t usually pick. Example: Always ordering the same meal? Try a different dish and notice if it adds value.",
+  "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+  "description": "For an ordinary low-stakes choice, name the familiar default, state the criterion that matters, compare one viable alternative, and keep or change the default for a concrete reason rather than novelty alone.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
   "machine_url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
     "topics": [
       {
         "id": "cognitive-biases",
         "title": "Cognitive Biases"
+      },
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +56,83 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:break-familiarity-bias",
+    "language": "en",
+    "slug": "break-familiarity-bias",
+    "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
+    "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+    "description": "For an ordinary low-stakes choice, name the familiar default, state the criterion that matters, compare one viable alternative, and keep or change the default for a concrete reason rather than novelty alone.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        },
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Name the default, write the criterion that matters, identify one viable alternative, compare the two on that criterion and any important constraint, then keep the default or try the alternative for a stated reason. Use this only for ordinary low-stakes choices.",
+    "check_in": "What was the default, what criterion mattered, what alternative did I compare, and why did I keep or change the choice?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Question Your Preferences"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/break-familiarity-bias.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

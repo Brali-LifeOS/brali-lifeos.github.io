@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "learning",
   "title": "Learning",
   "question": "How can I learn through retrieval, practice, feedback, and application rather than passive exposure?",
@@ -9,7 +9,7 @@
   "json_url": "https://brali-lifeos.github.io/topics/learning/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
   "coverage_status": "trusted-protocols",
-  "coverage_note": "7 trusted protocol recommendations available.",
+  "coverage_note": "8 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "skill-learning",
@@ -31,6 +31,103 @@
     }
   ],
   "protocols": [
+    {
+      "canonical_id": "brali:protocol:prequestions-before-learning",
+      "protocol_id": "brali:prequestions-before-learning",
+      "slug": "prequestions-before-learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+      "action": "Choose a small set of questions that point to information you genuinely want to learn. Before opening the explanation, reading the chapter, or watching the lesson, make a brief attempt at each answer even if you are unsure. Then study normally, paying attention when the material resolves those questions. Afterward, check the answers against the source. Use this to target important information, not as a claim that every unasked detail will also be learned better.",
+      "check_in": "After studying, can I answer the questions accurately without looking, and did the questions point me toward information that actually mattered?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "memory",
+        "skill-learning",
+        "metacognition"
+      ],
+      "method_ids": [],
+      "hub_score": 1242.4
+    },
+    {
+      "canonical_id": "brali:protocol:ai-learning-attempt-feedback-retest",
+      "protocol_id": "brali:ai-learning-attempt-feedback-retest",
+      "slug": "ai-learning-attempt-feedback-retest",
+      "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+      "action": "Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI.",
+      "check_in": "Can I now perform or explain the target skill without leaning on the AI output?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10462-026-11665-9",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
+      ],
+      "method_ids": [],
+      "hub_score": 1242.4
+    },
+    {
+      "canonical_id": "brali:protocol:self-explain-what-you-learn",
+      "protocol_id": "brali:self-explain-what-you-learn",
+      "slug": "self-explain-what-you-learn",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+      "action": "Study a manageable chunk, then look away from the explanation and produce a brief self-explanation: what the idea means, why a step follows, how it connects to what you already know, or when it would apply. Compare your explanation with the source, identify one gap or error, and revise it. Use the prompts that fit the material; do not turn every paragraph into a compulsory monologue.",
+      "check_in": "Can I explain the idea accurately enough to reconstruct the key relationship or step, and what did I have to correct after checking the source?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
+      ],
+      "method_ids": [],
+      "hub_score": 1242.4
+    },
+    {
+      "canonical_id": "brali:protocol:active-recall-test-yourself",
+      "protocol_id": "brali:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
+      "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+      "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ],
+      "method_ids": [
+        "retrieval-practice"
+      ],
+      "hub_score": 1192.4
+    },
     {
       "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
       "protocol_id": "brali:refocus-present-stop-mind-wandering",
@@ -57,29 +154,27 @@
       "hub_score": 1192.4
     },
     {
-      "canonical_id": "brali:protocol:active-recall-test-yourself",
-      "protocol_id": "brali:active-recall-test-yourself",
-      "slug": "active-recall-test-yourself",
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
-      "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-      "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+      "canonical_id": "brali:protocol:contextual-language-coach",
+      "protocol_id": "brali:contextual-language-coach",
+      "slug": "contextual-language-coach",
+      "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
+      "title": "Rehearse One Real Language Scenario",
+      "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
+      "action": "Define the scenario and desired outcome, write the core request or response, add likely follow-up phrases and one repair phrase for misunderstanding, rehearse both sides aloud, use the interaction when appropriate, and update the phrase set from the point where you hesitated or needed clarification.",
+      "check_in": "Which scenario did I rehearse, where did the interaction become difficult, which phrase or listening cue should I add, and what can I reuse next time?",
       "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
-        "reviewed_at": "2026-08-18"
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-09-10"
       },
       "is_flagship_100": true,
       "topic_ids": [
-        "memory",
+        "language-learning",
         "skill-learning"
       ],
-      "method_ids": [
-        "retrieval-practice"
-      ],
-      "hub_score": 1192.4
+      "method_ids": [],
+      "hub_score": 1112.4
     },
     {
       "canonical_id": "brali:protocol:ask-for-feedback-tracker",
@@ -105,29 +200,6 @@
       "hub_score": 1062.4
     },
     {
-      "canonical_id": "brali:protocol:belief-update-coach",
-      "protocol_id": "brali:belief-update-coach",
-      "slug": "belief-update-coach",
-      "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
-      "title": "Record What Would Change a Belief",
-      "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
-      "action": "Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition.",
-      "check_in": "What changed in the claim, its scope or my certainty, and what information would justify another update?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-22"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "critical-thinking",
-        "metacognition"
-      ],
-      "method_ids": [],
-      "hub_score": 1062.4
-    },
-    {
       "canonical_id": "brali:protocol:10-minute-language-microsprints",
       "protocol_id": "brali:10-minute-language-microsprints",
       "slug": "10-minute-language-microsprints",
@@ -148,54 +220,71 @@
       ],
       "method_ids": [],
       "hub_score": 1062.33
-    },
-    {
-      "canonical_id": "brali:protocol:decision-calibration-journal",
-      "protocol_id": "brali:decision-calibration-journal",
-      "slug": "decision-calibration-journal",
-      "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
-      "title": "Decision Calibration Journal",
-      "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
-      "action": "Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear.",
-      "check_in": "Which assumption held, which one failed, and what would you change in a similar decision next time?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-20"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "decision-making",
-        "metacognition"
-      ],
-      "method_ids": [],
-      "hub_score": 1061.89
-    },
-    {
-      "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
-      "protocol_id": "brali:weekly-theme-learning-sprints",
-      "slug": "weekly-theme-learning-sprints",
-      "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
-      "title": "Spend Each Week Focused on a Single Theme",
-      "description": "Spend each week focused on a single theme. Immerse yourself in everything related to that topic through reading, watching, and activities.",
-      "action": "Choose one narrow learning theme for the week, define one visible result for Friday, and complete at least one small practice rep on each day you work on it.",
-      "check_in": "Did I complete one practice rep? What was the main friction, and what should I change for the next rep?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-18"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "skill-learning"
-      ],
-      "method_ids": [],
-      "hub_score": 1061.57
     }
   ],
   "evidence_decisions": [
+    {
+      "id": "genai-learning-augmentation-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-05",
+      "source_title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "source_url": "https://link.springer.com/article/10.1007/s10462-026-11665-9",
+      "source_type": "systematic-review-and-meta-analysis",
+      "citation_text": "Boolzen C, Kuhn J, Flegr S, et al. Artificial Intelligence Review. Published August 25, 2026.",
+      "supported_claim": "Brali should not treat generative AI as a learning intervention by itself. In this highly heterogeneous literature, the apparent positive pooled effect did not survive robust publication-bias correction, while more informative moderator evidence suggested that outcomes depend partly on what cognitive work the learner still performs. This supports the existing human-first AI collaboration principle in learning contexts: preserve a meaningful learner attempt, explanation, retrieval, reasoning or verification step and use AI to extend or refine that activity rather than silently replacing the activity being learned.",
+      "unsupported_or_overstated_claims": [
+        "Generative AI has been shown to improve STEM learning overall.",
+        "Human-first AI workflows are proven superior for every learning task; the review compared heterogeneous instructional designs rather than one canonical Brali workflow.",
+        "AI substitution is always harmful or augmentation is always beneficial.",
+        "The meta-analysis establishes an optimal prompt, model, tutoring script, feedback style or amount of AI assistance.",
+        "Knowledge outcomes are universally improved while skill outcomes are not; substantial residual heterogeneity remained within categories.",
+        "A large effect reported in an individual AI-learning study should be assumed causal when intervention and control groups performed different levels of cognitive activity.",
+        "The findings establish long-term skill retention, transfer to real work, or independent performance after AI is removed.",
+        "The results generalize unchanged beyond STEM education."
+      ],
+      "limitations": [
+        "Between-study heterogeneity was extreme (I²=96.32%), and the prediction interval included negative, null and strongly positive true effects.",
+        "Funnel-plot asymmetry and the Robust Bayesian Meta-Analysis indicated substantial publication bias; after correction the evidence favored no stable overall positive or negative main effect.",
+        "The review's risk-of-bias assessment found high risk across included studies, with no study meeting the low-risk criteria.",
+        "Many studies used cognitively incomparable intervention and control conditions; the authors identified numerous apparently large effects where this comparison problem was present.",
+        "Most studies used text-based systems and many were conducted in higher education, limiting generalization to other learners, modalities and tasks.",
+        "AI literacy, metacognitive skill, delegation behavior, prompt quality and verification behavior were often underreported, leaving important mechanisms unresolved.",
+        "Evidence about learner challenges and instructional supports was sparse and inconsistently reported, so those qualitative findings should not be turned into general effect estimates.",
+        "Moderator patterns explained only part of the heterogeneity and did not produce a sufficient if-then configuration that guaranteed large effects."
+      ],
+      "topic_ids": [
+        "skill-learning",
+        "critical-thinking",
+        "metacognition"
+      ]
+    },
+    {
+      "id": "prequestions-targeted-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+      "source_type": "meta-analysis",
+      "citation_text": "King-Shepard QW, Walker J, Nokes-Malach TJ, Carpenter SK, Fraundorf SH. Educational Psychology Review. 2025;37:115.",
+      "supported_claim": "Prequestions can improve later learning of the specific information they target. The meta-analysis reported g = 0.66 for prequestioned information and g = 0.01 for non-prequestioned information; feedback alongside prequestions was associated with stronger targeted learning.",
+      "unsupported_or_overstated_claims": [
+        "Prequestions improve learning of the entire lesson.",
+        "Any question asked before learning will be beneficial.",
+        "There is one evidence-backed optimal number of prequestions.",
+        "A wrong first answer is itself sufficient without later exposure or correction.",
+        "Prequestions replace retrieval practice, practice problems, or feedback after learning."
+      ],
+      "limitations": [
+        "The average benefit is specific to prequestioned information rather than a broad benefit to all content.",
+        "The meta-analysis does not establish one universal question count, timing rule, or content format.",
+        "Effect sizes summarize heterogeneous studies and do not guarantee the same result for an individual learning session."
+      ],
+      "topic_ids": [
+        "memory",
+        "skill-learning",
+        "metacognition"
+      ]
+    },
     {
       "id": "retrieval-procedural-application-2026",
       "decision": "challenge-existing",
@@ -221,6 +310,33 @@
         "language-learning",
         "memory",
         "skill-learning"
+      ]
+    },
+    {
+      "id": "self-explanation-digital-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+      "source_type": "meta-analysis",
+      "citation_text": "Tan LP, Gong SY, Wang YJ, Guo XR, Xu XZ, Wang YQ. Educational Psychology Review. 2025;37:20.",
+      "supported_claim": "Self-explanation in digital learning environments had a positive average effect on academic performance (reported g = 0.46), with positive average effects for retention and transfer. Effects were moderated by pacing and knowledge type, with larger effects reported for learner-centered pacing and conceptual or mixed knowledge than for procedural knowledge.",
+      "unsupported_or_overstated_claims": [
+        "Self-explanation is always better than other learning strategies.",
+        "One explanation prompt or modality is universally optimal.",
+        "Every paragraph should be self-explained.",
+        "The average effect applies unchanged outside digital learning environments.",
+        "A fluent explanation is accurate without checking it against the source."
+      ],
+      "limitations": [
+        "The reviewed evidence is specifically about digital learning environments.",
+        "The meta-analysis reports heterogeneity and moderation rather than a uniform effect across all settings.",
+        "The authors identify the quality and standardization of self-explanations as areas needing further research."
+      ],
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
       ]
     },
     {
@@ -281,9 +397,55 @@
         "memory",
         "skill-learning"
       ]
+    },
+    {
+      "id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-02",
+      "source_title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "source_url": "https://link.springer.com/article/10.1186/s41235-026-00708-y",
+      "source_type": "primary-study",
+      "citation_text": "Chua TJE, Pan SC. Cognitive Research: Principles and Implications. 2026;11:20.",
+      "supported_claim": "For adults learning new, concrete second-language vocabulary paired with images, adding a forced multiple-choice guess before immediately revealing the correct pairing can produce a modest short-delay memory advantage over simply reading the pair. A bounded Brali protocol may therefore use a cue → guess → immediate correct feedback → later recall sequence for vocabulary practice, while keeping the claim limited to this learning format and time horizon.",
+      "unsupported_or_overstated_claims": [
+        "Making errors before learning is generally better than studying correct information.",
+        "Pretesting improves grammar, reading comprehension, conversation skill, pronunciation or complex skill learning.",
+        "The observed advantage has been shown to persist over days, weeks or months.",
+        "The exact 8-second guess window, 5-second feedback window, four-option format or image format is optimal.",
+        "Multiple-choice pretesting always improves later multiple-choice performance; Experiment 3 did not show a significant multiple-choice advantage.",
+        "The effect proves that error correction, associative strengthening or any single proposed mechanism caused the benefit.",
+        "The findings generalize to children, advanced language learners, non-concrete vocabulary or learners outside the sampled online populations."
+      ],
+      "limitations": [
+        "All criterial tests followed a short same-session distractor period rather than a delayed retention interval, so long-term retention was not established.",
+        "The studies used concrete Spanish nouns paired with images; vocabulary type and language-learning context were narrow.",
+        "Participants were adult Prolific users from English-speaking countries and exclusions were substantial in several experiments.",
+        "Pretesting trials included up to 8 seconds of cue-only guessing before the same 5 seconds of correct pair exposure used in reading, so total cue exposure was longer in the pretesting condition.",
+        "Initial guess accuracy was about 35–38%, raising the possibility of some prior familiarity despite exclusions; the authors note that benefits also appeared for incorrectly guessed items.",
+        "Learning condition was primarily within-subjects, and the authors identify between-subject replication as a future research need.",
+        "Multiple-choice benefits were not significant in Experiment 3, so recognition effects were less uniform than cued-recall effects."
+      ],
+      "topic_ids": [
+        "memory",
+        "language-learning"
+      ]
     }
   ],
   "research_watch": [
+    {
+      "id": "crossref:10.1007/s10462-026-11665-9",
+      "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "status": "support-existing",
+      "publication_date": "2026-08-25",
+      "reference_url": "https://doi.org/10.1007/s10462-026-11665-9",
+      "topic_ids": [
+        "skill-learning",
+        "critical-thinking",
+        "metacognition"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
     {
       "id": "crossref:10.1016/j.learninstruc.2026.102377",
       "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
@@ -313,14 +475,14 @@
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
     },
     {
-      "id": "crossref:10.1037/a0037559",
-      "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
-      "status": "support-existing",
-      "publication_date": "2014-08-25",
-      "reference_url": "https://doi.org/10.1037/a0037559",
+      "id": "crossref:10.1186/s41235-026-00708-y",
+      "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "status": "propose-protocol",
+      "publication_date": "2026-03-06",
+      "reference_url": "https://doi.org/10.1186/s41235-026-00708-y",
       "topic_ids": [
         "memory",
-        "skill-learning"
+        "language-learning"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -346,23 +508,18 @@
       "id": "attention-focus",
       "title": "Attention & Focus",
       "canonical_id": "brali:topic:attention-focus"
-    },
-    {
-      "id": "decision-making",
-      "title": "Decision Making",
-      "canonical_id": "brali:topic:decision-making"
     }
   ],
   "related_methods": [
     {
-      "id": "metacognitive-therapy",
-      "title": "Metacognitive Therapy-derived",
-      "canonical_id": "brali:method:metacognitive-therapy"
-    },
-    {
       "id": "retrieval-practice",
       "title": "Retrieval Practice",
       "canonical_id": "brali:method:retrieval-practice"
+    },
+    {
+      "id": "metacognitive-therapy",
+      "title": "Metacognitive Therapy-derived",
+      "canonical_id": "brali:method:metacognitive-therapy"
     }
   ],
   "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."

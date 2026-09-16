@@ -20,12 +20,38 @@
       "risk_flags": []
     },
     {
+      "id": "learning-pretesting",
+      "query": "pretesting guessing feedback errorful generation vocabulary learning randomized experiment meta analysis",
+      "risk_flags": []
+    },
+    {
       "id": "learning-consolidation-rest",
       "query": "wakeful rest post learning memory consolidation meta analysis",
       "risk_flags": []
     }
   ],
   "candidates": [
+    {
+      "id": "crossref:10.1007/s00426-026-02265-x",
+      "title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "status": "challenge-existing",
+      "publication_date": "2026-02-26",
+      "reference_url": "https://doi.org/10.1007/s00426-026-02265-x"
+    },
+    {
+      "id": "crossref:10.1007/s10648-025-10001-x",
+      "title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "status": "propose-protocol",
+      "publication_date": "2025-03-08",
+      "reference_url": "https://doi.org/10.1007/s10648-025-10001-x"
+    },
+    {
+      "id": "crossref:10.1007/s10648-025-10075-7",
+      "title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "status": "propose-protocol",
+      "publication_date": "2025-12-10",
+      "reference_url": "https://doi.org/10.1007/s10648-025-10075-7"
+    },
     {
       "id": "crossref:10.1016/j.learninstruc.2026.102377",
       "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
@@ -55,6 +81,13 @@
       "reference_url": "https://doi.org/10.1037/xlm0001634"
     },
     {
+      "id": "crossref:10.1186/s41235-026-00708-y",
+      "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "status": "propose-protocol",
+      "publication_date": "2026-03-06",
+      "reference_url": "https://doi.org/10.1186/s41235-026-00708-y"
+    },
+    {
       "id": "crossref:10.3758/s13423-025-02778-3",
       "title": "Should we all just take 10? A meta-analysis of wakeful rest",
       "status": "propose-protocol",
@@ -71,11 +104,25 @@
       "ledger_url": "https://brali-lifeos.github.io/evidence/distributed-practice-verbal-recall-boundary-2006/"
     },
     {
+      "id": "prequestions-targeted-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/prequestions-targeted-learning-boundary-2025/"
+    },
+    {
       "id": "retrieval-procedural-application-2026",
       "decision": "challenge-existing",
       "reviewed_at": "2026-08-18",
       "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
       "ledger_url": "https://brali-lifeos.github.io/evidence/retrieval-procedural-application-2026/"
+    },
+    {
+      "id": "self-explanation-digital-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/self-explanation-digital-learning-boundary-2025/"
     },
     {
       "id": "testing-effect-direct-forward-2026",
@@ -92,6 +139,20 @@
       "ledger_url": "https://brali-lifeos.github.io/evidence/testing-versus-restudy-retention-boundary-2014/"
     },
     {
+      "id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-02",
+      "source_title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/vocabulary-pretesting-guess-feedback-boundary-2026/"
+    },
+    {
+      "id": "wakeful-rest-complex-learning-challenge-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-28",
+      "source_title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/wakeful-rest-complex-learning-challenge-2026/"
+    },
+    {
       "id": "wakeful-rest-memory-2026",
       "decision": "propose-protocol",
       "reviewed_at": "2026-08-18",
@@ -100,6 +161,30 @@
     }
   ],
   "trusted_protocols": [
+    {
+      "slug": "active-recall-test-yourself",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "prequestions-before-learning",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "ai-learning-attempt-feedback-retest",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "self-explain-what-you-learn",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "spaced-recall-coach",
       "title": "Separate Review Sessions Instead of Cramming",
@@ -110,12 +195,6 @@
       "slug": "avoid-list-interference-memory-retention",
       "title": "Try Quiet Wakeful Rest After Learning",
       "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
-      "evidence_status": "reviewed"
-    },
-    {
-      "slug": "active-recall-test-yourself",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
       "evidence_status": "reviewed"
     }
   ],
@@ -140,7 +219,7 @@
     "title": "Memory",
     "domain_id": "learning-thinking",
     "status": "active",
-    "entries": 4,
-    "research_candidates": 5
+    "entries": 7,
+    "research_candidates": 9
   }
 }

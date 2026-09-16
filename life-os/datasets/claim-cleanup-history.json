@@ -2,8 +2,8 @@
   "schema_version": 1,
   "name": "Brali completed claim cleanup history",
   "counts": {
-    "batches": 3,
-    "completed": 12
+    "batches": 9,
+    "completed": 36
   },
   "batches": [
     {
@@ -76,6 +76,157 @@
         "belief-update-coach",
         "biomimicry-creative-problem-solving",
         "bold-brainstorm-kickoff"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 4,
+      "batch_id": "claim-cleanup-2026-09-10-04",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-4.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch three completed and before any batch-four rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 658,
+        "actionable_under_policy": 539,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "10x-goal-sprints-tracker",
+        "7-breath-decision-pause",
+        "ai-six-hats-facilitator",
+        "avoid-availability-heuristic-decisions"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 5,
+      "batch_id": "claim-cleanup-2026-09-10-05",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-5.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch four completed and before any batch-five disposition was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 628,
+        "actionable_under_policy": 512,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "boost-focus-with-40hz-binaural-beats",
+        "brag-doc-wins-hub",
+        "break-familiarity-bias",
+        "bullet-point-coach"
+      ],
+      "dispositions": {
+        "restrict": 1,
+        "rewrite-practical": 3
+      }
+    },
+    {
+      "batch_number": 6,
+      "batch_id": "claim-cleanup-2026-09-10-06",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-6.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch five completed and before any batch-six rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 625,
+        "actionable_under_policy": 508,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "calibrate-task-estimates",
+        "challenge-assumed-intent",
+        "check-base-rates-before-deciding",
+        "choose-best-resources"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 7,
+      "batch_id": "claim-cleanup-2026-09-10-07",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-7.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch six completed and before any batch-seven rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 621,
+        "actionable_under_policy": 504,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "chunk-complex-ideas-for-clarity",
+        "clarity-ladder-analyzer",
+        "clustering-illusion-guard",
+        "cognitive-dissonance-resolution"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 8,
+      "batch_id": "claim-cleanup-2026-09-10-08",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-8.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch seven completed and before any batch-eight rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 617,
+        "actionable_under_policy": 500,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "common-source-radar",
+        "confidence-calibration-habit",
+        "confirmation-bias-challenge",
+        "conjunction-fallacy-coach"
+      ],
+      "dispositions": {
+        "rewrite-practical": 4
+      }
+    },
+    {
+      "batch_number": 9,
+      "batch_id": "claim-cleanup-2026-09-10-09",
+      "selected_at": "2026-09-10",
+      "decisions_url": "/data/claim-cleanup-decisions-batch-9.json",
+      "selection_basis": "The first four actionable records emitted by the canonical review queue after claim cleanup batch eight completed and before any batch-nine rewrite was applied.",
+      "observed_initial_queue": {
+        "unresolved_claim_debt": 613,
+        "actionable_under_policy": 496,
+        "selected": 4,
+        "blocked_preview": 8,
+        "selected_editorial_score": 140,
+        "blocked_editorial_score": 330,
+        "blocked_reason": "The higher-priority preview consisted of sensitive or restricted records requiring actual-source and safety review rather than automatic practical rewriting."
+      },
+      "completed_slugs": [
+        "context-guard-for-decisions",
+        "context-planner-for-writers",
+        "contextual-language-coach",
+        "control-to-action-compass"
       ],
       "dispositions": {
         "rewrite-practical": 4

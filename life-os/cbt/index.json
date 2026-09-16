@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "cbt",
   "title": "CBT",
-  "description": "Growth hacks from Cognitive Behavioral Therapy to challenge negative thoughts and boost positive actions.",
+  "description": "CBT-inspired educational practices for examining thoughts and testing useful actions, not self-administered diagnosis or treatment.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/cbt/",
   "machine_url": "https://brali-lifeos.github.io/life-os/cbt/index.json",
   "indexable": true,
@@ -17,8 +17,8 @@
     "trusted_protocols": 1,
     "reviewed": 1,
     "practical": 0,
-    "pending_review": 0,
-    "restricted": 6,
+    "pending_review": 1,
+    "restricted": 5,
     "mapped_topics": 2,
     "research_gaps": 2
   },
@@ -46,7 +46,7 @@
     {
       "topic_id": "self-awareness",
       "title": "Self-Awareness",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
     }
   ],
@@ -68,9 +68,16 @@
     },
     {
       "slug": "cbt-mastery-activity-list",
-      "title": "Create a List of Activities That Give You a Sense of Accomplishment (e",
+      "title": "Create a Mastery Activity List",
       "url": "https://brali-lifeos.github.io/life-os/cbt-mastery-activity-list/",
       "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
+      "slug": "revive-neglected-hobby-cbt",
+      "title": "Engage in a Satisfying Hobby",
+      "url": "https://brali-lifeos.github.io/life-os/revive-neglected-hobby-cbt/",
+      "evidence_status": "pending-review",
       "indexable": false
     },
     {
@@ -81,29 +88,22 @@
       "indexable": false
     },
     {
-      "slug": "revive-neglected-hobby-cbt",
-      "title": "Pick a Hobby or Interest You’ve Neglected (e",
-      "url": "https://brali-lifeos.github.io/life-os/revive-neglected-hobby-cbt/",
-      "evidence_status": "restricted",
-      "indexable": false
-    },
-    {
-      "slug": "schedule-positive-activity-cbt",
-      "title": "Pick One Activity You Enjoy or Used to Enjoy (e",
-      "url": "https://brali-lifeos.github.io/life-os/schedule-positive-activity-cbt/",
-      "evidence_status": "restricted",
-      "indexable": false
-    },
-    {
       "slug": "cbt-social-connection-planner",
-      "title": "Reach Out to Someone (e",
+      "title": "Plan a Social Connection",
       "url": "https://brali-lifeos.github.io/life-os/cbt-social-connection-planner/",
       "evidence_status": "restricted",
       "indexable": false
     },
     {
+      "slug": "schedule-positive-activity-cbt",
+      "title": "Schedule a Positive Activity",
+      "url": "https://brali-lifeos.github.io/life-os/schedule-positive-activity-cbt/",
+      "evidence_status": "restricted",
+      "indexable": false
+    },
+    {
       "slug": "cbt-daily-micro-goals",
-      "title": "Set One Small, Achievable Goal for the Day (e",
+      "title": "Set Small Daily Goals",
       "url": "https://brali-lifeos.github.io/life-os/cbt-daily-micro-goals/",
       "evidence_status": "restricted",
       "indexable": false

@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:phase-transition-ritual-tracker",
   "slug": "phase-transition-ritual-tracker",
-  "title": "Transform with Phase Changes",
-  "description": "Use phase transitions in your life, such as transitioning from work to rest, to enhance productivity.",
+  "title": "Create a Clear Handoff Between Two Activities",
+  "description": "Use a short, ordinary handoff at a recurring boundary—such as work to personal time—to record what is unfinished, reset the environment, and make the first action of the next activity explicit.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "work-money",
+        "title": "Work & Money"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      },
+      {
+        "id": "attention-focus",
+        "title": "Attention & Focus"
+      }
+    ],
     "methods": [
       {
         "id": "triz",
@@ -39,8 +52,8 @@
       }
     ],
     "lenses": [],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "triz"
@@ -48,8 +61,88 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "attention-focus",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/attention-focus/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:phase-transition-ritual-tracker",
+    "language": "en",
+    "slug": "phase-transition-ritual-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
+    "title": "Create a Clear Handoff Between Two Activities",
+    "description": "Use a short, ordinary handoff at a recurring boundary—such as work to personal time—to record what is unfinished, reset the environment, and make the first action of the next activity explicit.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        },
+        {
+          "id": "attention-focus",
+          "title": "Attention & Focus"
+        }
+      ],
+      "methods": [
+        {
+          "id": "triz",
+          "title": "TRIZ"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "triz"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "triz",
+      "title": "TRIZ"
+    },
+    "action": "Choose one recurring transition, write down any unfinished item that must be resumed later, perform one simple closing action in the environment, name the first action of the next activity, then leave the handoff alone unless it proves useful enough to repeat.",
+    "check_in": "What did I close, what did I preserve for later, what is the first action in the next mode, and did this handoff reduce avoidable switching friction?",
+    "keywords": [
+      "TRIZ",
+      "Life OS",
+      "Transform with Phase Changes"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/phase-transition-ritual-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "relationships",
   "title": "Relationships",
-  "description": "Enhance your relationships with effective communication and empathy practices.",
+  "description": "Build better conversations, boundaries, repair, and shared routines without pretending one script fixes every relationship.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/relationships/",
   "machine_url": "https://brali-lifeos.github.io/life-os/relationships/index.json",
   "indexable": true,
@@ -13,20 +13,20 @@
     "title": "Communication & Relationships"
   },
   "counts": {
-    "library_entries": 31,
-    "trusted_protocols": 2,
-    "reviewed": 1,
+    "library_entries": 32,
+    "trusted_protocols": 3,
+    "reviewed": 2,
     "practical": 1,
     "pending_review": 29,
     "restricted": 0,
-    "mapped_topics": 2,
-    "research_gaps": 0
+    "mapped_topics": 3,
+    "research_gaps": 1
   },
   "topics": [
     {
       "id": "relationships",
       "title": "Relationships",
-      "count": 31,
+      "count": 32,
       "url": "https://brali-lifeos.github.io/ontology/topics/relationships/"
     },
     {
@@ -34,9 +34,22 @@
       "title": "Conflict & Repair",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/conflict-repair/"
+    },
+    {
+      "id": "social-confidence",
+      "title": "Social Confidence",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/social-confidence/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "social-confidence",
+      "title": "Social Confidence",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/social-confidence/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "active-listening-exercises",
@@ -48,6 +61,12 @@
       "slug": "relationship-repair-coach",
       "title": "Make a Specific Repair Attempt After a Workable Conflict",
       "url": "https://brali-lifeos.github.io/life-os/relationship-repair-coach/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "genuine-micro-conversation",
+      "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/genuine-micro-conversation/",
       "evidence_status": "reviewed"
     }
   ],
@@ -219,6 +238,13 @@
       "url": "https://brali-lifeos.github.io/life-os/relationship-time-out-technique/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "genuine-micro-conversation",
+      "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/genuine-micro-conversation/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "i-statements-practice-tracker",

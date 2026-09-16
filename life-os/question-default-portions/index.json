@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:question-default-portions",
   "slug": "question-default-portions",
-  "title": "When Consuming (e",
+  "title": "Rethink Default Quantities",
   "description": "When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
   "machine_url": "https://brali-lifeos.github.io/life-os/question-default-portions/index.json",
@@ -49,14 +49,17 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:question-default-portions",
     "language": "en",
     "slug": "question-default-portions",
     "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
-    "title": "When Consuming (e",
+    "title": "Rethink Default Quantities",
     "description": "When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty.",
     "ontology": {
       "domains": [
@@ -101,5 +104,13 @@
       "source_url": null,
       "reviewed_at": null
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/question-default-portions.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

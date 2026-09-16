@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:apply-80-20-principle",
   "slug": "apply-80-20-principle",
-  "title": "Identify the 20% of Activities That Will Yield 80% of the Results Towards Your",
-  "description": "Identify the 20% of activities that will yield 80% of the results towards your goals. Focus on these high-impact activities.",
+  "title": "Use 80/20 as a Prioritization Hypothesis",
+  "description": "Rank the few inputs most likely to matter, test that ranking against observed results, and revise it instead of treating 80/20 as a law or exact forecast.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
   "machine_url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:apply-80-20-principle",
+    "language": "en",
+    "slug": "apply-80-20-principle",
+    "url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
+    "title": "Use 80/20 as a Prioritization Hypothesis",
+    "description": "Rank the few inputs most likely to matter, test that ranking against observed results, and revise it instead of treating 80/20 as a law or exact forecast.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Define one outcome, list the inputs that could influence it, rank a small number by expected impact and cost, choose one to check, and compare the observed result with your initial ranking. Revise the ranking when the data disagrees.",
+    "check_in": "Which input actually changed the outcome, what did it cost, and what should move up, down, or out of the priority list?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Apply the 80/20 Principle"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/apply-80-20-principle.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

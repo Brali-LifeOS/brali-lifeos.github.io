@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:coot-ai-growth-journal",
   "slug": "coot-ai-growth-journal",
-  "title": "Open a Session with Coot)",
-  "description": "Open a session with Coot.AI to talk about your personal growth journey. Use the chat to reflect on your goals, ask for advice, and gain new insights.",
+  "title": "Turn an AI Reflection into One Next Action",
+  "description": "Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
   "machine_url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:coot-ai-growth-journal",
+    "language": "en",
+    "slug": "coot-ai-growth-journal",
+    "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+    "title": "Turn an AI Reflection into One Next Action",
+    "description": "Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "habits-consistency",
+          "title": "Habits & Consistency"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "grow-fast"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "grow-fast",
+      "title": "Grow fast"
+    },
+    "action": "State one concrete goal or decision, provide the relevant constraints and what you already know, ask the AI for a small set of distinct options with assumptions and failure modes, challenge anything vague, verify factual claims that matter, choose one reversible next action yourself, and record what would cause you to change course.",
+    "check_in": "What became clearer, which AI claim still needs verification, what action did I choose, and what new information would make me revise the decision?",
+    "keywords": [
+      "Grow fast",
+      "Life OS",
+      "Chat with Coot.AI: Personal Growth Conversations"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/coot-ai-growth-journal.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

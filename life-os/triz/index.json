@@ -3,50 +3,62 @@
   "type": "brali-growth-zone",
   "slug": "triz",
   "title": "TRIZ",
-  "description": "Apply problem-solving methods from Theory of Inventive Problem Solving to tackle challenges creatively and efficiently.",
+  "description": "Use TRIZ patterns to reframe constraints and generate alternatives when ordinary brainstorming is going in circles.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/triz/",
   "machine_url": "https://brali-lifeos.github.io/life-os/triz/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "learning-thinking",
     "title": "Learning & Thinking"
   },
   "counts": {
     "library_entries": 49,
-    "trusted_protocols": 0,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 49,
+    "practical": 2,
+    "pending_review": 47,
     "restricted": 0,
-    "mapped_topics": 3,
-    "research_gaps": 3
+    "mapped_topics": 5,
+    "research_gaps": 4
   },
   "topics": [
     {
       "id": "creative-problem-solving",
       "title": "Creative Problem Solving",
-      "count": 3,
+      "count": 4,
       "url": "https://brali-lifeos.github.io/ontology/topics/creative-problem-solving/"
     },
     {
       "id": "problem-solving",
       "title": "Problem Solving",
-      "count": 1,
+      "count": 2,
       "url": "https://brali-lifeos.github.io/ontology/topics/problem-solving/"
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/attention-focus/"
     },
     {
       "id": "recovery-energy",
       "title": "Recovery & Energy",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/recovery-energy/"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
     }
   ],
   "research_gaps": [
     {
       "topic_id": "creative-problem-solving",
       "title": "Creative Problem Solving",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
     },
     {
@@ -56,13 +68,32 @@
       "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
     },
     {
+      "topic_id": "attention-focus",
+      "title": "Attention & Focus",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/attention-focus/"
+    },
+    {
       "topic_id": "recovery-energy",
       "title": "Recovery & Energy",
       "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/"
     }
   ],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "phase-transition-ritual-tracker",
+      "title": "Create a Clear Handoff Between Two Activities",
+      "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "break-down-big-problems-triz",
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
     {
       "slug": "schedule-downtime-buffers",
@@ -114,13 +145,6 @@
       "indexable": false
     },
     {
-      "slug": "break-down-big-problems-triz",
-      "title": "Break Down Big Challenges into Smaller, More Manageable Parts",
-      "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "combine-tasks-for-efficiency",
       "title": "Combine Similar Tasks or Goals for Better Efficiency",
       "url": "https://brali-lifeos.github.io/life-os/combine-tasks-for-efficiency/",
@@ -156,6 +180,13 @@
       "indexable": false
     },
     {
+      "slug": "phase-transition-ritual-tracker",
+      "title": "Create a Clear Handoff Between Two Activities",
+      "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "triz-conflict-visualizer",
       "title": "Create a Visual Representation of the Conflicting Elements",
       "url": "https://brali-lifeos.github.io/life-os/triz-conflict-visualizer/",
@@ -168,6 +199,13 @@
       "url": "https://brali-lifeos.github.io/life-os/triz-composite-growth-planner/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "break-down-big-problems-triz",
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "eliminate-unnecessary-habits-triz",
@@ -341,13 +379,6 @@
       "slug": "triz-habit-stacking-planner",
       "title": "Transform Parts of Your Life into Multi-Functional Tools",
       "url": "https://brali-lifeos.github.io/life-os/triz-habit-stacking-planner/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "phase-transition-ritual-tracker",
-      "title": "Transform with Phase Changes",
-      "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },

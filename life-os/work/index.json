@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "work",
   "title": "Work",
-  "description": "Adopt a problem-solving approach and strategic thinking to tackle challenges like a pro.",
+  "description": "Design clearer work systems, decisions, handoffs, and reviews instead of collecting productivity rituals.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/work/",
   "machine_url": "https://brali-lifeos.github.io/life-os/work/index.json",
   "indexable": true,
@@ -13,14 +13,14 @@
     "title": "Work, Money & Strategy"
   },
   "counts": {
-    "library_entries": 29,
-    "trusted_protocols": 3,
-    "reviewed": 0,
-    "practical": 3,
+    "library_entries": 31,
+    "trusted_protocols": 5,
+    "reviewed": 1,
+    "practical": 4,
     "pending_review": 26,
     "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 6,
+    "research_gaps": 3
   },
   "topics": [
     {
@@ -28,10 +28,65 @@
       "title": "Work Systems",
       "count": 29,
       "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
+    },
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
+    },
+    {
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/digital-attention/"
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/problem-solving/"
+    },
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/task-initiation/"
+    },
+    {
+      "id": "workspace",
+      "title": "Workspace",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/workspace/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "digital-attention",
+      "title": "Digital Attention",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/digital-attention/"
+    },
+    {
+      "topic_id": "problem-solving",
+      "title": "Problem Solving",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+    },
+    {
+      "topic_id": "workspace",
+      "title": "Workspace",
+      "stage": "discovery-ready",
+      "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
+    }
+  ],
   "trusted_protocols": [
+    {
+      "slug": "deliberate-email-checking-windows",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "url": "https://brali-lifeos.github.io/life-os/deliberate-email-checking-windows/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "2-minute-desk-tidy-timer",
       "title": "Do a Short Desk Reset",
@@ -42,6 +97,12 @@
       "slug": "3-3-3-workday-planner",
       "title": "Plan Your Workday in Three Simple Blocks",
       "url": "https://brali-lifeos.github.io/life-os/3-3-3-workday-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "adopt-new-tools-at-work",
+      "title": "Test a New Work Tool on a Low-Risk Task",
+      "url": "https://brali-lifeos.github.io/life-os/adopt-new-tools-at-work/",
       "evidence_status": "practical"
     },
     {
@@ -72,6 +133,13 @@
       "url": "https://brali-lifeos.github.io/life-os/tackle-hardest-first/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "deliberate-email-checking-windows",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "url": "https://brali-lifeos.github.io/life-os/deliberate-email-checking-windows/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "stakeholder-update-copilot",
@@ -212,6 +280,13 @@
       "url": "https://brali-lifeos.github.io/life-os/top-3-daily-tasks/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "adopt-new-tools-at-work",
+      "title": "Test a New Work Tool on a Low-Risk Task",
+      "url": "https://brali-lifeos.github.io/life-os/adopt-new-tools-at-work/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "skills-to-offer-planner",

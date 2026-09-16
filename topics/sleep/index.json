@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "sleep",
   "title": "Sleep",
   "question": "How can I build a more reliable sleep routine without turning weak evidence into a prescription?",
@@ -9,7 +9,7 @@
   "json_url": "https://brali-lifeos.github.io/topics/sleep/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
   "coverage_status": "trusted-protocols",
-  "coverage_note": "1 trusted protocol recommendation available.",
+  "coverage_note": "2 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "sleep-circadian",
@@ -19,6 +19,29 @@
     }
   ],
   "protocols": [
+    {
+      "canonical_id": "brali:protocol:stop-caffeine-after-lunch",
+      "protocol_id": "brali:stop-caffeine-after-lunch",
+      "slug": "stop-caffeine-after-lunch",
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
+      "action": "For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance.",
+      "check_in": "When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+        "reviewed_at": "2026-09-06"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "sleep-circadian",
+        "health-basics"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
     {
       "canonical_id": "brali:protocol:ideal-sleep-hours-finder",
       "protocol_id": "brali:ideal-sleep-hours-finder",
@@ -43,6 +66,70 @@
     }
   ],
   "evidence_decisions": [
+    {
+      "id": "caffeine-dose-timing-sleep-boundary-2025",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-06",
+      "source_title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+      "source_type": "primary-study",
+      "citation_text": "Gardiner CL, Weakley J, Burke LM, et al. Sleep. 2025;48(4):zsae230.",
+      "supported_claim": "Caffeine timing should be interpreted together with dose rather than as one universal after-lunch rule. In this small randomized crossover trial, a single 400 mg dose disrupted multiple objective sleep measures when taken within 12 hours of bedtime, with larger disruption closer to bedtime; no statistically significant sleep effect was detected for 100 mg at the tested 12-, 8-, and 4-hour timings. For Brali, this supports moving large late-day caffeine doses earlier when sleep matters and using bedtime-relative timing rather than a fixed clock cutoff.",
+      "unsupported_or_overstated_claims": [
+        "Everyone should stop caffeine at 1 p.m. or immediately after lunch.",
+        "A 100 mg dose four hours before bedtime is safe or sleep-neutral for every person.",
+        "Twelve hours is a scientifically established cutoff for every caffeine dose or pattern of use.",
+        "People can infer whether they metabolize caffeine quickly from whether they fall asleep after an afternoon coffee.",
+        "The study establishes an ideal daily caffeine dose, a body-weight dosing range, or a morning dosing schedule.",
+        "The trial tested ordinary coffee, tea, energy drinks, or repeated real-world servings rather than standardized caffeine capsules.",
+        "A personal sleep log can establish a causal individual caffeine dose-response curve."
+      ],
+      "limitations": [
+        "The sample was small (23 participants) and included only healthy men aged 18–40, limiting generalizability to women, older adults, adolescents, people with sleep disorders, and other populations.",
+        "Participants were moderate habitual caffeine users; results may differ in people with very low, very high, or irregular caffeine exposure.",
+        "The intervention used acute standardized caffeine capsules rather than the variable doses, ingredients, absorption patterns, and repeated servings found in real-world caffeinated products.",
+        "The study tested only two caffeine doses and three pre-bed timing points, so it cannot define a continuous or personalized cutoff.",
+        "Sleep was measured with in-home partial polysomnography rather than full laboratory polysomnography.",
+        "A nonsignificant result for 100 mg in this sample is not proof of no effect for every individual, especially given known variability in caffeine pharmacokinetics and sensitivity."
+      ],
+      "topic_ids": [
+        "sleep-circadian",
+        "health-basics"
+      ]
+    },
+    {
+      "id": "pmr-subjective-sleep-quality-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1906525/full",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Li K, Chen S, Liu Y, Yu N. Front Public Health. 2026;14:1906525.",
+      "supported_claim": "Across the included randomized trials, PMR improved subjective PSQI sleep-quality scores on average in clinically heterogeneous adult populations. The direction of the pooled effect remained after sensitivity and trim-and-fill analyses. This supports adding sleep as a bounded use case to Brali's existing conservative PMR protocol. It does not establish an optimal timer, session count or frequency, and the evidence should be described as subjective sleep-quality evidence in the studied clinical populations rather than a universal sleep effect.",
+      "unsupported_or_overstated_claims": [
+        "PMR reliably improves sleep for every adult or for healthy adults in general.",
+        "The meta-analysis proves that PMR shortens sleep latency, increases total sleep time or improves objective sleep architecture.",
+        "A specific 5/30-second timer, 7-minute routine, 12-group sequence, 18-group sequence or weekly frequency is the evidence-based optimum.",
+        "More PMR sessions produce larger sleep benefits.",
+        "PMR improves sleep because it lowers cortisol, reduces sympathetic activity or activates parasympathetic activity; these mechanisms were discussed, not tested by this meta-analysis.",
+        "PMR does not work in adults aged 55 years or older.",
+        "The pooled effect size can be treated as an expected individual improvement.",
+        "PMR should replace assessment or treatment for persistent or severe sleep problems."
+      ],
+      "limitations": [
+        "Between-study heterogeneity was very high (I2 85.5%) and was not explained by the reported subgroup analyses.",
+        "The included trials involved diverse clinical populations, limiting direct generalization to healthy adults or any one condition.",
+        "Sleep quality was assessed with the subjective PSQI rather than objective sleep measures.",
+        "Intervention duration, frequency, session count and protocol details varied substantially across studies.",
+        "Egger's test suggested possible publication bias; trim-and-fill reduced the pooled estimate while retaining the direction.",
+        "Only 14 studies were available, limiting subgroup and meta-regression precision.",
+        "The age >=55 subgroup estimate was imprecise, and the formal between-subgroup difference was not significant.",
+        "The review did not establish long-term persistence of benefit after PMR stopped."
+      ],
+      "topic_ids": [
+        "sleep-circadian"
+      ]
+    },
     {
       "id": "sleep-opportunity-extension-2021",
       "decision": "propose-protocol",
@@ -98,6 +185,18 @@
   ],
   "research_watch": [
     {
+      "id": "crossref:10.3389/fpubh.2026.1906525",
+      "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "status": "support-existing",
+      "publication_date": "2026-08-06",
+      "reference_url": "https://doi.org/10.3389/fpubh.2026.1906525",
+      "topic_ids": [
+        "sleep-circadian"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
       "id": "crossref:10.1016/j.jad.2025.120481",
       "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
       "status": "watch",
@@ -105,6 +204,19 @@
       "reference_url": "https://doi.org/10.1016/j.jad.2025.120481",
       "topic_ids": [
         "sleep-circadian"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1093/sleep/zsae230",
+      "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "status": "support-existing",
+      "publication_date": "2025-04-11",
+      "reference_url": "https://doi.org/10.1093/sleep/zsae230",
+      "topic_ids": [
+        "sleep-circadian",
+        "health-basics"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."

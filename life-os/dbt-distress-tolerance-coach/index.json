@@ -70,10 +70,13 @@
       },
       {
         "topic_id": "self-awareness",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:dbt-distress-tolerance-coach",
@@ -138,5 +141,13 @@
       "source_url": "https://www.dorsethealthcare.nhs.uk/our-services-and-sites/mental-health-and-learning-disabilities/intensive-psychological-therapies/dialectical-behaviour-therapy-dbt",
       "reviewed_at": "2026-08-20"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/dbt-distress-tolerance-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

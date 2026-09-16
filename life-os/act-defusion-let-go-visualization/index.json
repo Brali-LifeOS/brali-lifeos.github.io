@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:act-defusion-let-go-visualization",
   "slug": "act-defusion-let-go-visualization",
-  "title": "Visualize Your Difficult Thought or Feeling as a Physical Object (e",
+  "title": "Practice Letting Go",
   "description": "Visualize your difficult thought or feeling as a physical object (e.g., a leaf on a stream). Watch it float away while reminding yourself to stay present.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/act-defusion-let-go-visualization/",
   "machine_url": "https://brali-lifeos.github.io/life-os/act-defusion-let-go-visualization/index.json",
@@ -18,7 +18,7 @@
   "evidence": {
     "status": "restricted",
     "indexable": false,
-    "search_indexable": true,
+    "search_indexable": false,
     "sensitive": true,
     "source_recorded": false,
     "source_url": null,
@@ -47,9 +47,20 @@
     }
   },
   "discovery": {
-    "search_indexable": true,
+    "search_indexable": false,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "withheld-review-required",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": false,
+    "display_state": "historical-source-only",
+    "historical_source_url": "/data/life-os-content/act-defusion-let-go-visualization.json",
+    "historical_source_role": "provenance-only-not-current-guidance",
+    "search_role": "withheld-review-required"
+  }
 }

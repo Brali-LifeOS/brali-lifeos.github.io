@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:power-pose-pre-talk-ritual",
   "slug": "power-pose-pre-talk-ritual",
-  "title": "Stand in a Confident, Expansive Posture (e",
+  "title": "Strike a Power Pose",
   "description": "Stand in a confident, expansive posture (e.g., feet shoulder-width apart, hands on hips) for two minutes before speaking.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/power-pose-pre-talk-ritual/",
   "machine_url": "https://brali-lifeos.github.io/life-os/power-pose-pre-talk-ritual/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/power-pose-pre-talk-ritual.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

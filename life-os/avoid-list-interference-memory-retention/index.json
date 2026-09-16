@@ -4,7 +4,7 @@
   "protocol_id": "brali:avoid-list-interference-memory-retention",
   "slug": "avoid-list-interference-memory-retention",
   "title": "Try Quiet Wakeful Rest After Learning",
-  "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
+  "description": "After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
   "machine_url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/index.json",
   "growth_zone": {
@@ -55,7 +55,10 @@
         "stage": "resolved",
         "url": "https://brali-lifeos.github.io/research/gaps/memory/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:avoid-list-interference-memory-retention",
@@ -63,7 +66,7 @@
     "slug": "avoid-list-interference-memory-retention",
     "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
     "title": "Try Quiet Wakeful Rest After Learning",
-    "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
+    "description": "After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule.",
     "ontology": {
       "domains": [
         {
@@ -94,7 +97,7 @@
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
     },
-    "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+    "action": "When you finish a focused memory-heavy learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. Do not use the pause as a substitute for self-testing, active review, or other learning methods.",
     "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
     "keywords": [
       "Cognitive Biases",
@@ -107,5 +110,13 @@
       "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/avoid-list-interference-memory-retention.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

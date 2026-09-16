@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:challenge-confirmation-bias-checklist",
   "slug": "challenge-confirmation-bias-checklist",
-  "title": "Challenge Confirmation Bias",
-  "description": "When evaluating information: - Seek opposing views: Actively search for evidence that challenges your beliefs. - Ask questions: “What would change my mind about this?” - Stay curious: Approach topics with an open mind, looking for new perspectives. Example: If you believe a certain diet works, read studies that critique it.",
+  "title": "Run a Disconfirming-Evidence Check",
+  "description": "State one claim precisely, define what evidence would make you less confident, inspect relevant credible evidence, and update the decision if the evidence warrants it.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/",
   "machine_url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/index.json",
   "growth_zone": {
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/challenge-confirmation-bias-checklist.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "movement",
   "title": "Movement & Exercise",
   "question": "How can I move more and build sustainable physical routines without inventing a magic cognitive break dose?",
@@ -9,7 +9,7 @@
   "json_url": "https://brali-lifeos.github.io/topics/movement/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
   "coverage_status": "trusted-protocols",
-  "coverage_note": "5 trusted protocol recommendations available.",
+  "coverage_note": "8 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "movement",
@@ -31,6 +31,30 @@
     }
   ],
   "protocols": [
+    {
+      "canonical_id": "brali:protocol:temptation-bundling",
+      "protocol_id": "brali:temptation-bundling",
+      "slug": "temptation-bundling",
+      "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+      "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+      "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+        "reviewed_at": "2026-09-11"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "habits-consistency",
+        "task-initiation",
+        "movement"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
     {
       "canonical_id": "brali:protocol:10-minute-morning-stretch-routine",
       "protocol_id": "brali:10-minute-morning-stretch-routine",
@@ -54,18 +78,41 @@
       "hub_score": 1192.4
     },
     {
+      "canonical_id": "brali:protocol:10-minute-stress-walk",
+      "protocol_id": "brali:10-minute-stress-walk",
+      "slug": "10-minute-stress-walk",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+      "title": "Take a Short Walk When Stress Builds",
+      "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+      "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+      "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "stress-regulation",
+        "movement"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
       "canonical_id": "brali:protocol:4-minute-hiit-tabata-workout",
       "protocol_id": "brali:4-minute-hiit-tabata-workout",
       "slug": "4-minute-hiit-tabata-workout",
       "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
       "title": "Try Short High-Intensity Intervals Safely",
       "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
-      "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
-      "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+      "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely. You can use it as one short interval session, or as brief exercise snacks separated across the day when a full workout is unlikely. Make the effort challenging but controlled. Treat 20/10, 3 × 1 minute, 4 × 1 minute and similar timers as formats to adapt, not scientifically optimized doses.",
+      "check_in": "Was the effort genuinely challenging but still controlled, could I repeat it without losing movement quality, and over several weeks is fitness or function trending in a useful direction rather than just my streak count?",
       "evidence": {
         "status": "reviewed",
         "source_recorded": true,
-        "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
         "reviewed_at": "2026-08-18"
       },
       "is_flagship_100": true,
@@ -98,6 +145,53 @@
       "hub_score": 1192.4
     },
     {
+      "canonical_id": "brali:protocol:post-meal-walk",
+      "protocol_id": "brali:post-meal-walk",
+      "slug": "post-meal-walk",
+      "url": "https://brali-lifeos.github.io/life-os/post-meal-walk/",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "description": "When it is safe and practical, replace some sitting after a meal with comfortable walking. Evidence supports an acute effect on post-meal glucose, not a universal walking dose or long-term treatment claim.",
+      "action": "After a meal, choose an ordinary walk that feels comfortable and fits the situation. Starting relatively soon after eating matches the direction of the reviewed acute evidence better than deliberately waiting a long time, but Brali does not prescribe a universal minute mark, pace, or duration. If you use glucose-lowering medication, have a condition affected by exercise or meals, or have been given specific activity advice, follow your clinical plan instead of using this page as treatment guidance.",
+      "check_in": "Did the walk replace sitting without causing discomfort or disrupting a medical plan, and is it practical enough to repeat when useful?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10036272/",
+        "reviewed_at": "2026-09-11"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "movement",
+        "health-basics"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:20-20-20-eye-break-reminder",
+      "protocol_id": "brali:20-20-20-eye-break-reminder",
+      "slug": "20-20-20-eye-break-reminder",
+      "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+      "title": "Use the 20-20-20 Rule for Screen Breaks",
+      "description": "When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds.",
+      "action": "During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care.",
+      "check_in": "Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "health-basics",
+        "digital-wellbeing",
+        "recovery-energy"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.35
+    },
+    {
       "canonical_id": "brali:protocol:cardio-health-daily-habits",
       "protocol_id": "brali:cardio-health-daily-habits",
       "slug": "cardio-health-daily-habits",
@@ -120,32 +214,134 @@
       ],
       "method_ids": [],
       "hub_score": 1192.27
-    },
-    {
-      "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
-      "protocol_id": "brali:90-30-focus-rest-schedule",
-      "slug": "90-30-focus-rest-schedule",
-      "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
-      "title": "Alternate Focused Work With Real Breaks",
-      "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
-      "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
-      "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-18"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "attention-focus",
-        "recovery-energy"
-      ],
-      "method_ids": [],
-      "hub_score": 1062.03
     }
   ],
   "evidence_decisions": [
+    {
+      "id": "activity-breaks-postprandial-metabolism-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-30",
+      "source_title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/obr.70152",
+      "source_type": "meta-analysis",
+      "citation_text": "Gale JT, Martin H, Haszard JJ, Peddie MC. Obesity Reviews. 2026:e70152.",
+      "supported_claim": "For acute post-meal metabolism, replacing small portions of a prolonged sitting period with brief activity is better supported than remaining continuously seated. Across randomized crossover evidence, regular activity breaks reduced postprandial glucose and insulin responses, with walking producing the strongest overall mode estimates. Brali can therefore propose a bounded protocol to interrupt long sitting bouts with brief movement, especially walking when feasible, while treating the exact timing and dose as adaptable rather than universally fixed.",
+      "unsupported_or_overstated_claims": [
+        "A break every 20 minutes is the universal optimal schedule for all people and settings.",
+        "Brief movement breaks prevent diabetes, cardiovascular disease, obesity, or mortality.",
+        "The protocol improves concentration, productivity, mood, pain, or cognitive performance.",
+        "Standing alone produces the same metabolic effect as walking or active movement.",
+        "Brief sitting interruptions can replace recommended weekly physical activity or structured exercise.",
+        "The subgroup estimates establish which BMI or clinical group will benefit most.",
+        "One exact walking speed, intensity, duration, or exercise routine is required."
+      ],
+      "limitations": [
+        "All included studies were acute laboratory randomized crossover trials lasting less than 24 hours, so the evidence does not establish long-term health effects or sustainability.",
+        "Prolonged-sitting laboratory protocols, especially the longer ones, may not resemble habitual real-world sitting.",
+        "Many pooled and subgroup estimates had substantial heterogeneity that remained after subgroup analysis.",
+        "Most studies were rated fair or good rather than excellent; participant blinding was impossible and reporting of attrition and assessor blinding was inconsistent.",
+        "The review was not prospectively registered in PROSPERO or another registry and no review protocol was prepared.",
+        "The search was limited to peer-reviewed English-language studies, so relevant evidence may have been missed.",
+        "Frequency and mode subgroup comparisons do not by themselves prove that the largest subgroup estimate is the optimal prescription for an individual."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
+    {
+      "id": "exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-09",
+      "source_title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Meng L, Li Y, Chen J, Zheng H. J Nutr Health Aging. 2026;30(10):100940.",
+      "supported_claim": "Across the included randomized studies, exercise snacks improved VO2max and peak power output on average with moderate-certainty evidence. This supports offering distributed brief exercise bouts as a practical cardiorespiratory-fitness option when a longer continuous workout is difficult to fit. The evidence does not establish one modality, timer, number of bouts, weekly frequency or intervention duration as the optimal prescription.",
+      "unsupported_or_overstated_claims": [
+        "A 20-seconds-on/10-seconds-off Tabata timer is the evidence-based exercise-snack dose.",
+        "Three or four one-minute exercise snacks per day are universally optimal.",
+        "The subgroup with more than five daily bouts proves that more bouts are better for each individual.",
+        "Four to five days per week or seven to nine weeks is an optimized prescription.",
+        "Exercise snacks reliably reduce body fat or improve cholesterol and triglycerides.",
+        "Exercise snacks are equivalent to or should replace conventional exercise.",
+        "The nonsignificant VO2max result in studies with mean age above 50 proves exercise snacks do not work for people older than 50.",
+        "A short exercise bout automatically produces a meaningful training stimulus regardless of intensity, modality or execution."
+      ],
+      "limitations": [
+        "Cardiorespiratory-fitness effects showed substantial between-study heterogeneity (I2 74% for VO2max and 63% for peak power output), which contributed to GRADE downgrading.",
+        "Certainty was low for body-fat and blood-lipid outcomes because of heterogeneity, imprecision and possible publication bias for some outcomes.",
+        "Interventions differed markedly in modality, intensity, bout duration, within-day distribution, weekly frequency, intervention duration and supervision.",
+        "Dietary control varied across trials and could contribute to inconsistent body-composition and lipid results.",
+        "Age analyses used study-level mean age rather than individual participant data, creating ecological-bias risk and making individual age cutoffs inappropriate.",
+        "Potential publication bias was detected for VO2max and body-fat percentage.",
+        "Subgroup analyses compared relatively small numbers of studies and cannot identify a causal optimal dose.",
+        "Long-term scalability remains uncertain."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
+    {
+      "id": "exercise-snacks-real-world-t2d-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-09",
+      "source_title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42502209/",
+      "source_type": "primary-study",
+      "citation_text": "Babir FJ, Marcotte-Chénard A, Sandilands RE, et al. Diabetes Obes Metab. 2026;28(10):9294-9303.",
+      "supported_claim": "In this specific real-world type 2 diabetes sample, the four-by-one-minute vigorous exercise-snack program was feasible and improved 30-second sit-to-stand performance more than an active mobility/stretching comparator. The trial does not show a broad cardiometabolic or aerobic-fitness advantage for this exact prescription.",
+      "unsupported_or_overstated_claims": [
+        "Four one-minute vigorous bouts on five days per week are an optimal exercise-snack prescription.",
+        "High adherence to exercise snacks guarantees improvement in VO2max, HbA1c or cardiometabolic biomarkers.",
+        "The trial proves exercise snacks improve diabetes control.",
+        "The findings can be generalized unchanged to healthy adults, younger adults, insulin-treated diabetes or other clinical populations.",
+        "A null result for most secondary outcomes proves exercise snacks are ineffective in general.",
+        "The observed sit-to-stand benefit proves reduced fall risk or improved long-term clinical outcomes."
+      ],
+      "limitations": [
+        "The sample was limited to insufficiently active adults with non-insulin-treated type 2 diabetes and well-controlled glycemia at baseline.",
+        "The primary outcome was feasibility; efficacy outcomes were secondary and the study was not a definitive comparative-effectiveness trial for all health outcomes.",
+        "The mobility/stretching control was active rather than no-exercise, so the contrast estimates the added effect of the vigorous condition over a matched low-intensity routine.",
+        "The intervention was remotely delivered and real-world exercise intensity was lower than some prior supervised laboratory exercise-snack protocols.",
+        "Estimated VO2max relied on a submaximal predictive test that the investigators reported performed poorly in this population, limiting interpretation of that fitness outcome.",
+        "The trial lasted 12 weeks and does not establish longer-term adherence or clinical outcomes."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
+    {
+      "id": "hourly-microexercise-workplace-watch-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-08-30",
+      "source_title": "Micro-exercise breaks every hour: a feasible strategy to improve metabolic health in sedentary office workers",
+      "source_url": "https://link.springer.com/article/10.1186/s12889-026-26484-4",
+      "source_type": "primary-study",
+      "citation_text": "Fang Y, Li H, Dong P, Wan F. BMC Public Health. 2026;26:763.",
+      "supported_claim": "This trial makes the general movement-break idea more plausible in an ordinary workplace over twelve weeks: a simple hourly bodyweight routine was feasible for many participants, increased light activity, reduced sedentary time and improved several measured metabolic markers. It is useful ecological support for continuing to develop a sitting-interruption protocol, but it should remain watch-level evidence for the exact hourly three-minute dose until stronger preregistered and replicated field evidence is available.",
+      "unsupported_or_overstated_claims": [
+        "Three minutes every hour is an established optimal dose.",
+        "The intervention prevents or delays diabetes or cardiovascular disease.",
+        "The results generalize unchanged to normal-weight, highly active, older, younger, shift-working, disabled, or non-office populations.",
+        "The routine improves work productivity or cognitive performance; those outcomes were not established with the same objective causal standard.",
+        "All seven prescribed breaks are necessary to obtain benefit.",
+        "The specific six-exercise sequence is superior to walking or other feasible movement.",
+        "The study proves long-term adherence or safety beyond twelve weeks."
+      ],
+      "limitations": [
+        "The trial was not registered in a clinical-trial registry, which weakens confidence that outcomes and analyses were fixed prospectively.",
+        "It was a single-city study across three workplaces with only 86 randomized participants and 79 completing follow-up.",
+        "The sample was predominantly overweight, limiting generalizability to metabolically different populations.",
+        "Participants and intervention facilitators could not be blinded and there was no attention-control condition.",
+        "Adherence was monitored primarily by self-report, although workplace observations and accelerometry provided partial objective corroboration.",
+        "Dietary intake was not measured, leaving a potential unmeasured contributor to metabolic change.",
+        "Twelve weeks is too short to establish durable adherence or clinical endpoints such as diabetes incidence.",
+        "The sample was not powered to establish reliable subgroup effects."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
     {
       "id": "microbreak-wellbeing-performance-boundary-2022",
       "decision": "support-existing",
@@ -180,6 +376,34 @@
       ]
     },
     {
+      "id": "movement-breaks-cardiometabolic-vanherle-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-08",
+      "source_title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+      "source_url": "https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwag079/8571395",
+      "source_type": "meta-analysis",
+      "citation_text": "Vanherle J, Franssen GHLM, Ivanova A, Eijnde BO, Franssen WMA. European Journal of Preventive Cardiology. Published online 1 April 2026. doi:10.1093/eurjpc/zwag079.",
+      "supported_claim": "In acute controlled settings, interrupting prolonged sitting with actual physical activity can improve glucose and insulin responses on average. More frequent light-to-moderate activity appears useful for acute glucose control, while standing alone did not show the same cardiometabolic signal. For Brali this supports replacing an avoidable sitting block with safe movement, including walking when a meeting can travel, without prescribing one universal interval.",
+      "unsupported_or_overstated_claims": [
+        "A walking meeting has a special metabolic, productivity, creativity, or cognitive effect beyond the movement it contains.",
+        "Everyone should stand or walk every 20 or 30 minutes.",
+        "Standing still is metabolically equivalent to a walking or physical-activity break.",
+        "Acute laboratory improvements prove long-term prevention or treatment of diabetes, hypertension, cardiovascular disease, or other conditions.",
+        "A walking meeting should target a fixed step count, heart-rate increase, duration, or physiological dose.",
+        "The review supports inherited claims about wind noise, phone battery drain, meeting quality, mental clarity, or screen fatigue."
+      ],
+      "limitations": [
+        "The evidence is dominated by acute controlled experimental settings and cannot establish long-term clinical benefit or sustainable free-living adherence.",
+        "Participant characteristics, meals, timing, activity protocols, and outcome measurement varied substantially across studies.",
+        "Many individual studies had small samples; only a minority of intervention comparisons were rated low overall risk of bias, with most having some concerns.",
+        "The review focused on adults aged 18-65 years, so the findings should not be generalized automatically to children or older adults.",
+        "The evidence concerns physical-activity interruptions, not walking meetings as a distinct behavioral or workplace intervention."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
+    {
       "id": "movement-breaks-cognition-2026",
       "decision": "watch",
       "reviewed_at": "2026-08-18",
@@ -205,9 +429,121 @@
       "topic_ids": [
         "movement"
       ]
+    },
+    {
+      "id": "post-meal-exercise-acute-glucose-boundary-2023",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "After Dinner Rest a While, After Supper Walk a Mile? A Systematic Review with Meta-analysis on the Acute Postprandial Glycemic Response to Exercise Before and After Meal Ingestion in Healthy Subjects and Patients with Impaired Glucose Tolerance",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10036272/",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Engeroff T, Groneberg DA, Wilke J. Sports Med. 2023;53(4):849-869.",
+      "supported_claim": "Replacing some post-meal sitting with safe walking or other suitable movement relatively soon after eating is a defensible practical option when the goal is ordinary movement and the acute post-meal glucose mechanism is relevant. The meta-analysis found lower acute postprandial glucose after post-meal exercise than after no exercise and better average results than matched pre-meal exercise. Brali should not prescribe one duration, pace, start minute, or medical target.",
+      "unsupported_or_overstated_claims": [
+        "Everyone should walk exactly 20 minutes after every meal.",
+        "There is a proven exact number of minutes after eating when exercise must start.",
+        "Post-meal walking treats diabetes or permits medication changes.",
+        "Acute glucose reductions prove long-term prevention of diabetes, cardiovascular disease, or other conditions.",
+        "Exercise before meals is useless for health in general.",
+        "A casual personal glucose reading can validate the protocol's causal effect for an individual."
+      ],
+      "limitations": [
+        "Only eight randomized crossover trials with 116 total participants met the strict inclusion criteria.",
+        "Included trials were rated high risk of bias.",
+        "Exercise protocols, meals, participant characteristics and glucose measurement methods varied.",
+        "The type 2 diabetes subgroup was small and some subgroup comparisons were imprecise.",
+        "The review concerned acute postprandial responses and cannot establish long-term clinical outcomes.",
+        "Moderator evidence about delay after eating does not define an exact individual optimum."
+      ],
+      "topic_ids": [
+        "movement",
+        "health-basics"
+      ]
+    },
+    {
+      "id": "sitting-breaks-cognition-boundary-2026",
+      "decision": "watch",
+      "reviewed_at": "2026-09-05",
+      "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+      "source_url": "https://link.springer.com/article/10.1186/s12966-026-01953-6",
+      "source_type": "systematic-review-meta-analysis",
+      "citation_text": "Zhuang M, Yin M, Liu Z, et al. International Journal of Behavioral Nutrition and Physical Activity. 2026;23:79.",
+      "supported_claim": "The existing Brali sitting-break protocol has limited additional cognitive support: across randomized crossover studies, interrupting prolonged sitting was associated with small acute improvements in executive function and memory. Because certainty was low and attention/information-processing results were not clear, cognition should remain a secondary possible benefit rather than the reason or promise for the protocol.",
+      "unsupported_or_overstated_claims": [
+        "Movement breaks reliably improve attention or concentration; the pooled attention estimate was not beneficial.",
+        "Movement breaks reliably improve overall cognition or information-processing speed.",
+        "A specific break frequency is proven optimal for executive function or memory.",
+        "Low-intensity walking is definitively superior to other feasible movement modes for cognition.",
+        "The small acute cognitive effects translate into better workplace productivity, fewer errors, academic achievement, or long-term cognitive protection.",
+        "The exploratory subgroup results establish who should use a more frequent or less frequent break schedule."
+      ],
+      "limitations": [
+        "Only 21 crossover trials with 433 total participants were included, leaving many domain and subgroup estimates based on small evidence bases.",
+        "GRADE certainty was low for executive function, memory, information processing and attention and very low for global cognition.",
+        "The evidence concerns acute experimental responses, not long-term cognitive outcomes, productivity or real-world work performance.",
+        "Intervention protocols varied substantially in frequency, intensity, duration and mode.",
+        "Subgroup and meta-regression findings were exploratory and should not be converted into individualized dosing rules.",
+        "Some apparently favorable domain estimates may be sensitive to the small number of studies and heterogeneous cognitive tasks."
+      ],
+      "topic_ids": [
+        "movement"
+      ]
+    },
+    {
+      "id": "temptation-bundling-exercise-boundary-2020",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Teaching temptation bundling to boost exercise: A field experiment",
+      "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+      "source_type": "primary-study",
+      "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020.",
+      "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+      "unsupported_or_overstated_claims": [
+        "Temptation bundling works equally well for every habit.",
+        "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+        "A reward should always be restricted exclusively to the target behavior.",
+        "The technique reliably creates permanent habits.",
+        "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+      ],
+      "limitations": [
+        "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+        "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+        "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+        "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+        "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+      ],
+      "topic_ids": [
+        "habits-consistency",
+        "task-initiation",
+        "movement"
+      ]
     }
   ],
   "research_watch": [
+    {
+      "id": "crossref:10.1016/j.jnha.2026.100940",
+      "title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+      "status": "support-existing",
+      "publication_date": "2026-08-09",
+      "reference_url": "https://doi.org/10.1016/j.jnha.2026.100940",
+      "topic_ids": [
+        "movement"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1111/dom.71052",
+      "title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+      "status": "support-existing",
+      "publication_date": "2026-07-25",
+      "reference_url": "https://doi.org/10.1111/dom.71052",
+      "topic_ids": [
+        "movement"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
     {
       "id": "crossref:10.1186/s12966-026-01953-6",
       "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
@@ -221,14 +557,13 @@
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
     },
     {
-      "id": "crossref:10.1371/journal.pone.0272460",
-      "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
-      "status": "support-existing",
-      "publication_date": "2022-08-31",
-      "reference_url": "https://doi.org/10.1371/journal.pone.0272460",
+      "id": "crossref:10.1111/obr.70152",
+      "title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "status": "propose-protocol",
+      "publication_date": "2026-05-03",
+      "reference_url": "https://doi.org/10.1111/obr.70152",
       "topic_ids": [
-        "recovery-energy",
-        "attention-focus"
+        "movement"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -246,9 +581,24 @@
       "canonical_id": "brali:topic:cardiovascular-health"
     },
     {
-      "id": "attention-focus",
-      "title": "Attention & Focus",
-      "canonical_id": "brali:topic:attention-focus"
+      "id": "habits-consistency",
+      "title": "Habits & Consistency",
+      "canonical_id": "brali:topic:habits-consistency"
+    },
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "canonical_id": "brali:topic:task-initiation"
+    },
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "canonical_id": "brali:topic:stress-regulation"
+    },
+    {
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "canonical_id": "brali:topic:digital-wellbeing"
     }
   ],
   "related_methods": [],

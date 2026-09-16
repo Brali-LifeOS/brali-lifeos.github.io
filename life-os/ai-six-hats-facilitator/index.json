@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:ai-six-hats-facilitator",
   "slug": "ai-six-hats-facilitator",
-  "title": "Try de Bono’s Six Thinking Hats",
-  "description": "Use de Bono’s Six Thinking Hats method to explore different perspectives on a topic: White (facts), Red (emotions), Black (caution), Yellow (optimism), Green (creativity), Blue (process).",
+  "title": "Run a Six-Perspective Thinking Pass",
+  "description": "Separate facts, reactions, risks, opportunities, alternatives, and process into distinct passes so a discussion can expose what is missing before choosing a next step.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
   "machine_url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:ai-six-hats-facilitator",
+    "language": "en",
+    "slug": "ai-six-hats-facilitator",
+    "url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
+    "title": "Run a Six-Perspective Thinking Pass",
+    "description": "Separate facts, reactions, risks, opportunities, alternatives, and process into distinct passes so a discussion can expose what is missing before choosing a next step.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Write one question. Make six short passes: facts and unknowns; reactions and preferences; risks and failure modes; benefits and opportunities; alternatives and experiments; then process and next step. Keep observations in their own pass so facts are not silently mixed with preferences or forecasts.",
+    "check_in": "Which perspective added information the first discussion was missing, and what decision, question, or test follows from it?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Try de Bono’s Six Thinking Hats"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/ai-six-hats-facilitator.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

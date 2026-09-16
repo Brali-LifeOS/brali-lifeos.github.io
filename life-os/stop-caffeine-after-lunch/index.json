@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:stop-caffeine-after-lunch",
   "slug": "stop-caffeine-after-lunch",
-  "title": "Stop Drinking Caffeine After Lunch Each Day",
-  "description": "Stop drinking caffeine after lunch each day.",
+  "title": "Move Caffeine Earlier When Sleep Matters",
+  "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
   "machine_url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Health & Energy"
   },
   "evidence": {
-    "status": "restricted",
-    "indexable": false,
+    "status": "reviewed",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": true,
-    "source_recorded": false,
-    "source_url": null,
-    "reviewed_at": null
+    "source_recorded": true,
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+    "reviewed_at": "2026-09-06"
   },
   "ontology": {
     "domains": [
@@ -33,14 +33,18 @@
     ],
     "topics": [
       {
+        "id": "sleep-circadian",
+        "title": "Sleep & Circadian Rhythm"
+      },
+      {
         "id": "health-basics",
         "title": "Everyday Health Basics"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "health-energy",
       "growth_zone_slug": "be-healthy"
@@ -48,8 +52,79 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "sleep-circadian",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:stop-caffeine-after-lunch",
+    "language": "en",
+    "slug": "stop-caffeine-after-lunch",
+    "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+    "title": "Move Caffeine Earlier When Sleep Matters",
+    "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
+        }
+      ],
+      "topics": [
+        {
+          "id": "sleep-circadian",
+          "title": "Sleep & Circadian Rhythm"
+        },
+        {
+          "id": "health-basics",
+          "title": "Everyday Health Basics"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "health-energy",
+        "growth_zone_slug": "be-healthy"
+      }
+    },
+    "life_area": {
+      "slug": "health-energy",
+      "title": "Health & Energy"
+    },
+    "growth_zone": {
+      "slug": "be-healthy",
+      "title": "Be Healthy"
+    },
+    "action": "For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance.",
+    "check_in": "When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days?",
+    "keywords": [
+      "Be Healthy",
+      "Life OS",
+      "Cut Off Caffeine Early"
+    ],
+    "evidence": {
+      "status": "reviewed",
+      "source_recorded": true,
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+      "reviewed_at": "2026-09-06"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/stop-caffeine-after-lunch.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

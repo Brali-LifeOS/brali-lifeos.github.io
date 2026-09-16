@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:chef-taste-and-adjust",
   "slug": "chef-taste-and-adjust",
-  "title": "Continuously Taste and Adjust Your Cooking",
-  "description": "Continuously taste and adjust your cooking. Apply this mindset to your projects and tasks by regularly reviewing and refining your work.",
+  "title": "Taste and Adjust One Variable at a Time",
+  "description": "For food that is safe to taste, sample at useful stages, identify the specific imbalance you notice, make one small adjustment, and taste again before changing something else.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/chef-taste-and-adjust/",
   "machine_url": "https://brali-lifeos.github.io/life-os/chef-taste-and-adjust/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -53,14 +53,80 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
+    "trusted_protocol_feed": true,
     "research_gaps": [
       {
         "topic_id": "revision-feedback",
         "stage": "resolved",
         "url": "https://brali-lifeos.github.io/research/gaps/revision-feedback/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:chef-taste-and-adjust",
+    "language": "en",
+    "slug": "chef-taste-and-adjust",
+    "url": "https://brali-lifeos.github.io/life-os/chef-taste-and-adjust/",
+    "title": "Taste and Adjust One Variable at a Time",
+    "description": "For food that is safe to taste, sample at useful stages, identify the specific imbalance you notice, make one small adjustment, and taste again before changing something else.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "revision-feedback",
+          "title": "Revision & Feedback"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "chef-operations",
+          "title": "Chef / Operations"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "chef"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "chef",
+      "title": "Chef"
+    },
+    "action": "Choose a useful tasting point, make sure the food is safe and cool enough to sample, name the issue you notice such as blandness, excess salt, acidity, texture, or thickness, choose one small adjustment appropriate to the dish, mix or cook as needed, then taste again before making another change.",
+    "check_in": "What did I notice before the adjustment, what single change did I make, and what is different after the next safe taste?",
+    "keywords": [
+      "Chef",
+      "Life OS",
+      "Degustar y Ajustar"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/chef-taste-and-adjust.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

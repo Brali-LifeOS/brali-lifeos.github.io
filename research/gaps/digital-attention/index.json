@@ -9,20 +9,129 @@
   "question": "Which device or notification changes reduce distraction without creating rebound use or unnecessary friction?",
   "evidence_target": "Prefer experiments and systematic reviews on notifications, smartphone interruption, and digital self-control.",
   "guardrail": "Do not claim that one blocker or grayscale setting universally restores attention.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/digital-attention/",
   "research_queries": [
     {
       "id": "focus-attention-switching",
       "query": "task switching interruptions sustained attention workplace systematic review",
       "risk_flags": []
+    },
+    {
+      "id": "focus-notification-interruptions",
+      "query": "communication notifications interruptions workplace performance strain experiment systematic review",
+      "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1002/1348-9585.12408",
+      "title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "status": "support-existing",
+      "publication_date": "2023-06-06",
+      "reference_url": "https://doi.org/10.1002/1348-9585.12408"
+    },
+    {
+      "id": "crossref:10.1016/j.chb.2014.11.005",
+      "title": "Checking email less frequently reduces stress",
+      "status": "propose-protocol",
+      "publication_date": "2015-02-01",
+      "reference_url": "https://doi.org/10.1016/j.chb.2014.11.005"
+    },
+    {
+      "id": "crossref:10.1016/j.chb.2019.07.016",
+      "title": "Batching smartphone notifications can improve well-being",
+      "status": "propose-protocol",
+      "publication_date": "2019-12-01",
+      "reference_url": "https://doi.org/10.1016/j.chb.2019.07.016"
+    },
+    {
+      "id": "crossref:10.1038/s41598-026-46218-1",
+      "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "status": "support-existing",
+      "publication_date": "2026-05-29",
+      "reference_url": "https://doi.org/10.1038/s41598-026-46218-1"
+    },
+    {
+      "id": "crossref:10.1093/pnasnexus/pgaf017",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "status": "propose-protocol",
+      "publication_date": "2025-02-18",
+      "reference_url": "https://doi.org/10.1093/pnasnexus/pgaf017"
+    },
+    {
+      "id": "crossref:10.3389/fdgth.2026.1816095",
+      "title": "A cross-over feasibility trial of smartphone grayscale mode in medical students",
+      "status": "propose-protocol",
+      "publication_date": "2026-07-06",
+      "reference_url": "https://doi.org/10.3389/fdgth.2026.1816095"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "email-checking-frequency-stress-boundary-2015",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Checking email less frequently reduces stress",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/email-checking-frequency-stress-boundary-2015/"
+    },
+    {
+      "id": "grayscale-screen-time-friction-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "A cross-over feasibility trial of smartphone grayscale mode in medical students",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/grayscale-screen-time-friction-boundary-2026/"
+    },
+    {
+      "id": "mobile-internet-block-attention-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-27",
+      "source_title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/mobile-internet-block-attention-boundary-2025/"
+    },
+    {
+      "id": "notification-batching-boundary-2019",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Batching smartphone notifications can improve well-being",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/notification-batching-boundary-2019/"
+    },
+    {
+      "id": "notification-blocking-workday-boundary-2023",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/notification-blocking-workday-boundary-2023/"
+    },
+    {
+      "id": "situational-digital-disconnection-procrastination-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-27",
+      "source_title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/situational-digital-disconnection-procrastination-boundary-2026/"
+    }
+  ],
   "trusted_protocols": [
+    {
+      "slug": "batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "deliberate-email-checking-windows",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "url": "https://brali-lifeos.github.io/life-os/deliberate-email-checking-windows/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "grayscale-phone-friction",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "url": "https://brali-lifeos.github.io/life-os/grayscale-phone-friction/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "30-min-eye-break-tracker",
       "title": "Screen Break Checkpoint",
@@ -36,7 +145,7 @@
     "title": "Digital Attention",
     "domain_id": "environment-digital",
     "status": "growth-gap",
-    "entries": 1,
-    "research_candidates": 0
+    "entries": 4,
+    "research_candidates": 6
   }
 }

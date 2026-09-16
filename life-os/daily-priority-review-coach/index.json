@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:daily-priority-review-coach",
   "slug": "daily-priority-review-coach",
-  "title": "Spend a Few Minutes Each Day Checking Out Your Open Tasks in the App)",
-  "description": "Spend a few minutes each day checking out your open tasks in the app. See what’s still on your list, shuffle priorities if needed, and stay on top of things.",
+  "title": "Review Open Tasks and Leave With a Clear Next Action",
+  "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:daily-priority-review-coach",
+    "language": "en",
+    "slug": "daily-priority-review-coach",
+    "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+    "title": "Review Open Tasks and Leave With a Clear Next Action",
+    "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "habits-consistency",
+          "title": "Habits & Consistency"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "grow-fast"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "grow-fast",
+      "title": "Grow fast"
+    },
+    "action": "Scan the open list, close or park items that are no longer active, rewrite vague active work as a concrete next action, identify blocked items and their dependency, choose the small set that deserves attention now, and stop the review before it turns into doing the tasks themselves.",
+    "check_in": "What became clearer, what was removed or parked, which item is blocked, and what is the next action I can actually take?",
+    "keywords": [
+      "Grow fast",
+      "Life OS",
+      "Review Your Open To-Dos"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/daily-priority-review-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

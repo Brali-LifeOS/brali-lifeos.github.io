@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:creativity-within-constraints",
   "slug": "creativity-within-constraints",
-  "title": "Creativity Within Constraints",
-  "description": "Impose limits like using fewer materials or setting time boundaries to spark creativity.",
+  "title": "Use One Constraint to Produce a Different Creative Draft",
+  "description": "When open-ended exploration is producing more browsing than making, choose one reversible constraint on scope, tools, format, or time and use it to create a concrete alternative you can compare with the original direction.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
   "machine_url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Creativity & Expression"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:creativity-within-constraints",
+    "language": "en",
+    "slug": "creativity-within-constraints",
+    "url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
+    "title": "Use One Constraint to Produce a Different Creative Draft",
+    "description": "When open-ended exploration is producing more browsing than making, choose one reversible constraint on scope, tools, format, or time and use it to create a concrete alternative you can compare with the original direction.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "idea-generation",
+          "title": "Idea Generation"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "creativity-expression",
+        "growth_zone_slug": "be-creative"
+      }
+    },
+    "life_area": {
+      "slug": "creativity-expression",
+      "title": "Creativity & Expression"
+    },
+    "growth_zone": {
+      "slug": "be-creative",
+      "title": "Be Creative"
+    },
+    "action": "Name the artifact and the part that feels too open, choose one constraint that does not violate the brief, create a reversible variant without adding new constraints midstream, compare the result with the original requirements, and keep only the useful difference.",
+    "check_in": "What did I constrain, what changed in the artifact, and did the constraint reveal anything worth keeping?",
+    "keywords": [
+      "Be Creative",
+      "Life OS",
+      "Creativity Within Constraints"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/creativity-within-constraints.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

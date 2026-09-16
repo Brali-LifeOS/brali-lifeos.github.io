@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:hack-impact-analytics",
   "slug": "hack-impact-analytics",
-  "title": "Pick One Growth Hack from Your List and Write a Journal Entry About Your)",
+  "title": "Reflect on a Hack",
   "description": "Pick one growth hack from your list and write a journal entry about your experience. Reflect on how you applied it, what you learned, and any changes you noticed in yourself.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/hack-impact-analytics/",
   "machine_url": "https://brali-lifeos.github.io/life-os/hack-impact-analytics/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/hack-impact-analytics.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

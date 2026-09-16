@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "habits",
   "title": "Habits",
   "question": "How can I make a useful behavior easier to repeat consistently?",
@@ -8,8 +8,8 @@
   "canonical_url": "https://brali-lifeos.github.io/topics/habits/",
   "json_url": "https://brali-lifeos.github.io/topics/habits/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
-  "coverage_status": "evidence-only-gap",
-  "coverage_note": "No reviewed/practical protocol currently covers this Topic. Brali shows reviewed evidence boundaries instead of promoting weaker content.",
+  "coverage_status": "trusted-protocols",
+  "coverage_note": "5 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "habits-consistency",
@@ -18,8 +18,151 @@
       "canonical_id": "brali:topic:habits-consistency"
     }
   ],
-  "protocols": [],
+  "protocols": [
+    {
+      "canonical_id": "brali:protocol:visible-progress-monitoring",
+      "protocol_id": "brali:visible-progress-monitoring",
+      "slug": "visible-progress-monitoring",
+      "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+      "title": "Make Goal Progress Visible Instead of Guessing",
+      "description": "For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better.",
+      "action": "Choose one goal where feedback can still change what you do. Pick one observable indicator that is close to the real outcome or behavior you care about. Record it at checkpoints that match the task, compare it with the target or previous checkpoint, and decide one adjustment. Prefer a small trace you will actually use over a dashboard full of decorative metrics.",
+      "check_in": "What changed in the progress signal, and what is the one next action that follows from that information?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1037/bul0000025",
+        "reviewed_at": "2026-09-11"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "goals",
+        "planning-prioritization",
+        "habits-consistency"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:temptation-bundling",
+      "protocol_id": "brali:temptation-bundling",
+      "slug": "temptation-bundling",
+      "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+      "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+      "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+        "reviewed_at": "2026-09-11"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "habits-consistency",
+        "task-initiation",
+        "movement"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:if-then-rules-productivity",
+      "protocol_id": "brali:if-then-rules-productivity",
+      "slug": "if-then-rules-productivity",
+      "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+      "title": "Turn a Good Intention into an If-Then Plan",
+      "description": "Turn a repeated low-stakes choice into a simple cue-and-action rule, add a fallback for common exceptions, and revise the rule when it creates friction or no longer fits the work.",
+      "action": "Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work.",
+      "check_in": "Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+        "reviewed_at": "2026-09-11"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ],
+      "method_ids": [
+        "implementation-intentions"
+      ],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:coot-ai-growth-journal",
+      "protocol_id": "brali:coot-ai-growth-journal",
+      "slug": "coot-ai-growth-journal",
+      "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+      "title": "Turn an AI Reflection into One Next Action",
+      "description": "Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself.",
+      "action": "State one concrete goal or decision, provide the relevant constraints and what you already know, ask the AI for a small set of distinct options with assumptions and failure modes, challenge anything vague, verify factual claims that matter, choose one reversible next action yourself, and record what would cause you to change course.",
+      "check_in": "What became clearer, which AI claim still needs verification, what action did I choose, and what new information would make me revise the decision?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-09-10"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "habits-consistency"
+      ],
+      "method_ids": [],
+      "hub_score": 1062.4
+    },
+    {
+      "canonical_id": "brali:protocol:daily-priority-review-coach",
+      "protocol_id": "brali:daily-priority-review-coach",
+      "slug": "daily-priority-review-coach",
+      "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
+      "action": "Scan the open list, close or park items that are no longer active, rewrite vague active work as a concrete next action, identify blocked items and their dependency, choose the small set that deserves attention now, and stop the review before it turns into doing the tasks themselves.",
+      "check_in": "What became clearer, what was removed or parked, which item is blocked, and what is the next action I can actually take?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-09-10"
+      },
+      "is_flagship_100": false,
+      "topic_ids": [
+        "habits-consistency"
+      ],
+      "method_ids": [],
+      "hub_score": 62.4
+    }
+  ],
   "evidence_decisions": [
+    {
+      "id": "implementation-intentions-meta-boundary-2024",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "The when and how of planning: Meta-analysis of implementation intentions in 642 tests",
+      "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+      "source_type": "meta-analysis",
+      "supported_claim": "Cue-response implementation intentions are a well-supported self-regulation mechanism; contingent if-then formats performed better on average in the reviewed literature.",
+      "unsupported_or_overstated_claims": [
+        "Every if-then sentence guarantees behavior change.",
+        "Aggregate effect sizes apply to every productivity task."
+      ],
+      "limitations": [
+        "The meta-analysis aggregates many populations, goals, outcomes and implementation-intention variants, so its average effect is not a guaranteed effect size for one productivity task or one person.",
+        "Reported moderators such as motivation, contingent if-then form and rehearsal describe variation across the evidence base; they do not establish one universally optimal Brali recipe.",
+        "The evidence supports the implementation-intention mechanism broadly, not fixed numbers of plans, fixed rehearsal counts, fixed time windows, or productivity estimates.",
+        "The reviewed synthesis does not validate Brali's exact wording, interface or reminder implementation as a separately tested intervention."
+      ],
+      "topic_ids": [
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ]
+    },
     {
       "id": "procrastination-treatment-exact-protocol-boundary-2018",
       "decision": "challenge-existing",
@@ -53,13 +196,120 @@
         "task-initiation",
         "habits-consistency"
       ]
+    },
+    {
+      "id": "progress-monitoring-goal-attainment-meta-2016",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Does monitoring goal progress promote goal attainment?",
+      "source_url": "https://doi.org/10.1037/bul0000025",
+      "source_type": "meta-analysis",
+      "supported_claim": "Increasing progress monitoring improves goal attainment on average; physically recording or reporting progress was associated with larger effects.",
+      "unsupported_or_overstated_claims": [
+        "Daily tracking is uniquely optimal.",
+        "Streaks or public leaderboards are universally beneficial.",
+        "More monitoring is always better."
+      ],
+      "limitations": [
+        "The meta-analysis combines heterogeneous goals, populations and monitoring interventions, so the pooled effect does not identify one optimal metric, cadence or tracking interface.",
+        "Larger effects associated with physically recording or reporting progress do not establish that public leaderboards, streaks, social accountability or any specific app feature is universally beneficial.",
+        "The evidence supports increasing useful progress monitoring on average, not maximal monitoring; excessive or poorly chosen measurement can still create burden or metric gaming.",
+        "The synthesis does not validate Brali's exact checkpoint wording or determine which proxy measure is best for a particular user's goal."
+      ],
+      "topic_ids": [
+        "goals",
+        "planning-prioritization",
+        "habits-consistency"
+      ]
+    },
+    {
+      "id": "temptation-bundling-exercise-boundary-2020",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Teaching temptation bundling to boost exercise: A field experiment",
+      "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+      "source_type": "primary-study",
+      "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020.",
+      "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+      "unsupported_or_overstated_claims": [
+        "Temptation bundling works equally well for every habit.",
+        "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+        "A reward should always be restricted exclusively to the target behavior.",
+        "The technique reliably creates permanent habits.",
+        "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+      ],
+      "limitations": [
+        "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+        "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+        "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+        "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+        "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+      ],
+      "topic_ids": [
+        "habits-consistency",
+        "task-initiation",
+        "movement"
+      ]
+    },
+    {
+      "id": "time-management-specificity-boundary-2021",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Does time management work? A meta-analysis",
+      "source_url": "https://doi.org/10.1371/journal.pone.0245066",
+      "source_type": "meta-analysis",
+      "supported_claim": "Time management has moderate positive relationships with performance and wellbeing at the construct level, with substantial heterogeneity.",
+      "unsupported_or_overstated_claims": [
+        "This validates a specific planner, calendar ratio, time-block length or branded method.",
+        "All observed relationships are causal."
+      ],
+      "limitations": [
+        "The meta-analysis pools studies using different definitions and measures of time management, job or academic performance and wellbeing, which limits claims about any one technique.",
+        "A substantial part of the underlying evidence is correlational, so associations between time-management behavior and outcomes should not be read as causal effects of a specific intervention.",
+        "The synthesis does not validate an exact planner layout, calendar ratio, time-block duration, prioritization rule or scheduling cadence.",
+        "Observed relationships vary across contexts and outcomes, so broad time-management evidence should not be converted into precise universal productivity claims."
+      ],
+      "topic_ids": [
+        "planning-prioritization",
+        "habits-consistency"
+      ]
+    },
+    {
+      "id": "woop-mcii-academic-procrastination-rct-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-09",
+      "source_title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/41601124/",
+      "source_type": "randomized-controlled-trial",
+      "citation_text": "Zhou X, Wider W, Wu H, Xu Y, Qin M, Borromeo AS. Acta Psychologica. 2026;262:106168.",
+      "supported_claim": "In this specific undergraduate academic-procrastination study, MCII reduced task aversiveness and improved willingness to initiate academic tasks relative to a positive-thinking control, with effects reported through one-week follow-up. Diary reports also provided a behavioral task-initiation signal. It provides narrow corroborating evidence for the obstacle-plus-plan mechanism in an academic setting.",
+      "unsupported_or_overstated_claims": [
+        "This trial proves WOOP works for all goals or populations.",
+        "The trial establishes long-term goal achievement effects.",
+        "The results generalize to workplaces, clinical populations or high-stakes decisions.",
+        "WOOP eliminates procrastination.",
+        "A one-week follow-up establishes durable behavior change."
+      ],
+      "limitations": [
+        "The study was single-site and restricted to first-year undergraduates at one private Chinese university.",
+        "Twenty of 101 randomized participants were excluded for missing reports or intervention nonadherence, leaving 81 in the final sample (19.8% attrition).",
+        "The main psychological outcomes were self-reported; task initiation was derived from participant diary reports rather than an objective academic-performance endpoint.",
+        "The context was academic procrastination rather than general goal pursuit.",
+        "The follow-up was one week, so long-term persistence is unknown.",
+        "The study does not justify generalizing to broad life outcomes, workplaces, clinical treatment, or safety-critical decisions."
+      ],
+      "topic_ids": [
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ]
     }
   ],
   "research_watch": [
     {
       "id": "crossref:10.1016/j.actpsy.2025.106168",
       "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
-      "status": "screening",
+      "status": "support-existing",
       "publication_date": "2026-02-01",
       "reference_url": "https://doi.org/10.1016/j.actpsy.2025.106168",
       "topic_ids": [
@@ -71,14 +321,42 @@
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
     },
     {
-      "id": "crossref:10.3389/fpsyg.2018.01588",
-      "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
-      "status": "challenge-existing",
-      "publication_date": "2018-08-30",
-      "reference_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+      "id": "crossref:10.1080/10463283.2024.2334563",
+      "title": "The when and how of planning: Meta-analysis of the scope and components of implementation intentions in 642 tests",
+      "status": "support-existing",
+      "publication_date": "2024-03-27",
+      "reference_url": "https://doi.org/10.1080/10463283.2024.2334563",
       "topic_ids": [
-        "task-initiation",
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "pubmed:33428644",
+      "title": "Does time management work? A meta-analysis",
+      "status": "challenge-existing",
+      "publication_date": "2021-01-11",
+      "reference_url": "https://doi.org/10.1371/journal.pone.0245066",
+      "topic_ids": [
+        "planning-prioritization",
         "habits-consistency"
+      ],
+      "evidence_state": "discovery-only",
+      "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+    },
+    {
+      "id": "crossref:10.1016/j.obhdp.2020.09.003",
+      "title": "Teaching temptation bundling to boost exercise: A field experiment",
+      "status": "propose-protocol",
+      "publication_date": "2020-11-01",
+      "reference_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+      "topic_ids": [
+        "habits-consistency",
+        "task-initiation",
+        "movement"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -99,8 +377,24 @@
       "id": "environment-design",
       "title": "Environment Design",
       "canonical_id": "brali:topic:environment-design"
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "canonical_id": "brali:topic:planning-prioritization"
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "canonical_id": "brali:topic:movement"
     }
   ],
-  "related_methods": [],
+  "related_methods": [
+    {
+      "id": "implementation-intentions",
+      "title": "Implementation Intentions",
+      "canonical_id": "brali:method:implementation-intentions"
+    }
+  ],
   "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
 }

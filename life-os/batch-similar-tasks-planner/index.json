@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:batch-similar-tasks-planner",
   "slug": "batch-similar-tasks-planner",
-  "title": "Group Similar Tasks and Do Them Together",
-  "description": "Group similar tasks and do them together.",
+  "title": "Batch Similar Tasks When Switching Is the Problem",
+  "description": "Group comparable low-risk tasks when repeated setup is slowing the work, then compare the batch with your normal flow and stop batching when responsiveness suffers.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
   "machine_url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:batch-similar-tasks-planner",
+    "language": "en",
+    "slug": "batch-similar-tasks-planner",
+    "url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
+    "title": "Batch Similar Tasks When Switching Is the Problem",
+    "description": "Group comparable low-risk tasks when repeated setup is slowing the work, then compare the batch with your normal flow and stop batching when responsiveness suffers.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "task-initiation",
+          "title": "Task Initiation"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "do-it"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "action": "Pick one recurring task family, define what makes the tasks similar, collect a small batch, process it with the same setup, and record completed items, rework, waiting time, and missed urgency. Compare with the ordinary flow before expanding the batch.",
+    "check_in": "Did batching remove repeated setup without adding unacceptable delay, rework, or missed urgent work?",
+    "keywords": [
+      "Do It",
+      "Life OS",
+      "Batch Similar Tasks"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/batch-similar-tasks-planner.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

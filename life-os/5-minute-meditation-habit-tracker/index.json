@@ -4,7 +4,7 @@
   "protocol_id": "brali:5-minute-meditation-habit-tracker",
   "slug": "5-minute-meditation-habit-tracker",
   "title": "Try a Short Breath Meditation",
-  "description": "Sit comfortably for a short meditation, let your breathing stay natural, and gently return attention when your mind wanders.",
+  "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/index.json",
   "growth_zone": {
@@ -49,7 +49,10 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:5-minute-meditation-habit-tracker",
@@ -57,7 +60,7 @@
     "slug": "5-minute-meditation-habit-tracker",
     "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
     "title": "Try a Short Breath Meditation",
-    "description": "Sit comfortably for a short meditation, let your breathing stay natural, and gently return attention when your mind wanders.",
+    "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down.",
     "ontology": {
       "domains": [
         {
@@ -88,8 +91,8 @@
       "slug": "be-healthy",
       "title": "Be Healthy"
     },
-    "action": "Set aside a short period somewhere comfortable and safe. Let your breathing stay natural, notice the sensations of breathing, and when your mind wanders gently bring attention back. Five minutes can be a convenient starting point, but use a duration and routine that work for you rather than treating twice-daily five-minute sessions as a required dose.",
-    "check_in": "Did I practise, how did focusing on the breath feel, and was returning attention useful, neutral or uncomfortable for me today?",
+    "action": "Sit somewhere comfortable and safe. Let breathing stay natural. Notice the sensations of breathing; when attention drifts into plans, memories, sounds or commentary, notice that and return to the breath without grading yourself. Use five minutes only if it is a convenient starting container. After several attempts, keep the practice only if it is useful for you.",
+    "check_in": "Did I notice attention wandering and return without turning it into a fight? Was the practice useful, neutral or uncomfortable? Would another wellbeing practice fit me better today?",
     "keywords": [
       "Be Healthy",
       "Life OS",
@@ -101,5 +104,13 @@
       "source_url": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-meditate-for-beginners/",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/5-minute-meditation-habit-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

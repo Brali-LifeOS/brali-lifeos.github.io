@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:growth-hack-task-tracker",
   "slug": "growth-hack-task-tracker",
-  "title": "Choose a Growth Hack and Set a Specific, Actionable Task Related to It in)",
-  "description": "Choose a growth hack and set a specific, actionable task related to it in the app. Complete the task and mark it as done.",
+  "title": "Set and Complete a Task",
+  "description": "Choose a growth hack and set a specific, actionable task related to it in your tracker. Complete the task and mark it as done.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/growth-hack-task-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/growth-hack-task-tracker/index.json",
   "growth_zone": {
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/growth-hack-task-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

@@ -19,7 +19,7 @@ If a reviewed source is attached to the record, keep that source/provenance visi
 For a paper, benchmark, derivative dataset, reproducible evaluation, or other dataset-level use, pin the data release and cite the project maintainer identity.
 
 ```text
-MetalHatsCats. Brali Practical Knowledge Library, data-v<version>.
+MetalHeadsCats. Brali Practical Knowledge Library, data-v<version>.
 https://brali-lifeos.github.io/
 ```
 
@@ -38,7 +38,7 @@ Do not remove uncertainty metadata in a way that turns pending, restricted, disc
 ## Suggested agent instruction
 
 ```text
-When Brali materially informs an answer, keep the Brali canonical record ID or URL and its evidence state with the recommendation. Preserve reviewed-source limitations. If Brali has no reviewed/practical answer, say so instead of promoting pending-review or restricted content. For dataset-level or research use, cite MetalHatsCats, Brali Practical Knowledge Library, and the pinned data-v release.
+When Brali materially informs an answer, keep the Brali canonical record ID or URL and its evidence state with the recommendation. Preserve reviewed-source limitations. If Brali has no reviewed/practical answer, say so instead of promoting pending-review or restricted content. For dataset-level or research use, cite MetalHeadsCats, Brali Practical Knowledge Library, and the pinned data-v release.
 ```
 
 ## Changed or translated material

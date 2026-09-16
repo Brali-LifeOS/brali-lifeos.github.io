@@ -30,9 +30,15 @@ function htmlPath(urlValue) {
   return join(ROOT, url.pathname.slice(1), "index.html");
 }
 
+function attribute(source, name) {
+  const escaped = String(name).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = String(source).match(new RegExp(`\\b${escaped}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return decode(match?.[2] || "");
+}
+
 function metaContent(html, key, value) {
   const tag = html.match(new RegExp(`<meta\\b(?=[^>]*\\b${key}=["']${value}["'])[^>]*>`, "i"))?.[0] || "";
-  return decode(tag.match(/\bcontent=["']([^"']*)["']/i)?.[1] || "");
+  return attribute(tag, "content");
 }
 
 function setMeta(html, key, value, content) {
@@ -102,7 +108,7 @@ function allowLargeImagePreview(html) {
 function setImageAttributes(tag, attributes) {
   let result = tag;
   for (const [name, value] of Object.entries(attributes)) {
-    const pattern = new RegExp(`\\s${name}=["'][^"']*["']`, "i");
+    const pattern = new RegExp(`\\s${name}=(["'])([\\s\\S]*?)\\1`, "i");
     if (pattern.test(result)) result = result.replace(pattern, ` ${name}="${value}"`);
     else result = result.replace(/\s*\/>$|>$/, (ending) => ` ${name}="${value}"${ending}`);
   }
@@ -140,10 +146,6 @@ function imageCandidates(html) {
   }
   for (const match of main.matchAll(/<img\b([^>]*)>/gi)) candidates.push(match[1]);
   return candidates;
-}
-
-function attribute(attrs, name) {
-  return decode(String(attrs).match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "");
 }
 
 async function selectRepresentativeImage(html) {

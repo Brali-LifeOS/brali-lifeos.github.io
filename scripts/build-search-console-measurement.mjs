@@ -24,7 +24,11 @@ export function validateSearchMeasurementContract() {
   assert(Number(config.opportunity_rules?.problem_match_threshold) >= 1, 'Problem match threshold must be positive.');
   assert((problems.collections ?? []).length >= 10, 'Search measurement expects the maintained canonical Problem Discovery Graph.');
   assert(trusted.size > 0, 'Search measurement cannot classify trusted guidance without the Protocol Feed.');
-  return { segment_count: ids.length, trusted_protocols: trusted.size, problems: problems.collections.length };
+  assert(config.generative_ai_search?.metric === 'impressions', 'Generative AI Search contract must measure impressions separately.');
+  assert((config.generative_ai_search?.dimensions ?? []).includes('pages'), 'Generative AI Search contract must include the pages dimension.');
+  assert((config.generative_ai_search?.supported_features_at_contract_date ?? []).includes('AI Overviews'), 'Generative AI Search contract must identify AI Overviews.');
+  assert((config.generative_ai_search?.supported_features_at_contract_date ?? []).includes('AI Mode'), 'Generative AI Search contract must identify AI Mode.');
+  return { segment_count: ids.length, trusted_protocols: trusted.size, problems: problems.collections.length, generative_ai_metric: config.generative_ai_search.metric };
 }
 
 function findFiles(dir, filename, found = []) {
@@ -51,6 +55,65 @@ function classify(url) {
   const match = pathname.match(/^\/life-os\/([^/]+)\/?$/);
   if (match) return trusted.has(match[1]) ? 'trusted-current-guidance' : 'review-required-neutral';
   return 'other';
+}
+
+function finiteOrNull(value) {
+  if (value === null || value === undefined || value === '') return null;
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric : null;
+}
+
+function buildGenerativeAiSearchMeasurement(report) {
+  const input = report.generative_ai_search ?? {};
+  const suppliedRows = Array.isArray(input.top_pages_28d) ? input.top_pages_28d : [];
+  const explicitStatus = typeof input.status === 'string' && input.status.trim() ? input.status.trim() : null;
+  const status = explicitStatus ?? (suppliedRows.length ? 'available' : 'not-exported');
+  const available = status === 'available';
+  const segmentBuckets = new Map(config.segments.map(segment => [segment.id, {
+    id: segment.id,
+    label: segment.label,
+    sampled_page_rows: 0,
+    impressions: 0
+  }]));
+
+  if (available) {
+    for (const row of suppliedRows) {
+      const bucket = segmentBuckets.get(classify(row.key ?? row.page ?? row.url ?? ''));
+      if (!bucket) continue;
+      bucket.sampled_page_rows += 1;
+      bucket.impressions += Number(row.impressions || 0);
+    }
+  }
+
+  const pageSample = [...segmentBuckets.values()].map(bucket => ({
+    ...bucket,
+    impressions: available ? Number(bucket.impressions.toFixed(3)) : null
+  }));
+
+  const controlInput = input.control ?? {};
+  const controlChecked = typeof controlInput.checked === 'boolean' ? controlInput.checked : null;
+  const controlIncluded = typeof controlInput.include_in_search_generative_ai === 'boolean'
+    ? controlInput.include_in_search_generative_ai
+    : null;
+
+  return {
+    status,
+    metric: 'impressions',
+    supported_features: input.supported_features ?? config.generative_ai_search.supported_features_at_contract_date,
+    data_through: input.data_through ?? null,
+    property_total_impressions_28d: available ? finiteOrNull(input.total_impressions_28d) : null,
+    top_page_sample_rows_28d: available ? suppliedRows.length : null,
+    page_sample_by_segment_28d: pageSample,
+    control: {
+      checked: controlChecked,
+      include_in_search_generative_ai: controlIncluded
+    },
+    source_semantics: {
+      property_total: 'Use an explicitly exported property/chart total only. Never reconstruct the property total by summing page-table rows.',
+      page_table: config.generative_ai_search.page_sample_semantics,
+      absence: config.generative_ai_search.absence_semantics
+    }
+  };
 }
 
 export function buildSearchMeasurement(report) {
@@ -130,6 +193,7 @@ export function buildSearchMeasurement(report) {
       unmatched_rows: queryRows.filter(row => row.coverage === 'unmatched').length,
       opportunities
     },
+    generative_ai_search: buildGenerativeAiSearchMeasurement(report),
     interpretation_limits: config.interpretation_limits,
     decision_options: config.decision_options,
     segment_definitions: Object.fromEntries([...segmentDefinitions].map(([id, value]) => [id, value.definition]))
@@ -166,6 +230,14 @@ function renderMarkdown(measured) {
     lines.push('| Query | Impressions | Clicks | Position | Coverage | Problem | Score |', '| --- | ---: | ---: | ---: | --- | --- | ---: |');
     for (const row of opportunities.slice(0, 20)) lines.push(`| ${String(row.query).replaceAll('|', '\\|')} | ${row.impressions} | ${row.clicks} | ${row.position.toFixed(1)} | ${row.coverage} | ${row.problem_slug || '—'} | ${row.problem_match_score} |`);
   }
+
+  const gai = measured.generative_ai_search;
+  lines.push('', '## Google Search generative AI', '', `- Status: **${gai.status}**`, `- Metric: **${gai.metric} only**`, `- Data through: **${gai.data_through || 'unavailable'}**`, `- Property total impressions (28d): **${gai.property_total_impressions_28d ?? 'unavailable'}**`, `- Exported page rows (28d): **${gai.top_page_sample_rows_28d ?? 'unavailable'}**`, `- Inclusion control checked: **${gai.control.checked === null ? 'not recorded' : gai.control.checked ? 'yes' : 'no'}**`, `- Inclusion control value: **${gai.control.include_in_search_generative_ai === null ? 'not recorded' : gai.control.include_in_search_generative_ai ? 'included' : 'excluded'}**`, '');
+  lines.push('The table below is a sum of the exported **page table sample**, not a reconstruction of the property total.', '', '| Segment | Sampled page rows | Generative AI impressions in page sample |', '| --- | ---: | ---: |');
+  for (const segment of gai.page_sample_by_segment_28d) {
+    lines.push(`| ${segment.label} | ${segment.sampled_page_rows} | ${segment.impressions ?? '—'} |`);
+  }
+
   lines.push('', '## Interpretation boundary', '');
   for (const limit of config.interpretation_limits) lines.push(`- ${limit}`);
   return `${lines.join('\n')}\n`;
@@ -175,7 +247,7 @@ function main() {
   const args = process.argv.slice(2);
   const summary = validateSearchMeasurementContract();
   if (args.includes('--config-check')) {
-    console.log(`Search Console measurement contract verified: ${summary.segment_count} stable segments, ${summary.trusted_protocols} trusted protocol slugs, ${summary.problems} canonical problems.`);
+    console.log(`Search Console measurement contract verified: ${summary.segment_count} stable segments, ${summary.trusted_protocols} trusted protocol slugs, ${summary.problems} canonical problems, generative-AI metric=${summary.generative_ai_metric}.`);
     return;
   }
   const reportArgIndex = args.indexOf('--report');
@@ -191,7 +263,7 @@ function main() {
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(path.join(outputDir, 'brali-search-measurement.json'), `${JSON.stringify(measured, null, 2)}\n`);
   fs.writeFileSync(path.join(outputDir, 'brali-search-measurement.md'), renderMarkdown(measured));
-  console.log(`Brali Search measurement: status=${measured.measurement_status}; tracked=${measured.segments.reduce((sum, segment) => sum + segment.tracked_pages, 0)}; top-query opportunities=${measured.query_coverage_28d.opportunities.length}.`);
+  console.log(`Brali Search measurement: status=${measured.measurement_status}; tracked=${measured.segments.reduce((sum, segment) => sum + segment.tracked_pages, 0)}; top-query opportunities=${measured.query_coverage_28d.opportunities.length}; generative-ai=${measured.generative_ai_search.status}.`);
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === MODULE_PATH) main();

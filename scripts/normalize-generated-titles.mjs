@@ -13,19 +13,37 @@ const escapeRegExp = (value = "") => String(value).replace(/[.*+?^${}()|[\]\\]/g
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
 const overrideTitle = (override) => clean(typeof override === "string" ? override : override?.display_title);
 const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|while|when|if|of|in|on|at|by|the|a|an)|[,;:—-])$/i;
+const suspiciousSingleTokenEnding = /\b(?:e)$/i;
+
+function hasUnbalancedPairs(value) {
+  const pairs = [["(", ")"], ["[", "]"]];
+  return pairs.some(([open, close]) => {
+    let depth = 0;
+    for (const character of value) {
+      if (character === open) depth += 1;
+      if (character === close) depth -= 1;
+      if (depth < 0) return true;
+    }
+    return depth !== 0;
+  });
+}
+
+function titleIssue(title) {
+  const value = clean(title);
+  if (!value) return "empty";
+  if (hasUnbalancedPairs(value)) return "unbalanced-brackets";
+  if (value.length > 82) return "too-long";
+  if (fragmentEnding.test(value) || suspiciousSingleTokenEnding.test(value)) return "fragment-ending";
+  return null;
+}
 
 for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
   if (!knownSlugs.has(slug)) throw new Error(`Title override references unknown entry: ${slug}`);
   const title = overrideTitle(override);
   if (!title) throw new Error(`Title override for ${slug} must provide a display title.`);
   if (title.length > 100) throw new Error(`Title override for ${slug} exceeds 100 characters.`);
-}
-
-function titleIssue(title) {
-  const value = clean(title);
-  if (value.length > 82) return "too-long";
-  if (fragmentEnding.test(value)) return "fragment-ending";
-  return null;
+  const issue = titleIssue(title);
+  if (issue) throw new Error(`Title override for ${slug} is still invalid (${issue}): ${title}`);
 }
 
 function displayTitle(entry) {
@@ -35,7 +53,7 @@ function displayTitle(entry) {
   const original = clean(entry.title);
   const subtitle = clean(entry.subtitle);
   const issue = titleIssue(original);
-  const usableSubtitle = subtitle.length >= 6 && subtitle.length <= 72 && !fragmentEnding.test(subtitle);
+  const usableSubtitle = subtitle.length >= 6 && subtitle.length <= 72 && !titleIssue(subtitle);
   if (issue && usableSubtitle) return { title: subtitle, reason: issue };
   return { title: original, reason: issue ? `unresolved-${issue}` : "original" };
 }
@@ -125,3 +143,7 @@ if (!datasetsHtml.includes("/life-os/datasets/title-quality.json")) {
 }
 
 console.log(`Title quality normalized: ${changed.length} display titles changed; ${unresolved.length} unresolved title issues remain.`);
+if (unresolved.length) {
+  const sample = unresolved.slice(0, 12).map((item) => `${item.slug}:${item.issue}`).join(", ");
+  throw new Error(`Title quality gate failed: ${unresolved.length} unresolved display title issue(s): ${sample}`);
+}

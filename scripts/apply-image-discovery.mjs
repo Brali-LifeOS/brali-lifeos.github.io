@@ -277,6 +277,8 @@ sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (whole, inner) => {
   return `<url>${cleaned}<image:image><image:loc>${image}</image:loc></image:image></url>`;
 });
 await writeFile(sitemapPath, sitemap);
-await writeFile(join(ROOT, "data", "image-discovery.json"), `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`);
+const manifestJson = `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`;
+await writeFile(join(ROOT, "data", "image-discovery.json"), manifestJson);
+await writeFile(join(ROOT, "api", "v1", "image-discovery.json"), manifestJson);
 
 console.log(`Brali SERP/social metadata finalized for ${blocks.length} sitemap page(s); Image Discovery applied to ${records.length} page(s) with visible informative images.`);

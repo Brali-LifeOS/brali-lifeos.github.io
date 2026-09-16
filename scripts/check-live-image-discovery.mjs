@@ -19,7 +19,7 @@ async function get(url) {
 
 const [sitemapResponse, manifestResponse] = await Promise.all([
   get(`${SITE}/sitemap.xml`),
-  get(`${SITE}/data/image-discovery.json`)
+  get(`${SITE}/api/v1/image-discovery.json`)
 ]);
 const sitemap = await sitemapResponse.text();
 const manifest = await manifestResponse.json();

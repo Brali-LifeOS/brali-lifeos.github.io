@@ -1,5 +1,6 @@
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
+import './apply-homepage-image-performance.mjs';
 
 const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");
@@ -82,6 +83,20 @@ for (const entry of index) {
   await writeFile(pagePath, html);
 }
 
+const reportPath = path.join(root, "life-os/datasets/title-quality.json");
+await writeFile(reportPath, JSON.stringify({
+  schema_version: 1,
+  changed_count: changed.length,
+  unresolved_count: unresolved.length,
+  changed,
+  unresolved,
+}, null, 2));
+
+if (unresolved.length > 0) {
+  const details = unresolved.map(({ slug, issue, title }) => `${slug} [${issue}]: ${title}`).join("\n");
+  throw new Error(`Unresolved public display titles must be fixed in authored source/title overrides before release:\n${details}`);
+}
+
 for (const entry of index) {
   const display = displayBySlug.get(entry.slug);
   if (display === clean(entry.title)) continue;
@@ -98,15 +113,6 @@ const publicIndexPath = path.join(root, "life-os-index.json");
 const publicIndex = JSON.parse(await readFile(publicIndexPath, "utf8"));
 for (const item of publicIndex) item.displayTitle = displayBySlug.get(item.slug) ?? clean(item.title);
 await writeFile(publicIndexPath, JSON.stringify(publicIndex, null, 2));
-
-const reportPath = path.join(root, "life-os/datasets/title-quality.json");
-await writeFile(reportPath, JSON.stringify({
-  schema_version: 1,
-  changed_count: changed.length,
-  unresolved_count: unresolved.length,
-  changed,
-  unresolved,
-}, null, 2));
 
 const manifestPath = path.join(root, "life-os/datasets/manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));

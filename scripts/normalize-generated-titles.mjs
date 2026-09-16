@@ -1,5 +1,6 @@
 import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import './apply-homepage-image-performance.mjs';
 
 const root = process.cwd();
 const contentRoot = path.join(root, "data/life-os-content");

@@ -22,15 +22,16 @@ const INTERNAL_TOP_LEVEL = new Set([
   "agent-skills",
   "mcp",
   "distribution",
-  "docs",
   "reports",
   "qa",
   "source",
   "sources",
 ]);
-const INTERNAL_SOURCE_LINK_TREE = "(?:data|scripts|artifacts|agent-skills|mcp|distribution|docs|reports|qa|source|sources)";
-const INTERNAL_SOURCE_HREF_REWRITE = new RegExp(`\\bhref=(["'])(\\/${INTERNAL_SOURCE_LINK_TREE}\\/[^"']+)\\1`, "gi");
-const INTERNAL_SOURCE_HREF = new RegExp(`\\bhref=["']\\/${INTERNAL_SOURCE_LINK_TREE}\\/`, "i");
+// `docs/` is intentionally mixed: /docs/ is a public Getting Started page, while
+// the repository Markdown/runbook material beside it is build-only source.
+const PUBLIC_MIXED_TREE_FILES = new Set([
+  "docs/index.html",
+]);
 const ROOT_SOURCE_FILES = new Set([
   ".gitignore",
   "AGENTS.md",
@@ -80,6 +81,24 @@ function relativeHtmlForPathname(pathname) {
 function isInternalPath(relativePath) {
   return INTERNAL_TOP_LEVEL.has(topLevel(relativePath));
 }
+function isBuildOnlySourcePath(relativePath) {
+  if (!relativePath) return false;
+  if (isInternalPath(relativePath)) return true;
+  if (relativePath === "docs") return false; // allow cp() to traverse the mixed tree
+  if (relativePath.startsWith("docs/") && !PUBLIC_MIXED_TREE_FILES.has(relativePath)) return true;
+  return false;
+}
+function relativePathFromRootHref(href) {
+  const pathname = href.split(/[?#]/u, 1)[0];
+  if (!pathname.startsWith("/") || pathname.startsWith("//")) return null;
+  const clean = pathname.replace(/^\/+/, "");
+  if (!clean) return "index.html";
+  return clean.endsWith("/") ? `${clean}index.html` : clean;
+}
+function isBuildOnlySourceHref(href) {
+  const relativePath = relativePathFromRootHref(href);
+  return relativePath ? isBuildOnlySourcePath(relativePath) : false;
+}
 async function collectFiles(dir, found = []) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
     if (entry.name === ".git" || entry.name === "node_modules") continue;
@@ -98,7 +117,7 @@ for (const value of sitemapUrls) {
   const url = new URL(value);
   if (url.origin !== SITE) continue;
   const relativePath = relativeHtmlForPathname(url.pathname);
-  if (isInternalPath(relativePath)) {
+  if (isBuildOnlySourcePath(relativePath)) {
     throw new Error(`pages_stage: sitemap references build-only/internal HTML: ${relativePath}`);
   }
   publishedRoutes.add(url.pathname);
@@ -129,7 +148,7 @@ for (const file of allFiles) {
   const relativePath = rel(file);
   if (!relativePath.endsWith(".html")) continue;
   const route = routeFromRelative(relativePath);
-  if (isInternalPath(relativePath)) {
+  if (isBuildOnlySourcePath(relativePath)) {
     prunedHtml.push({ path: relativePath, route, reason: "build-only/internal-html" });
     continue;
   }
@@ -158,7 +177,7 @@ for (const file of allFiles) {
 function includeSource(source) {
   const relativePath = rel(source);
   if (!relativePath) return true;
-  if (isInternalPath(relativePath)) return false;
+  if (isBuildOnlySourcePath(relativePath)) return false;
   if (!relativePath.includes("/") && ROOT_SOURCE_FILES.has(relativePath)) return false;
   if (!relativePath.includes("/") && /^\..+\.json$/i.test(relativePath)) return false;
   if (relativePath.endsWith(".html") && !allowedHtml.has(relativePath)) return false;
@@ -198,7 +217,8 @@ let sourceLinkRewrites = 0;
 for (const file of stagedFiles) {
   if (!file.endsWith(".html")) continue;
   const html = await readFile(file, "utf8");
-  const rewritten = html.replace(INTERNAL_SOURCE_HREF_REWRITE, (whole, quote, href) => {
+  const rewritten = html.replace(/\bhref=(["'])(\/(?!\/)[^"']+)\1/gi, (whole, quote, href) => {
+    if (!isBuildOnlySourceHref(href)) return whole;
     const [pathname, suffix = ""] = href.split(/(?=[?#])/u, 2);
     const relativePath = pathname.replace(/^\//, "");
     sourceLinkRewrites += 1;
@@ -209,13 +229,18 @@ for (const file of stagedFiles) {
 
 stagedFiles = await collectFiles(destination);
 const stagedRelative = new Set(stagedFiles.map((file) => slash(path.relative(destination, file))));
+for (const relativePath of stagedRelative) {
+  if (relativePath.startsWith("docs/") && !PUBLIC_MIXED_TREE_FILES.has(relativePath)) {
+    throw new Error(`pages_stage: build-only docs source leaked into artifact: ${relativePath}`);
+  }
+}
 let stagedHtmlCount = 0;
 const dependencyExtensions = /\.(?:css|js|mjs|png|jpe?g|gif|webp|avif|svg|ico|json|webmanifest|woff2?|ttf)(?:$|[?#])/i;
 for (const file of stagedFiles) {
   const relativePath = slash(path.relative(destination, file));
   if (!relativePath.endsWith(".html")) continue;
-  if (isInternalPath(relativePath)) {
-    throw new Error(`pages_stage: internal HTML survived staging: ${relativePath}`);
+  if (isBuildOnlySourcePath(relativePath)) {
+    throw new Error(`pages_stage: build-only/internal HTML survived staging: ${relativePath}`);
   }
   stagedHtmlCount += 1;
   const html = await readFile(file, "utf8");
@@ -228,8 +253,11 @@ for (const file of stagedFiles) {
       throw new Error(`pages_stage: undeclared noindex HTML survived staging: ${relativePath}`);
     }
   }
-  if (INTERNAL_SOURCE_HREF.test(html)) {
-    throw new Error(`pages_stage: ${relativePath} still references an omitted internal source tree`);
+  for (const match of html.matchAll(/\bhref=["']([^"']+)["']/gi)) {
+    const href = decode(match[1]);
+    if (isBuildOnlySourceHref(href)) {
+      throw new Error(`pages_stage: ${relativePath} still references an omitted build-only source: ${href}`);
+    }
   }
   for (const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)) {
     const ref = decode(match[1]);
@@ -249,5 +277,5 @@ if (!(manifest.webp_ratio > 0 && manifest.webp_ratio < 0.5) || !(manifest.avif_r
 
 let bytes = 0;
 for (const file of stagedFiles) bytes += (await stat(file)).size;
-console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/build-only HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex,follow route(s) allowlisted; ${sourceLinkRewrites} internal source link(s) rewritten to GitHub.`);
+console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/build-only HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex,follow route(s) allowlisted; ${sourceLinkRewrites} build-only source link(s) rewritten to GitHub.`);
 for (const item of prunedHtml) console.log(`- pruned ${item.path} -> ${item.route} (${item.reason})`);

@@ -126,6 +126,19 @@
       "checks": ["stable-identity", "source-current", "quality-state-explicit", "evidence-state-derived-not-translated", "no-silent-fallback"]
     },
     {
+      "id": "problem-guides",
+      "kind": "json-record-set",
+      "parity": "semantic",
+      "canonicalSource": "data/problem-collections.json",
+      "localePattern": "data/localization/{locale}/problem-collections.json",
+      "stableIdField": "slug",
+      "membership": "exact",
+      "requiredFields": ["slug", "title", "question", "summary", "decision_path", "stop_rule", "protocol_edges"],
+      "valueFields": ["title", "question", "aliases", "summary", "decision_path", "stop_rule", "protocol_edges"],
+      "requiredForRoles": ["human-interface"],
+      "checks": ["exact-id-parity", "source-current", "native-localized-copy", "protocol-edge-parity", "evidence-state-preserved", "no-silent-fallback"]
+    },
+    {
       "id": "growth-zones",
       "kind": "json-record-set",
       "parity": "semantic",
@@ -213,13 +226,14 @@
     {"paths":["index.html","homepage.js","styles.css","scripts/apply-brand-shell.mjs","scripts/patch-localized-responsive-css.mjs"],"surfaces":["core-ui","accessibility","seo-search"]},
     {"paths":["life-os/datasets/flagships.json","scripts/build-flagship-collection.mjs","scripts/build-protocol-feed.mjs"],"surfaces":["flagship-content","seo-search","ai-agent"]},
     {"paths":["data/life-os-content/index.json","data/life-os-content/**","life-os/datasets/evidence.json"],"surfaces":["library-content","seo-search","ai-agent"]},
+    {"paths":["data/problem-collections.json","scripts/build-problem-collections.mjs","scripts/build-localized-problem-collections.mjs","scripts/check-problem-collections.mjs"],"surfaces":["problem-guides","seo-search","ai-agent"]},
     {"paths":["data/life-os-zones.json"],"surfaces":["growth-zones","seo-search"]},
     {"paths":["scripts/build-content-methodology.mjs","life-os/methodology/index.html"],"surfaces":["methodology","seo-search","ai-agent"]},
     {"paths":["research/index.html"],"surfaces":["research-hub","seo-search"]},
     {"paths":["partners/index.html"],"surfaces":["partners-hub","seo-search"]},
     {"paths":["for-ai/index.html"],"surfaces":["ai-developer-hub","seo-search","ai-agent"]},
-    {"paths":["data/localization/**"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]},
-    {"paths":["scripts/lib/localization-pipeline.mjs","scripts/run-localization-build.mjs","scripts/run-localization-checks.mjs","scripts/build-localizations.mjs","scripts/build-ru-primary-pages.mjs","scripts/build-ru-library.mjs","scripts/patch-ru-discovery.mjs","scripts/build-interface-locales.mjs","scripts/finalize-interface-locales.mjs","scripts/finalize-localization-cluster.mjs","scripts/build-indexability-registry.mjs","scripts/check-indexability-contract.mjs","scripts/normalize-search-sitemap.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs","scripts/check-ru-primary-pages.mjs","scripts/check-interface-locale-sources.mjs","scripts/check-interface-locales.mjs","scripts/check-de-library-contract.mjs","scripts/audit-ru-language.mjs","scripts/audit-de-language.mjs","scripts/audit-de-library-language.mjs","scripts/check-localization-quality-states.mjs","scripts/check-localization-quality-debt.mjs","scripts/check-localization-cluster.mjs","scripts/check-pages-localization-artifact.mjs","scripts/check-live-localization-cluster.mjs","scripts/check-localization-contract.mjs","scripts/check-localization-faults.mjs","scripts/check-browser-localizations.mjs","scripts/check-live-localizations.mjs","scripts/run-localization-release-gates.mjs"],"surfaces":["core-ui","flagship-content","library-content","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]}
+    {"paths":["data/localization/**"],"surfaces":["core-ui","flagship-content","library-content","problem-guides","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]},
+    {"paths":["scripts/lib/localization-pipeline.mjs","scripts/run-localization-build.mjs","scripts/run-localization-checks.mjs","scripts/build-localizations.mjs","scripts/build-ru-primary-pages.mjs","scripts/build-ru-library.mjs","scripts/patch-ru-discovery.mjs","scripts/build-interface-locales.mjs","scripts/finalize-interface-locales.mjs","scripts/build-localized-problem-collections.mjs","scripts/finalize-localization-cluster.mjs","scripts/build-indexability-registry.mjs","scripts/check-indexability-contract.mjs","scripts/normalize-search-sitemap.mjs","scripts/check-localizations.mjs","scripts/check-ru-library.mjs","scripts/check-ru-primary-pages.mjs","scripts/check-interface-locale-sources.mjs","scripts/check-interface-locales.mjs","scripts/check-de-library-contract.mjs","scripts/audit-ru-language.mjs","scripts/audit-de-language.mjs","scripts/audit-de-library-language.mjs","scripts/check-localization-quality-states.mjs","scripts/check-localization-quality-debt.mjs","scripts/check-localization-cluster.mjs","scripts/check-pages-localization-artifact.mjs","scripts/check-problem-collections.mjs","scripts/check-live-localization-cluster.mjs","scripts/check-localization-contract.mjs","scripts/check-localization-faults.mjs","scripts/check-browser-localizations.mjs","scripts/check-live-localizations.mjs","scripts/run-localization-release-gates.mjs"],"surfaces":["core-ui","flagship-content","library-content","problem-guides","growth-zones","methodology","research-hub","partners-hub","ai-developer-hub","accessibility","seo-search","ai-agent"]}
   ],
   "evidenceBoundary": "A passing Brali localization gate proves declared source, generated-page and machine-surface invariants for the published locale scope. It does not by itself prove literary quality, cultural fit, deployed indexing, ranking, AI citation, recommendation visibility, traffic or conversion. Localization quality state is tracked separately from canonical evidence state."
 }

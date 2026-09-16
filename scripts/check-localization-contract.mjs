@@ -35,6 +35,19 @@ const problemImpact = (profile.impactRules || []).find((rule) => rule.paths?.inc
 assert(problemImpact?.surfaces?.includes("problem-guides"), "canonical problem graph changes must impact the problem-guides localization surface");
 assert(problemImpact?.surfaces?.includes("seo-search"), "canonical problem graph changes must trigger search/indexability review");
 
+const topicSurface = (profile.surfaces || []).find((surface) => surface.id === "topic-hubs");
+assert(topicSurface?.kind === "json-record-set", "topic-hubs must be a governed json-record-set surface");
+assert(topicSurface?.canonicalSource === "data/topic-hubs.json", "topic-hubs must bind to the canonical topic configuration");
+assert(topicSurface?.localePattern === "data/localization/{locale}/topic-hubs.json", "topic-hubs must use the locale-generic source pattern");
+assert(topicSurface?.stableIdField === "slug", "topic-hubs must preserve stable slug identity");
+assert(topicSurface?.membership === "exact", "topic-hubs must declare exact stable-ID membership for release locales");
+for (const requiredCheck of ["exact-id-parity", "source-current", "native-localized-copy", "trusted-protocol-links-localized", "explicit-human-fallback", "no-silent-fallback"]) {
+  assert(topicSurface?.checks?.includes(requiredCheck), `topic-hubs must require ${requiredCheck}`);
+}
+const topicImpact = (profile.impactRules || []).find((rule) => rule.paths?.includes("data/topic-hubs.json"));
+assert(topicImpact?.surfaces?.includes("topic-hubs"), "canonical topic config changes must impact the topic-hubs localization surface");
+assert(topicImpact?.surfaces?.includes("seo-search"), "canonical topic config changes must trigger search/indexability review");
+
 for (const surface of profile.surfaces || []) {
   if (!surface.requiredForRoles?.includes("human-interface")) continue;
   if (surface.localePattern) assert(surface.localePattern.includes("{locale}"), `${surface.id}.localePattern must use {locale}`);
@@ -57,4 +70,4 @@ for (const locale of byCode.values()) {
 
 await validateLocalizationPipeline(root, profile);
 
-console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; registry-to-pipeline wiring, exact library/problem-guide parity and release indexability are explicit.`);
+console.log(`Reusable localization contract passed for ${profile.locales.length} locale registry entries and ${(profile.surfaces || []).length} declared surfaces; registry-to-pipeline wiring, exact library/problem/topic parity and release indexability are explicit.`);

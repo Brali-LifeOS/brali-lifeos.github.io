@@ -17,10 +17,10 @@
     "hack": "Attach one action you already intend to take to one concrete cue: If [observable cue], then I will [specific feasible action].",
     "zone": "Do It",
     "zoneSlug": "do-it",
-    "whatYouDo": "Choose one goal you genuinely intend to pursue. Identify a cue you can recognize when it occurs: a time, place, event, state of another task, or other observable situation. Define one feasible response and write the relation explicitly as 'If X happens, then I will do Y.' Keep the cue and response specific enough that you can tell whether the plan fired. Rehearse it if useful, then revise the plan when the cue is too rare, ambiguous, or the action is unrealistic.",
+    "whatYouDo": "Choose one goal you genuinely intend to pursue. Identify a cue you can recognize when it occurs: a place, event, state of another task, or another observable situation. Define one feasible response and write the relation explicitly as 'If X happens, then I will do Y.' Keep the cue and response specific enough that you can tell whether the plan fired. Rehearse it if useful, then revise the plan when the cue is too rare, ambiguous, or the action is unrealistic.",
     "checkIn": "Did the cue occur, did I recognize it, and was the planned response realistic enough to execute?",
-    "reference": "Sheeran, Listrom & Gollwitzer (2024) — Meta-analysis of implementation intentions across 642 independent tests",
-    "sourceUrl": "https://doi.org/10.1080/10463283.2024.2334563"
+    "reference": "Sheeran, Listrom & Gollwitzer (2024) — meta-analysis of 642 independent tests; Melum & Martiny-Huenger (2026) — strict if-then planning meta-analysis in applied fruit-and-vegetable interventions",
+    "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13195971/"
   },
   "faq": [
     {
@@ -46,18 +46,24 @@
       "question": "What if the rule keeps failing?",
       "answer": "Diagnose the plan before blaming discipline. The cue may be vague or rarely encountered, the response may be too costly, the goal may not matter enough, or the environment may block the action. Rewrite or remove the rule accordingly.",
       "answerHtml": "<p>Diagnose the plan before blaming discipline. The cue may be vague or rarely encountered, the response may be too costly, the goal may not matter enough, or the environment may block the action. Rewrite or remove the rule accordingly.</p>"
+    },
+    {
+      "id": "if-then-rules-productivity-faq-5",
+      "question": "Is there evidence that strict if-then plans work in everyday behavior, not only laboratory tasks?",
+      "answer": "Yes, but keep the size and scope modest. A 2026 meta-analysis of 12 randomized comparisons in 2,399 adults found a small increase in self-reported fruit-and-vegetable intake versus active controls that wanted the same behavior change. That supports the cue-response format in this specific applied setting; it does not provide a universal effect size for productivity, exercise, studying, or every other goal.",
+      "answerHtml": "<p>Yes, but keep the size and scope modest. A 2026 meta-analysis of 12 randomized comparisons in 2,399 adults found a small increase in self-reported fruit-and-vegetable intake versus active controls that wanted the same behavior change. That supports the cue-response format in this specific applied setting; it does not provide a universal effect size for productivity, exercise, studying, or every other goal.</p>"
     }
   ],
   "meta": {
     "publishedISO": "2025-10-06T11:41:04.543Z",
-    "updatedISO": "2026-09-11T19:12:00Z",
+    "updatedISO": "2026-09-16T05:12:57Z",
     "authorName": "Brali",
     "authorUrl": "/",
     "accent": "mint"
   },
   "body": {
     "intro": {
-      "html": "<p>Wanting to do something and encountering the moment to do it are different problems. Implementation intentions connect them by pre-deciding the response to a recognizable situation: <strong>If X happens, then I will do Y.</strong> A 2024 meta-analysis by Sheeran, Listrom, and Gollwitzer synthesized 642 independent tests and found positive effects across cognitive, affective, and behavioral outcomes. Contingent if-then formats performed better on average than weaker plan formats, and effects were also related to factors such as motivation and rehearsal. That is strong support for the mechanism, not a promise that every sentence written in if-then form will work.</p>"
+      "html": "<p>Wanting to do something and encountering the moment to do it are different problems. Implementation intentions connect them by pre-deciding the response to a recognizable situation: <strong>If X happens, then I will do Y.</strong> A 2024 meta-analysis by Sheeran, Listrom, and Gollwitzer synthesized 642 independent tests and found positive effects across cognitive, affective, and behavioral outcomes. Contingent if-then formats performed better on average than weaker plan formats, and effects were also related to factors such as motivation and rehearsal. That is strong support for the mechanism, not a promise that every sentence written in if-then form will work.</p><p>A 2026 meta-analysis adds a useful reality check. It deliberately kept only strict if-then interventions and compared them with active controls that were already encouraged to make the same healthy change. Across 12 randomized comparisons involving 2,399 adults, the if-then groups reported a small average increase in fruit-and-vegetable intake. Useful? Yes. A behavioral cheat code? No. The outcome was self-reported, the samples were narrow, and the prediction interval allowed a future study to find no effect.</p>"
     },
     "sections": [
       {
@@ -68,7 +74,7 @@
       {
         "slug": "choose-cue",
         "title": "2. Choose a cue you can recognize",
-        "html": "<p>Good cues are concrete enough to notice when they occur: <em>when I close the daily stand-up</em>, <em>when I open the source file</em>, or <em>when it is time to begin the planned study session</em>. A vague cue such as <em>when I feel productive</em> creates another decision instead of removing one.</p>"
+        "html": "<p>Good cues are concrete enough to notice when they occur: <em>when I close the daily stand-up</em>, <em>when I open the source file</em>, or <em>when lunch ends</em>. A vague cue such as <em>when I feel productive</em> creates another decision instead of removing one. The 2026 applied review is especially useful here because it excluded generic planning that did not clearly connect a perceivable situation to a directly actionable response.</p>"
       },
       {
         "slug": "choose-response",
@@ -78,16 +84,26 @@
       {
         "slug": "write-relation",
         "title": "4. Write the relation explicitly",
-        "html": "<p>Use the contingent form directly: <strong>If [cue], then I will [response].</strong> The 2024 review found that this contingent structure mattered. You can rehearse the relation when useful, especially when the cue is easy to overlook, but there is no need to turn one plan into a ritual.</p>"
+        "html": "<p>Use the contingent form directly: <strong>If [cue], then I will [response].</strong> The 2024 review found that this contingent structure mattered, and the 2026 applied review only included interventions that explicitly linked a perceivable cue to an actionable response. You can rehearse the relation when useful, especially when the cue is easy to overlook, but there is no need to turn one plan into a ritual.</p>"
+      },
+      {
+        "slug": "schedule-is-not-the-whole-mechanism",
+        "title": "5. Do not confuse a calendar entry with the whole mechanism",
+        "html": "<p><em>Work on the report Thursday at 18:00</em> can be useful scheduling. It is not automatically the same thing as the strict if-then intervention reviewed in 2026. The reviewed format links something you can notice in the moment to something you can do next. If time is your cue, make the trigger operational rather than decorative: <em>If my 18:00 focus reminder appears, then I will open the report and write the next paragraph.</em></p>"
+      },
+      {
+        "slug": "keep-effect-size-honest",
+        "title": "6. Keep the effect size honest",
+        "html": "<p>In the 2026 applied meta-analysis, strict if-then planning increased self-reported fruit-and-vegetable intake by 0.29 portions per day on average versus active controls (95% CI 0.11 to 0.48; SMD 0.20). That is a small effect. The prediction interval included a possible null result in a future study, all outcomes were self-reported, and participants were predominantly Western European, female, White, and young-to-middle-aged. Use this as evidence that a low-cost cue-response plan can help in at least one everyday domain, not as a productivity multiplier you can paste onto every goal.</p>"
       },
       {
         "slug": "debug",
-        "title": "5. Debug the plan from real failures",
+        "title": "7. Debug the plan from real failures",
         "html": "<p>If execution is poor, ask what failed. Did the cue happen? Did you notice it? Was the response possible at that moment? Was another constraint stronger? Change the cue or response based on that evidence. A failed rule is information about the design, not proof of weak character.</p>"
       },
       {
         "slug": "avoid-pseudoprecision",
-        "title": "6. Do not decorate the rule with fake precision",
+        "title": "8. Do not decorate the rule with fake precision",
         "html": "<p>The old version of this Brali page prescribed arbitrary counts, minute limits, pilot lengths, and productivity estimates. Those details were not supported by the cited implementation-intention evidence. Use specificity when it makes the cue or action clearer; do not invent numbers merely because numbers sound scientific.</p>"
       }
     ]
@@ -99,14 +115,21 @@
       "doi": "10.1080/10463283.2024.2334563",
       "source_type": "meta-analysis",
       "claim_scope": "Meta-analysis of 642 independent tests supports implementation intentions as a self-regulation strategy and finds stronger average effects for contingent if-then formats. Aggregate results do not guarantee success for every goal, population, cue, or productivity task."
+    },
+    {
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13195971/",
+      "doi": "10.1186/s12966-026-01915-y",
+      "source_type": "systematic-review-meta-analysis",
+      "claim_scope": "Twelve randomized comparisons in 2,399 adults support a small average increase in self-reported fruit-and-vegetable intake when strict cue-response if-then planning is added versus active controls pursuing the same behavior change. The source does not establish a universal effect size for other goals, and its outcomes, population mix, publication-bias uncertainty, and prediction interval limit broader claims."
     }
   ],
   "editorialCuration": {
     "status": "curated",
     "evidenceStatus": "reviewed",
-    "reviewedAt": "2026-09-11",
+    "reviewedAt": "2026-09-16",
     "reviewedBy": "Brali Evidence Reviewer",
-    "reason": "Replace an inherited overlong protocol containing unsupported effect-size, timing, count, stress, and productivity claims with a concise mechanism-first implementation-intention protocol grounded in the 2024 meta-analysis of 642 independent tests.",
-    "registry": "review-registry-research-watch-2026-09-11-productivity-deep-run.json"
+    "reason": "Strengthen the existing reviewed implementation-intention protocol with a full-source-reviewed 2026 systematic review and meta-analysis of strict if-then planning in applied adult behavior change. The update clarifies the cue-response mechanism, distinguishes it from generic calendar planning, adds an active-control real-world use case, and keeps the small effect size, self-report outcome, narrow samples, prediction interval and publication-bias uncertainty explicit rather than turning the finding into a universal productivity claim.",
+    "registry": "review-registry-research-watch-2026-09-16-strict-if-then.json"
   }
 }

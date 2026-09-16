@@ -39,6 +39,20 @@ Reviewed normalizations are applied before public pages, evidence states, search
 
 Use this mechanism for genuinely repeated inherited claims. Do not use it to make article-specific editorial decisions look like generic rules.
 
+## Long-form preservation and article versions
+
+The migrated long-form article is an editorial asset, not disposable scaffolding. A trust state changes how Brali labels, indexes, recommends, and reuses a record; it must not silently collapse a substantive article into a short card.
+
+- `reviewed` and `practical` pages render their substantive article as current guidance.
+- `pending-review` pages keep the substantive article visible with a conspicuous review-pending boundary. Visibility does not promote the record into trusted recommendations or usable Agent Skills.
+- `restricted` pages may withhold inherited operational guidance when the safety/source bar is not met, while preserving the canonical source record for provenance.
+- Markdown-backed migrated articles must survive rebuilds. The build restores canonical `body.markdown` when there is no curated `body.sections` replacement.
+- When an article is refreshed, corrected, or reviewed, prefer updating/replacing the problematic claims while preserving useful depth, examples, teaching structure, and provenance.
+- Every hack page exposes an `Article versions` section at the bottom. It should show the recorded publication/current revision and evidence-review date when available, plus a link to the canonical source record.
+- Do not use shortening as a substitute for review. Unsupported precision should be removed or rewritten; supported depth should stay.
+
+A generated-page regression that removes a substantive canonical long-form body is a build failure, not an editorial optimization.
+
 ## Claims
 
 Precise claims require precise support. Percentages, sample sizes, effect estimates, phrases such as "research shows", and claims about treatment, diagnosis, prevention, or clinical outcomes require a source that a reader can trace.
@@ -65,7 +79,7 @@ A good Brali paragraph often follows this rhythm: **what is happening → why th
 
 ## Health and mental health
 
-Health and mental-health entries receive the highest review priority. Until the evidence bar is met, keep them out of search indexing, frame them as general education rather than medical advice, and avoid diagnosis or treatment promises.
+Health and mental-health entries receive the highest review priority. Until the evidence bar is met, keep them out of search indexing, frame them as general education rather than medical advice, and avoid diagnosis or treatment promises. `restricted` material may remain operationally withheld even while its provenance record is public.
 
 ## Structure of a strong protocol
 
@@ -84,28 +98,29 @@ A strong Brali entry should answer:
 
 ## Brand and provenance
 
-Public pages use Brali branding. Historical MetalHatsCats URLs and names may remain in archived source records for provenance, but they must not leak into generated public pages and they do not count as evidence.
+Public pages use Brali branding. Historical Metalhatscats URLs and names may remain in archived source records for provenance, but they must not leak into generated public pages and they do not count as evidence.
 
 ## Search policy
 
 Indexing is earned by useful public content, but **search visibility is not the same as recommendation eligibility**.
 
 - `reviewed` and eligible `practical` entries are canonical current-guidance pages: they may be indexed, included in the sitemap, offered through normal trusted recommendations, and packaged as Brali Agent Skills.
-- Non-sensitive `pending-review` entries may be indexed only after the generator **withholds the inherited long-form guidance**, rewrites title/description/structured data as an explicit **review record**, and exposes only provenance, ontology context, review state, and trusted alternatives. These pages are reference/evaluation surfaces, not advice.
-- `pending-review` search visibility never changes `content.current_guidance`, Trusted Protocol Feed eligibility, normal recommendation eligibility, evidence status, or Agent Skill eligibility. Promotion to current guidance still requires the normal editorial review path.
-- `restricted` entries remain `noindex,follow`, outside the sitemap, outside trusted recommendations, and outside Agent Skills. This includes safety-sensitive health or mental-health records that have not met the evidence bar.
-- Related-protocol recommendations may point only to trusted current-guidance entries. A pending-review reference page may link to trusted alternatives but cannot itself be recommended as the protocol to use.
+- Non-sensitive `pending-review` entries keep their long-form article visible with an explicit review-pending banner and may be included in search/sitemap as review-pending articles. Their evidence-like claims remain review debt, and the page must not present itself as reviewed or trusted guidance.
+- Safety-sensitive `pending-review` entries may keep the article visible for human review/education but remain `noindex,follow` until review is complete.
+- `pending-review` visibility or search eligibility never changes `content.current_guidance`, Trusted Protocol Feed eligibility, normal recommendation eligibility, evidence status, or Agent Skill eligibility. Promotion to trusted guidance still requires the normal editorial review path.
+- `restricted` entries remain `noindex,follow`, outside the sitemap, outside trusted recommendations, and outside usable Agent Skills. This includes safety-sensitive health or mental-health records that have not met the evidence bar; inherited operational guidance may remain withheld.
+- Related-protocol recommendations may point only to trusted current-guidance entries. A pending-review article may link to trusted alternatives but cannot itself be recommended as the protocol to use.
 - Topic, Domain, Method, Lens, Growth Zone, problem and question pages may be indexed when they add distinct navigation, decision, ontology, provenance, or retrieval value. Do not create near-duplicate URLs merely to target wording variants.
-- A canonical human protocol/review page remains the primary search surface for that record. Machine records, API views, and Brali Skill Packs are reusable representations of the same identity; they must not create thin duplicate SEO pages for every format.
+- A canonical human protocol/article page remains the primary search surface for that record. Machine records, API views, and Brali Skill Packs are reusable representations of the same identity; they must not create thin duplicate SEO pages for every format.
 - Sitemap membership, crawlability, indexing eligibility, actual indexing, ranking, AI citation, recommendation traffic, and protocol usefulness are separate states. Repository checks may prove implementation parity but must not claim external search outcomes.
 
-This policy opens the largest defensible first-party search surface while preserving a hard boundary between **discoverable record** and **trusted advice**. Google and other search systems may still choose not to index an eligible URL.
+This policy keeps the original editorial depth visible while preserving a hard boundary between **visible article**, **search eligibility**, and **trusted recommendation**. Google and other search systems may still choose not to index an eligible URL.
 
 ## Reusable Brali Skill Packs
 
 A trusted protocol may expose a portable `SKILL.md`-style pack for AI tools and agent workflows. The pack is derived from the canonical trusted record rather than maintained as a second copy of the advice.
 
-- Only records already eligible for the Trusted Protocol Feed may be offered as skill packs.
+- Only records already eligible for the Trusted Protocol Feed may be offered as usable skill packs.
 - The pack must preserve the canonical ID/URL, evidence state, action, check-in, source boundary, attribution, and important guardrails.
 - A review-gated record must not become reusable simply because its public URL is crawlable or search-indexable.
 - Tool-specific installation support must be described accurately. A downloadable or copyable instruction file is not evidence of universal one-click installation.
@@ -115,9 +130,11 @@ A trusted protocol may expose a portable `SKILL.md`-style pack for AI tools and 
 
 - `life-os/datasets/evidence.json` exposes the evidence state and current-guidance eligibility for every Growth Library entry.
 - `life-os/datasets/review-queue.json` exposes the current editorial queue.
-- `life-os/datasets/indexing.json` separately lists search-indexable trusted guidance, search-indexable pending-review reference records, restricted search-withheld records, and trusted recommendation eligibility.
+- `life-os/datasets/indexing.json` separately lists search-indexable trusted guidance, search-indexable pending-review articles, search-withheld review-required/restricted records, and trusted recommendation eligibility.
 - `life-os/datasets/protocols.json` provides the compact discovery-ready Trusted Protocol Feed and is the catalog source for Brali Skill Packs.
 - `life-os/datasets/editorial-normalizations.json` records reviewed inherited-claim corrections and their application counts.
+- `life-os/datasets/legacy-content-containment.json` records whether each article is trusted current guidance, visible review-pending long-form, or restricted historical-source-only.
+- `life-os/datasets/longform-publication.json` records Markdown-backed long-form restoration performed during the build.
 - `life-os/datasets/manifest.json` includes evidence, indexing, protocol-feed, and normalization counts.
 
-These files are public so search systems, AI tools, and contributors can distinguish discoverability from evidence state and recommendation eligibility.
+These files are public so search systems, AI tools, and contributors can distinguish visibility, discoverability, evidence state and recommendation eligibility.

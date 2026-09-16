@@ -75,6 +75,7 @@ jobs:
           node --check scripts/check-pages-localization-artifact.mjs
           node --check scripts/optimize-homepage-images.mjs
           node --check scripts/check-homepage-images.mjs
+          node --check scripts/stage-pages-artifact.mjs
       - name: Validate localization source contract and adversarial failures
         run: |
           npm run localization:contract
@@ -165,11 +166,13 @@ jobs:
         run: npm run localization:cluster && npm run localization:artifact && node scripts/check-indexability-contract.mjs
       - name: Gate exact final Pages artifact
         run: node scripts/check-search-release.mjs
+      - name: Stage source-clean Pages artifact
+        run: node scripts/stage-pages-artifact.mjs "$RUNNER_TEMP/brali-pages"
       - name: Upload verified Pages artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: ${{ runner.temp }}/brali-pages
 
   deploy:
     if: github.event_name != 'pull_request'

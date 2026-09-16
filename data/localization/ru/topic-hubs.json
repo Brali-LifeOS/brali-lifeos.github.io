@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "locale": "ru",
+  "source_locale": "en",
+  "source_dataset": "data/topic-hubs.json",
+  "quality_state": "editorial-reviewed",
+  "labels": {
+    "index_title": "Практические темы",
+    "index_description": "Семь тематических хабов Brali: сон, концентрация, память, стресс, привычки, обучение и движение — с явными границами доказательности.",
+    "index_eyebrow": "Точки входа по темам",
+    "index_heading": "Начните с задачи, а не с классификации.",
+    "index_lead": "Семь хабов объединяют темы Brali, проверенные практики там, где они есть, и честно показывают пробелы в доказательствах.",
+    "card_protocols_label": "Проверенные протоколы",
+    "card_evidence_label": "Решения по доказательности",
+    "card_cta": "Открыть тему",
+    "page_eyebrow": "Тематический хаб",
+    "trust_heading": "Граница доверия",
+    "trust_body": "Рекомендации здесь берутся только из протоколов, прошедших проверку или отмеченных как низкорисковые практические идеи. Материалы из исследовательской очереди не превращаются в советы только потому, что попали на разбор.",
+    "protocols_heading": "Что можно попробовать",
+    "protocol_check_in": "Что проверить после",
+    "coverage_gap_heading": "Пробел покрытия",
+    "coverage_gap_body": "Для этой темы пока нет доверенного протокола Brali. Это пробел в покрытии библиотеки, а не доказательство того, что полезных подходов не существует.",
+    "evidence_heading": "Границы доказательности",
+    "evidence_prefix": "К этой теме привязано проверенных решений по доказательности:",
+    "evidence_suffix": "Подробные формулировки выводов и ограничений пока остаются в каноническом английском хабе; Brali не подменяет их автоматическим переводом.",
+    "research_heading": "На радаре исследований",
+    "research_prefix": "Исследовательских кандидатов:",
+    "research_suffix": "Это материалы для дальнейшей проверки, а не готовые рекомендации.",
+    "source_heading": "Канонический контекст",
+    "source_body": "Английский хаб содержит полный набор решений по доказательности, исследовательских кандидатов и машинно-читаемых связей.",
+    "source_cta": "Открыть английский хаб",
+    "all_topics": "Все темы",
+    "home_heading": "Темы",
+    "home_body": "Начните с сна, концентрации, памяти, стресса, привычек, обучения или движения."
+  },
+  "hubs": [
+    {
+      "slug": "sleep",
+      "title": "Сон",
+      "question": "Как выстроить более стабильный режим сна, не превращая слабые данные в предписание?",
+      "summary": "Работайте с временем сна, восстановлением и средой, не смешивая наблюдательные связи с причинными выводами.",
+      "source": {
+        "title": "Sleep",
+        "question": "How can I build a more reliable sleep routine without turning weak evidence into a prescription?",
+        "summary": "Build routines around sleep timing, recovery, and environment while keeping observational findings separate from causal claims.",
+        "primary_topic_ids": ["sleep-circadian"],
+        "related_topic_ids": ["recovery-energy", "health-basics"]
+      }
+    },
+    {
+      "slug": "focus",
+      "title": "Концентрация",
+      "question": "Как начать важную работу и не переключаться с неё каждые несколько минут?",
+      "summary": "Снижайте цену переключений и трение старта, защищайте внимание ограниченными рабочими блоками и явными приоритетами.",
+      "source": {
+        "title": "Focus",
+        "question": "How can I start important work and stay with it instead of constantly switching?",
+        "summary": "Reduce switching, lower task-start friction, and protect attention with bounded work structures and explicit priorities.",
+        "primary_topic_ids": ["attention-focus", "task-initiation", "planning-prioritization"],
+        "related_topic_ids": ["goals", "habits-consistency", "digital-attention"]
+      }
+    },
+    {
+      "slug": "memory",
+      "title": "Память",
+      "question": "Как лучше запоминать изученное, не путая запоминание с умением применять знания?",
+      "summary": "Укрепляйте удержание через извлечение из памяти, управление интерференцией и осторожные практики после обучения, отделяя память от переноса навыка.",
+      "source": {
+        "title": "Memory",
+        "question": "How can I remember what I learn without confusing retention with application?",
+        "summary": "Improve retention with retrieval, interference management, and conservative post-learning practices while separating memory from skill transfer.",
+        "primary_topic_ids": ["memory"],
+        "related_topic_ids": ["skill-learning", "metacognition"]
+      }
+    },
+    {
+      "slug": "stress",
+      "title": "Стресс",
+      "question": "Какие низкорисковые практики могут помочь справляться со стрессом, не превращая библиотеку знаний в медицинскую помощь?",
+      "summary": "Используйте ограниченные практики саморегуляции, управляемости и самонаблюдения, оставляя лечение за пределами практического слоя Brali.",
+      "source": {
+        "title": "Stress",
+        "question": "What low-risk practices can help me respond to stress without treating a knowledge library like clinical care?",
+        "summary": "Use bounded regulation, controllability, and self-awareness practices while keeping treatment claims outside Brali's practical layer.",
+        "primary_topic_ids": ["stress-regulation", "emotion-regulation", "worry-rumination"],
+        "related_topic_ids": ["psychological-flexibility", "self-awareness", "fear-confidence"]
+      }
+    },
+    {
+      "slug": "habits",
+      "title": "Привычки",
+      "question": "Как сделать полезное действие проще для регулярного повторения?",
+      "summary": "Снижайте трение, используйте устойчивые сигналы и проверяйте, что произошло на практике, вместо того чтобы рассчитывать на мотивацию как на постоянное топливо.",
+      "source": {
+        "title": "Habits",
+        "question": "How can I make a useful behavior easier to repeat consistently?",
+        "summary": "Lower friction, use reliable cues, and review what actually happened instead of relying on motivation as a permanent fuel source.",
+        "primary_topic_ids": ["habits-consistency"],
+        "related_topic_ids": ["goals", "task-initiation", "environment-design"]
+      }
+    },
+    {
+      "slug": "learning",
+      "title": "Обучение",
+      "question": "Как учиться через воспроизведение, практику, обратную связь и применение, а не только через пассивное знакомство с материалом?",
+      "summary": "Сочетайте извлечение из памяти, обратную связь и практику применения, различая запоминание информации и способность ею пользоваться.",
+      "source": {
+        "title": "Learning",
+        "question": "How can I learn through retrieval, practice, feedback, and application rather than passive exposure?",
+        "summary": "Combine retrieval, feedback, and application practice while distinguishing remembering information from being able to use it.",
+        "primary_topic_ids": ["skill-learning", "language-learning", "metacognition"],
+        "related_topic_ids": ["memory", "critical-thinking", "revision-feedback"]
+      }
+    },
+    {
+      "slug": "movement",
+      "title": "Движение и упражнения",
+      "question": "Как больше двигаться и выстроить устойчивую физическую рутину, не выдумывая «идеальную дозу» перерывов для мозга?",
+      "summary": "Разбивайте долгие периоды сидения и поддерживайте устойчивые привычки движения, мобильности и силовой работы, не преувеличивая предварительные данные о когнитивных эффектах.",
+      "source": {
+        "title": "Movement & Exercise",
+        "question": "How can I move more and build sustainable physical routines without inventing a magic cognitive break dose?",
+        "summary": "Break up sedentary time and support sustainable movement, mobility, and strength while keeping exploratory cognition findings in bounds.",
+        "primary_topic_ids": ["movement", "fitness-strength", "recovery-energy"],
+        "related_topic_ids": ["health-basics", "cardiovascular-health"]
+      }
+    }
+  ]
+}

@@ -22,7 +22,15 @@ const INTERNAL_TOP_LEVEL = new Set([
   "agent-skills",
   "mcp",
   "distribution",
+  "docs",
+  "reports",
+  "qa",
+  "source",
+  "sources",
 ]);
+const INTERNAL_SOURCE_LINK_TREE = "(?:data|scripts|artifacts|agent-skills|mcp|distribution|docs|reports|qa|source|sources)";
+const INTERNAL_SOURCE_HREF_REWRITE = new RegExp(`\\bhref=(["'])(\\/${INTERNAL_SOURCE_LINK_TREE}\\/[^"']+)\\1`, "gi");
+const INTERNAL_SOURCE_HREF = new RegExp(`\\bhref=["']\\/${INTERNAL_SOURCE_LINK_TREE}\\/`, "i");
 const ROOT_SOURCE_FILES = new Set([
   ".gitignore",
   "AGENTS.md",
@@ -49,6 +57,16 @@ function robots(html) {
   const tag = html.match(/<meta\b(?=[^>]*\bname=["']robots["'])[^>]*>/i)?.[0] || "";
   return decode(tag.match(/\bcontent=["']([^"']+)["']/i)?.[1] || "").toLowerCase();
 }
+function robotsDirectives(html) {
+  return new Set(robots(html).split(/[\s,]+/u).filter(Boolean));
+}
+function isPublicNoindexFollow(html) {
+  const directives = robotsDirectives(html);
+  return directives.has("noindex")
+    && directives.has("follow")
+    && !directives.has("nofollow")
+    && !directives.has("none");
+}
 function routeFromRelative(relativePath) {
   if (relativePath === "index.html") return "/";
   if (relativePath.endsWith("/index.html")) return `/${relativePath.slice(0, -"index.html".length)}`;
@@ -58,6 +76,9 @@ function relativeHtmlForPathname(pathname) {
   if (pathname === "/") return "index.html";
   const clean = pathname.replace(/^\/+/, "");
   return pathname.endsWith(".html") ? clean : `${clean.replace(/\/+$/, "")}/index.html`;
+}
+function isInternalPath(relativePath) {
+  return INTERNAL_TOP_LEVEL.has(topLevel(relativePath));
 }
 async function collectFiles(dir, found = []) {
   for (const entry of await readdir(dir, { withFileTypes: true })) {
@@ -76,8 +97,12 @@ const publishedHtml = new Set();
 for (const value of sitemapUrls) {
   const url = new URL(value);
   if (url.origin !== SITE) continue;
+  const relativePath = relativeHtmlForPathname(url.pathname);
+  if (isInternalPath(relativePath)) {
+    throw new Error(`pages_stage: sitemap references build-only/internal HTML: ${relativePath}`);
+  }
   publishedRoutes.add(url.pathname);
-  publishedHtml.add(relativeHtmlForPathname(url.pathname));
+  publishedHtml.add(relativePath);
 }
 
 // A noindex page is retained only when it is a declared human route, not merely
@@ -104,21 +129,28 @@ for (const file of allFiles) {
   const relativePath = rel(file);
   if (!relativePath.endsWith(".html")) continue;
   const route = routeFromRelative(relativePath);
+  if (isInternalPath(relativePath)) {
+    prunedHtml.push({ path: relativePath, route, reason: "build-only/internal-html" });
+    continue;
+  }
   if (publishedHtml.has(relativePath) || relativePath === "404.html") {
     allowedHtml.add(relativePath);
     continue;
   }
   const html = await readFile(file, "utf8");
-  const isNoindex = /\b(?:noindex|none)\b/.test(robots(html));
-  if (isNoindex && intentionalNoindexRoutes.has(route)) {
+  if (intentionalNoindexRoutes.has(route)) {
+    if (!isPublicNoindexFollow(html)) {
+      throw new Error(`pages_stage: declared public noindex route must use exact noindex,follow policy: ${relativePath} (robots=${robots(html) || "missing"})`);
+    }
     allowedHtml.add(relativePath);
     continue;
   }
+  const directives = robotsDirectives(html);
   prunedHtml.push({
     path: relativePath,
     route,
-    reason: isNoindex
-      ? (intentionalNoindexRoutes.has(route) ? "unexpected-state" : "undeclared-noindex-html")
+    reason: directives.has("noindex") || directives.has("none")
+      ? "undeclared-noindex-html"
       : "off-sitemap-html",
   });
 }
@@ -126,8 +158,7 @@ for (const file of allFiles) {
 function includeSource(source) {
   const relativePath = rel(source);
   if (!relativePath) return true;
-  const first = topLevel(relativePath);
-  if (INTERNAL_TOP_LEVEL.has(first)) return false;
+  if (isInternalPath(relativePath)) return false;
   if (!relativePath.includes("/") && ROOT_SOURCE_FILES.has(relativePath)) return false;
   if (!relativePath.includes("/") && /^\..+\.json$/i.test(relativePath)) return false;
   if (relativePath.endsWith(".html") && !allowedHtml.has(relativePath)) return false;
@@ -167,7 +198,7 @@ let sourceLinkRewrites = 0;
 for (const file of stagedFiles) {
   if (!file.endsWith(".html")) continue;
   const html = await readFile(file, "utf8");
-  const rewritten = html.replace(/\bhref=(["'])(\/(?:data|scripts|artifacts|agent-skills|mcp|distribution)\/[^"']+)\1/gi, (whole, quote, href) => {
+  const rewritten = html.replace(INTERNAL_SOURCE_HREF_REWRITE, (whole, quote, href) => {
     const [pathname, suffix = ""] = href.split(/(?=[?#])/u, 2);
     const relativePath = pathname.replace(/^\//, "");
     sourceLinkRewrites += 1;
@@ -183,18 +214,21 @@ const dependencyExtensions = /\.(?:css|js|mjs|png|jpe?g|gif|webp|avif|svg|ico|js
 for (const file of stagedFiles) {
   const relativePath = slash(path.relative(destination, file));
   if (!relativePath.endsWith(".html")) continue;
+  if (isInternalPath(relativePath)) {
+    throw new Error(`pages_stage: internal HTML survived staging: ${relativePath}`);
+  }
   stagedHtmlCount += 1;
   const html = await readFile(file, "utf8");
   const route = routeFromRelative(relativePath);
   if (!publishedRoutes.has(route) && relativePath !== "404.html") {
-    if (!/\b(?:noindex|none)\b/.test(robots(html))) {
-      throw new Error(`pages_stage: staged off-sitemap HTML is indexable: ${relativePath}`);
+    if (!isPublicNoindexFollow(html)) {
+      throw new Error(`pages_stage: staged off-sitemap public HTML must use noindex,follow: ${relativePath}`);
     }
     if (!intentionalNoindexRoutes.has(route)) {
       throw new Error(`pages_stage: undeclared noindex HTML survived staging: ${relativePath}`);
     }
   }
-  if (/\bhref=["']\/(?:data|scripts|artifacts|agent-skills|mcp|distribution)\//i.test(html)) {
+  if (INTERNAL_SOURCE_HREF.test(html)) {
     throw new Error(`pages_stage: ${relativePath} still references an omitted internal source tree`);
   }
   for (const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)) {
@@ -215,5 +249,5 @@ if (!(manifest.webp_ratio > 0 && manifest.webp_ratio < 0.5) || !(manifest.avif_r
 
 let bytes = 0;
 for (const file of stagedFiles) bytes += (await stat(file)).size;
-console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/source HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex route(s) allowlisted; ${sourceLinkRewrites} internal source link(s) rewritten to GitHub.`);
+console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/build-only HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex,follow route(s) allowlisted; ${sourceLinkRewrites} internal source link(s) rewritten to GitHub.`);
 for (const item of prunedHtml) console.log(`- pruned ${item.path} -> ${item.route} (${item.reason})`);

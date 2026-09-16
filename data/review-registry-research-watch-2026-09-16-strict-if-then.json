@@ -3,9 +3,9 @@
   "description": "Brali Research Watch review batch for 2026-09-16. A fresh 2026 systematic review and meta-analysis of strict if-then planning completed full-source review. Brali already has a reviewed implementation-intention protocol, so the finding is used to strengthen that existing protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
   "research_candidates": [
     {
-      "id": "pubmed:41987207",
-      "source": "pubmed",
-      "source_id": "41987207",
+      "id": "crossref:10.1186/s12966-026-01915-y",
+      "source": "crossref",
+      "source_id": "10.1186/s12966-026-01915-y",
       "pmid": "41987207",
       "pmcid": "PMC13195971",
       "doi": "10.1186/s12966-026-01915-y",
@@ -55,18 +55,16 @@
         "health"
       ],
       "discovery_sources": [
-        "pubmed",
-        "pmc",
-        "publisher"
+        "crossref"
       ],
-      "review_notes": "Full open-access article reviewed through the final PMC/publisher record, not just title, abstract or discovery metadata. The review searched MEDLINE, Embase and PsycInfo, with the last search on 3 April 2025, and included randomized trials only when the intervention used a strict perceivable-cue -> directly actionable-response if-then format and the active control pursued the same dietary behavior change without that planning procedure. Ten articles yielded 12 independent comparisons and N=2,399 adults. The pooled effect on self-reported fruit-and-vegetable intake was small (MD 0.29 portions/day, 95% CI 0.11 to 0.48; SMD 0.20). The prediction interval included a possible null result in a future study. All outcomes were self-reported; samples were predominantly Western European, female, White and young-to-middle-aged; two articles had high risk from missing outcome data; preregistration/report-selection information was often unclear; and the authors explicitly note a possible file-drawer problem despite no strong funnel-plot asymmetry. Included primary reports were published from 2009 to 2019, so the 2026 synthesis is fresh but the underlying trials are not."
+      "review_notes": "Discovery identity is normalized to the supported Crossref provider; evidence review did not rely on Crossref metadata. The full open-access final article was reviewed through PMC/publisher, not just title, abstract or discovery metadata. The review searched MEDLINE, Embase and PsycInfo, with the last search on 3 April 2025, and included randomized trials only when the intervention used a strict perceivable-cue -> directly actionable-response if-then format and the active control pursued the same dietary behavior change without that planning procedure. Ten articles yielded 12 independent comparisons and N=2,399 adults. The pooled effect on self-reported fruit-and-vegetable intake was small (MD 0.29 portions/day, 95% CI 0.11 to 0.48; SMD 0.20). The prediction interval included a possible null result in a future study. All outcomes were self-reported; samples were predominantly Western European, female, White and young-to-middle-aged; two articles had high risk from missing outcome data; preregistration/report-selection information was often unclear; and the authors explicitly note a possible file-drawer problem despite no strong funnel-plot asymmetry. Included primary reports were published from 2009 to 2019, so the 2026 synthesis is fresh but the underlying trials are not."
     }
   ],
   "evidence_decisions": [
     {
       "schema_version": 1,
       "id": "strict-if-then-applied-boundary-2026",
-      "candidate_id": "pubmed:41987207",
+      "candidate_id": "crossref:10.1186/s12966-026-01915-y",
       "decision": "support-existing",
       "reviewed_at": "2026-09-16",
       "reviewed_by": "Brali Evidence Reviewer",

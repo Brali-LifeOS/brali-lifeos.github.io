@@ -13,6 +13,12 @@ const escapeRegExp = (value = "") => String(value).replace(/[.*+?^${}()|[\]\\]/g
 const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
 const overrideTitle = (override) => clean(typeof override === "string" ? override : override?.display_title);
 const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|while|when|if|of|in|on|at|by|the|a|an)|[,;:—-])$/i;
+const truncatedParenthetical = /\((?:e|i|ex|e\.g\.?)?$/i;
+
+function hasUnbalancedDelimiters(value) {
+  const pairs = [["(", ")"], ["[", "]"], ["{", "}"]];
+  return pairs.some(([open, close]) => value.split(open).length !== value.split(close).length);
+}
 
 for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
   if (!knownSlugs.has(slug)) throw new Error(`Title override references unknown entry: ${slug}`);
@@ -23,6 +29,8 @@ for (const [slug, override] of Object.entries(overrides.entries ?? {})) {
 
 function titleIssue(title) {
   const value = clean(title);
+  if (hasUnbalancedDelimiters(value)) return "unbalanced-delimiter";
+  if (truncatedParenthetical.test(value)) return "truncated-parenthetical";
   if (value.length > 82) return "too-long";
   if (fragmentEnding.test(value)) return "fragment-ending";
   return null;

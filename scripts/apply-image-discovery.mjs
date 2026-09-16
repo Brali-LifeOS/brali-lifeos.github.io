@@ -5,17 +5,22 @@ const ROOT = process.cwd();
 const SITE = "https://brali-lifeos.github.io";
 const IMAGE_NS = "http://www.google.com/schemas/sitemap-image/1.1";
 const sitemapPath = join(ROOT, "sitemap.xml");
+const TITLE_MAX = 65;
+const DESCRIPTION_MAX = 160;
 
 const decode = (value = "") => String(value)
   .replaceAll("&amp;", "&")
   .replaceAll("&quot;", '"')
   .replaceAll("&#39;", "'")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">")
   .trim();
 const escapeAttr = (value = "") => String(value)
   .replaceAll("&", "&amp;")
   .replaceAll('"', "&quot;")
   .replaceAll("<", "&lt;")
   .replaceAll(">", "&gt;");
+const cleanText = (value = "") => decode(value).replace(/\s+/g, " ").trim();
 
 function htmlPath(urlValue) {
   const url = new URL(urlValue);
@@ -38,6 +43,49 @@ function setMeta(html, key, value, content) {
 
 function pageTitle(html) {
   return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "");
+}
+
+function setPageTitle(html, title) {
+  const replacement = `<title>${escapeAttr(title)}</title>`;
+  return /<title\b[^>]*>[\s\S]*?<\/title>/i.test(html)
+    ? html.replace(/<title\b[^>]*>[\s\S]*?<\/title>/i, replacement)
+    : html.replace(/<\/head>/i, `${replacement}</head>`);
+}
+
+function truncateAtWord(value, max) {
+  const text = cleanText(value);
+  if (text.length <= max) return text;
+  const budget = Math.max(1, max - 1);
+  const probe = text.slice(0, budget + 1);
+  const boundary = probe.lastIndexOf(" ");
+  const safeBoundary = boundary >= Math.max(24, Math.floor(budget * 0.6));
+  const cut = (safeBoundary ? probe.slice(0, boundary) : text.slice(0, budget)).replace(/[\s,:;—-]+$/u, "");
+  return `${cut}…`;
+}
+
+function conciseTitle(value) {
+  const title = cleanText(value);
+  if (title.length <= TITLE_MAX) return title;
+  const brand = title.match(/(\s+[—|-]\s+Brali(?: LifeOS)?)$/i)?.[1] || "";
+  if (!brand) return truncateAtWord(title, TITLE_MAX);
+  const core = title.slice(0, -brand.length).trim();
+  const coreBudget = TITLE_MAX - brand.length;
+  if (coreBudget < 24) return truncateAtWord(title, TITLE_MAX);
+  return `${truncateAtWord(core, coreBudget)}${brand}`;
+}
+
+function conciseDescription(value) {
+  const description = cleanText(value);
+  if (description.length <= DESCRIPTION_MAX) return description;
+  const sentences = description.match(/[^.!?]+[.!?]+/g) ?? [];
+  let candidate = "";
+  for (const sentence of sentences) {
+    const next = cleanText(candidate ? `${candidate} ${sentence}` : sentence);
+    if (next.length > DESCRIPTION_MAX) break;
+    candidate = next;
+  }
+  if (candidate.length >= 80) return candidate;
+  return truncateAtWord(description, DESCRIPTION_MAX);
 }
 
 function allowLargeImagePreview(html) {
@@ -182,16 +230,17 @@ for (const inner of blocks) {
 
   if (page === `${SITE}/`) html = optimizeHomepageImageLoading(html);
 
-  const description = metaContent(html, "name", "description");
-  const socialTitle = metaContent(html, "property", "og:title") || pageTitle(html);
-  const socialDescription = metaContent(html, "property", "og:description") || description;
-  if (!socialTitle || !socialDescription) throw new Error(`Cannot finalize social metadata without title/description: ${page}`);
+  const serpTitle = conciseTitle(pageTitle(html));
+  const serpDescription = conciseDescription(metaContent(html, "name", "description"));
+  if (!serpTitle || !serpDescription) throw new Error(`Cannot finalize SERP/social metadata without title/description: ${page}`);
 
-  html = setMeta(html, "property", "og:title", socialTitle);
-  html = setMeta(html, "property", "og:description", socialDescription);
+  html = setPageTitle(html, serpTitle);
+  html = setMeta(html, "name", "description", serpDescription);
+  html = setMeta(html, "property", "og:title", serpTitle);
+  html = setMeta(html, "property", "og:description", serpDescription);
   html = setMeta(html, "property", "og:url", page);
-  html = setMeta(html, "name", "twitter:title", socialTitle);
-  html = setMeta(html, "name", "twitter:description", socialDescription);
+  html = setMeta(html, "name", "twitter:title", serpTitle);
+  html = setMeta(html, "name", "twitter:description", serpDescription);
 
   const representative = await selectRepresentativeImage(html);
   if (!representative) {
@@ -200,10 +249,9 @@ for (const inner of blocks) {
     continue;
   }
 
-  // Image discovery now runs over the aggregate multilingual sitemap. Keep the
-  // preview contract aligned for every index-eligible page selected for an image,
-  // including localized routes that did not previously carry an explicit robots
-  // preview directive. Restricted/noindex routes never enter this sitemap.
+  // Image discovery runs over the aggregate multilingual sitemap. Keep preview
+  // semantics aligned for every index-eligible page selected for a real visible
+  // informative image. Restricted/noindex routes never enter this sitemap.
   html = allowLargeImagePreview(html);
   html = setMeta(html, "property", "og:image", representative.url);
   html = setMeta(html, "property", "og:image:alt", representative.alt);
@@ -229,4 +277,4 @@ sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (whole, inner) => {
 await writeFile(sitemapPath, sitemap);
 await writeFile(join(ROOT, "data", "image-discovery.json"), `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`);
 
-console.log(`Brali social metadata finalized for ${blocks.length} sitemap page(s); Image Discovery applied to ${records.length} page(s) with visible informative images.`);
+console.log(`Brali SERP/social metadata finalized for ${blocks.length} sitemap page(s); Image Discovery applied to ${records.length} page(s) with visible informative images.`);

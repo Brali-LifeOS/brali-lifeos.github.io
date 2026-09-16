@@ -1,0 +1,197 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brali-lifeos.github.io/contracts/scenario-validation.schema.json",
+  "title": "Brali Scenario Validation Experiment",
+  "description": "A fail-closed contract for pre-registered Brali scenario experiments. Targets and procedures are planned evidence; attempts, observations, verification and inference must remain distinct and must never be fabricated.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "scenario_id",
+    "title",
+    "problem_statement",
+    "hypothesis",
+    "status",
+    "tracks",
+    "attempts",
+    "evidence",
+    "decision",
+    "privacy",
+    "links"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "scenario_id": {"type": "string", "pattern": "^brali:scenario:[a-z0-9][a-z0-9-]*$"},
+    "title": {"type": "string", "minLength": 8, "maxLength": 160},
+    "problem_statement": {"type": "string", "minLength": 20, "maxLength": 800},
+    "hypothesis": {"type": "string", "minLength": 20, "maxLength": 800},
+    "status": {"enum": ["planned", "running", "paused", "complete"]},
+    "tracks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human", "external_agent"],
+      "properties": {
+        "human": {"$ref": "#/$defs/track"},
+        "external_agent": {"$ref": "#/$defs/track"}
+      }
+    },
+    "attempts": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/attempt"}
+    },
+    "evidence": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/evidence"}
+    },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "value", "rationale", "evidence_refs", "limitations"],
+      "properties": {
+        "status": {"enum": ["pending", "made"]},
+        "value": {"type": ["string", "null"], "enum": ["keep", "change", "reject", null]},
+        "rationale": {"type": ["string", "null"], "maxLength": 2000},
+        "evidence_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"type": "string", "pattern": "^evidence-[a-z0-9][a-z0-9-]*$"}
+        },
+        "limitations": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 8, "maxLength": 400}
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["raw_task_text", "personal_data", "employer_or_client_material", "user_identifier", "observation_reference_policy"],
+      "properties": {
+        "raw_task_text": {"const": false},
+        "personal_data": {"const": false},
+        "employer_or_client_material": {"const": false},
+        "user_identifier": {"const": false},
+        "observation_reference_policy": {"type": "string", "minLength": 20, "maxLength": 1000}
+      }
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["issue", "outcome_event_schema", "outcome_observations", "runbook"],
+      "properties": {
+        "issue": {"type": "string", "format": "uri"},
+        "outcome_event_schema": {"type": "string", "format": "uri"},
+        "outcome_observations": {"type": "string", "format": "uri"},
+        "runbook": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "$defs": {
+    "track": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["track_id", "target", "procedure", "success_criteria", "failure_criteria"],
+      "properties": {
+        "track_id": {"enum": ["human", "external_agent"]},
+        "target": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "minimum_attempts", "maximum_attempts", "observed_attempts"],
+          "properties": {
+            "type": {"const": "experiment-target"},
+            "minimum_attempts": {"type": "integer", "minimum": 1, "maximum": 100},
+            "maximum_attempts": {"type": "integer", "minimum": 1, "maximum": 100},
+            "observed_attempts": {"type": "integer", "minimum": 0}
+          }
+        },
+        "procedure": {
+          "type": "array",
+          "minItems": 3,
+          "items": {"type": "string", "minLength": 8, "maxLength": 600}
+        },
+        "success_criteria": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 8, "maxLength": 600}
+        },
+        "failure_criteria": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 8, "maxLength": 600}
+        }
+      }
+    },
+    "attempt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["attempt_id", "track", "state", "attempted_at", "procedure_version", "outcome_event_ids", "source_refs"],
+      "properties": {
+        "attempt_id": {"type": "string", "pattern": "^attempt-[a-z0-9][a-z0-9-]*$"},
+        "track": {"enum": ["human", "external_agent"]},
+        "state": {"const": "attempted"},
+        "attempted_at": {"type": "string", "format": "date-time"},
+        "procedure_version": {"type": "integer", "minimum": 1},
+        "outcome_event_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/uuid"}
+        },
+        "source_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidence_id", "attempt_id", "track", "state", "category", "finding", "outcome_event_ids", "source_refs"],
+      "properties": {
+        "evidence_id": {"type": "string", "pattern": "^evidence-[a-z0-9][a-z0-9-]*$"},
+        "attempt_id": {"type": "string", "pattern": "^attempt-[a-z0-9][a-z0-9-]*$"},
+        "track": {"enum": ["human", "external_agent"]},
+        "state": {"enum": ["observed", "verified", "inferred"]},
+        "category": {
+          "enum": [
+            "setup-friction",
+            "trusted-match",
+            "no-trusted-answer",
+            "concrete-next-action",
+            "protocol-completed",
+            "helpfulness",
+            "repeat-use",
+            "provenance-preserved",
+            "abandonment",
+            "workaround",
+            "rejected-alternative",
+            "safety-boundary",
+            "other"
+          ]
+        },
+        "finding": {"type": "string", "minLength": 8, "maxLength": 1000},
+        "outcome_event_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/uuid"}
+        },
+        "source_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/source_ref"}
+        }
+      }
+    },
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ref"],
+      "properties": {
+        "kind": {"enum": ["github-issue", "provider-artifact", "outcome-event", "manual-review"]},
+        "ref": {"type": "string", "minLength": 8, "maxLength": 500}
+      }
+    },
+    "uuid": {"type": "string", "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"}
+  }
+}

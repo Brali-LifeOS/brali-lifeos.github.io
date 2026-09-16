@@ -8,7 +8,7 @@
   "api_base": "https://brali-lifeos.github.io/api/v1",
   "product_identity": {
     "short": "Brali is an evidence-informed decision layer for everyday problems.",
-    "publisher": "MetalHatsCats",
+    "publisher": "MetalHeadsCats",
     "human_contract": "Problem -> bounded recommendation -> protocol -> action",
     "machine_contract": "Natural language -> canonical problem -> trusted protocol -> evidence/provenance",
     "not_a_claim": "Brali does not claim that every problem has one universally best protocol or that indexed content is automatically trusted for recommendation."
@@ -37,8 +37,8 @@
     "preview_command": "gh skill preview Brali-LifeOS/brali-lifeos.github.io brali-life-os",
     "install_command": "gh skill install Brali-LifeOS/brali-lifeos.github.io brali-life-os --agent claude-code --scope user",
     "docs": "https://cli.github.com/manual/gh_skill",
-    "published_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.0",
-    "published_tag": "v1.0.0",
+    "published_release": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.1",
+    "published_tag": "v1.0.1",
     "publication_verified": true,
     "registry_search_verified": false,
     "discovery_blocker": "GitHub published the skill release, but the Actions token could not add the repository topic agent-skills. Do not claim GitHub skill-search discovery until the topic/search result is provider-visible.",
@@ -90,13 +90,13 @@
     {"id":"openai-api","title":"OpenAI API","status":"supported-static-api","transport":"https-json","example":"examples/integrations/openai-api.mjs","configuration":"Brali API prefetch -> bounded context packet -> Responses API","official_docs":"https://platform.openai.com/docs/quickstart","note":"Use Brali's hosted static API directly. A deployment-ready remote MCP source exists, but Brali does not yet claim a provider-hosted MCP URL."}
   ],
   "citation": {
-    "author": "MetalHatsCats",
+    "author": "MetalHeadsCats",
     "dataset_title": "Brali Practical Knowledge Library",
     "license": "CC-BY-NC-SA-4.0",
     "citation_file": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main/CITATION.cff",
     "guidance_page": "https://brali-lifeos.github.io/cite/",
     "answer_attribution_template": "Source: Brali — <record title> (<canonical_id>), <record_url>. Evidence: <evidence_state>.",
-    "dataset_citation_template": "MetalHatsCats. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
+    "dataset_citation_template": "MetalHeadsCats. Brali Practical Knowledge Library, data-v<version>. https://brali-lifeos.github.io/",
     "preserve": ["canonical Brali record URL or canonical_id","evidence state and review metadata where supplied","data-v release version for reproducible dataset use","an indication when material is changed or translated"]
   },
   "adoption_checklist": [

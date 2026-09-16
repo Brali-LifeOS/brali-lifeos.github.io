@@ -1,5 +1,6 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
+import './check-search-console-measurement.mjs';
 
 const root = process.cwd();
 const required = [

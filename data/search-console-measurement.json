@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-09-15",
+  "updated_at": "2026-09-16",
   "purpose": "Measure whether Brali's trusted and problem-first surfaces are gaining useful search discovery before expanding the indexable corpus again.",
   "baseline_gate": "Do not use raw sitemap size as a growth target and do not start another broad promotion/index-policy wave until a real Search Console baseline has been captured under this segmentation.",
   "segments": [
@@ -17,9 +17,21 @@
     "minimum_impressions_in_top_query_sample": 1,
     "rule": "Rank high-impression queries from the Search Console top-query sample that do not resolve to a canonical Problem Discovery Graph entry. Treat them as review/prioritization input, not proof that a new page should be created."
   },
+  "generative_ai_search": {
+    "source": "Google Search Console Generative AI performance report (Search)",
+    "supported_features_at_contract_date": ["AI Overviews", "AI Mode"],
+    "metric": "impressions",
+    "dimensions": ["pages", "countries", "dates", "devices"],
+    "expected_optional_report_key": "generative_ai_search",
+    "absence_semantics": "If the report/export is unavailable or not supplied, emit status=unavailable/not-exported and null metrics. Never coerce absence to zero.",
+    "page_sample_semantics": "Page-table exports are bounded by Search Console table limits. Segment totals derived from that table are sample sums, not property totals.",
+    "control_check": "Record whether the Search generative AI inclusion control was inspected for the property. Do not infer the setting from impression data."
+  },
   "interpretation_limits": [
     "Search Console top page and top query arrays are samples from the configured row limit, not complete zero-filled inventories.",
     "Clicks, impressions, CTR and average position are observational search metrics and do not prove that a repository change caused a ranking movement.",
+    "Generative AI Search impressions are a separate observational metric for links shown in supported Google generative AI features; they are not clicks, sessions, citations, recommendations, or proof of downstream use.",
+    "An unavailable Generative AI report/export is unknown, not zero. Exported table values are also subject to Search Console row/aggregation limits.",
     "An indexed review-required record remains non-recommendable until its evidence state changes through Brali's review workflow.",
     "A query with impressions is a demand signal, not permission to generate a thin keyword page or weaken evidence gates.",
     "Segment comparisons should be repeated over time with the same definitions before making index-policy decisions."

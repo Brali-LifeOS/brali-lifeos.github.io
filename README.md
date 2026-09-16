@@ -1,6 +1,6 @@
 # Brali — an evidence-informed decision layer for humans and AI agents
 
-Official public site and knowledge repository for Brali, maintained by **MetalHatsCats** and published at `https://brali-lifeos.github.io`.
+Official public site and knowledge repository for Brali, maintained by **MetalHeadsCats** and published at `https://brali-lifeos.github.io`.
 
 Brali is not another advice blog. It is a versioned decision and practical-knowledge layer: start with a real problem, resolve it to a canonical problem when coverage is strong enough, inspect a bounded recommendation with explicit fit and evidence limits, then run or reuse the underlying protocol. Stable identities, provenance, machine-readable data, Agent Skills, retrieval/evaluation artifacts, and integration surfaces keep that contract inspectable.
 
@@ -141,7 +141,7 @@ The first stable dataset baseline is `1.0.0`, using the immutable tag convention
 
 The `Package Brali data release` workflow rebuilds and checks the repository, packages every canonical dataset plus the complete API v1 surface, then verifies the release manifest and SHA-256 checksums before publishing tag assets. The bundle also includes `CITATION.cff`, license/licensing terms, evidence/source policies, versioning rules, and version-specific release notes. Consumers that need reproducibility should pin a release instead of `main`.
 
-When Brali materially informs a downstream answer, keep the canonical record URL/ID and evidence state. Dataset-level or research use should cite **MetalHatsCats, Brali Practical Knowledge Library**, together with the pinned `data-v*` release. See `docs/CITATION_AND_ATTRIBUTION.md` and `/cite/`.
+When Brali materially informs a downstream answer, keep the canonical record URL/ID and evidence state. Dataset-level or research use should cite **MetalHeadsCats, Brali Practical Knowledge Library**, together with the pinned `data-v*` release. See `docs/CITATION_AND_ATTRIBUTION.md` and `/cite/`.
 
 ## Contributing and partnerships
 

@@ -1,5 +1,6 @@
 import { readFile, access, readdir } from "node:fs/promises";
 import path from "node:path";
+import './check-release-hardening.mjs';
 
 const root = process.cwd();
 const entries = JSON.parse(await readFile(path.join(root, "life-os-index.json"), "utf8"));

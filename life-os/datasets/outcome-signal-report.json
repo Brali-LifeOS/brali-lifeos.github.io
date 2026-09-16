@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "name": "Brali outcome signal report",
+  "dataset_version": "1.0.0",
+  "generated_from": [
+    "data/outcome-signal-definitions.json",
+    "data/outcome-observations.json",
+    "contracts/outcome-event.schema.json"
+  ],
+  "reviewed_observation_events": 0,
+  "population_totals_available": false,
+  "unknown_representation": null,
+  "signals": [
+    {
+      "id": "page_discovered",
+      "meaning": "A person or external system encountered a Brali page or result before opening or using it.",
+      "collection_mode": "provider-only",
+      "event_types": [],
+      "claim_boundary": "Brali outcome events do not measure discovery. Search-provider impressions or registry visibility may describe provider exposure, but they are separate measurements and must not be converted into users, opens, attempts, or outcomes.",
+      "observation_state": "unknown",
+      "observed_value": null,
+      "interpretation": "This outcome report has no reviewed first-party observation for this signal. Provider measurements, if available elsewhere, remain separate and are not converted into an outcome count."
+    },
+    {
+      "id": "page_opened",
+      "meaning": "A deliberately shared and reviewed event says a canonical Brali protocol was opened.",
+      "collection_mode": "reviewed-event-count",
+      "event_types": ["protocol_opened"],
+      "claim_boundary": "This is a count of accepted explicit events only, not total page opens, sessions, visitors, or traffic. Zero reviewed events does not mean nobody opened Brali.",
+      "observation_state": "reviewed-opt-in-observations",
+      "observed_value": 0,
+      "by_event_type": {"protocol_opened": 0},
+      "interpretation": "Observed value counts only reviewed explicit opt-in events (protocol_opened). It is not a population total and does not imply later-stage outcomes."
+    },
+    {
+      "id": "method_understood",
+      "meaning": "A person explicitly reports that they understood what the method asks them to do.",
+      "collection_mode": "not-collected",
+      "event_types": [],
+      "claim_boundary": "Brali currently has no dedicated understood/not-understood observation. Completion, helpfulness, dwell time, or a page view must not be used as a proxy.",
+      "observation_state": "unknown",
+      "observed_value": null,
+      "interpretation": "Brali does not currently collect this signal. Unknown remains null rather than being presented as zero."
+    },
+    {
+      "id": "method_attempted",
+      "meaning": "A deliberately shared and reviewed event records that a trusted protocol run was started.",
+      "collection_mode": "reviewed-event-count",
+      "event_types": ["protocol_started"],
+      "claim_boundary": "A start event is an attempt signal only. It does not establish completion, usefulness, downstream effect, or a unique user.",
+      "observation_state": "reviewed-opt-in-observations",
+      "observed_value": 0,
+      "by_event_type": {"protocol_started": 0},
+      "interpretation": "Observed value counts only reviewed explicit opt-in events (protocol_started). It is not a population total and does not imply later-stage outcomes."
+    },
+    {
+      "id": "method_completed",
+      "meaning": "A deliberately shared and reviewed event records completion of a trusted protocol run.",
+      "collection_mode": "reviewed-event-count",
+      "event_types": ["protocol_completed"],
+      "claim_boundary": "Completion is not usefulness or efficacy. It is counted only from accepted opt-in events, never inferred from navigation or time on page.",
+      "observation_state": "reviewed-opt-in-observations",
+      "observed_value": 0,
+      "by_event_type": {"protocol_completed": 0},
+      "interpretation": "Observed value counts only reviewed explicit opt-in events (protocol_completed). It is not a population total and does not imply later-stage outcomes."
+    },
+    {
+      "id": "user_reported_usefulness",
+      "meaning": "A deliberately shared and reviewed event contains explicit helpful or not-helpful feedback.",
+      "collection_mode": "reviewed-event-breakdown",
+      "event_types": ["helpful_yes", "helpful_no"],
+      "claim_boundary": "Helpfulness is self-reported and opt-in. A rate is unknown when there are no reviewed helpfulness events; it is not reported as 0%.",
+      "observation_state": "reviewed-opt-in-observations",
+      "observed_value": {
+        "total": 0,
+        "by_event_type": {"helpful_yes": 0, "helpful_no": 0},
+        "helpfulness_rate": null
+      },
+      "interpretation": "There are no reviewed helpfulness observations, so the count is zero but the helpfulness rate remains unknown (null), not 0%."
+    },
+    {
+      "id": "return_usage",
+      "meaning": "A later real use is explicitly reported and can be distinguished from the original attempt without passive identity tracking.",
+      "collection_mode": "not-collected",
+      "event_types": [],
+      "claim_boundary": "Brali intentionally has no passive cross-session identity. Repeat use must remain unknown until a separate explicit, privacy-safe reporting contract exists; page views, cookies, local storage, and repeated anonymous events are not substitutes.",
+      "observation_state": "unknown",
+      "observed_value": null,
+      "interpretation": "Brali does not currently collect this signal. Unknown remains null rather than being presented as zero."
+    },
+    {
+      "id": "external_agent_tool_usage",
+      "meaning": "An external integration explicitly reports use of Brali through an agent or tool path.",
+      "collection_mode": "reviewed-event-count",
+      "event_types": ["integration_reported"],
+      "claim_boundary": "This counts accepted integration reports, not MCP/API calls, active integrations, installed agents, or unique external users. Provider/runtime telemetry is separate unless explicitly reviewed and imported.",
+      "observation_state": "reviewed-opt-in-observations",
+      "observed_value": 0,
+      "by_event_type": {"integration_reported": 0},
+      "interpretation": "Observed value counts only reviewed explicit opt-in events (integration_reported). It is not a population total and does not imply later-stage outcomes."
+    },
+    {
+      "id": "downstream_outcome",
+      "meaning": "A later real-world result after using a Brali method is explicitly reported with enough context to distinguish it from protocol completion or immediate helpfulness.",
+      "collection_mode": "not-collected",
+      "event_types": [],
+      "claim_boundary": "Brali currently does not collect a dedicated downstream-outcome signal. Helpful feedback and protocol completion must not be presented as downstream efficacy or causal impact.",
+      "observation_state": "unknown",
+      "observed_value": null,
+      "interpretation": "Brali does not currently collect this signal. Unknown remains null rather than being presented as zero."
+    }
+  ],
+  "rules": [
+    "Unknown is represented as null, never silently converted to zero.",
+    "Reviewed event counts describe accepted opt-in observations only; they are not population totals.",
+    "Page discovery and traffic measurements stay separate from product outcome observations.",
+    "A later-stage signal must never be inferred from an earlier-stage signal: open is not attempt, attempt is not completion, completion is not usefulness, usefulness is not downstream outcome.",
+    "External provider metrics remain provider measurements unless an explicit reviewed import contract says otherwise."
+  ],
+  "interpretation": "This report distinguishes measurable reviewed opt-in observations from signals Brali does not collect. Null means unknown/uncollected; numeric zero means zero accepted reviewed events of that explicit type, not zero real-world users, opens, attempts or outcomes."
+}

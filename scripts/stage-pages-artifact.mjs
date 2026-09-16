@@ -35,6 +35,9 @@ const ROOT_SOURCE_FILES = new Set([
   "package.json",
   "package-lock.json",
 ]);
+const EXPLICIT_PUBLIC_NOINDEX_ROUTES = new Set([
+  "/research/review-watchlist/",
+]);
 
 const slash = (value) => value.split(path.sep).join("/");
 const rel = (file) => slash(path.relative(root, file));
@@ -69,18 +72,29 @@ const sitemap = await readFile(path.join(root, "sitemap.xml"), "utf8");
 const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decode(match[1]));
 const publishedRoutes = new Set();
 const publishedHtml = new Set();
-const publicTopLevels = new Set();
 for (const value of sitemapUrls) {
   const url = new URL(value);
   if (url.origin !== SITE) continue;
   publishedRoutes.add(url.pathname);
-  const html = relativeHtmlForPathname(url.pathname);
-  publishedHtml.add(html);
-  const first = topLevel(html);
-  if (first !== "index.html") publicTopLevels.add(first);
+  publishedHtml.add(relativeHtmlForPathname(url.pathname));
 }
-// Research watch pages can intentionally be public-but-noindex while omitted from sitemap.
-publicTopLevels.add("research");
+
+// A noindex page is retained only when it is a declared human route, not merely
+// because it happens to live under a public-looking top-level directory. This
+// keeps restricted/reference translations available to users while preventing
+// QA reports or source fragments inside life-os/ru/de from surviving packaging.
+const intentionalNoindexRoutes = new Set(EXPLICIT_PUBLIC_NOINDEX_ROUTES);
+const cluster = JSON.parse(await readFile(path.join(root, "localization-cluster.json"), "utf8"));
+for (const row of cluster.routes ?? []) {
+  if (typeof row.canonical_path === "string" && row.canonical_path.startsWith("/")) {
+    intentionalNoindexRoutes.add(row.canonical_path);
+  }
+  for (const href of Object.values(row.alternates ?? {})) {
+    if (typeof href !== "string") continue;
+    const url = new URL(href, SITE);
+    if (url.origin === SITE) intentionalNoindexRoutes.add(url.pathname);
+  }
+}
 
 const allFiles = await collectFiles(root);
 const allowedHtml = new Set();
@@ -88,18 +102,24 @@ const prunedHtml = [];
 for (const file of allFiles) {
   const relativePath = rel(file);
   if (!relativePath.endsWith(".html")) continue;
+  const route = routeFromRelative(relativePath);
   if (publishedHtml.has(relativePath) || relativePath === "404.html") {
     allowedHtml.add(relativePath);
     continue;
   }
   const html = await readFile(file, "utf8");
   const isNoindex = /\b(?:noindex|none)\b/.test(robots(html));
-  const publicTree = publicTopLevels.has(topLevel(relativePath));
-  if (isNoindex && publicTree) {
+  if (isNoindex && intentionalNoindexRoutes.has(route)) {
     allowedHtml.add(relativePath);
     continue;
   }
-  prunedHtml.push({ path: relativePath, route: routeFromRelative(relativePath), reason: isNoindex ? "source-tree-noindex" : "off-sitemap-html" });
+  prunedHtml.push({
+    path: relativePath,
+    route,
+    reason: isNoindex
+      ? (intentionalNoindexRoutes.has(route) ? "unexpected-state" : "undeclared-noindex-html")
+      : "off-sitemap-html",
+  });
 }
 
 function includeSource(source) {
@@ -151,8 +171,13 @@ for (const file of stagedFiles) {
   stagedHtmlCount += 1;
   const html = await readFile(file, "utf8");
   const route = routeFromRelative(relativePath);
-  if (!publishedRoutes.has(route) && relativePath !== "404.html" && !/\b(?:noindex|none)\b/.test(robots(html))) {
-    throw new Error(`pages_stage: staged off-sitemap HTML is indexable: ${relativePath}`);
+  if (!publishedRoutes.has(route) && relativePath !== "404.html") {
+    if (!/\b(?:noindex|none)\b/.test(robots(html))) {
+      throw new Error(`pages_stage: staged off-sitemap HTML is indexable: ${relativePath}`);
+    }
+    if (!intentionalNoindexRoutes.has(route)) {
+      throw new Error(`pages_stage: undeclared noindex HTML survived staging: ${relativePath}`);
+    }
   }
   for (const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)) {
     const ref = decode(match[1]);
@@ -172,5 +197,5 @@ if (!(manifest.webp_ratio > 0 && manifest.webp_ratio < 0.5) || !(manifest.avif_r
 
 let bytes = 0;
 for (const file of stagedFiles) bytes += (await stat(file)).size;
-console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/source HTML file(s) physically omitted.`);
+console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/source HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex route(s) allowlisted.`);
 for (const item of prunedHtml) console.log(`- pruned ${item.path} -> ${item.route} (${item.reason})`);

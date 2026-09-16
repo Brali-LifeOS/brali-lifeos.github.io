@@ -36,6 +36,10 @@ function setMeta(html, key, value, content) {
   return pattern.test(html) ? html.replace(pattern, replacement) : html.replace(/<\/head>/i, `${replacement}</head>`);
 }
 
+function pageTitle(html) {
+  return decode(html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "");
+}
+
 function allowLargeImagePreview(html) {
   const current = metaContent(html, "name", "robots");
   const directives = current
@@ -45,6 +49,29 @@ function allowLargeImagePreview(html) {
     .filter((value) => !/^max-image-preview\s*:/i.test(value));
   directives.push("max-image-preview:large");
   return setMeta(html, "name", "robots", directives.join(", "));
+}
+
+function setImageAttributes(tag, attributes) {
+  let result = tag;
+  for (const [name, value] of Object.entries(attributes)) {
+    const pattern = new RegExp(`\\s${name}=["'][^"']*["']`, "i");
+    if (pattern.test(result)) result = result.replace(pattern, ` ${name}="${value}"`);
+    else result = result.replace(/\s*\/>$|>$/, (ending) => ` ${name}="${value}"${ending}`);
+  }
+  return result;
+}
+
+function optimizeHomepageImageLoading(html) {
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    const className = attribute(tag, "class");
+    const src = attribute(tag, "src");
+    if (className.split(/\s+/).includes("hero-mascot")) {
+      return setImageAttributes(tag, { fetchpriority: "high", decoding: "async" });
+    }
+    const belowFold = className.split(/\s+/).includes("audience-visual") || /\/assets\/images\/brali-category-/i.test(src);
+    if (belowFold) return setImageAttributes(tag, { loading: "lazy", decoding: "async", fetchpriority: "low" });
+    return tag;
+  });
 }
 
 function mainHtml(html) {
@@ -152,8 +179,26 @@ for (const inner of blocks) {
   if (!file) continue;
   let html;
   try { html = await readFile(file, "utf8"); } catch { continue; }
+
+  if (page === `${SITE}/`) html = optimizeHomepageImageLoading(html);
+
+  const description = metaContent(html, "name", "description");
+  const socialTitle = metaContent(html, "property", "og:title") || pageTitle(html);
+  const socialDescription = metaContent(html, "property", "og:description") || description;
+  if (!socialTitle || !socialDescription) throw new Error(`Cannot finalize social metadata without title/description: ${page}`);
+
+  html = setMeta(html, "property", "og:title", socialTitle);
+  html = setMeta(html, "property", "og:description", socialDescription);
+  html = setMeta(html, "property", "og:url", page);
+  html = setMeta(html, "name", "twitter:title", socialTitle);
+  html = setMeta(html, "name", "twitter:description", socialDescription);
+
   const representative = await selectRepresentativeImage(html);
-  if (!representative) continue;
+  if (!representative) {
+    html = setMeta(html, "name", "twitter:card", "summary");
+    await writeFile(file, html);
+    continue;
+  }
 
   // Image discovery now runs over the aggregate multilingual sitemap. Keep the
   // preview contract aligned for every index-eligible page selected for an image,
@@ -184,4 +229,4 @@ sitemap = sitemap.replace(/<url>([\s\S]*?)<\/url>/g, (whole, inner) => {
 await writeFile(sitemapPath, sitemap);
 await writeFile(join(ROOT, "data", "image-discovery.json"), `${JSON.stringify({ version: "0.1", site: `${SITE}/`, records }, null, 2)}\n`);
 
-console.log(`Brali Image Discovery applied to ${records.length} index-eligible sitemap page(s) with visible informative images.`);
+console.log(`Brali social metadata finalized for ${blocks.length} sitemap page(s); Image Discovery applied to ${records.length} page(s) with visible informative images.`);

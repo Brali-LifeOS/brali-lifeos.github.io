@@ -73,6 +73,7 @@ Current caveat: `npm run check` is not a purely read-only test command. It reapp
 - Every canonical hack has exactly one deterministic generated Agent Skill; recommendation eligibility remains evidence-state dependent.
 - Localization keeps English canonical evidence/provenance intact. Published locales require contract/corpus/language/rendered/live/browser proof as defined in `docs/LOCALIZATION.md`.
 - Generated Search/AI surfaces must agree with canonical/indexable URLs, language metadata, sitemap and public data.
+- The GitHub Pages artifact is a strict public release boundary: build-only/internal trees such as `docs/`, `reports/`, `qa/`, `source/` and `sources/` must not ship. Declared historical or compatibility HTML may remain off-sitemap only with an exact `noindex,follow` robots policy.
 - PR verification and production deployment stay separated. Production-only network/browser checks run only after the exact merged artifact is deployed.
 
 ## CI/workflow map

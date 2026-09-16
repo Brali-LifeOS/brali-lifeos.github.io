@@ -16,7 +16,7 @@ const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|w
 const suspiciousSingleTokenEnding = /\b(?:e)$/i;
 const legacyCorpusMarkers = [
   { id: "free-template", pattern: /we\s+share\s+it\s+for\s+free/i },
-  { id: "prototype-mini-apps", pattern: /prototype\s+mini[- ]?apps?/i },
+  { id: "prototype-mini-apps", pattern: /prototype\s+mini[-‑–— ]?apps?/i },
   { id: "flame-counter", pattern: /flame\s+counter/i },
 ];
 

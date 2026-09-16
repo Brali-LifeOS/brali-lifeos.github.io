@@ -54,6 +54,17 @@
       "review_source": "issue-260"
     },
     {
+      "id": "legacy-metalhatscats-lifeos-url",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "https://metalhatscats\\.com/life-os/([a-z0-9-]+)/?",
+      "flags": "giu",
+      "replacement": "https://brali-lifeos.github.io/life-os/$1/",
+      "reason": "Some structured source fields still carry the pre-Brali LifeOS domain even after visible legacy CTA cleanup. Preserve the useful deep link while moving it to the maintained canonical Brali site so old product identity cannot leak into generated metadata or search surfaces.",
+      "review_source": "issue-260"
+    },
+    {
       "id": "legacy-flame-counter-label",
       "status": "reviewed",
       "reviewed_at": "2026-09-16",

@@ -44,6 +44,9 @@ function preferredImages(html) {
   }
   return found;
 }
+function imageTags(html) {
+  return [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
+}
 
 const manifest = JSON.parse(await readFile(join(ROOT, "data", "image-discovery.json"), "utf8"));
 const sitemap = await readFile(join(ROOT, "sitemap.xml"), "utf8");
@@ -56,6 +59,38 @@ const blocks = new Map();
 for (const match of sitemap.matchAll(/<url>([\s\S]*?)<\/url>/g)) {
   const page = decode(match[1].match(/<loc>([^<]+)<\/loc>/)?.[1] || "");
   if (page) blocks.set(page, match[1]);
+}
+const recordByPage = new Map(manifest.records.map((record) => [record.page, record]));
+
+for (const page of blocks.keys()) {
+  const file = htmlPath(page);
+  if (!file) fail(`cannot map HTML path: ${page}`);
+  const html = await readFile(file, "utf8");
+  if (!meta(html, "property", "og:title")) fail(`missing og:title: ${page}`);
+  if (!meta(html, "property", "og:description")) fail(`missing og:description: ${page}`);
+  if (meta(html, "property", "og:url") !== page) fail(`og:url is not canonical self URL: ${page}`);
+  if (!meta(html, "name", "twitter:title")) fail(`missing twitter:title: ${page}`);
+  if (!meta(html, "name", "twitter:description")) fail(`missing twitter:description: ${page}`);
+  const card = meta(html, "name", "twitter:card");
+  if (!new Set(["summary", "summary_large_image"]).has(card)) fail(`invalid or missing twitter:card: ${page}`);
+
+  const record = recordByPage.get(page);
+  if (record && card !== "summary_large_image") fail(`representative image page must use summary_large_image: ${page}`);
+  if (!record && card !== "summary") fail(`page without representative image must use summary card: ${page}`);
+
+  if (page === `${SITE}/`) {
+    const tags = imageTags(html);
+    const hero = tags.find((image) => /\bhero-mascot\b/.test(attr(image, "class")));
+    if (!hero || attr(hero, "fetchpriority") !== "high") fail("homepage hero mascot must use fetchpriority=high");
+    if (attr(hero, "decoding") !== "async") fail("homepage hero mascot must use decoding=async");
+    const belowFold = tags.filter((image) => /\baudience-visual\b/.test(attr(image, "class")) || /\/assets\/images\/brali-category-/i.test(attr(image, "src")));
+    if (!belowFold.length) fail("homepage performance cohort was not found");
+    for (const image of belowFold) {
+      if (attr(image, "loading") !== "lazy") fail(`homepage below-fold image is not lazy: ${attr(image, "src")}`);
+      if (attr(image, "decoding") !== "async") fail(`homepage below-fold image is not async-decoded: ${attr(image, "src")}`);
+      if (attr(image, "fetchpriority") !== "low") fail(`homepage below-fold image is not low priority: ${attr(image, "src")}`);
+    }
+  }
 }
 
 for (const record of manifest.records) {
@@ -80,4 +115,4 @@ for (const record of manifest.records) {
   await access(join(ROOT, decodeURIComponent(imageUrl.pathname).replace(/^\//, "")));
 }
 
-console.log(`Brali Image Discovery gate passed for ${manifest.records.length} canonical page(s): sitemap, og/Twitter/schema convergence, preview controls, informative alt and local assets verified.`);
+console.log(`Brali social/Image Discovery gate passed for ${blocks.size} canonical page(s): universal OG/Twitter metadata, ${manifest.records.length} representative-image page(s), schema/sitemap convergence and homepage loading priorities verified.`);

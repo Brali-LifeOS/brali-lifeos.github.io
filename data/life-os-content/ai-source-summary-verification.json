@@ -4,12 +4,27 @@
   "subtitle": "Use compression for speed without turning a summary into a substitute for evidence",
   "description": "For a long document you are allowed to process, ask AI for a structured summary tied to the source, then verify the claims that will affect a decision, message, or deliverable. The summary is navigation; the source remains the authority.",
   "canonical": "/life-os/ai-source-summary-verification/",
-  "domain_ids": ["environment-digital"],
-  "topic_ids": ["information-management"],
+  "domain_ids": [
+    "environment-digital"
+  ],
+  "topic_ids": [
+    "information-management"
+  ],
   "method_ids": [],
-  "lens_ids": ["qa"],
-  "keywords": ["AI summarization", "document summary", "source verification", "information management", "LLM hallucination"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lens_ids": [
+    "qa"
+  ],
+  "keywords": [
+    "AI summarization",
+    "document summary",
+    "source verification",
+    "information management",
+    "LLM hallucination"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Use AI to compress a long source, but trace every decision-relevant claim back to the original material before acting on it.",
     "zone": "Using AI",
@@ -18,19 +33,66 @@
     "checkIn": "Can I point from every important statement in my final output back to the original source rather than to the AI summary?"
   },
   "faq": [
-    {"id":"ai-source-summary-verification-1","question":"Why verify if the summary looks accurate?","answer":"Fluent wording is not evidence of completeness or correctness. A useful summary can still omit a condition, merge separate claims, or add an unsupported inference."},
-    {"id":"ai-source-summary-verification-2","question":"What needs direct checking?","answer":"Check facts that change a decision: dates, quantities, scope, exceptions, obligations, definitions, quotations, risk statements, and anything you plan to repeat as authoritative."}
+    {
+      "id": "ai-source-summary-verification-1",
+      "question": "Why verify if the summary looks accurate?",
+      "answer": "Fluent wording is not evidence of completeness or correctness. A useful summary can still omit a condition, merge separate claims, or add an unsupported inference."
+    },
+    {
+      "id": "ai-source-summary-verification-2",
+      "question": "What needs direct checking?",
+      "answer": "Check facts that change a decision: dates, quantities, scope, exceptions, obligations, definitions, quotations, risk statements, and anything you plan to repeat as authoritative."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:21:00Z","updatedISO":"2026-09-15T09:21:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:21:00Z",
+    "updatedISO": "2026-09-15T09:21:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>A good AI summary is a map. Problems start when the map quietly becomes the territory.</p>"},
+    "intro": {
+      "html": "<p>A good AI summary is a map. Problems start when the map quietly becomes the territory.</p>"
+    },
     "sections": [
-      {"slug":"scope","title":"1. Define what you need from the source","html":"<p>Ask for the parts relevant to your task, not merely “summarize this.” Request decisions, definitions, exceptions, open questions, or another useful structure.</p>"},
-      {"slug":"trace","title":"2. Make the summary traceable","html":"<p>When the source format allows it, ask for page, section, heading, paragraph, or quoted-anchor references. Treat missing traceability as a reason for more checking, not more confidence.</p>"},
-      {"slug":"verify","title":"3. Verify decision-relevant claims","html":"<p>Return to the source for the statements that matter. Check both what the summary says and what it may have left out.</p>"},
-      {"slug":"label","title":"4. Separate source from inference","html":"<p>If the model offers interpretation or recommendations, label them as such. Do not let generated inference inherit the authority of the uploaded document.</p>"}
+      {
+        "slug": "scope",
+        "title": "1. Define what you need from the source",
+        "html": "<p>Ask for the parts relevant to your task, not merely “summarize this.” Request decisions, definitions, exceptions, open questions, or another useful structure.</p>"
+      },
+      {
+        "slug": "trace",
+        "title": "2. Make the summary traceable",
+        "html": "<p>When the source format allows it, ask for page, section, heading, paragraph, or quoted-anchor references. Treat missing traceability as a reason for more checking, not more confidence.</p>"
+      },
+      {
+        "slug": "verify",
+        "title": "3. Verify decision-relevant claims",
+        "html": "<p>Return to the source for the statements that matter. Check both what the summary says and what it may have left out.</p>"
+      },
+      {
+        "slug": "label",
+        "title": "4. Separate source from inference",
+        "html": "<p>If the model offers interpretation or recommendations, label them as such. Do not let generated inference inherit the authority of the uploaded document.</p>"
+      }
     ]
   },
-  "references": [{"title":"Explainability does not mitigate the negative impact of incorrect AI advice in a personnel selection task","url":"https://doi.org/10.1038/s41598-024-60220-5","doi":"10.1038/s41598-024-60220-5","source_type":"preregistered experiments","claim_scope":"Across multiple experiments, participants did not reliably dismiss incorrect AI advice, and added explainability did not remove overreliance. This supports an independent source-check boundary; the study was not a document-summarization experiment."}],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish as a source-reconciliation workflow. The protocol makes no universal summarization-quality claim and treats independent verification as the control against persuasive but incorrect output.","registry":"review-registry-using-ai-starters.json"}
+  "references": [
+    {
+      "title": "Explainability does not mitigate the negative impact of incorrect AI advice in a personnel selection task",
+      "url": "https://doi.org/10.1038/s41598-024-60220-5",
+      "doi": "10.1038/s41598-024-60220-5",
+      "source_type": "preregistered experiments",
+      "claim_scope": "Across multiple experiments, participants did not reliably dismiss incorrect AI advice, and added explainability did not remove overreliance. This supports an independent source-check boundary; the study was not a document-summarization experiment."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "Publish as a source-reconciliation workflow. The protocol makes no universal summarization-quality claim and treats independent verification as the control against persuasive but incorrect output.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

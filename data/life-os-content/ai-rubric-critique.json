@@ -4,12 +4,27 @@
   "subtitle": "Turn vague feedback into a check against explicit criteria",
   "description": "For a draft you own, give AI the purpose and a short rubric, ask it to point to specific places that miss the criteria, then decide which suggestions actually improve the work. Use critique as input, not as an automatic rewrite command.",
   "canonical": "/life-os/ai-rubric-critique/",
-  "domain_ids": ["creativity-expression"],
-  "topic_ids": ["revision-feedback", "writing"],
+  "domain_ids": [
+    "creativity-expression"
+  ],
+  "topic_ids": [
+    "revision-feedback",
+    "writing"
+  ],
   "method_ids": [],
   "lens_ids": [],
-  "keywords": ["AI critique", "rubric", "writing feedback", "draft review", "revision", "AI editing"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "keywords": [
+    "AI critique",
+    "rubric",
+    "writing feedback",
+    "draft review",
+    "revision",
+    "AI editing"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Give AI explicit review criteria and ask it to identify concrete mismatches before you revise the draft yourself.",
     "zone": "Using AI",
@@ -18,19 +33,58 @@
     "checkIn": "Did the critique point to observable gaps in the draft, or mostly produce generic advice I could paste onto any text?"
   },
   "faq": [
-    {"id":"ai-rubric-critique-1","question":"Why ask for critique before a rewrite?","answer":"A critique keeps the problem visible. An immediate rewrite can hide whether the model improved the intended criterion or simply changed the text."},
-    {"id":"ai-rubric-critique-2","question":"What makes a useful rubric?","answer":"Use observable criteria tied to purpose: accuracy, required points, clarity for the target reader, evidence, tone, length, structure, or another condition you can inspect."}
+    {
+      "id": "ai-rubric-critique-1",
+      "question": "Why ask for critique before a rewrite?",
+      "answer": "A critique keeps the problem visible. An immediate rewrite can hide whether the model improved the intended criterion or simply changed the text."
+    },
+    {
+      "id": "ai-rubric-critique-2",
+      "question": "What makes a useful rubric?",
+      "answer": "Use observable criteria tied to purpose: accuracy, required points, clarity for the target reader, evidence, tone, length, structure, or another condition you can inspect."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:25:00Z","updatedISO":"2026-09-15T09:25:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:25:00Z",
+    "updatedISO": "2026-09-15T09:25:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>“Make this better” invites the model to choose both the problem and the solution. A rubric keeps at least one of those jobs with you.</p>"},
+    "intro": {
+      "html": "<p>“Make this better” invites the model to choose both the problem and the solution. A rubric keeps at least one of those jobs with you.</p>"
+    },
     "sections": [
-      {"slug":"rubric","title":"1. Define what good means","html":"<p>Choose a short set of criteria before asking for feedback. If the criteria conflict, rank them or state the trade-off.</p>"},
-      {"slug":"evidence","title":"2. Require evidence from the draft","html":"<p>Ask the model to quote or point to the section behind each criticism. Unsupported feedback should be easier to reject than persuasive commentary.</p>"},
-      {"slug":"triage","title":"3. Triage before editing","html":"<p>Mark each suggestion accept, reject, or inspect. Check factual or domain-specific advice against reliable sources rather than assuming the reviewer is right.</p>"},
-      {"slug":"revise","title":"4. Revise with intent","html":"<p>Make the changes yourself or ask for a bounded rewrite of one section. Compare the result against the same rubric instead of changing criteria midstream.</p>"}
+      {
+        "slug": "rubric",
+        "title": "1. Define what good means",
+        "html": "<p>Choose a short set of criteria before asking for feedback. If the criteria conflict, rank them or state the trade-off.</p>"
+      },
+      {
+        "slug": "evidence",
+        "title": "2. Require evidence from the draft",
+        "html": "<p>Ask the model to quote or point to the section behind each criticism. Unsupported feedback should be easier to reject than persuasive commentary.</p>"
+      },
+      {
+        "slug": "triage",
+        "title": "3. Triage before editing",
+        "html": "<p>Mark each suggestion accept, reject, or inspect. Check factual or domain-specific advice against reliable sources rather than assuming the reviewer is right.</p>"
+      },
+      {
+        "slug": "revise",
+        "title": "4. Revise with intent",
+        "html": "<p>Make the changes yourself or ask for a bounded rewrite of one section. Compare the result against the same rubric instead of changing criteria midstream.</p>"
+      }
     ]
   },
   "references": [],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"A bounded feedback workflow that keeps criteria and acceptance with the user; no unsupported claim that AI critique is universally superior to human review.","registry":"review-registry-using-ai-starters.json"}
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "A bounded feedback workflow that keeps criteria and acceptance with the user; no unsupported claim that AI critique is universally superior to human review.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

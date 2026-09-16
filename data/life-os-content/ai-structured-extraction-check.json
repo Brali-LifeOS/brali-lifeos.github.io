@@ -4,12 +4,28 @@
   "subtitle": "Turn repeated text into structure without confusing extraction with ground truth",
   "description": "For repeated unstructured text you are allowed to process, ask AI to extract a fixed schema, include the source span for each row, and flag uncertainty. Then sample-check rows and fully verify fields that drive money, access, compliance, or other high-cost actions.",
   "canonical": "/life-os/ai-structured-extraction-check/",
-  "domain_ids": ["environment-digital"],
-  "topic_ids": ["information-management"],
+  "domain_ids": [
+    "environment-digital"
+  ],
+  "topic_ids": [
+    "information-management"
+  ],
   "method_ids": [],
-  "lens_ids": ["qa"],
-  "keywords": ["AI data extraction", "structured extraction", "text to table", "LLM extraction", "data verification", "information management"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lens_ids": [
+    "qa"
+  ],
+  "keywords": [
+    "AI data extraction",
+    "structured extraction",
+    "text to table",
+    "LLM extraction",
+    "data verification",
+    "information management"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Use AI to extract a fixed schema from repeated text, require traceable source evidence, and verify a sample before relying on the dataset.",
     "zone": "Using AI",
@@ -18,19 +34,58 @@
     "checkIn": "Do I know the observed extraction error rate well enough for the consequence of the next step?"
   },
   "faq": [
-    {"id":"ai-structured-extraction-check-1","question":"Why require null instead of a guess?","answer":"Missing data is visible and can be reviewed. A plausible invented value looks complete and can travel much farther before someone notices it."},
-    {"id":"ai-structured-extraction-check-2","question":"How much should I sample?","answer":"There is no universal percentage. Increase verification as error cost rises, and fully verify fields that trigger high-impact actions. If the sample reveals systematic errors, stop and fix the extraction process rather than sampling harder."}
+    {
+      "id": "ai-structured-extraction-check-1",
+      "question": "Why require null instead of a guess?",
+      "answer": "Missing data is visible and can be reviewed. A plausible invented value looks complete and can travel much farther before someone notices it."
+    },
+    {
+      "id": "ai-structured-extraction-check-2",
+      "question": "How much should I sample?",
+      "answer": "There is no universal percentage. Increase verification as error cost rises, and fully verify fields that trigger high-impact actions. If the sample reveals systematic errors, stop and fix the extraction process rather than sampling harder."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:27:00Z","updatedISO":"2026-09-15T09:27:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:27:00Z",
+    "updatedISO": "2026-09-15T09:27:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>LLMs are convenient format converters. Convenience becomes dangerous when a guessed value and an extracted value look identical in the final spreadsheet.</p>"},
+    "intro": {
+      "html": "<p>LLMs are convenient format converters. Convenience becomes dangerous when a guessed value and an extracted value look identical in the final spreadsheet.</p>"
+    },
     "sections": [
-      {"slug":"schema","title":"1. Freeze the schema first","html":"<p>Define field names, types, allowed values, and what counts as missing. Keep the schema smaller than the information you merely wish existed.</p>"},
-      {"slug":"trace","title":"2. Preserve traceability","html":"<p>Request the exact source phrase, paragraph, or locator behind each extracted row. This makes review possible without rereading the entire corpus.</p>"},
-      {"slug":"uncertainty","title":"3. Make uncertainty visible","html":"<p>Tell the model to return null or an uncertainty flag when the source is ambiguous. Do not reward completion at the expense of truth.</p>"},
-      {"slug":"sample","title":"4. Sample-check before downstream use","html":"<p>Verify randomly selected rows and all high-impact fields. Record error types. If failures are patterned, repair the prompt, schema, preprocessing, or tool before continuing.</p>"}
+      {
+        "slug": "schema",
+        "title": "1. Freeze the schema first",
+        "html": "<p>Define field names, types, allowed values, and what counts as missing. Keep the schema smaller than the information you merely wish existed.</p>"
+      },
+      {
+        "slug": "trace",
+        "title": "2. Preserve traceability",
+        "html": "<p>Request the exact source phrase, paragraph, or locator behind each extracted row. This makes review possible without rereading the entire corpus.</p>"
+      },
+      {
+        "slug": "uncertainty",
+        "title": "3. Make uncertainty visible",
+        "html": "<p>Tell the model to return null or an uncertainty flag when the source is ambiguous. Do not reward completion at the expense of truth.</p>"
+      },
+      {
+        "slug": "sample",
+        "title": "4. Sample-check before downstream use",
+        "html": "<p>Verify randomly selected rows and all high-impact fields. Record error types. If failures are patterned, repair the prompt, schema, preprocessing, or tool before continuing.</p>"
+      }
     ]
   },
   "references": [],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"A practical extraction workflow with traceability, explicit missingness, and consequence-weighted verification instead of unsupported claims about model accuracy.","registry":"review-registry-using-ai-starters.json"}
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "A practical extraction workflow with traceability, explicit missingness, and consequence-weighted verification instead of unsupported claims about model accuracy.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

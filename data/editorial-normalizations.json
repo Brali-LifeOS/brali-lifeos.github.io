@@ -95,6 +95,169 @@
       "replacement": "",
       "reason": "A closing-variant of the legacy MetalHatsCats product-intro boilerplate that the existing product-intro rule does not catch because of its leading 'We will close by repeating' wrapper. It is obsolete product identity copy, not protocol-specific guidance.",
       "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-momentum-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "match": "Focus on consistency rather than perfection, and use the app to build momentum.",
+      "replacement": "Focus on consistency rather than perfection to build momentum.",
+      "reason": "The sentence ends with a call to use a legacy companion app that is not a current Brali product. The consistency advice stands on its own; the app reference is removed instead of implying an available download.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-checkin-tracking-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "match": "Use the check-in method described above and track it in the Life OS app for consistent progress monitoring.",
+      "replacement": "Use the check-in method described above and record the result somewhere you will actually review, so progress stays visible over time.",
+      "reason": "The inherited FAQ answer routes readers into the retired Life OS app. The replacement keeps the tracking advice while removing the nonexistent-product reference.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-log-results-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(Log your [^.\\n]{0,100}?) in the Brali LifeOS app( at https?://\\S+)?",
+      "flags": "giu",
+      "replacement": "$1 in a journal, note, or tracker you already use",
+      "reason": "A family of inherited sentences tells readers to log results in the Brali LifeOS app. Brali publishes data sources and protocols, not a consumer app, so the logging advice is repointed to tools the reader already has.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-link-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(?:Use this link to access the app|Access the app at|Use the app link( again)?|The app link( again)?|Use the link to access the app|Use the app link above)\\.?\\s*:?\\s*(https?://\\S+)?",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "These call-to-action fragments exist only to send readers to a legacy app listing or self-referencing page. They carry no protocol content, so they are removed rather than rewritten.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-workspace-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(?:The Brali LifeOS app|The app) is where tasks, check[-‑]ins, and (?:your|the) journal live\\.",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "The sentence describes a legacy app workspace that is not a current Brali product. Removing it avoids implying an available application while leaving the surrounding guidance intact.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-brali-app-use-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "Use the Brali LifeOS app for this hack\\.",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "Bare leftover variant of the legacy app CTA that remained after the earlier CTA-cluster rule because it lacks the workspace sentence and link. Same obsolete product reference, same removal.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-use-open-with-link",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(?:Use|Open) the Brali LifeOS app for this hack:\\s*https?://\\S+",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "Legacy app call-to-action with a trailing self-referencing link. The app is not a current Brali product, so the whole CTA is removed.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-self-link-tail",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(?<=[A-Za-z)”'\\]]):\\s*https://brali-lifeos\\.github\\.io/life-os/[a-z0-9-]+/?",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "Prose sentences end with a colon and a self-referencing canonical link left over from app-link CTAs. The lookbehind requires a word character before the colon, so JSON key-value syntax can never match. The link adds no protocol content and is removed.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-tool-alternative",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(a notebook|a sheet of paper|a journal|pen and paper|a pen) or the Brali LifeOS app",
+      "flags": "giu",
+      "replacement": "$1 or a tracker",
+      "reason": "Tool lists offered the legacy app as one option beside paper. Collapsing the option keeps the instruction natural without implying an available application.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-subject-sentence-start",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "\\bThe Brali LifeOS app\\b",
+      "flags": "gu",
+      "replacement": "A notebook or tracker",
+      "reason": "Sentence-initial references to the legacy app as a tool become a generic reader-owned tool. Brali publishes protocols and data sources, not a consumer app.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-mid-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "\\bthe Brali LifeOS app\\b",
+      "flags": "giu",
+      "replacement": "a notebook or tracker",
+      "reason": "Mid-sentence references to the legacy app as the place to act, log, or check in are repointed to tools the reader already has. This preserves the practical instruction while removing the nonexistent-product reference.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-open-close-sentences",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "(?:We (?:open|close)|(?:^|\\s)(?:Close|Open)) the app\\.\\s*",
+      "flags": "giu",
+      "replacement": " ",
+      "reason": "Standalone narrative sentences about opening or closing the legacy app describe a product that does not exist. Removing them keeps the surrounding narrative intact.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-equipment-list-items",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "Smartphone with Brali LifeOS app \\(free\\)|Phone with camera and Brali LifeOS app|Brali LifeOS app for scheduling",
+      "flags": "giu",
+      "replacement": "Phone or notebook",
+      "reason": "Equipment lists name the legacy app as required gear, including a '(free)' availability claim. Brali has no consumer app, so the item becomes a generic phone-or-notebook requirement.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-app-checkin-with-you",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "We will check in with you in the app\\.",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "The sentence promises an in-app follow-up interaction Brali does not operate. Removed rather than replaced with an unverifiable alternative.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-track-it-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "Track it in Brali( LifeOS)?( as done)?\\.?\\s*",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "Standalone closing CTA sending readers to track the practice in the legacy app. Removed; the article body already explains how to observe progress.",
+      "review_source": "issue-279"
     }
   ]
 }

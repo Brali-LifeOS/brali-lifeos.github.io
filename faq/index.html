@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>FAQ — Brali</title>
-  <meta name="description" content="Simple answers about the Brali library, evidence, data, AI use, languages, licensing, and the original app.">
+  <meta name="description" content="Simple answers about the Brali library, evidence, data, AI use, languages, and licensing.">
   <link rel="canonical" href="https://brali-lifeos.github.io/faq/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Brali FAQ">
@@ -13,9 +13,42 @@
   <meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-logo.png">
   <link rel="icon" href="/assets/images/brali-logo.png">
   <link rel="stylesheet" href="/styles.css?v=20260822j">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Brali today?","acceptedAnswer":{"@type":"Answer","text":"Brali is a public library of practical ideas and structured data. The original LifeOS app is still available, but the library is now the main project."}},{"@type":"Question","name":"Are all Brali protocols scientifically proven?","acceptedAnswer":{"@type":"Answer","text":"No. Brali separates reviewed material, practical suggestions, items waiting for review, and restricted content."}},{"@type":"Question","name":"Can AI agents use Brali data?","acceptedAnswer":{"@type":"Answer","text":"Yes, subject to the repository license. Brali publishes machine-readable protocol and evidence data."}},{"@type":"Question","name":"Is Brali available in multiple languages?","acceptedAnswer":{"@type":"Answer","text":"English is the main published language today. More languages are planned."}},{"@type":"Question","name":"Can I use Brali data commercially?","acceptedAnswer":{"@type":"Answer","text":"Not under the current non-commercial public license. Commercial use requires written permission or a separate agreement."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Brali today?","acceptedAnswer":{"@type":"Answer","text":"Brali is a public library of practical ideas and structured data, built for humans and for AI agents. There is no Brali app; the library, its datasets, and its agent skills are the product."}},{"@type":"Question","name":"Are all Brali protocols scientifically proven?","acceptedAnswer":{"@type":"Answer","text":"No. Brali separates reviewed material, practical suggestions, items waiting for review, and restricted content."}},{"@type":"Question","name":"Can AI agents use Brali data?","acceptedAnswer":{"@type":"Answer","text":"Yes, subject to the repository license. Brali publishes machine-readable protocol and evidence data."}},{"@type":"Question","name":"Is Brali available in multiple languages?","acceptedAnswer":{"@type":"Answer","text":"English is the main published language today. More languages are planned."}},{"@type":"Question","name":"Can I use Brali data commercially?","acceptedAnswer":{"@type":"Answer","text":"Not under the current non-commercial public license. Commercial use requires written permission or a separate agreement."}}]}</script>
+<meta name="robots" content="max-image-preview:large">  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Brali Updates RSS">
+<!-- brali-consent-analytics -->
+<script>
+(function(w,d,id){
+  var key='brali-analytics-consent-v1';
+  function load(){
+    if(w.__braliGtmLoaded||d.querySelector('script[data-brali-gtm="'+id+'"]'))return;
+    w.__braliGtmLoaded=true;
+    w.dataLayer=w.dataLayer||[];
+    w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var s=d.createElement('script');
+    s.async=true;
+    s.dataset.braliGtm=id;
+    s.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(id);
+    d.head.appendChild(s);
+  }
+  w.braliAnalyticsConsent={
+    grant:function(){try{localStorage.setItem(key,'granted');}catch(e){}load();var n=d.getElementById('brali-analytics-consent');if(n)n.remove();},
+    deny:function(){try{localStorage.setItem(key,'denied');}catch(e){}var n=d.getElementById('brali-analytics-consent');if(n)n.remove();}
+  };
+  try{if(localStorage.getItem(key)==='granted')load();}catch(e){}
+})(window,document,'GTM-5TJVLJG9');
+</script>
 </head>
 <body data-brali-cluster="general">
+<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
+  <strong style="display:block;margin-bottom:6px;font-size:17px">Optional analytics</strong>
+  <span>Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.</span>
+  <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+    <button type="button" onclick="braliAnalyticsConsent.grant()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#171717;color:#fff;font:inherit;font-weight:700;cursor:pointer">Allow analytics</button>
+    <button type="button" onclick="braliAnalyticsConsent.deny()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#fff;color:#171717;font:inherit;font-weight:700;cursor:pointer">Necessary only</button>
+  </span>
+</aside>
+<script>(function(){try{if(localStorage.getItem('brali-analytics-consent-v1')){var n=document.getElementById('brali-analytics-consent');if(n)n.remove();}}catch(e){}})();</script>
 
 <a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>
 <main id="content" class="page wrap">
@@ -56,13 +89,13 @@
     <h2>Is this medical, legal, or financial advice?</h2>
     <p>No. Brali is general educational and personal-development material. Sensitive topics need a higher review bar.</p>
 
-    <h2>Is the mobile app still the main product?</h2>
-    <p>No. The app is still available, but the library and data are now the main project.</p>
+    <h2>Is there a Brali mobile app?</h2>
+    <p>No. There is no Brali app and nothing to install. Brali builds data sources for humans and AI agents — the library, its datasets, and its agent skills are the product.</p>
 
     <h2>How can an organization work with Brali?</h2>
     <p>Possible areas include data licensing, AI integrations, localization, research, and custom collections. See <a href="/partners/">Partnerships</a>.</p>
   </section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small><small>Maintained by MetalHeadsCats.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>
 </body>
 </html>

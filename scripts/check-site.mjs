@@ -87,7 +87,7 @@ if (/protocols\.jsonl|protocols\.schema\.json/.test(forAi)) throw new Error("AI/
 
 const faq = await readFile(path.join(root, "faq/index.html"), "utf8");
 if (!faq.includes('"@type":"FAQPage"')) throw new Error("FAQ page lacks FAQ structured data.");
-if (!faq.includes("Is the mobile app still the main product?")) throw new Error("FAQ does not explain the project pivot.");
+if (!faq.includes("Is there a Brali mobile app?")) throw new Error("FAQ does not explain the project pivot.");
 
 const agents = await readFile(path.join(root, "agents/index.html"), "utf8");
 if (!agents.includes('href="/agents/contribute/"')) throw new Error("Agent page does not expose the knowledge contribution path.");

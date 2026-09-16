@@ -7,8 +7,8 @@ let html = await readFile(file, "utf8");
 
 if (!html.includes('href="/life-os/flagships/"')) {
   html = html.replace(
-    '<div class="links"><a href="/life-os/areas/">Life Areas</a><a href="/life-os/">Growth Library</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get Brali</a></div>',
-    '<div class="links"><a href="/life-os/flagships/">Start here</a><a href="/life-os/areas/">Life Areas</a><a href="/life-os/">Growth Library</a><a class="button yellow" href="/download/">Get Brali</a></div>',
+    '<div class="links"><a href="/life-os/areas/">Life Areas</a><a href="/life-os/">Growth Library</a><a href="/docs/">Getting started</a><a class="button yellow" href="/download/">Get data</a></div>',
+    '<div class="links"><a href="/life-os/flagships/">Start here</a><a href="/life-os/areas/">Life Areas</a><a href="/life-os/">Growth Library</a><a class="button yellow" href="/download/">Get data</a></div>',
   );
   html = html.replace(
     '<div class="hero-actions"><a class="button yellow" href="/life-os/areas/">Choose a Life Area</a><a class="button quiet" href="/life-os/">Browse all protocols</a></div>',

@@ -4,12 +4,27 @@
   "subtitle": "Use suggestions to reduce repetitive wording without delegating the relationship",
   "description": "For repetitive support or service messages, AI can propose a response from the case facts and approved guidance while the human checks diagnosis, policy, tone, and the actual next step. Large-scale field evidence supports gains in one customer-support setting, especially for less experienced workers.",
   "canonical": "/life-os/ai-customer-reply-coach/",
-  "domain_ids": ["communication-relationships"],
-  "topic_ids": ["clear-communication", "difficult-conversations"],
+  "domain_ids": [
+    "communication-relationships"
+  ],
+  "topic_ids": [
+    "clear-communication",
+    "difficult-conversations"
+  ],
   "method_ids": [],
   "lens_ids": [],
-  "keywords": ["AI customer support", "AI reply drafting", "customer service", "support agent", "human review", "response drafting"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "keywords": [
+    "AI customer support",
+    "AI reply drafting",
+    "customer service",
+    "support agent",
+    "human review",
+    "response drafting"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Use AI to propose a routine customer reply from verified case facts, then let the human correct the diagnosis, policy, tone, and next action.",
     "zone": "Using AI",
@@ -20,19 +35,66 @@
     "sourceUrl": "https://doi.org/10.1093/qje/qjae044"
   },
   "faq": [
-    {"id":"ai-customer-reply-coach-1","question":"Does this mean AI should answer customers autonomously?","answer":"No. The cited field study examined an assistant that suggested responses to human agents. The agents remained responsible for the conversation and could edit or ignore suggestions."},
-    {"id":"ai-customer-reply-coach-2","question":"What should always be checked?","answer":"Case facts, account or order status, policy, promised actions, deadlines, pricing, safety-sensitive information, and anything that could create a commitment or escalation."}
+    {
+      "id": "ai-customer-reply-coach-1",
+      "question": "Does this mean AI should answer customers autonomously?",
+      "answer": "No. The cited field study examined an assistant that suggested responses to human agents. The agents remained responsible for the conversation and could edit or ignore suggestions."
+    },
+    {
+      "id": "ai-customer-reply-coach-2",
+      "question": "What should always be checked?",
+      "answer": "Case facts, account or order status, policy, promised actions, deadlines, pricing, safety-sensitive information, and anything that could create a commitment or escalation."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:18:00Z","updatedISO":"2026-09-15T09:18:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:18:00Z",
+    "updatedISO": "2026-09-15T09:18:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>A support reply has two jobs: communicate clearly and move the real case forward. AI can help with the first. It only helps with the second when the underlying facts and policy are right.</p>"},
+    "intro": {
+      "html": "<p>A support reply has two jobs: communicate clearly and move the real case forward. AI can help with the first. It only helps with the second when the underlying facts and policy are right.</p>"
+    },
     "sections": [
-      {"slug":"ground","title":"1. Ground the draft","html":"<p>Give the model the verified case facts and the policy or knowledge material it is allowed to use. Avoid asking it to infer account state or policy from thin context.</p>"},
-      {"slug":"draft","title":"2. Draft the response","html":"<p>Ask for a concise answer that states what is known, what happens next, and any action required from the customer. Keep routine wording routine.</p>"},
-      {"slug":"diagnose","title":"3. Check the diagnosis before the prose","html":"<p>A beautiful response to the wrong problem is still the wrong response. Confirm that the draft addresses the actual issue and that any troubleshooting step is appropriate.</p>"},
-      {"slug":"send","title":"4. Edit as the accountable human","html":"<p>Adjust tone, remove invented certainty, and verify commitments before sending. Escalate cases that exceed the known policy or evidence.</p>"}
+      {
+        "slug": "ground",
+        "title": "1. Ground the draft",
+        "html": "<p>Give the model the verified case facts and the policy or knowledge material it is allowed to use. Avoid asking it to infer account state or policy from thin context.</p>"
+      },
+      {
+        "slug": "draft",
+        "title": "2. Draft the response",
+        "html": "<p>Ask for a concise answer that states what is known, what happens next, and any action required from the customer. Keep routine wording routine.</p>"
+      },
+      {
+        "slug": "diagnose",
+        "title": "3. Check the diagnosis before the prose",
+        "html": "<p>A beautiful response to the wrong problem is still the wrong response. Confirm that the draft addresses the actual issue and that any troubleshooting step is appropriate.</p>"
+      },
+      {
+        "slug": "send",
+        "title": "4. Edit as the accountable human",
+        "html": "<p>Adjust tone, remove invented certainty, and verify commitments before sending. Escalate cases that exceed the known policy or evidence.</p>"
+      }
     ]
   },
-  "references": [{"title":"Generative AI at Work","url":"https://doi.org/10.1093/qje/qjae044","doi":"10.1093/qje/qjae044","source_type":"peer-reviewed field study","claim_scope":"A staggered deployment study involving 5,172 customer-support agents found AI assistance increased issues resolved per hour by 15% on average, with larger gains for less experienced and lower-skilled agents. The setting used a specific firm, workflow, and assistant and does not imply identical gains elsewhere."}],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Translate strong workplace evidence into a bounded human-in-the-loop reply workflow without extending the causal claim beyond the studied customer-support setting.","registry":"review-registry-using-ai-starters.json"}
+  "references": [
+    {
+      "title": "Generative AI at Work",
+      "url": "https://doi.org/10.1093/qje/qjae044",
+      "doi": "10.1093/qje/qjae044",
+      "source_type": "peer-reviewed field study",
+      "claim_scope": "A staggered deployment study involving 5,172 customer-support agents found AI assistance increased issues resolved per hour by 15% on average, with larger gains for less experienced and lower-skilled agents. The setting used a specific firm, workflow, and assistant and does not imply identical gains elsewhere."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "Translate strong workplace evidence into a bounded human-in-the-loop reply workflow without extending the causal claim beyond the studied customer-support setting.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

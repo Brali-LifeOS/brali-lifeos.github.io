@@ -4,12 +4,26 @@
   "subtitle": "Practise wording and likely responses without pretending the simulation predicts a person",
   "description": "Before a difficult but ordinary conversation, use AI to role-play several plausible reactions, practise a concise opening, and identify points where you may become unclear or defensive. Treat the simulation as rehearsal, not as a model of the other person's mind.",
   "canonical": "/life-os/ai-conversation-rehearsal/",
-  "domain_ids": ["communication-relationships"],
-  "topic_ids": ["difficult-conversations", "clear-communication"],
+  "domain_ids": [
+    "communication-relationships"
+  ],
+  "topic_ids": [
+    "difficult-conversations",
+    "clear-communication"
+  ],
   "method_ids": [],
   "lens_ids": [],
-  "keywords": ["AI role play", "difficult conversation", "conversation rehearsal", "communication practice", "AI coach"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "keywords": [
+    "AI role play",
+    "difficult conversation",
+    "conversation rehearsal",
+    "communication practice",
+    "AI coach"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Use AI as a rehearsal partner for several plausible responses, then keep your real conversation flexible and evidence-based.",
     "zone": "Using AI",
@@ -18,19 +32,58 @@
     "checkIn": "Am I better prepared to listen and respond, or did I start treating the simulated person's reaction as a prediction?"
   },
   "faq": [
-    {"id":"ai-conversation-rehearsal-1","question":"Can AI predict how the person will react?","answer":"No. The useful output is a set of plausible reactions that helps you practise. The real person may respond differently and should be listened to as new evidence."},
-    {"id":"ai-conversation-rehearsal-2","question":"What should I avoid sharing?","answer":"Avoid unnecessary confidential, identifying, medical, legal, employment, or other sensitive information. Use abstractions when the exact detail is not needed for the rehearsal."}
+    {
+      "id": "ai-conversation-rehearsal-1",
+      "question": "Can AI predict how the person will react?",
+      "answer": "No. The useful output is a set of plausible reactions that helps you practise. The real person may respond differently and should be listened to as new evidence."
+    },
+    {
+      "id": "ai-conversation-rehearsal-2",
+      "question": "What should I avoid sharing?",
+      "answer": "Avoid unnecessary confidential, identifying, medical, legal, employment, or other sensitive information. Use abstractions when the exact detail is not needed for the rehearsal."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:26:00Z","updatedISO":"2026-09-15T09:26:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:26:00Z",
+    "updatedISO": "2026-09-15T09:26:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>Rehearsal is useful because you get to hear your own wording before it matters. The AI counterpart is a practice dummy with vocabulary, not a clairvoyant colleague.</p>"},
+    "intro": {
+      "html": "<p>Rehearsal is useful because you get to hear your own wording before it matters. The AI counterpart is a practice dummy with vocabulary, not a clairvoyant colleague.</p>"
+    },
     "sections": [
-      {"slug":"goal","title":"1. Define the real goal","html":"<p>Choose what you want from the conversation: clarify, request, set a boundary, repair, decide, or surface disagreement. Do not make “win” the hidden goal if cooperation matters.</p>"},
-      {"slug":"opening","title":"2. Practise a short opening","html":"<p>State the observable situation, why it matters, and what you want to discuss. Keep the opening short enough to leave room for the other person.</p>"},
-      {"slug":"variants","title":"3. Rehearse several reactions","html":"<p>Ask for different plausible responses, including misunderstanding or disagreement. Practise asking a question instead of defending every point immediately.</p>"},
-      {"slug":"reset","title":"4. Reset before the real conversation","html":"<p>Keep the useful wording, discard the simulated storyline, and enter the real conversation ready to update based on what the person actually says.</p>"}
+      {
+        "slug": "goal",
+        "title": "1. Define the real goal",
+        "html": "<p>Choose what you want from the conversation: clarify, request, set a boundary, repair, decide, or surface disagreement. Do not make “win” the hidden goal if cooperation matters.</p>"
+      },
+      {
+        "slug": "opening",
+        "title": "2. Practise a short opening",
+        "html": "<p>State the observable situation, why it matters, and what you want to discuss. Keep the opening short enough to leave room for the other person.</p>"
+      },
+      {
+        "slug": "variants",
+        "title": "3. Rehearse several reactions",
+        "html": "<p>Ask for different plausible responses, including misunderstanding or disagreement. Practise asking a question instead of defending every point immediately.</p>"
+      },
+      {
+        "slug": "reset",
+        "title": "4. Reset before the real conversation",
+        "html": "<p>Keep the useful wording, discard the simulated storyline, and enter the real conversation ready to update based on what the person actually says.</p>"
+      }
     ]
   },
   "references": [],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish as low-risk communication rehearsal with explicit privacy and non-prediction boundaries; not presented as therapy or as evidence about another person's intentions.","registry":"review-registry-using-ai-starters.json"}
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "Publish as low-risk communication rehearsal with explicit privacy and non-prediction boundaries; not presented as therapy or as evidence about another person's intentions.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

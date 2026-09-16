@@ -67,9 +67,9 @@
   },
   {
     "slug": "10x-goal-sprints-tracker",
-    "title": "Set Goals That Are Ten Times Bigger Than What You Initially Think You Can",
+    "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
     "subtitle": "Apply the 10x Rule",
-    "description": "Set goals that are ten times bigger than what you initially think you can achieve. Increase your efforts and actions accordingly.",
+    "description": "Choose an intentionally ambitious outcome, separate controllable levers from external constraints, test one reversible change, and review what the sprint actually teaches you.",
     "zone": {
       "slug": "future-builder",
       "title": "Future Builder"
@@ -332,9 +332,9 @@
   },
   {
     "slug": "5-minute-meditation-habit-tracker",
-    "title": "Try a Short Breath Meditation",
+    "title": "Try a Short Breath Meditation — Without Turning Five Minutes Into a Religion",
     "subtitle": "Mini-Meditation Sessions",
-    "description": "Sit comfortably for a short meditation, let your breathing stay natural, and gently return attention when your mind wanders.",
+    "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down.",
     "zone": {
       "slug": "be-healthy",
       "title": "Be Healthy"
@@ -398,9 +398,9 @@
   },
   {
     "slug": "7-breath-decision-pause",
-    "title": "Take Seven Deep Breaths While Focusing on the Decision or Problem at Hand",
+    "title": "Use a Short Pause Before an Ordinary Decision",
     "subtitle": "7 Breaths Decision-Making (Samurai Style)",
-    "description": "Take seven deep breaths while focusing on the decision or problem at hand. If you still haven’t reached a decision after seven breaths, it might mean that it’s not the right time to decide or you need more information to evaluate all the factors.",
+    "description": "Pause briefly before a reactive low-risk choice, breathe comfortably or simply sit quietly, then decide whether to act, gather one missing fact, or defer deliberately.",
     "zone": {
       "slug": "future-builder",
       "title": "Future Builder"
@@ -729,9 +729,9 @@
   },
   {
     "slug": "active-listening-coach",
-    "title": "During Conversations, Maintain Eye Contact, Nod Occasionally, and Summarize What the Other Person Has",
-    "subtitle": "Listen Actively",
-    "description": "During conversations, maintain eye contact, nod occasionally, and summarize what the other person has said. Avoid interrupting or planning your response while the other person is speaking.",
+    "title": "Use a Brief Summary to Check What You Heard",
+    "subtitle": "Listen for meaning, reflect it back, and give the speaker room to correct you.",
+    "description": "In an important conversation, delay your response long enough to capture the speaker's main point, summarize it in your own words, ask whether you understood correctly, and adjust before moving to advice or action.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -817,9 +817,9 @@
   },
   {
     "slug": "active-recall-test-yourself",
-    "title": "Use Active Recall for Retention, Then Practice Application",
-    "subtitle": "Test memory without pretending that remembering and doing are the same outcome",
-    "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+    "title": "Active Recall: Close the Notes and Make Memory Work",
+    "subtitle": "Retrieve first, check second — and do not confuse remembering a rule with being able to use it",
+    "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -1017,20 +1017,21 @@
   },
   {
     "slug": "adopt-new-tools-at-work",
-    "title": "Be Open to New Tools, Methods, and Technologies That Can Enhance Your Work, Just",
-    "subtitle": "Embrace Innovation",
-    "description": "Be open to new tools, methods, and technologies that can enhance your work, just like cardiologists and surgeons adopt new technologies and techniques to improve outcomes.",
+    "title": "Test a New Work Tool on a Low-Risk Task",
+    "subtitle": "Adopt tools deliberately instead of adopting them because they are new.",
+    "description": "Pick one recurring work problem, try one tool on a noncritical task, compare the old and new workflow, then keep, adjust, or drop it based on what you observe.",
     "zone": {
-      "slug": "cardio-doc",
-      "title": "Cardio Doc"
+      "slug": "work",
+      "title": "Work"
     },
     "publishedISO": "2025-10-06T11:41:04.085Z",
     "updatedISO": "2025-10-06T11:41:04.085Z",
     "keywords": [
-      "Cardio Doc",
+      "Work",
       "Life OS",
-      "Cardio Doc",
-      "Embrace Innovation"
+      "Embrace Innovation",
+      "work tools",
+      "tool adoption"
     ],
     "stats": {
       "wordCount": 4603,
@@ -1039,9 +1040,9 @@
   },
   {
     "slug": "affirmation-habit-tracker",
-    "title": "Pick a Few Powerful Affirmations That Resonate with You and Repeat Them Out Loud",
-    "subtitle": "Say It Like You Mean It",
-    "description": "Pick a few powerful affirmations that resonate with you and repeat them out loud each morning.",
+    "title": "Write an Affirmation You Can Actually Act On",
+    "subtitle": "Replace grand claims with a grounded statement and one next action.",
+    "description": "Turn a vague positive statement into words you can presently stand behind, connect it to one action under your control, and revise the statement when it becomes false, empty, or unhelpful.",
     "zone": {
       "slug": "be-positive",
       "title": "Be Positive"
@@ -1057,6 +1058,101 @@
     "stats": {
       "wordCount": 4680,
       "readingMinutes": 23
+    }
+  },
+  {
+    "slug": "ai-code-scaffold-test-loop",
+    "title": "Use AI to Scaffold Code, Then Make Tests Decide",
+    "subtitle": "Accelerate the first implementation without treating generated code as reviewed code",
+    "description": "Use AI to produce a first implementation for a bounded coding task, then inspect the diff, run tests, add missing edge cases, and reject code you cannot explain. A controlled experiment found faster completion on one coding task; it did not establish universal software quality gains.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:19:00Z",
+    "updatedISO": "2026-09-15T09:19:00Z",
+    "keywords": [
+      "AI coding",
+      "coding assistant",
+      "AI pair programming",
+      "tests",
+      "code review",
+      "software development"
+    ],
+    "stats": {
+      "wordCount": 530,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-conversation-rehearsal",
+    "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+    "subtitle": "Practise wording and likely responses without pretending the simulation predicts a person",
+    "description": "Before a difficult but ordinary conversation, use AI to role-play several plausible reactions, practise a concise opening, and identify points where you may become unclear or defensive. Treat the simulation as rehearsal, not as a model of the other person's mind.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:26:00Z",
+    "updatedISO": "2026-09-15T09:26:00Z",
+    "keywords": [
+      "AI role play",
+      "difficult conversation",
+      "conversation rehearsal",
+      "communication practice",
+      "AI coach"
+    ],
+    "stats": {
+      "wordCount": 470,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-customer-reply-coach",
+    "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+    "subtitle": "Use suggestions to reduce repetitive wording without delegating the relationship",
+    "description": "For repetitive support or service messages, AI can propose a response from the case facts and approved guidance while the human checks diagnosis, policy, tone, and the actual next step. Large-scale field evidence supports gains in one customer-support setting, especially for less experienced workers.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:18:00Z",
+    "updatedISO": "2026-09-15T09:18:00Z",
+    "keywords": [
+      "AI customer support",
+      "AI reply drafting",
+      "customer service",
+      "support agent",
+      "human review",
+      "response drafting"
+    ],
+    "stats": {
+      "wordCount": 520,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-decision-alternatives",
+    "title": "Use AI to Widen the Option Set, Not Make the Decision",
+    "subtitle": "Generate alternatives and counterarguments before applying your own criteria",
+    "description": "When a decision feels binary or prematurely settled, ask AI for plausible alternatives, missing criteria, and arguments against your current favorite. Verify factual claims independently and keep the final weighting of trade-offs human.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:24:00Z",
+    "updatedISO": "2026-09-15T09:24:00Z",
+    "keywords": [
+      "AI decision making",
+      "decision alternatives",
+      "AI second opinion",
+      "counterarguments",
+      "options",
+      "human judgment"
+    ],
+    "stats": {
+      "wordCount": 500,
+      "readingMinutes": 3
     }
   },
   {
@@ -1079,6 +1175,77 @@
     "stats": {
       "wordCount": 4400,
       "readingMinutes": 22
+    }
+  },
+  {
+    "slug": "ai-idea-divergence-pass",
+    "title": "Use AI to Widen the Idea Set Before You Choose",
+    "subtitle": "Ask for meaningfully different directions, then judge them yourself",
+    "description": "When you are stuck on the first obvious idea, use AI to generate alternatives across different assumptions or constraints. Experimental evidence suggests generative AI can raise judged creativity in some ideation tasks; it does not decide which idea fits your real context.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:16:00Z",
+    "updatedISO": "2026-09-15T09:16:00Z",
+    "keywords": [
+      "AI brainstorming",
+      "idea generation",
+      "divergent thinking",
+      "creative options",
+      "generative AI"
+    ],
+    "stats": {
+      "wordCount": 500,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-learning-attempt-feedback-retest",
+    "title": "Attempt First, Use AI for Feedback, Retest Without It",
+    "subtitle": "Keep the cognitive work you are trying to learn on your side of the conversation",
+    "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:20:00Z",
+    "updatedISO": "2026-09-15T09:20:00Z",
+    "keywords": [
+      "AI tutor",
+      "AI learning",
+      "human first AI",
+      "feedback",
+      "retrieval",
+      "learning with AI"
+    ],
+    "stats": {
+      "wordCount": 560,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-meeting-notes-to-actions",
+    "title": "Turn Meeting Notes into Actions, Then Reconcile Them",
+    "subtitle": "Use AI to structure the mess; verify owners, decisions, and dates before publishing",
+    "description": "After a meeting, use AI to convert permitted notes or a transcript into decisions, actions, owners, dates, and open questions. Then reconcile the structured output against the original record before it becomes the team's memory.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:22:00Z",
+    "updatedISO": "2026-09-15T09:22:00Z",
+    "keywords": [
+      "AI meeting notes",
+      "action items",
+      "meeting summary",
+      "work systems",
+      "transcript",
+      "follow up"
+    ],
+    "stats": {
+      "wordCount": 460,
+      "readingMinutes": 3
     }
   },
   {
@@ -1126,10 +1293,34 @@
     }
   },
   {
+    "slug": "ai-professional-writing-draft",
+    "title": "Draft Professional Writing with AI, Then Take Back the Edit",
+    "subtitle": "Use AI for a fast first pass; keep intent, facts, tone, and final wording under human control",
+    "description": "For routine professional writing, give AI the purpose, audience, constraints, and source facts, ask for a draft, then revise it yourself. Controlled evidence supports productivity gains for some professional writing tasks, not automatic accuracy or judgment.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:15:00Z",
+    "updatedISO": "2026-09-15T09:15:00Z",
+    "keywords": [
+      "AI writing",
+      "professional writing",
+      "first draft",
+      "editing",
+      "generative AI",
+      "human review"
+    ],
+    "stats": {
+      "wordCount": 520,
+      "readingMinutes": 3
+    }
+  },
+  {
     "slug": "ai-question-bank-builder",
-    "title": "As You Study, Create a Variety of Questions—multiple-Choice, Short Answer, Essay—about the Content",
-    "subtitle": "Question Banks Creation",
-    "description": "As you study, create a variety of questions—multiple-choice, short answer, essay—about the content.",
+    "title": "Build an AI-Assisted Question Bank You Can Verify",
+    "subtitle": "Let AI draft; let the source decide the answer.",
+    "description": "Use AI to draft varied practice questions from material you already have, verify every answer against the source, and keep only questions that test the knowledge you actually need.",
     "zone": {
       "slug": "skill-sprint",
       "title": "Skill Sprint"
@@ -1148,10 +1339,34 @@
     }
   },
   {
+    "slug": "ai-rubric-critique",
+    "title": "Give AI a Rubric and Ask for Specific Critique",
+    "subtitle": "Turn vague feedback into a check against explicit criteria",
+    "description": "For a draft you own, give AI the purpose and a short rubric, ask it to point to specific places that miss the criteria, then decide which suggestions actually improve the work. Use critique as input, not as an automatic rewrite command.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:25:00Z",
+    "updatedISO": "2026-09-15T09:25:00Z",
+    "keywords": [
+      "AI critique",
+      "rubric",
+      "writing feedback",
+      "draft review",
+      "revision",
+      "AI editing"
+    ],
+    "stats": {
+      "wordCount": 450,
+      "readingMinutes": 3
+    }
+  },
+  {
     "slug": "ai-six-hats-facilitator",
-    "title": "Use De Bono’s Six Thinking Hats Method to Explore Different Perspectives on a Topic:",
+    "title": "Run a Six-Perspective Thinking Pass",
     "subtitle": "Try de Bono’s Six Thinking Hats",
-    "description": "Use de Bono’s Six Thinking Hats method to explore different perspectives on a topic: White (facts), Red (emotions), Black (caution), Yellow (optimism), Green (creativity), Blue (process).",
+    "description": "Separate facts, reactions, risks, opportunities, alternatives, and process into distinct passes so a discussion can expose what is missing before choosing a next step.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -1167,6 +1382,53 @@
     "stats": {
       "wordCount": 4691,
       "readingMinutes": 23
+    }
+  },
+  {
+    "slug": "ai-sop-from-examples",
+    "title": "Turn Real Examples into a Draft SOP with AI",
+    "subtitle": "Extract the repeated pattern, then test it on the next case",
+    "description": "When a recurring task lives mostly in someone's head, give AI a few sanitized examples and ask for a draft procedure with inputs, steps, decisions, outputs, and exceptions. Validate the draft with the person who does the work and test it on a fresh case before treating it as process documentation.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:28:00Z",
+    "updatedISO": "2026-09-15T09:28:00Z",
+    "keywords": [
+      "AI SOP",
+      "standard operating procedure",
+      "process documentation",
+      "workflow documentation",
+      "knowledge capture",
+      "AI process"
+    ],
+    "stats": {
+      "wordCount": 480,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-source-summary-verification",
+    "title": "Summarize with AI, Then Reconcile Against the Source",
+    "subtitle": "Use compression for speed without turning a summary into a substitute for evidence",
+    "description": "For a long document you are allowed to process, ask AI for a structured summary tied to the source, then verify the claims that will affect a decision, message, or deliverable. The summary is navigation; the source remains the authority.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:21:00Z",
+    "updatedISO": "2026-09-15T09:21:00Z",
+    "keywords": [
+      "AI summarization",
+      "document summary",
+      "source verification",
+      "information management",
+      "LLM hallucination"
+    ],
+    "stats": {
+      "wordCount": 470,
+      "readingMinutes": 3
     }
   },
   {
@@ -1192,10 +1454,82 @@
     }
   },
   {
+    "slug": "ai-structured-extraction-check",
+    "title": "Extract a Table with AI, Then Sample-Check the Rows",
+    "subtitle": "Turn repeated text into structure without confusing extraction with ground truth",
+    "description": "For repeated unstructured text you are allowed to process, ask AI to extract a fixed schema, include the source span for each row, and flag uncertainty. Then sample-check rows and fully verify fields that drive money, access, compliance, or other high-cost actions.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:27:00Z",
+    "updatedISO": "2026-09-15T09:27:00Z",
+    "keywords": [
+      "AI data extraction",
+      "structured extraction",
+      "text to table",
+      "LLM extraction",
+      "data verification",
+      "information management"
+    ],
+    "stats": {
+      "wordCount": 480,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-task-frontier-test",
+    "title": "Benchmark AI on the Task Before You Trust the Workflow",
+    "subtitle": "Test a small representative sample before turning assistance into a process",
+    "description": "AI performance is uneven across tasks that can look similarly difficult. Before redesigning a workflow around a model, run it on representative cases, score the outputs against a human-defined standard, and identify where human review is still mandatory.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:17:00Z",
+    "updatedISO": "2026-09-15T09:17:00Z",
+    "keywords": [
+      "AI benchmark",
+      "AI workflow",
+      "jagged frontier",
+      "AI evaluation",
+      "human AI collaboration",
+      "workflow design"
+    ],
+    "stats": {
+      "wordCount": 520,
+      "readingMinutes": 3
+    }
+  },
+  {
+    "slug": "ai-test-case-generator",
+    "title": "Ask AI for Failure Cases Before You Ship",
+    "subtitle": "Use the model as an adversarial idea generator, then turn useful candidates into real checks",
+    "description": "Give AI a feature, process, calculation, message, or workflow and ask for edge cases and failure modes. Treat the output as a candidate list, deduplicate it, verify relevance, and convert the useful cases into executable tests or checklist items.",
+    "zone": {
+      "slug": "using-ai",
+      "title": "Using AI"
+    },
+    "publishedISO": "2026-09-15T09:23:00Z",
+    "updatedISO": "2026-09-15T09:23:00Z",
+    "keywords": [
+      "AI test cases",
+      "edge cases",
+      "failure modes",
+      "QA",
+      "error prevention",
+      "AI testing"
+    ],
+    "stats": {
+      "wordCount": 450,
+      "readingMinutes": 3
+    }
+  },
+  {
     "slug": "aida-message-optimizer",
-    "title": "Structure Your Persuasive Messages Using the Aida Model (attention, Interest, Desire, Action)",
-    "subtitle": "Follow the AIDA Model",
-    "description": "Structure your persuasive messages using the AIDA model (Attention, Interest, Desire, Action). Grab attention, build interest, create a desire for your message, and call for action.",
+    "title": "Use AIDA as a Message Clarity Checklist",
+    "subtitle": "Make the message relevant, understandable, honest, and actionable.",
+    "description": "Check whether a message earns attention, makes the relevant point understandable, explains why it matters, and gives the reader a clear next action without treating AIDA as a persuasion guarantee.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -1393,9 +1727,9 @@
   },
   {
     "slug": "apply-80-20-principle",
-    "title": "Identify the 20% of Activities That Will Yield 80% of the Results Towards Your",
-    "subtitle": "Apply the 80/20 Principle",
-    "description": "Identify the 20% of activities that will yield 80% of the results towards your goals. Focus on these high-impact activities.",
+    "title": "Use 80/20 as a Prioritization Hypothesis",
+    "subtitle": "Look for concentration, then verify it.",
+    "description": "Rank the few inputs most likely to matter, test that ranking against observed results, and revise it instead of treating 80/20 as a law or exact forecast.",
     "zone": {
       "slug": "future-builder",
       "title": "Future Builder"
@@ -1547,9 +1881,9 @@
   },
   {
     "slug": "attention-to-detail-trainer",
-    "title": "Pay Close Attention to the Details Around You",
-    "subtitle": "Observe Closely",
-    "description": "Pay close attention to the details around you.",
+    "title": "Run a Detail Check Before You Ship",
+    "subtitle": "Turn vague carefulness into a bounded verification routine.",
+    "description": "Inspect a concrete artifact against a small checklist, run a second pass from a different angle, log anomalies, and improve the checklist from real misses rather than training vague hypervigilance.",
     "zone": {
       "slug": "as-detective",
       "title": "As Detective"
@@ -1635,9 +1969,9 @@
   },
   {
     "slug": "automate-routine-data-reports",
-    "title": "Data Analysts Automate Routine Reports",
-    "subtitle": "Automate Reports",
-    "description": "Data analysts automate routine reports. Use automation tools to generate regular reports on your progress, goals, or any other relevant data.",
+    "title": "Automate a Routine Report with Validation and Fallback",
+    "subtitle": "Automate the data path, not hidden judgment.",
+    "description": "Automate a stable reporting workflow only after defining source ownership, transformations, validation rules, freshness, failure handling, and a manual fallback.",
     "zone": {
       "slug": "data",
       "title": "Data"
@@ -1789,9 +2123,9 @@
   },
   {
     "slug": "avoid-availability-heuristic-decisions",
-    "title": "Challenge Yourself to Dig Deeper When Making Decisions",
+    "title": "Run a Missing-Evidence Check Before a Decision",
     "subtitle": "Look Beyond the Obvious (Availability Heuristic)",
-    "description": "Challenge yourself to dig deeper when making decisions. Don’t just go with what’s most easily recalled; ask yourself, 'What am I missing?'",
+    "description": "When a vivid or recent example is dominating a decision, separate what is easy to recall from what is representative, then look for one missing denominator, counterexample, or relevant source.",
     "zone": {
       "slug": "thinking",
       "title": "Thinking"
@@ -2034,7 +2368,7 @@
     "slug": "avoid-list-interference-memory-retention",
     "title": "Try Quiet Wakeful Rest After Learning",
     "subtitle": "Reduce immediate interference after material you want to remember",
-    "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
+    "description": "After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -2251,10 +2585,33 @@
     }
   },
   {
+    "slug": "batch-non-urgent-notifications",
+    "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+    "subtitle": "Make interruptions predictable without pretending every alert should disappear",
+    "description": "Group non-urgent smartphone notifications into a few predictable delivery windows while keeping genuinely urgent channels available. The useful idea is predictable batching, not a magic number of batches.",
+    "zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "publishedISO": "2026-09-11T12:12:00Z",
+    "updatedISO": "2026-09-11T12:12:00Z",
+    "keywords": [
+      "notification batching",
+      "digital attention",
+      "phone interruptions",
+      "focus",
+      "scheduled notifications"
+    ],
+    "stats": {
+      "wordCount": 780,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "batch-similar-tasks-planner",
-    "title": "Group Similar Tasks and Do Them Together",
-    "subtitle": "Batch Similar Tasks",
-    "description": "Group similar tasks and do them together.",
+    "title": "Batch Similar Tasks When Switching Is the Problem",
+    "subtitle": "Group work only when shared setup is the bottleneck.",
+    "description": "Group comparable low-risk tasks when repeated setup is slowing the work, then compare the batch with your normal flow and stop batching when responsiveness suffers.",
     "zone": {
       "slug": "do-it",
       "title": "Do It"
@@ -2670,9 +3027,9 @@
   },
   {
     "slug": "brag-doc-wins-hub",
-    "title": "Keep a Log of Your Achievements to Track Progress and Celebrate Milestones",
-    "subtitle": "Achievement Log: Track Your Milestones",
-    "description": "Keep a log of your achievements to track progress and celebrate milestones. Use the app to:\n- Write down every small or big win, like completing a task, reaching a goal, or overcoming a challenge.\n- Review your achievements regularly to see how far you’ve come.\n- Use this log to identify patterns of success and areas where you excel.\n\nThis helps you build confidence and stay motivated.\n",
+    "title": "Keep a Work Wins Log You Can Reuse",
+    "subtitle": "Capture concrete outcomes while the details are still easy to reconstruct.",
+    "description": "Record completed work, solved problems, decisions, useful contributions and recoveries in a compact log so you can retrieve concrete examples for reviews, resumes, proposals, retrospectives and planning.",
     "zone": {
       "slug": "grandmaster",
       "title": "Grandmaster"
@@ -2714,9 +3071,9 @@
   },
   {
     "slug": "break-big-goals-into-steps",
-    "title": "Divide Big Problems or Goals into Smaller, Manageable Parts",
-    "subtitle": "Break It Down",
-    "description": "Divide big problems or goals into smaller, manageable parts.",
+    "title": "Turn a Large Goal into the Next Verifiable Step",
+    "subtitle": "Make the finish condition and dependencies visible.",
+    "description": "Define the finish condition, expose dependencies, split the goal into observable deliverables, and choose the smallest next step that creates information or progress.",
     "zone": {
       "slug": "as-detective",
       "title": "As Detective"
@@ -2736,9 +3093,9 @@
   },
   {
     "slug": "break-down-big-problems-triz",
-    "title": "Break Down Big Challenges into Smaller, More Manageable Parts",
-    "subtitle": "Break Problems into Smaller Parts",
-    "description": "Break down big challenges into smaller, more manageable parts. Instead of trying to fix everything, focus on one aspect at a time.",
+    "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+    "subtitle": "Expose the conflict before optimizing around it.",
+    "description": "Describe the unwanted result, expose the trade-off or contradiction, split the system into parts, and check a change that removes a constraint instead of merely optimizing around it.",
     "zone": {
       "slug": "triz",
       "title": "TRIZ"
@@ -2758,9 +3115,9 @@
   },
   {
     "slug": "break-familiarity-bias",
-    "title": "Next Time You Feel Drawn to Something Familiar: - Pause and Reflect: Ask Yourself,",
-    "subtitle": "Question Your Preferences",
-    "description": "Next time you feel drawn to something familiar:\n- Pause and reflect: Ask yourself, \"Do I like this because it’s better, or just because it’s familiar?\"\n- Try alternatives: Challenge yourself to explore options you don’t usually pick.\n\nExample: Always ordering the same meal? Try a different dish and notice if it adds value.\n",
+    "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+    "subtitle": "Compare the default with one viable alternative before keeping it automatically.",
+    "description": "For an ordinary low-stakes choice, name the familiar default, state the criterion that matters, compare one viable alternative, and keep or change the default for a concrete reason rather than novelty alone.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -2868,9 +3225,9 @@
   },
   {
     "slug": "build-your-support-network",
-    "title": "Surround Yourself with People Who Can Offer Advice, Support, and Encouragement",
-    "subtitle": "Support Network",
-    "description": "Surround yourself with people who can offer advice, support, and encouragement. This could be friends, family, mentors, or colleagues.",
+    "title": "Build a Support Map Around Specific Needs",
+    "subtitle": "Ask the right person for a small, optional kind of help.",
+    "description": "Map the kinds of support you sometimes need, identify appropriate people or communities for each kind, make specific requests that are easy to decline, and protect reciprocity and boundaries.",
     "zone": {
       "slug": "insider",
       "title": "Insider"
@@ -2890,9 +3247,9 @@
   },
   {
     "slug": "bullet-point-coach",
-    "title": "Use Bullet Points to Outline Your Key Points",
-    "subtitle": "Bullet Your Points",
-    "description": "Use bullet points to outline your key points. This keeps your speech organized and ensures you cover all important topics.",
+    "title": "Use a Short Bullet Outline Before You Speak",
+    "subtitle": "Prepare cue points for the purpose, key information and requested next step.",
+    "description": "Before a meeting, update or presentation, write a compact set of cue points that preserves the purpose, the information the listener needs and the requested next step, then speak from the outline rather than reading a script.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -2934,9 +3291,9 @@
   },
   {
     "slug": "calibrate-task-estimates",
-    "title": "Be Realistic About Task Difficulty: - Set Milestones: Break Hard Tasks into Smaller, Achievable",
-    "subtitle": "Balance Your Expectations",
-    "description": "Be realistic about task difficulty:\n- Set milestones: Break hard tasks into smaller, achievable steps.\n- Reassess easy tasks: Don’t rush through just because they seem simple.\n- Check your assumptions: Look at past experiences for patterns of over- or underestimation.\n\nExample: Planning a complex project? Start with a detailed breakdown to avoid feeling overwhelmed or underprepared.\n",
+    "title": "Calibrate Task Estimates With Planned vs Actual Work",
+    "subtitle": "Use completed work to update the next comparable estimate.",
+    "description": "Define a concrete deliverable, make an initial estimate, record what completion actually required, note the main source of difference, and use that local record when planning similar work again.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -3264,9 +3621,9 @@
   },
   {
     "slug": "challenge-assumed-intent",
-    "title": "Challenge the Assumption of Intent Behind Events",
-    "subtitle": "Question the 'Why'",
-    "description": "Challenge the assumption of intent behind events. Here’s how:\n- Pause and think: Ask, “Could this be random or accidental instead of intentional?”\n- Look for evidence: Check if there’s real proof of intent or just a feeling.\n- Explore alternatives: Consider other explanations before concluding someone or something caused it.\n\nExample: If your internet goes down, don’t immediately assume someone sabotaged it. It’s likely a technical issue.\n",
+    "title": "Separate Observed Facts From Assumed Intent",
+    "subtitle": "Check what happened before deciding why another person did it.",
+    "description": "When an ordinary ambiguous event feels intentional, separate the observable facts from your interpretation, list plausible alternatives, check relevant information, and use a neutral clarification before treating intent as established.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -3286,24 +3643,25 @@
   },
   {
     "slug": "challenge-confirmation-bias-checklist",
-    "title": "When Evaluating Information: - Seek Opposing Views: Actively Search for Evidence That Challenges Your",
-    "subtitle": "Challenge Confirmation Bias",
-    "description": "When evaluating information:\n- Seek opposing views: Actively search for evidence that challenges your beliefs.\n- Ask questions: “What would change my mind about this?”\n- Stay curious: Approach topics with an open mind, looking for new perspectives.\n\nExample: If you believe a certain diet works, read studies that critique it.\n",
+    "title": "Run a Disconfirming-Evidence Check",
+    "subtitle": "Test one claim against evidence that could weaken it",
+    "description": "State one claim precisely, define what evidence would make you less confident, inspect relevant credible evidence, and update the decision if the evidence warrants it.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
     },
     "publishedISO": "2025-10-06T11:41:04.799Z",
-    "updatedISO": "2025-10-06T11:41:04.799Z",
+    "updatedISO": "2026-09-12T18:31:00Z",
     "keywords": [
-      "Cognitive Biases",
-      "Life OS",
-      "Cognitive Biases",
-      "Challenge Confirmation Bias"
+      "confirmation bias",
+      "evidence check",
+      "disconfirming evidence",
+      "critical thinking",
+      "decision making"
     ],
     "stats": {
-      "wordCount": 8,
-      "readingMinutes": 1
+      "wordCount": 420,
+      "readingMinutes": 3
     }
   },
   {
@@ -3507,9 +3865,9 @@
   },
   {
     "slug": "check-base-rates-before-deciding",
-    "title": "Before Jumping to Conclusions, Focus on the General Information",
-    "subtitle": "Trust the Bigger Picture",
-    "description": "Before jumping to conclusions, focus on the general information. Here’s how:\n- Check the base rate: Ask, “What do the overall statistics say?”\n- Pause before judging: Look for the larger trends instead of just the specifics.\n- Combine both perspectives: Use general information to inform the specific case.\n\nExample: If 90% of a population recovers from an illness, don’t let one extreme story make you believe the illness is fatal.\n",
+    "title": "Check a Relevant Baseline Before Interpreting One Case",
+    "subtitle": "Put a vivid example beside the broader reference class it belongs to.",
+    "description": "For an ordinary data-informed decision, define the relevant reference class, find a comparable baseline, inspect its scope and denominator, then combine that general context with the facts that are specific to the case.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -3573,9 +3931,9 @@
   },
   {
     "slug": "chef-taste-and-adjust",
-    "title": "Continuously Taste and Adjust Your Cooking",
-    "subtitle": "Degustar y Ajustar",
-    "description": "Continuously taste and adjust your cooking. Apply this mindset to your projects and tasks by regularly reviewing and refining your work.",
+    "title": "Taste and Adjust One Variable at a Time",
+    "subtitle": "Use feedback while cooking without guessing at universal seasoning rules.",
+    "description": "For food that is safe to taste, sample at useful stages, identify the specific imbalance you notice, make one small adjustment, and taste again before changing something else.",
     "zone": {
       "slug": "chef",
       "title": "Chef"
@@ -3617,9 +3975,9 @@
   },
   {
     "slug": "choose-best-resources",
-    "title": "Just Like Chefs Use the Freshest Ingredients for the Best Flavors, Ensure You Use",
-    "subtitle": "Use Fresh Ingredients",
-    "description": "Just like chefs use the freshest ingredients for the best flavors, ensure you use the best resources and tools in your work and personal projects.",
+    "title": "Choose Resources for the Next Concrete Step",
+    "subtitle": "Evaluate information and tools by fit, not by novelty or collection size.",
+    "description": "Start from the output or decision you need, choose the resource that best fits that next step, check authority, freshness, licensing and security where relevant, test the smallest useful use, then keep, defer or archive it.",
     "zone": {
       "slug": "chef",
       "title": "Chef"
@@ -3639,9 +3997,9 @@
   },
   {
     "slug": "chunk-complex-ideas-for-clarity",
-    "title": "Break Down Complex Information into Smaller, Manageable Chunks",
-    "subtitle": "Chunk Information",
-    "description": "Break down complex information into smaller, more manageable pieces (chunking up) or combine small details into a bigger picture (chunking down).",
+    "title": "Organize Complex Information Around One Decision",
+    "subtitle": "Give the main path a small set of labeled parts and keep supporting detail easy to retrieve.",
+    "description": "Define the audience and decision, group related material into labeled parts, put the main path in a useful order, and move supporting detail into linked layers instead of either flattening everything or presenting every detail at once.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -3747,9 +4105,9 @@
   },
   {
     "slug": "clarity-ladder-analyzer",
-    "title": "Move Between Abstract Concepts and Concrete Details to Clarify Your Message",
-    "subtitle": "Climb the Ladder of Abstraction",
-    "description": "Move between abstract concepts and concrete details to clarify your message. Start with a broad idea and provide specific examples to illustrate it, or vice versa.",
+    "title": "Connect a General Point to a Concrete Example",
+    "subtitle": "Move from the idea to an observable detail, then explain what the detail means.",
+    "description": "State the general point, add a concrete example or observable detail that belongs to it, connect the example back to the point, and remove specifics that do not help the audience understand the message or next action.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -3813,9 +4171,9 @@
   },
   {
     "slug": "clustering-illusion-guard",
-    "title": "Train Yourself to Spot When You're Overestimating the Importance of Random Patterns or Streaks",
-    "subtitle": "Break the Clustering Illusion",
-    "description": "Train yourself to spot when you're overestimating the importance of random patterns or streaks. Here’s how:\n- Step back: Ask, “Is this pattern meaningful or could it be random?”\n- Check the data size: Patterns in small samples are often misleading—look for larger trends.\n- Seek expert advice: For complex data, consult someone with statistical expertise to avoid jumping to conclusions.\n\nExample: If you see a streak of good or bad luck, remind yourself that random events can cluster together without meaning anything.\n",
+    "title": "Check a Streak Before Treating It as a Pattern",
+    "subtitle": "Put the visible cluster back into its full observation window before changing a plan.",
+    "description": "When a short streak looks meaningful, record the complete observation window and denominator, compare the cluster with the broader history, check whether measurement or operating conditions changed, and avoid changing a plan solely because the sequence looks striking.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -3901,9 +4259,9 @@
   },
   {
     "slug": "cognitive-dissonance-resolution",
-    "title": "When New Information Clashes with What You Believe, Research Both Sides to Understand Better",
-    "subtitle": "Cognitive Dissonance Resolution",
-    "description": "When new information clashes with what you believe, research both sides to understand better.",
+    "title": "Stress-Test a Belief With Strong Counter-Information",
+    "subtitle": "Seek the strongest credible challenge to a specific claim, then record what changes.",
+    "description": "Write the specific claim you currently accept, note the strongest support you have, seek credible information that could challenge it, compare relevance and independence, then keep, narrow or revise the claim without giving weak counterclaims equal weight.",
     "zone": {
       "slug": "skill-sprint",
       "title": "Skill Sprint"
@@ -3989,9 +4347,9 @@
   },
   {
     "slug": "common-source-radar",
-    "title": "Train Yourself to Spot When Research or Information Comes from the Same Source or",
-    "subtitle": "Spot Common Source Bias",
-    "description": "Train yourself to spot when research or information comes from the same source or uses the same methods. Here’s how:\n- Check the source: Are multiple studies or reports relying on the same data or methods? Look for diversity in sources.\n- Ask critical questions: Does the information offer different perspectives, or is it repeating the same point?\n- Practice comparison: Regularly compare findings from different authors or studies to get a fuller picture.\n\nExample: If two articles say the same thing, check if they reference the same original study.\n",
+    "title": "Trace Repeated Claims Back to Their Underlying Sources",
+    "subtitle": "Check whether several pages are independent or are repeating the same origin.",
+    "description": "When several pages or reports repeat the same claim, follow their links and citations back to the underlying material, record shared documents, datasets or organizations, and distinguish independent origins from repeated summaries.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -4011,9 +4369,9 @@
   },
   {
     "slug": "communication-blocks-scheduler",
-    "title": "Schedule Specific Times to Check Your Messages and Emails",
-    "subtitle": "Cut the Noise with Communication Blocks",
-    "description": "Schedule specific times to check your messages and emails.",
+    "title": "Batch Routine Messages Around Real Response Obligations",
+    "subtitle": "Protect focused work without hiding time-sensitive channels.",
+    "description": "Set predictable windows for non-urgent messages, keep an explicit path for work that genuinely cannot wait, and adjust the schedule when it conflicts with actual response duties.",
     "zone": {
       "slug": "do-it",
       "title": "Do It"
@@ -4187,9 +4545,9 @@
   },
   {
     "slug": "confidence-calibration-habit",
-    "title": "Estimate How Certain You Are About Something in Percentages Rather Than Absolute Terms",
-    "subtitle": "Think in Percentages (Overconfidence Bias)",
-    "description": "Estimate how certain you are about something in percentages rather than absolute terms. Ask, 'How sure am I, really?'",
+    "title": "Record What Would Change Your Confidence Before You Commit",
+    "subtitle": "Make support, unknowns and update conditions visible before a decision hardens.",
+    "description": "State your current confidence in plain language, record the main support and unknowns, name an observable fact that would change the judgment, then compare the expectation with what later happened and update future decisions accordingly.",
     "zone": {
       "slug": "thinking",
       "title": "Thinking"
@@ -4209,9 +4567,9 @@
   },
   {
     "slug": "confirmation-bias-challenge",
-    "title": "Make It a Habit to Question Your Beliefs",
-    "subtitle": "Challenge Your Beliefs (Confirmation Bias)",
-    "description": "Make it a habit to question your beliefs. Look for evidence that contradicts your assumptions instead of only seeking confirmation.",
+    "title": "Run One Disconfirming Check Before a Consequential Commitment",
+    "subtitle": "Define what would weaken the favored assumption, then check for it before locking in the decision.",
+    "description": "Before an ordinary consequential commitment, state the assumption you currently favor, name one observable condition that would weaken it, check that condition directly, and update, narrow or escalate the decision when the result matters.",
     "zone": {
       "slug": "thinking",
       "title": "Thinking"
@@ -4231,9 +4589,9 @@
   },
   {
     "slug": "conjunction-fallacy-coach",
-    "title": "Stick to the More General Explanation",
-    "subtitle": "Choose the Simpler Answer",
-    "description": "Stick to the more general explanation. Here’s how:\n- Simplify scenarios: Ask, “Is this really more specific, or am I overcomplicating it?”\n- Compare probabilities: The broader condition is usually more likely than the specific one.\n- Practice skepticism: Question assumptions that add unnecessary detail.\n\nExample: If someone says, “Linda is a bank teller and a feminist,” remind yourself that being a bank teller alone is statistically more probable.\n",
+    "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+    "subtitle": "Split A from A-and-B before a detailed story changes the comparison.",
+    "description": "When one option is A and another is A plus an additional condition B, write the two event sets explicitly and check their logical relationship before letting the more detailed description seem more likely.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -4249,6 +4607,29 @@
     "stats": {
       "wordCount": 4021,
       "readingMinutes": 20
+    }
+  },
+  {
+    "slug": "consider-the-opposite",
+    "title": "Before You Commit to a Judgment, Consider the Opposite",
+    "subtitle": "Generate a plausible case that your current conclusion could be wrong",
+    "description": "When a judgment matters and you already feel convinced, deliberately generate a plausible explanation, evidence pattern, or outcome that would point the other way. Use it as a bias check, not as a rule to distrust every conclusion.",
+    "zone": {
+      "slug": "avoid-errors",
+      "title": "Avoid Errors"
+    },
+    "publishedISO": "2026-09-11T12:30:00Z",
+    "updatedISO": "2026-09-11T12:30:00Z",
+    "keywords": [
+      "consider the opposite",
+      "confirmation bias",
+      "debiasing",
+      "decision making",
+      "critical thinking"
+    ],
+    "stats": {
+      "wordCount": 790,
+      "readingMinutes": 4
     }
   },
   {
@@ -4363,9 +4744,9 @@
   },
   {
     "slug": "context-guard-for-decisions",
-    "title": "Always Factor in the Human or Situational Context",
-    "subtitle": "Context Matters",
-    "description": "Always factor in the human or situational context. Here’s how:\n- Ask about the ‘why’: What’s the situation behind this problem?\n- Step into their shoes: Consider the human side of the issue.\n- Adapt accordingly: Tailor your approach based on the specific context.\n\nExample: When designing a product, think about how real people will use it in their everyday lives.\n",
+    "title": "Check the Operating Context Before Reusing a Decision",
+    "subtitle": "Make changed conditions, constraints and unknowns visible before applying an old answer.",
+    "description": "Before applying a familiar solution, state what changed, identify the people and system constraints that matter, separate verified facts from assumptions, and choose a reversible next step when important context is still missing.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -4385,9 +4766,9 @@
   },
   {
     "slug": "context-planner-for-writers",
-    "title": "Before You Start Writing, Think About the Bigger Picture",
-    "subtitle": "Context is King",
-    "description": "Before you start writing, think about the bigger picture. Who’s going to read this? Where will it be published? Consider the reputation of the platform and the expectations of your readers. Adjust your tone and content to fit the context.",
+    "title": "Write a Context Brief Before Drafting",
+    "subtitle": "Name the reader, publication surface, purpose and constraints before choosing structure and tone.",
+    "description": "Before drafting, write a compact brief that identifies the primary reader, where the text will appear, what the reader should understand or do, which constraints apply, and what facts or sources must be verified.",
     "zone": {
       "slug": "writing",
       "title": "Writing"
@@ -4407,9 +4788,9 @@
   },
   {
     "slug": "contextual-language-coach",
-    "title": "Choose a Real-Life Scenario to Practice (e",
-    "subtitle": "Contextual Practice",
-    "description": "Choose a real-life scenario to practice (e.g., ordering food) and focus on mastering phrases for that context. Once confident, move on to more complex topics.",
+    "title": "Rehearse One Real Language Scenario",
+    "subtitle": "Prepare the phrases and repair moves needed for one low-risk interaction.",
+    "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
     "zone": {
       "slug": "language",
       "title": "Language"
@@ -4451,9 +4832,9 @@
   },
   {
     "slug": "control-to-action-compass",
-    "title": "Each Morning, Write Down Your Main Concerns for the Day",
-    "subtitle": "Daily Control Check-In",
-    "description": "Each morning, write down your main concerns for the day. Next to each concern, list what aspects you can control and acknowledge the elements you can't.",
+    "title": "Separate Controllable Actions From Dependencies and Outcomes",
+    "subtitle": "Turn a concern into the next action you can actually perform.",
+    "description": "For a concern or desired outcome, separate actions you can directly perform from dependencies you can influence or only observe, choose one concrete next action, and define how waiting items will be revisited instead of repeatedly planning the outcome itself.",
     "zone": {
       "slug": "stoicism",
       "title": "Stoicism"
@@ -4495,9 +4876,9 @@
   },
   {
     "slug": "conversational-storytelling-coach",
-    "title": "Tell Short, Relevant Stories in Conversations to Illustrate Points and Engage Your Audience",
-    "subtitle": "Master Your Story",
-    "description": "Tell short, relevant stories in conversations to illustrate points and engage your audience. Use vivid details and a clear structure.",
+    "title": "Use a Short Story to Explain One Point in Conversation",
+    "subtitle": "Keep the anecdote relevant, compressed, and safe to share.",
+    "description": "Choose one real example that directly supports the point you are making, keep only the context needed to understand what changed, connect the ending back to the current conversation, and remove confidential or identifying details that are not necessary.",
     "zone": {
       "slug": "talk-smart",
       "title": "Talk Smart"
@@ -4539,9 +4920,9 @@
   },
   {
     "slug": "coot-ai-growth-journal",
-    "title": "Open a Session with Coot)",
-    "subtitle": "Chat with Coot.AI: Personal Growth Conversations",
-    "description": "Open a session with Coot.AI to talk about your personal growth journey. Use the chat to reflect on your goals, ask for advice, and gain new insights.",
+    "title": "Turn an AI Reflection into One Next Action",
+    "subtitle": "Use the model to structure options; keep the decision and verification with you.",
+    "description": "Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself.",
     "zone": {
       "slug": "grow-fast",
       "title": "Grow fast"
@@ -4759,9 +5140,9 @@
   },
   {
     "slug": "creativity-within-constraints",
-    "title": "Impose Limits Like Using Fewer Materials or Setting Time Boundaries to Spark Creativity",
-    "subtitle": "Creativity Within Constraints",
-    "description": "Impose limits like using fewer materials or setting time boundaries to spark creativity.",
+    "title": "Use One Constraint to Produce a Different Creative Draft",
+    "subtitle": "Limit one dimension, make a variant, then judge the result against the brief.",
+    "description": "When open-ended exploration is producing more browsing than making, choose one reversible constraint on scope, tools, format, or time and use it to create a concrete alternative you can compare with the original direction.",
     "zone": {
       "slug": "be-creative",
       "title": "Be Creative"
@@ -4891,24 +5272,25 @@
   },
   {
     "slug": "cut-your-losses-sunk-cost",
-    "title": "When You’re Stuck on Something Because of the Time, Money, or Effort You’ve Already",
-    "subtitle": "Cut Your Losses (Sunk Cost Fallacy)",
-    "description": "When you’re stuck on something because of the time, money, or effort you’ve already invested, ask, 'Is it still worth it going forward?'",
+    "title": "Judge a Commitment by What Comes Next",
+    "subtitle": "A quick stop, continue, or change check",
+    "description": "When past time, money, or effort is dominating a continuation decision, separate what cannot be recovered and compare realistic future costs, benefits, constraints, and alternatives.",
     "zone": {
       "slug": "thinking",
       "title": "Thinking"
     },
     "publishedISO": "2025-10-06T11:41:04.227Z",
-    "updatedISO": "2025-10-06T11:41:04.227Z",
+    "updatedISO": "2026-09-12T18:32:00Z",
     "keywords": [
-      "Thinking",
-      "Life OS",
-      "Thinking",
-      "Cut Your Losses (Sunk Cost Fallacy)"
+      "sunk cost",
+      "continue or stop",
+      "resource allocation",
+      "decision making",
+      "opportunity cost"
     ],
     "stats": {
-      "wordCount": 4286,
-      "readingMinutes": 21
+      "wordCount": 430,
+      "readingMinutes": 3
     }
   },
   {
@@ -5441,9 +5823,9 @@
   },
   {
     "slug": "daily-priority-review-coach",
-    "title": "Spend a Few Minutes Each Day Checking Out Your Open Tasks in the App)",
-    "subtitle": "Review Your Open To-Dos",
-    "description": "Spend a few minutes each day checking out your open tasks in the app. See what’s still on your list, shuffle priorities if needed, and stay on top of things.",
+    "title": "Review Open Tasks and Leave With a Clear Next Action",
+    "subtitle": "Use the task list to make decisions, not to rehearse everything you owe.",
+    "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
     "zone": {
       "slug": "grow-fast",
       "title": "Grow fast"
@@ -6145,9 +6527,9 @@
   },
   {
     "slug": "default-choice-audit",
-    "title": "Challenge Default Settings",
-    "subtitle": "Question the Default",
-    "description": "Challenge default settings. Here’s how:\n- Ask why: Consider if the default choice is actually best for you.\n- Explore alternatives: Take time to review all available options.\n- Make it yours: Choose based on your needs, not just convenience.\n\nExample: If a subscription auto-renews, pause and ask if it’s worth continuing or switching to another plan.\n",
+    "title": "Audit a Default Before Letting It Decide for You",
+    "subtitle": "Keep convenient defaults when they fit; change them when they do not.",
+    "description": "For a setting, subscription, workflow, or template with meaningful consequences, identify the current default, compare the relevant alternatives, and make a deliberate keep-or-change decision with an easy rollback when possible.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -6185,6 +6567,29 @@
     "stats": {
       "wordCount": 5557,
       "readingMinutes": 28
+    }
+  },
+  {
+    "slug": "deliberate-email-checking-windows",
+    "title": "Check Email in Deliberate Windows Instead of Continuously",
+    "subtitle": "Reduce inbox switching without pretending every role can ignore email",
+    "description": "If constant inbox checking fragments your day, test a few deliberate email windows and close the inbox between them. Match the schedule to real response expectations rather than copying a fixed number from a study.",
+    "zone": {
+      "slug": "work",
+      "title": "Work"
+    },
+    "publishedISO": "2026-09-11T12:14:00Z",
+    "updatedISO": "2026-09-11T12:14:00Z",
+    "keywords": [
+      "email checking",
+      "email stress",
+      "digital attention",
+      "work systems",
+      "inbox batching"
+    ],
+    "stats": {
+      "wordCount": 760,
+      "readingMinutes": 4
     }
   },
   {
@@ -6961,9 +7366,9 @@
   },
   {
     "slug": "ergonomic-workspace-assessment",
-    "title": "Set up Your Workspace to Be Comfortable and Efficient",
-    "subtitle": "Ergonomic Design",
-    "description": "Set up your workspace to be comfortable and efficient. For example, adjust your chair and desk height, and use a keyboard tray to prevent strain.",
+    "title": "Audit Workspace Friction Before Buying More Gear",
+    "subtitle": "Change the layout around the task, one reversible step at a time.",
+    "description": "Inspect where a workspace makes the actual task harder to see, reach, switch, connect, or reset; change one layout variable; and keep the change only when it removes friction without creating a new problem.",
     "zone": {
       "slug": "as-architector",
       "title": "As Architector"
@@ -8479,6 +8884,29 @@
     }
   },
   {
+    "slug": "genuine-micro-conversation",
+    "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+    "subtitle": "Add a little social connection where an interaction is already happening",
+    "description": "When the situation is relaxed and the other person seems willing, make one routine exchange slightly more human: eye contact, a real greeting, or a brief conversation. Treat it as a small social opportunity, not a cure for loneliness.",
+    "zone": {
+      "slug": "relationships",
+      "title": "Relationships"
+    },
+    "publishedISO": "2026-09-11T12:28:00Z",
+    "updatedISO": "2026-09-11T12:28:00Z",
+    "keywords": [
+      "weak ties",
+      "micro conversation",
+      "social connection",
+      "belonging",
+      "small talk"
+    ],
+    "stats": {
+      "wordCount": 760,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "gestalt-empty-chair-dialogue",
     "title": "Imagine Having a Conversation with Someone Important in Your Life (past or Present), Telling",
     "subtitle": "Dialogue with Imaginary Figures",
@@ -8718,6 +9146,29 @@
     "stats": {
       "wordCount": 4349,
       "readingMinutes": 22
+    }
+  },
+  {
+    "slug": "grayscale-phone-friction",
+    "title": "Make Your Phone Less Visually Tempting with Grayscale",
+    "subtitle": "A reversible interface nudge for reducing habitual screen time",
+    "description": "If you want to spend less time on your phone, try switching the display to grayscale for a bounded trial. Treat it as friction against habitual use, not as a productivity, sleep, or mental-health upgrade.",
+    "zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "publishedISO": "2026-09-11T12:10:00Z",
+    "updatedISO": "2026-09-11T12:10:00Z",
+    "keywords": [
+      "grayscale phone",
+      "screen time",
+      "digital attention",
+      "environment design",
+      "smartphone friction"
+    ],
+    "stats": {
+      "wordCount": 760,
+      "readingMinutes": 4
     }
   },
   {
@@ -9516,24 +9967,26 @@
   },
   {
     "slug": "if-then-rules-productivity",
-    "title": "Define Your Own If-Then Rules to Make Decisions Easier and Create Consistent Actions",
-    "subtitle": "Set and Follow If-Then Rules for Productivity",
-    "description": "Define your own if-then rules to make decisions easier and create consistent actions. Use the app to:\n- Select a template for your rule.\n- Write down conditions and actions, such as:\n  - If a meeting takes longer than 30 minutes, then I’ll summarize key points immediately after.\n  - If I finish one task early, then I’ll spend the extra time reviewing the next one.\n  - If I feel overwhelmed, then I’ll take a short walk to reset.\n- Start following your rule and track how it helps you stay focused and effective.\n\nThese rules work as simple frameworks to reduce stress and boost your productivity.\n",
+    "title": "Turn a Good Intention into an If-Then Plan",
+    "subtitle": "Connect one observable cue to one specific action",
+    "description": "For a goal you already want to pursue, define a concrete cue and a feasible response in the form: If X happens, then I will do Y. Implementation intentions are well supported, but they are a self-regulation aid rather than an automatic behavior guarantee.",
     "zone": {
-      "slug": "grandmaster",
-      "title": "Grandmaster"
+      "slug": "do-it",
+      "title": "Do It"
     },
     "publishedISO": "2025-10-06T11:41:04.543Z",
-    "updatedISO": "2025-10-06T11:41:04.543Z",
+    "updatedISO": "2026-09-11T19:12:00Z",
     "keywords": [
-      "Grandmaster",
-      "Life OS",
-      "Grandmaster",
-      "Set and Follow If-Then Rules for Productivity"
+      "implementation intentions",
+      "if then plan",
+      "if then rule",
+      "goal attainment",
+      "task initiation",
+      "behavior change"
     ],
     "stats": {
-      "wordCount": 4179,
-      "readingMinutes": 21
+      "wordCount": 690,
+      "readingMinutes": 4
     }
   },
   {
@@ -10000,9 +10453,9 @@
   },
   {
     "slug": "judge-decisions-by-process",
-    "title": "When Evaluating a Past Choice: - Ask Yourself: ",
-    "subtitle": "Focus on Decision Quality",
-    "description": "When evaluating a past choice:\n- Ask yourself: \"Did I make the best decision with the info I had at the time?\"\n- Separate outcomes from process: Focus on how the choice was made, not just how it ended.\n\nExample: A project failed? Instead of blaming yourself entirely, review whether the plan was reasonable based on what you knew then.\n",
+    "title": "Review a Decision Using What Was Known at the Time",
+    "subtitle": "Separate the quality of the process from the luck of the outcome.",
+    "description": "Reconstruct what information was actually available when a decision was made, compare it with the options and constraints considered then, and turn the review into one process improvement for a similar future decision.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -12248,9 +12701,9 @@
   },
   {
     "slug": "oblique-strategies-prompt-cards",
-    "title": "Use Cards with Unique Prompts to Shake up Your Thinking and Refresh Your Approach",
-    "subtitle": "Oblique Strategies",
-    "description": "Use cards with unique prompts to shake up your thinking and refresh your approach to creative challenges. Each card can spark new, unexpected ideas.",
+    "title": "Use One Random Constraint to Break a Creative Stalemate",
+    "subtitle": "Generate a different version before judging it.",
+    "description": "When familiar approaches keep producing the same result, draw or select one bounded prompt, create a reversible alternative for a few minutes, and keep only the part that improves the actual work.",
     "zone": {
       "slug": "be-creative",
       "title": "Be Creative"
@@ -12754,24 +13207,25 @@
   },
   {
     "slug": "pause-to-avoid-anchoring-bias",
-    "title": "When Faced with a Decision, Take a Moment to Step Back and Consider Other",
-    "subtitle": "Pause Before You Decide (Anchoring Bias)",
-    "description": "When faced with a decision, take a moment to step back and consider other pieces of information before settling on the first thing you heard.",
+    "title": "Pause Before Accepting the First Number or Frame",
+    "subtitle": "A short decision check for first-impression anchors",
+    "description": "Before committing to the first number, option, estimate, or framing you encounter, make it explicit, generate an independent alternative, and check the information that matters to the choice.",
     "zone": {
       "slug": "thinking",
       "title": "Thinking"
     },
     "publishedISO": "2025-10-06T11:41:04.219Z",
-    "updatedISO": "2025-10-06T11:41:04.219Z",
+    "updatedISO": "2026-09-12T18:30:00Z",
     "keywords": [
-      "Thinking",
-      "Life OS",
-      "Thinking",
-      "Pause Before You Decide (Anchoring Bias)"
+      "anchoring",
+      "decision check",
+      "alternative estimate",
+      "decision making",
+      "critical thinking"
     ],
     "stats": {
-      "wordCount": 5010,
-      "readingMinutes": 25
+      "wordCount": 430,
+      "readingMinutes": 3
     }
   },
   {
@@ -12886,9 +13340,9 @@
   },
   {
     "slug": "phase-transition-ritual-tracker",
-    "title": "Use Phase Transitions in Your Life, Such as Transitioning from Work to Rest, to",
-    "subtitle": "Transform with Phase Changes",
-    "description": "Use phase transitions in your life, such as transitioning from work to rest, to enhance productivity.",
+    "title": "Create a Clear Handoff Between Two Activities",
+    "subtitle": "Close one mode before starting the next.",
+    "description": "Use a short, ordinary handoff at a recurring boundary—such as work to personal time—to record what is unfinished, reset the environment, and make the first action of the next activity explicit.",
     "zone": {
       "slug": "triz",
       "title": "TRIZ"
@@ -12952,9 +13406,9 @@
   },
   {
     "slug": "plan-tasks-by-peak-energy",
-    "title": "Pay Attention to When You Feel Most Awake and Tackle the Hardest Tasks Then",
-    "subtitle": "Energy-Wise Work",
-    "description": "Pay attention to when you feel most awake and tackle the hardest tasks then. Do lighter work when you feel less energetic.",
+    "title": "Match Demanding Work to Your Own High-Energy Windows",
+    "subtitle": "Observe your pattern before rearranging the calendar.",
+    "description": "Track when demanding work feels easier or harder for several normal days, protect a promising window for one important task, and keep the change only if your own results justify it.",
     "zone": {
       "slug": "do-it",
       "title": "Do It"
@@ -13102,6 +13556,29 @@
     "stats": {
       "wordCount": 4123,
       "readingMinutes": 21
+    }
+  },
+  {
+    "slug": "post-meal-walk",
+    "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+    "subtitle": "A simple movement option with an acute post-meal glucose signal",
+    "description": "When it is safe and practical, replace some sitting after a meal with comfortable walking. Evidence supports an acute effect on post-meal glucose, not a universal walking dose or long-term treatment claim.",
+    "zone": {
+      "slug": "fit-life",
+      "title": "Fit Life"
+    },
+    "publishedISO": "2026-09-11T12:18:00Z",
+    "updatedISO": "2026-09-11T12:18:00Z",
+    "keywords": [
+      "post-meal walk",
+      "walking after meals",
+      "movement",
+      "postprandial glucose",
+      "sedentary time"
+    ],
+    "stats": {
+      "wordCount": 790,
+      "readingMinutes": 4
     }
   },
   {
@@ -13501,6 +13978,30 @@
     }
   },
   {
+    "slug": "prequestions-before-learning",
+    "title": "Ask a Few Questions Before You Start Learning",
+    "subtitle": "Use prequestions to make specific information easier to notice and remember",
+    "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+    "zone": {
+      "slug": "skill-sprint",
+      "title": "Skill Sprint"
+    },
+    "publishedISO": "2026-09-15T05:00:00Z",
+    "updatedISO": "2026-09-15T05:00:00Z",
+    "keywords": [
+      "prequestions",
+      "pretesting",
+      "learning",
+      "memory",
+      "study strategy",
+      "questions before learning"
+    ],
+    "stats": {
+      "wordCount": 814,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "present-bias-check",
     "title": "Avoid Overestimating the Present: - Zoom Out: Ask, “will This Matter in a Year",
     "subtitle": "Balance Present Significance",
@@ -13722,9 +14223,9 @@
   },
   {
     "slug": "process-of-elimination-tracker",
-    "title": "Narrow Down Options by Systematically Ruling Out the Least Viable Ones",
-    "subtitle": "Use Process of Elimination",
-    "description": "Narrow down options by systematically ruling out the least viable ones.",
+    "title": "Use Elimination Rules to Narrow a Decision",
+    "subtitle": "Remove clearly unfit options before comparing what remains.",
+    "description": "Define a few decision constraints, eliminate options that clearly fail them, then compare the smaller remaining set without pretending arbitrary thresholds are universal rules.",
     "zone": {
       "slug": "as-detective",
       "title": "As Detective"
@@ -14074,9 +14575,9 @@
   },
   {
     "slug": "qa-checklist-templates-runbook",
-    "title": "QA Specialists Use Checklists to Ensure Nothing Is Missed",
-    "subtitle": "Use Checklists",
-    "description": "QA specialists use checklists to ensure nothing is missed. Create checklists for your tasks to stay organized and ensure all steps are completed.",
+    "title": "Build a QA Checklist from Real Failure Modes",
+    "subtitle": "Make required checks explicit, observable, and easy to update.",
+    "description": "Turn a recurring QA task into a short checklist with clear expected results, exception handling, an owner, and a revision step when reality exposes a missing check.",
     "zone": {
       "slug": "as-qa",
       "title": "As QA"
@@ -14096,9 +14597,9 @@
   },
   {
     "slug": "qa-clear-feedback-templates",
-    "title": "QA Specialists Provide Clear Feedback",
-    "subtitle": "Clear Communication",
-    "description": "QA specialists provide clear feedback. Practice clear and concise communication in all your interactions to ensure your message is understood.",
+    "title": "Write a QA Report Another Person Can Act On",
+    "subtitle": "State the observed behavior, reproduction context, evidence, and acceptance check.",
+    "description": "Turn a vague defect report into a compact handoff that distinguishes what was observed from what is suspected and gives the receiver enough context to reproduce, investigate, and verify the fix.",
     "zone": {
       "slug": "as-qa",
       "title": "As QA"
@@ -14576,6 +15077,30 @@
     "stats": {
       "wordCount": 4690,
       "readingMinutes": 23
+    }
+  },
+  {
+    "slug": "ready-to-resume-plan",
+    "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+    "subtitle": "Give unfinished work a restart point before your attention moves elsewhere",
+    "description": "When you must leave unfinished work, capture where you stopped, the next concrete action, and one critical restart detail before switching. The goal is a cleaner return, not eliminating every cost of interruption.",
+    "zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "publishedISO": "2026-09-11T19:05:00Z",
+    "updatedISO": "2026-09-11T19:05:00Z",
+    "keywords": [
+      "ready to resume plan",
+      "attention residue",
+      "task switching",
+      "interruption recovery",
+      "unfinished work",
+      "focus"
+    ],
+    "stats": {
+      "wordCount": 760,
+      "readingMinutes": 4
     }
   },
   {
@@ -15657,6 +16182,29 @@
     }
   },
   {
+    "slug": "savor-positive-moment",
+    "title": "Pause Long Enough to Notice a Good Moment",
+    "subtitle": "A small savoring practice without forced positivity",
+    "description": "When something genuinely pleasant is already happening, give it a little deliberate attention instead of rushing past it. This is a conservative savoring practice, not a rule to feel positive or reinterpret difficult experiences.",
+    "zone": {
+      "slug": "be-positive",
+      "title": "Be Positive"
+    },
+    "publishedISO": "2026-09-11T12:16:00Z",
+    "updatedISO": "2026-09-11T12:16:00Z",
+    "keywords": [
+      "savoring",
+      "positive experience",
+      "wellbeing",
+      "attention",
+      "positive emotion"
+    ],
+    "stats": {
+      "wordCount": 760,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "say-no-boundary-coach",
     "title": "Start Declining Requests or Invitations That Don't Match Your Goals or Desires",
     "subtitle": "Learn to Say No",
@@ -16031,6 +16579,30 @@
     }
   },
   {
+    "slug": "self-explain-what-you-learn",
+    "title": "Explain What You Just Learned in Your Own Words",
+    "subtitle": "Use self-explanation to expose gaps and connect ideas instead of only rereading",
+    "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+    "zone": {
+      "slug": "skill-sprint",
+      "title": "Skill Sprint"
+    },
+    "publishedISO": "2026-09-15T05:00:00Z",
+    "updatedISO": "2026-09-15T05:00:00Z",
+    "keywords": [
+      "self-explanation",
+      "learning",
+      "metacognition",
+      "digital learning",
+      "conceptual understanding",
+      "study strategy"
+    ],
+    "stats": {
+      "wordCount": 819,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "self-serving-bias-reflection",
     "title": "Give Yourself Credit When Things Go Well, but Also Acknowledge Your Role When They",
     "subtitle": "Own Your Success (Self-Serving Bias)",
@@ -16142,9 +16714,9 @@
   },
   {
     "slug": "separate-to-decide-decision-evaluator",
-    "title": "Evaluate Options Individually to Reduce Unnecessary Distinctions",
-    "subtitle": "Separate to Decide",
-    "description": "Evaluate options individually to reduce unnecessary distinctions. Here’s how:\n- Look at them one by one: Avoid comparing them side-by-side.\n- Focus on your priorities: Ask which option meets your needs best.\n- Simplify the decision: Don’t overanalyze minor differences.\n\nExample: If choosing between two similar laptops, evaluate one fully before moving to the next instead of flipping between them.\n",
+    "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+    "subtitle": "Keep the criteria stable so side-by-side differences do not rewrite the decision.",
+    "description": "Define the must-have criteria first, inspect each option against the same criteria, record unknowns separately, and compare survivors only after the individual evaluations are complete.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
@@ -17616,9 +18188,9 @@
   },
   {
     "slug": "stop-caffeine-after-lunch",
-    "title": "Stop Drinking Caffeine After Lunch Each Day",
-    "subtitle": "Cut Off Caffeine Early",
-    "description": "Stop drinking caffeine after lunch each day.",
+    "title": "Move Caffeine Earlier When Sleep Matters",
+    "subtitle": "Use dose and bedtime—not lunch—as the boundary",
+    "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
     "zone": {
       "slug": "be-healthy",
       "title": "Be Healthy"
@@ -17881,9 +18453,9 @@
   },
   {
     "slug": "structure-writing-with-visuals",
-    "title": "Use Visual Elements Like Headings, Subheadings, Images, Tables, and Diagrams to Structure Your Text",
-    "subtitle": "Design Your Writing",
-    "description": "Use visual elements like headings, subheadings, images, tables, and diagrams to structure your text. These tools help guide your reader and make your writing more intuitive and engaging.",
+    "title": "Structure Dense Writing for Fast Navigation",
+    "subtitle": "Use headings and visuals only when they answer a reader question.",
+    "description": "Turn a dense draft into a navigable document by giving each section one job and choosing headings, tables, diagrams, or images according to the information the reader needs to inspect.",
     "zone": {
       "slug": "writing",
       "title": "Writing"
@@ -17947,24 +18519,25 @@
   },
   {
     "slug": "sunk-cost-decision-coach",
-    "title": "Don’t Let Past Investments Trap You into Bad Decisions",
-    "subtitle": "Break Free from Sunk Costs",
-    "description": "Don’t let past investments trap you into bad decisions. Here’s how:\n- Pause and evaluate: Ask, “If I hadn’t already invested, would I still continue?”\n- Set a clear stopping point: Define in advance when it’s time to quit.\n- Focus on future gains: Think about what you stand to gain moving forward, not what you’ve lost.\n\nExample: If you’ve spent weeks on a failing project, don’t keep going just to “make it worth it.”\n",
+    "title": "Review a High-Commitment Continue-or-Stop Decision",
+    "subtitle": "A structured comparison for commitments that are hard to reassess",
+    "description": "For a commitment with multiple stakeholders, dependencies, or meaningful switching costs, compare future paths explicitly and document which current facts justify the next step.",
     "zone": {
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
     },
     "publishedISO": "2025-10-06T11:41:04.658Z",
-    "updatedISO": "2025-10-06T11:41:04.658Z",
+    "updatedISO": "2026-09-12T18:33:00Z",
     "keywords": [
-      "Cognitive Biases",
-      "Life OS",
-      "Cognitive Biases",
-      "Break Free from Sunk Costs"
+      "sunk cost",
+      "commitment review",
+      "continue or stop",
+      "switching costs",
+      "decision making"
     ],
     "stats": {
-      "wordCount": 4878,
-      "readingMinutes": 24
+      "wordCount": 450,
+      "readingMinutes": 3
     }
   },
   {
@@ -18208,6 +18781,29 @@
     "stats": {
       "wordCount": 3666,
       "readingMinutes": 18
+    }
+  },
+  {
+    "slug": "temptation-bundling",
+    "title": "Pair a Useful Task with Something You Genuinely Want",
+    "subtitle": "Use an immediate reward to make a delayed-benefit behavior easier to start",
+    "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+    "zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "publishedISO": "2026-09-11T12:32:00Z",
+    "updatedISO": "2026-09-11T12:32:00Z",
+    "keywords": [
+      "temptation bundling",
+      "habit",
+      "task initiation",
+      "exercise",
+      "immediate reward"
+    ],
+    "stats": {
+      "wordCount": 820,
+      "readingMinutes": 4
     }
   },
   {
@@ -18476,9 +19072,9 @@
   },
   {
     "slug": "top-3-daily-focus-planner",
-    "title": "Limit Your Daily Goal List to the Three Most Important Tasks",
-    "subtitle": "Harness the Power of Three",
-    "description": "Limit your daily goal list to the three most important tasks. Focus on completing these tasks before moving on to others.",
+    "title": "Choose Up to Three Priority Outcomes for the Day",
+    "subtitle": "Use a small list as a capacity boundary, not a magic number.",
+    "description": "Choose a small set of outcomes that deserves protected attention today, define what done means, and move the rest to a visible backlog instead of pretending every task is equally urgent.",
     "zone": {
       "slug": "future-builder",
       "title": "Future Builder"
@@ -19579,6 +20175,30 @@
     }
   },
   {
+    "slug": "visible-progress-monitoring",
+    "title": "Make Goal Progress Visible Instead of Guessing",
+    "subtitle": "Track one useful signal closely enough to adjust what you do next",
+    "description": "For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better.",
+    "zone": {
+      "slug": "do-it",
+      "title": "Do It"
+    },
+    "publishedISO": "2026-09-11T19:08:00Z",
+    "updatedISO": "2026-09-11T19:08:00Z",
+    "keywords": [
+      "goal progress monitoring",
+      "progress tracking",
+      "goal attainment",
+      "self monitoring",
+      "visible progress",
+      "feedback loop"
+    ],
+    "stats": {
+      "wordCount": 780,
+      "readingMinutes": 4
+    }
+  },
+  {
     "slug": "vision-board-habit-system",
     "title": "Collect Images, Quotes, and Items That Represent Your Goals and Aspirations",
     "subtitle": "Create a Vision Board",
@@ -19955,9 +20575,9 @@
   },
   {
     "slug": "walking-meeting-assistant",
-    "title": "Have Meetings While Walking, Whether in-Person or over the Phone",
-    "subtitle": "Walk and Talk",
-    "description": "Have meetings while walking, whether in-person or over the phone.",
+    "title": "Turn a Screen-Free Meeting Into a Walking Meeting",
+    "subtitle": "Walk the meeting when the work can travel",
+    "description": "Use a walking meeting to replace part of a long sitting block when the conversation does not require a screen. Evidence supports the movement break, not a special meeting effect.",
     "zone": {
       "slug": "be-healthy",
       "title": "Be Healthy"
@@ -20087,9 +20707,9 @@
   },
   {
     "slug": "weekly-goal-review-coach",
-    "title": "Set Aside Time Each Week to Review Your Progress Towards Your Goals",
-    "subtitle": "Regularly Review Progress",
-    "description": "Set aside time each week to review your progress towards your goals. Adjust your plans as necessary.",
+    "title": "Run a Weekly Review That Produces One Clear Change",
+    "subtitle": "Compare intentions with what actually happened, then update the next week.",
+    "description": "Use a recurring weekly checkpoint to inspect active goals, completed and missed work, constraints, and changing priorities, then turn the review into a small set of concrete scheduling or scope decisions.",
     "zone": {
       "slug": "future-builder",
       "title": "Future Builder"

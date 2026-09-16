@@ -19,6 +19,7 @@ const legacyCorpusMarkers = [
   { id: "free-template", pattern: /we\s+share\s+it\s+for\s+free/i },
   { id: "prototype-mini-apps", pattern: /prototype\s+mini[-‑–— ]?apps?/i },
   { id: "metalhatscats-app-link", pattern: /https:\/\/metalhatscats\.com\/life-os\//i },
+  { id: "lifeos-app-claim", pattern: /life\s?os app(?![a-z])/i },
   { id: "flame-counter", pattern: /flame\s+counter/i },
 ];
 

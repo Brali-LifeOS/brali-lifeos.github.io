@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:avoid-availability-heuristic-decisions",
   "slug": "avoid-availability-heuristic-decisions",
-  "title": "Challenge Yourself to Dig Deeper When Making Decisions",
-  "description": "Challenge yourself to dig deeper when making decisions. Don’t just go with what’s most easily recalled; ask yourself, 'What am I missing?'",
+  "title": "Run a Missing-Evidence Check Before a Decision",
+  "description": "When a vivid or recent example is dominating a decision, separate what is easy to recall from what is representative, then look for one missing denominator, counterexample, or relevant source.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
   "machine_url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:avoid-availability-heuristic-decisions",
+    "language": "en",
+    "slug": "avoid-availability-heuristic-decisions",
+    "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
+    "title": "Run a Missing-Evidence Check Before a Decision",
+    "description": "When a vivid or recent example is dominating a decision, separate what is easy to recall from what is representative, then look for one missing denominator, counterexample, or relevant source.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "thinking"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "thinking",
+      "title": "Thinking"
+    },
+    "action": "Write the example or story currently driving the decision. Ask whether it is representative or simply vivid, recent, or personal. Look for one counterexample and, when the decision warrants it, one relevant denominator, base rate, or source. Update the decision only as far as the new information supports.",
+    "check_in": "What information was easy to recall, what was missing, and did the additional evidence change the decision or only the level of uncertainty?",
+    "keywords": [
+      "Thinking",
+      "Life OS",
+      "Look Beyond the Obvious (Availability Heuristic)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/avoid-availability-heuristic-decisions.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

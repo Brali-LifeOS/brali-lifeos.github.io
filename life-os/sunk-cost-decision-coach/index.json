@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:sunk-cost-decision-coach",
   "slug": "sunk-cost-decision-coach",
-  "title": "Don’t Let Past Investments Trap You into Bad Decisions",
-  "description": "Don’t let past investments trap you into bad decisions. Here’s how: - Pause and evaluate: Ask, “If I hadn’t already invested, would I still continue?” - Set a clear stopping point: Define in advance when it’s time to quit. - Focus on future gains: Think about what you stand to gain moving forward, not what you’ve lost. Example: If you’ve spent weeks on a failing project, don’t keep going just to “make it worth it.”",
+  "title": "Review a High-Commitment Continue-or-Stop Decision",
+  "description": "For a commitment with multiple stakeholders, dependencies, or meaningful switching costs, compare future paths explicitly and document which current facts justify the next step.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/index.json",
   "growth_zone": {
@@ -16,8 +16,8 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
@@ -48,8 +48,71 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:sunk-cost-decision-coach",
+    "language": "en",
+    "slug": "sunk-cost-decision-coach",
+    "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
+    "title": "Review a High-Commitment Continue-or-Stop Decision",
+    "description": "For a commitment with multiple stakeholders, dependencies, or meaningful switching costs, compare future paths explicitly and document which current facts justify the next step.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Define the feasible options. For each option record future cost, expected benefit, dependency or obligation, switching cost, reversibility, and important uncertainty. Ask what you would choose if the unrecoverable past investment were already accepted as history, then reconcile that answer with real current constraints.",
+    "check_in": "Which current facts justify continuing or stopping, which past costs are irrelevant to the next choice, and what uncertainty still matters?",
+    "keywords": [
+      "sunk cost",
+      "commitment review",
+      "continue or stop",
+      "switching costs",
+      "decision making"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": null
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/sunk-cost-decision-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

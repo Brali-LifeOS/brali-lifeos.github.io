@@ -10,21 +10,54 @@
   <link rel="alternate" type="application/json" href="https://brali-lifeos.github.io/skill-packs/catalog.json" title="Trusted Brali Agent Skills catalog">
   <meta name="robots" content="index,follow,max-image-preview:large">
   <meta property="og:type" content="website"><meta property="og:site_name" content="Brali"><meta property="og:title" content="Free AI Agent Skills Library — One Skill per Brali Hack"><meta property="og:description" content="Every Brali hack gets a stable SKILL.md. Trust mode determines whether an agent may use it, review it, or only reference it."><meta property="og:url" content="https://brali-lifeos.github.io/skill-packs/"><meta property="og:image" content="https://brali-lifeos.github.io/assets/images/brali-mascot-hero.png"><meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+  <link rel="icon" href="/assets/images/brali-logo.png"><link rel="stylesheet" href="/styles.css?v=20260822j"><link rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","name":"Brali Complete AI Agent Skills Library","alternateName":"Brali Agent Skills","url":"https://brali-lifeos.github.io/skill-packs/","description":"One generated Agent Skill artifact for every Brali hack, with trust mode preserved.","isAccessibleForFree":true,"license":"https://creativecommons.org/licenses/by-nc-sa/4.0/","keywords":["AI agent skills","Agent Skills","SKILL.md","Claude Code skills","Hermes Agent skills","OpenClaw skills","agent skill library"],"isPartOf":{"@type":"WebSite","name":"Brali","url":"https://brali-lifeos.github.io/"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does every Brali hack have an Agent Skill?","acceptedAnswer":{"@type":"Answer","text":"Yes. The build creates a deterministic SKILL.md, skill.json and stable skill page for every hack in the Brali corpus. New hacks receive a skill automatically on the next build."}},{"@type":"Question","name":"Can every Brali skill be used as practical advice?","acceptedAnswer":{"@type":"Answer","text":"No. Reviewed and practical skills are usable. Pending-review skills exist for review only. Restricted skills are non-operational reference shells. Trust state is preserved inside every skill."}},{"@type":"Question","name":"Can Brali skills be used with Claude Code, Hermes Agent or OpenClaw?","acceptedAnswer":{"@type":"Answer","text":"Yes. Brali emits portable SKILL.md files in the Agent Skills structure, with host-specific installation paths or commands for Claude Code, Hermes Agent and OpenClaw."}}]}]}</script>
   <style>
     .skill-hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr);gap:2rem;align-items:center;padding:3rem 0 2rem}.skill-hero-card,.skill-builder,.skill-result,.skill-note,.host-card{border:1px solid var(--border,#d9d5ca);border-radius:24px;background:var(--surface,#fff);box-shadow:0 16px 50px rgba(24,21,17,.07)}.skill-hero-card{padding:1.4rem}.skill-builder{padding:1.5rem;margin:1.5rem 0}.skill-grid{display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);gap:1.25rem}.skill-list{display:grid;gap:.65rem;max-height:38rem;overflow:auto;padding-right:.25rem}.skill-choice{display:block;width:100%;text-align:left;border:1px solid var(--border,#d9d5ca);background:transparent;border-radius:16px;padding:.9rem 1rem;cursor:pointer}.skill-choice:hover,.skill-choice[aria-current="true"]{transform:translateY(-1px);box-shadow:0 8px 24px rgba(24,21,17,.08)}.skill-choice small{display:block;opacity:.72;margin-top:.3rem}.skill-choice.review-required{border-style:dashed}.skill-choice.restricted-reference{opacity:.78}.skill-result{padding:1.25rem;min-height:20rem}.skill-result pre{white-space:pre-wrap;overflow:auto;max-height:30rem;background:#171717;color:#f6f4ee;border-radius:16px;padding:1rem;font-size:.86rem;line-height:1.5}.skill-actions{display:flex;flex-wrap:wrap;gap:.65rem;margin:1rem 0}.skill-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,.35fr);gap:.75rem;align-items:end;margin:.6rem 0 1rem}.skill-search,.skill-filter{width:100%;font:inherit;padding:.9rem 1rem;border-radius:14px;border:1px solid var(--border,#d9d5ca);background:var(--surface,#fff)}.skill-meta{display:flex;flex-wrap:wrap;gap:.5rem;margin:.7rem 0}.skill-chip{display:inline-flex;padding:.35rem .65rem;border-radius:999px;background:#f2efe8;font-size:.82rem}.skill-note{padding:1.1rem 1.25rem;margin:1.4rem 0}.skill-empty{padding:1rem;border:1px dashed var(--border,#d9d5ca);border-radius:14px}.skill-examples{display:flex;flex-wrap:wrap;gap:.55rem;margin:.8rem 0 1.2rem}.skill-examples a{display:inline-flex;padding:.55rem .8rem;border:1px solid var(--border,#d9d5ca);border-radius:999px;text-decoration:none}.install-box{background:#171717;color:#f6f4ee;border-radius:16px;padding:1rem;overflow:auto}.install-box code{color:inherit}.host-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:1.2rem 0 2rem}.host-card{padding:1.1rem}.host-card h3{margin:.25rem 0 .5rem}.host-card code,.skill-install code{overflow-wrap:anywhere}.verification-line{font-size:.9rem;opacity:.78}.skill-mode-banner{padding:.75rem .9rem;border-radius:14px;margin:.75rem 0}.skill-mode-banner.usable{background:#eef8ef}.skill-mode-banner.review-required{background:#fff8e6}.skill-mode-banner.restricted-reference{background:#f2f0ed}.coverage-strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem;margin:1rem 0}.coverage-strip div{padding:.85rem;border-radius:16px;background:#f7f4ed}.coverage-strip strong{display:block;font-size:1.2rem}.skill-mode-warning{font-size:.92rem}@media(max-width:850px){.skill-hero,.skill-grid,.host-grid,.skill-controls,.coverage-strip{grid-template-columns:1fr}.skill-list{max-height:24rem}}
   </style>
   <script src="/skill-packs/app.js" defer></script>
+  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Brali Updates RSS">
+<!-- brali-consent-analytics -->
+<script>
+(function(w,d,id){
+  var key='brali-analytics-consent-v1';
+  function load(){
+    if(w.__braliGtmLoaded||d.querySelector('script[data-brali-gtm="'+id+'"]'))return;
+    w.__braliGtmLoaded=true;
+    w.dataLayer=w.dataLayer||[];
+    w.dataLayer.push({'gtm.start':new Date().getTime(),event:'gtm.js'});
+    var s=d.createElement('script');
+    s.async=true;
+    s.dataset.braliGtm=id;
+    s.src='https://www.googletagmanager.com/gtm.js?id='+encodeURIComponent(id);
+    d.head.appendChild(s);
+  }
+  w.braliAnalyticsConsent={
+    grant:function(){try{localStorage.setItem(key,'granted');}catch(e){}load();var n=d.getElementById('brali-analytics-consent');if(n)n.remove();},
+    deny:function(){try{localStorage.setItem(key,'denied');}catch(e){}var n=d.getElementById('brali-analytics-consent');if(n)n.remove();}
+  };
+  try{if(localStorage.getItem(key)==='granted')load();}catch(e){}
+})(window,document,'GTM-5TJVLJG9');
+</script>
 </head>
 <body data-brali-cluster="ai">
-<a class="skip" href="#content">Skip to content</a>
-<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/problems/">Problems</a><a href="/life-os/methodology/">Evidence</a><a href="/for-ai/">For AI</a><a class="button" href="/skill-packs/" aria-current="page">Agent Skills</a></div></nav></header>
+<aside id="brali-analytics-consent" data-nosnippet role="dialog" aria-label="Analytics preference" style="position:fixed;z-index:2147483647;right:16px;bottom:16px;width:min(410px,calc(100vw - 32px));padding:17px;border:2px solid #171717;border-radius:16px;background:#fff;color:#171717;font:14px/1.45 system-ui,sans-serif;box-shadow:7px 7px 0 #171717">
+  <strong style="display:block;margin-bottom:6px;font-size:17px">Optional analytics</strong>
+  <span>Allow anonymous usage measurement with Google Analytics? Nothing is sent to Google before you accept.</span>
+  <span style="display:flex;flex-wrap:wrap;gap:8px;margin-top:12px">
+    <button type="button" onclick="braliAnalyticsConsent.grant()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#171717;color:#fff;font:inherit;font-weight:700;cursor:pointer">Allow analytics</button>
+    <button type="button" onclick="braliAnalyticsConsent.deny()" style="padding:8px 12px;border:1px solid #171717;border-radius:999px;background:#fff;color:#171717;font:inherit;font-weight:700;cursor:pointer">Necessary only</button>
+  </span>
+</aside>
+<script>(function(){try{if(localStorage.getItem('brali-analytics-consent-v1')){var n=document.getElementById('brali-analytics-consent');if(n)n.remove();}}catch(e){}})();</script>
+
+<a class="skip" href="#content">Skip to content</a><header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>
 <main id="content" class="page wrap">
   <section class="skill-hero">
     <div>
       <p class="eyebrow">One hack → one Agent Skill · automatic on every build</p>
-      <h1>The whole Brali hack library now has a skill layer.</h1>
+      <h1 class="long-heading">The whole Brali hack library now has a skill layer.</h1>
       <p class="lead">Every Brali hack gets its own stable <code>SKILL.md</code>, machine record and skill page. When a new hack enters the corpus, its skill is generated automatically. Trust state changes what the skill is allowed to do; it never removes the skill identity.</p>
       <div class="skill-actions"><a class="button yellow" href="#catalog">Browse all skills</a><a class="button quiet" href="/skill-packs/library.json">Complete library.json</a><a href="/skill-packs/catalog.json">Trusted catalog.json</a><a href="/life-os/datasets/protocols.json">Trusted Protocol Feed</a></div>
     </div>
@@ -61,6 +94,6 @@
     <h2>Licensing and attribution</h2><p>Original Brali knowledge is available for non-commercial reuse under <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Keep Brali attribution, the canonical record link, evidence state and skill mode. Commercial use requires separate permission. See <a href="/cite/">citation guidance</a> and <a href="/terms/">terms</a>.</p>
   </section>
 </main>
-<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/skill-packs/">Agent Skills</a><a href="/cite/">Cite</a></div></div></footer>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small><small>Maintained by MetalHeadsCats.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div></footer>
 </body>
 </html>

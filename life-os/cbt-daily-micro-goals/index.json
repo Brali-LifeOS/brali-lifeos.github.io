@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:cbt-daily-micro-goals",
   "slug": "cbt-daily-micro-goals",
-  "title": "Set One Small, Achievable Goal for the Day (e",
+  "title": "Set Small Daily Goals",
   "description": "Set one small, achievable goal for the day (e.g., ‘Clean one drawer’ or ‘Call a friend’). Focus on completing it.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/cbt-daily-micro-goals/",
   "machine_url": "https://brali-lifeos.github.io/life-os/cbt-daily-micro-goals/index.json",
@@ -18,7 +18,7 @@
   "evidence": {
     "status": "restricted",
     "indexable": false,
-    "search_indexable": true,
+    "search_indexable": false,
     "sensitive": true,
     "source_recorded": false,
     "source_url": null,
@@ -47,9 +47,20 @@
     }
   },
   "discovery": {
-    "search_indexable": true,
+    "search_indexable": false,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "withheld-review-required",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": false,
+    "display_state": "historical-source-only",
+    "historical_source_url": "/data/life-os-content/cbt-daily-micro-goals.json",
+    "historical_source_role": "provenance-only-not-current-guidance",
+    "search_role": "withheld-review-required"
+  }
 }

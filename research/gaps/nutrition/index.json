@@ -9,9 +9,9 @@
   "question": "Which low-risk food-environment or routine changes have evidence for improving everyday dietary behavior in adults?",
   "evidence_target": "Prefer systematic reviews of behavioral or environmental interventions rather than nutrient-treatment claims.",
   "guardrail": "Keep this general and educational; do not provide individualized nutrition or medical advice.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "reviewed",
+  "stage_label": "Reviewed boundary",
+  "stage_summary": "At least one candidate has a reviewed Evidence Decision, but trusted Topic coverage is not yet sufficient for closure.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/nutrition/",
   "research_queries": [
     {
@@ -22,8 +22,24 @@
       ]
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1186/s12966-026-01915-y",
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "status": "propose-protocol",
+      "publication_date": "2026-04-15",
+      "reference_url": "https://doi.org/10.1186/s12966-026-01915-y"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "if-then-fruit-vegetable-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-01",
+      "source_title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/if-then-fruit-vegetable-boundary-2026/"
+    }
+  ],
   "trusted_protocols": [],
   "resolution": null,
   "coverage": {
@@ -32,6 +48,6 @@
     "domain_id": "health-energy",
     "status": "growth-gap",
     "entries": 0,
-    "research_candidates": 0
+    "research_candidates": 1
   }
 }

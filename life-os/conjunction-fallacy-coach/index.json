@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:conjunction-fallacy-coach",
   "slug": "conjunction-fallacy-coach",
-  "title": "Stick to the More General Explanation",
-  "description": "Stick to the more general explanation. Here’s how: - Simplify scenarios: Ask, “Is this really more specific, or am I overcomplicating it?” - Compare probabilities: The broader condition is usually more likely than the specific one. - Practice skepticism: Question assumptions that add unnecessary detail. Example: If someone says, “Linda is a bank teller and a feminist,” remind yourself that being a bank teller alone is statistically more probable.",
+  "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+  "description": "When one option is A and another is A plus an additional condition B, write the two event sets explicitly and check their logical relationship before letting the more detailed description seem more likely.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -33,14 +33,18 @@
     ],
     "topics": [
       {
-        "id": "cognitive-biases",
-        "title": "Cognitive Biases"
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "data-literacy",
+        "title": "Data Literacy"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +52,73 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:conjunction-fallacy-coach",
+    "language": "en",
+    "slug": "conjunction-fallacy-coach",
+    "url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
+    "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+    "description": "When one option is A and another is A plus an additional condition B, write the two event sets explicitly and check their logical relationship before letting the more detailed description seem more likely.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Identify condition A, identify the additional condition B, write the compound event as A-and-B, and check whether every compound case is already included among the A cases. If so, do not rank the compound event above A merely because the added detail makes the story feel more specific.",
+    "check_in": "What was A, what extra condition did B add, is every A-and-B case already an A case, and did the detailed wording change my initial ranking?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Choose the Simpler Answer"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/conjunction-fallacy-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "language",
   "title": "Language",
-  "description": "Accelerate your language learning with effective techniques.",
+  "description": "Practise vocabulary, retrieval, feedback, and real use instead of collecting language-learning tricks.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/language/",
   "machine_url": "https://brali-lifeos.github.io/life-os/language/index.json",
   "indexable": true,
@@ -14,12 +14,12 @@
   },
   "counts": {
     "library_entries": 17,
-    "trusted_protocols": 1,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 1,
-    "pending_review": 16,
-    "restricted": 0,
-    "mapped_topics": 1,
+    "practical": 2,
+    "pending_review": 14,
+    "restricted": 1,
+    "mapped_topics": 2,
     "research_gaps": 0
   },
   "topics": [
@@ -28,6 +28,12 @@
       "title": "Language Learning",
       "count": 17,
       "url": "https://brali-lifeos.github.io/ontology/topics/language-learning/"
+    },
+    {
+      "id": "skill-learning",
+      "title": "Skill Learning",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/skill-learning/"
     }
   ],
   "research_gaps": [],
@@ -36,6 +42,12 @@
       "slug": "10-minute-language-microsprints",
       "title": "Practice One Small Language Skill for a Short Session",
       "url": "https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "contextual-language-coach",
+      "title": "Rehearse One Real Language Scenario",
+      "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
       "evidence_status": "practical"
     }
   ],
@@ -51,13 +63,6 @@
       "slug": "language-win-tracker",
       "title": "At the End of Each Day, Note One Accomplishment, Like Using a New Word",
       "url": "https://brali-lifeos.github.io/life-os/language-win-tracker/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "contextual-language-coach",
-      "title": "Choose a Real-Life Scenario to Practice (e",
-      "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -102,6 +107,13 @@
       "url": "https://brali-lifeos.github.io/life-os/language-reading-ladder/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "contextual-language-coach",
+      "title": "Rehearse One Real Language Scenario",
+      "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "sentence-rephrase-coach",
@@ -149,7 +161,7 @@
       "slug": "ai-speaking-practice-tracker",
       "title": "Use the AI Tutor in the Metkagram for Regular Speaking Practice",
       "url": "https://brali-lifeos.github.io/life-os/ai-speaking-practice-tracker/",
-      "evidence_status": "pending-review",
+      "evidence_status": "restricted",
       "indexable": false
     },
     {

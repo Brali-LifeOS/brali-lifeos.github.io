@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:clarity-ladder-analyzer",
   "slug": "clarity-ladder-analyzer",
-  "title": "Move Between Abstract Concepts and Concrete Details to Clarify Your Message",
-  "description": "Move between abstract concepts and concrete details to clarify your message. Start with a broad idea and provide specific examples to illustrate it, or vice versa.",
+  "title": "Connect a General Point to a Concrete Example",
+  "description": "State the general point, add a concrete example or observable detail that belongs to it, connect the example back to the point, and remove specifics that do not help the audience understand the message or next action.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
   "machine_url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "communication-relationships",
         "title": "Communication & Relationships"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
       }
     ],
     "topics": [
       {
         "id": "clear-communication",
         "title": "Clear Communication"
+      },
+      {
+        "id": "writing",
+        "title": "Writing"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "communication-relationships",
       "growth_zone_slug": "talk-smart"
@@ -48,8 +56,77 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:clarity-ladder-analyzer",
+    "language": "en",
+    "slug": "clarity-ladder-analyzer",
+    "url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
+    "title": "Connect a General Point to a Concrete Example",
+    "description": "State the general point, add a concrete example or observable detail that belongs to it, connect the example back to the point, and remove specifics that do not help the audience understand the message or next action.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        },
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        },
+        {
+          "id": "writing",
+          "title": "Writing"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Write the main point in plain language, choose an example, observation, step or verified figure that illustrates it, explain the connection in one sentence, and remove details that do not change understanding or action. If you began with a detail, reverse the sequence by stating the broader point it supports.",
+    "check_in": "What is the general point, which concrete detail makes it easier to understand, what does that detail show here, and which specifics can be removed without changing the meaning?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Climb the Ladder of Abstraction"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/clarity-ladder-analyzer.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -9,9 +9,9 @@
   "question": "Which metacognitive strategies improve calibration, learning choices, or error detection rather than just confidence?",
   "evidence_target": "Prefer systematic reviews and experiments that measure calibration or downstream performance.",
   "guardrail": "Do not treat introspection or confidence ratings as accurate self-knowledge by default.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/metacognition/",
   "research_queries": [
     {
@@ -20,14 +20,70 @@
       "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1007/s10462-026-11665-9",
+      "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "status": "support-existing",
+      "publication_date": "2026-08-25",
+      "reference_url": "https://doi.org/10.1007/s10462-026-11665-9"
+    },
+    {
+      "id": "crossref:10.1007/s10648-025-10001-x",
+      "title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "status": "propose-protocol",
+      "publication_date": "2025-03-08",
+      "reference_url": "https://doi.org/10.1007/s10648-025-10001-x"
+    },
+    {
+      "id": "crossref:10.1007/s10648-025-10075-7",
+      "title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "status": "propose-protocol",
+      "publication_date": "2025-12-10",
+      "reference_url": "https://doi.org/10.1007/s10648-025-10075-7"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "genai-learning-augmentation-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-05",
+      "source_title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/genai-learning-augmentation-boundary-2026/"
+    },
+    {
+      "id": "prequestions-targeted-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/prequestions-targeted-learning-boundary-2025/"
+    },
+    {
+      "id": "self-explanation-digital-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/self-explanation-digital-learning-boundary-2025/"
+    }
+  ],
   "trusted_protocols": [
+    {
+      "slug": "prequestions-before-learning",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "ask-for-feedback-tracker",
       "title": "Ask for Feedback on One Specific Decision",
       "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
       "evidence_status": "practical"
+    },
+    {
+      "slug": "ai-learning-attempt-feedback-retest",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+      "evidence_status": "reviewed"
     },
     {
       "slug": "decision-calibration-journal",
@@ -42,9 +98,21 @@
       "evidence_status": "reviewed"
     },
     {
+      "slug": "self-explain-what-you-learn",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "evidence_status": "reviewed"
+    },
+    {
       "slug": "belief-update-coach",
       "title": "Record What Would Change a Belief",
       "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
       "evidence_status": "practical"
     }
   ],
@@ -54,7 +122,7 @@
     "title": "Metacognition",
     "domain_id": "learning-thinking",
     "status": "growth-gap",
-    "entries": 4,
-    "research_candidates": 0
+    "entries": 8,
+    "research_candidates": 3
   }
 }

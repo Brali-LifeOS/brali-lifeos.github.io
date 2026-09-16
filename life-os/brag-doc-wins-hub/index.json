@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:brag-doc-wins-hub",
   "slug": "brag-doc-wins-hub",
-  "title": "Keep a Log of Your Achievements to Track Progress and Celebrate Milestones",
-  "description": "Keep a log of your achievements to track progress and celebrate milestones. Use the app to: - Write down every small or big win, like completing a task, reaching a goal, or overcoming a challenge. - Review your achievements regularly to see how far you’ve come. - Use this log to identify patterns of success and areas where you excel. This helps you build confidence and stay motivated.",
+  "title": "Keep a Work Wins Log You Can Reuse",
+  "description": "Record completed work, solved problems, decisions, useful contributions and recoveries in a compact log so you can retrieve concrete examples for reviews, resumes, proposals, retrospectives and planning.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
   "machine_url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Work, Money & Strategy"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      },
       {
         "id": "work-money",
         "title": "Work & Money"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "information-management",
+        "title": "Information Management"
+      },
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +52,8 @@
         "title": "Chess"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "work-money-strategy",
       "growth_zone_slug": "grandmaster"
@@ -48,8 +61,88 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "information-management",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:brag-doc-wins-hub",
+    "language": "en",
+    "slug": "brag-doc-wins-hub",
+    "url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
+    "title": "Keep a Work Wins Log You Can Reuse",
+    "description": "Record completed work, solved problems, decisions, useful contributions and recoveries in a compact log so you can retrieve concrete examples for reviews, resumes, proposals, retrospectives and planning.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "information-management",
+          "title": "Information Management"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "chess",
+          "title": "Chess"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "work-money-strategy",
+        "growth_zone_slug": "grandmaster"
+      }
+    },
+    "life_area": {
+      "slug": "work-money-strategy",
+      "title": "Work, Money & Strategy"
+    },
+    "growth_zone": {
+      "slug": "grandmaster",
+      "title": "Grandmaster"
+    },
+    "action": "After a meaningful piece of work, add a short entry with the situation, your contribution, the concrete result or current state, and one or two tags. During a review, retrieve entries that match the purpose and verify any figures or claims before reusing them.",
+    "check_in": "What changed, what did I contribute, what detail will I need later, and is the entry specific enough to reuse without exaggeration?",
+    "keywords": [
+      "Grandmaster",
+      "Life OS",
+      "Achievement Log: Track Your Milestones"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/brag-doc-wins-hub.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

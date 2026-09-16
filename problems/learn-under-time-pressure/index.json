@@ -1,9 +1,16 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-15",
+  "canonical_id": "brali:problem:learn-under-time-pressure",
   "slug": "learn-under-time-pressure",
+  "acquisition_cluster_id": null,
   "title": "Learn something useful when study time is limited",
   "question": "How do I learn effectively when I do not have much time?",
+  "aliases": [
+    "learn effectively with little time",
+    "study when time is limited",
+    "practice instead of cramming more material"
+  ],
   "summary": "Prioritize retrieval, targeted practice, feedback, and application instead of trying to consume more material.",
   "canonical_url": "https://brali-lifeos.github.io/problems/learn-under-time-pressure/",
   "json_url": "https://brali-lifeos.github.io/problems/learn-under-time-pressure/index.json",
@@ -53,10 +60,10 @@
       "canonical_id": "brali:protocol:active-recall-test-yourself",
       "slug": "active-recall-test-yourself",
       "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
-      "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-      "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
+      "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+      "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
       "evidence": {
         "status": "reviewed",
         "source_recorded": true,
@@ -68,47 +75,34 @@
         "skill-learning"
       ],
       "is_flagship_100": true,
-      "relevance_score": 270
-    },
-    {
-      "canonical_id": "brali:protocol:spaced-recall-coach",
-      "slug": "spaced-recall-coach",
-      "url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/",
-      "title": "Separate Review Sessions Instead of Cramming",
-      "description": "For verbal material you need to recall later, divide repeated study across separate sessions instead of concentrating the same planned review into one sitting. Choose the gap in relation to the intended retention period, then check recall and adjust rather than following one universal schedule.",
-      "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
-      "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
-        "reviewed_at": "2026-08-22"
-      },
-      "topic_ids": [
-        "memory"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 170
-    },
-    {
-      "canonical_id": "brali:protocol:avoid-list-interference-memory-retention",
-      "slug": "avoid-list-interference-memory-retention",
-      "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
-      "title": "Try Quiet Wakeful Rest After Learning",
-      "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
-      "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
-      "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
-        "reviewed_at": "2026-08-18"
-      },
-      "topic_ids": [
-        "memory"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 170
+      "fit": "best-fit",
+      "when": "The immediate target is remembering learned material and you can check attempted answers against a trustworthy source.",
+      "why": "Retrieval exposes what is actually available from memory so limited study time can be directed toward misses instead of familiarity.",
+      "caveat": "Recall is not the same as application; add a representative performance task when the real outcome is doing, judging, speaking, calculating, or producing.",
+      "gold_review": {
+        "reviewed_at": "2026-09-05",
+        "review_status": "gold-ready",
+        "first_action": "Choose three to five things you genuinely need to remember, close the source, and try to produce the first answer before looking.",
+        "observable_signal": "Whether the learner can produce the target information without looking, identify and correct misses, and—if application matters—complete a separate representative application task.",
+        "eligibility": [
+          "The target includes information, rules, concepts, vocabulary, or other material that the person needs to retrieve from memory.",
+          "The learner can compare the attempted answer with a trustworthy source or worked answer soon after retrieval.",
+          "The task is low-risk enough that practice errors can be corrected before the knowledge is used in a consequential setting."
+        ],
+        "when_not_to_use": [
+          "Do not use memory recall alone as a substitute for supervised practice, competency assessment, or expert review in safety-critical, clinical, legal, financial, or other consequential work.",
+          "Do not assume recall practice by itself trains application, procedural execution, fluent production, judgment, or transfer to a new problem.",
+          "Do not keep guessing from memory when the material has not first been learned well enough to provide a meaningful retrieval target; learn or clarify the source first."
+        ],
+        "evidence_boundary": {
+          "status": "reviewed",
+          "statement": "Applied classroom research supports retrieval practice as a useful strategy for learning and retention. Brali keeps the claim outcome-specific: later remembering is not the same as later application, and the broad label testing effect can combine distinct direct and forward effects.",
+          "source_decision_ids": [
+            "testing-effect-direct-forward-2026",
+            "retrieval-procedural-application-2026"
+          ]
+        }
+      }
     },
     {
       "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
@@ -128,9 +122,116 @@
         "skill-learning"
       ],
       "is_flagship_100": true,
-      "relevance_score": 140
+      "fit": "alternative",
+      "when": "Limited time is being fragmented across too many topics rather than one specific learning target.",
+      "why": "A narrow theme and visible artifact reduce scattering and tie new input to observed friction.",
+      "caveat": "A one-week frame is an organizational convenience, not an optimal learning schedule or proof of mastery.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "Choose one narrow learning theme and one visible end-of-week artifact, then make the first small practice attempt before collecting more resources.",
+        "observable_signal": "Whether real practice attempts occurred, a visible artifact or demonstration exists, recurring friction is identifiable, and the learner can name a useful next practice decision.",
+        "eligibility": [
+          "The learner can choose one narrow low-risk skill or topic that can be practiced through small attempts during the week.",
+          "A visible end-of-week artifact or demonstration can represent progress without pretending to measure mastery.",
+          "The learner can reduce scope when the week gets crowded and can inspect errors, friction, or unanswered questions after practice."
+        ],
+        "when_not_to_use": [
+          "Do not treat one week, a daily streak, or a fixed number of practice sessions as a scientifically optimal learning schedule.",
+          "Do not use a narrow weekly theme as a substitute for qualified supervision, feedback, or assessment where errors are high stakes.",
+          "Do not spend the week collecting resources when the target requires actual recall, production, problem solving, or performance practice."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is a practical learning-organization template. Brali does not claim that a one-week theme, daily reps, three resources, or this exact loop is an evidence-backed optimal schedule for learning or retention.",
+          "source_decision_ids": []
+        }
+      }
+    },
+    {
+      "canonical_id": "brali:protocol:10-minute-language-microsprints",
+      "slug": "10-minute-language-microsprints",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-language-microsprints/",
+      "title": "Practice One Small Language Skill for a Short Session",
+      "description": "Use a short study session to practice one narrow language skill such as recalling a few words, listening to a short clip, or speaking a brief response. Ten minutes is a convenient starting point, not a required dose.",
+      "action": "Pick one narrow language task, such as reviewing a few phrases, listening to a short clip, reading a small passage, or recording a brief spoken answer. Practice for a short session and finish with one note about what to revisit next.",
+      "check_in": "What did I practice, what could I recall or understand without help, and what is the next small thing worth repeating?",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
+      },
+      "topic_ids": [
+        "language-learning"
+      ],
+      "is_flagship_100": true,
+      "fit": "alternative",
+      "when": "The target is language practice and a small session boundary would reduce setup friction.",
+      "why": "It requires a real recall, comprehension, or production attempt instead of spending the short session reorganizing study materials.",
+      "caveat": "Ten minutes is not a minimum effective dose or complete curriculum; important errors still need reliable feedback.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "Pick one language skill small enough to attempt now, set a short session boundary, and begin with an act of recall, comprehension, or production rather than reorganizing study materials.",
+        "observable_signal": "Whether the learner completed a real recall, comprehension, or production attempt; what could be done without help; which errors were corrected; and whether the next practice target became clearer.",
+        "eligibility": [
+          "The learner can choose one narrow low-risk language target such as recalling a few words, understanding a short clip, reading a small passage, pronunciation practice, or one brief spoken response.",
+          "A short session would reduce setup friction and the learner has material or prompts that are good enough to use now.",
+          "The learner can check at least part of the attempt against a trustworthy answer, transcript, dictionary, teacher, or other feedback source when accuracy matters."
+        ],
+        "when_not_to_use": [
+          "Do not treat ten minutes as a minimum effective dose, a complete daily curriculum, or a guarantee of retention, fluency, pronunciation improvement, or proficiency growth.",
+          "Do not rely on short unsupervised practice alone for high-stakes interpreting, safety-critical communication, formal assessment, or errors that require qualified feedback.",
+          "Do not let choosing apps, reorganizing decks, or tracking streaks consume most of the practice boundary."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is a practical session-design template, not an efficacy claim about a ten-minute dose. Brali does not currently attach reviewed evidence establishing that short sessions of this exact format are optimal or that they produce a predictable improvement in vocabulary, fluency, pronunciation, or adherence.",
+          "source_decision_ids": []
+        }
+      }
     }
   ],
+  "answer_packet": {
+    "schema_version": 1,
+    "canonical_id": "brali:problem:learn-under-time-pressure",
+    "problem": "How do I learn effectively when I do not have much time?",
+    "canonical_url": "https://brali-lifeos.github.io/problems/learn-under-time-pressure/",
+    "best_fit": {
+      "canonical_id": "brali:protocol:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "when": "The immediate target is remembering learned material and you can check attempted answers against a trustworthy source.",
+      "why": "Retrieval exposes what is actually available from memory so limited study time can be directed toward misses instead of familiarity.",
+      "caveat": "Recall is not the same as application; add a representative performance task when the real outcome is doing, judging, speaking, calculating, or producing.",
+      "first_action": "Choose three to five things you genuinely need to remember, close the source, and try to produce the first answer before looking.",
+      "evidence_state": "reviewed"
+    },
+    "alternatives": [
+      {
+        "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
+        "slug": "weekly-theme-learning-sprints",
+        "title": "Spend Each Week Focused on a Single Theme",
+        "when": "Limited time is being fragmented across too many topics rather than one specific learning target.",
+        "why": "A narrow theme and visible artifact reduce scattering and tie new input to observed friction.",
+        "caveat": "A one-week frame is an organizational convenience, not an optimal learning schedule or proof of mastery.",
+        "first_action": "Choose one narrow learning theme and one visible end-of-week artifact, then make the first small practice attempt before collecting more resources.",
+        "evidence_state": "practical"
+      },
+      {
+        "canonical_id": "brali:protocol:10-minute-language-microsprints",
+        "slug": "10-minute-language-microsprints",
+        "title": "Practice One Small Language Skill for a Short Session",
+        "when": "The target is language practice and a small session boundary would reduce setup friction.",
+        "why": "It requires a real recall, comprehension, or production attempt instead of spending the short session reorganizing study materials.",
+        "caveat": "Ten minutes is not a minimum effective dose or complete curriculum; important errors still need reliable feedback.",
+        "first_action": "Pick one language skill small enough to attempt now, set a short session boundary, and begin with an act of recall, comprehension, or production rather than reorganizing study materials.",
+        "evidence_state": "practical"
+      }
+    ],
+    "stop_rule": "Do not interpret one successful recall session as proof of durable mastery. Use delayed checks or real application when the stakes justify it."
+  },
   "evidence_decisions": [
     {
       "id": "distributed-practice-verbal-recall-boundary-2006",
@@ -167,44 +268,53 @@
       ]
     },
     {
-      "id": "retrieval-procedural-application-2026",
-      "decision": "challenge-existing",
-      "reviewed_at": "2026-08-18",
-      "source_title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
-      "source_url": "https://www.sciencedirect.com/science/article/pii/S0959475226000629",
-      "supported_claim": "Adding retrieval practice to worked examples improved long-term retention of the spelling rules in this classroom study, but the combined group did not outperform worked examples alone on correct rule application after one week.",
+      "id": "genai-learning-augmentation-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-05",
+      "source_title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+      "source_url": "https://link.springer.com/article/10.1007/s10462-026-11665-9",
+      "supported_claim": "Brali should not treat generative AI as a learning intervention by itself. In this highly heterogeneous literature, the apparent positive pooled effect did not survive robust publication-bias correction, while more informative moderator evidence suggested that outcomes depend partly on what cognitive work the learner still performs. This supports the existing human-first AI collaboration principle in learning contexts: preserve a meaningful learner attempt, explanation, retrieval, reasoning or verification step and use AI to extend or refine that activity rather than silently replacing the activity being learned.",
       "unsupported_or_overstated_claims": [
-        "Remembering a rule better means a learner can apply it better.",
-        "Retrieval practice alone is sufficient practice for procedural skill application.",
-        "This one primary-school spelling study establishes a general failure of retrieval practice for transfer or skill learning.",
-        "The specific classroom protocol should be copied as a universal learning recipe."
+        "Generative AI has been shown to improve STEM learning overall.",
+        "Human-first AI workflows are proven superior for every learning task; the review compared heterogeneous instructional designs rather than one canonical Brali workflow.",
+        "AI substitution is always harmful or augmentation is always beneficial.",
+        "The meta-analysis establishes an optimal prompt, model, tutoring script, feedback style or amount of AI assistance.",
+        "Knowledge outcomes are universally improved while skill outcomes are not; substantial residual heterogeneity remained within categories.",
+        "A large effect reported in an individual AI-learning study should be assumed causal when intervention and control groups performed different levels of cognitive activity.",
+        "The findings establish long-term skill retention, transfer to real work, or independent performance after AI is removed.",
+        "The results generalize unchanged beyond STEM education."
       ],
       "limitations": [
-        "The sample was 105 fourth-grade pupils learning Dutch verb spelling in a small number of intact classes and schools.",
-        "The comparison tested retrieval practice added to worked examples, not retrieval practice in isolation.",
-        "The target was one form of procedural knowledge and the study does not establish identical boundaries in other domains or age groups.",
-        "The result supports separating retention from application outcomes, not concluding that retrieval practice is ineffective for complex learning generally."
+        "Between-study heterogeneity was extreme (I²=96.32%), and the prediction interval included negative, null and strongly positive true effects.",
+        "Funnel-plot asymmetry and the Robust Bayesian Meta-Analysis indicated substantial publication bias; after correction the evidence favored no stable overall positive or negative main effect.",
+        "The review's risk-of-bias assessment found high risk across included studies, with no study meeting the low-risk criteria.",
+        "Many studies used cognitively incomparable intervention and control conditions; the authors identified numerous apparently large effects where this comparison problem was present.",
+        "Most studies used text-based systems and many were conducted in higher education, limiting generalization to other learners, modalities and tasks.",
+        "AI literacy, metacognitive skill, delegation behavior, prompt quality and verification behavior were often underreported, leaving important mechanisms unresolved.",
+        "Evidence about learner challenges and instructional supports was sparse and inconsistently reported, so those qualitative findings should not be turned into general effect estimates.",
+        "Moderator patterns explained only part of the heterogeneity and did not produce a sufficient if-then configuration that guaranteed large effects."
       ]
     },
     {
-      "id": "testing-effect-direct-forward-2026",
-      "decision": "challenge-existing",
-      "reviewed_at": "2026-08-18",
-      "source_title": "Research on the testing effect routinely conflates direct and forward testing effects: A meta-analysis of testing effects with free recall",
-      "source_url": "https://pubmed.ncbi.nlm.nih.gov/42258276/",
-      "supported_claim": "Retrieval practice can improve memory, but the literature commonly labeled as the testing effect mixes at least two distinct effects. In this meta-analysis, 66% of included testing effects came from mixed studies and 34% from direct studies, with mixed studies producing larger effects.",
+      "id": "prequestions-targeted-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+      "supported_claim": "Prequestions can improve later learning of the specific information they target. The meta-analysis reported g = 0.66 for prequestioned information and g = 0.01 for non-prequestioned information; feedback alongside prequestions was associated with stronger targeted learning.",
       "unsupported_or_overstated_claims": [
-        "A single undifferentiated testing-effect estimate describes one coherent memory phenomenon.",
-        "Evidence from a mixed design can automatically be interpreted as a direct benefit for the tested material.",
-        "Retrieval practice has the same mechanism or effect across tested material and subsequently learned material.",
-        "A broad testing-effect citation is sufficient evidence for skill transfer or correct application."
+        "Prequestions improve learning of the entire lesson.",
+        "Any question asked before learning will be beneficial.",
+        "There is one evidence-backed optimal number of prequestions.",
+        "A wrong first answer is itself sufficient without later exposure or correction.",
+        "Prequestions replace retrieval practice, practice problems, or feedback after learning."
       ],
       "limitations": [
-        "The meta-analysis focuses on free-recall testing-effect studies rather than every form of retrieval practice or every educational outcome.",
-        "Its main contribution is separation of direct and forward effects; it does not negate the broader evidence that retrieval practice can support retention.",
-        "The reported mixture of study designs means older aggregate claims may need narrower interpretation rather than wholesale rejection."
+        "The average benefit is specific to prequestioned information rather than a broad benefit to all content.",
+        "The meta-analysis does not establish one universal question count, timing rule, or content format.",
+        "Effect sizes summarize heterogeneous studies and do not guarantee the same result for an individual learning session."
       ]
     }
   ],
-  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+  "trust_note": "Recommendations come only from protocols that are both trusted in the Brali Protocol Feed and manually Gold-ready. The problem-to-protocol fit is editorial decision logic; it is not a claim that one sequence is universally best."
 }

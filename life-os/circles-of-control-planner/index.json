@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:circles-of-control-planner",
   "slug": "circles-of-control-planner",
-  "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+  "title": "Separate Outcomes From Actions You Can Control",
   "description": "Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
   "machine_url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/index.json",
@@ -65,17 +65,20 @@
     "research_gaps": [
       {
         "topic_id": "decision-making",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:circles-of-control-planner",
     "language": "en",
     "slug": "circles-of-control-planner",
     "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-    "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+    "title": "Separate Outcomes From Actions You Can Control",
     "description": "Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control.",
     "ontology": {
       "domains": [
@@ -133,5 +136,13 @@
       "source_url": null,
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/circles-of-control-planner.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

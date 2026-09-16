@@ -22,14 +22,27 @@
   ],
   "candidates": [],
   "evidence_decisions": [],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "ergonomic-workspace-assessment",
+      "title": "Audit Workspace Friction Before Buying More Gear",
+      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "2-minute-desk-tidy-timer",
+      "title": "Do a Short Desk Reset",
+      "url": "https://brali-lifeos.github.io/life-os/2-minute-desk-tidy-timer/",
+      "evidence_status": "practical"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "workspace",
     "title": "Workspace",
     "domain_id": "environment-digital",
     "status": "growth-gap",
-    "entries": 2,
+    "entries": 3,
     "research_candidates": 0
   }
 }

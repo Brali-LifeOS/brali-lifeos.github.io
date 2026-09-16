@@ -18,29 +18,35 @@
     "hack": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
     "zone": "No Depression",
     "zoneSlug": "no-depression",
-    "whatYouDo": "When you notice stress building, consider taking a short walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. Walk at a comfortable pace in a safe place, then notice whether you feel any different before returning to the next task.",
-    "checkIn": "Did I take the walk? How did my stress or tension feel before and after, and did the walk feel safe and useful enough to try again?",
-    "reference": "World Health Organization — Stress (30 March 2026)",
-    "sourceUrl": "https://www.who.int/news-room/questions-and-answers/item/stress/"
+    "whatYouDo": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+    "checkIn": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
+    "reference": "Liu X, Sun Z, Wang X, Dong D, Samsudin SB. Effects of green exercise on mental health: a systematic review and meta-analysis. Frontiers in Psychology. 2026;17:1802759.",
+    "sourceUrl": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full"
   },
   "faq": [
     {
       "id": "10-minute-stress-walk-faq-1",
       "question": "Does the walk need to last exactly 10 minutes?",
-      "answer": "No. Ten minutes is a convenient practical boundary, not a universal therapeutic dose. WHO guidance emphasizes that physical activity includes walking and that any amount of activity is better than none; choose a duration that is realistic and appropriate for you.",
-      "answerHtml": "<p>No. Ten minutes is a convenient practical boundary, not a universal therapeutic dose. WHO guidance emphasizes that physical activity includes walking and that any amount of activity is better than none; choose a duration that is realistic and appropriate for you.</p>"
+      "answer": "No. Ten minutes is a convenient practical boundary, not a universal therapeutic dose. The 2026 green-exercise review included varied interventions and did not establish an optimal duration. Choose a duration that is realistic and appropriate for you.",
+      "answerHtml": "<p>No. Ten minutes is a convenient practical boundary, not a universal therapeutic dose. The 2026 green-exercise review included varied interventions and did not establish an optimal duration. Choose a duration that is realistic and appropriate for you.</p>"
     },
     {
       "id": "10-minute-stress-walk-faq-2",
-      "question": "Will a short walk always reduce stress immediately?",
-      "answer": "No. WHO includes regular exercise, including walking, among strategies that can help reduce stress, and physical activity can support mental health and wellbeing. That does not mean every short walk will produce an immediate or measurable reduction in stress for every person.",
-      "answerHtml": "<p>No. WHO includes regular exercise, including walking, among strategies that can help reduce stress, and physical activity can support mental health and wellbeing. That does not mean every short walk will produce an immediate or measurable reduction in stress for every person.</p>"
+      "question": "Is a park or forest necessary?",
+      "answer": "No. Randomized studies in the 2026 review used different natural or greener settings, and the review does not justify a route hierarchy for an individual. If a safe tree-lined or greener route is equally convenient, it is reasonable to test it. Do not turn a reset walk into a commute to the perfect forest.",
+      "answerHtml": "<p>No. Randomized studies in the 2026 review used different natural or greener settings, and the review does not justify a route hierarchy for an individual. If a safe tree-lined or greener route is equally convenient, it is reasonable to test it. Do not turn a reset walk into a commute to the perfect forest.</p>"
     },
     {
       "id": "10-minute-stress-walk-faq-3",
-      "question": "What should I track in Brali?",
-      "answer": "Keep it simple: whether you walked, roughly how long, and how your stress or tension felt before and after. Use your own repeated observations to decide whether this is a useful reset for you rather than chasing a target percentage or step count.",
-      "answerHtml": "<p>Keep it simple: whether you walked, roughly how long, and how your stress or tension felt before and after. Use your own repeated observations to decide whether this is a useful reset for you rather than chasing a target percentage or step count.</p>"
+      "question": "Will a green walk always reduce stress immediately?",
+      "answer": "No. Across randomized and crossover-randomized studies, green exercise improved wellbeing and affect on average compared with non-exercise, indoor exercise and built-up outdoor exercise, but results varied across studies and people. Treat the route choice as a low-cost option, not a guaranteed acute treatment.",
+      "answerHtml": "<p>No. Across randomized and crossover-randomized studies, green exercise improved wellbeing and affect on average compared with non-exercise, indoor exercise and built-up outdoor exercise, but results varied across studies and people. Treat the route choice as a low-cost option, not a guaranteed acute treatment.</p>"
+    },
+    {
+      "id": "10-minute-stress-walk-faq-4",
+      "question": "What should I track in your tracker?",
+      "answer": "Keep it simple: whether you walked, roughly how long, whether the route was relatively green, and how your stress or tension felt before and after. Over several tries, compare whether greener routes seem more useful for you. That is a personal signal, not proof that greenery caused the difference.",
+      "answerHtml": "<p>Keep it simple: whether you walked, roughly how long, whether the route was relatively green, and how your stress or tension felt before and after. Over several tries, compare whether greener routes seem more useful for you. That is a personal signal, not proof that greenery caused the difference.</p>"
     }
   ],
   "meta": {
@@ -52,7 +58,7 @@
   },
   "body": {
     "intro": {
-      "html": "<p>A short walk can be a simple way to step away from a stressful moment and add some physical activity to the day. WHO guidance on stress includes regular exercise, including walking, among strategies that can help reduce stress. WHO also recognizes walking as a common form of physical activity that can support mental health and wellbeing. Brali treats this as a small experiment, not a guaranteed treatment: walk when it is safe and practical, then observe what happens for you.</p>"
+      "html": "<p>A short walk can be a simple way to step away from a stressful moment and add some physical activity to the day. A 2026 systematic review of randomized and crossover-randomized trials found that exercise in greener settings improved wellbeing and affect on average compared with non-exercise, indoor exercise and exercise in more built-up outdoor settings. That makes a green route a sensible optional modifier when it is already convenient. It does not make trees a treatment, ten minutes a magic dose, or a forest pilgrimage a productivity requirement.</p>"
     },
     "sections": [
       {
@@ -62,32 +68,39 @@
       },
       {
         "slug": "choose-a-safe-walk",
-        "title": "2. Choose a safe, easy route",
-        "html": "<p>Walk somewhere safe and practical: outside, through a building, or along another familiar route. A comfortable walk is enough. You do not need a special pace, step count, heart-rate target, staircase interval or calorie goal for this protocol.</p>"
+        "title": "2. Choose the easiest safe route",
+        "html": "<p>Start with safety and friction. Pick a familiar route that is easy to take now. If two routes are similarly safe and convenient, the 2026 randomized-trial meta-analysis gives you a reason to prefer the greener one. It does not give you a reason to add a long detour, search for a forest, chase a vegetation score or ignore weather and accessibility.</p>"
+      },
+      {
+        "slug": "understand-green-route",
+        "title": "3. Know what the green-route evidence actually says",
+        "html": "<p>The review pooled 51 randomized or crossover-randomized studies involving 3,092 healthy adults. Green exercise produced better average wellbeing and affect than non-exercise, indoor exercise and exercise in built-up outdoor settings. The comparison is useful, but the studies varied in settings, exercise formats and outcomes, and some pooled results had substantial heterogeneity. The review also does not isolate one mechanism: movement, surroundings, attention, expectations and their interaction are not neatly separated. So the practical claim is modest: when a greener route costs you essentially nothing, it is worth trying.</p>"
       },
       {
         "slug": "use-ten-minutes-as-a-boundary",
-        "title": "3. Treat ten minutes as a boundary, not a dose",
-        "html": "<p>If ten minutes fits the moment, use it as a simple timer. If less time is available, a shorter walk can still count as physical activity. WHO guidance emphasizes that all physical activity counts and that some activity is better than none. Brali therefore does not claim that ten minutes is an optimal duration for acute stress relief.</p>"
+        "title": "4. Treat ten minutes as a boundary, not a dose",
+        "html": "<p>If ten minutes fits the moment, use it as a simple timer. If less time is available, take the shorter walk. The green-exercise review did not establish a minimum effective duration or an optimal dose, and WHO guidance emphasizes that all physical activity counts. Ten minutes is interface convenience, not a biological threshold.</p>"
       },
       {
         "slug": "leave-the-walk-simple",
-        "title": "4. Keep the walk simple",
-        "html": "<p>You do not need to combine the walk with prescribed breathing ratios, productivity targets or a complicated reflection exercise. The experiment is deliberately small: leave the stressful context for a short walk, then return and notice whether anything changed.</p>"
+        "title": "5. Keep the walk simple",
+        "html": "<p>You do not need a pace target, heart-rate zone, prescribed breathing ratio, forced mindfulness routine or phone ritual for this protocol. Those additions may be useful in other contexts, but they are not required by the evidence reviewed here. Walk comfortably, let the context change happen, then return.</p>"
       },
       {
         "slug": "check-in-afterward",
-        "title": "5. Check in after the walk",
-        "html": "<p>In Brali, record whether you walked and how your stress or tension felt before and after. A simple personal rating or short note is enough. Do not expect a fixed percentage improvement. After several attempts, review whether walking tends to be useful for you, neutral, or inconvenient in the situations where you tried it.</p>"
+        "title": "6. Check what happened, not what should have happened",
+        "html": "<p>Record a quick before-and-after impression of stress or tension and whether returning to the next task felt easier. If you naturally use both ordinary and greener routes, compare them over several attempts. This is an N-of-1 observation, not a causal trial, but it is more useful than assuming an average study effect must apply to you.</p>"
       },
       {
         "slug": "know-the-limit",
-        "title": "6. Know what this protocol is not",
-        "html": "<p>A short walk is general wellbeing guidance, not treatment for depression, anxiety or another mental-health condition. If stress is persistent, severe, difficult to cope with or significantly affecting your life, use appropriate professional support rather than relying on this protocol alone. Choose physical activity that is suitable for your health and circumstances.</p>"
+        "title": "7. Know where the evidence stops",
+        "html": "<p>The review mainly informs short-term mental-health and affect outcomes after green exercise. It does not prove that a short green walk treats depression or anxiety, prevents burnout, improves long-term mental health, or works through a specific nervous-system pathway. If stress is persistent, severe, difficult to cope with or significantly affecting your life, use appropriate professional support rather than relying on this protocol alone. Choose physical activity that is suitable for your health and circumstances.</p>"
       }
     ]
   },
   "references": [
+    "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+    "https://doi.org/10.3389/fpsyg.2026.1802759",
     "https://www.who.int/news-room/questions-and-answers/item/stress/",
     "https://www.who.int/health-topics/physical-activity/physical-activity",
     "https://www.nhs.uk/mental-health/self-help/guides-tools-and-activities/exercise-for-depression/"
@@ -95,9 +108,9 @@
   "editorialCuration": {
     "status": "curated",
     "evidenceStatus": "reviewed",
-    "reviewedAt": "2026-08-18",
+    "reviewedAt": "2026-09-13",
     "reviewedBy": "Brali editorial agent",
-    "reason": "Replace an inherited stress-walking article containing unsupported percentages, heart-rate claims, calorie estimates, adherence claims, breathing prescriptions and invented internal observations with a conservative walking protocol grounded in current WHO and NHS guidance. Walking is presented as one accessible form of physical activity that may support wellbeing and stress management, not as a guaranteed acute treatment or a precise ten-minute dose.",
+    "reason": "Strengthen the existing conservative stress-walk protocol with a full-source-reviewed 2026 systematic review and meta-analysis of randomized and crossover-randomized trials of green exercise. The new evidence supports treating a safe green route as an optional modifier for short-term wellbeing and affect, while preserving the existing boundaries: ten minutes is not an evidence-defined dose, a forest is not required, effects are not guaranteed, and the review does not establish a unique biological mechanism or long-term treatment effect.",
     "registry": "protocol-content-overrides-stress-walk.json"
   }
 }

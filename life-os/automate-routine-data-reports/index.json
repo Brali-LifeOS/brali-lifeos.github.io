@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:automate-routine-data-reports",
   "slug": "automate-routine-data-reports",
-  "title": "Data Analysts Automate Routine Reports",
-  "description": "Data analysts automate routine reports. Use automation tools to generate regular reports on your progress, goals, or any other relevant data.",
+  "title": "Automate a Routine Report with Validation and Fallback",
+  "description": "Automate a stable reporting workflow only after defining source ownership, transformations, validation rules, freshness, failure handling, and a manual fallback.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/",
   "machine_url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:automate-routine-data-reports",
+    "language": "en",
+    "slug": "automate-routine-data-reports",
+    "url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/",
+    "title": "Automate a Routine Report with Validation and Fallback",
+    "description": "Automate a stable reporting workflow only after defining source ownership, transformations, validation rules, freshness, failure handling, and a manual fallback.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "data-literacy",
+          "title": "Data Literacy"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "data"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "data",
+      "title": "Data"
+    },
+    "action": "Map the report consumer, source data, transformations and delivery step. Define validation rules for schema, completeness, freshness and key totals. Build a small automated path with logging and a visible failure state, keep a manual fallback, and stop publication when validation fails.",
+    "check_in": "Did the automated report use the expected source, pass validation, arrive on time, and fail visibly when an assumption broke?",
+    "keywords": [
+      "Data",
+      "Life OS",
+      "Automate Reports"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/automate-routine-data-reports.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

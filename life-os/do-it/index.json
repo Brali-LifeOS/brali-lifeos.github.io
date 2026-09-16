@@ -3,35 +3,151 @@
   "type": "brali-growth-zone",
   "slug": "do-it",
   "title": "Do It",
-  "description": "Discover tricks to finish tasks faster so you can have more time for fun.",
+  "description": "Reduce the friction between intending and starting: clearer next actions, better cues, and fewer productivity rituals.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/do-it/",
   "machine_url": "https://brali-lifeos.github.io/life-os/do-it/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "focus-execution",
     "title": "Focus & Execution"
   },
   "counts": {
-    "library_entries": 22,
-    "trusted_protocols": 0,
-    "reviewed": 0,
-    "practical": 0,
-    "pending_review": 22,
-    "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "library_entries": 28,
+    "trusted_protocols": 9,
+    "reviewed": 6,
+    "practical": 3,
+    "pending_review": 18,
+    "restricted": 1,
+    "mapped_topics": 8,
+    "research_gaps": 3
   },
   "topics": [
     {
       "id": "task-initiation",
       "title": "Task Initiation",
-      "count": 22,
+      "count": 25,
       "url": "https://brali-lifeos.github.io/ontology/topics/task-initiation/"
+    },
+    {
+      "id": "habits-consistency",
+      "title": "Habits & Consistency",
+      "count": 3,
+      "url": "https://brali-lifeos.github.io/ontology/topics/habits-consistency/"
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/attention-focus/"
+    },
+    {
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/digital-attention/"
+    },
+    {
+      "id": "goals",
+      "title": "Goals",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/goals/"
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/planning-prioritization/"
+    },
+    {
+      "id": "environment-design",
+      "title": "Environment Design",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/environment-design/"
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/movement/"
     }
   ],
-  "research_gaps": [],
-  "trusted_protocols": [],
+  "research_gaps": [
+    {
+      "topic_id": "attention-focus",
+      "title": "Attention & Focus",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/attention-focus/"
+    },
+    {
+      "topic_id": "digital-attention",
+      "title": "Digital Attention",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/digital-attention/"
+    },
+    {
+      "topic_id": "movement",
+      "title": "Movement",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/movement/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "communication-blocks-scheduler",
+      "title": "Batch Routine Messages Around Real Response Obligations",
+      "url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "batch-similar-tasks-planner",
+      "title": "Batch Similar Tasks When Switching Is the Problem",
+      "url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ready-to-resume-plan",
+      "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+      "url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "visible-progress-monitoring",
+      "title": "Make Goal Progress Visible Instead of Guessing",
+      "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "grayscale-phone-friction",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "url": "https://brali-lifeos.github.io/life-os/grayscale-phone-friction/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "plan-tasks-by-peak-energy",
+      "title": "Match Demanding Work to Your Own High-Energy Windows",
+      "url": "https://brali-lifeos.github.io/life-os/plan-tasks-by-peak-energy/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "temptation-bundling",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "if-then-rules-productivity",
+      "title": "Turn a Good Intention into an If-Then Plan",
+      "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+      "evidence_status": "reviewed"
+    }
+  ],
   "entries": [
     {
       "slug": "dress-for-productivity-routine",
@@ -48,6 +164,27 @@
       "indexable": false
     },
     {
+      "slug": "batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "communication-blocks-scheduler",
+      "title": "Batch Routine Messages Around Real Response Obligations",
+      "url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "batch-similar-tasks-planner",
+      "title": "Batch Similar Tasks When Switching Is the Problem",
+      "url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "learn-during-chores-with-podcasts",
       "title": "Combine Simple Tasks, Like Listening to Educational Podcasts While Doing Chores",
       "url": "https://brali-lifeos.github.io/life-os/learn-during-chores-with-podcasts/",
@@ -58,13 +195,6 @@
       "slug": "pre-task-focus-primer",
       "title": "Get Focused",
       "url": "https://brali-lifeos.github.io/life-os/pre-task-focus-primer/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "batch-similar-tasks-planner",
-      "title": "Group Similar Tasks and Do Them Together",
-      "url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -118,6 +248,13 @@
       "indexable": false
     },
     {
+      "slug": "ready-to-resume-plan",
+      "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+      "url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
       "slug": "short-meeting-optimizer",
       "title": "Limit Meetings to 15 or 30 Minutes with a Clear Agenda",
       "url": "https://brali-lifeos.github.io/life-os/short-meeting-optimizer/",
@@ -132,23 +269,37 @@
       "indexable": false
     },
     {
+      "slug": "visible-progress-monitoring",
+      "title": "Make Goal Progress Visible Instead of Guessing",
+      "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
+      "slug": "grayscale-phone-friction",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "url": "https://brali-lifeos.github.io/life-os/grayscale-phone-friction/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
       "slug": "plan-tasks-by-peak-energy",
-      "title": "Pay Attention to When You Feel Most Awake and Tackle the Hardest Tasks Then",
+      "title": "Match Demanding Work to Your Own High-Energy Windows",
       "url": "https://brali-lifeos.github.io/life-os/plan-tasks-by-peak-energy/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "temptation-bundling",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "optimize-morning-deep-work",
       "title": "Schedule Hard Mental Work During the 1–4 Hours After Waking up in the Morning",
       "url": "https://brali-lifeos.github.io/life-os/optimize-morning-deep-work/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "communication-blocks-scheduler",
-      "title": "Schedule Specific Times to Check Your Messages and Emails",
-      "url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -174,10 +325,17 @@
       "indexable": false
     },
     {
+      "slug": "if-then-rules-productivity",
+      "title": "Turn a Good Intention into an If-Then Plan",
+      "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
       "slug": "boost-focus-with-40hz-binaural-beats",
       "title": "Use Binaural Beats at a 40 Hertz Frequency If You’re Struggling to Focus",
       "url": "https://brali-lifeos.github.io/life-os/boost-focus-with-40hz-binaural-beats/",
-      "evidence_status": "pending-review",
+      "evidence_status": "restricted",
       "indexable": false
     },
     {

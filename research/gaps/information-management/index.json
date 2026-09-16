@@ -9,9 +9,9 @@
   "question": "Which capture and retrieval practices help people find and use information without creating excessive maintenance overhead?",
   "evidence_target": "Prefer HCI, personal-information-management, and knowledge-work studies with retrieval or task outcomes.",
   "guardrail": "Avoid productivity claims based only on system complexity or number of notes captured.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/information-management/",
   "research_queries": [
     {
@@ -20,16 +20,69 @@
       "risk_flags": []
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
-  "trusted_protocols": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1016/j.giq.2026.102106",
+      "title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "status": "propose-protocol",
+      "publication_date": "2026-06",
+      "reference_url": "https://doi.org/10.1016/j.giq.2026.102106"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "records-maintenance-precommitment-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-04",
+      "source_title": "Using behavioral science to improve compliance in government records management: Evidence from a large field experiment",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/records-maintenance-precommitment-boundary-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "choose-best-resources",
+      "title": "Choose Resources for the Next Concrete Step",
+      "url": "https://brali-lifeos.github.io/life-os/choose-best-resources/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ai-structured-extraction-check",
+      "title": "Extract a Table with AI, Then Sample-Check the Rows",
+      "url": "https://brali-lifeos.github.io/life-os/ai-structured-extraction-check/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "brag-doc-wins-hub",
+      "title": "Keep a Work Wins Log You Can Reuse",
+      "url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "chunk-complex-ideas-for-clarity",
+      "title": "Organize Complex Information Around One Decision",
+      "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ai-source-summary-verification",
+      "title": "Summarize with AI, Then Reconcile Against the Source",
+      "url": "https://brali-lifeos.github.io/life-os/ai-source-summary-verification/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "common-source-radar",
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
+      "evidence_status": "practical"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "information-management",
     "title": "Information Management",
     "domain_id": "environment-digital",
     "status": "growth-gap",
-    "entries": 0,
-    "research_candidates": 0
+    "entries": 6,
+    "research_candidates": 1
   }
 }

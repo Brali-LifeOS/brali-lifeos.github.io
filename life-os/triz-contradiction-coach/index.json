@@ -70,10 +70,21 @@
       },
       {
         "topic_id": "creative-problem-solving",
-        "stage": "discovery-ready",
+        "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
       }
-    ]
+    ],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/triz-contradiction-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

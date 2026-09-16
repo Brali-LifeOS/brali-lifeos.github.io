@@ -582,6 +582,12 @@
       "title": "Quantum (legacy analogy)",
       "description": "Legacy conceptual material retained for historical compatibility. Quantum mechanics must not be used as scientific evidence for self-help or cognition claims.",
       "status": "legacy-only"
+    },
+    {
+      "id": "ai-collaboration",
+      "title": "AI Collaboration",
+      "description": "Use AI as a bounded collaborator for drafting, exploration, transformation, critique, and checking while keeping verification, judgment, privacy, and target human skills explicit.",
+      "status": "active"
     }
   ],
   "legacy_zone_map": {
@@ -780,6 +786,10 @@
     "stratagema": {
       "kind": "lens",
       "target_id": "classical-strategy"
+    },
+    "using-ai": {
+      "kind": "lens",
+      "target_id": "ai-collaboration"
     }
   }
 }

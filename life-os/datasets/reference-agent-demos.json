@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "api_version": "v1",
   "name": "Brali Reference Agent Demos",
   "description": "Deterministic practical-agent examples generated from the same static API and trust rules external consumers can use.",
@@ -24,7 +24,7 @@
         "schema_version": 1,
         "contract": {
           "api_version": "v1",
-          "dataset_version": "1.0.0",
+          "dataset_version": "1.1.0",
           "static_api": true
         },
         "question": "How can I make enough room for sleep without turning my schedule into a rigid optimization experiment?",
@@ -54,9 +54,51 @@
               "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
               "record_url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/"
             }
+          },
+          {
+            "canonical_id": "brali:protocol:stop-caffeine-after-lunch",
+            "slug": "stop-caffeine-after-lunch",
+            "title": "Move Caffeine Earlier When Sleep Matters",
+            "action": "For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance.",
+            "check_in": "When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days?",
+            "topic_ids": [
+              "sleep-circadian",
+              "health-basics"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+              "record_url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/"
+            }
           }
         ],
         "evidence_boundaries": [
+          {
+            "canonical_id": "brali:evidence-decision:caffeine-dose-timing-sleep-boundary-2025",
+            "id": "caffeine-dose-timing-sleep-boundary-2025",
+            "decision": "support-existing",
+            "supported_claim": "Caffeine timing should be interpreted together with dose rather than as one universal after-lunch rule. In this small randomized crossover trial, a single 400 mg dose disrupted multiple objective sleep measures when taken within 12 hours of bedtime, with larger disruption closer to bedtime; no statistically significant sleep effect was detected for 100 mg at the tested 12-, 8-, and 4-hour timings. For Brali, this supports moving large late-day caffeine doses earlier when sleep matters and using bedtime-relative timing rather than a fixed clock cutoff.",
+            "limitations": [
+              "The sample was small (23 participants) and included only healthy men aged 18–40, limiting generalizability to women, older adults, adolescents, people with sleep disorders, and other populations.",
+              "Participants were moderate habitual caffeine users; results may differ in people with very low, very high, or irregular caffeine exposure.",
+              "The intervention used acute standardized caffeine capsules rather than the variable doses, ingredients, absorption patterns, and repeated servings found in real-world caffeinated products.",
+              "The study tested only two caffeine doses and three pre-bed timing points, so it cannot define a continuous or personalized cutoff.",
+              "Sleep was measured with in-home partial polysomnography rather than full laboratory polysomnography.",
+              "A nonsignificant result for 100 mg in this sample is not proof of no effect for every individual, especially given known variability in caffeine pharmacokinetics and sensitivity."
+            ],
+            "unsupported_or_overstated_claims": [
+              "Everyone should stop caffeine at 1 p.m. or immediately after lunch.",
+              "A 100 mg dose four hours before bedtime is safe or sleep-neutral for every person.",
+              "Twelve hours is a scientifically established cutoff for every caffeine dose or pattern of use.",
+              "People can infer whether they metabolize caffeine quickly from whether they fall asleep after an afternoon coffee.",
+              "The study establishes an ideal daily caffeine dose, a body-weight dosing range, or a morning dosing schedule.",
+              "The trial tested ordinary coffee, tea, energy drinks, or repeated real-world servings rather than standardized caffeine capsules.",
+              "A personal sleep log can establish a causal individual caffeine dose-response curve."
+            ],
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+            "citation_text": "Gardiner CL, Weakley J, Burke LM, et al. Sleep. 2025;48(4):zsae230."
+          },
           {
             "canonical_id": "brali:evidence-decision:sleep-opportunity-extension-2021",
             "id": "sleep-opportunity-extension-2021",
@@ -107,6 +149,18 @@
             "arguments": {
               "id": "ideal-sleep-hours-finder"
             }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:stop-caffeine-after-lunch"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "stop-caffeine-after-lunch"
+            }
           }
         ],
         "note": "Run these calls through any MCP client connected to mcp/server.mjs. Preserve evidence state and source/boundary fields in downstream answers."
@@ -132,7 +186,7 @@
         "schema_version": 1,
         "contract": {
           "api_version": "v1",
-          "dataset_version": "1.0.0",
+          "dataset_version": "1.1.0",
           "static_api": true
         },
         "question": "How can I use active recall to remember what I study, and what are its evidence boundaries?",
@@ -148,27 +202,11 @@
         },
         "recommendations": [
           {
-            "canonical_id": "brali:protocol:spaced-recall-coach",
-            "slug": "spaced-recall-coach",
-            "title": "Separate Review Sessions Instead of Cramming",
-            "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
-            "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
-            "topic_ids": [
-              "memory"
-            ],
-            "evidence_state": "reviewed",
-            "provenance": {
-              "kind": "reviewed-source",
-              "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
-              "record_url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/"
-            }
-          },
-          {
             "canonical_id": "brali:protocol:active-recall-test-yourself",
             "slug": "active-recall-test-yourself",
-            "title": "Use Active Recall for Retention, Then Practice Application",
-            "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-            "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+            "title": "Active Recall: Close the Notes and Make Memory Work",
+            "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+            "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
             "topic_ids": [
               "memory",
               "skill-learning"
@@ -184,7 +222,7 @@
             "canonical_id": "brali:protocol:avoid-list-interference-memory-retention",
             "slug": "avoid-list-interference-memory-retention",
             "title": "Try Quiet Wakeful Rest After Learning",
-            "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+            "action": "When you finish a focused memory-heavy learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. Do not use the pause as a substitute for self-testing, active review, or other learning methods.",
             "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
             "topic_ids": [
               "memory"
@@ -194,6 +232,22 @@
               "kind": "reviewed-source",
               "source_url": "https://link.springer.com/article/10.3758/s13423-025-02778-3",
               "record_url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/"
+            }
+          },
+          {
+            "canonical_id": "brali:protocol:spaced-recall-coach",
+            "slug": "spaced-recall-coach",
+            "title": "Separate Review Sessions Instead of Cramming",
+            "action": "Choose one set of verbal material and decide how long you need to retain it. Split the planned repetitions across at least two sessions separated by time. Use a longer gap when the required retention period is longer, then check final recall and adjust the next schedule instead of treating one interval as universally optimal.",
+            "check_in": "Did I separate the study episodes rather than cram them together, and did the chosen gap fit the period over which I needed to remember the material?",
+            "topic_ids": [
+              "memory"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1037/0033-2909.132.3.354",
+              "record_url": "https://brali-lifeos.github.io/life-os/spaced-recall-coach/"
             }
           }
         ],
@@ -299,6 +353,29 @@
             "citation_text": "Rowland CA. Psychological Bulletin. 2014;140(6):1432-1463."
           },
           {
+            "canonical_id": "brali:evidence-decision:wakeful-rest-complex-learning-challenge-2026",
+            "id": "wakeful-rest-complex-learning-challenge-2026",
+            "decision": "challenge-existing",
+            "supported_claim": "The existing Brali wakeful-rest protocol must not promise better comprehension or long-term retention for complex educational reading. In this more ecologically valid randomized study, eight minutes of post-reading wakeful rest did not produce a consistent advantage over social media, math or similar-text reading on immediate or one-week factual and conceptual tests. Keep the protocol narrow: it is an optional declarative-memory tactic, not a general learning upgrade.",
+            "limitations": [
+              "The study used one expository learning task in a university-student population.",
+              "The wakeful-rest condition used an autogenic-training implementation and therefore does not represent every possible quiet-rest procedure.",
+              "Only one eight-minute post-learning duration was tested.",
+              "The delayed test used different but conceptually aligned questions rather than identical items from the immediate test.",
+              "A single null study cannot establish absence of a wakeful-rest effect across all complex learning tasks or populations."
+            ],
+            "unsupported_or_overstated_claims": [
+              "This single study proves that wakeful rest never helps learning.",
+              "Social-media use immediately after learning is harmless in every setting.",
+              "All post-learning distractor tasks are equivalent.",
+              "Autogenic training or guided rest is ineffective for every outcome.",
+              "The null classroom result cancels the broader declarative-memory meta-analysis.",
+              "The findings generalize unchanged beyond university students and the specific expository material tested."
+            ],
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12945945/",
+            "citation_text": "Seban P, Šikl R, Prošek T, Urban K. Psychological Research. 2026;90:42."
+          },
+          {
             "canonical_id": "brali:evidence-decision:wakeful-rest-memory-2026",
             "id": "wakeful-rest-memory-2026",
             "decision": "propose-protocol",
@@ -342,18 +419,6 @@
           {
             "tool": "get_protocol",
             "arguments": {
-              "id": "brali:protocol:spaced-recall-coach"
-            }
-          },
-          {
-            "tool": "get_evidence",
-            "arguments": {
-              "id": "spaced-recall-coach"
-            }
-          },
-          {
-            "tool": "get_protocol",
-            "arguments": {
               "id": "brali:protocol:active-recall-test-yourself"
             }
           },
@@ -373,6 +438,18 @@
             "tool": "get_evidence",
             "arguments": {
               "id": "avoid-list-interference-memory-retention"
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:spaced-recall-coach"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "spaced-recall-coach"
             }
           }
         ],
@@ -394,7 +471,7 @@
         "schema_version": 1,
         "contract": {
           "api_version": "v1",
-          "dataset_version": "1.0.0",
+          "dataset_version": "1.1.0",
           "static_api": true
         },
         "question": "I am procrastinating on a difficult task. What is a small way to get started?",
@@ -410,23 +487,103 @@
         },
         "recommendations": [
           {
-            "canonical_id": "brali:protocol:ad-astra-per-aspera-motivation-tracker",
-            "slug": "ad-astra-per-aspera-motivation-tracker",
-            "title": "Use a Short Phrase to Choose the Next Step",
-            "action": "When you feel stuck, pause and repeat a short phrase once. Name what is difficult in plain language, then choose one action that is small enough to begin now. Skip the phrase if it feels hollow, pressuring or unrelated to the real problem.",
-            "check_in": "What was difficult, what action did I choose, and did the phrase help me begin or should I use a different cue next time?",
+            "canonical_id": "brali:protocol:temptation-bundling",
+            "slug": "temptation-bundling",
+            "title": "Pair a Useful Task with Something You Genuinely Want",
+            "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+            "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
             "topic_ids": [
+              "habits-consistency",
+              "task-initiation",
+              "movement"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+              "record_url": "https://brali-lifeos.github.io/life-os/temptation-bundling/"
+            }
+          },
+          {
+            "canonical_id": "brali:protocol:if-then-rules-productivity",
+            "slug": "if-then-rules-productivity",
+            "title": "Turn a Good Intention into an If-Then Plan",
+            "action": "Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work.",
+            "check_in": "Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed?",
+            "topic_ids": [
+              "goals",
+              "habits-consistency",
               "task-initiation"
             ],
-            "evidence_state": "practical",
+            "evidence_state": "reviewed",
             "provenance": {
-              "kind": "brali-reviewed-record",
-              "source_url": null,
-              "record_url": "https://brali-lifeos.github.io/life-os/ad-astra-per-aspera-motivation-tracker/"
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+              "record_url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/"
+            }
+          },
+          {
+            "canonical_id": "brali:protocol:ready-to-resume-plan",
+            "slug": "ready-to-resume-plan",
+            "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+            "action": "Use this only when unfinished work is about to be interrupted or deliberately parked. Before switching, capture three pieces of information in whatever format fits the task: your current state, the next concrete action, and one critical detail or open question that would otherwise have to be reconstructed. Then switch. When you return, read the note and start from the recorded next action rather than re-scanning the entire task.",
+            "check_in": "When I returned, could I identify the next action quickly, or did I still have to reconstruct the task from scratch?",
+            "topic_ids": [
+              "attention-focus",
+              "task-initiation",
+              "planning-prioritization"
+            ],
+            "evidence_state": "reviewed",
+            "provenance": {
+              "kind": "reviewed-source",
+              "source_url": "https://doi.org/10.1287/orsc.2017.1184",
+              "record_url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/"
             }
           }
         ],
-        "evidence_boundaries": [],
+        "evidence_boundaries": [
+          {
+            "canonical_id": "brali:evidence-decision:ready-to-resume-interruption-boundary-2018",
+            "id": "ready-to-resume-interruption-boundary-2018",
+            "decision": "propose-protocol",
+            "supported_claim": "When unfinished work must be interrupted, a short resumption plan can reduce attention residue and protect performance in the studied interruption contexts.",
+            "limitations": [
+              "The evidence comes from a small set of controlled interruption studies and does not represent every form of complex, collaborative or high-stakes real-world work.",
+              "A ready-to-resume plan can mitigate attention residue in the studied contexts; it does not make task switching cost-free or imply that avoidable interruptions should be accepted.",
+              "The research supports making a concrete resumption plan, not Brali's exact three-prompt note format, note length, writing medium or timing rule.",
+              "The studies do not establish a universal productivity percentage, a guaranteed performance benefit, or the same effect for every individual and task."
+            ],
+            "unsupported_or_overstated_claims": [
+              "It eliminates all switching costs.",
+              "There is a validated exact three-line template.",
+              "It has a known universal productivity percentage."
+            ],
+            "source_url": "https://doi.org/10.1287/orsc.2017.1184",
+            "citation_text": null
+          },
+          {
+            "canonical_id": "brali:evidence-decision:temptation-bundling-exercise-boundary-2020",
+            "id": "temptation-bundling-exercise-boundary-2020",
+            "decision": "propose-protocol",
+            "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+            "limitations": [
+              "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+              "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+              "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+              "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+              "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+            ],
+            "unsupported_or_overstated_claims": [
+              "Temptation bundling works equally well for every habit.",
+              "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+              "A reward should always be restricted exclusively to the target behavior.",
+              "The technique reliably creates permanent habits.",
+              "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+            ],
+            "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+            "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020."
+          }
+        ],
         "safety": {
           "blocked_from_normal_recommendation": false
         }
@@ -447,13 +604,37 @@
           {
             "tool": "get_protocol",
             "arguments": {
-              "id": "brali:protocol:ad-astra-per-aspera-motivation-tracker"
+              "id": "brali:protocol:temptation-bundling"
             }
           },
           {
             "tool": "get_evidence",
             "arguments": {
-              "id": "ad-astra-per-aspera-motivation-tracker"
+              "id": "temptation-bundling"
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:if-then-rules-productivity"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "if-then-rules-productivity"
+            }
+          },
+          {
+            "tool": "get_protocol",
+            "arguments": {
+              "id": "brali:protocol:ready-to-resume-plan"
+            }
+          },
+          {
+            "tool": "get_evidence",
+            "arguments": {
+              "id": "ready-to-resume-plan"
             }
           }
         ],
@@ -473,7 +654,7 @@
         "schema_version": 1,
         "contract": {
           "api_version": "v1",
-          "dataset_version": "1.0.0",
+          "dataset_version": "1.1.0",
           "static_api": true
         },
         "question": "I have severe depression. What treatment should I follow without seeing a professional?",

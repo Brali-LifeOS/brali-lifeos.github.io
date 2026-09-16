@@ -1,9 +1,16 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-15",
+  "canonical_id": "brali:problem:resume-after-interruption",
   "slug": "resume-after-interruption",
+  "acquisition_cluster_id": "focus-after-interruption",
   "title": "Resume useful work after interruptions derail the day",
   "question": "How do I recover after interruptions without losing the rest of the day?",
+  "aliases": [
+    "how to refocus after an interruption",
+    "recover concentration after notifications",
+    "get back to work after task switching"
+  ],
   "summary": "Use a small re-entry sequence: recover context, choose the next action, then protect a short restart block.",
   "canonical_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/",
   "json_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/index.json",
@@ -50,25 +57,50 @@
   "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints.",
   "protocols": [
     {
-      "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
-      "slug": "refocus-present-stop-mind-wandering",
-      "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
-      "title": "Deliberate Attention Switching with Everyday Sounds",
-      "description": "Use several neutral sounds around you to practice deliberately selecting one sound, switching to another, and then noticing several at once. Treat this as an attention-flexibility drill, not a treatment for worry, anxiety, or another condition.",
-      "action": "Find a safe place with several ordinary sounds. Attend closely to one sound without needing to block the others. Deliberately switch to a second and then a third sound. Finish by broadening attention so several sounds can be noticed together. Keep the exercise brief and stop when you choose.",
-      "check_in": "Could you intentionally select, switch, and broaden attention? Record the skill you practiced, not whether worry or another symptom changed.",
+      "canonical_id": "brali:protocol:25-minute-pomodoro-focus-sprints",
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+      "title": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break",
+      "description": "Work in focused 25-minute intervals (Pomodoros) followed by a 5-minute break. After four Pomodoros, take a longer break.",
+      "action": "Pick one concrete outcome, work on it for one 25-minute focus block, take a short break, and then decide whether another block is useful. Treat 25 minutes as a starting setting, not a scientifically optimal duration.",
+      "check_in": "Did I work on the intended outcome? What interrupted me, and should the next focus block be shorter, the same, or longer?",
       "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://pubmed.ncbi.nlm.nih.gov/42344681/",
-        "reviewed_at": "2026-08-20"
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-18"
       },
       "topic_ids": [
-        "attention-focus",
-        "metacognition"
+        "goals"
       ],
       "is_flagship_100": true,
-      "relevance_score": 170
+      "fit": "best-fit",
+      "when": "Context is recovered and you need one protected restart boundary for a concrete task.",
+      "why": "The protocol turns re-entry into one bounded outcome instead of asking you to recover an entire lost day at once.",
+      "caveat": "Adjust the block length to the work; do not use protected focus where monitoring or immediate response is required.",
+      "gold_review": {
+        "reviewed_at": "2026-09-05",
+        "review_status": "gold-ready",
+        "first_action": "Write one observable outcome for the next block, then start with a twenty-five-minute focus boundary only as a familiar default.",
+        "observable_signal": "Whether the intended outcome moved forward, which interruptions occurred, and whether the chosen focus boundary made returning to or continuing the task easier.",
+        "eligibility": [
+          "The user has one concrete low-risk work or study outcome that can be advanced during a bounded focus block.",
+          "A timer or deliberate stopping point would reduce ambiguity without creating a safety or operational problem.",
+          "The user is willing to adjust the block length from experience rather than treating twenty-five minutes as a universal rule."
+        ],
+        "when_not_to_use": [
+          "Do not use a focus timer where continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes deliberate disengagement inappropriate.",
+          "Do not interpret twenty-five minutes of work or a five-minute break as a scientifically optimal dose; the reviewed evidence does not test the full Pomodoro sequence.",
+          "Do not use block completion as a productivity score when the chosen task requires collaboration, waiting, exploration, or another outcome that is not well represented by uninterrupted solo work."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is a practical focus-boundary protocol, not an evidence-backed twenty-five-minute dose. A systematic review of micro-breaks supports only a narrow recovery boundary: short breaks were associated on average with small improvements in vigor and fatigue, while overall performance benefit was not reliable and the full Pomodoro sequence was not tested.",
+          "source_decision_ids": [
+            "microbreak-wellbeing-performance-boundary-2022"
+          ]
+        }
+      }
     },
     {
       "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
@@ -89,58 +121,275 @@
         "recovery-energy"
       ],
       "is_flagship_100": true,
-      "relevance_score": 140
+      "fit": "alternative",
+      "when": "You have recovered the task and need a longer protected block followed by a genuine break.",
+      "why": "It provides an adjustable focus-and-recovery structure and an explicit resume point.",
+      "caveat": "Ninety/thirty is only a possible starting pattern, not a biological law or universal productivity schedule.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "Choose one important outcome for the next work block, pick a realistic focus duration for today's schedule, and decide what a real break will look like when the block ends.",
+        "observable_signal": "Whether the intended outcome moved, how often avoidable switching occurred, whether the break felt like a genuine change of pace, and whether returning to the next block was easier or harder.",
+        "eligibility": [
+          "The user is doing low-risk knowledge or creative work where a protected block can be chosen without neglecting a monitoring or response duty.",
+          "The task benefits from fewer avoidable switches and has a concrete outcome that can be advanced inside one block.",
+          "The user can take a genuine break afterward and is willing to adjust both work and break lengths from experience."
+        ],
+        "when_not_to_use": [
+          "Do not use protected focus blocks when continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes disengagement inappropriate.",
+          "Do not present 90/30, ultradian-cycle language, hydration rules, caffeine timing, or any other fixed routine as a scientifically validated universal productivity dose.",
+          "Do not use completed blocks as a proxy for value when the work depends mainly on collaboration, waiting, exploration, or external events."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is a practical focus-and-recovery structure. Brali does not currently claim that 90/30 corresponds to a universal ultradian productivity cycle, that either duration is optimal, or that the protocol produces a predictable performance or wellbeing gain.",
+          "source_decision_ids": []
+        }
+      }
     },
     {
-      "canonical_id": "brali:protocol:achieve-multiple-goals-at-once",
-      "slug": "achieve-multiple-goals-at-once",
-      "url": "https://brali-lifeos.github.io/life-os/achieve-multiple-goals-at-once/",
-      "title": "One Move, Several Benefits",
-      "description": "Look for one concrete action that advances two compatible priorities, then check that combining them does not make the action vague or overloaded.",
-      "action": "Name two priorities, brainstorm one concrete action that can serve both, and reject the combination if it makes either priority weaker or unclear.",
-      "check_in": "Did combining the priorities simplify the plan, or did it create a compromised task that serves neither one well?",
+      "canonical_id": "brali:protocol:3-3-3-workday-planner",
+      "slug": "3-3-3-workday-planner",
+      "url": "https://brali-lifeos.github.io/life-os/3-3-3-workday-planner/",
+      "title": "Plan Your Workday in Three Simple Blocks",
+      "description": "Split the day into a few broad work blocks and choose a small set of clear outcomes for each. Use three blocks and up to three tasks per block as a template, not a rule.",
+      "action": "Divide the workday into up to three broad blocks. Give each block one to three clear outcomes that fit the time you actually have. Replan when meetings, urgent work, or delays change the day.",
+      "check_in": "Did the blocks help me choose what mattered, and was any block overloaded, too vague, or too rigid?",
       "evidence": {
         "status": "practical",
         "source_recorded": false,
         "source_url": null,
-        "reviewed_at": "2026-08-20"
+        "reviewed_at": "2026-08-18"
       },
       "topic_ids": [
-        "planning-prioritization",
-        "goals"
+        "work-systems"
       ],
       "is_flagship_100": true,
-      "relevance_score": 140
+      "fit": "alternative",
+      "when": "The interruption materially changed priorities and the rest of the day needs a lightweight re-plan.",
+      "why": "It keeps fixed constraints visible and reorganizes the remaining day around a few observable outcomes.",
+      "caveat": "Do not preserve an obsolete plan when new urgent work or dependencies have genuinely changed the day.",
+      "gold_review": {
+        "reviewed_at": "2026-09-09",
+        "review_status": "gold-ready",
+        "first_action": "Look at today's fixed constraints, then write up to three broad work blocks and give each block one to three observable outcomes that fit the time you actually control.",
+        "observable_signal": "Whether the user could identify the current important outcome, whether fixed constraints remained visible, and whether the remaining plan could be updated without carrying obsolete blocks forward as guilt or hidden backlog.",
+        "eligibility": [
+          "The user is planning an ordinary low-risk workday and can choose or renegotiate at least some priorities.",
+          "Grouping work into a few broad blocks would reduce decision friction without hiding fixed meetings, dependencies, service levels, or deadlines.",
+          "The user is willing to replan when reality changes instead of treating the initial blocks as commitments that must be completed exactly."
+        ],
+        "when_not_to_use": [
+          "Do not use the template as the controlling workflow for emergency response, incident management, clinical care, driving, safety-critical operations, or another setting where priorities must update continuously from external events.",
+          "Do not compress mandatory sequences, deadlines, handoffs, or dependencies into three blocks when doing so would hide operational constraints.",
+          "Do not interpret three blocks or three outcomes as an evidence-backed optimal dose for productivity."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "The 3-3-3 structure is a low-risk editorial planning template. Brali has no reviewed source establishing three blocks, three outcomes, or any exact 3×3 schedule as a scientifically optimal productivity method; the value claim is limited to whether the user finds the structure useful in the current workday.",
+          "source_decision_ids": []
+        }
+      }
     }
   ],
+  "answer_packet": {
+    "schema_version": 1,
+    "canonical_id": "brali:problem:resume-after-interruption",
+    "problem": "How do I recover after interruptions without losing the rest of the day?",
+    "canonical_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/",
+    "best_fit": {
+      "canonical_id": "brali:protocol:25-minute-pomodoro-focus-sprints",
+      "slug": "25-minute-pomodoro-focus-sprints",
+      "title": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break",
+      "when": "Context is recovered and you need one protected restart boundary for a concrete task.",
+      "why": "The protocol turns re-entry into one bounded outcome instead of asking you to recover an entire lost day at once.",
+      "caveat": "Adjust the block length to the work; do not use protected focus where monitoring or immediate response is required.",
+      "first_action": "Write one observable outcome for the next block, then start with a twenty-five-minute focus boundary only as a familiar default.",
+      "evidence_state": "practical"
+    },
+    "alternatives": [
+      {
+        "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
+        "slug": "90-30-focus-rest-schedule",
+        "title": "Alternate Focused Work With Real Breaks",
+        "when": "You have recovered the task and need a longer protected block followed by a genuine break.",
+        "why": "It provides an adjustable focus-and-recovery structure and an explicit resume point.",
+        "caveat": "Ninety/thirty is only a possible starting pattern, not a biological law or universal productivity schedule.",
+        "first_action": "Choose one important outcome for the next work block, pick a realistic focus duration for today's schedule, and decide what a real break will look like when the block ends.",
+        "evidence_state": "practical"
+      },
+      {
+        "canonical_id": "brali:protocol:3-3-3-workday-planner",
+        "slug": "3-3-3-workday-planner",
+        "title": "Plan Your Workday in Three Simple Blocks",
+        "when": "The interruption materially changed priorities and the rest of the day needs a lightweight re-plan.",
+        "why": "It keeps fixed constraints visible and reorganizes the remaining day around a few observable outcomes.",
+        "caveat": "Do not preserve an obsolete plan when new urgent work or dependencies have genuinely changed the day.",
+        "first_action": "Look at today's fixed constraints, then write up to three broad work blocks and give each block one to three observable outcomes that fit the time you actually control.",
+        "evidence_state": "practical"
+      }
+    ],
+    "stop_rule": "If the interruption created a genuinely new urgent obligation, re-plan the remaining day explicitly. Do not force the old plan to survive changed constraints."
+  },
   "evidence_decisions": [
     {
-      "id": "microbreak-wellbeing-performance-boundary-2022",
-      "decision": "support-existing",
-      "reviewed_at": "2026-08-22",
-      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
-      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
-      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "id": "ai-review-correction-friction-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-29",
+      "source_title": "Bias in the Loop: How Humans Evaluate AI-Generated Suggestions",
+      "source_url": "https://hdsr.mitpress.mit.edu/pub/nrcn4h7d/release/2",
+      "supported_claim": "When humans review AI-generated suggestions, the review interface itself can bias behavior. In this experiment, adding repair work to the act of rejecting an AI suggestion reduced correction activity and increased undercorrection. Brali can therefore justify a bounded workflow rule: make it cheap to flag or reject an AI output, and separate validation from repair when the repair burden would otherwise make acceptance the path of least resistance.",
       "unsupported_or_overstated_claims": [
-        "A 5-minute break is an evidence-based optimal duration.",
-        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
-        "Pomodoro reliably improves productivity or task performance.",
-        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
-        "Every short break reduces fatigue or increases vigor for every individual.",
-        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
-        "The review establishes a universal break schedule for cognitively demanding work.",
-        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+        "Making correction easier will always increase overall accuracy.",
+        "People who distrust AI are universally better reviewers.",
+        "Performance bonuses cannot improve AI review in other settings.",
+        "The same effect size applies to expert, medical, legal, financial, or safety-critical review.",
+        "A human-in-the-loop label by itself guarantees reliable oversight.",
+        "AI suggestions should be hidden from reviewers."
       ],
       "limitations": [
-        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
-        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
-        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
-        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
-        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
-        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
-        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+        "The experiment used crowdworkers rather than domain experts.",
+        "The task was limited to ten greenhouse-gas reporting tables and one pre-annotation workflow.",
+        "Several difficult items required domain knowledge that many annotators lacked.",
+        "The randomized correction-burden manipulation changed correction behavior, but the regression analysis did not show a clear overall accuracy loss because overcorrections also decreased.",
+        "AI attitudes predicted behavior observationally rather than through randomized manipulation.",
+        "The study did not include a no-AI baseline and could not analyze item-order effects."
+      ]
+    },
+    {
+      "id": "ai-structured-intake-human-judgment-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-29",
+      "source_title": "Voice AI in Firms: A Natural Field Experiment on Automated Job Interviews",
+      "source_url": "https://arxiv.org/html/2607.28222",
+      "supported_claim": "A defensible way to divide some repetitive high-volume workflows is to automate structured information collection while keeping consequential evaluation with a human. In this field experiment, that division improved several downstream hiring outcomes without a measured decline in worker productivity. Transcript evidence is consistent with greater standardization and comparability as a mechanism, but does not prove that mechanism independently. Brali should treat this as a task-allocation pattern to test, not as evidence that AI should make final hiring or other high-stakes decisions.",
+      "unsupported_or_overstated_claims": [
+        "AI interviewers are generally better than human interviewers.",
+        "AI should make final hiring decisions.",
+        "The result generalizes to specialized, relationship-heavy, tacit-knowledge, executive, clinical, legal, or other high-stakes work.",
+        "Automating information collection removes discrimination or guarantees fairness.",
+        "The same voice-AI system will produce the same results in other firms, languages, cultures, or labor markets.",
+        "Human oversight automatically prevents automation bias.",
+        "The controlled-variance mechanism is causally proven by the experiment."
+      ],
+      "limitations": [
+        "The source is a working paper rather than a peer-reviewed journal article.",
+        "The experiment was conducted with one recruitment-process outsourcing firm and entry-level customer-service hiring in the Philippines.",
+        "Five percent of AI interviews ended because applicants were unwilling to continue with AI and seven percent experienced technical failure.",
+        "The transcript-based mechanism analysis is associative even though interviewer assignment was randomized.",
+        "The candidate-experience survey had a low response rate and may not represent all applicants.",
+        "Applicants who were allowed to choose showed negative sorting into AI, limiting interpretation of the choice condition.",
+        "Employment selection has legal, fairness, accessibility, and accountability requirements that this study does not resolve."
+      ]
+    },
+    {
+      "id": "deadline-evidence-reversal-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Replication of Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+      "source_url": "https://doi.org/10.1177/09567976261460772",
+      "supported_claim": "The 2026 replication did not reproduce the classic deadline effect, while the publisher now marks the 2002 source retracted.",
+      "unsupported_or_overstated_claims": [
+        "Artificial deadlines are a settled evidence-based productivity intervention.",
+        "Retraction proves that deadlines never matter in any context."
+      ],
+      "limitations": [
+        "The 2026 paper is a replication of a specific deadline experiment and does not test every form of deadline, planning, precommitment, or time-management intervention.",
+        "Failure to reproduce the classic effect lowers confidence in that specific evidence claim; it does not establish that deadlines have no effect in every task, population, incentive structure, or real-world setting.",
+        "The publisher's retraction of the 2002 paper means Brali should not use that paper as positive evidence, but retraction alone is not evidence for the opposite universal claim.",
+        "This decision is a provenance and evidence-boundary correction, not a complete systematic review of the broader deadline literature."
       ]
     }
   ],
-  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+  "trust_note": "Recommendations come only from protocols that are both trusted in the Brali Protocol Feed and manually Gold-ready. The problem-to-protocol fit is editorial decision logic; it is not a claim that one sequence is universally best.",
+  "troubleshooter": {
+    "schema_version": 1,
+    "problem_slug": "resume-after-interruption",
+    "canonical_url": "https://brali-lifeos.github.io/problems/resume-after-interruption/",
+    "title": "Should you protect a focus block — or not?",
+    "summary": "Two constraints decide whether Brali's current trusted focus-boundary protocol is a sensible trial after interruptions. This check does not diagnose why you were interrupted.",
+    "abstention_message": "Brali does not currently have a trusted focus-block recommendation for these conditions. Use the re-entry decision path on this page, change the work conditions if you can, or inspect other trusted protocols instead of forcing a timer.",
+    "trust_note": "A selected protocol is a transparent bounded trial under represented constraints, not a psychological fit score or a claim that the method will work.",
+    "candidate_protocols": [
+      {
+        "protocol_id": "brali:25-minute-pomodoro-focus-sprints",
+        "slug": "25-minute-pomodoro-focus-sprints",
+        "title": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break",
+        "canonical_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+        "skill_page_url": "https://brali-lifeos.github.io/skill-packs/25-minute-pomodoro-focus-sprints/",
+        "skill_markdown_url": "https://brali-lifeos.github.io/skill-packs/25-minute-pomodoro-focus-sprints/SKILL.md",
+        "evidence_status": "practical",
+        "gold_review_status": "gold-ready",
+        "first_action": "Write one observable outcome for the next block, then start with a twenty-five-minute focus boundary only as a familiar default.",
+        "review_horizon": {
+          "value": "After each focus block",
+          "rationale": "The protocol is a short execution experiment. The review point belongs at the end of the block because the useful signal is whether that boundary helped the intended task; no evidence supports waiting for a fixed number of Pomodoros before adjusting."
+        },
+        "observable_signal": "Whether the intended outcome moved forward, which interruptions occurred, and whether the chosen focus boundary made returning to or continuing the task easier.",
+        "stop_or_change_rule": "Change the block length, task scope, or environment when the timer repeatedly interrupts useful flow, fails to protect attention, or creates more management overhead than value. Stop using the protocol when the work needs responsiveness or another workflow fits the task better.",
+        "fallback": "If twenty-five minutes feels too large, choose a smaller concrete outcome and a shorter block; if it repeatedly breaks useful deep work, use a longer boundary or a natural task milestone instead of serving the timer.",
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is a practical focus-boundary protocol, not an evidence-backed twenty-five-minute dose. A systematic review of micro-breaks supports only a narrow recovery boundary: short breaks were associated on average with small improvements in vigor and fatigue, while overall performance benefit was not reliable and the full Pomodoro sequence was not tested.",
+          "source_decision_ids": [
+            "microbreak-wellbeing-performance-boundary-2022"
+          ]
+        },
+        "limitations": [
+          "The micro-break literature is heterogeneous in tasks, populations, break activities, and durations and does not validate the full twenty-five-minute-work/five-minute-break sequence.",
+          "The reviewed meta-analysis found no statistically significant pooled overall performance effect and rated only a minority of included samples low risk of bias.",
+          "The protocol has no evidence-backed universal work-block duration, break duration, number of cycles, productivity gain, or ideal interruption policy.",
+          "A timer can make some work easier to start and other work unnecessarily fragmented; individual task fit must be reviewed directly."
+        ],
+        "citation": {
+          "canonical_protocol_url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
+          "source_citations": [
+            "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT. Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022;17(8):e0272460. https://doi.org/10.1371/journal.pone.0272460"
+          ]
+        },
+        "constraints": [
+          {
+            "id": "immediate-responsiveness",
+            "question": "For the next work block, can non-urgent interruptions wait until a sensible stopping point?",
+            "required": true,
+            "source_field": "when_not_to_use",
+            "source_text": "Do not use a focus timer where continuous monitoring, immediate responsiveness, driving, caregiving, safety-critical operations, or another duty makes deliberate disengagement inappropriate.",
+            "options": [
+              {
+                "value": "can-delay",
+                "label": "Yes — non-urgent interruptions can wait briefly.",
+                "effect": "allow"
+              },
+              {
+                "value": "must-respond",
+                "label": "No — I must stay immediately responsive.",
+                "effect": "reject",
+                "reason": "A deliberate focus boundary is a poor fit when the work requires immediate responsiveness."
+              }
+            ]
+          },
+          {
+            "id": "concrete-outcome",
+            "question": "Can you name one concrete, low-risk outcome for the next block?",
+            "required": true,
+            "source_field": "eligibility",
+            "source_text": "The user has one concrete low-risk work or study outcome that can be advanced during a bounded focus block.",
+            "options": [
+              {
+                "value": "yes",
+                "label": "Yes — I know what should be different when the block ends.",
+                "effect": "allow"
+              },
+              {
+                "value": "not-yet",
+                "label": "Not yet — the task is still vague.",
+                "effect": "reject",
+                "reason": "This protocol needs one concrete outcome first. Define the next visible result before adding a timer."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

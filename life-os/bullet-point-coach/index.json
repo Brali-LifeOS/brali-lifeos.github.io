@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:bullet-point-coach",
   "slug": "bullet-point-coach",
-  "title": "Use Bullet Points to Outline Your Key Points",
-  "description": "Use bullet points to outline your key points. This keeps your speech organized and ensures you cover all important topics.",
+  "title": "Use a Short Bullet Outline Before You Speak",
+  "description": "Before a meeting, update or presentation, write a compact set of cue points that preserves the purpose, the information the listener needs and the requested next step, then speak from the outline rather than reading a script.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -39,8 +39,8 @@
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "communication-relationships",
       "growth_zone_slug": "talk-smart"
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:bullet-point-coach",
+    "language": "en",
+    "slug": "bullet-point-coach",
+    "url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
+    "title": "Use a Short Bullet Outline Before You Speak",
+    "description": "Before a meeting, update or presentation, write a compact set of cue points that preserves the purpose, the information the listener needs and the requested next step, then speak from the outline rather than reading a script.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Write the purpose of the conversation, the key facts or updates the listener needs, the decision or request if there is one, and any important risk or unknown. Put the cues in a useful order, remove duplicate points, then speak from them and adjust when the conversation changes.",
+    "check_in": "Did the outline make the purpose, key information and next step easy to find, and which cue should be changed before the next use?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Bullet Your Points"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/bullet-point-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:growth-pack-completion-tracker",
   "slug": "growth-pack-completion-tracker",
-  "title": "Focus on Completing All the Growth Hacks in a Chosen Pack)",
+  "title": "Complete All Hacks in a Pack",
   "description": "Focus on completing all the growth hacks in a chosen pack. Track your progress and check off each hack as you finish.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/growth-pack-completion-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

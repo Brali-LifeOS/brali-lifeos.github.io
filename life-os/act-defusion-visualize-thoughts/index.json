@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:act-defusion-visualize-thoughts",
   "slug": "act-defusion-visualize-thoughts",
-  "title": "When a Troubling Thought Arises, Imagine It as a Character or an Object (e",
+  "title": "Defuse from Your Thoughts",
   "description": "When a troubling thought arises, imagine it as a character or an object (e.g., a talking cartoon cloud). Notice its presence, but don’t engage with it.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/act-defusion-visualize-thoughts/",
   "machine_url": "https://brali-lifeos.github.io/life-os/act-defusion-visualize-thoughts/index.json",
@@ -18,7 +18,7 @@
   "evidence": {
     "status": "restricted",
     "indexable": false,
-    "search_indexable": true,
+    "search_indexable": false,
     "sensitive": true,
     "source_recorded": false,
     "source_url": null,
@@ -47,9 +47,20 @@
     }
   },
   "discovery": {
-    "search_indexable": true,
+    "search_indexable": false,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "withheld-review-required",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": false,
+    "display_state": "historical-source-only",
+    "historical_source_url": "/data/life-os-content/act-defusion-visualize-thoughts.json",
+    "historical_source_role": "provenance-only-not-current-guidance",
+    "search_role": "withheld-review-required"
+  }
 }

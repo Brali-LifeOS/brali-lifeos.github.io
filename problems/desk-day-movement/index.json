@@ -1,10 +1,17 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-15",
+  "canonical_id": "brali:problem:desk-day-movement",
   "slug": "desk-day-movement",
+  "acquisition_cluster_id": null,
   "title": "Add movement to a desk-heavy day without a perfect schedule",
   "question": "How can I move more when I sit at a desk most of the day?",
-  "summary": "Choose repeatable movement opportunities and sustainable exercise without pretending there is one scientifically perfect break interval.",
+  "aliases": [
+    "move more during a desk day",
+    "break up long sitting while working",
+    "screen and movement breaks at a desk"
+  ],
+  "summary": "Choose repeatable movement opportunities and safe recovery breaks without pretending there is one scientifically perfect interval.",
   "canonical_url": "https://brali-lifeos.github.io/problems/desk-day-movement/",
   "json_url": "https://brali-lifeos.github.io/problems/desk-day-movement/index.json",
   "query_url": "/for-ai/query/?q=I%20sit%20for%20hours%20while%20working.%20How%20can%20I%20add%20more%20movement%20to%20my%20day%3F",
@@ -39,149 +46,217 @@
       "try": "Attach brief movement to transitions you already have: calls, refills, task changes, or natural breaks."
     },
     {
-      "if": "You want a sustainable exercise routine",
-      "try": "Choose a small repeatable strength, mobility, or walking commitment that survives ordinary workdays."
+      "if": "Stress or tension is accumulating",
+      "try": "Use a safe short walk as a change of context when walking is appropriate for you."
     },
     {
-      "if": "You are searching for the perfect cognitive break interval",
-      "try": "Use practicality and adherence as the decision criteria. Brali does not treat exploratory cognition findings as a universal dose prescription."
+      "if": "Screen discomfort is the more immediate signal",
+      "try": "Use safe distance-looking breaks and keep persistent symptoms as a separate eye-care question."
     }
   ],
-  "stop_rule": "Pain, injury, new severe symptoms, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance.",
+  "stop_rule": "Pain, injury, new severe symptoms, persistent vision changes, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance.",
   "protocols": [
     {
-      "canonical_id": "brali:protocol:cardio-health-daily-habits",
-      "slug": "cardio-health-daily-habits",
-      "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
-      "title": "Build Toward a Weekly Movement Baseline",
-      "description": "Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine.",
-      "action": "Look at the coming week, mark the activity you already do, then add realistic walking, moderate or vigorous activity, and strength sessions where they fit. Build gradually rather than treating the guideline as a one-day target.",
-      "check_in": "Does the plan fit your current ability, schedule and any guidance from your health professional? Adjust it rather than forcing a target that is inappropriate for you.",
+      "canonical_id": "brali:protocol:10-minute-stress-walk",
+      "slug": "10-minute-stress-walk",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+      "title": "Take a Short Walk When Stress Builds",
+      "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+      "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+      "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
       "evidence": {
         "status": "reviewed",
         "source_recorded": true,
-        "source_url": "https://www.heart.org/en/healthy-living/healthy-lifestyle/lifes-essential-8/how-to-be-more-active-fact-sheet",
-        "reviewed_at": "2026-08-20"
-      },
-      "topic_ids": [
-        "cardiovascular-health",
-        "movement",
-        "health-basics"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 195
-    },
-    {
-      "canonical_id": "brali:protocol:10-minute-morning-stretch-routine",
-      "slug": "10-minute-morning-stretch-routine",
-      "url": "https://brali-lifeos.github.io/life-os/10-minute-morning-stretch-routine/",
-      "title": "Start a Morning Stretch Routine",
-      "description": "Begin each day with a 10-minute stretch routine, increasing to 20 minutes over time.",
-      "action": "Use a short, gentle flexibility routine as a morning movement cue if that timing suits you. Move slowly only as far as is comfortable, start with a few simple movements, and build up gradually rather than forcing a fixed 10-to-20-minute progression.",
-      "check_in": "Did the movements feel comfortable and controlled? Did I stop or modify anything that caused pain or made me feel unwell, and is this routine still appropriate for me?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://www.nhs.uk/live-well/exercise/flexibility-exercises/",
+        "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
         "reviewed_at": "2026-08-18"
       },
       "topic_ids": [
-        "fitness-strength"
+        "stress-regulation",
+        "movement"
       ],
       "is_flagship_100": true,
-      "relevance_score": 170
+      "fit": "best-fit",
+      "when": "A safe short walk is practical and you want a simple movement-and-context reset during an ordinary desk day.",
+      "why": "Walking creates a concrete break from prolonged sitting while keeping the intervention simple and adjustable.",
+      "caveat": "It is a general-wellbeing option, not treatment, and ten minutes is not a universal therapeutic or exercise dose.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "When stress builds, choose a safe familiar place and take a comfortable short walk if walking is appropriate for you, treating ten minutes only as a convenient boundary.",
+        "observable_signal": "Whether the walk happened safely, whether the user's stress or tension felt different afterward, and whether the practice remains useful enough to repeat without replacing appropriate care.",
+        "eligibility": [
+          "Walking is safe and practical for the user in the current setting and circumstances.",
+          "The user is looking for a small general-wellbeing reset rather than diagnosis or treatment of a mental-health condition.",
+          "The user can notice a simple before-and-after subjective signal without treating one walk as proof of causality."
+        ],
+        "when_not_to_use": [
+          "Do not use the protocol when walking is medically inappropriate, unsafe in the current environment, or would interfere with an immediate duty that requires attention.",
+          "Do not present a ten-minute walk as treatment for depression, anxiety, severe stress, or another condition, or as a substitute for appropriate professional support.",
+          "Do not prescribe a pace, heart-rate target, step count, breathing ratio, calorie goal, or ten-minute duration as a universal therapeutic dose."
+        ],
+        "evidence_boundary": {
+          "status": "reviewed",
+          "statement": "WHO guidance on stress includes regular exercise, including walking, among strategies that can help reduce stress, and WHO physical-activity guidance recognizes walking as physical activity that can support health and wellbeing. These sources do not establish ten minutes as a universal therapeutic dose or guarantee an immediate stress reduction for every person, so Brali keeps the action as a bounded general-wellbeing option.",
+          "source_decision_ids": []
+        }
+      }
     },
     {
-      "canonical_id": "brali:protocol:4-minute-hiit-tabata-workout",
-      "slug": "4-minute-hiit-tabata-workout",
-      "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
-      "title": "Try Short High-Intensity Intervals Safely",
-      "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
-      "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
-      "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+      "canonical_id": "brali:protocol:20-20-20-eye-break-reminder",
+      "slug": "20-20-20-eye-break-reminder",
+      "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+      "title": "Use the 20-20-20 Rule for Screen Breaks",
+      "description": "When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds.",
+      "action": "During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care.",
+      "check_in": "Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional?",
       "evidence": {
         "status": "reviewed",
         "source_recorded": true,
-        "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+        "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
         "reviewed_at": "2026-08-18"
       },
       "topic_ids": [
-        "fitness-strength"
+        "health-basics",
+        "digital-wellbeing",
+        "recovery-energy"
       ],
       "is_flagship_100": true,
-      "relevance_score": 170
-    },
-    {
-      "canonical_id": "brali:protocol:4-minute-tabata-hiit-timer",
-      "slug": "4-minute-tabata-hiit-timer",
-      "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
-      "title": "Use a High-Intensity Interval Timer Safely",
-      "description": "Follow the Tabata protocol: 20 seconds of very intense exercise (like burpees or mountain climbers) followed by 10 seconds of rest, repeated for 4 minutes (8 rounds).",
-      "action": "If very vigorous exercise is suitable for you, use an interval timer to alternate a short period of harder work with recovery. A 20-second work and 10-second recovery pattern can be one option, but choose a movement and number of rounds you can control safely rather than treating 8 all-out rounds as mandatory.",
-      "check_in": "What movement and interval did I use, was the effort appropriate for my fitness today, did I maintain control, and was there any pain or reason to stop?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
-        "reviewed_at": "2026-08-18"
-      },
-      "topic_ids": [
-        "fitness-strength"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 170
+      "fit": "alternative",
+      "when": "Long screen viewing is creating eye tiredness or discomfort and a brief visual break can be taken safely.",
+      "why": "The rule supplies a memorable cue to change near-screen focus during prolonged computer use.",
+      "caveat": "It does not diagnose or treat the cause of persistent symptoms and should never be forced during a task where looking away is unsafe.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "During a long screen session, take a brief safe visual break around a natural pause and look at something roughly 20 feet away for about 20 seconds.",
+        "observable_signal": "Whether the user took safe visual breaks during prolonged screen use and whether discomfort remains frequent, persistent, worsening, or significant enough to warrant eye-care evaluation.",
+        "eligibility": [
+          "The user is doing ordinary prolonged screen work where a brief visual break can be taken safely.",
+          "A reminder to look at a distant object can be used without interfering with driving, monitoring, or another safety-critical duty.",
+          "The user understands that persistent eye strain, dryness, headaches, blurred vision, or other vision changes may require professional assessment."
+        ],
+        "when_not_to_use": [
+          "Do not use a screen-break reminder as treatment for an eye condition, as a substitute for regular eye care, or as a reason to ignore persistent or changing symptoms.",
+          "Do not force a reminder during driving, machinery use, safety monitoring, or another task where looking away at that moment would be unsafe.",
+          "Do not claim that the exact 20-minute interval, 20-foot distance, or 20-second duration prevents eye disease, improves vision, or guarantees symptom relief."
+        ],
+        "evidence_boundary": {
+          "status": "reviewed",
+          "statement": "The U.S. National Eye Institute recommends the 20-20-20 screen-break habit during prolonged computer use: every 20 minutes, look about 20 feet away for 20 seconds. Brali preserves that public-health recommendation while explicitly avoiding claims that the rule treats eye disease, improves vision, or guarantees symptom relief.",
+          "source_decision_ids": []
+        }
+      }
     }
   ],
+  "answer_packet": {
+    "schema_version": 1,
+    "canonical_id": "brali:problem:desk-day-movement",
+    "problem": "How can I move more when I sit at a desk most of the day?",
+    "canonical_url": "https://brali-lifeos.github.io/problems/desk-day-movement/",
+    "best_fit": {
+      "canonical_id": "brali:protocol:10-minute-stress-walk",
+      "slug": "10-minute-stress-walk",
+      "title": "Take a Short Walk When Stress Builds",
+      "when": "A safe short walk is practical and you want a simple movement-and-context reset during an ordinary desk day.",
+      "why": "Walking creates a concrete break from prolonged sitting while keeping the intervention simple and adjustable.",
+      "caveat": "It is a general-wellbeing option, not treatment, and ten minutes is not a universal therapeutic or exercise dose.",
+      "first_action": "When stress builds, choose a safe familiar place and take a comfortable short walk if walking is appropriate for you, treating ten minutes only as a convenient boundary.",
+      "evidence_state": "reviewed"
+    },
+    "alternatives": [
+      {
+        "canonical_id": "brali:protocol:20-20-20-eye-break-reminder",
+        "slug": "20-20-20-eye-break-reminder",
+        "title": "Use the 20-20-20 Rule for Screen Breaks",
+        "when": "Long screen viewing is creating eye tiredness or discomfort and a brief visual break can be taken safely.",
+        "why": "The rule supplies a memorable cue to change near-screen focus during prolonged computer use.",
+        "caveat": "It does not diagnose or treat the cause of persistent symptoms and should never be forced during a task where looking away is unsafe.",
+        "first_action": "During a long screen session, take a brief safe visual break around a natural pause and look at something roughly 20 feet away for about 20 seconds.",
+        "evidence_state": "reviewed"
+      }
+    ],
+    "stop_rule": "Pain, injury, new severe symptoms, persistent vision changes, or medical exercise restrictions belong outside a general knowledge library and should be handled with appropriate professional guidance."
+  },
   "evidence_decisions": [
     {
-      "id": "microbreak-wellbeing-performance-boundary-2022",
-      "decision": "support-existing",
-      "reviewed_at": "2026-08-22",
-      "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
-      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
-      "supported_claim": "Across the included studies, micro-breaks of up to 10 minutes were associated on average with small improvements in vigor and reduced fatigue. The pooled overall performance effect was not statistically significant, and performance effects varied by task demands and break duration. This supports retaining a short, adjustable break as a bounded recovery practice without presenting it as a reliable performance booster.",
+      "id": "activity-breaks-postprandial-metabolism-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-30",
+      "source_title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+      "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/obr.70152",
+      "supported_claim": "For acute post-meal metabolism, replacing small portions of a prolonged sitting period with brief activity is better supported than remaining continuously seated. Across randomized crossover evidence, regular activity breaks reduced postprandial glucose and insulin responses, with walking producing the strongest overall mode estimates. Brali can therefore propose a bounded protocol to interrupt long sitting bouts with brief movement, especially walking when feasible, while treating the exact timing and dose as adaptable rather than universally fixed.",
       "unsupported_or_overstated_claims": [
-        "A 5-minute break is an evidence-based optimal duration.",
-        "Twenty-five minutes of work followed by five minutes of rest is superior to other focus schedules.",
-        "Pomodoro reliably improves productivity or task performance.",
-        "Four 25-minute blocks followed by a longer break is validated by this meta-analysis.",
-        "Every short break reduces fatigue or increases vigor for every individual.",
-        "Scrolling, walking, standing, water, stretching or any other specific break activity is independently proven superior by this pooled result.",
-        "The review establishes a universal break schedule for cognitively demanding work.",
-        "The pooled effects justify treatment, burnout-prevention or clinical claims."
+        "A break every 20 minutes is the universal optimal schedule for all people and settings.",
+        "Brief movement breaks prevent diabetes, cardiovascular disease, obesity, or mortality.",
+        "The protocol improves concentration, productivity, mood, pain, or cognitive performance.",
+        "Standing alone produces the same metabolic effect as walking or active movement.",
+        "Brief sitting interruptions can replace recommended weekly physical activity or structured exercise.",
+        "The subgroup estimates establish which BMI or clinical group will benefit most.",
+        "One exact walking speed, intensity, duration, or exercise routine is required."
       ],
       "limitations": [
-        "The review combined heterogeneous break activities, durations, tasks and settings rather than testing a single Pomodoro-style intervention.",
-        "Only four of twenty-two included study samples were rated low risk of bias across the assessed domains.",
-        "The overall pooled performance effect was not statistically significant and performance heterogeneity was substantial.",
-        "Performance effects differed by task type; the authors reported significant effects only for less cognitively demanding tasks in subgroup analyses.",
-        "Longer break duration was associated with better performance in meta-regression, which argues against treating one short duration as universally optimal.",
-        "Most outcomes were immediate post-break measures; the review does not establish long-term productivity or health effects.",
-        "The source defines micro-breaks as no more than ten minutes and does not validate the work interval preceding the break."
+        "All included studies were acute laboratory randomized crossover trials lasting less than 24 hours, so the evidence does not establish long-term health effects or sustainability.",
+        "Prolonged-sitting laboratory protocols, especially the longer ones, may not resemble habitual real-world sitting.",
+        "Many pooled and subgroup estimates had substantial heterogeneity that remained after subgroup analysis.",
+        "Most studies were rated fair or good rather than excellent; participant blinding was impossible and reporting of attrition and assessor blinding was inconsistent.",
+        "The review was not prospectively registered in PROSPERO or another registry and no review protocol was prepared.",
+        "The search was limited to peer-reviewed English-language studies, so relevant evidence may have been missed.",
+        "Frequency and mode subgroup comparisons do not by themselves prove that the largest subgroup estimate is the optimal prescription for an individual."
       ]
     },
     {
-      "id": "movement-breaks-cognition-2026",
-      "decision": "watch",
-      "reviewed_at": "2026-08-18",
-      "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
-      "source_url": "https://link.springer.com/article/10.1186/s12966-026-01953-6",
-      "supported_claim": "Across the included trials, interruptions to prolonged sitting were associated with small acute improvements in executive function and memory on average. Evidence for global cognition, information processing, and attention was insufficient or inconsistent, and certainty was low for most outcomes.",
+      "id": "caffeine-dose-timing-sleep-boundary-2025",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-06",
+      "source_title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+      "supported_claim": "Caffeine timing should be interpreted together with dose rather than as one universal after-lunch rule. In this small randomized crossover trial, a single 400 mg dose disrupted multiple objective sleep measures when taken within 12 hours of bedtime, with larger disruption closer to bedtime; no statistically significant sleep effect was detected for 100 mg at the tested 12-, 8-, and 4-hour timings. For Brali, this supports moving large late-day caffeine doses earlier when sleep matters and using bedtime-relative timing rather than a fixed clock cutoff.",
       "unsupported_or_overstated_claims": [
-        "A specific break frequency is proven to optimize cognition.",
-        "A specific break duration or intensity should be prescribed for everyone.",
-        "Standing or movement breaks reliably improve attention.",
-        "The exploratory moderator findings establish that one protocol is superior.",
-        "Brief breaks are a treatment for cognitive impairment."
+        "Everyone should stop caffeine at 1 p.m. or immediately after lunch.",
+        "A 100 mg dose four hours before bedtime is safe or sleep-neutral for every person.",
+        "Twelve hours is a scientifically established cutoff for every caffeine dose or pattern of use.",
+        "People can infer whether they metabolize caffeine quickly from whether they fall asleep after an afternoon coffee.",
+        "The study establishes an ideal daily caffeine dose, a body-weight dosing range, or a morning dosing schedule.",
+        "The trial tested ordinary coffee, tea, energy drinks, or repeated real-world servings rather than standardized caffeine capsules.",
+        "A personal sleep log can establish a causal individual caffeine dose-response curve."
       ],
       "limitations": [
-        "Only 21 randomized crossover trials with 433 participants were included.",
-        "GRADE certainty was low for executive function, memory, information processing, and attention and very low for global cognition.",
-        "No clear improvement was found for global cognition, information processing, or attention.",
-        "Moderator and protocol-parameter findings were exploratory and the authors explicitly state they are insufficient for definitive prescriptive recommendations.",
-        "The outcomes were acute cognitive effects, so the source does not establish long-term cognitive benefit from a break routine."
+        "The sample was small (23 participants) and included only healthy men aged 18–40, limiting generalizability to women, older adults, adolescents, people with sleep disorders, and other populations.",
+        "Participants were moderate habitual caffeine users; results may differ in people with very low, very high, or irregular caffeine exposure.",
+        "The intervention used acute standardized caffeine capsules rather than the variable doses, ingredients, absorption patterns, and repeated servings found in real-world caffeinated products.",
+        "The study tested only two caffeine doses and three pre-bed timing points, so it cannot define a continuous or personalized cutoff.",
+        "Sleep was measured with in-home partial polysomnography rather than full laboratory polysomnography.",
+        "A nonsignificant result for 100 mg in this sample is not proof of no effect for every individual, especially given known variability in caffeine pharmacokinetics and sensitivity."
+      ]
+    },
+    {
+      "id": "exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-09",
+      "source_title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
+      "supported_claim": "Across the included randomized studies, exercise snacks improved VO2max and peak power output on average with moderate-certainty evidence. This supports offering distributed brief exercise bouts as a practical cardiorespiratory-fitness option when a longer continuous workout is difficult to fit. The evidence does not establish one modality, timer, number of bouts, weekly frequency or intervention duration as the optimal prescription.",
+      "unsupported_or_overstated_claims": [
+        "A 20-seconds-on/10-seconds-off Tabata timer is the evidence-based exercise-snack dose.",
+        "Three or four one-minute exercise snacks per day are universally optimal.",
+        "The subgroup with more than five daily bouts proves that more bouts are better for each individual.",
+        "Four to five days per week or seven to nine weeks is an optimized prescription.",
+        "Exercise snacks reliably reduce body fat or improve cholesterol and triglycerides.",
+        "Exercise snacks are equivalent to or should replace conventional exercise.",
+        "The nonsignificant VO2max result in studies with mean age above 50 proves exercise snacks do not work for people older than 50.",
+        "A short exercise bout automatically produces a meaningful training stimulus regardless of intensity, modality or execution."
+      ],
+      "limitations": [
+        "Cardiorespiratory-fitness effects showed substantial between-study heterogeneity (I2 74% for VO2max and 63% for peak power output), which contributed to GRADE downgrading.",
+        "Certainty was low for body-fat and blood-lipid outcomes because of heterogeneity, imprecision and possible publication bias for some outcomes.",
+        "Interventions differed markedly in modality, intensity, bout duration, within-day distribution, weekly frequency, intervention duration and supervision.",
+        "Dietary control varied across trials and could contribute to inconsistent body-composition and lipid results.",
+        "Age analyses used study-level mean age rather than individual participant data, creating ecological-bias risk and making individual age cutoffs inappropriate.",
+        "Potential publication bias was detected for VO2max and body-fat percentage.",
+        "Subgroup analyses compared relatively small numbers of studies and cannot identify a causal optimal dose.",
+        "Long-term scalability remains uncertain."
       ]
     }
   ],
-  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+  "trust_note": "Recommendations come only from protocols that are both trusted in the Brali Protocol Feed and manually Gold-ready. The problem-to-protocol fit is editorial decision logic; it is not a claim that one sequence is universally best."
 }

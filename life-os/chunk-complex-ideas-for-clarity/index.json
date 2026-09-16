@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:chunk-complex-ideas-for-clarity",
   "slug": "chunk-complex-ideas-for-clarity",
-  "title": "Break Down Complex Information into Smaller, Manageable Chunks",
-  "description": "Break down complex information into smaller, more manageable pieces (chunking up) or combine small details into a bigger picture (chunking down).",
+  "title": "Organize Complex Information Around One Decision",
+  "description": "Define the audience and decision, group related material into labeled parts, put the main path in a useful order, and move supporting detail into linked layers instead of either flattening everything or presenting every detail at once.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
   "machine_url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "communication-relationships",
         "title": "Communication & Relationships"
+      },
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
       }
     ],
     "topics": [
       {
         "id": "clear-communication",
         "title": "Clear Communication"
+      },
+      {
+        "id": "information-management",
+        "title": "Information Management"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "communication-relationships",
       "growth_zone_slug": "talk-smart"
@@ -48,8 +56,82 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "information-management",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:chunk-complex-ideas-for-clarity",
+    "language": "en",
+    "slug": "chunk-complex-ideas-for-clarity",
+    "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
+    "title": "Organize Complex Information Around One Decision",
+    "description": "Define the audience and decision, group related material into labeled parts, put the main path in a useful order, and move supporting detail into linked layers instead of either flattening everything or presenting every detail at once.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        },
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        },
+        {
+          "id": "information-management",
+          "title": "Information Management"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Name the primary audience and the decision or action they need to understand. Group related material by purpose, give each group a descriptive label, order the groups into a main path, and move supporting definitions, examples, calculations or source detail into a layer that remains easy to retrieve.",
+    "check_in": "What does the audience need to decide or do, which groups form the main path, what belongs in supporting detail, and can a reader find that detail when needed?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/chunk-complex-ideas-for-clarity.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

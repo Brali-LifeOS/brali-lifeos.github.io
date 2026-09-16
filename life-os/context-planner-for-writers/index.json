@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:context-planner-for-writers",
   "slug": "context-planner-for-writers",
-  "title": "Before You Start Writing, Think About the Bigger Picture",
-  "description": "Before you start writing, think about the bigger picture. Who’s going to read this? Where will it be published? Consider the reputation of the platform and the expectations of your readers. Adjust your tone and content to fit the context.",
+  "title": "Write a Context Brief Before Drafting",
+  "description": "Before drafting, write a compact brief that identifies the primary reader, where the text will appear, what the reader should understand or do, which constraints apply, and what facts or sources must be verified.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/",
   "machine_url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Creativity & Expression"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "creativity-expression",
         "title": "Creativity & Expression"
+      },
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
       }
     ],
     "topics": [
       {
         "id": "writing",
         "title": "Writing"
+      },
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "creativity-expression",
       "growth_zone_slug": "writing"
@@ -48,8 +56,77 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:context-planner-for-writers",
+    "language": "en",
+    "slug": "context-planner-for-writers",
+    "url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/",
+    "title": "Write a Context Brief Before Drafting",
+    "description": "Before drafting, write a compact brief that identifies the primary reader, where the text will appear, what the reader should understand or do, which constraints apply, and what facts or sources must be verified.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        },
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "writing",
+          "title": "Writing"
+        },
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "creativity-expression",
+        "growth_zone_slug": "writing"
+      }
+    },
+    "life_area": {
+      "slug": "creativity-expression",
+      "title": "Creativity & Expression"
+    },
+    "growth_zone": {
+      "slug": "writing",
+      "title": "Writing"
+    },
+    "action": "Write the primary reader, publication surface, desired reader action or understanding, required tone or format constraints, facts that must be checked, and any detail that should be omitted for privacy, confidentiality or scope. Then build the outline from that brief.",
+    "check_in": "Who is this for, where will it appear, what should the reader understand or do, and which constraint or fact must the draft respect?",
+    "keywords": [
+      "Writing",
+      "Life OS",
+      "Context is King"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/context-planner-for-writers.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

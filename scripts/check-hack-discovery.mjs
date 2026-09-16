@@ -100,8 +100,10 @@ for (const entry of index) {
     if (reference) {
       pendingReference += 1;
       requireCondition(!noindex && inSitemap && /max-image-preview:large/i.test(html), `${entry.slug}: pending-review reference search visibility contract failed`);
-      requireCondition(html.includes('data-legacy-content-state="historical-source-only"'), `${entry.slug}: pending-review reference missing historical-only marker`);
-      requireCondition(html.includes('Review record:'), `${entry.slug}: pending-review reference lacks neutral review-record title`);
+      requireCondition(html.includes('data-legacy-content-state="review-pending-longform-visible"'), `${entry.slug}: pending-review page missing review-pending long-form marker`);
+      requireCondition(html.includes('<div class="prose"'), `${entry.slug}: pending-review page lost its visible article body`);
+      requireCondition(html.includes('data-article-versions="true"'), `${entry.slug}: pending-review page missing article versions`);
+      requireCondition(!html.includes('Review record:'), `${entry.slug}: pending-review page still uses neutral review-record title`);
       requireCondition(!html.includes('Try it, then review.'), `${entry.slug}: pending-review reference leaked inherited action copy`);
     } else {
       restricted += 1;
@@ -120,7 +122,7 @@ for (const entry of index) {
     requireCondition(webPage?.license === license && webPage?.mainEntity?.["@id"] === article?.["@id"], `${entry.slug}: WebPage mainEntity/license schema drift`);
     const actionTarget = article?.potentialAction?.target;
     requireCondition(trusted ? actionTarget === `${base}${stableSkillPath}` : !actionTarget, `${entry.slug}: stable skill potentialAction trust parity failed`);
-    if (reference) requireCondition(article?.creativeWorkStatus === 'Pending review' && article?.genre === 'Brali review record', `${entry.slug}: pending-review structured-data framing drift`);
+    if (reference) requireCondition(article?.creativeWorkStatus === 'Pending editorial evidence review', `${entry.slug}: pending-review structured-data framing drift`);
     if (isRepresentative(ogImage)) {
       representative += 1;
       requireCondition(metaContent(html, "twitter:card") === "summary_large_image", `${entry.slug}: representative image missing summary_large_image card`);

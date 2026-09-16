@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:default-choice-audit",
   "slug": "default-choice-audit",
-  "title": "Challenge Default Settings",
-  "description": "Challenge default settings. Here’s how: - Ask why: Consider if the default choice is actually best for you. - Explore alternatives: Take time to review all available options. - Make it yours: Choose based on your needs, not just convenience. Example: If a subscription auto-renews, pause and ask if it’s worth continuing or switching to another plan.",
+  "title": "Audit a Default Before Letting It Decide for You",
+  "description": "For a setting, subscription, workflow, or template with meaningful consequences, identify the current default, compare the relevant alternatives, and make a deliberate keep-or-change decision with an easy rollback when possible.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
   "machine_url": "https://brali-lifeos.github.io/life-os/default-choice-audit/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:default-choice-audit",
+    "language": "en",
+    "slug": "default-choice-audit",
+    "url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
+    "title": "Audit a Default Before Letting It Decide for You",
+    "description": "For a setting, subscription, workflow, or template with meaningful consequences, identify the current default, compare the relevant alternatives, and make a deliberate keep-or-change decision with an easy rollback when possible.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Pick one consequential default, identify what is currently selected, state what you need from the setting or service, compare only the realistic alternatives, note switching costs and important constraints, make a keep-or-change decision, and record how to reverse it when reversal matters.",
+    "check_in": "What default did I inspect, what requirement mattered most, why did I keep or change it, and can I reverse the decision if the new choice is worse?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Question the Default"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/default-choice-audit.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

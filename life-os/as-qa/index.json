@@ -3,30 +3,30 @@
   "type": "brali-growth-zone",
   "slug": "as-qa",
   "title": "As QA",
-  "description": "Implement quality assurance methods to streamline your routines and avoid mistakes.",
+  "description": "Borrow QA habits for everyday work: define failure modes, make rejection cheap, and test before trusting.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/as-qa/",
   "machine_url": "https://brali-lifeos.github.io/life-os/as-qa/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "learning-thinking",
     "title": "Learning & Thinking"
   },
   "counts": {
     "library_entries": 10,
-    "trusted_protocols": 0,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 10,
+    "practical": 2,
+    "pending_review": 8,
     "restricted": 0,
-    "mapped_topics": 5,
+    "mapped_topics": 6,
     "research_gaps": 2
   },
   "topics": [
     {
       "id": "error-prevention",
       "title": "Error Prevention",
-      "count": 3,
+      "count": 4,
       "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
     },
     {
@@ -34,6 +34,12 @@
       "title": "Work Systems",
       "count": 2,
       "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
+    },
+    {
+      "id": "clear-communication",
+      "title": "Clear Communication",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/clear-communication/"
     },
     {
       "id": "planning-prioritization",
@@ -68,8 +74,28 @@
       "url": "https://brali-lifeos.github.io/research/gaps/workspace/"
     }
   ],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "qa-checklist-templates-runbook",
+      "title": "Build a QA Checklist from Real Failure Modes",
+      "url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "qa-clear-feedback-templates",
+      "title": "Write an Actionable QA Report Another Person Can Use",
+      "url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
+    {
+      "slug": "qa-checklist-templates-runbook",
+      "title": "Build a QA Checklist from Real Failure Modes",
+      "url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
     {
       "slug": "qa-feedback-loop-tracker",
       "title": "QA Specialists Constantly Seek Feedback to Improve",
@@ -120,13 +146,6 @@
       "indexable": false
     },
     {
-      "slug": "qa-clear-feedback-templates",
-      "title": "QA Specialists Provide Clear Feedback",
-      "url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "qa-assumption-testing-habit",
       "title": "QA Specialists Test Software to Find Flaws",
       "url": "https://brali-lifeos.github.io/life-os/qa-assumption-testing-habit/",
@@ -134,11 +153,11 @@
       "indexable": false
     },
     {
-      "slug": "qa-checklist-templates-runbook",
-      "title": "QA Specialists Use Checklists to Ensure Nothing Is Missed",
-      "url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "qa-clear-feedback-templates",
+      "title": "Write an Actionable QA Report Another Person Can Use",
+      "url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
+      "evidence_status": "practical",
+      "indexable": true
     }
   ]
 }

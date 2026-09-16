@@ -22,14 +22,39 @@
   ],
   "candidates": [],
   "evidence_decisions": [],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "ab-test-learning-loop",
+      "title": "Compare Two Approaches and Learn From the Result",
+      "url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "break-down-big-problems-triz",
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "process-of-elimination-tracker",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "start-with-a-hypothesis",
+      "title": "When Faced with a Problem, Start by Making an Educated Guess About the Cause",
+      "url": "https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/",
+      "evidence_status": "practical"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "problem-solving",
     "title": "Problem Solving",
     "domain_id": "learning-thinking",
     "status": "growth-gap",
-    "entries": 1,
+    "entries": 5,
     "research_candidates": 0
   }
 }

@@ -21,7 +21,7 @@
     "search_indexable": true,
     "sensitive": true,
     "source_recorded": true,
-    "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
     "reviewed_at": "2026-08-18"
   },
   "ontology": {
@@ -49,7 +49,10 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:4-minute-hiit-tabata-workout",
@@ -88,8 +91,8 @@
       "slug": "fit-life",
       "title": "Fit Life"
     },
-    "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
-    "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+    "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely. You can use it as one short interval session, or as brief exercise snacks separated across the day when a full workout is unlikely. Make the effort challenging but controlled. Treat 20/10, 3 × 1 minute, 4 × 1 minute and similar timers as formats to adapt, not scientifically optimized doses.",
+    "check_in": "Was the effort genuinely challenging but still controlled, could I repeat it without losing movement quality, and over several weeks is fitness or function trending in a useful direction rather than just my streak count?",
     "keywords": [
       "Fit Life",
       "Life OS",
@@ -98,8 +101,16 @@
     "evidence": {
       "status": "reviewed",
       "source_recorded": true,
-      "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/4-minute-hiit-tabata-workout.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

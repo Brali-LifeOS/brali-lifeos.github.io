@@ -2,7 +2,7 @@
   "schema_version": 1,
   "name": "Brali editorial normalization register",
   "description": "Reviewed corrections applied to inherited source content before public pages, evidence classification, indexing, and trusted feeds are generated.",
-  "changed_entries": 0,
+  "changed_entries": 9,
   "rules": [
     {
       "id": "habit-formation-fixed-window",
@@ -16,6 +16,1011 @@
         "id": "habit-formation-fixed-window",
         "replacements": 0,
         "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-metalhatscats-product-intro",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "This inherited site-wide paragraph fragment is obsolete product identity and duplicated template copy. It adds no protocol-specific value and exposes the pre-Brali MetalHatsCats positioning in search-facing canonical content. Remove it rather than replacing it with a new repeated boilerplate.",
+      "review_source": "issue-260",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-metalhatscats-product-intro",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-mini-app-product-intro",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "This repeated mini-app sentence belongs to the previous product identity and is not protocol-specific content. It appears both adjacent to and separated from the MetalHatsCats boilerplate, so it is normalized independently.",
+      "review_source": "issue-260",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-mini-app-product-intro",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-mini-app-product-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "A smaller set of inherited pages embeds the old mini-app positioning inside otherwise unique introductory sentences. Remove the sentence containing that obsolete product mechanic while preserving the surrounding protocol-specific prose.",
+      "review_source": "issue-260",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-mini-app-product-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-metalhatscats-app-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The old app CTA sends readers to the pre-Brali MetalHatsCats route and repeats obsolete product positioning. Remove the entire CTA paragraph rather than exposing a stale brand/domain or inventing an unverified replacement workflow.",
+      "review_source": "issue-260",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-metalhatscats-app-cta",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-metalhatscats-lifeos-url",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Some structured source fields still carry the pre-Brali LifeOS domain even after visible legacy CTA cleanup. Preserve the useful deep link while moving it to the maintained canonical Brali site so old product identity cannot leak into generated metadata or search surfaces.",
+      "review_source": "issue-260",
+      "replacement": "https://brali-lifeos.github.io/life-os/$1/",
+      "applied": {
+        "id": "legacy-metalhatscats-lifeos-url",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-flame-counter-label",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Flame Counter is a residual mechanic from the previous product identity. Keep the surrounding protocol content but replace the obsolete mechanic label with a neutral description.",
+      "review_source": "issue-260",
+      "replacement": "Progress check",
+      "applied": {
+        "id": "legacy-flame-counter-label",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-brali-app-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The repeated closing cluster is an obsolete legacy-app call to action and a self-referencing link, not protocol-specific content. It was previously hidden because the whole article body was discarded; with long-form articles restored, the CTA sentence cluster is removed while the surrounding article is preserved.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-brali-app-cta",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-closing-repeat-boilerplate",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "A closing-variant of the legacy MetalHatsCats product-intro boilerplate that the existing product-intro rule does not catch because of its leading 'We will close by repeating' wrapper. It is obsolete product identity copy, not protocol-specific guidance.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-closing-repeat-boilerplate",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-momentum-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The sentence ends with a call to use a legacy companion app that is not a current Brali product. The consistency advice stands on its own; the app reference is removed instead of implying an available download.",
+      "review_source": "issue-279",
+      "replacement": "Focus on consistency rather than perfection to build momentum.",
+      "applied": {
+        "id": "legacy-app-momentum-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-checkin-tracking-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The inherited FAQ answer routes readers into the retired Life OS app. The replacement keeps the tracking advice while removing the nonexistent-product reference.",
+      "review_source": "issue-279",
+      "replacement": "Use the check-in method described above and record the result somewhere you will actually review, so progress stays visible over time.",
+      "applied": {
+        "id": "legacy-app-checkin-tracking-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-log-results-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "A family of inherited sentences tells readers to log results in the Brali LifeOS app. Brali publishes data sources and protocols, not a consumer app, so the logging advice is repointed to tools the reader already has.",
+      "review_source": "issue-279",
+      "replacement": "$1 in a journal, note, or tracker you already use",
+      "applied": {
+        "id": "legacy-app-log-results-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-link-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "These call-to-action fragments exist only to send readers to a legacy app listing or self-referencing page. They carry no protocol content, so they are removed rather than rewritten.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-app-link-cta",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-workspace-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The sentence describes a legacy app workspace that is not a current Brali product. Removing it avoids implying an available application while leaving the surrounding guidance intact.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-app-workspace-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-brali-app-use-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Bare leftover variant of the legacy app CTA that remained after the earlier CTA-cluster rule because it lacks the workspace sentence and link. Same obsolete product reference, same removal.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-brali-app-use-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-use-open-with-link",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Legacy app call-to-action with a trailing self-referencing link. The app is not a current Brali product, so the whole CTA is removed.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-app-use-open-with-link",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-self-link-tail",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Prose sentences end with a colon and a self-referencing canonical link left over from app-link CTAs. The lookbehind requires a word character before the colon, so JSON key-value syntax can never match. The link adds no protocol content and is removed.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-app-self-link-tail",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-tool-alternative",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Tool lists offered the legacy app as one option beside paper. Collapsing the option keeps the instruction natural without implying an available application.",
+      "review_source": "issue-279",
+      "replacement": "$1 or a tracker",
+      "applied": {
+        "id": "legacy-app-tool-alternative",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-subject-sentence-start",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Sentence-initial references to the legacy app as a tool become a generic reader-owned tool. Brali publishes protocols and data sources, not a consumer app.",
+      "review_source": "issue-279",
+      "replacement": "A notebook or tracker",
+      "applied": {
+        "id": "legacy-app-subject-sentence-start",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-mid-sentence",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Mid-sentence references to the legacy app as the place to act, log, or check in are repointed to tools the reader already has. This preserves the practical instruction while removing the nonexistent-product reference.",
+      "review_source": "issue-279",
+      "replacement": "a notebook or tracker",
+      "applied": {
+        "id": "legacy-app-mid-sentence",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-open-close-sentences",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Standalone narrative sentences about opening or closing the legacy app describe a product that does not exist. Removing them keeps the surrounding narrative intact.",
+      "review_source": "issue-279",
+      "replacement": " ",
+      "applied": {
+        "id": "legacy-app-open-close-sentences",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-equipment-list-items",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Equipment lists name the legacy app as required gear, including a '(free)' availability claim. Brali has no consumer app, so the item becomes a generic phone-or-notebook requirement.",
+      "review_source": "issue-279",
+      "replacement": "Phone or notebook",
+      "applied": {
+        "id": "legacy-app-equipment-list-items",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-app-checkin-with-you",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "The sentence promises an in-app follow-up interaction Brali does not operate. Removed rather than replaced with an unverifiable alternative.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-app-checkin-with-you",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-track-it-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Standalone closing CTA sending readers to track the practice in the legacy app. Removed; the article body already explains how to observe progress.",
+      "review_source": "issue-279",
+      "replacement": "",
+      "applied": {
+        "id": "legacy-track-it-cta",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-structuredmeta-checkin-app-title",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Legacy structured how-to step title telling readers to check in via the retired Brali LifeOS app. The step summary already points to a personal journal or tracker; the title now matches that meaning.",
+      "review_source": "issue-279",
+      "replacement": "Check in and log your result",
+      "applied": {
+        "id": "legacy-structuredmeta-checkin-app-title",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-link",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Step directive deep-linking into the retired app. Replaced with the readers own task list or tracker.",
+      "review_source": "issue-279",
+      "replacement": "Open your task list or tracker",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-link",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-create-comma",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive followed by task creation. The app instruction is replaced by the readers own tracker; the rest of the sentence is unchanged.",
+      "review_source": "issue-279",
+      "replacement": "In your task list or tracker, create",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-create-comma",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-create-and",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive followed by task creation. The app instruction is replaced by the readers own tracker; the rest of the sentence is unchanged.",
+      "review_source": "issue-279",
+      "replacement": "In your task list or tracker, create",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-create-and",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-create-period",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive followed by an imperative sentence. The app instruction is replaced by the readers own tracker; the rest is unchanged.",
+      "review_source": "issue-279",
+      "replacement": "Use your task list or tracker. Create",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-create-period",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-start-timer",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive for an in-app timer. Replaced with a device-neutral timer instruction.",
+      "review_source": "issue-279",
+      "replacement": "Set a timer",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-start-timer",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-named-module",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive opening a named in-app module. Replaced with a reference to the steps described in the article itself.",
+      "review_source": "issue-279",
+      "replacement": "Use the “” steps below",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-named-module",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-named-task",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Telegraphic app instruction opening a named in-app task. Replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "Open a task in your tracker named “",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-named-task",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-week-report",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive running an in-app weekly report feature. Replaced with a review of the readers own records.",
+      "review_source": "issue-279",
+      "replacement": "Review your tracked notes from the week",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-week-report",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-daily-journal",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive opening the in-app journal. Replaced with the readers own journal.",
+      "review_source": "issue-279",
+      "replacement": "Open your own journal or a blank page",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-daily-journal",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-lifeos-fallback",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Remaining app-launch directives after the specific shapes above. The retired Brali LifeOS app does not exist; readers are pointed at their own task list or tracker instead.",
+      "review_source": "issue-279",
+      "replacement": "Open your task list or tracker",
+      "applied": {
+        "id": "legacy-open-brali-lifeos-fallback",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali-lifeos",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Phrase locating an action inside the retired app (log it in Brali LifeOS, track progress in Brali LifeOS). Replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": " in your own tracker",
+      "applied": {
+        "id": "legacy-in-brali-lifeos",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-the-brali-journal",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Reference to the in-app journal feature of the retired app. Replaced with the readers own journal.",
+      "review_source": "issue-279",
+      "replacement": " in your journal",
+      "applied": {
+        "id": "legacy-in-the-brali-journal",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-template-in-the-app",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Points readers to templates inside the retired app; the templates live in the article itself.",
+      "review_source": "issue-279",
+      "replacement": "Use a template from this article",
+      "applied": {
+        "id": "legacy-template-in-the-app",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-sentence-start-the-app",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Sentence-start references to the retired app; replaced with the readers own tracker, preserving capitalization.",
+      "review_source": "issue-279",
+      "replacement": "$1Your tracker",
+      "applied": {
+        "id": "legacy-sentence-start-the-app",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-the-app-fallback",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Remaining references to the retired Brali LifeOS app in narrative text (open the app, copy into the app, the app will remind you). The app does not exist; readers are pointed at their own tracker or notes. Behavioral feature promises that remain (streaks, tallies, nudges) stay visible as unreviewed editorial debt under the pending-review boundary.",
+      "review_source": "issue-279",
+      "replacement": "your tracker",
+      "applied": {
+        "id": "legacy-the-app-fallback",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-mini-app-nudge-heading",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Section headings that promoted the retired app inside restored articles. The sections already point to a personal tracker after earlier normalizations; the heading is renamed to match.",
+      "review_source": "issue-279",
+      "replacement": "Optional nudge",
+      "applied": {
+        "id": "legacy-mini-app-nudge-heading",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali-lifeos-create",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-location directive inside Mini-App Nudge sections; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "In your own tracker, create",
+      "applied": {
+        "id": "legacy-in-brali-lifeos-create",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-and",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Narrative app-usage directive (open Brali and log/review/create); replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker and",
+      "applied": {
+        "id": "legacy-open-brali-and",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-or",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Narrative app-usage directive (open Brali or a notebook); replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker or",
+      "applied": {
+        "id": "legacy-open-brali-or",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-now",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Narrative app-usage directive with a paper fallback; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker now",
+      "applied": {
+        "id": "legacy-open-brali-now",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-for",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Narrative app-usage directive (open Brali for 3 minutes); replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker for",
+      "applied": {
+        "id": "legacy-open-brali-for",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-link-bare",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Numbered-step deep link into the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker",
+      "applied": {
+        "id": "legacy-open-brali-link-bare",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-quick-add",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Named in-app feature (Quick Add); replaced with a neutral tracker action.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker’s quick-add",
+      "applied": {
+        "id": "legacy-open-brali-quick-add",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-quick-task",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Named in-app feature (Quick Task); replaced with a neutral tracker action.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker’s quick-add",
+      "applied": {
+        "id": "legacy-open-brali-quick-task",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-weekly-card",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Named in-app artifact (weekly reflection card); replaced with a personal note.",
+      "review_source": "issue-279",
+      "replacement": "open your weekly reflection note",
+      "applied": {
+        "id": "legacy-open-brali-weekly-card",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-named-module",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-launch directive opening a named in-app module; replaced with a reference to the article steps.",
+      "review_source": "issue-279",
+      "replacement": "use the “” steps below",
+      "applied": {
+        "id": "legacy-open-brali-named-module",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-brali-fallback",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Remaining narrative directives to open the retired Brali app. The negative lookahead keeps brali-lifeos.github.io URLs intact.",
+      "review_source": "issue-279",
+      "replacement": "open your tracker",
+      "applied": {
+        "id": "legacy-open-brali-fallback",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-checkins-paper-or-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Repeated kit line offering paper or in-app check-ins; the app option is replaced with the readers own tracker. Hyphen-variant rule for the ASCII spelling follows.",
+      "review_source": "issue-279",
+      "replacement": "Check‑ins (paper / your tracker)",
+      "applied": {
+        "id": "legacy-checkins-paper-or-brali",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-checkins-paper-or-brali-ascii",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "ASCII-hyphen variant of the paper-or-app check-ins kit line.",
+      "review_source": "issue-279",
+      "replacement": "Check-ins (paper / your tracker)",
+      "applied": {
+        "id": "legacy-checkins-paper-or-brali-ascii",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-copy-into-brali-lifeos",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Check-in block directive telling readers to copy prompts into the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "copy into your tracker",
+      "applied": {
+        "id": "legacy-copy-into-brali-lifeos",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-brali-lifeos-is-where",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Sentence claiming the retired app hosts tasks, check-ins, and the journal; reworded to a personal tracker.",
+      "review_source": "issue-279",
+      "replacement": "A personal tracker is where tasks",
+      "applied": {
+        "id": "legacy-brali-lifeos-is-where",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-open-the-brali-lifeos-task",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Directive to open the in-app task for a hack; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "open this task in your tracker",
+      "applied": {
+        "id": "legacy-open-the-brali-lifeos-task",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-hack-card-brali-lifeos",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Legacy in-article spec headings for the retired app card. The card number and fields are retained as provenance; the app name is dropped from the heading.",
+      "review_source": "issue-279",
+      "replacement": "Hack Card",
+      "applied": {
+        "id": "legacy-hack-card-brali-lifeos",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-the-brali-lifeos-tracker",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Possessive reference to the retired app tracker; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "your tracker",
+      "applied": {
+        "id": "legacy-the-brali-lifeos-tracker",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-the-brali-lifeos-link",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Deep-link references to the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "your tracker",
+      "applied": {
+        "id": "legacy-the-brali-lifeos-link",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-the-brali-lifeos",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Reference to doing the weekly review inside the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "in your tracker",
+      "applied": {
+        "id": "legacy-in-the-brali-lifeos",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-checkin-block-for-brali-paper",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Check-in block header offering paper or in-app check-ins; app option replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "Check‑in Block (for your tracker and paper)",
+      "applied": {
+        "id": "legacy-checkin-block-for-brali-paper",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-checkin-block-for-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Check-in block header pointing into the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "Check‑in Block (for your tracker)",
+      "applied": {
+        "id": "legacy-checkin-block-for-brali",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-integrating-with-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Section header about integrating with the retired app; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "Integrating with your tracker",
+      "applied": {
+        "id": "legacy-integrating-with-brali",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali-lifeos-comma",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-location directive inside narrative and nudge sections; replaced with the readers own tracker.",
+      "review_source": "issue-279",
+      "replacement": "In your own tracker, ",
+      "applied": {
+        "id": "legacy-in-brali-lifeos-comma",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-brali-lifeos-fallback",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Final net for remaining references to the retired app, scoped to app mentions only. The site brand name Brali LifeOS in titles, JSON-LD identity, and the MetalHatsCats × Brali LifeOS provenance byline is current product identity and is excluded by design.",
+      "review_source": "issue-279",
+      "replacement": "Brali",
+      "applied": {
+        "id": "legacy-brali-lifeos-fallback",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-check-in-on-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Telegraphic app check-in phrase; replaced with the reader's own tracker.",
+      "review_source": "issue-279",
+      "replacement": "check in with your tracker",
+      "applied": {
+        "id": "legacy-check-in-on-brali",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-on-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-surface locations (log it on Brali, swipe yes on Brali); replaced with the reader's own tracker.",
+      "review_source": "issue-279",
+      "replacement": " in your tracker",
+      "applied": {
+        "id": "legacy-on-brali",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali-journal",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Reference to the in-app journal; replaced with the reader's own journal.",
+      "review_source": "issue-279",
+      "replacement": " in your journal",
+      "applied": {
+        "id": "legacy-in-brali-journal",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "App-surface locations (log one sentence in Brali, record the result in Brali); replaced with the reader's own tracker. The negative lookahead keeps 'Brali library' and 'Brali Growth Library' intact.",
+      "review_source": "issue-279",
+      "replacement": " in your tracker",
+      "applied": {
+        "id": "legacy-in-brali",
+        "replacements": 3,
+        "affected_entries": [
+          "10-minute-stress-walk",
+          "active-recall-test-yourself",
+          "start-with-a-hypothesis"
+        ]
+      }
+    },
+    {
+      "id": "legacy-brali-check",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Named in-app check artifacts (Brali check-in, Brali check loop); replaced with tracker checks. The word boundary keeps 'Brali checklist' intact.",
+      "review_source": "issue-279",
+      "replacement": "tracker check",
+      "applied": {
+        "id": "legacy-brali-check",
+        "replacements": 0,
+        "affected_entries": []
+      }
+    },
+    {
+      "id": "legacy-in-brali-comma",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "reason": "Sentence-start app-surface locations (In Brali, record whether...); replaced with the reader own tracker.",
+      "review_source": "issue-279",
+      "replacement": "In your tracker, ",
+      "applied": {
+        "id": "legacy-in-brali-comma",
+        "replacements": 6,
+        "affected_entries": [
+          "10-minute-morning-stretch-routine",
+          "25-minute-pomodoro-focus-sprints",
+          "3-minute-sensory-mindfulness-act",
+          "active-listening-exercises",
+          "brainwriting-group-idea-generation",
+          "circles-of-control-planner"
+        ]
       }
     }
   ]

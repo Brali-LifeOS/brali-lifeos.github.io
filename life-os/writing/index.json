@@ -3,23 +3,23 @@
   "type": "brali-growth-zone",
   "slug": "writing",
   "title": "Writing",
-  "description": "Learn to write stuff that really sticks.",
+  "description": "Plan, draft, revise, and get useful feedback without turning every sentence into a content strategy.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/writing/",
   "machine_url": "https://brali-lifeos.github.io/life-os/writing/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "creativity-expression",
     "title": "Creativity & Expression"
   },
   "counts": {
     "library_entries": 5,
-    "trusted_protocols": 0,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 5,
+    "practical": 2,
+    "pending_review": 3,
     "restricted": 0,
-    "mapped_topics": 1,
+    "mapped_topics": 2,
     "research_gaps": 0
   },
   "topics": [
@@ -28,29 +28,34 @@
       "title": "Writing",
       "count": 5,
       "url": "https://brali-lifeos.github.io/ontology/topics/writing/"
+    },
+    {
+      "id": "clear-communication",
+      "title": "Clear Communication",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/clear-communication/"
     }
   ],
   "research_gaps": [],
-  "trusted_protocols": [],
-  "entries": [
+  "trusted_protocols": [
+    {
+      "slug": "structure-writing-with-visuals",
+      "title": "Structure Dense Writing for Fast Navigation",
+      "url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
+      "evidence_status": "practical"
+    },
     {
       "slug": "context-planner-for-writers",
-      "title": "Before You Start Writing, Think About the Bigger Picture",
+      "title": "Write a Context Brief Before Drafting",
       "url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
+      "evidence_status": "practical"
+    }
+  ],
+  "entries": [
     {
       "slug": "slogan-memorability-analyzer",
       "title": "Create Catchy Slogans or Terms That Encapsulate Your Key Ideas",
       "url": "https://brali-lifeos.github.io/life-os/slogan-memorability-analyzer/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "structure-writing-with-visuals",
-      "title": "Design Your Writing",
-      "url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -62,11 +67,25 @@
       "indexable": false
     },
     {
+      "slug": "structure-writing-with-visuals",
+      "title": "Structure Dense Writing for Fast Navigation",
+      "url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "example-coverage-analyzer",
       "title": "Whenever You Introduce a Key Point, Back It up with a Clear Example",
       "url": "https://brali-lifeos.github.io/life-os/example-coverage-analyzer/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "context-planner-for-writers",
+      "title": "Write a Context Brief Before Drafting",
+      "url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/",
+      "evidence_status": "practical",
+      "indexable": true
     }
   ]
 }

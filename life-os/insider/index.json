@@ -3,31 +3,43 @@
   "type": "brali-growth-zone",
   "slug": "insider",
   "title": "Insider",
-  "description": "Get insider advice to streamline and enrich your everyday life.",
+  "description": "Practical shortcuts and context that are useful because they remove friction, not because they sound secret.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/insider/",
   "machine_url": "https://brali-lifeos.github.io/life-os/insider/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "work-money-strategy",
     "title": "Work, Money & Strategy"
   },
   "counts": {
     "library_entries": 10,
-    "trusted_protocols": 0,
+    "trusted_protocols": 1,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 10,
+    "practical": 1,
+    "pending_review": 9,
     "restricted": 0,
-    "mapped_topics": 2,
+    "mapped_topics": 4,
     "research_gaps": 2
   },
   "topics": [
+    {
+      "id": "clear-communication",
+      "title": "Clear Communication",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/clear-communication/"
+    },
     {
       "id": "listening",
       "title": "Listening",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/listening/"
+    },
+    {
+      "id": "relationships",
+      "title": "Relationships",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/relationships/"
     },
     {
       "id": "social-confidence",
@@ -46,11 +58,18 @@
     {
       "topic_id": "social-confidence",
       "title": "Social Confidence",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/social-confidence/"
     }
   ],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "build-your-support-network",
+      "title": "Build a Support Map Around Specific Needs",
+      "url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
     {
       "slug": "insider-decision-calibrator",
@@ -72,6 +91,13 @@
       "url": "https://brali-lifeos.github.io/life-os/decision-risk-canvas/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "build-your-support-network",
+      "title": "Build a Support Map Around Specific Needs",
+      "url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "decide-fast-without-overthinking",
@@ -105,13 +131,6 @@
       "slug": "daily-industry-briefing-habit",
       "title": "Spend a Bit of Time Each Day Reading up on Your Industry or Interests",
       "url": "https://brali-lifeos.github.io/life-os/daily-industry-briefing-habit/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "build-your-support-network",
-      "title": "Surround Yourself with People Who Can Offer Advice, Support, and Encouragement",
-      "url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
       "evidence_status": "pending-review",
       "indexable": false
     },

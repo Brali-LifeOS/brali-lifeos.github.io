@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "cognitive-biases",
   "title": "Cognitive Biases",
-  "description": "Recognize mental shortcuts that can lead you astray and discover strategies to overcome them.",
+  "description": "Recognize predictable reasoning shortcuts and design checks that make the mistake harder to repeat.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/cognitive-biases/",
   "machine_url": "https://brali-lifeos.github.io/life-os/cognitive-biases/index.json",
   "indexable": true,
@@ -14,26 +14,38 @@
   },
   "counts": {
     "library_entries": 174,
-    "trusted_protocols": 88,
+    "trusted_protocols": 100,
     "reviewed": 3,
-    "practical": 85,
-    "pending_review": 86,
+    "practical": 97,
+    "pending_review": 74,
     "restricted": 0,
-    "mapped_topics": 8,
-    "research_gaps": 3
+    "mapped_topics": 11,
+    "research_gaps": 4
   },
   "topics": [
     {
       "id": "cognitive-biases",
       "title": "Cognitive Biases",
-      "count": 165,
+      "count": 160,
       "url": "https://brali-lifeos.github.io/ontology/topics/cognitive-biases/"
     },
     {
       "id": "critical-thinking",
       "title": "Critical Thinking",
-      "count": 4,
+      "count": 8,
       "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
+    },
+    {
+      "id": "data-literacy",
+      "title": "Data Literacy",
+      "count": 5,
+      "url": "https://brali-lifeos.github.io/ontology/topics/data-literacy/"
+    },
+    {
+      "id": "decision-making",
+      "title": "Decision Making",
+      "count": 4,
+      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
     },
     {
       "id": "memory",
@@ -42,22 +54,16 @@
       "url": "https://brali-lifeos.github.io/ontology/topics/memory/"
     },
     {
-      "id": "data-literacy",
-      "title": "Data Literacy",
-      "count": 2,
-      "url": "https://brali-lifeos.github.io/ontology/topics/data-literacy/"
-    },
-    {
-      "id": "decision-making",
-      "title": "Decision Making",
-      "count": 2,
-      "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
-    },
-    {
       "id": "conflict-repair",
       "title": "Conflict & Repair",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/conflict-repair/"
+    },
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/information-management/"
     },
     {
       "id": "metacognition",
@@ -66,13 +72,31 @@
       "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
     },
     {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/planning-prioritization/"
+    },
+    {
       "id": "skill-learning",
       "title": "Skill Learning",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/skill-learning/"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
     }
   ],
   "research_gaps": [
+    {
+      "topic_id": "decision-making",
+      "title": "Decision Making",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+    },
     {
       "topic_id": "memory",
       "title": "Memory",
@@ -80,19 +104,25 @@
       "url": "https://brali-lifeos.github.io/research/gaps/memory/"
     },
     {
-      "topic_id": "decision-making",
-      "title": "Decision Making",
-      "stage": "discovery-ready",
-      "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      "topic_id": "information-management",
+      "title": "Information Management",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
     },
     {
       "topic_id": "metacognition",
       "title": "Metacognition",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
     }
   ],
   "trusted_protocols": [
+    {
+      "slug": "active-recall-test-yourself",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "estimate-vs-actual-calibrator",
       "title": "Adjust for Regressive Bias",
@@ -103,6 +133,12 @@
       "slug": "fix-time-distortions-with-anchors",
       "title": "Anchor Your Timeline",
       "url": "https://brali-lifeos.github.io/life-os/fix-time-distortions-with-anchors/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "default-choice-audit",
+      "title": "Audit a Default Before Letting It Decide for You",
+      "url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
       "evidence_status": "practical"
     },
     {
@@ -154,6 +190,12 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "calibrate-task-estimates",
+      "title": "Calibrate Task Estimates With Planned vs Actual Work",
+      "url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "assumed-similarity-bias-check",
       "title": "Challenge Assumed Similarities",
       "url": "https://brali-lifeos.github.io/life-os/assumed-similarity-bias-check/",
@@ -172,15 +214,39 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "check-base-rates-before-deciding",
+      "title": "Check a Relevant Baseline Before Interpreting One Case",
+      "url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "clustering-illusion-guard",
+      "title": "Check a Streak Before Treating It as a Pattern",
+      "url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "check-blame-bias",
       "title": "Check Blame Bias",
       "url": "https://brali-lifeos.github.io/life-os/check-blame-bias/",
       "evidence_status": "practical"
     },
     {
+      "slug": "context-guard-for-decisions",
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "avoid-gamblers-fallacy-trust-the-odds",
       "title": "Check Whether a Streak Changes the Next Event",
       "url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "break-familiarity-bias",
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
       "evidence_status": "practical"
     },
     {
@@ -208,6 +274,12 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "conjunction-fallacy-coach",
+      "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+      "url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "deepen-memory-levels-of-processing",
       "title": "Deepen Memory with Levels of Processing",
       "url": "https://brali-lifeos.github.io/life-os/deepen-memory-levels-of-processing/",
@@ -229,6 +301,12 @@
       "slug": "finish-strong-peak-end-rule",
       "title": "End on a High Note",
       "url": "https://brali-lifeos.github.io/life-os/finish-strong-peak-end-rule/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "separate-to-decide-decision-evaluator",
+      "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+      "url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/",
       "evidence_status": "practical"
     },
     {
@@ -436,6 +514,24 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "question-default-portions",
+      "title": "Rethink Default Quantities",
+      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "judge-decisions-by-process",
+      "title": "Review a Decision Using What Was Known at the Time",
+      "url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "sunk-cost-decision-coach",
+      "title": "Review a High-Commitment Continue-or-Stop Decision",
+      "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "attribution-bias-checker",
       "title": "See Beyond Personality",
       "url": "https://brali-lifeos.github.io/life-os/attribution-bias-checker/",
@@ -463,6 +559,12 @@
       "slug": "avoid-anthropocentric-bias",
       "title": "Separate Observation from Human-Like Interpretation",
       "url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "challenge-assumed-intent",
+      "title": "Separate Observed Facts From Assumed Intent",
+      "url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/",
       "evidence_status": "practical"
     },
     {
@@ -544,6 +646,12 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "common-source-radar",
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "avoid-list-interference-memory-retention",
       "title": "Try Quiet Wakeful Rest After Learning",
       "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
@@ -568,12 +676,6 @@
       "evidence_status": "practical"
     },
     {
-      "slug": "active-recall-test-yourself",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "evidence_status": "reviewed"
-    },
-    {
       "slug": "context-cue-memory-recall",
       "title": "Use Context to Boost Recall",
       "url": "https://brali-lifeos.github.io/life-os/context-cue-memory-recall/",
@@ -581,7 +683,7 @@
     },
     {
       "slug": "mood-memory-matcher",
-      "title": "Use Mood to Boost Memory",
+      "title": "Use Mood Context Carefully When Practicing Recall",
       "url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/",
       "evidence_status": "practical"
     },
@@ -595,12 +697,6 @@
       "slug": "honest-feedback-phrasing-coach",
       "title": "When Asked for Your Opinion: - Be Truthful: Share Your Real Thoughts Respectfully",
       "url": "https://brali-lifeos.github.io/life-os/honest-feedback-phrasing-coach/",
-      "evidence_status": "practical"
-    },
-    {
-      "slug": "question-default-portions",
-      "title": "When Consuming (e",
-      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
       "evidence_status": "practical"
     },
     {
@@ -624,6 +720,13 @@
   ],
   "entries": [
     {
+      "slug": "active-recall-test-yourself",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "evidence_status": "reviewed",
+      "indexable": true
+    },
+    {
       "slug": "challenge-gender-stereotypes-at-work",
       "title": "Actively Question Gender Stereotypes",
       "url": "https://brali-lifeos.github.io/life-os/challenge-gender-stereotypes-at-work/",
@@ -638,16 +741,16 @@
       "indexable": true
     },
     {
-      "slug": "context-guard-for-decisions",
-      "title": "Always Factor in the Human or Situational Context",
-      "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "fix-time-distortions-with-anchors",
       "title": "Anchor Your Timeline",
       "url": "https://brali-lifeos.github.io/life-os/fix-time-distortions-with-anchors/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "default-choice-audit",
+      "title": "Audit a Default Before Letting It Decide for You",
+      "url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
       "evidence_status": "practical",
       "indexable": true
     },
@@ -764,13 +867,6 @@
       "indexable": true
     },
     {
-      "slug": "calibrate-task-estimates",
-      "title": "Balance Your Expectations",
-      "url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "media-influence-checker",
       "title": "Be Aware of How Media Affects You, Not Just Others",
       "url": "https://brali-lifeos.github.io/life-os/media-influence-checker/",
@@ -799,13 +895,6 @@
       "indexable": false
     },
     {
-      "slug": "check-base-rates-before-deciding",
-      "title": "Before Jumping to Conclusions, Focus on the General Information",
-      "url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "spot-decoy-effect-in-choices",
       "title": "Beware the Decoy",
       "url": "https://brali-lifeos.github.io/life-os/spot-decoy-effect-in-choices/",
@@ -827,11 +916,11 @@
       "indexable": true
     },
     {
-      "slug": "clustering-illusion-guard",
-      "title": "Break the Clustering Illusion",
-      "url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "calibrate-task-estimates",
+      "title": "Calibrate Task Estimates With Planned vs Actual Work",
+      "url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "assumed-similarity-bias-check",
@@ -839,20 +928,6 @@
       "url": "https://brali-lifeos.github.io/life-os/assumed-similarity-bias-check/",
       "evidence_status": "practical",
       "indexable": true
-    },
-    {
-      "slug": "challenge-confirmation-bias-checklist",
-      "title": "Challenge Confirmation Bias",
-      "url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "default-choice-audit",
-      "title": "Challenge Default Settings",
-      "url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
-      "evidence_status": "pending-review",
-      "indexable": false
     },
     {
       "slug": "hindsight-bias-coach",
@@ -865,13 +940,6 @@
       "slug": "challenge-negative-predictions",
       "title": "Challenge Negative Predictions",
       "url": "https://brali-lifeos.github.io/life-os/challenge-negative-predictions/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "challenge-assumed-intent",
-      "title": "Challenge the Assumption of Intent Behind Events",
-      "url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -911,6 +979,20 @@
       "indexable": false
     },
     {
+      "slug": "check-base-rates-before-deciding",
+      "title": "Check a Relevant Baseline Before Interpreting One Case",
+      "url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "clustering-illusion-guard",
+      "title": "Check a Streak Before Treating It as a Pattern",
+      "url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "check-blame-bias",
       "title": "Check Blame Bias",
       "url": "https://brali-lifeos.github.io/life-os/check-blame-bias/",
@@ -918,9 +1000,23 @@
       "indexable": true
     },
     {
+      "slug": "context-guard-for-decisions",
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "avoid-gamblers-fallacy-trust-the-odds",
       "title": "Check Whether a Streak Changes the Next Event",
       "url": "https://brali-lifeos.github.io/life-os/avoid-gamblers-fallacy-trust-the-odds/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "break-familiarity-bias",
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
       "evidence_status": "practical",
       "indexable": true
     },
@@ -953,6 +1049,13 @@
       "indexable": true
     },
     {
+      "slug": "conjunction-fallacy-coach",
+      "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+      "url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "attribution-guard-for-comms",
       "title": "Credit Where It’s Due",
       "url": "https://brali-lifeos.github.io/life-os/attribution-guard-for-comms/",
@@ -972,13 +1075,6 @@
       "url": "https://brali-lifeos.github.io/life-os/intent-vs-accident-coach/",
       "evidence_status": "practical",
       "indexable": true
-    },
-    {
-      "slug": "sunk-cost-decision-coach",
-      "title": "Don’t Let Past Investments Trap You into Bad Decisions",
-      "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
     },
     {
       "slug": "temptation-barrier-planner",
@@ -1017,10 +1113,10 @@
     },
     {
       "slug": "separate-to-decide-decision-evaluator",
-      "title": "Evaluate Options Individually to Reduce Unnecessary Distinctions",
+      "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
       "url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "anticipate-sudden-trend-shifts",
@@ -1042,13 +1138,6 @@
       "url": "https://brali-lifeos.github.io/life-os/best-odds-decision-making/",
       "evidence_status": "practical",
       "indexable": true
-    },
-    {
-      "slug": "judge-decisions-by-process",
-      "title": "Focus on Decision Quality",
-      "url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
-      "evidence_status": "pending-review",
-      "indexable": false
     },
     {
       "slug": "kpi-drift-guardrail",
@@ -1359,13 +1448,6 @@
       "indexable": false
     },
     {
-      "slug": "break-familiarity-bias",
-      "title": "Question Your Preferences",
-      "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "memory-fact-checker",
       "title": "Reality Check Your Memories",
       "url": "https://brali-lifeos.github.io/life-os/memory-fact-checker/",
@@ -1443,9 +1525,37 @@
       "indexable": true
     },
     {
+      "slug": "question-default-portions",
+      "title": "Rethink Default Quantities",
+      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "judge-decisions-by-process",
+      "title": "Review a Decision Using What Was Known at the Time",
+      "url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "sunk-cost-decision-coach",
+      "title": "Review a High-Commitment Continue-or-Stop Decision",
+      "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "rhyme-as-reason-bias",
       "title": "Rhyme Doesn’t Equal Truth",
       "url": "https://brali-lifeos.github.io/life-os/rhyme-as-reason-bias/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "challenge-confirmation-bias-checklist",
+      "title": "Run a Disconfirming-Evidence Check",
+      "url": "https://brali-lifeos.github.io/life-os/challenge-confirmation-bias-checklist/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -1481,6 +1591,13 @@
       "slug": "avoid-anthropocentric-bias",
       "title": "Separate Observation from Human-Like Interpretation",
       "url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "challenge-assumed-intent",
+      "title": "Separate Observed Facts From Assumed Intent",
+      "url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/",
       "evidence_status": "practical",
       "indexable": true
     },
@@ -1532,13 +1649,6 @@
       "url": "https://brali-lifeos.github.io/life-os/choice-supportive-bias-check-in/",
       "evidence_status": "practical",
       "indexable": true
-    },
-    {
-      "slug": "common-source-radar",
-      "title": "Spot Common Source Bias",
-      "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
-      "evidence_status": "pending-review",
-      "indexable": false
     },
     {
       "slug": "euphoric-recall-reality-check",
@@ -1625,13 +1735,6 @@
       "indexable": false
     },
     {
-      "slug": "conjunction-fallacy-coach",
-      "title": "Stick to the More General Explanation",
-      "url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "fundamental-attribution-bias-empathy",
       "title": "Stop Seeing Yourself as Complex and Others as Predictable",
       "url": "https://brali-lifeos.github.io/life-os/fundamental-attribution-bias-empathy/",
@@ -1642,6 +1745,13 @@
       "slug": "task-time-calibrator",
       "title": "Stop Underestimating How Long Tasks Will Take",
       "url": "https://brali-lifeos.github.io/life-os/task-time-calibrator/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "avoidance-action-coach",
+      "title": "Take One Concrete Step Instead of Ignoring the Issue",
+      "url": "https://brali-lifeos.github.io/life-os/avoidance-action-coach/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -1695,6 +1805,13 @@
       "indexable": false
     },
     {
+      "slug": "common-source-radar",
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "avoid-list-interference-memory-retention",
       "title": "Try Quiet Wakeful Rest After Learning",
       "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
@@ -1723,13 +1840,6 @@
       "indexable": true
     },
     {
-      "slug": "active-recall-test-yourself",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "evidence_status": "reviewed",
-      "indexable": true
-    },
-    {
       "slug": "cross-disciplinary-insight-lenses",
       "title": "Use All Relevant Knowledge Across Fields",
       "url": "https://brali-lifeos.github.io/life-os/cross-disciplinary-insight-lenses/",
@@ -1745,7 +1855,7 @@
     },
     {
       "slug": "mood-memory-matcher",
-      "title": "Use Mood to Boost Memory",
+      "title": "Use Mood Context Carefully When Practicing Recall",
       "url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/",
       "evidence_status": "practical",
       "indexable": true
@@ -1786,13 +1896,6 @@
       "indexable": false
     },
     {
-      "slug": "question-default-portions",
-      "title": "When Consuming (e",
-      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
-      "evidence_status": "practical",
-      "indexable": true
-    },
-    {
       "slug": "decide-under-unknown-odds",
       "title": "When Making a Decision, Don’t Shy Away from Unknown Probabilities",
       "url": "https://brali-lifeos.github.io/life-os/decide-under-unknown-odds/",
@@ -1826,13 +1929,6 @@
       "url": "https://brali-lifeos.github.io/life-os/spot-unintentional-plagiarism/",
       "evidence_status": "practical",
       "indexable": true
-    },
-    {
-      "slug": "avoidance-action-coach",
-      "title": "When You’re Tempted to Ignore an Issue: - Ask Yourself:",
-      "url": "https://brali-lifeos.github.io/life-os/avoidance-action-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
     },
     {
       "slug": "avoid-selection-bias-in-analysis",

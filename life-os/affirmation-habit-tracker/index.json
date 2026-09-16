@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:affirmation-habit-tracker",
   "slug": "affirmation-habit-tracker",
-  "title": "Pick a Few Powerful Affirmations That Resonate with You and Repeat Them Out Loud",
-  "description": "Pick a few powerful affirmations that resonate with you and repeat them out loud each morning.",
+  "title": "Replace grand claims with a grounded statement and one next action.",
+  "description": "Turn a vague positive statement into words you can presently stand behind, connect it to one action under your control, and revise the statement when it becomes false, empty, or unhelpful.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Mind & Resilience"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:affirmation-habit-tracker",
+    "language": "en",
+    "slug": "affirmation-habit-tracker",
+    "url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
+    "title": "Replace grand claims with a grounded statement and one next action.",
+    "description": "Turn a vague positive statement into words you can presently stand behind, connect it to one action under your control, and revise the statement when it becomes false, empty, or unhelpful.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "mind-resilience",
+          "title": "Mind & Resilience"
+        }
+      ],
+      "topics": [
+        {
+          "id": "mood-wellbeing",
+          "title": "Mood & Wellbeing"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "be-positive"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "be-positive",
+      "title": "Be Positive"
+    },
+    "action": "Write the positive statement you are tempted to use, underline the part that feels exaggerated or outside your control, replace it with language you can currently stand behind, attach one concrete action that would be consistent with the statement, and review the wording after you act.",
+    "check_in": "Can I honestly endorse this statement now, what action does it point to, and should I keep, narrow, or replace the wording after seeing what I actually did?",
+    "keywords": [
+      "Be Positive",
+      "Life OS",
+      "Say It Like You Mean It"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/affirmation-habit-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -2,7 +2,7 @@
   "openapi": "3.1.1",
   "info": {
     "title": "Brali Knowledge API",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Versioned read-only static JSON API over the canonical Brali knowledge model."
   },
   "servers": [
@@ -239,7 +239,7 @@
     "/api/v1/integrations.json": {
       "get": {
         "operationId": "get_integrations",
-        "summary": "Get Brali integration, MCP deployment, citation, and adoption metadata",
+        "summary": "Get Brali integration, MCP deployment, citation, evaluation, and adoption metadata",
         "responses": {
           "200": {
             "description": "External adoption metadata",
@@ -257,10 +257,10 @@
     "/api/v1/problem-collections.json": {
       "get": {
         "operationId": "get_problem_collections",
-        "summary": "Get Brali problem-first practical collections",
+        "summary": "Get the canonical Brali problem discovery graph",
         "responses": {
           "200": {
-            "description": "Problem collection dataset",
+            "description": "Problem discovery graph",
             "content": {
               "application/json": {
                 "schema": {

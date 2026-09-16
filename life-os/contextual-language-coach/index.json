@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:contextual-language-coach",
   "slug": "contextual-language-coach",
-  "title": "Choose a Real-Life Scenario to Practice (e",
-  "description": "Choose a real-life scenario to practice (e.g., ordering food) and focus on mastering phrases for that context. Once confident, move on to more complex topics.",
+  "title": "Rehearse One Real Language Scenario",
+  "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -35,12 +35,16 @@
       {
         "id": "language-learning",
         "title": "Language Learning"
+      },
+      {
+        "id": "skill-learning",
+        "title": "Skill Learning"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "language"
@@ -48,8 +52,73 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:contextual-language-coach",
+    "language": "en",
+    "slug": "contextual-language-coach",
+    "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
+    "title": "Rehearse One Real Language Scenario",
+    "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "language-learning",
+          "title": "Language Learning"
+        },
+        {
+          "id": "skill-learning",
+          "title": "Skill Learning"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "language"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "language",
+      "title": "Language"
+    },
+    "action": "Define the scenario and desired outcome, write the core request or response, add likely follow-up phrases and one repair phrase for misunderstanding, rehearse both sides aloud, use the interaction when appropriate, and update the phrase set from the point where you hesitated or needed clarification.",
+    "check_in": "Which scenario did I rehearse, where did the interaction become difficult, which phrase or listening cue should I add, and what can I reuse next time?",
+    "keywords": [
+      "Language",
+      "Life OS",
+      "Contextual Practice"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/contextual-language-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

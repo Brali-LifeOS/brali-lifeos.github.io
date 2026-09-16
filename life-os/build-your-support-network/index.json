@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:build-your-support-network",
   "slug": "build-your-support-network",
-  "title": "Surround Yourself with People Who Can Offer Advice, Support, and Encouragement",
-  "description": "Surround yourself with people who can offer advice, support, and encouragement. This could be friends, family, mentors, or colleagues.",
+  "title": "Build a Support Map Around Specific Needs",
+  "description": "Map the kinds of support you sometimes need, identify appropriate people or communities for each kind, make specific requests that are easy to decline, and protect reciprocity and boundaries.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
   "machine_url": "https://brali-lifeos.github.io/life-os/build-your-support-network/index.json",
   "growth_zone": {
@@ -16,22 +16,31 @@
     "title": "Work, Money & Strategy"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "work-money",
-        "title": "Work & Money"
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "relationships",
+        "title": "Relationships"
+      },
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +48,8 @@
         "title": "Fieldcraft"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "work-money-strategy",
       "growth_zone_slug": "insider"
@@ -48,8 +57,78 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:build-your-support-network",
+    "language": "en",
+    "slug": "build-your-support-network",
+    "url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
+    "title": "Build a Support Map Around Specific Needs",
+    "description": "Map the kinds of support you sometimes need, identify appropriate people or communities for each kind, make specific requests that are easy to decline, and protect reciprocity and boundaries.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "relationships",
+          "title": "Relationships"
+        },
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "insider-fieldcraft",
+          "title": "Fieldcraft"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "work-money-strategy",
+        "growth_zone_slug": "insider"
+      }
+    },
+    "life_area": {
+      "slug": "work-money-strategy",
+      "title": "Work, Money & Strategy"
+    },
+    "growth_zone": {
+      "slug": "insider",
+      "title": "Insider"
+    },
+    "action": "Write down one current need, decide what kind of help would actually be useful, identify a person or community that is appropriate for that request, ask specifically and make declining easy, respect the answer, and record whether you need a different resource or a different kind of help next time.",
+    "check_in": "Was the request specific and appropriate, was the other person's boundary clear, and do I need to change the ask, the resource, or my own next action?",
+    "keywords": [
+      "Insider",
+      "Life OS",
+      "Support Network"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/build-your-support-network.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

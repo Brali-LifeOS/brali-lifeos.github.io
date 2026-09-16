@@ -73,7 +73,10 @@
         "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/recovery-energy/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:90-30-focus-rest-schedule",
@@ -139,5 +142,13 @@
       "source_url": null,
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/90-30-focus-rest-schedule.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "thinking",
   "title": "Thinking",
-  "description": "Think clearer and make better choices.",
+  "description": "Frame problems, separate claims from evidence, generate alternatives, and build better checks around judgment.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/thinking/",
   "machine_url": "https://brali-lifeos.github.io/life-os/thinking/index.json",
   "indexable": true,
@@ -14,10 +14,10 @@
   },
   "counts": {
     "library_entries": 18,
-    "trusted_protocols": 2,
+    "trusted_protocols": 6,
     "reviewed": 0,
-    "practical": 2,
-    "pending_review": 16,
+    "practical": 6,
+    "pending_review": 12,
     "restricted": 0,
     "mapped_topics": 6,
     "research_gaps": 3
@@ -26,26 +26,26 @@
     {
       "id": "critical-thinking",
       "title": "Critical Thinking",
-      "count": 16,
+      "count": 15,
       "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
     },
     {
       "id": "decision-making",
       "title": "Decision Making",
-      "count": 1,
+      "count": 3,
       "url": "https://brali-lifeos.github.io/ontology/topics/decision-making/"
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
     },
     {
       "id": "error-prevention",
       "title": "Error Prevention",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/error-prevention/"
-    },
-    {
-      "id": "metacognition",
-      "title": "Metacognition",
-      "count": 1,
-      "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
     },
     {
       "id": "revision-feedback",
@@ -64,13 +64,13 @@
     {
       "topic_id": "decision-making",
       "title": "Decision Making",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
     },
     {
       "topic_id": "metacognition",
       "title": "Metacognition",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
     },
     {
@@ -91,6 +91,30 @@
       "slug": "ask-for-feedback-tracker",
       "title": "Ask for Feedback on One Specific Decision",
       "url": "https://brali-lifeos.github.io/life-os/ask-for-feedback-tracker/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "cut-your-losses-sunk-cost",
+      "title": "Judge a Commitment by What Comes Next",
+      "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "title": "Run a Missing-Evidence Check Before a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
       "evidence_status": "practical"
     }
   ],
@@ -124,13 +148,6 @@
       "indexable": false
     },
     {
-      "slug": "avoid-availability-heuristic-decisions",
-      "title": "Challenge Yourself to Dig Deeper When Making Decisions",
-      "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "status-quo-bias-challenge-tracker",
       "title": "Challenge Yourself to Step Out of Your Comfort Zone",
       "url": "https://brali-lifeos.github.io/life-os/status-quo-bias-challenge-tracker/",
@@ -141,13 +158,6 @@
       "slug": "fundamental-attribution-error-coach",
       "title": "Consider the Context (Fundamental Attribution Error)",
       "url": "https://brali-lifeos.github.io/life-os/fundamental-attribution-error-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "cut-your-losses-sunk-cost",
-      "title": "Cut Your Losses (Sunk Cost Fallacy)",
-      "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -173,11 +183,39 @@
       "indexable": false
     },
     {
-      "slug": "confirmation-bias-challenge",
-      "title": "Make It a Habit to Question Your Beliefs",
-      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+      "slug": "cut-your-losses-sunk-cost",
+      "title": "Judge a Commitment by What Comes Next",
+      "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "pause-to-avoid-anchoring-bias",
+      "title": "Pause Before Accepting the First Number or Frame",
+      "url": "https://brali-lifeos.github.io/life-os/pause-to-avoid-anchoring-bias/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "confidence-calibration-habit",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "avoid-availability-heuristic-decisions",
+      "title": "Run a Missing-Evidence Check Before a Decision",
+      "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "confirmation-bias-challenge",
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "avoid-bandwagon-think-for-yourself",
@@ -187,23 +225,9 @@
       "indexable": false
     },
     {
-      "slug": "confidence-calibration-habit",
-      "title": "Think in Percentages (Overconfidence Bias)",
-      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "illusory-correlation-checklist",
       "title": "Validate Connections (Illusory Correlation)",
       "url": "https://brali-lifeos.github.io/life-os/illusory-correlation-checklist/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "pause-to-avoid-anchoring-bias",
-      "title": "When Faced with a Decision, Take a Moment to Step Back and Consider Other",
-      "url": "https://brali-lifeos.github.io/life-os/pause-to-avoid-anchoring-bias/",
       "evidence_status": "pending-review",
       "indexable": false
     },

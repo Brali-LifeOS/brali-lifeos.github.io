@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:top-3-daily-focus-planner",
   "slug": "top-3-daily-focus-planner",
-  "title": "Limit Your Daily Goal List to the Three Most Important Tasks",
-  "description": "Limit your daily goal list to the three most important tasks. Focus on completing these tasks before moving on to others.",
+  "title": "Choose Up to Three Priority Outcomes for the Day",
+  "description": "Choose a small set of outcomes that deserves protected attention today, define what done means, and move the rest to a visible backlog instead of pretending every task is equally urgent.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
   "machine_url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:top-3-daily-focus-planner",
+    "language": "en",
+    "slug": "top-3-daily-focus-planner",
+    "url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
+    "title": "Choose Up to Three Priority Outcomes for the Day",
+    "description": "Choose a small set of outcomes that deserves protected attention today, define what done means, and move the rest to a visible backlog instead of pretending every task is equally urgent.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Review today's deadlines, dependencies, and available capacity; choose up to three outcomes that most deserve progress; define what done means for each; reserve appropriate time where possible; place other tasks in a visible backlog; and re-plan explicitly when genuinely urgent work changes the day.",
+    "check_in": "Which priority outcomes moved today, what changed the plan, and what should be carried forward rather than silently added to tomorrow?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Harness the Power of Three"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/top-3-daily-focus-planner.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

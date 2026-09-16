@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
-  "source_suite_version": "1.0.0",
+  "dataset_version": "1.1.0",
+  "source_suite_version": "1.1.0",
   "name": "Brali Query Playground Parity Report",
-  "description": "Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. The browser core uses the same Flagship 100 hybrid retrieval contract; failures remain visible rather than being removed from the suite.",
+  "description": "Runs the zero-install browser retrieval core against the maintained 50-case Brali Agent Evaluation Suite. Query may route through the canonical Problem Discovery Graph before Topic/Protocol ranking; existing trust, provenance, safety, no-answer, and expected-result gates remain authoritative.",
   "page_url": "https://brali-lifeos.github.io/for-ai/query/",
   "report_url": "https://brali-lifeos.github.io/for-ai/query/parity.json",
   "summary": {
@@ -19,6 +19,7 @@
     "no_answer_pct": 100,
     "en_pass_pct": 100,
     "ru_pass_pct": 100,
+    "canonical_problem_routes_used": 23,
     "failed_case_ids": []
   },
   "cases": [
@@ -40,21 +41,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "resume-after-interruption",
         "topic_ids": [
           "attention-focus",
           "task-initiation",
-          "digital-attention"
+          "planning-prioritization"
         ],
         "protocol_slugs": [
+          "25-minute-pomodoro-focus-sprints",
           "90-30-focus-rest-schedule",
-          "refocus-present-stop-mind-wandering",
-          "ad-astra-per-aspera-motivation-tracker",
-          "30-min-eye-break-tracker",
-          "avoid-list-interference-memory-retention"
+          "3-3-3-workday-planner",
+          "ready-to-resume-plan",
+          "refocus-present-stop-mind-wandering"
         ],
         "decision_ids": [
-          "wakeful-rest-memory-2026",
-          "microbreak-wellbeing-performance-boundary-2022"
+          "microbreak-wellbeing-performance-boundary-2022",
+          "ready-to-resume-interruption-boundary-2018",
+          "mobile-internet-block-attention-boundary-2025"
         ]
       },
       "gates": {
@@ -89,16 +92,20 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "attention-focus"
         ],
         "protocol_slugs": [
           "25-minute-pomodoro-focus-sprints",
+          "batch-non-urgent-notifications",
           "90-30-focus-rest-schedule",
+          "ready-to-resume-plan",
           "refocus-present-stop-mind-wandering"
         ],
         "decision_ids": [
-          "microbreak-wellbeing-performance-boundary-2022"
+          "microbreak-wellbeing-performance-boundary-2022",
+          "notification-blocking-workday-boundary-2023"
         ]
       },
       "gates": {
@@ -131,21 +138,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "start-important-work",
         "topic_ids": [
           "task-initiation",
-          "attention-focus"
+          "attention-focus",
+          "planning-prioritization"
         ],
         "protocol_slugs": [
-          "ad-astra-per-aspera-motivation-tracker",
-          "90-30-focus-rest-schedule",
-          "refocus-present-stop-mind-wandering",
-          "active-recall-test-yourself",
-          "10-minute-language-microsprints"
+          "woop-goal-planner",
+          "30-minute-deadline-sprints",
+          "25-minute-pomodoro-focus-sprints",
+          "temptation-bundling",
+          "ready-to-resume-plan"
         ],
         "decision_ids": [
-          "testing-versus-restudy-retention-boundary-2014",
-          "retrieval-procedural-application-2026",
-          "procrastination-treatment-exact-protocol-boundary-2018"
+          "microbreak-wellbeing-performance-boundary-2022",
+          "woop-mcii-goal-attainment-meta-analysis-2021",
+          "temptation-bundling-exercise-boundary-2020"
         ]
       },
       "gates": {
@@ -178,6 +187,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "plan-realistic-week",
         "topic_ids": [
           "work-systems",
           "planning-prioritization",
@@ -185,12 +195,15 @@
         ],
         "protocol_slugs": [
           "3-3-3-workday-planner",
-          "start-with-a-hypothesis",
-          "2-minute-desk-tidy-timer",
-          "ai-premortem-risk-planner",
-          "achieve-multiple-goals-at-once"
+          "circles-of-control-planner",
+          "woop-goal-planner",
+          "deliberate-email-checking-windows",
+          "brag-doc-wins-hub"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "woop-mcii-academic-procrastination-rct-2026",
+          "email-checking-frequency-stress-boundary-2015"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -222,20 +235,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "goals",
           "emotion-regulation",
           "planning-prioritization"
         ],
         "protocol_slugs": [
-          "achieve-multiple-goals-at-once",
           "woop-goal-planner",
+          "if-then-rules-productivity",
+          "visible-progress-monitoring",
           "5-whys-goal-clarity",
-          "goal-journaling-insights",
-          "cbt-action-mood-tracker"
+          "achieve-multiple-goals-at-once"
         ],
         "decision_ids": [
-          "procrastination-treatment-exact-protocol-boundary-2018"
+          "woop-mcii-academic-procrastination-rct-2026",
+          "woop-mcii-goal-attainment-meta-analysis-2021",
+          "progress-monitoring-goal-attainment-meta-2016"
         ]
       },
       "gates": {
@@ -268,17 +284,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "habits-consistency",
-          "attention-focus",
-          "cardiovascular-health"
+          "sleep-circadian",
+          "attention-focus"
         ],
         "protocol_slugs": [
-          "refocus-present-stop-mind-wandering",
-          "90-30-focus-rest-schedule",
-          "cardio-health-daily-habits"
+          "temptation-bundling",
+          "visible-progress-monitoring",
+          "if-then-rules-productivity",
+          "coot-ai-growth-journal",
+          "ideal-sleep-hours-finder"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "temptation-bundling-exercise-boundary-2020",
+          "progress-monitoring-goal-attainment-meta-2016"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -296,33 +318,40 @@
       "id": "decision-uncertainty",
       "category": "decisions",
       "language": "en",
-      "query": "How can I make a better decision when the outcome is uncertain?",
+      "query": "Show me a circles of control planner for a decision with an uncertain outcome",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
           "decision-making"
         ],
         "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "circles-of-control-planner"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "decision-under-uncertainty",
         "topic_ids": [
           "decision-making",
-          "negotiation",
-          "personal-finance"
+          "emotion-regulation",
+          "negotiation"
         ],
         "protocol_slugs": [
-          "decision-calibration-journal",
-          "avoid-contrast-effect",
-          "avoid-gamblers-fallacy-trust-the-odds",
           "circles-of-control-planner",
-          "ai-premortem-risk-planner"
+          "ab-test-learning-loop",
+          "start-with-a-hypothesis",
+          "consider-the-opposite",
+          "avoid-gamblers-fallacy-trust-the-odds"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "debiasing-education-transfer-boundary-2025",
+          "consider-opposite-social-judgment-boundary-1984",
+          "custom-social-media-brake-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -354,22 +383,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "prevent-recurring-errors",
         "topic_ids": [
           "decision-making",
           "error-prevention",
           "task-initiation"
         ],
         "protocol_slugs": [
-          "ai-premortem-risk-planner",
-          "avoid-contrast-effect",
-          "circles-of-control-planner",
-          "avoid-gamblers-fallacy-trust-the-odds",
-          "decision-calibration-journal"
+          "start-with-a-hypothesis",
+          "ab-test-learning-loop",
+          "5w1h-communication-checklist",
+          "ai-decision-alternatives",
+          "circles-of-control-planner"
         ],
         "decision_ids": [
+          "structured-peer-feedback-provision-2025",
           "empathic-paraphrasing-immediate-emotion-boundary-2012",
-          "procrastination-treatment-exact-protocol-boundary-2018",
-          "testing-versus-restudy-retention-boundary-2014"
+          "exercise-snacks-cardiorespiratory-fitness-boundary-2026"
         ]
       },
       "gates": {
@@ -388,35 +418,39 @@
       "id": "stress-overload",
       "category": "stress",
       "language": "en",
-      "query": "I feel stressed and overloaded after work. What low-risk practice can help me reset?",
+      "query": "Show me a short stress walk I can use as a low-risk reset after work",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
           "stress-regulation"
         ],
         "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "10-minute-stress-walk"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "stress-rumination-reset",
         "topic_ids": [
-          "work-systems",
           "stress-regulation",
-          "fitness-strength"
+          "work-systems",
+          "planning-prioritization"
         ],
         "protocol_slugs": [
-          "3-3-3-workday-planner",
-          "2-minute-desk-tidy-timer",
-          "ai-premortem-risk-planner",
-          "start-with-a-hypothesis",
-          "478-breathing-technique-guide"
+          "circles-of-control-planner",
+          "10-minute-stress-walk",
+          "abdominal-breathing-stress-relief",
+          "dbt-distress-tolerance-coach",
+          "3-minute-sensory-mindfulness-act"
         ],
         "decision_ids": [
-          "microbreak-wellbeing-performance-boundary-2022",
-          "procrastination-treatment-exact-protocol-boundary-2018"
+          "green-route-stress-walk-boundary-2026",
+          "activity-breaks-postprandial-metabolism-boundary-2026",
+          "microbreak-wellbeing-performance-boundary-2022"
         ]
       },
       "gates": {
@@ -449,6 +483,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "emotion-regulation",
           "self-awareness"
@@ -457,9 +492,12 @@
           "dbt-distress-tolerance-coach",
           "cbt-action-mood-tracker",
           "3-minute-sensory-mindfulness-act",
-          "daily-gratitude-journal-three-things"
+          "daily-gratitude-journal-three-things",
+          "savor-positive-moment"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "savoring-emotional-outcomes-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -491,6 +529,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "fear-confidence",
           "social-confidence",
@@ -499,9 +538,9 @@
         "protocol_slugs": [
           "talk-about-fears-coach",
           "safety-statements-exposure-anxiety",
-          "decision-calibration-journal",
-          "refocus-present-stop-mind-wandering",
-          "ask-for-feedback-tracker"
+          "genuine-micro-conversation",
+          "ai-learning-attempt-feedback-retest",
+          "prequestions-before-learning"
         ],
         "decision_ids": []
       },
@@ -535,19 +574,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "stress-rumination-reset",
         "topic_ids": [
           "worry-rumination",
           "attention-focus",
           "digital-attention"
         ],
         "protocol_slugs": [
+          "circles-of-control-planner",
+          "10-minute-stress-walk",
           "refocus-present-stop-mind-wandering",
-          "90-30-focus-rest-schedule",
-          "3-minute-sensory-mindfulness-act",
-          "30-min-eye-break-tracker",
-          "478-breathing-technique-guide"
+          "batch-non-urgent-notifications",
+          "ready-to-resume-plan"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "ready-to-resume-interruption-boundary-2018",
+          "notification-batching-boundary-2019"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -579,15 +622,19 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "sleep-circadian",
           "digital-wellbeing"
         ],
         "protocol_slugs": [
-          "ideal-sleep-hours-finder"
+          "ideal-sleep-hours-finder",
+          "stop-caffeine-after-lunch",
+          "20-20-20-eye-break-reminder"
         ],
         "decision_ids": [
-          "sleep-opportunity-extension-2021"
+          "sleep-opportunity-extension-2021",
+          "caffeine-dose-timing-sleep-boundary-2025"
         ]
       },
       "gates": {
@@ -606,34 +653,42 @@
       "id": "movement-sitting",
       "category": "movement",
       "language": "en",
-      "query": "I sit for hours while working. How can I add more movement to my day?",
+      "query": "I sit at a screen for hours. Show me a 20 20 20 eye break reminder for recovery.",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
+          "recovery-energy"
+        ],
+        "acceptable_topic_ids": [
+          "digital-attention",
           "movement"
         ],
-        "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "20-20-20-eye-break-reminder"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "desk-day-movement",
         "topic_ids": [
           "movement",
-          "work-systems",
-          "planning-prioritization"
+          "recovery-energy",
+          "digital-wellbeing"
         ],
         "protocol_slugs": [
+          "10-minute-stress-walk",
+          "20-20-20-eye-break-reminder",
+          "post-meal-walk",
           "cardio-health-daily-habits",
-          "3-3-3-workday-planner",
-          "start-with-a-hypothesis",
-          "2-minute-desk-tidy-timer",
-          "ai-premortem-risk-planner"
+          "temptation-bundling"
         ],
         "decision_ids": [
-          "distributed-practice-verbal-recall-boundary-2006"
+          "green-route-stress-walk-boundary-2026",
+          "post-meal-exercise-acute-glucose-boundary-2023",
+          "temptation-bundling-exercise-boundary-2020"
         ]
       },
       "gates": {
@@ -669,6 +724,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "fitness-strength"
         ],
@@ -676,11 +732,12 @@
           "10-minute-morning-stretch-routine",
           "4-minute-hiit-tabata-workout",
           "4-minute-tabata-hiit-timer",
-          "10-minute-stress-walk",
-          "5-minute-meditation-habit-tracker"
+          "10-minute-stress-walk"
         ],
         "decision_ids": [
-          "microbreak-wellbeing-performance-boundary-2022"
+          "exercise-snacks-real-world-t2d-boundary-2026",
+          "exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+          "green-route-stress-walk-boundary-2026"
         ]
       },
       "gates": {
@@ -713,6 +770,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "fitness-strength",
           "career",
@@ -725,7 +783,9 @@
           "cardio-health-daily-habits",
           "safety-statements-exposure-anxiety"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "exercise-snacks-real-world-t2d-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -757,19 +817,24 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "recovery-energy",
           "movement",
           "critical-thinking"
         ],
         "protocol_slugs": [
-          "90-30-focus-rest-schedule",
-          "cardio-health-daily-habits",
           "20-20-20-eye-break-reminder",
-          "daily-gratitude-journal-three-things",
-          "avoid-anthropocentric-bias"
+          "90-30-focus-rest-schedule",
+          "temptation-bundling",
+          "10-minute-stress-walk",
+          "cardio-health-daily-habits"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "temptation-bundling-exercise-boundary-2020",
+          "green-route-stress-walk-boundary-2026",
+          "genai-learning-augmentation-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -801,20 +866,21 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "remember-what-you-study",
         "topic_ids": [
           "memory"
         ],
         "protocol_slugs": [
-          "spaced-recall-coach",
-          "avoid-list-interference-memory-retention",
           "active-recall-test-yourself",
-          "full-list-recall-technique",
-          "highlight-recall-assistant"
+          "avoid-list-interference-memory-retention",
+          "weekly-theme-learning-sprints",
+          "spaced-recall-coach",
+          "prequestions-before-learning"
         ],
         "decision_ids": [
-          "distributed-practice-verbal-recall-boundary-2006",
           "wakeful-rest-memory-2026",
-          "retrieval-procedural-application-2026"
+          "retrieval-procedural-application-2026",
+          "testing-effect-direct-forward-2026"
         ]
       },
       "gates": {
@@ -851,22 +917,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "learn-under-time-pressure",
         "topic_ids": [
           "memory",
           "language-learning",
           "skill-learning"
         ],
         "protocol_slugs": [
-          "avoid-list-interference-memory-retention",
           "active-recall-test-yourself",
-          "spaced-recall-coach",
           "10-minute-language-microsprints",
-          "10-minute-stress-walk"
+          "weekly-theme-learning-sprints",
+          "avoid-list-interference-memory-retention",
+          "ai-learning-attempt-feedback-retest"
         ],
         "decision_ids": [
           "wakeful-rest-memory-2026",
-          "testing-effect-direct-forward-2026",
-          "testing-versus-restudy-retention-boundary-2014"
+          "wakeful-rest-complex-learning-challenge-2026",
+          "testing-effect-direct-forward-2026"
         ]
       },
       "gates": {
@@ -902,6 +969,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "remember-what-you-study",
         "topic_ids": [
           "memory",
           "conflict-repair",
@@ -910,14 +978,14 @@
         "protocol_slugs": [
           "active-recall-test-yourself",
           "avoid-list-interference-memory-retention",
+          "weekly-theme-learning-sprints",
           "spaced-recall-coach",
-          "relationship-repair-coach",
-          "backfire-effect-coach"
+          "ai-learning-attempt-feedback-retest"
         ],
         "decision_ids": [
           "retrieval-procedural-application-2026",
           "testing-versus-restudy-retention-boundary-2014",
-          "testing-effect-direct-forward-2026"
+          "wakeful-rest-complex-learning-challenge-2026"
         ]
       },
       "gates": {
@@ -950,22 +1018,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "learn-under-time-pressure",
         "topic_ids": [
           "skill-learning",
           "language-learning",
           "revision-feedback"
         ],
         "protocol_slugs": [
-          "weekly-theme-learning-sprints",
           "active-recall-test-yourself",
+          "weekly-theme-learning-sprints",
           "10-minute-language-microsprints",
-          "ask-a-peer-to-proofread",
-          "ask-for-feedback-tracker"
+          "ai-learning-attempt-feedback-retest",
+          "prequestions-before-learning"
         ],
         "decision_ids": [
           "testing-versus-restudy-retention-boundary-2014",
-          "retrieval-procedural-application-2026",
-          "testing-effect-direct-forward-2026"
+          "prequestions-targeted-learning-boundary-2025",
+          "retrieval-procedural-application-2026"
         ]
       },
       "gates": {
@@ -998,18 +1067,24 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "learn-under-time-pressure",
         "topic_ids": [
           "language-learning",
           "attention-focus",
           "environment-design"
         ],
         "protocol_slugs": [
+          "active-recall-test-yourself",
           "10-minute-language-microsprints",
-          "refocus-present-stop-mind-wandering",
-          "90-30-focus-rest-schedule",
-          "safety-statements-exposure-anxiety"
+          "weekly-theme-learning-sprints",
+          "contextual-language-coach",
+          "batch-non-urgent-notifications"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026",
+          "testing-versus-restudy-retention-boundary-2014"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1027,7 +1102,7 @@
       "id": "weekly-theme-learning",
       "category": "learning",
       "language": "en",
-      "query": "Show me a weekly theme learning sprint",
+      "query": "How can I spend each week focused on a single learning theme?",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [],
@@ -1043,21 +1118,22 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "learn-under-time-pressure",
         "topic_ids": [
+          "attention-focus",
           "language-learning",
-          "skill-learning",
-          "metacognition"
+          "skill-learning"
         ],
         "protocol_slugs": [
-          "10-minute-language-microsprints",
-          "weekly-theme-learning-sprints",
           "active-recall-test-yourself",
-          "refocus-present-stop-mind-wandering",
-          "ask-for-feedback-tracker"
+          "weekly-theme-learning-sprints",
+          "10-minute-language-microsprints",
+          "90-30-focus-rest-schedule",
+          "batch-non-urgent-notifications"
         ],
         "decision_ids": [
-          "retrieval-procedural-application-2026",
           "testing-effect-direct-forward-2026",
+          "retrieval-procedural-application-2026",
           "testing-versus-restudy-retention-boundary-2014"
         ]
       },
@@ -1091,22 +1167,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "cognitive-biases",
           "critical-thinking",
           "metacognition"
         ],
         "protocol_slugs": [
-          "challenge-generalizations-counterexamples",
+          "consider-the-opposite",
           "assumed-similarity-bias-check",
-          "avoid-groupthink-decision-checklist",
-          "belief-update-coach",
-          "consistency-bias-tracker"
+          "active-listening-meeting-notes",
+          "anticipate-sudden-trend-shifts",
+          "prequestions-before-learning"
         ],
         "decision_ids": [
-          "distributed-practice-verbal-recall-boundary-2006",
-          "communication-coaching-reflective-statements-boundary-2023",
-          "microbreak-wellbeing-performance-boundary-2022"
+          "consider-opposite-social-judgment-boundary-1984",
+          "debiasing-education-transfer-boundary-2025",
+          "prequestions-targeted-learning-boundary-2025"
         ]
       },
       "gates": {
@@ -1143,15 +1220,17 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "problem-solving",
           "creative-problem-solving"
         ],
         "protocol_slugs": [
-          "biomimicry-creative-problem-solving",
-          "bold-brainstorm-kickoff",
           "start-with-a-hypothesis",
-          "analogy-studio"
+          "ab-test-learning-loop",
+          "break-down-big-problems-triz",
+          "process-of-elimination-tracker",
+          "biomimicry-creative-problem-solving"
         ],
         "decision_ids": []
       },
@@ -1185,6 +1264,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "metacognition",
           "clear-communication",
@@ -1192,10 +1272,10 @@
         ],
         "protocol_slugs": [
           "refocus-present-stop-mind-wandering",
-          "belief-update-coach",
-          "ask-for-feedback-tracker",
-          "decision-calibration-journal",
-          "5w1h-communication-checklist"
+          "ai-learning-attempt-feedback-retest",
+          "prequestions-before-learning",
+          "self-explain-what-you-learn",
+          "ask-for-feedback-tracker"
         ],
         "decision_ids": []
       },
@@ -1215,35 +1295,41 @@
       "id": "data-uncertainty",
       "category": "thinking",
       "language": "en",
-      "query": "How can I use simple data and uncertainty to make a better judgment?",
+      "query": "Show me an A B test learning loop for problem solving",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
-          "data-literacy"
+          "problem-solving"
         ],
-        "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "acceptable_topic_ids": [
+          "strategy"
+        ],
+        "protocol_slugs": [
+          "ab-test-learning-loop"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "learn-under-time-pressure",
         "topic_ids": [
-          "data-literacy",
-          "decision-making",
-          "digital-wellbeing"
+          "problem-solving",
+          "creative-problem-solving",
+          "language-learning"
         ],
         "protocol_slugs": [
-          "avoid-gamblers-fallacy-trust-the-odds",
-          "avoid-selection-bias-in-analysis",
-          "ai-premortem-risk-planner",
-          "avoid-contrast-effect",
-          "circles-of-control-planner"
+          "active-recall-test-yourself",
+          "weekly-theme-learning-sprints",
+          "10-minute-language-microsprints",
+          "ab-test-learning-loop",
+          "start-with-a-hypothesis"
         ],
         "decision_ids": [
-          "empathic-paraphrasing-immediate-emotion-boundary-2012",
-          "distributed-practice-verbal-recall-boundary-2006"
+          "testing-versus-restudy-retention-boundary-2014",
+          "retrieval-procedural-application-2026",
+          "testing-effect-direct-forward-2026"
         ]
       },
       "gates": {
@@ -1276,21 +1362,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "decision-under-uncertainty",
         "topic_ids": [
           "cognitive-biases",
           "decision-making",
           "emotion-regulation"
         ],
         "protocol_slugs": [
-          "bias-checkpoints-for-teams",
-          "choice-supportive-bias-check-in",
-          "best-odds-decision-making",
-          "clarify-probabilities-risk-breakdown",
-          "hindsight-bias-coach"
+          "circles-of-control-planner",
+          "ab-test-learning-loop",
+          "start-with-a-hypothesis",
+          "consider-the-opposite",
+          "assumed-similarity-bias-check"
         ],
         "decision_ids": [
-          "empathic-paraphrasing-immediate-emotion-boundary-2012",
-          "sleep-variability-cognition-2026"
+          "debiasing-education-transfer-boundary-2025",
+          "consider-opposite-social-judgment-boundary-1984",
+          "empathic-paraphrasing-immediate-emotion-boundary-2012"
         ]
       },
       "gates": {
@@ -1325,6 +1413,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "listening",
           "memory"
@@ -1332,14 +1421,14 @@
         "protocol_slugs": [
           "ask-better-interview-questions",
           "active-recall-test-yourself",
-          "active-listening-exercises",
           "avoid-list-interference-memory-retention",
-          "spaced-recall-coach"
+          "active-listening-exercises",
+          "ai-learning-attempt-feedback-retest"
         ],
         "decision_ids": [
+          "communication-coaching-reflective-statements-boundary-2023",
           "retrieval-procedural-application-2026",
-          "testing-versus-restudy-retention-boundary-2014",
-          "communication-coaching-reflective-statements-boundary-2023"
+          "testing-versus-restudy-retention-boundary-2014"
         ]
       },
       "gates": {
@@ -1358,33 +1447,38 @@
       "id": "clear-message",
       "category": "communication",
       "language": "en",
-      "query": "How can I make a work message clearer and easier to act on?",
+      "query": "Show me a 5W1H communication checklist for a clear work message",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
           "clear-communication"
         ],
         "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "5w1h-communication-checklist"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "prevent-recurring-errors",
         "topic_ids": [
-          "work-systems",
           "clear-communication",
-          "habits-consistency"
+          "work-systems",
+          "planning-prioritization"
         ],
         "protocol_slugs": [
-          "2-minute-desk-tidy-timer",
-          "3-3-3-workday-planner",
           "start-with-a-hypothesis",
-          "ai-premortem-risk-planner",
-          "5w1h-communication-checklist"
+          "5w1h-communication-checklist",
+          "ab-test-learning-loop",
+          "build-your-support-network",
+          "clarity-ladder-analyzer"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "supervisory-feedback-characteristics-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1416,16 +1510,24 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "prepare-difficult-conversation",
         "topic_ids": [
           "difficult-conversations",
           "negotiation",
           "psychological-flexibility"
         ],
         "protocol_slugs": [
-          "create-win-win-outcomes",
-          "ancestral-torch-resilience-tracker"
+          "active-listening-exercises",
+          "5w1h-communication-checklist",
+          "ai-conversation-rehearsal",
+          "ai-customer-reply-coach",
+          "create-win-win-outcomes"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "communication-coaching-reflective-statements-boundary-2023",
+          "empathic-paraphrasing-immediate-emotion-boundary-2012",
+          "chatbot-difficult-conversation-rehearsal-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1457,12 +1559,14 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "conflict-repair"
         ],
         "protocol_slugs": [
           "relationship-repair-coach",
-          "backfire-effect-coach"
+          "backfire-effect-coach",
+          "contextual-language-coach"
         ],
         "decision_ids": [
           "apology-repair-2021"
@@ -1500,6 +1604,7 @@
       },
       "observed": {
         "status": "boundary-only",
+        "problem_slug": "desk-day-movement",
         "topic_ids": [
           "movement",
           "recovery-energy"
@@ -1507,8 +1612,8 @@
         "protocol_slugs": [],
         "decision_ids": [
           "movement-breaks-cognition-2026",
-          "distributed-practice-verbal-recall-boundary-2006",
-          "microbreak-wellbeing-performance-boundary-2022"
+          "sitting-breaks-cognition-boundary-2026",
+          "distributed-practice-verbal-recall-boundary-2006"
         ]
       },
       "gates": {
@@ -1527,33 +1632,38 @@
       "id": "idea-generation",
       "category": "creativity",
       "language": "en",
-      "query": "How can I generate more ideas before judging them?",
+      "query": "How can a short timebox help me produce a rough first pass before judging ideas?",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
           "idea-generation"
         ],
         "acceptable_topic_ids": [],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "30-minute-deadline-sprints"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
-          "idea-generation",
-          "cognitive-biases",
-          "goals"
+          "idea-generation"
         ],
         "protocol_slugs": [
-          "brainwriting-group-idea-generation",
-          "biomimicry-creative-problem-solving",
+          "30-minute-deadline-sprints",
+          "ai-idea-divergence-pass",
           "bold-brainstorm-kickoff",
-          "generation-effect-memory-coach",
-          "30-minute-deadline-sprints"
+          "brainwriting-group-idea-generation",
+          "ai-rubric-critique"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "human-first-ai-collaboration-boundary-2026",
+          "procrastination-treatment-exact-protocol-boundary-2018",
+          "vocabulary-pretesting-guess-feedback-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1587,6 +1697,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "idea-generation",
           "writing"
@@ -1594,12 +1705,12 @@
         "protocol_slugs": [
           "bold-brainstorm-kickoff",
           "brainwriting-group-idea-generation",
-          "30-minute-deadline-sprints",
+          "ai-idea-divergence-pass",
           "biomimicry-creative-problem-solving",
-          "ask-a-peer-to-proofread"
+          "creativity-within-constraints"
         ],
         "decision_ids": [
-          "writing-feedback-level-match-2024"
+          "walking-divergent-thinking-boundary-2026"
         ]
       },
       "gates": {
@@ -1632,18 +1743,20 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "writing",
           "decision-making"
         ],
         "protocol_slugs": [
+          "structure-writing-with-visuals",
+          "ai-professional-writing-draft",
           "ask-a-peer-to-proofread",
-          "ai-premortem-risk-planner",
-          "avoid-contrast-effect",
-          "avoid-gamblers-fallacy-trust-the-odds",
-          "circles-of-control-planner"
+          "ai-rubric-critique",
+          "context-planner-for-writers"
         ],
         "decision_ids": [
+          "structured-peer-feedback-provision-2025",
           "writing-feedback-level-match-2024"
         ]
       },
@@ -1677,19 +1790,22 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "prevent-recurring-errors",
         "topic_ids": [
           "work-systems",
           "planning-prioritization",
           "revision-feedback"
         ],
         "protocol_slugs": [
-          "3-3-3-workday-planner",
           "start-with-a-hypothesis",
-          "2-minute-desk-tidy-timer",
-          "ai-premortem-risk-planner",
-          "achieve-multiple-goals-at-once"
+          "5w1h-communication-checklist",
+          "ab-test-learning-loop",
+          "ai-task-frontier-test",
+          "deliberate-email-checking-windows"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "email-checking-frequency-stress-boundary-2015"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1721,6 +1837,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "personal-finance",
           "habits-consistency",
@@ -1728,12 +1845,14 @@
         ],
         "protocol_slugs": [
           "automatic-paycheck-to-savings",
-          "20-20-20-eye-break-reminder",
-          "5-minute-meditation-habit-tracker",
-          "cardio-health-daily-habits",
-          "deepen-memory-levels-of-processing"
+          "temptation-bundling",
+          "if-then-rules-productivity",
+          "visible-progress-monitoring",
+          "coot-ai-growth-journal"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "temptation-bundling-exercise-boundary-2020"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1765,19 +1884,23 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "plan-realistic-week",
         "topic_ids": [
           "strategy",
           "cardiovascular-health",
           "metacognition"
         ],
         "protocol_slugs": [
-          "create-win-win-outcomes",
-          "cardio-health-daily-habits",
-          "refocus-present-stop-mind-wandering",
-          "ask-for-feedback-tracker",
-          "belief-update-coach"
+          "3-3-3-workday-planner",
+          "circles-of-control-planner",
+          "woop-goal-planner",
+          "ai-task-frontier-test",
+          "create-win-win-outcomes"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "woop-mcii-academic-procrastination-rct-2026",
+          "woop-mcii-goal-attainment-meta-analysis-2021"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1809,16 +1932,24 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "digital-attention",
           "digital-wellbeing",
           "task-initiation"
         ],
         "protocol_slugs": [
+          "batch-non-urgent-notifications",
+          "deliberate-email-checking-windows",
+          "grayscale-phone-friction",
           "30-min-eye-break-tracker",
-          "ad-astra-per-aspera-motivation-tracker"
+          "20-20-20-eye-break-reminder"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "notification-blocking-workday-boundary-2023",
+          "grayscale-screen-time-friction-boundary-2026",
+          "email-checking-frequency-stress-boundary-2015"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1850,17 +1981,18 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "information-management",
           "work-systems",
           "attention-focus"
         ],
         "protocol_slugs": [
-          "ai-premortem-risk-planner",
-          "2-minute-desk-tidy-timer",
-          "3-3-3-workday-planner",
-          "start-with-a-hypothesis",
-          "refocus-present-stop-mind-wandering"
+          "chunk-complex-ideas-for-clarity",
+          "brag-doc-wins-hub",
+          "ai-source-summary-verification",
+          "ai-structured-extraction-check",
+          "ai-premortem-risk-planner"
         ],
         "decision_ids": []
       },
@@ -1880,7 +2012,7 @@
       "id": "workspace-friction",
       "category": "digital",
       "language": "en",
-      "query": "How can I change my workspace to reduce friction and mistakes?",
+      "query": "Show me a 2 minute desk tidy timer to reduce workspace friction before I start work",
       "mode": "retrieve",
       "expected": {
         "topic_ids": [
@@ -1889,23 +2021,33 @@
         "acceptable_topic_ids": [
           "environment-design"
         ],
-        "protocol_slugs": [],
+        "protocol_slugs": [
+          "2-minute-desk-tidy-timer"
+        ],
         "decision_ids": [],
         "boundary_only": false,
         "safety_sensitive": false
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "start-important-work",
         "topic_ids": [
           "workspace",
-          "environment-design",
-          "task-initiation"
+          "task-initiation",
+          "work-systems"
         ],
         "protocol_slugs": [
-          "ad-astra-per-aspera-motivation-tracker",
-          "weekly-theme-learning-sprints"
+          "woop-goal-planner",
+          "30-minute-deadline-sprints",
+          "25-minute-pomodoro-focus-sprints",
+          "2-minute-desk-tidy-timer",
+          "ergonomic-workspace-assessment"
         ],
-        "decision_ids": []
+        "decision_ids": [
+          "microbreak-wellbeing-performance-boundary-2022",
+          "woop-mcii-academic-procrastination-rct-2026",
+          "activity-breaks-postprandial-metabolism-boundary-2026"
+        ]
       },
       "gates": {
         "topic_hit": true,
@@ -1937,10 +2079,13 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "attention-focus"
         ],
         "protocol_slugs": [
+          "batch-non-urgent-notifications",
+          "ready-to-resume-plan",
           "refocus-present-stop-mind-wandering",
           "90-30-focus-rest-schedule"
         ],
@@ -1976,11 +2121,13 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "sleep-circadian"
         ],
         "protocol_slugs": [
-          "ideal-sleep-hours-finder"
+          "ideal-sleep-hours-finder",
+          "stop-caffeine-after-lunch"
         ],
         "decision_ids": []
       },
@@ -2014,13 +2161,16 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": null,
         "topic_ids": [
           "memory"
         ],
         "protocol_slugs": [
           "active-recall-test-yourself",
+          "ai-learning-attempt-feedback-retest",
           "avoid-list-interference-memory-retention",
-          "spaced-recall-coach"
+          "prequestions-before-learning",
+          "self-explain-what-you-learn"
         ],
         "decision_ids": []
       },
@@ -2052,6 +2202,7 @@
       },
       "observed": {
         "status": "no-trusted-answer",
+        "problem_slug": null,
         "topic_ids": [],
         "protocol_slugs": [],
         "decision_ids": []
@@ -2084,6 +2235,7 @@
       },
       "observed": {
         "status": "no-trusted-answer",
+        "problem_slug": null,
         "topic_ids": [],
         "protocol_slugs": [],
         "decision_ids": []
@@ -2116,6 +2268,7 @@
       },
       "observed": {
         "status": "no-trusted-answer",
+        "problem_slug": null,
         "topic_ids": [],
         "protocol_slugs": [],
         "decision_ids": []
@@ -2152,6 +2305,7 @@
       },
       "observed": {
         "status": "boundary-only",
+        "problem_slug": null,
         "topic_ids": [
           "sleep-circadian",
           "cognitive-biases",
@@ -2161,7 +2315,7 @@
         "decision_ids": [
           "sleep-variability-cognition-2026",
           "sleep-opportunity-extension-2021",
-          "movement-breaks-cognition-2026"
+          "activity-breaks-postprandial-metabolism-boundary-2026"
         ]
       },
       "gates": {
@@ -2200,6 +2354,7 @@
       },
       "observed": {
         "status": "trusted-answer",
+        "problem_slug": "remember-what-you-study",
         "topic_ids": [
           "memory",
           "fitness-strength",
@@ -2208,9 +2363,9 @@
         "protocol_slugs": [
           "active-recall-test-yourself",
           "avoid-list-interference-memory-retention",
-          "spaced-recall-coach",
-          "10-minute-morning-stretch-routine",
-          "4-minute-hiit-tabata-workout"
+          "weekly-theme-learning-sprints",
+          "self-explain-what-you-learn",
+          "spaced-recall-coach"
         ],
         "decision_ids": [
           "testing-versus-restudy-retention-boundary-2014",

@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "summary": {
     "classification_debt": 23,
     "growth_gaps": 22,
-    "pending_entries": 237,
+    "pending_entries": 226,
     "trusted_pending_entries": 0
   },
   "items": [
@@ -12,12 +12,12 @@
       "type": "classification-debt",
       "id": "triz",
       "title": "TRIZ",
-      "pending_entries": 45,
+      "pending_entries": 43,
       "trusted_entries": 0,
       "research_candidates": 0,
       "semantic_kind": "method",
       "target_id": "triz",
-      "priority_score": 145,
+      "priority_score": 143,
       "priority_factors": [
         "topic-pending"
       ],
@@ -27,14 +27,30 @@
       "type": "classification-debt",
       "id": "as-detective",
       "title": "Detective",
-      "pending_entries": 33,
+      "pending_entries": 30,
       "trusted_entries": 0,
       "research_candidates": 0,
       "semantic_kind": "lens",
       "target_id": "detective",
-      "priority_score": 133,
+      "priority_score": 130,
       "priority_factors": [
         "topic-pending"
+      ],
+      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
+    },
+    {
+      "type": "classification-debt",
+      "id": "as-qa",
+      "title": "Quality Assurance",
+      "pending_entries": 4,
+      "trusted_entries": 0,
+      "research_candidates": 5,
+      "semantic_kind": "lens",
+      "target_id": "qa",
+      "priority_score": 119,
+      "priority_factors": [
+        "topic-pending",
+        "research-coverage"
       ],
       "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
     },
@@ -44,27 +60,13 @@
       "title": "Architecture",
       "pending_entries": 15,
       "trusted_entries": 0,
-      "research_candidates": 0,
+      "research_candidates": 1,
       "semantic_kind": "lens",
       "target_id": "architecture",
-      "priority_score": 115,
+      "priority_score": 118,
       "priority_factors": [
-        "topic-pending"
-      ],
-      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
-    },
-    {
-      "type": "classification-debt",
-      "id": "grandmaster",
-      "title": "Chess",
-      "pending_entries": 12,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "lens",
-      "target_id": "chess",
-      "priority_score": 112,
-      "priority_factors": [
-        "topic-pending"
+        "topic-pending",
+        "research-coverage"
       ],
       "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
     },
@@ -85,13 +87,13 @@
     },
     {
       "type": "classification-debt",
-      "id": "stoicism",
-      "title": "Stoicism",
+      "id": "grandmaster",
+      "title": "Chess",
       "pending_entries": 10,
       "trusted_entries": 0,
       "research_candidates": 0,
       "semantic_kind": "lens",
-      "target_id": "stoicism",
+      "target_id": "chess",
       "priority_score": 110,
       "priority_factors": [
         "topic-pending"
@@ -100,28 +102,13 @@
     },
     {
       "type": "classification-debt",
-      "id": "chef",
-      "title": "Chef / Operations",
+      "id": "stoicism",
+      "title": "Stoicism",
       "pending_entries": 9,
       "trusted_entries": 0,
       "research_candidates": 0,
       "semantic_kind": "lens",
-      "target_id": "chef-operations",
-      "priority_score": 109,
-      "priority_factors": [
-        "topic-pending"
-      ],
-      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
-    },
-    {
-      "type": "classification-debt",
-      "id": "insider",
-      "title": "Fieldcraft",
-      "pending_entries": 9,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "lens",
-      "target_id": "insider-fieldcraft",
+      "target_id": "stoicism",
       "priority_score": 109,
       "priority_factors": [
         "topic-pending"
@@ -145,6 +132,21 @@
     },
     {
       "type": "classification-debt",
+      "id": "chef",
+      "title": "Chef / Operations",
+      "pending_entries": 8,
+      "trusted_entries": 0,
+      "research_candidates": 0,
+      "semantic_kind": "lens",
+      "target_id": "chef-operations",
+      "priority_score": 108,
+      "priority_factors": [
+        "topic-pending"
+      ],
+      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
+    },
+    {
+      "type": "classification-debt",
       "id": "gestalt",
       "title": "Gestalt-derived",
       "pending_entries": 8,
@@ -152,6 +154,21 @@
       "research_candidates": 0,
       "semantic_kind": "method",
       "target_id": "gestalt",
+      "priority_score": 108,
+      "priority_factors": [
+        "topic-pending"
+      ],
+      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
+    },
+    {
+      "type": "classification-debt",
+      "id": "insider",
+      "title": "Fieldcraft",
+      "pending_entries": 8,
+      "trusted_entries": 0,
+      "research_candidates": 0,
+      "semantic_kind": "lens",
+      "target_id": "insider-fieldcraft",
       "priority_score": 108,
       "priority_factors": [
         "topic-pending"
@@ -325,21 +342,6 @@
     },
     {
       "type": "classification-debt",
-      "id": "as-qa",
-      "title": "Quality Assurance",
-      "pending_entries": 5,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "lens",
-      "target_id": "qa",
-      "priority_score": 105,
-      "priority_factors": [
-        "topic-pending"
-      ],
-      "reason": "Topic classification debt. Trusted records rank first, then volume and available research coverage."
-    },
-    {
-      "type": "classification-debt",
       "id": "quantum",
       "title": "Quantum (legacy analogy)",
       "pending_entries": 3,
@@ -355,17 +357,97 @@
     },
     {
       "type": "growth-gap",
-      "id": "career",
-      "title": "Career",
+      "id": "movement",
+      "title": "Movement",
       "pending_entries": 0,
       "trusted_entries": 0,
-      "research_candidates": 0,
+      "research_candidates": 8,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:career",
-      "priority_score": 50,
+      "canonical_id": "brali:topic:movement",
+      "priority_score": 80,
       "priority_factors": [
-        "empty-topic",
-        "needs-research"
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 6,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:attention-focus",
+      "priority_score": 70,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 6,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:digital-attention",
+      "priority_score": 70,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "decision-making",
+      "title": "Decision Making",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 5,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:decision-making",
+      "priority_score": 65,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 4,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:digital-wellbeing",
+      "priority_score": 60,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 4,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:sleep-circadian",
+      "priority_score": 60,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
       ],
       "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
     },
@@ -375,25 +457,57 @@
       "title": "Difficult Conversations",
       "pending_entries": 0,
       "trusted_entries": 0,
-      "research_candidates": 0,
+      "research_candidates": 3,
       "semantic_kind": "topic",
       "canonical_id": "brali:topic:difficult-conversations",
-      "priority_score": 50,
+      "priority_score": 55,
       "priority_factors": [
-        "empty-topic",
-        "needs-research"
+        "thin-topic",
+        "research-coverage"
       ],
       "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
     },
     {
       "type": "growth-gap",
-      "id": "information-management",
-      "title": "Information Management",
+      "id": "metacognition",
+      "title": "Metacognition",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 3,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:metacognition",
+      "priority_score": 55,
+      "priority_factors": [
+        "thin-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "nutrition",
+      "title": "Nutrition",
+      "pending_entries": 0,
+      "trusted_entries": 0,
+      "research_candidates": 1,
+      "semantic_kind": "topic",
+      "canonical_id": "brali:topic:nutrition",
+      "priority_score": 55,
+      "priority_factors": [
+        "empty-topic",
+        "research-coverage"
+      ],
+      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
+    },
+    {
+      "type": "growth-gap",
+      "id": "career",
+      "title": "Career",
       "pending_entries": 0,
       "trusted_entries": 0,
       "research_candidates": 0,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:information-management",
+      "canonical_id": "brali:topic:career",
       "priority_score": 50,
       "priority_factors": [
         "empty-topic",
@@ -419,38 +533,6 @@
     },
     {
       "type": "growth-gap",
-      "id": "nutrition",
-      "title": "Nutrition",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:nutrition",
-      "priority_score": 50,
-      "priority_factors": [
-        "empty-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "sleep-circadian",
-      "title": "Sleep & Circadian Rhythm",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 2,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:sleep-circadian",
-      "priority_score": 50,
-      "priority_factors": [
-        "thin-topic",
-        "research-coverage"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
       "id": "worry-rumination",
       "title": "Worry & Rumination",
       "pending_entries": 0,
@@ -467,13 +549,13 @@
     },
     {
       "type": "growth-gap",
-      "id": "attention-focus",
-      "title": "Attention & Focus",
+      "id": "creative-problem-solving",
+      "title": "Creative Problem Solving",
       "pending_entries": 0,
       "trusted_entries": 0,
       "research_candidates": 1,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:attention-focus",
+      "canonical_id": "brali:topic:creative-problem-solving",
       "priority_score": 45,
       "priority_factors": [
         "thin-topic",
@@ -483,13 +565,13 @@
     },
     {
       "type": "growth-gap",
-      "id": "movement",
-      "title": "Movement",
+      "id": "information-management",
+      "title": "Information Management",
       "pending_entries": 0,
       "trusted_entries": 0,
       "research_candidates": 1,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:movement",
+      "canonical_id": "brali:topic:information-management",
       "priority_score": 45,
       "priority_factors": [
         "thin-topic",
@@ -515,65 +597,33 @@
     },
     {
       "type": "growth-gap",
-      "id": "creative-problem-solving",
-      "title": "Creative Problem Solving",
+      "id": "self-awareness",
+      "title": "Self-Awareness",
       "pending_entries": 0,
       "trusted_entries": 0,
-      "research_candidates": 0,
+      "research_candidates": 1,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:creative-problem-solving",
-      "priority_score": 40,
+      "canonical_id": "brali:topic:self-awareness",
+      "priority_score": 45,
       "priority_factors": [
         "thin-topic",
-        "needs-research"
+        "research-coverage"
       ],
       "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
     },
     {
       "type": "growth-gap",
-      "id": "decision-making",
-      "title": "Decision Making",
+      "id": "social-confidence",
+      "title": "Social Confidence",
       "pending_entries": 0,
       "trusted_entries": 0,
-      "research_candidates": 0,
+      "research_candidates": 1,
       "semantic_kind": "topic",
-      "canonical_id": "brali:topic:decision-making",
-      "priority_score": 40,
+      "canonical_id": "brali:topic:social-confidence",
+      "priority_score": 45,
       "priority_factors": [
         "thin-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "digital-attention",
-      "title": "Digital Attention",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:digital-attention",
-      "priority_score": 40,
-      "priority_factors": [
-        "thin-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "digital-wellbeing",
-      "title": "Digital Wellbeing",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:digital-wellbeing",
-      "priority_score": 40,
-      "priority_factors": [
-        "thin-topic",
-        "needs-research"
+        "research-coverage"
       ],
       "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
     },
@@ -586,22 +636,6 @@
       "research_candidates": 0,
       "semantic_kind": "topic",
       "canonical_id": "brali:topic:emotion-regulation",
-      "priority_score": 40,
-      "priority_factors": [
-        "thin-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "metacognition",
-      "title": "Metacognition",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:metacognition",
       "priority_score": 40,
       "priority_factors": [
         "thin-topic",
@@ -650,38 +684,6 @@
       "research_candidates": 0,
       "semantic_kind": "topic",
       "canonical_id": "brali:topic:psychological-flexibility",
-      "priority_score": 40,
-      "priority_factors": [
-        "thin-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "self-awareness",
-      "title": "Self-Awareness",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:self-awareness",
-      "priority_score": 40,
-      "priority_factors": [
-        "thin-topic",
-        "needs-research"
-      ],
-      "reason": "Canonical Topic exists but still lacks sufficient useful trusted coverage."
-    },
-    {
-      "type": "growth-gap",
-      "id": "social-confidence",
-      "title": "Social Confidence",
-      "pending_entries": 0,
-      "trusted_entries": 0,
-      "research_candidates": 0,
-      "semantic_kind": "topic",
-      "canonical_id": "brali:topic:social-confidence",
       "priority_score": 40,
       "priority_factors": [
         "thin-topic",

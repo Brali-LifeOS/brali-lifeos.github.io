@@ -3,21 +3,21 @@
   "type": "brali-growth-zone",
   "slug": "grow-fast",
   "title": "Grow fast",
-  "description": "Use these hacks to boost your growth! Do quick tasks, add journal notes, and finish up all the hacks in a pack right in the app.",
+  "description": "Run small growth experiments, review the signal, and keep what works instead of chasing transformation streaks.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/grow-fast/",
   "machine_url": "https://brali-lifeos.github.io/life-os/grow-fast/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "focus-execution",
     "title": "Focus & Execution"
   },
   "counts": {
     "library_entries": 9,
-    "trusted_protocols": 0,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 0,
-    "pending_review": 9,
+    "practical": 2,
+    "pending_review": 7,
     "restricted": 0,
     "mapped_topics": 1,
     "research_gaps": 0
@@ -31,19 +31,32 @@
     }
   ],
   "research_gaps": [],
-  "trusted_protocols": [],
+  "trusted_protocols": [
+    {
+      "slug": "daily-priority-review-coach",
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "coot-ai-growth-journal",
+      "title": "Turn an AI Reflection into One Next Action",
+      "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
     {
-      "slug": "step-logging-reflection",
-      "title": "As You Work on a Task, Log Each Step You Take in Real-Time)",
-      "url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/",
+      "slug": "growth-pack-completion-tracker",
+      "title": "Complete All Hacks in a Pack",
+      "url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },
     {
-      "slug": "growth-hack-task-tracker",
-      "title": "Choose a Growth Hack and Set a Specific, Actionable Task Related to It in)",
-      "url": "https://brali-lifeos.github.io/life-os/growth-hack-task-tracker/",
+      "slug": "finish-on-time-timebox",
+      "title": "Complete on Time: Stick to Your Time Limit",
+      "url": "https://brali-lifeos.github.io/life-os/finish-on-time-timebox/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -55,46 +68,46 @@
       "indexable": false
     },
     {
-      "slug": "growth-pack-completion-tracker",
-      "title": "Focus on Completing All the Growth Hacks in a Chosen Pack)",
-      "url": "https://brali-lifeos.github.io/life-os/growth-pack-completion-tracker/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "coot-ai-growth-journal",
-      "title": "Open a Session with Coot)",
-      "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+      "slug": "step-logging-reflection",
+      "title": "Protocolls: Track and Reflect on Steps",
+      "url": "https://brali-lifeos.github.io/life-os/step-logging-reflection/",
       "evidence_status": "pending-review",
       "indexable": false
     },
     {
       "slug": "hack-impact-analytics",
-      "title": "Pick One Growth Hack from Your List and Write a Journal Entry About Your)",
+      "title": "Reflect on a Hack",
       "url": "https://brali-lifeos.github.io/life-os/hack-impact-analytics/",
       "evidence_status": "pending-review",
       "indexable": false
     },
     {
-      "slug": "finish-on-time-timebox",
-      "title": "Set a Time Limit for Your Task and Complete It Within That Boundary)",
-      "url": "https://brali-lifeos.github.io/life-os/finish-on-time-timebox/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "daily-priority-review-coach",
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
-      "slug": "daily-priority-review-coach",
-      "title": "Spend a Few Minutes Each Day Checking Out Your Open Tasks in the App)",
-      "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+      "slug": "growth-hack-task-tracker",
+      "title": "Set and Complete a Task",
+      "url": "https://brali-lifeos.github.io/life-os/growth-hack-task-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },
     {
       "slug": "unassigned-task-inbox",
-      "title": "This Container Is Your Personal Hub for Tasks That Don’t Belong to Any Specific)",
+      "title": "Task Container",
       "url": "https://brali-lifeos.github.io/life-os/unassigned-task-inbox/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "coot-ai-growth-journal",
+      "title": "Turn an AI Reflection into One Next Action",
+      "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+      "evidence_status": "practical",
+      "indexable": true
     }
   ]
 }

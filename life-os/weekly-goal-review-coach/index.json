@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:weekly-goal-review-coach",
   "slug": "weekly-goal-review-coach",
-  "title": "Set Aside Time Each Week to Review Your Progress Towards Your Goals",
-  "description": "Set aside time each week to review your progress towards your goals. Adjust your plans as necessary.",
+  "title": "Run a Weekly Review That Produces One Clear Change",
+  "description": "Use a recurring weekly checkpoint to inspect active goals, completed and missed work, constraints, and changing priorities, then turn the review into a small set of concrete scheduling or scope decisions.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:weekly-goal-review-coach",
+    "language": "en",
+    "slug": "weekly-goal-review-coach",
+    "url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/",
+    "title": "Run a Weekly Review That Produces One Clear Change",
+    "description": "Use a recurring weekly checkpoint to inspect active goals, completed and missed work, constraints, and changing priorities, then turn the review into a small set of concrete scheduling or scope decisions.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "goals",
+          "title": "Goals"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "future-builder"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "future-builder",
+      "title": "Future Builder"
+    },
+    "action": "Review the active goals and commitments, note what moved and what did not, identify the main constraint or changed assumption, decide what should continue, stop, shrink, delegate, or move, and schedule the first concrete action created by the review.",
+    "check_in": "What moved this week, what blocked or changed, what am I changing for the next week, and where is the first action scheduled?",
+    "keywords": [
+      "Future Builder",
+      "Life OS",
+      "Regularly Review Progress"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/weekly-goal-review-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

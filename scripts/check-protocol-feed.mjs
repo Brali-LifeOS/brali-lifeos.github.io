@@ -55,7 +55,7 @@ const protocolBySlug = new Map((feed.entries ?? []).map((protocol) => [protocol.
 const expectedHomepageRoutes = {
   focus: "top-3-daily-focus-planner",
   memory: "active-recall-test-yourself",
-  stress: "box-breathing-for-speakers",
+  stress: "abdominal-breathing-stress-relief",
   sleep: "stop-caffeine-after-lunch",
 };
 if (matcher.schema_version !== 1 || matcher.generated_from !== "/life-os/datasets/protocols.json") invalid += 1;

@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "future-builder",
   "title": "Future Builder",
-  "description": "Set exciting goals and plan effectively to achieve them.",
+  "description": "Turn a future goal into assumptions, controllable next moves, and review points you can actually revisit.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/future-builder/",
   "machine_url": "https://brali-lifeos.github.io/life-os/future-builder/index.json",
   "indexable": true,
@@ -14,10 +14,10 @@
   },
   "counts": {
     "library_entries": 50,
-    "trusted_protocols": 4,
+    "trusted_protocols": 9,
     "reviewed": 1,
-    "practical": 3,
-    "pending_review": 46,
+    "practical": 8,
+    "pending_review": 41,
     "restricted": 0,
     "mapped_topics": 1,
     "research_gaps": 0
@@ -39,9 +39,39 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "top-3-daily-focus-planner",
+      "title": "Choose Up to Three Priority Outcomes for the Day",
+      "url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "goal-journaling-insights",
       "title": "Goal Journal Review",
       "url": "https://brali-lifeos.github.io/life-os/goal-journaling-insights/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "weekly-goal-review-coach",
+      "title": "Run a Weekly Review That Produces One Clear Change",
+      "url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "apply-80-20-principle",
+      "title": "Use 80/20 as a Prioritization Hypothesis",
+      "url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "7-breath-decision-pause",
+      "title": "Use a Short Pause Before an Ordinary Decision",
+      "url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "10x-goal-sprints-tracker",
+      "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
+      "url": "https://brali-lifeos.github.io/life-os/10x-goal-sprints-tracker/",
       "evidence_status": "practical"
     },
     {
@@ -80,6 +110,13 @@
       "indexable": true
     },
     {
+      "slug": "wheel-of-life-tracker",
+      "title": "Balance Your Life",
+      "url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
       "slug": "calm-decision-check",
       "title": "Before Making Any Big Decision, Take a Moment to Ensure Your Whole Body Is",
       "url": "https://brali-lifeos.github.io/life-os/calm-decision-check/",
@@ -113,6 +150,13 @@
       "url": "https://brali-lifeos.github.io/life-os/values-goal-alignment-coach/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "top-3-daily-focus-planner",
+      "title": "Choose Up to Three Priority Outcomes for the Day",
+      "url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "vision-board-habit-system",
@@ -178,23 +222,9 @@
       "indexable": false
     },
     {
-      "slug": "apply-80-20-principle",
-      "title": "Identify the 20% of Activities That Will Yield 80% of the Results Towards Your",
-      "url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "accountability-pods-pro",
       "title": "Join Accountability Groups",
       "url": "https://brali-lifeos.github.io/life-os/accountability-pods-pro/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "top-3-daily-focus-planner",
-      "title": "Limit Your Daily Goal List to the Three Most Important Tasks",
-      "url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -220,6 +250,13 @@
       "indexable": false
     },
     {
+      "slug": "five-finger-life-priorities",
+      "title": "Prioritize with Five Fingers",
+      "url": "https://brali-lifeos.github.io/life-os/five-finger-life-priorities/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
       "slug": "celebrate-your-wins-tracker",
       "title": "Recognize and Celebrate When You Achieve Milestones or Complete Goals",
       "url": "https://brali-lifeos.github.io/life-os/celebrate-your-wins-tracker/",
@@ -235,10 +272,10 @@
     },
     {
       "slug": "weekly-goal-review-coach",
-      "title": "Set Aside Time Each Week to Review Your Progress Towards Your Goals",
+      "title": "Run a Weekly Review That Produces One Clear Change",
       "url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "bhag-goal-setting-wizard",
@@ -265,13 +302,6 @@
       "slug": "smart-goals-planner",
       "title": "Set Goals That Are Specific, Measurable, Achievable, Relevant, and Time-Bound",
       "url": "https://brali-lifeos.github.io/life-os/smart-goals-planner/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "10x-goal-sprints-tracker",
-      "title": "Set Goals That Are Ten Times Bigger Than What You Initially Think You Can",
-      "url": "https://brali-lifeos.github.io/life-os/10x-goal-sprints-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -318,18 +348,25 @@
       "indexable": false
     },
     {
-      "slug": "7-breath-decision-pause",
-      "title": "Take Seven Deep Breaths While Focusing on the Decision or Problem at Hand",
-      "url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "apply-80-20-principle",
+      "title": "Use 80/20 as a Prioritization Hypothesis",
+      "url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
-      "slug": "five-finger-life-priorities",
-      "title": "Use Each Finger to Represent a Different Priority Area in Your Life (e",
-      "url": "https://brali-lifeos.github.io/life-os/five-finger-life-priorities/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "7-breath-decision-pause",
+      "title": "Use a Short Pause Before an Ordinary Decision",
+      "url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "10x-goal-sprints-tracker",
+      "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
+      "url": "https://brali-lifeos.github.io/life-os/10x-goal-sprints-tracker/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "goal-mind-map-planner",
@@ -363,13 +400,6 @@
       "slug": "ai-personal-okr-coach",
       "title": "Use the OKR (objectives and Key Results) Method to Set Ambitious Goals and Track",
       "url": "https://brali-lifeos.github.io/life-os/ai-personal-okr-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "wheel-of-life-tracker",
-      "title": "Use the Wheel of Life to Assess Different Areas of Your Life (e",
-      "url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/",
       "evidence_status": "pending-review",
       "indexable": false
     },

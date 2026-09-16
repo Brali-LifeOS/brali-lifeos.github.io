@@ -9,9 +9,9 @@
   "question": "Which technology-use interventions improve sleep, attention, relationships, or wellbeing without relying on simplistic screen-time claims?",
   "evidence_target": "Prefer systematic reviews and trials that distinguish type/context of use from total duration.",
   "guardrail": "Do not treat total screen time as a universal causal metric or prescribe a single safe threshold.",
-  "stage": "discovery-ready",
-  "stage_label": "Discovery ready",
-  "stage_summary": "A research question and search lens exist; no matching candidate is recorded yet.",
+  "stage": "ready-for-resolution",
+  "stage_label": "Ready for resolution review",
+  "stage_summary": "A reviewed Evidence Decision and trusted Topic protocol exist, but no explicit closure record exists yet.",
   "canonical_url": "https://brali-lifeos.github.io/research/gaps/digital-wellbeing/",
   "research_queries": [
     {
@@ -22,16 +22,81 @@
       ]
     }
   ],
-  "candidates": [],
-  "evidence_decisions": [],
-  "trusted_protocols": [],
+  "candidates": [
+    {
+      "id": "crossref:10.1007/s10916-026-02338-9",
+      "title": "Reducing Work-Related Screen-Time in Healthcare Workers During Leisure Time (REDUCE SCREEN) – A Randomized Controlled Trial",
+      "status": "propose-protocol",
+      "publication_date": "2026-01-17",
+      "reference_url": "https://doi.org/10.1007/s10916-026-02338-9"
+    },
+    {
+      "id": "crossref:10.1038/s41598-026-46218-1",
+      "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "status": "support-existing",
+      "publication_date": "2026-05-29",
+      "reference_url": "https://doi.org/10.1038/s41598-026-46218-1"
+    },
+    {
+      "id": "crossref:10.1093/pnasnexus/pgaf017",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "status": "propose-protocol",
+      "publication_date": "2025-02-18",
+      "reference_url": "https://doi.org/10.1093/pnasnexus/pgaf017"
+    },
+    {
+      "id": "crossref:10.2196/56824",
+      "title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "status": "propose-protocol",
+      "publication_date": "2026-04-08",
+      "reference_url": "https://doi.org/10.2196/56824"
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "id": "custom-social-media-brake-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-01",
+      "source_title": "Promoting Self-Regulated Social Media Use on Smartphones With a Mobile Intervention App (Wellspent): Randomized Controlled Trial",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/custom-social-media-brake-boundary-2026/"
+    },
+    {
+      "id": "mobile-internet-block-attention-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-27",
+      "source_title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/mobile-internet-block-attention-boundary-2025/"
+    },
+    {
+      "id": "protect-off-work-time-from-work-apps-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-05",
+      "source_title": "Reducing Work-Related Screen-Time in Healthcare Workers During Leisure Time (REDUCE SCREEN) – A Randomized Controlled Trial",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/protect-off-work-time-from-work-apps-boundary-2026/"
+    },
+    {
+      "id": "situational-digital-disconnection-procrastination-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-08-27",
+      "source_title": "Digital disconnection as a self-regulatory strategy against procrastination",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/situational-digital-disconnection-procrastination-boundary-2026/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "20-20-20-eye-break-reminder",
+      "title": "Use the 20-20-20 Rule for Screen Breaks",
+      "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+      "evidence_status": "reviewed"
+    }
+  ],
   "resolution": null,
   "coverage": {
     "id": "digital-wellbeing",
     "title": "Digital Wellbeing",
     "domain_id": "environment-digital",
     "status": "growth-gap",
-    "entries": 1,
-    "research_candidates": 0
+    "entries": 2,
+    "research_candidates": 4
   }
 }

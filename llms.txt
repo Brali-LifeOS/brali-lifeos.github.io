@@ -162,3 +162,43 @@ These statuses describe Brali's current corpus/review state and must not be inte
 
 - Page & Zone Quality Cycle: https://brali-lifeos.github.io/state/quality/
 - Page & Zone Quality JSON: https://brali-lifeos.github.io/state/quality/index.json
+
+## Reproduce Brali evaluation
+- Evaluation dashboard: https://brali-lifeos.github.io/for-ai/evaluation/
+- Source cases: https://brali-lifeos.github.io/data/agent-evaluation-suite.json
+- Machine-readable report: https://brali-lifeos.github.io/life-os/datasets/agent-evaluation.json
+- Build and generate: npm run build
+- Verify strict gates: npm run evaluate:check
+- Layers: no-knowledge-control, lexical-brali, structured-brali
+- This measures Brali retrieval and grounding behavior, not an unpinned language model.
+
+## Verified external distribution
+- GitHub Agent Skill release: https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/v1.0.1
+- Router: brali-life-os (v1.0.1)
+- GitHub skill-search discovery verified: false
+- Immutable dataset release: https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/tag/data-v1.1.0
+- Dataset archive: https://github.com/Brali-LifeOS/brali-lifeos.github.io/releases/download/data-v1.1.0/brali-data-1.1.0.tar.gz
+- Hugging Face mirror: not yet provider-verified
+- Zenodo DOI: not yet provider-verified
+- Hosted remote MCP: not yet provider-verified
+
+## Search-ready question pages
+- Human index: https://brali-lifeos.github.io/questions/
+- Machine index: https://brali-lifeos.github.io/questions/index.json
+- Stable answer page: https://brali-lifeos.github.io/questions/<question-slug>/
+- Machine answer packet: https://brali-lifeos.github.io/questions/<question-slug>/index.json
+- Pages are generated from editorially selected questions and Brali trusted retrieval. Unsupported queries are noindex rather than padded into search pages.
+
+<!-- brali-hack-lifecycle-discovery:start -->
+## Hack lifecycle, research triage, localization and commercial independence
+
+- Human review ledger: https://brali-lifeos.github.io/life-os/review-log/
+- Machine-readable lifecycle and linked reviewed Evidence Decisions: https://brali-lifeos.github.io/life-os/datasets/reviews.json
+- Discovery-only research review watchlist (noindex): https://brali-lifeos.github.io/research/review-watchlist/
+- Machine-readable research watchlist: https://brali-lifeos.github.io/life-os/datasets/research-lifecycle-watchlist.json
+- Sponsorship and commercial-independence policy: https://brali-lifeos.github.io/sponsorship/
+- Russian review ledger: https://brali-lifeos.github.io/ru/life-os/review-log/
+- Russian commercial-independence policy: https://brali-lifeos.github.io/ru/sponsorship/
+
+Treat lifecycle status as maintenance metadata layered on top of Brali's evidence state. Reviewed Evidence Decisions may be linked to a hack for provenance, but only an explicit append-only lifecycle event may materially change lifecycle status. Research Scout and provider metadata can create a review task, never an evidence verdict; the watchlist is intentionally noindex. A challenge, refutation, restoration or retirement stays in history rather than being silently overwritten. Implementation observations may trigger review but cannot change an evidence conclusion by themselves. Sponsorship must not change evidence, lifecycle status, retrieval, ranking, Agent Skill eligibility or review outcomes.
+<!-- brali-hack-lifecycle-discovery:end -->

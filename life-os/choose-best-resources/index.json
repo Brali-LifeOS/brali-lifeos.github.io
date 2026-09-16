@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:choose-best-resources",
   "slug": "choose-best-resources",
-  "title": "Just Like Chefs Use the Freshest Ingredients for the Best Flavors, Ensure You Use",
-  "description": "Just like chefs use the freshest ingredients for the best flavors, ensure you use the best resources and tools in your work and personal projects.",
+  "title": "Choose Resources for the Next Concrete Step",
+  "description": "Start from the output or decision you need, choose the resource that best fits that next step, check authority, freshness, licensing and security where relevant, test the smallest useful use, then keep, defer or archive it.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/choose-best-resources/",
   "machine_url": "https://brali-lifeos.github.io/life-os/choose-best-resources/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Focus & Execution"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "focus-action",
-        "title": "Focus & Action"
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
+      },
+      {
+        "id": "work-money",
+        "title": "Work & Money"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "information-management",
+        "title": "Information Management"
+      },
+      {
+        "id": "work-systems",
+        "title": "Work Systems"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +52,8 @@
         "title": "Chef / Operations"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "focus-execution",
       "growth_zone_slug": "chef"
@@ -48,8 +61,88 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "information-management",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:choose-best-resources",
+    "language": "en",
+    "slug": "choose-best-resources",
+    "url": "https://brali-lifeos.github.io/life-os/choose-best-resources/",
+    "title": "Choose Resources for the Next Concrete Step",
+    "description": "Start from the output or decision you need, choose the resource that best fits that next step, check authority, freshness, licensing and security where relevant, test the smallest useful use, then keep, defer or archive it.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        },
+        {
+          "id": "work-money",
+          "title": "Work & Money"
+        }
+      ],
+      "topics": [
+        {
+          "id": "information-management",
+          "title": "Information Management"
+        },
+        {
+          "id": "work-systems",
+          "title": "Work Systems"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "chef-operations",
+          "title": "Chef / Operations"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "focus-execution",
+        "growth_zone_slug": "chef"
+      }
+    },
+    "life_area": {
+      "slug": "focus-execution",
+      "title": "Focus & Execution"
+    },
+    "growth_zone": {
+      "slug": "chef",
+      "title": "Chef"
+    },
+    "action": "Name the output or decision you need, compare candidate resources on direct relevance and usability, check authority, freshness, licensing, privacy and security where they matter, try the smallest useful interaction, and record whether to keep, defer or archive the resource.",
+    "check_in": "What next step was this resource meant to support, did it fit that job, what constraint did I verify, and should I keep using it, defer it or archive it?",
+    "keywords": [
+      "Chef",
+      "Life OS",
+      "Use Fresh Ingredients"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/choose-best-resources.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

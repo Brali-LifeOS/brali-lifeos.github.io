@@ -87,13 +87,12 @@ for (const entry of index) {
   if (!searchIndexable && !noindex) searchWithheldPagesMissingNoindex += 1;
 
   if (referenceIndexable) {
-    const neutral = generated.includes("Review record:")
-      && generated.includes('data-legacy-content-state="historical-source-only"')
-      && generated.includes("Review record, not advice")
-      && !generated.includes("Try it, then review.")
-      && !generated.includes('<div class="prose">')
-      && !generated.includes('<section class="prose">');
-    if (!neutral) {
+    const visibleLongform = generated.includes('data-legacy-content-state="review-pending-longform-visible"')
+      && generated.includes('data-article-versions="true"')
+      && generated.includes('<div class="prose"')
+      && !generated.includes("Review record:")
+      && !generated.includes("Try it, then review.");
+    if (!visibleLongform) {
       referenceFramingProblems += 1;
       if (referenceFramingExamples.length < 12) referenceFramingExamples.push(entry.slug);
     }
@@ -172,5 +171,5 @@ if (strict && blockingProblems > 0) {
 }
 
 if (counts["pending-review"] + counts.restricted > 0) {
-  console.warn("Evidence review queue remains. Search-indexable pending-review pages are neutral review records only; use data/evidence-overrides.json to promote guidance after reviewing sources and wording.");
+  console.warn("Evidence review queue remains. Search-indexable pending-review pages keep their long-form article visible with an explicit review-pending boundary; use data/evidence-overrides.json to promote guidance after reviewing sources and wording.");
 }

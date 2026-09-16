@@ -1,9 +1,16 @@
 {
   "schema_version": 1,
-  "updated_at": "2026-08-20",
+  "updated_at": "2026-09-15",
+  "canonical_id": "brali:problem:prepare-difficult-conversation",
   "slug": "prepare-difficult-conversation",
+  "acquisition_cluster_id": "difficult-conversation",
   "title": "Prepare for a difficult conversation without escalating it",
   "question": "How do I prepare for a difficult conversation at work or at home?",
+  "aliases": [
+    "prepare for a difficult conversation",
+    "avoid escalating a disagreement",
+    "make a hard conversation clearer"
+  ],
   "summary": "Clarify the outcome, separate observations from interpretations, listen for the other person's model, and leave room for repair.",
   "canonical_url": "https://brali-lifeos.github.io/problems/prepare-difficult-conversation/",
   "json_url": "https://brali-lifeos.github.io/problems/prepare-difficult-conversation/index.json",
@@ -49,46 +56,51 @@
   "stop_rule": "If there is coercion, abuse, threats, or a serious safety issue, ordinary communication techniques are not an adequate response plan.",
   "protocols": [
     {
-      "canonical_id": "brali:protocol:ask-better-interview-questions",
-      "slug": "ask-better-interview-questions",
-      "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
-      "title": "Run a Short, Concrete Information Interview",
-      "description": "Ask permission, focus on one recent event, follow the sequence step by step and separate remembered facts, estimates and interpretation.",
-      "action": "Explain why you are asking and get permission. Ask the person to walk through the most recent relevant example. Use one question at a time about sequence, context, tools, decisions and uncertainty. Summarize what you heard and invite correction.",
-      "check_in": "What concrete sequence did I learn, what remains an estimate or interpretation, and what did the person correct?",
+      "canonical_id": "brali:protocol:active-listening-exercises",
+      "slug": "active-listening-exercises",
+      "url": "https://brali-lifeos.github.io/life-os/active-listening-exercises/",
+      "title": "Do Active Listening Exercises",
+      "description": "Practice active listening by summarizing and repeating back what the other person has said to confirm understanding.",
+      "action": "In one conversation, wait until the other person finishes a thought, paraphrase the main point in your own words, invite correction, and ask one open question before offering advice or changing the topic.",
+      "check_in": "Did I summarize before responding? Was my summary accepted or corrected, and what did the correction teach me?",
       "evidence": {
         "status": "practical",
         "source_recorded": false,
         "source_url": null,
-        "reviewed_at": "2026-08-22"
+        "reviewed_at": "2026-08-18"
       },
       "topic_ids": [
-        "listening",
-        "clear-communication"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 240
-    },
-    {
-      "canonical_id": "brali:protocol:relationship-repair-coach",
-      "slug": "relationship-repair-coach",
-      "url": "https://brali-lifeos.github.io/life-os/relationship-repair-coach/",
-      "title": "Make a Specific Repair Attempt After a Workable Conflict",
-      "description": "After a misunderstanding or conflict where it is safe to re-engage, make a specific repair attempt: name what you did, acknowledge the likely impact without arguing about intent, apologize for your part, offer a concrete corrective action, and invite the other person's view. Do not demand forgiveness or immediate reconciliation.",
-      "action": "Wait until you can speak without escalating. Name the specific action or words you are taking responsibility for. Acknowledge the impact as you understand it without using your intention to cancel the other person's experience. Apologize for your part without an 'if'. Offer one concrete repair or behavior change you can actually make, then ask how the other person sees it. Listen to the answer. Do not require forgiveness, agreement, or immediate trust in return.",
-      "check_in": "Did I own a specific part without defending it, offer a realistic repair, and give the other person room to respond or decline?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://pubmed.ncbi.nlm.nih.gov/34162912/",
-        "reviewed_at": "2026-08-19"
-      },
-      "topic_ids": [
-        "conflict-repair",
         "relationships"
       ],
       "is_flagship_100": true,
-      "relevance_score": 170
+      "fit": "best-fit",
+      "when": "Understanding the other person's main point matters and the conversation is ordinary and safe enough for a paraphrase-and-correction loop.",
+      "why": "The protocol makes misunderstanding observable by inviting correction before you argue with an interpretation.",
+      "caveat": "Do not force it in unsafe or coercive situations, and do not treat one paraphrase as proof that the conflict is resolved.",
+      "gold_review": {
+        "reviewed_at": "2026-09-05",
+        "review_status": "gold-ready",
+        "first_action": "In one conversation where understanding matters, wait for one complete thought, summarize the main point briefly in your own words, and leave room for correction.",
+        "observable_signal": "Whether the listener summarized before reacting, whether the speaker accepted or corrected the summary, and what mistaken assumption became visible when correction occurred.",
+        "eligibility": [
+          "The conversation is ordinary and safe enough for a brief paraphrase-and-correction loop.",
+          "Understanding the other person's point matters more than immediately persuading, diagnosing, defending, or giving advice.",
+          "There is enough conversational time to let the other person correct the listener without turning the exchange into a scripted performance."
+        ],
+        "when_not_to_use": [
+          "Do not force this exercise in abuse, coercion, threats, harassment, violence, or other unsafe situations where safety, distance, documentation, or professional support takes priority.",
+          "Do not paraphrase motives or emotions as facts; interpretations should remain tentative and easy to correct.",
+          "Do not use the technique as proof that the listener understood accurately, resolved a conflict, improved trust, or produced a better relationship outcome."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "Brali keeps this as a correction-based practical protocol rather than claiming generic active-listening effectiveness. A small trained-interviewer experiment supports a narrow paraphrase-plus-accuracy-check behavior for immediate emotional valence, while a larger multicomponent cardiology coaching trial did not show intervention-arm increases in reflective statements or open-ended questions and cannot validate Brali's sequence independently.",
+          "source_decision_ids": [
+            "empathic-paraphrasing-immediate-emotion-boundary-2012",
+            "communication-coaching-reflective-statements-boundary-2023"
+          ]
+        }
+      }
     },
     {
       "canonical_id": "brali:protocol:5w1h-communication-checklist",
@@ -108,51 +120,62 @@
         "clear-communication"
       ],
       "is_flagship_100": true,
-      "relevance_score": 140
-    },
-    {
-      "canonical_id": "brali:protocol:analogy-studio",
-      "slug": "analogy-studio",
-      "url": "https://brali-lifeos.github.io/life-os/analogy-studio/",
-      "title": "Explain One Idea with an Analogy and Its Limit",
-      "description": "Compare an unfamiliar idea with something familiar, state the matching point, name where the comparison stops and ask the listener to restate the idea.",
-      "action": "Write the idea you need to explain. Choose a familiar comparison, map only the important relationship, add one boundary sentence and ask the listener to restate the original idea. Revise the analogy if the restatement keeps the wrong detail.",
-      "check_in": "Could the listener restate the intended idea, and which part of the analogy clarified or distorted it?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-22"
-      },
-      "topic_ids": [
-        "clear-communication",
-        "creative-problem-solving"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 140
-    },
-    {
-      "canonical_id": "brali:protocol:leave-an-app-review",
-      "slug": "leave-an-app-review",
-      "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
-      "title": "Leave Useful Feedback",
-      "description": "Write feedback that separates what happened, why it mattered to you, and what change would make the experience better.",
-      "action": "Describe one concrete thing that worked or failed, explain the effect it had on your task, and add one specific suggestion if you have one.",
-      "check_in": "Could the recipient understand what happened and what might improve without guessing what you meant?",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-20"
-      },
-      "topic_ids": [
-        "revision-feedback",
-        "clear-communication"
-      ],
-      "is_flagship_100": true,
-      "relevance_score": 140
+      "fit": "alternative",
+      "when": "The difficult conversation is mainly an operational handoff or request where missing action, ownership, timing, or context is causing friction.",
+      "why": "A concise context-gap check can remove ambiguity before interpersonal interpretation becomes the main problem.",
+      "caveat": "Do not force all six elements into every message or expose sensitive information just to complete a checklist.",
+      "gold_review": {
+        "reviewed_at": "2026-09-15",
+        "review_status": "gold-ready",
+        "first_action": "Write the action or outcome the reader needs first, then scan Who, What, Where, When, Why, and How and add only the missing details required to act without guessing.",
+        "observable_signal": "Whether the recipient could identify the action, owner, relevant timing or location, and next step without avoidable clarification, while unnecessary or sensitive details stayed out.",
+        "eligibility": [
+          "The message carries an operational request, handoff, meeting detail, decision, or other information where missing context could create delay or avoidable follow-up.",
+          "The sender can identify the reader's actual next action and add only details required to make that action clear.",
+          "Sensitive information can be omitted or moved to an appropriate channel rather than included merely to satisfy a checklist."
+        ],
+        "when_not_to_use": [
+          "Do not force all six labels into every message when shared context already makes some answers obvious.",
+          "Do not add private, confidential, security-sensitive, or otherwise inappropriate detail merely to make the checklist look complete.",
+          "Do not treat 5W1H as proof that a message is correct, persuasive, legally sufficient, or understood by the recipient."
+        ],
+        "evidence_boundary": {
+          "status": "practical",
+          "statement": "This is an operational clarity checklist. Brali does not attach reviewed evidence that the six questions, this order, or this message format produces a predictable improvement in communication outcomes.",
+          "source_decision_ids": []
+        }
+      }
     }
   ],
+  "answer_packet": {
+    "schema_version": 1,
+    "canonical_id": "brali:problem:prepare-difficult-conversation",
+    "problem": "How do I prepare for a difficult conversation at work or at home?",
+    "canonical_url": "https://brali-lifeos.github.io/problems/prepare-difficult-conversation/",
+    "best_fit": {
+      "canonical_id": "brali:protocol:active-listening-exercises",
+      "slug": "active-listening-exercises",
+      "title": "Do Active Listening Exercises",
+      "when": "Understanding the other person's main point matters and the conversation is ordinary and safe enough for a paraphrase-and-correction loop.",
+      "why": "The protocol makes misunderstanding observable by inviting correction before you argue with an interpretation.",
+      "caveat": "Do not force it in unsafe or coercive situations, and do not treat one paraphrase as proof that the conflict is resolved.",
+      "first_action": "In one conversation where understanding matters, wait for one complete thought, summarize the main point briefly in your own words, and leave room for correction.",
+      "evidence_state": "practical"
+    },
+    "alternatives": [
+      {
+        "canonical_id": "brali:protocol:5w1h-communication-checklist",
+        "slug": "5w1h-communication-checklist",
+        "title": "Check Who, What, Where, When, Why, and How",
+        "when": "The difficult conversation is mainly an operational handoff or request where missing action, ownership, timing, or context is causing friction.",
+        "why": "A concise context-gap check can remove ambiguity before interpersonal interpretation becomes the main problem.",
+        "caveat": "Do not force all six elements into every message or expose sensitive information just to complete a checklist.",
+        "first_action": "Write the action or outcome the reader needs first, then scan Who, What, Where, When, Why, and How and add only the missing details required to act without guessing.",
+        "evidence_state": "practical"
+      }
+    ],
+    "stop_rule": "If there is coercion, abuse, threats, or a serious safety issue, ordinary communication techniques are not an adequate response plan."
+  },
   "evidence_decisions": [
     {
       "id": "apology-repair-2021",
@@ -173,6 +196,33 @@
         "Forgiveness is only one outcome and is not equivalent to trust, reconciliation, safety, or durable behavior change.",
         "The effect of apology depends on context, relationship value and the nature of the transgression.",
         "The study does not validate the specific wording or step sequence used in Brali's public repair protocol."
+      ]
+    },
+    {
+      "id": "chatbot-difficult-conversation-rehearsal-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-31",
+      "source_title": "Harnessing Artificial Intelligence to Facilitate Difficult Conversations",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/19485506261444068",
+      "supported_claim": "For adults already considering an ordinary difficult conversation, a brief chatbot preparation session modestly increased the probability that they reported actually initiating it over the following week: 65% in the preparation condition versus 59% in control. Brali can therefore test a bounded rehearsal protocol whose goal is to reduce the initiation barrier: clarify the goal, draft an opening, role-play a likely response and prepare one or two contingency moves, then return to the real human conversation.",
+      "unsupported_or_overstated_claims": [
+        "Chatbot rehearsal makes difficult conversations go better once they occur.",
+        "AI resolves interpersonal conflict or improves relationship quality.",
+        "AI preparation is better than preparing with a friend, coach, therapist, manager or journal.",
+        "The 6-12 minute duration is an established optimal dose.",
+        "The result generalizes unchanged outside US and Canadian adults familiar enough with chatbots to complete the intervention.",
+        "The protocol is appropriate for abuse, coercion, threats, harassment, legal disputes, HR investigations or other situations requiring safety planning, professional support or a durable written record.",
+        "A specific chatbot model or prompt is necessary to obtain the effect."
+      ],
+      "limitations": [
+        "The primary real-world outcome was participant self-report rather than independently observed conversation behavior.",
+        "The absolute difference in conversation initiation was modest: six percentage points.",
+        "The experimental and control chatbot interactions differed in duration, engagement and prompting, so the study does not isolate which preparation component caused the effect.",
+        "The sample was limited to US and Canadian Prolific participants, restricting cultural generalizability.",
+        "Among participants who did have the difficult conversation, the study found no significant differences in satisfaction, perceived quality, difficulty or thoroughness.",
+        "The study followed behavior for roughly one week and does not establish repeated-use or long-term effects.",
+        "Preparing the conversation increased negative affect immediately after the exercise, and repeated reliance on a chatbot was not studied.",
+        "Safety-sensitive, coercive, legal and high-power-imbalance conversations were not established as appropriate use cases."
       ]
     },
     {
@@ -201,34 +251,7 @@
         "The intervention required repeated one-to-one coaching and feedback, so it does not test a self-guided protocol used once.",
         "Clinical and longer-term outcomes were not established."
       ]
-    },
-    {
-      "id": "empathic-paraphrasing-immediate-emotion-boundary-2012",
-      "decision": "support-existing",
-      "reviewed_at": "2026-08-22",
-      "source_title": "Effects of Empathic Paraphrasing – Extrinsic Emotion Regulation in Social Conflict",
-      "source_url": "https://doi.org/10.3389/fpsyg.2012.00482",
-      "supported_claim": "In this small nonclinical social-conflict experiment, a trained interviewer used a behavior closely matching Brali's core correction loop: summarize the speaker's facts, feelings and priorities, then ask whether the understanding is accurate. Participants reported less negative immediate emotion after paraphrasing than after silent note-taking. This supports retaining paraphrase plus explicit correction as a bounded practice behavior, with the studied outcome and setting stated precisely.",
-      "unsupported_or_overstated_claims": [
-        "Paraphrasing improves understanding accuracy or prevents misunderstandings; the study asked for accuracy confirmation but did not measure comprehension accuracy as an outcome.",
-        "The protocol resolves conflict, improves relationships, increases trust or produces better decisions.",
-        "One open question after a paraphrase has an independent effect; open questions were part of the interview procedure and were not isolated.",
-        "The emotional effect is durable beyond the immediate interview period.",
-        "Any untrained listener will reproduce the effect in ordinary work, family or online conversations.",
-        "Paraphrasing is calming in a simple physiological sense; several autonomic measures showed higher activation during paraphrasing.",
-        "A wrong paraphrase is always beneficial or harmless; the study used one experienced mediator and excluded violent conflicts.",
-        "The study validates counting summaries, eye contact, nods, fixed timing or a universal conversational script."
-      ],
-      "limitations": [
-        "Only twenty participants contributed self-report data, making results vulnerable to individual variation and unsuitable for broad population estimates.",
-        "One female interviewer with approximately 190 hours of conflict-resolution training delivered every paraphrase, so listener skill and delivery cannot be separated from the technique.",
-        "The control condition was silent note-taking rather than another spoken response; differences may partly reflect receiving a verbal response rather than paraphrasing specifically.",
-        "Participants may have interpreted note-taking as judgment despite the study explanation, potentially biasing the comparison.",
-        "Only immediate reactions were measured; the authors explicitly described longer-term emotion resolution as speculative.",
-        "Conflicts involving physical or psychological violence were excluded, so the result must not be applied as ordinary advice in unsafe or abusive situations.",
-        "The study assessed emotional valence and arousal, not whether the listener understood more accurately or whether the conflict outcome improved."
-      ]
     }
   ],
-  "trust_note": "Recommendations come only from Brali protocols already classified as reviewed or practical. Decision guidance is editorial synthesis, not a claim that one sequence is universally best."
+  "trust_note": "Recommendations come only from protocols that are both trusted in the Brali Protocol Feed and manually Gold-ready. The problem-to-protocol fit is editorial decision logic; it is not a claim that one sequence is universally best."
 }

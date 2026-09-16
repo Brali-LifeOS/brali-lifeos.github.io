@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:active-recall-test-yourself",
   "slug": "active-recall-test-yourself",
-  "title": "Use Active Recall for Retention, Then Practice Application",
-  "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+  "title": "Active Recall: Close the Notes and Make Memory Work",
+  "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
   "machine_url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/index.json",
   "growth_zone": {
@@ -64,15 +64,18 @@
         "stage": "resolved",
         "url": "https://brali-lifeos.github.io/research/gaps/memory/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:active-recall-test-yourself",
     "language": "en",
     "slug": "active-recall-test-yourself",
     "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-    "title": "Use Active Recall for Retention, Then Practice Application",
-    "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
+    "title": "Active Recall: Close the Notes and Make Memory Work",
+    "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
     "ontology": {
       "domains": [
         {
@@ -112,8 +115,8 @@
       "slug": "cognitive-biases",
       "title": "Cognitive Biases"
     },
-    "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-    "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+    "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+    "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
     "keywords": [
       "Cognitive Biases",
       "Life OS",
@@ -125,5 +128,13 @@
       "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/active-recall-test-yourself.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

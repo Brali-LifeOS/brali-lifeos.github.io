@@ -36,9 +36,37 @@
       "status": "propose-protocol",
       "publication_date": "2021-12-01",
       "reference_url": "https://doi.org/10.1016/j.smrv.2021.101532"
+    },
+    {
+      "id": "crossref:10.1093/sleep/zsae230",
+      "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "status": "support-existing",
+      "publication_date": "2025-04-11",
+      "reference_url": "https://doi.org/10.1093/sleep/zsae230"
+    },
+    {
+      "id": "crossref:10.3389/fpubh.2026.1906525",
+      "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "status": "support-existing",
+      "publication_date": "2026-08-06",
+      "reference_url": "https://doi.org/10.3389/fpubh.2026.1906525"
     }
   ],
   "evidence_decisions": [
+    {
+      "id": "caffeine-dose-timing-sleep-boundary-2025",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-06",
+      "source_title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/caffeine-dose-timing-sleep-boundary-2025/"
+    },
+    {
+      "id": "pmr-subjective-sleep-quality-boundary-2026",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/pmr-subjective-sleep-quality-boundary-2026/"
+    },
     {
       "id": "sleep-opportunity-extension-2021",
       "decision": "propose-protocol",
@@ -56,6 +84,12 @@
   ],
   "trusted_protocols": [
     {
+      "slug": "stop-caffeine-after-lunch",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "evidence_status": "reviewed"
+    },
+    {
       "slug": "ideal-sleep-hours-finder",
       "title": "Protect Enough Sleep Opportunity and Track Daytime Function",
       "url": "https://brali-lifeos.github.io/life-os/ideal-sleep-hours-finder/",
@@ -68,7 +102,7 @@
     "title": "Sleep & Circadian Rhythm",
     "domain_id": "health-energy",
     "status": "growth-gap",
-    "entries": 1,
-    "research_candidates": 2
+    "entries": 2,
+    "research_candidates": 4
   }
 }

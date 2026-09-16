@@ -103,9 +103,14 @@ jobs:
         run: npm run skills:build
       - name: Validate generated Agent Skills library
         run: npm run skills:check
-      - name: Gate Trustverse coverage at 900 usable records
+      - name: Gate Trustverse coverage regression (honest-review floor)
+        # Long-form restoration (#279/#280) ended the build-time mass rewrite that
+        # inflated trusted coverage by deleting unreviewed article bodies. Trusted
+        # count must now reflect actual editorial review, not a quota. The floor
+        # guards against accidental mass demotion while review works through the
+        # pending-review queue; raise it only through real reviewed promotions.
         env:
-          TRUSTVERSE_TARGET: 900
+          TRUSTVERSE_TARGET: 200
         run: node scripts/check-trustverse-target.mjs
       - name: Run full repository checks
         run: npm run check

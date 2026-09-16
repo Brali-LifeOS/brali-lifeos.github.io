@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "skill-sprint",
   "title": "Skill Sprint",
-  "description": "Accelerate your learning curve with quick and effective techniques.",
+  "description": "Learn by practising the part that matters: retrieval, feedback, application, and review.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/skill-sprint/",
   "machine_url": "https://brali-lifeos.github.io/life-os/skill-sprint/index.json",
   "indexable": true,
@@ -13,29 +13,90 @@
     "title": "Learning & Thinking"
   },
   "counts": {
-    "library_entries": 25,
-    "trusted_protocols": 1,
-    "reviewed": 0,
-    "practical": 1,
-    "pending_review": 24,
+    "library_entries": 27,
+    "trusted_protocols": 5,
+    "reviewed": 2,
+    "practical": 3,
+    "pending_review": 22,
     "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 5,
+    "research_gaps": 2
   },
   "topics": [
     {
       "id": "skill-learning",
       "title": "Skill Learning",
-      "count": 25,
+      "count": 26,
       "url": "https://brali-lifeos.github.io/ontology/topics/skill-learning/"
+    },
+    {
+      "id": "memory",
+      "title": "Memory",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/memory/"
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "count": 2,
+      "url": "https://brali-lifeos.github.io/ontology/topics/metacognition/"
+    },
+    {
+      "id": "cognitive-biases",
+      "title": "Cognitive Biases",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/cognitive-biases/"
+    },
+    {
+      "id": "critical-thinking",
+      "title": "Critical Thinking",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/critical-thinking/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "memory",
+      "title": "Memory",
+      "stage": "resolved",
+      "url": "https://brali-lifeos.github.io/research/gaps/memory/"
+    },
+    {
+      "topic_id": "metacognition",
+      "title": "Metacognition",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/metacognition/"
+    }
+  ],
   "trusted_protocols": [
+    {
+      "slug": "prequestions-before-learning",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "ai-question-bank-builder",
+      "title": "Build an AI-Assisted Question Bank You Can Verify",
+      "url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "self-explain-what-you-learn",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "evidence_status": "reviewed"
+    },
     {
       "slug": "weekly-theme-learning-sprints",
       "title": "Spend Each Week Focused on a Single Theme",
       "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "cognitive-dissonance-resolution",
+      "title": "Stress-Test a Belief With Strong Counter-Information",
+      "url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
       "evidence_status": "practical"
     }
   ],
@@ -46,6 +107,13 @@
       "url": "https://brali-lifeos.github.io/life-os/get-feedback-after-learning/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "prequestions-before-learning",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "link-new-information-to-knowledge",
@@ -69,11 +137,11 @@
       "indexable": false
     },
     {
-      "slug": "cognitive-dissonance-resolution",
-      "title": "Cognitive Dissonance Resolution",
-      "url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "ai-question-bank-builder",
+      "title": "Build an AI-Assisted Question Bank You Can Verify",
+      "url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "habit-stacking-for-learning",
@@ -102,6 +170,13 @@
       "url": "https://brali-lifeos.github.io/life-os/concept-mapping-coach/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "self-explain-what-you-learn",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "flow-sprint-focus-coach",
@@ -153,13 +228,6 @@
       "indexable": false
     },
     {
-      "slug": "ai-question-bank-builder",
-      "title": "Question Banks Creation",
-      "url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "question-based-learning-skill-sprint",
       "title": "Question-Based Learning",
       "url": "https://brali-lifeos.github.io/life-os/question-based-learning-skill-sprint/",
@@ -191,6 +259,13 @@
       "slug": "weekly-theme-learning-sprints",
       "title": "Spend Each Week Focused on a Single Theme",
       "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "cognitive-dissonance-resolution",
+      "title": "Stress-Test a Belief With Strong Counter-Information",
+      "url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
       "evidence_status": "practical",
       "indexable": true
     },

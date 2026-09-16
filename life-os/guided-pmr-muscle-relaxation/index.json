@@ -49,7 +49,10 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:guided-pmr-muscle-relaxation",
@@ -88,8 +91,8 @@
       "slug": "no-depression",
       "title": "No Depression"
     },
-    "action": "Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort.",
-    "check_in": "Did I practise without pain or straining? Which areas felt tense, and did I notice any difference after releasing them?",
+    "action": "Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort. If sleep is your target, use PMR as a repeatable wind-down experiment rather than a one-night sleep test.",
+    "check_in": "Did I practise without pain or straining? If I am using PMR for sleep, across several attempts did winding down or my subjective sleep feel meaningfully easier, unchanged, or worse?",
     "keywords": [
       "No Depression",
       "Life OS",
@@ -101,5 +104,13 @@
       "source_url": "https://www.rbht.nhs.uk/our-services/clinical_support/rehabilitation-and-therapies/psychological-medicine/relaxation-exercises",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/guided-pmr-muscle-relaxation.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

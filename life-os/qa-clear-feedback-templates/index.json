@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:qa-clear-feedback-templates",
   "slug": "qa-clear-feedback-templates",
-  "title": "QA Specialists Provide Clear Feedback",
-  "description": "QA specialists provide clear feedback. Practice clear and concise communication in all your interactions to ensure your message is understood.",
+  "title": "Write an Actionable QA Report Another Person Can Use",
+  "description": "Turn a vague defect report into a compact handoff that distinguishes what was observed from what is suspected and gives the receiver enough context to reproduce, investigate, and verify the fix.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
   "machine_url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "learning-thinking",
-        "title": "Learning & Thinking"
+        "id": "focus-action",
+        "title": "Focus & Action"
+      },
+      {
+        "id": "communication-relationships",
+        "title": "Communication & Relationships"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "error-prevention",
+        "title": "Error Prevention"
+      },
+      {
+        "id": "clear-communication",
+        "title": "Clear Communication"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +52,8 @@
         "title": "Quality Assurance"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "as-qa"
@@ -48,8 +61,82 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:qa-clear-feedback-templates",
+    "language": "en",
+    "slug": "qa-clear-feedback-templates",
+    "url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
+    "title": "Write an Actionable QA Report Another Person Can Use",
+    "description": "Turn a vague defect report into a compact handoff that distinguishes what was observed from what is suspected and gives the receiver enough context to reproduce, investigate, and verify the fix.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        },
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "error-prevention",
+          "title": "Error Prevention"
+        },
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "qa",
+          "title": "Quality Assurance"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "as-qa"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "as-qa",
+      "title": "As QA"
+    },
+    "action": "Write a one-line observed problem and context, add the smallest reliable reproduction sequence, attach the relevant evidence while removing secrets and personal data, label any suspected cause as a hypothesis, state the expected behavior, and define a narrow acceptance check for the fix.",
+    "check_in": "Can another person see what happened, reproduce or investigate it, distinguish fact from hypothesis, and know what would count as fixed?",
+    "keywords": [
+      "As QA",
+      "Life OS",
+      "Clear Communication"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/qa-clear-feedback-templates.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

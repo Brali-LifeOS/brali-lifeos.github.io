@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "grandmaster",
   "title": "Grandmaster",
-  "description": "Use smart moves from chess to level up your life game!",
+  "description": "Borrow chess habits for planning, trade-offs, tempo, and looking one move beyond the obvious reply.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/grandmaster/",
   "machine_url": "https://brali-lifeos.github.io/life-os/grandmaster/index.json",
   "indexable": true,
@@ -13,14 +13,14 @@
     "title": "Work, Money & Strategy"
   },
   "counts": {
-    "library_entries": 13,
-    "trusted_protocols": 1,
+    "library_entries": 12,
+    "trusted_protocols": 2,
     "reviewed": 0,
-    "practical": 1,
-    "pending_review": 12,
+    "practical": 2,
+    "pending_review": 10,
     "restricted": 0,
-    "mapped_topics": 2,
-    "research_gaps": 0
+    "mapped_topics": 4,
+    "research_gaps": 1
   },
   "topics": [
     {
@@ -30,14 +30,39 @@
       "url": "https://brali-lifeos.github.io/ontology/topics/goals/"
     },
     {
+      "id": "information-management",
+      "title": "Information Management",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/information-management/"
+    },
+    {
       "id": "planning-prioritization",
       "title": "Planning & Prioritization",
       "count": 1,
       "url": "https://brali-lifeos.github.io/ontology/topics/planning-prioritization/"
+    },
+    {
+      "id": "work-systems",
+      "title": "Work Systems",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/work-systems/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "information-management",
+      "title": "Information Management",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+    }
+  ],
   "trusted_protocols": [
+    {
+      "slug": "brag-doc-wins-hub",
+      "title": "Keep a Work Wins Log You Can Reuse",
+      "url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
+      "evidence_status": "practical"
+    },
     {
       "slug": "achieve-multiple-goals-at-once",
       "title": "One Move, Several Benefits",
@@ -90,10 +115,10 @@
     },
     {
       "slug": "brag-doc-wins-hub",
-      "title": "Keep a Log of Your Achievements to Track Progress and Celebrate Milestones",
+      "title": "Keep a Work Wins Log You Can Reuse",
       "url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "achieve-multiple-goals-at-once",
@@ -106,13 +131,6 @@
       "slug": "protect-your-king-wellbeing",
       "title": "Protect Your 'king'—your Well-Being",
       "url": "https://brali-lifeos.github.io/life-os/protect-your-king-wellbeing/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "if-then-rules-productivity",
-      "title": "Set and Follow If-Then Rules for Productivity",
-      "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
       "evidence_status": "pending-review",
       "indexable": false
     },

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "memory",
   "title": "Memory",
   "question": "How can I remember what I learn without confusing retention with application?",
@@ -9,7 +9,7 @@
   "json_url": "https://brali-lifeos.github.io/topics/memory/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
   "coverage_status": "trusted-protocols",
-  "coverage_note": "3 trusted protocol recommendations available.",
+  "coverage_note": "6 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "memory",
@@ -19,6 +19,103 @@
     }
   ],
   "protocols": [
+    {
+      "canonical_id": "brali:protocol:active-recall-test-yourself",
+      "protocol_id": "brali:active-recall-test-yourself",
+      "slug": "active-recall-test-yourself",
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
+      "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+      "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "memory",
+        "skill-learning"
+      ],
+      "method_ids": [
+        "retrieval-practice"
+      ],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:prequestions-before-learning",
+      "protocol_id": "brali:prequestions-before-learning",
+      "slug": "prequestions-before-learning",
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+      "action": "Choose a small set of questions that point to information you genuinely want to learn. Before opening the explanation, reading the chapter, or watching the lesson, make a brief attempt at each answer even if you are unsure. Then study normally, paying attention when the material resolves those questions. Afterward, check the answers against the source. Use this to target important information, not as a claim that every unasked detail will also be learned better.",
+      "check_in": "After studying, can I answer the questions accurately without looking, and did the questions point me toward information that actually mattered?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "memory",
+        "skill-learning",
+        "metacognition"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:ai-learning-attempt-feedback-retest",
+      "protocol_id": "brali:ai-learning-attempt-feedback-retest",
+      "slug": "ai-learning-attempt-feedback-retest",
+      "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+      "action": "Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI.",
+      "check_in": "Can I now perform or explain the target skill without leaning on the AI output?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10462-026-11665-9",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
+    {
+      "canonical_id": "brali:protocol:self-explain-what-you-learn",
+      "protocol_id": "brali:self-explain-what-you-learn",
+      "slug": "self-explain-what-you-learn",
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+      "action": "Study a manageable chunk, then look away from the explanation and produce a brief self-explanation: what the idea means, why a step follows, how it connects to what you already know, or when it would apply. Compare your explanation with the source, identify one gap or error, and revise it. Use the prompts that fit the material; do not turn every paragraph into a compulsory monologue.",
+      "check_in": "Can I explain the idea accurately enough to reconstruct the key relationship or step, and what did I have to correct after checking the source?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+        "reviewed_at": "2026-09-15"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
+    },
     {
       "canonical_id": "brali:protocol:spaced-recall-coach",
       "protocol_id": "brali:spaced-recall-coach",
@@ -47,8 +144,8 @@
       "slug": "avoid-list-interference-memory-retention",
       "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
       "title": "Try Quiet Wakeful Rest After Learning",
-      "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
-      "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+      "description": "After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule.",
+      "action": "When you finish a focused memory-heavy learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. Do not use the pause as a substitute for self-testing, active review, or other learning methods.",
       "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
       "evidence": {
         "status": "reviewed",
@@ -61,31 +158,6 @@
         "memory"
       ],
       "method_ids": [],
-      "hub_score": 1192.4
-    },
-    {
-      "canonical_id": "brali:protocol:active-recall-test-yourself",
-      "protocol_id": "brali:active-recall-test-yourself",
-      "slug": "active-recall-test-yourself",
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "title": "Use Active Recall for Retention, Then Practice Application",
-      "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
-      "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-      "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
-      "evidence": {
-        "status": "reviewed",
-        "source_recorded": true,
-        "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
-        "reviewed_at": "2026-08-18"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "memory",
-        "skill-learning"
-      ],
-      "method_ids": [
-        "retrieval-practice"
-      ],
       "hub_score": 1192.4
     }
   ],
@@ -130,6 +202,33 @@
       ]
     },
     {
+      "id": "prequestions-targeted-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+      "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+      "source_type": "meta-analysis",
+      "citation_text": "King-Shepard QW, Walker J, Nokes-Malach TJ, Carpenter SK, Fraundorf SH. Educational Psychology Review. 2025;37:115.",
+      "supported_claim": "Prequestions can improve later learning of the specific information they target. The meta-analysis reported g = 0.66 for prequestioned information and g = 0.01 for non-prequestioned information; feedback alongside prequestions was associated with stronger targeted learning.",
+      "unsupported_or_overstated_claims": [
+        "Prequestions improve learning of the entire lesson.",
+        "Any question asked before learning will be beneficial.",
+        "There is one evidence-backed optimal number of prequestions.",
+        "A wrong first answer is itself sufficient without later exposure or correction.",
+        "Prequestions replace retrieval practice, practice problems, or feedback after learning."
+      ],
+      "limitations": [
+        "The average benefit is specific to prequestioned information rather than a broad benefit to all content.",
+        "The meta-analysis does not establish one universal question count, timing rule, or content format.",
+        "Effect sizes summarize heterogeneous studies and do not guarantee the same result for an individual learning session."
+      ],
+      "topic_ids": [
+        "memory",
+        "skill-learning",
+        "metacognition"
+      ]
+    },
+    {
       "id": "retrieval-procedural-application-2026",
       "decision": "challenge-existing",
       "reviewed_at": "2026-08-18",
@@ -154,6 +253,33 @@
         "language-learning",
         "memory",
         "skill-learning"
+      ]
+    },
+    {
+      "id": "self-explanation-digital-learning-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-15",
+      "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+      "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+      "source_type": "meta-analysis",
+      "citation_text": "Tan LP, Gong SY, Wang YJ, Guo XR, Xu XZ, Wang YQ. Educational Psychology Review. 2025;37:20.",
+      "supported_claim": "Self-explanation in digital learning environments had a positive average effect on academic performance (reported g = 0.46), with positive average effects for retention and transfer. Effects were moderated by pacing and knowledge type, with larger effects reported for learner-centered pacing and conceptual or mixed knowledge than for procedural knowledge.",
+      "unsupported_or_overstated_claims": [
+        "Self-explanation is always better than other learning strategies.",
+        "One explanation prompt or modality is universally optimal.",
+        "Every paragraph should be self-explained.",
+        "The average effect applies unchanged outside digital learning environments.",
+        "A fluent explanation is accurate without checking it against the source."
+      ],
+      "limitations": [
+        "The reviewed evidence is specifically about digital learning environments.",
+        "The meta-analysis reports heterogeneity and moderation rather than a uniform effect across all settings.",
+        "The authors identify the quality and standardization of self-explanations as areas needing further research."
+      ],
+      "topic_ids": [
+        "skill-learning",
+        "metacognition",
+        "memory"
       ]
     },
     {
@@ -216,6 +342,66 @@
       ]
     },
     {
+      "id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-02",
+      "source_title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+      "source_url": "https://link.springer.com/article/10.1186/s41235-026-00708-y",
+      "source_type": "primary-study",
+      "citation_text": "Chua TJE, Pan SC. Cognitive Research: Principles and Implications. 2026;11:20.",
+      "supported_claim": "For adults learning new, concrete second-language vocabulary paired with images, adding a forced multiple-choice guess before immediately revealing the correct pairing can produce a modest short-delay memory advantage over simply reading the pair. A bounded Brali protocol may therefore use a cue → guess → immediate correct feedback → later recall sequence for vocabulary practice, while keeping the claim limited to this learning format and time horizon.",
+      "unsupported_or_overstated_claims": [
+        "Making errors before learning is generally better than studying correct information.",
+        "Pretesting improves grammar, reading comprehension, conversation skill, pronunciation or complex skill learning.",
+        "The observed advantage has been shown to persist over days, weeks or months.",
+        "The exact 8-second guess window, 5-second feedback window, four-option format or image format is optimal.",
+        "Multiple-choice pretesting always improves later multiple-choice performance; Experiment 3 did not show a significant multiple-choice advantage.",
+        "The effect proves that error correction, associative strengthening or any single proposed mechanism caused the benefit.",
+        "The findings generalize to children, advanced language learners, non-concrete vocabulary or learners outside the sampled online populations."
+      ],
+      "limitations": [
+        "All criterial tests followed a short same-session distractor period rather than a delayed retention interval, so long-term retention was not established.",
+        "The studies used concrete Spanish nouns paired with images; vocabulary type and language-learning context were narrow.",
+        "Participants were adult Prolific users from English-speaking countries and exclusions were substantial in several experiments.",
+        "Pretesting trials included up to 8 seconds of cue-only guessing before the same 5 seconds of correct pair exposure used in reading, so total cue exposure was longer in the pretesting condition.",
+        "Initial guess accuracy was about 35–38%, raising the possibility of some prior familiarity despite exclusions; the authors note that benefits also appeared for incorrectly guessed items.",
+        "Learning condition was primarily within-subjects, and the authors identify between-subject replication as a future research need.",
+        "Multiple-choice benefits were not significant in Experiment 3, so recognition effects were less uniform than cued-recall effects."
+      ],
+      "topic_ids": [
+        "memory",
+        "language-learning"
+      ]
+    },
+    {
+      "id": "wakeful-rest-complex-learning-challenge-2026",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-08-28",
+      "source_title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12945945/",
+      "source_type": "primary-study",
+      "citation_text": "Seban P, Šikl R, Prošek T, Urban K. Psychological Research. 2026;90:42.",
+      "supported_claim": "The existing Brali wakeful-rest protocol must not promise better comprehension or long-term retention for complex educational reading. In this more ecologically valid randomized study, eight minutes of post-reading wakeful rest did not produce a consistent advantage over social media, math or similar-text reading on immediate or one-week factual and conceptual tests. Keep the protocol narrow: it is an optional declarative-memory tactic, not a general learning upgrade.",
+      "unsupported_or_overstated_claims": [
+        "This single study proves that wakeful rest never helps learning.",
+        "Social-media use immediately after learning is harmless in every setting.",
+        "All post-learning distractor tasks are equivalent.",
+        "Autogenic training or guided rest is ineffective for every outcome.",
+        "The null classroom result cancels the broader declarative-memory meta-analysis.",
+        "The findings generalize unchanged beyond university students and the specific expository material tested."
+      ],
+      "limitations": [
+        "The study used one expository learning task in a university-student population.",
+        "The wakeful-rest condition used an autogenic-training implementation and therefore does not represent every possible quiet-rest procedure.",
+        "Only one eight-minute post-learning duration was tested.",
+        "The delayed test used different but conceptually aligned questions rather than identical items from the immediate test.",
+        "A single null study cannot establish absence of a wakeful-rest effect across all complex learning tasks or populations."
+      ],
+      "topic_ids": [
+        "memory"
+      ]
+    },
+    {
       "id": "wakeful-rest-memory-2026",
       "decision": "propose-protocol",
       "reviewed_at": "2026-08-18",
@@ -274,26 +460,26 @@
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
     },
     {
-      "id": "crossref:10.3758/s13423-025-02778-3",
-      "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+      "id": "crossref:10.1186/s41235-026-00708-y",
+      "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
       "status": "propose-protocol",
-      "publication_date": "2026-01-15",
-      "reference_url": "https://doi.org/10.3758/s13423-025-02778-3",
+      "publication_date": "2026-03-06",
+      "reference_url": "https://doi.org/10.1186/s41235-026-00708-y",
       "topic_ids": [
-        "memory"
+        "memory",
+        "language-learning"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
     },
     {
-      "id": "crossref:10.1037/a0037559",
-      "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
-      "status": "support-existing",
-      "publication_date": "2014-08-25",
-      "reference_url": "https://doi.org/10.1037/a0037559",
+      "id": "crossref:10.1007/s00426-026-02265-x",
+      "title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+      "status": "challenge-existing",
+      "publication_date": "2026-02-26",
+      "reference_url": "https://doi.org/10.1007/s00426-026-02265-x",
       "topic_ids": [
-        "memory",
-        "skill-learning"
+        "memory"
       ],
       "evidence_state": "discovery-only",
       "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."

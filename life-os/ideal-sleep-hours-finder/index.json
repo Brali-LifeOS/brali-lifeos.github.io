@@ -55,7 +55,10 @@
         "stage": "ready-for-resolution",
         "url": "https://brali-lifeos.github.io/research/gaps/sleep-circadian/"
       }
-    ]
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:ideal-sleep-hours-finder",
@@ -107,5 +110,13 @@
       "source_url": "https://pubmed.ncbi.nlm.nih.gov/34507028/",
       "reviewed_at": "2026-08-19"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/ideal-sleep-hours-finder.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

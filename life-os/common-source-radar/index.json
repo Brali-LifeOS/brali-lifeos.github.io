@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:common-source-radar",
   "slug": "common-source-radar",
-  "title": "Spot Common Source Bias",
-  "description": "Train yourself to spot when research or information comes from the same source or uses the same methods. Here’s how: - Check the source: Are multiple studies or reports relying on the same data or methods? Look for diversity in sources. - Ask critical questions: Does the information offer different perspectives, or is it repeating the same point? - Practice comparison: Regularly compare findings from different authors or studies to get a fuller picture. Example: If two articles say the same thing, check if they reference the same original study.",
+  "title": "Trace Repeated Claims Back to Their Underlying Sources",
+  "description": "When several pages or reports repeat the same claim, follow their links and citations back to the underlying material, record shared documents, datasets or organizations, and distinguish independent origins from repeated summaries.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
   "machine_url": "https://brali-lifeos.github.io/life-os/common-source-radar/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
+      },
+      {
+        "id": "environment-digital",
+        "title": "Environment & Digital Life"
       }
     ],
     "topics": [
       {
-        "id": "cognitive-biases",
-        "title": "Cognitive Biases"
+        "id": "critical-thinking",
+        "title": "Critical Thinking"
+      },
+      {
+        "id": "information-management",
+        "title": "Information Management"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "cognitive-biases"
@@ -48,8 +56,83 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "information-management",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:common-source-radar",
+    "language": "en",
+    "slug": "common-source-radar",
+    "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
+    "title": "Trace Repeated Claims Back to Their Underlying Sources",
+    "description": "When several pages or reports repeat the same claim, follow their links and citations back to the underlying material, record shared documents, datasets or organizations, and distinguish independent origins from repeated summaries.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "environment-digital",
+          "title": "Environment & Digital Life"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "information-management",
+          "title": "Information Management"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Write the claim, list the pages or reports repeating it, follow their citations or links toward the origin, note shared documents, datasets, organizations or copied wording, and classify the set as independent origins, shared origin, mixed, or unclear.",
+    "check_in": "Which items looked separate, what underlying origin did each one use, where did they overlap, and how many genuinely distinct origins remain?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Spot Common Source Bias"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/common-source-radar.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

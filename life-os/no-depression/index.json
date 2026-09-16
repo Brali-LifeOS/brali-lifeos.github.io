@@ -19,18 +19,37 @@
     "practical": 0,
     "pending_review": 0,
     "restricted": 7,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 3,
+    "research_gaps": 1
   },
   "topics": [
     {
       "id": "mood-wellbeing",
       "title": "Mood & Wellbeing",
-      "count": 9,
+      "count": 8,
       "url": "https://brali-lifeos.github.io/ontology/topics/mood-wellbeing/"
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/movement/"
+    },
+    {
+      "id": "stress-regulation",
+      "title": "Stress Regulation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/stress-regulation/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "movement",
+      "title": "Movement",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/movement/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "10-minute-stress-walk",

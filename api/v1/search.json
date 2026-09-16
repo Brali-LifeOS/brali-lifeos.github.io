@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "note": "Compact client-side retrieval index. Consumers should preserve trust/evidence state.",
   "items": [
     {
@@ -34,7 +34,7 @@
         "planning-prioritization"
       ],
       "url": "/ontology/topics/",
-      "search_text": "Planning & Prioritization Choose what matters, order work, and make the next action clear. Planning & Prioritization планирование Планирование и приоритизация приоритеты"
+      "search_text": "Planning & Prioritization Choose what matters, order work, and make the next action clear. everything feels urgent plan a workday plan my workday Planning & Prioritization prioritize work too many urgent tasks планирование Планирование и приоритизация приоритеты"
     },
     {
       "id": "brali:topic:goals",
@@ -89,7 +89,7 @@
         "stress-regulation"
       ],
       "url": "/ontology/topics/",
-      "search_text": "Stress Regulation Use low-risk practices to respond to everyday stress and regain workable perspective. Stress Regulation Регуляция стресса снизить стресс стресс"
+      "search_text": "Stress Regulation Use low-risk practices to respond to everyday stress and regain workable perspective. everyday stress feel stressed stress Stress Regulation stress reset stressed Регуляция стресса снизить стресс стресс"
     },
     {
       "id": "brali:topic:emotion-regulation",
@@ -177,7 +177,7 @@
         "sleep-circadian"
       ],
       "url": "/ontology/topics/",
-      "search_text": "Sleep & Circadian Rhythm Sleep timing, regularity, environment, and daily rhythms. Sleep & Circadian Rhythm режим сна сон Сон и циркадный ритм"
+      "search_text": "Sleep & Circadian Rhythm Sleep timing, regularity, environment, and daily rhythms. consistent sleep regular sleep schedule sleep Sleep & Circadian Rhythm sleep regularity sleep schedule режим сна сон Сон и циркадный ритм"
     },
     {
       "id": "brali:topic:movement",
@@ -188,7 +188,7 @@
         "movement"
       ],
       "url": "/ontology/topics/",
-      "search_text": "Movement Reduce prolonged inactivity and add practical movement to daily life. break up sitting Movement movement break movement breaks sitting break"
+      "search_text": "Movement Reduce prolonged inactivity and add practical movement to daily life. break up sitting desk job move more Movement movement break movement breaks sit at a desk sitting all day sitting break"
     },
     {
       "id": "brali:topic:fitness-strength",
@@ -563,6 +563,15 @@
       "search_text": "Action and Mood Observation Note Use a short note to compare an activity with what you noticed before and after it. Treat the note as observation, not proof that an activity caused a mood change. Write the situation, the activity you chose, how you felt before, and how you felt afterward. Add one alternative explanation so the note does not turn correlation into certainty. What did you observe, and what would be worth trying or discussing next without assuming the activity caused the change? mind-resilience Mind & Resilience self-awareness Self-Awareness emotion-regulation Emotion Regulation"
     },
     {
+      "id": "brali:protocol:active-recall-test-yourself",
+      "kind": "protocol",
+      "title": "Active Recall: Close the Notes and Make Memory Work",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+      "search_text": "Active Recall: Close the Notes and Make Memory Work Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you. Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill. What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task? learning-thinking Learning & Thinking memory Memory skill-learning Skill Learning"
+    },
+    {
       "id": "brali:protocol:estimate-vs-actual-calibrator",
       "kind": "protocol",
       "title": "Adjust for Regressive Bias",
@@ -599,6 +608,24 @@
       "search_text": "Anchor Your Timeline To fix time distortions: - Use anchors: Connect events to specific dates or milestones. - Journal regularly: Write down events as they happen to track their timing. - Review your calendar: Check past schedules to confirm when things actually happened. Example: If you’re unsure when you last met a client, refer to your notes or calendar to avoid assuming it was more recent or distant. To fix time distortions: - Use anchors: Connect events to specific dates or milestones. - Journal regularly: Write down events as they happen to track their timing. - Review your calendar: Check past schedules to confirm when things actually happened. Example: If you’re unsure when you last met a client, refer to your notes or calendar to avoid assuming it was more recent or distant. Check in when you use tools to correct your perception of time. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:prequestions-before-learning",
+      "kind": "protocol",
+      "title": "Ask a Few Questions Before You Start Learning",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+      "search_text": "Ask a Few Questions Before You Start Learning Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else. Choose a small set of questions that point to information you genuinely want to learn. Before opening the explanation, reading the chapter, or watching the lesson, make a brief attempt at each answer even if you are unsure. Then study normally, paying attention when the material resolves those questions. Afterward, check the answers against the source. Use this to target important information, not as a claim that every unasked detail will also be learned better. After studying, can I answer the questions accurately without looking, and did the questions point me toward information that actually mattered? learning-thinking Learning & Thinking memory Memory skill-learning Skill Learning metacognition Metacognition"
+    },
+    {
+      "id": "brali:protocol:ai-test-case-generator",
+      "kind": "protocol",
+      "title": "Ask AI for Failure Cases Before You Ship",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-test-case-generator/",
+      "search_text": "Ask AI for Failure Cases Before You Ship Give AI a feature, process, calculation, message, or workflow and ask for edge cases and failure modes. Treat the output as a candidate list, deduplicate it, verify relevance, and convert the useful cases into executable tests or checklist items. Describe the intended behavior, constraints, known happy path, and expensive failures. Ask for boundary cases, invalid inputs, state transitions, concurrency or timing issues where relevant, and user misunderstandings. Remove duplicates, verify each candidate against the real system, and write tests for the cases worth keeping. Did AI expose a failure I had not covered, and did I turn that idea into a check rather than merely admire the list? focus-action Focus & Action error-prevention Error Prevention"
+    },
+    {
       "id": "brali:protocol:ask-for-feedback-tracker",
       "kind": "protocol",
       "title": "Ask for Feedback on One Specific Decision",
@@ -615,6 +642,42 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/5-whys-goal-clarity/",
       "search_text": "Ask Why Until a Goal Becomes Clearer Use repeated why questions to examine what is behind a goal, then turn the useful insight into a next step. Five questions are a prompt, not a requirement or a guarantee of finding one root cause. Write one goal or problem, ask why it matters, and continue asking why while each answer adds something useful. Stop when the answers become repetitive, speculative, or split into different causes. Then choose one next step or one assumption to check. Did the questions reveal a useful reason, assumption, or constraint, and what will I do or verify next? focus-action Focus & Action goals Goals"
+    },
+    {
+      "id": "brali:protocol:ai-learning-attempt-feedback-retest",
+      "kind": "protocol",
+      "title": "Attempt First, Use AI for Feedback, Retest Without It",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+      "search_text": "Attempt First, Use AI for Feedback, Retest Without It For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning. Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI. Can I now perform or explain the target skill without leaning on the AI output? learning-thinking Learning & Thinking skill-learning Skill Learning metacognition Metacognition memory Memory"
+    },
+    {
+      "id": "brali:protocol:default-choice-audit",
+      "kind": "protocol",
+      "title": "Audit a Default Before Letting It Decide for You",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/default-choice-audit/",
+      "search_text": "Audit a Default Before Letting It Decide for You For a setting, subscription, workflow, or template with meaningful consequences, identify the current default, compare the relevant alternatives, and make a deliberate keep-or-change decision with an easy rollback when possible. Pick one consequential default, identify what is currently selected, state what you need from the setting or service, compare only the realistic alternatives, note switching costs and important constraints, make a keep-or-change decision, and record how to reverse it when reversal matters. What default did I inspect, what requirement mattered most, why did I keep or change it, and can I reverse the decision if the new choice is worse? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:ergonomic-workspace-assessment",
+      "kind": "protocol",
+      "title": "Audit Workspace Friction Before Buying More Gear",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ergonomic-workspace-assessment/",
+      "search_text": "Audit Workspace Friction Before Buying More Gear Inspect where a workspace makes the actual task harder to see, reach, switch, connect, or reset; change one layout variable; and keep the change only when it removes friction without creating a new problem. Choose one frequent task, walk through it slowly, note every unnecessary reach, obstruction, visibility issue, cable move, device swap, or reset, rank the friction points, change one reversible layout variable, use the task again, and keep or undo the change based on what became easier or harder. Which step in the task had avoidable friction, what single workspace change did I make, and did it remove that friction without moving the problem somewhere else? environment-digital Environment & Digital Life workspace Workspace environment-design Environment Design"
+    },
+    {
+      "id": "brali:protocol:automate-routine-data-reports",
+      "kind": "protocol",
+      "title": "Automate a Routine Report with Validation and Fallback",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/automate-routine-data-reports/",
+      "search_text": "Automate a Routine Report with Validation and Fallback Automate a stable reporting workflow only after defining source ownership, transformations, validation rules, freshness, failure handling, and a manual fallback. Map the report consumer, source data, transformations and delivery step. Define validation rules for schema, completeness, freshness and key totals. Build a small automated path with logging and a visible failure state, keep a manual fallback, and stop publication when validation fails. Did the automated report use the expected source, pass validation, arrive on time, and fail visibly when an assumption broke? learning-thinking Learning & Thinking data-literacy Data Literacy"
     },
     {
       "id": "brali:protocol:automatic-paycheck-to-savings",
@@ -680,6 +743,51 @@
       "search_text": "Balance the Negativity Bias To manage negative recall: - List positives: After a bad experience, write down at least 3 positive things that happened that day. - Reframe events: Find the silver lining in unpleasant memories. - Focus on solutions: Instead of dwelling on what went wrong, brainstorm ways to improve next time. Example: If a meeting didn’t go well, note what you learned and how you can prepare better next time. To manage negative recall: - List positives: After a bad experience, write down at least 3 positive things that happened that day. - Reframe events: Find the silver lining in unpleasant memories. - Focus on solutions: Instead of dwelling on what went wrong, brainstorm ways to improve next time. Example: If a meeting didn’t go well, note what you learned and how you can prepare better next time. Check in when you counteract negativity by focusing on the positive. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:batch-non-urgent-notifications",
+      "kind": "protocol",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+      "search_text": "Batch Non-Urgent Notifications Instead of Receiving Them All Day Group non-urgent smartphone notifications into a few predictable delivery windows while keeping genuinely urgent channels available. The useful idea is predictable batching, not a magic number of batches. Choose the apps whose alerts are useful but rarely urgent. Use your phone's notification summary, scheduled focus mode, or another reversible setting to deliver those alerts in predictable windows. Keep calls, selected contacts, security alerts, calendars, or other genuinely time-sensitive channels outside the batch. Start with a schedule that fits your day rather than copying the study's three-times-a-day condition as a universal rule. Did I feel interrupted less often without creating missed urgent information, compulsive manual checking, or anxiety about what I could not see? environment-digital Environment & Digital Life focus-action Focus & Action digital-attention Digital Attention attention-focus Attention & Focus"
+    },
+    {
+      "id": "brali:protocol:communication-blocks-scheduler",
+      "kind": "protocol",
+      "title": "Batch Routine Messages Around Real Response Obligations",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/communication-blocks-scheduler/",
+      "search_text": "Batch Routine Messages Around Real Response Obligations Set predictable windows for non-urgent messages, keep an explicit path for work that genuinely cannot wait, and adjust the schedule when it conflicts with actual response duties. List the communication channels you monitor, separate channels that require rapid coverage from routine messages, place routine processing into predictable windows, define an exception path for genuinely time-sensitive items, turn longer requests into tasks, and review whether your response obligations are still being met. Which messages waited until the planned window, which exception was genuinely time-sensitive, and did the schedule still meet the response expectations of my role? focus-action Focus & Action task-initiation Task Initiation"
+    },
+    {
+      "id": "brali:protocol:batch-similar-tasks-planner",
+      "kind": "protocol",
+      "title": "Batch Similar Tasks When Switching Is the Problem",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/batch-similar-tasks-planner/",
+      "search_text": "Batch Similar Tasks When Switching Is the Problem Group comparable low-risk tasks when repeated setup is slowing the work, then compare the batch with your normal flow and stop batching when responsiveness suffers. Pick one recurring task family, define what makes the tasks similar, collect a small batch, process it with the same setup, and record completed items, rework, waiting time, and missed urgency. Compare with the ordinary flow before expanding the batch. Did batching remove repeated setup without adding unacceptable delay, rework, or missed urgent work? focus-action Focus & Action task-initiation Task Initiation"
+    },
+    {
+      "id": "brali:protocol:consider-the-opposite",
+      "kind": "protocol",
+      "title": "Before You Commit to a Judgment, Consider the Opposite",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/consider-the-opposite/",
+      "search_text": "Before You Commit to a Judgment, Consider the Opposite When a judgment matters and you already feel convinced, deliberately generate a plausible explanation, evidence pattern, or outcome that would point the other way. Use it as a bias check, not as a rule to distrust every conclusion. Write your current conclusion in one sentence. Then ask: what evidence, mechanism, or alternative explanation could make the opposite conclusion reasonable? Generate a concrete alternative rather than telling yourself to be objective. Check whether your decision would change if that alternative were true. Use this on decisions where biased assimilation or one-sided hypothesis testing is a real risk; do not turn it into endless doubt about routine choices. What plausible disconfirming case did I generate, and did it reveal a missing fact, a weak assumption, or no meaningful reason to change course? focus-action Focus & Action learning-thinking Learning & Thinking decision-making Decision Making cognitive-biases Cognitive Biases critical-thinking Critical Thinking"
+    },
+    {
+      "id": "brali:protocol:ai-task-frontier-test",
+      "kind": "protocol",
+      "title": "Benchmark AI on the Task Before You Trust the Workflow",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-task-frontier-test/",
+      "search_text": "Benchmark AI on the Task Before You Trust the Workflow AI performance is uneven across tasks that can look similarly difficult. Before redesigning a workflow around a model, run it on representative cases, score the outputs against a human-defined standard, and identify where human review is still mandatory. Choose a small sample containing easy, ordinary, and awkward cases. Define what counts as acceptable before running the model. Compare AI output with the source or a trusted human result, record failure patterns, and decide which cases can be assisted, which need review, and which should stay human-first. Do I know the cases where AI is reliable enough to help and the cases where its polished answer should not be trusted? work-money Work & Money work-systems Work Systems strategy Strategy"
+    },
+    {
       "id": "brali:protocol:full-list-recall-technique",
       "kind": "protocol",
       "title": "Boost Recall with Full Lists",
@@ -698,6 +806,33 @@
       "search_text": "Break Free from Stereotypes To reduce stereotypical bias: - Pause and question: Before making assumptions, ask yourself, “What evidence do I have?” - Focus on individuals: Get to know people beyond labels and categories. - Seek diverse perspectives: Actively listen to stories and views different from your own. Example: Instead of assuming someone’s skills based on their background, ask them about their experiences directly. To reduce stereotypical bias: - Pause and question: Before making assumptions, ask yourself, “What evidence do I have?” - Focus on individuals: Get to know people beyond labels and categories. - Seek diverse perspectives: Actively listen to stories and views different from your own. Example: Instead of assuming someone’s skills based on their background, ask them about their experiences directly. Check in when you challenge and replace stereotypical assumptions. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:qa-checklist-templates-runbook",
+      "kind": "protocol",
+      "title": "Build a QA Checklist from Real Failure Modes",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/qa-checklist-templates-runbook/",
+      "search_text": "Build a QA Checklist from Real Failure Modes Turn a recurring QA task into a short checklist with clear expected results, exception handling, an owner, and a revision step when reality exposes a missing check. Choose one recurring QA activity, list the failure modes that would matter, turn each necessary check into an action plus expected result, define what to capture when the result differs, run the checklist on real work, and revise it when a new recurring miss appears. Which check changed the release or review decision, which item was ambiguous, and what should be added, removed, or rewritten before the next run? focus-action Focus & Action work-money Work & Money error-prevention Error Prevention work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:build-your-support-network",
+      "kind": "protocol",
+      "title": "Build a Support Map Around Specific Needs",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/build-your-support-network/",
+      "search_text": "Build a Support Map Around Specific Needs Map the kinds of support you sometimes need, identify appropriate people or communities for each kind, make specific requests that are easy to decline, and protect reciprocity and boundaries. Write down one current need, decide what kind of help would actually be useful, identify a person or community that is appropriate for that request, ask specifically and make declining easy, respect the answer, and record whether you need a different resource or a different kind of help next time. Was the request specific and appropriate, was the other person's boundary clear, and do I need to change the ask, the resource, or my own next action? communication-relationships Communication & Relationships relationships Relationships clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:ai-question-bank-builder",
+      "kind": "protocol",
+      "title": "Build an AI-Assisted Question Bank You Can Verify",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
+      "search_text": "Build an AI-Assisted Question Bank You Can Verify Use AI to draft varied practice questions from material you already have, verify every answer against the source, and keep only questions that test the knowledge you actually need. Choose a source you need to learn, ask AI for questions covering definitions, explanations, comparisons, application and error cases, verify every answer against the source, remove ambiguous or unsupported items, and practice from the cleaned bank. Which questions exposed a gap, which answers could not be verified, and what should be corrected or added before the next practice round? learning-thinking Learning & Thinking skill-learning Skill Learning"
+    },
+    {
       "id": "brali:protocol:cardio-health-daily-habits",
       "kind": "protocol",
       "title": "Build Toward a Weekly Movement Baseline",
@@ -705,6 +840,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/cardio-health-daily-habits/",
       "search_text": "Build Toward a Weekly Movement Baseline Plan how ordinary walking, moderate activity, vigorous activity or strength work can fit your week. Adapt the plan to your abilities and medical guidance rather than forcing one routine. Look at the coming week, mark the activity you already do, then add realistic walking, moderate or vigorous activity, and strength sessions where they fit. Build gradually rather than treating the guideline as a one-day target. Does the plan fit your current ability, schedule and any guidance from your health professional? Adjust it rather than forcing a target that is inappropriate for you. health-energy Health & Energy cardiovascular-health Cardiovascular Health movement Movement health-basics Everyday Health Basics"
+    },
+    {
+      "id": "brali:protocol:calibrate-task-estimates",
+      "kind": "protocol",
+      "title": "Calibrate Task Estimates With Planned vs Actual Work",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/calibrate-task-estimates/",
+      "search_text": "Calibrate Task Estimates With Planned vs Actual Work Define a concrete deliverable, make an initial estimate, record what completion actually required, note the main source of difference, and use that local record when planning similar work again. Write the deliverable and important assumptions, make an estimate that includes the work you currently know about, complete or reassess the task, record the actual conditions and the main reason for any difference, then consult that record before estimating similar work again. What did I estimate, what actually happened, what caused the largest difference, and what will I change in the next comparable estimate? focus-action Focus & Action work-money Work & Money planning-prioritization Planning & Prioritization work-systems Work Systems"
     },
     {
       "id": "brali:protocol:assumed-similarity-bias-check",
@@ -734,6 +878,24 @@
       "search_text": "Challenge the Consensus In group discussions: - Ask questions: \"Have we considered other perspectives?\" - Encourage dissent: Create a safe space for alternative viewpoints. - Pause before deciding: Suggest taking time to explore overlooked options. Example: Before agreeing with a team’s rushed decision, propose reviewing potential risks and alternatives. In group discussions: - Ask questions: \"Have we considered other perspectives?\" - Encourage dissent: Create a safe space for alternative viewpoints. - Pause before deciding: Suggest taking time to explore overlooked options. Example: Before agreeing with a team’s rushed decision, propose reviewing potential risks and alternatives. Check in when you challenge groupthink and push for diverse perspectives. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:check-base-rates-before-deciding",
+      "kind": "protocol",
+      "title": "Check a Relevant Baseline Before Interpreting One Case",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/check-base-rates-before-deciding/",
+      "search_text": "Check a Relevant Baseline Before Interpreting One Case For an ordinary data-informed decision, define the relevant reference class, find a comparable baseline, inspect its scope and denominator, then combine that general context with the facts that are specific to the case. State the decision, define the reference class, find a baseline with a clear denominator and scope, check whether it is comparable to the current case, add the case-specific information that genuinely differs, and keep the conclusion tentative when the baseline or fit is weak. What reference class did I use, where did its baseline come from, how comparable is it to this case, and which case-specific fact could justify departing from it? learning-thinking Learning & Thinking data-literacy Data Literacy critical-thinking Critical Thinking"
+    },
+    {
+      "id": "brali:protocol:clustering-illusion-guard",
+      "kind": "protocol",
+      "title": "Check a Streak Before Treating It as a Pattern",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/clustering-illusion-guard/",
+      "search_text": "Check a Streak Before Treating It as a Pattern When a short streak looks meaningful, record the complete observation window and denominator, compare the cluster with the broader history, check whether measurement or operating conditions changed, and avoid changing a plan solely because the sequence looks striking. Record what happened, the full period or set you are looking at, and the denominator behind the visible cluster. Compare it with the earlier history when available, note any change in measurement or operating conditions, identify plausible alternative explanations, and choose whether to act, gather more information or keep the current plan. What streak caught my attention, what is the full denominator and observation window, what changed in the context, and would I make the same decision if the sequence looked less visually striking? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases data-literacy Data Literacy"
+    },
+    {
       "id": "brali:protocol:check-blame-bias",
       "kind": "protocol",
       "title": "Check Blame Bias",
@@ -741,6 +903,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/check-blame-bias/",
       "search_text": "Check Blame Bias When assigning blame: - Pause: Ask, \"Am I blaming more because the outcome was worse?\" - Separate outcome from intent: Focus on actions, not just consequences. - Avoid personal filters: Check if you’re influenced by similarities to the victim. Example: In a car accident case, avoid assigning more blame just because the damage was severe. When assigning blame: - Pause: Ask, \"Am I blaming more because the outcome was worse?\" - Separate outcome from intent: Focus on actions, not just consequences. - Avoid personal filters: Check if you’re influenced by similarities to the victim. Example: In a car accident case, avoid assigning more blame just because the damage was severe. Check in when you assess blame without being influenced by severity or personal connections. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:deliberate-email-checking-windows",
+      "kind": "protocol",
+      "title": "Check Email in Deliberate Windows Instead of Continuously",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/deliberate-email-checking-windows/",
+      "search_text": "Check Email in Deliberate Windows Instead of Continuously If constant inbox checking fragments your day, test a few deliberate email windows and close the inbox between them. Match the schedule to real response expectations rather than copying a fixed number from a study. Choose a small number of email windows that still meet the real response expectations of your work and personal life. Close or hide the inbox between those windows and disable nonessential email alerts. Keep a separate urgent channel for issues that genuinely cannot wait. Do not treat three checks per day as a universal rule; that was the experimental condition, not an optimized schedule. Was my day less stressful or fragmented, did I miss anything genuinely time-sensitive, and did I compensate by manually reopening the inbox anyway? environment-digital Environment & Digital Life work-money Work & Money digital-attention Digital Attention work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:context-guard-for-decisions",
+      "kind": "protocol",
+      "title": "Check the Operating Context Before Reusing a Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/context-guard-for-decisions/",
+      "search_text": "Check the Operating Context Before Reusing a Decision Before applying a familiar solution, state what changed, identify the people and system constraints that matter, separate verified facts from assumptions, and choose a reversible next step when important context is still missing. State the decision, note what changed since the comparable case, list the concrete constraints and stakeholders that affect execution, mark assumptions separately from verified facts, and choose a reversible next step or clarification when a missing condition could change the choice. What changed, which constraint matters now, what am I assuming rather than verifying, and what is the smallest next step that fits the current context? focus-action Focus & Action decision-making Decision Making"
     },
     {
       "id": "brali:protocol:avoid-gamblers-fallacy-trust-the-odds",
@@ -752,6 +932,15 @@
       "search_text": "Check Whether a Streak Changes the Next Event Before acting on a streak, identify whether earlier outcomes can change the next event and use a pre-defined decision rule rather than a story about what is due. Describe the next event and the recent streak. Ask what carries information or state from earlier outcomes into the next one. If there is no connection, ignore the streak and use the same probability or decision rule. If a connection may exist, identify the relevant state and gather that information. Use a pre-defined stop rule for repeated high-cost decisions. What connection did I identify between past and next events, and did my action follow the rule or merely the feeling that an outcome was due? focus-action Focus & Action learning-thinking Learning & Thinking decision-making Decision Making data-literacy Data Literacy"
     },
     {
+      "id": "brali:protocol:break-familiarity-bias",
+      "kind": "protocol",
+      "title": "Check Whether Familiarity Is Driving a Low-Stakes Choice",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/break-familiarity-bias/",
+      "search_text": "Check Whether Familiarity Is Driving a Low-Stakes Choice For an ordinary low-stakes choice, name the familiar default, state the criterion that matters, compare one viable alternative, and keep or change the default for a concrete reason rather than novelty alone. Name the default, write the criterion that matters, identify one viable alternative, compare the two on that criterion and any important constraint, then keep the default or try the alternative for a stated reason. Use this only for ordinary low-stakes choices. What was the default, what criterion mattered, what alternative did I compare, and why did I keep or change the choice? learning-thinking Learning & Thinking focus-action Focus & Action cognitive-biases Cognitive Biases decision-making Decision Making"
+    },
+    {
       "id": "brali:protocol:5w1h-communication-checklist",
       "kind": "protocol",
       "title": "Check Who, What, Where, When, Why, and How",
@@ -759,6 +948,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/5w1h-communication-checklist/",
       "search_text": "Check Who, What, Where, When, Why, and How Before an important operational message, check whether the reader has the people, action, place, timing, reason, and next-step details they actually need. Review an important operational message using six questions: Who? What? Where? When? Why? How? Add only the missing details the reader needs to act, then send the shortest version that is still clear. Could the reader act without guessing, and did I include any detail that was unnecessary or sensitive? communication-relationships Communication & Relationships clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:choose-best-resources",
+      "kind": "protocol",
+      "title": "Choose Resources for the Next Concrete Step",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/choose-best-resources/",
+      "search_text": "Choose Resources for the Next Concrete Step Start from the output or decision you need, choose the resource that best fits that next step, check authority, freshness, licensing and security where relevant, test the smallest useful use, then keep, defer or archive it. Name the output or decision you need, compare candidate resources on direct relevance and usability, check authority, freshness, licensing, privacy and security where they matter, try the smallest useful interaction, and record whether to keep, defer or archive the resource. What next step was this resource meant to support, did it fit that job, what constraint did I verify, and should I keep using it, defer it or archive it? environment-digital Environment & Digital Life work-money Work & Money information-management Information Management work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:top-3-daily-focus-planner",
+      "kind": "protocol",
+      "title": "Choose Up to Three Priority Outcomes for the Day",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/top-3-daily-focus-planner/",
+      "search_text": "Choose Up to Three Priority Outcomes for the Day Choose a small set of outcomes that deserves protected attention today, define what done means, and move the rest to a visible backlog instead of pretending every task is equally urgent. Review today's deadlines, dependencies, and available capacity; choose up to three outcomes that most deserve progress; define what done means for each; reserve appropriate time where possible; place other tasks in a visible backlog; and re-plan explicitly when genuinely urgent work changes the day. Which priority outcomes moved today, what changed the plan, and what should be carried forward rather than silently added to tomorrow? focus-action Focus & Action goals Goals"
     },
     {
       "id": "brali:protocol:clarify-probabilities-risk-breakdown",
@@ -815,13 +1022,31 @@
       "search_text": "Comfortable Diaphragmatic Breathing Try a few slow, comfortable breaths while noticing the abdomen move. Keep the exercise easy, stop if it feels uncomfortable, and do not use it instead of medical care. Sit or lie in a comfortable position, let the breath slow without forcing a count, notice the abdomen rise and fall, and stop after a few easy cycles or whenever you prefer. Did the exercise feel comfortable and leave you ready for the next ordinary action? Stop if you feel dizzy, short of breath, distressed, or otherwise unwell. mind-resilience Mind & Resilience stress-regulation Stress Regulation"
     },
     {
+      "id": "brali:protocol:conjunction-fallacy-coach",
+      "kind": "protocol",
+      "title": "Compare a Condition With the Same Condition Plus Another Requirement",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/conjunction-fallacy-coach/",
+      "search_text": "Compare a Condition With the Same Condition Plus Another Requirement When one option is A and another is A plus an additional condition B, write the two event sets explicitly and check their logical relationship before letting the more detailed description seem more likely. Identify condition A, identify the additional condition B, write the compound event as A-and-B, and check whether every compound case is already included among the A cases. If so, do not rank the compound event above A merely because the added detail makes the story feel more specific. What was A, what extra condition did B add, is every A-and-B case already an A case, and did the detailed wording change my initial ranking? learning-thinking Learning & Thinking critical-thinking Critical Thinking data-literacy Data Literacy"
+    },
+    {
       "id": "brali:protocol:ab-test-learning-loop",
       "kind": "protocol",
       "title": "Compare Two Approaches and Learn From the Result",
       "trust": "practical",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/ab-test-learning-loop/",
-      "search_text": "Compare Two Approaches and Learn From the Result When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny informal comparison as statistical proof. Choose one reversible decision, define what you want to learn, compare two approaches as fairly as you can, and record the outcome before deciding what to try next. Use proper experimental design when the result needs statistical confidence. What changed between the two approaches, what outcome did I observe, and is the evidence strong enough to act or only strong enough to suggest another test? work-money Work & Money marketing-positioning Marketing & Positioning"
+      "search_text": "Compare Two Approaches and Learn From the Result When a decision is reversible, compare two approaches around one clear question, keep the outcome you care about visible, and avoid treating a tiny informal comparison as statistical proof. Choose one reversible decision, define what you want to learn, compare two approaches as fairly as you can, and record the outcome before deciding what to try next. Use proper experimental design when the result needs statistical confidence. What changed between the two approaches, what outcome did I observe, and is the evidence strong enough to act or only strong enough to suggest another test? learning-thinking Learning & Thinking focus-action Focus & Action problem-solving Problem Solving decision-making Decision Making data-literacy Data Literacy"
+    },
+    {
+      "id": "brali:protocol:clarity-ladder-analyzer",
+      "kind": "protocol",
+      "title": "Connect a General Point to a Concrete Example",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
+      "search_text": "Connect a General Point to a Concrete Example State the general point, add a concrete example or observable detail that belongs to it, connect the example back to the point, and remove specifics that do not help the audience understand the message or next action. Write the main point in plain language, choose an example, observation, step or verified figure that illustrates it, explain the connection in one sentence, and remove details that do not change understanding or action. If you began with a detail, reverse the sequence by stating the broader point it supports. What is the general point, which concrete detail makes it easier to understand, what does that detail show here, and which specifics can be removed without changing the meaning? communication-relationships Communication & Relationships creativity-expression Creativity & Expression clear-communication Clear Communication writing Writing"
     },
     {
       "id": "brali:protocol:challenge-generalizations-counterexamples",
@@ -833,6 +1058,15 @@
       "search_text": "Counterexample Check When a statement uses words such as always, never, everyone, or nothing, look for one genuine exception before treating it as a rule. Write the absolute statement, underline the universal word, and find one genuine case where the statement does not hold. Then rewrite the claim more precisely. Did the counterexample change the claim, or was the original statement already precise enough to survive the check? learning-thinking Learning & Thinking critical-thinking Critical Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:phase-transition-ritual-tracker",
+      "kind": "protocol",
+      "title": "Create a Clear Handoff Between Two Activities",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
+      "search_text": "Create a Clear Handoff Between Two Activities Use a short, ordinary handoff at a recurring boundary—such as work to personal time—to record what is unfinished, reset the environment, and make the first action of the next activity explicit. Choose one recurring transition, write down any unfinished item that must be resumed later, perform one simple closing action in the environment, name the first action of the next activity, then leave the handoff alone unless it proves useful enough to repeat. What did I close, what did I preserve for later, what is the first action in the next mode, and did this handoff reduce avoidable switching friction? work-money Work & Money focus-action Focus & Action work-systems Work Systems attention-focus Attention & Focus"
+    },
+    {
       "id": "brali:protocol:decision-calibration-journal",
       "kind": "protocol",
       "title": "Decision Calibration Journal",
@@ -840,6 +1074,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
       "search_text": "Decision Calibration Journal Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices. Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear. Which assumption held, which one failed, and what would you change in a similar decision next time? focus-action Focus & Action learning-thinking Learning & Thinking decision-making Decision Making metacognition Metacognition"
+    },
+    {
+      "id": "brali:protocol:break-down-big-problems-triz",
+      "kind": "protocol",
+      "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
+      "search_text": "Decompose a Hard Problem with TRIZ-Inspired Contradictions Describe the unwanted result, expose the trade-off or contradiction, split the system into parts, and check a change that removes a constraint instead of merely optimizing around it. State the unwanted outcome, map the main parts and interactions, write the trade-off as two requirements that appear to conflict, generate separation or redesign options, choose a reversible check, and record which assumption or constraint changed. What contradiction did I expose, what separation or redesign did I check, and did it remove the conflict or only move it elsewhere? learning-thinking Learning & Thinking creativity-expression Creativity & Expression problem-solving Problem Solving creative-problem-solving Creative Problem Solving"
     },
     {
       "id": "brali:protocol:deepen-memory-levels-of-processing",
@@ -875,7 +1118,7 @@
       "trust": "practical",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/2-minute-desk-tidy-timer/",
-      "search_text": "Do a Short Desk Reset Set a timer for 2 minutes and tidy up your workspace. Put away unnecessary items and clear some space for your tasks. Set a short timer and tidy one small part of your workspace. Make only obvious moves, then stop before tidying turns into a larger task. Is the workspace easier to use now, and did I stop before tidying became a new form of procrastination? work-money Work & Money work-systems Work Systems"
+      "search_text": "Do a Short Desk Reset Set a timer for 2 minutes and tidy up your workspace. Put away unnecessary items and clear some space for your tasks. Set a short timer and tidy one small part of your workspace. Make only obvious moves, then stop before tidying turns into a larger task. Is the workspace easier to use now, and did I stop before tidying became a new form of procrastination? environment-digital Environment & Digital Life focus-action Focus & Action workspace Workspace task-initiation Task Initiation"
     },
     {
       "id": "brali:protocol:active-listening-exercises",
@@ -887,13 +1130,13 @@
       "search_text": "Do Active Listening Exercises Practice active listening by summarizing and repeating back what the other person has said to confirm understanding. In one conversation, wait until the other person finishes a thought, paraphrase the main point in your own words, invite correction, and ask one open question before offering advice or changing the topic. Did I summarize before responding? Was my summary accepted or corrected, and what did the correction teach me? communication-relationships Communication & Relationships relationships Relationships"
     },
     {
-      "id": "brali:protocol:circles-of-control-planner",
+      "id": "brali:protocol:ai-professional-writing-draft",
       "kind": "protocol",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
-      "trust": "practical",
+      "title": "Draft Professional Writing with AI, Then Take Back the Edit",
+      "trust": "reviewed",
       "topic_ids": [],
-      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-      "search_text": "Draw Two Circles; One for Factors You Can Control and Another for Those You Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control. Write down one concern, separate the outcome from the actions you can take, convert anything you can influence into one concrete behavior, and choose the next useful action without pretending you control the final result. What part of this situation was actually mine to act on, what remained outside my control, and did the sorting help me choose a clearer next step? focus-action Focus & Action mind-resilience Mind & Resilience decision-making Decision Making stress-regulation Stress Regulation"
+      "url": "https://brali-lifeos.github.io/life-os/ai-professional-writing-draft/",
+      "search_text": "Draft Professional Writing with AI, Then Take Back the Edit For routine professional writing, give AI the purpose, audience, constraints, and source facts, ask for a draft, then revise it yourself. Controlled evidence supports productivity gains for some professional writing tasks, not automatic accuracy or judgment. Provide the audience, goal, source facts, must-include points, and constraints. Ask for one draft. Compare it with the source material, remove invented details, restore your own judgment and voice, and send only the version you can defend without the model in the room. Did AI reduce drafting time without introducing claims, tone, or commitments I would not have written myself? creativity-expression Creativity & Expression writing Writing revision-feedback Revision & Feedback"
     },
     {
       "id": "brali:protocol:evaluate-external-ideas-objectively",
@@ -914,6 +1157,15 @@
       "search_text": "End on a High Note To create great memories: - Finish strong: End tasks or experiences with something positive. - Celebrate small wins: After completing a tough task, reward yourself with something enjoyable. - Pause to reflect: Take a moment to focus on the highlights before ending your day. Example: After a meeting, share a positive takeaway with your team to leave a good impression. To create great memories: - Finish strong: End tasks or experiences with something positive. - Celebrate small wins: After completing a tough task, reward yourself with something enjoyable. - Pause to reflect: Take a moment to focus on the highlights before ending your day. Example: After a meeting, share a positive takeaway with your team to leave a good impression. Check in when you focus on the best parts and how you wrap up experiences. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:separate-to-decide-decision-evaluator",
+      "kind": "protocol",
+      "title": "Evaluate Options Against Fixed Criteria Before Comparing Them",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/separate-to-decide-decision-evaluator/",
+      "search_text": "Evaluate Options Against Fixed Criteria Before Comparing Them Define the must-have criteria first, inspect each option against the same criteria, record unknowns separately, and compare survivors only after the individual evaluations are complete. Write the must-have constraints and relevant preferences before opening the comparison, evaluate each option against that same list, mark missing information as unknown rather than pass or fail, remove options that clearly violate a must-have, and compare the remaining trade-offs only after the individual evaluations are recorded. Did I keep the same criteria across options, which unknown could still change the result, and which remaining trade-off actually matters? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
       "id": "brali:protocol:anticipate-sudden-trend-shifts",
       "kind": "protocol",
       "title": "Expect the Unexpected",
@@ -932,6 +1184,15 @@
       "search_text": "Explain One Idea with an Analogy and Its Limit Compare an unfamiliar idea with something familiar, state the matching point, name where the comparison stops and ask the listener to restate the idea. Write the idea you need to explain. Choose a familiar comparison, map only the important relationship, add one boundary sentence and ask the listener to restate the original idea. Revise the analogy if the restatement keeps the wrong detail. Could the listener restate the intended idea, and which part of the analogy clarified or distorted it? communication-relationships Communication & Relationships creativity-expression Creativity & Expression clear-communication Clear Communication creative-problem-solving Creative Problem Solving"
     },
     {
+      "id": "brali:protocol:self-explain-what-you-learn",
+      "kind": "protocol",
+      "title": "Explain What You Just Learned in Your Own Words",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+      "search_text": "Explain What You Just Learned in Your Own Words After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types. Study a manageable chunk, then look away from the explanation and produce a brief self-explanation: what the idea means, why a step follows, how it connects to what you already know, or when it would apply. Compare your explanation with the source, identify one gap or error, and revise it. Use the prompts that fit the material; do not turn every paragraph into a compulsory monologue. Can I explain the idea accurately enough to reconstruct the key relationship or step, and what did I have to correct after checking the source? learning-thinking Learning & Thinking skill-learning Skill Learning metacognition Metacognition memory Memory"
+    },
+    {
       "id": "brali:protocol:recall-early-childhood-memories-triggers",
       "kind": "protocol",
       "title": "Explore Childhood Amnesia",
@@ -939,6 +1200,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/recall-early-childhood-memories-triggers/",
       "search_text": "Explore Childhood Amnesia To recall early memories: - Use triggers: Look at photos or listen to music from your early years. - Ask family: Talk to relatives about events you may have forgotten. - Write it down: Jot down fragments of memories as they surface. Example: A photo of a birthday party might help you recall more about the event. To recall early memories: - Use triggers: Look at photos or listen to music from your early years. - Ask family: Talk to relatives about events you may have forgotten. - Write it down: Jot down fragments of memories as they surface. Example: A photo of a birthday party might help you recall more about the event. Check in when you recall an early memory with the help of a trigger or conversation. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:ai-structured-extraction-check",
+      "kind": "protocol",
+      "title": "Extract a Table with AI, Then Sample-Check the Rows",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-structured-extraction-check/",
+      "search_text": "Extract a Table with AI, Then Sample-Check the Rows For repeated unstructured text you are allowed to process, ask AI to extract a fixed schema, include the source span for each row, and flag uncertainty. Then sample-check rows and fully verify fields that drive money, access, compliance, or other high-cost actions. Define the columns and allowed values before extraction. Ask the model to return null rather than guess, preserve a source snippet or locator for each row, and flag ambiguous cases. Check a random sample plus all high-impact rows against the original text before using the result downstream. Do I know the observed extraction error rate well enough for the consequence of the next step? environment-digital Environment & Digital Life information-management Information Management"
     },
     {
       "id": "brali:protocol:best-odds-decision-making",
@@ -957,6 +1227,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/kpi-drift-guardrail/",
       "search_text": "Focus on the Bigger Picture When working with metrics: - Ask yourself: \"Is this measure representing the actual goal, or has it become the goal?\" - Revisit the strategy: Ensure you understand the broader objective the metric supports. - Avoid tunnel vision: Regularly check if actions are aligned with the ultimate goal. Example: Focusing solely on sales numbers? Balance them with customer satisfaction to maintain long-term success. When working with metrics: - Ask yourself: \"Is this measure representing the actual goal, or has it become the goal?\" - Revisit the strategy: Ensure you understand the broader objective the metric supports. - Avoid tunnel vision: Regularly check if actions are aligned with the ultimate goal. Example: Focusing solely on sales numbers? Balance them with customer satisfaction to maintain long-term success. Check in when you align metrics with strategic goals. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:ai-rubric-critique",
+      "kind": "protocol",
+      "title": "Give AI a Rubric and Ask for Specific Critique",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-rubric-critique/",
+      "search_text": "Give AI a Rubric and Ask for Specific Critique For a draft you own, give AI the purpose and a short rubric, ask it to point to specific places that miss the criteria, then decide which suggestions actually improve the work. Use critique as input, not as an automatic rewrite command. Write three to six criteria that describe a good result. Give the model the draft and rubric, ask for evidence from the draft for each criticism, and request no rewrite on the first pass. Triage the feedback, then make the changes you agree with. Did the critique point to observable gaps in the draft, or mostly produce generic advice I could paste onto any text? creativity-expression Creativity & Expression revision-feedback Revision & Feedback writing Writing"
     },
     {
       "id": "brali:protocol:goal-journaling-insights",
@@ -1022,6 +1301,15 @@
       "search_text": "In a Group, Write Down Ideas and Pass Them Around for Others to Build In a group, write down ideas and pass them around for others to build on. Give the group one clear question, let everyone write ideas silently, pass the ideas to another person to add or change them, and delay discussion until the group has built several options. Did everyone get a chance to contribute before discussion? Which idea became more useful after another person built on it, and what should the group test next? creativity-expression Creativity & Expression idea-generation Idea Generation"
     },
     {
+      "id": "brali:protocol:cut-your-losses-sunk-cost",
+      "kind": "protocol",
+      "title": "Judge a Commitment by What Comes Next",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/cut-your-losses-sunk-cost/",
+      "search_text": "Judge a Commitment by What Comes Next When past time, money, or effort is dominating a continuation decision, separate what cannot be recovered and compare realistic future costs, benefits, constraints, and alternatives. Name the decision. Separate unrecoverable past cost from future cost. List the realistic benefit of continuing, the best alternative use of the same resources, and any obligation or switching cost that genuinely exists now. Then choose stop, continue, change, or gather one missing fact. If I were deciding from today forward, what future cost and benefit would justify continuing, and what alternative am I giving up? learning-thinking Learning & Thinking critical-thinking Critical Thinking"
+    },
+    {
       "id": "brali:protocol:judge-intent-not-outcomes",
       "kind": "protocol",
       "title": "Judge Actions, Not Outcomes",
@@ -1049,6 +1337,24 @@
       "search_text": "Judge Individuals, Not Groups When evaluating groups: - Ask yourself: \"Am I judging the group based on one person’s actions?\" - Separate individuals: Focus on specific behaviors or contributions, not stereotypes. - Avoid sweeping judgments: Base evaluations on evidence, not generalizations. Example: If one team member underperforms, don’t assume the whole team is inefficient. When evaluating groups: - Ask yourself: \"Am I judging the group based on one person’s actions?\" - Separate individuals: Focus on specific behaviors or contributions, not stereotypes. - Avoid sweeping judgments: Base evaluations on evidence, not generalizations. Example: If one team member underperforms, don’t assume the whole team is inefficient. Check in when you focus on individuals instead of generalizing about groups. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:brag-doc-wins-hub",
+      "kind": "protocol",
+      "title": "Keep a Work Wins Log You Can Reuse",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/brag-doc-wins-hub/",
+      "search_text": "Keep a Work Wins Log You Can Reuse Record completed work, solved problems, decisions, useful contributions and recoveries in a compact log so you can retrieve concrete examples for reviews, resumes, proposals, retrospectives and planning. After a meaningful piece of work, add a short entry with the situation, your contribution, the concrete result or current state, and one or two tags. During a review, retrieve entries that match the purpose and verify any figures or claims before reusing them. What changed, what did I contribute, what detail will I need later, and is the entry specific enough to reuse without exaggeration? environment-digital Environment & Digital Life work-money Work & Money information-management Information Management work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:ready-to-resume-plan",
+      "kind": "protocol",
+      "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/",
+      "search_text": "Leave a Ready-to-Resume Note Before You Switch Tasks When you must leave unfinished work, capture where you stopped, the next concrete action, and one critical restart detail before switching. The goal is a cleaner return, not eliminating every cost of interruption. Use this only when unfinished work is about to be interrupted or deliberately parked. Before switching, capture three pieces of information in whatever format fits the task: your current state, the next concrete action, and one critical detail or open question that would otherwise have to be reconstructed. Then switch. When you return, read the note and start from the recorded next action rather than re-scanning the entire task. When I returned, could I identify the next action quickly, or did I still have to reconstruct the task from scratch? focus-action Focus & Action attention-focus Attention & Focus task-initiation Task Initiation planning-prioritization Planning & Prioritization"
+    },
+    {
       "id": "brali:protocol:leave-an-app-review",
       "kind": "protocol",
       "title": "Leave Useful Feedback",
@@ -1056,6 +1362,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/leave-an-app-review/",
       "search_text": "Leave Useful Feedback Write feedback that separates what happened, why it mattered to you, and what change would make the experience better. Describe one concrete thing that worked or failed, explain the effect it had on your task, and add one specific suggestion if you have one. Could the recipient understand what happened and what might improve without guessing what you meant? creativity-expression Creativity & Expression communication-relationships Communication & Relationships revision-feedback Revision & Feedback clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:ai-customer-reply-coach",
+      "kind": "protocol",
+      "title": "Let AI Draft Routine Replies, Keep the Human on the Conversation",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-customer-reply-coach/",
+      "search_text": "Let AI Draft Routine Replies, Keep the Human on the Conversation For repetitive support or service messages, AI can propose a response from the case facts and approved guidance while the human checks diagnosis, policy, tone, and the actual next step. Large-scale field evidence supports gains in one customer-support setting, especially for less experienced workers. Provide only information you are allowed to share, plus the customer question and approved policy or knowledge source. Ask for a concise draft. Check that it answers the real issue, does not invent policy or status, and gives the correct next action before sending. Did the suggestion save wording effort while leaving the human more attentive to the customer's actual problem? communication-relationships Communication & Relationships clear-communication Clear Communication difficult-conversations Difficult Conversations"
     },
     {
       "id": "brali:protocol:humor-memory-mnemonics",
@@ -1085,6 +1400,15 @@
       "search_text": "Make a Specific Repair Attempt After a Workable Conflict After a misunderstanding or conflict where it is safe to re-engage, make a specific repair attempt: name what you did, acknowledge the likely impact without arguing about intent, apologize for your part, offer a concrete corrective action, and invite the other person's view. Do not demand forgiveness or immediate reconciliation. Wait until you can speak without escalating. Name the specific action or words you are taking responsibility for. Acknowledge the impact as you understand it without using your intention to cancel the other person's experience. Apologize for your part without an 'if'. Offer one concrete repair or behavior change you can actually make, then ask how the other person sees it. Listen to the answer. Do not require forgiveness, agreement, or immediate trust in return. Did I own a specific part without defending it, offer a realistic repair, and give the other person room to respond or decline? communication-relationships Communication & Relationships conflict-repair Conflict & Repair relationships Relationships"
     },
     {
+      "id": "brali:protocol:visible-progress-monitoring",
+      "kind": "protocol",
+      "title": "Make Goal Progress Visible Instead of Guessing",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+      "search_text": "Make Goal Progress Visible Instead of Guessing For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better. Choose one goal where feedback can still change what you do. Pick one observable indicator that is close to the real outcome or behavior you care about. Record it at checkpoints that match the task, compare it with the target or previous checkpoint, and decide one adjustment. Prefer a small trace you will actually use over a dashboard full of decorative metrics. What changed in the progress signal, and what is the one next action that follows from that information? focus-action Focus & Action goals Goals planning-prioritization Planning & Prioritization habits-consistency Habits & Consistency"
+    },
+    {
       "id": "brali:protocol:highlight-recall-assistant",
       "kind": "protocol",
       "title": "Make Key Info Stand Out",
@@ -1092,6 +1416,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/highlight-recall-assistant/",
       "search_text": "Make Key Info Stand Out To remember better: - Highlight differently: Use bold colors or symbols for key points. - Add uniqueness: Attach a quirky story or image to important details. - Group by importance: Separate standout items from general information. Example: If studying a list, underline or use bright markers on the most critical items. To remember better: - Highlight differently: Use bold colors or symbols for key points. - Add uniqueness: Attach a quirky story or image to important details. - Group by importance: Separate standout items from general information. Example: If studying a list, underline or use bright markers on the most critical items. Check in when you make key information stand out in your notes. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:grayscale-phone-friction",
+      "kind": "protocol",
+      "title": "Make Your Phone Less Visually Tempting with Grayscale",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/grayscale-phone-friction/",
+      "search_text": "Make Your Phone Less Visually Tempting with Grayscale If you want to spend less time on your phone, try switching the display to grayscale for a bounded trial. Treat it as friction against habitual use, not as a productivity, sleep, or mental-health upgrade. Enable grayscale on your phone and leave the rest of your normal setup alone for a bounded trial. Use the phone when you actually need it; the point is not abstinence. Notice whether automatic checking becomes less attractive. If color is important for navigation, accessibility, work, photos, or another real task, switch color back on for that task instead of treating grayscale as a purity test. Did my phone screen time or automatic checking change, and did I simply move the same distraction to another device? environment-digital Environment & Digital Life digital-attention Digital Attention environment-design Environment Design"
     },
     {
       "id": "brali:protocol:slow-time-under-pressure",
@@ -1103,6 +1436,15 @@
       "search_text": "Master Your Perception of Time To manage time perception: - Practice calmness: Breathe deeply to slow things down when you feel rushed. - Focus intently: In critical moments, focus on one detail at a time to create clarity. - Review after action: Reflect on what happened to separate emotions from actual timing. Example: During a stressful meeting, focus on your breath and slow your response to regain control. To manage time perception: - Practice calmness: Breathe deeply to slow things down when you feel rushed. - Focus intently: In critical moments, focus on one detail at a time to create clarity. - Review after action: Reflect on what happened to separate emotions from actual timing. Example: During a stressful meeting, focus on your breath and slow your response to regain control. Check in when you regulate your sense of time under pressure. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:plan-tasks-by-peak-energy",
+      "kind": "protocol",
+      "title": "Match Demanding Work to Your Own High-Energy Windows",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/plan-tasks-by-peak-energy/",
+      "search_text": "Match Demanding Work to Your Own High-Energy Windows Track when demanding work feels easier or harder for several normal days, protect a promising window for one important task, and keep the change only if your own results justify it. For several ordinary workdays, note your perceived energy and the kind of work you were doing at a few points in the day, look for a repeatable high-energy window, place one demanding task there, protect the block from avoidable interruptions, and compare the result with your usual schedule. When did demanding work feel easiest today, what task did I place there, and did the scheduling change produce a result worth repeating? focus-action Focus & Action task-initiation Task Initiation"
+    },
+    {
       "id": "brali:protocol:ask-a-peer-to-proofread",
       "kind": "protocol",
       "title": "Match Feedback to the Revision Target",
@@ -1112,6 +1454,15 @@
       "search_text": "Match Feedback to the Revision Target When revising a student or learning-focused draft, decide whether the current pass targets surface features such as grammar and wording or deeper features such as ideas, organization, and coherence. Ask the reviewer to focus feedback on that target, revise at the same level, and use a separate pass when the other level also matters. Before asking for feedback on a student or learning-focused draft, choose the current revision target. Use a surface pass for grammar, spelling, wording, and similar features; use a deep pass for ideas, organization, coherence, or other meaning-level features. Tell the reviewer which level you want them to focus on, revise against that target, and run a separate pass if the other level also needs work. What was the revision target for this pass, and did the feedback actually help you revise at that level? creativity-expression Creativity & Expression writing Writing revision-feedback Revision & Feedback"
     },
     {
+      "id": "brali:protocol:stop-caffeine-after-lunch",
+      "kind": "protocol",
+      "title": "Move Caffeine Earlier When Sleep Matters",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+      "search_text": "Move Caffeine Earlier When Sleep Matters If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff. For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance. When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days? health-energy Health & Energy sleep-circadian Sleep & Circadian Rhythm health-basics Everyday Health Basics"
+    },
+    {
       "id": "brali:protocol:achieve-multiple-goals-at-once",
       "kind": "protocol",
       "title": "One Move, Several Benefits",
@@ -1119,6 +1470,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/achieve-multiple-goals-at-once/",
       "search_text": "One Move, Several Benefits Look for one concrete action that advances two compatible priorities, then check that combining them does not make the action vague or overloaded. Name two priorities, brainstorm one concrete action that can serve both, and reject the combination if it makes either priority weaker or unclear. Did combining the priorities simplify the plan, or did it create a compromised task that serves neither one well? focus-action Focus & Action planning-prioritization Planning & Prioritization goals Goals"
+    },
+    {
+      "id": "brali:protocol:chunk-complex-ideas-for-clarity",
+      "kind": "protocol",
+      "title": "Organize Complex Information Around One Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
+      "search_text": "Organize Complex Information Around One Decision Define the audience and decision, group related material into labeled parts, put the main path in a useful order, and move supporting detail into linked layers instead of either flattening everything or presenting every detail at once. Name the primary audience and the decision or action they need to understand. Group related material by purpose, give each group a descriptive label, order the groups into a main path, and move supporting definitions, examples, calculations or source detail into a layer that remains easy to retrieve. What does the audience need to decide or do, which groups form the main path, what belongs in supporting detail, and can a reader find that detail when needed? communication-relationships Communication & Relationships environment-digital Environment & Digital Life clear-communication Clear Communication information-management Information Management"
     },
     {
       "id": "brali:protocol:remember-names-and-faces",
@@ -1148,6 +1508,15 @@
       "search_text": "Own Successes AND Failures When reflecting on outcomes: - Be honest: Ask, \"What role did I really play in this success or failure?\" - Balance: Acknowledge both personal effort and external factors. - Learn from mistakes: Use failures as opportunities to grow, not excuses to deflect. Example: If a project goes well, credit teamwork and planning, not just your input. When reflecting on outcomes: - Be honest: Ask, \"What role did I really play in this success or failure?\" - Balance: Acknowledge both personal effort and external factors. - Learn from mistakes: Use failures as opportunities to grow, not excuses to deflect. Example: If a project goes well, credit teamwork and planning, not just your input. Check in when you give a balanced account of your role in success or failure. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:temptation-bundling",
+      "kind": "protocol",
+      "title": "Pair a Useful Task with Something You Genuinely Want",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+      "search_text": "Pair a Useful Task with Something You Genuinely Want Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade. Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk. Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task? focus-action Focus & Action health-energy Health & Energy habits-consistency Habits & Consistency task-initiation Task Initiation movement Movement"
+    },
+    {
       "id": "brali:protocol:backfire-effect-coach",
       "kind": "protocol",
       "title": "Pause a Heated Disagreement and Test One Claim",
@@ -1173,6 +1542,15 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/pause-before-assuming-hostility/",
       "search_text": "Pause Before Assuming Hostility When interpreting behavior: - Pause: Ask yourself, \"Could this be unintentional or neutral?\" - Clarify: If unsure, communicate and seek their perspective. - Reflect: Check if past experiences are influencing your assumptions. Example: If someone doesn’t reply to an email, consider they might be busy, not ignoring you. When interpreting behavior: - Pause: Ask yourself, \"Could this be unintentional or neutral?\" - Clarify: If unsure, communicate and seek their perspective. - Reflect: Check if past experiences are influencing your assumptions. Example: If someone doesn’t reply to an email, consider they might be busy, not ignoring you. Check in when you interpret behavior without immediately assuming hostility. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:savor-positive-moment",
+      "kind": "protocol",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/savor-positive-moment/",
+      "search_text": "Pause Long Enough to Notice a Good Moment When something genuinely pleasant is already happening, give it a little deliberate attention instead of rushing past it. This is a conservative savoring practice, not a rule to feel positive or reinterpret difficult experiences. Choose a positive experience that is already real: a good meal, a joke, a quiet walk, finishing useful work, music, a kind message, or another ordinary moment. For a short period, stop adding new input. Notice one or two concrete details and what makes the moment worth noticing. Then continue your day. Do not use the exercise to deny an unpleasant feeling or to manufacture gratitude for something that is not good. Did I actually stay with a positive experience for a moment, and did the practice feel useful, neutral, awkward, or forced? mind-resilience Mind & Resilience mood-wellbeing Mood & Wellbeing self-awareness Self-Awareness"
     },
     {
       "id": "brali:protocol:3-3-3-workday-planner",
@@ -1283,6 +1661,15 @@
       "search_text": "Record What Would Change a Belief Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief. Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition. What changed in the claim, its scope or my certainty, and what information would justify another update? learning-thinking Learning & Thinking critical-thinking Critical Thinking metacognition Metacognition"
     },
     {
+      "id": "brali:protocol:confidence-calibration-habit",
+      "kind": "protocol",
+      "title": "Record What Would Change Your Confidence Before You Commit",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/confidence-calibration-habit/",
+      "search_text": "Record What Would Change Your Confidence Before You Commit State your current confidence in plain language, record the main support and unknowns, name an observable fact that would change the judgment, then compare the expectation with what later happened and update future decisions accordingly. State the decision or prediction, label your confidence in ordinary language, list the strongest support and the most important unknown, name one observable condition that would make you update, then revisit the record when the outcome or new information becomes available. What did I expect, how confident was I, what would have changed my view, what actually happened, and what should I update next time? learning-thinking Learning & Thinking focus-action Focus & Action metacognition Metacognition decision-making Decision Making"
+    },
+    {
       "id": "brali:protocol:reduce-egocentric-bias-with-evidence",
       "kind": "protocol",
       "title": "Reduce Egocentric Bias",
@@ -1290,6 +1677,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/reduce-egocentric-bias-with-evidence/",
       "search_text": "Reduce Egocentric Bias When recalling events: - Use evidence: Look at photos, reports, or other objective records of what happened. - Ask others: Gather perspectives from those who were there. - Reflect honestly: Recognize moments where your memory might exaggerate your role or success. Example: If you remember organizing a successful event, check with others to confirm your recollection. When recalling events: - Use evidence: Look at photos, reports, or other objective records of what happened. - Ask others: Gather perspectives from those who were there. - Reflect honestly: Recognize moments where your memory might exaggerate your role or success. Example: If you remember organizing a successful event, check with others to confirm your recollection. Check in when you adjust your memory to reflect reality, not ego. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:ai-conversation-rehearsal",
+      "kind": "protocol",
+      "title": "Rehearse a Difficult Conversation with AI Before the Real One",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-conversation-rehearsal/",
+      "search_text": "Rehearse a Difficult Conversation with AI Before the Real One Before a difficult but ordinary conversation, use AI to role-play several plausible reactions, practise a concise opening, and identify points where you may become unclear or defensive. Treat the simulation as rehearsal, not as a model of the other person's mind. State the goal, your opening, and relevant context without unnecessary private detail. Ask AI to play a neutral, skeptical, and confused counterpart. Practise responding with facts, boundaries, and questions. Write one shorter opening after the rehearsal and use that in the real conversation if it still fits. Am I better prepared to listen and respond, or did I start treating the simulated person's reaction as a prediction? communication-relationships Communication & Relationships difficult-conversations Difficult Conversations clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:contextual-language-coach",
+      "kind": "protocol",
+      "title": "Rehearse One Real Language Scenario",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
+      "search_text": "Rehearse One Real Language Scenario Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult. Define the scenario and desired outcome, write the core request or response, add likely follow-up phrases and one repair phrase for misunderstanding, rehearse both sides aloud, use the interaction when appropriate, and update the phrase set from the point where you hesitated or needed clarification. Which scenario did I rehearse, where did the interaction become difficult, which phrase or listening cue should I add, and what can I reuse next time? learning-thinking Learning & Thinking language-learning Language Learning skill-learning Skill Learning"
     },
     {
       "id": "brali:protocol:generation-effect-memory-coach",
@@ -1319,6 +1724,15 @@
       "search_text": "Remember Something: - Make It Weird: Add Something Bizarre or Unusual to the Idea To remember something: - Make it weird: Add something bizarre or unusual to the idea or fact. - Visualize it vividly: Picture the bizarre element as vividly as possible. - Tell a story: Embed the information in a strange, memorable scenario. Example: To remember someone’s name (e.g., Daisy), imagine them wearing a giant daisy hat. To remember something: - Make it weird: Add something bizarre or unusual to the idea or fact. - Visualize it vividly: Picture the bizarre element as vividly as possible. - Tell a story: Embed the information in a strange, memorable scenario. Example: To remember someone’s name (e.g., Daisy), imagine them wearing a giant daisy hat. Check in when you use bizarre imagery to enhance your memory of something. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:affirmation-habit-tracker",
+      "kind": "protocol",
+      "title": "Replace grand claims with a grounded statement and one next action.",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
+      "search_text": "Replace grand claims with a grounded statement and one next action. Turn a vague positive statement into words you can presently stand behind, connect it to one action under your control, and revise the statement when it becomes false, empty, or unhelpful. Write the positive statement you are tempted to use, underline the part that feels exaggerated or outside your control, replace it with language you can currently stand behind, attach one concrete action that would be consistent with the statement, and review the wording after you act. Can I honestly endorse this statement now, what action does it point to, and should I keep, narrow, or replace the wording after seeing what I actually did? mind-resilience Mind & Resilience mood-wellbeing Mood & Wellbeing"
+    },
+    {
       "id": "brali:protocol:meeting-message-recall",
       "kind": "protocol",
       "title": "Retain the Message: - Summarize: Write or Say the Main Idea in Your Own",
@@ -1328,6 +1742,60 @@
       "search_text": "Retain the Message: - Summarize: Write or Say the Main Idea in Your Own To retain the message: - Summarize: Write or say the main idea in your own words. - Look for patterns: Identify recurring themes or key points. - Practice context recall: Remember when and why something was said, not just how. Example: After a meeting, jot down the core decisions and action points instead of trying to recall word-for-word what was said. To retain the message: - Summarize: Write or say the main idea in your own words. - Look for patterns: Identify recurring themes or key points. - Practice context recall: Remember when and why something was said, not just how. Example: After a meeting, jot down the core decisions and action points instead of trying to recall word-for-word what was said. Check in when you remember the essence of a conversation or reading. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:question-default-portions",
+      "kind": "protocol",
+      "title": "Rethink Default Quantities",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
+      "search_text": "Rethink Default Quantities When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty. When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty. Check in when you adjust consumption based on your actual needs. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:judge-decisions-by-process",
+      "kind": "protocol",
+      "title": "Review a Decision Using What Was Known at the Time",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
+      "search_text": "Review a Decision Using What Was Known at the Time Reconstruct what information was actually available when a decision was made, compare it with the options and constraints considered then, and turn the review into one process improvement for a similar future decision. Write the decision and its date, list the information and constraints that were available then, separate later discoveries into a different section, note which realistic alternatives were considered or missed, identify one process weakness or strength, and define one change to use for a similar future decision. What was genuinely knowable at the decision point, what did I learn only afterward, and what should change in the process next time? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:sunk-cost-decision-coach",
+      "kind": "protocol",
+      "title": "Review a High-Commitment Continue-or-Stop Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/sunk-cost-decision-coach/",
+      "search_text": "Review a High-Commitment Continue-or-Stop Decision For a commitment with multiple stakeholders, dependencies, or meaningful switching costs, compare future paths explicitly and document which current facts justify the next step. Define the feasible options. For each option record future cost, expected benefit, dependency or obligation, switching cost, reversibility, and important uncertainty. Ask what you would choose if the unrecoverable past investment were already accepted as history, then reconcile that answer with real current constraints. Which current facts justify continuing or stopping, which past costs are irrelevant to the next choice, and what uncertainty still matters? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:daily-priority-review-coach",
+      "kind": "protocol",
+      "title": "Review Open Tasks and Leave With a Clear Next Action",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+      "search_text": "Review Open Tasks and Leave With a Clear Next Action Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project. Scan the open list, close or park items that are no longer active, rewrite vague active work as a concrete next action, identify blocked items and their dependency, choose the small set that deserves attention now, and stop the review before it turns into doing the tasks themselves. What became clearer, what was removed or parked, which item is blocked, and what is the next action I can actually take? focus-action Focus & Action habits-consistency Habits & Consistency"
+    },
+    {
+      "id": "brali:protocol:attention-to-detail-trainer",
+      "kind": "protocol",
+      "title": "Run a Detail Check Before You Ship",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/attention-to-detail-trainer/",
+      "search_text": "Run a Detail Check Before You Ship Inspect a concrete artifact against a small checklist, run a second pass from a different angle, log anomalies, and improve the checklist from real misses rather than training vague hypervigilance. Choose an artifact or environment where errors matter, write a short checklist from known failure modes, inspect once for completeness and once from a different perspective such as data consistency or user flow, record anomalies, fix them, and update the checklist when a new recurring miss appears. What defect or ambiguity did the check find, which checklist item caught it, and what recurring miss should change the next review? focus-action Focus & Action work-money Work & Money error-prevention Error Prevention work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:avoid-availability-heuristic-decisions",
+      "kind": "protocol",
+      "title": "Run a Missing-Evidence Check Before a Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/avoid-availability-heuristic-decisions/",
+      "search_text": "Run a Missing-Evidence Check Before a Decision When a vivid or recent example is dominating a decision, separate what is easy to recall from what is representative, then look for one missing denominator, counterexample, or relevant source. Write the example or story currently driving the decision. Ask whether it is representative or simply vivid, recent, or personal. Look for one counterexample and, when the decision warrants it, one relevant denominator, base rate, or source. Update the decision only as far as the new information supports. What information was easy to recall, what was missing, and did the additional evidence change the decision or only the level of uncertainty? learning-thinking Learning & Thinking critical-thinking Critical Thinking"
+    },
+    {
       "id": "brali:protocol:ask-better-interview-questions",
       "kind": "protocol",
       "title": "Run a Short, Concrete Information Interview",
@@ -1335,6 +1803,33 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/ask-better-interview-questions/",
       "search_text": "Run a Short, Concrete Information Interview Ask permission, focus on one recent event, follow the sequence step by step and separate remembered facts, estimates and interpretation. Explain why you are asking and get permission. Ask the person to walk through the most recent relevant example. Use one question at a time about sequence, context, tools, decisions and uncertainty. Summarize what you heard and invite correction. What concrete sequence did I learn, what remains an estimate or interpretation, and what did the person correct? communication-relationships Communication & Relationships listening Listening clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:ai-six-hats-facilitator",
+      "kind": "protocol",
+      "title": "Run a Six-Perspective Thinking Pass",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
+      "search_text": "Run a Six-Perspective Thinking Pass Separate facts, reactions, risks, opportunities, alternatives, and process into distinct passes so a discussion can expose what is missing before choosing a next step. Write one question. Make six short passes: facts and unknowns; reactions and preferences; risks and failure modes; benefits and opportunities; alternatives and experiments; then process and next step. Keep observations in their own pass so facts are not silently mixed with preferences or forecasts. Which perspective added information the first discussion was missing, and what decision, question, or test follows from it? communication-relationships Communication & Relationships clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:weekly-goal-review-coach",
+      "kind": "protocol",
+      "title": "Run a Weekly Review That Produces One Clear Change",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/weekly-goal-review-coach/",
+      "search_text": "Run a Weekly Review That Produces One Clear Change Use a recurring weekly checkpoint to inspect active goals, completed and missed work, constraints, and changing priorities, then turn the review into a small set of concrete scheduling or scope decisions. Review the active goals and commitments, note what moved and what did not, identify the main constraint or changed assumption, decide what should continue, stop, shrink, delegate, or move, and schedule the first concrete action created by the review. What moved this week, what blocked or changed, what am I changing for the next week, and where is the first action scheduled? focus-action Focus & Action goals Goals"
+    },
+    {
+      "id": "brali:protocol:confirmation-bias-challenge",
+      "kind": "protocol",
+      "title": "Run One Disconfirming Check Before a Consequential Commitment",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+      "search_text": "Run One Disconfirming Check Before a Consequential Commitment Before an ordinary consequential commitment, state the assumption you currently favor, name one observable condition that would weaken it, check that condition directly, and update, narrow or escalate the decision when the result matters. Write the assumption driving the decision, state one observation that would materially weaken it, identify where that information can be checked, inspect it before the commitment becomes difficult to reverse, and then keep, narrow, change or escalate the plan according to what you found. What assumption was I favoring, what would have weakened it, did I check that condition, and how did the result change the commitment? learning-thinking Learning & Thinking focus-action Focus & Action critical-thinking Critical Thinking decision-making Decision Making"
     },
     {
       "id": "brali:protocol:30-min-eye-break-tracker",
@@ -1382,6 +1877,15 @@
       "search_text": "See the Individual, Not the Group When thinking about other groups: - Pause assumptions: Ask yourself, \"Am I generalizing based on the group?\" - Get personal: Interact with individuals from the group to learn about their unique experiences. - Stay curious: Challenge stereotypes by seeking real, diverse examples. Example: If you think \"All people from X group act this way,\" question that thought and find real-world exceptions. When thinking about other groups: - Pause assumptions: Ask yourself, \"Am I generalizing based on the group?\" - Get personal: Interact with individuals from the group to learn about their unique experiences. - Stay curious: Challenge stereotypes by seeking real, diverse examples. Example: If you think \"All people from X group act this way,\" question that thought and find real-world exceptions. Check in when you recognize individuality over group stereotypes. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:control-to-action-compass",
+      "kind": "protocol",
+      "title": "Separate Controllable Actions From Dependencies and Outcomes",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+      "search_text": "Separate Controllable Actions From Dependencies and Outcomes For a concern or desired outcome, separate actions you can directly perform from dependencies you can influence or only observe, choose one concrete next action, and define how waiting items will be revisited instead of repeatedly planning the outcome itself. Write the concern or desired outcome, list the actions you can directly perform, list dependencies or responses owned by others, identify outcomes you can only observe, choose one next action under your control, and give waiting items a review trigger rather than repeatedly treating them as current work. What action can I perform directly, what depends on someone or something else, what outcome can I only observe, and when will I revisit the waiting part? focus-action Focus & Action decision-making Decision Making"
+    },
+    {
       "id": "brali:protocol:avoid-anthropocentric-bias",
       "kind": "protocol",
       "title": "Separate Observation from Human-Like Interpretation",
@@ -1389,6 +1893,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/avoid-anthropocentric-bias/",
       "search_text": "Separate Observation from Human-Like Interpretation Describe what a non-human animal, plant, machine or model did before assigning a human motive. Add a system-specific alternative and state what remains uncertain. Choose one behavior or output. Record only what you could point to or reproduce. Write the human-like interpretation you first considered, then add a system-specific alternative and one low-risk way to check between them. Keep uncertainty visible when you cannot check. What did I directly observe, what interpretation did I add, and what alternative or check changed my next action? learning-thinking Learning & Thinking critical-thinking Critical Thinking"
+    },
+    {
+      "id": "brali:protocol:challenge-assumed-intent",
+      "kind": "protocol",
+      "title": "Separate Observed Facts From Assumed Intent",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/challenge-assumed-intent/",
+      "search_text": "Separate Observed Facts From Assumed Intent When an ordinary ambiguous event feels intentional, separate the observable facts from your interpretation, list plausible alternatives, check relevant information, and use a neutral clarification before treating intent as established. Write the observable event without motive language, mark the inferred intent as an interpretation, list other explanations that fit the known facts, check the information that is reasonably available, and ask a neutral clarifying question when another person can resolve the ambiguity. What did I directly observe, what intent did I infer, what else could explain it, and what information would actually distinguish those explanations? learning-thinking Learning & Thinking cognitive-biases Cognitive Biases critical-thinking Critical Thinking"
+    },
+    {
+      "id": "brali:protocol:circles-of-control-planner",
+      "kind": "protocol",
+      "title": "Separate Outcomes From Actions You Can Control",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
+      "search_text": "Separate Outcomes From Actions You Can Control Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control. Write down one concern, separate the outcome from the actions you can take, convert anything you can influence into one concrete behavior, and choose the next useful action without pretending you control the final result. What part of this situation was actually mine to act on, what remained outside my control, and did the sorting help me choose a clearer next step? focus-action Focus & Action mind-resilience Mind & Resilience decision-making Decision Making stress-regulation Stress Regulation"
     },
     {
       "id": "brali:protocol:spaced-recall-coach",
@@ -1526,13 +2048,40 @@
       "search_text": "Stay Sharp: - Take Notes: Write Down Key Points from the Person Speaking Before To stay sharp: - Take notes: Write down key points from the person speaking before you. - Breathe and listen: Avoid rehearsing your own response while someone else is speaking. - Repeat mentally: After someone speaks, quickly repeat their main point in your head. Example: In a team meeting, note what the person before you says and reference it when it’s your turn. To stay sharp: - Take notes: Write down key points from the person speaking before you. - Breathe and listen: Avoid rehearsing your own response while someone else is speaking. - Repeat mentally: After someone speaks, quickly repeat their main point in your head. Example: In a team meeting, note what the person before you says and reference it when it’s your turn. Check in when you stay present during group conversations and recall the last speaker's points. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:cognitive-dissonance-resolution",
+      "kind": "protocol",
+      "title": "Stress-Test a Belief With Strong Counter-Information",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/cognitive-dissonance-resolution/",
+      "search_text": "Stress-Test a Belief With Strong Counter-Information Write the specific claim you currently accept, note the strongest support you have, seek credible information that could challenge it, compare relevance and independence, then keep, narrow or revise the claim without giving weak counterclaims equal weight. Write the claim precisely, record what currently supports it, identify what kind of information would materially challenge it, seek the strongest relevant counter-information you can verify, compare source directness, relevance and independence, and record whether the claim stays, narrows or changes. What is the exact claim, what currently supports it, what strong counter-information did I find, and did I keep, narrow or revise the claim for a stated reason? learning-thinking Learning & Thinking critical-thinking Critical Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:structure-writing-with-visuals",
+      "kind": "protocol",
+      "title": "Structure Dense Writing for Fast Navigation",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
+      "search_text": "Structure Dense Writing for Fast Navigation Turn a dense draft into a navigable document by giving each section one job and choosing headings, tables, diagrams, or images according to the information the reader needs to inspect. Name the reader's main task, read the current headings without the body, reorganize sections around that path, replace repeated comparisons with a table when rows share the same attributes, use a diagram for relationships or sequence, and keep images only when they show information that prose would make harder to inspect. Can a reader scan the headings and understand the path, and does every visual element answer a question that the surrounding text does not answer as clearly? creativity-expression Creativity & Expression writing Writing"
+    },
+    {
+      "id": "brali:protocol:ai-source-summary-verification",
+      "kind": "protocol",
+      "title": "Summarize with AI, Then Reconcile Against the Source",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-source-summary-verification/",
+      "search_text": "Summarize with AI, Then Reconcile Against the Source For a long document you are allowed to process, ask AI for a structured summary tied to the source, then verify the claims that will affect a decision, message, or deliverable. The summary is navigation; the source remains the authority. Provide only material you are permitted to share. Ask for a summary with sections, explicit uncertainties, and source locations when available. Mark the claims that affect your decision, then open the source and verify those claims directly before reusing them. Can I point from every important statement in my final output back to the original source rather than to the AI summary? environment-digital Environment & Digital Life information-management Information Management"
+    },
+    {
       "id": "brali:protocol:10-minute-stress-walk",
       "kind": "protocol",
       "title": "Take a Short Walk When Stress Builds",
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
-      "search_text": "Take a Short Walk When Stress Builds Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office. When you notice stress building, consider taking a short walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. Walk at a comfortable pace in a safe place, then notice whether you feel any different before returning to the next task. Did I take the walk? How did my stress or tension feel before and after, and did the walk feel safe and useful enough to try again? mind-resilience Mind & Resilience mood-wellbeing Mood & Wellbeing"
+      "search_text": "Take a Short Walk When Stress Builds Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office. When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task. Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task? mind-resilience Mind & Resilience health-energy Health & Energy stress-regulation Stress Regulation movement Movement"
     },
     {
       "id": "brali:protocol:talk-about-fears-coach",
@@ -1542,6 +2091,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/talk-about-fears-coach/",
       "search_text": "Talk About a Fear With Someone You Trust Share your fears with a trusted friend, family member, or therapist. Choose someone you trust and tell them, in your own words, what you are worried or afraid about. You can also say what kind of support you want, such as listening, practical help, or simply company. Keep the conversation within boundaries that feel appropriate for both of you. Who did I talk to, what did I want from the conversation, did I feel heard or supported, and is there any next step I need? mind-resilience Mind & Resilience fear-confidence Fear & Confidence"
+    },
+    {
+      "id": "brali:protocol:chef-taste-and-adjust",
+      "kind": "protocol",
+      "title": "Taste and Adjust One Variable at a Time",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/chef-taste-and-adjust/",
+      "search_text": "Taste and Adjust One Variable at a Time For food that is safe to taste, sample at useful stages, identify the specific imbalance you notice, make one small adjustment, and taste again before changing something else. Choose a useful tasting point, make sure the food is safe and cool enough to sample, name the issue you notice such as blandness, excess salt, acidity, texture, or thickness, choose one small adjustment appropriate to the dish, mix or cook as needed, then taste again before making another change. What did I notice before the adjustment, what single change did I make, and what is different after the next safe taste? creativity-expression Creativity & Expression revision-feedback Revision & Feedback"
+    },
+    {
+      "id": "brali:protocol:adopt-new-tools-at-work",
+      "kind": "protocol",
+      "title": "Test a New Work Tool on a Low-Risk Task",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/adopt-new-tools-at-work/",
+      "search_text": "Test a New Work Tool on a Low-Risk Task Pick one recurring work problem, try one tool on a noncritical task, compare the old and new workflow, then keep, adjust, or drop it based on what you observe. Choose one recurring low-risk work task, note how you handle it now, try one new tool on a test or noncritical case, compare the result and friction, and decide whether to repeat, adjust, or stop. What task did I test, what changed in the workflow, what friction appeared, and is the next step to keep, adjust, or drop the tool? work-money Work & Money work-systems Work Systems"
     },
     {
       "id": "brali:protocol:verify-claims-ask-for-sources",
@@ -1571,6 +2138,15 @@
       "search_text": "Think Off the Bandwagon When considering a popular opinion: - Pause: Ask yourself, \"Do I agree because it’s popular or because it’s right?\" - Analyze: Break down the reasoning behind the opinion. Does it align with your values or evidence? - Decide independently: Make choices based on your evaluation, not peer pressure. Example: A team might agree on a subpar idea because everyone else does. Challenge it with better logic. When considering a popular opinion: - Pause: Ask yourself, \"Do I agree because it’s popular or because it’s right?\" - Analyze: Break down the reasoning behind the opinion. Does it align with your values or evidence? - Decide independently: Make choices based on your evaluation, not peer pressure. Example: A team might agree on a subpar idea because everyone else does. Challenge it with better logic. Check in when you resist following a crowd and evaluate decisions independently. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:common-source-radar",
+      "kind": "protocol",
+      "title": "Trace Repeated Claims Back to Their Underlying Sources",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/common-source-radar/",
+      "search_text": "Trace Repeated Claims Back to Their Underlying Sources When several pages or reports repeat the same claim, follow their links and citations back to the underlying material, record shared documents, datasets or organizations, and distinguish independent origins from repeated summaries. Write the claim, list the pages or reports repeating it, follow their citations or links toward the origin, note shared documents, datasets, organizations or copied wording, and classify the set as independent origins, shared origin, mixed, or unclear. Which items looked separate, what underlying origin did each one use, where did they overlap, and how many genuinely distinct origins remain? learning-thinking Learning & Thinking environment-digital Environment & Digital Life critical-thinking Critical Thinking information-management Information Management"
+    },
+    {
       "id": "brali:protocol:biomimicry-creative-problem-solving",
       "kind": "protocol",
       "title": "Translate a Problem into a Nature-Inspired Design Principle",
@@ -1586,7 +2162,7 @@
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/5-minute-meditation-habit-tracker/",
-      "search_text": "Try a Short Breath Meditation Sit comfortably for a short meditation, let your breathing stay natural, and gently return attention when your mind wanders. Set aside a short period somewhere comfortable and safe. Let your breathing stay natural, notice the sensations of breathing, and when your mind wanders gently bring attention back. Five minutes can be a convenient starting point, but use a duration and routine that work for you rather than treating twice-daily five-minute sessions as a required dose. Did I practise, how did focusing on the breath feel, and was returning attention useful, neutral or uncomfortable for me today? health-energy Health & Energy health-basics Everyday Health Basics"
+      "search_text": "Try a Short Breath Meditation Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down. Sit somewhere comfortable and safe. Let breathing stay natural. Notice the sensations of breathing; when attention drifts into plans, memories, sounds or commentary, notice that and return to the breath without grading yourself. Use five minutes only if it is a convenient starting container. After several attempts, keep the practice only if it is useful for you. Did I notice attention wandering and return without turning it into a fight? Was the practice useful, neutral or uncomfortable? Would another wellbeing practice fit me better today? health-energy Health & Energy health-basics Everyday Health Basics"
     },
     {
       "id": "brali:protocol:guided-pmr-muscle-relaxation",
@@ -1595,7 +2171,7 @@
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/guided-pmr-muscle-relaxation/",
-      "search_text": "Try Progressive Muscle Relaxation Gently Tightly squeeze each muscle group for five seconds, then relax it for thirty seconds, moving from your toes up to your head. Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort. Did I practise without pain or straining? Which areas felt tense, and did I notice any difference after releasing them? mind-resilience Mind & Resilience mood-wellbeing Mood & Wellbeing"
+      "search_text": "Try Progressive Muscle Relaxation Gently Tightly squeeze each muscle group for five seconds, then relax it for thirty seconds, moving from your toes up to your head. Sit or lie somewhere comfortable and work through a few muscle groups one at a time. Gently tense each group for no more than about five seconds, then release it and notice the contrast. Do not strain, and skip or release any area that causes significant discomfort. If sleep is your target, use PMR as a repeatable wind-down experiment rather than a one-night sleep test. Did I practise without pain or straining? If I am using PMR for sleep, across several attempts did winding down or my subjective sleep feel meaningfully easier, unchanged, or worse? mind-resilience Mind & Resilience mood-wellbeing Mood & Wellbeing"
     },
     {
       "id": "brali:protocol:avoid-list-interference-memory-retention",
@@ -1604,7 +2180,7 @@
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
-      "search_text": "Try Quiet Wakeful Rest After Learning After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule. When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual? learning-thinking Learning & Thinking memory Memory"
+      "search_text": "Try Quiet Wakeful Rest After Learning After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule. When you finish a focused memory-heavy learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. Do not use the pause as a substitute for self-testing, active review, or other learning methods. What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual? learning-thinking Learning & Thinking memory Memory"
     },
     {
       "id": "brali:protocol:4-minute-hiit-tabata-workout",
@@ -1613,7 +2189,70 @@
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
-      "search_text": "Try Short High-Intensity Intervals Safely Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds. If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell. Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop? health-energy Health & Energy fitness-strength Fitness & Strength"
+      "search_text": "Try Short High-Intensity Intervals Safely Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds. If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely. You can use it as one short interval session, or as brief exercise snacks separated across the day when a full workout is unlikely. Make the effort challenging but controlled. Treat 20/10, 3 × 1 minute, 4 × 1 minute and similar timers as formats to adapt, not scientifically optimized doses. Was the effort genuinely challenging but still controlled, could I repeat it without losing movement quality, and over several weeks is fitness or function trending in a useful direction rather than just my streak count? health-energy Health & Energy fitness-strength Fitness & Strength"
+    },
+    {
+      "id": "brali:protocol:if-then-rules-productivity",
+      "kind": "protocol",
+      "title": "Turn a Good Intention into an If-Then Plan",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+      "search_text": "Turn a Good Intention into an If-Then Plan Turn a repeated low-stakes choice into a simple cue-and-action rule, add a fallback for common exceptions, and revise the rule when it creates friction or no longer fits the work. Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work. Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed? focus-action Focus & Action goals Goals habits-consistency Habits & Consistency task-initiation Task Initiation"
+    },
+    {
+      "id": "brali:protocol:break-big-goals-into-steps",
+      "kind": "protocol",
+      "title": "Turn a Large Goal into the Next Verifiable Step",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/break-big-goals-into-steps/",
+      "search_text": "Turn a Large Goal into the Next Verifiable Step Define the finish condition, expose dependencies, split the goal into observable deliverables, and choose the smallest next step that creates information or progress. Write what done looks like, list the major deliverables and external dependencies, split uncertain work until each next step has an observable output, choose the smallest useful step, complete it, and update the map from what you learned. What became complete or clearer, what dependency blocks the next step, and what is the smallest observable deliverable now? focus-action Focus & Action goals Goals planning-prioritization Planning & Prioritization"
+    },
+    {
+      "id": "brali:protocol:walking-meeting-assistant",
+      "kind": "protocol",
+      "title": "Turn a Screen-Free Meeting Into a Walking Meeting",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/walking-meeting-assistant/",
+      "search_text": "Turn a Screen-Free Meeting Into a Walking Meeting Use a walking meeting to replace part of a long sitting block when the conversation does not require a screen. Evidence supports the movement break, not a special meeting effect. When a meeting is mostly listening and talking, replace some of that sitting with an easy walk if the route, weather, privacy and meeting format make it safe. Keep screen-heavy or safety-critical conversations seated. Capture decisions before you finish. Did I replace a sitting block with walking without making the meeting worse? Was the route safe and the conversation easy enough to follow? Would I use this format again for this kind of meeting? health-energy Health & Energy health-basics Everyday Health Basics"
+    },
+    {
+      "id": "brali:protocol:coot-ai-growth-journal",
+      "kind": "protocol",
+      "title": "Turn an AI Reflection into One Next Action",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+      "search_text": "Turn an AI Reflection into One Next Action Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself. State one concrete goal or decision, provide the relevant constraints and what you already know, ask the AI for a small set of distinct options with assumptions and failure modes, challenge anything vague, verify factual claims that matter, choose one reversible next action yourself, and record what would cause you to change course. What became clearer, which AI claim still needs verification, what action did I choose, and what new information would make me revise the decision? focus-action Focus & Action habits-consistency Habits & Consistency"
+    },
+    {
+      "id": "brali:protocol:ai-meeting-notes-to-actions",
+      "kind": "protocol",
+      "title": "Turn Meeting Notes into Actions, Then Reconcile Them",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-meeting-notes-to-actions/",
+      "search_text": "Turn Meeting Notes into Actions, Then Reconcile Them After a meeting, use AI to convert permitted notes or a transcript into decisions, actions, owners, dates, and open questions. Then reconcile the structured output against the original record before it becomes the team's memory. Use only notes or transcripts you are allowed to process. Ask for five buckets: decisions, actions, owners, dates, and unresolved questions. Compare each populated field with the source, remove inferred commitments, and publish the checked version quickly while context is fresh. Does every named owner and commitment come from the meeting, or did the model quietly turn a suggestion into an assignment? work-money Work & Money work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:genuine-micro-conversation",
+      "kind": "protocol",
+      "title": "Turn One Routine Exchange into a Genuine Micro-Conversation",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/genuine-micro-conversation/",
+      "search_text": "Turn One Routine Exchange into a Genuine Micro-Conversation When the situation is relaxed and the other person seems willing, make one routine exchange slightly more human: eye contact, a real greeting, or a brief conversation. Treat it as a small social opportunity, not a cure for loneliness. Pick an ordinary low-pressure interaction that already needs to happen: buying coffee, greeting a neighbor, talking to a receptionist, or another brief exchange. If the context is appropriate, make eye contact, greet the person, and add one natural sentence or question. Keep it short and responsive to the other person's cues. If they are busy, uncomfortable, or not interested, let the interaction stay efficient. Did the interaction feel more connected without becoming intrusive, and did the other person seem willing to engage? communication-relationships Communication & Relationships relationships Relationships social-confidence Social Confidence"
+    },
+    {
+      "id": "brali:protocol:ai-sop-from-examples",
+      "kind": "protocol",
+      "title": "Turn Real Examples into a Draft SOP with AI",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-sop-from-examples/",
+      "search_text": "Turn Real Examples into a Draft SOP with AI When a recurring task lives mostly in someone's head, give AI a few sanitized examples and ask for a draft procedure with inputs, steps, decisions, outputs, and exceptions. Validate the draft with the person who does the work and test it on a fresh case before treating it as process documentation. Choose several representative examples and remove information you should not share. Ask AI to separate inputs, steps, decisions, outputs, exceptions, and unresolved questions. Review the draft with the actual operator, then run one new case using only the SOP and revise where the procedure breaks. Could another competent person complete a fresh case from the checked SOP without relying on the hidden knowledge that created the examples? work-money Work & Money work-systems Work Systems"
     },
     {
       "id": "brali:protocol:bias-aware-meeting-insights",
@@ -1643,6 +2282,24 @@
       "search_text": "Understand Motivations When evaluating motivation: - For others: Ask, \"Could their actions come from genuine interest, not just external rewards?\" - For yourself: Reflect, \"Are my actions really driven by passion, or am I influenced by external factors?\" - Compare honestly: Treat others’ motivations as complex as your own. Example: A teammate working late might care about the project, not just a bonus. When evaluating motivation: - For others: Ask, \"Could their actions come from genuine interest, not just external rewards?\" - For yourself: Reflect, \"Are my actions really driven by passion, or am I influenced by external factors?\" - Compare honestly: Treat others’ motivations as complex as your own. Example: A teammate working late might care about the project, not just a bonus. Check in when you give fair weight to both intrinsic and extrinsic motivations. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:apply-80-20-principle",
+      "kind": "protocol",
+      "title": "Use 80/20 as a Prioritization Hypothesis",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/apply-80-20-principle/",
+      "search_text": "Use 80/20 as a Prioritization Hypothesis Rank the few inputs most likely to matter, test that ranking against observed results, and revise it instead of treating 80/20 as a law or exact forecast. Define one outcome, list the inputs that could influence it, rank a small number by expected impact and cost, choose one to check, and compare the observed result with your initial ranking. Revise the ranking when the data disagrees. Which input actually changed the outcome, what did it cost, and what should move up, down, or out of the priority list? focus-action Focus & Action goals Goals"
+    },
+    {
+      "id": "brali:protocol:active-listening-coach",
+      "kind": "protocol",
+      "title": "Use a Brief Summary to Check What You Heard",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
+      "search_text": "Use a Brief Summary to Check What You Heard In an important conversation, delay your response long enough to capture the speaker's main point, summarize it in your own words, ask whether you understood correctly, and adjust before moving to advice or action. Let the speaker finish the relevant thought, identify the main point and any stated constraint, summarize it briefly in your own words, ask whether you captured it correctly, update your understanding if they correct you, and only then move to your response or the next action. What did I think the person meant, what did they correct or add, and did the final next step reflect the shared understanding? communication-relationships Communication & Relationships clear-communication Clear Communication"
+    },
+    {
       "id": "brali:protocol:4-minute-tabata-hiit-timer",
       "kind": "protocol",
       "title": "Use a High-Intensity Interval Timer Safely",
@@ -1650,6 +2307,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/4-minute-tabata-hiit-timer/",
       "search_text": "Use a High-Intensity Interval Timer Safely Follow the Tabata protocol: 20 seconds of very intense exercise (like burpees or mountain climbers) followed by 10 seconds of rest, repeated for 4 minutes (8 rounds). If very vigorous exercise is suitable for you, use an interval timer to alternate a short period of harder work with recovery. A 20-second work and 10-second recovery pattern can be one option, but choose a movement and number of rounds you can control safely rather than treating 8 all-out rounds as mandatory. What movement and interval did I use, was the effort appropriate for my fitness today, did I maintain control, and was there any pain or reason to stop? health-energy Health & Energy fitness-strength Fitness & Strength"
+    },
+    {
+      "id": "brali:protocol:bullet-point-coach",
+      "kind": "protocol",
+      "title": "Use a Short Bullet Outline Before You Speak",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
+      "search_text": "Use a Short Bullet Outline Before You Speak Before a meeting, update or presentation, write a compact set of cue points that preserves the purpose, the information the listener needs and the requested next step, then speak from the outline rather than reading a script. Write the purpose of the conversation, the key facts or updates the listener needs, the decision or request if there is one, and any important risk or unknown. Put the cues in a useful order, remove duplicate points, then speak from them and adjust when the conversation changes. Did the outline make the purpose, key information and next step easy to find, and which cue should be changed before the next use? communication-relationships Communication & Relationships clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:7-breath-decision-pause",
+      "kind": "protocol",
+      "title": "Use a Short Pause Before an Ordinary Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/7-breath-decision-pause/",
+      "search_text": "Use a Short Pause Before an Ordinary Decision Pause briefly before a reactive low-risk choice, breathe comfortably or simply sit quietly, then decide whether to act, gather one missing fact, or defer deliberately. Name the decision in one sentence. Take a few comfortable breaths or use a quiet pause; seven is only a memorable optional count. Ask what is known, what is missing, and whether the choice is reversible. Then act, gather one specific piece of information, or set a deliberate time to revisit it. After the pause, did I act, identify one missing fact, or defer the decision intentionally—and what made that the appropriate next step? focus-action Focus & Action goals Goals"
     },
     {
       "id": "brali:protocol:ad-astra-per-aspera-motivation-tracker",
@@ -1661,22 +2336,67 @@
       "search_text": "Use a Short Phrase to Choose the Next Step Use a brief phrase as a cue to acknowledge a difficult moment and choose one small, controllable action. The phrase is a reminder, not a prediction about how the situation will end. When you feel stuck, pause and repeat a short phrase once. Name what is difficult in plain language, then choose one action that is small enough to begin now. Skip the phrase if it feels hollow, pressuring or unrelated to the real problem. What was difficult, what action did I choose, and did the phrase help me begin or should I use a different cue next time? focus-action Focus & Action task-initiation Task Initiation"
     },
     {
+      "id": "brali:protocol:conversational-storytelling-coach",
+      "kind": "protocol",
+      "title": "Use a Short Story to Explain One Point in Conversation",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
+      "search_text": "Use a Short Story to Explain One Point in Conversation Choose one real example that directly supports the point you are making, keep only the context needed to understand what changed, connect the ending back to the current conversation, and remove confidential or identifying details that are not necessary. State the point you need to explain, choose one real example that directly supports it, keep only the minimum context, describe the change or decision that matters, connect the ending back to the present topic, and remove confidential or identifying details that are not necessary for the explanation. What point was the story serving, which detail made it clearer, what could be removed, and did I protect information that did not need to be shared? communication-relationships Communication & Relationships clear-communication Clear Communication"
+    },
+    {
       "id": "brali:protocol:30-minute-deadline-sprints",
       "kind": "protocol",
       "title": "Use a Short Timebox for a Rough First Pass",
       "trust": "practical",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/30-minute-deadline-sprints/",
-      "search_text": "Use a Short Timebox for a Rough First Pass Give a low-risk task a shorter-than-usual timebox, define what a useful first pass must contain, and reduce scope instead of pretending you can preserve everything by working faster. Pick a low-risk task where an imperfect first pass is useful. Set a short timebox, define the minimum useful output, and decide what you will leave for later. Stop or reassess when the timebox ends. Did the timebox help me make useful scope decisions, and what should be improved before this work is actually finished or shared? creativity-expression Creativity & Expression idea-generation Idea Generation"
+      "search_text": "Use a Short Timebox for a Rough First Pass Give a low-risk task a shorter-than-usual timebox, define what a useful first pass must contain, and reduce scope instead of pretending you can preserve everything by working faster. Pick a low-risk task where an imperfect first pass is useful. Set a short timebox, define the minimum useful output, and decide what you will leave for later. Stop or reassess when the timebox ends. Did the timebox help me make useful scope decisions, and what should be improved before this work is actually finished or shared? focus-action Focus & Action task-initiation Task Initiation planning-prioritization Planning & Prioritization"
     },
     {
-      "id": "brali:protocol:active-recall-test-yourself",
+      "id": "brali:protocol:10x-goal-sprints-tracker",
       "kind": "protocol",
-      "title": "Use Active Recall for Retention, Then Practice Application",
+      "title": "Use a Stretch-Goal Sprint to Expose What Must Change",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/10x-goal-sprints-tracker/",
+      "search_text": "Use a Stretch-Goal Sprint to Expose What Must Change Choose an intentionally ambitious outcome, separate controllable levers from external constraints, test one reversible change, and review what the sprint actually teaches you. Write one desired outcome and the constraints around it. List the levers you can actually change, choose one reversible experiment, define what you will observe, run the smallest useful version, and review whether the result changes your plan. What assumption, constraint, or controllable lever did the sprint expose, and what should I keep, change, or stop next? focus-action Focus & Action goals Goals"
+    },
+    {
+      "id": "brali:protocol:ai-code-scaffold-test-loop",
+      "kind": "protocol",
+      "title": "Use AI to Scaffold Code, Then Make Tests Decide",
       "trust": "reviewed",
       "topic_ids": [],
-      "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-      "search_text": "Use Active Recall for Retention, Then Practice Application Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically. Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application. Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task? learning-thinking Learning & Thinking memory Memory skill-learning Skill Learning"
+      "url": "https://brali-lifeos.github.io/life-os/ai-code-scaffold-test-loop/",
+      "search_text": "Use AI to Scaffold Code, Then Make Tests Decide Use AI to produce a first implementation for a bounded coding task, then inspect the diff, run tests, add missing edge cases, and reject code you cannot explain. A controlled experiment found faster completion on one coding task; it did not establish universal software quality gains. Define the behavior and constraints first. Ask AI for a small implementation. Read the diff, run the existing test suite, add tests for edge cases and failure paths, and inspect security or data-handling implications. Keep only code you can explain and maintain. Did AI shorten implementation time without increasing code I do not understand, test, or want to own? work-money Work & Money work-systems Work Systems"
+    },
+    {
+      "id": "brali:protocol:ai-idea-divergence-pass",
+      "kind": "protocol",
+      "title": "Use AI to Widen the Idea Set Before You Choose",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-idea-divergence-pass/",
+      "search_text": "Use AI to Widen the Idea Set Before You Choose When you are stuck on the first obvious idea, use AI to generate alternatives across different assumptions or constraints. Experimental evidence suggests generative AI can raise judged creativity in some ideation tasks; it does not decide which idea fits your real context. State the problem and constraints. Ask for several directions that must differ from one another in a named way. Cluster similar answers, discard obvious filler, and evaluate the remaining options against real constraints and evidence. Did AI add genuinely different options, or merely rephrase the same idea several times? creativity-expression Creativity & Expression idea-generation Idea Generation creative-problem-solving Creative Problem Solving"
+    },
+    {
+      "id": "brali:protocol:ai-decision-alternatives",
+      "kind": "protocol",
+      "title": "Use AI to Widen the Option Set, Not Make the Decision",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/ai-decision-alternatives/",
+      "search_text": "Use AI to Widen the Option Set, Not Make the Decision When a decision feels binary or prematurely settled, ask AI for plausible alternatives, missing criteria, and arguments against your current favorite. Verify factual claims independently and keep the final weighting of trade-offs human. Write your objective, constraints, and current leading option. Ask AI for materially different alternatives, missing criteria, and the strongest case against your favorite. Verify any external facts, then compare options using your own criteria and downside limits. Do not ask the model to hide the trade-off inside a single confident recommendation. Did AI reveal an option, criterion, or counterargument I had missed without becoming the authority that decides what I value? focus-action Focus & Action decision-making Decision Making error-prevention Error Prevention"
+    },
+    {
+      "id": "brali:protocol:aida-message-optimizer",
+      "kind": "protocol",
+      "title": "Use AIDA as a Message Clarity Checklist",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
+      "search_text": "Use AIDA as a Message Clarity Checklist Check whether a message earns attention, makes the relevant point understandable, explains why it matters, and gives the reader a clear next action without treating AIDA as a persuasion guarantee. Name the audience and desired next step, review the opening for relevance, remove information that does not help understanding, explain the concrete value or consequence honestly, and end with one clear action the reader can accept, decline, or ignore. Can the reader quickly tell why this matters, what is being asked, and what they should do next without exaggerated claims or hidden pressure? communication-relationships Communication & Relationships clear-communication Clear Communication"
     },
     {
       "id": "brali:protocol:bold-brainstorm-kickoff",
@@ -1697,13 +2417,40 @@
       "search_text": "Use Context to Boost Recall To retrieve memories: - Recreate the setting: Recall the sights, sounds, and smells of the original context. - Use prompts: Bring objects or tools from the original environment to trigger memory. - Mentally revisit: Imagine yourself back in the original situation. Example: To recall work-related ideas, sit at your desk or review materials from the office. To retrieve memories: - Recreate the setting: Recall the sights, sounds, and smells of the original context. - Use prompts: Bring objects or tools from the original environment to trigger memory. - Mentally revisit: Imagine yourself back in the original situation. Example: To recall work-related ideas, sit at your desk or review materials from the office. Check in when you use context cues to retrieve an otherwise forgotten memory. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
+      "id": "brali:protocol:process-of-elimination-tracker",
+      "kind": "protocol",
+      "title": "Use Elimination Rules to Narrow a Decision",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/process-of-elimination-tracker/",
+      "search_text": "Use Elimination Rules to Narrow a Decision Define a few decision constraints, eliminate options that clearly fail them, then compare the smaller remaining set without pretending arbitrary thresholds are universal rules. List the viable options, write two to four constraints that are genuinely relevant to this decision, eliminate only options that clearly fail a constraint, inspect what remains for missing information and trade-offs, then choose the next reversible test or decision step. Which constraint removed an option, what uncertainty remains among the survivors, and what is the smallest next step that would improve the decision? focus-action Focus & Action learning-thinking Learning & Thinking decision-making Decision Making problem-solving Problem Solving"
+    },
+    {
       "id": "brali:protocol:mood-memory-matcher",
       "kind": "protocol",
-      "title": "Use Mood to Boost Memory",
+      "title": "Use Mood Context Carefully When Practicing Recall",
       "trust": "practical",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/",
-      "search_text": "Use Mood to Boost Memory To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance. To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance. Check in when you match your mood to the task to improve memory. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+      "search_text": "Use Mood Context Carefully When Practicing Recall To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance. To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance. Check in when you match your mood to the task to improve memory. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
+    },
+    {
+      "id": "brali:protocol:creativity-within-constraints",
+      "kind": "protocol",
+      "title": "Use One Constraint to Produce a Different Creative Draft",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
+      "search_text": "Use One Constraint to Produce a Different Creative Draft When open-ended exploration is producing more browsing than making, choose one reversible constraint on scope, tools, format, or time and use it to create a concrete alternative you can compare with the original direction. Name the artifact and the part that feels too open, choose one constraint that does not violate the brief, create a reversible variant without adding new constraints midstream, compare the result with the original requirements, and keep only the useful difference. What did I constrain, what changed in the artifact, and did the constraint reveal anything worth keeping? creativity-expression Creativity & Expression idea-generation Idea Generation"
+    },
+    {
+      "id": "brali:protocol:oblique-strategies-prompt-cards",
+      "kind": "protocol",
+      "title": "Use One Random Constraint to Break a Creative Stalemate",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/oblique-strategies-prompt-cards/",
+      "search_text": "Use One Random Constraint to Break a Creative Stalemate When familiar approaches keep producing the same result, draw or select one bounded prompt, create a reversible alternative for a few minutes, and keep only the part that improves the actual work. Name the part of the work that feels stuck, select one prompt or constraint without hunting for the perfect one, create a separate reversible version under that constraint, stop after one useful pass, compare it with the original, and keep only the changes that improve the brief. What constraint did I try, what changed in the artifact, and which part—if any—is worth carrying into the real version? creativity-expression Creativity & Expression idea-generation Idea Generation"
     },
     {
       "id": "brali:protocol:20-20-20-eye-break-reminder",
@@ -1712,7 +2459,7 @@
       "trust": "reviewed",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
-      "search_text": "Use the 20-20-20 Rule for Screen Breaks When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds. During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care. Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional? health-energy Health & Energy health-basics Everyday Health Basics"
+      "search_text": "Use the 20-20-20 Rule for Screen Breaks When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds. During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care. Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional? health-energy Health & Energy environment-digital Environment & Digital Life health-basics Everyday Health Basics digital-wellbeing Digital Wellbeing recovery-energy Recovery & Energy"
     },
     {
       "id": "brali:protocol:woop-goal-planner",
@@ -1733,6 +2480,15 @@
       "search_text": "Use Your Senses to Return to the Present Spend 3–5 minutes focusing on your senses. Notice what you see, hear, smell, feel, and taste. Gently redirect your attention whenever your mind wanders. Pause somewhere safe and deliberately notice what is happening around you right now. Choose a few sights, sounds, textures, smells or tastes and describe them simply. When your attention drifts into planning, worry or commentary, notice that and gently return to one sensory detail. What did I notice, how easy or difficult was it to return attention to the present, and did this feel useful enough to try again? mind-resilience Mind & Resilience self-awareness Self-Awareness stress-regulation Stress Regulation"
     },
     {
+      "id": "brali:protocol:post-meal-walk",
+      "kind": "protocol",
+      "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+      "trust": "reviewed",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/post-meal-walk/",
+      "search_text": "Walk Soon After a Meal When You Would Otherwise Sit When it is safe and practical, replace some sitting after a meal with comfortable walking. Evidence supports an acute effect on post-meal glucose, not a universal walking dose or long-term treatment claim. After a meal, choose an ordinary walk that feels comfortable and fits the situation. Starting relatively soon after eating matches the direction of the reviewed acute evidence better than deliberately waiting a long time, but Brali does not prescribe a universal minute mark, pace, or duration. If you use glucose-lowering medication, have a condition affected by exercise or meals, or have been given specific activity advice, follow your clinical plan instead of using this page as treatment guidance. Did the walk replace sitting without causing discomfort or disrupting a medical plan, and is it practical enough to repeat when useful? health-energy Health & Energy movement Movement health-basics Everyday Health Basics"
+    },
+    {
       "id": "brali:protocol:prevention-vs-response-calculator",
       "kind": "protocol",
       "title": "Weigh Prevention vs. Response",
@@ -1751,22 +2507,13 @@
       "search_text": "When Asked for Your Opinion: - Be Truthful: Share Your Real Thoughts Respectfully When asked for your opinion: - Be truthful: Share your real thoughts respectfully. - Use tact: Frame criticism constructively (\"I think this could be improved by… When asked for your opinion: - Be truthful: Share your real thoughts respectfully. - Use tact: Frame criticism constructively (\"I think this could be improved by… Check in when you give honest feedback without fear of offending. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
     },
     {
-      "id": "brali:protocol:question-default-portions",
-      "kind": "protocol",
-      "title": "When Consuming (e",
-      "trust": "practical",
-      "topic_ids": [],
-      "url": "https://brali-lifeos.github.io/life-os/question-default-portions/",
-      "search_text": "When Consuming (e When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty. When consuming (e.g., food, resources): - Ask yourself: \"Do I really need this much, or am I just following the default?\" - Adjust portions: Take only what’s appropriate for your needs, not the suggested amount. - Set your own limits: Avoid letting external standards dictate your consumption. Example: Served a large plate of food? Eat until you’re satisfied, not until the plate is empty. Check in when you adjust consumption based on your actual needs. learning-thinking Learning & Thinking cognitive-biases Cognitive Biases"
-    },
-    {
       "id": "brali:protocol:start-with-a-hypothesis",
       "kind": "protocol",
       "title": "When Faced with a Problem, Start by Making an Educated Guess About the Cause",
       "trust": "practical",
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/start-with-a-hypothesis/",
-      "search_text": "When Faced with a Problem, Start by Making an Educated Guess About the Cause When faced with a problem, start by making an educated guess about the cause. Write down your hypothesis and what you expect to happen if it’s true. When a work problem is unclear, write one plausible explanation, state what you would expect to observe if it were true, run the smallest safe check that could change your mind, and update the hypothesis from the result. What did I expect to observe, what actually happened, and what changed in my explanation after the test? work-money Work & Money work-systems Work Systems"
+      "search_text": "When Faced with a Problem, Start by Making an Educated Guess About the Cause When faced with a problem, start by making an educated guess about the cause. Write down your hypothesis and what you expect to happen if it’s true. When a work problem is unclear, write one plausible explanation, state what you would expect to observe if it were true, run the smallest safe check that could change your mind, and update the hypothesis from the result. What did I expect to observe, what actually happened, and what changed in my explanation after the test? learning-thinking Learning & Thinking problem-solving Problem Solving critical-thinking Critical Thinking"
     },
     {
       "id": "brali:protocol:consistency-bias-tracker",
@@ -1794,6 +2541,24 @@
       "topic_ids": [],
       "url": "https://brali-lifeos.github.io/life-os/25-minute-pomodoro-focus-sprints/",
       "search_text": "Work in Focused 25-Minute Intervals (pomodoros) Followed by a 5-Minute Break Work in focused 25-minute intervals (Pomodoros) followed by a 5-minute break. After four Pomodoros, take a longer break. Pick one concrete outcome, work on it for one 25-minute focus block, take a short break, and then decide whether another block is useful. Treat 25 minutes as a starting setting, not a scientifically optimal duration. Did I work on the intended outcome? What interrupted me, and should the next focus block be shorter, the same, or longer? focus-action Focus & Action goals Goals"
+    },
+    {
+      "id": "brali:protocol:context-planner-for-writers",
+      "kind": "protocol",
+      "title": "Write a Context Brief Before Drafting",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/context-planner-for-writers/",
+      "search_text": "Write a Context Brief Before Drafting Before drafting, write a compact brief that identifies the primary reader, where the text will appear, what the reader should understand or do, which constraints apply, and what facts or sources must be verified. Write the primary reader, publication surface, desired reader action or understanding, required tone or format constraints, facts that must be checked, and any detail that should be omitted for privacy, confidentiality or scope. Then build the outline from that brief. Who is this for, where will it appear, what should the reader understand or do, and which constraint or fact must the draft respect? creativity-expression Creativity & Expression communication-relationships Communication & Relationships writing Writing clear-communication Clear Communication"
+    },
+    {
+      "id": "brali:protocol:qa-clear-feedback-templates",
+      "kind": "protocol",
+      "title": "Write an Actionable QA Report Another Person Can Use",
+      "trust": "practical",
+      "topic_ids": [],
+      "url": "https://brali-lifeos.github.io/life-os/qa-clear-feedback-templates/",
+      "search_text": "Write an Actionable QA Report Another Person Can Use Turn a vague defect report into a compact handoff that distinguishes what was observed from what is suspected and gives the receiver enough context to reproduce, investigate, and verify the fix. Write a one-line observed problem and context, add the smallest reliable reproduction sequence, attach the relevant evidence while removing secrets and personal data, label any suspected cause as a hypothesis, state the expected behavior, and define a narrow acceptance check for the fix. Can another person see what happened, reproduce or investigate it, distinguish fact from hypothesis, and know what would count as fixed? focus-action Focus & Action communication-relationships Communication & Relationships error-prevention Error Prevention clear-communication Clear Communication"
     },
     {
       "id": "brali:protocol:avoid-selection-bias-in-analysis",

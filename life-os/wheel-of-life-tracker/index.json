@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:wheel-of-life-tracker",
   "slug": "wheel-of-life-tracker",
-  "title": "Use the Wheel of Life to Assess Different Areas of Your Life (e",
+  "title": "Balance Your Life",
   "description": "Use the Wheel of Life to assess different areas of your life (e.g., career, health, relationships) and identify areas that need improvement.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/",
   "machine_url": "https://brali-lifeos.github.io/life-os/wheel-of-life-tracker/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/wheel-of-life-tracker.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

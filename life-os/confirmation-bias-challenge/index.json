@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:confirmation-bias-challenge",
   "slug": "confirmation-bias-challenge",
-  "title": "Make It a Habit to Question Your Beliefs",
-  "description": "Make it a habit to question your beliefs. Look for evidence that contradicts your assumptions instead of only seeking confirmation.",
+  "title": "Run One Disconfirming Check Before a Consequential Commitment",
+  "description": "Before an ordinary consequential commitment, state the assumption you currently favor, name one observable condition that would weaken it, check that condition directly, and update, narrow or escalate the decision when the result matters.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
   "machine_url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/index.json",
   "growth_zone": {
@@ -16,31 +16,39 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
+      },
+      {
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
     "topics": [
       {
         "id": "critical-thinking",
         "title": "Critical Thinking"
+      },
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "thinking"
@@ -48,8 +56,83 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:confirmation-bias-challenge",
+    "language": "en",
+    "slug": "confirmation-bias-challenge",
+    "url": "https://brali-lifeos.github.io/life-os/confirmation-bias-challenge/",
+    "title": "Run One Disconfirming Check Before a Consequential Commitment",
+    "description": "Before an ordinary consequential commitment, state the assumption you currently favor, name one observable condition that would weaken it, check that condition directly, and update, narrow or escalate the decision when the result matters.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "critical-thinking",
+          "title": "Critical Thinking"
+        },
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "thinking"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "thinking",
+      "title": "Thinking"
+    },
+    "action": "Write the assumption driving the decision, state one observation that would materially weaken it, identify where that information can be checked, inspect it before the commitment becomes difficult to reverse, and then keep, narrow, change or escalate the plan according to what you found.",
+    "check_in": "What assumption was I favoring, what would have weakened it, did I check that condition, and how did the result change the commitment?",
+    "keywords": [
+      "Thinking",
+      "Life OS",
+      "Challenge Your Beliefs (Confirmation Bias)"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/confirmation-bias-challenge.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

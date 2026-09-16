@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "slug": "stress",
   "title": "Stress",
   "question": "What low-risk practices can help me respond to stress without treating a knowledge library like clinical care?",
@@ -9,7 +9,7 @@
   "json_url": "https://brali-lifeos.github.io/topics/stress/index.json",
   "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
   "coverage_status": "trusted-protocols",
-  "coverage_note": "7 trusted protocol recommendations available.",
+  "coverage_note": "8 trusted protocol recommendations available.",
   "topics": [
     {
       "id": "stress-regulation",
@@ -56,6 +56,29 @@
         "dbt"
       ],
       "hub_score": 1242.4
+    },
+    {
+      "canonical_id": "brali:protocol:10-minute-stress-walk",
+      "protocol_id": "brali:10-minute-stress-walk",
+      "slug": "10-minute-stress-walk",
+      "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+      "title": "Take a Short Walk When Stress Builds",
+      "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+      "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+      "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
+      "evidence": {
+        "status": "reviewed",
+        "source_recorded": true,
+        "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+        "reviewed_at": "2026-08-18"
+      },
+      "is_flagship_100": true,
+      "topic_ids": [
+        "stress-regulation",
+        "movement"
+      ],
+      "method_ids": [],
+      "hub_score": 1192.4
     },
     {
       "canonical_id": "brali:protocol:3-minute-sensory-mindfulness-act",
@@ -136,7 +159,7 @@
       "protocol_id": "brali:circles-of-control-planner",
       "slug": "circles-of-control-planner",
       "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-      "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+      "title": "Separate Outcomes From Actions You Can Control",
       "description": "Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control.",
       "action": "Write down one concern, separate the outcome from the actions you can take, convert anything you can influence into one concrete behavior, and choose the next useful action without pretending you control the final result.",
       "check_in": "What part of this situation was actually mine to act on, what remained outside my control, and did the sorting help me choose a clearer next step?",
@@ -153,28 +176,6 @@
       ],
       "method_ids": [],
       "hub_score": 1062.21
-    },
-    {
-      "canonical_id": "brali:protocol:478-breathing-technique-guide",
-      "protocol_id": "brali:478-breathing-technique-guide",
-      "slug": "478-breathing-technique-guide",
-      "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
-      "title": "Comfortable Breathing Reset",
-      "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
-      "action": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
-      "check_in": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed.",
-      "evidence": {
-        "status": "practical",
-        "source_recorded": false,
-        "source_url": null,
-        "reviewed_at": "2026-08-20"
-      },
-      "is_flagship_100": true,
-      "topic_ids": [
-        "stress-regulation"
-      ],
-      "method_ids": [],
-      "hub_score": 1061.54
     },
     {
       "canonical_id": "brali:protocol:ancestral-torch-resilience-tracker",
@@ -198,6 +199,28 @@
       ],
       "method_ids": [],
       "hub_score": 1061.34
+    },
+    {
+      "canonical_id": "brali:protocol:478-breathing-technique-guide",
+      "protocol_id": "brali:478-breathing-technique-guide",
+      "slug": "478-breathing-technique-guide",
+      "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
+      "title": "Comfortable Breathing Reset",
+      "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
+      "action": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
+      "check_in": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed.",
+      "evidence": {
+        "status": "practical",
+        "source_recorded": false,
+        "source_url": null,
+        "reviewed_at": "2026-08-20"
+      },
+      "is_flagship_100": false,
+      "topic_ids": [
+        "stress-regulation"
+      ],
+      "method_ids": [],
+      "hub_score": 61.54
     }
   ],
   "evidence_decisions": [],
@@ -217,6 +240,11 @@
       "id": "fear-confidence",
       "title": "Fear & Confidence",
       "canonical_id": "brali:topic:fear-confidence"
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "canonical_id": "brali:topic:movement"
     },
     {
       "id": "decision-making",

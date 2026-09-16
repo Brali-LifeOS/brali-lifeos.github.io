@@ -4,12 +4,26 @@
   "subtitle": "Use AI to structure the mess; verify owners, decisions, and dates before publishing",
   "description": "After a meeting, use AI to convert permitted notes or a transcript into decisions, actions, owners, dates, and open questions. Then reconcile the structured output against the original record before it becomes the team's memory.",
   "canonical": "/life-os/ai-meeting-notes-to-actions/",
-  "domain_ids": ["work-money"],
-  "topic_ids": ["work-systems"],
+  "domain_ids": [
+    "work-money"
+  ],
+  "topic_ids": [
+    "work-systems"
+  ],
   "method_ids": [],
   "lens_ids": [],
-  "keywords": ["AI meeting notes", "action items", "meeting summary", "work systems", "transcript", "follow up"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "keywords": [
+    "AI meeting notes",
+    "action items",
+    "meeting summary",
+    "work systems",
+    "transcript",
+    "follow up"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Convert meeting notes into a structured action register with AI, then verify each decision, owner, and due date against the meeting record.",
     "zone": "Using AI",
@@ -18,19 +32,58 @@
     "checkIn": "Does every named owner and commitment come from the meeting, or did the model quietly turn a suggestion into an assignment?"
   },
   "faq": [
-    {"id":"ai-meeting-notes-to-actions-1","question":"What is the main failure mode?","answer":"The model can infer an owner, deadline, or decision that sounded plausible but was never agreed. Those fields deserve explicit reconciliation."},
-    {"id":"ai-meeting-notes-to-actions-2","question":"Can I upload any meeting transcript?","answer":"No. Follow your organization's privacy, confidentiality, retention, and approved-tool rules. Sensitive content should not be sent to an unapproved service."}
+    {
+      "id": "ai-meeting-notes-to-actions-1",
+      "question": "What is the main failure mode?",
+      "answer": "The model can infer an owner, deadline, or decision that sounded plausible but was never agreed. Those fields deserve explicit reconciliation."
+    },
+    {
+      "id": "ai-meeting-notes-to-actions-2",
+      "question": "Can I upload any meeting transcript?",
+      "answer": "No. Follow your organization's privacy, confidentiality, retention, and approved-tool rules. Sensitive content should not be sent to an unapproved service."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:22:00Z","updatedISO":"2026-09-15T09:22:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:22:00Z",
+    "updatedISO": "2026-09-15T09:22:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>Meeting notes often fail in the boring gap between conversation and ownership. AI can help close that gap, but it is very capable of making an unassigned action look pleasantly assigned.</p>"},
+    "intro": {
+      "html": "<p>Meeting notes often fail in the boring gap between conversation and ownership. AI can help close that gap, but it is very capable of making an unassigned action look pleasantly assigned.</p>"
+    },
     "sections": [
-      {"slug":"input","title":"1. Use an approved record","html":"<p>Start with notes or a transcript you are permitted to process. Remove unnecessary sensitive information before sharing it with any external tool.</p>"},
-      {"slug":"schema","title":"2. Ask for a fixed schema","html":"<p>Request decisions, action, owner, due date, evidence from the notes, and open questions. A fixed schema makes omissions and unsupported fields easier to spot.</p>"},
-      {"slug":"reconcile","title":"3. Reconcile commitments","html":"<p>Check names, dates, decisions, and obligations against the original record. If ownership was not explicit, write “unassigned” rather than accepting an AI guess.</p>"},
-      {"slug":"publish","title":"4. Publish the checked record","html":"<p>Send or store the reconciled version while the meeting is still fresh enough for people to correct it. The human-approved record becomes the source of truth, not the transcript summary.</p>"}
+      {
+        "slug": "input",
+        "title": "1. Use an approved record",
+        "html": "<p>Start with notes or a transcript you are permitted to process. Remove unnecessary sensitive information before sharing it with any external tool.</p>"
+      },
+      {
+        "slug": "schema",
+        "title": "2. Ask for a fixed schema",
+        "html": "<p>Request decisions, action, owner, due date, evidence from the notes, and open questions. A fixed schema makes omissions and unsupported fields easier to spot.</p>"
+      },
+      {
+        "slug": "reconcile",
+        "title": "3. Reconcile commitments",
+        "html": "<p>Check names, dates, decisions, and obligations against the original record. If ownership was not explicit, write “unassigned” rather than accepting an AI guess.</p>"
+      },
+      {
+        "slug": "publish",
+        "title": "4. Publish the checked record",
+        "html": "<p>Send or store the reconciled version while the meeting is still fresh enough for people to correct it. The human-approved record becomes the source of truth, not the transcript summary.</p>"
+      }
     ]
   },
   "references": [],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"A low-risk transformation workflow with explicit privacy and reconciliation gates; no unsupported claim that AI meeting notes improve team performance.","registry":"review-registry-using-ai-starters.json"}
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "A low-risk transformation workflow with explicit privacy and reconciliation gates; no unsupported claim that AI meeting notes improve team performance.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

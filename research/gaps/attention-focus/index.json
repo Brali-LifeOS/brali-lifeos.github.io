@@ -18,15 +18,65 @@
       "id": "focus-attention-switching",
       "query": "task switching interruptions sustained attention workplace systematic review",
       "risk_flags": []
+    },
+    {
+      "id": "focus-interruption-recovery",
+      "query": "task interruption resumption planning attention residue workplace experiment review",
+      "risk_flags": []
+    },
+    {
+      "id": "work-context-switching",
+      "query": "context switching interruptions knowledge work performance attention systematic review",
+      "risk_flags": []
+    },
+    {
+      "id": "focus-notification-interruptions",
+      "query": "communication notifications interruptions workplace performance strain experiment systematic review",
+      "risk_flags": []
     }
   ],
   "candidates": [
+    {
+      "id": "crossref:10.1002/1348-9585.12408",
+      "title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "status": "support-existing",
+      "publication_date": "2023-06-06",
+      "reference_url": "https://doi.org/10.1002/1348-9585.12408"
+    },
+    {
+      "id": "crossref:10.1016/j.chb.2019.07.016",
+      "title": "Batching smartphone notifications can improve well-being",
+      "status": "propose-protocol",
+      "publication_date": "2019-12-01",
+      "reference_url": "https://doi.org/10.1016/j.chb.2019.07.016"
+    },
+    {
+      "id": "crossref:10.1093/pnasnexus/pgaf017",
+      "title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "status": "propose-protocol",
+      "publication_date": "2025-02-18",
+      "reference_url": "https://doi.org/10.1093/pnasnexus/pgaf017"
+    },
+    {
+      "id": "crossref:10.1287/orsc.2017.1184",
+      "title": "Tasks Interrupted: How Anticipating Time Pressure on Resumption of an Interrupted Task Causes Attention Residue and Low Performance on Interrupting Tasks and How a Ready-to-Resume Plan Mitigates the Effects",
+      "status": "propose-protocol",
+      "publication_date": "2018-05-11",
+      "reference_url": "https://doi.org/10.1287/orsc.2017.1184"
+    },
     {
       "id": "crossref:10.1371/journal.pone.0272460",
       "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
       "status": "support-existing",
       "publication_date": "2022-08-31",
       "reference_url": "https://doi.org/10.1371/journal.pone.0272460"
+    },
+    {
+      "id": "pubmed:21688924",
+      "title": "Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals",
+      "status": "support-existing",
+      "publication_date": "2011-10-01",
+      "reference_url": "https://doi.org/10.1037/a0024192"
     }
   ],
   "evidence_decisions": [
@@ -36,6 +86,34 @@
       "reviewed_at": "2026-08-22",
       "source_title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
       "ledger_url": "https://brali-lifeos.github.io/evidence/microbreak-wellbeing-performance-boundary-2022/"
+    },
+    {
+      "id": "mobile-internet-block-attention-boundary-2025",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-08-27",
+      "source_title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/mobile-internet-block-attention-boundary-2025/"
+    },
+    {
+      "id": "notification-batching-boundary-2019",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Batching smartphone notifications can improve well-being",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/notification-batching-boundary-2019/"
+    },
+    {
+      "id": "notification-blocking-workday-boundary-2023",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/notification-blocking-workday-boundary-2023/"
+    },
+    {
+      "id": "ready-to-resume-interruption-boundary-2018",
+      "decision": "propose-protocol",
+      "reviewed_at": "2026-09-11",
+      "source_title": "Tasks Interrupted: Ready-to-Resume Plan",
+      "ledger_url": "https://brali-lifeos.github.io/evidence/ready-to-resume-interruption-boundary-2018/"
     }
   ],
   "trusted_protocols": [
@@ -46,9 +124,27 @@
       "evidence_status": "practical"
     },
     {
+      "slug": "batch-non-urgent-notifications",
+      "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+      "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "phase-transition-ritual-tracker",
+      "title": "Create a Clear Handoff Between Two Activities",
+      "url": "https://brali-lifeos.github.io/life-os/phase-transition-ritual-tracker/",
+      "evidence_status": "practical"
+    },
+    {
       "slug": "refocus-present-stop-mind-wandering",
       "title": "Deliberate Attention Switching with Everyday Sounds",
       "url": "https://brali-lifeos.github.io/life-os/refocus-present-stop-mind-wandering/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "ready-to-resume-plan",
+      "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+      "url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/",
       "evidence_status": "reviewed"
     }
   ],
@@ -58,7 +154,7 @@
     "title": "Attention & Focus",
     "domain_id": "focus-action",
     "status": "growth-gap",
-    "entries": 2,
-    "research_candidates": 1
+    "entries": 5,
+    "research_candidates": 6
   }
 }

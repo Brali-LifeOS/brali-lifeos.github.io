@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:judge-decisions-by-process",
   "slug": "judge-decisions-by-process",
-  "title": "Focus on Decision Quality",
-  "description": "When evaluating a past choice: - Ask yourself: \"Did I make the best decision with the info I had at the time?\" - Separate outcomes from process: Focus on how the choice was made, not just how it ended. Example: A project failed? Instead of blaming yourself entirely, review whether the plan was reasonable based on what you knew then.",
+  "title": "Review a Decision Using What Was Known at the Time",
+  "description": "Reconstruct what information was actually available when a decision was made, compare it with the options and constraints considered then, and turn the review into one process improvement for a similar future decision.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
   "machine_url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:judge-decisions-by-process",
+    "language": "en",
+    "slug": "judge-decisions-by-process",
+    "url": "https://brali-lifeos.github.io/life-os/judge-decisions-by-process/",
+    "title": "Review a Decision Using What Was Known at the Time",
+    "description": "Reconstruct what information was actually available when a decision was made, compare it with the options and constraints considered then, and turn the review into one process improvement for a similar future decision.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "cognitive-biases",
+          "title": "Cognitive Biases"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "cognitive-biases"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "cognitive-biases",
+      "title": "Cognitive Biases"
+    },
+    "action": "Write the decision and its date, list the information and constraints that were available then, separate later discoveries into a different section, note which realistic alternatives were considered or missed, identify one process weakness or strength, and define one change to use for a similar future decision.",
+    "check_in": "What was genuinely knowable at the decision point, what did I learn only afterward, and what should change in the process next time?",
+    "keywords": [
+      "Cognitive Biases",
+      "Life OS",
+      "Focus on Decision Quality"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/judge-decisions-by-process.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

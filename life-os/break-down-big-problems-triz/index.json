@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:break-down-big-problems-triz",
   "slug": "break-down-big-problems-triz",
-  "title": "Break Down Big Challenges into Smaller, More Manageable Parts",
-  "description": "Break down big challenges into smaller, more manageable parts. Instead of trying to fix everything, focus on one aspect at a time.",
+  "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+  "description": "Describe the unwanted result, expose the trade-off or contradiction, split the system into parts, and check a change that removes a constraint instead of merely optimizing around it.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
   "machine_url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/index.json",
   "growth_zone": {
@@ -16,22 +16,35 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
         "id": "learning-thinking",
         "title": "Learning & Thinking"
+      },
+      {
+        "id": "creativity-expression",
+        "title": "Creativity & Expression"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "problem-solving",
+        "title": "Problem Solving"
+      },
+      {
+        "id": "creative-problem-solving",
+        "title": "Creative Problem Solving"
+      }
+    ],
     "methods": [
       {
         "id": "triz",
@@ -39,8 +52,8 @@
       }
     ],
     "lenses": [],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "learning-thinking",
       "growth_zone_slug": "triz"
@@ -48,8 +61,93 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "problem-solving",
+        "stage": "discovery-ready",
+        "url": "https://brali-lifeos.github.io/research/gaps/problem-solving/"
+      },
+      {
+        "topic_id": "creative-problem-solving",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:break-down-big-problems-triz",
+    "language": "en",
+    "slug": "break-down-big-problems-triz",
+    "url": "https://brali-lifeos.github.io/life-os/break-down-big-problems-triz/",
+    "title": "Decompose a Hard Problem with TRIZ-Inspired Contradictions",
+    "description": "Describe the unwanted result, expose the trade-off or contradiction, split the system into parts, and check a change that removes a constraint instead of merely optimizing around it.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        },
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "problem-solving",
+          "title": "Problem Solving"
+        },
+        {
+          "id": "creative-problem-solving",
+          "title": "Creative Problem Solving"
+        }
+      ],
+      "methods": [
+        {
+          "id": "triz",
+          "title": "TRIZ"
+        }
+      ],
+      "lenses": [],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "triz"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "triz",
+      "title": "TRIZ"
+    },
+    "action": "State the unwanted outcome, map the main parts and interactions, write the trade-off as two requirements that appear to conflict, generate separation or redesign options, choose a reversible check, and record which assumption or constraint changed.",
+    "check_in": "What contradiction did I expose, what separation or redesign did I check, and did it remove the conflict or only move it elsewhere?",
+    "keywords": [
+      "TRIZ",
+      "Life OS",
+      "Break Problems into Smaller Parts"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/break-down-big-problems-triz.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

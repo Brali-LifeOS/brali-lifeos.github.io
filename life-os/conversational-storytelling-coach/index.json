@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:conversational-storytelling-coach",
   "slug": "conversational-storytelling-coach",
-  "title": "Master Your Story",
-  "description": "Tell short, relevant stories in conversations to illustrate points and engage your audience. Use vivid details and a clear structure.",
+  "title": "Use a Short Story to Explain One Point in Conversation",
+  "description": "Choose one real example that directly supports the point you are making, keep only the context needed to understand what changed, connect the ending back to the current conversation, and remove confidential or identifying details that are not necessary.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:conversational-storytelling-coach",
+    "language": "en",
+    "slug": "conversational-storytelling-coach",
+    "url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
+    "title": "Use a Short Story to Explain One Point in Conversation",
+    "description": "Choose one real example that directly supports the point you are making, keep only the context needed to understand what changed, connect the ending back to the current conversation, and remove confidential or identifying details that are not necessary.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "State the point you need to explain, choose one real example that directly supports it, keep only the minimum context, describe the change or decision that matters, connect the ending back to the present topic, and remove confidential or identifying details that are not necessary for the explanation.",
+    "check_in": "What point was the story serving, which detail made it clearer, what could be removed, and did I protect information that did not need to be shared?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Master Your Story"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/conversational-storytelling-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

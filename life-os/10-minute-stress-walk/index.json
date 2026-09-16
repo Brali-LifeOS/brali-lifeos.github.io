@@ -21,7 +21,7 @@
     "search_indexable": true,
     "sensitive": true,
     "source_recorded": true,
-    "source_url": "https://www.who.int/news-room/questions-and-answers/item/stress/",
+    "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
     "reviewed_at": "2026-08-18"
   },
   "ontology": {
@@ -29,18 +29,26 @@
       {
         "id": "mind-resilience",
         "title": "Mind & Resilience"
+      },
+      {
+        "id": "health-energy",
+        "title": "Health & Energy"
       }
     ],
     "topics": [
       {
-        "id": "mood-wellbeing",
-        "title": "Mood & Wellbeing"
+        "id": "stress-regulation",
+        "title": "Stress Regulation"
+      },
+      {
+        "id": "movement",
+        "title": "Movement"
       }
     ],
     "methods": [],
     "lenses": [],
-    "classification_status": "topic-mapped",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "mind-resilience",
       "growth_zone_slug": "no-depression"
@@ -49,7 +57,16 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [
+      {
+        "topic_id": "movement",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/movement/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:10-minute-stress-walk",
@@ -63,18 +80,26 @@
         {
           "id": "mind-resilience",
           "title": "Mind & Resilience"
+        },
+        {
+          "id": "health-energy",
+          "title": "Health & Energy"
         }
       ],
       "topics": [
         {
-          "id": "mood-wellbeing",
-          "title": "Mood & Wellbeing"
+          "id": "stress-regulation",
+          "title": "Stress Regulation"
+        },
+        {
+          "id": "movement",
+          "title": "Movement"
         }
       ],
       "methods": [],
       "lenses": [],
-      "classification_status": "topic-mapped",
-      "classification_source": "legacy-zone-map",
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
       "legacy": {
         "life_area_slug": "mind-resilience",
         "growth_zone_slug": "no-depression"
@@ -88,8 +113,8 @@
       "slug": "no-depression",
       "title": "No Depression"
     },
-    "action": "When you notice stress building, consider taking a short walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. Walk at a comfortable pace in a safe place, then notice whether you feel any different before returning to the next task.",
-    "check_in": "Did I take the walk? How did my stress or tension feel before and after, and did the walk feel safe and useful enough to try again?",
+    "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+    "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
     "keywords": [
       "No Depression",
       "Life OS",
@@ -98,8 +123,16 @@
     "evidence": {
       "status": "reviewed",
       "source_recorded": true,
-      "source_url": "https://www.who.int/news-room/questions-and-answers/item/stress/",
+      "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
       "reviewed_at": "2026-08-18"
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/10-minute-stress-walk.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:mood-memory-matcher",
   "slug": "mood-memory-matcher",
-  "title": "Use Mood to Boost Memory",
+  "title": "Use Mood Context Carefully When Practicing Recall",
   "description": "To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/",
   "machine_url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/index.json",
@@ -49,14 +49,17 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": true,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
   "trusted_protocol": {
     "protocol_id": "brali:mood-memory-matcher",
     "language": "en",
     "slug": "mood-memory-matcher",
     "url": "https://brali-lifeos.github.io/life-os/mood-memory-matcher/",
-    "title": "Use Mood to Boost Memory",
+    "title": "Use Mood Context Carefully When Practicing Recall",
     "description": "To align mood and memory: - Match your mood: Study happy topics when you’re in a good mood; tackle tough topics when feeling serious. - Recreate the setting: When recalling something, try to recreate the emotional environment you were in when you learned it. - Stay balanced: Use calming techniques (like deep breathing) to avoid overly negative or positive distortions. Example: If you felt relaxed while learning a skill, try to replicate that mood during a test or performance.",
     "ontology": {
       "domains": [
@@ -101,5 +104,13 @@
       "source_url": null,
       "reviewed_at": null
     }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/mood-memory-matcher.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
   }
 }

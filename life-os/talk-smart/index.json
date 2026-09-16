@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "talk-smart",
   "title": "Talk Smart",
-  "description": "Clear Words, Strong Impact: sharpen your speaking skills for clearer and more effective communication.",
+  "description": "Make communication clearer: listen accurately, choose the right medium, rehearse hard conversations, and repair misunderstandings.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/talk-smart/",
   "machine_url": "https://brali-lifeos.github.io/life-os/talk-smart/index.json",
   "indexable": true,
@@ -14,13 +14,13 @@
   },
   "counts": {
     "library_entries": 113,
-    "trusted_protocols": 1,
+    "trusted_protocols": 8,
     "reviewed": 0,
-    "practical": 1,
-    "pending_review": 112,
+    "practical": 8,
+    "pending_review": 105,
     "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 3,
+    "research_gaps": 1
   },
   "topics": [
     {
@@ -28,14 +28,75 @@
       "title": "Clear Communication",
       "count": 113,
       "url": "https://brali-lifeos.github.io/ontology/topics/clear-communication/"
+    },
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/information-management/"
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/writing/"
     }
   ],
-  "research_gaps": [],
+  "research_gaps": [
+    {
+      "topic_id": "information-management",
+      "title": "Information Management",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/information-management/"
+    }
+  ],
   "trusted_protocols": [
     {
       "slug": "5w1h-communication-checklist",
       "title": "Check Who, What, Where, When, Why, and How",
       "url": "https://brali-lifeos.github.io/life-os/5w1h-communication-checklist/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "clarity-ladder-analyzer",
+      "title": "Connect a General Point to a Concrete Example",
+      "url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "chunk-complex-ideas-for-clarity",
+      "title": "Organize Complex Information Around One Decision",
+      "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "ai-six-hats-facilitator",
+      "title": "Run a Six-Perspective Thinking Pass",
+      "url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "active-listening-coach",
+      "title": "Use a Brief Summary to Check What You Heard",
+      "url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "bullet-point-coach",
+      "title": "Use a Short Bullet Outline Before You Speak",
+      "url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "conversational-storytelling-coach",
+      "title": "Use a Short Story to Explain One Point in Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "aida-message-optimizer",
+      "title": "Use AIDA as a Message Clarity Checklist",
+      "url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
       "evidence_status": "practical"
     }
   ],
@@ -111,13 +172,6 @@
       "indexable": false
     },
     {
-      "slug": "chunk-complex-ideas-for-clarity",
-      "title": "Break Down Complex Information into Smaller, Manageable Chunks",
-      "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "presentation-chunking-assistant",
       "title": "Break Down Complex Information into Smaller, Manageable Chunks",
       "url": "https://brali-lifeos.github.io/life-os/presentation-chunking-assistant/",
@@ -158,6 +212,13 @@
       "url": "https://brali-lifeos.github.io/life-os/story-arc-presentation-planner/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "clarity-ladder-analyzer",
+      "title": "Connect a General Point to a Concrete Example",
+      "url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "elevator-pitch-coach",
@@ -272,13 +333,6 @@
       "indexable": false
     },
     {
-      "slug": "aida-message-optimizer",
-      "title": "Follow the AIDA Model",
-      "url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "post-meeting-follow-up-email",
       "title": "Follow Up Effectively",
       "url": "https://brali-lifeos.github.io/life-os/post-meeting-follow-up-email/",
@@ -356,13 +410,6 @@
       "indexable": false
     },
     {
-      "slug": "active-listening-coach",
-      "title": "Listen Actively",
-      "url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "master-eye-contact-in-conversations",
       "title": "Maintain Appropriate Eye Contact During Conversations",
       "url": "https://brali-lifeos.github.io/life-os/master-eye-contact-in-conversations/",
@@ -377,13 +424,6 @@
       "indexable": false
     },
     {
-      "slug": "conversational-storytelling-coach",
-      "title": "Master Your Story",
-      "url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
       "slug": "voice-modulation-exercises",
       "title": "Modulate Your Voice",
       "url": "https://brali-lifeos.github.io/life-os/voice-modulation-exercises/",
@@ -391,11 +431,11 @@
       "indexable": false
     },
     {
-      "slug": "clarity-ladder-analyzer",
-      "title": "Move Between Abstract Concepts and Concrete Details to Clarify Your Message",
-      "url": "https://brali-lifeos.github.io/life-os/clarity-ladder-analyzer/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "chunk-complex-ideas-for-clarity",
+      "title": "Organize Complex Information Around One Decision",
+      "url": "https://brali-lifeos.github.io/life-os/chunk-complex-ideas-for-clarity/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "pause-for-effect-coach",
@@ -531,6 +571,13 @@
       "indexable": false
     },
     {
+      "slug": "ai-six-hats-facilitator",
+      "title": "Run a Six-Perspective Thinking Pass",
+      "url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "vulnerable-storytelling-coach",
       "title": "Share Personal Stories and Experiences to Connect with Your Audience",
       "url": "https://brali-lifeos.github.io/life-os/vulnerable-storytelling-coach/",
@@ -562,13 +609,6 @@
       "slug": "smile-while-talking",
       "title": "Smile While You Talk",
       "url": "https://brali-lifeos.github.io/life-os/smile-while-talking/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "power-pose-pre-talk-ritual",
-      "title": "Stand in a Confident, Expansive Posture (e",
-      "url": "https://brali-lifeos.github.io/life-os/power-pose-pre-talk-ritual/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -611,6 +651,13 @@
       "slug": "vocal-health-habits-coach",
       "title": "Stay Hydrated, Avoid Shouting, and Rest Your Voice When Needed",
       "url": "https://brali-lifeos.github.io/life-os/vocal-health-habits-coach/",
+      "evidence_status": "pending-review",
+      "indexable": false
+    },
+    {
+      "slug": "power-pose-pre-talk-ritual",
+      "title": "Strike a Power Pose",
+      "url": "https://brali-lifeos.github.io/life-os/power-pose-pre-talk-ritual/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -671,11 +718,11 @@
       "indexable": false
     },
     {
-      "slug": "ai-six-hats-facilitator",
-      "title": "Try de Bono’s Six Thinking Hats",
-      "url": "https://brali-lifeos.github.io/life-os/ai-six-hats-facilitator/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "active-listening-coach",
+      "title": "Use a Brief Summary to Check What You Heard",
+      "url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "speech-outline-generator",
@@ -692,16 +739,30 @@
       "indexable": false
     },
     {
+      "slug": "bullet-point-coach",
+      "title": "Use a Short Bullet Outline Before You Speak",
+      "url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "conversational-storytelling-coach",
+      "title": "Use a Short Story to Explain One Point in Conversation",
+      "url": "https://brali-lifeos.github.io/life-os/conversational-storytelling-coach/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
+      "slug": "aida-message-optimizer",
+      "title": "Use AIDA as a Message Clarity Checklist",
+      "url": "https://brali-lifeos.github.io/life-os/aida-message-optimizer/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "ethos-pathos-logos-coach",
       "title": "Use Aristotle’s Trio: Ethos (credibility), Pathos (emotion), and Logos (logic)",
       "url": "https://brali-lifeos.github.io/life-os/ethos-pathos-logos-coach/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "bullet-point-coach",
-      "title": "Use Bullet Points to Outline Your Key Points",
-      "url": "https://brali-lifeos.github.io/life-os/bullet-point-coach/",
       "evidence_status": "pending-review",
       "indexable": false
     },

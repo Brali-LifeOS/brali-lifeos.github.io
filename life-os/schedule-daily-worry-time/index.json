@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:schedule-daily-worry-time",
   "slug": "schedule-daily-worry-time",
-  "title": "Set a Specific Time Each Day for Rumination (e (Metacognitive)",
+  "title": "Limit Rumination Time",
   "description": "Set a specific time each day for rumination (e.g., 10 minutes). If you catch yourself ruminating outside of this time, gently remind yourself to wait until your ‘thinking time.’",
   "canonical_url": "https://brali-lifeos.github.io/life-os/schedule-daily-worry-time/",
   "machine_url": "https://brali-lifeos.github.io/life-os/schedule-daily-worry-time/index.json",
@@ -18,7 +18,7 @@
   "evidence": {
     "status": "restricted",
     "indexable": false,
-    "search_indexable": true,
+    "search_indexable": false,
     "sensitive": true,
     "source_recorded": false,
     "source_url": null,
@@ -47,9 +47,20 @@
     }
   },
   "discovery": {
-    "search_indexable": true,
+    "search_indexable": false,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "withheld-review-required",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": false,
+    "display_state": "historical-source-only",
+    "historical_source_url": "/data/life-os-content/schedule-daily-worry-time.json",
+    "historical_source_role": "provenance-only-not-current-guidance",
+    "search_role": "withheld-review-required"
+  }
 }

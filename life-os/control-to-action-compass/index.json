@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:control-to-action-compass",
   "slug": "control-to-action-compass",
-  "title": "Each Morning, Write Down Your Main Concerns for the Day",
-  "description": "Each morning, write down your main concerns for the day. Next to each concern, list what aspects you can control and acknowledge the elements you can't.",
+  "title": "Separate Controllable Actions From Dependencies and Outcomes",
+  "description": "For a concern or desired outcome, separate actions you can directly perform from dependencies you can influence or only observe, choose one concrete next action, and define how waiting items will be revisited instead of repeatedly planning the outcome itself.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
   "machine_url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/index.json",
   "growth_zone": {
@@ -16,22 +16,27 @@
     "title": "Mind & Resilience"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
       {
-        "id": "mind-resilience",
-        "title": "Mind & Resilience"
+        "id": "focus-action",
+        "title": "Focus & Action"
       }
     ],
-    "topics": [],
+    "topics": [
+      {
+        "id": "decision-making",
+        "title": "Decision Making"
+      }
+    ],
     "methods": [],
     "lenses": [
       {
@@ -39,8 +44,8 @@
         "title": "Stoicism"
       }
     ],
-    "classification_status": "topic-pending",
-    "classification_source": "legacy-zone-map",
+    "classification_status": "explicit",
+    "classification_source": "reviewed-ontology-override",
     "legacy": {
       "life_area_slug": "mind-resilience",
       "growth_zone_slug": "stoicism"
@@ -48,8 +53,80 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [
+      {
+        "topic_id": "decision-making",
+        "stage": "ready-for-resolution",
+        "url": "https://brali-lifeos.github.io/research/gaps/decision-making/"
+      }
+    ],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:control-to-action-compass",
+    "language": "en",
+    "slug": "control-to-action-compass",
+    "url": "https://brali-lifeos.github.io/life-os/control-to-action-compass/",
+    "title": "Separate Controllable Actions From Dependencies and Outcomes",
+    "description": "For a concern or desired outcome, separate actions you can directly perform from dependencies you can influence or only observe, choose one concrete next action, and define how waiting items will be revisited instead of repeatedly planning the outcome itself.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "focus-action",
+          "title": "Focus & Action"
+        }
+      ],
+      "topics": [
+        {
+          "id": "decision-making",
+          "title": "Decision Making"
+        }
+      ],
+      "methods": [],
+      "lenses": [
+        {
+          "id": "stoicism",
+          "title": "Stoicism"
+        }
+      ],
+      "classification_status": "explicit",
+      "classification_source": "reviewed-ontology-override",
+      "legacy": {
+        "life_area_slug": "mind-resilience",
+        "growth_zone_slug": "stoicism"
+      }
+    },
+    "life_area": {
+      "slug": "mind-resilience",
+      "title": "Mind & Resilience"
+    },
+    "growth_zone": {
+      "slug": "stoicism",
+      "title": "Stoicism"
+    },
+    "action": "Write the concern or desired outcome, list the actions you can directly perform, list dependencies or responses owned by others, identify outcomes you can only observe, choose one next action under your control, and give waiting items a review trigger rather than repeatedly treating them as current work.",
+    "check_in": "What action can I perform directly, what depends on someone or something else, what outcome can I only observe, and when will I revisit the waiting part?",
+    "keywords": [
+      "Stoicism",
+      "Life OS",
+      "Daily Control Check-In"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/control-to-action-compass.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

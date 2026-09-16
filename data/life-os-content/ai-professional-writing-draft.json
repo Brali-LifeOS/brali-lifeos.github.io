@@ -4,12 +4,27 @@
   "subtitle": "Use AI for a fast first pass; keep intent, facts, tone, and final wording under human control",
   "description": "For routine professional writing, give AI the purpose, audience, constraints, and source facts, ask for a draft, then revise it yourself. Controlled evidence supports productivity gains for some professional writing tasks, not automatic accuracy or judgment.",
   "canonical": "/life-os/ai-professional-writing-draft/",
-  "domain_ids": ["creativity-expression"],
-  "topic_ids": ["writing", "revision-feedback"],
+  "domain_ids": [
+    "creativity-expression"
+  ],
+  "topic_ids": [
+    "writing",
+    "revision-feedback"
+  ],
   "method_ids": [],
   "lens_ids": [],
-  "keywords": ["AI writing", "professional writing", "first draft", "editing", "generative AI", "human review"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "keywords": [
+    "AI writing",
+    "professional writing",
+    "first draft",
+    "editing",
+    "generative AI",
+    "human review"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Use AI to produce a constrained first draft, then rewrite the parts where facts, intent, tone, or accountability matter.",
     "zone": "Using AI",
@@ -20,19 +35,66 @@
     "sourceUrl": "https://doi.org/10.1126/science.adh2586"
   },
   "faq": [
-    {"id":"ai-professional-writing-draft-1","question":"Should I send the AI draft as-is?","answer":"No. Treat it as draft material. Check facts, names, numbers, commitments, tone, and anything that could matter to another person before sending."},
-    {"id":"ai-professional-writing-draft-2","question":"What did the experiment actually show?","answer":"In one preregistered experiment with mid-level professional writing tasks, participants with ChatGPT completed tasks faster on average and received higher quality ratings. That does not prove the same gain for every writing task, model, or workplace."}
+    {
+      "id": "ai-professional-writing-draft-1",
+      "question": "Should I send the AI draft as-is?",
+      "answer": "No. Treat it as draft material. Check facts, names, numbers, commitments, tone, and anything that could matter to another person before sending."
+    },
+    {
+      "id": "ai-professional-writing-draft-2",
+      "question": "What did the experiment actually show?",
+      "answer": "In one preregistered experiment with mid-level professional writing tasks, participants with ChatGPT completed tasks faster on average and received higher quality ratings. That does not prove the same gain for every writing task, model, or workplace."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:15:00Z","updatedISO":"2026-09-15T09:15:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:15:00Z",
+    "updatedISO": "2026-09-15T09:15:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>AI is unusually good at making the blank page less blank. That is useful. It is not the same as being responsible for what the page says.</p>"},
+    "intro": {
+      "html": "<p>AI is unusually good at making the blank page less blank. That is useful. It is not the same as being responsible for what the page says.</p>"
+    },
     "sections": [
-      {"slug":"brief","title":"1. Give it a real brief","html":"<p>State the audience, purpose, length, tone, source facts, and any non-negotiable points. A vague prompt mostly asks the model to invent the missing brief for you.</p>"},
-      {"slug":"draft","title":"2. Ask for one workable draft","html":"<p>Use the first pass to create structure and wording quickly. Do not spend ten rounds polishing a weak premise; fix the premise yourself if the task is underspecified.</p>"},
-      {"slug":"verify","title":"3. Reconcile every material claim","html":"<p>Check names, dates, numbers, quotations, promises, legal or policy language, and anything presented as fact against the original source. Remove details the model supplied without evidence.</p>"},
-      {"slug":"own","title":"4. Take back the final edit","html":"<p>Rewrite the parts that carry your judgment or relationship with the reader. The final test is simple: would you still stand behind the message if nobody knew AI helped draft it?</p>"}
+      {
+        "slug": "brief",
+        "title": "1. Give it a real brief",
+        "html": "<p>State the audience, purpose, length, tone, source facts, and any non-negotiable points. A vague prompt mostly asks the model to invent the missing brief for you.</p>"
+      },
+      {
+        "slug": "draft",
+        "title": "2. Ask for one workable draft",
+        "html": "<p>Use the first pass to create structure and wording quickly. Do not spend ten rounds polishing a weak premise; fix the premise yourself if the task is underspecified.</p>"
+      },
+      {
+        "slug": "verify",
+        "title": "3. Reconcile every material claim",
+        "html": "<p>Check names, dates, numbers, quotations, promises, legal or policy language, and anything presented as fact against the original source. Remove details the model supplied without evidence.</p>"
+      },
+      {
+        "slug": "own",
+        "title": "4. Take back the final edit",
+        "html": "<p>Rewrite the parts that carry your judgment or relationship with the reader. The final test is simple: would you still stand behind the message if nobody knew AI helped draft it?</p>"
+      }
     ]
   },
-  "references": [{"title":"Experimental evidence on the productivity effects of generative artificial intelligence","url":"https://doi.org/10.1126/science.adh2586","doi":"10.1126/science.adh2586","source_type":"randomized experiment / peer-reviewed article","claim_scope":"In a preregistered experiment with 453 college-educated professionals completing mid-level professional writing tasks, access to ChatGPT reduced average completion time and increased average quality ratings. The study does not establish equivalent gains for every writing task or guarantee factual accuracy."}],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish as a bounded AI writing workflow: evidence supports task-level productivity gains in a specific professional-writing experiment, while the protocol keeps factual verification and final accountability human.","registry":"review-registry-using-ai-starters.json"}
+  "references": [
+    {
+      "title": "Experimental evidence on the productivity effects of generative artificial intelligence",
+      "url": "https://doi.org/10.1126/science.adh2586",
+      "doi": "10.1126/science.adh2586",
+      "source_type": "randomized experiment / peer-reviewed article",
+      "claim_scope": "In a preregistered experiment with 453 college-educated professionals completing mid-level professional writing tasks, access to ChatGPT reduced average completion time and increased average quality ratings. The study does not establish equivalent gains for every writing task or guarantee factual accuracy."
+    }
+  ],
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "Publish as a bounded AI writing workflow: evidence supports task-level productivity gains in a specific professional-writing experiment, while the protocol keeps factual verification and final accountability human.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

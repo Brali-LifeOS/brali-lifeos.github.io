@@ -3,7 +3,7 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:finish-on-time-timebox",
   "slug": "finish-on-time-timebox",
-  "title": "Set a Time Limit for Your Task and Complete It Within That Boundary)",
+  "title": "Complete on Time: Stick to Your Time Limit",
   "description": "Set a time limit for your task and complete it within that boundary. Stay focused and finish within the time you’ve set.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/finish-on-time-timebox/",
   "machine_url": "https://brali-lifeos.github.io/life-os/finish-on-time-timebox/index.json",
@@ -49,7 +49,18 @@
   "discovery": {
     "search_indexable": true,
     "trusted_protocol_feed": false,
-    "research_gaps": []
+    "research_gaps": [],
+    "search_role": "pending-review-longform",
+    "recommendation_eligible": false,
+    "agent_skill_eligible": false
   },
-  "trusted_protocol": null
+  "trusted_protocol": null,
+  "content": {
+    "current_guidance": false,
+    "longform_visible": true,
+    "display_state": "review-pending-longform-visible",
+    "historical_source_url": "/data/life-os-content/finish-on-time-timebox.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "pending-review-longform"
+  }
 }

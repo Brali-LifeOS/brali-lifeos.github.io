@@ -4,12 +4,28 @@
   "subtitle": "Use the model as an adversarial idea generator, then turn useful candidates into real checks",
   "description": "Give AI a feature, process, calculation, message, or workflow and ask for edge cases and failure modes. Treat the output as a candidate list, deduplicate it, verify relevance, and convert the useful cases into executable tests or checklist items.",
   "canonical": "/life-os/ai-test-case-generator/",
-  "domain_ids": ["focus-action"],
-  "topic_ids": ["error-prevention"],
+  "domain_ids": [
+    "focus-action"
+  ],
+  "topic_ids": [
+    "error-prevention"
+  ],
   "method_ids": [],
-  "lens_ids": ["qa"],
-  "keywords": ["AI test cases", "edge cases", "failure modes", "QA", "error prevention", "AI testing"],
-  "zone": {"slug": "using-ai", "title": "Using AI"},
+  "lens_ids": [
+    "qa"
+  ],
+  "keywords": [
+    "AI test cases",
+    "edge cases",
+    "failure modes",
+    "QA",
+    "error prevention",
+    "AI testing"
+  ],
+  "zone": {
+    "slug": "using-ai",
+    "title": "Using AI"
+  },
   "lifeOsSource": {
     "hack": "Ask AI to generate edge cases and failure modes, then promote only verified candidates into tests or checks.",
     "zone": "Using AI",
@@ -18,19 +34,58 @@
     "checkIn": "Did AI expose a failure I had not covered, and did I turn that idea into a check rather than merely admire the list?"
   },
   "faq": [
-    {"id":"ai-test-case-generator-1","question":"Are generated test cases evidence that a bug exists?","answer":"No. They are hypotheses about where the system could fail. Reproduce or validate the condition before treating it as a defect."},
-    {"id":"ai-test-case-generator-2","question":"What context helps most?","answer":"State the contract, boundaries, user roles, inputs, outputs, integrations, and known costly failures. Generic prompts produce generic edge cases."}
+    {
+      "id": "ai-test-case-generator-1",
+      "question": "Are generated test cases evidence that a bug exists?",
+      "answer": "No. They are hypotheses about where the system could fail. Reproduce or validate the condition before treating it as a defect."
+    },
+    {
+      "id": "ai-test-case-generator-2",
+      "question": "What context helps most?",
+      "answer": "State the contract, boundaries, user roles, inputs, outputs, integrations, and known costly failures. Generic prompts produce generic edge cases."
+    }
   ],
-  "meta": {"publishedISO":"2026-09-15T09:23:00Z","updatedISO":"2026-09-15T09:23:00Z","authorName":"Brali","authorUrl":"/","accent":"mint"},
+  "meta": {
+    "publishedISO": "2026-09-15T09:23:00Z",
+    "updatedISO": "2026-09-15T09:23:00Z",
+    "authorName": "Brali",
+    "authorUrl": "/",
+    "accent": "mint"
+  },
   "body": {
-    "intro": {"html":"<p>AI can be a cheap source of additional suspicion. That is valuable in QA, provided suspicion eventually becomes a reproducible check.</p>"},
+    "intro": {
+      "html": "<p>AI can be a cheap source of additional suspicion. That is valuable in QA, provided suspicion eventually becomes a reproducible check.</p>"
+    },
     "sections": [
-      {"slug":"contract","title":"1. Give it the contract","html":"<p>Describe what should happen and what must never happen. Include meaningful constraints rather than only a feature name.</p>"},
-      {"slug":"attack","title":"2. Ask from several failure angles","html":"<p>Request boundary values, missing data, duplicated actions, stale state, wrong permissions, malformed inputs, timeouts, interruptions, and misuse that fits the system.</p>"},
-      {"slug":"triage","title":"3. Triage the candidates","html":"<p>Remove duplicates and impossible scenarios. Rank what remains by likelihood, impact, and cost to test.</p>"},
-      {"slug":"encode","title":"4. Encode the useful ones","html":"<p>Turn the surviving cases into automated tests, acceptance examples, monitoring rules, or a concise manual checklist. The artifact, not the brainstorm, is the payoff.</p>"}
+      {
+        "slug": "contract",
+        "title": "1. Give it the contract",
+        "html": "<p>Describe what should happen and what must never happen. Include meaningful constraints rather than only a feature name.</p>"
+      },
+      {
+        "slug": "attack",
+        "title": "2. Ask from several failure angles",
+        "html": "<p>Request boundary values, missing data, duplicated actions, stale state, wrong permissions, malformed inputs, timeouts, interruptions, and misuse that fits the system.</p>"
+      },
+      {
+        "slug": "triage",
+        "title": "3. Triage the candidates",
+        "html": "<p>Remove duplicates and impossible scenarios. Rank what remains by likelihood, impact, and cost to test.</p>"
+      },
+      {
+        "slug": "encode",
+        "title": "4. Encode the useful ones",
+        "html": "<p>Turn the surviving cases into automated tests, acceptance examples, monitoring rules, or a concise manual checklist. The artifact, not the brainstorm, is the payoff.</p>"
+      }
     ]
   },
   "references": [],
-  "editorialCuration": {"status":"curated","evidenceStatus":"practical","reviewedAt":"2026-09-15","reviewedBy":"Brali editorial agent","reason":"Publish as an AI-assisted QA ideation protocol with an explicit hypothesis-to-test boundary and no claim that model-generated cases are complete or correct.","registry":"review-registry-using-ai-starters.json"}
+  "editorialCuration": {
+    "status": "curated",
+    "evidenceStatus": "practical",
+    "reviewedAt": "2026-09-15",
+    "reviewedBy": "Brali editorial agent",
+    "reason": "Publish as an AI-assisted QA ideation protocol with an explicit hypothesis-to-test boundary and no claim that model-generated cases are complete or correct.",
+    "registry": "review-registry-using-ai-starters.json"
+  }
 }

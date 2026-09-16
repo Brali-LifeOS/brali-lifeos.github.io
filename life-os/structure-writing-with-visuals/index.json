@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:structure-writing-with-visuals",
   "slug": "structure-writing-with-visuals",
-  "title": "Design Your Writing",
-  "description": "Use visual elements like headings, subheadings, images, tables, and diagrams to structure your text. These tools help guide your reader and make your writing more intuitive and engaging.",
+  "title": "Structure Dense Writing for Fast Navigation",
+  "description": "Turn a dense draft into a navigable document by giving each section one job and choosing headings, tables, diagrams, or images according to the information the reader needs to inspect.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
   "machine_url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Creativity & Expression"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:structure-writing-with-visuals",
+    "language": "en",
+    "slug": "structure-writing-with-visuals",
+    "url": "https://brali-lifeos.github.io/life-os/structure-writing-with-visuals/",
+    "title": "Structure Dense Writing for Fast Navigation",
+    "description": "Turn a dense draft into a navigable document by giving each section one job and choosing headings, tables, diagrams, or images according to the information the reader needs to inspect.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "creativity-expression",
+          "title": "Creativity & Expression"
+        }
+      ],
+      "topics": [
+        {
+          "id": "writing",
+          "title": "Writing"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "creativity-expression",
+        "growth_zone_slug": "writing"
+      }
+    },
+    "life_area": {
+      "slug": "creativity-expression",
+      "title": "Creativity & Expression"
+    },
+    "growth_zone": {
+      "slug": "writing",
+      "title": "Writing"
+    },
+    "action": "Name the reader's main task, read the current headings without the body, reorganize sections around that path, replace repeated comparisons with a table when rows share the same attributes, use a diagram for relationships or sequence, and keep images only when they show information that prose would make harder to inspect.",
+    "check_in": "Can a reader scan the headings and understand the path, and does every visual element answer a question that the surrounding text does not answer as clearly?",
+    "keywords": [
+      "Writing",
+      "Life OS",
+      "Design Your Writing"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/structure-writing-with-visuals.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

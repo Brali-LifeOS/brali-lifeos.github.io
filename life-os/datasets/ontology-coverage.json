@@ -3,16 +3,16 @@
   "name": "Brali Ontology Coverage",
   "generated_from": "evidence index + trusted protocol feed + research candidate queue",
   "summary": {
-    "library_entries": 947,
-    "trusted_protocols": 139,
-    "domain_mapped": 947,
-    "topic_mapped": 710,
-    "topic_pending": 237,
+    "library_entries": 973,
+    "trusted_protocols": 224,
+    "domain_mapped": 973,
+    "topic_mapped": 747,
+    "topic_pending": 226,
     "trusted_topic_pending": 0,
-    "topic_coverage_percent": 75,
-    "method_tagged": 147,
-    "lens_tagged": 123,
-    "research_candidates": 15,
+    "topic_coverage_percent": 76.8,
+    "method_tagged": 148,
+    "lens_tagged": 136,
+    "research_candidates": 65,
     "growth_gap_topics": 22
   },
   "migration_rule": "topic-pending is deliberate: a legacy Method or Lens collection provides a useful secondary classification but cannot honestly determine the concrete Topic for every contained entry.",
@@ -20,7 +20,7 @@
     {
       "id": "focus-action",
       "title": "Focus & Action",
-      "entries": 110
+      "entries": 131
     },
     {
       "id": "mind-resilience",
@@ -30,7 +30,7 @@
     {
       "id": "health-energy",
       "title": "Health & Energy",
-      "entries": 83
+      "entries": 85
     },
     {
       "id": "learning-thinking",
@@ -40,22 +40,22 @@
     {
       "id": "communication-relationships",
       "title": "Communication & Relationships",
-      "entries": 159
+      "entries": 165
     },
     {
       "id": "creativity-expression",
       "title": "Creativity & Expression",
-      "entries": 35
+      "entries": 39
     },
     {
       "id": "work-money",
       "title": "Work & Money",
-      "entries": 77
+      "entries": 82
     },
     {
       "id": "environment-digital",
       "title": "Environment & Digital Life",
-      "entries": 5
+      "entries": 16
     }
   ],
   "topics": [
@@ -64,63 +64,63 @@
       "title": "Attention & Focus",
       "domain_id": "focus-action",
       "status": "growth-gap",
-      "entries": 2,
-      "research_candidates": 1
+      "entries": 5,
+      "research_candidates": 6
     },
     {
       "id": "task-initiation",
       "title": "Task Initiation",
       "domain_id": "focus-action",
       "status": "active",
-      "entries": 23,
-      "research_candidates": 2
+      "entries": 28,
+      "research_candidates": 8
     },
     {
       "id": "planning-prioritization",
       "title": "Planning & Prioritization",
       "domain_id": "focus-action",
       "status": "active",
-      "entries": 2,
-      "research_candidates": 0
+      "entries": 7,
+      "research_candidates": 6
     },
     {
       "id": "goals",
       "title": "Goals",
       "domain_id": "focus-action",
       "status": "active",
-      "entries": 51,
-      "research_candidates": 1
+      "entries": 54,
+      "research_candidates": 5
     },
     {
       "id": "habits-consistency",
       "title": "Habits & Consistency",
       "domain_id": "focus-action",
       "status": "active",
-      "entries": 9,
-      "research_candidates": 2
+      "entries": 12,
+      "research_candidates": 6
     },
     {
       "id": "decision-making",
       "title": "Decision Making",
       "domain_id": "focus-action",
       "status": "growth-gap",
-      "entries": 6,
-      "research_candidates": 0
+      "entries": 15,
+      "research_candidates": 5
     },
     {
       "id": "error-prevention",
       "title": "Error Prevention",
       "domain_id": "focus-action",
       "status": "active",
-      "entries": 11,
-      "research_candidates": 0
+      "entries": 15,
+      "research_candidates": 3
     },
     {
       "id": "stress-regulation",
       "title": "Stress Regulation",
       "domain_id": "mind-resilience",
       "status": "active",
-      "entries": 9,
+      "entries": 10,
       "research_candidates": 0
     },
     {
@@ -153,7 +153,7 @@
       "domain_id": "mind-resilience",
       "status": "active",
       "entries": 28,
-      "research_candidates": 0
+      "research_candidates": 3
     },
     {
       "id": "psychological-flexibility",
@@ -168,32 +168,32 @@
       "title": "Self-Awareness",
       "domain_id": "mind-resilience",
       "status": "growth-gap",
-      "entries": 4,
-      "research_candidates": 0
+      "entries": 5,
+      "research_candidates": 1
     },
     {
       "id": "health-basics",
       "title": "Everyday Health Basics",
       "domain_id": "health-energy",
       "status": "active",
-      "entries": 61,
-      "research_candidates": 0
+      "entries": 62,
+      "research_candidates": 2
     },
     {
       "id": "sleep-circadian",
       "title": "Sleep & Circadian Rhythm",
       "domain_id": "health-energy",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 2
+      "entries": 2,
+      "research_candidates": 4
     },
     {
       "id": "movement",
       "title": "Movement",
       "domain_id": "health-energy",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 1
+      "entries": 4,
+      "research_candidates": 8
     },
     {
       "id": "fitness-strength",
@@ -208,7 +208,7 @@
       "title": "Recovery & Energy",
       "domain_id": "health-energy",
       "status": "growth-gap",
-      "entries": 2,
+      "entries": 3,
       "research_candidates": 1
     },
     {
@@ -217,14 +217,14 @@
       "domain_id": "health-energy",
       "status": "growth-gap",
       "entries": 0,
-      "research_candidates": 0
+      "research_candidates": 1
     },
     {
       "id": "cardiovascular-health",
       "title": "Cardiovascular Health",
       "domain_id": "health-energy",
       "status": "active",
-      "entries": 10,
+      "entries": 9,
       "research_candidates": 0
     },
     {
@@ -232,16 +232,16 @@
       "title": "Memory",
       "domain_id": "learning-thinking",
       "status": "active",
-      "entries": 4,
-      "research_candidates": 5
+      "entries": 7,
+      "research_candidates": 9
     },
     {
       "id": "skill-learning",
       "title": "Skill Learning",
       "domain_id": "learning-thinking",
       "status": "active",
-      "entries": 27,
-      "research_candidates": 3
+      "entries": 30,
+      "research_candidates": 6
     },
     {
       "id": "language-learning",
@@ -249,22 +249,22 @@
       "domain_id": "learning-thinking",
       "status": "active",
       "entries": 17,
-      "research_candidates": 2
+      "research_candidates": 3
     },
     {
       "id": "critical-thinking",
       "title": "Critical Thinking",
       "domain_id": "learning-thinking",
       "status": "active",
-      "entries": 22,
-      "research_candidates": 0
+      "entries": 28,
+      "research_candidates": 3
     },
     {
       "id": "problem-solving",
       "title": "Problem Solving",
       "domain_id": "learning-thinking",
       "status": "growth-gap",
-      "entries": 1,
+      "entries": 5,
       "research_candidates": 0
     },
     {
@@ -272,15 +272,15 @@
       "title": "Metacognition",
       "domain_id": "learning-thinking",
       "status": "growth-gap",
-      "entries": 4,
-      "research_candidates": 0
+      "entries": 8,
+      "research_candidates": 3
     },
     {
       "id": "data-literacy",
       "title": "Data Literacy",
       "domain_id": "learning-thinking",
       "status": "active",
-      "entries": 12,
+      "entries": 16,
       "research_candidates": 0
     },
     {
@@ -288,8 +288,8 @@
       "title": "Cognitive Biases",
       "domain_id": "learning-thinking",
       "status": "active",
-      "entries": 166,
-      "research_candidates": 0
+      "entries": 163,
+      "research_candidates": 2
     },
     {
       "id": "listening",
@@ -304,16 +304,16 @@
       "title": "Clear Communication",
       "domain_id": "communication-relationships",
       "status": "active",
-      "entries": 124,
-      "research_candidates": 2
+      "entries": 129,
+      "research_candidates": 3
     },
     {
       "id": "difficult-conversations",
       "title": "Difficult Conversations",
       "domain_id": "communication-relationships",
       "status": "growth-gap",
-      "entries": 0,
-      "research_candidates": 0
+      "entries": 2,
+      "research_candidates": 3
     },
     {
       "id": "conflict-repair",
@@ -321,23 +321,23 @@
       "domain_id": "communication-relationships",
       "status": "active",
       "entries": 4,
-      "research_candidates": 1
+      "research_candidates": 3
     },
     {
       "id": "relationships",
       "title": "Relationships",
       "domain_id": "communication-relationships",
       "status": "active",
-      "entries": 31,
-      "research_candidates": 1
+      "entries": 33,
+      "research_candidates": 3
     },
     {
       "id": "social-confidence",
       "title": "Social Confidence",
       "domain_id": "communication-relationships",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
+      "entries": 2,
+      "research_candidates": 1
     },
     {
       "id": "idea-generation",
@@ -345,39 +345,39 @@
       "domain_id": "creativity-expression",
       "status": "active",
       "entries": 21,
-      "research_candidates": 0
+      "research_candidates": 2
     },
     {
       "id": "creative-problem-solving",
       "title": "Creative Problem Solving",
       "domain_id": "creativity-expression",
       "status": "growth-gap",
-      "entries": 6,
-      "research_candidates": 0
+      "entries": 8,
+      "research_candidates": 1
     },
     {
       "id": "writing",
       "title": "Writing",
       "domain_id": "creativity-expression",
       "status": "active",
-      "entries": 6,
-      "research_candidates": 1
+      "entries": 9,
+      "research_candidates": 2
     },
     {
       "id": "revision-feedback",
       "title": "Revision & Feedback",
       "domain_id": "creativity-expression",
       "status": "active",
-      "entries": 5,
-      "research_candidates": 1
+      "entries": 7,
+      "research_candidates": 2
     },
     {
       "id": "work-systems",
       "title": "Work Systems",
       "domain_id": "work-money",
       "status": "active",
-      "entries": 32,
-      "research_candidates": 0
+      "entries": 41,
+      "research_candidates": 9
     },
     {
       "id": "career",
@@ -393,14 +393,14 @@
       "domain_id": "work-money",
       "status": "active",
       "entries": 7,
-      "research_candidates": 0
+      "research_candidates": 1
     },
     {
       "id": "strategy",
       "title": "Strategy",
       "domain_id": "work-money",
       "status": "active",
-      "entries": 1,
+      "entries": 2,
       "research_candidates": 0
     },
     {
@@ -416,7 +416,7 @@
       "title": "Marketing & Positioning",
       "domain_id": "work-money",
       "status": "active",
-      "entries": 10,
+      "entries": 9,
       "research_candidates": 0
     },
     {
@@ -424,31 +424,31 @@
       "title": "Digital Attention",
       "domain_id": "environment-digital",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
+      "entries": 4,
+      "research_candidates": 6
     },
     {
       "id": "information-management",
       "title": "Information Management",
       "domain_id": "environment-digital",
       "status": "growth-gap",
-      "entries": 0,
-      "research_candidates": 0
+      "entries": 6,
+      "research_candidates": 1
     },
     {
       "id": "environment-design",
       "title": "Environment Design",
       "domain_id": "environment-digital",
       "status": "active",
-      "entries": 3,
-      "research_candidates": 0
+      "entries": 4,
+      "research_candidates": 1
     },
     {
       "id": "workspace",
       "title": "Workspace",
       "domain_id": "environment-digital",
       "status": "growth-gap",
-      "entries": 2,
+      "entries": 3,
       "research_candidates": 0
     },
     {
@@ -456,8 +456,8 @@
       "title": "Digital Wellbeing",
       "domain_id": "environment-digital",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
+      "entries": 2,
+      "research_candidates": 4
     }
   ],
   "methods": [
@@ -465,15 +465,15 @@
       "id": "implementation-intentions",
       "title": "Implementation Intentions",
       "status": "active",
-      "entries": 0,
-      "research_candidates": 1
+      "entries": 1,
+      "research_candidates": 4
     },
     {
       "id": "mcii-woop",
       "title": "MCII / WOOP",
       "status": "active",
       "entries": 0,
-      "research_candidates": 1
+      "research_candidates": 2
     },
     {
       "id": "retrieval-practice",
@@ -614,15 +614,15 @@
       "id": "qa",
       "title": "Quality Assurance",
       "status": "active",
-      "entries": 10,
-      "research_candidates": 0
+      "entries": 14,
+      "research_candidates": 5
     },
     {
       "id": "architecture",
       "title": "Architecture",
       "status": "active",
       "entries": 18,
-      "research_candidates": 0
+      "research_candidates": 1
     },
     {
       "id": "detective",
@@ -642,7 +642,7 @@
       "id": "chess",
       "title": "Chess",
       "status": "active",
-      "entries": 13,
+      "entries": 12,
       "research_candidates": 0
     },
     {
@@ -671,7 +671,7 @@
   "unresolved_legacy_collections": [
     {
       "zone_slug": "triz",
-      "entries": 45,
+      "entries": 43,
       "trusted": 0,
       "kind": "method",
       "target_id": "triz",
@@ -679,7 +679,7 @@
     },
     {
       "zone_slug": "as-detective",
-      "entries": 33,
+      "entries": 30,
       "trusted": 0,
       "kind": "lens",
       "target_id": "detective",
@@ -694,14 +694,6 @@
       "target_title": "Architecture"
     },
     {
-      "zone_slug": "grandmaster",
-      "entries": 12,
-      "trusted": 0,
-      "kind": "lens",
-      "target_id": "chess",
-      "target_title": "Chess"
-    },
-    {
       "zone_slug": "nlp",
       "entries": 11,
       "trusted": 0,
@@ -710,28 +702,20 @@
       "target_title": "NLP (legacy)"
     },
     {
-      "zone_slug": "stoicism",
+      "zone_slug": "grandmaster",
       "entries": 10,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "chess",
+      "target_title": "Chess"
+    },
+    {
+      "zone_slug": "stoicism",
+      "entries": 9,
       "trusted": 0,
       "kind": "lens",
       "target_id": "stoicism",
       "target_title": "Stoicism"
-    },
-    {
-      "zone_slug": "chef",
-      "entries": 9,
-      "trusted": 0,
-      "kind": "lens",
-      "target_id": "chef-operations",
-      "target_title": "Chef / Operations"
-    },
-    {
-      "zone_slug": "insider",
-      "entries": 9,
-      "trusted": 0,
-      "kind": "lens",
-      "target_id": "insider-fieldcraft",
-      "target_title": "Fieldcraft"
     },
     {
       "zone_slug": "antifragility",
@@ -742,12 +726,28 @@
       "target_title": "Antifragility"
     },
     {
+      "zone_slug": "chef",
+      "entries": 8,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "chef-operations",
+      "target_title": "Chef / Operations"
+    },
+    {
       "zone_slug": "gestalt",
       "entries": 8,
       "trusted": 0,
       "kind": "method",
       "target_id": "gestalt",
       "target_title": "Gestalt-derived"
+    },
+    {
+      "zone_slug": "insider",
+      "entries": 8,
+      "trusted": 0,
+      "kind": "lens",
+      "target_id": "insider-fieldcraft",
+      "target_title": "Fieldcraft"
     },
     {
       "zone_slug": "cognitive-analytic",
@@ -839,7 +839,7 @@
     },
     {
       "zone_slug": "as-qa",
-      "entries": 5,
+      "entries": 4,
       "trusted": 0,
       "kind": "lens",
       "target_id": "qa",
@@ -864,28 +864,12 @@
       "research_candidates": 0
     },
     {
-      "id": "difficult-conversations",
-      "title": "Difficult Conversations",
-      "domain_id": "communication-relationships",
-      "status": "growth-gap",
-      "entries": 0,
-      "research_candidates": 0
-    },
-    {
-      "id": "information-management",
-      "title": "Information Management",
-      "domain_id": "environment-digital",
-      "status": "growth-gap",
-      "entries": 0,
-      "research_candidates": 0
-    },
-    {
       "id": "nutrition",
       "title": "Nutrition",
       "domain_id": "health-energy",
       "status": "growth-gap",
       "entries": 0,
-      "research_candidates": 0
+      "research_candidates": 1
     },
     {
       "id": "worry-rumination",
@@ -896,30 +880,6 @@
       "research_candidates": 0
     },
     {
-      "id": "digital-attention",
-      "title": "Digital Attention",
-      "domain_id": "environment-digital",
-      "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
-    },
-    {
-      "id": "digital-wellbeing",
-      "title": "Digital Wellbeing",
-      "domain_id": "environment-digital",
-      "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
-    },
-    {
-      "id": "movement",
-      "title": "Movement",
-      "domain_id": "health-energy",
-      "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 1
-    },
-    {
       "id": "negotiation",
       "title": "Negotiation",
       "domain_id": "work-money",
@@ -928,36 +888,20 @@
       "research_candidates": 0
     },
     {
-      "id": "problem-solving",
-      "title": "Problem Solving",
-      "domain_id": "learning-thinking",
-      "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
-    },
-    {
-      "id": "sleep-circadian",
-      "title": "Sleep & Circadian Rhythm",
-      "domain_id": "health-energy",
-      "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 2
-    },
-    {
-      "id": "social-confidence",
-      "title": "Social Confidence",
+      "id": "difficult-conversations",
+      "title": "Difficult Conversations",
       "domain_id": "communication-relationships",
       "status": "growth-gap",
-      "entries": 1,
-      "research_candidates": 0
+      "entries": 2,
+      "research_candidates": 3
     },
     {
-      "id": "attention-focus",
-      "title": "Attention & Focus",
-      "domain_id": "focus-action",
+      "id": "digital-wellbeing",
+      "title": "Digital Wellbeing",
+      "domain_id": "environment-digital",
       "status": "growth-gap",
       "entries": 2,
-      "research_candidates": 1
+      "research_candidates": 4
     },
     {
       "id": "listening",
@@ -976,20 +920,20 @@
       "research_candidates": 0
     },
     {
-      "id": "recovery-energy",
-      "title": "Recovery & Energy",
+      "id": "sleep-circadian",
+      "title": "Sleep & Circadian Rhythm",
       "domain_id": "health-energy",
       "status": "growth-gap",
       "entries": 2,
-      "research_candidates": 1
+      "research_candidates": 4
     },
     {
-      "id": "workspace",
-      "title": "Workspace",
-      "domain_id": "environment-digital",
+      "id": "social-confidence",
+      "title": "Social Confidence",
+      "domain_id": "communication-relationships",
       "status": "growth-gap",
       "entries": 2,
-      "research_candidates": 0
+      "research_candidates": 1
     },
     {
       "id": "emotion-regulation",
@@ -1000,11 +944,51 @@
       "research_candidates": 0
     },
     {
-      "id": "metacognition",
-      "title": "Metacognition",
-      "domain_id": "learning-thinking",
+      "id": "recovery-energy",
+      "title": "Recovery & Energy",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 3,
+      "research_candidates": 1
+    },
+    {
+      "id": "workspace",
+      "title": "Workspace",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 3,
+      "research_candidates": 0
+    },
+    {
+      "id": "digital-attention",
+      "title": "Digital Attention",
+      "domain_id": "environment-digital",
       "status": "growth-gap",
       "entries": 4,
+      "research_candidates": 6
+    },
+    {
+      "id": "movement",
+      "title": "Movement",
+      "domain_id": "health-energy",
+      "status": "growth-gap",
+      "entries": 4,
+      "research_candidates": 8
+    },
+    {
+      "id": "attention-focus",
+      "title": "Attention & Focus",
+      "domain_id": "focus-action",
+      "status": "growth-gap",
+      "entries": 5,
+      "research_candidates": 6
+    },
+    {
+      "id": "problem-solving",
+      "title": "Problem Solving",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 5,
       "research_candidates": 0
     },
     {
@@ -1012,24 +996,40 @@
       "title": "Self-Awareness",
       "domain_id": "mind-resilience",
       "status": "growth-gap",
-      "entries": 4,
-      "research_candidates": 0
+      "entries": 5,
+      "research_candidates": 1
+    },
+    {
+      "id": "information-management",
+      "title": "Information Management",
+      "domain_id": "environment-digital",
+      "status": "growth-gap",
+      "entries": 6,
+      "research_candidates": 1
     },
     {
       "id": "creative-problem-solving",
       "title": "Creative Problem Solving",
       "domain_id": "creativity-expression",
       "status": "growth-gap",
-      "entries": 6,
-      "research_candidates": 0
+      "entries": 8,
+      "research_candidates": 1
+    },
+    {
+      "id": "metacognition",
+      "title": "Metacognition",
+      "domain_id": "learning-thinking",
+      "status": "growth-gap",
+      "entries": 8,
+      "research_candidates": 3
     },
     {
       "id": "decision-making",
       "title": "Decision Making",
       "domain_id": "focus-action",
       "status": "growth-gap",
-      "entries": 6,
-      "research_candidates": 0
+      "entries": 15,
+      "research_candidates": 5
     }
   ]
 }

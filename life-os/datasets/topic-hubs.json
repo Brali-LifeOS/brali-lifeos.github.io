@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "dataset_version": "1.0.0",
+  "dataset_version": "1.1.0",
   "name": "Brali Topic Knowledge Hubs",
   "description": "Compact topic entry points generated from the Brali ontology, trusted Protocol Feed, Flagship 100, Evidence Decisions, and research discovery queue.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/datasets/topic-hubs.json",
@@ -8,7 +8,7 @@
   "hubs": [
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "sleep",
       "title": "Sleep",
       "question": "How can I build a more reliable sleep routine without turning weak evidence into a prescription?",
@@ -17,7 +17,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/sleep/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "1 trusted protocol recommendation available.",
+      "coverage_note": "2 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "sleep-circadian",
@@ -27,6 +27,29 @@
         }
       ],
       "protocols": [
+        {
+          "canonical_id": "brali:protocol:stop-caffeine-after-lunch",
+          "protocol_id": "brali:stop-caffeine-after-lunch",
+          "slug": "stop-caffeine-after-lunch",
+          "url": "https://brali-lifeos.github.io/life-os/stop-caffeine-after-lunch/",
+          "title": "Move Caffeine Earlier When Sleep Matters",
+          "description": "If caffeine may be reaching into the night, move the last dose earlier and reduce large late-day doses. A 2025 randomized crossover trial found that a single 400 mg dose disrupted several sleep measures even when taken many hours before bed; a small 100 mg dose did not show a significant effect at the tested timings. That is a reason to be dose-aware, not a license for one universal cutoff.",
+          "action": "For one or two weeks, note the time and rough amount of your last caffeine, your bedtime, and whether sleep onset, overnight restfulness, and next-day sleepiness are broadly better or worse. Start by moving the last large dose earlier or reducing it; do not deliberately take caffeine late just to test your tolerance.",
+          "check_in": "When was my last caffeine, roughly how much was it, and did sleep and next-day alertness look better, worse, or unchanged across several days?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+            "reviewed_at": "2026-09-06"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "sleep-circadian",
+            "health-basics"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
         {
           "canonical_id": "brali:protocol:ideal-sleep-hours-finder",
           "protocol_id": "brali:ideal-sleep-hours-finder",
@@ -51,6 +74,70 @@
         }
       ],
       "evidence_decisions": [
+        {
+          "id": "caffeine-dose-timing-sleep-boundary-2025",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-06",
+          "source_title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11985402/",
+          "source_type": "primary-study",
+          "citation_text": "Gardiner CL, Weakley J, Burke LM, et al. Sleep. 2025;48(4):zsae230.",
+          "supported_claim": "Caffeine timing should be interpreted together with dose rather than as one universal after-lunch rule. In this small randomized crossover trial, a single 400 mg dose disrupted multiple objective sleep measures when taken within 12 hours of bedtime, with larger disruption closer to bedtime; no statistically significant sleep effect was detected for 100 mg at the tested 12-, 8-, and 4-hour timings. For Brali, this supports moving large late-day caffeine doses earlier when sleep matters and using bedtime-relative timing rather than a fixed clock cutoff.",
+          "unsupported_or_overstated_claims": [
+            "Everyone should stop caffeine at 1 p.m. or immediately after lunch.",
+            "A 100 mg dose four hours before bedtime is safe or sleep-neutral for every person.",
+            "Twelve hours is a scientifically established cutoff for every caffeine dose or pattern of use.",
+            "People can infer whether they metabolize caffeine quickly from whether they fall asleep after an afternoon coffee.",
+            "The study establishes an ideal daily caffeine dose, a body-weight dosing range, or a morning dosing schedule.",
+            "The trial tested ordinary coffee, tea, energy drinks, or repeated real-world servings rather than standardized caffeine capsules.",
+            "A personal sleep log can establish a causal individual caffeine dose-response curve."
+          ],
+          "limitations": [
+            "The sample was small (23 participants) and included only healthy men aged 18–40, limiting generalizability to women, older adults, adolescents, people with sleep disorders, and other populations.",
+            "Participants were moderate habitual caffeine users; results may differ in people with very low, very high, or irregular caffeine exposure.",
+            "The intervention used acute standardized caffeine capsules rather than the variable doses, ingredients, absorption patterns, and repeated servings found in real-world caffeinated products.",
+            "The study tested only two caffeine doses and three pre-bed timing points, so it cannot define a continuous or personalized cutoff.",
+            "Sleep was measured with in-home partial polysomnography rather than full laboratory polysomnography.",
+            "A nonsignificant result for 100 mg in this sample is not proof of no effect for every individual, especially given known variability in caffeine pharmacokinetics and sensitivity."
+          ],
+          "topic_ids": [
+            "sleep-circadian",
+            "health-basics"
+          ]
+        },
+        {
+          "id": "pmr-subjective-sleep-quality-boundary-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+          "source_url": "https://www.frontiersin.org/journals/public-health/articles/10.3389/fpubh.2026.1906525/full",
+          "source_type": "systematic-review-meta-analysis",
+          "citation_text": "Li K, Chen S, Liu Y, Yu N. Front Public Health. 2026;14:1906525.",
+          "supported_claim": "Across the included randomized trials, PMR improved subjective PSQI sleep-quality scores on average in clinically heterogeneous adult populations. The direction of the pooled effect remained after sensitivity and trim-and-fill analyses. This supports adding sleep as a bounded use case to Brali's existing conservative PMR protocol. It does not establish an optimal timer, session count or frequency, and the evidence should be described as subjective sleep-quality evidence in the studied clinical populations rather than a universal sleep effect.",
+          "unsupported_or_overstated_claims": [
+            "PMR reliably improves sleep for every adult or for healthy adults in general.",
+            "The meta-analysis proves that PMR shortens sleep latency, increases total sleep time or improves objective sleep architecture.",
+            "A specific 5/30-second timer, 7-minute routine, 12-group sequence, 18-group sequence or weekly frequency is the evidence-based optimum.",
+            "More PMR sessions produce larger sleep benefits.",
+            "PMR improves sleep because it lowers cortisol, reduces sympathetic activity or activates parasympathetic activity; these mechanisms were discussed, not tested by this meta-analysis.",
+            "PMR does not work in adults aged 55 years or older.",
+            "The pooled effect size can be treated as an expected individual improvement.",
+            "PMR should replace assessment or treatment for persistent or severe sleep problems."
+          ],
+          "limitations": [
+            "Between-study heterogeneity was very high (I2 85.5%) and was not explained by the reported subgroup analyses.",
+            "The included trials involved diverse clinical populations, limiting direct generalization to healthy adults or any one condition.",
+            "Sleep quality was assessed with the subjective PSQI rather than objective sleep measures.",
+            "Intervention duration, frequency, session count and protocol details varied substantially across studies.",
+            "Egger's test suggested possible publication bias; trim-and-fill reduced the pooled estimate while retaining the direction.",
+            "Only 14 studies were available, limiting subgroup and meta-regression precision.",
+            "The age >=55 subgroup estimate was imprecise, and the formal between-subgroup difference was not significant.",
+            "The review did not establish long-term persistence of benefit after PMR stopped."
+          ],
+          "topic_ids": [
+            "sleep-circadian"
+          ]
+        },
         {
           "id": "sleep-opportunity-extension-2021",
           "decision": "propose-protocol",
@@ -106,6 +193,18 @@
       ],
       "research_watch": [
         {
+          "id": "crossref:10.3389/fpubh.2026.1906525",
+          "title": "The effects of progressive muscle relaxation on sleep quality in adults: a systematic review and meta-analysis of randomized controlled trials",
+          "status": "support-existing",
+          "publication_date": "2026-08-06",
+          "reference_url": "https://doi.org/10.3389/fpubh.2026.1906525",
+          "topic_ids": [
+            "sleep-circadian"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
           "id": "crossref:10.1016/j.jad.2025.120481",
           "title": "The association between sleep variability and cognitive function: A systematic review and meta analysis",
           "status": "watch",
@@ -113,6 +212,19 @@
           "reference_url": "https://doi.org/10.1016/j.jad.2025.120481",
           "topic_ids": [
             "sleep-circadian"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "crossref:10.1093/sleep/zsae230",
+          "title": "Dose and timing effects of caffeine on subsequent sleep: a randomized clinical crossover trial",
+          "status": "support-existing",
+          "publication_date": "2025-04-11",
+          "reference_url": "https://doi.org/10.1093/sleep/zsae230",
+          "topic_ids": [
+            "sleep-circadian",
+            "health-basics"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -147,7 +259,7 @@
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "focus",
       "title": "Focus",
       "question": "How can I start important work and stay with it instead of constantly switching?",
@@ -156,7 +268,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/focus/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "4 trusted protocol recommendations available.",
+      "coverage_note": "8 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "attention-focus",
@@ -178,6 +290,53 @@
         }
       ],
       "protocols": [
+        {
+          "canonical_id": "brali:protocol:ready-to-resume-plan",
+          "protocol_id": "brali:ready-to-resume-plan",
+          "slug": "ready-to-resume-plan",
+          "url": "https://brali-lifeos.github.io/life-os/ready-to-resume-plan/",
+          "title": "Leave a Ready-to-Resume Note Before You Switch Tasks",
+          "description": "When you must leave unfinished work, capture where you stopped, the next concrete action, and one critical restart detail before switching. The goal is a cleaner return, not eliminating every cost of interruption.",
+          "action": "Use this only when unfinished work is about to be interrupted or deliberately parked. Before switching, capture three pieces of information in whatever format fits the task: your current state, the next concrete action, and one critical detail or open question that would otherwise have to be reconstructed. Then switch. When you return, read the note and start from the recorded next action rather than re-scanning the entire task.",
+          "check_in": "When I returned, could I identify the next action quickly, or did I still have to reconstruct the task from scratch?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1287/orsc.2017.1184",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "attention-focus",
+            "task-initiation",
+            "planning-prioritization"
+          ],
+          "method_ids": [],
+          "hub_score": 1292.4
+        },
+        {
+          "canonical_id": "brali:protocol:batch-non-urgent-notifications",
+          "protocol_id": "brali:batch-non-urgent-notifications",
+          "slug": "batch-non-urgent-notifications",
+          "url": "https://brali-lifeos.github.io/life-os/batch-non-urgent-notifications/",
+          "title": "Batch Non-Urgent Notifications Instead of Receiving Them All Day",
+          "description": "Group non-urgent smartphone notifications into a few predictable delivery windows while keeping genuinely urgent channels available. The useful idea is predictable batching, not a magic number of batches.",
+          "action": "Choose the apps whose alerts are useful but rarely urgent. Use your phone's notification summary, scheduled focus mode, or another reversible setting to deliver those alerts in predictable windows. Keep calls, selected contacts, security alerts, calendars, or other genuinely time-sensitive channels outside the batch. Start with a schedule that fits your day rather than copying the study's three-times-a-day condition as a universal rule.",
+          "check_in": "Did I feel interrupted less often without creating missed urgent information, compulsive manual checking, or anxiety about what I could not see?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1016/j.chb.2019.07.016",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "digital-attention",
+            "attention-focus"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
         {
           "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
           "protocol_id": "brali:refocus-present-stop-mind-wandering",
@@ -204,6 +363,103 @@
           "hub_score": 1192.4
         },
         {
+          "canonical_id": "brali:protocol:visible-progress-monitoring",
+          "protocol_id": "brali:visible-progress-monitoring",
+          "slug": "visible-progress-monitoring",
+          "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+          "title": "Make Goal Progress Visible Instead of Guessing",
+          "description": "For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better.",
+          "action": "Choose one goal where feedback can still change what you do. Pick one observable indicator that is close to the real outcome or behavior you care about. Record it at checkpoints that match the task, compare it with the target or previous checkpoint, and decide one adjustment. Prefer a small trace you will actually use over a dashboard full of decorative metrics.",
+          "check_in": "What changed in the progress signal, and what is the one next action that follows from that information?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1037/bul0000025",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "goals",
+            "planning-prioritization",
+            "habits-consistency"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:temptation-bundling",
+          "protocol_id": "brali:temptation-bundling",
+          "slug": "temptation-bundling",
+          "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+          "title": "Pair a Useful Task with Something You Genuinely Want",
+          "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+          "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+          "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:if-then-rules-productivity",
+          "protocol_id": "brali:if-then-rules-productivity",
+          "slug": "if-then-rules-productivity",
+          "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+          "title": "Turn a Good Intention into an If-Then Plan",
+          "description": "Turn a repeated low-stakes choice into a simple cue-and-action rule, add a fallback for common exceptions, and revise the rule when it creates friction or no longer fits the work.",
+          "action": "Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work.",
+          "check_in": "Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ],
+          "method_ids": [
+            "implementation-intentions"
+          ],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:30-minute-deadline-sprints",
+          "protocol_id": "brali:30-minute-deadline-sprints",
+          "slug": "30-minute-deadline-sprints",
+          "url": "https://brali-lifeos.github.io/life-os/30-minute-deadline-sprints/",
+          "title": "Use a Short Timebox for a Rough First Pass",
+          "description": "Give a low-risk task a shorter-than-usual timebox, define what a useful first pass must contain, and reduce scope instead of pretending you can preserve everything by working faster.",
+          "action": "Pick a low-risk task where an imperfect first pass is useful. Set a short timebox, define the minimum useful output, and decide what you will leave for later. Stop or reassess when the timebox ends.",
+          "check_in": "Did the timebox help me make useful scope decisions, and what should be improved before this work is actually finished or shared?",
+          "evidence": {
+            "status": "practical",
+            "source_recorded": false,
+            "source_url": null,
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "task-initiation",
+            "planning-prioritization"
+          ],
+          "method_ids": [],
+          "hub_score": 1111.98
+        },
+        {
           "canonical_id": "brali:protocol:ad-astra-per-aspera-motivation-tracker",
           "protocol_id": "brali:ad-astra-per-aspera-motivation-tracker",
           "slug": "ad-astra-per-aspera-motivation-tracker",
@@ -224,55 +480,56 @@
           ],
           "method_ids": [],
           "hub_score": 1062.39
-        },
-        {
-          "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
-          "protocol_id": "brali:90-30-focus-rest-schedule",
-          "slug": "90-30-focus-rest-schedule",
-          "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
-          "title": "Alternate Focused Work With Real Breaks",
-          "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
-          "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
-          "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-18"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "attention-focus",
-            "recovery-energy"
-          ],
-          "method_ids": [],
-          "hub_score": 1062.03
-        },
-        {
-          "canonical_id": "brali:protocol:achieve-multiple-goals-at-once",
-          "protocol_id": "brali:achieve-multiple-goals-at-once",
-          "slug": "achieve-multiple-goals-at-once",
-          "url": "https://brali-lifeos.github.io/life-os/achieve-multiple-goals-at-once/",
-          "title": "One Move, Several Benefits",
-          "description": "Look for one concrete action that advances two compatible priorities, then check that combining them does not make the action vague or overloaded.",
-          "action": "Name two priorities, brainstorm one concrete action that can serve both, and reject the combination if it makes either priority weaker or unclear.",
-          "check_in": "Did combining the priorities simplify the plan, or did it create a compromised task that serves neither one well?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-20"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "planning-prioritization",
-            "goals"
-          ],
-          "method_ids": [],
-          "hub_score": 1061.46
         }
       ],
       "evidence_decisions": [
+        {
+          "id": "deadline-evidence-reversal-2026",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Replication of Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+          "source_url": "https://doi.org/10.1177/09567976261460772",
+          "source_type": "replication-study",
+          "supported_claim": "The 2026 replication did not reproduce the classic deadline effect, while the publisher now marks the 2002 source retracted.",
+          "unsupported_or_overstated_claims": [
+            "Artificial deadlines are a settled evidence-based productivity intervention.",
+            "Retraction proves that deadlines never matter in any context."
+          ],
+          "limitations": [
+            "The 2026 paper is a replication of a specific deadline experiment and does not test every form of deadline, planning, precommitment, or time-management intervention.",
+            "Failure to reproduce the classic effect lowers confidence in that specific evidence claim; it does not establish that deadlines have no effect in every task, population, incentive structure, or real-world setting.",
+            "The publisher's retraction of the 2002 paper means Brali should not use that paper as positive evidence, but retraction alone is not evidence for the opposite universal claim.",
+            "This decision is a provenance and evidence-boundary correction, not a complete systematic review of the broader deadline literature."
+          ],
+          "topic_ids": [
+            "task-initiation",
+            "planning-prioritization"
+          ]
+        },
+        {
+          "id": "implementation-intentions-meta-boundary-2024",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "The when and how of planning: Meta-analysis of implementation intentions in 642 tests",
+          "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+          "source_type": "meta-analysis",
+          "supported_claim": "Cue-response implementation intentions are a well-supported self-regulation mechanism; contingent if-then formats performed better on average in the reviewed literature.",
+          "unsupported_or_overstated_claims": [
+            "Every if-then sentence guarantees behavior change.",
+            "Aggregate effect sizes apply to every productivity task."
+          ],
+          "limitations": [
+            "The meta-analysis aggregates many populations, goals, outcomes and implementation-intention variants, so its average effect is not a guaranteed effect size for one productivity task or one person.",
+            "Reported moderators such as motivation, contingent if-then form and rehearsal describe variation across the evidence base; they do not establish one universally optimal Brali recipe.",
+            "The evidence supports the implementation-intention mechanism broadly, not fixed numbers of plans, fixed rehearsal counts, fixed time windows, or productivity estimates.",
+            "The reviewed synthesis does not validate Brali's exact wording, interface or reminder implementation as a separately tested intervention."
+          ],
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ]
+        },
         {
           "id": "microbreak-wellbeing-performance-boundary-2022",
           "decision": "support-existing",
@@ -304,6 +561,91 @@
           "topic_ids": [
             "recovery-energy",
             "attention-focus"
+          ]
+        },
+        {
+          "id": "mobile-internet-block-attention-boundary-2025",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-08-27",
+          "source_title": "Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11834938/",
+          "source_type": "primary-study",
+          "citation_text": "Castelo N, Kushlev K, Ward AF, Esterman M, Reiner PB. PNAS Nexus. 2025;4(2):pgaf017.",
+          "supported_claim": "For adults who actively want to reduce constant phone connectivity, temporarily removing mobile-internet access from the phone is a defensible attention experiment. In this randomized trial, the intervention produced a small intention-to-treat improvement in objectively measured sustained attention while calls, texts and non-phone internet remained available. Brali can therefore test a bounded phone-offline window or period when the user's goal is fewer digital temptations and more sustained attention.",
+          "unsupported_or_overstated_claims": [
+            "Blocking mobile internet treats depression, anxiety, ADHD or any mental-health condition.",
+            "Two weeks is an optimal or necessary duration.",
+            "Everyone should use a dumb phone or eliminate smartphone internet.",
+            "A fixed daily screen-time threshold is scientifically established by this study.",
+            "The intervention will improve productivity, job performance or learning outcomes.",
+            "The self-reported wellbeing effects are free from expectancy or demand effects.",
+            "The study proves that every notification, app or form of internet access is harmful."
+          ],
+          "limitations": [
+            "Only 119 of 467 participants who agreed to the intervention met the preregistered compliance threshold, so the full two-week block was difficult to sustain.",
+            "The sample was strongly motivated to reduce smartphone use, which limits generalizability to people who do not share that goal.",
+            "Only 67 percent completed all three surveys; completers had somewhat better baseline mental health and sustained attention than non-completers.",
+            "The delayed-intervention design did not provide an active placebo control, so expectancy and demand effects may have affected self-report outcomes.",
+            "The sustained-attention task provides a cognitive outcome, not direct evidence of improved work, study, safety or life performance.",
+            "The study tested a broad mobile-internet block, not shorter work windows, app-specific limits, notification batching or other lower-friction variants."
+          ],
+          "topic_ids": [
+            "attention-focus",
+            "digital-attention",
+            "digital-wellbeing"
+          ]
+        },
+        {
+          "id": "notification-batching-boundary-2019",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Batching smartphone notifications can improve well-being",
+          "source_url": "https://doi.org/10.1016/j.chb.2019.07.016",
+          "source_type": "primary-study",
+          "citation_text": "Fitz N, Kushlev K, Jagannathan R, Lewis T, Paliwal D, Ariely D. Comput Hum Behav. 2019;101:84-94.",
+          "supported_claim": "Predictable batching of non-urgent notifications is a defensible attention-environment experiment. In this field trial, three daily batches reduced perceived interruption and stress relative to usual delivery, while hourly batching changed little and complete notification removal increased anxiety/FoMO. Brali should preserve urgent exceptions and treat schedule frequency as a user-fit parameter rather than a fixed dose.",
+          "unsupported_or_overstated_claims": [
+            "Three notification batches per day is universally optimal.",
+            "Hourly batching never helps anyone.",
+            "Turning all notifications off is generally harmful.",
+            "Notification batching reliably increases objective productivity or long-term wellbeing.",
+            "The result automatically generalizes to every operating system, notification type, occupation, or family situation."
+          ],
+          "limitations": [
+            "Single short field experiment rather than a replicated long-term evidence base.",
+            "Participants were recruited through an online labor market and may not represent all smartphone users or work contexts.",
+            "The intervention used a custom notification-management implementation.",
+            "Many psychological outcomes were self-reported and the study intentionally used broad exploratory measurement.",
+            "The study compared a small set of schedules and cannot identify an optimal individualized batching frequency."
+          ],
+          "topic_ids": [
+            "digital-attention",
+            "attention-focus"
+          ]
+        },
+        {
+          "id": "notification-blocking-workday-boundary-2023",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Effects of task interruptions caused by notifications from communication applications on strain and performance",
+          "source_url": "https://doi.org/10.1002/1348-9585.12408",
+          "source_type": "primary-study",
+          "supported_claim": "Disabling automatic notifications can reduce notification interruptions; in this field experiment, fewer interruptions mediated better perceived performance and lower irritation.",
+          "unsupported_or_overstated_claims": [
+            "All notifications should be off all day for everyone.",
+            "The study proves an optimal focus-block duration.",
+            "The effect is independent of FoMO and response expectations."
+          ],
+          "limitations": [
+            "The study was a one-day field experiment, so it does not establish durable effects of notification blocking over longer work periods or adaptation over time.",
+            "Performance and irritation outcomes were self-reported, and the direct intervention effect on performance was not significant; the reported performance pathway was indirect through fewer interruptions.",
+            "Work roles differ in response-time obligations, telepressure, fear of missing out and safety or escalation requirements, so an always-off notification rule is not supported.",
+            "The study tests communication-application notification interruptions, not every form of digital distraction or every focus-window design."
+          ],
+          "topic_ids": [
+            "attention-focus",
+            "digital-attention",
+            "work-systems"
           ]
         },
         {
@@ -339,45 +681,222 @@
             "task-initiation",
             "habits-consistency"
           ]
+        },
+        {
+          "id": "progress-monitoring-goal-attainment-meta-2016",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Does monitoring goal progress promote goal attainment?",
+          "source_url": "https://doi.org/10.1037/bul0000025",
+          "source_type": "meta-analysis",
+          "supported_claim": "Increasing progress monitoring improves goal attainment on average; physically recording or reporting progress was associated with larger effects.",
+          "unsupported_or_overstated_claims": [
+            "Daily tracking is uniquely optimal.",
+            "Streaks or public leaderboards are universally beneficial.",
+            "More monitoring is always better."
+          ],
+          "limitations": [
+            "The meta-analysis combines heterogeneous goals, populations and monitoring interventions, so the pooled effect does not identify one optimal metric, cadence or tracking interface.",
+            "Larger effects associated with physically recording or reporting progress do not establish that public leaderboards, streaks, social accountability or any specific app feature is universally beneficial.",
+            "The evidence supports increasing useful progress monitoring on average, not maximal monitoring; excessive or poorly chosen measurement can still create burden or metric gaming.",
+            "The synthesis does not validate Brali's exact checkpoint wording or determine which proxy measure is best for a particular user's goal."
+          ],
+          "topic_ids": [
+            "goals",
+            "planning-prioritization",
+            "habits-consistency"
+          ]
+        },
+        {
+          "id": "ready-to-resume-interruption-boundary-2018",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Tasks Interrupted: Ready-to-Resume Plan",
+          "source_url": "https://doi.org/10.1287/orsc.2017.1184",
+          "source_type": "primary-study",
+          "supported_claim": "When unfinished work must be interrupted, a short resumption plan can reduce attention residue and protect performance in the studied interruption contexts.",
+          "unsupported_or_overstated_claims": [
+            "It eliminates all switching costs.",
+            "There is a validated exact three-line template.",
+            "It has a known universal productivity percentage."
+          ],
+          "limitations": [
+            "The evidence comes from a small set of controlled interruption studies and does not represent every form of complex, collaborative or high-stakes real-world work.",
+            "A ready-to-resume plan can mitigate attention residue in the studied contexts; it does not make task switching cost-free or imply that avoidable interruptions should be accepted.",
+            "The research supports making a concrete resumption plan, not Brali's exact three-prompt note format, note length, writing medium or timing rule.",
+            "The studies do not establish a universal productivity percentage, a guaranteed performance benefit, or the same effect for every individual and task."
+          ],
+          "topic_ids": [
+            "attention-focus",
+            "task-initiation",
+            "planning-prioritization"
+          ]
+        },
+        {
+          "id": "situational-digital-disconnection-procrastination-boundary-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-08-27",
+          "source_title": "Digital disconnection as a self-regulatory strategy against procrastination",
+          "source_url": "https://www.nature.com/articles/s41598-026-46218-1",
+          "source_type": "primary-study",
+          "citation_text": "Klingelhoefer J, Gilbert A, Meier A. Scientific Reports. 2026;16:17133.",
+          "supported_claim": "Situational digital disconnection is a plausible low-friction self-regulation tactic to include in Brali's phone-offline protocol design. Within individuals, moments with more deliberate disconnection were associated with slightly less procrastination, and channel-focused strategies at the device, app or feature level showed the most promising pattern. This source adds ecological support for targeting access to a temptation before it is opened, but it does not establish a causal effect.",
+          "unsupported_or_overstated_claims": [
+            "Digital disconnection has been proven to reduce procrastination causally.",
+            "Putting the phone away will improve productivity or task performance for every user.",
+            "Device-level disconnection is always superior to app- or feature-level controls.",
+            "A specific duration, frequency or disconnection tool is optimal.",
+            "Digital media breaks are inherently procrastination or should always be suppressed.",
+            "The findings generalize unchanged beyond young adult Android users."
+          ],
+          "limitations": [
+            "The design was observational, so reverse causality and time-varying situational confounding remain possible.",
+            "Digital disconnection and procrastination were both self-reported.",
+            "Surveys asked participants to recall the previous two hours, creating possible recall delay and measurement error.",
+            "The sample was limited to young adults and Android users recruited largely through German university-related channels.",
+            "The lagged analyses and comparisons among disconnection levels were exploratory.",
+            "The study did not measure downstream work performance, academic achievement or objective task completion."
+          ],
+          "topic_ids": [
+            "task-initiation",
+            "digital-attention",
+            "digital-wellbeing"
+          ]
+        },
+        {
+          "id": "temptation-bundling-exercise-boundary-2020",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Teaching temptation bundling to boost exercise: A field experiment",
+          "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+          "source_type": "primary-study",
+          "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020.",
+          "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+          "unsupported_or_overstated_claims": [
+            "Temptation bundling works equally well for every habit.",
+            "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+            "A reward should always be restricted exclusively to the target behavior.",
+            "The technique reliably creates permanent habits.",
+            "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+          ],
+          "limitations": [
+            "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+            "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+            "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+            "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+            "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+          ],
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ]
+        },
+        {
+          "id": "time-management-specificity-boundary-2021",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Does time management work? A meta-analysis",
+          "source_url": "https://doi.org/10.1371/journal.pone.0245066",
+          "source_type": "meta-analysis",
+          "supported_claim": "Time management has moderate positive relationships with performance and wellbeing at the construct level, with substantial heterogeneity.",
+          "unsupported_or_overstated_claims": [
+            "This validates a specific planner, calendar ratio, time-block length or branded method.",
+            "All observed relationships are causal."
+          ],
+          "limitations": [
+            "The meta-analysis pools studies using different definitions and measures of time management, job or academic performance and wellbeing, which limits claims about any one technique.",
+            "A substantial part of the underlying evidence is correlational, so associations between time-management behavior and outcomes should not be read as causal effects of a specific intervention.",
+            "The synthesis does not validate an exact planner layout, calendar ratio, time-block duration, prioritization rule or scheduling cadence.",
+            "Observed relationships vary across contexts and outcomes, so broad time-management evidence should not be converted into precise universal productivity claims."
+          ],
+          "topic_ids": [
+            "planning-prioritization",
+            "habits-consistency"
+          ]
+        },
+        {
+          "id": "woop-mcii-academic-procrastination-rct-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-09",
+          "source_title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/41601124/",
+          "source_type": "randomized-controlled-trial",
+          "citation_text": "Zhou X, Wider W, Wu H, Xu Y, Qin M, Borromeo AS. Acta Psychologica. 2026;262:106168.",
+          "supported_claim": "In this specific undergraduate academic-procrastination study, MCII reduced task aversiveness and improved willingness to initiate academic tasks relative to a positive-thinking control, with effects reported through one-week follow-up. Diary reports also provided a behavioral task-initiation signal. It provides narrow corroborating evidence for the obstacle-plus-plan mechanism in an academic setting.",
+          "unsupported_or_overstated_claims": [
+            "This trial proves WOOP works for all goals or populations.",
+            "The trial establishes long-term goal achievement effects.",
+            "The results generalize to workplaces, clinical populations or high-stakes decisions.",
+            "WOOP eliminates procrastination.",
+            "A one-week follow-up establishes durable behavior change."
+          ],
+          "limitations": [
+            "The study was single-site and restricted to first-year undergraduates at one private Chinese university.",
+            "Twenty of 101 randomized participants were excluded for missing reports or intervention nonadherence, leaving 81 in the final sample (19.8% attrition).",
+            "The main psychological outcomes were self-reported; task initiation was derived from participant diary reports rather than an objective academic-performance endpoint.",
+            "The context was academic procrastination rather than general goal pursuit.",
+            "The follow-up was one week, so long-term persistence is unknown.",
+            "The study does not justify generalizing to broad life outcomes, workplaces, clinical treatment, or safety-critical decisions."
+          ],
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ]
         }
       ],
       "research_watch": [
         {
+          "id": "crossref:10.1177/09567976261488042",
+          "title": "Retraction: Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+          "status": "challenge-existing",
+          "publication_date": "2026-09-01",
+          "reference_url": "https://doi.org/10.1177/09567976261488042",
+          "topic_ids": [
+            "task-initiation",
+            "planning-prioritization"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "pubmed:42456006",
+          "title": "Replication of Procrastination, Deadlines, and Performance: Self-Control by Precommitment",
+          "status": "challenge-existing",
+          "publication_date": "2026-08-01",
+          "reference_url": "https://doi.org/10.1177/09567976261460772",
+          "topic_ids": [
+            "task-initiation",
+            "planning-prioritization"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "crossref:10.1038/s41598-026-46218-1",
+          "title": "Digital disconnection as a self-regulatory strategy against procrastination",
+          "status": "support-existing",
+          "publication_date": "2026-05-29",
+          "reference_url": "https://doi.org/10.1038/s41598-026-46218-1",
+          "topic_ids": [
+            "task-initiation",
+            "digital-attention",
+            "digital-wellbeing"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
           "id": "crossref:10.1016/j.actpsy.2025.106168",
           "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
-          "status": "screening",
+          "status": "support-existing",
           "publication_date": "2026-02-01",
           "reference_url": "https://doi.org/10.1016/j.actpsy.2025.106168",
           "topic_ids": [
             "goals",
             "habits-consistency",
             "task-initiation"
-          ],
-          "evidence_state": "discovery-only",
-          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
-        },
-        {
-          "id": "crossref:10.1371/journal.pone.0272460",
-          "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
-          "status": "support-existing",
-          "publication_date": "2022-08-31",
-          "reference_url": "https://doi.org/10.1371/journal.pone.0272460",
-          "topic_ids": [
-            "recovery-energy",
-            "attention-focus"
-          ],
-          "evidence_state": "discovery-only",
-          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
-        },
-        {
-          "id": "crossref:10.3389/fpsyg.2018.01588",
-          "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
-          "status": "challenge-existing",
-          "publication_date": "2018-08-30",
-          "reference_url": "https://doi.org/10.3389/fpsyg.2018.01588",
-          "topic_ids": [
-            "task-initiation",
-            "habits-consistency"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -405,9 +924,9 @@
           "canonical_id": "brali:topic:metacognition"
         },
         {
-          "id": "recovery-energy",
-          "title": "Recovery & Energy",
-          "canonical_id": "brali:topic:recovery-energy"
+          "id": "movement",
+          "title": "Movement",
+          "canonical_id": "brali:topic:movement"
         }
       ],
       "related_methods": [
@@ -415,13 +934,18 @@
           "id": "metacognitive-therapy",
           "title": "Metacognitive Therapy-derived",
           "canonical_id": "brali:method:metacognitive-therapy"
+        },
+        {
+          "id": "implementation-intentions",
+          "title": "Implementation Intentions",
+          "canonical_id": "brali:method:implementation-intentions"
         }
       ],
       "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "memory",
       "title": "Memory",
       "question": "How can I remember what I learn without confusing retention with application?",
@@ -430,7 +954,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/memory/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "3 trusted protocol recommendations available.",
+      "coverage_note": "6 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "memory",
@@ -440,6 +964,103 @@
         }
       ],
       "protocols": [
+        {
+          "canonical_id": "brali:protocol:active-recall-test-yourself",
+          "protocol_id": "brali:active-recall-test-yourself",
+          "slug": "active-recall-test-yourself",
+          "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+          "title": "Active Recall: Close the Notes and Make Memory Work",
+          "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
+          "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+          "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "memory",
+            "skill-learning"
+          ],
+          "method_ids": [
+            "retrieval-practice"
+          ],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:prequestions-before-learning",
+          "protocol_id": "brali:prequestions-before-learning",
+          "slug": "prequestions-before-learning",
+          "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+          "title": "Ask a Few Questions Before You Start Learning",
+          "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+          "action": "Choose a small set of questions that point to information you genuinely want to learn. Before opening the explanation, reading the chapter, or watching the lesson, make a brief attempt at each answer even if you are unsure. Then study normally, paying attention when the material resolves those questions. Afterward, check the answers against the source. Use this to target important information, not as a claim that every unasked detail will also be learned better.",
+          "check_in": "After studying, can I answer the questions accurately without looking, and did the questions point me toward information that actually mattered?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "memory",
+            "skill-learning",
+            "metacognition"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:ai-learning-attempt-feedback-retest",
+          "protocol_id": "brali:ai-learning-attempt-feedback-retest",
+          "slug": "ai-learning-attempt-feedback-retest",
+          "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+          "title": "Attempt First, Use AI for Feedback, Retest Without It",
+          "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+          "action": "Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI.",
+          "check_in": "Can I now perform or explain the target skill without leaning on the AI output?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10462-026-11665-9",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:self-explain-what-you-learn",
+          "protocol_id": "brali:self-explain-what-you-learn",
+          "slug": "self-explain-what-you-learn",
+          "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+          "title": "Explain What You Just Learned in Your Own Words",
+          "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+          "action": "Study a manageable chunk, then look away from the explanation and produce a brief self-explanation: what the idea means, why a step follows, how it connects to what you already know, or when it would apply. Compare your explanation with the source, identify one gap or error, and revise it. Use the prompts that fit the material; do not turn every paragraph into a compulsory monologue.",
+          "check_in": "Can I explain the idea accurately enough to reconstruct the key relationship or step, and what did I have to correct after checking the source?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
         {
           "canonical_id": "brali:protocol:spaced-recall-coach",
           "protocol_id": "brali:spaced-recall-coach",
@@ -468,8 +1089,8 @@
           "slug": "avoid-list-interference-memory-retention",
           "url": "https://brali-lifeos.github.io/life-os/avoid-list-interference-memory-retention/",
           "title": "Try Quiet Wakeful Rest After Learning",
-          "description": "After learning material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal experiment, not a guaranteed memory boost or a universal ten-minute rule.",
-          "action": "When you finish a focused learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to social media, problem solving, reading new material, or another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity.",
+          "description": "After learning declarative material you want to remember, try a short period of quiet, minimally stimulating wakeful rest before switching to another demanding task. Treat it as a personal memory experiment, not a general learning upgrade or a universal ten-minute rule.",
+          "action": "When you finish a focused memory-heavy learning episode, put aside the material and spend a brief period awake in a quiet, low-stimulation setting. Avoid immediately switching to another cognitively demanding task. Choose a duration that is practical for you, then return to normal activity. Do not use the pause as a substitute for self-testing, active review, or other learning methods.",
           "check_in": "What did I learn, did I actually create a low-interference pause afterward, and when I checked later did recall seem better, unchanged, or worse than usual?",
           "evidence": {
             "status": "reviewed",
@@ -482,31 +1103,6 @@
             "memory"
           ],
           "method_ids": [],
-          "hub_score": 1192.4
-        },
-        {
-          "canonical_id": "brali:protocol:active-recall-test-yourself",
-          "protocol_id": "brali:active-recall-test-yourself",
-          "slug": "active-recall-test-yourself",
-          "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-          "title": "Use Active Recall for Retention, Then Practice Application",
-          "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
-          "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-          "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
-          "evidence": {
-            "status": "reviewed",
-            "source_recorded": true,
-            "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
-            "reviewed_at": "2026-08-18"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "memory",
-            "skill-learning"
-          ],
-          "method_ids": [
-            "retrieval-practice"
-          ],
           "hub_score": 1192.4
         }
       ],
@@ -551,6 +1147,33 @@
           ]
         },
         {
+          "id": "prequestions-targeted-learning-boundary-2025",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-15",
+          "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+          "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+          "source_type": "meta-analysis",
+          "citation_text": "King-Shepard QW, Walker J, Nokes-Malach TJ, Carpenter SK, Fraundorf SH. Educational Psychology Review. 2025;37:115.",
+          "supported_claim": "Prequestions can improve later learning of the specific information they target. The meta-analysis reported g = 0.66 for prequestioned information and g = 0.01 for non-prequestioned information; feedback alongside prequestions was associated with stronger targeted learning.",
+          "unsupported_or_overstated_claims": [
+            "Prequestions improve learning of the entire lesson.",
+            "Any question asked before learning will be beneficial.",
+            "There is one evidence-backed optimal number of prequestions.",
+            "A wrong first answer is itself sufficient without later exposure or correction.",
+            "Prequestions replace retrieval practice, practice problems, or feedback after learning."
+          ],
+          "limitations": [
+            "The average benefit is specific to prequestioned information rather than a broad benefit to all content.",
+            "The meta-analysis does not establish one universal question count, timing rule, or content format.",
+            "Effect sizes summarize heterogeneous studies and do not guarantee the same result for an individual learning session."
+          ],
+          "topic_ids": [
+            "memory",
+            "skill-learning",
+            "metacognition"
+          ]
+        },
+        {
           "id": "retrieval-procedural-application-2026",
           "decision": "challenge-existing",
           "reviewed_at": "2026-08-18",
@@ -575,6 +1198,33 @@
             "language-learning",
             "memory",
             "skill-learning"
+          ]
+        },
+        {
+          "id": "self-explanation-digital-learning-boundary-2025",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-15",
+          "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+          "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+          "source_type": "meta-analysis",
+          "citation_text": "Tan LP, Gong SY, Wang YJ, Guo XR, Xu XZ, Wang YQ. Educational Psychology Review. 2025;37:20.",
+          "supported_claim": "Self-explanation in digital learning environments had a positive average effect on academic performance (reported g = 0.46), with positive average effects for retention and transfer. Effects were moderated by pacing and knowledge type, with larger effects reported for learner-centered pacing and conceptual or mixed knowledge than for procedural knowledge.",
+          "unsupported_or_overstated_claims": [
+            "Self-explanation is always better than other learning strategies.",
+            "One explanation prompt or modality is universally optimal.",
+            "Every paragraph should be self-explained.",
+            "The average effect applies unchanged outside digital learning environments.",
+            "A fluent explanation is accurate without checking it against the source."
+          ],
+          "limitations": [
+            "The reviewed evidence is specifically about digital learning environments.",
+            "The meta-analysis reports heterogeneity and moderation rather than a uniform effect across all settings.",
+            "The authors identify the quality and standardization of self-explanations as areas needing further research."
+          ],
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
           ]
         },
         {
@@ -637,6 +1287,66 @@
           ]
         },
         {
+          "id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-02",
+          "source_title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+          "source_url": "https://link.springer.com/article/10.1186/s41235-026-00708-y",
+          "source_type": "primary-study",
+          "citation_text": "Chua TJE, Pan SC. Cognitive Research: Principles and Implications. 2026;11:20.",
+          "supported_claim": "For adults learning new, concrete second-language vocabulary paired with images, adding a forced multiple-choice guess before immediately revealing the correct pairing can produce a modest short-delay memory advantage over simply reading the pair. A bounded Brali protocol may therefore use a cue → guess → immediate correct feedback → later recall sequence for vocabulary practice, while keeping the claim limited to this learning format and time horizon.",
+          "unsupported_or_overstated_claims": [
+            "Making errors before learning is generally better than studying correct information.",
+            "Pretesting improves grammar, reading comprehension, conversation skill, pronunciation or complex skill learning.",
+            "The observed advantage has been shown to persist over days, weeks or months.",
+            "The exact 8-second guess window, 5-second feedback window, four-option format or image format is optimal.",
+            "Multiple-choice pretesting always improves later multiple-choice performance; Experiment 3 did not show a significant multiple-choice advantage.",
+            "The effect proves that error correction, associative strengthening or any single proposed mechanism caused the benefit.",
+            "The findings generalize to children, advanced language learners, non-concrete vocabulary or learners outside the sampled online populations."
+          ],
+          "limitations": [
+            "All criterial tests followed a short same-session distractor period rather than a delayed retention interval, so long-term retention was not established.",
+            "The studies used concrete Spanish nouns paired with images; vocabulary type and language-learning context were narrow.",
+            "Participants were adult Prolific users from English-speaking countries and exclusions were substantial in several experiments.",
+            "Pretesting trials included up to 8 seconds of cue-only guessing before the same 5 seconds of correct pair exposure used in reading, so total cue exposure was longer in the pretesting condition.",
+            "Initial guess accuracy was about 35–38%, raising the possibility of some prior familiarity despite exclusions; the authors note that benefits also appeared for incorrectly guessed items.",
+            "Learning condition was primarily within-subjects, and the authors identify between-subject replication as a future research need.",
+            "Multiple-choice benefits were not significant in Experiment 3, so recognition effects were less uniform than cued-recall effects."
+          ],
+          "topic_ids": [
+            "memory",
+            "language-learning"
+          ]
+        },
+        {
+          "id": "wakeful-rest-complex-learning-challenge-2026",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-08-28",
+          "source_title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12945945/",
+          "source_type": "primary-study",
+          "citation_text": "Seban P, Šikl R, Prošek T, Urban K. Psychological Research. 2026;90:42.",
+          "supported_claim": "The existing Brali wakeful-rest protocol must not promise better comprehension or long-term retention for complex educational reading. In this more ecologically valid randomized study, eight minutes of post-reading wakeful rest did not produce a consistent advantage over social media, math or similar-text reading on immediate or one-week factual and conceptual tests. Keep the protocol narrow: it is an optional declarative-memory tactic, not a general learning upgrade.",
+          "unsupported_or_overstated_claims": [
+            "This single study proves that wakeful rest never helps learning.",
+            "Social-media use immediately after learning is harmless in every setting.",
+            "All post-learning distractor tasks are equivalent.",
+            "Autogenic training or guided rest is ineffective for every outcome.",
+            "The null classroom result cancels the broader declarative-memory meta-analysis.",
+            "The findings generalize unchanged beyond university students and the specific expository material tested."
+          ],
+          "limitations": [
+            "The study used one expository learning task in a university-student population.",
+            "The wakeful-rest condition used an autogenic-training implementation and therefore does not represent every possible quiet-rest procedure.",
+            "Only one eight-minute post-learning duration was tested.",
+            "The delayed test used different but conceptually aligned questions rather than identical items from the immediate test.",
+            "A single null study cannot establish absence of a wakeful-rest effect across all complex learning tasks or populations."
+          ],
+          "topic_ids": [
+            "memory"
+          ]
+        },
+        {
           "id": "wakeful-rest-memory-2026",
           "decision": "propose-protocol",
           "reviewed_at": "2026-08-18",
@@ -695,26 +1405,26 @@
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
         },
         {
-          "id": "crossref:10.3758/s13423-025-02778-3",
-          "title": "Should we all just take 10? A meta-analysis of wakeful rest",
+          "id": "crossref:10.1186/s41235-026-00708-y",
+          "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
           "status": "propose-protocol",
-          "publication_date": "2026-01-15",
-          "reference_url": "https://doi.org/10.3758/s13423-025-02778-3",
+          "publication_date": "2026-03-06",
+          "reference_url": "https://doi.org/10.1186/s41235-026-00708-y",
           "topic_ids": [
-            "memory"
+            "memory",
+            "language-learning"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
         },
         {
-          "id": "crossref:10.1037/a0037559",
-          "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
-          "status": "support-existing",
-          "publication_date": "2014-08-25",
-          "reference_url": "https://doi.org/10.1037/a0037559",
+          "id": "crossref:10.1007/s00426-026-02265-x",
+          "title": "Wakeful rest and memory consolidation in an ecologically valid educational setting: no benefit over distractor tasks",
+          "status": "challenge-existing",
+          "publication_date": "2026-02-26",
+          "reference_url": "https://doi.org/10.1007/s00426-026-02265-x",
           "topic_ids": [
-            "memory",
-            "skill-learning"
+            "memory"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -743,7 +1453,7 @@
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "stress",
       "title": "Stress",
       "question": "What low-risk practices can help me respond to stress without treating a knowledge library like clinical care?",
@@ -752,7 +1462,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/stress/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "7 trusted protocol recommendations available.",
+      "coverage_note": "8 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "stress-regulation",
@@ -799,6 +1509,29 @@
             "dbt"
           ],
           "hub_score": 1242.4
+        },
+        {
+          "canonical_id": "brali:protocol:10-minute-stress-walk",
+          "protocol_id": "brali:10-minute-stress-walk",
+          "slug": "10-minute-stress-walk",
+          "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+          "title": "Take a Short Walk When Stress Builds",
+          "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+          "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+          "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "stress-regulation",
+            "movement"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
         },
         {
           "canonical_id": "brali:protocol:3-minute-sensory-mindfulness-act",
@@ -879,7 +1612,7 @@
           "protocol_id": "brali:circles-of-control-planner",
           "slug": "circles-of-control-planner",
           "url": "https://brali-lifeos.github.io/life-os/circles-of-control-planner/",
-          "title": "Draw Two Circles; One for Factors You Can Control and Another for Those You",
+          "title": "Separate Outcomes From Actions You Can Control",
           "description": "Draw two circles; one for factors you can control and another for those you cannot. Set clear, achievable goals based on what’s within your control.",
           "action": "Write down one concern, separate the outcome from the actions you can take, convert anything you can influence into one concrete behavior, and choose the next useful action without pretending you control the final result.",
           "check_in": "What part of this situation was actually mine to act on, what remained outside my control, and did the sorting help me choose a clearer next step?",
@@ -896,28 +1629,6 @@
           ],
           "method_ids": [],
           "hub_score": 1062.21
-        },
-        {
-          "canonical_id": "brali:protocol:478-breathing-technique-guide",
-          "protocol_id": "brali:478-breathing-technique-guide",
-          "slug": "478-breathing-technique-guide",
-          "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
-          "title": "Comfortable Breathing Reset",
-          "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
-          "action": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
-          "check_in": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed.",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-20"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "stress-regulation"
-          ],
-          "method_ids": [],
-          "hub_score": 1061.54
         },
         {
           "canonical_id": "brali:protocol:ancestral-torch-resilience-tracker",
@@ -941,6 +1652,28 @@
           ],
           "method_ids": [],
           "hub_score": 1061.34
+        },
+        {
+          "canonical_id": "brali:protocol:478-breathing-technique-guide",
+          "protocol_id": "brali:478-breathing-technique-guide",
+          "slug": "478-breathing-technique-guide",
+          "url": "https://brali-lifeos.github.io/life-os/478-breathing-technique-guide/",
+          "title": "Comfortable Breathing Reset",
+          "description": "Use a few comfortable, unforced breaths as a brief pause before deciding what to do next. Skip counts that create strain or dizziness.",
+          "action": "Sit or stand comfortably, let your breathing slow without forcing a count, take a few easy breaths, and then return attention to one concrete next action.",
+          "check_in": "Did the pause help you feel more settled and able to choose the next action? Stop if breathing feels uncomfortable or light-headed.",
+          "evidence": {
+            "status": "practical",
+            "source_recorded": false,
+            "source_url": null,
+            "reviewed_at": "2026-08-20"
+          },
+          "is_flagship_100": false,
+          "topic_ids": [
+            "stress-regulation"
+          ],
+          "method_ids": [],
+          "hub_score": 61.54
         }
       ],
       "evidence_decisions": [],
@@ -960,6 +1693,11 @@
           "id": "fear-confidence",
           "title": "Fear & Confidence",
           "canonical_id": "brali:topic:fear-confidence"
+        },
+        {
+          "id": "movement",
+          "title": "Movement",
+          "canonical_id": "brali:topic:movement"
         },
         {
           "id": "decision-making",
@@ -993,7 +1731,7 @@
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "habits",
       "title": "Habits",
       "question": "How can I make a useful behavior easier to repeat consistently?",
@@ -1001,8 +1739,8 @@
       "canonical_url": "https://brali-lifeos.github.io/topics/habits/",
       "json_url": "https://brali-lifeos.github.io/topics/habits/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
-      "coverage_status": "evidence-only-gap",
-      "coverage_note": "No reviewed/practical protocol currently covers this Topic. Brali shows reviewed evidence boundaries instead of promoting weaker content.",
+      "coverage_status": "trusted-protocols",
+      "coverage_note": "5 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "habits-consistency",
@@ -1011,8 +1749,151 @@
           "canonical_id": "brali:topic:habits-consistency"
         }
       ],
-      "protocols": [],
+      "protocols": [
+        {
+          "canonical_id": "brali:protocol:visible-progress-monitoring",
+          "protocol_id": "brali:visible-progress-monitoring",
+          "slug": "visible-progress-monitoring",
+          "url": "https://brali-lifeos.github.io/life-os/visible-progress-monitoring/",
+          "title": "Make Goal Progress Visible Instead of Guessing",
+          "description": "For a goal you are actively pursuing, choose one observable progress signal, record it at useful checkpoints, compare it with the target, and use the result to adjust the next action. Monitoring helps when it informs action; more tracking is not automatically better.",
+          "action": "Choose one goal where feedback can still change what you do. Pick one observable indicator that is close to the real outcome or behavior you care about. Record it at checkpoints that match the task, compare it with the target or previous checkpoint, and decide one adjustment. Prefer a small trace you will actually use over a dashboard full of decorative metrics.",
+          "check_in": "What changed in the progress signal, and what is the one next action that follows from that information?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1037/bul0000025",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "goals",
+            "planning-prioritization",
+            "habits-consistency"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:temptation-bundling",
+          "protocol_id": "brali:temptation-bundling",
+          "slug": "temptation-bundling",
+          "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+          "title": "Pair a Useful Task with Something You Genuinely Want",
+          "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+          "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+          "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:if-then-rules-productivity",
+          "protocol_id": "brali:if-then-rules-productivity",
+          "slug": "if-then-rules-productivity",
+          "url": "https://brali-lifeos.github.io/life-os/if-then-rules-productivity/",
+          "title": "Turn a Good Intention into an If-Then Plan",
+          "description": "Turn a repeated low-stakes choice into a simple cue-and-action rule, add a fallback for common exceptions, and revise the rule when it creates friction or no longer fits the work.",
+          "action": "Choose one repeated situation, describe the cue in observable terms, choose a small action you can safely perform when the cue appears, add a fallback for a common exception, use the rule when the situation occurs, and revise or retire it when it stops fitting the work.",
+          "check_in": "Did the cue occur, did I follow the chosen action, what exception appeared, and should the rule stay, change, or be removed?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ],
+          "method_ids": [
+            "implementation-intentions"
+          ],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:coot-ai-growth-journal",
+          "protocol_id": "brali:coot-ai-growth-journal",
+          "slug": "coot-ai-growth-journal",
+          "url": "https://brali-lifeos.github.io/life-os/coot-ai-growth-journal/",
+          "title": "Turn an AI Reflection into One Next Action",
+          "description": "Give an AI assistant a concrete goal, current constraints, and the decision you need to make; ask for options, assumptions, and failure modes; verify factual claims; then choose one reversible next action yourself.",
+          "action": "State one concrete goal or decision, provide the relevant constraints and what you already know, ask the AI for a small set of distinct options with assumptions and failure modes, challenge anything vague, verify factual claims that matter, choose one reversible next action yourself, and record what would cause you to change course.",
+          "check_in": "What became clearer, which AI claim still needs verification, what action did I choose, and what new information would make me revise the decision?",
+          "evidence": {
+            "status": "practical",
+            "source_recorded": false,
+            "source_url": null,
+            "reviewed_at": "2026-09-10"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "habits-consistency"
+          ],
+          "method_ids": [],
+          "hub_score": 1062.4
+        },
+        {
+          "canonical_id": "brali:protocol:daily-priority-review-coach",
+          "protocol_id": "brali:daily-priority-review-coach",
+          "slug": "daily-priority-review-coach",
+          "url": "https://brali-lifeos.github.io/life-os/daily-priority-review-coach/",
+          "title": "Review Open Tasks and Leave With a Clear Next Action",
+          "description": "Scan open work, remove or park stale items, clarify the next action for active commitments, and choose what deserves attention now without turning the review itself into a large planning project.",
+          "action": "Scan the open list, close or park items that are no longer active, rewrite vague active work as a concrete next action, identify blocked items and their dependency, choose the small set that deserves attention now, and stop the review before it turns into doing the tasks themselves.",
+          "check_in": "What became clearer, what was removed or parked, which item is blocked, and what is the next action I can actually take?",
+          "evidence": {
+            "status": "practical",
+            "source_recorded": false,
+            "source_url": null,
+            "reviewed_at": "2026-09-10"
+          },
+          "is_flagship_100": false,
+          "topic_ids": [
+            "habits-consistency"
+          ],
+          "method_ids": [],
+          "hub_score": 62.4
+        }
+      ],
       "evidence_decisions": [
+        {
+          "id": "implementation-intentions-meta-boundary-2024",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "The when and how of planning: Meta-analysis of implementation intentions in 642 tests",
+          "source_url": "https://doi.org/10.1080/10463283.2024.2334563",
+          "source_type": "meta-analysis",
+          "supported_claim": "Cue-response implementation intentions are a well-supported self-regulation mechanism; contingent if-then formats performed better on average in the reviewed literature.",
+          "unsupported_or_overstated_claims": [
+            "Every if-then sentence guarantees behavior change.",
+            "Aggregate effect sizes apply to every productivity task."
+          ],
+          "limitations": [
+            "The meta-analysis aggregates many populations, goals, outcomes and implementation-intention variants, so its average effect is not a guaranteed effect size for one productivity task or one person.",
+            "Reported moderators such as motivation, contingent if-then form and rehearsal describe variation across the evidence base; they do not establish one universally optimal Brali recipe.",
+            "The evidence supports the implementation-intention mechanism broadly, not fixed numbers of plans, fixed rehearsal counts, fixed time windows, or productivity estimates.",
+            "The reviewed synthesis does not validate Brali's exact wording, interface or reminder implementation as a separately tested intervention."
+          ],
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ]
+        },
         {
           "id": "procrastination-treatment-exact-protocol-boundary-2018",
           "decision": "challenge-existing",
@@ -1046,13 +1927,120 @@
             "task-initiation",
             "habits-consistency"
           ]
+        },
+        {
+          "id": "progress-monitoring-goal-attainment-meta-2016",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Does monitoring goal progress promote goal attainment?",
+          "source_url": "https://doi.org/10.1037/bul0000025",
+          "source_type": "meta-analysis",
+          "supported_claim": "Increasing progress monitoring improves goal attainment on average; physically recording or reporting progress was associated with larger effects.",
+          "unsupported_or_overstated_claims": [
+            "Daily tracking is uniquely optimal.",
+            "Streaks or public leaderboards are universally beneficial.",
+            "More monitoring is always better."
+          ],
+          "limitations": [
+            "The meta-analysis combines heterogeneous goals, populations and monitoring interventions, so the pooled effect does not identify one optimal metric, cadence or tracking interface.",
+            "Larger effects associated with physically recording or reporting progress do not establish that public leaderboards, streaks, social accountability or any specific app feature is universally beneficial.",
+            "The evidence supports increasing useful progress monitoring on average, not maximal monitoring; excessive or poorly chosen measurement can still create burden or metric gaming.",
+            "The synthesis does not validate Brali's exact checkpoint wording or determine which proxy measure is best for a particular user's goal."
+          ],
+          "topic_ids": [
+            "goals",
+            "planning-prioritization",
+            "habits-consistency"
+          ]
+        },
+        {
+          "id": "temptation-bundling-exercise-boundary-2020",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Teaching temptation bundling to boost exercise: A field experiment",
+          "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+          "source_type": "primary-study",
+          "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020.",
+          "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+          "unsupported_or_overstated_claims": [
+            "Temptation bundling works equally well for every habit.",
+            "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+            "A reward should always be restricted exclusively to the target behavior.",
+            "The technique reliably creates permanent habits.",
+            "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+          ],
+          "limitations": [
+            "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+            "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+            "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+            "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+            "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+          ],
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ]
+        },
+        {
+          "id": "time-management-specificity-boundary-2021",
+          "decision": "challenge-existing",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Does time management work? A meta-analysis",
+          "source_url": "https://doi.org/10.1371/journal.pone.0245066",
+          "source_type": "meta-analysis",
+          "supported_claim": "Time management has moderate positive relationships with performance and wellbeing at the construct level, with substantial heterogeneity.",
+          "unsupported_or_overstated_claims": [
+            "This validates a specific planner, calendar ratio, time-block length or branded method.",
+            "All observed relationships are causal."
+          ],
+          "limitations": [
+            "The meta-analysis pools studies using different definitions and measures of time management, job or academic performance and wellbeing, which limits claims about any one technique.",
+            "A substantial part of the underlying evidence is correlational, so associations between time-management behavior and outcomes should not be read as causal effects of a specific intervention.",
+            "The synthesis does not validate an exact planner layout, calendar ratio, time-block duration, prioritization rule or scheduling cadence.",
+            "Observed relationships vary across contexts and outcomes, so broad time-management evidence should not be converted into precise universal productivity claims."
+          ],
+          "topic_ids": [
+            "planning-prioritization",
+            "habits-consistency"
+          ]
+        },
+        {
+          "id": "woop-mcii-academic-procrastination-rct-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-09",
+          "source_title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/41601124/",
+          "source_type": "randomized-controlled-trial",
+          "citation_text": "Zhou X, Wider W, Wu H, Xu Y, Qin M, Borromeo AS. Acta Psychologica. 2026;262:106168.",
+          "supported_claim": "In this specific undergraduate academic-procrastination study, MCII reduced task aversiveness and improved willingness to initiate academic tasks relative to a positive-thinking control, with effects reported through one-week follow-up. Diary reports also provided a behavioral task-initiation signal. It provides narrow corroborating evidence for the obstacle-plus-plan mechanism in an academic setting.",
+          "unsupported_or_overstated_claims": [
+            "This trial proves WOOP works for all goals or populations.",
+            "The trial establishes long-term goal achievement effects.",
+            "The results generalize to workplaces, clinical populations or high-stakes decisions.",
+            "WOOP eliminates procrastination.",
+            "A one-week follow-up establishes durable behavior change."
+          ],
+          "limitations": [
+            "The study was single-site and restricted to first-year undergraduates at one private Chinese university.",
+            "Twenty of 101 randomized participants were excluded for missing reports or intervention nonadherence, leaving 81 in the final sample (19.8% attrition).",
+            "The main psychological outcomes were self-reported; task initiation was derived from participant diary reports rather than an objective academic-performance endpoint.",
+            "The context was academic procrastination rather than general goal pursuit.",
+            "The follow-up was one week, so long-term persistence is unknown.",
+            "The study does not justify generalizing to broad life outcomes, workplaces, clinical treatment, or safety-critical decisions."
+          ],
+          "topic_ids": [
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ]
         }
       ],
       "research_watch": [
         {
           "id": "crossref:10.1016/j.actpsy.2025.106168",
           "title": "Beyond positive thinking: A randomized trial of mental contrasting with implementation intentions to curb academic procrastination",
-          "status": "screening",
+          "status": "support-existing",
           "publication_date": "2026-02-01",
           "reference_url": "https://doi.org/10.1016/j.actpsy.2025.106168",
           "topic_ids": [
@@ -1064,14 +2052,42 @@
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
         },
         {
-          "id": "crossref:10.3389/fpsyg.2018.01588",
-          "title": "Targeting Procrastination Using Psychological Treatments: A Systematic Review and Meta-Analysis",
-          "status": "challenge-existing",
-          "publication_date": "2018-08-30",
-          "reference_url": "https://doi.org/10.3389/fpsyg.2018.01588",
+          "id": "crossref:10.1080/10463283.2024.2334563",
+          "title": "The when and how of planning: Meta-analysis of the scope and components of implementation intentions in 642 tests",
+          "status": "support-existing",
+          "publication_date": "2024-03-27",
+          "reference_url": "https://doi.org/10.1080/10463283.2024.2334563",
           "topic_ids": [
-            "task-initiation",
+            "goals",
+            "habits-consistency",
+            "task-initiation"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "pubmed:33428644",
+          "title": "Does time management work? A meta-analysis",
+          "status": "challenge-existing",
+          "publication_date": "2021-01-11",
+          "reference_url": "https://doi.org/10.1371/journal.pone.0245066",
+          "topic_ids": [
+            "planning-prioritization",
             "habits-consistency"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "crossref:10.1016/j.obhdp.2020.09.003",
+          "title": "Teaching temptation bundling to boost exercise: A field experiment",
+          "status": "propose-protocol",
+          "publication_date": "2020-11-01",
+          "reference_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -1092,14 +2108,30 @@
           "id": "environment-design",
           "title": "Environment Design",
           "canonical_id": "brali:topic:environment-design"
+        },
+        {
+          "id": "planning-prioritization",
+          "title": "Planning & Prioritization",
+          "canonical_id": "brali:topic:planning-prioritization"
+        },
+        {
+          "id": "movement",
+          "title": "Movement",
+          "canonical_id": "brali:topic:movement"
         }
       ],
-      "related_methods": [],
+      "related_methods": [
+        {
+          "id": "implementation-intentions",
+          "title": "Implementation Intentions",
+          "canonical_id": "brali:method:implementation-intentions"
+        }
+      ],
       "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "learning",
       "title": "Learning",
       "question": "How can I learn through retrieval, practice, feedback, and application rather than passive exposure?",
@@ -1108,7 +2140,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/learning/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "7 trusted protocol recommendations available.",
+      "coverage_note": "8 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "skill-learning",
@@ -1130,6 +2162,103 @@
         }
       ],
       "protocols": [
+        {
+          "canonical_id": "brali:protocol:prequestions-before-learning",
+          "protocol_id": "brali:prequestions-before-learning",
+          "slug": "prequestions-before-learning",
+          "url": "https://brali-lifeos.github.io/life-os/prequestions-before-learning/",
+          "title": "Ask a Few Questions Before You Start Learning",
+          "description": "Before reading, watching, or studying new material, try a few questions about the specific information you want to learn. Attempt an answer, then study and check it. Evidence supports better learning for the prequestioned information, not a general boost to everything else.",
+          "action": "Choose a small set of questions that point to information you genuinely want to learn. Before opening the explanation, reading the chapter, or watching the lesson, make a brief attempt at each answer even if you are unsure. Then study normally, paying attention when the material resolves those questions. Afterward, check the answers against the source. Use this to target important information, not as a claim that every unasked detail will also be learned better.",
+          "check_in": "After studying, can I answer the questions accurately without looking, and did the questions point me toward information that actually mattered?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "memory",
+            "skill-learning",
+            "metacognition"
+          ],
+          "method_ids": [],
+          "hub_score": 1242.4
+        },
+        {
+          "canonical_id": "brali:protocol:ai-learning-attempt-feedback-retest",
+          "protocol_id": "brali:ai-learning-attempt-feedback-retest",
+          "slug": "ai-learning-attempt-feedback-retest",
+          "url": "https://brali-lifeos.github.io/life-os/ai-learning-attempt-feedback-retest/",
+          "title": "Attempt First, Use AI for Feedback, Retest Without It",
+          "description": "For learning tasks, make a genuine attempt before asking AI to explain, critique, or extend your work, then reproduce the target skill without assistance. Recent evidence on generative AI in education is mixed enough that the workflow should preserve learner activity rather than assume the chatbot itself improves learning.",
+          "action": "Name the skill you are actually trying to acquire. Attempt a problem, explanation, translation, derivation, or answer unaided. Ask AI to identify gaps, give a contrasting example, or explain one sticking point. Check the feedback against trusted material when accuracy matters, then perform a fresh attempt without AI.",
+          "check_in": "Can I now perform or explain the target skill without leaning on the AI output?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10462-026-11665-9",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
+          ],
+          "method_ids": [],
+          "hub_score": 1242.4
+        },
+        {
+          "canonical_id": "brali:protocol:self-explain-what-you-learn",
+          "protocol_id": "brali:self-explain-what-you-learn",
+          "slug": "self-explain-what-you-learn",
+          "url": "https://brali-lifeos.github.io/life-os/self-explain-what-you-learn/",
+          "title": "Explain What You Just Learned in Your Own Words",
+          "description": "After a meaningful chunk of digital learning, pause and explain the idea, relationship, or step in your own words, then compare with the source and correct gaps. Meta-analytic evidence supports self-explanation in digital learning, with meaningful variation across contexts and material types.",
+          "action": "Study a manageable chunk, then look away from the explanation and produce a brief self-explanation: what the idea means, why a step follows, how it connects to what you already know, or when it would apply. Compare your explanation with the source, identify one gap or error, and revise it. Use the prompts that fit the material; do not turn every paragraph into a compulsory monologue.",
+          "check_in": "Can I explain the idea accurately enough to reconstruct the key relationship or step, and what did I have to correct after checking the source?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+            "reviewed_at": "2026-09-15"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
+          ],
+          "method_ids": [],
+          "hub_score": 1242.4
+        },
+        {
+          "canonical_id": "brali:protocol:active-recall-test-yourself",
+          "protocol_id": "brali:active-recall-test-yourself",
+          "slug": "active-recall-test-yourself",
+          "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
+          "title": "Active Recall: Close the Notes and Make Memory Work",
+          "description": "Before rereading, hide the source and try to produce the answer from memory. Then check it, fix the misses, and practice application separately if the real goal is solving, speaking, writing, or doing. Familiarity feels nice; retrieval tells you what is actually available without the page in front of you.",
+          "action": "Choose a small set of material you want to retain. Hide the source and answer a question, explain the idea, or write what you remember. Check immediately enough to catch errors and repair them. Then, if success means solving, writing, speaking, calculating, or performing, practice that outcome too. Memory practice is useful; it is not a teleportation device to skill.",
+          "check_in": "What could I retrieve without looking? What was missing or wrong? If the real goal is application, could I actually use the knowledge in a relevant task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "memory",
+            "skill-learning"
+          ],
+          "method_ids": [
+            "retrieval-practice"
+          ],
+          "hub_score": 1192.4
+        },
         {
           "canonical_id": "brali:protocol:refocus-present-stop-mind-wandering",
           "protocol_id": "brali:refocus-present-stop-mind-wandering",
@@ -1156,29 +2285,27 @@
           "hub_score": 1192.4
         },
         {
-          "canonical_id": "brali:protocol:active-recall-test-yourself",
-          "protocol_id": "brali:active-recall-test-yourself",
-          "slug": "active-recall-test-yourself",
-          "url": "https://brali-lifeos.github.io/life-os/active-recall-test-yourself/",
-          "title": "Use Active Recall for Retention, Then Practice Application",
-          "description": "Try to retrieve what you learned without looking, check the answer, and correct errors. Use active recall when retention matters; if the real goal is applying a rule or performing a skill, add separate application practice instead of assuming better recall will transfer automatically.",
-          "action": "Choose a small set of material you want to retain. Put the source out of view and answer questions or explain the material from memory. Then compare your response with the source, correct mistakes, and note what you could not retrieve. If success ultimately means solving, writing, speaking, calculating, or performing, add a separate task that practices that application.",
-          "check_in": "Could I retrieve the target information without looking? What did I get wrong? If my goal involves application, could I actually use the rule or knowledge in a relevant task?",
+          "canonical_id": "brali:protocol:contextual-language-coach",
+          "protocol_id": "brali:contextual-language-coach",
+          "slug": "contextual-language-coach",
+          "url": "https://brali-lifeos.github.io/life-os/contextual-language-coach/",
+          "title": "Rehearse One Real Language Scenario",
+          "description": "Choose a real low-risk interaction in the language you are learning, prepare the minimum useful phrases plus a repair phrase, rehearse likely turns, try the interaction when appropriate, and update the phrase set from what was difficult.",
+          "action": "Define the scenario and desired outcome, write the core request or response, add likely follow-up phrases and one repair phrase for misunderstanding, rehearse both sides aloud, use the interaction when appropriate, and update the phrase set from the point where you hesitated or needed clarification.",
+          "check_in": "Which scenario did I rehearse, where did the interaction become difficult, which phrase or listening cue should I add, and what can I reuse next time?",
           "evidence": {
-            "status": "reviewed",
-            "source_recorded": true,
-            "source_url": "https://doi.org/10.1007/s10648-021-09595-9",
-            "reviewed_at": "2026-08-18"
+            "status": "practical",
+            "source_recorded": false,
+            "source_url": null,
+            "reviewed_at": "2026-09-10"
           },
           "is_flagship_100": true,
           "topic_ids": [
-            "memory",
+            "language-learning",
             "skill-learning"
           ],
-          "method_ids": [
-            "retrieval-practice"
-          ],
-          "hub_score": 1192.4
+          "method_ids": [],
+          "hub_score": 1112.4
         },
         {
           "canonical_id": "brali:protocol:ask-for-feedback-tracker",
@@ -1204,29 +2331,6 @@
           "hub_score": 1062.4
         },
         {
-          "canonical_id": "brali:protocol:belief-update-coach",
-          "protocol_id": "brali:belief-update-coach",
-          "slug": "belief-update-coach",
-          "url": "https://brali-lifeos.github.io/life-os/belief-update-coach/",
-          "title": "Record What Would Change a Belief",
-          "description": "Write a claim, the basis for your current view, the new information and the condition under which you would revise, narrow or suspend the belief.",
-          "action": "Choose one claim that affects a decision. Write its current basis and the new information separately. Check whether the information addresses the same claim and context. Choose a disposition: unchanged, less certain, revised, narrowed or unresolved. Record what additional information would change the disposition.",
-          "check_in": "What changed in the claim, its scope or my certainty, and what information would justify another update?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-22"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "critical-thinking",
-            "metacognition"
-          ],
-          "method_ids": [],
-          "hub_score": 1062.4
-        },
-        {
           "canonical_id": "brali:protocol:10-minute-language-microsprints",
           "protocol_id": "brali:10-minute-language-microsprints",
           "slug": "10-minute-language-microsprints",
@@ -1247,54 +2351,71 @@
           ],
           "method_ids": [],
           "hub_score": 1062.33
-        },
-        {
-          "canonical_id": "brali:protocol:decision-calibration-journal",
-          "protocol_id": "brali:decision-calibration-journal",
-          "slug": "decision-calibration-journal",
-          "url": "https://brali-lifeos.github.io/life-os/decision-calibration-journal/",
-          "title": "Decision Calibration Journal",
-          "description": "Before an uncertain decision, record your expectation, confidence, and key assumption. Later compare them with the outcome and update how you make similar choices.",
-          "action": "Before a meaningful uncertain choice, write the expected outcome, how confident you are in plain language, and the assumption that matters most. Revisit the note after the outcome is clear.",
-          "check_in": "Which assumption held, which one failed, and what would you change in a similar decision next time?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-20"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "decision-making",
-            "metacognition"
-          ],
-          "method_ids": [],
-          "hub_score": 1061.89
-        },
-        {
-          "canonical_id": "brali:protocol:weekly-theme-learning-sprints",
-          "protocol_id": "brali:weekly-theme-learning-sprints",
-          "slug": "weekly-theme-learning-sprints",
-          "url": "https://brali-lifeos.github.io/life-os/weekly-theme-learning-sprints/",
-          "title": "Spend Each Week Focused on a Single Theme",
-          "description": "Spend each week focused on a single theme. Immerse yourself in everything related to that topic through reading, watching, and activities.",
-          "action": "Choose one narrow learning theme for the week, define one visible result for Friday, and complete at least one small practice rep on each day you work on it.",
-          "check_in": "Did I complete one practice rep? What was the main friction, and what should I change for the next rep?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-18"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "skill-learning"
-          ],
-          "method_ids": [],
-          "hub_score": 1061.57
         }
       ],
       "evidence_decisions": [
+        {
+          "id": "genai-learning-augmentation-boundary-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-05",
+          "source_title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+          "source_url": "https://link.springer.com/article/10.1007/s10462-026-11665-9",
+          "source_type": "systematic-review-and-meta-analysis",
+          "citation_text": "Boolzen C, Kuhn J, Flegr S, et al. Artificial Intelligence Review. Published August 25, 2026.",
+          "supported_claim": "Brali should not treat generative AI as a learning intervention by itself. In this highly heterogeneous literature, the apparent positive pooled effect did not survive robust publication-bias correction, while more informative moderator evidence suggested that outcomes depend partly on what cognitive work the learner still performs. This supports the existing human-first AI collaboration principle in learning contexts: preserve a meaningful learner attempt, explanation, retrieval, reasoning or verification step and use AI to extend or refine that activity rather than silently replacing the activity being learned.",
+          "unsupported_or_overstated_claims": [
+            "Generative AI has been shown to improve STEM learning overall.",
+            "Human-first AI workflows are proven superior for every learning task; the review compared heterogeneous instructional designs rather than one canonical Brali workflow.",
+            "AI substitution is always harmful or augmentation is always beneficial.",
+            "The meta-analysis establishes an optimal prompt, model, tutoring script, feedback style or amount of AI assistance.",
+            "Knowledge outcomes are universally improved while skill outcomes are not; substantial residual heterogeneity remained within categories.",
+            "A large effect reported in an individual AI-learning study should be assumed causal when intervention and control groups performed different levels of cognitive activity.",
+            "The findings establish long-term skill retention, transfer to real work, or independent performance after AI is removed.",
+            "The results generalize unchanged beyond STEM education."
+          ],
+          "limitations": [
+            "Between-study heterogeneity was extreme (I²=96.32%), and the prediction interval included negative, null and strongly positive true effects.",
+            "Funnel-plot asymmetry and the Robust Bayesian Meta-Analysis indicated substantial publication bias; after correction the evidence favored no stable overall positive or negative main effect.",
+            "The review's risk-of-bias assessment found high risk across included studies, with no study meeting the low-risk criteria.",
+            "Many studies used cognitively incomparable intervention and control conditions; the authors identified numerous apparently large effects where this comparison problem was present.",
+            "Most studies used text-based systems and many were conducted in higher education, limiting generalization to other learners, modalities and tasks.",
+            "AI literacy, metacognitive skill, delegation behavior, prompt quality and verification behavior were often underreported, leaving important mechanisms unresolved.",
+            "Evidence about learner challenges and instructional supports was sparse and inconsistently reported, so those qualitative findings should not be turned into general effect estimates.",
+            "Moderator patterns explained only part of the heterogeneity and did not produce a sufficient if-then configuration that guaranteed large effects."
+          ],
+          "topic_ids": [
+            "skill-learning",
+            "critical-thinking",
+            "metacognition"
+          ]
+        },
+        {
+          "id": "prequestions-targeted-learning-boundary-2025",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-15",
+          "source_title": "The Effect of Prequestions on Learning: A Multilevel Meta-Analysis",
+          "source_url": "https://doi.org/10.1007/s10648-025-10075-7",
+          "source_type": "meta-analysis",
+          "citation_text": "King-Shepard QW, Walker J, Nokes-Malach TJ, Carpenter SK, Fraundorf SH. Educational Psychology Review. 2025;37:115.",
+          "supported_claim": "Prequestions can improve later learning of the specific information they target. The meta-analysis reported g = 0.66 for prequestioned information and g = 0.01 for non-prequestioned information; feedback alongside prequestions was associated with stronger targeted learning.",
+          "unsupported_or_overstated_claims": [
+            "Prequestions improve learning of the entire lesson.",
+            "Any question asked before learning will be beneficial.",
+            "There is one evidence-backed optimal number of prequestions.",
+            "A wrong first answer is itself sufficient without later exposure or correction.",
+            "Prequestions replace retrieval practice, practice problems, or feedback after learning."
+          ],
+          "limitations": [
+            "The average benefit is specific to prequestioned information rather than a broad benefit to all content.",
+            "The meta-analysis does not establish one universal question count, timing rule, or content format.",
+            "Effect sizes summarize heterogeneous studies and do not guarantee the same result for an individual learning session."
+          ],
+          "topic_ids": [
+            "memory",
+            "skill-learning",
+            "metacognition"
+          ]
+        },
         {
           "id": "retrieval-procedural-application-2026",
           "decision": "challenge-existing",
@@ -1320,6 +2441,33 @@
             "language-learning",
             "memory",
             "skill-learning"
+          ]
+        },
+        {
+          "id": "self-explanation-digital-learning-boundary-2025",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-15",
+          "source_title": "Enhancing Academic Performance Through Self-Explanation in Digital Learning Environments (DLEs): A Three-Level Meta-Analysis",
+          "source_url": "https://doi.org/10.1007/s10648-025-10001-x",
+          "source_type": "meta-analysis",
+          "citation_text": "Tan LP, Gong SY, Wang YJ, Guo XR, Xu XZ, Wang YQ. Educational Psychology Review. 2025;37:20.",
+          "supported_claim": "Self-explanation in digital learning environments had a positive average effect on academic performance (reported g = 0.46), with positive average effects for retention and transfer. Effects were moderated by pacing and knowledge type, with larger effects reported for learner-centered pacing and conceptual or mixed knowledge than for procedural knowledge.",
+          "unsupported_or_overstated_claims": [
+            "Self-explanation is always better than other learning strategies.",
+            "One explanation prompt or modality is universally optimal.",
+            "Every paragraph should be self-explained.",
+            "The average effect applies unchanged outside digital learning environments.",
+            "A fluent explanation is accurate without checking it against the source."
+          ],
+          "limitations": [
+            "The reviewed evidence is specifically about digital learning environments.",
+            "The meta-analysis reports heterogeneity and moderation rather than a uniform effect across all settings.",
+            "The authors identify the quality and standardization of self-explanations as areas needing further research."
+          ],
+          "topic_ids": [
+            "skill-learning",
+            "metacognition",
+            "memory"
           ]
         },
         {
@@ -1380,9 +2528,55 @@
             "memory",
             "skill-learning"
           ]
+        },
+        {
+          "id": "vocabulary-pretesting-guess-feedback-boundary-2026",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-02",
+          "source_title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+          "source_url": "https://link.springer.com/article/10.1186/s41235-026-00708-y",
+          "source_type": "primary-study",
+          "citation_text": "Chua TJE, Pan SC. Cognitive Research: Principles and Implications. 2026;11:20.",
+          "supported_claim": "For adults learning new, concrete second-language vocabulary paired with images, adding a forced multiple-choice guess before immediately revealing the correct pairing can produce a modest short-delay memory advantage over simply reading the pair. A bounded Brali protocol may therefore use a cue → guess → immediate correct feedback → later recall sequence for vocabulary practice, while keeping the claim limited to this learning format and time horizon.",
+          "unsupported_or_overstated_claims": [
+            "Making errors before learning is generally better than studying correct information.",
+            "Pretesting improves grammar, reading comprehension, conversation skill, pronunciation or complex skill learning.",
+            "The observed advantage has been shown to persist over days, weeks or months.",
+            "The exact 8-second guess window, 5-second feedback window, four-option format or image format is optimal.",
+            "Multiple-choice pretesting always improves later multiple-choice performance; Experiment 3 did not show a significant multiple-choice advantage.",
+            "The effect proves that error correction, associative strengthening or any single proposed mechanism caused the benefit.",
+            "The findings generalize to children, advanced language learners, non-concrete vocabulary or learners outside the sampled online populations."
+          ],
+          "limitations": [
+            "All criterial tests followed a short same-session distractor period rather than a delayed retention interval, so long-term retention was not established.",
+            "The studies used concrete Spanish nouns paired with images; vocabulary type and language-learning context were narrow.",
+            "Participants were adult Prolific users from English-speaking countries and exclusions were substantial in several experiments.",
+            "Pretesting trials included up to 8 seconds of cue-only guessing before the same 5 seconds of correct pair exposure used in reading, so total cue exposure was longer in the pretesting condition.",
+            "Initial guess accuracy was about 35–38%, raising the possibility of some prior familiarity despite exclusions; the authors note that benefits also appeared for incorrectly guessed items.",
+            "Learning condition was primarily within-subjects, and the authors identify between-subject replication as a future research need.",
+            "Multiple-choice benefits were not significant in Experiment 3, so recognition effects were less uniform than cued-recall effects."
+          ],
+          "topic_ids": [
+            "memory",
+            "language-learning"
+          ]
         }
       ],
       "research_watch": [
+        {
+          "id": "crossref:10.1007/s10462-026-11665-9",
+          "title": "Evidence of impact and interpretational limits of generative AI in STEM education: a systematic review and meta-analysis on cognitive learning outcomes",
+          "status": "support-existing",
+          "publication_date": "2026-08-25",
+          "reference_url": "https://doi.org/10.1007/s10462-026-11665-9",
+          "topic_ids": [
+            "skill-learning",
+            "critical-thinking",
+            "metacognition"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
         {
           "id": "crossref:10.1016/j.learninstruc.2026.102377",
           "title": "Mixed effects of retrieval practice on the acquisition of procedural knowledge in verb spelling education",
@@ -1412,14 +2606,14 @@
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
         },
         {
-          "id": "crossref:10.1037/a0037559",
-          "title": "The effect of testing versus restudy on retention: a meta-analytic review of the testing effect",
-          "status": "support-existing",
-          "publication_date": "2014-08-25",
-          "reference_url": "https://doi.org/10.1037/a0037559",
+          "id": "crossref:10.1186/s41235-026-00708-y",
+          "title": "Duolingo-inspired pretesting with words and pictures improves vocabulary learning",
+          "status": "propose-protocol",
+          "publication_date": "2026-03-06",
+          "reference_url": "https://doi.org/10.1186/s41235-026-00708-y",
           "topic_ids": [
             "memory",
-            "skill-learning"
+            "language-learning"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -1445,30 +2639,25 @@
           "id": "attention-focus",
           "title": "Attention & Focus",
           "canonical_id": "brali:topic:attention-focus"
-        },
-        {
-          "id": "decision-making",
-          "title": "Decision Making",
-          "canonical_id": "brali:topic:decision-making"
         }
       ],
       "related_methods": [
         {
-          "id": "metacognitive-therapy",
-          "title": "Metacognitive Therapy-derived",
-          "canonical_id": "brali:method:metacognitive-therapy"
-        },
-        {
           "id": "retrieval-practice",
           "title": "Retrieval Practice",
           "canonical_id": "brali:method:retrieval-practice"
+        },
+        {
+          "id": "metacognitive-therapy",
+          "title": "Metacognitive Therapy-derived",
+          "canonical_id": "brali:method:metacognitive-therapy"
         }
       ],
       "trust_note": "Protocol recommendations come only from the reviewed/practical trusted feed. Research-watch items are discovery metadata, not evidence. Reviewed Evidence Decisions define the research claims and boundaries shown here."
     },
     {
       "schema_version": 1,
-      "dataset_version": "1.0.0",
+      "dataset_version": "1.1.0",
       "slug": "movement",
       "title": "Movement & Exercise",
       "question": "How can I move more and build sustainable physical routines without inventing a magic cognitive break dose?",
@@ -1477,7 +2666,7 @@
       "json_url": "https://brali-lifeos.github.io/topics/movement/index.json",
       "api_url": "https://brali-lifeos.github.io/api/v1/hubs.json",
       "coverage_status": "trusted-protocols",
-      "coverage_note": "5 trusted protocol recommendations available.",
+      "coverage_note": "8 trusted protocol recommendations available.",
       "topics": [
         {
           "id": "movement",
@@ -1499,6 +2688,30 @@
         }
       ],
       "protocols": [
+        {
+          "canonical_id": "brali:protocol:temptation-bundling",
+          "protocol_id": "brali:temptation-bundling",
+          "slug": "temptation-bundling",
+          "url": "https://brali-lifeos.github.io/life-os/temptation-bundling/",
+          "title": "Pair a Useful Task with Something You Genuinely Want",
+          "description": "Pair a beneficial activity that is easy to postpone with a compatible pleasure you already enjoy. Temptation bundling has field-experiment support for exercise, but it is not a universal habit formula and effects can fade.",
+          "action": "Choose one 'should' behavior that is useful but easy to delay and one 'want' experience that can happen at the same time without making the task worse. Examples might include a favorite audiobook during a walk or routine cardio, a preferred podcast while doing repetitive household work, or another compatible pairing. If you want a stronger commitment device, reserve that entertainment for the target activity. Keep the pairing safe: do not add absorbing media to driving, technical work, strength movements that require concentration, or any task where divided attention creates risk.",
+          "check_in": "Did the pairing make the useful activity easier to start or repeat, and did the reward stay enjoyable without damaging the quality or safety of the task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
         {
           "canonical_id": "brali:protocol:10-minute-morning-stretch-routine",
           "protocol_id": "brali:10-minute-morning-stretch-routine",
@@ -1522,18 +2735,41 @@
           "hub_score": 1192.4
         },
         {
+          "canonical_id": "brali:protocol:10-minute-stress-walk",
+          "protocol_id": "brali:10-minute-stress-walk",
+          "slug": "10-minute-stress-walk",
+          "url": "https://brali-lifeos.github.io/life-os/10-minute-stress-walk/",
+          "title": "Take a Short Walk When Stress Builds",
+          "description": "Whenever stress hits, take a quick 10-minute walk—whether it’s outside, around a park, or just circling your office.",
+          "action": "When stress is building, consider a short, comfortable walk if walking is safe and practical for you. Treat ten minutes as a convenient boundary, not a medically proven dose. If a greener route is just as easy and safe, prefer it as a reasonable experiment rather than making a special trip. Then notice whether you feel any different before returning to the next task.",
+          "check_in": "Did I take the walk? Was the route ordinary or relatively green? How did my stress or tension feel before and after, and did I return more able to continue the next task?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1802759/full",
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "stress-regulation",
+            "movement"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
           "canonical_id": "brali:protocol:4-minute-hiit-tabata-workout",
           "protocol_id": "brali:4-minute-hiit-tabata-workout",
           "slug": "4-minute-hiit-tabata-workout",
           "url": "https://brali-lifeos.github.io/life-os/4-minute-hiit-tabata-workout/",
           "title": "Try Short High-Intensity Intervals Safely",
           "description": "Perform a HIIT session with 20 seconds of intense exercise (like sprinting or jumping jacks) followed by 10 seconds of rest, repeated for 8 rounds.",
-          "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely and try a short interval session at an intensity you can control. Treat 20 seconds of work and 10 seconds of rest as one possible interval format, not a universal prescription, and stop if you feel pain or become unwell.",
-          "check_in": "Was this level of intensity appropriate for me today, did I keep good control of the movement, and did I have any pain, dizziness, unusual breathlessness or other reason to stop?",
+          "action": "If vigorous exercise is appropriate for your current fitness and health, choose a simple movement you can perform safely. You can use it as one short interval session, or as brief exercise snacks separated across the day when a full workout is unlikely. Make the effort challenging but controlled. Treat 20/10, 3 × 1 minute, 4 × 1 minute and similar timers as formats to adapt, not scientifically optimized doses.",
+          "check_in": "Was the effort genuinely challenging but still controlled, could I repeat it without losing movement quality, and over several weeks is fitness or function trending in a useful direction rather than just my streak count?",
           "evidence": {
             "status": "reviewed",
             "source_recorded": true,
-            "source_url": "https://www.nhs.uk/live-well/exercise/physical-activity-guidelines-for-adults-aged-19-to-64/",
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
             "reviewed_at": "2026-08-18"
           },
           "is_flagship_100": true,
@@ -1566,6 +2802,53 @@
           "hub_score": 1192.4
         },
         {
+          "canonical_id": "brali:protocol:post-meal-walk",
+          "protocol_id": "brali:post-meal-walk",
+          "slug": "post-meal-walk",
+          "url": "https://brali-lifeos.github.io/life-os/post-meal-walk/",
+          "title": "Walk Soon After a Meal When You Would Otherwise Sit",
+          "description": "When it is safe and practical, replace some sitting after a meal with comfortable walking. Evidence supports an acute effect on post-meal glucose, not a universal walking dose or long-term treatment claim.",
+          "action": "After a meal, choose an ordinary walk that feels comfortable and fits the situation. Starting relatively soon after eating matches the direction of the reviewed acute evidence better than deliberately waiting a long time, but Brali does not prescribe a universal minute mark, pace, or duration. If you use glucose-lowering medication, have a condition affected by exercise or meals, or have been given specific activity advice, follow your clinical plan instead of using this page as treatment guidance.",
+          "check_in": "Did the walk replace sitting without causing discomfort or disrupting a medical plan, and is it practical enough to repeat when useful?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10036272/",
+            "reviewed_at": "2026-09-11"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "movement",
+            "health-basics"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.4
+        },
+        {
+          "canonical_id": "brali:protocol:20-20-20-eye-break-reminder",
+          "protocol_id": "brali:20-20-20-eye-break-reminder",
+          "slug": "20-20-20-eye-break-reminder",
+          "url": "https://brali-lifeos.github.io/life-os/20-20-20-eye-break-reminder/",
+          "title": "Use the 20-20-20 Rule for Screen Breaks",
+          "description": "When you spend a long time looking at screens, take a short distance-viewing break: about every 20 minutes, look at something about 20 feet away for 20 seconds.",
+          "action": "During long periods of screen use, take a short visual break about every 20 minutes and look at something about 20 feet away for 20 seconds. Use the reminder as a simple screen-rest cue, not as a treatment or a substitute for eye care.",
+          "check_in": "Did I take regular screen breaks, and are eye strain, dryness, headaches, or blurred vision still bothering me enough that I should discuss them with an eye-care professional?",
+          "evidence": {
+            "status": "reviewed",
+            "source_recorded": true,
+            "source_url": "https://www.nei.nih.gov/eye-health-information/healthy-vision/how-eyes-work/keep-your-eyes-healthy",
+            "reviewed_at": "2026-08-18"
+          },
+          "is_flagship_100": true,
+          "topic_ids": [
+            "health-basics",
+            "digital-wellbeing",
+            "recovery-energy"
+          ],
+          "method_ids": [],
+          "hub_score": 1192.35
+        },
+        {
           "canonical_id": "brali:protocol:cardio-health-daily-habits",
           "protocol_id": "brali:cardio-health-daily-habits",
           "slug": "cardio-health-daily-habits",
@@ -1588,32 +2871,134 @@
           ],
           "method_ids": [],
           "hub_score": 1192.27
-        },
-        {
-          "canonical_id": "brali:protocol:90-30-focus-rest-schedule",
-          "protocol_id": "brali:90-30-focus-rest-schedule",
-          "slug": "90-30-focus-rest-schedule",
-          "url": "https://brali-lifeos.github.io/life-os/90-30-focus-rest-schedule/",
-          "title": "Alternate Focused Work With Real Breaks",
-          "description": "Use a protected focus block followed by a real break, then adjust the length to your task, energy, and schedule instead of treating 90/30 as a biological rule.",
-          "action": "Choose one important task, protect a focus block from avoidable interruptions, then step away for a real break. Adjust both periods to your workload and energy rather than forcing a fixed 90/30 schedule.",
-          "check_in": "Was the focus block long enough to make progress, did the break actually feel like a break, and what duration would fit the next cycle better?",
-          "evidence": {
-            "status": "practical",
-            "source_recorded": false,
-            "source_url": null,
-            "reviewed_at": "2026-08-18"
-          },
-          "is_flagship_100": true,
-          "topic_ids": [
-            "attention-focus",
-            "recovery-energy"
-          ],
-          "method_ids": [],
-          "hub_score": 1062.03
         }
       ],
       "evidence_decisions": [
+        {
+          "id": "activity-breaks-postprandial-metabolism-boundary-2026",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-08-30",
+          "source_title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+          "source_url": "https://onlinelibrary.wiley.com/doi/10.1111/obr.70152",
+          "source_type": "meta-analysis",
+          "citation_text": "Gale JT, Martin H, Haszard JJ, Peddie MC. Obesity Reviews. 2026:e70152.",
+          "supported_claim": "For acute post-meal metabolism, replacing small portions of a prolonged sitting period with brief activity is better supported than remaining continuously seated. Across randomized crossover evidence, regular activity breaks reduced postprandial glucose and insulin responses, with walking producing the strongest overall mode estimates. Brali can therefore propose a bounded protocol to interrupt long sitting bouts with brief movement, especially walking when feasible, while treating the exact timing and dose as adaptable rather than universally fixed.",
+          "unsupported_or_overstated_claims": [
+            "A break every 20 minutes is the universal optimal schedule for all people and settings.",
+            "Brief movement breaks prevent diabetes, cardiovascular disease, obesity, or mortality.",
+            "The protocol improves concentration, productivity, mood, pain, or cognitive performance.",
+            "Standing alone produces the same metabolic effect as walking or active movement.",
+            "Brief sitting interruptions can replace recommended weekly physical activity or structured exercise.",
+            "The subgroup estimates establish which BMI or clinical group will benefit most.",
+            "One exact walking speed, intensity, duration, or exercise routine is required."
+          ],
+          "limitations": [
+            "All included studies were acute laboratory randomized crossover trials lasting less than 24 hours, so the evidence does not establish long-term health effects or sustainability.",
+            "Prolonged-sitting laboratory protocols, especially the longer ones, may not resemble habitual real-world sitting.",
+            "Many pooled and subgroup estimates had substantial heterogeneity that remained after subgroup analysis.",
+            "Most studies were rated fair or good rather than excellent; participant blinding was impossible and reporting of attrition and assessor blinding was inconsistent.",
+            "The review was not prospectively registered in PROSPERO or another registry and no review protocol was prepared.",
+            "The search was limited to peer-reviewed English-language studies, so relevant evidence may have been missed.",
+            "Frequency and mode subgroup comparisons do not by themselves prove that the largest subgroup estimate is the optimal prescription for an individual."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
+        {
+          "id": "exercise-snacks-cardiorespiratory-fitness-boundary-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-09",
+          "source_title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13486332/",
+          "source_type": "systematic-review-meta-analysis",
+          "citation_text": "Meng L, Li Y, Chen J, Zheng H. J Nutr Health Aging. 2026;30(10):100940.",
+          "supported_claim": "Across the included randomized studies, exercise snacks improved VO2max and peak power output on average with moderate-certainty evidence. This supports offering distributed brief exercise bouts as a practical cardiorespiratory-fitness option when a longer continuous workout is difficult to fit. The evidence does not establish one modality, timer, number of bouts, weekly frequency or intervention duration as the optimal prescription.",
+          "unsupported_or_overstated_claims": [
+            "A 20-seconds-on/10-seconds-off Tabata timer is the evidence-based exercise-snack dose.",
+            "Three or four one-minute exercise snacks per day are universally optimal.",
+            "The subgroup with more than five daily bouts proves that more bouts are better for each individual.",
+            "Four to five days per week or seven to nine weeks is an optimized prescription.",
+            "Exercise snacks reliably reduce body fat or improve cholesterol and triglycerides.",
+            "Exercise snacks are equivalent to or should replace conventional exercise.",
+            "The nonsignificant VO2max result in studies with mean age above 50 proves exercise snacks do not work for people older than 50.",
+            "A short exercise bout automatically produces a meaningful training stimulus regardless of intensity, modality or execution."
+          ],
+          "limitations": [
+            "Cardiorespiratory-fitness effects showed substantial between-study heterogeneity (I2 74% for VO2max and 63% for peak power output), which contributed to GRADE downgrading.",
+            "Certainty was low for body-fat and blood-lipid outcomes because of heterogeneity, imprecision and possible publication bias for some outcomes.",
+            "Interventions differed markedly in modality, intensity, bout duration, within-day distribution, weekly frequency, intervention duration and supervision.",
+            "Dietary control varied across trials and could contribute to inconsistent body-composition and lipid results.",
+            "Age analyses used study-level mean age rather than individual participant data, creating ecological-bias risk and making individual age cutoffs inappropriate.",
+            "Potential publication bias was detected for VO2max and body-fat percentage.",
+            "Subgroup analyses compared relatively small numbers of studies and cannot identify a causal optimal dose.",
+            "Long-term scalability remains uncertain."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
+        {
+          "id": "exercise-snacks-real-world-t2d-boundary-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-09",
+          "source_title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+          "source_url": "https://pubmed.ncbi.nlm.nih.gov/42502209/",
+          "source_type": "primary-study",
+          "citation_text": "Babir FJ, Marcotte-Chénard A, Sandilands RE, et al. Diabetes Obes Metab. 2026;28(10):9294-9303.",
+          "supported_claim": "In this specific real-world type 2 diabetes sample, the four-by-one-minute vigorous exercise-snack program was feasible and improved 30-second sit-to-stand performance more than an active mobility/stretching comparator. The trial does not show a broad cardiometabolic or aerobic-fitness advantage for this exact prescription.",
+          "unsupported_or_overstated_claims": [
+            "Four one-minute vigorous bouts on five days per week are an optimal exercise-snack prescription.",
+            "High adherence to exercise snacks guarantees improvement in VO2max, HbA1c or cardiometabolic biomarkers.",
+            "The trial proves exercise snacks improve diabetes control.",
+            "The findings can be generalized unchanged to healthy adults, younger adults, insulin-treated diabetes or other clinical populations.",
+            "A null result for most secondary outcomes proves exercise snacks are ineffective in general.",
+            "The observed sit-to-stand benefit proves reduced fall risk or improved long-term clinical outcomes."
+          ],
+          "limitations": [
+            "The sample was limited to insufficiently active adults with non-insulin-treated type 2 diabetes and well-controlled glycemia at baseline.",
+            "The primary outcome was feasibility; efficacy outcomes were secondary and the study was not a definitive comparative-effectiveness trial for all health outcomes.",
+            "The mobility/stretching control was active rather than no-exercise, so the contrast estimates the added effect of the vigorous condition over a matched low-intensity routine.",
+            "The intervention was remotely delivered and real-world exercise intensity was lower than some prior supervised laboratory exercise-snack protocols.",
+            "Estimated VO2max relied on a submaximal predictive test that the investigators reported performed poorly in this population, limiting interpretation of that fitness outcome.",
+            "The trial lasted 12 weeks and does not establish longer-term adherence or clinical outcomes."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
+        {
+          "id": "hourly-microexercise-workplace-watch-2026",
+          "decision": "watch",
+          "reviewed_at": "2026-08-30",
+          "source_title": "Micro-exercise breaks every hour: a feasible strategy to improve metabolic health in sedentary office workers",
+          "source_url": "https://link.springer.com/article/10.1186/s12889-026-26484-4",
+          "source_type": "primary-study",
+          "citation_text": "Fang Y, Li H, Dong P, Wan F. BMC Public Health. 2026;26:763.",
+          "supported_claim": "This trial makes the general movement-break idea more plausible in an ordinary workplace over twelve weeks: a simple hourly bodyweight routine was feasible for many participants, increased light activity, reduced sedentary time and improved several measured metabolic markers. It is useful ecological support for continuing to develop a sitting-interruption protocol, but it should remain watch-level evidence for the exact hourly three-minute dose until stronger preregistered and replicated field evidence is available.",
+          "unsupported_or_overstated_claims": [
+            "Three minutes every hour is an established optimal dose.",
+            "The intervention prevents or delays diabetes or cardiovascular disease.",
+            "The results generalize unchanged to normal-weight, highly active, older, younger, shift-working, disabled, or non-office populations.",
+            "The routine improves work productivity or cognitive performance; those outcomes were not established with the same objective causal standard.",
+            "All seven prescribed breaks are necessary to obtain benefit.",
+            "The specific six-exercise sequence is superior to walking or other feasible movement.",
+            "The study proves long-term adherence or safety beyond twelve weeks."
+          ],
+          "limitations": [
+            "The trial was not registered in a clinical-trial registry, which weakens confidence that outcomes and analyses were fixed prospectively.",
+            "It was a single-city study across three workplaces with only 86 randomized participants and 79 completing follow-up.",
+            "The sample was predominantly overweight, limiting generalizability to metabolically different populations.",
+            "Participants and intervention facilitators could not be blinded and there was no attention-control condition.",
+            "Adherence was monitored primarily by self-report, although workplace observations and accelerometry provided partial objective corroboration.",
+            "Dietary intake was not measured, leaving a potential unmeasured contributor to metabolic change.",
+            "Twelve weeks is too short to establish durable adherence or clinical endpoints such as diabetes incidence.",
+            "The sample was not powered to establish reliable subgroup effects."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
         {
           "id": "microbreak-wellbeing-performance-boundary-2022",
           "decision": "support-existing",
@@ -1648,6 +3033,34 @@
           ]
         },
         {
+          "id": "movement-breaks-cardiometabolic-vanherle-2026",
+          "decision": "support-existing",
+          "reviewed_at": "2026-09-08",
+          "source_title": "Optimizing physical activity bouts to interrupt sedentary behaviour for cardiometabolic health: a systematic review and meta-analyses of randomized controlled trials",
+          "source_url": "https://academic.oup.com/eurjpc/advance-article/doi/10.1093/eurjpc/zwag079/8571395",
+          "source_type": "meta-analysis",
+          "citation_text": "Vanherle J, Franssen GHLM, Ivanova A, Eijnde BO, Franssen WMA. European Journal of Preventive Cardiology. Published online 1 April 2026. doi:10.1093/eurjpc/zwag079.",
+          "supported_claim": "In acute controlled settings, interrupting prolonged sitting with actual physical activity can improve glucose and insulin responses on average. More frequent light-to-moderate activity appears useful for acute glucose control, while standing alone did not show the same cardiometabolic signal. For Brali this supports replacing an avoidable sitting block with safe movement, including walking when a meeting can travel, without prescribing one universal interval.",
+          "unsupported_or_overstated_claims": [
+            "A walking meeting has a special metabolic, productivity, creativity, or cognitive effect beyond the movement it contains.",
+            "Everyone should stand or walk every 20 or 30 minutes.",
+            "Standing still is metabolically equivalent to a walking or physical-activity break.",
+            "Acute laboratory improvements prove long-term prevention or treatment of diabetes, hypertension, cardiovascular disease, or other conditions.",
+            "A walking meeting should target a fixed step count, heart-rate increase, duration, or physiological dose.",
+            "The review supports inherited claims about wind noise, phone battery drain, meeting quality, mental clarity, or screen fatigue."
+          ],
+          "limitations": [
+            "The evidence is dominated by acute controlled experimental settings and cannot establish long-term clinical benefit or sustainable free-living adherence.",
+            "Participant characteristics, meals, timing, activity protocols, and outcome measurement varied substantially across studies.",
+            "Many individual studies had small samples; only a minority of intervention comparisons were rated low overall risk of bias, with most having some concerns.",
+            "The review focused on adults aged 18-65 years, so the findings should not be generalized automatically to children or older adults.",
+            "The evidence concerns physical-activity interruptions, not walking meetings as a distinct behavioral or workplace intervention."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
+        {
           "id": "movement-breaks-cognition-2026",
           "decision": "watch",
           "reviewed_at": "2026-08-18",
@@ -1673,9 +3086,121 @@
           "topic_ids": [
             "movement"
           ]
+        },
+        {
+          "id": "post-meal-exercise-acute-glucose-boundary-2023",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "After Dinner Rest a While, After Supper Walk a Mile? A Systematic Review with Meta-analysis on the Acute Postprandial Glycemic Response to Exercise Before and After Meal Ingestion in Healthy Subjects and Patients with Impaired Glucose Tolerance",
+          "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10036272/",
+          "source_type": "systematic-review-meta-analysis",
+          "citation_text": "Engeroff T, Groneberg DA, Wilke J. Sports Med. 2023;53(4):849-869.",
+          "supported_claim": "Replacing some post-meal sitting with safe walking or other suitable movement relatively soon after eating is a defensible practical option when the goal is ordinary movement and the acute post-meal glucose mechanism is relevant. The meta-analysis found lower acute postprandial glucose after post-meal exercise than after no exercise and better average results than matched pre-meal exercise. Brali should not prescribe one duration, pace, start minute, or medical target.",
+          "unsupported_or_overstated_claims": [
+            "Everyone should walk exactly 20 minutes after every meal.",
+            "There is a proven exact number of minutes after eating when exercise must start.",
+            "Post-meal walking treats diabetes or permits medication changes.",
+            "Acute glucose reductions prove long-term prevention of diabetes, cardiovascular disease, or other conditions.",
+            "Exercise before meals is useless for health in general.",
+            "A casual personal glucose reading can validate the protocol's causal effect for an individual."
+          ],
+          "limitations": [
+            "Only eight randomized crossover trials with 116 total participants met the strict inclusion criteria.",
+            "Included trials were rated high risk of bias.",
+            "Exercise protocols, meals, participant characteristics and glucose measurement methods varied.",
+            "The type 2 diabetes subgroup was small and some subgroup comparisons were imprecise.",
+            "The review concerned acute postprandial responses and cannot establish long-term clinical outcomes.",
+            "Moderator evidence about delay after eating does not define an exact individual optimum."
+          ],
+          "topic_ids": [
+            "movement",
+            "health-basics"
+          ]
+        },
+        {
+          "id": "sitting-breaks-cognition-boundary-2026",
+          "decision": "watch",
+          "reviewed_at": "2026-09-05",
+          "source_title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
+          "source_url": "https://link.springer.com/article/10.1186/s12966-026-01953-6",
+          "source_type": "systematic-review-meta-analysis",
+          "citation_text": "Zhuang M, Yin M, Liu Z, et al. International Journal of Behavioral Nutrition and Physical Activity. 2026;23:79.",
+          "supported_claim": "The existing Brali sitting-break protocol has limited additional cognitive support: across randomized crossover studies, interrupting prolonged sitting was associated with small acute improvements in executive function and memory. Because certainty was low and attention/information-processing results were not clear, cognition should remain a secondary possible benefit rather than the reason or promise for the protocol.",
+          "unsupported_or_overstated_claims": [
+            "Movement breaks reliably improve attention or concentration; the pooled attention estimate was not beneficial.",
+            "Movement breaks reliably improve overall cognition or information-processing speed.",
+            "A specific break frequency is proven optimal for executive function or memory.",
+            "Low-intensity walking is definitively superior to other feasible movement modes for cognition.",
+            "The small acute cognitive effects translate into better workplace productivity, fewer errors, academic achievement, or long-term cognitive protection.",
+            "The exploratory subgroup results establish who should use a more frequent or less frequent break schedule."
+          ],
+          "limitations": [
+            "Only 21 crossover trials with 433 total participants were included, leaving many domain and subgroup estimates based on small evidence bases.",
+            "GRADE certainty was low for executive function, memory, information processing and attention and very low for global cognition.",
+            "The evidence concerns acute experimental responses, not long-term cognitive outcomes, productivity or real-world work performance.",
+            "Intervention protocols varied substantially in frequency, intensity, duration and mode.",
+            "Subgroup and meta-regression findings were exploratory and should not be converted into individualized dosing rules.",
+            "Some apparently favorable domain estimates may be sensitive to the small number of studies and heterogeneous cognitive tasks."
+          ],
+          "topic_ids": [
+            "movement"
+          ]
+        },
+        {
+          "id": "temptation-bundling-exercise-boundary-2020",
+          "decision": "propose-protocol",
+          "reviewed_at": "2026-09-11",
+          "source_title": "Teaching temptation bundling to boost exercise: A field experiment",
+          "source_url": "https://doi.org/10.1016/j.obhdp.2020.09.003",
+          "source_type": "primary-study",
+          "citation_text": "Milkman KL, Duckworth AL, Choi J, Laibson D, Madrian B. Organ Behav Hum Decis Process. 2020.",
+          "supported_claim": "Pairing a delayed-benefit behavior with a compatible immediate reward can modestly increase exercise participation in some field settings. Brali can offer temptation bundling as a task-initiation experiment, while keeping its strongest empirical anchor in exercise and requiring that the reward not impair the useful activity.",
+          "unsupported_or_overstated_claims": [
+            "Temptation bundling works equally well for every habit.",
+            "The audiobook itself proves the mechanism independent of planning, reminders and other program components.",
+            "A reward should always be restricted exclusively to the target behavior.",
+            "The technique reliably creates permanent habits.",
+            "Adding entertainment is appropriate for driving, complex learning, technical work or exercise where divided attention creates risk."
+          ],
+          "limitations": [
+            "The strongest evidence is concentrated in exercise/gym behavior rather than arbitrary habits.",
+            "The large StepUp program included multiple behavior-change components, complicating attribution in broader control comparisons.",
+            "The incremental effect of explicit temptation-bundling teaching over receiving the audiobook alone was modest.",
+            "Participants self-selected into an exercise-boosting program and may have been more motivated than typical gym members.",
+            "The original field experiment showed that effects can decay and be disrupted by context changes such as holidays."
+          ],
+          "topic_ids": [
+            "habits-consistency",
+            "task-initiation",
+            "movement"
+          ]
         }
       ],
       "research_watch": [
+        {
+          "id": "crossref:10.1016/j.jnha.2026.100940",
+          "title": "Effects of exercise snacks on cardiorespiratory fitness, body composition, and blood lipids in adults across different age groups: a systematic review and meta-analysis",
+          "status": "support-existing",
+          "publication_date": "2026-08-09",
+          "reference_url": "https://doi.org/10.1016/j.jnha.2026.100940",
+          "topic_ids": [
+            "movement"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
+        {
+          "id": "crossref:10.1111/dom.71052",
+          "title": "Exercise Snacks Are Feasible to Perform in the Real World and Improve Physical Capacity for Adults Living With Non-Insulin Treated Type 2 Diabetes: A Randomised Trial",
+          "status": "support-existing",
+          "publication_date": "2026-07-25",
+          "reference_url": "https://doi.org/10.1111/dom.71052",
+          "topic_ids": [
+            "movement"
+          ],
+          "evidence_state": "discovery-only",
+          "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
+        },
         {
           "id": "crossref:10.1186/s12966-026-01953-6",
           "title": "Acute cognitive effects of interruptions to prolonged sitting with brief standing or physical activity breaks: a systematic review and three-level meta-analysis",
@@ -1689,14 +3214,13 @@
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
         },
         {
-          "id": "crossref:10.1371/journal.pone.0272460",
-          "title": "Give me a break! A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
-          "status": "support-existing",
-          "publication_date": "2022-08-31",
-          "reference_url": "https://doi.org/10.1371/journal.pone.0272460",
+          "id": "crossref:10.1111/obr.70152",
+          "title": "The Acute Effects of Interrupting Prolonged Sitting With Regular Activity Breaks on Postprandial Glucose and Insulin in Adults: A Systematic Review and Meta-Analysis",
+          "status": "propose-protocol",
+          "publication_date": "2026-05-03",
+          "reference_url": "https://doi.org/10.1111/obr.70152",
           "topic_ids": [
-            "recovery-energy",
-            "attention-focus"
+            "movement"
           ],
           "evidence_state": "discovery-only",
           "note": "Discovery metadata is not reviewed evidence. Read the Evidence Decision when one exists."
@@ -1714,9 +3238,24 @@
           "canonical_id": "brali:topic:cardiovascular-health"
         },
         {
-          "id": "attention-focus",
-          "title": "Attention & Focus",
-          "canonical_id": "brali:topic:attention-focus"
+          "id": "habits-consistency",
+          "title": "Habits & Consistency",
+          "canonical_id": "brali:topic:habits-consistency"
+        },
+        {
+          "id": "task-initiation",
+          "title": "Task Initiation",
+          "canonical_id": "brali:topic:task-initiation"
+        },
+        {
+          "id": "stress-regulation",
+          "title": "Stress Regulation",
+          "canonical_id": "brali:topic:stress-regulation"
+        },
+        {
+          "id": "digital-wellbeing",
+          "title": "Digital Wellbeing",
+          "canonical_id": "brali:topic:digital-wellbeing"
         }
       ],
       "related_methods": [],

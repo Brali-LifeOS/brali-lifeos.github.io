@@ -3,7 +3,7 @@
   "type": "brali-growth-zone",
   "slug": "be-creative",
   "title": "Be Creative",
-  "description": "Unlock your creativity and learn how to apply it to solve problems and generate ideas.",
+  "description": "Generate more varied ideas, change context when it helps, and separate idea generation from evaluation.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/be-creative/",
   "machine_url": "https://brali-lifeos.github.io/life-os/be-creative/index.json",
   "indexable": true,
@@ -14,19 +14,19 @@
   },
   "counts": {
     "library_entries": 21,
-    "trusted_protocols": 4,
+    "trusted_protocols": 6,
     "reviewed": 0,
-    "practical": 4,
-    "pending_review": 17,
+    "practical": 6,
+    "pending_review": 15,
     "restricted": 0,
-    "mapped_topics": 2,
+    "mapped_topics": 4,
     "research_gaps": 1
   },
   "topics": [
     {
       "id": "idea-generation",
       "title": "Idea Generation",
-      "count": 21,
+      "count": 20,
       "url": "https://brali-lifeos.github.io/ontology/topics/idea-generation/"
     },
     {
@@ -34,13 +34,25 @@
       "title": "Creative Problem Solving",
       "count": 2,
       "url": "https://brali-lifeos.github.io/ontology/topics/creative-problem-solving/"
+    },
+    {
+      "id": "planning-prioritization",
+      "title": "Planning & Prioritization",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/planning-prioritization/"
+    },
+    {
+      "id": "task-initiation",
+      "title": "Task Initiation",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/task-initiation/"
     }
   ],
   "research_gaps": [
     {
       "topic_id": "creative-problem-solving",
       "title": "Creative Problem Solving",
-      "stage": "discovery-ready",
+      "stage": "ready-for-resolution",
       "url": "https://brali-lifeos.github.io/research/gaps/creative-problem-solving/"
     }
   ],
@@ -67,6 +79,18 @@
       "slug": "bold-brainstorm-kickoff",
       "title": "Use an Extreme Seed, Then Return to Reality",
       "url": "https://brali-lifeos.github.io/life-os/bold-brainstorm-kickoff/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "creativity-within-constraints",
+      "title": "Use One Constraint to Produce a Different Creative Draft",
+      "url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
+      "evidence_status": "practical"
+    },
+    {
+      "slug": "oblique-strategies-prompt-cards",
+      "title": "Use One Random Constraint to Break a Creative Stalemate",
+      "url": "https://brali-lifeos.github.io/life-os/oblique-strategies-prompt-cards/",
       "evidence_status": "practical"
     }
   ],
@@ -103,13 +127,6 @@
       "slug": "mind-map-templates-and-integrations",
       "title": "Create Mind Maps",
       "url": "https://brali-lifeos.github.io/life-os/mind-map-templates-and-integrations/",
-      "evidence_status": "pending-review",
-      "indexable": false
-    },
-    {
-      "slug": "creativity-within-constraints",
-      "title": "Creativity Within Constraints",
-      "url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
       "evidence_status": "pending-review",
       "indexable": false
     },
@@ -191,11 +208,18 @@
       "indexable": true
     },
     {
+      "slug": "creativity-within-constraints",
+      "title": "Use One Constraint to Produce a Different Creative Draft",
+      "url": "https://brali-lifeos.github.io/life-os/creativity-within-constraints/",
+      "evidence_status": "practical",
+      "indexable": true
+    },
+    {
       "slug": "oblique-strategies-prompt-cards",
-      "title": "Use Cards with Unique Prompts to Shake up Your Thinking and Refresh Your Approach",
+      "title": "Use One Random Constraint to Break a Creative Stalemate",
       "url": "https://brali-lifeos.github.io/life-os/oblique-strategies-prompt-cards/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "walt-disney-method-workshop",

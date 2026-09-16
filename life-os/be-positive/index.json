@@ -3,35 +3,61 @@
   "type": "brali-growth-zone",
   "slug": "be-positive",
   "title": "Be Positive",
-  "description": "Learn to see the silver lining in every situation and turn obstacles into stepping stones.",
+  "description": "Build everyday wellbeing with small practices, without forcing positivity or pretending every setback needs a silver lining.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/be-positive/",
   "machine_url": "https://brali-lifeos.github.io/life-os/be-positive/index.json",
   "indexable": true,
-  "trusted_coverage": false,
+  "trusted_coverage": true,
   "life_area": {
     "slug": "mind-resilience",
     "title": "Mind & Resilience"
   },
   "counts": {
-    "library_entries": 18,
-    "trusted_protocols": 0,
-    "reviewed": 0,
-    "practical": 0,
-    "pending_review": 18,
+    "library_entries": 19,
+    "trusted_protocols": 2,
+    "reviewed": 1,
+    "practical": 1,
+    "pending_review": 17,
     "restricted": 0,
-    "mapped_topics": 1,
-    "research_gaps": 0
+    "mapped_topics": 2,
+    "research_gaps": 1
   },
   "topics": [
     {
       "id": "mood-wellbeing",
       "title": "Mood & Wellbeing",
-      "count": 18,
+      "count": 19,
       "url": "https://brali-lifeos.github.io/ontology/topics/mood-wellbeing/"
+    },
+    {
+      "id": "self-awareness",
+      "title": "Self-Awareness",
+      "count": 1,
+      "url": "https://brali-lifeos.github.io/ontology/topics/self-awareness/"
     }
   ],
-  "research_gaps": [],
-  "trusted_protocols": [],
+  "research_gaps": [
+    {
+      "topic_id": "self-awareness",
+      "title": "Self-Awareness",
+      "stage": "ready-for-resolution",
+      "url": "https://brali-lifeos.github.io/research/gaps/self-awareness/"
+    }
+  ],
+  "trusted_protocols": [
+    {
+      "slug": "savor-positive-moment",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "url": "https://brali-lifeos.github.io/life-os/savor-positive-moment/",
+      "evidence_status": "reviewed"
+    },
+    {
+      "slug": "affirmation-habit-tracker",
+      "title": "Replace grand claims with a grounded statement and one next action.",
+      "url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
+      "evidence_status": "practical"
+    }
+  ],
   "entries": [
     {
       "slug": "practice-optimistic-thinking",
@@ -97,11 +123,11 @@
       "indexable": false
     },
     {
-      "slug": "affirmation-habit-tracker",
-      "title": "Pick a Few Powerful Affirmations That Resonate with You and Repeat Them Out Loud",
-      "url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
-      "evidence_status": "pending-review",
-      "indexable": false
+      "slug": "savor-positive-moment",
+      "title": "Pause Long Enough to Notice a Good Moment",
+      "url": "https://brali-lifeos.github.io/life-os/savor-positive-moment/",
+      "evidence_status": "reviewed",
+      "indexable": true
     },
     {
       "slug": "positive-morning-priming",
@@ -123,6 +149,13 @@
       "url": "https://brali-lifeos.github.io/life-os/daily-gratitude-journal-habit/",
       "evidence_status": "pending-review",
       "indexable": false
+    },
+    {
+      "slug": "affirmation-habit-tracker",
+      "title": "Replace grand claims with a grounded statement and one next action.",
+      "url": "https://brali-lifeos.github.io/life-os/affirmation-habit-tracker/",
+      "evidence_status": "practical",
+      "indexable": true
     },
     {
       "slug": "comfort-zone-challenge-tracker",

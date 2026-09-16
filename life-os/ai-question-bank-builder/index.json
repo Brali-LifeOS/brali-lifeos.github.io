@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:ai-question-bank-builder",
   "slug": "ai-question-bank-builder",
-  "title": "Question Banks Creation",
-  "description": "As you study, create a variety of questions—multiple-choice, short answer, essay—about the content.",
+  "title": "Build an AI-Assisted Question Bank You Can Verify",
+  "description": "Use AI to draft varied practice questions from material you already have, verify every answer against the source, and keep only questions that test the knowledge you actually need.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
   "machine_url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Learning & Thinking"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:ai-question-bank-builder",
+    "language": "en",
+    "slug": "ai-question-bank-builder",
+    "url": "https://brali-lifeos.github.io/life-os/ai-question-bank-builder/",
+    "title": "Build an AI-Assisted Question Bank You Can Verify",
+    "description": "Use AI to draft varied practice questions from material you already have, verify every answer against the source, and keep only questions that test the knowledge you actually need.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "learning-thinking",
+          "title": "Learning & Thinking"
+        }
+      ],
+      "topics": [
+        {
+          "id": "skill-learning",
+          "title": "Skill Learning"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "learning-thinking",
+        "growth_zone_slug": "skill-sprint"
+      }
+    },
+    "life_area": {
+      "slug": "learning-thinking",
+      "title": "Learning & Thinking"
+    },
+    "growth_zone": {
+      "slug": "skill-sprint",
+      "title": "Skill Sprint"
+    },
+    "action": "Choose a source you need to learn, ask AI for questions covering definitions, explanations, comparisons, application and error cases, verify every answer against the source, remove ambiguous or unsupported items, and practice from the cleaned bank.",
+    "check_in": "Which questions exposed a gap, which answers could not be verified, and what should be corrected or added before the next practice round?",
+    "keywords": [
+      "Skill Sprint",
+      "Life OS",
+      "Question Banks Creation"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/ai-question-bank-builder.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

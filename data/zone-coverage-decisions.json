@@ -2,12 +2,36 @@
   "schema_version": 1,
   "updated_at": "2026-09-11",
   "purpose": "Editorial dispositions for Growth Zones that remain without a trusted starter. These decisions describe Brali's current public-content and source-match state; they are not judgments that a topic, practice, therapy or school has no evidence.",
-  "allowed_dispositions": ["legacy-sensitive", "needs-new-protocol", "empty-legacy"],
+  "allowed_dispositions": [
+    "legacy-sensitive",
+    "needs-new-protocol",
+    "empty-legacy"
+  ],
   "zones": {
     "stratagema": {
       "disposition": "empty-legacy",
       "reason": "The stable legacy Growth Zone exists for compatibility but currently contains no entries.",
       "next_action": "Do not invent filler content to reach nominal 49/49 coverage. Add content only when a real, reviewed protocol belongs here."
+    },
+    "cognitive-analytic": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited Cognitive Analytic collection is therapy-adjacent legacy material whose entries are currently review-gated or restricted; none meet the trusted evidence bar after long-form restoration returned their unreviewed claim-bearing bodies.",
+      "next_action": "Work the editorial review queue for this zone: review real sources, rewrite or restrict claim-bearing entries, and promote individual protocols only through the normal evidence decision path. Do not create filler trusted content to clear the zone."
+    },
+    "ericksonian": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited Ericksonian collection is therapy-adjacent legacy material whose entries are currently review-gated or restricted; none meet the trusted evidence bar after long-form restoration returned their unreviewed claim-bearing bodies.",
+      "next_action": "Work the editorial review queue for this zone: review real sources, rewrite or restrict claim-bearing entries, and promote individual protocols only through the normal evidence decision path. Do not create filler trusted content to clear the zone."
+    },
+    "gestalt": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited Gestalt collection is therapy-adjacent legacy material whose entries are currently review-gated or restricted; none meet the trusted evidence bar after long-form restoration returned their unreviewed claim-bearing bodies.",
+      "next_action": "Work the editorial review queue for this zone: review real sources, rewrite or restrict claim-bearing entries, and promote individual protocols only through the normal evidence decision path. Do not create filler trusted content to clear the zone."
+    },
+    "psychodynamic": {
+      "disposition": "legacy-sensitive",
+      "reason": "The inherited Psychodynamic collection is therapy-adjacent legacy material whose entries are currently review-gated or restricted; none meet the trusted evidence bar after long-form restoration returned their unreviewed claim-bearing bodies.",
+      "next_action": "Work the editorial review queue for this zone: review real sources, rewrite or restrict claim-bearing entries, and promote individual protocols only through the normal evidence decision path. Do not create filler trusted content to clear the zone."
     }
   }
 }

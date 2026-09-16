@@ -3,8 +3,8 @@
   "type": "brali-library-entry",
   "protocol_id": "brali:active-listening-coach",
   "slug": "active-listening-coach",
-  "title": "Listen Actively",
-  "description": "During conversations, maintain eye contact, nod occasionally, and summarize what the other person has said. Avoid interrupting or planning your response while the other person is speaking.",
+  "title": "Use a Brief Summary to Check What You Heard",
+  "description": "In an important conversation, delay your response long enough to capture the speaker's main point, summarize it in your own words, ask whether you understood correctly, and adjust before moving to advice or action.",
   "canonical_url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
   "machine_url": "https://brali-lifeos.github.io/life-os/active-listening-coach/index.json",
   "growth_zone": {
@@ -16,13 +16,13 @@
     "title": "Communication & Relationships"
   },
   "evidence": {
-    "status": "pending-review",
-    "indexable": false,
+    "status": "practical",
+    "indexable": true,
     "search_indexable": true,
     "sensitive": false,
     "source_recorded": false,
     "source_url": null,
-    "reviewed_at": null
+    "reviewed_at": "2026-09-10"
   },
   "ontology": {
     "domains": [
@@ -48,8 +48,69 @@
   },
   "discovery": {
     "search_indexable": true,
-    "trusted_protocol_feed": false,
-    "research_gaps": []
+    "trusted_protocol_feed": true,
+    "research_gaps": [],
+    "search_role": "trusted-current-guidance",
+    "recommendation_eligible": true,
+    "agent_skill_eligible": true
   },
-  "trusted_protocol": null
+  "trusted_protocol": {
+    "protocol_id": "brali:active-listening-coach",
+    "language": "en",
+    "slug": "active-listening-coach",
+    "url": "https://brali-lifeos.github.io/life-os/active-listening-coach/",
+    "title": "Use a Brief Summary to Check What You Heard",
+    "description": "In an important conversation, delay your response long enough to capture the speaker's main point, summarize it in your own words, ask whether you understood correctly, and adjust before moving to advice or action.",
+    "ontology": {
+      "domains": [
+        {
+          "id": "communication-relationships",
+          "title": "Communication & Relationships"
+        }
+      ],
+      "topics": [
+        {
+          "id": "clear-communication",
+          "title": "Clear Communication"
+        }
+      ],
+      "methods": [],
+      "lenses": [],
+      "classification_status": "topic-mapped",
+      "classification_source": "legacy-zone-map",
+      "legacy": {
+        "life_area_slug": "communication-relationships",
+        "growth_zone_slug": "talk-smart"
+      }
+    },
+    "life_area": {
+      "slug": "communication-relationships",
+      "title": "Communication & Relationships"
+    },
+    "growth_zone": {
+      "slug": "talk-smart",
+      "title": "Talk Smart"
+    },
+    "action": "Let the speaker finish the relevant thought, identify the main point and any stated constraint, summarize it briefly in your own words, ask whether you captured it correctly, update your understanding if they correct you, and only then move to your response or the next action.",
+    "check_in": "What did I think the person meant, what did they correct or add, and did the final next step reflect the shared understanding?",
+    "keywords": [
+      "Talk Smart",
+      "Life OS",
+      "Listen Actively"
+    ],
+    "evidence": {
+      "status": "practical",
+      "source_recorded": false,
+      "source_url": null,
+      "reviewed_at": "2026-09-10"
+    }
+  },
+  "content": {
+    "current_guidance": true,
+    "longform_visible": true,
+    "display_state": "current-guidance-visible",
+    "historical_source_url": "/data/life-os-content/active-listening-coach.json",
+    "historical_source_role": "canonical-source-record",
+    "search_role": "trusted-current-guidance"
+  }
 }

@@ -37,6 +37,8 @@ const routes = [
   "/research/rag-is-not-a-trust-button/",
   "/research/sleep-regularity-signal-not-prescription/",
   "/research/retrieval-practice-memory-is-not-application/",
+  "/research/movement-breaks-no-magic-interval/",
+  "/research/movement-breaks-metabolic-evidence/",
   "/for-ai/",
   "/for-ai/query/",
   "/for-ai/integrations/",

@@ -59,7 +59,7 @@ for (const entry of sourceIndex) {
   const trusted = isTrusted(trust);
   const reference = isReference(trust);
   const searchIndexable = trusted || reference;
-  const expectedRole = trusted ? 'trusted-current-guidance' : reference ? 'pending-review-reference' : 'withheld-restricted';
+  const expectedRole = trusted ? 'trusted-current-guidance' : reference ? 'pending-review-longform' : 'withheld-review-required';
   if (!html.includes('data-sitewide-quality-context="true"')) fail(`${entry.slug}: missing site-wide quality context`);
   if (!html.includes(`rel="alternate" type="application/json" href="${pathname}index.json"`)) fail(`${entry.slug}: missing alternate JSON link`);
   if (machine.slug !== entry.slug || machine.canonical_url !== `${BASE}${pathname}`) fail(`${entry.slug}: machine record identity drift`);
@@ -79,8 +79,10 @@ for (const entry of sourceIndex) {
     if (inSitemap) fail(`${entry.slug}: restricted hack page leaked into sitemap`);
   }
   if (reference) {
-    if (!html.includes('Review record:') || !html.includes('data-legacy-content-state="historical-source-only"')) fail(`${entry.slug}: pending-review reference is not visibly neutralized`);
-    if (html.includes('Try it, then review.') || html.includes('<div class="prose">') || html.includes('<section class="prose">')) fail(`${entry.slug}: pending-review reference leaked inherited guidance`);
+    if (!html.includes('data-legacy-content-state="review-pending-longform-visible"')) fail(`${entry.slug}: pending-review page lost its visible long-form review boundary`);
+    if (!html.includes('<div class="prose"')) fail(`${entry.slug}: pending-review page lost its visible article body`);
+    if (!html.includes('data-article-versions="true"')) fail(`${entry.slug}: pending-review page lost its article versions`);
+    if (html.includes('Review record:') || html.includes('Try it, then review.')) fail(`${entry.slug}: pending-review page still uses neutralized review-record framing`);
   }
 }
 
@@ -125,4 +127,4 @@ if (!sitemap.includes(`<loc>${BASE}/state/quality/</loc>`)) fail('quality report
 if (!stateHtml.includes('data-sitewide-quality-cycle')) fail('State page does not expose quality cycle');
 if (!llms.includes('Page & Zone Quality Cycle:')) fail('llms.txt does not expose quality cycle');
 
-console.log(`Site-wide quality verified: ${searchIndexableEntries.length} entry pages search-indexable (${trustedEntries.length} trusted guidance + ${referenceEntries.length} pending-review references), ${withheldEntries.length} restricted entry pages noindex, ${zones.length} search-indexable zones, trusted subsets separated from full archives, structural loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);
+console.log(`Site-wide quality verified: ${searchIndexableEntries.length} entry pages search-indexable (${trustedEntries.length} trusted guidance + ${referenceEntries.length} pending-review long-form articles), ${withheldEntries.length} restricted entry pages noindex, ${zones.length} search-indexable zones, trusted subsets separated from full archives, structural loop ${report.loop.changed_pages_by_pass.join(' -> ')}, zero enforced errors.`);

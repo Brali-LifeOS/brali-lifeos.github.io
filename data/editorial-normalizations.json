@@ -73,6 +73,28 @@
       "replacement": "Progress check",
       "reason": "Flame Counter is a residual mechanic from the previous product identity. Keep the surrounding protocol content but replace the obsolete mechanic label with a neutral description.",
       "review_source": "issue-260"
+    },
+    {
+      "id": "legacy-brali-app-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "Use the Brali LifeOS app for this hack\\.\\s*It['’]s where tasks, check[-‑]ins, and your journal live\\.\\s*App link: https://brali-lifeos\\.github\\.io/life-os/[a-z0-9-]+/?",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "The repeated closing cluster is an obsolete legacy-app call to action and a self-referencing link, not protocol-specific content. It was previously hidden because the whole article body was discarded; with long-form articles restored, the CTA sentence cluster is removed while the surrounding article is preserved.",
+      "review_source": "issue-279"
+    },
+    {
+      "id": "legacy-closing-repeat-boilerplate",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "We will close by repeating: at MetalHatsCats, we investigate and collect practical knowledge to help you\\.\\s*We share it for free, we educate, and we provide tools to apply it\\.",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "A closing-variant of the legacy MetalHatsCats product-intro boilerplate that the existing product-intro rule does not catch because of its leading 'We will close by repeating' wrapper. It is obsolete product identity copy, not protocol-specific guidance.",
+      "review_source": "issue-279"
     }
   ]
 }

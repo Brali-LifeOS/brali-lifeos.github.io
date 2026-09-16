@@ -86,7 +86,7 @@ const homepageRoutes = {
     match: "Retrieval practice with its evidence boundary visible",
   },
   stress: {
-    slug: "box-breathing-for-speakers",
+    slug: "abdominal-breathing-stress-relief",
     match: "A short breathing practice with its boundary visible",
   },
   sleep: {

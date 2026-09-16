@@ -44,13 +44,21 @@ function reviewMetadata(entry, evidenceRecord) {
     };
   }
   const restricted = evidenceRecord?.status === "restricted";
+  if (restricted) {
+    return {
+      title: `Restricted review record: ${clean(entry.title)}`,
+      description: "Archived Brali review record. Safety-sensitive inherited guidance is withheld until a usable source is reviewed. This page is provenance, not advice.",
+      genre: "Brali review record",
+      creativeWorkStatus: "Restricted review",
+    };
+  }
+  const sensitive = evidenceRecord?.sensitive === true;
+  const description = clean(entry.description).slice(0, 140);
   return {
-    title: `${restricted ? "Restricted review record" : "Review record"}: ${clean(entry.title)}`,
-    description: restricted
-      ? "Archived Brali review record. Safety-sensitive inherited guidance is withheld until a usable source is reviewed. This page is provenance, not advice."
-      : "Archived Brali review record. Inherited guidance is withheld while evidence-like claims await editorial review. Use it for provenance, ontology context and trusted alternatives.",
-    genre: "Brali review record",
-    creativeWorkStatus: restricted ? "Restricted review" : "Pending review",
+    title: clean(entry.title),
+    description: `${description} ${sensitive ? "Safety/source review pending — this article is visible for education and inspection, not current guidance." : "Review pending — this migrated article is visible while evidence-like claims are still being reviewed."}`.trim(),
+    genre: "Migrated long-form article",
+    creativeWorkStatus: sensitive ? "Pending safety/source review" : "Pending editorial evidence review",
   };
 }
 
@@ -109,7 +117,7 @@ function enrichSchema(html, entry, imageUrl, evidenceRecord) {
         article.headline = meta.title;
         article.description = meta.description;
         article.creativeWorkStatus = meta.creativeWorkStatus;
-        article.about = [entry.zone?.title || "Brali Growth Library", evidenceRecord?.status === "restricted" ? "restricted review record" : "pending review record"];
+        article.about = [entry.zone?.title || "Brali Growth Library", evidenceRecord?.status === "restricted" ? "restricted review record" : "pending-review long-form article"];
         delete article.citation;
         delete article.potentialAction;
         delete article.keywords;
@@ -177,4 +185,4 @@ for (const entry of index) {
   }
 }
 
-console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata and machine records; ${trustedSkillPages} trusted pages link stable free Agent Skills; ${pendingReferencePages} pending-review pages preserve neutral discovery metadata; ${largeImagePages} expose representative large-image previews.`);
+console.log(`Hack discovery enhanced: ${changed}/${index.length} pages expose social metadata and machine records; ${trustedSkillPages} trusted pages link stable free Agent Skills; ${pendingReferencePages} pending-review pages keep human-facing metadata with explicit review state; ${largeImagePages} expose representative large-image previews.`);

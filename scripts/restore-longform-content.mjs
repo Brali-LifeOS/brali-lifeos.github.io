@@ -116,9 +116,35 @@ function markdownLongform(article) {
   return markdown;
 }
 
+// Migrated markdown often opens with a plain line that simply repeats the page
+// title (optionally with a legacy brand suffix). Drop that echo so the rendered
+// article does not start with a duplicate of the visible h1.
+function dropLeadingTitleEcho(markdown, article) {
+  const normalize = (value = "") => String(value).toLowerCase().replace(/[—–-].*$/s, "").replace(/[^a-z0-9]+/g, " ").trim();
+  const title = normalize(article.title);
+  if (!title) return markdown;
+  const lines = markdown.split("\n");
+  const firstIndex = lines.findIndex((line) => line.trim());
+  if (firstIndex < 0) return markdown;
+  const first = lines[firstIndex].trim();
+  if (/^#|^\s*[-*+>]/.test(first)) return markdown;
+  const candidate = normalize(first);
+  if (candidate && (candidate === title || candidate.startsWith(title) || title.startsWith(candidate))) {
+    lines.splice(firstIndex, 1);
+    return lines.join("\n").trim();
+  }
+  return markdown;
+}
+
 function injectLongform(html, slug, rendered) {
   const marker = 'data-longform-source="body.markdown"';
-  if (html.includes(marker)) return html;
+  const replacement = `<div class="prose" data-longform-source="body.markdown">${rendered}</div>`;
+  const existing = html.match(/<div class="prose" data-longform-source="body\.markdown">[\s\S]*?<\/div>/);
+  if (existing) {
+    // The renderer never emits nested divs, so the restored block is replaceable
+    // as a unit and rebuilds stay idempotent when the canonical markdown changes.
+    return html.replace(existing[0], replacement);
+  }
 
   const coverMatch = html.match(/<figure class="hack-cover"[\s\S]*?<\/figure>/);
   if (!coverMatch || coverMatch.index == null) throw new Error(`${slug}: cannot locate hack cover for long-form restoration.`);
@@ -126,7 +152,6 @@ function injectLongform(html, slug, rendered) {
   const before = html.slice(0, afterCoverIndex);
   let after = html.slice(afterCoverIndex);
   const firstProse = after.match(/^<div class="prose">[\s\S]*?<\/div>/);
-  const replacement = `<div class="prose" data-longform-source="body.markdown">${rendered}</div>`;
 
   if (firstProse) after = `${replacement}${after.slice(firstProse[0].length)}`;
   else after = `${replacement}${after}`;
@@ -141,7 +166,7 @@ for (const entry of index) {
 
   const htmlPath = path.join(root, "life-os", entry.slug, "index.html");
   const before = await readFile(htmlPath, "utf8");
-  const rendered = renderMarkdown(markdown);
+  const rendered = renderMarkdown(dropLeadingTitleEcho(markdown, article));
   const after = injectLongform(before, entry.slug, rendered);
   if (after !== before) await writeFile(htmlPath, after);
   restored.push({

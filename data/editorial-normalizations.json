@@ -43,6 +43,17 @@
       "review_source": "issue-260"
     },
     {
+      "id": "legacy-metalhatscats-app-cta",
+      "status": "reviewed",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali editorial agent",
+      "pattern": "<p>[^<]{0,1200}\\bApp link:\\s*https://metalhatscats\\.com/life-os/[a-z0-9-]+/?[^<]*</p>",
+      "flags": "giu",
+      "replacement": "",
+      "reason": "The old app CTA sends readers to the pre-Brali MetalHatsCats route and repeats obsolete product positioning. Remove the entire CTA paragraph rather than exposing a stale brand/domain or inventing an unverified replacement workflow.",
+      "review_source": "issue-260"
+    },
+    {
       "id": "legacy-flame-counter-label",
       "status": "reviewed",
       "reviewed_at": "2026-09-16",

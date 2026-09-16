@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-16. A fresh 2026 systematic review and meta-analysis of strict if-then planning completed full-source review. Brali already has a reviewed implementation-intention protocol, so the finding is used to strengthen that existing protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
+  "research_candidates": [
+    {
+      "id": "pubmed:41987207",
+      "source": "pubmed",
+      "source_id": "41987207",
+      "pmid": "41987207",
+      "pmcid": "PMC13195971",
+      "doi": "10.1186/s12966-026-01915-y",
+      "title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "authors": [
+        "Sanne Karlsen Melum",
+        "Torsten Martiny-Huenger"
+      ],
+      "container_title": "International Journal of Behavioral Nutrition and Physical Activity",
+      "publication_date": "2026-04-15",
+      "type": "journal-article",
+      "subjects": [
+        "implementation intentions",
+        "if-then planning",
+        "behavior change",
+        "fruit and vegetable intake",
+        "systematic review",
+        "meta-analysis",
+        "randomized controlled trials"
+      ],
+      "reference_url": "https://doi.org/10.1186/s12966-026-01915-y",
+      "discovered_at": "2026-09-16T05:12:57Z",
+      "last_seen_at": "2026-09-16T05:12:57Z",
+      "status": "support-existing",
+      "query_ids": [
+        "focus-implementation-intentions"
+      ],
+      "domain_ids": [
+        "focus-action"
+      ],
+      "topic_ids": [
+        "goals",
+        "habits-consistency",
+        "task-initiation"
+      ],
+      "method_ids": [
+        "implementation-intentions"
+      ],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "focus-execution"
+      ],
+      "zone_slugs": [
+        "do-it"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "discovery_sources": [
+        "pubmed",
+        "pmc",
+        "publisher"
+      ],
+      "review_notes": "Full open-access article reviewed through the final PMC/publisher record, not just title, abstract or discovery metadata. The review searched MEDLINE, Embase and PsycInfo, with the last search on 3 April 2025, and included randomized trials only when the intervention used a strict perceivable-cue -> directly actionable-response if-then format and the active control pursued the same dietary behavior change without that planning procedure. Ten articles yielded 12 independent comparisons and N=2,399 adults. The pooled effect on self-reported fruit-and-vegetable intake was small (MD 0.29 portions/day, 95% CI 0.11 to 0.48; SMD 0.20). The prediction interval included a possible null result in a future study. All outcomes were self-reported; samples were predominantly Western European, female, White and young-to-middle-aged; two articles had high risk from missing outcome data; preregistration/report-selection information was often unclear; and the authors explicitly note a possible file-drawer problem despite no strong funnel-plot asymmetry. Included primary reports were published from 2009 to 2019, so the 2026 synthesis is fresh but the underlying trials are not."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "strict-if-then-applied-boundary-2026",
+      "candidate_id": "pubmed:41987207",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-16",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13195971/",
+      "source_title": "A systematic review and meta-analysis on the effectiveness of if-then plans – in a strict sense – to facilitate fruit and vegetable consumption in adults",
+      "source_type": "systematic-review-meta-analysis",
+      "doi": "10.1186/s12966-026-01915-y",
+      "citation_text": "Melum SK, Martiny-Huenger T. Int J Behav Nutr Phys Act. 2026;23:51.",
+      "source_reviewed": true,
+      "study_design": "PRISMA-reported systematic review and random-effects meta-analysis of randomized controlled trials. MEDLINE, Embase and PsycInfo were searched with an update through 3 April 2025. Eligibility deliberately required a strict if(situation)-then(response) intervention and an active control encouraged to make the same behavior change without the if-then planning component. Ten articles contributed 12 independent comparisons; RoB 2, sensitivity analysis, prediction intervals and publication-bias analyses were reported.",
+      "population": "2,399 adults across 12 comparisons, recruited from university and community/workplace populations. Samples were predominantly Western European, approximately 75% female where reported, predominantly White where ethnicity was reported, and young-to-middle-aged. Follow-up ranged from one week to 24 months.",
+      "intervention_or_exposure": "A strict implementation-intention procedure: identify a perceivable situational cue, identify a directly actionable goal-directed response, and explicitly link them in an if-then plan. Controls were encouraged toward the same fruit-and-vegetable behavior change but were not guided to form strict cue-response if-then plans.",
+      "outcomes": [
+        "Self-reported fruit and vegetable intake",
+        "Mean difference in portions per day",
+        "Standardized mean difference between if-then and active-control conditions"
+      ],
+      "supported_claim": "The existing Brali if-then protocol can be strengthened by distinguishing strict cue-response planning from generic scheduling and by showing one applied adult use case. Across 12 randomized comparisons, strict if-then planning produced a small average increase in self-reported fruit-and-vegetable intake versus active controls pursuing the same behavior change (MD 0.29 portions/day, 95% CI 0.11 to 0.48; SMD 0.20). This supports the low-cost cue -> actionable response mechanism in that specific everyday domain, not a universal effect size.",
+      "unsupported_or_overstated_claims": [
+        "If-then planning guarantees that an intended behavior will occur.",
+        "The 0.29-portion result can be translated into a productivity, study, exercise, finance or other-domain effect size.",
+        "Any calendar plan or statement containing the words if and then is equivalent to the strict intervention tested in the review.",
+        "The meta-analysis proves a unique memory, habit or neural mechanism for the observed behavioral effect.",
+        "A fixed number of plans, rehearsal repetitions, reminders, days or minutes is an evidence-based optimum.",
+        "The review establishes objective changes in food intake; all included outcomes were self-reported.",
+        "The positive pooled estimate means a future well-run study cannot find a null result.",
+        "The 2026 publication date means the underlying randomized trials are recent; included reports were published from 2009 to 2019."
+      ],
+      "limitations": [
+        "All included fruit-and-vegetable outcomes were self-reported.",
+        "The prediction interval allowed a future study to find a null effect, even though the pooled estimate was positive.",
+        "Samples were predominantly Western European, female, White and young-to-middle-aged, limiting generalizability.",
+        "Two included articles were rated high risk of bias for missing outcome data because intention-to-treat procedures were not used; excluding them did not materially change the pooled conclusion.",
+        "Many articles did not make clear whether analyses were preregistered or specified before data were available, producing risk-of-bias concerns around selection of reported results.",
+        "Formal funnel-plot asymmetry testing did not show a strong publication-bias signal, but the authors identified no unpublished studies and explicitly discuss a possible file-drawer problem.",
+        "The synthesis is new in 2026, but the included primary reports were published between 2009 and 2019.",
+        "The review was intentionally narrow: it estimates strict if-then planning for fruit-and-vegetable intake, not all implementation-intention applications."
+      ],
+      "target_hack_ids": [
+        "if-then-rules-productivity"
+      ],
+      "target_protocol_ids": [
+        "brali:if-then-rules-productivity"
+      ],
+      "risk_flags": [
+        "health"
+      ],
+      "notes": "Editorial action: strengthen the existing reviewed if-then protocol rather than add a duplicate nutrition or productivity hack. Make the operational distinction explicit: perceivable cue -> directly actionable response -> explicit if-then link. Add the applied active-control result as a bounded example, emphasize its small size and self-report limitations, and do not export the dietary effect size to unrelated domains."
+    }
+  ]
+}

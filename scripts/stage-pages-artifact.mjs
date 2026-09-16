@@ -1,4 +1,4 @@
-import { access, cp, mkdir, readFile, readdir, rm, stat } from "node:fs/promises";
+import { access, cp, mkdir, readFile, readdir, rm, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -10,6 +10,7 @@ if (destination === root || destination.startsWith(`${root}${path.sep}`)) {
 }
 
 const SITE = "https://brali-lifeos.github.io";
+const REPOSITORY_SOURCE_BASE = "https://github.com/Brali-LifeOS/brali-lifeos.github.io/blob/main";
 const INTERNAL_TOP_LEVEL = new Set([
   ".git",
   ".github",
@@ -161,7 +162,21 @@ for (const sourceFile of ROOT_SOURCE_FILES) {
   }
 }
 
-const stagedFiles = await collectFiles(destination);
+let stagedFiles = await collectFiles(destination);
+let sourceLinkRewrites = 0;
+for (const file of stagedFiles) {
+  if (!file.endsWith(".html")) continue;
+  const html = await readFile(file, "utf8");
+  const rewritten = html.replace(/\bhref=(["'])(\/(?:data|scripts|artifacts|agent-skills|mcp|distribution)\/[^"']+)\1/gi, (whole, quote, href) => {
+    const [pathname, suffix = ""] = href.split(/(?=[?#])/u, 2);
+    const relativePath = pathname.replace(/^\//, "");
+    sourceLinkRewrites += 1;
+    return `href=${quote}${REPOSITORY_SOURCE_BASE}/${relativePath}${suffix}${quote}`;
+  });
+  if (rewritten !== html) await writeFile(file, rewritten);
+}
+
+stagedFiles = await collectFiles(destination);
 const stagedRelative = new Set(stagedFiles.map((file) => slash(path.relative(destination, file))));
 let stagedHtmlCount = 0;
 const dependencyExtensions = /\.(?:css|js|mjs|png|jpe?g|gif|webp|avif|svg|ico|json|webmanifest|woff2?|ttf)(?:$|[?#])/i;
@@ -178,6 +193,9 @@ for (const file of stagedFiles) {
     if (!intentionalNoindexRoutes.has(route)) {
       throw new Error(`pages_stage: undeclared noindex HTML survived staging: ${relativePath}`);
     }
+  }
+  if (/\bhref=["']\/(?:data|scripts|artifacts|agent-skills|mcp|distribution)\//i.test(html)) {
+    throw new Error(`pages_stage: ${relativePath} still references an omitted internal source tree`);
   }
   for (const match of html.matchAll(/\b(?:src|href)=["']([^"']+)["']/gi)) {
     const ref = decode(match[1]);
@@ -197,5 +215,5 @@ if (!(manifest.webp_ratio > 0 && manifest.webp_ratio < 0.5) || !(manifest.avif_r
 
 let bytes = 0;
 for (const file of stagedFiles) bytes += (await stat(file)).size;
-console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/source HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex route(s) allowlisted.`);
+console.log(`Pages artifact staged: ${stagedFiles.length} files; ${stagedHtmlCount} HTML; ${(bytes / 1024 / 1024).toFixed(2)} MiB; ${prunedHtml.length} off-sitemap/source HTML file(s) physically omitted; ${intentionalNoindexRoutes.size} declared human/noindex route(s) allowlisted; ${sourceLinkRewrites} internal source link(s) rewritten to GitHub.`);
 for (const item of prunedHtml) console.log(`- pruned ${item.path} -> ${item.route} (${item.reason})`);

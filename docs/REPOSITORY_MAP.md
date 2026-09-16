@@ -31,7 +31,7 @@ The normal repository gate is `npm run build` followed by `npm run check`. `.git
 | `skill-packs/` | One-skill-per-hack library/catalog | Canonical hack corpus + evidence state | Yes | Agent hosts |
 | `life-os/` | Human library and compatibility surfaces | Canonical data + generators | Largely generated | Browser users/crawlers |
 | `for-ai/` | Query, evaluation, demos and integration surfaces | Canonical data + generators/examples | Mixed | AI developers/agents |
-| `docs/` and root policy docs | Architecture-adjacent runbooks and policy | Named documents | No, unless a document explicitly says otherwise | Maintainers/agents |
+| `docs/` and root policy docs | Public `/docs/` start page plus repository runbooks/policy beside it | Named documents and `docs/index.html` | Mixed public/source tree | Browser users plus maintainers/agents |
 | `.github/workflows/` | CI, deploy, releases and scheduled/external automation | Workflow YAML | No | GitHub Actions |
 
 `data/` is not uniformly “hand-authored JSON”. Before editing a data file, identify its owning generator/workflow and policy. Research candidates and derived reports are not equivalent to reviewed evidence.
@@ -73,6 +73,7 @@ Current caveat: `npm run check` is not a purely read-only test command. It reapp
 - Every canonical hack has exactly one deterministic generated Agent Skill; recommendation eligibility remains evidence-state dependent.
 - Localization keeps English canonical evidence/provenance intact. Published locales require contract/corpus/language/rendered/live/browser proof as defined in `docs/LOCALIZATION.md`.
 - Generated Search/AI surfaces must agree with canonical/indexable URLs, language metadata, sitemap and public data.
+- The GitHub Pages artifact is a strict public release boundary: build-only/internal trees such as `reports/`, `qa/`, `source/` and `sources/` must not ship. `docs/` is mixed: only the declared public rendered view may ship; repository runbooks/source files beside it remain excluded. Declared historical or compatibility HTML may remain off-sitemap only with an exact `noindex,follow` robots policy.
 - PR verification and production deployment stay separated. Production-only network/browser checks run only after the exact merged artifact is deployed.
 
 ## CI/workflow map

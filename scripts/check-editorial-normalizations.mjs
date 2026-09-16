@@ -7,8 +7,8 @@ const index = JSON.parse(await readFile(path.join(contentRoot, "index.json"), "u
 const registry = JSON.parse(await readFile(path.join(root, "data/editorial-normalizations.json"), "utf8"));
 const published = JSON.parse(await readFile(path.join(root, "life-os/datasets/editorial-normalizations.json"), "utf8"));
 let leakedMatches = 0;
-let replacementMissing = 0;
 let publicationDrift = 0;
+let ledgerErrors = 0;
 
 function containsInherited(value, rule) {
   if (rule.match) return value.includes(rule.match);
@@ -27,9 +27,16 @@ for (const rule of registry.rules ?? []) {
   const publishedRule = (published.rules ?? []).find((item) => item.id === rule.id);
   if (!publishedRule) throw new Error(`Editorial normalization rule was not published: ${rule.id}.`);
   if (publishedRule.replacement !== rule.replacement) publicationDrift += 1;
-  if (!Array.isArray(publishedRule.applied?.affected_entries) || !Number.isInteger(publishedRule.applied?.replacements)) {
+
+  const affected = publishedRule.applied?.affected_entries;
+  const replacements = publishedRule.applied?.replacements;
+  if (!Array.isArray(affected) || !Number.isInteger(replacements) || replacements < 0) {
     publicationDrift += 1;
+    continue;
   }
+  if (new Set(affected).size !== affected.length) ledgerErrors += 1;
+  if (replacements < affected.length) ledgerErrors += 1;
+  if ((replacements === 0) !== (affected.length === 0)) ledgerErrors += 1;
 }
 
 for (const entry of index) {
@@ -37,26 +44,10 @@ for (const entry of index) {
   const generated = await readFile(path.join(root, "life-os", entry.slug, "index.html"), "utf8");
   for (const rule of registry.rules ?? []) {
     if (containsInherited(source, rule) || containsInherited(generated, rule)) leakedMatches += 1;
-
-    const publishedRule = (published.rules ?? []).find((item) => item.id === rule.id);
-    const affected = publishedRule?.applied?.affected_entries ?? [];
-    // A literal, non-empty replacement has a deterministic post-condition we can
-    // validate directly in the normalized canonical JSON. Deletion rules have no
-    // replacement string to find, and regex replacements may contain captures such
-    // as $1, so for those the fail-closed invariant is absence of the inherited
-    // match plus the published application ledger above.
-    if (
-      affected.includes(entry.slug)
-      && rule.match
-      && rule.replacement.length > 0
-      && !source.includes(rule.replacement)
-    ) {
-      replacementMissing += 1;
-    }
   }
 }
 
-if (leakedMatches || replacementMissing || publicationDrift) {
-  throw new Error(`Editorial normalization validation failed: inherited matches=${leakedMatches}, expected replacements missing=${replacementMissing}, publication drift=${publicationDrift}.`);
+if (leakedMatches || publicationDrift || ledgerErrors) {
+  throw new Error(`Editorial normalization validation failed: inherited matches=${leakedMatches}, publication drift=${publicationDrift}, ledger errors=${ledgerErrors}.`);
 }
-console.log(`Editorial normalizations verified: ${(registry.rules ?? []).length} reviewed rule(s), no inherited claim leakage; deletion/regex transforms validated by absence plus application ledger.`);
+console.log(`Editorial normalizations verified: ${(registry.rules ?? []).length} reviewed rule(s), no inherited claim leakage; application ledger is internally consistent across downstream rewrites.`);

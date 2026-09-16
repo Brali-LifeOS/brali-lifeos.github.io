@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
@@ -14,6 +14,11 @@ const clean = (value = "") => String(value).replace(/\s+/g, " ").trim();
 const overrideTitle = (override) => clean(typeof override === "string" ? override : override?.display_title);
 const fragmentEnding = /(?:\b(?:and|or|whether|with|to|for|from|around|because|while|when|if|of|in|on|at|by|the|a|an)|[,;:—-])$/i;
 const suspiciousSingleTokenEnding = /\b(?:e)$/i;
+const legacyCorpusMarkers = [
+  { id: "free-template", pattern: /we\s+share\s+it\s+for\s+free/i },
+  { id: "prototype-mini-apps", pattern: /prototype\s+mini[- ]?apps?/i },
+  { id: "flame-counter", pattern: /flame\s+counter/i },
+];
 
 function hasUnbalancedPairs(value) {
   const pairs = [["(", ")"], ["[", "]"]];
@@ -35,6 +40,17 @@ function titleIssue(title) {
   if (value.length > 82) return "too-long";
   if (fragmentEnding.test(value) || suspiciousSingleTokenEnding.test(value)) return "fragment-ending";
   return null;
+}
+
+// Trusted SEO reset is a canonical-source invariant, not a generated-HTML cleanup.
+// Keep a small explicit deny-list for product/template residue that has already
+// been removed from the maintained English corpus so it cannot silently return.
+for (const file of await readdir(contentRoot)) {
+  if (!file.endsWith(".json")) continue;
+  const raw = await readFile(path.join(contentRoot, file), "utf8");
+  for (const marker of legacyCorpusMarkers) {
+    if (marker.pattern.test(raw)) throw new Error(`Canonical EN content regression (${marker.id}) in data/life-os-content/${file}`);
+  }
 }
 
 for (const [slug, override] of Object.entries(overrides.entries ?? {})) {

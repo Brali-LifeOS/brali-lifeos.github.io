@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "scenario_id": "brali:scenario:interrupted-knowledge-work",
+  "title": "Interrupted knowledge work: resume a real task without losing context",
+  "problem_statement": "Knowledge workers and agent builders can lose the thread of a real task after interruptions. Brali should be tested on whether its existing trusted problem-to-protocol path helps a person or an external integration recover a concrete next action without hiding uncertainty, provenance or failure.",
+  "hypothesis": "For interrupted knowledge work, Brali can help a meaningful share of real human trials reach a concrete next action and can help external agent integrations retrieve a bounded trusted packet while preserving evidence and provenance. The scenario remains unvalidated until real reviewed evidence exists.",
+  "status": "planned",
+  "tracks": {
+    "human": {
+      "track_id": "human",
+      "target": {
+        "type": "experiment-target",
+        "minimum_attempts": 10,
+        "maximum_attempts": 15,
+        "observed_attempts": 0
+      },
+      "procedure": [
+        "Use a participant's own recent interrupted knowledge-work task. Do not collect the task text, employer/client material, names, account identifiers or other personal data into the repository.",
+        "Before using Brali, record only a privacy-safe categorical description of the current workaround and whether the person already has a concrete next action. Do not treat interest or compliments as outcome evidence.",
+        "Use the current public Brali path: Ask Brali for a trusted match or explicit no-answer, inspect the bounded recommendation, then use the Protocol Runner when a trusted protocol is available.",
+        "After the attempt, record whether a concrete next action was reached, whether the protocol was started/completed, explicit helpful/not-helpful feedback, abandonment or workaround, and any rejected alternative. Reuse existing privacy-light outcome events whenever they represent the observation.",
+        "Record repeat use only after a separate later real attempt is deliberately reported. Do not infer return usage from page views, cookies, local storage, downloads or repository activity."
+      ],
+      "success_criteria": [
+        "At least 10 real human attempts are reviewed before a keep/change/reject decision is made.",
+        "At least 6 reviewed human attempts reach a concrete next action that was not already present before Brali, with the observation linked to a privacy-safe source reference.",
+        "At least 5 reviewed human attempts contain both a protocol-completed signal and explicit helpful feedback for the same real attempt; generated demos and fixtures do not count.",
+        "At least 3 later real attempts are explicitly reported as repeat use or reuse of a Brali protocol; repeat use is never inferred from traffic or anonymous page opens.",
+        "Negative outcomes, abandonment, workarounds and rejected alternatives are retained under the same review rules as positive outcomes."
+      ],
+      "failure_criteria": [
+        "After at least 10 reviewed attempts, fewer than 4 reach a concrete next action attributable to the Brali interaction rather than a pre-existing plan.",
+        "Trust, safety, fit or clarity failures repeatedly cause abandonment in at least 4 reviewed attempts.",
+        "The experiment cannot distinguish a real protocol attempt/completion from page exposure without collecting data outside the declared privacy boundary."
+      ]
+    },
+    "external_agent": {
+      "track_id": "external_agent",
+      "target": {
+        "type": "experiment-target",
+        "minimum_attempts": 5,
+        "maximum_attempts": 5,
+        "observed_attempts": 0
+      },
+      "procedure": [
+        "Run each attempt from a clean external integration context using only public Brali interfaces available at the time of the attempt. Record the exact interface and version; do not describe repository-ready source as a hosted service.",
+        "Test a realistic interrupted-work query through the maintained trusted retrieval path. A correct explicit no-answer is a valid result when Brali lacks eligible coverage.",
+        "Verify that canonical Brali IDs/URLs, locale availability where exposed, evidence state, limitations and provenance survive the integration boundary.",
+        "Record setup friction, malformed or missing metadata, trust-boundary failures, correct no-answer behavior, and whether the integration can repeat the retrieval without a repository-specific hidden workaround.",
+        "Use privacy-light integration outcome events where they fit. Provider-visible artifacts may be referenced for transport/discovery verification, but CI or source existence alone is not an external observation."
+      ],
+      "success_criteria": [
+        "All 5 planned external integration attempts are actually attempted before a keep/change/reject decision is made for this track.",
+        "At least 4 reviewed attempts return either an eligible trusted packet or the correct explicit no-answer without leaking pending-review or restricted material as a recommendation.",
+        "At least 4 reviewed attempts preserve canonical identity, evidence state and provenance across the integration boundary.",
+        "At least 3 reviewed attempts can repeat the retrieval from the documented public integration path without repository checkout-specific assumptions beyond those explicitly required by that interface."
+      ],
+      "failure_criteria": [
+        "Two or more reviewed attempts lose evidence/provenance or expose review-gated material as trusted guidance.",
+        "Three or more reviewed attempts require undocumented repository-specific workarounds to reach the maintained integration path.",
+        "The integration path fabricates an answer when trusted coverage is insufficient instead of returning explicit no-answer semantics."
+      ]
+    }
+  },
+  "attempts": [],
+  "evidence": [],
+  "decision": {
+    "status": "pending",
+    "value": null,
+    "rationale": null,
+    "evidence_refs": [],
+    "limitations": [
+      "No real human or external integration attempt has yet been accepted into this experiment registry.",
+      "Targets and thresholds are pre-registered experiment criteria, not adoption, usefulness or conversion claims.",
+      "The current outcome registry is privacy-light and deliberately does not identify people across sessions; repeat use therefore requires a separate explicit report rather than passive tracking."
+    ]
+  },
+  "privacy": {
+    "raw_task_text": false,
+    "personal_data": false,
+    "employer_or_client_material": false,
+    "user_identifier": false,
+    "observation_reference_policy": "Store only privacy-safe references needed to audit an accepted observation: canonical Brali IDs, accepted outcome event IDs, public GitHub issue references, provider-visible artifacts or a maintainer review reference. Never store raw task/prompt text, employer/client material, names, contact details or persistent person identifiers in this registry."
+  },
+  "links": {
+    "issue": "https://github.com/Brali-LifeOS/brali-lifeos.github.io/issues/262",
+    "outcome_event_schema": "https://brali-lifeos.github.io/contracts/outcome-event.schema.json",
+    "outcome_observations": "https://brali-lifeos.github.io/life-os/datasets/outcome-observations.json",
+    "runbook": "docs/SCENARIO_VALIDATION.md"
+  }
+}

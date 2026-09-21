@@ -1,15 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import './build-rss-feed.mjs';
-import { VEDOKROK_BANNER, VEDOKROK_FOOTER_LINE } from './lib/vedokrok-banner.mjs';
+import { vedokrokBannerFor, vedokrokFooterLineFor } from './lib/vedokrok-banner.mjs';
 
 const ROOT = path.resolve(new URL('..', import.meta.url).pathname);
 const BASE = 'https://brali-lifeos.github.io';
 const SKIP = new Set(['node_modules', '.git', 'reports']);
 
 const header = `<header class="site-header"><nav class="wrap nav" aria-label="Main navigation"><a class="brand" href="/" aria-label="Brali home"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links"><a href="/life-os/">Explore</a><a href="/life-os/methodology/">Evidence</a><a href="/research/">Research</a><a href="/partners/">Build with Brali</a><a class="button" href="/for-ai/">For AI &amp; Developers</a></div></nav></header>`;
-const banner = VEDOKROK_BANNER;
-const footer = `<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small><small>Maintained by MetalHeadsCats.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div><div class="wrap">${VEDOKROK_FOOTER_LINE}</div></footer>`;
+const footerFor = (rel) => `<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>One useful next move, with the why still attached.</small><small>Maintained by MetalHeadsCats.</small></div><div class="footer-links"><a href="/life-os/">Explore</a><a href="/research/">Research</a><a href="/life-os/datasets/">Data</a><a href="/for-ai/">For AI</a><a href="/partners/">Partners</a><a href="/contact/">Contact</a><a href="/terms/">Terms</a><a href="/privacy/">Privacy</a></div></div><div class="wrap">${vedokrokFooterLineFor(rel)}</div></footer>`;
 const arwpDiscovery = '  <link rel="describedby" type="application/json" href="/ai/site-profile.json" title="Agent-Ready Web Profile">\n';
 const rssDiscovery = '  <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Brali Updates RSS">\n';
 const preferredSource = '<aside class="callout" data-brali-preferred-source="true"><h2>Follow Brali as a preferred source</h2><p>If Google offers Brali in Preferred Sources for your account, you can choose this site so Brali can be highlighted for you in supported Search surfaces.</p><p><a class="button" href="https://www.google.com/preferences/source?q=brali-lifeos.github.io" rel="noopener" target="_blank">Add Brali as a Preferred Source on Google</a></p><small>This is a user preference, not a ranking guarantee and not a claim that Brali is currently eligible in every locale or account.</small></aside>';
@@ -140,6 +139,7 @@ for (const file of files(ROOT)) {
   }
 
   if (!html.includes('data-vedokrok-banner')) {
+    const banner = vedokrokBannerFor(rel);
     if (/<header class="site-header">[\s\S]*?<\/header>/.test(html)) {
       html = html.replace(/(<header class="site-header">[\s\S]*?<\/header>)/, `$1${banner}`);
     } else if (/<body[^>]*>/.test(html)) {
@@ -157,9 +157,9 @@ for (const file of files(ROOT)) {
   }
 
   if (/<footer class="footer">[\s\S]*?<\/footer>/.test(html)) {
-    html = html.replace(/<footer class="footer">[\s\S]*?<\/footer>/, footer);
+    html = html.replace(/<footer class="footer">[\s\S]*?<\/footer>/, footerFor(rel));
   } else if (/<\/body>/.test(html)) {
-    html = html.replace('</body>', `${footer}</body>`);
+    html = html.replace('</body>', `${footerFor(rel)}</body>`);
   }
 
   if (/<body(?![^>]*data-brali-cluster)[^>]*>/.test(html)) {

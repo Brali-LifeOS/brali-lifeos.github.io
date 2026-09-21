@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { VEDOKROK_BANNER, VEDOKROK_FOOTER_LINE } from "./lib/vedokrok-banner.mjs";
+import { VEDOKROK_BANNER_RU, VEDOKROK_FOOTER_LINE_RU } from "./lib/vedokrok-banner.mjs";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
@@ -80,9 +80,9 @@ function shellDocument(page, body) {
 <body data-brali-cluster="localized-ru-primary">
 <a class="skip" href="#content">${escapeHtml(site.shell.skip)}</a>
 <header class="site-header"><nav class="wrap nav" aria-label="${escapeAttribute(site.shell.nav_aria)}"><a class="brand" href="/ru/" aria-label="${escapeAttribute(site.shell.home_aria)}"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><div class="links">${navLink("/ru/life-os/", nav.library, page.route)}${navLink("/ru/life-os/methodology/", nav.methodology, page.route)}${navLink("/ru/research/", nav.research, page.route)}${navLink("/ru/partners/", nav.partners, page.route)}${navLink("/ru/for-ai/", nav.forAi, page.route, { button: true })}<a lang="en" hreflang="en" href="${escapeAttribute(page.source_route)}">${escapeHtml(site.shell.language_switch)}</a></div></nav></header>
-${VEDOKROK_BANNER}
+${VEDOKROK_BANNER_RU}
 <main id="content" class="page wrap">${body}</main>
-<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/ru/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>${escapeHtml(site.shell.footer_line)}</small></div><div class="footer-links"><a href="/ru/life-os/">${escapeHtml(nav.library)}</a><a href="/ru/research/">${escapeHtml(nav.research)}</a><a href="/ru/for-ai/">${escapeHtml(nav.forAi)}</a><a href="/ru/partners/">${escapeHtml(nav.partners)}</a><a href="/ru/life-os/methodology/">${escapeHtml(nav.methodology)}</a><a href="/ru/llms.txt">llms.txt</a><a lang="en" hreflang="en" href="${escapeAttribute(page.source_route)}">English</a></div></div><div class="wrap">${VEDOKROK_FOOTER_LINE}</div></footer>
+<footer class="footer"><div class="wrap footer-row"><div><a class="brand" href="/ru/"><img src="/assets/images/brali-logo.png" alt=""><span>Brali</span></a><small>${escapeHtml(site.shell.footer_line)}</small></div><div class="footer-links"><a href="/ru/life-os/">${escapeHtml(nav.library)}</a><a href="/ru/research/">${escapeHtml(nav.research)}</a><a href="/ru/for-ai/">${escapeHtml(nav.forAi)}</a><a href="/ru/partners/">${escapeHtml(nav.partners)}</a><a href="/ru/life-os/methodology/">${escapeHtml(nav.methodology)}</a><a href="/ru/llms.txt">llms.txt</a><a lang="en" hreflang="en" href="${escapeAttribute(page.source_route)}">English</a></div></div><div class="wrap">${VEDOKROK_FOOTER_LINE_RU}</div></footer>
 </body>
 </html>`;
 }

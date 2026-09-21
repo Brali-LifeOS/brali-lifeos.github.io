@@ -1,6 +1,14 @@
 {
   "schema_version": 1,
   "description": "Brali Research Watch review batch for 2026-09-21. A fresh 2026 randomized controlled trial of two brief paced-breathing patterns completed full-source review. Brali already has a 4-2-6 breathing page, but its inherited copy contains unsupported focus, dose, adherence and mechanistic claims. The evidence is therefore used to correct that existing page into a bounded acute stress-reset protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
+  "evidence_overrides": {
+    "4-2-6-breathing-for-work-focus": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-21",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Full-source review of a 2026 randomized controlled trial supports brief comfortable paced breathing as a bounded acute stress-reset option in healthy young adults. The effective public page removes unsupported focus/productivity, optimal-ratio, dose, adherence, cortisol, HRV and generic autonomic-mechanism claims and keeps the legacy 4-2-6 count only as an optional comfortable pacing interface, not an evidence-defined prescription."
+    }
+  },
   "research_candidates": [
     {
       "id": "europepmc:42388906",

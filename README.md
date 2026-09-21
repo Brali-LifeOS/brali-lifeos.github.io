@@ -10,6 +10,17 @@ Brali started as a feature-rich personal organizer. The maintained direction is 
 
 For repository work from ChatGPT or another coding agent, start with [AGENTS.md](AGENTS.md).
 
+## Now part of Vedokrok
+
+Brali Life OS started as a personal organizer and became a knowledge project built around one observation: knowledge read once and never used has little value. Brali experimented with turning useful ideas into repeatable actions.
+
+That experiment is now part of [Vedokrok](https://vedokrok.com) — a broader practical knowledge system built on the same principle: knowledge should be available at the moment it can change an action or decision.
+
+- **Before:** a focused project around one area of practical knowledge.
+- **Now:** Vedokrok connects thousands of practical ideas, techniques, frameworks and tools across many areas of life and work — with collections, evidence, structured knowledge and future AI access.
+
+Brali remains online as a historical project and a useful standalone resource. Active development continues at Vedokrok. See [VEDOKROK.md](VEDOKROK.md) for the project history.
+
 ## Use Brali in 60 seconds
 
 ### 1. Ask it in the browser

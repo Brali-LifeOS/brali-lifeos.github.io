@@ -1,0 +1,3 @@
+export const VEDOKROK_BANNER = `<aside class="vedokrok-banner" data-vedokrok-banner><div class="wrap vedokrok-banner__inner"><p class="vedokrok-banner__kicker">Now part of</p><p class="vedokrok-banner__name"><a href="https://vedokrok.com">Vedokrok</a></p><p class="vedokrok-banner__line">Brali explored one question: why does useful knowledge so rarely change what people do? Vedokrok turns the answer into a broader system — practical knowledge, ready at the moment it can change an action or decision.</p><p class="vedokrok-banner__cta"><a href="https://vedokrok.com">Explore Vedokrok →</a></p></div></aside>`;
+
+export const VEDOKROK_FOOTER_LINE = `<p class="vedokrok-footer">Now part of <a href="https://vedokrok.com">Vedokrok</a> — a broader practical knowledge system.</p>`;

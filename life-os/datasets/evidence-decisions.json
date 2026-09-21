@@ -2,7 +2,7 @@
   "schema_version": 1,
   "name": "Brali Evidence Decisions",
   "description": "Reviewed research decisions that bridge discovery metadata and public Brali content. A decision records what the actual source supports, what it does not support, and whether a candidate may change a Hack or Protocol.",
-  "count": 63,
+  "count": 64,
   "entries": [
     {
       "schema_version": 1,
@@ -1986,6 +1986,65 @@
       ],
       "risk_flags": [],
       "notes": "Brali should keep active recall as a retention-oriented method but explicitly add application practice when the real goal is using a rule or procedure."
+    },
+    {
+      "schema_version": 1,
+      "id": "routine-cued-short-mindfulness-boundary-2026",
+      "candidate_id": "europepmc:42456167",
+      "decision": "support-existing",
+      "reviewed_at": "2026-09-18",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13372293/",
+      "source_title": "A Self-Guided Mobile Mindfulness Intervention Embedded in Daily Routines for Adults With Mild to Moderate Psychological Distress: Randomized Controlled Trial",
+      "source_type": "randomized-controlled-trial",
+      "doi": "10.2196/98056",
+      "citation_text": "Wu X, De Alwis J, Dou Z, et al. JMIR Ment Health. 2026;13:e98056.",
+      "source_reviewed": true,
+      "study_design": "Four-arm parallel randomized controlled trial with 686 adults assigned 1:1:1:1 to traditional mobile mindfulness, routine-embedded mobile mindfulness, mindfulness psychoeducation, or waitlist. The intervention lasted 21 days. The two mindfulness conditions received matched psychoeducation and 15 minutes of daily guided practice structured either as one continuous session or three routine-linked five-minute practices. Primary outcomes were self-reported depressive and anxiety symptoms, with postintervention ANCOVA and longitudinal analyses through three months for active conditions.",
+      "population": "686 adults aged 18-65 with mild to moderate symptoms of anxiety or depression, recruited into a fully online self-guided study. This is not a general healthy-population sample and not a trial of people receiving clinical diagnosis-specific care.",
+      "intervention_or_exposure": "Habitual Mindfulness Practice linked three five-minute audio-guided mindfulness practices per day to recurring contexts such as eating or drinking, commuting, household tasks, leisure activities and wellness-related routines. The traditional mindfulness comparator used one continuous 15-minute guided practice per day. Both were richer mobile programs than Brali's simple short breath-meditation protocol.",
+      "outcomes": [
+        "Depressive symptoms",
+        "Anxiety symptoms",
+        "Mindfulness",
+        "Cognitive emotion regulation",
+        "Affective balance",
+        "Interpersonal difficulties",
+        "Practice duration",
+        "Engagement",
+        "Participant satisfaction",
+        "Attrition"
+      ],
+      "supported_claim": "For Brali's existing short meditation page, a stable daily routine can be offered as an optional cue when the user's main friction is remembering or initiating practice. A 21-day routine-embedded mobile mindfulness format produced broadly comparable short-term outcomes to a traditional session-based mobile mindfulness format in this trial. Crucially, routine embedding did not improve engagement, practice duration, satisfaction, or attrition, so the evidence supports feasibility and choice of format rather than an adherence advantage.",
+      "unsupported_or_overstated_claims": [
+        "Habit stacking or routine cueing has been shown to make meditation habits automatic.",
+        "Embedding mindfulness in an existing routine improves adherence, engagement, satisfaction, or retention compared with a traditional session format.",
+        "Three five-minute practices per day are an evidence-defined optimal dose.",
+        "This trial proves that a single five-minute Brali breath practice treats anxiety or depression.",
+        "Routine cueing was the mechanism responsible for the observed symptom changes.",
+        "A particular daily cue such as commuting, eating, hygiene, or household work is superior to another cue.",
+        "The results establish durable benefits beyond three months or superiority over professionally delivered care.",
+        "The absence of reported adverse events proves that mindfulness is harmless for everyone."
+      ],
+      "limitations": [
+        "Attrition was substantial, especially in the two mindfulness practice groups. Only 55.2% of randomized participants provided postintervention outcome data, and only 24.1% of participants in active conditions provided three-month outcome data.",
+        "Primary and secondary clinical outcomes were self-reported.",
+        "Engagement measures combined app-recorded exposure with brief self-report measures and could not establish fidelity or untracked off-platform practice.",
+        "The study did not directly measure habit strength, automaticity, or cue-response consistency, so it cannot demonstrate habit formation as the mechanism.",
+        "The routine-embedded intervention was a 21-day mobile program totaling 15 minutes of guided practice per day, not a test of Brali's single short breath-meditation exercise.",
+        "Participants had mild to moderate anxiety or depressive symptoms; generalization to healthy adults, acute clinical presentations, other diagnoses, or clinician-delivered treatment is limited.",
+        "Waitlist participants were offered intervention materials after postintervention, so there was no untreated waitlist comparison at three months."
+      ],
+      "target_hack_ids": [
+        "5-minute-meditation-habit-tracker"
+      ],
+      "target_protocol_ids": [
+        "brali:5-minute-meditation-habit-tracker"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "notes": "Editorial action: update the existing reviewed short meditation page rather than create a duplicate habit-stacking hack. Add one optional routine-cue step for initiation friction, explicitly state that the trial did not show better engagement or adherence, preserve the no-magic-dose framing, and keep treatment claims outside the page. Do not copy the study's 3x5-minute schedule as a Brali prescription."
     },
     {
       "schema_version": 1,

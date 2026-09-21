@@ -2,7 +2,7 @@
   "slug": "5-minute-meditation-habit-tracker",
   "title": "Try a Short Breath Meditation — Without Turning Five Minutes Into a Religion",
   "subtitle": "Mini-Meditation Sessions",
-  "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. Five minutes is a convenient container, not a therapeutic dose or a test of whether you are good at calming down.",
+  "description": "Sit somewhere safe, let your breathing stay natural, notice when attention wanders, and bring it back. If starting is the hard part, you can attach the practice to a stable daily routine. The cue is an implementation option, not a proven adherence hack, and five minutes is still a convenient container rather than a therapeutic dose.",
   "canonical": "/life-os/5-minute-meditation-habit-tracker/",
   "keywords": [
     "Be Healthy",
@@ -15,13 +15,13 @@
     "title": "Be Healthy"
   },
   "lifeOsSource": {
-    "hack": "Use a short period to practise noticing when attention has wandered and returning it to the natural breath. If breath focus is uncomfortable or simply not useful for you, switch to another low-risk wellbeing practice instead of forcing the streak.",
+    "hack": "Use a short period to practise noticing when attention has wandered and returning it to the natural breath. If remembering to start is the main friction, optionally attach the practice to one stable, safe routine cue. Keep the cue only if it genuinely makes starting easier; the reviewed trial does not show that routine embedding improves adherence over traditional app-based practice.",
     "zone": "Be Healthy",
     "zoneSlug": "be-healthy",
-    "whatYouDo": "Sit somewhere comfortable and safe. Let breathing stay natural. Notice the sensations of breathing; when attention drifts into plans, memories, sounds or commentary, notice that and return to the breath without grading yourself. Use five minutes only if it is a convenient starting container. After several attempts, keep the practice only if it is useful for you.",
-    "checkIn": "Did I notice attention wandering and return without turning it into a fight? Was the practice useful, neutral or uncomfortable? Would another wellbeing practice fit me better today?",
-    "reference": "NHS beginner meditation guidance; Wilkie et al. (2026) network meta-analysis of general-adult well-being interventions",
-    "sourceUrl": "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-meditate-for-beginners/"
+    "whatYouDo": "Sit somewhere comfortable and safe. Let breathing stay natural. Notice the sensations of breathing; when attention drifts into plans, memories, sounds or commentary, notice that and return to the breath without grading yourself. Use five minutes only if it is a convenient starting container. If initiation is the problem, choose one recurring non-safety-critical cue — for example after closing the laptop for lunch or after finishing your evening hygiene — and let that cue mean 'try the short practice now.' After several attempts, keep the cue only if it reduces friction without making the practice annoying or compulsory.",
+    "checkIn": "Did I notice attention wandering and return without turning it into a fight? If I used a routine cue, did it actually make starting easier? Was the practice useful, neutral or uncomfortable? Would another wellbeing practice fit me better today?",
+    "reference": "NHS beginner meditation guidance; Wilkie et al. (2026) network meta-analysis of general-adult well-being interventions; Wu et al. (2026) randomized trial of routine-embedded versus traditional mobile mindfulness",
+    "sourceUrl": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13372293/"
   },
   "faq": [
     {
@@ -47,6 +47,12 @@
       "question": "Is meditation the best wellbeing practice?",
       "answer": "The evidence does not give Brali a universal winner. A 2026 network meta-analysis of 183 randomized trials in adults without diagnosed conditions found several viable routes, including mindfulness, exercise, yoga, compassion-based and positive-psychology interventions. Many head-to-head differences were not clear, and study quality was often imperfect. Treat meditation as one option worth testing, not a loyalty program.",
       "answerHtml": "<p>The evidence does not give Brali a universal winner. A 2026 network meta-analysis of 183 randomized trials in adults without diagnosed conditions found several viable routes, including mindfulness, exercise, yoga, compassion-based and positive-psychology interventions. Many head-to-head differences were not clear, and study quality was often imperfect. Treat meditation as one option worth testing, not a loyalty program.</p>"
+    },
+    {
+      "id": "5-minute-meditation-habit-tracker-faq-5",
+      "question": "Should I attach meditation to a daily routine?",
+      "answer": "You can try it if remembering to start is your main problem. A 2026 randomized trial found that a routine-embedded mobile mindfulness program could produce benefits broadly comparable to traditional app-delivered mindfulness, but it did not improve engagement, practice duration, satisfaction or attrition. So use a stable routine cue as a low-cost prompt, not as a scientifically certified habit-stacking trick.",
+      "answerHtml": "<p>You can try it if remembering to start is your main problem. A 2026 randomized trial found that a routine-embedded mobile mindfulness program could produce benefits broadly comparable to traditional app-delivered mindfulness, but it did not improve engagement, practice duration, satisfaction or attrition. So use a stable routine cue as a low-cost prompt, not as a scientifically certified habit-stacking trick.</p>"
     }
   ],
   "meta": {
@@ -58,7 +64,7 @@
   },
   "body": {
     "intro": {
-      "html": "<p>The job is not to empty your head. If that were the entry requirement, meditation would have a very small user base. The useful move is simpler: put attention somewhere ordinary, notice when it leaves, and bring it back without turning the detour into a personal failure. NHS guidance describes mind wandering as normal and does not prescribe one correct session length. A 2026 network meta-analysis also gives Brali a useful bigger-picture boundary: mindfulness is one plausible route to general wellbeing, not the only one. Exercise, yoga, compassion-based and positive-psychology approaches also showed benefits in randomized-trial evidence. So this page is a small experiment, not a recruitment campaign.</p>"
+      "html": "<p>The job is not to empty your head. If that were the entry requirement, meditation would have a very small user base. The useful move is simpler: put attention somewhere ordinary, notice when it leaves, and bring it back without turning the detour into a personal failure. NHS guidance describes mind wandering as normal and does not prescribe one correct session length. A 2026 network meta-analysis also gives Brali a useful bigger-picture boundary: mindfulness is one plausible route to general wellbeing, not the only one. And a newer 2026 randomized trial adds a practical detail: you can embed brief mindfulness into recurring routines, but doing so did not make people more engaged than a traditional app-based format. So this page is a small experiment, not a recruitment campaign — and certainly not a victory lap for habit stacking.</p>"
     },
     "sections": [
       {
@@ -82,19 +88,24 @@
         "html": "<p>If five minutes fits your day, set five minutes. If two minutes makes the practice easier to start, use two. If a longer sit is comfortable and useful, use longer. The reviewed sources do not establish a universal evidence-backed dose, so Brali will resist the ancient productivity tradition of turning a round number into natural law.</p>"
       },
       {
+        "slug": "optional-routine-cue",
+        "title": "5. If starting is the problem, borrow one routine cue",
+        "html": "<p>Choose one recurring, non-safety-critical moment that already happens most days — for example after closing the laptop for lunch or after your evening hygiene — and let it serve as a prompt to try the practice. This is not a claim that the cue rewires a habit. In a 2026 four-arm randomized trial, a 21-day routine-embedded mobile mindfulness program used three five-minute practices linked to ordinary daily contexts. It produced broadly similar short-term outcomes to traditional mobile mindfulness, but it did <strong>not</strong> improve practice duration, engagement, satisfaction or attrition. The trial also did not directly measure habit strength or automaticity. Translation: a cue may make your plan more concrete; the study does not award it magical adherence powers.</p>"
+      },
+      {
         "slug": "notice-if-it-is-not-helpful",
-        "title": "5. Switch methods without making it a moral failure",
+        "title": "6. Switch methods without making it a moral failure",
         "html": "<p>If breath focus is irritating, uncomfortable or consistently unhelpful, stop or change the anchor. You can use sounds, take a walk, do another low-risk wellbeing practice or simply decide that this is not your tool. A large 2026 synthesis found several different intervention families with evidence for general wellbeing; it did not establish that mindfulness must win. Choice is part of the protocol, not evidence that you failed it.</p>"
       },
       {
         "slug": "review-the-experience",
-        "title": "6. Measure the useful thing, not wellness theatre",
-        "html": "<p>After the session, record something simple: Did you practise? Could you notice attention moving and return? Was the experience useful, neutral or uncomfortable? Do not chase pulse, HRV, number of thoughts or a manufactured calmness score as proof. After several attempts, keep, modify or drop the practice based on what actually helps.</p>"
+        "title": "7. Measure the useful thing, not wellness theatre",
+        "html": "<p>After the session, record something simple: Did you practise? Could you notice attention moving and return? If you used a routine cue, did it actually reduce the friction of starting? Was the experience useful, neutral or uncomfortable? Do not chase pulse, HRV, number of thoughts or a manufactured calmness score as proof. After several attempts, keep, modify or drop the practice — and the cue — based on what actually helps.</p>"
       },
       {
         "slug": "evidence-boundary",
         "title": "Where the evidence stops",
-        "html": "<p>The 2026 network meta-analysis synthesized 183 randomized trials with 22,811 adults without diagnosed conditions. Mindfulness, exercise, yoga, compassion and several positive-psychology approaches generally improved wellbeing relative to inactive controls, but 60% of included trials were rated high risk of bias, many outcomes were measured only immediately after the intervention, and many comparisons were indirect. This supports offering mindfulness as one reasonable option. It does not prove that five minutes is optimal, that meditation treats a diagnosed condition, or that one practice is best for every person.</p>"
+        "html": "<p>The 2026 network meta-analysis synthesized 183 randomized trials with 22,811 adults without diagnosed conditions. Mindfulness, exercise, yoga, compassion and several positive-psychology approaches generally improved wellbeing relative to inactive controls, but 60% of included trials were rated high risk of bias, many outcomes were measured only immediately after the intervention, and many comparisons were indirect. The newer Wu et al. randomized trial included 686 adults with mild to moderate anxiety or depressive symptoms and tested a much richer 21-day mobile program than this bare-bones breath practice. Both routine-embedded and traditional mindfulness conditions outperformed psychoeducation and waitlist on several short-term outcomes, but routine embedding was not superior on engagement and attrition was substantial: postintervention outcome data were available for 55.2% of randomized participants, and 3-month data for 24.1% of participants in active conditions. This supports routine cueing as a feasible implementation option inside a fuller program. It does not prove that attaching this five-minute practice to a cue improves adherence, treats a diagnosed condition, creates a habit, or is better than simply scheduling a session.</p>"
       }
     ]
   },
@@ -102,14 +113,16 @@
     "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/how-to-meditate-for-beginners/",
     "https://www.nhs.uk/mental-health/self-help/tips-and-support/mindfulness/",
     "https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/what-is-mindfulness/",
-    "https://doi.org/10.1038/s41562-025-02369-1"
+    "https://doi.org/10.1038/s41562-025-02369-1",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC13372293/",
+    "https://doi.org/10.2196/98056"
   ],
   "editorialCuration": {
     "status": "curated",
     "evidenceStatus": "reviewed",
-    "reviewedAt": "2026-09-05",
+    "reviewedAt": "2026-09-18",
     "reviewedBy": "Brali Evidence Reviewer",
-    "reason": "Keep the conservative short breath-meditation protocol while replacing brochure-like copy with Brali's teaching voice. NHS guidance supports a simple beginner practice with no universal session length and warns that mindfulness is not helpful for everyone. A 2026 preregistered network meta-analysis of 183 RCTs and 22,811 adults without diagnosed conditions adds a useful boundary: mindfulness is one evidence-informed route to general well-being alongside exercise, yoga, compassion and positive-psychology approaches, with no clear reason to present one as the universal winner. The page therefore teaches the attention-return loop, treats five minutes as a convenience rather than a dose, and normalizes switching practices when the method is unhelpful.",
+    "reason": "Keep the conservative short breath-meditation protocol while adding a bounded implementation lesson from a full-source-reviewed 2026 four-arm randomized trial. NHS guidance still supports a simple beginner practice with no universal session length and warns that mindfulness is not helpful for everyone. A 2026 preregistered network meta-analysis of 183 RCTs and 22,811 adults without diagnosed conditions keeps the larger boundary clear: mindfulness is one evidence-informed route to general well-being rather than a universal winner. Wu et al. (2026) randomized 686 adults with mild to moderate anxiety or depressive symptoms to routine-embedded mobile mindfulness, traditional app-delivered mindfulness, mindfulness psychoeducation, or waitlist for 21 days. Routine-embedded practice produced broadly similar short-term clinical outcomes to traditional app mindfulness, but it did not improve practice duration, engagement, satisfaction, or attrition. Postintervention outcome data were available for only 55.2% of randomized participants and 3-month outcome data for 24.1% of participants in the active conditions. The trial also did not directly measure habit strength or automaticity. Brali therefore uses routine cueing only as an optional way to make initiation more concrete, not as a claim that habit stacking improves adherence, treatment response, or meditation effectiveness.",
     "registry": "protocol-content-overrides-short-meditation.json"
   }
 }

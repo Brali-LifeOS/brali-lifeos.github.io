@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "description": "Brali Research Watch review batch for 2026-09-21. A fresh 2026 randomized controlled trial of two brief paced-breathing patterns completed full-source review. Brali already has a 4-2-6 breathing page, but its inherited copy contains unsupported focus, dose, adherence and mechanistic claims. The evidence is therefore used to correct that existing page into a bounded acute stress-reset protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
+  "evidence_overrides": {
+    "4-2-6-breathing-for-work-focus": {
+      "status": "reviewed",
+      "reviewed_at": "2026-09-21",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "note": "Full-source review of a 2026 randomized controlled trial supports brief comfortable paced breathing as a bounded acute stress-reset option in healthy young adults. The effective public page removes unsupported focus/productivity, optimal-ratio, dose, adherence, cortisol, HRV and generic autonomic-mechanism claims and keeps the legacy 4-2-6 count only as an optional comfortable pacing interface, not an evidence-defined prescription."
+    }
+  },
+  "research_candidates": [
+    {
+      "id": "europepmc:42388906",
+      "source": "europepmc",
+      "source_id": "42388906",
+      "doi": "10.1016/j.cpnec.2026.100360",
+      "pmid": "42388906",
+      "title": "Box breathing and prolonged exhalation reduces markers of physiological stress reactivity in response to a virtual trier social stress test",
+      "authors": [
+        "Matthew J. McAllister",
+        "M. Hunter Martaindale",
+        "Nate Sutton",
+        "Judith P. Andersen"
+      ],
+      "container_title": "Comprehensive Psychoneuroendocrinology",
+      "publication_date": "2026-06-25",
+      "type": "journal-article",
+      "subjects": [
+        "paced breathing",
+        "box breathing",
+        "prolonged exhalation",
+        "acute stress",
+        "state anxiety",
+        "randomized controlled trial"
+      ],
+      "reference_url": "https://doi.org/10.1016/j.cpnec.2026.100360",
+      "discovered_at": "2026-09-21T00:00:00Z",
+      "last_seen_at": "2026-09-21T00:00:00Z",
+      "status": "challenge-existing",
+      "query_ids": [
+        "mind-wellbeing-interventions"
+      ],
+      "domain_ids": [
+        "mind-resilience"
+      ],
+      "topic_ids": [
+        "mood-wellbeing"
+      ],
+      "method_ids": [],
+      "lens_ids": [],
+      "life_area_slugs": [
+        "mind-resilience"
+      ],
+      "zone_slugs": [
+        "be-calm"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "crossref_score": null,
+      "discovery_sources": [
+        "europepmc"
+      ],
+      "review_notes": "Full open-access publisher article reviewed, not just title/abstract/discovery metadata. This randomized parallel-group trial assigned 66 healthy adults aged 18-39 to normal breathing, 4:4:4:4 box breathing, or a prolonged-exhalation pattern. Participants used the assigned technique for 5 minutes immediately before a modified virtual Trier Social Stress Test and again for 1 minute between the presentation and cognitive challenge. Compared with normal breathing, both paced-breathing groups attenuated post-stressor increases in heart rate, state anxiety and salivary alpha-amylase. HRV, cortisol and cognitive performance did not differ across conditions. The study does not test Brali's legacy 4-2-6 ratio, does not establish an optimal dose, and does not support a focus/productivity claim."
+    }
+  ],
+  "evidence_decisions": [
+    {
+      "schema_version": 1,
+      "id": "paced-breathing-acute-stress-boundary-2026",
+      "candidate_id": "europepmc:42388906",
+      "decision": "challenge-existing",
+      "reviewed_at": "2026-09-21",
+      "reviewed_by": "Brali Evidence Reviewer",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S266649762600024X",
+      "source_title": "Box breathing and prolonged exhalation reduces markers of physiological stress reactivity in response to a virtual trier social stress test",
+      "source_type": "randomized-controlled-trial",
+      "doi": "10.1016/j.cpnec.2026.100360",
+      "citation_text": "McAllister MJ, Martaindale MH, Sutton N, Andersen JP. Compr Psychoneuroendocrinol. 2026;27:100360.",
+      "source_reviewed": true,
+      "study_design": "Single-site randomized controlled parallel-group trial (N=66; 22 per arm). Participants were assigned to normal breathing, 4:4:4:4 box breathing, or a prolonged-exhalation pattern. The assigned intervention was performed for 5 minutes immediately before a modified virtual Trier Social Stress Test and for 1 additional minute between the presentation and cognitive challenge. Outcomes were analyzed with linear mixed models. The study reported no a priori power analysis.",
+      "population": "Healthy adults aged 18-39 recruited from a university campus. The sample included 25 men and 41 women. Exclusion criteria included known cardiovascular or metabolic disease, diagnosed anxiety, depression or ADHD, and medications for those conditions. This limits direct generalization to clinical populations and older adults.",
+      "intervention_or_exposure": "Box breathing used a 4-second inhale, 4-second hold, 4-second exhale and 4-second hold. The prolonged-exhalation condition used a 3-second nasal inhale followed by a 6-second controlled exhale through pursed lips once every 30 seconds, with normal breathing between prompted breaths. Normal breathing served as the control.",
+      "outcomes": [
+        "State anxiety",
+        "Heart rate",
+        "Heart-rate variability (RMSSD and SDNN)",
+        "Salivary alpha-amylase",
+        "Salivary secretory immunoglobulin A",
+        "Salivary cortisol",
+        "Stroop performance",
+        "Mental-arithmetic performance"
+      ],
+      "supported_claim": "For Brali's existing breathing page, brief comfortable paced breathing can be presented as a plausible low-friction option for buffering some aspects of an acute stress response. In this RCT, box breathing and prolonged exhalation attenuated post-stressor increases in heart rate, state anxiety and salivary alpha-amylase relative to normal breathing. The practical protocol should therefore target acute activation/stress and observation of comfort and subjective response, not promise improved focus or an optimized ratio.",
+      "unsupported_or_overstated_claims": [
+        "The 4-2-6 ratio is evidence-based, optimal or uniquely effective.",
+        "Three cycles or one minute is a validated minimum effective dose.",
+        "Paced breathing reliably improves focus, executive function or work performance.",
+        "The intervention reduced cortisol in this trial.",
+        "The intervention increased HRV in this trial.",
+        "The observed effects prove a specific parasympathetic, vagal or diaphragmatic mechanism.",
+        "Box breathing is superior to prolonged exhalation, or vice versa.",
+        "Brief paced breathing treats chronic stress, anxiety disorders, panic disorder or another clinical condition.",
+        "Repeated daily use produces long-term resilience, habit formation or productivity benefits.",
+        "Internal adherence percentages, skip-rate reductions or workplace-pilot effects can be inferred from this study."
+      ],
+      "limitations": [
+        "The study was small (N=66), single-site and had no a priori power analysis.",
+        "Participants were healthy adults aged 18-39, with several medical and diagnosed psychological conditions excluded.",
+        "The Trier Social Stress Test was modified and virtual; participants spoke to prerecorded judges rather than live evaluators, and awareness of the prerecorded panel was not formally checked.",
+        "HRV was measured at resting timepoints rather than during the ultra-brief breathing intervention, limiting mechanistic inference about acute autonomic effects.",
+        "Cortisol did not show the expected stress response in any group, limiting conclusions about HPA-axis effects in this paradigm.",
+        "Cognitive measures were exploratory and the tasks were not fully validated for reliability and sensitivity to stress-induced change in this protocol.",
+        "The sample was too small to examine sex as a moderator.",
+        "The trial evaluated acute responses only and does not establish long-term benefits or an optimal breathing schedule.",
+        "The legacy 4-2-6 pattern was not tested."
+      ],
+      "target_hack_ids": [
+        "4-2-6-breathing-for-work-focus"
+      ],
+      "target_protocol_ids": [
+        "brali:4-2-6-breathing-for-work-focus"
+      ],
+      "risk_flags": [
+        "mental-health"
+      ],
+      "notes": "Editorial action: correct the existing page rather than create a second breathing hack. Keep the original ratio only as an optional counting interface for continuity; explicitly state that the reviewed RCT tested different patterns. Remove unsupported focus/productivity promises, invented workplace-pilot numbers, precise adherence/dose claims and generic parasympathetic/cortisol stories. Teach readers to use breathing around acute activation, keep it comfortable, observe stress and comfort first, and separate personal task re-entry impressions from cognitive evidence."
+    }
+  ]
+}

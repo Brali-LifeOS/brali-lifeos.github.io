@@ -3,9 +3,9 @@
   "description": "Brali Research Watch review batch for 2026-09-21. A fresh 2026 randomized controlled trial of two brief paced-breathing patterns completed full-source review. Brali already has a 4-2-6 breathing page, but its inherited copy contains unsupported focus, dose, adherence and mechanistic claims. The evidence is therefore used to correct that existing page into a bounded acute stress-reset protocol rather than create a duplicate. Discovery metadata remains separate from the Evidence Decision.",
   "research_candidates": [
     {
-      "id": "crossref:10.1016/j.cpnec.2026.100360",
-      "source": "crossref",
-      "source_id": "10.1016/j.cpnec.2026.100360",
+      "id": "europepmc:42388906",
+      "source": "europepmc",
+      "source_id": "42388906",
       "doi": "10.1016/j.cpnec.2026.100360",
       "pmid": "42388906",
       "title": "Box breathing and prolonged exhalation reduces markers of physiological stress reactivity in response to a virtual trier social stress test",
@@ -51,6 +51,9 @@
         "mental-health"
       ],
       "crossref_score": null,
+      "discovery_sources": [
+        "europepmc"
+      ],
       "review_notes": "Full open-access publisher article reviewed, not just title/abstract/discovery metadata. This randomized parallel-group trial assigned 66 healthy adults aged 18-39 to normal breathing, 4:4:4:4 box breathing, or a prolonged-exhalation pattern. Participants used the assigned technique for 5 minutes immediately before a modified virtual Trier Social Stress Test and again for 1 minute between the presentation and cognitive challenge. Compared with normal breathing, both paced-breathing groups attenuated post-stressor increases in heart rate, state anxiety and salivary alpha-amylase. HRV, cortisol and cognitive performance did not differ across conditions. The study does not test Brali's legacy 4-2-6 ratio, does not establish an optimal dose, and does not support a focus/productivity claim."
     }
   ],
@@ -58,7 +61,7 @@
     {
       "schema_version": 1,
       "id": "paced-breathing-acute-stress-boundary-2026",
-      "candidate_id": "crossref:10.1016/j.cpnec.2026.100360",
+      "candidate_id": "europepmc:42388906",
       "decision": "challenge-existing",
       "reviewed_at": "2026-09-21",
       "reviewed_by": "Brali Evidence Reviewer",

@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const base = "https://brali-lifeos.github.io";
-const maintainerLine = "Maintained by MetalHatsCats.";
+const maintainerLine = "Maintained by MetalHeadsCats.";
 const profile = JSON.parse(await readFile(path.join(root, ".arwp", "localization.json"), "utf8"));
 const sourceLocale = (profile.locales || []).find((entry) => entry.code === profile.sourceLocale);
 if (!sourceLocale) throw new Error("[localization-cluster] canonical source locale is not registered");
@@ -68,6 +68,7 @@ function normalizeSwitchContainer(html, className, currentCode, canonicalPath, v
 }
 
 function ensureMaintainerAttribution(html) {
+  html = html.replace(/<small>Maintained by MetalHatsCats\.<\/small>/g, "");
   if (html.includes(maintainerLine)) return html;
   const footerIndex = html.indexOf('<footer class="footer">');
   if (footerIndex < 0) throw new Error("[localization-cluster] missing site footer while applying maintainer attribution");

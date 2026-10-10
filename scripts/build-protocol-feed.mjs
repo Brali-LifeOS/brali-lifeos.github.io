@@ -134,6 +134,28 @@ const homepageMatcher = {
 };
 await writeFile(path.join(root, "homepage-matcher.json"), `${JSON.stringify(homepageMatcher, null, 2)}\n`);
 
+// The first example must also be accurate before JavaScript loads or when it is disabled.
+const escapeHtml = value => String(value).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const homepagePath = path.join(root, "index.html");
+let homepageHtml = await readFile(homepagePath, "utf8");
+const initial = homepageGoals.focus;
+for (const [tag, id, value] of [
+  ["strong", "goal-result", initial.match],
+  ["h2", "protocol-title", initial.title],
+  ["p", "protocol-summary", initial.summary],
+  ["span", "protocol-trust", initial.trust],
+  ["strong", "protocol-source", initial.source],
+  ["span", "protocol-limit", initial.limit],
+]) {
+  const pattern = new RegExp(`(<${tag}\\b[^>]*\\bid="${id}"[^>]*>)[\\s\\S]*?(</${tag}>)`);
+  if (!pattern.test(homepageHtml)) throw new Error(`Homepage example is missing ${id}`);
+  homepageHtml = homepageHtml.replace(pattern, (_all, open, close) => `${open}${escapeHtml(value)}${close}`);
+}
+const initialSteps = initial.steps.map(([name, detail, time]) => `<div class="protocol-step"><strong>${escapeHtml(name)}</strong><span>${escapeHtml(detail)}</span><small>${escapeHtml(time)}</small></div>`).join("");
+homepageHtml = homepageHtml.replace(/(<div class="protocol-steps" id="protocol-steps">)[\s\S]*?(<div class="protocol-meta">)/, (_all, open, next) => `${open}${initialSteps}</div>${next}`);
+homepageHtml = homepageHtml.replace(/(<a\b[^>]*\bid="protocol-link"[^>]*\bhref=")[^"]*(")/, (_all, open, close) => `${open}${escapeHtml(initial.href)}${close}`);
+await writeFile(homepagePath, homepageHtml);
+
 const manifestPath = path.join(root, "life-os/datasets/manifest.json");
 const manifest = JSON.parse(await readFile(manifestPath, "utf8"));
 manifest.files = [...new Set([...(manifest.files ?? []), "protocols.json"] )];

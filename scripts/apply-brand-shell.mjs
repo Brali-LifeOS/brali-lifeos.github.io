@@ -113,7 +113,7 @@ for (const file of files(ROOT)) {
   let html = fs.readFileSync(file, 'utf8');
   const before = html;
 
-  html = html.replace(/href="\/styles\.css(?:\?[^\"]*)?"/g, 'href="/styles.css?v=20260920a"');
+  html = html.replace(/href="\/styles\.css(?:\?[^\"]*)?"/g, 'href="/styles.css?v=20261010-reading"');
   html = html.replace(/href="\/life-os\/flagships\/100\/"/g, 'href="/life-os/flagships/curated-100/"');
   html = markLongHeadings(html, rel === 'index.html');
   html = html.replace(/<a class="skip"[^>]*>[\s\S]*?<\/a>/g, '');
@@ -138,7 +138,9 @@ for (const file of files(ROOT)) {
     html = html.replace(/(<body[^>]*>)(?:<a class="skip"[^>]*>.*?<\/a>)?/, `$1<a class="skip" href="#content">Skip to content</a>${header}`);
   }
 
-  if (!html.includes('data-vedokrok-banner')) {
+  if (html.includes('data-vedokrok-banner')) {
+    html = html.replace(/<aside\b[^>]*data-vedokrok-banner[^>]*>[\s\S]*?<\/aside>/, vedokrokBannerFor(rel));
+  } else {
     const banner = vedokrokBannerFor(rel);
     if (/<header class="site-header">[\s\S]*?<\/header>/.test(html)) {
       html = html.replace(/(<header class="site-header">[\s\S]*?<\/header>)/, `$1${banner}`);

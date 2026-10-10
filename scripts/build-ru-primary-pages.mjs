@@ -74,7 +74,7 @@ function shellDocument(page, body) {
   <meta property="og:url" content="${ruUrl}">
   <meta property="og:image" content="${base}/assets/images/brali-mascot-hero.png">
   <link rel="icon" href="/assets/images/brali-logo.png">
-  <link rel="stylesheet" href="/styles.css?v=20260920a">
+  <link rel="stylesheet" href="/styles.css?v=20261010-reading">
   <script type="application/ld+json">${jsonForHtml(structured)}</script>
 </head>
 <body data-brali-cluster="localized-ru-primary">

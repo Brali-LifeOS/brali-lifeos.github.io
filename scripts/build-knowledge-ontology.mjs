@@ -153,9 +153,9 @@ for (const zone of zones) {
 
 const libraryPath = path.join(root, "life-os/index.html");
 let libraryHtml = await readFile(libraryPath, "utf8");
-libraryHtml = libraryHtml.replace(`Browse ${entries.length} entries across ${zones.length} Growth Zones.`, `Browse ${entries.length} entries. The original ${zones.length} Growth Zone URLs remain stable while the new ontology separates Topics, Methods, and Lenses.`);
+
 if (!libraryHtml.includes('data-ontology-entry="true"')) {
-  libraryHtml = libraryHtml.replace('<div class="grid three">', '<div class="callout" data-ontology-entry="true"><h3>Browse the new knowledge model</h3><p>Start with a Domain and Topic, or explore Methods and Brali Lenses separately. Old Growth Zone links still work.</p><a class="button" href="/ontology/">Open ontology</a></div><div class="grid three">');
+  libraryHtml = libraryHtml.replace('<div class="grid three">', '<div class="callout" data-ontology-entry="true"><h3>Explore by topic or method</h3><p>Use the knowledge map to find related topics and methods.</p><a class="button" href="/ontology/">Browse the knowledge map</a></div><div class="grid three">');
 }
 await writeFile(libraryPath, libraryHtml);
 

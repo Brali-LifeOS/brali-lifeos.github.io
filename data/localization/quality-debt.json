@@ -6,6 +6,15 @@
       "status": "reviewed-partial",
       "items": [
         {
+          "id": "ru-homepage-assumption-check-link",
+          "surface": "homepage-interaction",
+          "state": "planned",
+          "release_blocking": false,
+          "scope": "Direct homepage link to the practical assumption-check protocol",
+          "reason": "The English homepage offers a direct link to the assumption-check protocol; the RU homepage does not yet offer an equivalent localized link. No English link is silently inserted into the localized homepage.",
+          "release_rule": "If this shortcut is added to the RU homepage, use a separately reviewed native label and the correct localized protocol route, and verify the rendered link and locale boundary."
+        },
+        {
           "id": "ru-long-form-library-expansion",
           "surface": "long-form-library",
           "state": "closed",
@@ -103,6 +112,15 @@
     "de": {
       "status": "reviewed-partial",
       "items": [
+        {
+          "id": "de-homepage-assumption-check-link",
+          "surface": "homepage-interaction",
+          "state": "planned",
+          "release_blocking": false,
+          "scope": "Direct homepage link to the practical assumption-check protocol",
+          "reason": "The English homepage offers a direct link to the assumption-check protocol; the DE homepage does not yet offer an equivalent localized link. No English link is silently inserted into the localized homepage.",
+          "release_rule": "If this shortcut is added to the DE homepage, use a separately reviewed native label and the correct localized protocol route, and verify the rendered link and locale boundary."
+        },
         {
           "id": "de-long-form-library-expansion",
           "surface": "long-form-library",
